@@ -1,0 +1,66 @@
+# NordicSDRF campaign manifest — single source of truth for what to annotate
+# and how far each city has gotten. Update the counters here as work lands
+# instead of only in status/*.md, so scripts can read progress without
+# parsing markdown.
+
+project: NordicSDRF
+description: >
+  Annotate Nordic-affiliated PRIDE proteomics datasets with validated SDRF
+  files, worked country by country and city by city.
+
+tools:
+  sdrf_skills: ../sdrf-skills                       # sibling checkout, not vendored
+  sdrf_annotated_datasets: ../sdrf-annotated-datasets
+
+pipeline:
+  tier_1_local:
+    runner: ollama
+    model: qwen2.5:7b
+    gpu: "NVIDIA RTX PRO 2000 Blackwell (Laptop)"
+    jobs: [dedup_against_corpus, rough_triage]
+  tier_2_codex:
+    jobs: [sdrf_metascreen, sdrf_fix, sdrf_validate]
+  tier_3_claude:
+    jobs: [sdrf_annotate, sdrf_review, sdrf_adversarial_review]
+
+countries:
+  sweden:
+    status: in_progress
+    cities:
+      stockholm:
+        pxd_list: sweden/stockholm.txt
+        pxd_count: 165
+        screened: 0
+        annotated: 0
+        blocked: 0
+        notes: "line 1 is PRD000423, a legacy ProteomeXchange id — resolve to a PXD before screening"
+      lund:
+        pxd_list: sweden/lund.txt
+        pxd_count: 163
+        screened: 0
+        annotated: 0
+        blocked: 0
+      gothenburg:
+        pxd_list: sweden/gothenburg.txt
+        pxd_count: 135
+        screened: 0
+        annotated: 0
+        blocked: 0
+      uppsala:
+        pxd_list: sweden/uppsala.txt
+        pxd_count: 75
+        screened: 0
+        annotated: 0
+        blocked: 0
+  norway:
+    status: not_started
+    cities: {}
+  denmark:
+    status: not_started
+    cities: {}
+  finland:
+    status: not_started
+    cities: {}
+  iceland:
+    status: not_started
+    cities: {}
