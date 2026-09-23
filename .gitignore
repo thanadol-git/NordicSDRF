@@ -1,3 +1,5 @@
 # Files
 
 .venv
+results/logs/
+results/.status.lock

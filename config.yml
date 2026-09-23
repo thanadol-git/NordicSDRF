@@ -1,7 +1,17 @@
 # NordicSDRF campaign manifest — single source of truth for what to annotate
-# and how far each city has gotten. Update the counters here as work lands
-# instead of only in status/*.md, so scripts can read progress without
-# parsing markdown.
+# and how far each city has gotten.
+#
+# `scripts/update_status.py` reads this file, queries PRIDE, counts manifests and
+# annotations/ outputs, and writes the numbers back here (pxd_count, pride_hits,
+# screened, annotated, blocked) and into README.md + status/<country>.md.
+# Only those numeric fields are machine-written; everything else is yours.
+#
+# City fields:
+#   name          display name used in tables
+#   search_terms  PRIDE full-text keywords (English spelling first; diacritic
+#                 forms return almost nothing). Hits across terms are unioned.
+#   pxd_list      curated manifest (one PXD per line) — present once a city is scoped
+#   pxd_count / pride_hits / screened / annotated / blocked — machine-updated
 
 project: NordicSDRF
 description: >
@@ -15,7 +25,7 @@ tools:
 pipeline:
   tier_1_local:
     runner: ollama
-    model: qwen2.5:7b
+    model: qwen3.5:9b-128k
     gpu: "NVIDIA RTX PRO 2000 Blackwell (Laptop)"
     jobs: [dedup_against_corpus, rough_triage]
   tier_2_codex:
@@ -23,44 +33,224 @@ pipeline:
   tier_3_claude:
     jobs: [sdrf_annotate, sdrf_review, sdrf_adversarial_review]
 
+pride_hits_queried: 2026-09-23
+
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-09-23)
+
 countries:
   sweden:
     status: in_progress
     cities:
       stockholm:
+        name: Stockholm
+        search_terms: [Stockholm, Karolinska, Solna, Huddinge]
         pxd_list: sweden/stockholm.txt
         pxd_count: 165
+        pride_hits: 323
         screened: 0
         annotated: 0
         blocked: 0
         notes: "line 1 is PRD000423, a legacy ProteomeXchange id — resolve to a PXD before screening"
+        in_corpus: 4
       lund:
+        name: Lund
+        search_terms: [Lund, Malmö, Skåne]
         pxd_list: sweden/lund.txt
         pxd_count: 163
+        pride_hits: 508
         screened: 0
         annotated: 0
         blocked: 0
+        in_corpus: 7
       gothenburg:
+        name: Gothenburg
+        search_terms: [Gothenburg, Göteborg, Sahlgrenska, Chalmers]
         pxd_list: sweden/gothenburg.txt
         pxd_count: 135
+        pride_hits: 188
         screened: 0
         annotated: 0
         blocked: 0
+        in_corpus: 9
       uppsala:
+        name: Uppsala
+        search_terms: [Uppsala]
         pxd_list: sweden/uppsala.txt
         pxd_count: 75
+        pride_hits: 196
         screened: 0
         annotated: 0
         blocked: 0
-  norway:
-    status: not_started
-    cities: {}
+        notes: "line 1 PXD001817 is a Utrecht dataset (PI address 'Uppsalalaan 8', countries=[Netherlands]) — keyword false positive; filter on PRIDE `countries` in tier 1"
+        in_corpus: 6
+      umea:
+        name: Umeå
+        search_terms: [Umeå, Umea]
+        pride_hits: 45
+        screened: 0
+        annotated: 0
+        blocked: 0
+      linkoping:
+        name: Linköping
+        search_terms: [Linköping, Linkoping]
+        pride_hits: 26
+        screened: 0
+        annotated: 0
+        blocked: 0
+      orebro:
+        name: Örebro
+        search_terms: [Örebro, Orebro]
+        pride_hits: 0
+        screened: 0
+        annotated: 0
+        blocked: 0
+
   denmark:
     status: not_started
-    cities: {}
+    cities:
+      copenhagen:
+        name: Copenhagen
+        search_terms: [Copenhagen, København, Rigshospitalet, Frederiksberg]
+        pride_hits: 554
+        screened: 0
+        annotated: 0
+        blocked: 0
+      odense:
+        name: Odense
+        search_terms: [Odense, "University of Southern Denmark"]
+        pride_hits: 602
+        screened: 0
+        annotated: 0
+        blocked: 0
+      aarhus:
+        name: Aarhus
+        search_terms: [Aarhus, Århus]
+        pride_hits: 117
+        screened: 0
+        annotated: 0
+        blocked: 0
+      aalborg:
+        name: Aalborg
+        search_terms: [Aalborg]
+        pride_hits: 67
+        screened: 0
+        annotated: 0
+        blocked: 0
+      lyngby:
+        name: Lyngby
+        search_terms: [Lyngby, "Technical University of Denmark"]
+        pride_hits: 57
+        screened: 0
+        annotated: 0
+        blocked: 0
+      roskilde:
+        name: Roskilde
+        search_terms: [Roskilde]
+        pride_hits: 9
+        screened: 0
+        annotated: 0
+        blocked: 0
+
+  norway:
+    status: not_started
+    cities:
+      bergen:
+        name: Bergen
+        search_terms: [Bergen, Haukeland]
+        pride_hits: 218
+        screened: 0
+        annotated: 0
+        blocked: 0
+        notes: "'Bergen' also matches Bergen NJ (USA) and Bergen op Zoom (NL)"
+      oslo:
+        name: Oslo
+        search_terms: [Oslo, Rikshospitalet, Radiumhospitalet]
+        pride_hits: 124
+        screened: 0
+        annotated: 0
+        blocked: 0
+      trondheim:
+        name: Trondheim
+        search_terms: [Trondheim, NTNU]
+        pride_hits: 64
+        screened: 0
+        annotated: 0
+        blocked: 0
+      aas:
+        name: Ås
+        search_terms: [NMBU, "Norwegian University of Life Sciences"]   # never the bare token "Ås"
+        pride_hits: 56
+        screened: 0
+        annotated: 0
+        blocked: 0
+      tromso:
+        name: Tromsø
+        search_terms: [Tromsø, Tromso]
+        pride_hits: 15
+        screened: 0
+        annotated: 0
+        blocked: 0
+      stavanger:
+        name: Stavanger
+        search_terms: [Stavanger]
+        pride_hits: 0
+        screened: 0
+        annotated: 0
+        blocked: 0
+
   finland:
     status: not_started
-    cities: {}
+    cities:
+      helsinki:
+        name: Helsinki
+        search_terms: [Helsinki, Espoo, Meilahti]
+        pride_hits: 163
+        screened: 0
+        annotated: 0
+        blocked: 0
+      turku:
+        name: Turku
+        search_terms: [Turku, Åbo]
+        pride_hits: 102
+        screened: 0
+        annotated: 0
+        blocked: 0
+      oulu:
+        name: Oulu
+        search_terms: [Oulu]
+        pride_hits: 11
+        screened: 0
+        annotated: 0
+        blocked: 0
+      tampere:
+        name: Tampere
+        search_terms: [Tampere]
+        pride_hits: 5
+        screened: 0
+        annotated: 0
+        blocked: 0
+      kuopio:
+        name: Kuopio
+        search_terms: [Kuopio, "University of Eastern Finland"]
+        pride_hits: 10
+        screened: 0
+        annotated: 0
+        blocked: 0
+      jyvaskyla:
+        name: Jyväskylä
+        search_terms: [Jyväskylä, Jyvaskyla]
+        pride_hits: 1
+        screened: 0
+        annotated: 0
+        blocked: 0
+
   iceland:
     status: not_started
-    cities: {}
+    cities:
+      reykjavik:
+        name: Reykjavík
+        search_terms: [Reykjavik, Reykjavík, Iceland]
+        pride_hits: 6
+        screened: 0
+        annotated: 0
+        blocked: 0
