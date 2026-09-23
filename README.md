@@ -59,7 +59,9 @@ NordicSDRF/
 └── scripts/
     ├── annotate_local.sh            # sdrf-annotate via Claude Code + local Ollama (zero tokens); NORDIC_BATCH=1 for headless
     ├── annotate_slurm.sbatch        # Slurm array wrapper: one task per manifest line
+    ├── build_manifest.py            # tier 1: PRIDE keyword search → verify country in each record → <country>/<city>.txt
     ├── update_status.py             # PRIDE hits + corpus overlap + local progress → config.yml, README, status/
+    ├── trace_summary.py             # one-line summary of a results/logs/<PXD>.*.jsonl run trace (live or finished)
     ├── check_existing_coverage.py   # tier 1: dedup against sdrf-annotated-datasets + BLOCKED/DUPLICATES
     └── local_triage.py              # tier 1: local Ollama pre-screen of a city manifest
 ```
@@ -77,6 +79,10 @@ counts and progress counters. The numeric fields are machine-written by
 
 ## Current status
 
+Tables below are generated. To check a live annotation run, read a JSONL
+trace, or refresh the numbers from files on this machine (no tokens), see
+[Checking status locally](#checking-status-locally).
+
 <!-- status:begin -->
 One table per country, same columns everywhere. *PRIDE hits* is the rough
 full-text hit count from the PRIDE Archive search (unioned over each city's
@@ -84,7 +90,7 @@ full-text hit count from the PRIDE Archive search (unioned over each city's
 *PXDs listed* is the curated manifest length and is `—` until a
 `<country>/<city>.txt` exists; *In corpus* is how many of those already have an
 SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/bigbio/sdrf-annotated-datasets)
-(checked against GitHub bigbio/sdrf-annotated-datasets (2026-09-23)) and can be skipped.
+(checked against local checkout (2026-09-23)) and can be skipped.
 Regenerate with `python scripts/update_status.py`.
 
 ### Sweden — in progress
@@ -136,12 +142,12 @@ Regenerate with `python scripts/update_status.py`.
 | Jyväskylä | 1 | — | — | 0 | 0 | 0 |
 | **Total** | | **0** | 0 | 0 | 0 | 0 |
 
-### Iceland — not started
+### Iceland — scoped
 
 | City | PRIDE hits | PXDs listed | In corpus | Screened | Annotated | Blocked |
 |---|---:|---:|---:|---:|---:|---:|
-| Reykjavík | 6 | — | — | 0 | 0 | 0 |
-| **Total** | | **0** | 0 | 0 | 0 | 0 |
+| Reykjavík | 6 | 3 | 0 | 0 | 0 | 0 |
+| **Total** | | **3** | 0 | 0 | 0 | 0 |
 <!-- status:end -->
 
 No duplicates found within or across the four Swedish city lists. Two
@@ -171,12 +177,26 @@ cities are also recorded per country in `config.yml` as `candidate_cities`.
 | Denmark | Copenhagen (CPR, Rigshospitalet), Odense (SDU), Aarhus, Aalborg, Lyngby (DTU), Roskilde | 1600 | not started — largest depositor |
 | Norway | Bergen (PROBE), Oslo (OUS), Trondheim (NTNU/PROMEC), Ås (NMBU), Tromsø, Stavanger | 461 | not started |
 | Finland | Helsinki/Espoo, Turku, Oulu, Tampere, Kuopio, Jyväskylä | 205 | not started |
-| Iceland | Reykjavík (mostly affinity proteomics, little in PRIDE) | 6 | not started |
+| Iceland | Reykjavík (mostly affinity proteomics, little in PRIDE) | 6 | scoped |
 
 Suggested order after Sweden: Denmark, Norway, Finland, Iceland. To scope a
-new city, follow "Building the next manifests" at the end of
-`criteria/nordic_cities.md`, add `<country>/<city>.txt`, and move the city
-from `candidate_cities` into `cities:` in `config.yml`.
+city, run the tier-1 manifest builder — PRIDE has no working country filter,
+so it unions the city's `search_terms` from `config.yml`, fetches every
+candidate record and keeps an accession only when the record itself confirms
+the country (`countries`, a submitter's `country`, or a city/institution term
+in an affiliation string):
+
+```bash
+python scripts/build_manifest.py iceland reykjavik --dry-run          # see the evidence first
+python scripts/build_manifest.py iceland reykjavik                    # writes iceland/reykjavik.txt + results/iceland/reykjavik_candidates.tsv
+# then add `pxd_list: iceland/reykjavik.txt` under the city in config.yml and
+python scripts/update_status.py --no-pride --corpus github
+```
+
+Iceland was scoped this way: 65 keyword candidates → 3 confirmed PXDs (all
+Rolfsson lab, University of Iceland) + 1 legacy `PRD` id; 61 rejected, e.g.
+"deCODE" matching *decode*, and a Norwegian dataset that cites Iceland. The
+same run on `sweden/uppsala.txt` would have rejected the Utrecht dataset.
 
 ## Workflow, per city
 
@@ -244,6 +264,15 @@ too slow, `qwen3.5:4b` at 128k is the fallback. Expect a local 4–9B
 model to be far weaker than tier 3 on the annotator brief's traps — treat its
 output as a draft and keep the `sdrf-adversarial-review` gate mandatory.
 
+**Stream timeouts are raised.** Claude Code's defaults assume Anthropic's
+latency; the first full attempt on PXD001817 died at turn 42 (68 min, context
+67k) with `API Error: The response stopped arriving` while the model was
+writing the SDRF. The launcher therefore sets
+`CLAUDE_STREAM_FIRST_BYTE_TIMEOUT_MS=1200000` (prefill of a 60k+ prompt with
+CPU offload), `CLAUDE_STREAM_IDLE_TIMEOUT_MS=600000`, `API_TIMEOUT_MS=3600000`
+and `CLAUDE_CODE_MAX_OUTPUT_TOKENS=32000`; override with `NORDIC_FIRST_BYTE_MS`,
+`NORDIC_IDLE_MS`, `NORDIC_API_TIMEOUT_MS`, `NORDIC_MAX_OUTPUT`.
+
 **Plugin hooks are disabled in these runs.** The `sdrf-skills` `Stop` hook
 (`tools/review_gate.py stop-hook`) refuses to end a session while *any* SDRF in
 the `sdrf-skills` git tree lacks a review receipt — including unrelated
@@ -278,6 +307,95 @@ there, and check the compute nodes can reach PRIDE/Europe PMC/OLS (many block
 outbound traffic). To declare the GPU to the local Slurm, add
 `GresTypes=gpu`, `Gres=gpu:1` on the `NodeName` line in `/etc/slurm/slurm.conf`
 and `Name=gpu File=/dev/nvidia0` in `/etc/slurm/gres.conf`.
+
+### Checking status locally
+
+Everything is on disk; nothing needs a token. Three levels: is a run alive,
+what is that run doing, and where is the campaign.
+
+Needs `python3` with PyYAML for the tracker (`mambaforge` or
+`../sdrf-skills/.venv/bin/python`). Traces are gitignored under
+`results/logs/`.
+
+**1. Is a run alive?**
+
+```bash
+pgrep -af "claude -p"                        # headless Claude Code process(es)
+curl -s localhost:11434/api/ps | python3 -m json.tool   # model in Ollama, VRAM/CPU split, expires_at
+nvidia-smi --query-gpu=utilization.gpu,memory.used --format=csv   # GPU busy = model is generating
+squeue -u "$USER"                            # Slurm array: PD = waiting, R = running
+```
+
+Ollama unloads the model 5 min after the last request, so an empty `api/ps`
+while `claude -p` still exists means Claude Code is between requests (a tool
+call), not that the run is dead.
+
+**2. What is the run doing?** Every headless run writes a `stream-json` trace
+to `results/logs/<PXD>.<timestamp>.jsonl`. Summarise a live or finished trace
+with `scripts/trace_summary.py` (needs only the stdlib):
+
+```bash
+python scripts/trace_summary.py results/logs/*.jsonl          # one line per trace
+python scripts/trace_summary.py -v results/logs/PXD001817.20260923-204007.jsonl   # + every tool call
+watch -n 30 'python scripts/trace_summary.py results/logs/*.jsonl'                # refresh every 30 s
+```
+
+```text
+PXD001817.20260923-202912.jsonl: FINISHED error_during_execution after 4 turns, 10 min; 1 tool calls; context 32k; 14 compactions; last tool: Bash(...)
+PXD001817.20260923-204007.jsonl: FINISHED success after 42 turns, 68 min — API Error: The response stopped arriving. ...; 37 tool calls; context 67k; 0 compactions; last tool: Read(.../TERMS.tsv)
+PXD001817.20260923-220741.jsonl: RUNNING (last write 0 min ago); 2 tool calls; context 44k; 0 compactions; last tool: Bash(...)
+```
+
+How to read a line:
+
+| Field | Meaning |
+|---|---|
+| `RUNNING` / `FINISHED <subtype>` | Live vs done. `success` is Claude Code exiting cleanly — still a failure if the text starts with `API Error` or there is no file in `annotations/` |
+| `error_during_execution` | Process died (killed, hook, crash) |
+| *N* tool calls | Real progress meter. A full annotation is roughly 30–50: PRIDE metadata → paper → OLS lookups → write SDRF → `parse_sdrf` |
+| `context Nk` | Prompt size; this is what drives per-turn time on the 8 GB GPU |
+| *N* compactions | `> 0` means the context window is too small (the 64k variant — see above) |
+| `looks stalled` | No write to the JSONL for 15 min |
+| `last tool` | What the model just did |
+
+Raw stream, if you want it: `tail -f results/logs/<PXD>.*.jsonl | cut -c1-200`.
+
+Outputs on disk, independent of the trace:
+
+```bash
+ls -la annotations/                          # <PXD>.sdrf.tsv + .report.md = done; <PXD>.BLOCKED.md = gave up
+ls ../sdrf-skills/scratchpad/<PXD>/          # cached PRIDE/PMC files the model pulled
+tail -3 results/logs/slurm-*_*.out           # each Slurm task ends with a verdict line:
+                                             #   "PXD001817: success after 42 turns, 68 min; 37 tool calls; SDRF written"
+```
+
+**3. Where is the campaign?** The tracker never calls out. It counts files
+here and writes `config.yml`, the [Current status](#current-status) block in
+this README, and `status/<country>.md`:
+
+```bash
+python scripts/update_status.py --no-pride --dry-run              # print the tables, change nothing
+python scripts/update_status.py --no-pride                        # refresh from local files only (offline)
+python scripts/update_status.py --no-pride --country iceland      # one country
+python scripts/update_status.py --no-pride --corpus github        # + live check against bigbio/sdrf-annotated-datasets
+cat status/sweden.md                                              # generated per-city table
+cat status/iceland.md
+```
+
+| File | What it tells you |
+|---|---|
+| `status/<country>.md` | Same table as in this README, one country |
+| `config.yml` → city `annotated` / `blocked` / `in_corpus` | Machine counters the tables are built from |
+| `annotations/<PXD>.sdrf.tsv` | That PXD is counted as annotated |
+| `annotations/<PXD>.BLOCKED.md` | Counted as blocked |
+| `results/<country>/<city>_screen.tsv` | Counted as screened (data rows) |
+| `results/<country>/<city>_in_corpus.txt` | Manifest PXDs already in the community corpus |
+| `results/<country>/<city>_candidates.tsv` | Evidence from `build_manifest.py` (keep / reject) |
+
+Slurm tasks run the offline form automatically after each PXD, so the tables
+lag a batch by at most one task. Use `--dry-run` while a job is writing.
+Drop `--no-pride` only when you want to re-query PRIDE hit counts (slow,
+needs the network).
 
 ### Concurrency
 

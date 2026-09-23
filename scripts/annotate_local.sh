@@ -66,6 +66,14 @@ export ANTHROPIC_DEFAULT_OPUS_MODEL="$MODEL"
 # auto-compaction triggers before Ollama truncates.
 export CLAUDE_CODE_MAX_CONTEXT_TOKENS="${NORDIC_CTX:-131072}"
 export CLAUDE_SCRATCH="$SKILLS_DIR/scratchpad/$PXD"
+# Claude Code's stream timeouts are tuned for Anthropic's API. A 9B model with
+# half its layers on the CPU needs minutes to prefill a 60k+ prompt and ~10 tok/s
+# to write a full SDRF, which otherwise ends the run with
+# "API Error: The response stopped arriving" (PXD001817, turn 42).
+export CLAUDE_STREAM_FIRST_BYTE_TIMEOUT_MS="${NORDIC_FIRST_BYTE_MS:-1200000}"   # 20 min for prefill
+export CLAUDE_STREAM_IDLE_TIMEOUT_MS="${NORDIC_IDLE_MS:-600000}"                # 10 min between chunks
+export API_TIMEOUT_MS="${NORDIC_API_TIMEOUT_MS:-3600000}"                      # 60 min per request
+export CLAUDE_CODE_MAX_OUTPUT_TOKENS="${NORDIC_MAX_OUTPUT:-32000}"             # room for thinking + a whole SDRF
 
 # The plugin's Stop hook (tools/review_gate.py) blocks the session until every
 # unreviewed SDRF in the sdrf-skills git tree has been adversarially reviewed —

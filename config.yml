@@ -35,7 +35,7 @@ pipeline:
 
 pride_hits_queried: 2026-09-23
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-09-23)
+corpus_source: local checkout (2026-09-23)
 
 countries:
   sweden:
@@ -245,12 +245,16 @@ countries:
         blocked: 0
 
   iceland:
-    status: not_started
+    status: scoped
     cities:
       reykjavik:
         name: Reykjavík
-        search_terms: [Reykjavik, Reykjavík, Iceland]
+        search_terms: [Reykjavik, Reykjavík, Iceland, Icelandic, "University of Iceland"]   # not "deCODE": matches 'decode' everywhere
+        pxd_list: iceland/reykjavik.txt
+        pxd_count: 3
+        notes: "3 confirmed PXDs (Rolfsson lab, University of Iceland) + legacy PRD000134 (cod trypsin) kept out; see results/iceland/reykjavik_candidates.tsv"
         pride_hits: 6
         screened: 0
         annotated: 0
         blocked: 0
+        in_corpus: 0

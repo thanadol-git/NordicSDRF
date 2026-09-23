@@ -1,0 +1,7 @@
+accession	verdict	evidence	in_corpus	title
+PRD000134	legacy_id	countries=['Iceland']		Identification of cod trypsin isoform
+PXD024164	confirmed	affiliation~'iceland': Department of Biochemistry and Molecular Biology & The Center for Systems Biology Universi		Proteomic analysis of breast EMT cell models reveal UGDH is upregulated during EMT and holds the pot
+PXD025600	confirmed	countries=['Iceland']		Glutamine-fructose-6-phosphate transaminase 2 (GFPT2) is upregulated in breast epithelial-mesenchyma
+PXD025858	confirmed	countries=['Iceland']		Glutamine-fructose-6-phosphate transaminase 2 (GFPT2) is upregulated in breast epithelial-mesenchyma
+PXD051310	rejected	countries=['United Kingdom'] | University of Liverpool, Institute of Life Course and Medica ; University of Liverpool		Inflammation and response to bacterial infection as  potential drivers of equine odontoclastic tooth
+PXD067648	rejected	countries=['Netherlands'] | Utrecht University ; Biomolecular Mass Spectrometry and Proteomics, Center for Bi		Distinct (Phospho)proteomic Landscapes of PIK3CA Mutants Reveal Insulin-Mediated Reactivation of PI3
