@@ -147,8 +147,8 @@ Regenerate with `python scripts/update_status.py`.
 
 | City | PRIDE hits | PXDs listed | In corpus | Screened | Annotated | Blocked |
 |---|---:|---:|---:|---:|---:|---:|
-| Reykjavík | 6 | 3 | 0 | 0 | 0 | 0 |
-| **Total** | | **3** | 0 | 0 | 0 | 0 |
+| Reykjavík | 6 | 3 | 0 | 1 | 1 | 0 |
+| **Total** | | **3** | 0 | 1 | 1 | 0 |
 <!-- status:end -->
 
 No duplicates found within or across the four Swedish city lists. Two
