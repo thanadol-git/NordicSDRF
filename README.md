@@ -101,11 +101,11 @@ Regenerate with `python scripts/update_status.py`.
 | Stockholm | 323 | 165 | 4 | 0 | 0 | 0 |
 | Lund | 508 | 163 | 6 | 0 | 0 | 0 |
 | Gothenburg | 188 | 135 | 9 | 0 | 0 | 0 |
-| Uppsala | 196 | 75 | 4 | 0 | 0 | 0 |
+| Uppsala | 196 | 75 | 4 | 0 | 1 | 0 |
 | Umeå | 45 | — | — | 0 | 0 | 0 |
 | Linköping | 26 | — | — | 0 | 0 | 0 |
 | Örebro | 0 | — | — | 0 | 0 | 0 |
-| **Total** | | **538** | 23 | 0 | 0 | 0 |
+| **Total** | | **538** | 23 | 0 | 1 | 0 |
 
 ### Denmark — not started
 

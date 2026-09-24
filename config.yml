@@ -79,7 +79,7 @@ countries:
         pxd_count: 75
         pride_hits: 196
         screened: 0
-        annotated: 0
+        annotated: 1
         blocked: 0
         notes: "line 1 PXD001817 is a Utrecht dataset (PI address 'Uppsalalaan 8', countries=[Netherlands]) — keyword false positive; filter on PRIDE `countries` in tier 1"
         in_corpus: 4
