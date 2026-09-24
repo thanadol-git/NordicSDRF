@@ -1,0 +1,10 @@
+accession	verdict	evidence	in_corpus	title
+PXD013057	rejected	countries=['Germany'] | University of Tübingen ; University of Tübingen Interfaculty Institute for Cell Biolo		Multi-omics discovery of exome-derived neoantigens in hepatocellular carcinoma
+PXD017597	rejected	countries=['Switzerland'] | Proteomics and Mass Spectrometry Core Facility, Department f ; Institute of Parasitology, Vetsuisse Faculty, University of 		Comparative proteomics of three Giardia lamblia strains: Antigenic variation in the post-genomic era
+PXD024152	confirmed	countries=['Denmark']	yes	Mesenchymal treatment of the salivary glands upregulates proteins with regenerative potential in irr
+PXD037817	confirmed	countries=['Denmark']	yes	Comprehensive protein-expression map of ILC2 and ILC3 subsets in healthy human skin
+PXD039665	confirmed	countries=['Denmark']	yes	The proteome of hand eczema assessed by tape stripping
+PXD051528	confirmed	countries=['Denmark']	yes	Analysis of antibiotic response in Clinical Wound Pseudomonas aeruginosa isolates: Unveiling Proteom
+PXD060087	confirmed	countries=['Denmark']		Improved wound healing by dual inhibition of miR-146a-5p and miR-29a-3p supports a network action of
+PXD063539	confirmed	countries=['Denmark']		Spatial Proteomic Profiling Reveals Increased Levels of Cholesterol Synthesis Proteins in Psoriasis 
+PXD080543	confirmed	countries=['Denmark']		Crosstalk between S-nitrosylation and glycation defines a novel  metabolic vulnerability in liver an
