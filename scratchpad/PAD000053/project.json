@@ -1,0 +1,149 @@
+{
+  "accession": "PAD000053",
+  "title": "Exploratory proteomic biomarker combinations associated with post-concussion symptoms following a concussion in adolescents",
+  "additionalAttributes": [],
+  "projectDescription": "Objective: This study examined the ability of established brain biomarkers, glial fibrillary acid protein (GFAP), neuro-filament light chain (NFL), ubiquitin carboxy hydrolase-L1(UCH-L1), tau, and phosphorylated tau (p-tau), and novel biomark- ers from blood collected sub-acutely after concussion to determine prediction of persisting post-concussion symptoms (PPCS) beyond 3 months. We hypoth- esized that a combination of established and novel proteins would predict high PPCS burden. Participants: Adolescents 11 to 17.99 years with a concussion based on Concussion In Sport Group (CISG) criteria were eligible. Participants were assessed 7\u201335 days post-injury (baseline) and then reassessed at 3 months (follow-up) for persistent post-concussion symptoms (PPCS) using the Post- Concussion Symptom Inventory, 2nd Edition (PCSI-2). A total of 155 participants (78 females, 77 males) with both blood biomarkers and 3-month symptom data were analyzed. Design: Plasma proteins collected sub-acutely (7\u201335 days post concussion) were quantified by both Quanterix and the Olink Explore platform, and compared between participants with the highest and lowest quartiles of PPCS severity at follow-up (85\u201395 days post concussion) using the PCSI-2. An exhaustive best- subsets logistic regression strategy was executed following clinical and biologi- cal pre-filtering to identify parsimonious multivariable configurations of protein biomarkers distinguishing individuals with high and low PPCS at follow-up. A stratified 10-fold cross-validation framework was implemented to evaluate model generalizability and safeguard against overfitting, while bootstrapping was used to calculate confidence intervals. Ingenuity Pathway Analysis (IPA) was performed to generate hypotheses of molecular pathways implicated in PPCS pathogenesis. Results: None of the brain biomarkers collected sub-acutley were signifi- cantly different in PPCS-high and PPCS-low groups at 90-day follow-up. No Olink proteins survived multiple testing correction, but a cross-validated mul- tivariable model, including Tripartite Motif Containing 39 (TRIM39) + Sclerostin (SOST) + Transcription factor Dp family member 3 (TFDP3) + TNF receptor superfamily member 9 (TNFRSF9) + Leptin (LEP) + Prune Homolog 2 With BCH Domain (PRUNE2) + Trimethylguanosine Synthase 1 (TGS1) + EPCAM (Epithelial Cell Adhesion Molecule) distinguished high PPCS at follow-up with an area under the curve (AUC) of 0.86 (95% CI 0.80\u20130.92). IPA identified three significant net- works associated with PPCS: (a) cardiovascular and neurological disease, organ- ismal injury, and abnormalities (score = 45; 28 focus molecules); (b) connective tissue disorders, inflammatory disease, and organismal injury and abnormalities (score = 41; 26 focus molecules); and (c) connective tissue development and function, embryonic development, and organismal development (score = 41; 26 focus molecules). Conclusion: This study suggests the possibility to utilize novel biomarkers discov- ered by high throughput proteomic analysis to predict high PPCS. Future research should further develop precision of unique biomarker profiles and prolonged symptomatology in adolescents\u2019 post-concussion.",
+  "sampleProcessingProtocol": "The samples were aliquoted to a pre-assigned well within a plate, which was then transferred to one sample source plate using a F. A. S. T.\u00ae instrument and samples were diluted using the SPTlabtech Dragonfly\u00ae instrument. The immune-reaction or incubation was next, when the High multiplexed PEATM probes, which were matched pairs of antibodies with unique DNA oligonucleotides, bind to their respective proteins in the samples. This incubation period was maintained for a consistent duration for the entire cohort; a standard incubation time was used for this study.  Following the appropriate incubation time, the oligonucleotides that were brought into proximity hybridize and are extended using a DNA polymerase. The piece of DNA barcode that was created was then amplified by a Polymerase Chain Reaction (PCR). Unique sample indexes were added to every sample using the F. A. S. T.\u00ae to allow pooling of the DNA amplicons for all samples. The final DNA amplicons in the Olink Explore HT libraries include specific barcode sequences for each assay, sample specific indexes, and required sequences for Illumina sequencing (P5 and P7 Adapters and Sequencing Primer Binding Site Rd1SP).  Following the PCR procedure, PCR pooling was conducted using the F. A. S. T.\u00ae instrument which pools samples from the same dilution block together, resulting in one pool per dilution block, each containing samples/controls. Once complete, the library purification and quality control were performed, using AMPure\u00ae XP Magnetic Beads to purify and assess the samples using the Agilent\u00ae Tapestation instrumentation and High Sensitivity D1000 Tapestation kits to determine quality of samples. The samples were then pooled into the final Explore HT library and sent for sequencing by NGS using Illumina platform. The relative concentration of each biomarker, based on matched counts (the number of reads for each specific combination of sample and assay), was calculated using the Olink NPX Explore HT software.",
+  "dataProcessingProtocol": "Raw protein expression levels measured by the Olink Proximity Extension platform were normalized using the intensity normalization method to yield Normalized Protein eXpression (NPX) values. Because a Shapiro\u2013Wilk test determined that the data were non-normally distributed, non-parametric statistical methods were utilized for downstream analysis, employing the Wilcoxon Rank Sum Test via the OlinkAnalyze package in R to identify differential expression between the clinical groups while controlling for multiple testing via the Benjamini-Hochberg False Discovery Rate procedure. To resolve the high-dimensional nature of the dataset, a hybrid, biology-driven dimensionality reduction workflow was implemented, combining statistical pre-filtering with biological pathway modeling through Ingenuity Pathway Analysis (IPA) to streamline thousands of proteins down to a focused pool of key candidate biomarkers. Finally, these candidate proteins were evaluated using an exhaustive best-subsets logistic regression strategy to identify the most predictive multivariable panels, which were validated using receiver operating characteristic (ROC) and area under the curve (AUC) analyses alongside bootstrapping techniques to determine final diagnostic performance metrics.",
+  "projectTags": [],
+  "keywords": [
+    "Concussion",
+    "Inflammation",
+    "Adolescents",
+    "Brain injury",
+    "Recovery",
+    "Biomarker"
+  ],
+  "doi": "10.6019/PAD000053",
+  "submissionType": "AFFINITY",
+  "license": "Creative Commons Public Domain (CC0)",
+  "submissionDate": "2026-07-13",
+  "publicationDate": "2026-09-14",
+  "submitters": [
+    {
+      "title": "Mr",
+      "firstName": "Joseph",
+      "lastName": "Yun",
+      "identifier": "1000007840",
+      "affiliation": "Johns Hopkins University",
+      "email": "jyun21@jh.edu",
+      "country": "United States",
+      "orcid": "0009-0002-3241-4091",
+      "name": "Joseph Yun",
+      "id": "1000007840"
+    }
+  ],
+  "labPIs": [
+    {
+      "title": "Dr",
+      "firstName": "Jessica",
+      "lastName": "Gill",
+      "identifier": "3509160",
+      "affiliation": "School of Nursing and School of Medicine, Department of Neurology, Johns Hopkins University, Baltimore, MD, United States",
+      "email": "JessicaGill@jhu.edu",
+      "country": "",
+      "orcid": "",
+      "name": "Jessica Gill",
+      "id": "3509160"
+    }
+  ],
+  "instruments": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000673",
+      "name": "Olink Explore HT"
+    }
+  ],
+  "softwares": [],
+  "experimentTypes": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000635",
+      "name": "Affinity proteomics"
+    },
+    {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000637",
+      "name": "Olink affinity proteomics"
+    }
+  ],
+  "quantificationMethods": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000653",
+      "name": "NPX"
+    }
+  ],
+  "countries": [
+    "United States"
+  ],
+  "sampleAttributes": [
+    {
+      "@type": "Tuple",
+      "key": {
+        "cvLabel": "EFO",
+        "accession": "EFO:0000635",
+        "name": "organism part"
+      },
+      "value": [
+        {
+          "cvLabel": "BTO",
+          "accession": "BTO:0000131",
+          "name": "blood plasma"
+        }
+      ]
+    },
+    {
+      "@type": "Tuple",
+      "key": {
+        "cvLabel": "EFO",
+        "accession": "OBI:0100026",
+        "name": "organism"
+      },
+      "value": [
+        {
+          "cvLabel": "NEWT",
+          "accession": "NEWT:9606",
+          "name": "Homo sapiens (Human)"
+        }
+      ]
+    }
+  ],
+  "organisms": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "NEWT",
+      "accession": "NEWT:9606",
+      "name": "Homo sapiens (human)"
+    }
+  ],
+  "organismParts": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "BTO",
+      "accession": "BTO:0000131",
+      "name": "Blood plasma"
+    }
+  ],
+  "diseases": [],
+  "references": [
+    {
+      "referenceLine": "Gill J, Lim A, Dennis E, Bickart K, Yun S, Yun J, Alice J, Miles C, Chrisman SP, Vaughan C, Cullum CM, Cook LJ, Gioia G, Rivara FP, Giza CC, Bazarian JJ. Exploratory proteomic biomarker combinations associated with post-concussion symptoms following a concussion in adolescents. Front Neurol. 2026 17:1872460",
+      "pubmedID": 42666808,
+      "doi": "10.3389/fneur.2026.1872460"
+    }
+  ],
+  "identifiedPTMStrings": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "MS",
+      "accession": "MS:1002864",
+      "name": "No PTMs are included in the dataset"
+    }
+  ],
+  "totalFileDownloads": 0
+}

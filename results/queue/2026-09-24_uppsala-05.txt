@@ -1,0 +1,11 @@
+# Batch 05 — processed under the all-unannotated-list policy
+PXD033874	sweden/uppsala	annotated	36 RAW files annotated and structurally validated
+PXD034245	sweden/uppsala	annotated	2 MGF files annotated and structurally validated
+PXD034473	sweden/uppsala	blocked	Opaque MS-21-014 run codes lack deposited sample map
+PXD034474	sweden/uppsala	blocked	Opaque MS-21-014b run codes lack deposited sample map
+PXD036263	sweden/uppsala	blocked	Workbook conflicts with RAW filename mapping; see annotations/PXD036263.BLOCKED.md
+PXD036580	sweden/uppsala	annotated	20 RAW files retained from community SDRF and validated
+PXD037380	sweden/uppsala	blocked	127 RAW file labels lack deposited peptide-bait sample map
+PXD037791	sweden/uppsala	annotated	12 RAW files annotated and structurally validated
+PXD039572	sweden/uppsala	blocked	Opaque MS-16-043 run codes lack deposited sample map
+PXD039945	sweden/uppsala	annotated	70 MGF files annotated from protocol-defined filename treatment, temperature, and replicate fields

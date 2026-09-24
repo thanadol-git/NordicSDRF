@@ -91,7 +91,7 @@ full-text hit count from the PRIDE Archive search (unioned over each city's
 *PXDs listed* is the curated manifest length and is `—` until a
 `<country>/<city>.txt` exists; *In corpus* is how many of those already have an
 SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/bigbio/sdrf-annotated-datasets)
-(checked against local checkout (2026-09-23)) and can be skipped.
+(checked against local checkout (2026-09-24)) and can be skipped.
 Regenerate with `python scripts/update_status.py`.
 
 ### Sweden — in progress
@@ -101,11 +101,11 @@ Regenerate with `python scripts/update_status.py`.
 | Stockholm | 323 | 165 | 4 | 0 | 0 | 0 |
 | Lund | 508 | 163 | 6 | 0 | 0 | 0 |
 | Gothenburg | 188 | 135 | 9 | 0 | 0 | 0 |
-| Uppsala | 196 | 75 | 4 | 0 | 0 | 0 |
+| Uppsala | 196 | 75 | 4 | 0 | 22 | 17 |
 | Umeå | 45 | — | — | 0 | 0 | 0 |
 | Linköping | 26 | — | — | 0 | 0 | 0 |
 | Örebro | 0 | — | — | 0 | 0 | 0 |
-| **Total** | | **538** | 23 | 0 | 0 | 0 |
+| **Total** | | **538** | 23 | 0 | 22 | 17 |
 
 ### Denmark — not started
 
@@ -157,11 +157,12 @@ anomalies to resolve before screening:
 - `sweden/stockholm.txt` line 1 is `PRD000423`, an old pre-`PXD`
   ProteomeXchange accession that ProteomeCentral rejects outright — resolve it
   to its current `PXD` id or drop it.
-- `sweden/uppsala.txt` line 1 is `PXD001817`, a **Utrecht** dataset: the PI's
-  address is *Uppsalalaan 8, Utrecht* and PRIDE records
-  `countries: [Netherlands]`. Keyword-built manifests will contain more of
-  these; tier 1 should require a Nordic country in the PRIDE record's
-  `countries` / affiliation fields before an accession goes to screening.
+- `sweden/uppsala.txt` contains Utrecht false positives `PXD001817`,
+  `PXD004529`, and `PXD007189`: their PI addresses contain *Uppsalalaan 8,
+  Utrecht* and PRIDE records `countries: [Netherlands]`. Keyword-built
+  manifests will contain more of these; tier 1 should require a Nordic country
+  in the PRIDE record's `countries` / affiliation fields before an accession
+  goes to screening.
 
 ## Nordic cities
 

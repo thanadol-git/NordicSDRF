@@ -1,0 +1,11 @@
+# Uppsala annotation batch 04 — next 10 unprocessed accessions from sweden/uppsala.txt
+PXD022559	sweden/uppsala	blocked	Nine opaque RAW run numbers lack genotype/fraction mapping; see annotations/PXD022559.BLOCKED.md
+PXD024632	sweden/uppsala	blocked	195 hepatocyte RAW files lack a deposited media/timepoint map; see annotations/PXD024632.BLOCKED.md
+PXD024887	sweden/uppsala	excluded	Submitter affiliation is Karolinska Institutet, Stockholm, not Uppsala
+PXD025383	sweden/uppsala	excluded	Submitter affiliation is Concordia University, Canada, not Uppsala
+PXD026064	sweden/uppsala	excluded	Submitter affiliation is Stockholm University, not Uppsala
+PXD026566	sweden/uppsala	annotated	18 mzML files annotated from protocol-defined filename genotype, brain-region, and replicate fields
+PXD027282	sweden/uppsala	blocked	Blinded CellMix codes lack deposited composition key; see annotations/PXD027282.BLOCKED.md
+PXD027623	sweden/uppsala	excluded	Submitter affiliation is in the Netherlands, not Uppsala
+PXD029039	sweden/uppsala	annotated	69 MGF files annotated from deposited sample workbook; analysis-suffixed names reconciled by exact mapped prefix
+PXD032939	sweden/uppsala	blocked	MGF condition codes lack a deposited mapping key; see annotations/PXD032939.BLOCKED.md

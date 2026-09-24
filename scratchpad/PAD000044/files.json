@@ -1,0 +1,97 @@
+[{
+  "projectAccessions" : [ "PAD000044" ],
+  "accession" : "a620fbc42622c1cef234236434d19b98c2f85d747e7d3ffd458e9512f0d47eba",
+  "fileCategory" : {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:1002848",
+    "name" : "Result file URI",
+    "value" : "RESULT"
+  },
+  "checksum" : "",
+  "publicFileLocations" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000468",
+    "name" : "Aspera Protocol",
+    "value" : "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2026/06/PAD000044/MAIT-Plate3.npx.csv"
+  }, {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000469",
+    "name" : "FTP Protocol",
+    "value" : "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/06/PAD000044/MAIT-Plate3.npx.csv"
+  } ],
+  "fileSizeBytes" : 220044,
+  "fileName" : "MAIT-Plate3.npx.csv",
+  "compress" : false,
+  "submissionDate" : "2026-05-18T13:10:36.201+00:00",
+  "publicationDate" : "2026-06-26T16:15:30.419+00:00",
+  "updatedDate" : "2026-05-18T13:10:36.201+00:00",
+  "additionalAttributes" : [ ],
+  "totalDownloads" : 0
+},{
+  "projectAccessions" : [ "PAD000044" ],
+  "accession" : "988e0c3caee304672631c2b5d0775c81fa9650655403a2ff7532999797c77276",
+  "fileCategory" : {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:1002848",
+    "name" : "Result file URI",
+    "value" : "RESULT"
+  },
+  "checksum" : "",
+  "publicFileLocations" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000469",
+    "name" : "FTP Protocol",
+    "value" : "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/06/PAD000044/MAIT-Plate1.npx.csv"
+  }, {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000468",
+    "name" : "Aspera Protocol",
+    "value" : "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2026/06/PAD000044/MAIT-Plate1.npx.csv"
+  } ],
+  "fileSizeBytes" : 261605,
+  "fileName" : "MAIT-Plate1.npx.csv",
+  "compress" : false,
+  "submissionDate" : "2026-05-18T13:10:36.201+00:00",
+  "publicationDate" : "2026-06-26T16:15:30.419+00:00",
+  "updatedDate" : "2026-05-18T13:10:36.201+00:00",
+  "additionalAttributes" : [ ],
+  "totalDownloads" : 0
+},{
+  "projectAccessions" : [ "PAD000044" ],
+  "accession" : "ae40cb98385685871dc9f7acc73cedf4c30361f956cd6ab704c7c352aee98170",
+  "fileCategory" : {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:1002848",
+    "name" : "Result file URI",
+    "value" : "RESULT"
+  },
+  "checksum" : "",
+  "publicFileLocations" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000468",
+    "name" : "Aspera Protocol",
+    "value" : "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2026/06/PAD000044/MAIT-Plate2.npx.csv"
+  }, {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000469",
+    "name" : "FTP Protocol",
+    "value" : "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/06/PAD000044/MAIT-Plate2.npx.csv"
+  } ],
+  "fileSizeBytes" : 612378,
+  "fileName" : "MAIT-Plate2.npx.csv",
+  "compress" : false,
+  "submissionDate" : "2026-05-18T13:10:36.201+00:00",
+  "publicationDate" : "2026-06-26T16:15:30.419+00:00",
+  "updatedDate" : "2026-05-18T13:10:36.201+00:00",
+  "additionalAttributes" : [ ],
+  "totalDownloads" : 0
+}]

@@ -1,0 +1,40 @@
+[
+  {
+    "projectAccessions": [
+      "PAD000053"
+    ],
+    "accession": "a672c28c4f9e1c7594b161c33a24d4868388ed1ba317c49d9c8a32fc1dfa64be",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:1002848",
+      "name": "Result file URI",
+      "value": "RESULT"
+    },
+    "checksum": "",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/09/PAD000053/U54_T1_FullData_NPX_2025-05-19.npx.parquet"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2026/09/PAD000053/U54_T1_FullData_NPX_2025-05-19.npx.parquet"
+      }
+    ],
+    "fileSizeBytes": 23744843,
+    "fileName": "U54_T1_FullData_NPX_2025-05-19.npx.parquet",
+    "compress": false,
+    "submissionDate": "2026-07-13T15:56:41.866+00:00",
+    "publicationDate": "2026-09-14T04:12:24.605+00:00",
+    "updatedDate": "2026-07-13T15:56:41.866+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 0
+  }
+]

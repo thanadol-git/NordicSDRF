@@ -1,0 +1,65 @@
+[{
+  "projectAccessions" : [ "PAD000035" ],
+  "accession" : "9ecb5cb6f1262c61d1588de6073018b637d1d88e77a9a2d63bfb0d981eadb709",
+  "fileCategory" : {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:1002848",
+    "name" : "Result file URI",
+    "value" : "RESULT"
+  },
+  "checksum" : "",
+  "publicFileLocations" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000469",
+    "name" : "FTP Protocol",
+    "value" : "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/05/PAD000035/FIDO_Olink.npx.csv"
+  }, {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000468",
+    "name" : "Aspera Protocol",
+    "value" : "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2026/05/PAD000035/FIDO_Olink.npx.csv"
+  } ],
+  "fileSizeBytes" : 9190468,
+  "fileName" : "FIDO_Olink.npx.csv",
+  "compress" : false,
+  "submissionDate" : "2026-04-01T11:54:36.542+00:00",
+  "publicationDate" : "2026-05-29T11:16:34.066+00:00",
+  "updatedDate" : "2026-04-01T11:54:36.542+00:00",
+  "additionalAttributes" : [ ],
+  "totalDownloads" : 0
+},{
+  "projectAccessions" : [ "PAD000035" ],
+  "accession" : "6ac61571dc4891c152686d8fb4f16481fe86695cc18752a51aa49486e1b4f68d",
+  "fileCategory" : {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000410",
+    "name" : "Other type file URI",
+    "value" : "OTHER"
+  },
+  "checksum" : "",
+  "publicFileLocations" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000469",
+    "name" : "FTP Protocol",
+    "value" : "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/05/PAD000035/FIDO_Metadata_PRIDE.csv"
+  }, {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000468",
+    "name" : "Aspera Protocol",
+    "value" : "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2026/05/PAD000035/FIDO_Metadata_PRIDE.csv"
+  } ],
+  "fileSizeBytes" : 3435,
+  "fileName" : "FIDO_Metadata_PRIDE.csv",
+  "compress" : false,
+  "submissionDate" : "2026-04-01T11:54:36.542+00:00",
+  "publicationDate" : "2026-05-29T11:16:34.066+00:00",
+  "updatedDate" : "2026-04-01T11:54:36.542+00:00",
+  "additionalAttributes" : [ ],
+  "totalDownloads" : 0
+}]

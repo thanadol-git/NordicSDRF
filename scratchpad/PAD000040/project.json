@@ -1,0 +1,135 @@
+{
+  "accession" : "PAD000040",
+  "title" : "Inflammatory proteomics heterogeneity beyond glycemia status in severe obesity",
+  "additionalAttributes" : [ ],
+  "projectDescription" : "In the present exploratory study, we aimed to characterize circulating inflam-matory protein profiles associated with glycemic status in individuals with severe obesity. Using proximity extension assay-based (PEA) proteomics, we first identified inflammatory proteins differentially expressed across normoglycemia, prediabetes, and T2DM and examined their distributions at the individual level. We then applied unsupervised topological data analysis to determine whether multidimensional in-flammatory protein patterns define distinct patient subgroups beyond conventional glycemic classification. By combining proteomic data, clinical variables, and network analysis, this study provides a hypothesis-generating view of inflammatory hetero-geneity in obesity-related dysglycemia.",
+  "sampleProcessingProtocol" : "In the present exploratory study, we aimed to characterize circulating inflam-matory protein profiles associated with glycemic status in individuals with severe obesity. Using proximity extension assay-based (PEA) proteomics, we first identified inflammatory proteins differentially expressed across normoglycemia, prediabetes, and T2DM and examined their distributions at the individual level. We then applied unsupervised topological data analysis to determine whether multidimensional in-flammatory protein patterns define distinct patient subgroups beyond conventional glycemic classification. By combining proteomic data, clinical variables, and network analysis, this study provides a hypothesis-generating view of inflammatory hetero-geneity in obesity-related dysglycemia.",
+  "dataProcessingProtocol" : "Proteome profiling and data processing Plasma inflammatory proteins were quantified using the Olink® Inflammation panels on the Olink Signature Q100 platform (Olink Proteomics AB), based on PEA technology. In brief, target proteins are recognized by pairs of oligonucleotide-labeled antibodies, enabling subsequent DNA amplification and quantification by microflu-idic real-time PCR. Raw cycle threshold (Ct) values underwent quality control and normalization using internal and external controls with Olink NPX Signature Software (v1.13.0). Protein abundance is reported as Normalized Protein Expression (NPX), an arbitrary unit on a log2 scale, with higher NPX values indicating higher protein levels. Data exploration and initial analyses were performed using the Olink web-based analysis platform (https://olink.com/software/olink-analyze, accessed on 2 October 2025). A total of 178 samples from 143 individuals were analyzed across two Olink plates. One sample failed quality control and was excluded. Batch effects were cor-rected using a two-step strategy in Rstudio, through standard bridge normalization (46) and the Bamboo algorithm  (47), leveraging 35 technical replicate samples (12 noDM, 12 PreDM, and 11 T2DM) processed on both plates as shared bridging controls . Consistent with previous antibody-based proteomics studies, proteins with more than 20% missing values were excluded, resulting in a final dataset of 74 inflammatory proteins (out of 92 total proteins in the Olink panel) included in downstream analyses. P-values derived from t-tests were adjusted for multiple testing using the Benjamini–Hochberg method, with adjusted p-values < 0.05 considered statistically significant.",
+  "projectTags" : [ ],
+  "keywords" : [ "Human", "Plasma" ],
+  "doi" : "10.6019/PAD000040",
+  "submissionType" : "AFFINITY",
+  "license" : "Creative Commons Public Domain (CC0)",
+  "submissionDate" : "2026-04-28",
+  "publicationDate" : "2026-06-07",
+  "submitters" : [ {
+    "title" : "Dr",
+    "firstName" : "Pablo",
+    "lastName" : "Giraudi",
+    "identifier" : "1000006133",
+    "affiliation" : "Fondazione Italiana Fegato ONLUS",
+    "email" : "pablodata@fegato.it",
+    "country" : "Italy",
+    "orcid" : "",
+    "name" : "Pablo Giraudi",
+    "id" : "1000006133"
+  } ],
+  "labPIs" : [ {
+    "title" : "Dr",
+    "firstName" : "Pablo José",
+    "lastName" : "Giraudi",
+    "identifier" : "3443124",
+    "affiliation" : "Fondazione Italiana Fegato",
+    "email" : "pablo.giraudi@fegato.it",
+    "country" : "",
+    "orcid" : "",
+    "name" : "Pablo José Giraudi",
+    "id" : "3443124"
+  } ],
+  "instruments" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000655",
+    "name" : "Olink Target 96"
+  } ],
+  "softwares" : [ ],
+  "experimentTypes" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000635",
+    "name" : "Affinity proteomics"
+  }, {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000637",
+    "name" : "Olink affinity proteomics"
+  } ],
+  "quantificationMethods" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000653",
+    "name" : "NPX"
+  } ],
+  "countries" : [ "Italy" ],
+  "sampleAttributes" : [ {
+    "@type" : "Tuple",
+    "key" : {
+      "cvLabel" : "EFO",
+      "accession" : "EFO:0000635",
+      "name" : "organism part"
+    },
+    "value" : [ {
+      "cvLabel" : "BTO",
+      "accession" : "BTO:0000131",
+      "name" : "blood plasma"
+    } ]
+  }, {
+    "@type" : "Tuple",
+    "key" : {
+      "cvLabel" : "EFO",
+      "accession" : "OBI:0100026",
+      "name" : "organism"
+    },
+    "value" : [ {
+      "cvLabel" : "NEWT",
+      "accession" : "NEWT:9606",
+      "name" : "Homo sapiens (Human)"
+    } ]
+  }, {
+    "@type" : "Tuple",
+    "key" : {
+      "cvLabel" : "EFO",
+      "accession" : "EFO:0000408",
+      "name" : "disease"
+    },
+    "value" : [ {
+      "cvLabel" : "DOID",
+      "accession" : "DOID:9352",
+      "name" : "type 2 diabetes mellitus"
+    }, {
+      "cvLabel" : "DOID",
+      "accession" : "DOID:0080208",
+      "name" : "metabolic dysfunction-associated steatotic liver disease"
+    } ]
+  } ],
+  "organisms" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "NEWT",
+    "accession" : "NEWT:9606",
+    "name" : "Homo sapiens (human)"
+  } ],
+  "organismParts" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "BTO",
+    "accession" : "BTO:0000131",
+    "name" : "Blood plasma"
+  } ],
+  "diseases" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "DOID",
+    "accession" : "DOID:9352",
+    "name" : "Type 2 diabetes mellitus"
+  }, {
+    "@type" : "CvParam",
+    "cvLabel" : "DOID",
+    "accession" : "DOID:0080208",
+    "name" : "Metabolic dysfunction-associated steatotic liver disease"
+  } ],
+  "references" : [ {
+    "referenceLine" : "Milito MM, Chiesa M, Mallia A, Papaianni GG, Regalado JT, Tiribelli C, Bonazza D, Rosso N, Palmisano S, Banfi C, Giraudi PJ. Inflammatory Proteomic Heterogeneity Beyond Glycemia Status in Severe Obesity. Int J Mol Sci. 2026 27(9):4152",
+    "pubmedID" : 42123728,
+    "doi" : "10.3390/ijms27094152"
+  } ],
+  "identifiedPTMStrings" : [ ],
+  "totalFileDownloads" : 0
+}
