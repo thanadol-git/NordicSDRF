@@ -258,3 +258,51 @@ countries:
         annotated: 4
         blocked: 2
         in_corpus: 1
+
+  olink_pad:
+    name: Olink PAD
+    status: in_progress
+    pride_search: false   # not a keyword search: olink_pad/*.txt come from scripts/build_pad_manifest.py
+    cities:               # one row per Olink platform (PRIDE instrument field), not a city
+      explore_ht:
+        name: Explore HT
+        pxd_list: olink_pad/explore_ht.txt
+        pxd_count: 7
+        in_corpus: 7
+        screened: 0
+        annotated: 4
+        blocked: 0
+      explore:
+        name: Explore 3072/384
+        pxd_list: olink_pad/explore.txt
+        notes: "also Explore 1536, Explore 384 and bare 'Olink Explore' records"
+        pxd_count: 7
+        in_corpus: 7
+        screened: 0
+        annotated: 1
+        blocked: 0
+      target:
+        name: Target 96/48
+        pxd_list: olink_pad/target.txt
+        pxd_count: 7
+        in_corpus: 4
+        screened: 0
+        annotated: 3
+        blocked: 0
+      reveal:
+        name: Reveal
+        pxd_list: olink_pad/reveal.txt
+        pxd_count: 1
+        in_corpus: 1
+        screened: 0
+        annotated: 0
+        blocked: 0
+      unspecified:
+        name: Unspecified
+        pxd_list: olink_pad/unspecified.txt
+        notes: "PRIDE instrument is the generic 'Olink instrument model'"
+        pxd_count: 2
+        in_corpus: 2
+        screened: 0
+        annotated: 1
+        blocked: 0

@@ -40,6 +40,8 @@ NordicSDRF/
 │   ├── gothenburg.txt
 │   ├── lund.txt
 │   └── uppsala.txt
+├── olink_pad/                 # Olink datasets in PRIDE's affinity archive, one PAD list per platform
+│   └── <platform>.txt          #   (explore_ht, explore, target, reveal, unspecified) — build_pad_manifest.py
 ├── results/                   # sdrf-metascreen output, resumable TSV + .log per city
 │   ├── pride_hits/<country>/<city>.txt   # raw PRIDE keyword candidates (update_status.py)
 │   ├── logs/                  # headless annotation traces (gitignored)
@@ -64,6 +66,7 @@ NordicSDRF/
     ├── annotate_local.sh            # sdrf-annotate via Claude Code + local Ollama (zero tokens); NORDIC_BATCH=1 for headless
     ├── annotate_slurm.sbatch        # Slurm array wrapper: one task per manifest line
     ├── build_manifest.py            # tier 1: PRIDE keyword search → verify country in each record → <country>/<city>.txt
+    ├── build_pad_manifest.py        # every public PAD in PRIDE → Olink ones → olink_pad/<platform>.txt
     ├── daily_queue.py               # next N PXDs to annotate today (skip corpus / done / blocked / running)
     ├── update_status.py             # PRIDE hits + corpus overlap + local progress → config.yml, README, status/
     ├── plot_status.py               # tables/<country>.tsv → status/plots/<country>.svg (called by update_status.py)
@@ -96,7 +99,9 @@ sits in exactly one block, first match wins: *Annotated* (SDRF in `annotations/`
 *Blocked*, *In corpus* (already has an SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/bigbio/sdrf-annotated-datasets),
 checked against GitHub bigbio/sdrf-annotated-datasets (2026-09-24)), *Screened*, *To do*.
 A city without a manifest shows a dashed outline sized by its raw PRIDE full-text
-hit count (unioned over `search_terms` in `config.yml`, queried 2026-09-23).
+hit count (unioned over `search_terms` in `config.yml`, queried 2026-09-23). *Olink PAD*
+is every public Olink dataset in PRIDE's affinity archive, one row per platform
+(`olink_pad/<platform>.txt`, rebuilt by `python scripts/build_pad_manifest.py`).
 The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with
 `python scripts/update_status.py`; redraw the charts alone from `tables/` with
 `python scripts/plot_status.py`.
@@ -120,6 +125,10 @@ The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with
 ### Iceland — scoped
 
 ![Iceland — scoped: SDRF progress per city](status/plots/iceland.svg)
+
+### Olink PAD — in progress
+
+![Olink PAD — in progress: SDRF progress per city](status/plots/olink_pad.svg)
 <!-- status:end -->
 
 No duplicates found within or across the four Swedish city lists. Two

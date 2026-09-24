@@ -1,6 +1,7 @@
-country	status	pride_hits_queried
-sweden	in_progress	2026-09-23
-denmark	not_started	2026-09-23
-norway	not_started	2026-09-23
-finland	not_started	2026-09-23
-iceland	scoped	2026-09-23
+country	name	status	pride_hits_queried
+sweden	Sweden	in_progress	2026-09-23
+denmark	Denmark	not_started	2026-09-23
+norway	Norway	not_started	2026-09-23
+finland	Finland	not_started	2026-09-23
+iceland	Iceland	scoped	2026-09-23
+olink_pad	Olink PAD	in_progress	2026-09-23

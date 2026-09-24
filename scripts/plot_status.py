@@ -4,7 +4,7 @@
 Two steps, both defined here so the table format lives in one place:
 
   1. tables/  — update_status.py writes plain TSV:
-       tables/countries.tsv   country, status, pride_hits_queried (one row per country)
+       tables/countries.tsv   country, name, status, pride_hits_queried (one row per country)
        tables/<country>.tsv   city, pride_hits, listed, then one column per CATEGORY
                               (one row per city; category cells are empty when the
                               city has no curated manifest yet)
@@ -47,7 +47,7 @@ UNCURATED_LABEL = "PRIDE hits, not curated yet"
 
 # Layout, in px.
 WIDTH = 860
-NAME_W = 110          # city-name gutter left of the bars
+NAME_W = 110          # minimum row-name gutter left of the bars; widens for long names
 TOTAL_W = 90          # room right of the longest bar for its total
 BAR_H = 20
 ROW_GAP = 10
@@ -86,9 +86,10 @@ def write_tables(cfg: dict, breakdowns: dict[tuple[str, str], dict[str, int] | N
     written = [TABLE_DIR / "countries.tsv"]
     with written[0].open("w", newline="") as fh:
         w = csv.writer(fh, delimiter="\t", lineterminator="\n")
-        w.writerow(["country", "status", "pride_hits_queried"])
+        w.writerow(["country", "name", "status", "pride_hits_queried"])
         for country, cdata in cfg["countries"].items():
-            w.writerow([country, cdata.get("status") or "not_started", cfg.get("pride_hits_queried", "")])
+            w.writerow([country, cdata.get("name") or country.title(), cdata.get("status") or "not_started",
+                        cfg.get("pride_hits_queried", "")])
     for country, cdata in cfg["countries"].items():
         path = TABLE_DIR / f"{country}.tsv"
         with path.open("w", newline="") as fh:
@@ -145,7 +146,8 @@ def row_widths(city: dict, px_per_pxd: float) -> list[float]:
 
 def country_svg(country: dict, cities: list[dict]) -> str:
     height = HEADER_H + LEGEND_H + len(cities) * (BAR_H + ROW_GAP) + 8
-    span = WIDTH - NAME_W - TOTAL_W - 12
+    name_w = max(NAME_W, 12 + 8 * max((len(c["city"]) for c in cities), default=0) + 12)
+    span = WIDTH - name_w - TOTAL_W - 12
     # Shared scale: shrink px-per-PXD until the widest row (after minimum widths) fits.
     px_per_pxd = span / max(1, max((bar_total(c)[0] for c in cities), default=0))
     for _ in range(20):
@@ -155,7 +157,7 @@ def country_svg(country: dict, cities: list[dict]) -> str:
         px_per_pxd *= span / widest
 
     totals = {k: sum(cell(c, k) or 0 for c in cities) for k, *_ in CATEGORIES}
-    name = country["country"].title()
+    name = country.get("name") or country["country"].title()
     queried = country.get("pride_hits_queried") or "unknown date"
     out = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{height}" '
@@ -163,8 +165,8 @@ def country_svg(country: dict, cities: list[dict]) -> str:
         f"<style>{STYLE}</style>",
         f'<rect class="bg" width="{WIDTH}" height="{height}" rx="6"/>',
         f'<text class="title" x="12" y="22">{escape(name)} — {escape(human_status(country.get("status")))}</text>',
-        f'<text class="sub" x="12" y="40">{sum(totals.values())} PXDs listed · {totals["annotated"]} annotated · '
-        f"PRIDE queried {escape(queried)} · bar length = PXDs in the city's manifest (dashed: raw PRIDE hits)</text>",
+        f'<text class="sub" x="12" y="40">{sum(totals.values())} datasets listed · {totals["annotated"]} annotated · '
+        f"PRIDE queried {escape(queried)} · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>",
     ]
 
     # legend
@@ -183,7 +185,7 @@ def country_svg(country: dict, cities: list[dict]) -> str:
         out.append(f'<text class="city" x="12" y="{ty}">{cname}</text>')
         total, curated = bar_total(city)
         widths = row_widths(city, px_per_pxd)
-        x = NAME_W
+        x = name_w
         if not curated:
             w = widths[0]
             if total:
