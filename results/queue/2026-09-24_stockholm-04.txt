@@ -1,0 +1,11 @@
+# Batch 04 — next unannotated Stockholm accessions
+PXD009990	sweden/stockholm	queued	metadata screening pending
+PXD010006	sweden/stockholm	queued	metadata screening pending
+PXD010175	sweden/stockholm	queued	metadata screening pending
+PXD010554	sweden/stockholm	queued	metadata screening pending
+PXD010692	sweden/stockholm	annotated	11 MGF files annotated by membrane fraction and biological replicate
+PXD010802	sweden/stockholm	queued	metadata screening pending
+PXD011722	sweden/stockholm	queued	metadata screening pending
+PXD013106	sweden/stockholm	queued	metadata screening pending
+PXD013134	sweden/stockholm	queued	metadata screening pending
+PXD013182	sweden/stockholm	queued	metadata screening pending

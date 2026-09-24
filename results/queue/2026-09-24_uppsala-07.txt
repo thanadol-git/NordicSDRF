@@ -1,0 +1,14 @@
+# Batch 07 — in progress under the all-unannotated-list policy
+PXD061921	sweden/uppsala	annotated	4 RAW files mapped from deposited sample_info.xlsx and structurally validated
+PXD065743	sweden/uppsala	annotated	8 TMT fraction RAW files represented as 72 channel-aware assay rows and structurally validated
+PXD052523	sweden/uppsala	annotated	7 RAW files annotated with literal submitted group codes and structurally validated
+PXD057192	sweden/uppsala	annotated	96 RAW files annotated with submitted sample identifiers and digest type; structurally validated
+PXD062134	sweden/uppsala	annotated	27 RAW files annotated with submitted sample and fraction identifiers; structurally validated
+PXD063020	sweden/uppsala	annotated	24 RAW files mapped from deposited Experimental_Design.xlsx and structurally validated
+PXD069174	sweden/uppsala	annotated	18 RAW files annotated from deposited control/construct, replicate, and fraction labels; structurally validated
+PXD069175	sweden/uppsala	annotated	16 RAW files annotated with literal submitted group codes and structurally validated
+PXD069192	sweden/uppsala	annotated	16 RAW files annotated with literal submitted group codes and structurally validated
+PXD069216	sweden/uppsala	annotated	80 RAW files annotated with literal submitted group codes and structurally validated
+PXD069221	sweden/uppsala	annotated	60 RAW files mapped from deposited KO/WT workbook headers and structurally validated
+PXD069222	sweden/uppsala	annotated	36 RAW files annotated as whole-proteome or phospho-enriched fraction series; structurally validated
+PXD080484	sweden/uppsala	annotated	98 TMT RAW files annotated at run level; channel-to-raw mapping was not deposited; structurally validated

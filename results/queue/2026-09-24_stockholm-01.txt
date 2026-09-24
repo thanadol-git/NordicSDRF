@@ -1,0 +1,11 @@
+# Batch 01 — initialized under the all-unannotated-list policy
+PXD000542	sweden/stockholm	blocked	RAW names conflict with PRIDE protocol and processing metadata; see annotations/PXD000542.BLOCKED.md
+PXD000752	sweden/stockholm	annotated	72 RAW files annotated by iTRAQ plex and fraction; channel map unavailable
+PXD000928	sweden/stockholm	annotated	97 RAW files annotated by iTRAQ plex and fraction; channel map unavailable
+PXD000996	sweden/stockholm	annotated	96 RAW files annotated by iTRAQ plex and fraction; channel map unavailable
+PXD001524	sweden/stockholm	annotated	1 RAW file annotated and structurally validated
+PXD001808	sweden/stockholm	annotated	40 directly deposited RAW files annotated by iTRAQ plex and fraction; channel map unavailable
+PXD002278	sweden/stockholm	annotated	1 RAW file annotated and structurally validated
+PXD002439	sweden/stockholm	annotated	36 directly deposited RAW files annotated with literal submitted source labels; search CSVs do not map raw runs
+PXD002603	sweden/stockholm	blocked	Only processed files and ZIP archives are deposited; no addressable raw/open MS data file
+PXD003702	sweden/stockholm	annotated	99 RAW files annotated by submitted pool, HiRIEF range, and fraction; channel map unavailable

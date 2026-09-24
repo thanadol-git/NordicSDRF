@@ -48,8 +48,8 @@ countries:
         pxd_count: 165
         pride_hits: 323
         screened: 0
-        annotated: 0
-        blocked: 0
+        annotated: 27
+        blocked: 2
         notes: "line 1 is PRD000423, a legacy ProteomeXchange id — resolve to a PXD before screening"
         in_corpus: 4
       lund:
@@ -79,8 +79,8 @@ countries:
         pxd_count: 75
         pride_hits: 196
         screened: 0
-        annotated: 22
-        blocked: 17
+        annotated: 44
+        blocked: 18
         notes: "PXD001817, PXD004529, and PXD007189 are Utrecht datasets (PI address 'Uppsalalaan 8', countries=[Netherlands]) — keyword false positives; filter on PRIDE `countries` in tier 1"
         in_corpus: 4
       umea:
@@ -254,7 +254,7 @@ countries:
         pxd_count: 3
         notes: "3 confirmed PXDs (Rolfsson lab, University of Iceland) + legacy PRD000134 (cod trypsin) kept out; see results/iceland/reykjavik_candidates.tsv"
         pride_hits: 6
-        screened: 1
-        annotated: 1
+        screened: 0
+        annotated: 3
         blocked: 0
         in_corpus: 0

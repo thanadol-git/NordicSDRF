@@ -1,0 +1,11 @@
+# Batch 06 — processed under the all-unannotated-list policy
+PXD040338	sweden/uppsala	annotated	18 RAW files annotated and structurally validated
+PXD041654	sweden/uppsala	annotated	10 RAW archives annotated with deposited donor and group labels; structurally validated
+PXD042238	sweden/uppsala	blocked	A/B/C run codes lack a deposited transfection-condition key; see annotations/PXD042238.BLOCKED.md
+PXD043440	sweden/uppsala	annotated	12 RAW files annotated and structurally validated
+PXD047102	sweden/uppsala	annotated	20 RAW files annotated from deposited experimental-design workbook and structurally validated
+PXD048890	sweden/uppsala	annotated	8 RAW files annotated and structurally validated
+PXD049287	sweden/uppsala	annotated	4 RAW files annotated and structurally validated
+PXD050618	sweden/uppsala	annotated	9 RAW files annotated and structurally validated
+PXD051061	sweden/uppsala	annotated	8 RAW files annotated and structurally validated
+PXD052116	sweden/uppsala	annotated	27 RAW files annotated and structurally validated

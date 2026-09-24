@@ -1,0 +1,11 @@
+# Batch 03 — next unannotated Stockholm accessions from the curated manifest
+PXD006895	sweden/stockholm	annotated	99 RAW files annotated by submitted experiment series, cell line when named, HiRIEF range, and fraction; TMT channel map unavailable
+PXD007686	sweden/stockholm	annotated	90 RAW files annotated by submitted cell line, treatment, attachment state, and replicate
+PXD007762	sweden/stockholm	annotated	76 RAW files annotated by submitted cell line, treatment, duration, replicate, and instrument
+PXD008445	sweden/stockholm	blocked	107 archived RAW files available, but deposited samples.csv returns HTTP 403 from PRIDE; patient/control map cannot be recovered safely
+PXD008760	sweden/stockholm	annotated	51 RAW files annotated by submitted supernatant sample ID and technical replicate; day/density key unavailable
+PXD009232	sweden/stockholm	already_annotated	PRIDE deposits PXD009232_community_annotated.sdrf.tsv; duplicate local annotation not created
+PXD009244	sweden/stockholm	annotated	54 archived RAW files annotated from deposited Metadata.xlsx sample map
+PXD009516	sweden/stockholm	annotated	12 RAW files annotated by pull-down condition, biological replicate, and technical replicate
+PXD009582	sweden/stockholm	annotated	29 mzML files annotated by submitted culture-condition token and biological replicate
+PXD009644	sweden/stockholm	annotated	48 RAW files annotated by validation multiplex replicate and fraction; TMT drug-channel key unavailable

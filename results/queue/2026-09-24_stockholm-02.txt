@@ -1,0 +1,11 @@
+# Batch 02 — initialized under the all-unannotated-list policy
+PXD003706	sweden/stockholm	annotated	92 RAW files annotated by submitted species and fraction; TMT growth-phase key unavailable
+PXD003735	sweden/stockholm	annotated	6 MGF files annotated by hydroxylamine condition and replicate
+PXD004163	sweden/stockholm	annotated	34 deposited RAW files represented as 340 mapped TMT channel assays
+PXD004323	sweden/stockholm	annotated	3 MGF files annotated and structurally validated
+PXD004541	sweden/stockholm	annotated	48 RAW files represented as 480 channel-aware CETSA TMT assays
+PXD004695	sweden/stockholm	annotated	84 MGF files annotated by submitted data group; only explicit gel-band stage labels assigned
+PXD005766	sweden/stockholm	annotated	40 RAW files annotated with literal submitted sample IDs; treatment key unavailable
+PXD006122	sweden/stockholm	annotated	97 RAW files represented as 970 channel-aware TMT assays
+PXD006291	sweden/stockholm	annotated	89 RAW files represented as 815 channel-aware TMT and validation-standard assays
+PXD006647	sweden/stockholm	annotated	6 RAW files annotated by control/p62-knockout genotype and replicate
