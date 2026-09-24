@@ -5,7 +5,7 @@ Reads config.yml, then for every city:
   * pride_hits  - union of accessions returned by the PRIDE Archive v2 full-text
                   search for each of the city's `search_terms` (written to
                   results/pride_hits/<country>/<city>.txt as a raw candidate list)
-  * pxd_count   - lines in the curated manifest (`pxd_list`, or `<country>/<city>.txt`
+  * pxd_count   - lines in the curated manifest (`pxd_list`, or `lists/<country>/<city>.txt`
                   if that file exists), if the city is scoped
   * in_corpus   - manifest PXDs that already have an SDRF in the community repo
                   bigbio/sdrf-annotated-datasets (local sibling checkout by default,
@@ -131,10 +131,19 @@ def load_corpus(cfg: dict, source: str) -> tuple[set[str], str]:
 
 
 # --------------------------------------------------------------------------- local counts
+def conventional_list_relpath(country: str, slug: str) -> str:
+    """Geographic city lists live under lists/; Olink PAD lists stay at olink_pad/."""
+    if country == "olink_pad":
+        return f"{country}/{slug}.txt"
+    return f"lists/{country}/{slug}.txt"
+
+
 def manifest_relpath(country: str, slug: str, city: dict | None = None) -> str | None:
-    """Config `pxd_list` if set, else the conventional `<country>/<city>.txt` when it exists."""
+    """Config `pxd_list` if set, else `lists/<country>/<city>.txt` when that file exists."""
     seen: list[str] = []
-    for path in (city.get("pxd_list") if city else None, f"{country}/{slug}.txt"):
+    for path in (city.get("pxd_list") if city else None,
+                 conventional_list_relpath(country, slug),
+                 f"{country}/{slug}.txt"):
         if path and path not in seen:
             seen.append(path)
             if (ROOT / path).exists():
@@ -222,7 +231,7 @@ def update_config_text(text: str, numbers: dict[tuple[str, str], dict[str, int]]
 
     `top` holds top-level bookkeeping keys (pride_hits_queried, corpus_source);
     they are updated if present and inserted just above `countries:` otherwise.
-    `discovered_lists` inserts a missing `pxd_list` when `<country>/<city>.txt` exists.
+    `discovered_lists` inserts a missing `pxd_list` when `lists/<country>/<city>.txt` exists.
     `country_status` rewrites each country's `status:` from scoped-city progress.
     """
     discovered_lists = discovered_lists or {}
@@ -300,7 +309,7 @@ def country_plot(country: str, cdata: dict, plots_dir: str) -> str:
 def render_status_block(cfg: dict) -> str:
     queried = cfg.get("pride_hits_queried", "unknown date")
     intro = (f"One chart per country, one bar per city (shared x scale within a country). A\n"
-             f"curated city's bar is its manifest (`<country>/<city>.txt`), split so every PXD\n"
+             f"curated city's bar is its manifest (`lists/<country>/<city>.txt`), split so every PXD\n"
              f"sits in exactly one block, first match wins: *Annotated* (SDRF in `annotations/`),\n"
              f"*Blocked*, *In corpus* (already has an SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/{CORPUS_REPO}),\n"
              f"checked against {cfg.get('corpus_source', 'the local checkout')}), *Screened*, *To do*.\n"

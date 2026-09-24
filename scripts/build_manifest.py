@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a curated <country>/<city>.txt manifest from PRIDE (tier 1, no LLM).
+"""Build a curated lists/<country>/<city>.txt manifest from PRIDE (tier 1, no LLM).
 
 PRIDE has no working country filter, so:
   1. run the city's `search_terms` from config.yml (plus --term extras) through the
@@ -9,7 +9,7 @@ PRIDE has no working country filter, so:
        - <Country> in `countries`, or a submitter's `country`, or
        - a city/institution term or the country name appears in a submitter/PI
          affiliation string (case-insensitive);
-  4. write the confirmed PXDs to <country>/<city>.txt (unless --dry-run) and an
+  4. write the confirmed PXDs to lists/<country>/<city>.txt (unless --dry-run) and an
      evidence table for *all* candidates to results/<country>/<city>_candidates.tsv.
 
 Legacy `PRD` ids are reported but never written to the manifest. Accessions already
@@ -137,7 +137,7 @@ def main() -> None:
         w.writerow(["accession", "verdict", "evidence", "in_corpus", "title"])
         w.writerows(rows)
 
-    manifest = ROOT / args.country / f"{args.city}.txt"
+    manifest = ROOT / "lists" / args.country / f"{args.city}.txt"
     n_rej = sum(r[1] == "rejected" for r in rows)
     n_leg = sum(r[1] == "legacy_id" for r in rows)
     print(f"\n{len(confirmed)} confirmed, {n_rej} rejected, {n_leg} legacy ids -> {out_tsv.relative_to(ROOT)}")
@@ -150,7 +150,7 @@ def main() -> None:
         print(f"{manifest.relative_to(ROOT)} exists ({len(existing)} lines); {len(new)} confirmed PXDs are not in it: {new}")
         print("not overwriting — merge by hand or delete the file to regenerate")
         return
-    manifest.parent.mkdir(exist_ok=True)
+    manifest.parent.mkdir(parents=True, exist_ok=True)
     manifest.write_text("\n".join(confirmed) + ("\n" if confirmed else ""))
     print(f"wrote {manifest.relative_to(ROOT)} ({len(confirmed)} PXDs). Next:\n"
           f"    python scripts/update_status.py --no-pride --corpus github")

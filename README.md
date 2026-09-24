@@ -35,15 +35,18 @@ tier 1 under-rated; nothing is silently dropped without a rerunnable trail.
 ```
 NordicSDRF/
 ├── config.yml                  # single source of truth: countries → cities → counts/status
-├── sweden/
-│   ├── stockholm.txt           # one PXD per line — your source lists
-│   ├── gothenburg.txt
-│   ├── lund.txt
-│   └── uppsala.txt
-├── denmark/
-│   └── roskilde.txt
-├── iceland/
-│   └── reykjavik.txt
+├── lists/                      # curated city manifests (one PXD per line)
+│   ├── sweden/
+│   │   ├── stockholm.txt
+│   │   ├── gothenburg.txt
+│   │   ├── lund.txt
+│   │   └── uppsala.txt
+│   ├── denmark/
+│   │   └── roskilde.txt
+│   ├── iceland/
+│   │   └── reykjavik.txt
+│   └── norway/
+│       └── tromso.txt
 ├── olink_pad/                 # Olink datasets in PRIDE's affinity archive, one PAD list per platform
 │   └── <platform>.txt          #   (explore_ht, explore, target, reveal, unspecified) — build_pad_manifest.py
 ├── results/                   # sdrf-metascreen output, resumable TSV + .log per city
@@ -65,11 +68,12 @@ NordicSDRF/
 │   └── plots/<country>.svg     # horizontal bar chart per city, drawn from tables/ by plot_status.py
 ├── criteria/
 │   ├── nordic_cities.md        # cities × institutions × search terms × rough PRIDE hit counts, all 5 countries
-│   └── nordic_screen.md        # inclusion rules + extract fields for sdrf-metascreen
+│   ├── nordic_screen.md        # inclusion rules + extract fields for sdrf-metascreen
+│   └── sea_cities.md           # SEA country/city inventory for a later campaign; not in config.yml
 └── scripts/
     ├── annotate_local.sh            # sdrf-annotate via Claude Code + local Ollama (zero tokens); NORDIC_BATCH=1 for headless
     ├── annotate_slurm.sbatch        # Slurm array wrapper: one task per manifest line
-    ├── build_manifest.py            # tier 1: PRIDE keyword search → verify country in each record → <country>/<city>.txt
+    ├── build_manifest.py            # tier 1: PRIDE keyword search → verify country in each record → lists/<country>/<city>.txt
     ├── build_pad_manifest.py        # every public PAD in PRIDE → Olink ones → olink_pad/<platform>.txt
     ├── daily_queue.py               # next N PXDs to annotate today (skip corpus / done / blocked / running)
     ├── update_status.py             # PRIDE hits + corpus overlap + local progress → config.yml, README, status/
@@ -89,7 +93,7 @@ tier-1/2/3 pipeline assignment, and per-country/per-city search terms, PXD
 counts and progress counters. The numeric fields are machine-written by
 `scripts/update_status.py`, which also regenerates the charts below,
 `status/<country>.md`, `tables/`, and `status/plots/`. Edit names, search
-terms and notes by hand. A city is scoped as soon as `<country>/<city>.txt`
+terms and notes by hand. A city is scoped as soon as `lists/<country>/<city>.txt`
 exists — you do not need to add `pxd_list` in `config.yml` first.
 
 ## Current status
@@ -100,7 +104,7 @@ trace, or refresh the numbers from files on this machine (no tokens), see
 
 <!-- status:begin -->
 One chart per country, one bar per city (shared x scale within a country). A
-curated city's bar is its manifest (`<country>/<city>.txt`), split so every PXD
+curated city's bar is its manifest (`lists/<country>/<city>.txt`), split so every PXD
 sits in exactly one block, first match wins: *Annotated* (SDRF in `annotations/`),
 *Blocked*, *In corpus* (already has an SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/bigbio/sdrf-annotated-datasets),
 checked against GitHub bigbio/sdrf-annotated-datasets (2026-09-24)), *Screened*, *To do*.
@@ -140,10 +144,10 @@ The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with
 No duplicates found within or across the four Swedish city lists. Two
 anomalies to resolve before screening:
 
-- `sweden/stockholm.txt` line 1 is `PRD000423`, an old pre-`PXD`
+- `lists/sweden/stockholm.txt` line 1 is `PRD000423`, an old pre-`PXD`
   ProteomeXchange accession that ProteomeCentral rejects outright — resolve it
   to its current `PXD` id or drop it.
-- `sweden/uppsala.txt` contains Utrecht false positives `PXD001817`,
+- `lists/sweden/uppsala.txt` contains Utrecht false positives `PXD001817`,
   `PXD004529`, and `PXD007189`: their PI addresses contain *Uppsalalaan 8,
   Utrecht* and PRIDE records `countries: [Netherlands]`. Keyword-built
   manifests will contain more of these; tier 1 should require a Nordic country
@@ -176,14 +180,14 @@ in an affiliation string):
 
 ```bash
 python scripts/build_manifest.py denmark roskilde --dry-run       # see the evidence first
-python scripts/build_manifest.py denmark roskilde                 # writes denmark/roskilde.txt + results/denmark/roskilde_candidates.tsv
+python scripts/build_manifest.py denmark roskilde                 # writes lists/denmark/roskilde.txt + results/denmark/roskilde_candidates.tsv
 python scripts/update_status.py --no-pride --corpus github        # picks up the new .txt, redraws README charts
 ```
 
 Iceland was scoped this way: 65 keyword candidates → 3 confirmed PXDs (all
 Rolfsson lab, University of Iceland) + 1 legacy `PRD` id; 61 rejected, e.g.
 "deCODE" matching *decode*, and a Norwegian dataset that cites Iceland. The
-same run on `sweden/uppsala.txt` would have rejected the Utrecht dataset.
+same run on `lists/sweden/uppsala.txt` would have rejected the Utrecht dataset.
 
 ## Workflow, per city
 
@@ -192,7 +196,7 @@ same run on `sweden/uppsala.txt` would have rejected the Utrecht dataset.
 cd sdrf-skills && conda env create -f environment.yml && conda activate sdrf-skills
 
 # 1. Tier 1 — local, free: dedup + pre-triage (from NordicSDRF root)
-python scripts/check_existing_coverage.py sweden/stockholm.txt \
+python scripts/check_existing_coverage.py lists/sweden/stockholm.txt \
   --against ../sdrf-annotated-datasets/datasets ../sdrf-skills/annotations \
   --out results/sweden/stockholm_new.txt
 
@@ -304,7 +308,7 @@ because the 8 GB GPU fits one model instance:
 
 ```bash
 sudo systemctl start slurmctld slurmd
-sbatch --array=1-$(wc -l < sweden/uppsala.txt)%1 scripts/annotate_slurm.sbatch sweden/uppsala.txt
+sbatch --array=1-$(wc -l < lists/sweden/uppsala.txt)%1 scripts/annotate_slurm.sbatch lists/sweden/uppsala.txt
 squeue -u "$USER"; tail -f results/logs/slurm-*_1.out
 ```
 

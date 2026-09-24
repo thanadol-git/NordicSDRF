@@ -2,7 +2,7 @@
 # Slurm array job: one task per line of a PXD manifest, each running the local
 # (zero-token) annotation in headless mode. Submit from the NordicSDRF root:
 #
-#   sbatch --array=1-$(wc -l < sweden/uppsala.txt)%1 scripts/annotate_slurm.sbatch sweden/uppsala.txt
+#   sbatch --array=1-$(wc -l < lists/sweden/uppsala.txt)%1 scripts/annotate_slurm.sbatch lists/sweden/uppsala.txt
 #
 # `%1` runs one task at a time — the 8 GB laptop GPU fits one model instance.
 # On a multi-GPU cluster raise the throttle and uncomment --gres below.

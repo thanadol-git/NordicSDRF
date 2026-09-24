@@ -4,14 +4,14 @@
 # `scripts/update_status.py` reads this file, queries PRIDE, counts manifests and
 # annotations/ outputs, and writes the numbers back here (pxd_count, pride_hits,
 # screened, annotated, blocked), country `status`, a missing `pxd_list` when
-# `<country>/<city>.txt` exists, and into README.md + status/<country>.md.
+# `lists/<country>/<city>.txt` exists, and into README.md + status/<country>.md.
 #
 # City fields:
 #   name          display name used in tables
 #   search_terms  PRIDE full-text keywords (English spelling first; diacritic
 #                 forms return almost nothing). Hits across terms are unioned.
 #   pxd_list      curated manifest (one PXD per line). Optional: if omitted,
-#                 update_status.py uses <country>/<city>.txt when that file exists.
+#                 update_status.py uses lists/<country>/<city>.txt when that file exists.
 #   pxd_count / pride_hits / screened / annotated / blocked — machine-updated
 
 project: NordicSDRF
@@ -45,7 +45,7 @@ countries:
       stockholm:
         name: Stockholm
         search_terms: [Stockholm, Karolinska, Solna, Huddinge]
-        pxd_list: sweden/stockholm.txt
+        pxd_list: lists/sweden/stockholm.txt
         pxd_count: 165
         pride_hits: 323
         screened: 0
@@ -56,7 +56,7 @@ countries:
       lund:
         name: Lund
         search_terms: [Lund, Malmö, Skåne]
-        pxd_list: sweden/lund.txt
+        pxd_list: lists/sweden/lund.txt
         pxd_count: 163
         pride_hits: 508
         screened: 0
@@ -66,7 +66,7 @@ countries:
       gothenburg:
         name: Gothenburg
         search_terms: [Gothenburg, Göteborg, Sahlgrenska, Chalmers]
-        pxd_list: sweden/gothenburg.txt
+        pxd_list: lists/sweden/gothenburg.txt
         pxd_count: 135
         pride_hits: 188
         screened: 0
@@ -76,7 +76,7 @@ countries:
       uppsala:
         name: Uppsala
         search_terms: [Uppsala]
-        pxd_list: sweden/uppsala.txt
+        pxd_list: lists/sweden/uppsala.txt
         pxd_count: 75
         pride_hits: 196
         screened: 0
@@ -151,7 +151,7 @@ countries:
         screened: 0
         annotated: 7
         blocked: 0
-        pxd_list: denmark/roskilde.txt
+        pxd_list: lists/denmark/roskilde.txt
         pxd_count: 7
         in_corpus: 4
   norway:
@@ -253,7 +253,7 @@ countries:
       reykjavik:
         name: Reykjavík
         search_terms: [Reykjavik, Reykjavík, Iceland, Icelandic, "University of Iceland"]   # not "deCODE": matches 'decode' everywhere
-        pxd_list: iceland/reykjavik.txt
+        pxd_list: lists/iceland/reykjavik.txt
         pxd_count: 6
         notes: "3 confirmed Rolfsson lab PXDs plus leftover PRIDE hits queued for resolution: PRD000134 (legacy Iceland), PXD051310 (UK), PXD067648 (Netherlands); see results/iceland/reykjavik_candidates.tsv"
         pride_hits: 6

@@ -2,7 +2,7 @@
 
 Reference list of the cities (and the institutions behind them) that generate
 MS-proteomics depositions in PRIDE across the five Nordic countries. Use it to
-scope new `<country>/<city>.txt` manifests and to pick search terms.
+scope new `lists/<country>/<city>.txt` manifests and to pick search terms.
 
 **"PRIDE hits"** is the `total_records` returned by the PRIDE Archive v2
 full-text search (`/pride/ws/archive/v2/search/projects?keyword=<city>`),
@@ -17,7 +17,7 @@ under-counts (submitters who wrote only the institute name). The Swedish
 manifests already in this repo are 35–70 % of the raw hit counts after
 curation.
 
-> **Known trap.** `sweden/uppsala.txt` line 1, `PXD001817`, is a Utrecht
+> **Known trap.** `lists/sweden/uppsala.txt` line 1, `PXD001817`, is a Utrecht
 > dataset: the lab PI's address is *"Uppsalalaan 8, 3584 CT Utrecht"* and PRIDE
 > records `countries: [Netherlands]`. Keyword-built manifests will contain such
 > false positives. The cheap, deterministic fix belongs in tier 1: fetch
@@ -29,10 +29,10 @@ curation.
 
 | City | Search terms | Key institutions / facilities | PRIDE hits | Manifest |
 |---|---|---|---:|---|
-| Stockholm | Stockholm, Solna, Huddinge, Karolinska, KTH, SciLifeLab | Karolinska Institutet, KTH Royal Institute of Technology, Stockholm University, SciLifeLab (Solna), Karolinska University Hospital | 211 | `sweden/stockholm.txt` (165) |
-| Uppsala | Uppsala | Uppsala University, SLU, Uppsala University Hospital (Akademiska), SciLifeLab Uppsala | 196 | `sweden/uppsala.txt` (75) — contains ≥1 Utrecht false positive |
-| Gothenburg | Gothenburg, Göteborg, Sahlgrenska, Chalmers | University of Gothenburg, Chalmers, Sahlgrenska University Hospital / Academy, GU Proteomics Core Facility | 166 + 18 | `sweden/gothenburg.txt` (135) |
-| Lund | Lund, Malmö, Skåne | Lund University (BMC, Medicon Village), Skåne University Hospital, Malmö campus | 503 + 16 | `sweden/lund.txt` (163) — "Lund" is also a common surname |
+| Stockholm | Stockholm, Solna, Huddinge, Karolinska, KTH, SciLifeLab | Karolinska Institutet, KTH Royal Institute of Technology, Stockholm University, SciLifeLab (Solna), Karolinska University Hospital | 211 | `lists/sweden/stockholm.txt` (165) |
+| Uppsala | Uppsala | Uppsala University, SLU, Uppsala University Hospital (Akademiska), SciLifeLab Uppsala | 196 | `lists/sweden/uppsala.txt` (75) — contains ≥1 Utrecht false positive |
+| Gothenburg | Gothenburg, Göteborg, Sahlgrenska, Chalmers | University of Gothenburg, Chalmers, Sahlgrenska University Hospital / Academy, GU Proteomics Core Facility | 166 + 18 | `lists/sweden/gothenburg.txt` (135) |
+| Lund | Lund, Malmö, Skåne | Lund University (BMC, Medicon Village), Skåne University Hospital, Malmö campus | 503 + 16 | `lists/sweden/lund.txt` (163) — "Lund" is also a common surname |
 | Umeå | Umeå, Umea | Umeå University, SLU Umeå | 23 | not scoped |
 | Linköping | Linköping, Linkoping | Linköping University, Linköping University Hospital | 24 | not scoped |
 | Örebro | Örebro, Orebro | Örebro University | 0 | not scoped |
