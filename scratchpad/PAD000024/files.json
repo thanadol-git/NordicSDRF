@@ -1,0 +1,97 @@
+[{
+  "projectAccessions" : [ "PAD000024" ],
+  "accession" : "3b12246ba3632ca92ff943c9d31e1c947a45f752f3a3ceab04e0deae066550e4",
+  "fileCategory" : {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:1002848",
+    "name" : "Result file URI",
+    "value" : "RESULT"
+  },
+  "checksum" : "",
+  "publicFileLocations" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000468",
+    "name" : "Aspera Protocol",
+    "value" : "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2026/05/PAD000024/MDD_rearranged_NPX.npx.csv"
+  }, {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000469",
+    "name" : "FTP Protocol",
+    "value" : "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/05/PAD000024/MDD_rearranged_NPX.npx.csv"
+  } ],
+  "fileSizeBytes" : 3124284,
+  "fileName" : "MDD_rearranged_NPX.npx.csv",
+  "compress" : false,
+  "submissionDate" : "2025-11-19T00:57:13.861+00:00",
+  "publicationDate" : "2026-05-24T23:12:33.767+00:00",
+  "updatedDate" : "2025-11-19T00:57:13.861+00:00",
+  "additionalAttributes" : [ ],
+  "totalDownloads" : 0
+},{
+  "projectAccessions" : [ "PAD000024" ],
+  "accession" : "538f2d1ec7db9e28d8c6ee5357eb098194f596d44cbae88f804580e0e67c06ea",
+  "fileCategory" : {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000410",
+    "name" : "Other type file URI",
+    "value" : "OTHER"
+  },
+  "checksum" : "",
+  "publicFileLocations" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000469",
+    "name" : "FTP Protocol",
+    "value" : "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/05/PAD000024/adjustedmetadata_fordeposit.csv"
+  }, {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000468",
+    "name" : "Aspera Protocol",
+    "value" : "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2026/05/PAD000024/adjustedmetadata_fordeposit.csv"
+  } ],
+  "fileSizeBytes" : 4272,
+  "fileName" : "adjustedmetadata_fordeposit.csv",
+  "compress" : false,
+  "submissionDate" : "2025-11-19T00:57:13.861+00:00",
+  "publicationDate" : "2026-05-24T23:12:33.767+00:00",
+  "updatedDate" : "2025-11-19T00:57:13.861+00:00",
+  "additionalAttributes" : [ ],
+  "totalDownloads" : 0
+},{
+  "projectAccessions" : [ "PAD000024" ],
+  "accession" : "6def728731825c9df4413f3dec51706f7ecfbb280e5dba070c801817a899fa37",
+  "fileCategory" : {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000410",
+    "name" : "Other type file URI",
+    "value" : "OTHER"
+  },
+  "checksum" : "",
+  "publicFileLocations" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000469",
+    "name" : "FTP Protocol",
+    "value" : "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/05/PAD000024/RAW_modified_Olink.xlsx"
+  }, {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000468",
+    "name" : "Aspera Protocol",
+    "value" : "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2026/05/PAD000024/RAW_modified_Olink.xlsx"
+  } ],
+  "fileSizeBytes" : 209771,
+  "fileName" : "RAW_modified_Olink.xlsx",
+  "compress" : false,
+  "submissionDate" : "2025-11-19T00:57:13.861+00:00",
+  "publicationDate" : "2026-05-24T23:12:33.767+00:00",
+  "updatedDate" : "2025-11-19T00:57:13.861+00:00",
+  "additionalAttributes" : [ ],
+  "totalDownloads" : 0
+}]

@@ -1,0 +1,40 @@
+[
+  {
+    "projectAccessions": [
+      "PAD000055"
+    ],
+    "accession": "0a1bf48440da9fe1594c8d24c52c3c2891abb54660a7efc099fd9f2212f9dd71",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:1002848",
+      "name": "Result file URI",
+      "value": "RESULT"
+    },
+    "checksum": "",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2026/09/PAD000055/NICOE_npx.parquet"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/09/PAD000055/NICOE_npx.parquet"
+      }
+    ],
+    "fileSizeBytes": 39851120,
+    "fileName": "NICOE_npx.parquet",
+    "compress": false,
+    "submissionDate": "2026-08-07T20:23:16.435+00:00",
+    "publicationDate": "2026-09-02T20:11:39.389+00:00",
+    "updatedDate": "2026-08-07T20:23:16.435+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 0
+  }
+]

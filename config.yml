@@ -35,7 +35,7 @@ pipeline:
 
 pride_hits_queried: 2026-09-23
 
-corpus_source: local checkout (2026-09-23)
+corpus_source: local checkout (2026-09-24)
 
 countries:
   sweden:
@@ -79,9 +79,9 @@ countries:
         pxd_count: 75
         pride_hits: 196
         screened: 0
-        annotated: 1
-        blocked: 0
-        notes: "line 1 PXD001817 is a Utrecht dataset (PI address 'Uppsalalaan 8', countries=[Netherlands]) — keyword false positive; filter on PRIDE `countries` in tier 1"
+        annotated: 14
+        blocked: 8
+        notes: "PXD001817, PXD004529, and PXD007189 are Utrecht datasets (PI address 'Uppsalalaan 8', countries=[Netherlands]) — keyword false positives; filter on PRIDE `countries` in tier 1"
         in_corpus: 4
       umea:
         name: Umeå

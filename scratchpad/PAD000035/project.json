@@ -1,0 +1,126 @@
+{
+  "accession" : "PAD000035",
+  "title" : "Febrile Infant Diagnostic Assessment and Outcome Olink Dataset",
+  "additionalAttributes" : [ ],
+  "projectDescription" : "The FIDO (Febrile Infant Diagnostic assessment and Outcome) study aimed to look at different diagnostic approaches to identify infants with a fever at low and high-risk of serious infection. FIDO was a multicentre prospective observational cohort study that enrolled infants ≤90 days of age presenting with fever to 35 Paediatric Emergency Research in the UK and Ireland (PERUKI) sites. The FIDO study was prospectively registered at ClinicalTrials.gov (NCT05259683; 28 February 2022). Where possible, residual plasma volume was collected and stored from infants for proteomic and biomarker analysis.",
+  "sampleProcessingProtocol" : "During routine phlebotomy EDTA preserved whole blood was collected. The additional EDTA blood was centrifuged for 10mins at 1600g within 24hours of collection and blood plasma stored. The blood plasma samples were stored at local sites frozen in preparation for transport. Samples were batch transported on dry ice to Queen’s University Belfast for storage at -80C. Plasma concentrations of 735 proteins were measured using the Olink® platform (Uppsala, Sweden) “Explore Neurology” and “Inflammation” antibody-based Proximity Extension Assays. Analysis was performed by an Olink Certified Service Provider (Randox Laboratories, Antrim, UK).",
+  "dataProcessingProtocol" : "Data were provided normalised and log2 transformed by an Olink Certified Service Provider (Randox Laboratories, Antrim, UK). Samples from participants without explicit consent for future use have been removed from the dataset.",
+  "projectTags" : [ ],
+  "keywords" : [ "Blood biomarkers", "Infant", "Infection", "Meningitis" ],
+  "doi" : "10.6019/PAD000035",
+  "submissionType" : "AFFINITY",
+  "license" : "Creative Commons Public Domain (CC0)",
+  "submissionDate" : "2026-04-01",
+  "publicationDate" : "2026-05-29",
+  "submitters" : [ {
+    "title" : "Dr",
+    "firstName" : "Clare",
+    "lastName" : "Mills",
+    "identifier" : "1000004389",
+    "affiliation" : "Queen's University Belfast",
+    "email" : "clare.mills@qub.ac.uk",
+    "country" : "United Kingdom",
+    "orcid" : "0000-0001-8176-5053",
+    "name" : "Clare Mills",
+    "id" : "1000004389"
+  } ],
+  "labPIs" : [ {
+    "title" : "Dr",
+    "firstName" : "Clare",
+    "lastName" : "Mills",
+    "identifier" : "3409174",
+    "affiliation" : "Wellcome-Wolfson Institute for Experimental Medicine at Queen’s University Belfast",
+    "email" : "clare.mills@qub.ac.uk",
+    "country" : "",
+    "orcid" : "",
+    "name" : "Clare Mills",
+    "id" : "3409174"
+  } ],
+  "instruments" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000657",
+    "name" : "Olink Explore 3072/384"
+  } ],
+  "softwares" : [ ],
+  "experimentTypes" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000635",
+    "name" : "Affinity proteomics"
+  }, {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000637",
+    "name" : "Olink affinity proteomics"
+  } ],
+  "quantificationMethods" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "PRIDE",
+    "accession" : "PRIDE:0000653",
+    "name" : "NPX"
+  } ],
+  "countries" : [ "United Kingdom" ],
+  "sampleAttributes" : [ {
+    "@type" : "Tuple",
+    "key" : {
+      "cvLabel" : "EFO",
+      "accession" : "EFO:0000635",
+      "name" : "organism part"
+    },
+    "value" : [ {
+      "cvLabel" : "BTO",
+      "accession" : "BTO:0000131",
+      "name" : "blood plasma"
+    } ]
+  }, {
+    "@type" : "Tuple",
+    "key" : {
+      "cvLabel" : "EFO",
+      "accession" : "OBI:0100026",
+      "name" : "organism"
+    },
+    "value" : [ {
+      "cvLabel" : "NEWT",
+      "accession" : "NEWT:9606",
+      "name" : "Homo sapiens (Human)"
+    } ]
+  }, {
+    "@type" : "Tuple",
+    "key" : {
+      "cvLabel" : "EFO",
+      "accession" : "EFO:0000408",
+      "name" : "disease"
+    },
+    "value" : [ {
+      "cvLabel" : "DOID",
+      "accession" : "DOID:0040085",
+      "name" : "bacterial sepsis"
+    } ]
+  } ],
+  "organisms" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "NEWT",
+    "accession" : "NEWT:9606",
+    "name" : "Homo sapiens (human)"
+  } ],
+  "organismParts" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "BTO",
+    "accession" : "BTO:0000131",
+    "name" : "Blood plasma"
+  } ],
+  "diseases" : [ {
+    "@type" : "CvParam",
+    "cvLabel" : "DOID",
+    "accession" : "DOID:0040085",
+    "name" : "Bacterial sepsis"
+  } ],
+  "references" : [ {
+    "referenceLine" : "Umana E, Mills C, Norman-Bruce H, Wilson K, Mitchell H, McFetridge L, Woolfall K, Lynn FA, McKeeman G, Foster S, Barrett M, Roland D, Lyttle MD, Watson C, Waterfield T. Applying clinical decision aids for the assessment and management of febrile infants presenting to emergency care in the UK and Ireland: Febrile Infant Diagnostic Assessment and Outcome (FIDO) Study protocol. BMJ Open. 2023 13(9):e075823",
+    "pubmedID" : 37730397,
+    "doi" : "10.1136/bmjopen-2023-075823"
+  } ],
+  "identifiedPTMStrings" : [ ],
+  "totalFileDownloads" : 0
+}

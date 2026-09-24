@@ -1,0 +1,13 @@
+# Uppsala annotation batch — 10 candidates selected from sweden/uppsala.txt
+# PXD001817 is intentionally held out: PRIDE identifies it as Utrecht/Netherlands.
+# PXD002403 is already present in the local community corpus.
+PXD002163	sweden/uppsala	annotated	SDRF and report written; structural validation passed with ontology lookup skipped
+PXD004036	sweden/uppsala	blocked	TMT channel-to-sample map not recoverable; see annotations/PXD004036.BLOCKED.md
+PXD004095	sweden/uppsala	annotated	50 RAW files annotated; structural validation passed with ontology lookup skipped
+PXD004499	sweden/uppsala	annotated	103 RAW files annotated; structural validation passed with ontology lookup skipped
+PXD004529	sweden/uppsala	excluded	False positive: PRIDE countries=[Netherlands]; Utrecht affiliation and Uppsalalaan address
+PXD005340	sweden/uppsala	annotated	28 RAW files annotated; structural validation passed with ontology lookup skipped
+PXD005936	sweden/uppsala	annotated	24 RAW files annotated from deposited replicate sample sheets; structural validation passed with ontology lookup skipped
+PXD006085	sweden/uppsala	blocked	80 RAW files lack a recoverable lane-code-to-condition/enrichment map; see annotations/PXD006085.BLOCKED.md
+PXD007189	sweden/uppsala	excluded	False positive: PRIDE countries=[Netherlands]; Utrecht affiliation and Uppsalalaan address
+PXD007647	sweden/uppsala	blocked	TMT reporter-channel-to-sample map not recoverable; see annotations/PXD007647.BLOCKED.md

@@ -1,0 +1,12 @@
+# Uppsala annotation batch 02 — next 10 unprocessed accessions from sweden/uppsala.txt
+# Affiliation screening completed against the PRIDE project records on 2026-09-24.
+PXD008076	sweden/uppsala	annotated	77 CSF RAW mzML files annotated; structural validation passed with ontology lookup skipped
+PXD008980	sweden/uppsala	blocked	Four SILAC fraction sets lack a recoverable mapping to time point and label swap; see annotations/PXD008980.BLOCKED.md
+PXD009277	sweden/uppsala	blocked	PRIDE public archive exposes zero data files; see annotations/PXD009277.BLOCKED.md
+PXD009278	sweden/uppsala	blocked	Unmapped shotgun and calibration/precision runs prevent a full-dataset SDRF; see annotations/PXD009278.BLOCKED.md
+PXD009562	sweden/uppsala	blocked	PRIDE public archive exposes zero data files; see annotations/PXD009562.BLOCKED.md
+PXD009967	sweden/uppsala	blocked	Opaque RAW acquisition codes lack a recoverable biological sample map; see annotations/PXD009967.BLOCKED.md
+PXD012757	sweden/uppsala	annotated	30 C2C12 lysate SILAC RAW files annotated; structural validation passed with ontology lookup skipped
+PXD012758	sweden/uppsala	annotated	40 C2C12 medium SILAC RAW files annotated; structural validation passed with ontology lookup skipped
+PXD012769	sweden/uppsala	annotated	30 C2C12 medium SILAC RAW files annotated; structural validation passed with ontology lookup skipped
+PXD012789	sweden/uppsala	annotated	40 C2C12 lysate SILAC RAW files annotated; structural validation passed with ontology lookup skipped
