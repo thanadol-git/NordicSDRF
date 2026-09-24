@@ -152,8 +152,8 @@ def main() -> None:
         return
     manifest.parent.mkdir(exist_ok=True)
     manifest.write_text("\n".join(confirmed) + ("\n" if confirmed else ""))
-    print(f"wrote {manifest.relative_to(ROOT)} ({len(confirmed)} PXDs). Next: add `pxd_list: {args.country}/{args.city}.txt` "
-          f"under that city in config.yml and run scripts/update_status.py --no-pride")
+    print(f"wrote {manifest.relative_to(ROOT)} ({len(confirmed)} PXDs). Next:\n"
+          f"    python scripts/update_status.py --no-pride --corpus github")
 
 
 if __name__ == "__main__":

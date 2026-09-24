@@ -133,7 +133,7 @@ def main() -> None:
         if wanted and country != wanted:
             continue
         for slug, city in (cdata.get("cities") or {}).items():
-            ids = manifest_ids(city)
+            ids = manifest_ids(country, slug, city)
             if not ids:
                 continue
             screen = screen_verdicts(country, slug)

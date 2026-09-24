@@ -171,11 +171,11 @@ def country_svg(country: dict, cities: list[dict]) -> str:
 
     # legend
     x, y = 12, HEADER_H + 4
-    for key, label, *_ in CATEGORIES:
-        out.append(f'<rect class="c-{key}" x="{x}" y="{y}" width="12" height="12" rx="2"/>')
+    for key, label, light, _ in CATEGORIES:
+        out.append(f'<rect class="c-{key}" fill="{light}" x="{x}" y="{y}" width="12" height="12" rx="2"/>')
         out.append(f'<text class="legend" x="{x + 17}" y="{y + 10}">{label}</text>')
         x += 17 + 7 * len(label) + 18
-    out.append(f'<rect class="uncurated" x="{x}" y="{y + 0.75}" width="12" height="10.5" rx="2"/>')
+    out.append(f'<rect class="uncurated" fill="none" stroke="#8a8983" x="{x}" y="{y + 0.75}" width="12" height="10.5" rx="2"/>')
     out.append(f'<text class="legend" x="{x + 17}" y="{y + 10}">{UNCURATED_LABEL}</text>')
 
     for i, city in enumerate(cities):
@@ -189,16 +189,16 @@ def country_svg(country: dict, cities: list[dict]) -> str:
         if not curated:
             w = widths[0]
             if total:
-                out.append(f'<rect class="uncurated" x="{x}" y="{y + 0.75}" width="{max(w, 2):.1f}" '
+                out.append(f'<rect class="uncurated" fill="none" stroke="#8a8983" x="{x}" y="{y + 0.75}" width="{max(w, 2):.1f}" '
                            f'height="{BAR_H - 1.5}" rx="3"><title>{cname} · {UNCURATED_LABEL}: {total}</title></rect>')
             out.append(f'<text class="total" x="{x + w + 6:.1f}" y="{ty}">{total} PRIDE hits</text>')
             continue
-        for (key, label, *_), w in zip(CATEGORIES, widths):
+        for (key, label, light, _), w in zip(CATEGORIES, widths):
             n = cell(city, key) or 0
             if not n:
                 continue
             # 1px surface gap between blocks: draw each block 1px short.
-            out.append(f'<rect class="c-{key}" x="{x:.1f}" y="{y}" width="{max(w - 1, 1):.1f}" height="{BAR_H}" '
+            out.append(f'<rect class="c-{key}" fill="{light}" x="{x:.1f}" y="{y}" width="{max(w - 1, 1):.1f}" height="{BAR_H}" '
                        f'rx="2"><title>{cname} · {label}: {n}</title></rect>')
             out.append(f'<text class="seg" x="{x + (w - 1) / 2:.1f}" y="{ty}" text-anchor="middle">{n}</text>')
             x += w

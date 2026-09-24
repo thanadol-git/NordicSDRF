@@ -26,36 +26,37 @@
   }
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
-<text class="title" x="12" y="22">Denmark — not started</text>
-<text class="sub" x="12" y="40">0 datasets listed · 0 annotated · PRIDE queried 2026-09-23 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
-<rect class="c-annotated" x="12" y="52" width="12" height="12" rx="2"/>
+<text class="title" x="12" y="22">Denmark — in progress</text>
+<text class="sub" x="12" y="40">7 datasets listed · 7 annotated · PRIDE queried 2026-09-23 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
-<rect class="c-blocked" x="110" y="52" width="12" height="12" rx="2"/>
+<rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="127" y="62">Blocked</text>
-<rect class="c-in_corpus" x="194" y="52" width="12" height="12" rx="2"/>
+<rect class="c-in_corpus" fill="#199e70" x="194" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="211" y="62">In corpus</text>
-<rect class="c-screened" x="292" y="52" width="12" height="12" rx="2"/>
+<rect class="c-screened" fill="#c98500" x="292" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="309" y="62">Screened</text>
-<rect class="c-todo" x="383" y="52" width="12" height="12" rx="2"/>
+<rect class="c-todo" fill="#8a8983" x="383" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="400" y="62">To do</text>
-<rect class="uncurated" x="453" y="52.75" width="12" height="10.5" rx="2"/>
+<rect class="uncurated" fill="none" stroke="#8a8983" x="453" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="470" y="62">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="88.0">Copenhagen</text>
-<rect class="uncurated" x="110" y="74.75" width="596.3" height="18.5" rx="3"><title>Copenhagen · PRIDE hits, not curated yet: 554</title></rect>
+<rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="74.75" width="596.3" height="18.5" rx="3"><title>Copenhagen · PRIDE hits, not curated yet: 554</title></rect>
 <text class="total" x="712.3" y="88.0">554 PRIDE hits</text>
 <text class="city" x="12" y="118.0">Odense</text>
-<rect class="uncurated" x="110" y="104.75" width="648.0" height="18.5" rx="3"><title>Odense · PRIDE hits, not curated yet: 602</title></rect>
+<rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="104.75" width="648.0" height="18.5" rx="3"><title>Odense · PRIDE hits, not curated yet: 602</title></rect>
 <text class="total" x="764.0" y="118.0">602 PRIDE hits</text>
 <text class="city" x="12" y="148.0">Aarhus</text>
-<rect class="uncurated" x="110" y="134.75" width="125.9" height="18.5" rx="3"><title>Aarhus · PRIDE hits, not curated yet: 117</title></rect>
+<rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="134.75" width="125.9" height="18.5" rx="3"><title>Aarhus · PRIDE hits, not curated yet: 117</title></rect>
 <text class="total" x="241.9" y="148.0">117 PRIDE hits</text>
 <text class="city" x="12" y="178.0">Aalborg</text>
-<rect class="uncurated" x="110" y="164.75" width="72.1" height="18.5" rx="3"><title>Aalborg · PRIDE hits, not curated yet: 67</title></rect>
+<rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="164.75" width="72.1" height="18.5" rx="3"><title>Aalborg · PRIDE hits, not curated yet: 67</title></rect>
 <text class="total" x="188.1" y="178.0">67 PRIDE hits</text>
 <text class="city" x="12" y="208.0">Lyngby</text>
-<rect class="uncurated" x="110" y="194.75" width="61.4" height="18.5" rx="3"><title>Lyngby · PRIDE hits, not curated yet: 57</title></rect>
+<rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="194.75" width="61.4" height="18.5" rx="3"><title>Lyngby · PRIDE hits, not curated yet: 57</title></rect>
 <text class="total" x="177.4" y="208.0">57 PRIDE hits</text>
 <text class="city" x="12" y="238.0">Roskilde</text>
-<rect class="uncurated" x="110" y="224.75" width="9.7" height="18.5" rx="3"><title>Roskilde · PRIDE hits, not curated yet: 9</title></rect>
-<text class="total" x="125.7" y="238.0">9 PRIDE hits</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="224" width="17.0" height="20" rx="2"><title>Roskilde · Annotated: 7</title></rect>
+<text class="seg" x="118.5" y="238.0" text-anchor="middle">7</text>
+<text class="total" x="134.0" y="238.0">7 listed</text>
 </svg>

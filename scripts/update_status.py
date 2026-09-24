@@ -5,7 +5,8 @@ Reads config.yml, then for every city:
   * pride_hits  - union of accessions returned by the PRIDE Archive v2 full-text
                   search for each of the city's `search_terms` (written to
                   results/pride_hits/<country>/<city>.txt as a raw candidate list)
-  * pxd_count   - lines in the curated manifest (`pxd_list`), if the city is scoped
+  * pxd_count   - lines in the curated manifest (`pxd_list`, or `<country>/<city>.txt`
+                  if that file exists), if the city is scoped
   * in_corpus   - manifest PXDs that already have an SDRF in the community repo
                   bigbio/sdrf-annotated-datasets (local sibling checkout by default,
                   or the live GitHub tree with --corpus github); the PXDs are written
@@ -130,9 +131,20 @@ def load_corpus(cfg: dict, source: str) -> tuple[set[str], str]:
 
 
 # --------------------------------------------------------------------------- local counts
-def manifest_ids(city: dict) -> list[str]:
-    path = city.get("pxd_list")
-    if not path or not (ROOT / path).exists():
+def manifest_relpath(country: str, slug: str, city: dict | None = None) -> str | None:
+    """Config `pxd_list` if set, else the conventional `<country>/<city>.txt` when it exists."""
+    seen: list[str] = []
+    for path in (city.get("pxd_list") if city else None, f"{country}/{slug}.txt"):
+        if path and path not in seen:
+            seen.append(path)
+            if (ROOT / path).exists():
+                return path
+    return None
+
+
+def manifest_ids(country: str, slug: str, city: dict | None = None) -> list[str]:
+    path = manifest_relpath(country, slug, city)
+    if not path:
         return []
     return [ln.strip() for ln in (ROOT / path).read_text().splitlines() if ACCESSION_RE.match(ln.strip())]
 
@@ -155,7 +167,7 @@ def blocked_ids() -> set[str]:
 
 
 def local_counts(country: str, slug: str, city: dict, blocked: set[str], corpus: set[str]) -> dict[str, int]:
-    ids = manifest_ids(city)
+    ids = manifest_ids(country, slug, city)
     ann = ROOT / "annotations"
     in_corpus = sorted(pxd for pxd in ids if pxd in corpus)
     if ids:
@@ -185,7 +197,7 @@ def city_categories(country: str, slug: str, city: dict, blocked: set[str], corp
     (annotated > blocked > in corpus > screened > to do), so the counts add up to
     the manifest length. None for a city without a curated manifest.
     """
-    if not city.get("pxd_list"):
+    if not manifest_relpath(country, slug, city):
         return None
     ann = ROOT / "annotations"
     screened = screened_ids(country, slug)
@@ -197,27 +209,41 @@ def city_categories(country: str, slug: str, city: dict, blocked: set[str], corp
         "todo": lambda p: True,
     }
     counts = {key: 0 for key, *_ in CATEGORIES}
-    for pxd in manifest_ids(city):
+    for pxd in manifest_ids(country, slug, city):
         counts[next(key for key, *_ in CATEGORIES if tests[key](pxd))] += 1
     return counts
 
 
 # --------------------------------------------------------------------------- writers
-def update_config_text(text: str, numbers: dict[tuple[str, str], dict[str, int]], top: dict[str, str]) -> str:
+def update_config_text(text: str, numbers: dict[tuple[str, str], dict[str, int]], top: dict[str, str],
+                       discovered_lists: dict[tuple[str, str], str] | None = None,
+                       country_status: dict[str, str] | None = None) -> str:
     """Rewrite machine-owned scalar values in place, keeping comments and order.
 
     `top` holds top-level bookkeeping keys (pride_hits_queried, corpus_source);
     they are updated if present and inserted just above `countries:` otherwise.
+    `discovered_lists` inserts a missing `pxd_list` when `<country>/<city>.txt` exists.
+    `country_status` rewrites each country's `status:` from scoped-city progress.
     """
+    discovered_lists = discovered_lists or {}
+    country_status = country_status or {}
     out, country, city, seen = [], None, None, set()
     key_re = re.compile(r"^(\s*)([A-Za-z_][\w-]*):(.*)$")
 
     def flush_missing() -> None:
         # machine keys computed for this city but absent from its block: add them after the last one
+        extras: list[str] = []
         if country and city and (country, city) in numbers:
+            if (country, city) in discovered_lists and "pxd_list" not in seen:
+                extras.append(f"{' ' * 8}pxd_list: {discovered_lists[(country, city)]}")
             for key in MACHINE_KEYS:
                 if key in numbers[(country, city)] and key not in seen:
-                    out.append(f"{' ' * 8}{key}: {numbers[(country, city)][key]}")
+                    extras.append(f"{' ' * 8}{key}: {numbers[(country, city)][key]}")
+        if extras:
+            insert_at = len(out)
+            while insert_at and out[insert_at - 1] == "":
+                insert_at -= 1
+            out[insert_at:insert_at] = extras
 
     for line in text.splitlines():
         m = key_re.match(line)
@@ -228,8 +254,12 @@ def update_config_text(text: str, numbers: dict[tuple[str, str], dict[str, int]]
                 seen = set()
             if indent == 2 and key in numbers_countries(numbers):
                 country, city = key, None
+            elif indent == 4 and country and key == "status" and country in country_status:
+                line = f"    status: {country_status[country]}"
             elif indent == 6 and country:
                 city = key
+            elif indent == 8 and key == "pxd_list":
+                seen.add("pxd_list")
             elif indent == 8 and country and city and key in MACHINE_KEYS and (country, city) in numbers:
                 seen.add(key)
                 if key in numbers[(country, city)]:
@@ -329,27 +359,40 @@ def main() -> None:
     cfg["corpus_source"] = corpus_source
     print(f"community corpus: {len(corpus)} annotated PXDs ({corpus_source})")
     numbers: dict[tuple[str, str], dict[str, int]] = {}
+    discovered_lists: dict[tuple[str, str], str] = {}
+    country_status: dict[str, str] = {}
     for country, cdata in cfg["countries"].items():
         if country not in wanted:
             continue
         print(f"{country}:")
+        listed = annotated = blocked_n = 0
         for slug, city in (cdata.get("cities") or {}).items():
             n = local_counts(country, slug, city, blocked, corpus)
-            if not city.get("pxd_list"):
+            path = manifest_relpath(country, slug, city)
+            if not path:
                 n.pop("pxd_count")
                 n.pop("in_corpus")
+            elif not city.get("pxd_list"):
+                discovered_lists[(country, slug)] = path
+                city["pxd_list"] = path
             if not args.no_pride and cdata.get("pride_search", True):
                 print(f"  {city.get('name', slug)} — PRIDE search")
                 n["pride_hits"] = collect_pride_hits(country, slug, city, ROOT / args.hits_dir)
             numbers[(country, slug)] = n
             city.update(n)
+            listed += n.get("pxd_count") or 0
+            annotated += n.get("annotated") or 0
+            blocked_n += n.get("blocked") or 0
             print(f"  {city.get('name', slug):<12} " + "  ".join(f"{k}={v}" for k, v in n.items()))
+        status = "in_progress" if annotated or blocked_n else "scoped" if listed else "not_started"
+        country_status[country] = status
+        cdata["status"] = status
 
     top = {"corpus_source": f"{corpus_source} ({dt.date.today().isoformat()})"}
     if not args.no_pride:
         top["pride_hits_queried"] = dt.date.today().isoformat()
     cfg.update(top)
-    new_text = update_config_text(text, numbers, top)
+    new_text = update_config_text(text, numbers, top, discovered_lists, country_status)
 
     block = render_status_block(cfg)
     if args.dry_run:

@@ -40,6 +40,10 @@ NordicSDRF/
 │   ├── gothenburg.txt
 │   ├── lund.txt
 │   └── uppsala.txt
+├── denmark/
+│   └── roskilde.txt
+├── iceland/
+│   └── reykjavik.txt
 ├── olink_pad/                 # Olink datasets in PRIDE's affinity archive, one PAD list per platform
 │   └── <platform>.txt          #   (explore_ht, explore, target, reveal, unspecified) — build_pad_manifest.py
 ├── results/                   # sdrf-metascreen output, resumable TSV + .log per city
@@ -83,8 +87,10 @@ self-contained and pinned to a version.
 `config.yml` is the single manifest: which sibling tools to use, the
 tier-1/2/3 pipeline assignment, and per-country/per-city search terms, PXD
 counts and progress counters. The numeric fields are machine-written by
-`scripts/update_status.py`, which also regenerates the status tables below and
-`status/<country>.md`; edit names, search terms, manifests and notes by hand.
+`scripts/update_status.py`, which also regenerates the charts below,
+`status/<country>.md`, `tables/`, and `status/plots/`. Edit names, search
+terms and notes by hand. A city is scoped as soon as `<country>/<city>.txt`
+exists — you do not need to add `pxd_list` in `config.yml` first.
 
 ## Current status
 
@@ -110,9 +116,9 @@ The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with
 
 ![Sweden — in progress: SDRF progress per city](status/plots/sweden.svg)
 
-### Denmark — not started
+### Denmark — in progress
 
-![Denmark — not started: SDRF progress per city](status/plots/denmark.svg)
+![Denmark — in progress: SDRF progress per city](status/plots/denmark.svg)
 
 ### Norway — not started
 
@@ -122,9 +128,9 @@ The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with
 
 ![Finland — not started: SDRF progress per city](status/plots/finland.svg)
 
-### Iceland — scoped
+### Iceland — in progress
 
-![Iceland — scoped: SDRF progress per city](status/plots/iceland.svg)
+![Iceland — in progress: SDRF progress per city](status/plots/iceland.svg)
 
 ### Olink PAD — in progress
 
@@ -156,10 +162,10 @@ cities are also recorded per country in `config.yml` as `candidate_cities`.
 | Country | Cities that matter | PRIDE hits (country) | Status |
 |---|---|---:|---|
 | Sweden | Stockholm, Uppsala, Gothenburg, Lund (+ Umeå, Linköping, Örebro, small) | 1149 | in progress |
-| Denmark | Copenhagen (CPR, Rigshospitalet), Odense (SDU), Aarhus, Aalborg, Lyngby (DTU), Roskilde | 1600 | not started — largest depositor |
+| Denmark | Copenhagen (CPR, Rigshospitalet), Odense (SDU), Aarhus, Aalborg, Lyngby (DTU), Roskilde | 1600 | in progress (Roskilde) |
 | Norway | Bergen (PROBE), Oslo (OUS), Trondheim (NTNU/PROMEC), Ås (NMBU), Tromsø, Stavanger | 461 | not started |
 | Finland | Helsinki/Espoo, Turku, Oulu, Tampere, Kuopio, Jyväskylä | 205 | not started |
-| Iceland | Reykjavík (mostly affinity proteomics, little in PRIDE) | 6 | scoped |
+| Iceland | Reykjavík (mostly affinity proteomics, little in PRIDE) | 6 | in progress |
 
 Suggested order after Sweden: Denmark, Norway, Finland, Iceland. To scope a
 city, run the tier-1 manifest builder — PRIDE has no working country filter,
@@ -169,10 +175,9 @@ the country (`countries`, a submitter's `country`, or a city/institution term
 in an affiliation string):
 
 ```bash
-python scripts/build_manifest.py iceland reykjavik --dry-run          # see the evidence first
-python scripts/build_manifest.py iceland reykjavik                    # writes iceland/reykjavik.txt + results/iceland/reykjavik_candidates.tsv
-# then add `pxd_list: iceland/reykjavik.txt` under the city in config.yml and
-python scripts/update_status.py --no-pride --corpus github
+python scripts/build_manifest.py denmark roskilde --dry-run       # see the evidence first
+python scripts/build_manifest.py denmark roskilde                 # writes denmark/roskilde.txt + results/denmark/roskilde_candidates.tsv
+python scripts/update_status.py --no-pride --corpus github        # picks up the new .txt, redraws README charts
 ```
 
 Iceland was scoped this way: 65 keyword candidates → 3 confirmed PXDs (all
@@ -236,8 +241,8 @@ already in flight (live JSONL or `claude -p`) is listed as `running` and kept
 off the queue so you do not share the 8 GB GPU. If a city later has a
 `results/<country>/<city>_screen.tsv`, only `include` rows are queued.
 
-After the Claude pass, `python scripts/update_status.py --no-pride` so Iceland
-moves from `scoped` to real annotated counts.
+After the Claude pass, `python scripts/update_status.py --no-pride` so the
+README charts pick up the new SDRFs.
 
 ### Local annotation (zero API tokens)
 
@@ -380,17 +385,17 @@ here and writes `config.yml`, the [Current status](#current-status) block in
 this README, and `status/<country>.md`:
 
 ```bash
-python scripts/update_status.py --no-pride --dry-run              # print the tables, change nothing
+python scripts/update_status.py --no-pride --dry-run              # print the numbers, change nothing
 python scripts/update_status.py --no-pride                        # refresh from local files only (offline)
 python scripts/update_status.py --no-pride --country iceland      # one country
 python scripts/update_status.py --no-pride --corpus github        # + live check against bigbio/sdrf-annotated-datasets
-cat status/sweden.md                                              # generated per-city table
+cat status/sweden.md                                              # generated per-country page + chart
 cat status/iceland.md
 ```
 
 | File | What it tells you |
 |---|---|
-| `status/<country>.md` | Same table as in this README, one country |
+| `status/<country>.md` | Same chart as in this README, one country |
 | `config.yml` → city `annotated` / `blocked` / `in_corpus` | Machine counters the tables are built from |
 | `annotations/<PXD>.sdrf.tsv` | That PXD is counted as annotated |
 | `annotations/<PXD>.BLOCKED.md` | Counted as blocked |

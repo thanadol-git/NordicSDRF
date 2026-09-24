@@ -3,14 +3,15 @@
 #
 # `scripts/update_status.py` reads this file, queries PRIDE, counts manifests and
 # annotations/ outputs, and writes the numbers back here (pxd_count, pride_hits,
-# screened, annotated, blocked) and into README.md + status/<country>.md.
-# Only those numeric fields are machine-written; everything else is yours.
+# screened, annotated, blocked), country `status`, a missing `pxd_list` when
+# `<country>/<city>.txt` exists, and into README.md + status/<country>.md.
 #
 # City fields:
 #   name          display name used in tables
 #   search_terms  PRIDE full-text keywords (English spelling first; diacritic
 #                 forms return almost nothing). Hits across terms are unioned.
-#   pxd_list      curated manifest (one PXD per line) — present once a city is scoped
+#   pxd_list      curated manifest (one PXD per line). Optional: if omitted,
+#                 update_status.py uses <country>/<city>.txt when that file exists.
 #   pxd_count / pride_hits / screened / annotated / blocked — machine-updated
 
 project: NordicSDRF
@@ -106,7 +107,7 @@ countries:
         blocked: 0
 
   denmark:
-    status: not_started
+    status: in_progress
     cities:
       copenhagen:
         name: Copenhagen
@@ -148,9 +149,11 @@ countries:
         search_terms: [Roskilde]
         pride_hits: 9
         screened: 0
-        annotated: 0
+        annotated: 7
         blocked: 0
-
+        pxd_list: denmark/roskilde.txt
+        pxd_count: 7
+        in_corpus: 4
   norway:
     status: not_started
     cities:
@@ -245,7 +248,7 @@ countries:
         blocked: 0
 
   iceland:
-    status: scoped
+    status: in_progress
     cities:
       reykjavik:
         name: Reykjavík

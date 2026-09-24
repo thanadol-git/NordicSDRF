@@ -28,55 +28,55 @@
 <rect class="bg" width="860" height="292" rx="6"/>
 <text class="title" x="12" y="22">Sweden — in progress</text>
 <text class="sub" x="12" y="40">538 datasets listed · 83 annotated · PRIDE queried 2026-09-23 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
-<rect class="c-annotated" x="12" y="52" width="12" height="12" rx="2"/>
+<rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
-<rect class="c-blocked" x="110" y="52" width="12" height="12" rx="2"/>
+<rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="127" y="62">Blocked</text>
-<rect class="c-in_corpus" x="194" y="52" width="12" height="12" rx="2"/>
+<rect class="c-in_corpus" fill="#199e70" x="194" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="211" y="62">In corpus</text>
-<rect class="c-screened" x="292" y="52" width="12" height="12" rx="2"/>
+<rect class="c-screened" fill="#c98500" x="292" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="309" y="62">Screened</text>
-<rect class="c-todo" x="383" y="52" width="12" height="12" rx="2"/>
+<rect class="c-todo" fill="#8a8983" x="383" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="400" y="62">To do</text>
-<rect class="uncurated" x="453" y="52.75" width="12" height="10.5" rx="2"/>
+<rect class="uncurated" fill="none" stroke="#8a8983" x="453" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="470" y="62">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="88.0">Stockholm</text>
-<rect class="c-annotated" x="110.0" y="74" width="149.1" height="20" rx="2"><title>Stockholm · Annotated: 39</title></rect>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="74" width="149.1" height="20" rx="2"><title>Stockholm · Annotated: 39</title></rect>
 <text class="seg" x="184.6" y="88.0" text-anchor="middle">39</text>
-<rect class="c-blocked" x="260.1" y="74" width="17.0" height="20" rx="2"><title>Stockholm · Blocked: 2</title></rect>
+<rect class="c-blocked" fill="#d95926" x="260.1" y="74" width="17.0" height="20" rx="2"><title>Stockholm · Blocked: 2</title></rect>
 <text class="seg" x="268.6" y="88.0" text-anchor="middle">2</text>
-<rect class="c-in_corpus" x="278.1" y="74" width="17.0" height="20" rx="2"><title>Stockholm · In corpus: 4</title></rect>
+<rect class="c-in_corpus" fill="#199e70" x="278.1" y="74" width="17.0" height="20" rx="2"><title>Stockholm · In corpus: 4</title></rect>
 <text class="seg" x="286.6" y="88.0" text-anchor="middle">4</text>
-<rect class="c-todo" x="296.1" y="74" width="460.9" height="20" rx="2"><title>Stockholm · To do: 120</title></rect>
+<rect class="c-todo" fill="#8a8983" x="296.1" y="74" width="460.9" height="20" rx="2"><title>Stockholm · To do: 120</title></rect>
 <text class="seg" x="526.6" y="88.0" text-anchor="middle">120</text>
 <text class="total" x="764.0" y="88.0">165 listed</text>
 <text class="city" x="12" y="118.0">Lund</text>
-<rect class="c-in_corpus" x="110.0" y="104" width="25.9" height="20" rx="2"><title>Lund · In corpus: 7</title></rect>
+<rect class="c-in_corpus" fill="#199e70" x="110.0" y="104" width="25.9" height="20" rx="2"><title>Lund · In corpus: 7</title></rect>
 <text class="seg" x="123.0" y="118.0" text-anchor="middle">7</text>
-<rect class="c-todo" x="136.9" y="104" width="599.5" height="20" rx="2"><title>Lund · To do: 156</title></rect>
+<rect class="c-todo" fill="#8a8983" x="136.9" y="104" width="599.5" height="20" rx="2"><title>Lund · To do: 156</title></rect>
 <text class="seg" x="436.7" y="118.0" text-anchor="middle">156</text>
 <text class="total" x="743.4" y="118.0">163 listed</text>
 <text class="city" x="12" y="148.0">Gothenburg</text>
-<rect class="c-in_corpus" x="110.0" y="134" width="33.6" height="20" rx="2"><title>Gothenburg · In corpus: 9</title></rect>
+<rect class="c-in_corpus" fill="#199e70" x="110.0" y="134" width="33.6" height="20" rx="2"><title>Gothenburg · In corpus: 9</title></rect>
 <text class="seg" x="126.8" y="148.0" text-anchor="middle">9</text>
-<rect class="c-todo" x="144.6" y="134" width="484.0" height="20" rx="2"><title>Gothenburg · To do: 126</title></rect>
+<rect class="c-todo" fill="#8a8983" x="144.6" y="134" width="484.0" height="20" rx="2"><title>Gothenburg · To do: 126</title></rect>
 <text class="seg" x="386.6" y="148.0" text-anchor="middle">126</text>
 <text class="total" x="635.6" y="148.0">135 listed</text>
 <text class="city" x="12" y="178.0">Uppsala</text>
-<rect class="c-annotated" x="110.0" y="164" width="168.4" height="20" rx="2"><title>Uppsala · Annotated: 44</title></rect>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="164" width="168.4" height="20" rx="2"><title>Uppsala · Annotated: 44</title></rect>
 <text class="seg" x="194.2" y="178.0" text-anchor="middle">44</text>
-<rect class="c-blocked" x="279.4" y="164" width="60.6" height="20" rx="2"><title>Uppsala · Blocked: 16</title></rect>
+<rect class="c-blocked" fill="#d95926" x="279.4" y="164" width="60.6" height="20" rx="2"><title>Uppsala · Blocked: 16</title></rect>
 <text class="seg" x="309.7" y="178.0" text-anchor="middle">16</text>
-<rect class="c-in_corpus" x="340.9" y="164" width="17.0" height="20" rx="2"><title>Uppsala · In corpus: 2</title></rect>
+<rect class="c-in_corpus" fill="#199e70" x="340.9" y="164" width="17.0" height="20" rx="2"><title>Uppsala · In corpus: 2</title></rect>
 <text class="seg" x="349.4" y="178.0" text-anchor="middle">2</text>
-<rect class="c-todo" x="358.9" y="164" width="49.0" height="20" rx="2"><title>Uppsala · To do: 13</title></rect>
+<rect class="c-todo" fill="#8a8983" x="358.9" y="164" width="49.0" height="20" rx="2"><title>Uppsala · To do: 13</title></rect>
 <text class="seg" x="383.5" y="178.0" text-anchor="middle">13</text>
 <text class="total" x="415.0" y="178.0">75 listed</text>
 <text class="city" x="12" y="208.0">Umeå</text>
-<rect class="uncurated" x="110" y="194.75" width="173.2" height="18.5" rx="3"><title>Umeå · PRIDE hits, not curated yet: 45</title></rect>
+<rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="194.75" width="173.2" height="18.5" rx="3"><title>Umeå · PRIDE hits, not curated yet: 45</title></rect>
 <text class="total" x="289.2" y="208.0">45 PRIDE hits</text>
 <text class="city" x="12" y="238.0">Linköping</text>
-<rect class="uncurated" x="110" y="224.75" width="100.1" height="18.5" rx="3"><title>Linköping · PRIDE hits, not curated yet: 26</title></rect>
+<rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="224.75" width="100.1" height="18.5" rx="3"><title>Linköping · PRIDE hits, not curated yet: 26</title></rect>
 <text class="total" x="216.1" y="238.0">26 PRIDE hits</text>
 <text class="city" x="12" y="268.0">Örebro</text>
 <text class="total" x="116.0" y="268.0">0 PRIDE hits</text>
