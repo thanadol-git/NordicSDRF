@@ -42,7 +42,7 @@ from pathlib import Path
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from plot_status import write_plots, write_tables  # noqa: E402
+from plot_status import CATEGORIES, write_plots, write_tables  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "config.yml"
@@ -171,6 +171,37 @@ def local_counts(country: str, slug: str, city: dict, blocked: set[str], corpus:
     }
 
 
+def screened_ids(country: str, slug: str) -> set[str]:
+    tsv = ROOT / "results" / country / f"{slug}_screen.tsv"
+    if not tsv.exists():
+        return set()
+    return set(re.findall(r"\b(?:PXD|PRD|MSV|RPXD)\d+\b", tsv.read_text()))
+
+
+def city_categories(country: str, slug: str, city: dict, blocked: set[str], corpus: set[str]) -> dict[str, int] | None:
+    """Manifest PXDs split into CATEGORIES (plot_status.py), each PXD counted once.
+
+    A PXD that fits several categories goes to the first one in CATEGORIES order
+    (annotated > blocked > in corpus > screened > to do), so the counts add up to
+    the manifest length. None for a city without a curated manifest.
+    """
+    if not city.get("pxd_list"):
+        return None
+    ann = ROOT / "annotations"
+    screened = screened_ids(country, slug)
+    tests = {
+        "annotated": lambda p: (ann / f"{p}.sdrf.tsv").exists(),
+        "blocked": lambda p: p in blocked,
+        "in_corpus": lambda p: p in corpus,
+        "screened": lambda p: p in screened,
+        "todo": lambda p: True,
+    }
+    counts = {key: 0 for key, *_ in CATEGORIES}
+    for pxd in manifest_ids(city):
+        counts[next(key for key, *_ in CATEGORIES if tests[key](pxd))] += 1
+    return counts
+
+
 # --------------------------------------------------------------------------- writers
 def update_config_text(text: str, numbers: dict[tuple[str, str], dict[str, int]], top: dict[str, str]) -> str:
     """Rewrite machine-owned scalar values in place, keeping comments and order.
@@ -233,13 +264,13 @@ def country_plot(country: str, cdata: dict, plots_dir: str) -> str:
 
 def render_status_block(cfg: dict) -> str:
     queried = cfg.get("pride_hits_queried", "unknown date")
-    intro = (f"One chart per country, one panel per city, same bars everywhere (shared x scale\n"
-             f"within a country). *PRIDE hits* is the rough full-text hit count from the PRIDE\n"
-             f"Archive search (unioned over each city's `search_terms` in `config.yml`, queried\n"
-             f"{queried}) and only indicates size; *PXDs listed* is the curated manifest length\n"
-             f"and shows `—` until a `<country>/<city>.txt` exists; *In corpus* is how many of\n"
-             f"those already have an SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/{CORPUS_REPO})\n"
-             f"(checked against {cfg.get('corpus_source', 'the local checkout')}) and can be skipped.\n"
+    intro = (f"One chart per country, one bar per city (shared x scale within a country). A\n"
+             f"curated city's bar is its manifest (`<country>/<city>.txt`), split so every PXD\n"
+             f"sits in exactly one block, first match wins: *Annotated* (SDRF in `annotations/`),\n"
+             f"*Blocked*, *In corpus* (already has an SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/{CORPUS_REPO}),\n"
+             f"checked against {cfg.get('corpus_source', 'the local checkout')}), *Screened*, *To do*.\n"
+             f"A city without a manifest shows a dashed outline sized by its raw PRIDE full-text\n"
+             f"hit count (unioned over `search_terms` in `config.yml`, queried {queried}).\n"
              f"The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with\n"
              f"`python scripts/update_status.py`; redraw the charts alone from `tables/` with\n"
              f"`python scripts/plot_status.py`.")
@@ -320,7 +351,10 @@ def main() -> None:
     CONFIG.write_text(new_text)
     update_readme(block, dry_run=False)
     write_status_pages(cfg, dry_run=False)
-    write_tables(cfg)
+    breakdowns = {(country, slug): city_categories(country, slug, city, blocked, corpus)
+                  for country, cdata in cfg["countries"].items()
+                  for slug, city in (cdata.get("cities") or {}).items()}
+    write_tables(cfg, breakdowns)
     write_plots()
     print(f"\nupdated {CONFIG.name}, README.md status block, status/<country>.md, tables/<country>.tsv, status/plots/<country>.svg"
           + ("" if args.no_pride else f", raw candidate lists in {args.hits_dir}/"))

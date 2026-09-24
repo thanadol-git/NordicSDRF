@@ -1,7 +1,7 @@
-city	pride_hits	pxd_count	in_corpus	screened	annotated	blocked
-Copenhagen	554			0	0	0
-Odense	602			0	0	0
-Aarhus	117			0	0	0
-Aalborg	67			0	0	0
-Lyngby	57			0	0	0
-Roskilde	9			0	0	0
+city	pride_hits	listed	annotated	blocked	in_corpus	screened	todo
+Copenhagen	554						
+Odense	602						
+Aarhus	117						
+Aalborg	67						
+Lyngby	57						
+Roskilde	9						

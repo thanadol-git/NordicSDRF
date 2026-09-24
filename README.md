@@ -90,13 +90,13 @@ trace, or refresh the numbers from files on this machine (no tokens), see
 [Checking status locally](#checking-status-locally).
 
 <!-- status:begin -->
-One chart per country, one panel per city, same bars everywhere (shared x scale
-within a country). *PRIDE hits* is the rough full-text hit count from the PRIDE
-Archive search (unioned over each city's `search_terms` in `config.yml`, queried
-2026-09-23) and only indicates size; *PXDs listed* is the curated manifest length
-and shows `—` until a `<country>/<city>.txt` exists; *In corpus* is how many of
-those already have an SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/bigbio/sdrf-annotated-datasets)
-(checked against GitHub bigbio/sdrf-annotated-datasets (2026-09-24)) and can be skipped.
+One chart per country, one bar per city (shared x scale within a country). A
+curated city's bar is its manifest (`<country>/<city>.txt`), split so every PXD
+sits in exactly one block, first match wins: *Annotated* (SDRF in `annotations/`),
+*Blocked*, *In corpus* (already has an SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/bigbio/sdrf-annotated-datasets),
+checked against GitHub bigbio/sdrf-annotated-datasets (2026-09-24)), *Screened*, *To do*.
+A city without a manifest shows a dashed outline sized by its raw PRIDE full-text
+hit count (unioned over `search_terms` in `config.yml`, queried 2026-09-23).
 The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with
 `python scripts/update_status.py`; redraw the charts alone from `tables/` with
 `python scripts/plot_status.py`.

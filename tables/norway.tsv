@@ -1,7 +1,7 @@
-city	pride_hits	pxd_count	in_corpus	screened	annotated	blocked
-Bergen	218			0	0	0
-Oslo	124			0	0	0
-Trondheim	64			0	0	0
-Ås	56			0	0	0
-Tromsø	15			0	0	0
-Stavanger	0			0	0	0
+city	pride_hits	listed	annotated	blocked	in_corpus	screened	todo
+Bergen	218						
+Oslo	124						
+Trondheim	64						
+Ås	56						
+Tromsø	15						
+Stavanger	0						

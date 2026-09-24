@@ -1,82 +1,75 @@
 #!/usr/bin/env python3
-"""Status tables -> horizontal bar charts, one panel per city.
+"""Status tables -> one stacked horizontal bar per city.
 
-Two steps, both here so the table format lives in one place:
+Two steps, both defined here so the table format lives in one place:
 
-  1. tables/  — update_status.py writes the numbers as plain TSV:
+  1. tables/  — update_status.py writes plain TSV:
        tables/countries.tsv   country, status, pride_hits_queried (one row per country)
-       tables/<country>.tsv   city, pride_hits, pxd_count, in_corpus, screened,
-                              annotated, blocked (one row per city; empty cell = "—",
-                              i.e. the city has no curated manifest yet)
+       tables/<country>.tsv   city, pride_hits, listed, then one column per CATEGORY
+                              (one row per city; category cells are empty when the
+                              city has no curated manifest yet)
+     Every PXD in a city's manifest is counted in exactly one category, so the
+     categories add up to `listed`.
   2. plots    — this script reads only those TSVs and writes one SVG per country
-                to status/plots/<country>.svg. All panels in a country share one
-                x scale so cities can be compared. Stdlib only — no matplotlib.
+                to status/plots/<country>.svg: one row per city, one bar per row,
+                split into coloured blocks per category with the count in white.
+                All rows in a country share one x scale. Stdlib only.
 
     python scripts/plot_status.py                    # redraw every country from tables/
     python scripts/plot_status.py --country sweden   # just one (repeatable)
-    python scripts/plot_status.py --from-config      # rebuild tables/ from config.yml first
 
-update_status.py writes the tables and redraws the plots automatically. Run this
-by hand after editing a TSV, or after changing STAGES / colours / layout below.
+update_status.py rewrites the tables and redraws the plots every run, so a hand
+edit to a TSV only lasts until the next run. Run this by hand after editing a
+TSV, or after changing CATEGORIES / colours / layout below.
 """
 from __future__ import annotations
 
 import argparse
 import csv
-import math
 from html import escape
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CONFIG = ROOT / "config.yml"
 TABLE_DIR = ROOT / "tables"
 PLOT_DIR = ROOT / "status" / "plots"
 
-# (table column, bar label) — top to bottom in every panel. Add, drop or
-# reorder stages here; an empty cell is drawn as "—" (e.g. no manifest yet).
-STAGES = [
-    ("pride_hits", "PRIDE hits"),
-    ("pxd_count", "PXDs listed"),
-    ("in_corpus", "In corpus"),
-    ("screened", "Screened"),
-    ("annotated", "Annotated"),
-    ("blocked", "Blocked"),
+# (table column, legend label, light colour, dark colour) — left to right in the
+# bar. The order is also the priority update_status.py uses when a PXD fits more
+# than one category (e.g. annotated here *and* already in the community corpus).
+CATEGORIES = [
+    ("annotated", "Annotated", "#2a78d6", "#3987e5"),
+    ("blocked", "Blocked", "#d95926", "#d95926"),
+    ("in_corpus", "In corpus", "#199e70", "#199e70"),
+    ("screened", "Screened", "#c98500", "#c98500"),
+    ("todo", "To do", "#8a8983", "#6b6a65"),
 ]
-
-# Stages that only mean something once a city has a curated manifest (pxd_list).
-UNSCOPED_EMPTY = {"pxd_count", "in_corpus"}
+UNCURATED_LABEL = "PRIDE hits, not curated yet"
 
 # Layout, in px.
-COLUMNS = 2           # city panels per row
-PANEL_W = 420
-LABEL_W = 92          # stage-name gutter left of the bars
-VALUE_W = 40          # room right of the longest bar for its number
-BAR_H = 14
-BAR_GAP = 6
-PANEL_TITLE_H = 26
-PANEL_PAD = 18        # vertical space between panel rows
-HEADER_H = 44         # country title + subtitle
+WIDTH = 860
+NAME_W = 110          # city-name gutter left of the bars
+TOTAL_W = 90          # room right of the longest bar for its total
+BAR_H = 20
+ROW_GAP = 10
+HEADER_H = 48         # country title + subtitle
+LEGEND_H = 26
+MIN_BLOCK_PX = 8      # per digit + 10: small blocks are widened so their number fits
 
-# Light / dark colours; the SVG switches with the viewer's colour scheme.
 STYLE = """
   .bg { fill: #fcfcfb; }
-  .bar { fill: #2a78d6; }
-  .track { fill: #f0efec; }
   .title { fill: #0b0b0b; font-size: 17px; font-weight: 600; }
   .city { fill: #0b0b0b; font-size: 13px; font-weight: 600; }
-  .label, .sub { fill: #52514e; font-size: 11.5px; }
-  .value { fill: #0b0b0b; font-size: 11.5px; font-variant-numeric: tabular-nums; }
-  .empty { fill: #8a8983; font-size: 11.5px; }
+  .sub, .legend, .total { fill: #52514e; font-size: 11.5px; }
+  .seg { font-size: 11.5px; font-weight: 600; fill: #ffffff; font-variant-numeric: tabular-nums; }
+  .uncurated { fill: none; stroke: #8a8983; stroke-width: 1.5; stroke-dasharray: 4 3; }
   text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+""" + "".join(f"  .c-{k} {{ fill: {light}; }}\n" for k, _, light, _ in CATEGORIES) + """
   @media (prefers-color-scheme: dark) {
     .bg { fill: #1a1a19; }
-    .bar { fill: #3987e5; }
-    .track { fill: #2a2a28; }
-    .title, .city, .value { fill: #ffffff; }
-    .label, .sub { fill: #c3c2b7; }
-    .empty { fill: #8f8e86; }
-  }
-"""
+    .title, .city { fill: #ffffff; }
+    .sub, .legend, .total { fill: #c3c2b7; }
+    .uncurated { stroke: #8f8e86; }
+""" + "".join(f"    .c-{k} {{ fill: {dark}; }}\n" for k, _, _, dark in CATEGORIES) + "  }\n"
 
 
 def human_status(status: str | None) -> str:
@@ -84,26 +77,28 @@ def human_status(status: str | None) -> str:
 
 
 # --------------------------------------------------------------------------- tables
-def write_tables(cfg: dict) -> list[Path]:
-    """config.yml numbers -> tables/countries.tsv + tables/<country>.tsv."""
+def write_tables(cfg: dict, breakdowns: dict[tuple[str, str], dict[str, int] | None]) -> list[Path]:
+    """config.yml + per-city category counts -> tables/countries.tsv + tables/<country>.tsv.
+
+    `breakdowns[(country, slug)]` is {category: count} for a scoped city, None otherwise.
+    """
     TABLE_DIR.mkdir(exist_ok=True)
-    queried = cfg.get("pride_hits_queried", "")
     written = [TABLE_DIR / "countries.tsv"]
     with written[0].open("w", newline="") as fh:
         w = csv.writer(fh, delimiter="\t", lineterminator="\n")
         w.writerow(["country", "status", "pride_hits_queried"])
         for country, cdata in cfg["countries"].items():
-            w.writerow([country, cdata.get("status") or "not_started", queried])
+            w.writerow([country, cdata.get("status") or "not_started", cfg.get("pride_hits_queried", "")])
     for country, cdata in cfg["countries"].items():
         path = TABLE_DIR / f"{country}.tsv"
         with path.open("w", newline="") as fh:
             w = csv.writer(fh, delimiter="\t", lineterminator="\n")
-            w.writerow(["city", *(k for k, _ in STAGES)])
+            w.writerow(["city", "pride_hits", "listed", *(k for k, *_ in CATEGORIES)])
             for slug, city in (cdata.get("cities") or {}).items():
-                scoped = bool(city.get("pxd_list"))
-                w.writerow([city.get("name", slug),
-                            *("" if (k in UNSCOPED_EMPTY and not scoped) or city.get(k) is None
-                              else int(city[k]) for k, _ in STAGES)])
+                cats = breakdowns.get((country, slug))
+                w.writerow([city.get("name", slug), int(city.get("pride_hits") or 0),
+                            sum(cats.values()) if cats else "",
+                            *((cats[k] if cats else "") for k, *_ in CATEGORIES)])
         written.append(path)
     return written
 
@@ -112,11 +107,9 @@ def read_tables(countries: list[str] | None = None) -> list[tuple[dict, list[dic
     """[(country row from countries.tsv, [city rows from <country>.tsv]), ...] in file order."""
     index = TABLE_DIR / "countries.tsv"
     if not index.exists():
-        raise SystemExit(f"{index.relative_to(ROOT)} not found — run update_status.py "
-                         f"or plot_status.py --from-config first")
+        raise SystemExit(f"{index.relative_to(ROOT)} not found — run scripts/update_status.py --no-pride first")
     with index.open(newline="") as fh:
-        rows = [r for r in csv.DictReader(fh, delimiter="\t")
-                if not countries or r["country"] in countries]
+        rows = [r for r in csv.DictReader(fh, delimiter="\t") if not countries or r["country"] in countries]
     out = []
     for row in rows:
         with (TABLE_DIR / f"{row['country']}.tsv").open(newline="") as fh:
@@ -130,48 +123,84 @@ def cell(row: dict, key: str) -> int | None:
 
 
 # --------------------------------------------------------------------------- plots
-def country_svg(country: dict, cities: list[dict]) -> str:
-    cols = min(COLUMNS, max(len(cities), 1))
-    rows = math.ceil(len(cities) / cols) if cities else 0
-    panel_h = PANEL_TITLE_H + len(STAGES) * (BAR_H + BAR_GAP)
-    width = cols * PANEL_W
-    height = HEADER_H + rows * (panel_h + PANEL_PAD)
-    scale_max = max(1, max((cell(c, k) or 0 for c in cities for k, _ in STAGES), default=0))
-    bar_span = PANEL_W - LABEL_W - VALUE_W - 16
+def bar_total(city: dict) -> tuple[int, bool]:
+    """(bar length in PXDs, curated?) — the manifest if there is one, else raw PRIDE hits."""
+    cats = [cell(city, k) for k, *_ in CATEGORIES]
+    if any(v is not None for v in cats):
+        return sum(v or 0 for v in cats), True
+    return cell(city, "pride_hits") or 0, False
 
-    listed = sum(cell(c, "pxd_count") or 0 for c in cities)
-    annotated = sum(cell(c, "annotated") or 0 for c in cities)
+
+def block_widths(counts: list[int], px_per_pxd: float) -> list[float]:
+    """Proportional widths, except a non-empty block is never narrower than its number."""
+    return [max(n * px_per_pxd, MIN_BLOCK_PX * len(str(n)) + 10) if n else 0 for n in counts]
+
+
+def row_widths(city: dict, px_per_pxd: float) -> list[float]:
+    total, curated = bar_total(city)
+    if not curated:
+        return [total * px_per_pxd]
+    return block_widths([cell(city, k) or 0 for k, *_ in CATEGORIES], px_per_pxd)
+
+
+def country_svg(country: dict, cities: list[dict]) -> str:
+    height = HEADER_H + LEGEND_H + len(cities) * (BAR_H + ROW_GAP) + 8
+    span = WIDTH - NAME_W - TOTAL_W - 12
+    # Shared scale: shrink px-per-PXD until the widest row (after minimum widths) fits.
+    px_per_pxd = span / max(1, max((bar_total(c)[0] for c in cities), default=0))
+    for _ in range(20):
+        widest = max((sum(row_widths(c, px_per_pxd)) for c in cities), default=0)
+        if widest <= span:
+            break
+        px_per_pxd *= span / widest
+
+    totals = {k: sum(cell(c, k) or 0 for c in cities) for k, *_ in CATEGORIES}
     name = country["country"].title()
     queried = country.get("pride_hits_queried") or "unknown date"
     out = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
-        f'viewBox="0 0 {width} {height}" role="img" aria-label="{escape(name)} SDRF progress by city">',
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{height}" '
+        f'viewBox="0 0 {WIDTH} {height}" role="img" aria-label="{escape(name)} SDRF progress by city">',
         f"<style>{STYLE}</style>",
-        f'<rect class="bg" width="{width}" height="{height}" rx="6"/>',
+        f'<rect class="bg" width="{WIDTH}" height="{height}" rx="6"/>',
         f'<text class="title" x="12" y="22">{escape(name)} — {escape(human_status(country.get("status")))}</text>',
-        f'<text class="sub" x="12" y="38">{listed} PXDs listed · {annotated} annotated · '
-        f"PRIDE queried {escape(queried)}</text>",
+        f'<text class="sub" x="12" y="40">{sum(totals.values())} PXDs listed · {totals["annotated"]} annotated · '
+        f"PRIDE queried {escape(queried)} · bar length = PXDs in the city's manifest (dashed: raw PRIDE hits)</text>",
     ]
 
+    # legend
+    x, y = 12, HEADER_H + 4
+    for key, label, *_ in CATEGORIES:
+        out.append(f'<rect class="c-{key}" x="{x}" y="{y}" width="12" height="12" rx="2"/>')
+        out.append(f'<text class="legend" x="{x + 17}" y="{y + 10}">{label}</text>')
+        x += 17 + 7 * len(label) + 18
+    out.append(f'<rect class="uncurated" x="{x}" y="{y + 0.75}" width="12" height="10.5" rx="2"/>')
+    out.append(f'<text class="legend" x="{x + 17}" y="{y + 10}">{UNCURATED_LABEL}</text>')
+
     for i, city in enumerate(cities):
-        x0 = (i % cols) * PANEL_W + 12
-        y0 = HEADER_H + (i // cols) * (panel_h + PANEL_PAD)
+        y = HEADER_H + LEGEND_H + i * (BAR_H + ROW_GAP)
+        ty = y + BAR_H / 2 + 4
         cname = escape(city["city"])
-        out.append(f'<text class="city" x="{x0}" y="{y0 + 16}">{cname}</text>')
-        for j, (key, label) in enumerate(STAGES):
-            y = y0 + PANEL_TITLE_H + j * (BAR_H + BAR_GAP)
-            bx = x0 + LABEL_W
-            out.append(f'<text class="label" x="{bx - 8}" y="{y + BAR_H - 3}" text-anchor="end">{label}</text>')
-            out.append(f'<rect class="track" x="{bx}" y="{y}" width="{bar_span}" height="{BAR_H}" rx="3"/>')
-            value = cell(city, key)
-            if value is None:
-                out.append(f'<text class="empty" x="{bx + 6}" y="{y + BAR_H - 3}">—</text>')
+        out.append(f'<text class="city" x="12" y="{ty}">{cname}</text>')
+        total, curated = bar_total(city)
+        widths = row_widths(city, px_per_pxd)
+        x = NAME_W
+        if not curated:
+            w = widths[0]
+            if total:
+                out.append(f'<rect class="uncurated" x="{x}" y="{y + 0.75}" width="{max(w, 2):.1f}" '
+                           f'height="{BAR_H - 1.5}" rx="3"><title>{cname} · {UNCURATED_LABEL}: {total}</title></rect>')
+            out.append(f'<text class="total" x="{x + w + 6:.1f}" y="{ty}">{total} PRIDE hits</text>')
+            continue
+        for (key, label, *_), w in zip(CATEGORIES, widths):
+            n = cell(city, key) or 0
+            if not n:
                 continue
-            w = bar_span * value / scale_max
-            if value:
-                out.append(f'<rect class="bar" x="{bx}" y="{y}" width="{max(w, 2):.1f}" height="{BAR_H}" rx="3">'
-                           f"<title>{cname} · {label}: {value}</title></rect>")
-            out.append(f'<text class="value" x="{bx + w + 6:.1f}" y="{y + BAR_H - 3}">{value}</text>')
+            # 1px surface gap between blocks: draw each block 1px short.
+            out.append(f'<rect class="c-{key}" x="{x:.1f}" y="{y}" width="{max(w - 1, 1):.1f}" height="{BAR_H}" '
+                       f'rx="2"><title>{cname} · {label}: {n}</title></rect>')
+            out.append(f'<text class="seg" x="{x + (w - 1) / 2:.1f}" y="{ty}" text-anchor="middle">{n}</text>')
+            x += w
+        out.append(f'<text class="total" x="{x + 6:.1f}" y="{ty}">{total} listed</text>')
 
     out.append("</svg>")
     return "\n".join(out) + "\n"
@@ -191,12 +220,7 @@ def write_plots(countries: list[str] | None = None) -> list[Path]:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--country", action="append", help="limit to one or more countries (repeatable)")
-    ap.add_argument("--from-config", action="store_true", help="rebuild tables/ from config.yml before plotting")
     args = ap.parse_args()
-    if args.from_config:
-        import yaml
-        for path in write_tables(yaml.safe_load(CONFIG.read_text())):
-            print(f"wrote {path.relative_to(ROOT)}")
     for path in write_plots(args.country):
         print(f"wrote {path.relative_to(ROOT)}")
 

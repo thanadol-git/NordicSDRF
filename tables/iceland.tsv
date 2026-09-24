@@ -1,2 +1,2 @@
-city	pride_hits	pxd_count	in_corpus	screened	annotated	blocked
-Reykjavík	6	6	1	0	4	2
+city	pride_hits	listed	annotated	blocked	in_corpus	screened	todo
+Reykjavík	6	6	4	2	0	0	0

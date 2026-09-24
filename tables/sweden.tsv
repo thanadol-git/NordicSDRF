@@ -1,8 +1,8 @@
-city	pride_hits	pxd_count	in_corpus	screened	annotated	blocked
-Stockholm	323	165	16	0	39	2
-Lund	508	163	7	0	0	0
-Gothenburg	188	135	9	0	0	0
-Uppsala	196	75	8	0	44	18
-Umeå	45			0	0	0
-Linköping	26			0	0	0
-Örebro	0			0	0	0
+city	pride_hits	listed	annotated	blocked	in_corpus	screened	todo
+Stockholm	323	165	39	2	4	0	120
+Lund	508	163	0	0	7	0	156
+Gothenburg	188	135	0	0	9	0	126
+Uppsala	196	75	44	16	2	0	13
+Umeå	45						
+Linköping	26						
+Örebro	0						
