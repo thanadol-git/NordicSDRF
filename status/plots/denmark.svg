@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="536" viewBox="0 0 840 536" role="img" aria-label="Denmark SDRF progress by city">
+<style>
+  .bg { fill: #fcfcfb; }
+  .bar { fill: #2a78d6; }
+  .track { fill: #f0efec; }
+  .title { fill: #0b0b0b; font-size: 17px; font-weight: 600; }
+  .city { fill: #0b0b0b; font-size: 13px; font-weight: 600; }
+  .label, .sub { fill: #52514e; font-size: 11.5px; }
+  .value { fill: #0b0b0b; font-size: 11.5px; font-variant-numeric: tabular-nums; }
+  .empty { fill: #8a8983; font-size: 11.5px; }
+  text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #1a1a19; }
+    .bar { fill: #3987e5; }
+    .track { fill: #2a2a28; }
+    .title, .city, .value { fill: #ffffff; }
+    .label, .sub { fill: #c3c2b7; }
+    .empty { fill: #8f8e86; }
+  }
+</style>
+<rect class="bg" width="840" height="536" rx="6"/>
+<text class="title" x="12" y="22">Denmark — not started</text>
+<text class="sub" x="12" y="38">0 PXDs listed · 0 annotated · PRIDE queried 2026-09-23</text>
+<text class="city" x="12" y="60">Copenhagen</text>
+<text class="label" x="96" y="81" text-anchor="end">PRIDE hits</text>
+<rect class="track" x="104" y="70" width="272" height="14" rx="3"/>
+<rect class="bar" x="104" y="70" width="250.3" height="14" rx="3"><title>Copenhagen · PRIDE hits: 554</title></rect>
+<text class="value" x="360.3" y="81">554</text>
+<text class="label" x="96" y="101" text-anchor="end">PXDs listed</text>
+<rect class="track" x="104" y="90" width="272" height="14" rx="3"/>
+<text class="empty" x="110" y="101">—</text>
+<text class="label" x="96" y="121" text-anchor="end">In corpus</text>
+<rect class="track" x="104" y="110" width="272" height="14" rx="3"/>
+<text class="empty" x="110" y="121">—</text>
+<text class="label" x="96" y="141" text-anchor="end">Screened</text>
+<rect class="track" x="104" y="130" width="272" height="14" rx="3"/>
+<text class="value" x="110.0" y="141">0</text>
+<text class="label" x="96" y="161" text-anchor="end">Annotated</text>
+<rect class="track" x="104" y="150" width="272" height="14" rx="3"/>
+<text class="value" x="110.0" y="161">0</text>
+<text class="label" x="96" y="181" text-anchor="end">Blocked</text>
+<rect class="track" x="104" y="170" width="272" height="14" rx="3"/>
+<text class="value" x="110.0" y="181">0</text>
+<text class="city" x="432" y="60">Odense</text>
+<text class="label" x="516" y="81" text-anchor="end">PRIDE hits</text>
+<rect class="track" x="524" y="70" width="272" height="14" rx="3"/>
+<rect class="bar" x="524" y="70" width="272.0" height="14" rx="3"><title>Odense · PRIDE hits: 602</title></rect>
+<text class="value" x="802.0" y="81">602</text>
+<text class="label" x="516" y="101" text-anchor="end">PXDs listed</text>
+<rect class="track" x="524" y="90" width="272" height="14" rx="3"/>
+<text class="empty" x="530" y="101">—</text>
+<text class="label" x="516" y="121" text-anchor="end">In corpus</text>
+<rect class="track" x="524" y="110" width="272" height="14" rx="3"/>
+<text class="empty" x="530" y="121">—</text>
+<text class="label" x="516" y="141" text-anchor="end">Screened</text>
+<rect class="track" x="524" y="130" width="272" height="14" rx="3"/>
+<text class="value" x="530.0" y="141">0</text>
+<text class="label" x="516" y="161" text-anchor="end">Annotated</text>
+<rect class="track" x="524" y="150" width="272" height="14" rx="3"/>
+<text class="value" x="530.0" y="161">0</text>
+<text class="label" x="516" y="181" text-anchor="end">Blocked</text>
+<rect class="track" x="524" y="170" width="272" height="14" rx="3"/>
+<text class="value" x="530.0" y="181">0</text>
+<text class="city" x="12" y="224">Aarhus</text>
+<text class="label" x="96" y="245" text-anchor="end">PRIDE hits</text>
+<rect class="track" x="104" y="234" width="272" height="14" rx="3"/>
+<rect class="bar" x="104" y="234" width="52.9" height="14" rx="3"><title>Aarhus · PRIDE hits: 117</title></rect>
+<text class="value" x="162.9" y="245">117</text>
+<text class="label" x="96" y="265" text-anchor="end">PXDs listed</text>
+<rect class="track" x="104" y="254" width="272" height="14" rx="3"/>
+<text class="empty" x="110" y="265">—</text>
+<text class="label" x="96" y="285" text-anchor="end">In corpus</text>
+<rect class="track" x="104" y="274" width="272" height="14" rx="3"/>
+<text class="empty" x="110" y="285">—</text>
+<text class="label" x="96" y="305" text-anchor="end">Screened</text>
+<rect class="track" x="104" y="294" width="272" height="14" rx="3"/>
+<text class="value" x="110.0" y="305">0</text>
+<text class="label" x="96" y="325" text-anchor="end">Annotated</text>
+<rect class="track" x="104" y="314" width="272" height="14" rx="3"/>
+<text class="value" x="110.0" y="325">0</text>
+<text class="label" x="96" y="345" text-anchor="end">Blocked</text>
+<rect class="track" x="104" y="334" width="272" height="14" rx="3"/>
+<text class="value" x="110.0" y="345">0</text>
+<text class="city" x="432" y="224">Aalborg</text>
+<text class="label" x="516" y="245" text-anchor="end">PRIDE hits</text>
+<rect class="track" x="524" y="234" width="272" height="14" rx="3"/>
+<rect class="bar" x="524" y="234" width="30.3" height="14" rx="3"><title>Aalborg · PRIDE hits: 67</title></rect>
+<text class="value" x="560.3" y="245">67</text>
+<text class="label" x="516" y="265" text-anchor="end">PXDs listed</text>
+<rect class="track" x="524" y="254" width="272" height="14" rx="3"/>
+<text class="empty" x="530" y="265">—</text>
+<text class="label" x="516" y="285" text-anchor="end">In corpus</text>
+<rect class="track" x="524" y="274" width="272" height="14" rx="3"/>
+<text class="empty" x="530" y="285">—</text>
+<text class="label" x="516" y="305" text-anchor="end">Screened</text>
+<rect class="track" x="524" y="294" width="272" height="14" rx="3"/>
+<text class="value" x="530.0" y="305">0</text>
+<text class="label" x="516" y="325" text-anchor="end">Annotated</text>
+<rect class="track" x="524" y="314" width="272" height="14" rx="3"/>
+<text class="value" x="530.0" y="325">0</text>
+<text class="label" x="516" y="345" text-anchor="end">Blocked</text>
+<rect class="track" x="524" y="334" width="272" height="14" rx="3"/>
+<text class="value" x="530.0" y="345">0</text>
+<text class="city" x="12" y="388">Lyngby</text>
+<text class="label" x="96" y="409" text-anchor="end">PRIDE hits</text>
+<rect class="track" x="104" y="398" width="272" height="14" rx="3"/>
+<rect class="bar" x="104" y="398" width="25.8" height="14" rx="3"><title>Lyngby · PRIDE hits: 57</title></rect>
+<text class="value" x="135.8" y="409">57</text>
+<text class="label" x="96" y="429" text-anchor="end">PXDs listed</text>
+<rect class="track" x="104" y="418" width="272" height="14" rx="3"/>
+<text class="empty" x="110" y="429">—</text>
+<text class="label" x="96" y="449" text-anchor="end">In corpus</text>
+<rect class="track" x="104" y="438" width="272" height="14" rx="3"/>
+<text class="empty" x="110" y="449">—</text>
+<text class="label" x="96" y="469" text-anchor="end">Screened</text>
+<rect class="track" x="104" y="458" width="272" height="14" rx="3"/>
+<text class="value" x="110.0" y="469">0</text>
+<text class="label" x="96" y="489" text-anchor="end">Annotated</text>
+<rect class="track" x="104" y="478" width="272" height="14" rx="3"/>
+<text class="value" x="110.0" y="489">0</text>
+<text class="label" x="96" y="509" text-anchor="end">Blocked</text>
+<rect class="track" x="104" y="498" width="272" height="14" rx="3"/>
+<text class="value" x="110.0" y="509">0</text>
+<text class="city" x="432" y="388">Roskilde</text>
+<text class="label" x="516" y="409" text-anchor="end">PRIDE hits</text>
+<rect class="track" x="524" y="398" width="272" height="14" rx="3"/>
+<rect class="bar" x="524" y="398" width="4.1" height="14" rx="3"><title>Roskilde · PRIDE hits: 9</title></rect>
+<text class="value" x="534.1" y="409">9</text>
+<text class="label" x="516" y="429" text-anchor="end">PXDs listed</text>
+<rect class="track" x="524" y="418" width="272" height="14" rx="3"/>
+<text class="empty" x="530" y="429">—</text>
+<text class="label" x="516" y="449" text-anchor="end">In corpus</text>
+<rect class="track" x="524" y="438" width="272" height="14" rx="3"/>
+<text class="empty" x="530" y="449">—</text>
+<text class="label" x="516" y="469" text-anchor="end">Screened</text>
+<rect class="track" x="524" y="458" width="272" height="14" rx="3"/>
+<text class="value" x="530.0" y="469">0</text>
+<text class="label" x="516" y="489" text-anchor="end">Annotated</text>
+<rect class="track" x="524" y="478" width="272" height="14" rx="3"/>
+<text class="value" x="530.0" y="489">0</text>
+<text class="label" x="516" y="509" text-anchor="end">Blocked</text>
+<rect class="track" x="524" y="498" width="272" height="14" rx="3"/>
+<text class="value" x="530.0" y="509">0</text>
+</svg>

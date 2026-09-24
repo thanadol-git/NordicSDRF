@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="208" viewBox="0 0 420 208" role="img" aria-label="Iceland SDRF progress by city">
+<style>
+  .bg { fill: #fcfcfb; }
+  .bar { fill: #2a78d6; }
+  .track { fill: #f0efec; }
+  .title { fill: #0b0b0b; font-size: 17px; font-weight: 600; }
+  .city { fill: #0b0b0b; font-size: 13px; font-weight: 600; }
+  .label, .sub { fill: #52514e; font-size: 11.5px; }
+  .value { fill: #0b0b0b; font-size: 11.5px; font-variant-numeric: tabular-nums; }
+  .empty { fill: #8a8983; font-size: 11.5px; }
+  text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #1a1a19; }
+    .bar { fill: #3987e5; }
+    .track { fill: #2a2a28; }
+    .title, .city, .value { fill: #ffffff; }
+    .label, .sub { fill: #c3c2b7; }
+    .empty { fill: #8f8e86; }
+  }
+</style>
+<rect class="bg" width="420" height="208" rx="6"/>
+<text class="title" x="12" y="22">Iceland — scoped</text>
+<text class="sub" x="12" y="38">6 PXDs listed · 4 annotated · PRIDE queried 2026-09-23</text>
+<text class="city" x="12" y="60">Reykjavík</text>
+<text class="label" x="96" y="81" text-anchor="end">PRIDE hits</text>
+<rect class="track" x="104" y="70" width="272" height="14" rx="3"/>
+<rect class="bar" x="104" y="70" width="272.0" height="14" rx="3"><title>Reykjavík · PRIDE hits: 6</title></rect>
+<text class="value" x="382.0" y="81">6</text>
+<text class="label" x="96" y="101" text-anchor="end">PXDs listed</text>
+<rect class="track" x="104" y="90" width="272" height="14" rx="3"/>
+<rect class="bar" x="104" y="90" width="272.0" height="14" rx="3"><title>Reykjavík · PXDs listed: 6</title></rect>
+<text class="value" x="382.0" y="101">6</text>
+<text class="label" x="96" y="121" text-anchor="end">In corpus</text>
+<rect class="track" x="104" y="110" width="272" height="14" rx="3"/>
+<rect class="bar" x="104" y="110" width="45.3" height="14" rx="3"><title>Reykjavík · In corpus: 1</title></rect>
+<text class="value" x="155.3" y="121">1</text>
+<text class="label" x="96" y="141" text-anchor="end">Screened</text>
+<rect class="track" x="104" y="130" width="272" height="14" rx="3"/>
+<text class="value" x="110.0" y="141">0</text>
+<text class="label" x="96" y="161" text-anchor="end">Annotated</text>
+<rect class="track" x="104" y="150" width="272" height="14" rx="3"/>
+<rect class="bar" x="104" y="150" width="181.3" height="14" rx="3"><title>Reykjavík · Annotated: 4</title></rect>
+<text class="value" x="291.3" y="161">4</text>
+<text class="label" x="96" y="181" text-anchor="end">Blocked</text>
+<rect class="track" x="104" y="170" width="272" height="14" rx="3"/>
+<rect class="bar" x="104" y="170" width="90.7" height="14" rx="3"><title>Reykjavík · Blocked: 2</title></rect>
+<text class="value" x="200.7" y="181">2</text>
+</svg>
