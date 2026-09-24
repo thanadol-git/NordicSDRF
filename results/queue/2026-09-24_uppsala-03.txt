@@ -1,0 +1,12 @@
+# Uppsala annotation batch 03 — next 10 unprocessed accessions from sweden/uppsala.txt
+# Affiliation screening completed against PRIDE project records on 2026-09-24.
+PXD013041	sweden/uppsala	excluded	Submitter affiliation is University of Gothenburg, not Uppsala
+PXD013142	sweden/uppsala	annotated	36 human hepatocyte RAW files annotated from deposited experimental-design template; structural validation passed with ontology lookup skipped
+PXD014039	sweden/uppsala	excluded	Submitter affiliation is University of Gothenburg, not Uppsala
+PXD014131	sweden/uppsala	annotated	100 matched human liver-material RAW files annotated from four deposited experimental-design templates; structural validation passed with ontology lookup skipped
+PXD016495	sweden/uppsala	excluded	Submitter affiliation is Karolinska Institutet, Stockholm, not Uppsala
+PXD019121	sweden/uppsala	annotated	2 RAW files retained from deposited community SDRF; structural validation passed with ontology lookup skipped
+PXD020194	sweden/uppsala	annotated	22 bladder-tumor RAW files annotated using filename preservation arms and project protocol; structural validation passed with ontology lookup skipped
+PXD020238	sweden/uppsala	blocked	16 RAW files have FASP codes absent from deposited metadata; see annotations/PXD020238.BLOCKED.md
+PXD020245	sweden/uppsala	annotated	132 mouse-intestine and Caco-2 RAW files annotated from deposited metadata tables; structural validation passed with ontology lookup skipped
+PXD022221	sweden/uppsala	blocked	42 MGF files lack a deposited sample-to-region/treatment map; see annotations/PXD022221.BLOCKED.md
