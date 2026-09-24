@@ -1,0 +1,4 @@
+# daily queue 2026-09-24 iceland  (3 PXDs, cap 10) — completed
+PRD000134	iceland/reykjavik	blocked	legacy MALDI-TOF; no vendor RAW; see annotations/PRD000134.BLOCKED.md
+PXD051310	iceland/reykjavik	annotated	14-row equine cementum LFQ SDRF; UK leftover hit; see annotations/PXD051310.sdrf.tsv
+PXD067648	iceland/reykjavik	blocked	no file-to-sample map; Netherlands keyword hit; see annotations/PXD067648.BLOCKED.md

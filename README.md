@@ -91,21 +91,21 @@ full-text hit count from the PRIDE Archive search (unioned over each city's
 *PXDs listed* is the curated manifest length and is `—` until a
 `<country>/<city>.txt` exists; *In corpus* is how many of those already have an
 SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/bigbio/sdrf-annotated-datasets)
-(checked against local checkout (2026-09-24)) and can be skipped.
+(checked against GitHub bigbio/sdrf-annotated-datasets (2026-09-24)) and can be skipped.
 Regenerate with `python scripts/update_status.py`.
 
 ### Sweden — in progress
 
 | City | PRIDE hits | PXDs listed | In corpus | Screened | Annotated | Blocked |
 |---|---:|---:|---:|---:|---:|---:|
-| Stockholm | 323 | 165 | 4 | 0 | 27 | 2 |
-| Lund | 508 | 163 | 6 | 0 | 0 | 0 |
+| Stockholm | 323 | 165 | 16 | 0 | 39 | 2 |
+| Lund | 508 | 163 | 7 | 0 | 0 | 0 |
 | Gothenburg | 188 | 135 | 9 | 0 | 0 | 0 |
-| Uppsala | 196 | 75 | 4 | 0 | 44 | 18 |
+| Uppsala | 196 | 75 | 8 | 0 | 44 | 18 |
 | Umeå | 45 | — | — | 0 | 0 | 0 |
 | Linköping | 26 | — | — | 0 | 0 | 0 |
 | Örebro | 0 | — | — | 0 | 0 | 0 |
-| **Total** | | **538** | 23 | 0 | 71 | 20 |
+| **Total** | | **538** | 40 | 0 | 83 | 20 |
 
 ### Denmark — not started
 
@@ -147,8 +147,8 @@ Regenerate with `python scripts/update_status.py`.
 
 | City | PRIDE hits | PXDs listed | In corpus | Screened | Annotated | Blocked |
 |---|---:|---:|---:|---:|---:|---:|
-| Reykjavík | 6 | 3 | 0 | 0 | 3 | 0 |
-| **Total** | | **3** | 0 | 0 | 3 | 0 |
+| Reykjavík | 6 | 6 | 1 | 0 | 4 | 2 |
+| **Total** | | **6** | 1 | 0 | 4 | 2 |
 <!-- status:end -->
 
 No duplicates found within or across the four Swedish city lists. Two

@@ -35,7 +35,7 @@ pipeline:
 
 pride_hits_queried: 2026-09-23
 
-corpus_source: local checkout (2026-09-24)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-09-24)
 
 countries:
   sweden:
@@ -48,10 +48,10 @@ countries:
         pxd_count: 165
         pride_hits: 323
         screened: 0
-        annotated: 27
+        annotated: 39
         blocked: 2
         notes: "line 1 is PRD000423, a legacy ProteomeXchange id — resolve to a PXD before screening"
-        in_corpus: 4
+        in_corpus: 16
       lund:
         name: Lund
         search_terms: [Lund, Malmö, Skåne]
@@ -61,7 +61,7 @@ countries:
         screened: 0
         annotated: 0
         blocked: 0
-        in_corpus: 6
+        in_corpus: 7
       gothenburg:
         name: Gothenburg
         search_terms: [Gothenburg, Göteborg, Sahlgrenska, Chalmers]
@@ -82,7 +82,7 @@ countries:
         annotated: 44
         blocked: 18
         notes: "PXD001817, PXD004529, and PXD007189 are Utrecht datasets (PI address 'Uppsalalaan 8', countries=[Netherlands]) — keyword false positives; filter on PRIDE `countries` in tier 1"
-        in_corpus: 4
+        in_corpus: 8
       umea:
         name: Umeå
         search_terms: [Umeå, Umea]
@@ -251,10 +251,10 @@ countries:
         name: Reykjavík
         search_terms: [Reykjavik, Reykjavík, Iceland, Icelandic, "University of Iceland"]   # not "deCODE": matches 'decode' everywhere
         pxd_list: iceland/reykjavik.txt
-        pxd_count: 3
-        notes: "3 confirmed PXDs (Rolfsson lab, University of Iceland) + legacy PRD000134 (cod trypsin) kept out; see results/iceland/reykjavik_candidates.tsv"
+        pxd_count: 6
+        notes: "3 confirmed Rolfsson lab PXDs plus leftover PRIDE hits queued for resolution: PRD000134 (legacy Iceland), PXD051310 (UK), PXD067648 (Netherlands); see results/iceland/reykjavik_candidates.tsv"
         pride_hits: 6
         screened: 0
-        annotated: 3
-        blocked: 0
-        in_corpus: 0
+        annotated: 4
+        blocked: 2
+        in_corpus: 1
