@@ -254,7 +254,7 @@ countries:
         pxd_count: 3
         notes: "3 confirmed PXDs (Rolfsson lab, University of Iceland) + legacy PRD000134 (cod trypsin) kept out; see results/iceland/reykjavik_candidates.tsv"
         pride_hits: 6
-        screened: 0
-        annotated: 0
+        screened: 1
+        annotated: 1
         blocked: 0
         in_corpus: 0
