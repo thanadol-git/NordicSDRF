@@ -60,6 +60,7 @@ NordicSDRF/
     ├── annotate_local.sh            # sdrf-annotate via Claude Code + local Ollama (zero tokens); NORDIC_BATCH=1 for headless
     ├── annotate_slurm.sbatch        # Slurm array wrapper: one task per manifest line
     ├── build_manifest.py            # tier 1: PRIDE keyword search → verify country in each record → <country>/<city>.txt
+    ├── daily_queue.py               # next N PXDs to annotate today (skip corpus / done / blocked / running)
     ├── update_status.py             # PRIDE hits + corpus overlap + local progress → config.yml, README, status/
     ├── trace_summary.py             # one-line summary of a results/logs/<PXD>.*.jsonl run trace (live or finished)
     ├── check_existing_coverage.py   # tier 1: dedup against sdrf-annotated-datasets + BLOCKED/DUPLICATES
@@ -98,13 +99,13 @@ Regenerate with `python scripts/update_status.py`.
 | City | PRIDE hits | PXDs listed | In corpus | Screened | Annotated | Blocked |
 |---|---:|---:|---:|---:|---:|---:|
 | Stockholm | 323 | 165 | 4 | 0 | 0 | 0 |
-| Lund | 508 | 163 | 7 | 0 | 0 | 0 |
+| Lund | 508 | 163 | 6 | 0 | 0 | 0 |
 | Gothenburg | 188 | 135 | 9 | 0 | 0 | 0 |
-| Uppsala | 196 | 75 | 6 | 0 | 0 | 0 |
+| Uppsala | 196 | 75 | 4 | 0 | 0 | 0 |
 | Umeå | 45 | — | — | 0 | 0 | 0 |
 | Linköping | 26 | — | — | 0 | 0 | 0 |
 | Örebro | 0 | — | — | 0 | 0 | 0 |
-| **Total** | | **538** | 26 | 0 | 0 | 0 |
+| **Total** | | **538** | 23 | 0 | 0 | 0 |
 
 ### Denmark — not started
 
@@ -218,10 +219,13 @@ $sdrf-metascreen target="results/sweden/stockholm_triaged.tsv" \
   criteria="criteria/nordic_screen.md" extract="criteria/nordic_screen.md" \
   output="results/sweden/stockholm_screen.tsv"
 
-# 3. Tier 3 — Claude: annotate only the `include` rows, one at a time
+# 3. Today's 10 (or fewer) — skip corpus / done / blocked / already running
+python scripts/daily_queue.py iceland            # writes results/queue/<date>_iceland.txt
+#    then, in Claude Code (tier 3), annotate each queued PXD:
 /sdrf-skills:sdrf-annotate PXD######
 /sdrf-skills:sdrf-review annotations/PXD######.sdrf.tsv
 $sdrf-adversarial-review annotations/PXD######.sdrf.tsv   # fresh-context gate, hash-bound receipt
+#    optional overnight local draft of the first queued PXD, only if the GPU is free
 
 # 4. Update the tracker (counts annotations/, results/, manifests; --corpus github
 #    checks the live community repo; drop --no-pride to refresh PRIDE hit counts)
@@ -232,6 +236,27 @@ python scripts/update_status.py --no-pride --corpus github
 ```
 
 Repeat for `gothenburg.txt`, `lund.txt`, `uppsala.txt`, then the next country.
+
+### Daily queue (aim: 10 PXDs / day)
+
+Ten finished SDRFs a day is a **Claude** quota, not a local-GPU quota. The
+laptop filters; Claude annotates. Iceland is the pilot — three confirmed PXDs,
+none in the community corpus:
+
+```bash
+python scripts/daily_queue.py iceland                 # next 10 (here: the 3 remaining)
+python scripts/daily_queue.py iceland --dry-run       # print only
+python scripts/daily_queue.py --limit 10              # next country that still has a manifest
+```
+
+The script writes `results/queue/<YYYY-MM-DD>_<country>.txt` and prints the
+`/sdrf-skills:sdrf-annotate` lines for today. It never starts a job. A PXD
+already in flight (live JSONL or `claude -p`) is listed as `running` and kept
+off the queue so you do not share the 8 GB GPU. If a city later has a
+`results/<country>/<city>_screen.tsv`, only `include` rows are queued.
+
+After the Claude pass, `python scripts/update_status.py --no-pride` so Iceland
+moves from `scoped` to real annotated counts.
 
 ### Local annotation (zero API tokens)
 

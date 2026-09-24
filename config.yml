@@ -61,7 +61,7 @@ countries:
         screened: 0
         annotated: 0
         blocked: 0
-        in_corpus: 7
+        in_corpus: 6
       gothenburg:
         name: Gothenburg
         search_terms: [Gothenburg, Göteborg, Sahlgrenska, Chalmers]
@@ -82,7 +82,7 @@ countries:
         annotated: 0
         blocked: 0
         notes: "line 1 PXD001817 is a Utrecht dataset (PI address 'Uppsalalaan 8', countries=[Netherlands]) — keyword false positive; filter on PRIDE `countries` in tier 1"
-        in_corpus: 6
+        in_corpus: 4
       umea:
         name: Umeå
         search_terms: [Umeå, Umea]
