@@ -27,7 +27,7 @@
 </style>
 <rect class="bg" width="860" height="292" rx="6"/>
 <text class="title" x="12" y="22">Sweden — in progress</text>
-<text class="sub" x="12" y="40">538 datasets listed · 83 annotated · PRIDE queried 2026-09-23 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<text class="sub" x="12" y="40">538 datasets listed · 84 annotated · PRIDE queried 2026-09-23 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
 <rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
@@ -51,11 +51,15 @@
 <text class="seg" x="526.6" y="88.0" text-anchor="middle">120</text>
 <text class="total" x="764.0" y="88.0">165 listed</text>
 <text class="city" x="12" y="118.0">Lund</text>
-<rect class="c-in_corpus" fill="#199e70" x="110.0" y="104" width="25.9" height="20" rx="2"><title>Lund · In corpus: 7</title></rect>
-<text class="seg" x="123.0" y="118.0" text-anchor="middle">7</text>
-<rect class="c-todo" fill="#8a8983" x="136.9" y="104" width="599.5" height="20" rx="2"><title>Lund · To do: 156</title></rect>
-<text class="seg" x="436.7" y="118.0" text-anchor="middle">156</text>
-<text class="total" x="743.4" y="118.0">163 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="17.0" height="20" rx="2"><title>Lund · Annotated: 1</title></rect>
+<text class="seg" x="118.5" y="118.0" text-anchor="middle">1</text>
+<rect class="c-blocked" fill="#d95926" x="128.0" y="104" width="45.2" height="20" rx="2"><title>Lund · Blocked: 12</title></rect>
+<text class="seg" x="150.6" y="118.0" text-anchor="middle">12</text>
+<rect class="c-in_corpus" fill="#199e70" x="174.2" y="104" width="25.9" height="20" rx="2"><title>Lund · In corpus: 7</title></rect>
+<text class="seg" x="187.2" y="118.0" text-anchor="middle">7</text>
+<rect class="c-todo" fill="#8a8983" x="201.1" y="104" width="549.4" height="20" rx="2"><title>Lund · To do: 143</title></rect>
+<text class="seg" x="475.8" y="118.0" text-anchor="middle">143</text>
+<text class="total" x="757.5" y="118.0">163 listed</text>
 <text class="city" x="12" y="148.0">Gothenburg</text>
 <rect class="c-in_corpus" fill="#199e70" x="110.0" y="134" width="33.6" height="20" rx="2"><title>Gothenburg · In corpus: 9</title></rect>
 <text class="seg" x="126.8" y="148.0" text-anchor="middle">9</text>

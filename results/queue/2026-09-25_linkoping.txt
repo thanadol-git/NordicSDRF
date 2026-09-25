@@ -1,0 +1,28 @@
+# Linköping annotation batch — 26 PRIDE hits checked on 2026-09-25
+# Five accessions already have canonical SDRFs upstream; 21 new local SDRFs were generated.
+PXD001951	sweden/linkoping	annotated	12 rows; structural and full ontology validation passed
+PXD003930	sweden/linkoping	annotated	60 rows; conservative not-available organism part due carotid artery/plaque evidence conflict
+PXD004304	sweden/linkoping	annotated	6 rows; THP-1 control and mixed-oxysterol runs
+PXD004636	sweden/linkoping	existing	Canonical SDRF already present upstream
+PXD013227	sweden/linkoping	annotated	49 rows; thermal-profiling runs
+PXD015725	sweden/linkoping	existing	Canonical SDRF already present upstream
+PXD018805	sweden/linkoping	annotated	10 rows; deposited protocol documents multiple digest reagents, builder emits Trypsin
+PXD020218	sweden/linkoping	annotated	21 rows; Trypsin/modifications/tolerances reconciled to cited paper
+PXD021670	sweden/linkoping	existing	Canonical SDRF already present upstream
+PXD022008	sweden/linkoping	annotated	48 rows; T47D/MCF-7 treatment groups
+PXD026424	sweden/linkoping	annotated	23 rows; sex/genotype preserved from run names
+PXD029265	sweden/linkoping	annotated	18 rows; Drosophila sperm dietary-sugar groups
+PXD030464	sweden/linkoping	annotated	8 rows; FOXQ1/TID run labels preserved
+PXD033056	sweden/linkoping	annotated	12 rows; cleavage reagent unavailable in deposited record
+PXD035624	sweden/linkoping	annotated	6 rows; FOXQ1/TID run labels preserved
+PXD037153	sweden/linkoping	annotated	78 rows; cleavage reagent unavailable in deposited record
+PXD038811	sweden/linkoping	annotated	30 rows; FOX transcription-factor run labels preserved
+PXD045881	sweden/linkoping	existing	Canonical SDRF already present upstream
+PXD047868	sweden/linkoping	annotated	8 rows; guide/control run labels preserved
+PXD047899	sweden/linkoping	annotated	24 rows; HEK293T BioID-MS runs
+PXD053005	sweden/linkoping	annotated	15 rows; vendor .d.zip archives mapped by treatment prefix
+PXD061700	sweden/linkoping	annotated	6 rows; Trypsin emitted, Lys-C co-digest noted
+PXD062561	sweden/linkoping	annotated	3 rows; Raw_run archives and online PepsinA digestion
+PXD067416	sweden/linkoping	annotated	17 rows; proximity-proteomics runs
+PXD071007	sweden/linkoping	existing	Canonical SDRF already present upstream
+PXD072143	sweden/linkoping	annotated	27 rows; DDA/DIA modes resolved from deposited run names

@@ -1,0 +1,11 @@
+# daily queue 2026-09-25 sweden  (10 PXDs, cap 10)
+PRD000423	sweden/stockholm	pending	stockholm: no screen yet; queued as a candidate
+PXD008445	sweden/stockholm	pending	stockholm: no screen yet; queued as a candidate
+PXD009990	sweden/stockholm	pending	stockholm: no screen yet; queued as a candidate
+PXD010006	sweden/stockholm	pending	stockholm: no screen yet; queued as a candidate
+PXD010175	sweden/stockholm	pending	stockholm: no screen yet; queued as a candidate
+PXD010554	sweden/stockholm	pending	stockholm: no screen yet; queued as a candidate
+PXD011722	sweden/stockholm	pending	stockholm: no screen yet; queued as a candidate
+PXD013134	sweden/stockholm	pending	stockholm: no screen yet; queued as a candidate
+PXD013182	sweden/stockholm	pending	stockholm: no screen yet; queued as a candidate
+PXD013284	sweden/stockholm	pending	stockholm: no screen yet; queued as a candidate

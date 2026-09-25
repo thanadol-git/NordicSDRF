@@ -1,0 +1,47 @@
+# Umeå annotation batch — 39 confirmed PRIDE hits checked on 2026-09-25
+# Eight accessions already have canonical SDRFs upstream; 19 new local drafts were generated and 12 were held for missing isobaric-channel maps.
+PXD000411	sweden/umea	annotated	30 rows; ontology-aware validation passed; cleavage evidence reconciled to PRIDE prose
+PXD002509	sweden/umea	annotated	10 rows; ontology-aware validation passed; Trypsin retained from deposited sample-processing protocol
+PXD005167	sweden/umea	annotated	8 rows; ontology-aware validation passed
+PXD005551	sweden/umea	annotated	12 rows; human template; Trypsin retained from tryptically digested protocol text
+PXD005715	sweden/umea	annotated	44 rows; ontology-aware validation passed; enzyme unavailable in deposited protocol
+PXD006301	sweden/umea	existing	Tracked local annotation already present; not replaced
+PXD006487	sweden/umea	annotated	31 rows; ontology-aware validation passed; enzyme unavailable in deposited protocol
+PXD007958	sweden/umea	annotated	45 rows; ontology-aware validation passed
+PXD008266	sweden/umea	annotated	48 rows; ontology-aware validation passed
+PXD019953	sweden/umea	annotated	34 rows; ontology-aware validation passed; online Pepsin digestion documented
+PXD020907	sweden/umea	existing	Canonical SDRF already present upstream
+PXD013683	sweden/umea	rejected	Affiliation screening resolved to Portugal, not Sweden/Umeå
+PXD015360	sweden/umea	rejected	Affiliation screening resolved to China, not Sweden/Umeå
+PXD022955	sweden/umea	annotated	16 rows; ontology-aware validation passed
+PXD023009	sweden/umea	rejected	Affiliation screening resolved to China, not Sweden/Umeå
+PXD023826	sweden/umea	annotated	50 rows; ontology-aware validation passed
+PXD026971	sweden/umea	annotated	31 rows; ontology-aware validation passed; cleavage reagent unavailable in deposited record
+PXD029700	sweden/umea	rejected	Affiliation screening resolved to the United States, not Sweden/Umeå
+PXD031995	sweden/umea	rejected	Affiliation screening resolved to China, not Sweden/Umeå
+PXD033148	sweden/umea	rejected	Affiliation screening resolved to China, not Sweden/Umeå
+PXD035237	sweden/umea	blocked	TMT reporter-channel map unavailable; no SDRF produced
+PXD036163	sweden/umea	existing	Canonical SDRF already present upstream
+PXD038312	sweden/umea	blocked	TMT reporter-channel map unavailable; no SDRF produced
+PXD041057	sweden/umea	blocked	TMT reporter-channel map unavailable; no SDRF produced
+PXD041683	sweden/umea	blocked	TMT reporter-channel map unavailable; no SDRF produced
+PXD042495	sweden/umea	existing	Canonical SDRF already present upstream
+PXD042571	sweden/umea	existing	Canonical SDRF already present upstream
+PXD043344	sweden/umea	blocked	TMT reporter-channel map unavailable; no SDRF produced
+PXD046629	sweden/umea	existing	Canonical SDRF already present upstream
+PXD050925	sweden/umea	annotated	12 rows; human template; ontology-aware validation passed
+PXD051173	sweden/umea	blocked	TMT reporter-channel map unavailable; no SDRF produced
+PXD051268	sweden/umea	blocked	TMT reporter-channel map unavailable; no SDRF produced
+PXD051835	sweden/umea	annotated	4 rows; ontology-aware validation passed
+PXD053388	sweden/umea	blocked	TMT reporter-channel map unavailable; no SDRF produced
+PXD055477	sweden/umea	annotated	12 rows; rat/vertebrates template; ontology-aware validation passed
+PXD055903	sweden/umea	existing	Canonical SDRF already present upstream
+PXD057599	sweden/umea	annotated	24 rows; ontology-aware validation passed
+PXD058468	sweden/umea	annotated	15 rows; human template; ontology-aware validation passed
+PXD059583	sweden/umea	annotated	21 rows; ontology-aware validation passed after taxon normalization
+PXD061921	sweden/umea	existing	Already annotated locally and canonical upstream
+PXD062959	sweden/umea	blocked	TMT reporter-channel map unavailable; no SDRF produced
+PXD062960	sweden/umea	blocked	TMT reporter-channel map unavailable; no SDRF produced
+PXD066285	sweden/umea	existing	Canonical SDRF already present upstream
+PXD070029	sweden/umea	blocked	TMT reporter-channel map unavailable; no SDRF produced
+PXD079402	sweden/umea	annotated	24 rows; ontology-aware validation passed

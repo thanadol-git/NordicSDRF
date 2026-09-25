@@ -1,0 +1,46 @@
+accession	verdict	evidence	in_corpus	title
+PXD000411	confirmed	countries=['Sweden']		Proteomics of protein secretion by Aggregatibacter actinomycetemcomitans
+PXD002509	confirmed	countries=['Sweden']		Outer membrane vesicle proteome of Aggregatibacter actinomycetemcomitans serotype e strain 173
+PXD005167	confirmed	affiliation~'sweden': Director Max Planck Institute for Infection Biology Department of Regulation in Infection 		Streptococcus pyogenes (GAS) membrane vesicles (MVs) and membranes LC-MSMS
+PXD005551	confirmed	countries=['Sweden']		Rho-kinase inhibitor Y-27632 and hypoxia synergistically enhance chondrocytic phenotype and change t
+PXD005715	confirmed	countries=['Sweden']		Protein Expression in TW Formation
+PXD006301	confirmed	countries=['Sweden']		Expression of the phycobiliprotein antenna of the cryptophyte alga Guillardia theta
+PXD006487	confirmed	countries=['Sweden']		Nuclear Proteins in Chlamydomonas reinhardtii
+PXD007958	confirmed	countries=['Sweden']		Populus metacaspases -  The function of two type II metacaspases in woody tissues of Populus trees
+PXD008266	confirmed	countries=['Sweden']		A proteomics approach reveals function of Secretory Carrier-Associated Membrane Proteins in wood for
+PXD013683	rejected	countries=['Portugal'] | CQE, IST ; Centro de Química Estrutural, Instituto Superior Técnico, UL		Identification of histone adducts with glycidamide
+PXD015360	rejected	countries=['China'] | Sichuan University ; Sichuan University, Westchina Hospital		Comparative glycoproteomic profiling of human body fluid between healthy controls and patients with 
+PXD019953	confirmed	countries=['Sweden']		(p)ppGpp controls stringent factors by exploiting antagonistic allosteric coupling between catalytic
+PXD020907	confirmed	countries=['Sweden']	yes	S. pombe LC-MS G4-binding proteins
+PXD022955	confirmed	affiliation~'sweden': Dept of Chemistry, Umeå University, Umeå, Sweden.		The proteolytically inactive orthocaspase of Synechocystis sp. PCC 6803 plays an important role duri
+PXD023009	rejected	countries=['China'] | Chinese academy of sciences ; university of chinese academy of sciences	yes	Plasma non-targeted peptidomics discovers potential biomarkers for major depressive disorder
+PXD023826	confirmed	countries=['Sweden']		Proteomic analysis in transgenic hybrid aspen (Populus tremula x tremuloides) trees overexpression o
+PXD026971	confirmed	countries=['Sweden']		Proteomic analysis of Filifactor alocis type and clinically isolated strains
+PXD029700	rejected	countries=['United States'] | Boston University School of Medicine ; Boston University School of Medicine		Improving statistical certainty of glycosylation similarity between influenza A virus variants using
+PXD031995	rejected	countries=['China'] | Nanjing Agricultural University ; Nanjing Agricultural University		Novel peptidomics-based evaluation of pork freshness via a potential peptide biomarker
+PXD033148	rejected	countries=['China'] | Xiangya Hospital, Central South University ; Department of Respiratory Medicine, Xiangya Hospital, Centra		human lung adenocarcinoma cell lines TMT based proteomics
+PXD035237	confirmed	countries=['Sweden']		Thermal proteome profiling of Vibrio mutants exposed to arsenate
+PXD036163	confirmed	countries=['Sweden']	yes	Metabolic and Morphotypic Trade-offs within the Eco-Evolutionary Dynamics of Escherichia coli
+PXD038312	confirmed	countries=['Sweden']		Thermal proteome profiling of D-Arginine in Vibrio cholerae
+PXD041057	confirmed	countries=['Sweden']		Flotillin effects on heat shock in Staphylococcus aureus
+PXD041683	confirmed	countries=['Sweden']		Protein profiles following miRNA-23c and -4328 overexpression in prostate cancer cell lines, PC-3 an
+PXD042495	confirmed	countries=['Sweden']	yes	LSD1 knockout effects on proteome
+PXD042571	confirmed	countries=['Sweden']		In situ ribosome clustering and ultrastructure reorganization of polar tube proteins in germinated m
+PXD043344	confirmed	countries=['Sweden']		Thermal proteome profiling of Salmonella enterica infection
+PXD046629	confirmed	countries=['Sweden']	yes	Effects of gene knockout on Shigella proteome
+PXD050925	confirmed	countries=['Sweden']		Mechanical loading modulates AMPK and mTOR signaling in myoblasts
+PXD051173	confirmed	countries=['Sweden']		The flavivirus protein NS4B recruits the cis-Golgi protein ACBD3 to modify ER-Golgi trafficking for 
+PXD051268	confirmed	countries=['Sweden']		FBL knockdown effects on proteome
+PXD051835	confirmed	affiliation~'sweden': Department of Chemistry, Umeå University, Umeå, Sweden		In vivo proteolytic profiling of the type I and type II metacaspases in Chlamydomonas reinhardtii ex
+PXD053388	confirmed	countries=['Sweden']		2D-thermal proteome profiling of CBK282870 as an antichlamydial compound
+PXD055477	confirmed	countries=['Sweden']		Impact of Static Myoblast Loading on Protein Secretion Linked to tenocyte Migration
+PXD055903	confirmed	countries=['Sweden']	yes	Secretome of Staphylococcus aureus under drug treatment
+PXD057599	confirmed	countries=['Sweden']		Ribosome biogenesis in plants reqRibosome biogenesis in plants requires the nuclear envelope and mit
+PXD058468	confirmed	countries=['Sweden']		Nigericin induced paraptosis-like cell death instead of pyroptosis in corneal keratocytes
+PXD059583	confirmed	countries=['Sweden']		Francisella tularensis virulence is dependent on a conserved putative catalytic triad within the Typ
+PXD061921	confirmed	countries=['Sweden']		Probing substrate water access through the O1 channel of Photosystem II by single site mutations and
+PXD062959	confirmed	countries=['Sweden']		METTL3 knockdown and chemical inhibition effects on proteome
+PXD062960	confirmed	countries=['Sweden']		Thermal proteome profiling of caffeine in E. coli
+PXD066285	confirmed	countries=['Sweden']	yes	Macrolide drug interactions in Bacteroidaceae
+PXD070029	confirmed	countries=['Sweden']		Proteome profiling of human gut microbiome species grown on spent medium of another species
+PXD079402	confirmed	countries=['Sweden']		Effects of indole-derivatives on Salmonella proteome

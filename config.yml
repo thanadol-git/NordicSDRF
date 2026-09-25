@@ -60,8 +60,8 @@ countries:
         pxd_count: 163
         pride_hits: 508
         screened: 0
-        annotated: 0
-        blocked: 0
+        annotated: 1
+        blocked: 12
         in_corpus: 7
       gothenburg:
         name: Gothenburg
@@ -291,7 +291,7 @@ countries:
         name: Target 96/48
         pxd_list: olink_pad/target.txt
         pxd_count: 7
-        in_corpus: 5
+        in_corpus: 6
         screened: 0
         annotated: 4
         blocked: 0
