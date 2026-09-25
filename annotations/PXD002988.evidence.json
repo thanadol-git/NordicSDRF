@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002988.sdrf.tsv",
+  "dataset": "PXD002988",
+  "sources": [
+    {
+      "id": "pride-record",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002988"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD002988/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5371560/"
+    },
+    {
+      "id": "sample-guide",
+      "kind": "supplement",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5371560/supplementaryFiles"
+    },
+    {
+      "id": "pride-result-anchors",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/03/PXD002988/PrideExport_20150923_2235_LINGdbdbA1_140131_LL_NGA1_LiraI_30Dil_01.pride.xml.gz; https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/03/PXD002988/PrideExport_20150923_2235_LINGdbdbB1_140131_LL_NGB1_LiraI_30Dil_01.pride.xml.gz; https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/03/PXD002988/PrideExport_20150923_2235_LINGdbdbC1_140131_LL_NGC1_LiraI_30Dil_01.pride.xml.gz; https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/03/PXD002988/PrideExport_20150923_2235_LINGdbD1_140131_LL_NGD1_LiraI_30Dil_01.pride.xml.gz"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[biological replicate], characteristics[genotype], characteristics[organism status], characteristics[treatment], factor value[treatment], and comment[technical replicate], rows 1-40",
+      "value": "Four groups of five mouse kidneys with two technical replicates per kidney: healthy db/+ vehicle, db/db vehicle, db/db liraglutide, and db/db insulin",
+      "source_ids": ["paper", "sample-guide", "pride-result-anchors"],
+      "evidence": "Methods states the four groups and two technical replicates. Supplementary file 1A supplies each kidney and technical-replicate assignment. Deposited result-file titles numbered 1/40, 11/40, 21/40, and 31/40 anchor the D, A, B, and C filename prefixes to the guide's ordered groups."
+    },
+    {
+      "location": "characteristics[organism], characteristics[organism part], characteristics[material type], and comment[data file], rows 1-40",
+      "value": "Mus musculus kidney tissue and the 40 deposited vendor RAW files",
+      "source_ids": ["pride-record", "pride-files", "paper", "sample-guide"],
+      "evidence": "The PRIDE record reports mouse and the study scope; Methods identifies left kidney analysis; the PRIDE file manifest lists every RAW filename; the sample guide maps all 40 files to kidneys."
+    },
+    {
+      "location": "comment[proteomics data acquisition method], comment[instrument], comment[cleavage agent details], comment[precursor mass tolerance], comment[fragment mass tolerance], and comment[modification parameters], rows 1-40",
+      "value": "data-dependent acquisition on LTQ Orbitrap XL; trypsin; fixed Carbamidomethyl(C), variable Oxidation(M); 5 ppm precursor and 0.8 Da fragment tolerances",
+      "source_ids": ["paper", "pride-result-anchors"],
+      "evidence": "Methods describes LTQ Orbitrap XL DDA and the Mascot search configuration. The deposited PRIDE result records independently identify the LTQ Orbitrap XL instrument."
+    }
+  ],
+  "limitations": [
+    "The study reports mouse group, kidney number, and technical replicate but not animal ages or sexes; these are not annotated.",
+    "No per-sample disease term is supported by the supplement, so the permitted sentinel not available is used.",
+    "The treatment factor retains the repository-supported group labels; the template does not permit an equivalent controlled characteristics[treatment] value for vehicle.",
+    "An independent adversarial review and hash-bound receipt are pending."
+  ]
+}

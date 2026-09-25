@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD003196.sdrf.tsv",
+  "dataset": "PXD003196",
+  "sources": [
+    {"id": "pride-record", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003196"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003196/files/all"},
+    {"id": "paper", "kind": "publication", "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5065702/"},
+    {"id": "sample-guide", "kind": "supplement", "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5065702/supplementaryFiles"}
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[biological replicate], characteristics[organism status], factor value[diabetes induction], and comment[data file], rows 1-12",
+      "value": "Six NoSTZ healthy and six STZ diabetic mouse kidneys, one RAW file per mouse",
+      "source_ids": ["paper", "sample-guide", "pride-files"],
+      "evidence": "Methods specifies n=6 per STZ and NoSTZ group and one sample per animal. Additional file 1f maps every deposited RAW filename to its exact NoSTZ or STZ source name."
+    },
+    {
+      "location": "characteristics[organism], characteristics[organism part], characteristics[material type], comment[proteomics data acquisition method], and comment[instrument], rows 1-12",
+      "value": "Mus musculus right-kidney tissue analysed by DDA on LTQ Orbitrap XL",
+      "source_ids": ["paper", "pride-record"],
+      "evidence": "Methods identifies the right kidney in the STZ model and describes DDA on LTQ Orbitrap XL; PRIDE identifies the mouse project."
+    },
+    {
+      "location": "comment[cleavage agent details], comment[modification parameters], comment[precursor mass tolerance], and comment[fragment mass tolerance], rows 1-12",
+      "value": "trypsin; fixed Carbamidomethyl(C); variable Oxidation(M) and Deamidated(N); 5 ppm precursor and 0.8 Da fragment tolerances",
+      "source_ids": ["paper"],
+      "evidence": "The Data processing methods state the Mascot settings, including PNGase F-associated Asn-to-Asp deamidation."
+    }
+  ],
+  "limitations": [
+    "The published guide does not provide individual mouse ages or individual sex; the cohort is male but no unsupported per-row sex value is included.",
+    "The experimental factor is recorded from the source labels; no matching controlled characteristics term is available for NoSTZ/STZ in the active templates.",
+    "An independent adversarial review and hash-bound receipt are pending."
+  ]
+}
