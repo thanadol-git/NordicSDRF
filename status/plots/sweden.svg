@@ -27,7 +27,7 @@
 </style>
 <rect class="bg" width="860" height="292" rx="6"/>
 <text class="title" x="12" y="22">Sweden — in progress</text>
-<text class="sub" x="12" y="40">538 datasets listed · 84 annotated · PRIDE queried 2026-09-23 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<text class="sub" x="12" y="40">603 datasets listed · 128 annotated · PRIDE queried 2026-09-23 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
 <rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
@@ -51,15 +51,15 @@
 <text class="seg" x="526.6" y="88.0" text-anchor="middle">120</text>
 <text class="total" x="764.0" y="88.0">165 listed</text>
 <text class="city" x="12" y="118.0">Lund</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="17.0" height="20" rx="2"><title>Lund · Annotated: 1</title></rect>
-<text class="seg" x="118.5" y="118.0" text-anchor="middle">1</text>
-<rect class="c-blocked" fill="#d95926" x="128.0" y="104" width="45.2" height="20" rx="2"><title>Lund · Blocked: 12</title></rect>
-<text class="seg" x="150.6" y="118.0" text-anchor="middle">12</text>
-<rect class="c-in_corpus" fill="#199e70" x="174.2" y="104" width="25.9" height="20" rx="2"><title>Lund · In corpus: 7</title></rect>
-<text class="seg" x="187.2" y="118.0" text-anchor="middle">7</text>
-<rect class="c-todo" fill="#8a8983" x="201.1" y="104" width="549.4" height="20" rx="2"><title>Lund · To do: 143</title></rect>
-<text class="seg" x="475.8" y="118.0" text-anchor="middle">143</text>
-<text class="total" x="757.5" y="118.0">163 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="17.0" height="20" rx="2"><title>Lund · Annotated: 3</title></rect>
+<text class="seg" x="118.5" y="118.0" text-anchor="middle">3</text>
+<rect class="c-blocked" fill="#d95926" x="128.0" y="104" width="137.6" height="20" rx="2"><title>Lund · Blocked: 36</title></rect>
+<text class="seg" x="196.8" y="118.0" text-anchor="middle">36</text>
+<rect class="c-in_corpus" fill="#199e70" x="266.6" y="104" width="22.1" height="20" rx="2"><title>Lund · In corpus: 6</title></rect>
+<text class="seg" x="277.6" y="118.0" text-anchor="middle">6</text>
+<rect class="c-todo" fill="#8a8983" x="289.7" y="104" width="453.2" height="20" rx="2"><title>Lund · To do: 118</title></rect>
+<text class="seg" x="516.3" y="118.0" text-anchor="middle">118</text>
+<text class="total" x="749.8" y="118.0">163 listed</text>
 <text class="city" x="12" y="148.0">Gothenburg</text>
 <rect class="c-in_corpus" fill="#199e70" x="110.0" y="134" width="33.6" height="20" rx="2"><title>Gothenburg · In corpus: 9</title></rect>
 <text class="seg" x="126.8" y="148.0" text-anchor="middle">9</text>
@@ -77,11 +77,23 @@
 <text class="seg" x="383.5" y="178.0" text-anchor="middle">13</text>
 <text class="total" x="415.0" y="178.0">75 listed</text>
 <text class="city" x="12" y="208.0">Umeå</text>
-<rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="194.75" width="173.2" height="18.5" rx="3"><title>Umeå · PRIDE hits, not curated yet: 45</title></rect>
-<text class="total" x="289.2" y="208.0">45 PRIDE hits</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="194" width="79.8" height="20" rx="2"><title>Umeå · Annotated: 21</title></rect>
+<text class="seg" x="149.9" y="208.0" text-anchor="middle">21</text>
+<rect class="c-blocked" fill="#d95926" x="190.8" y="194" width="41.3" height="20" rx="2"><title>Umeå · Blocked: 11</title></rect>
+<text class="seg" x="211.5" y="208.0" text-anchor="middle">11</text>
+<rect class="c-in_corpus" fill="#199e70" x="233.2" y="194" width="22.1" height="20" rx="2"><title>Umeå · In corpus: 6</title></rect>
+<text class="seg" x="244.2" y="208.0" text-anchor="middle">6</text>
+<rect class="c-todo" fill="#8a8983" x="256.3" y="194" width="17.0" height="20" rx="2"><title>Umeå · To do: 1</title></rect>
+<text class="seg" x="264.8" y="208.0" text-anchor="middle">1</text>
+<text class="total" x="280.3" y="208.0">39 listed</text>
 <text class="city" x="12" y="238.0">Linköping</text>
-<rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="224.75" width="100.1" height="18.5" rx="3"><title>Linköping · PRIDE hits, not curated yet: 26</title></rect>
-<text class="total" x="216.1" y="238.0">26 PRIDE hits</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="224" width="79.8" height="20" rx="2"><title>Linköping · Annotated: 21</title></rect>
+<text class="seg" x="149.9" y="238.0" text-anchor="middle">21</text>
+<rect class="c-in_corpus" fill="#199e70" x="190.8" y="224" width="17.0" height="20" rx="2"><title>Linköping · In corpus: 4</title></rect>
+<text class="seg" x="199.3" y="238.0" text-anchor="middle">4</text>
+<rect class="c-todo" fill="#8a8983" x="208.8" y="224" width="17.0" height="20" rx="2"><title>Linköping · To do: 1</title></rect>
+<text class="seg" x="217.3" y="238.0" text-anchor="middle">1</text>
+<text class="total" x="232.8" y="238.0">26 listed</text>
 <text class="city" x="12" y="268.0">Örebro</text>
 <text class="total" x="116.0" y="268.0">0 PRIDE hits</text>
 </svg>

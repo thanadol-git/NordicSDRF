@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-09-23
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-09-25)
+corpus_source: local checkout (2026-09-25)
 
 countries:
   sweden:
@@ -52,7 +52,7 @@ countries:
         annotated: 39
         blocked: 2
         notes: "line 1 is PRD000423, a legacy ProteomeXchange id — resolve to a PXD before screening"
-        in_corpus: 43
+        in_corpus: 4
       lund:
         name: Lund
         search_terms: [Lund, Malmö, Skåne]
@@ -60,9 +60,9 @@ countries:
         pxd_count: 163
         pride_hits: 508
         screened: 0
-        annotated: 1
-        blocked: 12
-        in_corpus: 7
+        annotated: 3
+        blocked: 36
+        in_corpus: 6
       gothenburg:
         name: Gothenburg
         search_terms: [Gothenburg, Göteborg, Sahlgrenska, Chalmers]
@@ -83,21 +83,27 @@ countries:
         annotated: 44
         blocked: 18
         notes: "PXD001817, PXD004529, and PXD007189 are Utrecht datasets (PI address 'Uppsalalaan 8', countries=[Netherlands]) — keyword false positives; filter on PRIDE `countries` in tier 1"
-        in_corpus: 46
+        in_corpus: 4
       umea:
         name: Umeå
         search_terms: [Umeå, Umea]
         pride_hits: 45
         screened: 0
-        annotated: 0
-        blocked: 0
+        annotated: 21
+        blocked: 11
+        pxd_list: lists/sweden/umea.txt
+        pxd_count: 39
+        in_corpus: 6
       linkoping:
         name: Linköping
         search_terms: [Linköping, Linkoping]
         pride_hits: 26
         screened: 0
-        annotated: 0
+        annotated: 21
         blocked: 0
+        pxd_list: lists/sweden/linkoping.txt
+        pxd_count: 26
+        in_corpus: 4
       orebro:
         name: Örebro
         search_terms: [Örebro, Orebro]
@@ -107,8 +113,17 @@ countries:
         blocked: 0
 
   denmark:
+        screened: 0
+        annotated: 0
+        blocked: 0
     status: in_progress
+        screened: 0
+        annotated: 0
+        blocked: 0
     cities:
+        screened: 0
+        annotated: 0
+        blocked: 0
       copenhagen:
         name: Copenhagen
         search_terms: [Copenhagen, København, Rigshospitalet, Frederiksberg]
@@ -205,7 +220,7 @@ countries:
         blocked: 0
 
   finland:
-    status: not_started
+    status: in_progress
     cities:
       helsinki:
         name: Helsinki

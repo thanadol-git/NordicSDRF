@@ -33,8 +33,8 @@ curation.
 | Uppsala | Uppsala | Uppsala University, SLU, Uppsala University Hospital (Akademiska), SciLifeLab Uppsala | 196 | `lists/sweden/uppsala.txt` (75) — contains ≥1 Utrecht false positive |
 | Gothenburg | Gothenburg, Göteborg, Sahlgrenska, Chalmers | University of Gothenburg, Chalmers, Sahlgrenska University Hospital / Academy, GU Proteomics Core Facility | 166 + 18 | `lists/sweden/gothenburg.txt` (135) |
 | Lund | Lund, Malmö, Skåne | Lund University (BMC, Medicon Village), Skåne University Hospital, Malmö campus | 503 + 16 | `lists/sweden/lund.txt` (163) — "Lund" is also a common surname |
-| Umeå | Umeå, Umea | Umeå University, SLU Umeå | 23 | not scoped |
-| Linköping | Linköping, Linkoping | Linköping University, Linköping University Hospital | 24 | not scoped |
+| Umeå | Umeå, Umea | Umeå University, SLU Umeå | 45 | `lists/sweden/umea.txt` (39) — from the 2026-09-25 queue; 6 rejected affiliation hits omitted |
+| Linköping | Linköping, Linkoping | Linköping University, Linköping University Hospital | 26 | `lists/sweden/linkoping.txt` (26) — from the 2026-09-25 queue |
 | Örebro | Örebro, Orebro | Örebro University | 0 | not scoped |
 
 ## Denmark — not started (largest Nordic depositor)
