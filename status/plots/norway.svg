@@ -26,8 +26,8 @@
   }
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
-<text class="title" x="12" y="22">Norway — not started</text>
-<text class="sub" x="12" y="40">0 datasets listed · 0 annotated · PRIDE queried 2026-09-23 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<text class="title" x="12" y="22">Norway — in progress</text>
+<text class="sub" x="12" y="40">14 datasets listed · 5 annotated · PRIDE queried 2026-09-23 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
 <rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
@@ -53,8 +53,13 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="164.75" width="166.5" height="18.5" rx="3"><title>Ås · PRIDE hits, not curated yet: 56</title></rect>
 <text class="total" x="282.5" y="178.0">56 PRIDE hits</text>
 <text class="city" x="12" y="208.0">Tromsø</text>
-<rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="194.75" width="44.6" height="18.5" rx="3"><title>Tromsø · PRIDE hits, not curated yet: 15</title></rect>
-<text class="total" x="160.6" y="208.0">15 PRIDE hits</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="194" width="17.0" height="20" rx="2"><title>Tromsø · Annotated: 5</title></rect>
+<text class="seg" x="118.5" y="208.0" text-anchor="middle">5</text>
+<rect class="c-in_corpus" fill="#199e70" x="128.0" y="194" width="19.8" height="20" rx="2"><title>Tromsø · In corpus: 7</title></rect>
+<text class="seg" x="137.9" y="208.0" text-anchor="middle">7</text>
+<rect class="c-todo" fill="#8a8983" x="148.8" y="194" width="17.0" height="20" rx="2"><title>Tromsø · To do: 2</title></rect>
+<text class="seg" x="157.3" y="208.0" text-anchor="middle">2</text>
+<text class="total" x="172.8" y="208.0">14 listed</text>
 <text class="city" x="12" y="238.0">Stavanger</text>
 <text class="total" x="116.0" y="238.0">0 PRIDE hits</text>
 </svg>

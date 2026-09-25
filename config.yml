@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-09-23
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-09-24)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-09-25)
 
 countries:
   sweden:
@@ -52,7 +52,7 @@ countries:
         annotated: 39
         blocked: 2
         notes: "line 1 is PRD000423, a legacy ProteomeXchange id — resolve to a PXD before screening"
-        in_corpus: 33
+        in_corpus: 43
       lund:
         name: Lund
         search_terms: [Lund, Malmö, Skåne]
@@ -83,7 +83,7 @@ countries:
         annotated: 44
         blocked: 18
         notes: "PXD001817, PXD004529, and PXD007189 are Utrecht datasets (PI address 'Uppsalalaan 8', countries=[Netherlands]) — keyword false positives; filter on PRIDE `countries` in tier 1"
-        in_corpus: 42
+        in_corpus: 46
       umea:
         name: Umeå
         search_terms: [Umeå, Umea]
@@ -153,9 +153,9 @@ countries:
         blocked: 0
         pxd_list: lists/denmark/roskilde.txt
         pxd_count: 7
-        in_corpus: 4
+        in_corpus: 7
   norway:
-    status: not_started
+    status: in_progress
     cities:
       bergen:
         name: Bergen
@@ -191,8 +191,11 @@ countries:
         search_terms: [Tromsø, Tromso]
         pride_hits: 15
         screened: 0
-        annotated: 0
+        annotated: 5
         blocked: 0
+        pxd_list: lists/norway/tromso.txt
+        pxd_count: 14
+        in_corpus: 12
       stavanger:
         name: Stavanger
         search_terms: [Stavanger]
@@ -260,7 +263,7 @@ countries:
         screened: 0
         annotated: 4
         blocked: 2
-        in_corpus: 2
+        in_corpus: 3
 
   olink_pad:
     name: Olink PAD
