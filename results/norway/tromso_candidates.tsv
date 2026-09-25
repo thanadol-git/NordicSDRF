@@ -1,0 +1,16 @@
+accession	verdict	evidence	in_corpus	title
+PXD004198	confirmed	countries=['Norway']		Proteomic analysis of extracellular vesicles derived from Merkel cell carcinoma cell lines
+PXD009206	confirmed	countries=['Norway']		Dose- and time-dependent effects of triethylene glycol dimethacrylate on the proteome of human THP-1
+PXD009441	rejected	countries=['United States'] | Proteomics ; The Stowers Institute for Medical Research		Probing the Sensitivity of the Lumos Mass Spectrometer using a Standard Reference Protein in a Compl
+PXD010389	confirmed	countries=['Norway']	yes	Comparative exoproteome profiling of an invasive and a commensal Staphylococcus haemolyticus isolate
+PXD011762	confirmed	countries=['Norway']		Large-scale secretome analyses unveil a superior immunosuppressive phenotype from umbilical cord str
+PXD016681	confirmed	countries=['Norway']		NIMA-related kinase 9–mediated phosphorylation of the microtubule-associated LC3B protein at Thr-50 
+PXD018894	confirmed	countries=['Norway']		CALCOCO1 acts with VAMP-Associated Proteins to mediate ER-phagy
+PXD024232	confirmed	countries=['Norway']	yes	Proteome profile of Methicillin-Resistant Staphylococcus aureus Membrane-Derived Vesicles grown in p
+PXD029241	confirmed	countries=['Norway']		Changes in the proteome and secretome of rat liver sinusoidal endothelial cells during early primary
+PXD041381	confirmed	countries=['Norway']		Mouse liver sinusoidal endothelial cell responses to the glucocorticoid receptor agonist dexamethaso
+PXD043275	confirmed	countries=['Norway']	yes	Activity-Based Protein Profiling in Methicillin-Resistant Staphylococcus aureus Reveals Broad Reacti
+PXD048798	confirmed	countries=['Norway']	yes	FP-biotin enrichment of serine hydrolases in Enterococcus faecium
+PXD049003	confirmed	countries=['Norway']	yes	Deciphering Staphylococcus aureus-host dynamics using dual Activity-based protein profiling of ATP-i
+PXD052286	confirmed	countries=['Norway']	yes	Activity-Based Protein Profiling identifies an alpha-amylase family protein contributing to the viru
+PXD071481	confirmed	countries=['Norway']	yes	Secretome proteomics of THP-1 macrophages under M0, M1, and M2 polarization

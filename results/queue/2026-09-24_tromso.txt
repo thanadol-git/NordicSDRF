@@ -1,0 +1,17 @@
+# Tromsø annotation batch — 2026-09-24
+# PRIDE search returned 15 hits: 14 confirmed Norway/Tromsø-associated projects and one rejected U.S. false positive.
+PXD004198	 norway/tromso	 annotated	 28 RAW files; structural, reconciliation, and ontology validation passed
+PXD009206	 norway/tromso	 annotated	 92 RAW files; structural, reconciliation, and ontology validation passed
+PXD009441	 norway/tromso	 excluded	 PRIDE countries=[United States]; Stowers Institute for Medical Research
+PXD010389	 norway/tromso	 existing	 canonical SDRF already present in community corpus
+PXD011762	 norway/tromso	 annotated	 16 RAW files; structural and ontology validation passed; Lys-C reconciliation item documented
+PXD016681	 norway/tromso	 annotated	 8 RAW files; structural, reconciliation, and ontology validation passed
+PXD018894	 norway/tromso	 annotated	 6 RAW files; structural, reconciliation, and ontology validation passed
+PXD024232	 norway/tromso	 existing	 canonical SDRF already present in community corpus
+PXD029241	 norway/tromso	 existing	 canonical SDRF already present in community corpus
+PXD041381	 norway/tromso	 existing	 canonical SDRF already present in community corpus
+PXD043275	 norway/tromso	 existing	 canonical SDRF already present in community corpus
+PXD048798	 norway/tromso	 existing	 canonical SDRF already present in community corpus
+PXD049003	 norway/tromso	 existing	 canonical SDRF already present in community corpus
+PXD052286	 norway/tromso	 existing	 canonical SDRF already present in community corpus
+PXD071481	 norway/tromso	 existing	 canonical SDRF already present in community corpus
