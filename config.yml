@@ -291,9 +291,9 @@ countries:
         name: Target 96/48
         pxd_list: olink_pad/target.txt
         pxd_count: 7
-        in_corpus: 4
+        in_corpus: 5
         screened: 0
-        annotated: 3
+        annotated: 4
         blocked: 0
       reveal:
         name: Reveal
