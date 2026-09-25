@@ -62,16 +62,16 @@ campaign; expect many multiplexed (TMT) and DIA studies from CPR and SDU.
 | Tromsø | Tromsø, Tromso, UiT | UiT The Arctic University of Norway, University Hospital of North Norway | 14 |
 | Stavanger | Stavanger | University of Stavanger, Stavanger University Hospital | 0 |
 
-## Finland — not started
+## Finland — in progress (Oulu, Tampere scoped)
 
-| City | Search terms | Key institutions / facilities | PRIDE hits |
-|---|---|---|---:|
-| Helsinki | Helsinki, Espoo, HiLIFE, Meilahti, FIMM, Aalto | University of Helsinki (Institute of Biotechnology, HiLIFE, Meilahti Clinical Proteomics Core Facility), Helsinki University Hospital (HUS), FIMM, Aalto University and VTT (Espoo) | 162 |
-| Turku | Turku, Åbo, "Turku Bioscience" | University of Turku, Åbo Akademi, Turku Bioscience Centre (Turku Proteomics Facility), Turku University Hospital | 98 |
-| Oulu | Oulu | University of Oulu, Biocenter Oulu | 11 |
-| Tampere | Tampere | Tampere University, Tampere University Hospital | 5 |
-| Kuopio | Kuopio, "University of Eastern Finland" | University of Eastern Finland, Kuopio University Hospital | 3 |
-| Jyväskylä | Jyväskylä, Jyvaskyla | University of Jyväskylä | 1 |
+| City | Search terms | Key institutions / facilities | PRIDE hits | Manifest |
+|---|---|---|---:|---|
+| Helsinki | Helsinki, Espoo, HiLIFE, Meilahti, FIMM, Aalto | University of Helsinki (Institute of Biotechnology, HiLIFE, Meilahti Clinical Proteomics Core Facility), Helsinki University Hospital (HUS), FIMM, Aalto University and VTT (Espoo) | 162 | not scoped |
+| Turku | Turku, Åbo, "Turku Bioscience" | University of Turku, Åbo Akademi, Turku Bioscience Centre (Turku Proteomics Facility), Turku University Hospital | 98 | not scoped |
+| Oulu | Oulu | University of Oulu, Biocenter Oulu | 11 | `lists/finland/oulu.txt` (11) — all 11 PRIDE hits confirmed Finland |
+| Tampere | Tampere | Tampere University, Tampere University Hospital | 5 | `lists/finland/tampere.txt` (4) — 4/5 PRIDE hits confirmed Finland; PXD021494 rejected (Karolinska / Sweden) |
+| Kuopio | Kuopio, "University of Eastern Finland" | University of Eastern Finland, Kuopio University Hospital | 3 | not scoped |
+| Jyväskylä | Jyväskylä, Jyvaskyla | University of Jyväskylä | 1 | not scoped |
 
 ## Iceland — not started (small)
 

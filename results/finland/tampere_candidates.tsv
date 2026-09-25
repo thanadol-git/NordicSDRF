@@ -1,0 +1,6 @@
+accession	verdict	evidence	in_corpus	title
+PXD014016	confirmed	affiliation~'finland': BioMediTech & Tampere University Hospital, Faculty of Medicine and Health Technology, Tamp	yes	Complexome profiling of heart mitochondria from mouse expressing alternative oxidase
+PXD021494	rejected	countries=['Sweden'] | Karolinska Institutet ; Department of Oncology-Pathology (OnkPat) (PI)		New antiviral small molecule inhibitors disturb interactions between cellular HSP70 and virus protei
+PXD033425	confirmed	affiliation~'finland': Faculty of Medicine and Health Technology, FI-33014, Tampere University, Finland		Proteomic analysis of Mycobacterial Biofilm Matrix and Development of Biofilm-binding Synthetic Nano
+PXD035554	confirmed	affiliation~'finland': Faculty of Medicine and Health Technology, Tampere University, Tampere, Finland, and Depar	yes	Complexome profiling of mitochondrial protein complexes from pig heart to study the molecular conseq
+PXD047678	confirmed	affiliation~'finland': Faculty of Medicine and Health Technology, Tampere University, Tampere, Finland, and Depar		Proteome analysis of  pig heart tissue to study the molecular consequences of hyperbaric oxygen trea

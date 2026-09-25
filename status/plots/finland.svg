@@ -26,8 +26,8 @@
   }
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
-<text class="title" x="12" y="22">Finland — not started</text>
-<text class="sub" x="12" y="40">0 datasets listed · 0 annotated · PRIDE queried 2026-09-23 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<text class="title" x="12" y="22">Finland — in progress</text>
+<text class="sub" x="12" y="40">15 datasets listed · 6 annotated · PRIDE queried 2026-09-23 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
 <rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
@@ -47,11 +47,21 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="104.75" width="405.5" height="18.5" rx="3"><title>Turku · PRIDE hits, not curated yet: 102</title></rect>
 <text class="total" x="521.5" y="118.0">102 PRIDE hits</text>
 <text class="city" x="12" y="148.0">Oulu</text>
-<rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="134.75" width="43.7" height="18.5" rx="3"><title>Oulu · PRIDE hits, not curated yet: 11</title></rect>
-<text class="total" x="159.7" y="148.0">11 PRIDE hits</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="134" width="18.9" height="20" rx="2"><title>Oulu · Annotated: 5</title></rect>
+<text class="seg" x="119.4" y="148.0" text-anchor="middle">5</text>
+<rect class="c-blocked" fill="#d95926" x="129.9" y="134" width="17.0" height="20" rx="2"><title>Oulu · Blocked: 2</title></rect>
+<text class="seg" x="138.4" y="148.0" text-anchor="middle">2</text>
+<rect class="c-in_corpus" fill="#199e70" x="147.9" y="134" width="17.0" height="20" rx="2"><title>Oulu · In corpus: 4</title></rect>
+<text class="seg" x="156.4" y="148.0" text-anchor="middle">4</text>
+<text class="total" x="171.9" y="148.0">11 listed</text>
 <text class="city" x="12" y="178.0">Tampere</text>
-<rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="164.75" width="19.9" height="18.5" rx="3"><title>Tampere · PRIDE hits, not curated yet: 5</title></rect>
-<text class="total" x="135.9" y="178.0">5 PRIDE hits</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="164" width="17.0" height="20" rx="2"><title>Tampere · Annotated: 1</title></rect>
+<text class="seg" x="118.5" y="178.0" text-anchor="middle">1</text>
+<rect class="c-blocked" fill="#d95926" x="128.0" y="164" width="17.0" height="20" rx="2"><title>Tampere · Blocked: 1</title></rect>
+<text class="seg" x="136.5" y="178.0" text-anchor="middle">1</text>
+<rect class="c-in_corpus" fill="#199e70" x="146.0" y="164" width="17.0" height="20" rx="2"><title>Tampere · In corpus: 2</title></rect>
+<text class="seg" x="154.5" y="178.0" text-anchor="middle">2</text>
+<text class="total" x="170.0" y="178.0">4 listed</text>
 <text class="city" x="12" y="208.0">Kuopio</text>
 <rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="194.75" width="39.8" height="18.5" rx="3"><title>Kuopio · PRIDE hits, not curated yet: 10</title></rect>
 <text class="total" x="155.8" y="208.0">10 PRIDE hits</text>

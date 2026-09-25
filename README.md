@@ -117,9 +117,9 @@ The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with
 
 ![Norway — in progress: SDRF progress per city](status/plots/norway.svg)
 
-### Finland — not started
+### Finland — in progress
 
-![Finland — not started: SDRF progress per city](status/plots/finland.svg)
+![Finland — in progress: SDRF progress per city](status/plots/finland.svg)
 
 ### Iceland — in progress
 

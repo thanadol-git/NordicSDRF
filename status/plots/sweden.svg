@@ -27,7 +27,7 @@
 </style>
 <rect class="bg" width="860" height="292" rx="6"/>
 <text class="title" x="12" y="22">Sweden — in progress</text>
-<text class="sub" x="12" y="40">603 datasets listed · 128 annotated · PRIDE queried 2026-09-23 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<text class="sub" x="12" y="40">603 datasets listed · 134 annotated · PRIDE queried 2026-09-23 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
 <rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
@@ -51,15 +51,15 @@
 <text class="seg" x="526.6" y="88.0" text-anchor="middle">120</text>
 <text class="total" x="764.0" y="88.0">165 listed</text>
 <text class="city" x="12" y="118.0">Lund</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="17.0" height="20" rx="2"><title>Lund · Annotated: 3</title></rect>
-<text class="seg" x="118.5" y="118.0" text-anchor="middle">3</text>
-<rect class="c-blocked" fill="#d95926" x="128.0" y="104" width="137.6" height="20" rx="2"><title>Lund · Blocked: 36</title></rect>
-<text class="seg" x="196.8" y="118.0" text-anchor="middle">36</text>
-<rect class="c-in_corpus" fill="#199e70" x="266.6" y="104" width="22.1" height="20" rx="2"><title>Lund · In corpus: 6</title></rect>
-<text class="seg" x="277.6" y="118.0" text-anchor="middle">6</text>
-<rect class="c-todo" fill="#8a8983" x="289.7" y="104" width="453.2" height="20" rx="2"><title>Lund · To do: 118</title></rect>
-<text class="seg" x="516.3" y="118.0" text-anchor="middle">118</text>
-<text class="total" x="749.8" y="118.0">163 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="33.6" height="20" rx="2"><title>Lund · Annotated: 9</title></rect>
+<text class="seg" x="126.8" y="118.0" text-anchor="middle">9</text>
+<rect class="c-blocked" fill="#d95926" x="144.6" y="104" width="179.9" height="20" rx="2"><title>Lund · Blocked: 47</title></rect>
+<text class="seg" x="234.6" y="118.0" text-anchor="middle">47</text>
+<rect class="c-in_corpus" fill="#199e70" x="325.5" y="104" width="22.1" height="20" rx="2"><title>Lund · In corpus: 6</title></rect>
+<text class="seg" x="336.6" y="118.0" text-anchor="middle">6</text>
+<rect class="c-todo" fill="#8a8983" x="348.6" y="104" width="387.8" height="20" rx="2"><title>Lund · To do: 101</title></rect>
+<text class="seg" x="542.5" y="118.0" text-anchor="middle">101</text>
+<text class="total" x="743.4" y="118.0">163 listed</text>
 <text class="city" x="12" y="148.0">Gothenburg</text>
 <rect class="c-in_corpus" fill="#199e70" x="110.0" y="134" width="33.6" height="20" rx="2"><title>Gothenburg · In corpus: 9</title></rect>
 <text class="seg" x="126.8" y="148.0" text-anchor="middle">9</text>

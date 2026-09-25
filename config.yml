@@ -113,17 +113,8 @@ countries:
         blocked: 0
 
   denmark:
-        screened: 0
-        annotated: 0
-        blocked: 0
     status: in_progress
-        screened: 0
-        annotated: 0
-        blocked: 0
     cities:
-        screened: 0
-        annotated: 0
-        blocked: 0
       copenhagen:
         name: Copenhagen
         search_terms: [Copenhagen, København, Rigshospitalet, Frederiksberg]
@@ -241,15 +232,21 @@ countries:
         search_terms: [Oulu]
         pride_hits: 11
         screened: 0
-        annotated: 0
-        blocked: 0
+        annotated: 5
+        blocked: 2
+        pxd_list: lists/finland/oulu.txt
+        pxd_count: 11
+        in_corpus: 4
       tampere:
         name: Tampere
         search_terms: [Tampere]
         pride_hits: 5
         screened: 0
-        annotated: 0
-        blocked: 0
+        annotated: 1
+        blocked: 1
+        pxd_list: lists/finland/tampere.txt
+        pxd_count: 4
+        in_corpus: 2
       kuopio:
         name: Kuopio
         search_terms: [Kuopio, "University of Eastern Finland"]

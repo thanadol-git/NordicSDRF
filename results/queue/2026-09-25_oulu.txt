@@ -1,0 +1,13 @@
+# Oulu annotation batch — 11 confirmed PRIDE hits checked on 2026-09-25
+# Four accessions already have canonical SDRFs upstream; five new local SDRFs were generated; two were blocked for missing file-to-sample maps.
+PXD012034	finland/oulu	blocked	34 RAW files cannot be mapped to the paper's 7 PCOS + 20 control patients; numbered stems do not match Supplementary Table 1
+PXD023546	finland/oulu	annotated	31 rows; Renca hypoxia/normoxia EV vs supernatant mapped from PD supplementary tables; parse_sdrf warnings only (RenCa, BALB/c)
+PXD041792	finland/oulu	blocked	four numbered PHYHD1 RAW files do not encode the 2×2 BirA*/biotin BioID design; FEBS Lett. paper is not open access
+PXD045589	finland/oulu	annotated	26 rows; sweat EV enrichment methods from filename tokens; ontology validation passed
+PXD045755	finland/oulu	annotated	53 rows; amniotic vs fecal bacterial EV isolates from deposited metadata.txt; ontology validation passed
+PXD047290	finland/oulu	annotated	36 rows; bilberry ripening stages from filenames; white mutant not deposited; EFO warnings on stage names
+PXD047510	finland/oulu	existing	Canonical SDRF already present upstream
+PXD050033	finland/oulu	existing	Canonical SDRF already present upstream
+PXD052294	finland/oulu	existing	Canonical SDRF already present upstream
+PXD059764	finland/oulu	existing	Canonical SDRF already present upstream
+PXD065046	finland/oulu	annotated	13 rows; MEF collagen genotypes from Sample_map.xlsx; ontology validation passed

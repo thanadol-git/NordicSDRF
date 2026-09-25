@@ -1,0 +1,7 @@
+# Tampere annotation batch — 4 confirmed Finland PRIDE hits checked on 2026-09-25
+# Two accessions already have canonical SDRFs upstream; one new local SDRF was generated; one was blocked for a missing file-to-sample map.
+# PXD021494 (Karolinska / countries=Sweden) was a PRIDE hit for the Tampere terms and was rejected, not listed.
+PXD014016	finland/tampere	existing	Canonical SDRF already present upstream (complexome, mouse heart AOX)
+PXD033425	finland/tampere	blocked	Mixed in-vitro Bruker zips + granuloma QE RAWs; A1–A4 and P134xx have no condition map; paper points granulomas at PXD039416
+PXD035554	finland/tampere	existing	Canonical SDRF already present upstream (pig heart complexome companion of PXD047678)
+PXD047678	finland/tampere	annotated	96 rows; 12 piglets × pellet/supernatant C18/SCX fractions; HBO vs control from filenames + Excel animal IDs

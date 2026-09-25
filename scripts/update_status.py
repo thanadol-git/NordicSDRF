@@ -261,7 +261,7 @@ def update_config_text(text: str, numbers: dict[tuple[str, str], dict[str, int]]
             if indent <= 6:
                 flush_missing()
                 seen = set()
-            if indent == 2 and key in numbers_countries(numbers):
+            if indent == 2:
                 country, city = key, None
             elif indent == 4 and country and key == "status" and country in country_status:
                 line = f"    status: {country_status[country]}"
