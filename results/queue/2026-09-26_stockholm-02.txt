@@ -1,0 +1,12 @@
+# Stockholm annotation batch — 10 accessions, 2026-09-26
+# Two new SDRFs; eight blocked for missing file-to-sample or TMT maps.
+PXD014830	sweden/stockholm	blocked	TMT RAWs; no channel-to-iPSC/hFF sample map
+PXD016709	sweden/stockholm	blocked	Metadata workbook matches only 11/97 RAW archives
+PXD016727	sweden/stockholm	annotated	DIA serum OPSCC; PR #951
+PXD016776	sweden/stockholm	blocked	mixed label-free + TMT thermal profiling; no TMT channel map
+PXD017453	sweden/stockholm	blocked	CLL TMT10; no channel-to-patient map
+PXD018426	sweden/stockholm	blocked	mtDNA transcription inhibitor TMT; no channel/plex map
+PXD019267	sweden/stockholm	blocked	THP-1 nanomaterial codes unmapped to the 31 materials
+PXD019690	sweden/stockholm	blocked	neuronal mixed label-free/TMT; no multiplex channel map
+PXD020191	sweden/stockholm	blocked	lung cancer TMT; no patient/channel map
+PXD021015	sweden/stockholm	annotated	HEK293T bait AP-MS; PR #952

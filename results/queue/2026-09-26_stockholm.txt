@@ -1,0 +1,12 @@
+# Stockholm blocked batch — 10 accessions, 2026-09-26
+# All blocked for missing file-to-sample or TMT channel/plex maps. No SDRFs emitted.
+PXD008445	sweden/stockholm	blocked	samples.csv maps only 70/97 RAW archives; 27 RAWs unmatched, 14 sheet rows unmatched
+PXD009990	sweden/stockholm	blocked	generic RAW names; no SILAF/label-free/phospho run-level design
+PXD010006	sweden/stockholm	blocked	TMT10 HiRIEF RAWs lack channel-to-sample and run-to-plex maps
+PXD010175	sweden/stockholm	blocked	TMT10 ALL proteogenomics; no patient/channel/run design
+PXD010554	sweden/stockholm	blocked	SIESTA TrxR1/PARP10 TMT; filenames have arms but no channel map
+PXD011722	sweden/stockholm	blocked	TMT channel PDF present; Fusion_160628_<n>.raw files have no set/fraction map
+PXD013134	sweden/stockholm	blocked	ProTargetMiner TMT10; cell-line/fraction names, no channel-to-compound map
+PXD013182	sweden/stockholm	blocked	PISA TMT10; experiment names cannot assign reporter channels
+PXD013284	sweden/stockholm	blocked	CD4+ T-cell TMT10; RAW names have donor/fraction, not channel identities
+PXD014445	sweden/stockholm	blocked	AKT1 SIESTA TMT; protocol lists conditions, no channel or plex map
