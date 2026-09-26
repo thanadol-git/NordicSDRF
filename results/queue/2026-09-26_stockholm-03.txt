@@ -1,0 +1,12 @@
+# Stockholm annotation batch — 10 accessions, 2026-09-26
+# One new SDRF; nine blocked for missing TMT/file-to-sample maps.
+PXD021799	sweden/stockholm	blocked	TMT mito fractions; no channel-to-sample map
+PXD022734	sweden/stockholm	blocked	two TMT12 series; workbook plexes F15/F16 unlinked to RAWs
+PXD023050	sweden/stockholm	blocked	TMT FAIMS/fractions; no channel-to-TFAM sample map
+PXD023148	sweden/stockholm	blocked	plasma-depletion TMT; no reporter-channel map
+PXD023450	sweden/stockholm	blocked	SARS/MERS TMT; workbook plexes F19/F18 unlinked to RAWs
+PXD023760	sweden/stockholm	blocked	TMTpro Calu/Caco vs 293T/Huh7; F3/F4 unlinked to RAW series
+PXD023846	sweden/stockholm	blocked	96 TMT RAWs; Cell Metabolism paper not open; no channel map
+PXD023881	sweden/stockholm	blocked	liver RAWs vs opaque F11–F16 columns; no sample/run map
+PXD023990	sweden/stockholm	annotated	HIV PBMC TMT10 elite controller vs HC vs viremic; PR #953
+PXD025319	sweden/stockholm	blocked	opaque J_01–J_24 TMT RAWs; no channel/sample map
