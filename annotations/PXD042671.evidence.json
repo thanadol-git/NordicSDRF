@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD042671.sdrf.tsv",
+  "dataset": "PXD042671",
+  "sources": [
+    {
+      "id": "pride_project",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD042671"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD042671/files/all"
+    },
+    {
+      "id": "raw_sequence",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/04/PXD042671/MS_Sequence_rawFiles.xlsx"
+    },
+    {
+      "id": "channel_map",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/04/PXD042671/4000_scaffolds_Mascot_M0_SPS65_SN10_PD24_Lumos_200525_200601_04_08_To_Customer.xlsx"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11194446/"
+    },
+    {
+      "id": "paper_methods",
+      "kind": "supplement",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11194446/bin/CAC2-44-695-s002.docx"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] rows 1-1620",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride_project",
+        "paper_methods"
+      ],
+      "evidence": "The PRIDE project record identifies NEWT:9606, and the supplementary Methods describe human breast-cancer and adjacent-normal patient tissues."
+    },
+    {
+      "location": "characteristics[organism part] rows 1-1620",
+      "value": "breast",
+      "source_ids": [
+        "pride_project",
+        "paper_methods"
+      ],
+      "evidence": "The project title/description and Supplementary Methods sections 1-2 identify primary breast cancers and adjacent normal breast tissues used to prepare the scaffolds."
+    },
+    {
+      "location": "source name, characteristics[disease], characteristics[individual], and factor value[disease] for non-pool rows",
+      "value": "65 PDS identifiers annotated as breast cancer and 8 NT identifiers annotated as normal",
+      "source_ids": [
+        "channel_map",
+        "paper_methods"
+      ],
+      "evidence": "The deposited workbook's 'Sample info' sheet maps sample numbers 1-73 to exact PDS/NT identifiers and maps those sample numbers to TMT reporters in sets F1-F8. Supplementary Methods section 2 states that 65 primary breast cancers and 8 adjacent normal tissues were decellularised."
+    },
+    {
+      "location": "rows whose source name is reference-pool",
+      "value": "one common pooled reference; disease not available; individual pooled; technical replicates 1-8",
+      "source_ids": [
+        "channel_map",
+        "paper_methods"
+      ],
+      "evidence": "Reporter 126 is REF1-REF8 in the deposited 'Sample info' sheet. Supplementary Methods section 3 says one representative reference pool was prepared from equal protein amounts from all groups and an aliquot was included in every TMT set. One source identity is therefore used, while technical-replicate values 1-8 preserve the eight set aliquots and keep fraction coordinates unique. The evidence does not support assigning one disease or individual to the pool."
+    },
+    {
+      "location": "comment[label] rows 1-1620",
+      "value": "TMT126, TMT127N, TMT127C, TMT128N, TMT128C, TMT129N, TMT129C, TMT130N, TMT130C, TMT131N, or TMT131C according to set",
+      "source_ids": [
+        "channel_map",
+        "paper_methods"
+      ],
+      "evidence": "The deposited 'Sample info' sheet gives the reporter-to-sample assignment for each of F1-F8. Supplementary Methods section 4 confirms TMT labelling and eight combined TMT sets."
+    },
+    {
+      "location": "omission of TMT131C rows for sets F2-F8",
+      "value": "seven explicitly unused channels omitted",
+      "source_ids": [
+        "channel_map"
+      ],
+      "evidence": "The deposited 'Sample info' sheet records 'not used' for reporter 131C in F2-F8. F1 has a real sample in 131C and is retained."
+    },
+    {
+      "location": "comment[data file], assay name, and comment[fraction identifier] rows 1-1620",
+      "value": "160 deposited RAW names, mapped as 20 fractions in each of TMT sets F1-F8",
+      "source_ids": [
+        "raw_sequence",
+        "pride_files"
+      ],
+      "evidence": "MS_Sequence_rawFiles.xlsx lists the exact RAW basename and fraction sequence for each set; every listed basename occurs in the PRIDE file inventory. The SDRF assay name is the corresponding RAW basename without its extension."
+    },
+    {
+      "location": "comment[technical replicate] rows 1-1620",
+      "value": "1 for participant specimens; 1-8 for the eight aliquots of the common reference pool",
+      "source_ids": [
+        "raw_sequence"
+      ],
+      "evidence": "The deposited sequence contains one RAW acquisition for each set/fraction combination. For participant specimens the technical replicate is 1. For the single common reference source, values 1-8 encode the eight set aliquots described by the protocol and preserve unique source/replicate/fraction coordinates without inventing biological sources."
+    },
+    {
+      "location": "comment[proteomics data acquisition method] and comment[instrument] rows 1-1620",
+      "value": "Data-dependent acquisition; Orbitrap Fusion Lumos",
+      "source_ids": [
+        "pride_project",
+        "paper_methods"
+      ],
+      "evidence": "The PRIDE record specifies MS:1002732 Orbitrap Fusion Lumos. Supplementary Methods section 5 reports TMT fractions analysed on an Orbitrap Fusion Lumos with data-dependent precursor selection and MS2/MS3 acquisition."
+    },
+    {
+      "location": "comment[cleavage agent details] rows 1-1620",
+      "value": "Trypsin (MS:1001251)",
+      "source_ids": [
+        "paper_methods"
+      ],
+      "evidence": "Supplementary Methods section 4 specifies MS-grade trypsin digestion, and section 6 specifies tryptic peptides."
+    },
+    {
+      "location": "comment[precursor mass tolerance] and comment[fragment mass tolerance] rows 1-1620",
+      "value": "5 ppm precursor; 0.6 Da fragment",
+      "source_ids": [
+        "paper_methods"
+      ],
+      "evidence": "Supplementary Methods section 6 reports a 5 ppm MS peptide tolerance and 0.6 Da fragment-ion tolerance for the Mascot search."
+    },
+    {
+      "location": "four comment[modification parameters] columns, rows 1-1620",
+      "value": "variable methionine oxidation; fixed cysteine methylthiolation; fixed TMT modification on lysine and peptide N-termini",
+      "source_ids": [
+        "paper_methods"
+      ],
+      "evidence": "Supplementary Methods section 6 explicitly reports methionine oxidation as variable and cysteine methylthiolation plus TMT-6 on lysine and peptide N-termini as fixed. The SDRF uses the corresponding UNIMOD encodings."
+    },
+    {
+      "location": "retention of all 73 non-pool specimen sources",
+      "value": "all acquired specimens retained in the SDRF",
+      "source_ids": [
+        "channel_map",
+        "paper_methods"
+      ],
+      "evidence": "The reporter map includes samples 1-73. Supplementary Methods section 6 says two PDS samples were removed from downstream analyses but were part of the LC-MS/MS analyses, so they remain in an acquisition-level SDRF."
+    }
+  ],
+  "limitations": [
+    "No sample-level age or sex mapping was available in the deposited run/channel workbooks used for this annotation; those fields are 'not available' rather than inferred from cohort summaries.",
+    "The evidence does not enumerate the constituent sample identifiers of the study-wide reference pool; it is represented as one pooled source without a disease assignment, with set aliquots distinguished technically.",
+    "No donor pairing between NT1-NT8 and specific cancer PDS identifiers was asserted because the deposited channel map does not establish such pairing.",
+    "Ancestry and developmental-stage values were not added because no sample-level mapping was established.",
+    "Two PDS samples excluded from downstream statistical analyses are not identified by the supplementary Methods; they are retained because the publication says they were acquired by LC-MS/MS and the deposited channel map includes all 73 specimens."
+  ]
+}

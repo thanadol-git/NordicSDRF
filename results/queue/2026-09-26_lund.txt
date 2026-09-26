@@ -1,0 +1,22 @@
+# Lund batch — 20 accessions from lists/sweden/lund.txt to-do, 2026-09-26
+# 11 annotated (draft, awaiting independent review), 9 blocked.
+PXD021197	sweden/lund	blocked	DIA runs labelled only sputum/plasma; no RAW-to-patient/day map
+PXD021241	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD021245	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD021266	sweden/lund	blocked	HDX-MS full-MS runs: no SDRF acquisition term, no D2O-time column
+PXD021338	sweden/lund	blocked	13 FF runs not linkable to woman or MII/immature outcome
+PXD021394	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD023075	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD023122	sweden/lund	blocked	HDX-MS full-MS runs only
+PXD023174	sweden/lund	blocked	316 RAWs, no RAW-to-patient/diagnosis map
+PXD023244	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD023708	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD023890	sweden/lund	blocked	depth bin per RAW not stated; files named bov vs porcine
+PXD024286	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD024359	sweden/lund	blocked	PD F1-F133 ids not linked to RAW names
+PXD024448	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD024508	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD025242	sweden/lund	blocked	TMT map for 8 PD inputs, 4 RAWs deposited
+PXD026086	sweden/lund	blocked	20+ sub-experiments, no RAW-to-sample sheet
+PXD026371	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD026661	sweden/lund	annotated	SDRF + report + evidence manifest

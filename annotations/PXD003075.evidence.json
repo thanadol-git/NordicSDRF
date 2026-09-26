@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD003075.sdrf.tsv",
+  "dataset": "PXD003075",
+  "sources": [
+    {"id": "pride_project", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003075"},
+    {"id": "pride_files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003075/files/all"},
+    {"id": "paper", "kind": "publication", "location": "https://doi.org/10.1186/s13195-016-0178-x"},
+    {"id": "paper_fulltext", "kind": "publication", "location": "https://europepmc.org/articles/PMC4780148"}
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[individual], comment[data file], comment[technical replicate]: all rows",
+      "value": "15 LFAM participant multiplexes, each represented by one 20130822 RAW file and one 131108 RAW file",
+      "source_ids": ["pride_files", "paper", "paper_fulltext"],
+      "evidence": "The complete file listing contains exactly two RAW filenames with each LFAM identifier, one in each acquisition series; the Methods state that each participant's TMT6 set was analyzed in two technical replicates."
+    },
+    {
+      "location": "comment[label], characteristics[sampling time], factor value[sampling time]: all rows",
+      "value": "TMT126=0 h, TMT127=3 h, TMT128=9 h, TMT129=12 h, TMT130=18 h, TMT131=36 h",
+      "source_ids": ["paper", "paper_fulltext", "pride_project"],
+      "evidence": "Publication Table 1 explicitly maps all six reporters to the six time points; the PRIDE sample-processing protocol independently confirms that time zero is TMT126 and later samples proceed in reporter order."
+    },
+    {
+      "location": "characteristics[organism], characteristics[organism part], characteristics[pooled sample], characteristics[disease], characteristics[material type]",
+      "value": "Homo sapiens; cerebrospinal fluid; not pooled; normal; organism part",
+      "source_ids": ["pride_project", "paper", "paper_fulltext"],
+      "evidence": "The project and Methods describe neat CSF aliquots collected separately from 15 healthy human volunteers and multiplexed per participant."
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method]",
+      "value": "Q Exactive; data-dependent acquisition",
+      "source_ids": ["pride_project", "paper", "paper_fulltext"],
+      "evidence": "The PRIDE instrument record names Q Exactive and the protocol states DDA; the publication LC-MS section describes the Q Exactive top-10 data-dependent method."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "not applicable",
+      "source_ids": ["pride_project", "paper", "paper_fulltext"],
+      "evidence": "The workflow isolates endogenous CSF peptides by 30 kDa ultrafiltration, and the publication states that endogenous peptides were searched without an enzyme."
+    },
+    {
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance], comment[modification parameters]",
+      "value": "10 ppm; 0.02 Da; fixed Carbamidomethyl(C), fixed TMT6plex(K and peptide N-terminus), variable Oxidation(M)",
+      "source_ids": ["pride_project", "paper", "paper_fulltext"],
+      "evidence": "The PRIDE data-processing protocol and publication Data analysis section give the same fixed/variable modifications and 10 ppm/20 milli-mass-unit tolerances."
+    }
+  ],
+  "limitations": [
+    "No source provides a participant-ID-to-treatment-group crosswalk, so placebo and semagacestat-dose factors are omitted.",
+    "Participant-level age, sex, ancestry, and developmental stage are unavailable.",
+    "The PRIDE overview says baseline plus six subsequent time points, whereas publication Table 1 and detailed Methods define six total analyzed time points; the exact table is used.",
+    "Technical-replicate numbers 1 and 2 are deterministic local labels for the two acquisition series and do not assert temporal order.",
+    "No source explicitly names the dissociation method or collision energy, so neither is asserted.",
+    "A fresh-context adversarial review was unavailable, and review-gate state was not written because this campaign forbids git-state changes."
+  ]
+}

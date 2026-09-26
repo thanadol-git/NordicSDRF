@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD023075.sdrf.tsv",
+  "dataset": "PXD023075",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD023075"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD023075/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC8140740"
+    },
+    {
+      "id": "mqpar",
+      "kind": "repository",
+      "location": "SEARCH.zip → 'SEARCH/txt - KRH-Me/mqpar.xml' and parameters.txt (zip central directory range read)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "201019_HAP1_MT9KO_Rep01.raw, 201019_HAP1_WT_Rep01/05.raw headers"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://api.cellosaurus.org/cell-line/CVCL_Y019"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, factor value[genotype], characteristics[genotype]",
+      "value": "5 × METTL9 knockout, 5 × wild type",
+      "source_ids": [
+        "pride",
+        "mqpar",
+        "paper"
+      ],
+      "evidence": "RAW names MT9KO_Rep01-05 / WT_Rep01-05; mqpar experiments MT9KO_Rep01..05, WT_Rep01..05; paper Fig. 6 n = 5"
+    },
+    {
+      "location": "characteristics[cell line], [cellosaurus accession], [cellosaurus name], [age], [sex], [disease], [organism part]",
+      "value": "HAP-1 / CVCL_Y019 / HAP1; 40Y; male; chronic myelogenous leukemia, BCR-ABL1 positive; bone marrow",
+      "source_ids": [
+        "cellosaurus",
+        "paper"
+      ],
+      "evidence": "Cellosaurus CVCL_Y019: SX Male, AG 40Y, DI Chronic myelogenous leukemia BCR-ABL1 positive, derived from bone marrow (KBM-7 parent)"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF-X",
+      "source_ids": [
+        "raw-header"
+      ],
+      "evidence": "RAW headers read 'Q Exactive HF-X'; the paper and PRIDE protocol say Q Exactive HF — raw data wins"
+    },
+    {
+      "location": "comment[modification parameters], tolerances",
+      "value": "CAM C fixed; Ox M, Acetyl protein N-term, Methyl KRH, Dimethyl KR, Trimethyl K variable; 4.5 ppm main search; 20 ppm FTMS MS/MS",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mqpar fixed/variable modification lists, mainSearchTol 4.5 ppm, MS/MS tol (FTMS) 20 ppm, enzyme Trypsin/P"
+    }
+  ],
+  "limitations": [
+    "Cellosaurus age 40Y describes the KBM-7/HAP1 donor, not the experiment.",
+    "Disease column describes the cell line origin; the WT arm is the genotype control, not a disease control (reconcile flags this — intentionally kept).",
+    "Digestion enzyme is taken from the search (Trypsin/P → Trypsin); the paper refers to a previous protocol."
+  ]
+}

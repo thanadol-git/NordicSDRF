@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD011527.sdrf.tsv",
+  "dataset": "PXD011527",
+  "sources": [
+    {
+      "id": "pride-project",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD011527"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD011527/files/all"
+    },
+    {
+      "id": "deposited-file-map",
+      "kind": "deposited-file",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2021/04/PXD011527/ProteomicsRAWfiles.xlsx"
+    },
+    {
+      "id": "publication",
+      "kind": "publication",
+      "location": "https://doi.org/10.1038/s41467-021-27743-1"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, assay name, comment[data file], comment[technical replicate], and comment[fraction identifier], all rows",
+      "value": "148 PRIDE RAW files mapped to 34 biological source identities, with SAX fractions and explicitly repeated injections preserved",
+      "source_ids": [
+        "pride-files",
+        "deposited-file-map"
+      ],
+      "evidence": "The PRIDE file inventory contains 148 RAW files. ProteomicsRAWfiles.xlsx maps every RAW filename to its Name, Group, MS Experiment, sample description, mouse identifier, age, sex, and animal count. Thirteen base/_SAX pairs have identical specimen description, mouse identifier(s), age, sex, and animal count and are modeled as one source each; distinct composite SAX pools remain separate. RAW suffixes and the sheet's '7 fractions SAX' designation establish fraction grouping, while duplicate source/fraction entries establish repeated injections."
+    },
+    {
+      "location": "comment[fraction identifier] and comment[technical replicate] for 161222_QEx_LA_MS580_GC_01_pH3_02.raw",
+      "value": "fraction 2; technical replicate 2",
+      "source_ids": [
+        "pride-files",
+        "deposited-file-map"
+      ],
+      "evidence": "The target is the second injection of the pH3 fraction for source DC_GC_03_05_SAX. Its sibling series establishes end=1, pH3=2, pH4=3, pH5=4, pH6=5, pH8=6, and pH11=7; the _pH3_02 filename preserves fraction 2 while technical replicate 2 distinguishes the reinjection."
+    },
+    {
+      "location": "characteristics[organism], all rows",
+      "value": "Mus musculus",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "The PRIDE project organism is Mus musculus and the associated study describes mouse intestinal cells."
+    },
+    {
+      "location": "characteristics[organism part], characteristics[cell type], factor value[organism part], and factor value[cell type], all rows",
+      "value": "colon or ileum; epithelial cell or goblet cell",
+      "source_ids": [
+        "pride-project",
+        "deposited-file-map"
+      ],
+      "evidence": "The project title and description identify ileum and colon FACS-sorted Muc2-expressing and non-expressing cells. The deposited Group and Sample description fields explicitly distinguish DC versus Si8 and GC versus EC for each source; PRIDE also registers colon, ileum, goblet cell, and epithelial cell terms."
+    },
+    {
+      "location": "characteristics[biological replicate] and characteristics[pooled sample], all rows",
+      "value": "specimen-consistent group-local biological replicate ordinals; pooled or not pooled",
+      "source_ids": [
+        "deposited-file-map"
+      ],
+      "evidence": "Biological replicate ordinals are assigned to specimen identities within each biological group. For the 13 reviewed base/_SAX pairs, identical sample description, mouse identifier(s), age, sex, and animal count establish one specimen and therefore one biological-replicate value; technical-replicate identifiers preserve the separate unfractionated and SAX measurements. The sheet's Nr animals field explicitly states 1, Pool/pool of 2 animals, or Pool/pool of 4 animals."
+    },
+    {
+      "location": "characteristics[material type], all rows",
+      "value": "cell",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "The PRIDE description and Methods identify FACS-sorted epithelial-cell and goblet-cell populations."
+    },
+    {
+      "location": "characteristics[developmental stage], all rows except source Si8_EC_01",
+      "value": "adult",
+      "source_ids": [
+        "deposited-file-map"
+      ],
+      "evidence": "The deposited age values are 8, 9, or 11 weeks and were normalized to the controlled developmental-stage value adult. Si8_EC_01 has no deposited age and is explicitly recorded as not available."
+    },
+    {
+      "location": "characteristics[sex], all rows",
+      "value": "male",
+      "source_ids": [
+        "deposited-file-map"
+      ],
+      "evidence": "Every mapped row in the deposited spreadsheet has Gender M."
+    },
+    {
+      "location": "characteristics[disease], all rows",
+      "value": "not available",
+      "source_ids": [
+        "pride-project",
+        "deposited-file-map"
+      ],
+      "evidence": "PRIDE registers no disease and the deposited sample map provides no per-source disease status, so no normal or disease state was inferred."
+    },
+    {
+      "location": "comment[label], all rows",
+      "value": "label free sample",
+      "source_ids": [
+        "pride-project"
+      ],
+      "evidence": "The PRIDE data-processing protocol states that quantification used the MaxQuant LFQ protocol and describes no isotopic or isobaric label."
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method], and comment[dissociation method], all rows",
+      "value": "Q Exactive; data-dependent acquisition; beam-type collision-induced dissociation",
+      "source_ids": [
+        "pride-project"
+      ],
+      "evidence": "The PRIDE record names the Q Exactive and describes top-12 precursor selection followed by fragmentation in the HCD collision cell."
+    },
+    {
+      "location": "comment[cleavage agent details], all rows",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride-project"
+      ],
+      "evidence": "The PRIDE sample-processing protocol states sequential Lys-C and trypsin digestion, and the data-processing protocol states full tryptic specificity. Trypsin is retained as the single v1.1.0 cleavage-agent value; the omitted preceding Lys-C step is documented as a limitation."
+    },
+    {
+      "location": "three comment[modification parameters] columns, all rows",
+      "value": "Carbamidomethyl (C), Oxidation (M), and protein N-terminal Acetyl, all variable",
+      "source_ids": [
+        "pride-project"
+      ],
+      "evidence": "The PRIDE data-processing protocol explicitly lists carbamidomethylation of cysteine, methionine oxidation, and protein N-terminal acetylation as variable modifications."
+    }
+  ],
+  "limitations": [
+    "The ms-proteomics v1.1.0 template permits only one cleavage-agent column. The sample preparation used sequential Lys-C and trypsin, so Lys-C cannot be represented alongside Trypsin without violating the declared template; reconciliation reports this as an incomplete cleavage-agent annotation.",
+    "The deposited map has no age for source Si8_EC_01; its developmental stage is therefore not available.",
+    "PRIDE and the deposited map provide no per-source disease status; disease is recorded as not available rather than inferred as normal.",
+    "Biological replicate values are deterministic group-local ordinals over biological specimen identities, not the submitter's mouse identifiers. Thirteen base/_SAX name pairs were unified only where all specimen fields match; composite SAX pools with different composition remain distinct.",
+    "Pooled status is represented, but individual contributing mouse identifiers remain only in the deposited spreadsheet."
+  ]
+}

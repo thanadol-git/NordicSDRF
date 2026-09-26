@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD016519.sdrf.tsv",
+  "dataset": "PXD016519",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "/tmp/gothenburg-sdrf/PXD016519/pride.json"},
+    {"id": "files", "kind": "repository", "location": "/tmp/gothenburg-sdrf/PXD016519/files.json"},
+    {"id": "sample-order", "kind": "deposited-file", "location": "/tmp/gothenburg-sdrf/PXD016519/sample_order_proteomics.xlsx"}
+  ],
+  "claims": [
+    {
+      "location": "source name, comment[data file], labels, carbon source, sampling time, and biological replicate",
+      "value": "165 rows covering 108 RAW files with total-proteome, phosphoproteome, heavy-standard, and calibration channels",
+      "source_ids": ["files", "sample-order", "pride"],
+      "evidence": "The PRIDE inventory and deposited sample-order workbook jointly define every represented file, condition, time point, and replicate."
+    },
+    {
+      "location": "fifth comment[modification parameters] column",
+      "value": "Phospho(ST), variable on 51 phosphoproteome rows; not applicable on 114 other rows",
+      "source_ids": ["files", "pride"],
+      "evidence": "EasyPhos-designated files are phosphoproteome acquisitions and use the phospho search parameter; the parameter does not apply to total-proteome, standard, or calibration rows."
+    },
+    {
+      "location": "factor value[carbon source] and factor value[sampling time]",
+      "value": "study conditions on 102 biological rows; not applicable on 63 calibration/heavy-standard rows",
+      "source_ids": ["sample-order", "files"],
+      "evidence": "The workbook assigns carbon source and sampling time only to study samples. Standards do not belong to either experimental factor."
+    },
+    {
+      "location": "technical comment columns",
+      "value": "Q Exactive Plus DDA with evidence-specific Lys-C/P or Trypsin/P cleavage, HCD, tolerances, and common search modifications",
+      "source_ids": ["pride", "files"],
+      "evidence": "PRIDE protocols and acquisition naming support the technical settings and distinguish total-proteome from EasyPhos processing."
+    }
+  ],
+  "limitations": [
+    "The deterministic reconciler compares enzyme labels lexically and flags Trypsin/P and Lys-C/P against protocol strings Trypsin and Lys-C; the more precise search-specificity terms are retained.",
+    "No row or file coverage was changed during repair.",
+    "No review-gate approval was created for this repair run, as requested."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD028613.sdrf.tsv",
+  "dataset": "PXD028613",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "/tmp/gothenburg-sdrf/PXD028613/evidence/project.json"},
+    {"id": "files", "kind": "repository", "location": "/tmp/gothenburg-sdrf/PXD028613/evidence/files.json"},
+    {"id": "design", "kind": "deposited-file", "location": "/tmp/gothenburg-sdrf/PXD028613/evidence/attachments/Samples.txt"},
+    {"id": "mqpar", "kind": "deposited-file", "location": "/tmp/gothenburg-sdrf/PXD028613/evidence/attachments/mqpar.xml"},
+    {"id": "paper", "kind": "publication", "location": "/tmp/gothenburg-sdrf/PXD028613/evidence/manuscript.txt"}
+  ],
+  "claims": [
+    {
+      "location": "source name, comment[data file], and all factor columns",
+      "value": "54 exact RAW-to-experiment mappings with diet, days on WSD, and SI5/SI8 region",
+      "source_ids": ["design", "files"],
+      "evidence": "Samples.txt contains one row per represented RAW stem and explicitly records experiment, tissue code, food, and time on WSD."
+    },
+    {
+      "location": "characteristics[strain or breed] and characteristics[developmental stage]",
+      "value": "C57BL/6; adult",
+      "source_ids": ["paper", "pride"],
+      "evidence": "The publication methods identify adult C57BL/6 mice for this design."
+    },
+    {
+      "location": "characteristics[disease]: all rows",
+      "value": "not available",
+      "source_ids": ["design", "paper", "pride"],
+      "evidence": "The design and paper establish diet and intestinal region, not sample-level disease. Project-level obesity metadata is not broadcast to every sample."
+    },
+    {
+      "location": "comment[precursor mass tolerance] and comment[fragment mass tolerance]: all rows",
+      "value": "4.5 ppm precursor; 20 ppm fragment",
+      "source_ids": ["mqpar"],
+      "evidence": "Deposited mqpar.xml v1.5.7.4 maps all 54 RAW files and is the operative MaxQuant configuration. mainSearchTol=4.5 with searchTolInPpm=true is the main-search precursor tolerance after recalibration. msInstrument=0 selects the FTMS MS/MS block (MatchTolerance=20 ppm) for the Q Exactive Orbitrap; the unused ITMS 0.5 Da block is not applied. Publication/PRIDE prose of 7 ppm / 0.5 Da is superseded by this exact deposited configuration."
+    },
+    {
+      "location": "technical comment columns: all rows",
+      "value": "Q Exactive DDA, Trypsin, Carbamidomethyl, Oxidation, and protein N-terminal Acetyl",
+      "source_ids": ["mqpar", "pride"],
+      "evidence": "The retained mqpar.xml and PRIDE processing record establish the file map, instrument, cleavage, and modification configuration."
+    },
+    {
+      "location": "comment[sdrf version]: all rows",
+      "value": "v1.1.0",
+      "source_ids": ["pride"],
+      "evidence": "The artifact is built and validated against the declared v1.1.0 templates."
+    }
+  ],
+  "limitations": [
+    "Mass-tolerance columns follow the deposited mqpar.xml rather than publication/PRIDE prose (7 ppm / 0.5 Da). MaxQuant firstSearchTol=20 ppm is the recalibration first pass and is not used as the SDRF precursor tolerance.",
+    "The v1.1.0 template carries one cleavage-agent value; Trypsin is represented while the broader preparation also used Lys-C.",
+    "The three design factors preserve deposited vocabulary and have no same-named characteristics columns.",
+    "Samples.txt SHA-256 is 8cd15103324136004dac6c963994a2b00075c92ad0d17a3bb47a770d20cc9193; mqpar.xml SHA-256 is c5c27d225de0950d786929b0159ac1b29d6cf3558bf6cf42e73a237951e6e766.",
+    "No review-gate approval was created for this repair run, as requested."
+  ]
+}

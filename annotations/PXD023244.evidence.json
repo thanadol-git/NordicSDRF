@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD023244.sdrf.tsv",
+  "dataset": "PXD023244",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD023244"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD023244/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC7888259"
+    },
+    {
+      "id": "github",
+      "kind": "repository",
+      "location": "https://github.com/ErikHartman/2020-peptidomics peptidomic_final/dataset/peptidomic_data (PEAKS exports, 'Source File' column)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "all 45 RAW headers (instrument string)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[phenotype], characteristics[disease]",
+      "value": "acute wound fluid WF1–WF5; non-infected dressings 13/21/33; S. aureus-infected dressings 31/34/39",
+      "source_ids": [
+        "github",
+        "paper"
+      ],
+      "evidence": "GitHub folders peptide_acute / peptide_ninf / peptide_inf; each PEAKS export lists its RAW files in 'Source File'"
+    },
+    {
+      "location": "38_1.raw, 38_2.raw",
+      "value": "sample 39 (infected)",
+      "source_ids": [
+        "github"
+      ],
+      "evidence": "'peptide sample 39.xlsx' Source File = 38_1/38_2 (deposited) + 39_1/39_2 (not deposited)"
+    },
+    {
+      "location": "first_33_1.raw, first_33_2.raw",
+      "value": "sample 33",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "by file name only; PEAKS used first_33b_* instead"
+    },
+    {
+      "location": "comment[instrument], comment[fragment mass tolerance]",
+      "value": "Orbitrap Fusion (WF runs, 0.5 Da) / Q Exactive HF-X (dressing runs, 0.02 Da)",
+      "source_ids": [
+        "raw-header",
+        "pride"
+      ],
+      "evidence": "RAW headers per file; PRIDE protocol gives per-instrument fragment tolerance"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "not applicable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "endogenous peptidome, no digestion; PEAKS nonspecific search"
+    }
+  ],
+  "limitations": [
+    "38_* RAWs are attributed to sample 39 per the authors' PEAKS export; the numbering conflict (38 vs 39) is unexplained.",
+    "first_33_1/2 not referenced by any PEAKS export; assigned to sample 33 by name.",
+    "Plasma samples mentioned in the papers are not in this deposit.",
+    "Donor age/sex not available."
+  ]
+}

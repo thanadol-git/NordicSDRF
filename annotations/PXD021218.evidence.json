@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD021218.sdrf.tsv",
+  "dataset": "PXD021218",
+  "sources": [
+    {
+      "id": "pride-project",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD021218"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD021218/files/all"
+    },
+    {
+      "id": "deposited-design",
+      "kind": "deposited-file",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2021/03/PXD021218/2963_FileList_TMT_LFQ.pdf"
+    },
+    {
+      "id": "publication",
+      "kind": "publication",
+      "location": "https://doi.org/10.7554/elife.65722"
+    },
+    {
+      "id": "publication-supplement",
+      "kind": "publication-supplement",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8016476/supplementaryFiles"
+    },
+    {
+      "id": "unimod-methylthio",
+      "kind": "ontology",
+      "location": "https://www.unimod.org/modifications_view.php?editid1=39"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, assay name, comment[data file], comment[label], comment[fraction identifier], and comment[technical replicate], all rows",
+      "value": "Five explicitly mapped TMT10 sets containing 47 used channels across 100 RAW fractions, plus one label-free pooled reference measured in three technical injections across 30 RAW files",
+      "source_ids": [
+        "pride-files",
+        "deposited-design",
+        "publication"
+      ],
+      "evidence": "The deposited PDF gives each TMT set's channel-to-sample table, explicitly blank channels, exact fraction-ordered RAW lists, and the three exact LFQ injection-replicate file lists. The publication Methods confirms five TMT10 sets with 20 final fractions and a label-free pooled sample with 10 final fractions injected three times."
+    },
+    {
+      "location": "characteristics[organism] and characteristics[material type], all rows",
+      "value": "Saccharomyces cerevisiae; cell",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "PRIDE registers Saccharomyces cerevisiae and both PRIDE and the publication describe cultured yeast cell pellets."
+    },
+    {
+      "location": "characteristics[biological replicate], characteristics[pooled sample], and all factor-value columns for sources S1-S42",
+      "value": "42 samples forming biological triplicates across 14 exact chemostat conditions",
+      "source_ids": [
+        "deposited-design",
+        "publication-supplement"
+      ],
+      "evidence": "Supplementary File 1a maps sample numbers 1-42 to nitrogen source, dilution rate, glucose concentration, nitrogen-source concentration, limiting nutrient, C/N ratio, and experiment subset. Replicate numbers are deterministic ordinals within identical seven-field condition tuples. The deposited PDF maps each S-number to an exact TMT channel."
+    },
+    {
+      "location": "factor value[carbon nitrogen ratio], factor value[dilution rate], factor value[experiment subset], factor value[glucose concentration], factor value[limiting nutrient], factor value[nitrogen source], and factor value[nitrogen source concentration] for S1-S42",
+      "value": "exact values from Supplementary File 1a",
+      "source_ids": [
+        "publication-supplement"
+      ],
+      "evidence": "All seven values are copied from the publication supplement's 'Chemostat culture conditions and sample ID' sheet, with only explicit units appended from the column headings."
+    },
+    {
+      "location": "sources Reference and Reference_UPS2",
+      "value": "one pooled TMT Reference represented across technical replicates 1-5, plus the separately prepared Reference_UPS2 material; condition factors not applicable",
+      "source_ids": [
+        "deposited-design",
+        "publication"
+      ],
+      "evidence": "The deposited design labels Ref1-Ref5 as reference channels. The Methods states that one Reference was prepared by mixing equal amounts from every supernatant and distributed across five TMT sets. The SDRF therefore uses one Reference source with technical-replicate values 1-5. A separate aliquot was UPS2-spiked for label-free IBAQ and remains Reference_UPS2."
+    },
+    {
+      "location": "comment[instrument] and comment[proteomics data acquisition method], all rows",
+      "value": "Orbitrap Fusion; data-dependent acquisition",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "PRIDE registers Orbitrap Fusion. The Methods describes cycle-based selection of the most abundant charge 2-7 precursors for fragmentation, establishing DDA for both sub-data sets."
+    },
+    {
+      "location": "comment[dissociation method], all rows",
+      "value": "collision-induced dissociation",
+      "source_ids": [
+        "publication"
+      ],
+      "evidence": "The Methods explicitly states that precursors were fragmented by CID for identification in both TMT and label-free acquisitions. TMT reporter quantification also used a downstream HCD MS3 step, recorded as a limitation because the template field is single-valued."
+    },
+    {
+      "location": "comment[cleavage agent details], comment[precursor mass tolerance], and comment[fragment mass tolerance], all rows",
+      "value": "Trypsin; 5 ppm; 0.6 Da",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "PRIDE and the publication state trypsin digestion, a 5 ppm precursor tolerance, and a 600 mmu (0.6 Da) MS2 identification tolerance for both TMT and label-free data."
+    },
+    {
+      "location": "comment[modification parameters], all rows",
+      "value": "fixed Methylthio (C) and variable Oxidation (M); TMT rows additionally have fixed TMT6plex on K and peptide N-termini",
+      "source_ids": [
+        "pride-project",
+        "publication",
+        "unimod-methylthio"
+      ],
+      "evidence": "The PRIDE data-processing protocol and publication Methods explicitly list fixed cysteine methylthiolation, variable methionine oxidation, and TMT-6 label on lysine and peptide N-termini for the TMT subset. Unimod accession 39 identifies Methylthio and MMTS."
+    }
+  ],
+  "limitations": [
+    "The ms-proteomics v1.1.0 dissociation-method field is single-valued. TMT identification used CID MS2 followed by HCD MS3 reporter-ion measurement; CID is recorded because it produced the identification spectra, while the HCD MS3 step remains documented here.",
+    "The deposited design names the five TMT aliquots Ref1-Ref5, but the publication establishes one pooled Reference preparation; the SDRF uses one Reference source and preserves the five aliquots as technical replicates 1-5.",
+    "The label-free Reference_UPS2 source is an aliquot of the pooled reference spiked with UPS2; the optional spiked-compound structured field is not asserted because the v1.1.0 grammar requires details not fully supplied by the sources.",
+    "No strain characteristic is asserted even though the search database is S288c and the publication mentions CEN.PK 113-7D; the available design does not provide a per-sample strain column."
+  ]
+}

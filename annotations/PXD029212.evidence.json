@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029212.sdrf.tsv",
+  "dataset": "PXD029212",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "/tmp/gothenburg-sdrf/PXD029212/pride.json"},
+    {"id": "files", "kind": "repository", "location": "/tmp/gothenburg-sdrf/PXD029212/files.json"},
+    {"id": "file-list", "kind": "deposited-file", "location": "/tmp/gothenburg-sdrf/PXD029212/File_List.xlsx"},
+    {"id": "results", "kind": "deposited-file", "location": "/tmp/gothenburg-sdrf/PXD029212/Results_All_Proteins.xlsx"},
+    {"id": "paper", "kind": "publication", "location": "/tmp/gothenburg-sdrf/PXD029212/article.xml"}
+  ],
+  "claims": [
+    {
+      "location": "comment[data file], comment[fraction identifier], and comment[label]: all rows",
+      "value": "40 RAW files in two 20-fraction TMT10 sets with complete reporter-channel maps",
+      "source_ids": ["files", "file-list", "results"],
+      "evidence": "File_List.xlsx assigns every RAW identifier to set and fraction; the results workbook maps the ten reporter channels in both sets."
+    },
+    {
+      "location": "source name and biological-replicate/sample characteristics: study rows",
+      "value": "18 study sources covering three derivatives, two EV subtypes, and three biological replicates",
+      "source_ids": ["results", "paper"],
+      "evidence": "The workbook supplies sample numbers and replicate suffixes; the paper resolves derivative and small/large EV terminology."
+    },
+    {
+      "location": "characteristics[pooled sample]",
+      "value": "pooled only on the 40 TMT126 reference-pool rows; not pooled on the 360 named study-sample rows",
+      "source_ids": ["results", "paper", "pride"],
+      "evidence": "The protocol defines 18 individual biological samples plus one reference pool used in each of two TMT sets. Results_All_Proteins.xlsx maps TMT126 to Ref in each set and maps the other nine channels to named individual samples."
+    },
+    {
+      "location": "reference-pool-set1 and reference-pool-set2 rows",
+      "value": "pooled characteristics and pooled values in both active factor columns",
+      "source_ids": ["results", "paper", "pride"],
+      "evidence": "Both TMT126 channels are aliquots of the common pool. Because each factor describes the pooled composition rather than one derivative or EV subtype, the characteristics and factors consistently use pooled."
+    },
+    {
+      "location": "technical comment columns: all rows",
+      "value": "Orbitrap Fusion DDA, Trypsin, CID at 35% NCE, 5 ppm/0.6 Da, and four deposited search modifications",
+      "source_ids": ["pride", "paper"],
+      "evidence": "The accession protocol and publication methods support the instrument, acquisition, digestion, tolerances, MMTS alkylation, oxidation, and TMT search settings."
+    }
+  ],
+  "limitations": [
+    "The paper avoids assigning exosome/microvesicle biogenesis; small/large extracellular-vesicle wording is retained.",
+    "No accession-specific Cellosaurus identifiers are available for the three MDA-MB-231 derivatives.",
+    "No review-gate approval was created for this repair run, as requested."
+  ]
+}

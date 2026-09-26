@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD014178.sdrf.tsv",
+  "dataset": "PXD014178",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "/tmp/gothenburg-sdrf/PXD014178/pride.json"},
+    {"id": "files", "kind": "repository", "location": "/tmp/gothenburg-sdrf/PXD014178/files.json"},
+    {"id": "paper", "kind": "publication", "location": "https://doi.org/10.1098/rsif.2019.0775"}
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] and comment[sdrf template]: all rows",
+      "value": "Homo sapiens with the human v1.1.0 template",
+      "source_ids": ["pride", "paper"],
+      "evidence": "PRIDE and the publication identify a preserved human brain; the human template is therefore the correct organism layer."
+    },
+    {
+      "location": "characteristics[age]: all rows",
+      "value": "not available",
+      "source_ids": ["pride", "paper"],
+      "evidence": "Neither source reports donor age. The specimen age is not donor age, so the human contract's allowed unavailable value is used."
+    },
+    {
+      "location": "characteristics[disease]: all rows",
+      "value": "disease free",
+      "source_ids": ["pride"],
+      "evidence": "PRIDE explicitly records disease free with DOID:0000018."
+    },
+    {
+      "location": "comment[data file] and comment[fraction identifier]: all rows",
+      "value": "78 deposited RAW files; Hels_Cx5 uses fraction identifiers 2 through 8",
+      "source_ids": ["files", "pride"],
+      "evidence": "The file inventory contains exactly the represented RAW files. Filename suffixes preserve the deposited gel-slice number; Hels_Cx5 fraction 1 has no RAW file and is not silently renumbered."
+    },
+    {
+      "location": "comment[modification parameters]: all rows",
+      "value": "fixed Carbamidomethyl on cysteine",
+      "source_ids": ["pride"],
+      "evidence": "The PRIDE data-processing protocol names fixed carbamidomethylation and does not support protein N-terminal acetylation."
+    }
+  ],
+  "limitations": [
+    "Donor age, sex, developmental stage, and ancestry are unavailable at sample level.",
+    "The cached manuscript.txt is empty; accession protocols and the cited publication metadata were used for the supported claims.",
+    "No review-gate approval was created for this repair run, as requested."
+  ]
+}

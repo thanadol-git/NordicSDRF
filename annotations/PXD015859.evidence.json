@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD015859.sdrf.tsv",
+  "dataset": "PXD015859",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "/tmp/gothenburg-sdrf/PXD015859/evidence/project.json"},
+    {"id": "files", "kind": "repository", "location": "/tmp/gothenburg-sdrf/PXD015859/evidence/files.json"},
+    {"id": "paper", "kind": "publication", "location": "/tmp/gothenburg-sdrf/PXD015859/evidence/manuscript.txt"},
+    {"id": "supplement", "kind": "publication-supplement", "location": "/tmp/gothenburg-sdrf/PXD015859/evidence/supplement-files/41598_2022_10271_MOESM1_ESM.pdf.txt"},
+    {"id": "labeling", "kind": "deposited-file", "location": "/tmp/gothenburg-sdrf/PXD015859/evidence/attachments/2211_3109_Plasma_Labeling_Scheme.pdf"},
+    {"id": "labeling-text", "kind": "deposited-file-extract", "location": "/tmp/gothenburg-sdrf/PXD015859/evidence/attachments/2211_3109_Plasma_Labeling_Scheme.pdf.txt"},
+    {"id": "set1-msf-head", "kind": "deposited-file-range", "location": "/tmp/gothenburg-sdrf/PXD015859/set1-head.msf"},
+    {"id": "set2-msf-head", "kind": "deposited-file-range", "location": "/tmp/gothenburg-sdrf/PXD015859/set2-head.msf"}
+  ],
+  "claims": [
+    {
+      "location": "source name and comment[label]: all 660 rows",
+      "value": "exact used-channel assignments for pooled sets 1/2 and individual sets 5/6",
+      "source_ids": ["labeling", "labeling-text"],
+      "evidence": "The deposited PDF tabulates every channel against Ref, A-F/AK-FK, A2-A5, B1-B5, AK1-AK4, and BK1-BK4. Its seven dash entries are explicit unused channels and emit no SDRF rows."
+    },
+    {
+      "location": "comment[data file] and comment[fraction identifier]: all rows",
+      "value": "80 RAW files in four 20-fraction plexes",
+      "source_ids": ["files", "set1-msf-head", "set2-msf-head", "labeling"],
+      "evidence": "The inventory and MSF evidence establish the pooled-set RAW ranges; deposited set-5/set-6 names and the labeling scheme establish the two individual plexes."
+    },
+    {
+      "location": "characteristics[developmental stage] and factor value[age group]",
+      "value": "adult for 18-week cohorts; not available for source-described juvenile 7-week cohorts; exact age groups retained as factors",
+      "source_ids": ["paper", "supplement", "labeling"],
+      "evidence": "The source calls the 7-week cohort juvenile, but that label does not resolve in the template's EFO family. The allowed reserved value prevents an unsupported ontology substitution while the 7-week-old factor preserves source meaning."
+    },
+    {
+      "location": "strain, sex, dose, sampling time, and irradiation factors",
+      "value": "source-supported C57BL/6N or CAnN.Cg-Foxn1nu/Crl cohorts, sex, 0/0.5 Gy, and 24-hour collection",
+      "source_ids": ["paper", "supplement", "labeling"],
+      "evidence": "The publication and supplement define cohorts A-F and their K controls; the labeling PDF applies those aliases to exact channels."
+    },
+    {
+      "location": "technical comment columns and comment[sdrf version]",
+      "value": "Orbitrap Fusion DDA, experiment-specific fragment tolerances, deposited search modifications, and SDRF v1.1.0",
+      "source_ids": ["pride", "supplement"],
+      "evidence": "The accession and supplementary processing methods support the instrument, acquisition, tolerances, and search settings; the artifact is built against v1.1.0 templates."
+    }
+  ],
+  "limitations": [
+    "Reference pools are known pools, but exact contributing aliquot identifiers are not enumerated.",
+    "C57BL/6N and CAnN.Cg-Foxn1nu/Crl are source-exact free-text strain values and produce non-failing local ontology-cache warnings.",
+    "The source word juvenile is documented but not asserted as an unresolved EFO value.",
+    "No review-gate approval was created for this repair run, as requested."
+  ]
+}

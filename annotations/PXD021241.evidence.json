@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD021241.sdrf.tsv",
+  "dataset": "PXD021241",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD021241"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD021241/files/all"
+    },
+    {
+      "id": "design",
+      "kind": "repository",
+      "location": "first_cohort_design.tsv (PRIDE, EXPERIMENTAL DESIGN/OTHER)"
+    },
+    {
+      "id": "data-header",
+      "kind": "repository",
+      "location": "first_cohort_data.tsv header rows '# File' / column headers (HTTP range read)"
+    },
+    {
+      "id": "xtandem",
+      "kind": "repository",
+      "location": "Elite_170424_54_GPM00300012497.2017_05_19_14_53_35.t.xt.xml 'input parameters' block (tail range read)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "Elite_170424_101/97.raw, Elite_181205_98.raw first 400 KB (UTF-16 instrument string)"
+    },
+    {
+      "id": "abstract",
+      "kind": "publication",
+      "location": "Europe PMC abstract PMID 33540068"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, assay name, comment[data file], comment[technical replicate], all 162 rows",
+      "value": "one row per RAW; source = <bull>_<sample>; S01 and S01.1 are two injections (technical replicates 1 and 2) of the same sample",
+      "source_ids": [
+        "design",
+        "data-header"
+      ],
+      "evidence": "first_cohort_data.tsv '# File' row maps each sample column (S01, S01.1, Sv1, Sb76…) positionally to Elite_*.mzML; design TechRep column groups S01/S01.1; 162/162 RAWs matched"
+    },
+    {
+      "location": "characteristics[organism], [organism part], [sex]",
+      "value": "Bos taurus; seminal plasma; male",
+      "source_ids": [
+        "pride",
+        "abstract"
+      ],
+      "evidence": "PRIDE organism Bos taurus; sample protocol and abstract describe seminal plasma of bulls"
+    },
+    {
+      "location": "characteristics[developmental stage]",
+      "value": "adult",
+      "source_ids": [
+        "design"
+      ],
+      "evidence": "age_at_first_collection 2.5-6.8 years for all bulls (breeding bulls)"
+    },
+    {
+      "location": "factor value[non-return rate]",
+      "value": "TotPerc per bull (e.g. 47.89%)",
+      "source_ids": [
+        "design",
+        "abstract"
+      ],
+      "evidence": "design column TotPerc = total non-return rate; abstract: bulls with NRR 35-60% correlated to proteome"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Elite",
+      "source_ids": [
+        "raw-header",
+        "pride"
+      ],
+      "evidence": "RAW headers read 'Orbitrap Elite MS'"
+    },
+    {
+      "location": "comment[modification parameters], tolerances, cleavage",
+      "value": "CAM C fixed; Ox M variable; Acetyl protein N-term variable (refinement); 3.5 ppm / 0.4 Da; trypsin",
+      "source_ids": [
+        "xtandem"
+      ],
+      "evidence": "X!Tandem input parameters: residue modification mass 57.021464@C, potential 15.994915@M, refine potential N-terminus +42.010565@[, parent 3.5 ppm, fragment 0.4 Da, cleavage [RK]|{P}"
+    },
+    {
+      "location": "comment[reduction reagent], comment[alkylation reagent]",
+      "value": "DTT; IAA",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "sample protocol: SDS-PAGE buffer with DTT, iodoacetamide 55 mM"
+    }
+  ],
+  "limitations": [
+    "Breed not stated anywhere reachable (strain or breed = not available).",
+    "Collection season per batch is not in the deposit; acquisition batch (Elite_170424/180117/181205) equals design 'Batch' 1/2/3 but is not annotated as a season.",
+    "Sv39–Sv42 are flagged IsTechrep=TRUE in the design but the sample they replicate is not named; they are annotated as their own sources.",
+    "MS-GF+ was also used; its tolerances were not read (only the X!Tandem block).",
+    "Paper full text not open access; no per-bull fertility group other than the deposited design table was used.",
+    "The design lists 21 bulls; the abstract says 20 — not reconciled."
+  ]
+}

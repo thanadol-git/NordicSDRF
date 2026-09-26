@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD063324.sdrf.tsv",
+  "dataset": "PXD063324",
+  "sources": [
+    {
+      "id": "pride-project",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD063324"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD063324/files/all"
+    },
+    {
+      "id": "deposited-design",
+      "kind": "deposited-file",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/01/PXD063324/5095_StudyDesignResults.xlsx"
+    },
+    {
+      "id": "publication",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12808897/"
+    },
+    {
+      "id": "uberon-cache",
+      "kind": "ontology",
+      "location": "/home/thanadol.sutantiwani@Olink.local/.cache/sdrf-pipelines/ontologies/uberon.parquet"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[biological replicate], comment[label], and factor value[treatment], all rows",
+      "value": "18 exact TMTpro channels mapped to LS1–LS20, comprising nine vehicle and nine tirzepatide biological replicates",
+      "source_ids": [
+        "deposited-design"
+      ],
+      "evidence": "The `sample infodesign` sheet explicitly maps tags 126 through 135N to Sample IDs LS1, LS2, LS3, LS4, LS6, LS7, LS9–LS20, group Veh or Tirz, and group-specific replicate integers 1–9. Omitted numeric Sample IDs 5 and 8 are not invented or represented."
+    },
+    {
+      "location": "assay name, comment[data file], comment[fraction identifier], and comment[technical replicate], all rows",
+      "value": "36 ordered fractions, Eclipse_241128_FAIMS_05.raw through Eclipse_241128_FAIMS_40.raw, each represented for all 18 channels",
+      "source_ids": [
+        "pride-files",
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "PRIDE deposits exactly the consecutive RAW filenames 05–40. The project protocol states that 210 primary fractions were combined into 36 final fractions, and the publication describes one TMT set fractionated into 36 fractions. Numeric filename order is used as fraction order; all rows are technical replicate 1."
+    },
+    {
+      "location": "factor value[treatment], all rows",
+      "value": "vehicle or tirzepatide",
+      "source_ids": [
+        "deposited-design",
+        "publication"
+      ],
+      "evidence": "The deposited workbook assigns every channel to Veh or Tirz. The publication defines these proteomic samples as lateral-septum tissue from alcohol-consuming male rats after six alcohol-drinking days over two weeks of repeated vehicle or tirzepatide treatment at 30 nmol/kg subcutaneously."
+    },
+    {
+      "location": "characteristics[organism], characteristics[organism part], characteristics[material type], characteristics[developmental stage], characteristics[strain or breed], and characteristics[sex], all rows",
+      "value": "Rattus norvegicus; lateral septal complex; tissue; adult; Rcc/Han Wistar; male",
+      "source_ids": [
+        "pride-project",
+        "publication",
+        "uberon-cache"
+      ],
+      "evidence": "PRIDE registers Rattus norvegicus, and the publication states that LS tissue was microdissected from adult male Rcc/Han Wistar rats for proteomics. Because the source names the broad lateral septum/LS region rather than one nucleus, the SDRF uses the UBERON-backed bare term lateral septal complex (UBERON:0007628), not the narrower lateral septal nucleus."
+    },
+    {
+      "location": "characteristics[disease], all rows",
+      "value": "alcohol dependence",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "PRIDE explicitly registers Alcohol dependence. The publication describes the source animals as long-term alcohol-consuming rats from the repeated-treatment alcohol-drinking experiment."
+    },
+    {
+      "location": "characteristics[pooled sample], all rows",
+      "value": "not pooled",
+      "source_ids": [
+        "deposited-design",
+        "publication",
+        "pride-project"
+      ],
+      "evidence": "The design supplies one distinct Sample ID for every reporter channel. The publication and PRIDE protocol state that 20 micrograms from each peptide sample were labeled individually and only then combined into one TMT set; this is analytical post-label pooling, not biological sample pooling."
+    },
+    {
+      "location": "comment[label], all rows",
+      "value": "the exact TMT126–TMT135N reporter channel from the deposited design",
+      "source_ids": [
+        "deposited-design",
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "The workbook lists all 18 tag names. PRIDE and the publication identify TMTpro 18-plex labeling and one pooled TMT set."
+    },
+    {
+      "location": "comment[proteomics data acquisition method], comment[instrument], comment[dissociation method], and comment[collision energy], all rows",
+      "value": "Data-dependent acquisition; Orbitrap Eclipse; collision-induced dissociation; 35% NCE",
+      "source_ids": [
+        "pride-project",
+        "pride-files",
+        "publication"
+      ],
+      "evidence": "PRIDE registers Orbitrap Eclipse, every RAW filename begins with Eclipse and contains FAIMS, and the methods describe DDA SPS-MS3 acquisition with CID MS2 at 35% followed by HCD MS3 at 55%. The SDRF's single dissociation-method and collision-energy fields represent the peptide-identification MS2 stage."
+    },
+    {
+      "location": "comment[cleavage agent details], all rows",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "The preparation used a Trypsin/Lys-C mix for two hours followed by trypsin overnight, and the search accepted tryptic peptides. Trypsin is the one cleavage-agent value representable by the declared template; Lys-C is listed as a limitation."
+    },
+    {
+      "location": "comment[precursor mass tolerance] and comment[fragment mass tolerance], all rows",
+      "value": "5 ppm; 0.6 Da",
+      "source_ids": [
+        "pride-project"
+      ],
+      "evidence": "The PRIDE data-processing protocol explicitly states a 5 ppm precursor tolerance and 0.6 Da fragment-ion tolerance for the Proteome Discoverer Sequest search."
+    },
+    {
+      "location": "four comment[modification parameters] columns, all rows",
+      "value": "Carbamidomethyl (C), fixed; Oxidation (M), variable; TMTpro (K), fixed; TMTpro (peptide N-terminus), fixed",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "The PRIDE processing record explicitly lists cysteine carbamidomethylation and TMTpro on lysine and peptide N-termini as fixed, and methionine oxidation as variable. The publication independently identifies TMTpro 18-plex labeling."
+    }
+  ],
+  "limitations": [
+    "The ms-proteomics v1.1.0 template permits one cleavage-agent value. The sample preparation used both Lys-C and trypsin, so Lys-C cannot be represented alongside Trypsin without violating the declared template; reconciliation reports this as incomplete cleavage-agent annotation.",
+    "The acquisition used CID MS2 at 35% and HCD MS3 at 55%. The template has one dissociation-method and one collision-energy field, so the SDRF records the peptide-identification MS2 settings; the reporter-ion MS3 settings remain documented only in this manifest and the sources.",
+    "FAIMS compensation voltages -50 and -70 are specified in the source methods but the declared templates do not provide a dedicated field for them.",
+    "The exact publication strain string Rcc/Han Wistar is preserved. `parse_sdrf` accepts the file but emits a non-fatal warning because this strain string is absent from its cached NCBITaxon lookup.",
+    "PRIDE registers alcohol dependence and the publication calls the animals long-term alcohol-consuming rats; the deposited channel design itself only distinguishes Veh and Tirz and does not contain a per-channel disease column."
+  ]
+}

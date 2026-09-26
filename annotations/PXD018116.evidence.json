@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD018116.sdrf.tsv",
+  "dataset": "PXD018116",
+  "sources": [
+    {"id": "pride_project", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD018116"},
+    {"id": "pride_files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD018116/files/all"},
+    {"id": "sampleinfo", "kind": "deposited_file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2020/10/PXD018116/sampleinfo.docx"},
+    {"id": "paper", "kind": "publication", "location": "https://doi.org/10.1128/mbio.02743-20"}
+  ],
+  "claims": [
+    {"location": "source name, characteristics[biological replicate], factor value[strain], factor value[dilution rate]: non-reference rows", "value": "12 yeast chemostat samples spanning strains AAC, MH34, and B184; dilution rates 0.1 /h and 0.2 /h; two biological replicates", "source_ids": ["sampleinfo", "paper"], "evidence": "The deposited sample-info table gives the exact strain, dilution rate, replicate, channel, and file prefix for each of the 12 samples; the article describes the comparative strain experiment."},
+    {"location": "comment[data file], comment[fraction identifier], comment[label]: all rows", "value": "60 RAW files in three 20-fraction sets, with 7, 3, and 5 populated channels respectively", "source_ids": ["sampleinfo", "pride_files"], "evidence": "The sample-info table maps every channel to a RAW prefix and the complete PRIDE listing supplies exactly 20 deposited files for each prefix."},
+    {"location": "source name=reference-pool; characteristics[biological replicate]; comment[label]=TMT126; factor value[dilution rate]", "value": "common CEN.PK 113-7D reference pool in every RAW file; biological replicate pooled; dilution-rate factor not applicable", "source_ids": ["sampleinfo", "pride_project"], "evidence": "The deposited table assigns the same Reference sample to channel 126 for all raw files, and the PRIDE sample-processing protocol describes preparation of that reference pool from CEN.PK 113-7D lysates. Because the pool is not an independent biological replicate and has no chemostat dilution rate, the contract-correct values are pooled and not applicable respectively in all 60 expanded reference rows."},
+    {"location": "characteristics[organism], organism part, cell type, material type", "value": "Saccharomyces cerevisiae; not applicable; not applicable; cell", "source_ids": ["pride_project", "paper"], "evidence": "The repository and publication identify cultured S. cerevisiae cells; organism-part and multicellular cell-type concepts are not applicable."},
+    {"location": "comment[instrument] and comment[proteomics data acquisition method]", "value": "Orbitrap Fusion; data-dependent acquisition", "source_ids": ["pride_project"], "evidence": "PRIDE registers the Orbitrap Fusion and describes TMT reporter quantification from MS3 HCD spectra in the data-processing protocol."},
+    {"location": "comment[cleavage agent details], precursor/fragment tolerances, and modification parameters", "value": "Trypsin; 5 ppm; 0.6 Da; fixed Methylthio(C); variable Oxidation(M); fixed TMT6plex(K and peptide N-terminus)", "source_ids": ["pride_project"], "evidence": "These values are stated in the accession's sample-processing and Proteome Discoverer/Mascot data-processing protocols."},
+    {"location": "comment[dissociation method]", "value": "higher energy beam-type collision-induced dissociation; MS:1002481", "source_ids": ["pride_project"], "evidence": "The PRIDE data-processing protocol states that reporter ions were identified in MS3 HCD spectra, supporting the specific HCD PSI-MS term and accession."}
+  ],
+  "limitations": [
+    "The deposit does not name a separate reporter-ion product variant; UNIMOD:737 is used for the documented fixed TMT chemistry, while exact channel identities are taken from sampleinfo.docx.",
+    "The reference pool is not one of the 12 chemostat samples and has no experimental dilution rate; its factor value[dilution rate] is therefore the explicit contract-valid placeholder 'not applicable' rather than an empty cell.",
+    "Sparse, unused channels are absent from the final SDRF; they were explicitly declared only in the build input so no source-to-channel assignment was invented.",
+    "The supplied fresh independent re-review assessed prior SDRF hash b6adf39f59cdb83bb015f7cf9fce81af8485bfab5dc2570412a77829bd77896e and failed it on the dissociation label/accession mismatch. The repaired current hash remains intentionally unapproved."
+  ]
+}

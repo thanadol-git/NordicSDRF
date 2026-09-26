@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD052791.sdrf.tsv",
+  "dataset": "PXD052791",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "/tmp/gothenburg-sdrf/PXD052791/pride.json"},
+    {"id": "files", "kind": "repository", "location": "/tmp/gothenburg-sdrf/PXD052791/files.json"},
+    {"id": "design", "kind": "deposited-file", "location": "/tmp/gothenburg-sdrf/PXD052791/deposited/experimentalDesignTemplate.txt"},
+    {"id": "mqpar", "kind": "deposited-file", "location": "/tmp/gothenburg-sdrf/PXD052791/deposited/mqpar.xml"},
+    {"id": "publication", "kind": "publication", "location": "/tmp/gothenburg-sdrf/PXD052791/evidence/PMC12051479.fulltext.xml"}
+  ],
+  "claims": [
+    {
+      "location": "source name, comment[data file], factor value[age], and biological replicate",
+      "value": "68 exact RAW-to-experiment mappings carrying deposited P1/P2/etc. and Adult labels",
+      "source_ids": ["design", "mqpar", "files"],
+      "evidence": "The deposited design and mqpar.xml list the same 68 RAW stems and exact experiment labels."
+    },
+    {
+      "location": "characteristics[organism], characteristics[organism part], and characteristics[strain or breed]",
+      "value": "Rattus norvegicus; colon; Wistar",
+      "source_ids": ["pride", "publication"],
+      "evidence": "PRIDE identifies rat distal-colon mucus. The recovered publication explicitly states that postnatal mucus development and proteomic profiling used Wistar rats."
+    },
+    {
+      "location": "factor value[age]",
+      "value": "P1, P2, P3, P4, P6, P7, P9, P10, P15, P20, P30, or Adult",
+      "source_ids": ["design", "publication"],
+      "evidence": "The design encodes these labels and the publication defines P as postnatal day. They remain verbatim factors rather than being copied into a non-contract vertebrate age characteristic."
+    },
+    {
+      "location": "comment[precursor mass tolerance] and comment[fragment mass tolerance]",
+      "value": "4.5 ppm precursor; 20 ppm fragment",
+      "source_ids": ["mqpar"],
+      "evidence": "Deposited mqpar.xml v2.1.3.0 maps all 68 RAW files and is the operative MaxQuant configuration. mainSearchTol=4.5 ppm is the main-search precursor tolerance. msInstrument=0 selects the FTMS MS/MS block (MatchTolerance=20 ppm) for Q Exactive / Q Exactive HF Orbitrap acquisition; the unused ITMS 0.5 Da block is not applied. Publication/PRIDE prose of 0.5 Da fragments is superseded by this exact deposited configuration."
+    },
+    {
+      "location": "characteristics[developmental stage]",
+      "value": "adult on the seven Adult factor rows; not available on P-day rows",
+      "source_ids": ["design", "publication"],
+      "evidence": "experimentalDesignTemplate.txt names DC_Adult_58-61 and DC_Adult_44-46. The accession-linked publication defines adult rats as older than P100 and labels sampling as neonatal, weaned, and adult. P-day groups are not mapped onto a finer EFO stage because the deposited labels do not support an unambiguous neonatal/juvenile assignment."
+    },
+    {
+      "location": "technical comment columns",
+      "value": "Q Exactive/Q Exactive HF DIA, Trypsin search, HCD, and three search modifications",
+      "source_ids": ["pride", "mqpar", "publication"],
+      "evidence": "The deposited configuration and accession methods support the instrument-specific blocks, DIA setup, and modification parameters."
+    }
+  ],
+  "limitations": [
+    "Mass-tolerance columns follow the deposited mqpar.xml rather than publication/PRIDE 0.5 Da fragment prose.",
+    "The v1.1.0 vertebrates contract does not define characteristics[age]; the only age contract is human-only and requires number-plus-unit values. Deposited P-day labels are therefore intentionally factor-only.",
+    "The single cleavage-agent field records the Trypsin search specificity although sample preparation also used Lys-C.",
+    "Publication cache SHA-256 is aa51bf045105946c0d87b557dd81bff047c697078ba3251d5cfb76447cdc2fb9.",
+    "No review-gate approval was created for this repair run, as requested."
+  ]
+}

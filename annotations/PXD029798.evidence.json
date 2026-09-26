@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029798.sdrf.tsv",
+  "dataset": "PXD029798",
+  "sources": [
+    {"id": "pride_project", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD029798"},
+    {"id": "pride_files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD029798/files/all"},
+    {"id": "tmt_file_map", "kind": "deposited_file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/02/PXD029798/3281_TMT_Labeling_and_File_List.pdf"},
+    {"id": "pd_settings", "kind": "deposited_file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/02/PXD029798/3281_Proteome_Discoverer_Settings.pdf"},
+    {"id": "paper", "kind": "publication", "location": "https://doi.org/10.3390/cancers13235983"}
+  ],
+  "claims": [
+    {"location": "comment[data file], comment[fraction identifier]: all rows", "value": "80 RAW files assigned to four exact 20-fraction sets", "source_ids": ["tmt_file_map", "pride_files"], "evidence": "The deposited PDF explicitly lists every RAW path under F1.1-F4.20, and all names match the complete PRIDE listing."},
+    {"location": "source name and comment[label]: all rows", "value": "four complete TMTpro 16-plex channel layouts", "source_ids": ["tmt_file_map", "pd_settings"], "evidence": "The deposited labeling table maps each reporter from 126 through 134N to an exact K/B/Ref source code for sets 1-4; the settings PDF confirms the TMTpro 16-plex method."},
+    {"location": "characteristics[organism], organism part, material type, sex, and developmental stage: 1,200 non-reference rows", "value": "Homo sapiens; uterine cervix; organism part; female; adult", "source_ids": ["paper", "pride_project"], "evidence": "The project and cohort methods describe cervical-brush proteome samples from adult Rwandan women. This claim excludes the 80 Ref-set1 through Ref-set4 rows."},
+    {"location": "source name, comment[label], characteristics[organism], organism part, material type, sex, and developmental stage: 80 Ref-set1 through Ref-set4 rows", "value": "set-specific TMT126 reference identity; not applicable organism; all other listed biological properties not available", "source_ids": ["tmt_file_map"], "evidence": "The deposited labeling table supports only the set-specific Ref identity at TMT126 and its run/fraction coordinates. It does not define the reference material's biological composition, so contract-allowed reserved values replace cohort-level assertions."},
+    {"location": "comment[instrument] and acquisition method", "value": "Orbitrap Fusion Lumos; data-dependent acquisition", "source_ids": ["paper", "pride_project"], "evidence": "The supplementary LC-MS/MS method names the instrument and top-speed precursor selection workflow; PRIDE registers the same instrument."},
+    {"location": "comment[dissociation method] and collision energy", "value": "collision-induced dissociation; 30% NCE", "source_ids": ["paper"], "evidence": "The supplementary method states that precursors were fragmented by CID at 30% for MS2, followed by SPS-MS3 HCD at 55%."},
+    {"location": "comment[cleavage agent details], tolerances, and modification parameters", "value": "Trypsin; 5 ppm; 0.6 Da; fixed Methylthio(C), variable Oxidation(M), fixed TMTpro(K and peptide N-terminus)", "source_ids": ["paper", "pride_project", "pd_settings"], "evidence": "The supplementary methods, PRIDE protocol, and deposited Proteome Discoverer settings agree on these preparation and search parameters."}
+  ],
+  "limitations": [
+    "No deposited crosswalk links the K/B source codes to the publication's Woman 1-44 clinical table; clinical and longitudinal factors are intentionally omitted.",
+    "TMT126 is described only as Ref. Its source name, reporter label, set, fraction, and RAW-file coordinates are retained, while organism is `not applicable` and organism part, material type, sex, developmental stage, and pooling status are `not available` because physical composition is undocumented.",
+    "Age, HIV status, HPV status/type, cytology, disease group, ancestry, and individual identity are not available at source-code resolution.",
+    "The single dissociation field records MS2 CID; MS3 HCD is documented in evidence but not representable simultaneously in that field.",
+    "A fresh-context adversarial review was unavailable, and review-gate state was not written because this campaign forbids git-state changes."
+  ]
+}

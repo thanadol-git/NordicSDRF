@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD069845.sdrf.tsv",
+  "dataset": "PXD069845",
+  "sources": [
+    {"id": "pride_project", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD069845"},
+    {"id": "pride_files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD069845/files/all"},
+    {"id": "metadata", "kind": "deposited_file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/08/PXD069845/Metadata.tsv"},
+    {"id": "diann_log", "kind": "deposited_file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/08/PXD069845/Lucas_phospho_2.2.log.txt"},
+    {"id": "paper", "kind": "publication", "location": "https://doi.org/10.1038/s41698-026-01659-9"}
+  ],
+  "claims": [
+    {"location": "source name and comment[data file]: all 185 rows", "value": "180 tumor samples and five pooled controls mapped one-to-one to all deposited RAW files", "source_ids": ["metadata", "pride_files", "diann_log"], "evidence": "Metadata.tsv names every RAW file and sample; exact set equality was checked against PRIDE and the DIA-NN command line."},
+    {"location": "characteristics[organism], organism part, cell type, disease", "value": "Homo sapiens; ovary; malignant cell; ovarian carcinoma", "source_ids": ["pride_project", "paper"], "evidence": "Project protocol and article describe primary ovarian carcinoma tumor tissue."},
+    {"location": "characteristics[age], sex, individual, disease staging, histologic subtype", "value": "per-row clinical values; histologic subtypes use ovarian high grade serous adenocarcinoma (NCIT:C105555), ovarian mucinous adenocarcinoma (NCIT:C5243), ovarian endometrioid adenocarcinoma (NCIT:C7979), or ovarian clear cell adenocarcinoma (NCIT:C40078)", "source_ids": ["metadata", "paper"], "evidence": "Metadata.tsv provides age at diagnosis, sample identifier, stage, and one of four histotype groups; the cohort is explicitly women. The four deposited group labels were normalized to the canonical NCIT labels and accessions required by the oncology template, while preserving all group assignments and counts."},
+    {"location": "characteristics[survival time]", "value": "exact per-tumor survival time as number plus day; not applicable for five pooled controls", "source_ids": ["metadata", "paper"], "evidence": "Metadata.tsv supplies Survival time (days) for all 180 tumor samples, and the publication performs overall-survival modeling. The five MIX pool rows are analytical controls rather than patients, so the contract-allowed non-fabricated value not applicable is used."},
+    {"location": "factor value[disease staging] and factor value[histologic subtype]", "value": "stage and the same canonical NCIT-backed ovarian-carcinoma histologic subtype as the matching characteristic", "source_ids": ["metadata", "paper"], "evidence": "These are the study's deposited comparison variables. Factor histologic-subtype values mirror the canonical bare labels in characteristics[histologic subtype]."},
+    {"location": "comment[instrument], acquisition method, isolation window width, collision energy", "value": "Q Exactive HF-X; DIA; 13.7 m/z; 27 NCE", "source_ids": ["pride_project", "paper"], "evidence": "PRIDE sample-processing protocol gives the exact LC-MS/DIA settings."},
+    {"location": "comment[dissociation method]", "value": "beam-type collision-induced dissociation; MS:1000422", "source_ids": ["pride_project", "paper"], "evidence": "The accession and publication document DIA windows and normalized collision energy 27 but do not explicitly identify HCD. The canonical generic beam-type collision-induced dissociation label/accession pair is therefore used without asserting the more specific HCD term."},
+    {"location": "comment[cleavage agent details] and modification parameters", "value": "Trypsin/P; fixed Carbamidomethyl (C); variable Phospho (STY)", "source_ids": ["diann_log", "pride_project"], "evidence": "The deposited DIA-NN command line specifies K*/R* cleavage, --unimod4, and UniMod:21 at STY; wet-lab protocol also names Lys-C and trypsin."}
+  ],
+  "limitations": [
+    "DIA-NN auto-optimized mass accuracy per run, so fixed precursor and fragment tolerances are not available.",
+    "The current parser accepts the template-documented plain label Data-independent acquisition but rejects the equivalent NT/AC encoding when validating dia-acquisition; the plain canonical label is therefore used.",
+    "The deposited histotype wording is preserved semantically through canonical NCIT labels: NCIT:C105555, NCIT:C5243, NCIT:C7979, and NCIT:C40078. The template requires bare values, so accessions are recorded here rather than embedded in SDRF cells.",
+    "The SDRF cleavage column is single-cardinality and records the deposited search rule Trypsin/P; the wet-lab protocol additionally used Lys-C.",
+    "Metadata.tsv provides overall- and disease-specific survival event indicators, but the selected template contract has no direct standardized event-status column; these indicators are documented here and are not forced into an unrelated SDRF field.",
+    "The supplied fresh independent re-review assessed prior SDRF hash af4a5b93b90f9f31245daba3018c65d78e90b64454b75b63352715f3746a2be4 and failed it on the dissociation pair and omitted survival-time field. The repaired current hash remains intentionally unapproved."
+  ]
+}

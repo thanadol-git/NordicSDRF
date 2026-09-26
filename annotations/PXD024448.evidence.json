@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD024448.sdrf.tsv",
+  "dataset": "PXD024448",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD024448"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD024448/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC8993215"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "~50 RAW headers sampled across the three file families (instrument + method name)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[individual], characteristics[phenotype], characteristics[compound]",
+      "value": "30 healthy men × time points A (baseline), B (week 3 after degarelix), C (week 5, after testosterone undecanoate)",
+      "source_ids": [
+        "paper",
+        "pride-files"
+      ],
+      "evidence": "RAW names <A|B|C>-<subject>-…_DTPI_<n> and <A|B|C><subject>_…_tp_<n>; the randomised sample number n is identical in the DDA and MRM names of the same subject/time point"
+    },
+    {
+      "location": "infertile_Pxx rows",
+      "value": "75 men investigated for infertility, serum, MRM only",
+      "source_ids": [
+        "paper",
+        "pride-files"
+      ],
+      "evidence": "20180614_Hypo_dep_01..76 × R1–R3; paper: 75 serum samples"
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method]",
+      "value": "DTPI = Q Exactive Plus DDA; tp and Hypo_dep = TSQ Quantiva SRM",
+      "source_ids": [
+        "raw-header",
+        "paper"
+      ],
+      "evidence": "RAW headers (DDAHV18_Top20 method vs TP_pool_sched MRM methods)"
+    },
+    {
+      "location": "comment[modification parameters], tolerances",
+      "value": "CAM C fixed; Ox M variable; 10 ppm / 0.02 Da (DDA rows only)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods, PD 2.2"
+    }
+  ],
+  "limitations": [
+    "Testosterone group (low / borderline / normal) of each infertile patient is not deposited — phenotype states this.",
+    "Per-subject ages not available (cohort ranges only).",
+    "Heavy isotope-labelled reference peptides spiked into MRM samples are not encoded (no spiked-compound column).",
+    "Time point C subjects had also received degarelix at week 0; compound column lists only the most recent drug.",
+    "Only ~50 of 770 RAW headers were read; instrument per file family is assumed uniform."
+  ]
+}

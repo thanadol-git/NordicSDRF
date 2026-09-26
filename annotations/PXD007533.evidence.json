@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD007533.sdrf.tsv",
+  "dataset": "PXD007533",
+  "sources": [
+    {
+      "id": "pride-project",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD007533"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD007533/files/all"
+    },
+    {
+      "id": "publication",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5748153/"
+    },
+    {
+      "id": "ncbi-taxonomy-ncib3610",
+      "kind": "ontology",
+      "location": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=535026&mode=Info"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[biological replicate], comment[technical replicate], assay name, and comment[data file], all rows",
+      "value": "12 filename-encoded biological sources, each measured in three technical injections",
+      "source_ids": [
+        "pride-files",
+        "publication"
+      ],
+      "evidence": "Every RAW filename contains an exact sodium-ascorbate concentration token and BR1, BR2, or BR3. For every condition/BR key, PRIDE deposits three sequentially numbered RAW files. The publication states that MS experiments used biological triplicates and that triplicate injections were performed for every sample. Technical-replicate integers follow ascending acquisition number within each exact filename key."
+    },
+    {
+      "location": "factor value[sodium ascorbate concentration], all rows",
+      "value": "0 mM, 10 mM, 20 mM, or 30 mM",
+      "source_ids": [
+        "pride-files",
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "The RAW filenames explicitly encode 0, 10, 20, or 30. PRIDE describes control and sodium-ascorbate-treated biofilms, and the publication identifies the proteomic conditions as control plus 10, 20, and 30 mM sodium ascorbate."
+    },
+    {
+      "location": "characteristics[organism], characteristics[organism part], characteristics[material type], characteristics[sampling time], and source name, all rows",
+      "value": "Bacillus subtilis; not applicable; cell; 24 hour; source names prefixed NCIB3610",
+      "source_ids": [
+        "pride-project",
+        "publication",
+        "ncbi-taxonomy-ncib3610"
+      ],
+      "evidence": "The publication states that the samples were cell pellets from 24-hour Bacillus subtilis NCIB 3610 biofilms. NCBI Taxonomy records NCIB 3610 under Bacillus subtilis (taxon 535026). The SDRF uses the species-level organism value Bacillus subtilis and retains the publication's strain identifier in each source name."
+    },
+    {
+      "location": "characteristics[pooled sample] and characteristics[disease], all rows",
+      "value": "not pooled; not applicable",
+      "source_ids": [
+        "pride-files",
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "The publication describes separate biological triplicates and separate triplicate injections, while the filenames retain a distinct BR identifier for every run; no physical pooling is reported. Disease is not applicable to this bacterial biofilm perturbation experiment."
+    },
+    {
+      "location": "comment[label] and comment[proteomics data acquisition method], all rows",
+      "value": "label free sample; Data-dependent acquisition",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "PRIDE states that label-free quantification was enabled. The publication explicitly describes data-dependent acquisition with top-10 precursor selection."
+    },
+    {
+      "location": "comment[instrument], comment[dissociation method], and comment[ms1 scan range], all rows",
+      "value": "Q Exactive; beam-type collision-induced dissociation; 400m/z-1600m/z",
+      "source_ids": [
+        "pride-project",
+        "pride-files",
+        "publication"
+      ],
+      "evidence": "PRIDE registers Q Exactive, every RAW filename begins with QE, and the publication reports Q Exactive acquisition, an MS1 range of 400–1600 m/z, and higher-energy collisional dissociation. HCD is represented by the PSI-MS beam-type collision-induced dissociation term."
+    },
+    {
+      "location": "comment[cleavage agent details], all rows",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "Both PRIDE and the publication state that proteins were digested with trypsin; PRIDE records Trypsin/P specificity for the MaxQuant search."
+    },
+    {
+      "location": "comment[precursor mass tolerance] and comment[fragment mass tolerance], all rows",
+      "value": "4.5 ppm; 20 ppm",
+      "source_ids": [
+        "publication"
+      ],
+      "evidence": "The publication's proteome-analysis methods explicitly state a 4.5 ppm main-search precursor tolerance and 20 ppm fragment-ion tolerance."
+    },
+    {
+      "location": "comment[modification parameters], all rows",
+      "value": "Carbamidomethyl (C), fixed",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "PRIDE and the publication explicitly list cysteine carbamidomethylation as a fixed MaxQuant search modification. No other search modification is stated in the checked accession record or publication methods."
+    }
+  ],
+  "limitations": [
+    "The publication identifies the experimental strain as Bacillus subtilis NCIB 3610, whereas PRIDE's structured organism field registers strain 168 and the database-search protocol reports a strain-168 protein database. The SDRF therefore uses the shared species-level organism value Bacillus subtilis and preserves NCIB3610 in source names; it does not claim that the biological samples were strain 168.",
+    "Technical-replicate integers are assigned by ascending acquisition number within each exact condition/BR filename key. The publication confirms three technical injections but does not number them explicitly.",
+    "Only carbamidomethylation is declared because it is the only search modification explicitly documented in the checked sources; common MaxQuant variable modifications were not inferred.",
+    "HCD collision energy was not reported and is therefore not annotated."
+  ]
+}

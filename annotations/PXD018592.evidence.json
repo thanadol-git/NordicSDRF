@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD018592.sdrf.tsv",
+  "dataset": "PXD018592",
+  "sources": [
+    {
+      "id": "pride-project",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD018592"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD018592/files/all"
+    },
+    {
+      "id": "publication",
+      "kind": "publication",
+      "location": "https://doi.org/10.1016/j.celrep.2021.108757"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, assay name, comment[data file], characteristics[biological replicate], comment[technical replicate], and factor value[age], all rows",
+      "value": "11 filename-encoded P14/P24 samples, each represented by two deposited RAW runs",
+      "source_ids": [
+        "pride-files",
+        "publication"
+      ],
+      "evidence": "Every PRIDE RAW filename contains an exact index and age token: 01–05_P14 or 06–11_P24. Each index/age key occurs in two filenames distinguished by the absence or presence of the `_230min` suffix; indices 01–09 use dates 191205 and 191206 respectively, while both runs for indices 10 and 11 are dated 191205. The paired files retain the exact shared key as their source name and replicate integer and are numbered technical replicates 1 and 2. The publication states that purified intestinal epithelial cells from P14 and P24 mice were analyzed by proteomics."
+    },
+    {
+      "location": "characteristics[organism], characteristics[organism part], characteristics[cell type], and characteristics[material type], all rows",
+      "value": "Mus musculus; small intestine epithelium; epithelial cell; cell",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "PRIDE directly registers BTO:0001258 small intestine epithelium and CL:0000066 epithelial cell for this accession. The project description and publication title support postnatal small-intestine epithelial biology; no narrower ileum assertion is required."
+    },
+    {
+      "location": "characteristics[disease], all rows",
+      "value": "disease free",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "PRIDE registers the disease term Disease free, and the publication describes normal postnatal wild-type mouse development rather than a disease cohort for these P14/P24 proteomic samples."
+    },
+    {
+      "location": "characteristics[pooled sample], characteristics[developmental stage], and characteristics[sex], all rows",
+      "value": "not available",
+      "source_ids": [
+        "pride-project",
+        "pride-files",
+        "publication"
+      ],
+      "evidence": "The accession-level record, deposited RAW names, and publication do not provide per-sample sex, physical-pooling membership, or a controlled developmental-stage value. Exact postnatal ages are retained separately in factor value[age]."
+    },
+    {
+      "location": "comment[label] and comment[proteomics data acquisition method], all rows",
+      "value": "label free sample; Data-dependent acquisition",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "The PRIDE data-processing protocol explicitly states label-free quantification. The PRIDE acquisition protocol and publication describe top-12 precursor selection followed by MS/MS, which is data-dependent acquisition."
+    },
+    {
+      "location": "comment[instrument] and comment[dissociation method], all rows",
+      "value": "Q Exactive HF; beam-type collision-induced dissociation",
+      "source_ids": [
+        "pride-project",
+        "pride-files"
+      ],
+      "evidence": "PRIDE registers Q Exactive HF and its acquisition protocol specifies HCD fragmentation; every RAW filename also contains QExHF. HCD is represented by the PSI-MS beam-type collision-induced dissociation term."
+    },
+    {
+      "location": "comment[cleavage agent details], all rows",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "The PRIDE sample-processing protocol and publication methods state that proteins were digested with trypsin."
+    },
+    {
+      "location": "comment[precursor mass tolerance] and comment[fragment mass tolerance], all rows",
+      "value": "7 ppm; 0.5 Da",
+      "source_ids": [
+        "pride-project"
+      ],
+      "evidence": "The PRIDE data-processing protocol states a 7 ppm main-search precursor tolerance after recalibration and a 0.5 Da fragment-ion tolerance."
+    },
+    {
+      "location": "three comment[modification parameters] columns, all rows",
+      "value": "Carbamidomethyl (C), fixed; Oxidation (M), variable; protein N-terminal Acetyl, variable",
+      "source_ids": [
+        "pride-project"
+      ],
+      "evidence": "The PRIDE data-processing protocol explicitly lists carbamidomethylation of cysteine as fixed and methionine oxidation plus protein N-terminal acetylation as variable search modifications."
+    }
+  ],
+  "limitations": [
+    "No separate deposited sample-design table exists. The run-to-source mapping is limited to exact identifiers embedded in the RAW filenames; no mouse identity beyond those filename keys is asserted.",
+    "The P24 replicate integers remain the deposited filename indices 6–11 rather than being renumbered to 1–6.",
+    "The publication describes a 230-minute LC gradient. The 11 earlier RAW files lack the `_230min` suffix and are substantially smaller, but no exact alternative gradient is deposited; the SDRF therefore does not claim an elution condition for either run set.",
+    "Sex and physical pooling are not reported per sample and remain not available. Developmental stage is left not available because the exact postnatal-day factor is more precise than assigning a broader controlled stage."
+  ]
+}
