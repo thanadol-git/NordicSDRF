@@ -1,0 +1,12 @@
+# Stockholm annotation batch — additional validated SDRFs, 2026-09-26
+# Coordinate collisions repaired then PRed: PXD033550 (TMT6_ source prefix), PXD042819 (Ctrl-plusRNAse-2-rep2).
+# Term repairs then PRed: PXD037472 (DIA AC PRIDE:0000450), PXD043391 (Q Exactive AC MS:1001911).
+PXD029371	sweden/stockholm	annotated	PR #991	18-row pig GI mucus LF+TMT10, Q Exactive HF
+PXD032835	sweden/stockholm	annotated	PR #992	240-row mouse BV2 PISA TMT10, Q Exactive HF
+PXD035964	sweden/stockholm	annotated	PR #993	240-row mouse pDC TMTpro, Exploris 480
+PXD038607	sweden/stockholm	annotated	PR #994	288-row human neuronal PISA TMTpro, Q Exactive HF
+PXD037472	sweden/stockholm	annotated	PR #995	66-row HEK293 phospho DIA Lumos
+PXD043391	sweden/stockholm	annotated	PR #996	6-row yeast Chp1 AP-MS Q Exactive
+PXD033550	sweden/stockholm	annotated	PR #997	826-row hepatocyte spheroid TMTpro/TMT6/LF
+PXD042819	sweden/stockholm	annotated	PR #998	28-row mouse Neuro-2a ADAR3 LF Fusion/Eclipse
+

@@ -49,10 +49,10 @@ countries:
         pxd_count: 165
         pride_hits: 323
         screened: 0
-        annotated: 58
-        blocked: 38
+        annotated: 62
+        blocked: 43
         notes: "line 1 is PRD000423, a legacy ProteomeXchange id — resolve to a PXD before screening"
-        in_corpus: 50
+        in_corpus: 53
       lund:
         name: Lund
         search_terms: [Lund, Malmö, Skåne]
@@ -62,7 +62,7 @@ countries:
         screened: 0
         annotated: 9
         blocked: 51
-        in_corpus: 15
+        in_corpus: 16
       gothenburg:
         name: Gothenburg
         search_terms: [Gothenburg, Göteborg, Sahlgrenska, Chalmers]
@@ -236,7 +236,7 @@ countries:
         blocked: 2
         pxd_list: lists/finland/oulu.txt
         pxd_count: 11
-        in_corpus: 8
+        in_corpus: 9
       tampere:
         name: Tampere
         search_terms: [Tampere]
@@ -246,7 +246,7 @@ countries:
         blocked: 1
         pxd_list: lists/finland/tampere.txt
         pxd_count: 4
-        in_corpus: 2
+        in_corpus: 3
       kuopio:
         name: Kuopio
         search_terms: [Kuopio, "University of Eastern Finland"]
