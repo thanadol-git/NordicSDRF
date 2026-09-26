@@ -252,8 +252,11 @@ countries:
         search_terms: [Kuopio, "University of Eastern Finland"]
         pride_hits: 10
         screened: 0
-        annotated: 0
+        annotated: 8
         blocked: 0
+        pxd_list: lists/finland/kuopio.txt
+        pxd_count: 10
+        in_corpus: 2
       jyvaskyla:
         name: Jyväskylä
         search_terms: [Jyväskylä, Jyvaskyla]
@@ -261,6 +264,9 @@ countries:
         screened: 0
         annotated: 0
         blocked: 0
+        pxd_list: lists/finland/jyvaskyla.txt
+        pxd_count: 1
+        in_corpus: 1
 
   iceland:
     status: in_progress

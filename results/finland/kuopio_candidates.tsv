@@ -1,0 +1,11 @@
+accession	verdict	evidence	in_corpus	title
+PXD015183	confirmed	affiliation~'finland': Institute of Biomedicine, University of Eastern Finland, Kuopio, Finland	yes	SUMOylation regulates chromatin protein network and accessibility at glucocorticoid receptor-binding
+PXD017713	confirmed	countries=['Finland']		BioID of SUMOylation-deficient glucocorticoid receptor GR3KR
+PXD017714	confirmed	countries=['Finland']		IP of endogenous SUMO2/3 in HEK293 cells
+PXD025193	confirmed	affiliation~'finland': Institute of Biomedicine, Faculty of Health Sciences, University of Eastern Finland, Kuopi		Single-minded homolog 2 resides in the chromatin protein network of androgen receptor and modulates 
+PXD035416	confirmed	affiliation~'finland': Department of Environmental and Biological Sciences, University of Eastern Finland		Identification of proximal interactome of BioID2-tagged mitochondrial Top3α
+PXD037260	confirmed	countries=['Finland']		Identification of Aminopeptidase-B in mouse tissue and BV2 cells
+PXD039179	confirmed	countries=['Finland']		Chromatome of AR and SUMO2/3 idenitified with RIME
+PXD051304	confirmed	countries=['Finland']		Chromatomes of GR and SUMO2/3 identified with RIME
+PXD071373	confirmed	countries=['Finland']		Chromatin-associated protein networks of CEBPA and SUMO2/3 identified with RIME
+PXD076495	confirmed	countries=['Finland']	yes	Abundance analysis of chromatin-residing proteins during lineage conversion using protein aggregatio

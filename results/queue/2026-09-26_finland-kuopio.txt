@@ -1,0 +1,13 @@
+# Kuopio annotation batch — 10 Finland-confirmed PRIDE hits checked on 2026-09-26
+# Two accessions already have canonical SDRFs upstream; eight new local SDRFs were generated.
+# All eight pass python3 -m tools structure and python3 -m tools check (CLEAN).
+PXD015183	finland/kuopio	existing	Canonical SDRF already present upstream
+PXD017713	finland/kuopio	annotated	6 rows; GR3KR BioID dex vs ethanol; Elite not QE despite filename token; structure/check CLEAN
+PXD017714	finland/kuopio	annotated	9 rows; SUMO2/3 IP × heat shock × dex/etoh + IgG; structure/check CLEAN
+PXD025193	finland/kuopio	annotated	12 rows; VCaP AR ChIP-SICAP SILAC light=ethanol / heavy=R1881; structure/check CLEAN
+PXD035416	finland/kuopio	annotated	12 rows; mtTop3α-BioID2 vs MTS, 3 bio × 2 tech; structure/check CLEAN
+PXD037260	finland/kuopio	annotated	12 rows; mouse brain/liver/plasma + BV2 DIA; isolation 24 m/z; structure/check CLEAN
+PXD039179	finland/kuopio	annotated	10 rows; VCaP AR/SUMO RIME, one pooled row per rep1-3 zip; structure/check CLEAN
+PXD051304	finland/kuopio	annotated	12 rows; NALM-6 GR/SUMO RIME, pooled zips; OLS label NALM-6 cell; structure/check CLEAN
+PXD071373	finland/kuopio	annotated	17 rows; BLaER1 CEBPA/SUMO RIME, pooled zips; no Cellosaurus; structure/check CLEAN
+PXD076495	finland/kuopio	existing	Canonical SDRF already present upstream

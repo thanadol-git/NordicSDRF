@@ -62,7 +62,7 @@ campaign; expect many multiplexed (TMT) and DIA studies from CPR and SDU.
 | Tromsø | Tromsø, Tromso, UiT | UiT The Arctic University of Norway, University Hospital of North Norway | 14 |
 | Stavanger | Stavanger | University of Stavanger, Stavanger University Hospital | 0 |
 
-## Finland — in progress (Oulu, Tampere scoped)
+## Finland — in progress (Oulu, Tampere, Kuopio, Jyväskylä scoped)
 
 | City | Search terms | Key institutions / facilities | PRIDE hits | Manifest |
 |---|---|---|---:|---|
@@ -70,8 +70,8 @@ campaign; expect many multiplexed (TMT) and DIA studies from CPR and SDU.
 | Turku | Turku, Åbo, "Turku Bioscience" | University of Turku, Åbo Akademi, Turku Bioscience Centre (Turku Proteomics Facility), Turku University Hospital | 98 | not scoped |
 | Oulu | Oulu | University of Oulu, Biocenter Oulu | 11 | `lists/finland/oulu.txt` (11) — all 11 PRIDE hits confirmed Finland |
 | Tampere | Tampere | Tampere University, Tampere University Hospital | 5 | `lists/finland/tampere.txt` (4) — 4/5 PRIDE hits confirmed Finland; PXD021494 rejected (Karolinska / Sweden) |
-| Kuopio | Kuopio, "University of Eastern Finland" | University of Eastern Finland, Kuopio University Hospital | 3 | not scoped |
-| Jyväskylä | Jyväskylä, Jyvaskyla | University of Jyväskylä | 1 | not scoped |
+| Kuopio | Kuopio, "University of Eastern Finland" | University of Eastern Finland, Kuopio University Hospital | 10 | `lists/finland/kuopio.txt` (10) — all 10 PRIDE hits confirmed Finland |
+| Jyväskylä | Jyväskylä, Jyvaskyla | University of Jyväskylä | 1 | `lists/finland/jyvaskyla.txt` (1) — the single PRIDE hit confirmed Finland |
 
 ## Iceland — not started (small)
 

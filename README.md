@@ -157,7 +157,7 @@ cities are also recorded per country in `config.yml` as `candidate_cities`.
 | Sweden | Stockholm, Uppsala, Gothenburg, Lund (+ Umeå, Linköping, Örebro, small) | 1149 | in progress |
 | Denmark | Copenhagen (CPR, Rigshospitalet), Odense (SDU), Aarhus, Aalborg, Lyngby (DTU), Roskilde | 1600 | in progress (Roskilde) |
 | Norway | Bergen (PROBE), Oslo (OUS), Trondheim (NTNU/PROMEC), Ås (NMBU), Tromsø, Stavanger | 461 | not started |
-| Finland | Helsinki/Espoo, Turku, Oulu, Tampere, Kuopio, Jyväskylä | 205 | not started |
+| Finland | Helsinki/Espoo, Turku, Oulu, Tampere, Kuopio, Jyväskylä | 205 | in progress |
 | Iceland | Reykjavík (mostly affinity proteomics, little in PRIDE) | 6 | in progress |
 
 Suggested order after Sweden: Denmark, Norway, Finland, Iceland. To scope a
