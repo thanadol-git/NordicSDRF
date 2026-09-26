@@ -1,0 +1,12 @@
+# Stockholm annotation batch — 10 smallest remaining unannotated accessions, 2026-09-26
+# Ranked by deposited file-entry count; PXD036952 excluded (community SDRF already in PRIDE).
+PXD040446	sweden/stockholm	annotated	6-row TMT6 PC12 Cacna1h vs vector; PD channel names; PR #957
+PXD056396	sweden/stockholm	annotated	8-row TMT Plasmodium AA+/AA-; PR #955
+PXD060120	sweden/stockholm	annotated	12-row TMTpro HUVEC navtemadlin; PD channel names; PR #958
+PXD039805	sweden/stockholm	blocked	TMT6 brain endothelial IFNAR1; no channel-to-genotype map
+PXD046610	sweden/stockholm	blocked	DIA mouse muscle/aorta in 7z; no RAW-level manifest
+PXD030167	sweden/stockholm	blocked	TMTpro serum EV surgery; no channel-to-animal map
+PXD036514	sweden/stockholm	blocked	two Caulobacter TMT/TMTpro runs; no channel maps
+PXD063095	sweden/stockholm	annotated	34-row TMTpro Pseudomonas lon/time across two sets; PR #956
+PXD043637	sweden/stockholm	blocked	workbook sample03 vs archive sample05 unresolved
+PXD047509	sweden/stockholm	annotated	2-row label-free C. elegans IU171 vs N2 HCF-1 IP; PR #954

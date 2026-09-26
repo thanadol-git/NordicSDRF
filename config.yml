@@ -49,8 +49,8 @@ countries:
         pxd_count: 165
         pride_hits: 323
         screened: 0
-        annotated: 42
-        blocked: 29
+        annotated: 47
+        blocked: 34
         notes: "line 1 is PRD000423, a legacy ProteomeXchange id — resolve to a PXD before screening"
         in_corpus: 43
       lund:
