@@ -43,12 +43,12 @@
 <text class="city" x="12" y="88.0">Stockholm</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="74" width="245.5" height="20" rx="2"><title>Stockholm · Annotated: 63</title></rect>
 <text class="seg" x="232.8" y="88.0" text-anchor="middle">63</text>
-<rect class="c-blocked" fill="#d95926" x="356.5" y="74" width="190.7" height="20" rx="2"><title>Stockholm · Blocked: 49</title></rect>
-<text class="seg" x="451.9" y="88.0" text-anchor="middle">49</text>
-<rect class="c-in_corpus" fill="#199e70" x="548.3" y="74" width="17.0" height="20" rx="2"><title>Stockholm · In corpus: 4</title></rect>
-<text class="seg" x="556.8" y="88.0" text-anchor="middle">4</text>
-<rect class="c-todo" fill="#8a8983" x="566.3" y="74" width="190.7" height="20" rx="2"><title>Stockholm · To do: 49</title></rect>
-<text class="seg" x="661.6" y="88.0" text-anchor="middle">49</text>
+<rect class="c-blocked" fill="#d95926" x="356.5" y="74" width="202.5" height="20" rx="2"><title>Stockholm · Blocked: 52</title></rect>
+<text class="seg" x="457.8" y="88.0" text-anchor="middle">52</text>
+<rect class="c-in_corpus" fill="#199e70" x="560.0" y="74" width="17.0" height="20" rx="2"><title>Stockholm · In corpus: 4</title></rect>
+<text class="seg" x="568.5" y="88.0" text-anchor="middle">4</text>
+<rect class="c-todo" fill="#8a8983" x="578.0" y="74" width="179.0" height="20" rx="2"><title>Stockholm · To do: 46</title></rect>
+<text class="seg" x="667.5" y="88.0" text-anchor="middle">46</text>
 <text class="total" x="764.0" y="88.0">165 listed</text>
 <text class="city" x="12" y="118.0">Lund</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="34.2" height="20" rx="2"><title>Lund · Annotated: 9</title></rect>
