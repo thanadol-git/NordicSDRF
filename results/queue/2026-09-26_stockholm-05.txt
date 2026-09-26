@@ -1,0 +1,9 @@
+# Stockholm annotation batch — 7 validated SDRFs PRed 2026-09-26
+# Skipped PXD042819 (duplicate source/tech/fraction coordinates) and PXD043391 (instrument AC/label mismatch).
+PXD026463	sweden/stockholm	annotated	PR #983	4-row mouse CT26 immunopeptidome, timsTOF Pro
+PXD026481	sweden/stockholm	annotated	PR #984	110-row TMT10 Fusion Acute/Untreated/Resistant
+PXD027339	sweden/stockholm	annotated	PR #985	560-row TMT16 GBM stem-cell lines
+PXD027341	sweden/stockholm	annotated	PR #986	400-row TMT10 GBM tumour tissue
+PXD027749	sweden/stockholm	annotated	PR #987	264-row TMTpro CD4 CCR6 HIV cohorts
+PXD028531	sweden/stockholm	annotated	PR #988	324-row TMT11 U1/U937 HIV cell lines
+PXD031945	sweden/stockholm	annotated	PR #989	46-row HDX-MS SARS-CoV-2 RBD ± Fab

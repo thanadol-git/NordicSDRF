@@ -17,9 +17,9 @@ under-counts (submitters who wrote only the institute name). The Swedish
 manifests already in this repo are 35–70 % of the raw hit counts after
 curation.
 
-> **Known trap.** `lists/sweden/uppsala.txt` line 1, `PXD001817`, is a Utrecht
-> dataset: the lab PI's address is *"Uppsalalaan 8, 3584 CT Utrecht"* and PRIDE
-> records `countries: [Netherlands]`. Keyword-built manifests will contain such
+> **Known trap.** `PXD001817` was removed from the Uppsala manifest because it is
+> a Utrecht dataset: the lab PI's address is *"Uppsalalaan 8, 3584 CT Utrecht"*
+> and PRIDE records `countries: [Netherlands]`. Keyword-built manifests can contain such
 > false positives. The cheap, deterministic fix belongs in tier 1: fetch
 > `/pride/ws/archive/v2/projects/<PXD>` and require the Nordic country in
 > `countries` (or in a `submitters[].country` / `labPIs[].affiliation` string)
@@ -30,7 +30,7 @@ curation.
 | City | Search terms | Key institutions / facilities | PRIDE hits | Manifest |
 |---|---|---|---:|---|
 | Stockholm | Stockholm, Solna, Huddinge, Karolinska, KTH, SciLifeLab | Karolinska Institutet, KTH Royal Institute of Technology, Stockholm University, SciLifeLab (Solna), Karolinska University Hospital | 211 | `lists/sweden/stockholm.txt` (165) |
-| Uppsala | Uppsala | Uppsala University, SLU, Uppsala University Hospital (Akademiska), SciLifeLab Uppsala | 196 | `lists/sweden/uppsala.txt` (75) — contains ≥1 Utrecht false positive |
+| Uppsala | Uppsala | Uppsala University, SLU, Uppsala University Hospital (Akademiska), SciLifeLab Uppsala | 196 | `lists/sweden/uppsala.txt` (69) — six confirmed affiliation false positives removed |
 | Gothenburg | Gothenburg, Göteborg, Sahlgrenska, Chalmers | University of Gothenburg, Chalmers, Sahlgrenska University Hospital / Academy, GU Proteomics Core Facility | 166 + 18 | `lists/sweden/gothenburg.txt` (135) |
 | Lund | Lund, Malmö, Skåne | Lund University (BMC, Medicon Village), Skåne University Hospital, Malmö campus | 503 + 16 | `lists/sweden/lund.txt` (163) — "Lund" is also a common surname |
 | Umeå | Umeå, Umea | Umeå University, SLU Umeå | 45 | `lists/sweden/umea.txt` (39) — from the 2026-09-25 queue; 6 rejected affiliation hits omitted |

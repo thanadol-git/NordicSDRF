@@ -49,10 +49,10 @@ countries:
         pxd_count: 165
         pride_hits: 323
         screened: 0
-        annotated: 47
-        blocked: 34
+        annotated: 58
+        blocked: 38
         notes: "line 1 is PRD000423, a legacy ProteomeXchange id — resolve to a PXD before screening"
-        in_corpus: 43
+        in_corpus: 50
       lund:
         name: Lund
         search_terms: [Lund, Malmö, Skåne]
@@ -72,18 +72,18 @@ countries:
         screened: 0
         annotated: 0
         blocked: 0
-        in_corpus: 9
+        in_corpus: 10
       uppsala:
         name: Uppsala
         search_terms: [Uppsala]
         pxd_list: lists/sweden/uppsala.txt
-        pxd_count: 75
+        pxd_count: 69
         pride_hits: 196
         screened: 0
         annotated: 46
-        blocked: 19
+        blocked: 23
         notes: "PXD001817, PXD004529, and PXD007189 are Utrecht datasets (PI address 'Uppsalalaan 8', countries=[Netherlands]) — keyword false positives; filter on PRIDE `countries` in tier 1"
-        in_corpus: 46
+        in_corpus: 48
       umea:
         name: Umeå
         search_terms: [Umeå, Umea]
