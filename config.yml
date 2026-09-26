@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-09-23
 
-corpus_source: local checkout (2026-09-25)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-09-26)
 
 countries:
   sweden:
@@ -50,9 +50,9 @@ countries:
         pride_hits: 323
         screened: 0
         annotated: 39
-        blocked: 2
+        blocked: 12
         notes: "line 1 is PRD000423, a legacy ProteomeXchange id — resolve to a PXD before screening"
-        in_corpus: 4
+        in_corpus: 43
       lund:
         name: Lund
         search_terms: [Lund, Malmö, Skåne]
@@ -60,9 +60,9 @@ countries:
         pxd_count: 163
         pride_hits: 508
         screened: 0
-        annotated: 3
-        blocked: 36
-        in_corpus: 6
+        annotated: 9
+        blocked: 51
+        in_corpus: 15
       gothenburg:
         name: Gothenburg
         search_terms: [Gothenburg, Göteborg, Sahlgrenska, Chalmers]
@@ -80,10 +80,10 @@ countries:
         pxd_count: 75
         pride_hits: 196
         screened: 0
-        annotated: 44
-        blocked: 18
+        annotated: 46
+        blocked: 19
         notes: "PXD001817, PXD004529, and PXD007189 are Utrecht datasets (PI address 'Uppsalalaan 8', countries=[Netherlands]) — keyword false positives; filter on PRIDE `countries` in tier 1"
-        in_corpus: 4
+        in_corpus: 46
       umea:
         name: Umeå
         search_terms: [Umeå, Umea]
@@ -93,7 +93,7 @@ countries:
         blocked: 11
         pxd_list: lists/sweden/umea.txt
         pxd_count: 39
-        in_corpus: 6
+        in_corpus: 28
       linkoping:
         name: Linköping
         search_terms: [Linköping, Linkoping]
@@ -103,7 +103,7 @@ countries:
         blocked: 0
         pxd_list: lists/sweden/linkoping.txt
         pxd_count: 26
-        in_corpus: 4
+        in_corpus: 26
       orebro:
         name: Örebro
         search_terms: [Örebro, Orebro]
@@ -236,7 +236,7 @@ countries:
         blocked: 2
         pxd_list: lists/finland/oulu.txt
         pxd_count: 11
-        in_corpus: 4
+        in_corpus: 8
       tampere:
         name: Tampere
         search_terms: [Tampere]

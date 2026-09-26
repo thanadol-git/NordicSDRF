@@ -1,8 +1,8 @@
 city	pride_hits	listed	annotated	blocked	in_corpus	screened	todo
-Stockholm	323	165	39	2	4	0	120
-Lund	508	163	9	47	6	0	101
+Stockholm	323	165	39	12	4	0	110
+Lund	508	163	9	51	8	0	95
 Gothenburg	188	135	0	0	9	0	126
-Uppsala	196	75	44	16	2	0	13
-Umeå	45	39	21	11	6	0	1
-Linköping	26	26	21	0	4	0	1
+Uppsala	196	75	46	17	2	0	10
+Umeå	45	39	21	11	7	0	0
+Linköping	26	26	21	0	5	0	0
 Örebro	0						
