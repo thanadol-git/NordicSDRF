@@ -27,7 +27,7 @@
 </style>
 <rect class="bg" width="860" height="292" rx="6"/>
 <text class="title" x="12" y="22">Sweden — in progress</text>
-<text class="sub" x="12" y="40">597 datasets listed · 160 annotated · PRIDE queried 2026-09-23 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<text class="sub" x="12" y="40">597 datasets listed · 165 annotated · PRIDE queried 2026-09-23 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
 <rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
@@ -41,14 +41,12 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="453" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="470" y="62">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="88.0">Stockholm</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="74" width="245.5" height="20" rx="2"><title>Stockholm · Annotated: 63</title></rect>
-<text class="seg" x="232.8" y="88.0" text-anchor="middle">63</text>
-<rect class="c-blocked" fill="#d95926" x="356.5" y="74" width="202.5" height="20" rx="2"><title>Stockholm · Blocked: 52</title></rect>
-<text class="seg" x="457.8" y="88.0" text-anchor="middle">52</text>
-<rect class="c-in_corpus" fill="#199e70" x="560.0" y="74" width="17.0" height="20" rx="2"><title>Stockholm · In corpus: 4</title></rect>
-<text class="seg" x="568.5" y="88.0" text-anchor="middle">4</text>
-<rect class="c-todo" fill="#8a8983" x="578.0" y="74" width="179.0" height="20" rx="2"><title>Stockholm · To do: 46</title></rect>
-<text class="seg" x="667.5" y="88.0" text-anchor="middle">46</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="74" width="265.1" height="20" rx="2"><title>Stockholm · Annotated: 68</title></rect>
+<text class="seg" x="242.5" y="88.0" text-anchor="middle">68</text>
+<rect class="c-blocked" fill="#d95926" x="376.1" y="74" width="362.9" height="20" rx="2"><title>Stockholm · Blocked: 93</title></rect>
+<text class="seg" x="557.5" y="88.0" text-anchor="middle">93</text>
+<rect class="c-in_corpus" fill="#199e70" x="740.0" y="74" width="17.0" height="20" rx="2"><title>Stockholm · In corpus: 4</title></rect>
+<text class="seg" x="748.5" y="88.0" text-anchor="middle">4</text>
 <text class="total" x="764.0" y="88.0">165 listed</text>
 <text class="city" x="12" y="118.0">Lund</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="34.2" height="20" rx="2"><title>Lund · Annotated: 9</title></rect>

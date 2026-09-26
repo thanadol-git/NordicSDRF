@@ -1,0 +1,20 @@
+run_date        : 2026-09-26
+target          : 50 largest remaining Gothenburg accessions from lists/sweden/gothenburg.txt
+criteria_source : inline — exclude accessions already annotated, blocked, or present in the local community corpus
+criteria_sha256 : n/a
+repositories    : PRIDE
+ranking_source  : PRIDE Archive v3 /projects/<accession>/files/all
+ranking_metric  : descending sum of fileSizeBytes across all deposited files
+candidates      : 125 eligible accessions
+selected        : 50
+largest_bytes   : 913103137895
+cutoff_bytes    : 40167553206
+selected_bytes  : 6512638018666
+selected_raw_bytes : 4753834676805
+selected_raw_files : 5522
+selected_all_files : 6178
+profile         : general-proteomics
+validation_mode : serial
+write           : workspace
+selection_tsv   : results/sweden/gothenburg_large50.tsv
+queue_manifest  : results/queue/2026-09-26_gothenburg-large50.txt
