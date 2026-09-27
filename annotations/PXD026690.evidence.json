@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD026690.sdrf.tsv",
+  "dataset": "PXD026690",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD026690"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD026690/files/all"
+    },
+    {
+      "id": "design",
+      "kind": "repository",
+      "location": "deposited y1819_design.tsv (SampleName, RAW Name, SamplePlace, SampleVariety, SampleDate)"
+    },
+    {
+      "id": "xtandem",
+      "kind": "repository",
+      "location": "deposited *.t.xt.xml 'input parameters' block (scratchpad/PXD026690/evidence/xtandem_input_parameters.txt)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, comment[data file], characteristics[growth condition], factor value[sampling date]",
+      "value": "34 leaf samples of cv. Desiree, field-grown at Borgeby (south) or Umeå (north), 3 sampling dates per site-year",
+      "source_ids": [
+        "design"
+      ],
+      "evidence": "y1819_design.tsv maps every RAW file to SamplePlace, SampleVariety, SampleDate"
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "leaf",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "sample protocol: leaves frozen and ground, phenol extraction"
+    },
+    {
+      "location": "comment[modification parameters], tolerances",
+      "value": "CAM C fixed; Ox M variable; 10 ppm / 0.02 Da; refinement off",
+      "source_ids": [
+        "xtandem"
+      ],
+      "evidence": "X!Tandem input parameters: 57.021464@C fixed, 15.994915@M potential, parent 10 ppm, fragment 0.02 Da"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF-X",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE instrument"
+    }
+  ],
+  "limitations": [
+    "Disease and developmental stage are 'not available' (field plants, stage not recorded per sample).",
+    "Reduction/alkylation reagents taken from the PRIDE protocol (DTT in extraction buffer, IAA); the paper full text was not accessible."
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD032369.sdrf.tsv",
+  "dataset": "PXD032369",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD032369"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD032369/files/all"
+    },
+    {
+      "id": "design",
+      "kind": "repository",
+      "location": "deposited experimentalDesignTemplate.ESR1.proteome.txt (RAW → experiment, fraction)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC10959978"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://api.cellosaurus.org (CVCL_0031, CVCL_3424)"
+    },
+    {
+      "id": "mq",
+      "kind": "repository",
+      "location": "deposited txt.ESR1.proteome.zip parameters.txt"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[genotype], [compound], [dose]",
+      "value": "same 30 samples as PXD032285 (5 lines × E2/vehicle × 3)",
+      "source_ids": [
+        "design",
+        "paper"
+      ],
+      "evidence": "MaxQuant experimental design + Methods"
+    },
+    {
+      "location": "comment[fraction identifier], comment[fractionation method]",
+      "value": "6 SAX fractions per sample",
+      "source_ids": [
+        "design",
+        "paper"
+      ],
+      "evidence": "design Fraction column; Methods: strong anion exchange"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "CAM fixed; Ox M, Acetyl N-term variable; MS/MS 20 ppm",
+      "source_ids": [
+        "mq"
+      ],
+      "evidence": "parameters.txt"
+    }
+  ],
+  "limitations": [
+    "As PXD032285: precursor tolerance omitted; SUM44PE age not available; reconcile disease/control-arm flag is expected."
+  ]
+}

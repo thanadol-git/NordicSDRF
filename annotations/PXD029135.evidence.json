@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029135.sdrf.tsv",
+  "dataset": "PXD029135",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD029135"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD029135/files/all"
+    },
+    {
+      "id": "design",
+      "kind": "repository",
+      "location": "deposited SRDF_File.txt (authors' sample sheet: RAW → subject RC#, ICS before/after, stimulus, T2 status)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC8688760"
+    },
+    {
+      "id": "mq",
+      "kind": "repository",
+      "location": "deposited max_quant_results.zip mqpar"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[individual], [phenotype], [treatment], [compound]",
+      "value": "10 asthma patients (T2-high / T2-low) before/after inhaled budesonide; HBECs unstimulated, poly(I:C) or imiquimod",
+      "source_ids": [
+        "design",
+        "paper"
+      ],
+      "evidence": "SRDF_File.txt per RAW file"
+    },
+    {
+      "location": "comment[modification parameters], tolerances",
+      "value": "CAM fixed; Ox M, Acetyl N-term variable; 4.5 ppm / 20 ppm",
+      "source_ids": [
+        "mq"
+      ],
+      "evidence": "mqpar.xml"
+    }
+  ],
+  "limitations": [
+    "Donor age/sex not given per subject → 'not available'.",
+    "Compound doses (10 µg/mL poly(I:C), 10 µg/mL imiquimod) from Methods; dose column not added."
+  ]
+}

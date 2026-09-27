@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029821.sdrf.tsv",
+  "dataset": "PXD029821",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD029821"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD029821/files/all"
+    },
+    {
+      "id": "design",
+      "kind": "repository",
+      "location": "deposited SCLC_Experimental_design_cell_media.xlsx"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Table 1 and Methods"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://api.cellosaurus.org (29 lines, queried 2026-09-26)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "RAW headers read by HTTP range request (instrument string; see scratchpad/PXD029821/evidence/raw_header_check.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[cell line]",
+      "value": "same 29 lines; conditioned culture media",
+      "source_ids": [
+        "design"
+      ],
+      "evidence": "design sheet per RAW file"
+    },
+    {
+      "location": "characteristics[organism part], [sampling site]",
+      "value": "culture medium (BTO); Cellosaurus derived-from site in sampling site",
+      "source_ids": [
+        "design",
+        "cellosaurus"
+      ],
+      "evidence": "CM samples"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "per run DDA or DIA",
+      "source_ids": [
+        "design",
+        "paper"
+      ],
+      "evidence": "CM: 2 DDA + 1 DIA per vial"
+    },
+    {
+      "location": "comment[modification parameters], tolerances, cleavage",
+      "value": "as part I",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods"
+    }
+  ],
+  "limitations": [
+    "Mixed DDA and DIA: following the repo convention (PXD023708), the combined SDRF is kept plus `-dda` and `-dia` splits with technical replicates renumbered per split.",
+    "Disease uses the Cellosaurus disease of each line: NCI-H841 and DMS 114 (CRL-2066) → thoracic SMARCA4-deficient undifferentiated tumor, NCI-H196 → lung sarcomatoid carcinoma, NCI-H1341 → cervical small cell carcinoma, although the paper treats them as SCLC lines; the paper's subtype is in phenotype.",
+    "HLHE is not in Cellosaurus → accession/name/age/sex 'not available'.",
+    "Runs marked 'Deleted…' in the design sheet (H661, H720, H460 reference lines; some re-measured DDA runs) are deposited and therefore annotated.",
+    "reconcile flags: Trypsin/Lys-C not named in the PRIDE record (paper Methods state LysC then trypsin, S-Trap); organism part from cultured material (heuristic on 'cell line' wording; Cellosaurus derived-from site is used, as in repo precedent PXD070201).",
+    "PRIDE lists the instrument as Q Exactive; RAW headers and paper say Q Exactive HF-X."
+  ],
+  "additional_artifacts": [
+    "annotations/PXD029821-dda.sdrf.tsv",
+    "annotations/PXD029821-dia.sdrf.tsv"
+  ]
+}

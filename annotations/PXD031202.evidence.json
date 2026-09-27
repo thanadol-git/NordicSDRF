@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD031202.sdrf.tsv",
+  "dataset": "PXD031202",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD031202"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD031202/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC9420555"
+    },
+    {
+      "id": "pdtable",
+      "kind": "repository",
+      "location": "deposited 20191902_Linge.csv (PD protein table; Modifications column tallied)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "RAW method header (ActivationType HCD, CE 30 %)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[individual], [disease]",
+      "value": "5 healthy controls (Ctrl1–5) and 10 SLE patients (P26–P43), triplicate runs 001–003",
+      "source_ids": [
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "RAW names; paper: 5 SLE-low FSC, 5 SLE-normal FSC, 5 HC"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "CAM fixed (paper); Acetyl protein N-term and Phospho S/T variable (present in the deposited PD table)",
+      "source_ids": [
+        "paper",
+        "pdtable"
+      ],
+      "evidence": "Modifications column: Acetyl [N-Term] 98, Phospho [S] 24, [T] 8"
+    },
+    {
+      "location": "comment[precursor mass tolerance], [collision energy], cleavage",
+      "value": "15 ppm; HCD 30 %; trypsin",
+      "source_ids": [
+        "paper",
+        "raw-header"
+      ],
+      "evidence": "Methods; RAW header"
+    }
+  ],
+  "limitations": [
+    "Patient IDs P26–P43 are not linked to the paper's SLE-low / SLE-normal FSC groups or to the per-patient table → FSC group, age and sex 'not available'.",
+    "Runs 001–003 annotated as technical replicates; the paper calls them 'three biological replicates from each sample'.",
+    "Fragment tolerance is printed as '0.05 ppm' (likely 0.05 Da) → omitted. Oxidation not listed in the PD table → not annotated.",
+    "reconcile flags trypsin as not named in the PRIDE record; Methods state trypsin digestion."
+  ]
+}

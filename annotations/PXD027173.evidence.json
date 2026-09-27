@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD027173.sdrf.tsv",
+  "dataset": "PXD027173",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD027173"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD027173/files/all"
+    },
+    {
+      "id": "filelist",
+      "kind": "repository",
+      "location": "deposited AD_FileList_4regionsPatientData_210707.xlsx (sheets DDA, Phospho: file, region, disease group, brain no., sex, age, PMI)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC8546208"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "RAW headers read by HTTP range request (instrument string; see scratchpad/PXD027173/evidence/raw_header_check.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[individual], [organism part], [phenotype], [age], [sex]",
+      "value": "23 brains × CA1 / entorhinal cortex / hippocampal formation / perirhinal cortex; Braak stage III, IV or control",
+      "source_ids": [
+        "filelist"
+      ],
+      "evidence": "AD_FileList maps each RAW file to region, disease group (B/B III., IV, control), brain number, sex and age"
+    },
+    {
+      "location": "characteristics[enrichment process]",
+      "value": "58 global DDA runs; 70 phospho-enriched runs",
+      "source_ids": [
+        "filelist",
+        "paper"
+      ],
+      "evidence": "separate DDA and Phospho sheets; Methods: Fe-IMAC phosphopeptide enrichment"
+    },
+    {
+      "location": "comment[modification parameters] (per row)",
+      "value": "global: CAM fixed; Ox M, Acetyl K, Acetyl:2H(3) K, Acetyl protein N-term variable. phospho: CAM fixed; Phospho STY, Ox M, Acetyl protein N-term variable",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods, Proteome Discoverer searches for the two workflows"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF-X",
+      "source_ids": [
+        "raw-header",
+        "paper"
+      ],
+      "evidence": "RAW headers"
+    }
+  ],
+  "limitations": [
+    "The file list names '181130_P997_2_phospho.raw' but PRIDE holds '181130_C997_2_phospho.raw' (no other candidate); the deposited name is used.",
+    "Region 'HC' annotated as hippocampal formation (UBERON) — the paper's 'total hippocampus' sample.",
+    "Braak stage is carried as phenotype (clinical-metadata template has no staging column for AD)."
+  ]
+}

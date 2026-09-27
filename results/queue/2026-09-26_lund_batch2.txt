@@ -1,0 +1,22 @@
+# Lund batch 2 — next 20 accessions from lists/sweden/lund.txt to-do, 2026-09-26
+# 15 annotated (draft, awaiting independent review), 5 blocked.
+PXD026690	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD027173	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD027259	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD028709	sweden/lund	blocked	18 pool/depletion runs not identifiable (healthy vs melanoma pool, depletion)
+PXD028930	sweden/lund	blocked	RAW names not linked to primary/metastasis or patient
+PXD029028	sweden/lund	annotated	SDRF (DIA) + -dda-library SDRF + report + evidence manifest
+PXD029129	sweden/lund	blocked	run numbers not linked to migrated/non-migrated or SF donor
+PXD029135	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD029625	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD029805	sweden/lund	annotated	SDRF + -dda/-dia splits + report + evidence manifest
+PXD029821	sweden/lund	annotated	SDRF + -dda/-dia splits + report + evidence manifest
+PXD030043	sweden/lund	annotated	SDRF (iodoTMT) + report + evidence manifest
+PXD030521	sweden/lund	blocked	deposit incomplete (pellet runs missing) and SUP naming undocumented
+PXD031202	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD031458	sweden/lund	blocked	mzML only (no Bruker .d) and no file-to-POTS/control map
+PXD031693	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD032213	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD032266	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD032285	sweden/lund	annotated	SDRF + report + evidence manifest
+PXD032369	sweden/lund	annotated	SDRF + report + evidence manifest

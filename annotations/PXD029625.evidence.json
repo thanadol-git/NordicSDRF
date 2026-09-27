@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029625.sdrf.tsv",
+  "dataset": "PXD029625",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD029625"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD029625/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC9902543"
+    },
+    {
+      "id": "diann",
+      "kind": "repository",
+      "location": "deposited DIANN_results_BALF.zip and DIANN_results_Lung.zip Pass1/Pass2 logs (scratchpad/PXD029625/evidence/DIANN_*.txt)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "RAW headers read by HTTP range request (instrument string; see scratchpad/PXD029625/evidence/raw_header_check.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[organism part], [treatment]",
+      "value": "Lung and BALF × B (bleomycin + vehicle), BTH (bleomycin + TH5487), DEX (bleomycin + dexamethasone), TH (saline + TH5487), V (saline + vehicle); n = 4–5",
+      "source_ids": [
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "RAW names encode tissue, group, animal number; Methods define groups and doses (bleomycin 2.5 U/kg i.t., TH5487 40 mg/kg i.p., dexamethasone 10 mg/kg i.p.)"
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "pulmonary fibrosis (bleomycin groups) / normal (saline groups)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "bleomycin-induced fibrosis model"
+    },
+    {
+      "location": "characteristics[sex], [strain or breed]",
+      "value": "male; C57BL/6",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "'10–12-week-old male C57Bl/6 mice (Janvier)'"
+    },
+    {
+      "location": "comment[acquisition], [instrument], [collision energy]",
+      "value": "DIA (44 variable windows), Q Exactive HF-X, stepped NCE 25.5/27/30",
+      "source_ids": [
+        "pride",
+        "raw-header"
+      ],
+      "evidence": "sample protocol; RAW headers (PRIDE instrument field says Q Exactive HF)"
+    },
+    {
+      "location": "comment[reduction reagent], cleavage, modifications",
+      "value": "TCEP, IAA, trypsin; CAM",
+      "source_ids": [
+        "pride",
+        "diann"
+      ],
+      "evidence": "PRIDE protocol; DIA-NN library-free search"
+    }
+  ],
+  "limitations": [
+    "Lung and BALF runs with the same group/number are not asserted to be the same animal (no deposited statement) → no individual column.",
+    "Age at sampling not given (10–12 weeks on arrival + ≥2 weeks + 21 days) → not annotated.",
+    "CAM is annotated fixed (DIA-NN --unimod4 semantics); the Methods sentence calls it 'variable'. DIA-NN auto-optimises tolerances → none annotated.",
+    "reconcile BLOCKER 'run names name lung but every row says BALF' and MAJOR 'control arm' are false positives of the single-value comparison: 22 rows are lung, 22 BALF, and saline groups are 'normal'."
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD032285.sdrf.tsv",
+  "dataset": "PXD032285",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD032285"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD032285/files/all"
+    },
+    {
+      "id": "design",
+      "kind": "repository",
+      "location": "deposited experimentalDesignTemplate.ESR1.phosphoproteome.txt (MaxQuant design: RAW → experiment, fraction)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC10959978"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://api.cellosaurus.org (CVCL_0031 MCF-7, CVCL_3424 SUM44PE)"
+    },
+    {
+      "id": "mq",
+      "kind": "repository",
+      "location": "deposited txt.zip parameters.txt (MaxQuant 1.6.14)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[genotype], [compound], [dose]",
+      "value": "MCF-7 ESR1 WT / Y537N / Y537S knock-in and SUM44PE WT / SUM44PE-LTED (Y537S); 1 nM estradiol vs ethanol vehicle; 3 replicates",
+      "source_ids": [
+        "design",
+        "paper"
+      ],
+      "evidence": "MaxQuant experimental design + Methods"
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "2 fractions per phospho-enriched sample",
+      "source_ids": [
+        "design"
+      ],
+      "evidence": "experimental design Fraction column"
+    },
+    {
+      "location": "comment[modification parameters], tolerances",
+      "value": "CAM fixed; Ox M, Acetyl N-term, Phospho STY variable; MS/MS 20 ppm",
+      "source_ids": [
+        "mq"
+      ],
+      "evidence": "parameters.txt"
+    }
+  ],
+  "limitations": [
+    "Precursor tolerance not read from parameters (MaxQuant first/main search) → column omitted.",
+    "SUM44PE donor age not in Cellosaurus → 'not available'.",
+    "reconcile flags disease 'breast lobular carcinoma'/'invasive breast carcinoma' for the vehicle arm; the disease column describes the cell line origin, so it is kept."
+  ]
+}

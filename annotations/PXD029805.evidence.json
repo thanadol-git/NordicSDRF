@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029805.sdrf.tsv",
+  "dataset": "PXD029805",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD029805"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD029805/files/all"
+    },
+    {
+      "id": "design",
+      "kind": "repository",
+      "location": "deposited SCLC_Experimental_design_cell_pellets.xlsx (RAW → cell line, internal ID, subtype, vial G/D/B, DDA/DIA, batch)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Table 1 and Methods"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://api.cellosaurus.org (29 lines, queried 2026-09-26)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "RAW headers read by HTTP range request (instrument string; see scratchpad/PXD029805/evidence/raw_header_check.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[cell line], [biological replicate]",
+      "value": "29 lines (26 SCLC + NCI-H661, NCI-H460, NCI-H720 references); source = line × growth batch (G1/G2)",
+      "source_ids": [
+        "design"
+      ],
+      "evidence": "design sheet per RAW file"
+    },
+    {
+      "location": "characteristics[phenotype]",
+      "value": "SCLC-A/N/P/Y subtype, NSCLC or carcinoid reference",
+      "source_ids": [
+        "design",
+        "paper"
+      ],
+      "evidence": "Subtype column; Table 1"
+    },
+    {
+      "location": "characteristics[cellosaurus accession], [sex], [age], [sampling site], [organism part]",
+      "value": "Cellosaurus entries (e.g. NCI-H209 CVCL_1525; SW1271 CVCL_1716 for CRL-2177; DMS 114 CVCL_1174 for CRL-2066; COR-L311 CVCL_2412 for 'COR')",
+      "source_ids": [
+        "cellosaurus",
+        "paper"
+      ],
+      "evidence": "Table 1 'Other cell line ID' resolves CRL-2177, CRL-2066, COR"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "per run DDA or DIA",
+      "source_ids": [
+        "design",
+        "paper"
+      ],
+      "evidence": "Data acquisition mode column; CP: 1 DDA + 2 DIA per vial"
+    },
+    {
+      "location": "comment[modification parameters], tolerances, cleavage",
+      "value": "CAM fixed; Ox M, Acetyl N-term variable; 10 ppm / 0.02 Da; Lys-C + trypsin",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods (PD 2.4, S-Trap)"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF-X",
+      "source_ids": [
+        "raw-header",
+        "paper"
+      ],
+      "evidence": "RAW headers of both batches"
+    }
+  ],
+  "limitations": [
+    "Mixed DDA and DIA: following the repo convention (PXD023708), the combined SDRF is kept plus `-dda` and `-dia` splits with technical replicates renumbered per split.",
+    "Disease uses the Cellosaurus disease of each line: NCI-H841 and DMS 114 (CRL-2066) → thoracic SMARCA4-deficient undifferentiated tumor, NCI-H196 → lung sarcomatoid carcinoma, NCI-H1341 → cervical small cell carcinoma, although the paper treats them as SCLC lines; the paper's subtype is in phenotype.",
+    "HLHE is not in Cellosaurus → accession/name/age/sex 'not available'.",
+    "Runs marked 'Deleted…' in the design sheet (H661, H720, H460 reference lines; some re-measured DDA runs) are deposited and therefore annotated.",
+    "reconcile flags: Trypsin/Lys-C not named in the PRIDE record (paper Methods state LysC then trypsin, S-Trap); organism part from cultured material (heuristic on 'cell line' wording; Cellosaurus derived-from site is used, as in repo precedent PXD070201).",
+    "PRIDE lists the instrument as Q Exactive; RAW headers and paper say Q Exactive HF-X."
+  ],
+  "additional_artifacts": [
+    "annotations/PXD029805-dda.sdrf.tsv",
+    "annotations/PXD029805-dia.sdrf.tsv"
+  ]
+}

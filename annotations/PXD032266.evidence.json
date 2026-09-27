@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD032266.sdrf.tsv",
+  "dataset": "PXD032266",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD032266"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD032266/files/all"
+    },
+    {
+      "id": "smpl",
+      "kind": "repository",
+      "location": "deposited SMPL_NFO.xlsx (RAW file → patient, tumour type PT/LR, age at diagnosis)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC9894938"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "RAW headers read by HTTP range request (instrument string; see scratchpad/PXD032266/evidence/raw_header_check.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[individual], characteristics[phenotype], [age]",
+      "value": "27 patients × primary tumour + ipsilateral local recurrence; age from AGE.DIAGNOSIS (floored)",
+      "source_ids": [
+        "smpl"
+      ],
+      "evidence": "SMPL_NFO.xlsx maps each RAW file to patient and PT/LR"
+    },
+    {
+      "location": "comment[proteomics data acquisition method], [instrument]",
+      "value": "DIA; Q Exactive HF-X",
+      "source_ids": [
+        "paper",
+        "raw-header"
+      ],
+      "evidence": "Methods; RAW headers"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: trypsin 1:50, 37 °C 16 h (PRIDE record does not name the enzyme → reconcile flag)"
+    }
+  ],
+  "limitations": [
+    "Search modifications (CAM fixed; Ox M, Acetyl N-term variable) assumed from the group's matching DIA workflow (PXD021394); the deposited PQP library was not parsed.",
+    "dia-acquisition template not declared (its validator requires the bare literal instead of NT=/AC=)."
+  ]
+}

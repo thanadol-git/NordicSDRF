@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD027259.sdrf.tsv",
+  "dataset": "PXD027259",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD027259"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD027259/files/all"
+    },
+    {
+      "id": "idmap",
+      "kind": "repository",
+      "location": "deposited LADC_PRIDE_raw_files_sample_ID.xlsx (RAW sample number → pLADC-NN / mLADC-NN)"
+    },
+    {
+      "id": "tableS1",
+      "kind": "publication",
+      "location": "Supplementary Table S1 (mmc2.xlsx, sheet 'Clinical-histopathological info'; scratchpad/PXD027259/evidence/mmc2_TableS1_clinical.tsv)"
+    },
+    {
+      "id": "suppmethods",
+      "kind": "publication",
+      "location": "Supplementary Materials and Methods (mmc1.docx; scratchpad/PXD027259/evidence/mmc1_supplementary_methods.txt)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "RAW headers read by HTTP range request (instrument string; see scratchpad/PXD027259/evidence/raw_header_check.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[individual]",
+      "value": "pLADC-01..20 (primary) and mLADC-01..20 (brain metastasis) from patients LADC-01..20",
+      "source_ids": [
+        "idmap",
+        "tableS1"
+      ],
+      "evidence": "ID sheet maps every RAW sample number; Table S1 row LADC-19 metastasis tumour content 3.6 % = paper's outlier mLADC-19, confirming mLADC-NN ↔ LADC-NN"
+    },
+    {
+      "location": "characteristics[clinical history], factor value",
+      "value": "fast (LADC-01..11, lung–brain interval ≤ 365 d) vs slow (LADC-12..20)",
+      "source_ids": [
+        "tableS1"
+      ],
+      "evidence": "Table S1 'Progression to brain metastasis'"
+    },
+    {
+      "location": "characteristics[age], [sex], [smoking status], [disease staging], [genotype]",
+      "value": "per patient",
+      "source_ids": [
+        "tableS1"
+      ],
+      "evidence": "Table S1 Gender (1 male, 2 female), Age (half-years kept as 6M), Smoking (2/1/0), pathological stage I–IV, EGFR/KRAS status"
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "R1/R2 = duplicate injections",
+      "source_ids": [
+        "suppmethods",
+        "pride-files"
+      ],
+      "evidence": "'All samples were run in duplicates'"
+    },
+    {
+      "location": "comment[modification parameters], tolerances, cleavage",
+      "value": "CAM fixed; Ox M, Acetyl protein N-term variable; 10 ppm / 0.02 Da; Lys-C + trypsin",
+      "source_ids": [
+        "suppmethods"
+      ],
+      "evidence": "Supplementary Methods (PD 2.4, S-Trap LysC then trypsin, DTT, IAA)"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF-X",
+      "source_ids": [
+        "raw-header",
+        "suppmethods"
+      ],
+      "evidence": "RAW headers"
+    }
+  ],
+  "limitations": [
+    "FFPE preservation is stated in the report only (no licensed SDRF column).",
+    "mLADC-19 (outlier, 3.6 % tumour) is kept; the paper excluded it from group comparisons.",
+    "reconcile flags Trypsin/Lys-C as not named in the PRIDE record; both are in the supplementary methods."
+  ]
+}
