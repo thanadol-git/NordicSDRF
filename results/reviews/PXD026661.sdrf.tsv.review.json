@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD026661.sdrf.tsv",
+  "artifact_sha256": "859d1b71ffd429d82b46216986bc460d70f756a61309bdaedc4b2a40cedaa765",
+  "verdict": "PASS",
+  "summary": "Independent review reconstructed the sample-to-file mapping, varieties, locations and technical replicates from the deposited y16_design.tsv and Proteios y16_data.tsv header and found all 131 rows consistent; validator and helper checks clean. Only minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent without producer transcript; producer report treated as untrusted"
+  },
+  "evidence_manifest": "annotations/PXD026661.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "pass", "evidence": "131 rows x 31 columns; templates ms-proteomics v1.1.0 + plants v1.1.0 declared and appropriate (Solanum tuberosum leaf, label-free MS). plants-required developmental stage and disease present (not available); reserved words correctly spelled; sdrf-tools structure OK; no duplicate assay names or data files."},
+    "ontology_integrity": {"status": "pass", "evidence": "Resolved in local OLS cache: NCBITaxon:4113 solanum tuberosum; BTO:0000713 leaf; MS:1002416 orbitrap fusion; MS:1001251 trypsin; MS:1002038 label free sample; PRIDE:0000627 data-dependent acquisition; PRIDE:0000608 dithiothreitol (DTT); PRIDE:0000599 iodoacetamide (IAA); UNIMOD:4 carbamidomethyl, UNIMOD:35 oxidation, UNIMOD:1 acetyl. Labels and accessions match; sdrf-tools check --offline CLEAN."},
+    "source_evidence": {"status": "pass", "evidence": "PRIDE record: organism potato, organism part leaf, Orbitrap Fusion, DTT/IAA reduction-alkylation, trypsin in-gel digestion, MS-GF+/X!Tandem search. X!Tandem input parameters: 57.021464@C fixed, 15.994915@M variable, refinement +42.010565@[ (protein N-term), 10 ppm / 0.4 Da. For every row, variety == design 'variety', location (Umea/Borgeby) == design 'location', source name == potato_sample_<design sample>, technical replicate == design 'rerun'. Umea (northern) vs Borgeby (southern Sweden) matches abstract framing. sdrf-tools reconcile: all values agree with deposit record."},
+    "file_mapping": {"status": "pass", "evidence": "files_compact.json has 131 RAW files; y16_data.tsv header maps 131 ns_* sample names to 131 mzML stems, all identical to RAW stems; every SDRF assay name maps to exactly the header-designated RAW (0 mismatches), 131 unique data files, no missing or extra RAW, no non-raw files."},
+    "design_consistency": {"status": "pass", "evidence": "95 sources = design samples 1..95 with no gaps; 33 rerun=2 and 3 rerun=3 injections as technical replicates (131 rows). Per-source characteristics are constant. Biological replicate numbering is 1..n contiguous within each of 26 variety x location groups. Factors growth condition (2 levels) and strain or breed (19 levels) match design; unbalanced (only 7 varieties at Borgeby) is a property of the study, not an error."},
+    "omission_safety": {"status": "pass", "evidence": "No unsupported specificity: developmental stage and disease left as not available; month/date/time correctly recognised as 2017 acquisition timestamps (plants grown 2016) and not annotated as sample attributes; yield/supergroup design columns are derived groupings and not required. Omissions noted below are minor/optional."},
+    "deterministic_validation": {"status": "pass", "evidence": "flock ... parse_sdrf validate-sdrf -t ms-proteomics -t plants --use_ols_cache_only: 'Everything seems to be fine', exit 0. sdrf-tools check --offline exit 0 CLEAN; score 100/100 exit 0; structure OK exit 0; reconcile against pride.json exit 0, all values agree."}
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "value-normalisation",
+      "location": "characteristics[strain or breed] / factor value[strain or breed] values 'KingEdward', 'SarpoMira'",
+      "message": "Cultivar names copied from design codes without spaces; canonical cultivar names are 'King Edward' and 'Sarpo Mira'.",
+      "evidence": "y16_design.tsv 'variety' column uses space-free identifiers."
+    },
+    {
+      "severity": "minor",
+      "category": "search-parameters",
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance], comment[modification parameters]",
+      "message": "Tolerances and modifications are taken from X!Tandem only; MS-GF+ settings (also used per PRIDE data processing protocol) are unverified, and missed cleavages (1) is not recorded.",
+      "evidence": "xtandem_input_parameters.txt; PRIDE dataProcessingProtocol names MS-GF+ and X!Tandem."
+    },
+    {
+      "severity": "minor",
+      "category": "technical-batch",
+      "location": "file-level (optional comment columns)",
+      "message": "Design column 'batch_column_switch' (LC column batch 1: 43 runs, 2: 88 runs) is not recorded, and Svante_85min_1.raw (ns_1, acquired June 2017, name suggests an 85 min gradient) differs from the Sep-Nov 2017 runs; consider optional comment columns so downstream users can model the batch.",
+      "evidence": "y16_design.tsv batch_column_switch, batch_date_range, month columns."
+    }
+  ]
+}

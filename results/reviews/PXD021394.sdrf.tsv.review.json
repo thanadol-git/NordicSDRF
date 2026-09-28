@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD021394.sdrf.tsv",
+  "artifact_sha256": "78081720b5422489990f5ccb51bb7e89d661774f16809ad16293d78fd3b597d1",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. All 24 RAW files map one-to-one to Sample.information.xlsx rows (Sample.ID, mammographic appearance, ER/PgR/IntClust exactly reproduced); technical values are supported by the paper Methods for sample sets 1 and 2; all controlled terms resolve. Only minor provenance and documentation issues remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh adversarial reviewer agent without producer transcript; evidence restricted to scratchpad/PXD021394/"
+  },
+  "evidence_manifest": "annotations/PXD021394.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Column order and forms match `sdrf-tools contract -t ms-proteomics -t human -t clinical-metadata -t oncology-metadata`; required columns (organism, organism part, biological replicate, age, sex, assay name, technology type, technical replicate, data file, acquisition method, instrument, cleavage agent, label, fraction identifier) present; reserved words used only where permitted (age/sex/cell type 'not available'; PgR 'not available' inside free-text clinical data); source name and assay name unique; 24 rows x 35 columns; repeated sdrf template/modification columns are legal 'multiple' columns. Bare 'label free sample' matches spec README usage. dia-acquisition template omission verified as defensible: its YAML (sdrf_pipelines dia-acquisition/1.1.0) enforces the bare literal 'Data-independent acquisition'."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Resolved one parquet at a time from sdrf-pipelines cache: MS:1002877 q exactive hf-x; MS:1001251 trypsin; MS:1000422 beam-type collision-induced dissociation (spec-canonical HCD); PRIDE:0000450 data-independent acquisition; PRIDE:0000608 dithiothreitol (DTT); PRIDE:0000599 iodoacetamide (IAA); UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, UNIMOD:1 Acetyl; 'breast' = UBERON:0000310; 'breast cancer' = MONDO:0007254 / DOID:1612; 'label free sample' = MS:1002038. Phenotype values are free text (permitted: PATO, EFO, free text); no PATO/EFO term for spiculated appearance exists in cache. sdrf-tools check --offline CLEAN (0 hallucinated, 0 label mismatches, 0 UNIMOD swaps)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Sample.information.xlsx (deposited, 24 rows) reproduced exactly per row for source name, individual, phenotype/factor, and 'ER x; PgR y; IntClust z' (V20/V21 PgR blank -> 'not available'). Type.of.tissue = Breast primary tumor for all 24 supports organism part/disease/material type. Manuscript: 'For downstream DIA MS analysis (sample sets 1 and 2)... digested as previously mentioned' (FASP, 100 mM DTT, 50 mM iodoacetamide, trypsin 1:50), unfractionated; 'For DIA MS analysis (sample sets 1 and 2), a Q-Exactive HF-X'; 'fragmented by HCD (collision energy: 30)'. Modifications: MaxQuant Cys carbamidomethyl fixed, N-terminal acetyl and Met oxidation variable; Comet library search 'parameter sets were similar to those of MaxQuant'. Sex 'not available' verified: 'collected from women' is in the set-1 (21 specimens, 172-sample cohort) paragraph; the set-2 paragraph (24 tumours from 109-sample cohort) states no sex/age. PRIDE instrument 'Q Exactive' (MS:1001911) is a generic record entry superseded by the paper's explicit HF-X."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "files_raw_names.json lists 24 RAW files; SDRF comment[data file] contains exactly these 24, no duplicates, no non-raw files; assay name = file stem on every row. Non-raw deposits (2 FASTA, PQP library, feature_alignment_matrix.tsv, Sample.information.xlsx) correctly excluded."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "24 distinct tumours/individuals, one DIA run each: biological replicate 1, technical replicate 1, fraction identifier 1 (unfractionated DIA per Methods). Factor value[phenotype] equals characteristics[phenotype] on every row; recomputed groups spiculated 4 (V03, V12, V15, V18), non-spiculated 20, matching the sheet and the report. ER/PgR/IntClust carried as covariates, not factors."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value traced to the deposited sheet, PRIDE record, or manuscript Methods. No unsupported specificity: sex/age/cell type left 'not available' rather than inferred 'female' from the generic breast-cancer context; no per-sample values derived from cohort summaries; collision energy unit NCE is the standard Q Exactive HCD convention for 'collision energy: 30'. Omitted recommended columns (precursor/fragment mass tolerance, ancestry category) have no DIA-specific evidence and their omission does not assert anything false."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -t ms-proteomics -t human -t clinical-metadata -t oncology-metadata --use_ols_cache_only: exit 0, only 2 warnings (free-text phenotype not in pato;efo). sdrf-tools structure: OK (exit 0). sdrf-tools check --offline: CLEAN (exit 0). sdrf-tools score: 95/100. sdrf-tools reconcile --record pride.json: exit 1 with one flag 'cleavage_agent_unsupported' (PRIDE record never names trypsin) - adjudicated false positive: manuscript Methods state trypsin digestion (1:50, 37 C, 16 h) explicitly for DIA sample sets 1 and 2."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD021394.report.md 'Validation' section",
+      "message": "Report says remaining sdrf-tools reconcile flags are 'explained below', but the cleavage_agent_unsupported flag (trypsin absent from PRIDE record) is never explained.",
+      "evidence": "reconcile exit 1 with that single flag; manuscript 'Proteins were then digested with trypsin (enzyme:protein ratio of 1:50)' resolves it. Correction: add one line citing the Methods sentence."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD021394.evidence.json sources[id=raw-header]",
+      "message": "Manifest cites RAW-header evidence (TDM_M1912_226/277, TDM_M2002_109) for the instrument, but no RAW-header extract exists under scratchpad/PXD021394/.",
+      "evidence": "scratchpad/PXD021394 contains only pride.json, manuscript.txt, file lists, samples.tsv, technical.tsv, evidence/Sample.information.xlsx. Instrument claim is independently supported by the paper, so no SDRF change needed; either store the header extract or drop the source."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "annotations/PXD021394.report.md Limitations (age); characteristics[age], characteristics[sex]",
+      "message": "Limitation cites only 'Table S1 in the ACS PDF supplement'; the manuscript points to Tables S1 and S2 (pr1c00243_si_002.xlsx, 'Clinical and histopathological information') as the per-specimen clinical source, which was not retrieved and may hold age/sex/grade for set 2.",
+      "evidence": "manuscript.txt Patients section and line 1358 '(Table S2) Clinical and histopathological information'. Correction: fetch Table S2 in a future pass or correct the limitation text; current 'not available' values are safe."
+    },
+    {
+      "severity": "minor",
+      "category": "stale-working-file",
+      "location": "scratchpad/PXD021394/technical.tsv comment[dissociation method]",
+      "message": "Working technical.tsv still holds NT=HCD;AC=PRIDE:0000590 while the SDRF (correctly) uses NT=beam-type collision-induced dissociation;AC=MS:1000422; a rebuild from the scratchpad would regress this.",
+      "evidence": "technical.tsv row comment[dissociation method]. Correction: update the working file to the spec-canonical term."
+    }
+  ]
+}

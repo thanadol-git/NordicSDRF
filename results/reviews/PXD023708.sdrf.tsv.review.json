@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD023708.sdrf.tsv",
+  "artifact_sha256": "90821ef5a77d9560ef6ae5aa39dd0cb7fde62d14cf579d7912e68b0ad6c96d5b",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review found no blocker or important issues; minor findings only.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer agent without producer transcript; evidence limited to scratchpad/PXD023708, spec, installed templates and ontology caches; no network"
+  },
+  "evidence_manifest": "annotations/PXD023708.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t human -t clinical-metadata --use_ols_cache_only (serialized with flock) exit 0, no errors; only warnings are the 4 free-text characteristics[phenotype] labels. 135 rows x 37 columns, uniform row width, no blank cells, no leading/trailing whitespace, LF endings, ASCII. Template declarations (ms-proteomics v1.1.0, human v1.1.0, clinical-metadata v1.0.0) match installed templates.yaml latest versions. Reserved words (not available for age/sex, not applicable for cell type and pooled-QC disease) are permitted by TERMS.tsv. sdrf-tools structure reports only the expected mixed-acquisition-methods note (repo convention)."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Resolved against local parquet caches one file at a time: MS:1002877 q exactive hf-x, MS:1001251 trypsin, MS:1000422 beam-type collision-induced dissociation (spec-canonical HCD), PRIDE:0000608 dithiothreitol (dtt), PRIDE:0000599 iodoacetamide (iaa), PRIDE:0000627 data-dependent acquisition, PRIDE:0000450 data-independent acquisition, UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, UNIMOD:1 Acetyl, UNIMOD:7 Deamidated, UNIMOD:27 Glu->pyro-Glu; label-only values resolve: synovial fluid UBERON:0001090, osteoarthritis, knee MONDO:0005416/EFO:0004616, normal PATO:0000461, Homo sapiens NCBITaxon:9606. sdrf-tools check --offline CLEAN (0 hallucinated, 0 label mismatches, 0 UNIMOD swaps)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Checked against scratchpad/PXD023708/pride.json (accession PXD023708 confirmed), manuscript.txt (PMC8941261, title matches), files_compact.json and evidence/raw_header_check.json. Cohort n=11 late (arthroplasty), 7 early (arthroscopy, degenerative meniscal tear), 13 deceased-donor controls matches 11 distinct L*, 7 B*, 13 G* subject codes (G2 normalized to G02, which also appears as G02); count-based mapping is the unique consistent assignment and is disclosed as inference. MARS Hu7 depletion, DTT/IAA, trypsin, Q Exactive HF-X, NCE 27, and all modifications (deamidation, Glu->pyro-Glu, Met ox, hydroxyproline=Oxidation P, acetylation) are stated in PRIDE/Methods. Age/sex only as cohort summaries -> not available is correct. Pooled QC 'every 10th sample' quoted verbatim in manuscript. reconcile BLOCKER on 190411_DDA_B414_nr2b refuted: header method is the DIA .meth, RAW size 3.62 GB is within DIA range (all 65 DDA-method RAWs <= 2.15 GB), and the deposit contains 190411_DDA_B414_nr2b.htrms while every other .htrms is a DIA-named run. reconcile MAJOR disease flag is a false positive (controls = normal)."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "135 rows, 135 unique comment[data file]; assay name == data file stem for every row. Set equals the 135 deposited RAW files in files_compact.json/files_raw_names.json/raw_header_check.json (0 missing, 0 extra, 0 duplicates); 94 OTHER (.htrms/.bgms) and 1 SEARCH (.sne) files correctly excluded. Per-row acquisition method matches the RAW-header .meth for all rows (0 mismatches; DDA_QC2b_JM/DDA_test_QC1 -> DDA, DIA_STD_120kMS1_45kMS2_24VarWin -> DIA), including 190411_DDA_B414_nr2b.raw = DIA and 190326_pooled_SF* = DDA."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "46 sources / 32 individuals (31 subjects + pooled). Source name, individual and factor group re-derived from every file name (B->early, L->late, G->control, pooled_SF->QC) with 0 mismatches; factor value[phenotype] == characteristics[phenotype] on every row; disease consistent with group (70 OA, 45 normal, 20 not applicable). (source, technical replicate, fraction, label) unique; technical replicates contiguous 1..n per source in acquisition-date order."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No value asserts more than the evidence supports: age/sex left not available, cell type not applicable, acetyl site assumption and B/G/L group inference disclosed in report/manifest limitations; truncated/empty runs (190319_DIA_L441_nr1 230 KB, 190401_DIA_pooled_SF_10 0.24 GB) are deposited files and disclosed. Every cited manifest source exists in scratchpad/PXD023708 (pride.json, files_compact.json/files_raw_names.json, manuscript.txt, evidence/raw_header_check.json) and quotes were found verbatim. Report statements verified: 135x37, 46 sources, group row counts 45/28/42/20, 65 DDA/70 DIA split sizes, 20 _rep2 pairs vs paper's 18, sha256 of combined file."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "validate-sdrf exit 0 (warnings only); sdrf-tools structure: 1 expected mixed-acquisition note; sdrf-tools check --offline CLEAN; sdrf-tools score 95/100; sdrf-tools reconcile: 1 BLOCKER + 1 MAJOR, both refuted with evidence (see source_evidence)."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "spec-compliance",
+      "location": "pooled_SF rows: characteristics[biological replicate], characteristics[age], characteristics[sex]",
+      "message": "Pooled QC rows carry biological replicate=1 and age/sex='not available' instead of 'pooled'.",
+      "evidence": "spec README 'Pooled samples' TIP: use 'pooled' for individual-specific fields (biological replicate, age, sex); TERMS.tsv allow_pooled=true for these columns. Correction: set these three cells to 'pooled' on pooled_SF rows."
+    },
+    {
+      "severity": "minor",
+      "category": "technical-metadata",
+      "location": "rows 190405_DDA_pooled_SF_12.raw, 190405_DDA_pooled_SF_12_20190409234137.raw",
+      "message": "These two runs used DDA_test_QC1.meth (not DDA_QC2b_JM.meth); their technical columns (NCE 27, etc.) are copied from the main DDA method without evidence for the test method.",
+      "evidence": "raw_header_check.json method_per_file; report mentions only their ~0.5 GB size. Correction: disclose the different method in report limitations (values cannot be verified)."
+    },
+    {
+      "severity": "minor",
+      "category": "report",
+      "location": "PXD023708.report.md Validation/Limitations",
+      "message": "The report says remaining reconcile flags are 'explained below' but lists only the disease flag; the reconcile BLOCKER acquisition_contradicted_by_run_name on 190411_DDA_B414_nr2b is only implicitly addressed in Key evidence.",
+      "evidence": "sdrf-tools reconcile output for combined and -dia files. Correction: list the flag explicitly and cite the corroborating 3.62 GB size and deposited 190411_DDA_B414_nr2b.htrms."
+    },
+    {
+      "severity": "minor",
+      "category": "spec-compliance",
+      "location": "comment[sdrf template] (no dia-acquisition)",
+      "message": "DIA runs are not declared under the dia-acquisition experiment template and its recommended columns (scan window 350/1650 m/z, variable isolation window) are absent.",
+      "evidence": "TEMPLATES.adoc 'By Technology': DIA -> dia-acquisition. However the installed dia-acquisition 1.1.0 values validator rejects the NT=...;AC=PRIDE:0000450 form (validated: 'Invalid value ... must be one of the allowed values'), and repo DIA splits (PXD029805, PXD029821) follow the same 3-template convention, so this is not blocking."
+    },
+    {
+      "severity": "minor",
+      "category": "technical-metadata",
+      "location": "comment[cleavage agent details]; comment[modification parameters] Acetyl",
+      "message": "Search used Trypsin/P (MS:1001313) per PRIDE/Methods while SDRF records Trypsin (MS:1001251); Acetyl PP=Protein N-term is an assumed Spectronaut default.",
+      "evidence": "Wet-lab enzyme trypsin is defensible; the acetyl assumption is disclosed. Optionally note Trypsin/P search rule in the report."
+    },
+    {
+      "severity": "minor",
+      "category": "spec-compliance",
+      "location": "file (characteristics[ancestry category])",
+      "message": "Recommended human-template column characteristics[ancestry category] is absent.",
+      "evidence": "human/1.1.0 marks it recommended; no evidence exists, so adding it as 'not available' would suffice."
+    },
+    {
+      "severity": "minor",
+      "category": "structure",
+      "location": "comment[proteomics data acquisition method]",
+      "message": "sdrf-tools structure reports mixed-acquisition-methods (65 DDA + 70 DIA) in the combined file.",
+      "evidence": "Expected under the repo convention; -dda/-dia splits exist and pass structure."
+    }
+  ]
+}

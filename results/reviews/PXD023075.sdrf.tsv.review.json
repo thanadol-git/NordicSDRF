@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD023075.sdrf.tsv",
+  "artifact_sha256": "37744e0503611cb84a5cf885f8b245ff1bd16b540c08f632e4a2c1350540d7b5",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review of the 10-run HAP1 METTL9-KO vs WT label-free DDA SDRF found no blocker or important issues; all runs map 1:1 to PRIDE RAW files, all controlled terms resolve, and the official validator passes for every declared template. Reconcile flags were each checked and judged false positives. Only minor improvements remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer agent without producer transcript; producer report.md not relied upon"
+  },
+  "evidence_manifest": "annotations/PXD023075.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "10 rows x 39 columns, no duplicate rows, unique source/assay names. Declared templates ms-proteomics v1.1.0 + human v1.1.0 + cell-lines v1.1.0 + clinical-metadata v1.0.0 are a permitted combination under README Template Combination Rules (one technology layer, human as organism layer; clinical-metadata is not in the mutually exclusive organism set). sdrf-tools structure: OK. comment[sdrf version] v1.1.0 present."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Resolved in local ontology cache: UBERON:0002371 bone marrow; MONDO:0011996 chronic myelogenous leukemia, BCR-ABL1 positive; EFO:0007598 HAP-1; PATO:0000384 male; MS:1002877 Q Exactive HF-X; MS:1001251 Trypsin; MS:1000422 beam-type collision-induced dissociation; PRIDE:0000627 data-dependent acquisition; MS:1002038 label free sample; PRIDE:0000664 proteomic profiling by mass spectrometry; UNIMOD:4/35/1/34/36/37 with labels matching NT. sdrf-tools check --offline: 0 hallucinated, 0 label mismatches, 0 UNIMOD swaps (CLEAN)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Cellosaurus CVCL_Y019 fetched live: ID HAP1, SY HAP-1, SX Male, AG 40Y, DI NCIt C3174 CML BCR-ABL1 positive, derived from bone marrow (UBERON_0002371), parent KBM-7 -- matches cell line/cellosaurus/sex/age/disease/organism part. Instrument Q Exactive HF-X is corroborated by the PRIDE record instruments field (MS:1002877) independently of the producer's raw-header claim, despite the protocol text saying 'Q Exactive HF'. Genotype arms and n=5 per arm match RAW names and manuscript Fig. 6 legend (n = 5). DDA (Top12) and HCD from PRIDE/manuscript protocol. Mods/tolerances/enzyme from mqpar extract (Carbamidomethyl C fixed; Ox M, Acetyl protein N-term, Methyl KRH, Dimethyl KR, Trimethyl K variable; mainSearchTol 4.5 ppm; FTMS MS/MS 20 ppm; Trypsin/P). Reconcile flags reviewed: disease_on_control_runs is a false positive (WT arm is the same CML-derived HAP1 parental line, disease describes cell-line origin); cleavage_agent_unsupported is answered by the MaxQuant search enzyme (protocol defers to a cited method); instrument_contradicted is resolved by PRIDE instrument metadata."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "All 10 comment[data file] values match the 10 RAW entries in files_compact.json exactly (set equality); no duplicates; SEARCH.zip correctly excluded. Assay name = file stem; source name, genotype and replicate number consistent with each file name."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 2 genotype conditions (METTL9 knockout, wild type) x 5 replicates, single-shot (fraction 1), technical replicate 1, label free. factor value[genotype] equals characteristics[genotype] on every row. No confounders beyond genotype; all other characteristics constant."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every characteristic traced to Cellosaurus, PRIDE, manuscript or mqpar; cell type left as 'not available' rather than guessed; individual 'not applicable'. No unsupported specificity found. Omitted optional information noted as minor findings (biorepository product numbers, collision energy, genetic modification, exact Trypsin/P)."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "flock parse_sdrf validate-sdrf -t ms-proteomics -t human -t cell-lines -t clinical-metadata --use_ols_cache_only: 'Everything seems to be fine', exit 0; auto-detected template run also exit 0. sdrf-tools check --offline exit 0 (CLEAN). sdrf-tools score 98/100. sdrf-tools structure OK. sdrf-tools reconcile: 3 flags, each adjudicated false positive (see source_evidence)."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "comment[cleavage agent details], all rows",
+      "message": "MaxQuant enzyme was Trypsin/P; the exact PSI-MS term is NT=Trypsin/P;AC=MS:1001313. Current NT=Trypsin;AC=MS:1001251 is acceptable but less exact, and the digestion protocol itself is only cited ('as previously described').",
+      "evidence": "evidence/maxquant_params_extract.txt: enzymes = Trypsin/P; MS:1001313 resolves in psi-ms cache."
+    },
+    {
+      "severity": "minor",
+      "category": "template-choice",
+      "location": "comment[sdrf template] NT=clinical-metadata",
+      "message": "clinical-metadata is declared for a non-clinical cell-line study, apparently only to host characteristics[genotype]. Permitted by the combination rules and validator-clean, but if kept, consider also adding characteristics[genetic modification] (CRISPR knockout, EFO term) which that template provides for exactly this case.",
+      "evidence": "Template description: 'clinical study samples'; manuscript: 'CRISPR-mediated METTL9 knockout (KO) HAP-1 cell line'."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (optional columns)",
+      "message": "Optional supported metadata omitted: characteristics[biorepository] (Horizon Genomics HZGHC004343c010 KO / C631 WT), comment[collision energy] (28 NCE), characteristics[culture medium] (IMDM GlutaMAX + 10% FBS).",
+      "evidence": "PRIDE sampleProcessingProtocol and manuscript Methods."
+    },
+    {
+      "severity": "minor",
+      "category": "replication",
+      "location": "characteristics[biological replicate]",
+      "message": "Replicates 1-5 are derived from a single clonal KO and single WT line; the paper does not state whether these are independent cultures or technical preparations ('technical experimental variation'). Numbering as biological replicates is conventional but unverified.",
+      "evidence": "Manuscript Results/Fig. 6 legend (n = 5) without culture-level detail."
+    }
+  ]
+}

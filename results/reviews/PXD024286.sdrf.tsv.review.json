@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD024286.sdrf.tsv",
+  "artifact_sha256": "7e75dc9d8a8578a72591044c78eaedaf1fa78bc7438af8989c9a28526df6d03e",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review found no blocker or important issues. 84 rows = 14 donors (7 control, 7 HD) x 2 cell types (fibroblast, iN) x 3 technical replicates, all mapped 1:1 to the 84 PRIDE RAW files. Only minor improvements remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer agent without producer transcript; producer report.md not relied upon"
+  },
+  "evidence_manifest": "annotations/PXD024286.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "pass", "evidence": "Templates ms-proteomics + human (declared v1.1.0) are appropriate: human primary dermal fibroblasts and directly converted iNs (not established cell lines). All required columns present; single-row shape per RAW; no duplicate assay names/data files; biological replicate numbered 1-7 restarting per factor group (cell type x disease), consistent with README 'Encoding sample technical and biological replicates'."},
+    "ontology_integrity": {"status": "pass", "evidence": "Resolved in local OLS cache: CL:0000057 fibroblast, CL:0000540 neuron, UBERON:0002097 skin of body, MONDO:0007739 huntington disease, PATO:0000461 normal, PRIDE:0000627 data-dependent acquisition, PRIDE:0000608 dithiothreitol (DTT), PRIDE:0000599 iodoacetamide (IAA), MS:1002038 label free sample, MS:1002877 Q Exactive HF-X, MS:1001251 Trypsin, MS:1000422 beam-type CID, UNIMOD:1/4/21/35 Acetyl/Carbamidomethyl/Phospho/Oxidation. Labels and accessions match; none obsolete."},
+    "source_evidence": {"status": "pass", "evidence": "pride.json (accession PXD024286 asserted) and manuscript Methods 'Shotgun proteomic analysis': 7 control + 7 HD lines as fibroblasts and iNs; triplicate injections; Q-Exactive HF-X (PRIDE instrument field says Q Exactive HF but both PRIDE protocol text and paper say HF-X); top-20 DDA, NCE 28; DTT in lysis buffer + IAA; trypsin; PD 2.2 with 10 ppm / 0.02 Da, CAM C fixed, Ox M, Phospho STY, protein N-term Acetyl variable. Disease/cell type from RAW prefixes FBC/FBHD/INC/INHD. sdrf-tools reconcile: every value agrees with the deposit record."},
+    "file_mapping": {"status": "pass", "evidence": "files_compact.json has 84 RAW + 4 .msf + 1 FASTA. All 84 comment[data file] values match RAW names exactly, no duplicates, no unmatched RAW; assay name == data file stem for every row; 3 runs per source name."},
+    "design_consistency": {"status": "pass", "evidence": "28 source names (14 donors x fibroblast/iN), each with technical replicates 1-3; characteristics[individual] links fibroblast and iN of the same donor; factors cell type and disease match characteristics; 7 donors per disease group consistent with paper (C1-C7; HD1-2, HD5-7, HD9-10). Label free, single fraction."},
+    "omission_safety": {"status": "pass", "evidence": "No unsupported values: age and sex set to 'not available' because file donor codes (C11, CBS, HDKP, HD4 ...) cannot be linked to paper Table 2 (and file code HD4 conflicts with the paper's MS donor list, where HD4 is a female line not used for MS). Omitted-but-available details (adult stage, NCAM+ FACS at 4 weeks) recorded as minor findings."},
+    "deterministic_validation": {"status": "pass", "evidence": "flock parse_sdrf validate-sdrf -t ms-proteomics -t human --use_ols_cache_only: 'Everything seems to be fine', exit 0. sdrf-tools check --offline: CLEAN, 0 hallucinated, exit 0. sdrf-tools score: 97/100. sdrf-tools reconcile vs pride.json: all values agree."}
+  },
+  "findings": [
+    {"severity": "minor", "category": "omission", "location": "characteristics[sex], HD rows (FBHD/INHD, 42 rows)", "message": "Paper and PRIDE protocol state the HD lines used for MS were 'only males'; HD rows could be annotated 'male' if the producer accepts this cohort-wide universal statement. 'not available' is a defensible conservative choice given the HD4 file-code conflict.", "evidence": "manuscript line 193; Table 2"},
+    {"severity": "minor", "category": "provenance", "location": "annotations/PXD024286.evidence.json claims[characteristics[sex]]", "message": "Manifest claim says 'HD rows male' but the SDRF has 'not available' for all rows (the limitations section says the opposite). Align the claim with the artifact.", "evidence": "evidence.json claims vs SDRF column 8"},
+    {"severity": "minor", "category": "completeness", "location": "characteristics[developmental stage] (absent)", "message": "Recommended column missing; all donors are adults (27-75 y, 'adult dermal fibroblasts'), so 'adult' is supportable.", "evidence": "manuscript Table 2 and fibroblast source paragraph; sdrf-tools score completeness"},
+    {"severity": "minor", "category": "omission", "location": "iN rows (INC/INHD)", "message": "Paper states iNs were NCAM+ FACS-purified at 4 weeks post-conversion for the transcriptome/proteome analyses; evidence manifest wrongly says conversion length not stated. Optionally capture in a comment/characteristics column.", "evidence": "manuscript line 263"},
+    {"severity": "minor", "category": "format", "location": "comment[collision energy] all rows", "message": "'28% NCE' deviates from spec pattern '{value} {unit}' (e.g. '28 NCE'); validator accepted it.", "evidence": "README.adoc line 1130"}
+  ]
+}

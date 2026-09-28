@@ -1,0 +1,11 @@
+# Gothenburg batch 1 — next 10 accessions from lists/sweden/gothenburg.txt to-do (not in corpus, not annotated/blocked here), 2026-09-28
+PXD000978	sweden/gothenburg	queued	
+PXD000987	sweden/gothenburg	queued	
+PXD001479	sweden/gothenburg	queued	
+PXD004931	sweden/gothenburg	queued	
+PXD004993	sweden/gothenburg	queued	
+PXD005074	sweden/gothenburg	queued	
+PXD009198	sweden/gothenburg	queued	
+PXD009652	sweden/gothenburg	queued	
+PXD012332	sweden/gothenburg	queued	
+PXD012680	sweden/gothenburg	queued	

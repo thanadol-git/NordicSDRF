@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD030043.sdrf.tsv",
+  "artifact_sha256": "f0ee7b7dd1d042009356f68b90c9cb23138811baeb90ad4a607b1bd4c64cd1fc",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review found no blocker or important issues. The row-to-file mapping, the iodoTMT channel map (FL 127=SH/131=Sox, ABM 126=SH/128=Sox), the replicate and fraction structure, the instrument and search parameters, and all ontology terms check out against the evidence. Six minor findings: semantic choices for the sex, phenotype, treatment, age and fraction columns, and two inaccurate statements in the report.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh reviewer subagent without the producer transcript; used only the artifact, the report and manifest (treated as untrusted), scratchpad/PXD030043/ evidence, the bundled spec, the installed sdrf-pipelines templates and the local OLS parquet cache."
+  },
+  "evidence_manifest": "annotations/PXD030043.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "sdrf-tools structure: 'Structure OK' (exit 0). All 36 rows have 37 fields, with no empty or whitespace-padded cells. Each (data file, label) pair is unique and each source name has consistent characteristics. Declared templates (ms-proteomics v1.1.0 and vertebrates v1.1.0) fit a mouse TMT DDA dataset. The only reserved word, 'not available' in characteristics[age], is permitted. characteristics[sex]='pooled' is allowed by spec TERMS.tsv (allow_pooled=true for vertebrates) and by the README reserved-word section, but the installed vertebrates.yaml value list omits it, so the validator gives a warning (see minor finding)."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Resolved against the local OLS parquet cache, one file at a time. unimod: UNIMOD:1342 iodoTMT6plex, UNIMOD:35 Oxidation, UNIMOD:1 Acetyl. pride: PRIDE:0000609 TCEP, PRIDE:0000627 data-dependent acquisition, TMT126/127/128/131 (PRIDE:0000516/0000517/0000520/0000529). psi-ms: MS:1002416 Orbitrap Fusion, MS:1001251 Trypsin, MS:1001309 Lys-C, MS:1000133 CID, MS:1000422 beam-type CID (HCD, per the spec). cl: CL:0001008 kit and sca1-positive hematopoietic stem cell. efo: EFO:0002565 embryonic day 14.5, EFO:0001272 adult, PATO:0000461 normal. All labels match their accessions and none is obsolete. C57BL/6N is not in NCBITaxon (validator warning, expected for mouse substrains). sdrf-tools check --offline: CLEAN (0 hallucinated, 0 label mismatches, 0 UNIMOD swaps)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "The manuscript Methods 4.12 names PXD030043 as the FL/ABM experiment, so the scope is correct. Fig. 1a (evidence/fig1_workflow.jpg) confirms 'iTMT127/126 blocking' before TCEP, 'iTMT131/128 blocking' after TCEP, fetal oxidation = 131/(127+131) and adult = 128/(126+128), which matches comment[label] on every row. Methods confirm: C57Bl/6 N mice; adults 10–20 weeks; equal numbers of male and female mice; E14.5 FL and adult BM; 400,000 LSK cells per replicate; 3 replicates; FL and ABM combined per replicate; LysC then trypsin; TCEP; Full, Flow-through and Enriched fractions jointly processed; Orbitrap Fusion SPS-MS3 with ion-trap CID-MS2 and HCD-MS3; MaxQuant with Met oxidation and N-term acetylation variable, no other fixed mods, 20 ppm / 0.5 Da. The RAW headers of E01 and full03 confirm Orbitrap Fusion."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "files_compact.json and files_raw_names.json list 9 RAW files plus txt_MQ.zip (SEARCH). All 9 RAW files appear in comment[data file], each with exactly 4 rows (one per iodoTMT channel), for 36 rows. No SDRF file is missing from the deposit and no deposited RAW file is missing from the SDRF. File replicate index 01/02/03 matches characteristics[biological replicate] 1/2/3 on every row."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed 2 tissues × 3 biological replicates = 6 lysates. Each lysate has 2 thiol pools (SH, Sox), giving 12 source names. Each replicate plex (FL+ABM, 4 channels) was run as full/FT/enriched, giving 3 fractions = 3 files, so 9 files × 4 channels = 36 rows. The factor groups have 9 rows each, which matches the report. Tissue (liver vs bone marrow) and developmental stage (E14.5 vs adult) are inherently confounded, and the SDRF represents this faithfully. Technical replicate is 1 throughout."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every characteristic and technical value traces to Methods or Fig. 1a. No per-sample values are fabricated. Adult age is given as the cohort range the paper states (10W-20W) and fetal age is left unasserted. Optional parameters (collision energy, MS2 analyzer, alkylation reagent) are omitted rather than guessed. PRIDE's project-level disease 'Acute leukemia' belongs to the MLL-ENL part of the paper, not to this WT FL/ABM deposit, so disease='normal' is correct. The residual items are semantic minor findings, not unsupported claims."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf --sdrf_file annotations/PXD030043.sdrf.tsv -t ms-proteomics -t vertebrates --use_ols_cache_only: exit 0, 'There were only warnings' (2 free-text treatment, 1 strain not in NCBITaxon, 1 \"Invalid value 'pooled'\" for sex). sdrf-tools structure: exit 0. sdrf-tools check --offline: CLEAN. sdrf-tools reconcile: one MAJOR 'cleavage_agent_incomplete [missing: Lys-C]', a false positive because Lys-C (MS:1001309) is in the second comment[cleavage agent details] column on all rows. sdrf-tools score: 98/100."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "spec-compliance / report-accuracy",
+      "location": "characteristics[sex], all 36 rows; report.md 'Validation' section",
+      "message": "The installed vertebrates template's allowed-values list does not include sex='pooled', and the validator warns \"Invalid value 'pooled' - must be one of the allowed values\". The report says the validator produced only 'free-text / uncached-label warnings', which misdescribes this value-constraint warning.",
+      "evidence": "vertebrates/1.1.0/vertebrates.yaml sex values: male, female, hermaphrodite (no allow_pooled). Spec TERMS.tsv sex row has allow_pooled=true for human and vertebrates, and README line 365 recommends 'pooled' for sex of pooled samples. Methods: 'equal numbers of male and female mice were used'.",
+      "correction": "Keep 'pooled' (spec-supported) and have the report state the warning accurately with its justification. Alternatively use 'not available' if template-clean output is preferred."
+    },
+    {
+      "severity": "minor",
+      "category": "semantics",
+      "location": "characteristics[phenotype] and factor value[phenotype], all rows",
+      "message": "The free-text values 'fetal liver HSPC (E14.5)' and 'adult bone marrow HSPC' are not phenotypes. They combine organism part, cell type and developmental stage, which already have their own ontology-backed columns. The study variable (ontogeny) is better expressed as factor value[developmental stage].",
+      "evidence": "SAMPLE-GUIDELINES.adoc Phenotype section: 'observable characteristics or traits … how the sample behaves or appears'. characteristics[developmental stage] already holds EFO:0002565 vs EFO:0001272 and fully separates the two groups.",
+      "correction": "Replace factor value[phenotype] with factor value[developmental stage] (embryonic day 14.5 / adult). Drop or rethink characteristics[phenotype]."
+    },
+    {
+      "severity": "minor",
+      "category": "semantics",
+      "location": "characteristics[treatment] and factor value[treatment], all rows",
+      "message": "The SH/Sox distinction is an analytical thiol-pool labelling step on one lysate, not a treatment or perturbation of the biological sample. The values are accurate, but the column semantics are stretched.",
+      "evidence": "sample-metadata template: treatment = 'Treatment or perturbation applied to the sample (drug, stimulus, environmental stress)'. Methods 4.9: sequential iodoTMT1 → TCEP → iodoTMT2 labelling of the same pellet.",
+      "correction": "Acceptable as is. Optionally shorten the values to 'free thiol (SH) channel' / 'reversibly oxidized thiol (Sox) channel' and state in the report that the two source names share one lysate."
+    },
+    {
+      "severity": "minor",
+      "category": "semantics",
+      "location": "characteristics[age], 18 fetal rows (FL_HSPC_*)",
+      "message": "'not available' asserts that fetal age is unknown, but the embryos are timed at E14.5 (already in developmental stage). 'not applicable' (no postnatal age) describes this more accurately.",
+      "evidence": "Methods 4.2: 'E14.5 embryos … obtained by timed pregnancies … morning after mating was considered E0.5'. README: 'not available' = unknown.",
+      "correction": "Use 'not applicable' for fetal age, or keep 'not available' and document why."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "comment[fraction identifier], all rows",
+      "message": "Fractions 1/2/3 mean full / anti-TMT flow-through / anti-TMT enriched, but this mapping is only in the report and in RAW file-name prefixes, so SDRF consumers cannot recover it from the SDRF alone.",
+      "evidence": "Methods 4.9 defines the 'Full fraction', 'Flow-through fraction' and 'Enriched fraction'. The ms-proteomics template defines fraction identifier as a chromatographic/electrophoretic fraction.",
+      "correction": "Optional: add a free-text comment column (e.g. comment[fraction description]) or describe the mapping in the submission README."
+    },
+    {
+      "severity": "minor",
+      "category": "report-accuracy",
+      "location": "report.md 'Limitations' and evidence.json limitations[0]",
+      "message": "The statement 'Each HSPC replicate is pooled from several sorts (Supplementary Fig. 2a)' cannot be verified from the supplied evidence. Supplementary Fig. 2a is not in scratchpad, and the text says only that each tissue was sorted on separate days. The sex='pooled' value itself is supported by the equal-male/female statement.",
+      "evidence": "manuscript.txt line 177: 'cells from each tissue (FL or ABM) were sorted on separate days (SF2a)'.",
+      "correction": "Reword to cite the Methods statement on equal numbers of male and female mice, and drop the unsupported per-replicate pooling detail."
+    }
+  ]
+}

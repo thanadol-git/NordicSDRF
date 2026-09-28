@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029135.sdrf.tsv",
+  "artifact_sha256": "aba4a747ccfee07fdadff832966bccf5b97d5ead16e9cc62bae79fd777e7a5ff",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review found no blocker or important issues. All 43 rows match the authors' deposited sample sheet (SRDF_File.txt) and the 43 PRIDE RAW files one-to-one. Controlled terms resolve. Four minor modeling improvements remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent without producer transcript; producer report treated as untrusted"
+  },
+  "evidence_manifest": "annotations/PXD029135.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "pass", "evidence": "Templates ms-proteomics v1.1.0, human v1.1.0 and clinical-metadata v1.0.0 were checked independently and suit a primary human clinical-cohort cell study. 43 rows x 35 columns, no duplicate source names or data files. Required columns present. Reserved words used correctly (age/sex 'not available', compound 'not applicable'). sdrf-tools structure OK."},
+    "ontology_integrity": {"status": "pass", "evidence": "Resolved against the local OLS cache: bronchus UBERON:0002185; bronchial epithelial cell CL:0002328; asthma MONDO:0004979; T2-high asthma MONDO:0956975; T2-low asthma MONDO:0956976 (the validator warning is only because the column checks pato/efo); poly(I:C) CHEBI:84491; imiquimod CHEBI:36704; Q Exactive HF-X MS:1002877; Trypsin MS:1001251; beam-type CID MS:1000422; DDA PRIDE:0000627; UNIMOD:4/35/1 standard. Material type 'cell' is allowed by SAMPLE-GUIDELINES for primary cell cultures."},
+    "source_evidence": {"status": "pass", "evidence": "Recomputed for every row from SRDF_File.txt: individual (RC#), ICS before/after, poly(I:C)/imiquimod stimulus and T2-high/low all match (0 mismatches). Also checked: disease asthma (PRIDE DOID:2841, paper); bronchial brushings expanded in vitro (paper Methods); Q-Exactive HF-X, DDA, trypsin (PRIDE protocol and paper); MaxQuant 1.6.15 default settings, which are consistent with 4.5/20 ppm and CAM/Ox/Acetyl mods. Age/sex appear only as cohort summaries in Table 1, so 'not available' is correct."},
+    "file_mapping": {"status": "pass", "evidence": "43 RAW files in files_compact.json and 43 data files in the SDRF: set difference empty both ways, no duplicates. assay name Sample_N equals the RAW file's Sample_N for every row. The deposited typo '2101122_KH_BMC_Sample_29.raw' is reproduced exactly."},
+    "design_consistency": {"status": "pass", "evidence": "Groups: 10 pre-ICS unstimulated, 10 pre-ICS poly(I:C), 10 post-ICS unstimulated, 10 post-ICS poly(I:C), 3 pre-ICS imiquimod (RC7, RC4, RC5) = 43. Each donor has one biological replicate value and one T2 phenotype. Factor values compound + treatment match the paired design. Label-free, fraction 1, technical replicate 1."},
+    "omission_safety": {"status": "pass", "evidence": "No per-sample value was inferred from cohort summaries (age/sex left 'not available'). No dose or exposure duration was asserted: the paper gives 3/24/48 h without a proteomics-specific time point. HF-X is supported by two text sources although the PRIDE CV lists HF. No unsupported specificity found."},
+    "deterministic_validation": {"status": "pass", "evidence": "flock ... parse_sdrf validate-sdrf -t ms-proteomics -t human -t clinical-metadata --use_ols_cache_only: exit 0, warnings only (free-text treatment values, T2-low asthma not in pato/efo). sdrf-tools check --offline: CLEAN (exit 0). sdrf-tools score: 97/100. sdrf-tools structure: OK. sdrf-tools reconcile against pride.json: every value agrees."}
+  },
+  "findings": [
+    {"severity": "minor", "category": "modeling", "location": "characteristics[treatment] / factor value[treatment], all rows", "message": "In vivo ICS status is stored as free text ('before ICS treatment' / 'after ICS (budesonide) treatment') in the treatment column. clinical-metadata provides characteristics[treatment status] (pre-treatment/post-treatment) for exactly this. Consider treatment = 'untreated'/'budesonide' with treatment status = pre-treatment/post-treatment.", "evidence": "clinical-metadata 1.0.0 YAML guidance; the validator warns that the free-text values are not in ncit/efo."},
+    {"severity": "minor", "category": "replicates", "location": "characteristics[biological replicate], all rows", "message": "Replicate numbers follow the donor (RC1..RC11 -> 1..10) instead of restarting per factor-value group. The imiquimod group is numbered 6, 3, 4 instead of 1-3. Pairing is already captured by characteristics[individual].", "evidence": "README.adoc: 'Numbering restarts per experimental condition (factor value group)'."},
+    {"severity": "minor", "category": "completeness", "location": "file", "message": "characteristics[dose] (10 ug/mL for poly(I:C) and imiquimod, per paper Methods) could be added. Exposure duration is ambiguous (3/24/48 h) and correctly omitted.", "evidence": "Paper Methods, 'Imiquimod, Poly(I:C) and SP1 Treatment'."},
+    {"severity": "minor", "category": "provenance", "location": "comment[instrument], all rows", "message": "PRIDE CV metadata lists Q Exactive HF (MS:1002523). The SDRF uses Q Exactive HF-X (MS:1002877), which the PRIDE protocol text and the paper both state. This is acceptable, but the discrepancy should be noted in the evidence manifest.", "evidence": "pride.json instruments vs sampleProcessingProtocol and manuscript Mass Spectrometry section."}
+  ]
+}

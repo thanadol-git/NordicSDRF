@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD024508.sdrf.tsv",
+  "artifact_sha256": "c1c61b5d5410a38b6ba58ec77f086642a7aeeff810b834cc1491edc4c503a877",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review found no blocker or important issues. All 38 deposited RAW files map to exactly one row. Compounds, replicates, enrichment, cell lines and technical parameters are supported by the PRIDE record and PMC8609038 in scratchpad/PXD024508/. The minor findings are about provenance and optional cell-line metadata.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer agent without producer transcript; evidence restricted to scratchpad/PXD024508/, sdrf-skills spec/data, and the local sdrf-pipelines ontology cache; no network"
+  },
+  "evidence_manifest": "annotations/PXD024508.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "pass", "evidence": "sdrf-tools structure: OK (exit 0). 38 rows x 45 columns, no ragged rows, no leading or trailing whitespace. The four declared templates match the validator run. Reserved words are used only in columns whose TERMS.tsv flags allow them. Collision energy '30% NCE' matches the TERMS.tsv pattern. HCD is written as MS:1000422, as the spec requires. The 38 assay names are unique, and every source name has identical characteristics across its rows (VX_03 and VX_03_N2 share HEK293T_VX_rep3)."},
+    "ontology_integrity": {"status": "pass", "evidence": "Checked in the offline cache, one parquet file at a time. Resolved: MS:1002416 Orbitrap Fusion, MS:1001309 Lys-C, MS:1001251 Trypsin, MS:1000422, PRIDE:0000627, PRIDE:0000608, PRIDE:0000599, MS:1002038 label free sample, EFO:0010806 enrichment of phosphorylated protein, UBERON:0002113 kidney, UBERON:0000002 uterine cervix, PATO:0000461 normal, cervical adenocarcinoma (EFO/MONDO/DOID/NCIT), CHEBI:28262 DMSO, CHEBI:90705 SB 203580, CHEBI:79090 SB-202190, CHEBI:90528 VX-745, NCIT:C77392 enzastaurin, and UNIMOD 4/35/1/21. Unresolved free text: GF109203X and 'overexpression', which gave validator warnings only. CVCL_0063 (HEK293T) and CVCL_0030 (HeLa) match the names, sex and organism part in sdrf-skills data/cl-annotations-db.tsv. sdrf-tools check --offline: CLEAN, 0 hallucinated terms."},
+    "source_evidence": {"status": "pass", "evidence": "manuscript.txt line 82: 18 pellets = 5 drugs + vehicle x 3 biological replicates. The abbreviations SB80/GF/SB90/Enza come from the Results text; VX-745 and enzastaurin are named in the PRIDE description. Fe(III)-NTA phosphopeptide enrichment of part of each lysate: line 92 and line 158. S-Trap digestion with Lys-C then trypsin, DTT and IAA: line 88. Orbitrap Fusion, DDA, HCD at 30% NCE: lines 96-98. PD 2.3 modifications and 15 ppm / 0.05 Da tolerances: line 102 and PRIDE dataProcessingProtocol. 48 h treatment and 'HEK293T overexpressing alpha-synucleinA53T-GFP': PRIDE sampleProcessingProtocol and projectDescription. HEK293T sex female and organism part kidney: Cellosaurus data. No dose is annotated, which is correct because no proteomics concentration is stated."},
+    "file_mapping": {"status": "pass", "evidence": "files_compact.json has 40 files: 38 RAW and 2 SEARCH (.msf). The set of comment[data file] values equals the 38 RAW names exactly (symmetric difference is empty), with no duplicates and no non-raw files. Groups: 18 global, 18 P_* phospho, VX_03_N2 as technical replicate 2 of HEK293T_VX_rep3, and HeLa.raw as a QC row."},
+    "design_consistency": {"status": "pass", "evidence": "Factor counts recomputed: 6 conditions x 3 biological replicates x 2 (global/phospho) = 36 rows, plus 1 VX re-injection and 1 HeLa QC = 38. Matches the report (VX 7, each other condition 6, not applicable 1). Biological replicate numbers are consistent between the global and phospho rows of the same condition. Enrichment differs only between the global and P_* rows, which justifies the separate source names. The fraction identifier is 1 throughout, and the label-free design is consistent."},
+    "omission_safety": {"status": "pass", "evidence": "No dose was invented. The genotype, genetic modification and 48 h exposure are backed by the PRIDE record. The report discloses that the HeLa QC identity and the VX_03_N2 re-injection are inferred from file names. Cellosaurus age and cell type for HeLa, and developmental stage for HEK293T, are omitted as 'not available' or missing columns rather than overstated (minor). The PRIDE instrument 'LTQ Orbitrap' is correctly overridden by the paper's Orbitrap Fusion. The PRIDE disease 'Parkinson's disease' is correctly not applied to the cell line."},
+    "deterministic_validation": {"status": "pass", "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -t ms-proteomics -t human -t cell-lines -t clinical-metadata --use_ols_cache_only: exit 0, warnings only (GF109203X and 'overexpression' not in the ontology cache). sdrf-tools structure: exit 0. sdrf-tools check --offline: CLEAN. sdrf-tools score: 98/100. sdrf-tools reconcile --record pride.json raised 2 flags, both false positives: 'HeLa run name names a cell line' is expected because that row is annotated as the HeLa cell line (CVCL_0030); 'only Lys-C declared' is wrong because a second comment[cleavage agent details] column holds Trypsin (MS:1001251)."}
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD024508.evidence.json sources 'raw-header' and 'cellosaurus'; report 'Key evidence' instrument line",
+      "message": "Two cited sources have no saved copy in scratchpad/PXD024508/. The 'RAW header Orbitrap Fusion' claim therefore cannot be verified from the evidence.",
+      "evidence": "The manifest itself says 'extract not saved' and 'records not saved'. The value is still supported by manuscript.txt line 96 (Orbitrap Fusion), and the Cellosaurus accessions are confirmed in sdrf-skills data/cl-annotations-db.tsv. Correction: save the header extract, or cite only the paper."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "evidence.json claim 'characteristics[genetic modification], [genotype], [exposure duration]'",
+      "message": "The paper quote cited for the alpha-synA53T-GFP line comes from the live-cell microscopy experiment, not the proteomics samples. The paper's main reporter line (NPR-H-001) is a CFP/YFP dual transduction.",
+      "evidence": "manuscript.txt line 152 is about kinetics imaging. The proteomics methods (line 82) do not name the cell line. Only the PRIDE projectDescription states A53T-GFP for this dataset. Correction: cite PRIDE as the sole support and note the ambiguity."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "HeLa_QC row characteristics[age], characteristics[cell type]; missing characteristics[developmental stage]",
+      "message": "Values available from Cellosaurus are left as 'not available': HeLa age 30Y6M, HeLa cell type epithelial, and HEK293T developmental stage fetus.",
+      "evidence": "Taken from sdrf-skills data/cl-annotations-db.tsv. sdrf-tools score also reports developmental stage as a missing recommended column."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[compound]/factor value[compound] = GF109203X; characteristics[genetic modification] = overexpression",
+      "message": "Two values do not resolve in the offline ontology cache and remain free text.",
+      "evidence": "Validator warnings. Neither ChEBI nor NCIT in the cache holds GF109203X or bisindolylmaleimide I. Acceptable as free text; resolve online if possible."
+    },
+    {
+      "severity": "minor",
+      "category": "report-accuracy",
+      "location": "annotations/PXD024508.report.md 'PRIDE title'",
+      "message": "The report quotes the PRIDE title as 'HEK293T'; pride.json has 'Hek293T'.",
+      "evidence": "Cosmetic only; no annotation impact."
+    }
+  ]
+}

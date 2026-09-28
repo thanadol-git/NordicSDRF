@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029821.sdrf.tsv",
+  "artifact_sha256": "29eda8a2df6a3e2dfd560853b605d4122d7b17c7257fa49754af6480b3dd8713",
+  "verdict": "PASS",
+  "summary": "Independent review of 108 rows (73 DDA + 35 DIA; 33 sources) found no blocker or important issues; 7 minor findings.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent reviewer without producer transcript; evidence limited to scratchpad/PXD029821/, sdrf-skills spec/data, installed templates and ontology caches; no network"
+  },
+  "evidence_manifest": "annotations/PXD029821.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "42 columns, templates ms-proteomics/human/cell-lines v1.1.0 declared and derived independently (all 29 lines are cell lines, human); required columns present; reserved words lowercase and correctly used; no empty/whitespace cells; assay names unique; (source, technical replicate, fraction) unique; structure: mixed-acquisition-methods (expected convention note)."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Resolved against local caches one parquet at a time: culture medium BTO:0000316; sampling sites UBERON (pleural effusion 0000175, ascitic fluid 0007795, bone marrow 0002371, lymph node 0000029, liver 0002107, lung 0002048, uterine cervix 0000002, upper lobe of left lung 0008952); epithelial cell CL:0000066; diseases MONDO:0008433/0003050/0006041; PRIDE:0000627 DDA, PRIDE:0000450 DIA, PRIDE:0000608 DTT, PRIDE:0000599 IAA; MS:1002877 Q Exactive HF-X, MS:1001251 trypsin, MS:1001309 Lys-C, MS:1000422 beam-type CID; UNIMOD:4/35/1; label free sample MS:1002038. Only RPMI 1640 and cell-line short names unresolved (warnings)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Every row checked against the deposited design sheet (cell line, internal ID, subtype, growth G#, MS batch, DDA/DIA). Age/sex/site/accession match the snapshot extract (verified verbatim against sdrf-skills data/cl-annotations-db.tsv) or saved Cellosaurus API extracts (GLC-4, N417, H372, H82=41Y). Disease/subtype vs paper Table 1 and PRIDE; RPMI-1640, DTT, IAA, LysC+trypsin (S-Trap), NCE 28, 10 ppm / 0.02 Da, Q Exactive HF-X vs paper Methods and RAW header check. reconcile flags (Trypsin not in PRIDE prose; organism part heuristic) are false positives: paper Methods name trypsin; culture medium follows repo precedent PXD032213. Paper origin disagreements for H211/H378/H1694 disclosed; Cellosaurus site kept."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "108 data files, all unique, all present in the PRIDE file list (108 RAW; identity PXD029821 confirmed in pride.json and FTP paths); combined set equals the 108 RAW files exactly; DDA/DIA sets disjoint and union = combined. SCLC02 R3 B1/B2 swap follows design-sheet vial IDs and processing IDs (disclosed)."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 29 lines, 33 growths; biological replicate 2 for G2 of SCLC02/08/09/14 (12 combined rows); factor counts A38/N21/P15/Y25/carcinoid 3/NSCLC 6; lc batch 54/54 matches design Batch number and 20191213/20200311 prefixes; split rows identical to combined except technical replicate, renumbered 1..n per source per split; deleted-in-analysis runs retained and disclosed."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Each Cellosaurus-derived value traced to the snapshot or saved API extract; 'not available' used where Cellosaurus/paper lack data (HLHE, GLC-4/N417/H720/H460 age, reference-line medium); no DIA window or other unsupported technical values added; inferred Acetyl Protein N-term and sampling-site choice disclosed. Report counts, hashes, dates and statements re-verified."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf --sdrf_file annotations/PXD029821.sdrf.tsv -t ms-proteomics -t human -t cell-lines --use_ols_cache_only -> exit 0, warnings only (27 cell-line short names, RPMI 1640); sdrf-tools check --offline CLEAN; structure: mixed-acquisition-methods (expected convention note); sdrf-tools score 98/100; sdrf-tools reconcile --record scratchpad/PXD029821/pride.json -> 2 flags judged false positives."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "structure",
+      "location": "comment[proteomics data acquisition method] (file level)",
+      "message": "sdrf-tools structure reports mixed-acquisition-methods (73 DDA + 35 DIA) in the combined file.",
+      "evidence": "Expected under the repo convention (precedent PXD023708): combined file plus -dda/-dia splits, which both pass structure.",
+      "correction": "None required; keep the splits authoritative for acquisition-specific processing."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[culture medium] (all RPMI rows)",
+      "message": "'RPMI 1640' is free text that the NCIt cache does not resolve (validator warning); the NCIt term is 'Roswell Park Memorial Institute 1640 Medium' (NCIT:C178973).",
+      "evidence": "ncit.parquet: label match only for 'roswell park memorial institute 1640 medium' (ncit:c178973). The spec README gives 'RPMI 1640' as an example value, so this is not blocking.",
+      "correction": "Optionally write NT=Roswell Park Memorial Institute 1640 Medium;AC=NCIT:C178973."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "characteristics[ancestry category] (column absent)",
+      "message": "Recommended human-template column omitted although the cited snapshot extract carries per-line ancestry (Caucasian / African American) for 25 lines.",
+      "evidence": "human/1.1.0 marks ancestry category 'recommended'; sdrf-tools score lists it as a missing recommended column; evidence/cl-annotations-db_extract.tsv has an ancestry column.",
+      "correction": "Add HANCESTRO-mapped ancestry where Cellosaurus gives it, 'not available' otherwise; or keep omission consistently with part I (PXD029805)."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "SCLC08_HLHE_* rows, characteristics[cellosaurus accession]/[cellosaurus name]/age/sex/sampling site",
+      "message": "'not available' for HLHE rests only on absence from the bundled snapshot and paper Table 1 'N/A'; unlike GLC-4/N417/H372, no saved Cellosaurus API search for HLHE is in the evidence.",
+      "evidence": "evidence/cellosaurus_api_extracts.txt covers GLC-4, NCI-N417, NCI-H372, NCI-H82 only; cellosaurus accession is a required cell-lines column.",
+      "correction": "Save a Cellosaurus name search for HLHE (empty result or record) to evidence."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "comment[modification parameters] Acetyl",
+      "message": "PP=Protein N-term is inferred; paper and PRIDE say only 'N-terminal acetylation'.",
+      "evidence": "manuscript Methods 2.5.1; disclosed in report limitations.",
+      "correction": "Acceptable as disclosed (Proteome Discoverer default); keep the disclosure."
+    },
+    {
+      "severity": "minor",
+      "category": "consistency",
+      "location": "characteristics[cell line]",
+      "message": "Cell line names mix design-sheet short names (H209, GLC4, N417, H82) with Cellosaurus names (DMS 114, SW1271, COR-L311); 27 values do not resolve in CLO/BTO/EFO (validator warnings).",
+      "evidence": "Validator warnings; canonical names are present in characteristics[cellosaurus name]. Consistent with part I PXD029805.",
+      "correction": "Optional: use Cellosaurus names (NCI-H209, GLC-4, NCI-N417, ...) in characteristics[cell line]."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD029821.evidence.json claims",
+      "message": "Manifest claims cover only 4 locations; disease/age/sex/sampling site/culture medium/batch/biological replicate/instrument are only in limitations. The acquisition claim '2 DDA + 1 DIA per vial' is not exact: SCLC08_G1_D1_B1 has 1 DDA only and SCLC19_G1_D1_B1 has 2 DDA and no DIA. 'as part I' cites another dataset.",
+      "evidence": "Design sheet rows for SCLC08 (batch 1) and SCLC19 (batch 1); SDRF correctly reflects the actual runs.",
+      "correction": "Add explicit claim entries with source_ids for the Cellosaurus-derived columns, batch and replicates; reword the acquisition claim to 'per design sheet'."
+    }
+  ]
+}

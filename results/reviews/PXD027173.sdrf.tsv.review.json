@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD027173.sdrf.tsv",
+  "artifact_sha256": "4f542cabaa79e69b1ec7c5d271cfbd68f4ec71b8be838063072e44bf9971cb2b",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review found no blocker or important issues. All 128 RAW files map 1:1 to rows; every per-row region, Braak group, brain number, sex and age matches the deposited AD_FileList xlsx; workflow-specific CE and modifications match the paper Methods. Minor findings only.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent without producer transcript; producer report.md treated as untrusted"
+  },
+  "evidence_manifest": "annotations/PXD027173.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "pass", "evidence": "Templates ms-proteomics v1.1.0 + human v1.1.0 + clinical-metadata v1.0.0 are compatible (human is sample layer excl. vertebrates/invertebrates/plants only; clinical-metadata sample layer combinable). 128 rows x 39 columns, no duplicate assay names or data files, reserved words used correctly; disease uses 'normal' for controls per README; age {N}Y format; sdrf-tools structure OK."},
+    "ontology_integrity": {"status": "pass", "evidence": "Resolved in local cache: UBERON:0003881 CA1 field of hippocampus, UBERON:0002728 entorhinal cortex, UBERON:0006083 perirhinal cortex, UBERON:0002421 hippocampal formation, MONDO:0004975 Alzheimer disease, PATO:0000461 normal, EFO:0010806 enrichment of phosphorylated protein, PRIDE:0000627/0000608/0000599, MS:1002877 Q Exactive HF-X, MS:1001251 Trypsin, MS:1000422 beam-type CID, UNIMOD:1/4/21/35/56 names match. sdrf-tools check --offline CLEAN (0 hallucinated/mismatch/UNIMOD swaps). Braak stage phenotype values are free text (validator warning only, allowed)."},
+    "source_evidence": {"status": "pass", "evidence": "Programmatic row-by-row comparison of all 128 rows vs AD_FileList_4regionsPatientData_210707.xlsx (DDA 58 + Phospho 70 sheets): 0 differences in organism part, phenotype, individual, sex, age, enrichment, disease, factor values. Instrument Q Exactive HF-X per paper 2.5 and PRIDE protocol text (PRIDE instrument field 'Q Exactive HF' is a record-level coarser entry). NCE 28 global / 25 phospho, 10 ppm / 0.02 Da, DTT in lysis buffer, IAA alkylation, Fe(III)-IMAC enrichment all confirmed in manuscript sections 2.2-2.6."},
+    "file_mapping": {"status": "pass", "evidence": "PRIDE file list has 128 RAW files; SDRF data files set-equal to them (0 missing, 0 extra). Non-raw files (6 PD result txt, 1 xlsx) correctly excluded. xlsx name 181130_P997_2_phospho.raw vs deposited 181130_C997_2_phospho.raw: deposited name used, only candidate, consistent with brain277 CA1 phospho. File sizes consistent with workflow assignment (phospho ~0.8-1.1 GB, global ~1.9-2.7 GB), including 20180824_P* HC phospho files lacking 'phospho' in name."},
+    "design_consistency": {"status": "pass", "evidence": "23 individuals, each with a single consistent age/sex/phenotype; 115 sources (individual x region x workflow); 13 extra runs recorded as technical replicates 2-4 under the same source; factors disease (68 AD / 60 normal rows) and organism part; fraction 1 for all; label free."},
+    "omission_safety": {"status": "pass", "evidence": "Every sample-level value traced to the per-file xlsx (not cohort summaries); no unsupported specificity found. Omissions noted as minor: post-mortem interval, Arg-C search specificity, d3-acetyl at protein N-term (ambiguous in Methods)."},
+    "deterministic_validation": {"status": "pass", "evidence": "flock parse_sdrf validate-sdrf -t ms-proteomics -t human -t clinical-metadata --use_ols_cache_only: exit 0, warnings only (Braak stage free text). sdrf-tools check --offline exit 0 CLEAN; score 97/100 exit 0; structure OK exit 0; reconcile vs pride.json: every value agrees, exit 0."}
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "reanalysis-parameters",
+      "location": "comment[cleavage agent details], 58 global rows (characteristics[enrichment process]=not applicable)",
+      "message": "Global runs were digested with trypsin after full chemical lysine acetylation (NAS-d3) and the authors searched them with Arg-C specificity; the SDRF carries only NT=Trypsin;AC=MS:1001251, so a pipeline driven by the SDRF would search with K/R specificity.",
+      "evidence": "Manuscript 2.3/2.6 and PRIDE dataProcessingProtocol: 'Arg-C as the cleavage enzyme' for global; Trypsin for phospho. Trypsin is spec-correct as the digestion enzyme, so not an error; consider documenting the effective Arg-C specificity (e.g. a CS= cleavage-site field or a comment column)."
+    },
+    {
+      "severity": "minor",
+      "category": "modification-parameters",
+      "location": "comment[modification parameters], 58 global rows",
+      "message": "Methods state 'acetylation [normal (d0) and heavy (d3)] at lysine residues, and at protein N-terminus'; SDRF has only d0 Acetyl at protein N-term. NAS-d3 labelling at protein level would also label free protein N-termini, so NT=Acetyl:2H(3);AC=UNIMOD:56;PP=Protein N-term;MT=Variable is plausibly missing.",
+      "evidence": "Manuscript section 2.6 wording is ambiguous; add if the reading 'd0 and d3 at K and protein N-term' is accepted."
+    },
+    {
+      "severity": "minor",
+      "category": "technical-replicate-order",
+      "location": "rows with data files 181207_OR996_2_phospho.raw (tech rep 1) and 20180824_OR996_1_phospho.raw (tech rep 2), source brain279_HC_phospho",
+      "message": "Technical replicate numbers are inverted relative to the _1/_2 file suffixes used everywhere else (other replicate pairs follow the suffix).",
+      "evidence": "Deposited file list names OR996_1 (20180824) and OR996_2 (181207); set 20180824_OR996_1 to 1 and 181207_OR996_2 to 2."
+    },
+    {
+      "severity": "minor",
+      "category": "phenotype-semantics",
+      "location": "characteristics[phenotype] = 'control', 60 rows",
+      "message": "'control' is an experimental-role concept, not a phenotype; the README discourages 'control' as a biological state. Controls' Braak stage is not given in the file list.",
+      "evidence": "README line 684 note; consider 'not available' for controls' Braak stage."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "file",
+      "message": "Post-mortem interval (PostmortemTime, hours) is available per brain in the deposited xlsx but not carried; recommended human columns ancestry category/developmental stage absent (could be 'not available' / adult).",
+      "evidence": "AD_FileList xlsx column PostmortemTime; sdrf-tools score completeness issues."
+    }
+  ]
+}

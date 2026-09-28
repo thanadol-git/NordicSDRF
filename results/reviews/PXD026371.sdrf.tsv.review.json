@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD026371.sdrf.tsv",
+  "artifact_sha256": "4cd2e4671ce42301460c267f710680b724ccc70e88a9dcb9afa62d85e40c1c9e",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocker or important issues. All 65 deposited RAW files map exactly once. Patient and compartment assignments follow the file names. Technical values match the PRIDE protocol. Remaining issues are minor: disclosure, provenance and optional-completeness points.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer agent without producer transcript; evidence restricted to scratchpad/PXD026371/ (pride.json, files_compact.json, files_raw_names.json, samples.tsv, technical.tsv), installed sdrf_pipelines templates, spec TERMS.tsv and offline ontology caches"
+  },
+  "evidence_manifest": "annotations/PXD026371.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "pass", "evidence": "sdrf-tools structure: OK. The four templates declared (ms-proteomics 1.1.0, human 1.1.0, clinical-metadata 1.0.0, oncology-metadata 1.0.0) suit a human PDAC tissue DDA study, and all four exist in the installed templates.yaml. Rows: 65, all 32 columns wide. The (source name, technical replicate) pair is unique in every row. Reserved words are limited to 'not available' in age, sex and cell type, which all allow it. Collision energy '28% NCE' matches the TERMS.tsv pattern, which lists '30% NCE' as an example."},
+    "ontology_integrity": {"status": "pass", "evidence": "Every term resolved in the offline caches (one parquet at a time): MS:1002877 q exactive hf-x; MS:1001251 trypsin; MS:1000422 beam-type collision-induced dissociation; PRIDE:0000627 data-dependent acquisition; PRIDE:0000599 iodoacetamide (IAA); PRIDE:0000608 dithiothreitol (DTT); UNIMOD:4 Carbamidomethyl; UBERON:0001264 pancreas; MONDO:0005184 pancreatic ductal adenocarcinoma; PATO:0000461 normal; NCBITaxon:9606 Homo sapiens. sdrf-tools check --offline: CLEAN. The only free-text values are the 4 phenotype values, which TERMS.tsv allows."},
+    "source_evidence": {"status": "pass", "evidence": "pride.json (accession PXD026371 confirmed) supports the following: human; PDAC ('operable, non-neoadjuvant treated'); FFPE; microdissection of neoplastic and adjacent healthier exocrine glands and the stroma around both; 25 mM DTT; 50 mM IAA; trypsin via S-Trap; Q Exactive HF-X; top-20 DDA; HCD NCE 28; label-free quantification. sdrf-tools reconcile --record pride.json: every annotated value agrees. Patient and compartment come from RAW names. Reading Set_2_Patient_N as the same donor as Patient_N is inferred and disclosed. Two facts support it: Set_2 tube numbers follow the set-1 per-patient tube pairs (1-2, 3-4, 5-6, 7-8, 9-10), and the deposited result files are named P1-5 and P6-14."},
+    "file_mapping": {"status": "pass", "evidence": "The set of comment[data file] values equals files_raw_names.json (65 RAW files). No duplicates, no missing files and no non-RAW files. The 2 SEARCH .txt files are correctly excluded. Every assay name equals its file stem. samples.tsv file column matches the SDRF exactly."},
+    "design_consistency": {"status": "pass", "evidence": "Recomputed: 14 individuals and 57 sources. Factor groups: neoplastic parenchyma 17 rows, tumor-adjacent benign exocrine parenchyma 20, stroma adjacent to benign exocrine parenchyma 14, stroma adjacent to neoplastic parenchyma 14. These counts match the report. Characteristics are constant within each source. Technical replicates 1-4 follow Replicate_N/RN suffixes; P02 HealthyAcinar Tube_4 has 4 injections across 20190808 and 20190813. Biological replicate 2 is used only for P01 Tube_11 (HNE), which is disclosed. Factor value mirrors characteristics[phenotype]."},
+    "omission_safety": {"status": "pass", "evidence": "No SDRF value asserts more than the evidence supports. Age and sex are 'not available', the correct reserved word. Only Carbamidomethyl is annotated; carbamoylation is left out and disclosed. Omitted items that the evidence does support (treatment-naive status, PRIDE carbamoylated-residue PTM, acquisition batch) are listed as minor findings. Report-only overstatements (laser capture, PMID) are also listed as minor."},
+    "deterministic_validation": {"status": "pass", "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -t ms-proteomics -t human -t clinical-metadata -t oncology-metadata --use_ols_cache_only: exit 0, warnings only (4 free-text phenotype values not in pato/efo). sdrf-tools structure: exit 0. sdrf-tools check --offline: exit 0, CLEAN. sdrf-tools reconcile --record scratchpad/PXD026371/pride.json: exit 0, all values agree. sdrf-tools score: 95/100; the missing columns are recommended, not required (mass tolerances, ancestry, developmental stage)."}
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "patient-assignment",
+      "location": "row with comment[data file]=20190827_Panc_Set_2_Patient_3_Tube_7_NeoStroma_DDA.raw (source PDAC_P03_NeSt_set2_tube7)",
+      "message": "The P03 neoplastic-stroma file carries tube 7, the same tube as P04 neoplastic stroma (Set_2_Patient_4_Tube_7_NeoStroma_DDA_20190829.raw) and P04 neoplastic parenchyma (Tube_7). The per-patient tube pairs (1-2, 3-4, 5-6, 7-8, 9-10) predict tube 6 for P03, so the file name contains a typo in either the tube number or the patient number. The annotation follows the patient label, which is reasonable, but neither the report nor the manifest notes the conflict.",
+      "evidence": "files_raw_names.json: Set_2 tubes are P1 1/2, P2 3/4, P3 5/7, P4 7/8, P5 9/10. The P04 file has a later re-acquisition date suffix (_20190829).",
+      "correction": "Add a limitation stating that the file name conflicts on tube number and that the patient label was used."
+    },
+    {
+      "severity": "minor",
+      "category": "modification-parameters",
+      "location": "comment[modification parameters]",
+      "message": "PRIDE identifiedPTMStrings lists carbamoylated residue (MOD:00398). This suggests the search included Carbamyl (UNIMOD:5), probably as a variable modification. Only fixed Carbamidomethyl C is annotated. The omission is disclosed and adding it would require guessing sites and type, so this is acceptable. Search tolerances are also absent.",
+      "evidence": "pride.json identifiedPTMStrings: MOD:00398, MOD:00397. dataProcessingProtocol names only PD 2.3/SEQUEST HT, with no parameters.",
+      "correction": "Optional: if the paper's Methods become available, add Carbamyl with the stated targets and type, and add mass tolerances."
+    },
+    {
+      "severity": "minor",
+      "category": "modelling",
+      "location": "characteristics[phenotype] / factor value[phenotype], all rows",
+      "message": "The microdissected compartment (neoplastic or benign parenchyma, and the stroma next to each) is a sampling context, not an observable trait. TERMS.tsv scopes phenotype to observable characteristics. It defines characteristics[sampling site] (clinical-metadata, already active) for context such as 'normal tissue adjacent to tumor'. The validator accepts the current choice, which only produces free-text warnings.",
+      "evidence": "TERMS.tsv rows for phenotype and sampling site. The clinical-metadata documentation names sampling site as 'important for matched tissue designs'.",
+      "correction": "Consider moving the compartment to characteristics[sampling site] and using factor value[sampling site]."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "clinical-metadata columns",
+      "message": "PRIDE states the tumours were 'operable, non-neoadjuvant treated', which supports characteristics[treatment status]=treatment naive for all rows. That column is absent. FFPE preservation is also not encoded.",
+      "evidence": "pride.json projectDescription and sampleProcessingProtocol.",
+      "correction": "Optionally add characteristics[treatment status]=treatment naive, and a preservation/FFPE annotation."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "file level",
+      "message": "Acquisition batches are not encoded. P01-P05 were run in 2019 (parenchyma 20190724-20190815 with repeat injections; all stroma on 20190827). P06-P14 were run on 20200219 with single injections. For P01-P03, compartment is therefore confounded with run date.",
+      "evidence": "Date prefixes in files_raw_names.json.",
+      "correction": "Optionally add a batch or run-date comment column, or note the confound in the report."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "source PDAC_P01_HePa_set1_tube11 (20190827_Panc_Patient_1_Tube_11_HealthyAcinarHNE_DDA.raw)",
+      "message": "The 'HNE' suffix is unexplained, but the sample is placed in the benign-parenchyma factor group as biological replicate 2. It could be a different compartment or treatment. This is disclosed as unknown.",
+      "evidence": "File name only; no other in-scope evidence.",
+      "correction": "Keep the disclosure, and confirm against the paper if it becomes available."
+    },
+    {
+      "severity": "minor",
+      "category": "report-accuracy",
+      "location": "annotations/PXD026371.report.md (Scope, Key evidence) and evidence.json claim 1",
+      "message": "The report calls the samples 'laser-capture microdissected' and cites PMID 36054547. Neither appears in any scratchpad/PXD026371 file: PRIDE says only 'microdissection', and its reference has pubmedID 0. The manifest's 'protein-lists' source is supported only by file names, not file contents; this is stated correctly. Also, 'sdrf-tools reconcile: remaining flags explained below' is stale, because reconcile now reports full agreement.",
+      "evidence": "grep for 'laser' and '36054547' across scratchpad/PXD026371: no hits.",
+      "correction": "Change 'laser-capture' to 'microdissected', either remove the PMID or preserve its source, and update the reconcile statement."
+    }
+  ]
+}

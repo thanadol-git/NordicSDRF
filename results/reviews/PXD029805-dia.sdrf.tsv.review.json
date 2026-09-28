@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029805-dia.sdrf.tsv",
+  "artifact_sha256": "52b4529c800b5f03a5fb3594b3f8d63de148fa8c3d51c73bd8b2bfdfd4c89a8c",
+  "verdict": "PASS",
+  "summary": "DIA split: 72 DIA runs, identical to the combined rows except per-split technical replicate renumbering; no blocker or important issues.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh adversarial reviewer agent without producer transcript; evidence limited to scratchpad/PXD029805/, sdrf-skills spec/data, installed templates and ontology caches; no network"
+  },
+  "evidence_manifest": "annotations/PXD029805.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "42 columns, templates ms-proteomics/human/cell-lines v1.1.0; sdrf-tools structure OK."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Resolved in local caches (one parquet at a time): MONDO small cell lung carcinoma (0008433), lung large cell carcinoma (0003050), lung carcinoid tumor (0006041); UBERON lung, bone marrow, liver, pleural effusion, lymph node, upper lobe of left lung, uterine cervix, ascitic fluid; CL:0000066 epithelial cell; MS:1002877 Q Exactive HF-X, MS:1001251 trypsin, MS:1001309 Lys-C, MS:1000422 beam-type CID; PRIDE:0000627 DDA, PRIDE:0000450 DIA, PRIDE:0000608 DTT, PRIDE:0000599 IAA; UNIMOD:4/35/1 labels match. Cellosaurus accessions match snapshot rows (verified byte-identical to sdrf-skills data/cl-annotations-db.tsv) or saved API extracts for GLC-4, NCI-N417, NCI-H372, NCI-H82."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Per-line age/sex/sampling site/disease/cell type checked against snapshot and API extracts for all 28 annotated lines (NCI-H82 41Y from saved API record); subtype per RAW from design sheet; RPMI-1640 from Methods (SCLC lines only); Lys-C+trypsin, DTT, IAA, NCE 28, 10 ppm/0.02 Da, mods from Methods; instrument from RAW headers of both batches and paper. Table 1 origin conflicts (H211, H378, H1694) are disclosed. Reconcile flags are false positives: trypsin/Lys-C are named in paper Methods (PRIDE protocol omits them); organism part 'lung' = tissue of origin per SAMPLE-GUIDELINES."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "72 rows = the 72 design-sheet rows with mode DIA; all present in PRIDE; no duplicates; the 39 excluded files are all DDA."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Row-by-row identical to the combined file except comment[technical replicate], renumbered consecutively 1..n per source (2 per vial, 4 for sources re-injected in batch 2 or with a second digestion); acquisition method all DIA."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No value exceeds its evidence: HLHE (no Cellosaurus/Table 1 ID) is 'not available' for accession/name/age/sex/site; culture medium 'not available' for the three non-SCLC lines not covered by Methods; cell type only where the snapshot states it; age 'not available' where Cellosaurus says unspecified. Only interpretive wording is the 'reference line' phenotype (minor finding)."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t human -t cell-lines --use_ols_cache_only (flock-serialized): exit 0, 0 errors; warnings only (27 characteristics[cell line] names not in CLO/BTO/EFO cache, 'RPMI 1640' not in NCIT cache). sdrf-tools check --offline: CLEAN. sdrf-tools score: 100 on specificity/consistency/standards/design."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "file (DIA parameters)",
+      "message": "dia-acquisition template not declared (optional, consistent with PXD023708 precedent), so the DIA scan range (m/z 375-1455) and variable isolation windows (13/16/26/61 m/z) stated in Methods are not captured.",
+      "evidence": "manuscript DIA method paragraph; templates.yaml dia-acquisition layer=experiment, usable_alone=false (optional)."
+    },
+    {
+      "severity": "minor",
+      "category": "naming-consistency",
+      "location": "characteristics[cell line], all rows",
+      "message": "Cell line names mix design-sheet IDs (H209, H1688, GLC4, N417, DMS53, SHP77 ...) with Cellosaurus names substituted for three lines (SW1271 for CRL2177, 'DMS 114' for CRL2066, COR-L311 for COR); 26 of 29 names do not resolve in CLO/BTO/EFO (validator warnings).",
+      "evidence": "Design sheet 'Cell line ID' column vs characteristics[cellosaurus name]; validator warning list. Correction: use one convention (preferably the Cellosaurus name, e.g. NCI-H209, DMS 53, SHP-77) for every line."
+    },
+    {
+      "severity": "minor",
+      "category": "reserved-words",
+      "location": "characteristics[individual], all rows",
+      "message": "'not applicable' is asserted for every row although each cell line derives from a distinct human donor; 'not available' (or a per-line donor identifier) is the more accurate reserved word.",
+      "evidence": "human template: individual = donor identifier (recommended); 29 lines = 29 donors."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "file",
+      "message": "Recommended characteristics[ancestry category] is omitted although the cited snapshot extract gives it for 25 lines (Caucasian; African American for NCI-H1048); optional comment[ms min mz]/[ms max mz] (DDA 375-1500, DIA 375-1455) are stated in Methods but not annotated.",
+      "evidence": "scratchpad/PXD029805/evidence/cl-annotations-db_extract.tsv 'ancestry category'; manuscript Nano LC-MS/MS section; sdrf-tools score completeness notes."
+    },
+    {
+      "severity": "minor",
+      "category": "source-evidence",
+      "location": "characteristics[phenotype] / factor value[phenotype], SCLC22/SCLC25/SCLC26 rows (10 rows)",
+      "message": "'non-small cell lung cancer reference line' and 'lung carcinoid reference line' add a 'reference line' role not stated anywhere: the design sheet says only Subtype NSCLC / CARCINOID and the paper never mentions NCI-H661, NCI-H460 or NCI-H720.",
+      "evidence": "SCLC_Experimental_design_cell_pellets.xlsx Subtype column; manuscript has no H460/H661/H720 mention. Correction: use the deposited labels (e.g. 'non-small cell lung cancer', 'lung carcinoid') or state the inference in the report."
+    },
+    {
+      "severity": "minor",
+      "category": "report-accuracy",
+      "location": "PXD029805.report.md / evidence.json claim on cellosaurus accession",
+      "message": "The statement that Table 1 'Other cell line ID' resolves 'COR' is inaccurate: COR-L311 is in Table 1's 'Cell line ID' column with Other ID N/A (CRL-2177 and CRL-2066 are in the 'Cell line ID' column, with SW1271 / DMS 114 as Other ID). The resolved accessions themselves are correct.",
+      "evidence": "manuscript Table 1 rows 'COR-L311 | N/A | SCLC-P', 'CRL-2066 | DMS 114', 'CRL-2177 | SW1271'."
+    }
+  ]
+}

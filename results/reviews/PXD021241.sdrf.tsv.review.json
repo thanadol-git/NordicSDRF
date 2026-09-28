@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD021241.sdrf.tsv",
+  "artifact_sha256": "8199915f6cd343d7e38ae6148c43fc958d83ede793ab3f041d18dbdae227c892",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocker or important issues. All 162 deposited RAW files map exactly once to the correct design sample; bull, batch, technical replicate and non-return-rate values re-derived from the deposited design/data header match every row; validator and sdrf-tools checks pass. Six minor findings concern replicate/season semantics, the undocumented IsTechrep flag, and evidence reproducibility.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer agent without producer transcript; evidence restricted to scratchpad/PXD021241/, sdrf-skills spec, installed sdrf_pipelines and offline ontology cache; no network"
+  },
+  "evidence_manifest": "annotations/PXD021241.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "pass", "evidence": "162 rows x 32 columns; templates ms-proteomics + vertebrates v1.1.0 declared via repeated comment[sdrf template]; required columns present; factor value column after all characteristics/comment columns; reserved words lowercase (cell type = not applicable, strain or breed = not available); no whitespace artefacts; 162 unique assay names; each of the 120 source names has identical characteristics/factor values across its rows; sdrf-tools structure OK."},
+    "ontology_integrity": {"status": "pass", "evidence": "Resolved one parquet at a time in ~/.cache/sdrf-pipelines/ontologies: MS:1001910 'Orbitrap Elite', MS:1001251 'Trypsin', MS:1002038 'label free sample', PRIDE:0000627 'Data-dependent acquisition', PRIDE:0000608 'dithiothreitol (DTT)', PRIDE:0000599 'iodoacetamide (IAA)', UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, UNIMOD:1 Acetyl, BTO:0001232 seminal plasma, EFO:0001272 adult, PATO:0000384 male, PATO:0000461 normal, NCBITaxon:9913 Bos taurus - labels and accessions agree; sdrf-tools check --offline CLEAN (0 hallucinated, 0 label mismatches)."},
+    "source_evidence": {"status": "pass", "evidence": "pride.json (accession PXD021241): Bos taurus, BTO seminal plasma, LTQ Orbitrap Elite (MS:1001910), DTT/iodoacetamide, in-gel trypsin, MS-GF+/X!Tandem. evidence/first_cohort_design.tsv: Bull, Batch, TechRep, TotPerc re-checked for all 162 assays (0 mismatches); TotPerc = 100*TotPreg/TotIns verified for every row. xtandem_input_parameters.txt supports 57.021464@C fixed, 15.994915@M, +42.010565 N-term refine, 3.5 ppm / 0.4 Da. Abstract file supports seminal plasma, NRR 35-60%, three seasons."},
+    "file_mapping": {"status": "pass", "evidence": "files_compact.json (all FTP paths under PXD021241): 162 RAW; files_raw_names.json identical set; SDRF comment[data file] 162 unique = same set. Independent positional mapping of first_cohort_data_header.tsv '# File' row to the column-header row (and '# Sample name' row) reproduces every assay name -> RAW pair in the SDRF (0 mismatches). No non-RAW files referenced."},
+    "design_consistency": {"status": "pass", "evidence": "Recomputed: 120 sources (batch 1: 42 samples/21 bulls, each injected twice -> tech rep 1/2; batch 2: 41 samples/19 bulls; batch 3: 37 samples/19 bulls), 21 individuals, 21 factor levels (one NRR per bull, 35.23-59.68%); report group counts match. S01/S01.1-style re-injections correctly share source name. Replicate/season semantics noted as minor findings."},
+    "omission_safety": {"status": "pass", "evidence": "Every SDRF value traced to pride.json, the deposited design, data header, X!Tandem parameter extract or abstract. Mild inferences (adult for bull4/bull19 with NA age; disease = normal; X!Tandem-only search tolerances) are low-risk and recorded as minor. No per-sample values were inferred from cohort summaries; breed and fertility groupings were correctly left unannotated."},
+    "deterministic_validation": {"status": "pass", "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf --sdrf_file annotations/PXD021241.sdrf.tsv -t ms-proteomics -t vertebrates --use_ols_cache_only -> exit 0, 'Everything seems to be fine. Well done.'; sdrf-tools structure exit 0; sdrf-tools check --offline CLEAN exit 0; sdrf-tools reconcile --record scratchpad/PXD021241/pride.json -> every annotated value agrees; sdrf-tools score 96/100 (design: factor without mirroring column)."}
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "characteristics[biological replicate], all 162 rows",
+      "message": "Biological replicate is 1 for all 120 sources although every factor group (bull) contains 2-8 distinct seminal-plasma samples, including two distinct samples per bull within the same batch (e.g. bull4_S13 and bull4_S16, both batch 1, bio rep 1, tech rep 1/2). Spec README says independent samples are numbered per factor group.",
+      "evidence": "first_cohort_design.tsv lists distinct Sample IDs per Bull per Batch; README.adoc line 330. Defensible because the factor is a bull-level property and individual/source name disambiguate, but the collection-level structure is not explicit in replicate columns.",
+      "correction": "Optionally number distinct samples within each bull (1..n) or add a comment explaining bull = biological unit; not required for approval."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "rows for assays Sv39, Sv40, Sv41, Sv42 (bull17/19/21/12)",
+      "message": "Depositor design flags these as IsTechrep=TRUE; the SDRF encodes them as ordinary independent samples with no trace of the flag. The counter-evidence (sv39_42_correlation_check.json) is not reproducible from the scratchpad (first_cohort_data.tsv not saved) and benchmarks only against re-injections, not against between-sample same-bull correlations. They were acquired last in batch 2 (Elite_180117_91/99/101/104) and correlate most with each other.",
+      "evidence": "evidence/first_cohort_design.tsv IsTechrep column; evidence/first_cohort_data_header.tsv file order; report limitations section.",
+      "correction": "Keep the depositor's flag visible (e.g. a comment column or report note tied to the rows) and save the intensity extract used for the check, or add a same-bull between-sample benchmark."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "comment[sample preparation batch]",
+      "message": "Design 'Batch' 1/2/3 is recorded as sample preparation batch, while the report equates it with sampling season; neither mapping is stated by the depositor. Season, a central study variable (title 'at different seasons'), is not encoded as a sample characteristic.",
+      "evidence": "Batches coincide with acquisition series Elite_170424/180117/181205; abstract mentions three seasons without mapping.",
+      "correction": "State in the report that batch = season is inferred; add a season/collection characteristic only if a source supports the mapping."
+    },
+    {
+      "severity": "minor",
+      "category": "spec",
+      "location": "factor value[non-return rate]",
+      "message": "Factor value has no mirroring characteristics column.",
+      "evidence": "sdrf-tools score design issue; README.adoc line 690 ('typically mirrors a characteristics column').",
+      "correction": "Optionally add characteristics[non-return rate] with the same values."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD021241.evidence.json sources 'raw-header', 'xtandem', 'intensity-check'",
+      "message": "The 'raw-header' source is explicitly not saved in the scratchpad; 'xtandem' is a paraphrased summary rather than a verbatim extract; the intensity data underlying 'intensity-check' are absent. Instrument claim remains supported by pride.json.",
+      "evidence": "ls scratchpad/PXD021241/ and evidence/.",
+      "correction": "Save verbatim extracts for cited sources or drop sources that cannot be re-opened."
+    },
+    {
+      "severity": "minor",
+      "category": "omission-safety",
+      "location": "characteristics[developmental stage], characteristics[disease], search tolerances",
+      "message": "adult for bull4/bull19 (age NA) and disease = normal are inferences not covered by a verbatim source; precursor/fragment tolerances come from X!Tandem only while MS-GF+ was also used (disclosed).",
+      "evidence": "first_cohort_design.tsv age_at_first_collection NA for bull4, bull19; pride.json diseases []; report limitations.",
+      "correction": "Acceptable as is; optionally add these to the manifest claims/limitations."
+    }
+  ]
+}

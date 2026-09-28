@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD032266.sdrf.tsv",
+  "artifact_sha256": "164d8e053059ea25cddd058ff77e77394f7ff6a754db710d6426b4cfa06be7bd",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review found no blocker or important issues. All 54 deposited RAW files map exactly once; every per-row patient, PT/LR assignment, age, grade and clinical-data string reproduces SMPL_NFO.xlsx exactly; controlled terms resolve; the official validator passes for all four declared templates. Only minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent without producer transcript; evidence restricted to scratchpad/PXD032266/, spec, installed sdrf_pipelines templates and local ontology caches; no network"
+  },
+  "evidence_manifest": "annotations/PXD032266.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "54 rows x 34 columns, uniform row width, ASCII, no CR/whitespace artefacts. Templates ms-proteomics v1.1.0, human v1.1.0, clinical-metadata v1.0.0, oncology-metadata v1.0.0 declared and consistent with installed templates.yaml (dia-acquisition is an optional experiment-layer template; its installed values validator only accepts the bare literal 'Data-independent acquisition', confirming the report's stated reason for not declaring it). Reserved words used only as 'not available' (cell type 54 rows, tumor grading 11 rows). factor value[phenotype] is last and equals characteristics[phenotype] on every row. sdrf-tools structure: OK."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Resolved one parquet at a time from ~/.cache/sdrf-pipelines/ontologies: MS:1002877 'Q Exactive HF-X', MS:1001251 'Trypsin', MS:1000422 'beam-type collision-induced dissociation' (spec-canonical for HCD), PRIDE:0000450 'data-independent acquisition', PRIDE:0000608 'dithiothreitol (DTT)', PRIDE:0000599 'iodoacetamide (IAA)', UNIMOD:4 'Carbamidomethyl', NCIT:C28077/C28078/C28079 'grade 1/2/3', MONDO:0007254 'breast cancer', UBERON:0000310 'breast', PATO:0000383 'female', NCBITaxon:9606 'Homo sapiens'. No obsolete or mislabelled terms; sdrf-tools check --offline CLEAN (0 hallucinated, 0 label mismatches, 0 UNIMOD swaps). Only free-text phenotype labels are not ontology terms (warning level)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Scripted row-by-row comparison against evidence/SMPL_NFO.xlsx (sheet 20220201.nfo.PAIRS): source name, individual, PT/LR phenotype, floor(AGE.DIAGNOSIS), TUMOR.GRADE, and the full clinical-data string (ER, PgR, Her2/ERBB2 score, TP53 per tumour; RADIOTHERAPY/ENDOCRINE.THERAPY/CHEMOTHERAPY from the patient's PT row) match on 54/54 rows with 0 discrepancies. LR ages equal PT age + RELAPSE.FREE.SURVIVAL (e.g. S02 54.74+6.65=61.39), i.e. age at recurrence sampling, consistent with the human template definition 'age at sample collection'. Sheet counts reproduce paper Table 1 for ER (18/9, 16/8), PgR (11/15, 13/11), radiotherapy 19/8, endocrine 8/19, chemotherapy 6/21, HER2 score-3 = amplified 4/4, PT grade 14/9; the report's two stated discrepancies are true (Ki-67 labels reversed vs Table 1; LR grade-2 12 vs 13). Technical values confirmed in manuscript.txt Methods and pride.json/submission.PAIRED.px protocols: DTT reduction, iodoacetamide alkylation, trypsin 1:50, DIA, Q-Exactive HFX, HCD collision energy 30, no PTMs declared. All cited sources exist locally (pride.json, files_compact.json/files_raw_names.json, evidence/SMPL_NFO.xlsx, manuscript.txt = PMC9894938)."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "files_compact.json lists 59 files (54 RAW, 1 FASTA, 2 SEARCH, 2 OTHER); the 54 RAW names equal files_raw_names.json and submission.PAIRED.px FME entries 5-58, and equal the SDRF comment[data file] set with each file used exactly once; assay name = file stem on every row; no non-RAW files referenced."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "27 individuals x (1 PT + 1 LR) = 54 sources; every individual appears exactly twice; factor phenotype 27/27; biological replicate 1, technical replicate 1, fraction 1 consistent with one label-free DIA run per tumour. Acquisition batches (M1912: 19 PT + 19 LR; M2002: 8 PT + 8 LR) are balanced and keep pairs together, so no factor/batch confounding."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No value asserts more than evidence supports: Ki-67 withheld because sheet contradicts Table 1; tumour size and lymph-node counts withheld (unit unstated); missing biomarkers omitted rather than invented; therapy explicitly scoped 'after primary surgery'; only fixed carbamidomethyl declared given 'No PTMs' in the PX submission. The one inferred value (sex=female) is disclosed in report and manifest and is recorded as a minor finding."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf --sdrf_file annotations/PXD032266.sdrf.tsv -t ms-proteomics -t human -t clinical-metadata -t oncology-metadata --use_ols_cache_only: exit 0, 'There were only warnings' (2 warnings: free-text phenotype labels not in PATO/EFO). sdrf-tools structure exit 0 (OK); sdrf-tools check --offline exit 0 (CLEAN); sdrf-tools score 95/100. sdrf-tools reconcile --record scratchpad/PXD032266/pride.json flags cleavage_agent_unsupported for Trypsin; this is a false positive: pride.json sampleProcessingProtocol states 'trypsin was added (enzyme-protein ratio 1:50; incubation at 37C for 16 h)'. Hash re-checked unchanged at end of review."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "inference",
+      "location": "characteristics[sex], rows 1-54",
+      "message": "sex = female is inferred from disease context (breast cancer, breast-conserving surgery); neither SMPL_NFO.xlsx, the manuscript nor PRIDE states patient sex.",
+      "evidence": "No sex column in SMPL_NFO.xlsx; manuscript.txt contains no 'female'/'women'. Inference is disclosed in report and manifest and male BCS+IBTR is very improbable, so not blocking. Correction criterion: keep with the disclosure, or cite a cohort source (ref 24) stating an all-female cohort, or use 'not available'."
+    },
+    {
+      "severity": "minor",
+      "category": "source-conflict",
+      "location": "comment[instrument], rows 1-54",
+      "message": "Q Exactive HF-X (MS:1002877) follows Methods and PRIDE protocol text ('Q-Exactive HFX') over the structured PRIDE/PX instrument field (MS:1002523 Q Exactive HF); RAW headers were not inspected.",
+      "evidence": "pride.json instruments = MS:1002523; dataProcessingProtocol and manuscript Methods = 'Q-Exactive HFX'. Two textual statements agree, so the choice is defensible; confirm from a RAW file header if possible."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology-specificity",
+      "location": "characteristics[phenotype] / factor value[phenotype], rows 1-54",
+      "message": "Phenotype values 'primary breast tumour' and 'ipsilateral breast tumour recurrence' are free text and raise validator warnings.",
+      "evidence": "Validator: 'not found in the given ontology list pato;efo'. Optional improvement: map to ontology terms (e.g. NCIT primary neoplasm / locally recurrent breast carcinoma) if a suitable cached term exists."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD032266.evidence.json",
+      "message": "The manifest has no explicit claims for reduction/alkylation reagent, modification parameters, dissociation method or collision energy, although all are supported by the Methods and PRIDE protocol text.",
+      "evidence": "Values verified independently in manuscript.txt 'Protein digestion' and 'Mass spectrometry analysis' sections; adding claims would complete provenance."
+    }
+  ]
+}

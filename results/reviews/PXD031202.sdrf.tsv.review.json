@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD031202.sdrf.tsv",
+  "artifact_sha256": "d84c6a74d967c057fa0dbfbd8cbe36739d4cab72e3ca06cbaed6b0fd31819928",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review found no blocker or important issues. All 45 deposited RAW files map to exactly one row; sample, factor, replicate and technical values trace to the manuscript, PRIDE record, supplementary table S1 and RAW-header excerpt in scratchpad/PXD031202. Three minor findings (provenance of the variable-modification evidence, an omitted recommended ancestry column, and a replicate-naming ambiguity that the producer disclosed).",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent without producer transcript; evidence restricted to scratchpad/PXD031202, sdrf-skills spec, installed sdrf_pipelines templates and local OLS parquet cache; no network"
+  },
+  "evidence_manifest": "annotations/PXD031202.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates are ms-proteomics v1.1.0 and human v1.1.0 (the latter extends sample-metadata 1.0.0 and base 1.1.0), declared in two comment[sdrf template] columns. Every required column is present: source name, organism, organism part, biological replicate, disease, age, sex, assay name, technology type, technical replicate, data file, acquisition method, instrument, cleavage agent, label, fraction identifier. The file has 45 data rows x 33 columns with uniform shape, LF line endings, 45 unique assay names and 45 unique data files. Reserved words are limited to 'not available' (age 45, sex 45, phenotype 30). sdrf-tools structure: OK."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Resolved against the local parquet caches, loaded one at a time: NCBITaxon:9606 homo sapiens; UBERON:0000178 blood; CL:0000233 platelet; MONDO:0007915 systemic lupus erythematosus; PATO:0000461 normal; material type 'cell' is in the sample-metadata allowed list; PRIDE:0000627 data-dependent acquisition; MS:1002416 Orbitrap Fusion; MS:1001251 Trypsin; MS:1000422 beam-type collision-induced dissociation (the canonical HCD term per the spec README); PRIDE:0000608 DTT; PRIDE:0000599 IAA; UNIMOD:4 Carbamidomethyl; UNIMOD:1 Acetyl; UNIMOD:21 Phospho. All labels match. sdrf-tools check --offline: CLEAN, with 0 hallucinated terms, 0 label mismatches and 0 UNIMOD swaps."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "manuscript.txt (PMC9420555) Methods give: RIPA lysis; 10 mM DTT; 20 mM iodoacetamide; trypsin (Promega) 1:50; Orbitrap Fusion DDA; HCD at 30% NCE; PD 2.2 SEQUEST with static cysteine carbamidomethylation; precursor 15 ppm; fragment '0.05 ppm', which the producer correctly omitted as implausible. The design is 5 HC plus 5 SLE-low and 5 SLE-nor patients, with three runs per sample. evidence/raw_method_header.txt confirms ActivationType HCD, CE 30%, no stepped CE. pride.json confirms Orbitrap Fusion, platelet, SLE and human. Table 2 and supplementary Table S1 (supplementary_s210564.xls) use only 'SLE low n' and 'SLE nor n' IDs; nothing in the scratchpad links P26-P43 to those IDs, so FSC group, age and sex are correctly 'not available'. The reconcile BLOCKER cleavage_agent_unsupported is a false positive: PRIDE omits the enzyme, but Methods explicitly state trypsin digestion."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "files_compact.json lists 47 files: 45 RAW, 1 SEARCH (20191902_Linge.csv) and 1 mzid, with no duplicate names. The sorted comment[data file] set equals the sorted RAW set exactly (45/45, each once) and equals files_raw_names.json. No non-RAW files appear in the SDRF. Every row's source name, individual, disease, factor value, technical replicate and assay name agree with its RAW filename pattern (Ctrl<n>/P<nn>_00<k>)."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 15 sources (HC1-5, SLE_P26/28/29/30/31/32/34/35/36/43) x 3 runs = 45 rows. factor value[disease] gives normal 15 and SLE 30, consistent with characteristics[disease]. biological replicate is 1 for all rows and technical replicate is 1-3 within each source. One fraction, label free. No confounders are introduced; the unlinkable SLE-low/SLE-nor subgroup is disclosed as a limitation, not guessed."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No per-sample value is inferred from cohort summaries: age and sex are 'not available' although Table 2 exists, because patient IDs cannot be linked. Every technical value traces to Methods or the RAW header. Acetyl (protein N-term) and Phospho (S,T) variable modifications rest on a producer-written tally of the deposited PD table (see minor finding 1); they are plausible and not contradicted by the paper, which lists no variable modifications. Oxidation and fragment tolerance were conservatively omitted. Omitted evidence-backed items appear only in recommended or optional columns (minor finding 2)."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf --sdrf_file annotations/PXD031202.sdrf.tsv -t ms-proteomics -t human --use_ols_cache_only -> 'Everything seems to be fine. Well done.' (exit 0). sdrf-tools structure -> OK (exit 0). sdrf-tools check --offline -> CLEAN (exit 0). sdrf-tools score -> 96/100. sdrf-tools reconcile --record scratchpad/PXD031202/pride.json -> 1 flag (trypsin not in PRIDE record), refuted by Methods. SHA-256 re-checked at the end of the review: unchanged."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[modification parameters] columns 31-32 (Acetyl Protein N-term, Phospho S,T), all 45 rows; evidence.json source 'pdtable'",
+      "message": "The source cited for the two variable modifications, deposited 20191902_Linge.csv, is not in scratchpad/PXD031202. Only a producer-authored tally (evidence/deposited_PD_modifications.txt) is present, and the paper lists only static carbamidomethylation.",
+      "evidence": "files_compact.json confirms 20191902_Linge.csv exists on PRIDE, but the scratchpad does not hold the file or an extract of its Modifications column, so the counts (Acetyl [N-Term] 98, Phospho [S] 24, [T] 8) cannot be independently re-derived. Correction criterion: archive the Modifications-column extract (or the file header plus counts script output) under scratchpad/PXD031202/evidence/ and point the manifest's pdtable source at it."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "characteristics[ancestry category] (column absent)",
+      "message": "The recommended human-template column is omitted although the paper gives cohort-wide ancestry that applies to every individual.",
+      "evidence": "manuscript.txt line 48: patients 'all had Caucasian ancestry'; the 10 healthy controls 'all had Caucasian heritage'. Correction criterion: optionally add characteristics[ancestry category] = European ancestry (HANCESTRO:0005) for all 45 rows, or record why it was omitted."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "comment[technical replicate] and characteristics[biological replicate], all rows",
+      "message": "Runs 001-003 are encoded as technical replicates of one biological replicate, while the paper calls them 'three biological replicates from each sample' and 'biological triplicates'.",
+      "evidence": "manuscript.txt lines 107 and 231. Because all three runs derive from the same individual's single PRP sample, SDRF semantics support biological replicate 1 with technical replicates 1-3. The producer disclosed the ambiguity in its limitations. No change required."
+    }
+  ]
+}

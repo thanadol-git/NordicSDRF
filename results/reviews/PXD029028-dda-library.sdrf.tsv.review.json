@@ -1,0 +1,72 @@
+{
+ "schema_version": 1,
+ "artifact": "annotations/PXD029028-dda-library.sdrf.tsv",
+ "artifact_sha256": "0cbe4ce5bd58249571f16ff2dc08a57506c997f35d05a0733acb739a3f15d1f1",
+ "verdict": "PASS",
+ "summary": "Independent review of the 40-run DDA spectral-library SDRF found no blocker or important issues; file-to-sample/fraction mapping matches DDA_sample_ID.csv and cell-line metadata matches Cellosaurus. Minor improvements only.",
+ "reviewer_context": {
+  "independent": true,
+  "context": "fresh adversarial reviewer subagent; no producer transcript; producer report.md not relied upon"
+ },
+ "evidence_manifest": "annotations/PXD029028.evidence.json",
+ "checks": {
+  "spec_compliance": {
+   "status": "pass",
+   "evidence": "35 columns, 40 rows, uniform width, LF, no blank cells or duplicate rows; ms-proteomics + human v1.1.0 declared; structured values well formed. sdrf-tools structure flags 'not applicable' in cell line/cellosaurus columns for the two primary-cell rows (recorded as minor: SAMPLE-GUIDELINES material-type table explicitly uses characteristics[cell line]=not applicable for primary cells, and cell-lines template is not declared)."
+  },
+  "ontology_integrity": {
+   "status": "pass",
+   "evidence": "Resolved: CL:0002259 neuroepithelial stem cell, CL:0002553 fibroblast of lung, CL:0002539 aortic smooth muscle cell, CL:2000016 lung microvascular endothelial cell; UBERON:0002028 hindbrain, UBERON:0002048 lung, UBERON:0000947 aorta; PATO male/normal; PRIDE:0000627 DDA; PRIDE:0000568 SDS PAGE; plus shared MS/PRIDE/UNIMOD terms as in main SDRF. Cellosaurus: CVCL_A5DT = Sai2 (male, fetal hindbrain neuroepithelial stem cell), CVCL_0298 = HFL1 (male, fetal lung fibroblast) confirmed on cellosaurus.org."
+  },
+  "source_evidence": {
+   "status": "pass",
+   "evidence": "DDA_sample_ID.csv maps all 40 RAW files to Sai2/HMVEC-L/HFL1/hAaSMC fractions 1-10 (incl. Emma_S1705_204 = hAaSMC fraction 3, Emma_S1705_205 = Sai2 fraction 8): 40/40 match. Supplement: Sai2 p33, HFL1 p18 lines; primary HASMC p11 and HMVEC-L p3; SDS-PAGE 45 bands pooled to 10 fractions, in-gel digestion; DDA top-15 HCD on Q Exactive Plus (RAW header Emma_S1705_204 confirms)."
+  },
+  "file_mapping": {
+   "status": "pass",
+   "evidence": "40 DDA RAW files, all present in PRIDE file list, none shared with the DIA SDRF; union of both SDRFs = all 88 RAW files."
+  },
+  "design_consistency": {
+   "status": "pass",
+   "evidence": "4 source names x 10 fractions = 40 runs; fraction identifier 1-10 per source, each exactly once; biological/technical replicate 1; material type 'cell line' for Sai2/HFL1 and 'cell' for primary cells."
+  },
+  "omission_safety": {
+   "status": "pass",
+   "evidence": "Sex 'male' only for Sai2/HFL1 where Cellosaurus states it; primary cells left 'not available'; ages left 'not available' (fetal ages not expressible in postnatal pattern). Reduction (DTT in harvest buffer) supported; IAA alkylation for the in-gel DDA workflow is by reference ('as previously described') and consistent with the fixed carbamidomethyl search - noted as minor."
+  },
+  "deterministic_validation": {
+   "status": "pass",
+   "evidence": "flock parse_sdrf validate-sdrf -t ms-proteomics -t human --use_ols_cache_only: exit 0, 'Everything seems to be fine'. sdrf-tools check --offline: CLEAN. sdrf-tools score: 92/100 (no factor value column). sdrf-tools reconcile vs pride.json: all values agree. sdrf-tools structure: 3 reserved-word notes (see spec_compliance/minor finding)."
+  }
+ },
+ "findings": [
+  {
+   "severity": "minor",
+   "category": "spec-compliance",
+   "location": "characteristics[cell line], characteristics[cellosaurus accession], characteristics[cellosaurus name]; HMVEC-L and hAaSMC rows (20 rows)",
+   "message": "'not applicable' in cell-line columns is disallowed by TERMS.tsv (cell-lines scope, allow_not_applicable=false) and flagged by sdrf-tools structure, but is the only sensible value for primary-cell rows in a mixed table and is endorsed by SAMPLE-GUIDELINES; keep, or split primary vs cell-line rows if a cell-lines template declaration is desired.",
+   "evidence": "sdrf-tools structure output; TERMS.tsv rows 17-19; SAMPLE-GUIDELINES material-type example table."
+  },
+  {
+   "severity": "minor",
+   "category": "completeness",
+   "location": "file",
+   "message": "No factor value column; for a library SDRF a factor value[cell type] would make the four sources explicit. Developmental stage (fetal/embryonic) for Sai2 (6 FW) and HFL1 (16 FW) and passage numbers (Sai2 33, HFL1 18, HASMC 11, HMVEC-L 3) are available but not recorded.",
+   "evidence": "sdrf-tools score design 67/100; Cellosaurus records; supplement DDA sample preparation."
+  },
+  {
+   "severity": "minor",
+   "category": "provenance",
+   "location": "characteristics[individual], HMVEC-L and hAaSMC rows",
+   "message": "Primary cells come from real, unidentified donors; 'not available' is semantically more accurate than 'not applicable' for individual.",
+   "evidence": "Supplement: primary HASMC and HMVEC-L."
+  },
+  {
+   "severity": "minor",
+   "category": "provenance",
+   "location": "comment[alkylation reagent], all rows",
+   "message": "IAA for the in-gel DDA workflow is inferred from the referenced in-gel protocol and the fixed carbamidomethyl search, not stated explicitly for DDA samples; acceptable but weakly evidenced.",
+   "evidence": "Supplement DDA section: Laemmli + 2.5% beta-mercaptoethanol, 'in-gel digestion was performed as previously described'."
+  }
+ ]
+}

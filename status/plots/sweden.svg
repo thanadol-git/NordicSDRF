@@ -53,10 +53,10 @@
 <text class="seg" x="178.0" y="118.0" text-anchor="middle">35</text>
 <rect class="c-blocked" fill="#d95926" x="247.0" y="104" width="253.3" height="20" rx="2"><title>Lund · Blocked: 65</title></rect>
 <text class="seg" x="373.6" y="118.0" text-anchor="middle">65</text>
-<rect class="c-in_corpus" fill="#199e70" x="501.3" y="104" width="30.3" height="20" rx="2"><title>Lund · In corpus: 8</title></rect>
-<text class="seg" x="516.5" y="118.0" text-anchor="middle">8</text>
-<rect class="c-todo" fill="#8a8983" x="532.6" y="104" width="214.2" height="20" rx="2"><title>Lund · To do: 55</title></rect>
-<text class="seg" x="639.7" y="118.0" text-anchor="middle">55</text>
+<rect class="c-in_corpus" fill="#199e70" x="501.3" y="104" width="34.2" height="20" rx="2"><title>Lund · In corpus: 9</title></rect>
+<text class="seg" x="518.4" y="118.0" text-anchor="middle">9</text>
+<rect class="c-todo" fill="#8a8983" x="536.5" y="104" width="210.3" height="20" rx="2"><title>Lund · To do: 54</title></rect>
+<text class="seg" x="641.7" y="118.0" text-anchor="middle">54</text>
 <text class="total" x="753.8" y="118.0">163 listed</text>
 <text class="city" x="12" y="148.0">Gothenburg</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="134" width="69.4" height="20" rx="2"><title>Gothenburg · Annotated: 18</title></rect>

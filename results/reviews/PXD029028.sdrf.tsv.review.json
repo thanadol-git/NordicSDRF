@@ -1,0 +1,65 @@
+{
+ "schema_version": 1,
+ "artifact": "annotations/PXD029028.sdrf.tsv",
+ "artifact_sha256": "428e33a4b04893087c143249f9082f8d4ca7f79e44a20825cb7128e95ebe0d8e",
+ "verdict": "PASS",
+ "summary": "Independent review of the 48-run DIA SDRF found no blocker or important issues; every row matches the deposited meta_data.csv and all terms resolve. Minor improvements only.",
+ "reviewer_context": {
+  "independent": true,
+  "context": "fresh adversarial reviewer subagent; no producer transcript; producer report.md not relied upon"
+ },
+ "evidence_manifest": "annotations/PXD029028.evidence.json",
+ "checks": {
+  "spec_compliance": {
+   "status": "pass",
+   "evidence": "34 columns, 48 rows, uniform width, LF, no blank/whitespace cells, no duplicate rows; templates ms-proteomics v1.1.0 + human v1.1.0 declared (NT/VV form); reserved words lowercase; structured values (NT/AC, modification TA/MT) well formed; factor values last; sdrf-tools structure: OK."
+  },
+  "ontology_integrity": {
+   "status": "pass",
+   "evidence": "Resolved in local OLS cache: CL:0008019 mesenchymal cell; UBERON:0008946 lung parenchyma; UBERON:0001005 respiratory airway; PATO:0000461 normal; PRIDE:0000450 DIA; PRIDE:0000608 DTT; PRIDE:0000599 IAA; PRIDE:0000664 proteomic profiling by MS; MS:1002038 label free sample; MS:1002634 Q Exactive Plus; MS:1001251 Trypsin; MS:1000422 beam-type CID; UNIMOD:4 Carbamidomethyl; UNIMOD:35 Oxidation (M, P = hydroxyproline). characteristics[treatment] is free text (validator warning only)."
+  },
+  "source_evidence": {
+   "status": "pass",
+   "evidence": "Per-row check vs deposited meta_data.csv (48/48 match: donor FL4/FL5/FL11/FL12, Central airway->respiratory airway, Distal parenchyma->lung parenchyma, protocol 1 walk-out/2 clonal, CL1-3 -> technical replicate 1-3). Supplementary methods: healthy donor lungs n=4, DMEM 10% serum explant vs enzymatic digestion + StemMACS, lysis with 10 mM DTT, 50 mM IAA, SP3 trypsin, Q Exactive Plus, DIA 400-1200 m/z, 20/50 ppm, CAM C fixed, Ox M and hydroxy-P variable. RAW header confirms Q Exactive Plus (Mans_S1802_201)."
+  },
+  "file_mapping": {
+   "status": "pass",
+   "evidence": "PRIDE file list (88 RAW, all URLs under PXD029028): 48 DIA RAW files in this SDRF, 40 DDA in the -dda-library SDRF, 0 overlap, 0 missing, 0 extra; 4 non-raw CSVs correctly excluded."
+  },
+  "design_consistency": {
+   "status": "pass",
+   "evidence": "Full factorial 4 donors x 2 sites x 2 protocols = 16 source names x 3 technical replicates = 48 runs; biological replicate = donor (1-4) consistent across sources; factor value[organism part] and factor value[treatment] equal their characteristics; fraction identifier 1 (unfractionated DIA)."
+  },
+  "omission_safety": {
+   "status": "pass",
+   "evidence": "No value asserts more than the evidence: age/sex left 'not available' because FL donor IDs are not mapped to Supplementary Table S1; disease normal from 'healthy donor lungs'; no unsupported fractionation, enrichment or labels added. Omitted optional DIA window metadata noted as minor."
+  },
+  "deterministic_validation": {
+   "status": "pass",
+   "evidence": "flock parse_sdrf validate-sdrf -t ms-proteomics -t human --use_ols_cache_only: exit 0, 2 warnings (free-text treatment not in NCIT/EFO), no errors. sdrf-tools check --offline: CLEAN (0 hallucinated). sdrf-tools score: 97/100. sdrf-tools structure: OK. sdrf-tools reconcile vs pride.json: all values agree."
+  }
+ },
+ "findings": [
+  {
+   "severity": "minor",
+   "category": "completeness",
+   "location": "file / comment[sdrf template]",
+   "message": "DIA acquisition geometry (MS1 400-1200 m/z; 32 windows of 26 m/z, 1 m/z overlap) is not captured; could declare dia-acquisition and add comment[scan window lower limit]=400, comment[scan window upper limit]=1200, comment[isolation window width]=26.",
+   "evidence": "PRIDE sampleProcessingProtocol and supplementary LC-MS/MS section. Note: installed dia-acquisition 1.1.0 YAML rejects the NT=...;AC=PRIDE:0000450 form (ERROR when tested), while the spec README allows it; use plain 'Data-independent acquisition' if the template is declared."
+  },
+  {
+   "severity": "minor",
+   "category": "ontology",
+   "location": "characteristics[treatment] / factor value[treatment], all rows",
+   "message": "Isolation/culture protocol is long free text not from NCIT/EFO (validator warning); consider shorter labels (e.g. 'explant culture', 'enzymatic dissociation clonal culture') and/or characteristics[culture medium] (DMEM vs StemMACS MSC expansion medium).",
+   "evidence": "parse_sdrf warnings for both treatment values."
+  },
+  {
+   "severity": "minor",
+   "category": "provenance",
+   "location": "characteristics[sex], characteristics[age], all rows",
+   "message": "Supplementary Table S1 lists six healthy lung donors, all male (ages 26-68Y). If the authors confirm FL4/FL5/FL11/FL12 belong to that cohort, sex could be 'male'; left 'not available' is acceptable because the FL IDs are not mapped and the cells were isolated 'as previously described'.",
+   "evidence": "supplementary_MOESM1_text.txt Table S1; manuscript Methods 'healthy donors (n = 6)'."
+  }
+ ]
+}

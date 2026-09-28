@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD026690.sdrf.tsv",
+  "artifact_sha256": "a8f163884a2fc26bbb821c71620ec2e2fd36fa0cba7ba4cf6ae1856b44541110",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. All 34 rows reconcile 1:1 with the deposited y1819_design.tsv (sample name, RAW file, site, cultivar, date, leaf number) and all 34 PRIDE RAW files; controlled terms resolve; validator clean.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh adversarial reviewer subagent without producer transcript; producer report treated as untrusted"
+  },
+  "evidence_manifest": "annotations/PXD026690.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "pass", "evidence": "34 rows x 31 columns, uniform row width, no CR/whitespace padding; templates ms-proteomics + plants (plants requires disease and developmental stage: present, reserved words allowed); sdrf-tools structure OK; factor value columns have matching characteristics columns; unique source names and data files."},
+    "ontology_integrity": {"status": "pass", "evidence": "Resolved in local ontology cache: ncbitaxon:4113 solanum tuberosum; bto:0000713 / po:0025034 leaf; ms:1002877 q exactive hf-x; ms:1001251 trypsin; ms:1002038 label free sample; pride:0000627 data-dependent acquisition; pride:0000608 dithiothreitol (dtt); pride:0000599 iodoacetamide (iaa); unimod:4 carbamidomethyl; unimod:35 oxidation. No obsolete or mismatched labels."},
+    "source_evidence": {"status": "pass", "evidence": "Organism/organism part/instrument match PRIDE record (NEWT:4113, BTO:0000713, MS:1002877). DTT 10 mM and iodoacetamide 55 mM, in-gel trypsin digest stated in PRIDE sample protocol. CAM C fixed, Ox M variable, 10 ppm / 0.02 Da from deposited X!Tandem input parameters. Site (Borgeby/Umea), cultivar Desiree, dates and leaf numbering checked programmatically per row against y1819_design.tsv: 0 mismatches. DDA inferred from MGF + MS-GF+/X!Tandem search workflow (paper not accessible)."},
+    "file_mapping": {"status": "pass", "evidence": "PRIDE file list has 34 RAW files; SDRF comment[data file] set equals it exactly (34/34, no duplicates, no non-raw files). PEAK/SEARCH/OTHER files correctly excluded."},
+    "design_consistency": {"status": "pass", "evidence": "Recomputed groups from design table: Bo 2018-07-23 (6), Um 2018-07-26 (6), Bo 2018-08-15 (6), Um 2018-08-17 (6), Bo 2019-07-18 (4, des7-10), Um 2019-07-25 (6) = 34. Biological replicate equals SampleInternalleafnumbering; technical replicate 1 and fraction 1 consistent with one run per sample (single short-stacked gel piece)."},
+    "omission_safety": {"status": "pass", "evidence": "Disease and developmental stage set to 'not available' rather than guessed; cell type 'not applicable' for tissue. Regional qualifiers (southern/northern Sweden) are geographic facts about the named sites, PRIDE country Sweden. No unsupported specific values found."},
+    "deterministic_validation": {"status": "pass", "evidence": "flock parse_sdrf validate-sdrf -t ms-proteomics -t plants --use_ols_cache_only: 'Everything seems to be fine' exit 0; auto-template run exit 0; sdrf-tools check --offline CLEAN exit 0; sdrf-tools score 100/100; sdrf-tools structure OK; sdrf-tools reconcile: every value agrees with deposit record."}
+  },
+  "findings": [
+    {"severity": "minor", "category": "completeness", "location": "file (missing optional column comment[number of missed cleavages])", "message": "X!Tandem parameters state missed cleavages 1; this optional search parameter is not recorded.", "evidence": "scratchpad/PXD026690/evidence/xtandem_input_parameters.txt: 'missed cleavages 1'"},
+    {"severity": "minor", "category": "provenance", "location": "comment[precursor mass tolerance], comment[fragment mass tolerance], comment[modification parameters]", "message": "Search parameters come from a single X!Tandem result file (Potato_6); MS-GF+ parameters were not checked and could differ.", "evidence": "PRIDE data protocol: searches with MS-GF+ and X!Tandem; evidence excerpt only from one .t.xt.xml."},
+    {"severity": "minor", "category": "specificity", "location": "characteristics[growth condition] / factor value[growth condition]", "message": "Field site is encoded as free-text growth condition; an additional characteristics[geographic location] (GAZ term for Borgeby/Umea) would make the site machine-readable.", "evidence": "TERMS.tsv defines geographic location (PRIDE:0000995, GAZ)."},
+    {"severity": "minor", "category": "design", "location": "characteristics[biological replicate] all rows", "message": "Values are taken from SampleInternalleafnumbering; whether each number is a distinct plant (and whether numbers are linked across dates at the same site) is not documented.", "evidence": "y1819_design.tsv column SampleInternalleafnumbering; paper not accessible."}
+  ]
+}

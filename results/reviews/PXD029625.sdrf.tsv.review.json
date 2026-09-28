@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029625.sdrf.tsv",
+  "artifact_sha256": "3d32d9ab8a57e84574c45544568264016806443f16a1310d07cd6c4e09f704b4",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review found no blocker or important issues. All 44 deposited RAW files map exactly once; tissue, group, replicate, treatment, disease and factor values match the RAW names, the PRIDE record, the DIA-NN logs and the publication Methods; the official validator passes with warnings only. The findings are minor provenance and specificity points.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer agent without producer transcript; evidence restricted to scratchpad/PXD029625/, the spec, installed sdrf_pipelines templates and local ontology caches; no network"
+  },
+  "evidence_manifest": "annotations/PXD029625.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "The validator (ms-proteomics + vertebrates, use_ols_cache_only) exited 0 with 'only warnings': 5 free-text treatment values not in ncit/efo and 'C57BL/6' not in ncbitaxon, both expected for free-text columns. sdrf-tools structure: OK. All 44 rows have 31 cells, with no empty or whitespace-padded cells. The duplicate comment[sdrf template] columns are the spec form. Collision energy '25.5% NCE;27% NCE;30% NCE' matches the TERMS.tsv stepped pattern. material type values (tissue, organism part) are in the fixed list. The only reserved word is 'not applicable' in cell type. The vertebrates template requires disease and developmental stage, and both are present."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Resolved against the local parquet caches, one file at a time. MS:1002877 = q exactive hf-x; MS:1001251 = trypsin; MS:1000422 = beam-type collision-induced dissociation (spec-sanctioned HCD form); PRIDE:0000450 = data-independent acquisition; PRIDE:0000609 = TCEP; PRIDE:0000599 = IAA; UNIMOD:4 = carbamidomethyl; 'label free sample' = MS:1002038 in the PRIDE cache; 'bronchoalveolar lavage fluid' = BTO:0000155; lung = UBERON:0002048; pulmonary fibrosis = EFO:0009448/MONDO:0002771/DOID:3770; normal = PATO:0000461; adult = EFO:0001272; male = PATO:0000384; Mus musculus = NCBITaxon:10090. Every label and accession pair agrees. sdrf-tools check --offline: CLEAN."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Checked against the evidence files. manuscript.txt (header PMC9902543) has the Methods groups and doses: bleomycin 2.5 U/kg i.t. + vehicle i.p.; + TH5487 40 mg/kg i.p.; + dexamethasone 10 mg/kg i.p.; saline i.t. + vehicle; saline i.t. + TH5487. It also gives male C57Bl/6, 10-12 weeks, Q Exactive HF-X, stepped NCE 25.5/27/30, 44-window DIA, TCEP, IAA and trypsin. pride.json (accession PXD029625) has the same sample protocol, and its description names the groups B/BTH/DEX/TH/V. The PRIDE instrument field (Q Exactive HF) is overridden by the protocol text and evidence/raw_header_check.json (2 RAW headers, one BALF and one Lung, read 'Q Exactive HF-X'). The DIA-NN logs process 22 BALF files under R04_BALF and 22 Lung files under R04_Lung, confirming the tissue split. Every source cited in the manifest exists in scratchpad/PXD029625/."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "files_compact.json lists 50 files: 44 RAW, 2 SEARCH zips, 2 TIC zips, 1 FASTA and 1 speclib. Every download URL is under archive/2023/02/PXD029625. The set of 44 RAW names equals the set of SDRF comment[data file] values and files_raw_names.json, with no duplicates. For every row, assay name + '.raw' equals the data file. For every row, the regex Mm_(BALF|Lung)_(group)_(nn) agrees with the source name, organism part, treatment and biological replicate."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed group sizes per tissue: B 5, BTH 5, DEX 4, V 4, TH 4. That gives 22 lung and 22 BALF rows, which matches the report's group table. disease is 'normal' exactly for the saline (V, TH) groups and 'pulmonary fibrosis' for the bleomycin groups. The factor values equal the corresponding characteristics in every row. There is one run per source and no fractions (fraction 1, technical replicate 1). Biological replicate numbers are the animal index within each group, as in the Methods: 'Animals within groups were considered biological replicates'. Not asserting that the lung and BALF runs came from the same animal is a conservative call, because nothing in the deposit or paper states it. The reconcile tool's BLOCKER (every row BALF) and MAJOR (control arm) flags were checked directly and are false positives: 22 rows say lung, and the saline rows say normal."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No value asserts more than the evidence supports. No age is given, because age at sampling is not stated. There is no individual column, because pairing is not stated. No mass tolerances are given, because DIA-NN optimised mass accuracy per run (the logs show 6.1-14.8 ppm). Strain is left at C57BL/6, which is less specific than the paper allows (see the minor finding) but not wrong. The only value in tension with a source is CAM MT=Fixed versus the Methods wording 'variable'. The producer disclosed it, and it is chemically and tool-semantically defensible (see the minor finding)."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf --sdrf_file annotations/PXD029625.sdrf.tsv -t ms-proteomics -t vertebrates --use_ols_cache_only: exit 0, warnings only. sdrf-tools structure: OK (exit 0). sdrf-tools check --offline: CLEAN. sdrf-tools score: 88/100; the only completeness gaps are the recommended precursor and fragment tolerances, whose absence is justified by per-run DIA-NN optimisation. sdrf-tools reconcile --record pride.json: 2 flags, both verified as false positives."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[modification parameters] all rows; evidence.json claim 'comment[reduction reagent], cleavage, modifications'; report.md Limitations",
+      "message": "The CAM MT=Fixed call departs from the explicit Methods wording ('carbamidomethylation of cysteine residues enabled as variable modification'). Its stated justification ('DIA-NN --unimod4 semantics') and the manifest's 'diann' source are not visible in the cited evidence.",
+      "evidence": "None of the four DIANN_*.log.txt files contains --unimod4, --var-mod or any modification setting. They load a pre-built predicted .speclib whose generation command is not deposited. Fixed is chemically sound (IAA alkylation after TCEP reduction) and matches DIA-NN's carbamidomethylation option, so it is not a blocking error. Correction criterion: reword the limitation to say Fixed is inferred from alkylation chemistry and DIA-NN convention, not from the logs, and drop 'diann' as the source for the modification claim."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "report.md / evidence.json (modification parameters)",
+      "message": "The PRIDE record's identifiedPTMStrings lists 'monohydroxylated residue' (MOD:00425), and the report does not discuss this. No oxidation modification is annotated.",
+      "evidence": "In pride.json, identifiedPTMStrings = [MOD:00425 monohydroxylated residue]. The Methods list only CAM and N-terminal Met excision, and the DIA-NN logs show no --var-mods. Leaving oxidation out is therefore defensible, but the conflict should be recorded as a limitation."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "characteristics[strain or breed] all rows",
+      "message": "The paper supports the more specific substrain 'C57BL/6J', but the SDRF says 'C57BL/6'.",
+      "evidence": "manuscript.txt Results says 'Male C57BL/6J mice received a once-off intratracheal administration ... of bleomycin' and 'male C57BL6/J mice'. The Methods say 'C57Bl/6 mice (Janvier)'. The current value is not wrong, only less specific."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "optional columns",
+      "message": "Optional values that the evidence supports are not annotated: 1 missed cleavage (comment[number of missed cleavages]), the DIA scan range 350-1650 m/z and variable 44-window isolation (dia-acquisition template columns), and the treatment schedule (dosed 1 h post-bleomycin, then five times per week, sampled at day 21).",
+      "evidence": "Methods: 'Trypsin/P, up to 1 missed cleavage'; 'mass range for MS1 was 350-1650 m/z'; '44 variably sized MS2 windows'; dosing 'five times per week, over the course of 21 days'. These columns are recommended or optional, not required."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "evidence.json claims",
+      "message": "The manifest has no claim entries for characteristics[developmental stage]=adult, material type, cell type='not applicable', or biological replicate numbering. The paper's plasma DIA dataset, which is described in the Methods but not deposited in PXD029625, is not mentioned as out of scope.",
+      "evidence": "The manifest's claims cover only treatment/organism part, disease, sex/strain, acquisition and preparation reagents. manuscript.txt line 277 refers to 'lung/BALF/plasma datasets', while files_compact.json contains only lung and BALF RAW files."
+    }
+  ]
+}

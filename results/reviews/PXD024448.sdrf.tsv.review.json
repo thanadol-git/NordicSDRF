@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD024448.sdrf.tsv",
+  "artifact_sha256": "6ec2b834c1a9559c1d1a6f57330cc55e86751119eee0ca890b10d52f3416fd54",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review of the 770-row PXD024448 SDRF (270 DDA Q Exactive Plus + 500 SRM TSQ Quantiva runs; 90 healthy subject/time-point samples + 75 infertile-patient serum samples). File mapping, subject/time-point/treatment assignment, replicate numbering, instrument/method per file family, ontology terms and reserved words all verified against scratchpad/PXD024448 evidence. Only minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer agent without producer transcript; evidence limited to scratchpad/PXD024448, spec, installed sdrf_pipelines templates and offline ontology cache; no network"
+  },
+  "evidence_manifest": "annotations/PXD024448.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "pass", "evidence": "Templates ms-proteomics v1.1.0, human v1.1.0, clinical-metadata v1.0.0 declared and used; sdrf-tools structure OK; 770 unique rows, 35 columns, assay name == data file stem on every row; reserved-word counts in report.md match the file (age not available 770, cell type not applicable 770, compound not applicable 182 / not available 225, CE not available 500, tolerances not applicable 500 on SRM rows only); depletion uses the fixed value 'depletion'."},
+    "ontology_integrity": {"status": "pass", "evidence": "Resolved in offline parquet caches (one file at a time): MS:1002634 Q Exactive Plus, MS:1002418 TSQ Quantiva, MS:1001251 Trypsin, MS:1000422 beam-type CID, PRIDE:0000627 DDA, PRIDE:0000630 SRM, PRIDE:0000608 DTT, PRIDE:0000599 IAA, UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, CHEBI:135961 degarelix, CHEBI:135741 testosterone undecanoate, EFO:0004248 / MONDO:0005372 male infertility, PATO:0000461 normal, UBERON:0001969 blood plasma, UBERON:0001977 blood serum. sdrf-tools check --offline CLEAN. Phenotype is free text (allowed by TERMS.tsv: PATO, EFO, free text)."},
+    "source_evidence": {"status": "pass", "evidence": "manuscript.txt (PMC8993215): 30 healthy men, plasma, time points A baseline / B 3 weeks after 240 mg degarelix / C two further weeks after 1000 mg TU given at week 3; 75 serum samples from infertile men; MARS7 top-7 depletion of each sample in both cohorts; DTT/IAA; trypsin; Q-Exactive Plus top-10 HCD 26% NCE; TSQ Quantiva MRM; PD 2.2 CAM fixed, Ox M variable, 10 ppm / 0.02 Da. pride.json repeats the protocols. Age left 'not available' (only cohort ranges exist) - correct. Report statements (group counts, 75 Hypo_dep numbers with 11 gaps in 01-86, Table 1b medication counts) re-verified."},
+    "file_mapping": {"status": "pass", "evidence": "files_compact.json (all ftp paths under PXD024448) lists 770 RAW + 97 SEARCH/Skyline files; files_raw_names.json identical set. SDRF comment[data file] = exactly those 770 RAW names, each once, no non-raw files. Every row's source name/individual/time point/biological replicate re-derived from the file name (DTPI <T>-<subj>-..., tp <T><subj>_..., Hypo_dep_NN): 0 mismatches; each subject/time point has a single randomised sample number n shared by its DDA and MRM files (padding aside) and the 90 numbers are distinct."},
+    "design_consistency": {"status": "pass", "evidence": "165 sources: 90 healthy (30 subjects x A/B/C, each 3 DDA + 3-4 SRM runs; 5 samples with an extra r1b/r1B/r2b re-injection => 7 runs) and 75 infertile (3 SRM runs R1-R3). Technical replicates are contiguous 1..n and unique per source; infertile tech rep equals R number. Biological replicate = subject number (1-30 shared over A/B/C; 1-75 in patient order), consistent with paper's 'biological replicates'. Factor value[phenotype] equals characteristics[phenotype] on every row (182/182/181/225). Instrument/method per family supported by paper plus file sizes (DTPI 0.66-1.13 GB; tp ~9.2 MB; Hypo_dep ~4.8 MB) and deposited Skyline documents (Model_*.sky for healthy MRM, Clinical_patients_2021b.sky for patients)."},
+    "omission_safety": {"status": "pass", "evidence": "No per-sample values inferred from cohort summaries (age, BMI, T group, comorbidities, medication all withheld). No added specificity beyond evidence; remaining omissions (degarelix co-exposure at C, heavy reference peptides) are disclosed in report limitations and recorded below as minor."},
+    "deterministic_validation": {"status": "pass", "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -t ms-proteomics -t human -t clinical-metadata --use_ols_cache_only: exit 0, only 4 warnings (free-text phenotype values not in PATO/EFO). sdrf-tools structure: OK. sdrf-tools check --offline: CLEAN. sdrf-tools reconcile --record pride.json: every annotated value agrees. sdrf-tools score: 97/100."}
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "sample-metadata",
+      "location": "characteristics[compound], rows with source name healthy_Sxx_C (181 rows)",
+      "message": "Time point C lists only 'testosterone undecanoate', although these men also received 240 mg degarelix at week 0 (castration persists at week 5; TU only restores T).",
+      "evidence": "manuscript.txt line 27: degarelix followed by TU after 3 weeks, sample C two weeks later. Correction: encode both exposures (e.g. 'degarelix, testosterone undecanoate' per spec multi-value convention, or add a treatment column), or keep as disclosed limitation."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD024448.evidence.json sources[id=raw-header]; report.md limitations",
+      "message": "Cited source 'raw-header' (~50 RAW headers) does not exist in scratchpad/PXD024448 and cannot be re-opened.",
+      "evidence": "Scratchpad holds only files_compact.json, files_raw_names.json, manuscript.txt, pride.json, samples.tsv, technical.tsv. The instrument claims it backs are independently supported by the paper, file sizes and Skyline documents, so no value changes; drop the source or save the extract."
+    },
+    {
+      "severity": "minor",
+      "category": "technical-metadata",
+      "location": "comment[modification parameters] (Oxidation) and missing spiked-compound on 500 SRM rows",
+      "message": "SRM rows carry the DDA search's variable Met oxidation and do not encode the isotopically labelled synthetic reference peptides spiked into MRM samples.",
+      "evidence": "pride.json sampleProcessingProtocol: internal isotopically labelled synthetic peptides (UVic-Genome BC) added for MRM. Optional: add characteristics[spiked compound] for SRM rows; disclosed in report limitations."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "comment[technical replicate] on SRM rows of healthy_* sources (values 4-7)",
+      "message": "Technical replicate numbering continues from DDA (1-3) into SRM runs (4-7) of the same sample on a different instrument, which downstream consumers may read as 7 injections of one assay.",
+      "evidence": "Unique and contiguous per source, so valid; documented in report. Acceptable, but consider noting it in a comment column or restarting per acquisition family if the target pipeline keys on method."
+    }
+  ]
+}

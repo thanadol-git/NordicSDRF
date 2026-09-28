@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD031693.sdrf.tsv",
+  "artifact_sha256": "8a1efe4dd49b51811b13d86f740c712ab580f82cf442a7d29f7611f40e499c19",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. All 24 deposited RAW files map to exactly one row; genotype, condition-label, disease, modification and technical values are consistent with the PRIDE record, file names, mzIdentML/results-CSV parse and RAW method header in scratchpad/PXD031693/. Only minor provenance/semantic improvements remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh adversarial reviewer subagent without producer transcript; evidence restricted to scratchpad/PXD031693/, spec, installed sdrf_pipelines templates and local ontology caches; no network"
+  },
+  "evidence_manifest": "annotations/PXD031693.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Header re-derived against ms-proteomics 1.1.0 + vertebrates 1.1.0 (+ sample-metadata/base): all required columns present (disease, developmental stage, acquisition method, instrument, cleavage agent, label, fraction identifier, technical replicate, data file, template/version columns). 24 rows x 32 columns, no duplicate rows, reserved words used only in columns that allow them (cell type n/a, developmental stage n/av, strain n/av, modification parameters n/a in 30 cells). Structured values (NT=/AC=/TA=/PP=/MT=) well formed. HCD encoded as MS:1000422 per spec README. Recommended characteristics[sex] absent (minor)."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Resolved one parquet at a time from /root/.cache/sdrf-pipelines/ontologies: MS:1002416 orbitrap fusion, MS:1001251 trypsin, MS:1000422 beam-type collision-induced dissociation, MS:1002038 label free sample, PRIDE:0000627 data-dependent acquisition, UNIMOD:1/4/21/35 acetyl/carbamidomethyl/phospho/oxidation, NCBITaxon:10090 mus musculus, UBERON:0000966 retina, MONDO:0019200 retinitis pigmentosa, PATO:0000461 normal. Labels and accessions match; none obsolete. Treatment and genotype are free text (validator warnings only for treatment; NCIT:C16432 'affinity chromatography' exists)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "pride.json (accession PXD031693): organism mouse, retina, RP, rd1/rd10/rd2 models, affinity chromatography, Orbitrap Fusion, DDA, label free, PD 2.2/SEQUEST. evidence/mzid_and_results_check.json: four per-genotype mzIdentML each listing the six condition-label spectra files, enzyme Trypsin (resolves reconcile trypsin flag), observed mods wt/rd1 {Ox, CAM}, rd10 {Ox, CAM, Acetyl}, rd2 {Ox, CAM, Acetyl, Phospho}; results CSV abundance columns = six labels. evidence/raw_method_header.txt: HCD, fixed CE 30%, DDA; raw_header_check.json confirms Orbitrap Fusion in WT and rd2 RAWs. All sources cited in report/manifest exist in scratchpad."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "files_compact.json (34 files, all FTP paths under PXD031693) lists 24 RAW; set equals files_raw_names.json and the 24 comment[data file] values; no duplicates, missing or extra files; assay name = file stem for every row."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Programmatic per-row check: genotype token in file name -> characteristics/factor genotype (WT->wild type, rd1/rd10->Pde6b, rd2->Prph2), disease (normal for WT only), condition token -> characteristics/factor treatment and source name, and modification set size per genotype all consistent (0 mismatches). 4 genotypes x 6 condition labels x 1 run = 24; biological/technical replicate 1, fraction 1 throughout, consistent with one run per group."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value traced to scratchpad evidence except allele gene symbols (Pde6b, Prph2), which are standard MGI nomenclature for rd1/rd10/rd2 but not stated in the cited sources (minor). Condition labels kept verbatim without interpreting matrix/competitor; strain, age, sex, reagents, tolerances left out or not available rather than guessed. Per-genotype modification sets are observed lower bounds, disclosed in limitations."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -t ms-proteomics -t vertebrates --use_ols_cache_only: exit 0, 6 warnings (free-text treatment not in ncit/efo), no errors. sdrf-tools structure: OK (exit 0). sdrf-tools check --offline: CLEAN, 0 hallucinated (exit 0). sdrf-tools reconcile --record pride.json: 1 flag cleavage_agent_unsupported (exit 1) - refuted by mzIdentML enzyme Trypsin in evidence/mzid_and_results_check.json and mzid_modification_tally.json."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "characteristics[genotype], factor value[genotype] rows with rd1/rd10/rd2",
+      "message": "Gene symbols Pde6b (rd1, rd10) and Prph2 (rd2) are not stated in any cited source; PRIDE and file names only say rd1, rd10, rd2.",
+      "evidence": "pride.json sampleProcessingProtocol: 'rd models; i.e., rd1, rd10, and rd2'; manifest claim cites pride, pride-files, mzid only. Values are correct MGI nomenclature. Correction: add a cited nomenclature source (e.g. MGI allele Pde6b<rd1>, Pde6b<rd10>, Prph2<Rd2>) to the manifest or note it as curator knowledge."
+    },
+    {
+      "severity": "minor",
+      "category": "semantics",
+      "location": "characteristics[treatment], factor value[treatment] (all rows)",
+      "message": "'affinity chromatography' is a sample-processing/enrichment method, not a perturbation; it is concatenated with the condition label into one free-text treatment value.",
+      "evidence": "TERMS.tsv defines treatment as a perturbation (drug, stimulus, stress); characteristics[enrichment process] exists in sample-metadata. Validator warns on all six values. Optional improvement: keep the verbatim condition label as treatment/factor and record the method separately."
+    },
+    {
+      "severity": "minor",
+      "category": "technical-parameters",
+      "location": "comment[modification parameters] cols 27-30",
+      "message": "Per-genotype modification sets and PP=Protein N-term for Acetyl are inferred from observed modifications, not from search settings.",
+      "evidence": "mzid_and_results_check.json note: no SearchModification elements; acetyl tallied as 'M(position 1)' without a protein-start check. Disclosed in limitations; could be tightened by checking PeptideEvidence start=1 or the .msf search parameters."
+    },
+    {
+      "severity": "minor",
+      "category": "technical-parameters",
+      "location": "comment[dissociation method], comment[collision energy] (all rows)",
+      "message": "HCD and 30% NCE are read from the method header of one RAW (MR_DF003_DF003_WT.raw) and extrapolated to all 24 runs.",
+      "evidence": "raw_method_header.txt covers one file; raw_header_check.json for MR_EtOH_cGMP_rd2.raw confirms only the instrument. Method name dated 190401 matches the rd2 acquisition date, making reuse plausible. Disclosed in limitations."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (column set)",
+      "message": "Recommended vertebrates column characteristics[sex] is absent; could be added as 'not available'.",
+      "evidence": "vertebrates/1.1.0/vertebrates.yaml marks characteristics[sex] recommended with allow_not_available: true."
+    },
+    {
+      "severity": "minor",
+      "category": "report-accuracy",
+      "location": "annotations/PXD031693.report.md",
+      "message": "Report says 'not applicable (30 rows)' for modification parameters (it is 30 cells over 18 rows), states the publication abstract was read although no abstract is in scratchpad/PXD031693/, and equates PRIDE's 'CN03' with Rp-8-Br-PET-cGMPS without a cited source.",
+      "evidence": "Cell count: 12 (col 29) + 18 (col 30). pride.json sampleProcessingProtocol says 'isolate CN03 interactors'. None of these statements drives an SDRF value."
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD032213.sdrf.tsv",
+  "artifact_sha256": "1d4f8accf7a4addf704284eb3ca2943aef50301efc2bb9f6412894a4690faa5a",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocker or important issues. All 100 rows match the deposited samples_list.xlsx (donor, treatment, explant replicate, medium vs cartilage extract) and all 100 PRIDE RAW files; ontology terms resolve; official validator passes with warnings only. Minor findings only.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh adversarial reviewer subagent without producer transcript; producer report treated as untrusted and not relied on"
+  },
+  "evidence_manifest": "annotations/PXD032213.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "pass", "evidence": "Templates declared ms-proteomics v1.1.0 + human v1.1.0, consistent with Homo sapiens LC-MS DDA data; 30 columns on all 101 lines, no CR/trailing whitespace; 100 unique source names/assay names/data files; sdrf-tools structure OK; required human columns age/sex use allowed reserved word 'not available'."},
+    "ontology_integrity": {"status": "pass", "evidence": "Resolved in local cache: BTO:0000316 culture medium, UBERON:0010996 articular cartilage of joint, PATO:0000461 normal, MS:1002038 label free sample, PRIDE:0000627 data-dependent acquisition, MS:1002877 Q Exactive HF-X, MS:1001251 trypsin, UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation. sdrf-tools check --offline: 0 hallucinated, 0 label mismatch, CLEAN. Treatment values are free text (validator warnings only; column is optional)."},
+    "source_evidence": {"status": "pass", "evidence": "samples_list.xlsx: 84 'explant media' runs (donors 1-7 x N/D/IC/ICD x 3 explants) and 16 'cartilage extract' runs (donors 4-7 x 4 conditions, 'pooled 123'); programmatic row-by-row comparison of treatment, individual, organism part, replicate and file gave 0 mismatches (incl. irregular donor4 ICD2_11/ICD3_12/ICD4_10 ordering). Paper/PRIDE Methods: Q Exactive HF-X, trypsin-based search, CAM C fixed, Ox M/P variable, MS1 10 ppm, Sequest MS2 0.02 Da; Collins grade 0-1 donors support disease=normal. Trypsin additionally stated per sample in samples_list.xlsx digestion enzyme column, so the reconcile 'cleavage_agent_unsupported' flag is a false positive."},
+    "file_mapping": {"status": "pass", "evidence": "files_compact.json: 100 RAW files; SDRF comment[data file] has 100 unique entries, exact set equality with PRIDE RAW list; non-raw (.msf, .xlsx) files correctly excluded; assay name == data file stem on every row."},
+    "design_consistency": {"status": "pass", "evidence": "Recomputed: 7 donors x 4 conditions x 3 explants = 84 media runs + 4 donors x 4 conditions pooled cartilage = 16; factor value[treatment] equals characteristics[treatment] on all rows (4 levels, balanced 25 rows each); biological replicate 1-3 per donor x condition for media, 1 for pooled cartilage with pooled sample='pooled'; technical replicate 1, fraction 1 (no fractionation described)."},
+    "omission_safety": {"status": "pass", "evidence": "No value asserts more than evidence: age/sex left 'not available' because the paper gives an unmapped cohort list; no invented instrument/tolerance/modification beyond Methods; cell type 'not applicable'. Omitted optional context (ankle joint origin, cytokine doses, 21-day culture, media batch) is noted as minor findings."},
+    "deterministic_validation": {"status": "pass", "evidence": "flock parse_sdrf validate-sdrf -t ms-proteomics -t human --use_ols_cache_only: exit 0, 4 warnings (free-text treatment not in ncit/efo), no errors. sdrf-tools check --offline: exit 0 CLEAN. sdrf-tools score: 97/100. sdrf-tools structure: OK. sdrf-tools reconcile: 1 flag (trypsin) adjudicated false positive against samples_list.xlsx."}
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "consistency",
+      "location": "characteristics[treatment] / factor value[treatment], IC vs ICD rows",
+      "message": "IC value says 'single-impact mechanical injury + TNF-alpha/IL-6/sIL-6R' while ICD says 'mechanical injury + TNF-alpha/IL-6/sIL-6R + dexamethasone 100 nM'; cytokine doses (25/50/250 ng/mL) and 21-day duration are omitted, and the template suggests 'untreated' for controls rather than 'no treatment'.",
+      "evidence": "Paper Methods define IC as single-impact injury + 25 ng/mL TNF-a + 50 ng/mL IL-6 + 250 ng/mL sIL-6R; ICD = IC + 100 nM Dex."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "characteristics[organism part], 84 medium rows and 16 cartilage rows",
+      "message": "Media rows carry only 'culture medium' (BTO:0000316) and cartilage rows the generic 'articular cartilage of joint'; the ankle talocrural osteochondral explant origin (UBERON:0001488 ankle joint; bone also present) is not recorded anywhere.",
+      "evidence": "PRIDE organismParts lists articular cartilage, ankle joint, bone; paper: explants from ankle talocrural joints with ~4 mm bone."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[age], characteristics[sex]",
+      "message": "Paper lists donor demographics (62F, 66M, 66M, 44F, 23M, 39M, 70M) without an explicit donor-number mapping; 'not available' is the safe choice, but a producer could seek author confirmation of the ordinal mapping to HDP1-7.",
+      "evidence": "Methods 'Explant harvest and treatment'."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file",
+      "message": "Paper reports a media batch effect from two donor collections; no batch/collection column is annotated (acquisition dates 210909/210917/210921 in file names).",
+      "evidence": "Bioinformatics analyses: 'The media data had significant batch effects due to two collections of donors'."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD032213.evidence.json sources[raw-header]",
+      "message": "Manifest cites scratchpad/PXD032213/evidence/raw_header_check.json, which does not exist; instrument is nevertheless supported by PRIDE record and paper.",
+      "evidence": "ls scratchpad/PXD032213/evidence shows only samples_list.xlsx."
+    }
+  ]
+}

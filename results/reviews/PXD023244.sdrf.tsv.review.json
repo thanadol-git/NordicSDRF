@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD023244.sdrf.tsv",
+  "artifact_sha256": "1bf941688d7865e9e837c5a38d3ee2f5510568282364c9ce7276024a5874cfc5",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocker or important issues. All 45 deposited RAW files map to exactly one row; per-file instrument and fragment tolerance agree with the RAW-header evidence and the published methods; the sample groups match the PEAKS 'Source File' summary and the papers (5 acute post-mastectomy drainage fluids, 3 non-infected and 3 S. aureus-infected facial skin-graft dressings). The findings are minor provenance and modelling points only.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer agent without producer transcript; evidence restricted to scratchpad/PXD023244/, spec/templates, installed sdrf_pipelines templates and local ontology caches; no network access"
+  },
+  "evidence_manifest": "annotations/PXD023244.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Official validator (ms-proteomics, human, clinical-metadata, --use_ols_cache_only) exited 0 with only 3 warnings: free-text phenotype values not in PATO/EFO, which the clinical-metadata phenotype column allows. sdrf-tools structure is OK. Template versions (ms-proteomics 1.1.0, human 1.1.0, clinical-metadata 1.0.0) match the latest versions in the installed templates.yaml. Every required column is present: disease, age, sex, organism, organism part, biological replicate, acquisition method, instrument, cleavage agent, label and fraction identifier. The reserved words are allowed by TERMS.tsv: age and sex allow 'not available', cell type and cleavage agent details allow 'not applicable', and disease allows 'not available'. The file has 45 rows and 31 columns, and no data file is duplicated."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Each term was resolved from the local caches, one parquet file at a time. wound fluid = BTO:0003114; staphylococcal infection = MONDO:0024313; MS:1002877 = Q Exactive HF-X; MS:1002416 = Orbitrap Fusion; MS:1000422 = beam-type collision-induced dissociation (the spec-canonical form for HCD); PRIDE:0000627 = data-dependent acquisition; UNIMOD:35 = Oxidation; UNIMOD:7 = Deamidated. None of the terms is obsolete. sdrf-tools check --offline is CLEAN, with 0 hallucinated terms and 0 label mismatches."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "manuscript.txt contains PMC7888259 and PMC8260221. PMC8260221 confirms 'sterile acute wound fluids ... surgical drainages after mastectomy from five donors' and six facial full-thickness skin-graft patients (3 healed well, 3 'infected with i.a. Staphylococcus aureus'). PMC7888259 confirms the S. aureus-infected group, top-20 DDA, NCE 28%, and both the Fusion and HFX instruments. pride.json dataProcessingProtocol confirms 5 ppm precursor tolerance, 0.5 Da fragment tolerance (Fusion) and 0.02 Da (HFX), Oxidation (M) and deamidation (NQ), and nonspecific search. The PRIDE record's 'Q Exactive HF' is overridden by the paper's 'HFX' and by the RAW-header strings, which is correct. evidence/github_peaks_source_files.tsv supports the sample-to-group and file-to-sample assignments, including 38_1/38_2 -> sample 39."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "files_compact.json lists 50 files, all under the PXD023244 FTP path: 45 RAW files, 4 MGF files and 1 SEARCH xlsx. The set of 45 RAW files equals the set of SDRF comment[data file] values and files_raw_names.json, with none missing, none extra and none duplicated. assay name equals the file stem on every row. Against the PEAKS source lists, 3 deposited RAW files have no PEAKS entry (170303_WF3_3, first_33_1, first_33_2); these were assigned by file name. Two PEAKS files were never deposited (39_1, 39_2)."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 11 sources, one per individual, each with biological replicate 1. The acute group has 21 rows (WF1 4, WF2 4, WF3 5, WF4 4, WF5 4); the non-infected group has 14 (13: 4, 21: 4, 33: 6); the infected group has 10 (31: 4, 34: 4, 39: 2). This matches the report. Technical replicates are unique within each source. factor value[phenotype] equals characteristics[phenotype] on every row. Instrument, fragment tolerance and the 0.5/0.02 Da split are consistent within each sample. Instrument is completely confounded with the acute-versus-dressing contrast; this is inherent to the study, not an annotation error."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Age, sex and donor disease are left as 'not available' rather than inferred; for example, female sex or breast cancer was not guessed from 'mastectomy'. Disease 'staphylococcal infection' appears only on the three infected dressings. No enzyme is asserted. The reconcile BLOCKER (cleavage_agent_unsupported) is a false positive: TERMS.tsv allows 'not applicable' for cleavage agent details, and this is an endogenous peptidome with no digestion, where 'nonspecific' is only a search setting. Some items rest on inference or file names only; each is listed under findings as minor."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "The validator run was: flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -t ms-proteomics -t human -t clinical-metadata --use_ols_cache_only. It exited 0 with warnings only. sdrf-tools structure exited 0 with OK. sdrf-tools check --offline exited 0 with CLEAN. sdrf-tools reconcile --record pride.json exited 1 with one flag, cleavage_agent_unsupported, adjudicated as a false positive above. sdrf-tools score gave 97/100. The artifact SHA-256 was unchanged at the start and end of the review."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "evidence manifest sources 'github' and 'raw-header'",
+      "message": "Two sources are cited as web locations, but the scratchpad holds only summaries the producer derived from them. The sample-to-group assignments and the 38_*->39 attribution rest on the GitHub PEAKS 'Source File' columns. The per-file instrument rests on HTTP-range RAW header reads.",
+      "evidence": "scratchpad/PXD023244/evidence contains only github_peaks_source_files.tsv and raw_header_check.json; the PEAKS xlsx exports and the RAW header bytes themselves are not archived. The papers do not link the sample numbers 13/21/31/33/34/39 to groups. Fix: archive the original PEAKS 'Source File' extracts, or record their URLs with commit hashes."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "evidence manifest sources / claims",
+      "message": "PMC8260221 (eLife) is missing from the manifest sources, although it is the only source for 'post-mastectomy surgical drainage' and 'facial skin graft'. Several technical claims are also not recorded as manifest claims: DDA, NCE 28%, HCD, 5 ppm, and the modifications.",
+      "evidence": "In manuscript.txt the mastectomy statement is at line 1119 and the skin-graft statement at line 1059, both in the eLife section. The manifest lists only PMC7888259 as 'paper'."
+    },
+    {
+      "severity": "minor",
+      "category": "source-evidence",
+      "location": "comment[dissociation method], Orbitrap Fusion rows (21 rows)",
+      "message": "For the Orbitrap Fusion runs, HCD (MS:1000422) is inferred rather than stated. The papers give NCE 28% and an MS2 resolution of 15,000, but never name the activation type. For Q Exactive HF-X rows HCD is certain, because it is the only activation that instrument offers.",
+      "evidence": "No occurrence of 'HCD' or 'higher-energy' in manuscript.txt. The Fusion method is referred to Mehmeti et al. 2019, which is not in the scratchpad. Fix: confirm from the RAW method header, or note the inference in the report."
+    },
+    {
+      "severity": "minor",
+      "category": "report-accuracy",
+      "location": "report.md 'Limitations' / row 170303_WF3_3",
+      "message": "The report says only first_33_1/2 are missing from the PEAKS exports. 170303_WF3_3.raw is also missing from every PEAKS export and was assigned to WF3 by file name alone. Its RAW method date (5/4/2017) also differs from the rest of the 170303 series (5/3/2017).",
+      "evidence": "Set difference of the deposited RAW files against the PEAKS Source File lists: {170303_WF3_3, first_33_1, first_33_2}."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "comment[technical replicate]; acquisition sessions",
+      "message": "Injections from different sessions, and possibly different preparations, are pooled into a single technical-replicate series with no batch column. The pairs are 170303_* vs WF*_80uL_long_* (method dates 5/3/2017 vs 1/17/2017), first_* vs plain, and first_33 vs first_33b. The report already discloses this.",
+      "evidence": "raw_header_check.json method dates. eLife describes several extraction and volume conditions and reinjections during method evaluation. Suggestion: add comment[acquisition date], comment[lc batch], or comment[sample preparation batch]."
+    },
+    {
+      "severity": "minor",
+      "category": "modelling",
+      "location": "characteristics[phenotype] / factor value[phenotype]",
+      "message": "The phenotype free text mixes wound state with sample-collection details (dressing extract, facial skin graft, post-mastectomy drainage). This is valid, but less reusable than keeping the wound state in phenotype and putting the collection details in a separate column, for example characteristics[sampling site] or characteristics[sample type]. The recommended columns ancestry category and developmental stage are also absent.",
+      "evidence": "Validator warnings for the 3 free-text phenotype values; sdrf-tools score completeness 91/100."
+    }
+  ]
+}
