@@ -77,7 +77,9 @@
     }
   ],
   "limitations": [
-    "Donor age/sex not available: Supplementary Table S1 lists donors 1–8 but the proteomics donors FL4/FL5/FL11/FL12 are not linked to it.",
+    "Donor age/sex not available: the proteomics cells come from 'healthy donor lungs (n=4) as previously described' (refs 1,2 of the supplement); Supplementary Table S1 (donors 1–8, healthy donors all male) describes the FACS/in-situ cohort and does not list FL4/FL5/FL11/FL12, so sex is not transferred.",
+    "characteristics[biological replicate] = donor (FL4=1, FL5=2, FL11=3, FL12=4) within each organism part × protocol group; CL1–3 are technical replicates.",
+    "Library SDRF: Sai2 and HFL1 carry cell line / Cellosaurus columns; primary HASMC and HMVEC-L are 'not applicable' there.",
     "'Central airway' mapped to UBERON 'respiratory airway' (no more specific term fits); 'distal parenchyma' → 'lung parenchyma'.",
     "Library files follow the repo `-dda-library` convention (PXD037817). Sai2/HFL1 are fetal-derived; age left 'not available' (SDRF age has no gestational form).",
     "Fragment tolerance '50 ppm' is as stated by the authors."

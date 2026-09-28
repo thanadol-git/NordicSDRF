@@ -58,7 +58,7 @@
       "source_ids": [
         "tableS1"
       ],
-      "evidence": "Table S1 Gender (1 male, 2 female), Age (half-years kept as 6M), Smoking (2/1/0), pathological stage I–IV, EGFR/KRAS status"
+      "evidence": "Table S1 Gender (1 male, 2 female), Age at diagnosis (half-years kept as 6M; metastasis rows = age + lung-brain interval), Smoking (2/1/0), pathological stage I–IV, EGFR/KRAS status"
     },
     {
       "location": "comment[technical replicate]",
@@ -88,6 +88,9 @@
     }
   ],
   "limitations": [
+    "characteristics[age]: Table S1 'Age' is age at LADC diagnosis in half-years (README sheet). Because the rounding convention is not stated, every row gives the whole-year range covering [age − 0.25, age + 0.5) years; metastasis rows first add the lung–brain interval (age at brain-metastasis diagnosis). Primary rows use age at diagnosis as age at resection.",
+    "Disease staging: primary rows carry the pathological stage at diagnosis (Table S1); metastasis rows are stage IV, since a brain metastasis is distant (M1) disease.",
+    "Run batch is confounded with tissue: primary tumours were run in the 20191128/20191201 batches, metastases in the 20191206 'LUAD_B' batch.",
     "FFPE preservation is stated in the report only (no licensed SDRF column).",
     "mLADC-19 (outlier, 3.6 % tumour) is kept; the paper excluded it from group comparisons.",
     "reconcile flags Trypsin/Lys-C as not named in the PRIDE record; both are in the supplementary methods."

@@ -22,11 +22,6 @@
       "id": "paper",
       "kind": "publication",
       "location": "PMC9894938"
-    },
-    {
-      "id": "raw-header",
-      "kind": "repository",
-      "location": "RAW headers read by HTTP range request (instrument string; see scratchpad/PXD032266/evidence/raw_header_check.json)"
     }
   ],
   "claims": [
@@ -43,9 +38,26 @@
       "value": "DIA; Q Exactive HF-X",
       "source_ids": [
         "paper",
-        "raw-header"
+        "pride"
       ],
-      "evidence": "Methods; RAW headers"
+      "evidence": "Methods and PRIDE protocol text say Q Exactive HFX; the PRIDE instrument field says Q Exactive HF — the text is followed"
+    },
+    {
+      "location": "characteristics[tumor grading], [clinical data]",
+      "value": "grade 1–3 / not available; ER, PgR, HER2/ERBB2 score, TP53 per tumour; adjuvant therapy after primary surgery per patient",
+      "source_ids": [
+        "smpl",
+        "paper"
+      ],
+      "evidence": "SMPL_NFO.xlsx columns TUMOR.GRADE, ER, PgR, Her2/ERBB2, TP53 per RAW file; RADIOTHERAPY/ENDOCRINE.THERAPY/CHEMOTHERAPY (given on the PT row only) are the adjuvant treatments of Table 1 and are written on both tumours of the patient"
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "female",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "breast cancer patients with ipsilateral recurrence after breast-conserving surgery; no male patient is described (inferred)"
     },
     {
       "location": "comment[cleavage agent details]",
@@ -53,11 +65,14 @@
       "source_ids": [
         "paper"
       ],
-      "evidence": "Methods: trypsin 1:50, 37 °C 16 h (PRIDE record does not name the enzyme → reconcile flag)"
+      "evidence": "Methods: trypsin 1:50, 37 °C 16 h; the PRIDE sample protocol also names trypsin (the reconcile flag reads only the structured PRIDE fields)"
     }
   ],
   "limitations": [
-    "Search modifications (CAM fixed; Ox M, Acetyl N-term variable) assumed from the group's matching DIA workflow (PXD021394); the deposited PQP library was not parsed.",
+    "comment[modification parameters] = Carbamidomethyl C (fixed) only, from the iodoacetamide step; no variable modifications are stated in the paper or PRIDE (the PX submission says no PTMs are included), and the deposited PQP library was not parsed.",
+    "Adjuvant therapy flags appear only on the primary-tumour rows of SMPL_NFO.xlsx; they describe treatment after primary surgery and are carried on both the PT and LR rows of that patient. TUMOR.SIZE and lymph-node counts are not annotated because the size unit is not stated.",
+    "Ki-67 (MKI67 high/low) is not annotated: the spreadsheet counts are the exact reverse of paper Table 1 (PT high 10 / low 13, LR high 8 / low 16 vs Table 1 with the labels swapped). Grade also differs by one recurrence (12 grade-2 LR in the sheet vs 13 in Table 1); the sheet is followed.",
+    "sex = female is inferred from the cohort description (breast cancer, breast-conserving surgery); SMPL_NFO.xlsx has no sex column.",
     "dia-acquisition template not declared (its validator requires the bare literal instead of NT=/AC=)."
   ]
 }

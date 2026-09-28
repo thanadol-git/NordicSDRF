@@ -26,7 +26,7 @@
     {
       "id": "cellosaurus",
       "kind": "database",
-      "location": "https://api.cellosaurus.org (29 lines, queried 2026-09-26)"
+      "location": "scratchpad evidence/cl-annotations-db_extract.tsv (sdrf-skills snapshot) and evidence/cellosaurus_api_extracts.txt (api.cellosaurus.org, 2026-09-27)"
     },
     {
       "id": "raw-header",
@@ -53,13 +53,22 @@
       "evidence": "Subtype column; Table 1"
     },
     {
-      "location": "characteristics[cellosaurus accession], [sex], [age], [sampling site], [organism part]",
+      "location": "characteristics[cellosaurus accession], [sex], [age], [sampling site]",
       "value": "Cellosaurus entries (e.g. NCI-H209 CVCL_1525; SW1271 CVCL_1716 for CRL-2177; DMS 114 CVCL_1174 for CRL-2066; COR-L311 CVCL_2412 for 'COR')",
       "source_ids": [
         "cellosaurus",
         "paper"
       ],
       "evidence": "Table 1 'Other cell line ID' resolves CRL-2177, CRL-2066, COR"
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "lung (all lines)",
+      "source_ids": [
+        "cellosaurus",
+        "paper"
+      ],
+      "evidence": "snapshot organism part Lung for every line; paper: SCLC/NSCLC/carcinoid lung-cancer lines"
     },
     {
       "location": "comment[proteomics data acquisition method]",
@@ -90,11 +99,20 @@
   ],
   "limitations": [
     "Mixed DDA and DIA: following the repo convention (PXD023708), the combined SDRF is kept plus `-dda` and `-dia` splits with technical replicates renumbered per split.",
-    "Disease uses the Cellosaurus disease of each line: NCI-H841 and DMS 114 (CRL-2066) → thoracic SMARCA4-deficient undifferentiated tumor, NCI-H196 → lung sarcomatoid carcinoma, NCI-H1341 → cervical small cell carcinoma, although the paper treats them as SCLC lines; the paper's subtype is in phenotype.",
-    "HLHE is not in Cellosaurus → accession/name/age/sex 'not available'.",
-    "Runs marked 'Deleted…' in the design sheet (H661, H720, H460 reference lines; some re-measured DDA runs) are deposited and therefore annotated.",
-    "reconcile flags: Trypsin/Lys-C not named in the PRIDE record (paper Methods state LysC then trypsin, S-Trap); organism part from cultured material (heuristic on 'cell line' wording; Cellosaurus derived-from site is used, as in repo precedent PXD070201).",
-    "PRIDE lists the instrument as Q Exactive; RAW headers and paper say Q Exactive HF-X."
+    "Disease follows the paper (Table 1), PRIDE and the bundled sdrf-skills cell-line snapshot (scratchpad evidence/cl-annotations-db_extract.tsv): small cell lung carcinoma for all SCLC lines, large cell carcinoma for NCI-H460/NCI-H661 and carcinoid for NCI-H720 (snapshot). The paper's subtype is in phenotype.",
+    "Age/sex/sampling site come from the snapshot extract; GLC-4, NCI-N417 and NCI-H372 (absent from the snapshot) and NCI-H82 come from api.cellosaurus.org records saved in evidence/cellosaurus_api_extracts.txt. Precedence: a saved current Cellosaurus record wins over the snapshot, so NCI-H82 age is 41Y (the snapshot says 40Y); no other saved record conflicts with the snapshot.",
+    "MS batch from the design sheet 'Batch number' (also the B1/B2 token of the vial ID) is in comment[lc batch] as 'MS batch 1' / 'MS batch 2'; the paper batch-corrects, and SCLC20–SCLC29 (incl. all three reference lines) were measured in batch 2 only.",
+    "characteristics[culture medium] = RPMI 1640 (Methods: SCLC lines maintained in RPMI-1640 with 10% fetal calf serum); 'not available' for the NSCLC and carcinoid reference lines, whose medium is not stated.",
+    "The dia-acquisition template is not declared for the -dia split (as for PXD023708), so DIA window columns are omitted.",
+    "characteristics[sampling site] is the Cellosaurus derived-from site of each line (snapshot / API extracts). Paper Table 1 'Cell line origin' is coarser (Metastatic / Pleural eff. / Lung) and disagrees for three lines: NCI-H211 (paper Lung; Cellosaurus bone marrow), NCI-H378 (paper Lung; pleural effusion) and NCI-H1694 (paper Lung; ascites). The Cellosaurus site is kept because it records the specific sampled tissue; the paper's 'Lung' is consistent with the lung primary.",
+    "SW1271 cell type = epithelial cell (snapshot); cell type is 'not available' for the other lines.",
+    "Acetyl is annotated with PP=Protein N-term; the paper says only 'N-terminal acetylation' (Proteome Discoverer protein N-terminal modification is inferred).",
+    "HLHE has no Cellosaurus accession in the snapshot and paper Table 1 gives no other ID (N/A) → accession/name/age/sex 'not available'.",
+    "reconcile flags: Trypsin/Lys-C not named in the PRIDE record (paper Methods state LysC then trypsin, S-Trap); organism part on cultured material (heuristic on 'cell line' wording; see the dataset-specific organism part note).",
+    "PRIDE lists the instrument as Q Exactive; RAW headers and paper say Q Exactive HF-X.",
+    "Runs marked 'Deleted…' in the design sheet are deposited and therefore annotated: the H661, H720 and H460 reference-line runs (deleted after batch correction), SCLC08_B1_DDA_R1 (deleted after normalization) and the DDA R1 runs of SCLC20, SCLC26 and SCLC29 that were re-measured as ..._R1_T.",
+    "characteristics[organism part] = lung for every line (tumour organ of the lung-cancer lines, as in the snapshot); the metastatic site is in sampling site.",
+    "RAW date prefixes per MS batch: batch 1 = 20191025 and 20191101, batch 2 = 20200221."
   ],
   "additional_artifacts": [
     "annotations/PXD029805-dda.sdrf.tsv",

@@ -22,11 +22,6 @@
       "id": "paper",
       "kind": "publication",
       "location": "PMC9185927"
-    },
-    {
-      "id": "raw-header",
-      "kind": "repository",
-      "location": "RAW headers read by HTTP range request (instrument string; see scratchpad/PXD032213/evidence/raw_header_check.json)"
     }
   ],
   "claims": [

@@ -50,6 +50,7 @@
   ],
   "limitations": [
     "Donor age/sex not given per subject → 'not available'.",
+    "characteristics[biological replicate] = donor number (RC1…RC11 → 1…10), repeated across the conditions each donor contributes to.",
     "Compound doses (10 µg/mL poly(I:C), 10 µg/mL imiquimod) from Methods; dose column not added."
   ]
 }

@@ -62,7 +62,8 @@
     }
   ],
   "limitations": [
-    "Precursor tolerance not read from parameters (MaxQuant first/main search) → column omitted.",
+    "Precursor tolerance 4.5 ppm = MaxQuant main search (first search 20 ppm), from Methods.",
+    "factor value[cell line] added so each mutant is grouped with its own isogenic wild type (MCF-7 vs SUM44PE).",
     "SUM44PE donor age not in Cellosaurus → 'not available'.",
     "reconcile flags disease 'breast lobular carcinoma'/'invasive breast carcinoma' for the vehicle arm; the disease column describes the cell line origin, so it is kept."
   ]

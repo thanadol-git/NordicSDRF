@@ -26,8 +26,8 @@
   ],
   "claims": [
     {
-      "location": "source name, comment[data file], characteristics[growth condition], factor value[sampling date]",
-      "value": "34 leaf samples of cv. Desiree, field-grown at Borgeby (south) or Umeå (north), 3 sampling dates per site-year",
+      "location": "source name, comment[data file], characteristics[growth condition], characteristics[collection date], factor values",
+      "value": "34 leaf samples of cv. Desiree, field-grown at Borgeby or Umeå; 2018: two sampling dates per site, 2019: one per site (ISO dates)",
       "source_ids": [
         "design"
       ],

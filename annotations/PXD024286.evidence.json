@@ -44,11 +44,12 @@
     },
     {
       "location": "characteristics[sex]",
-      "value": "HD rows male; control rows not available",
+      "value": "not available (all rows)",
       "source_ids": [
-        "paper"
+        "paper",
+        "pride-files"
       ],
-      "evidence": "'Patients HD1–2, HD5–7 and HD9–10 (age-matched but only males…)'; controls = 4 male + 3 female, not linkable"
+      "evidence": "paper: only male HD lines used for MS, controls 4 male + 3 female; file donor codes cannot be matched to the paper's donor table"
     },
     {
       "location": "comment[modification parameters], tolerances",
@@ -60,6 +61,9 @@
     }
   ],
   "limitations": [
+    "Sex is 'not available' for all donors: the paper says only male HD lines were used for MS, but the file donor codes (HD1, HD4, HDKP, …) cannot be matched to the paper's HD1–HD10 table (its HD4 is female), so sex is not transferred.",
+    "characteristics[biological replicate] = donor number within disease group (7 controls, 7 HD), shared by the fibroblast and iN samples of the same donor; R1–R3 are technical replicates.",
+    "HCD written as MS:1000422 (beam-type collision-induced dissociation), the spec-canonical term.",
     "File donor codes (C11, CBS, HDKP, …) cannot be linked to the paper's C1–C7 / HD1–HD10 table, so age, sex (controls) and CAG repeats are not annotated per donor.",
     "iNs are annotated with CL 'neuron' (directly converted from the same donors' fibroblasts; conversion length for the MS samples is not stated)."
   ]

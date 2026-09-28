@@ -72,6 +72,7 @@
     }
   ],
   "limitations": [
+    "HCD written as MS:1000422 (beam-type collision-induced dissociation), the spec-canonical term.",
     "Cellosaurus age 40Y describes the KBM-7/HAP1 donor, not the experiment.",
     "Disease column describes the cell line origin; the WT arm is the genotype control, not a disease control (reconcile flags this — intentionally kept).",
     "Digestion enzyme is taken from the search (Trypsin/P → Trypsin); the paper refers to a previous protocol."

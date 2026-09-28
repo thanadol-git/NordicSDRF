@@ -14,14 +14,9 @@
       "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD026371/files/all"
     },
     {
-      "id": "abstract",
-      "kind": "publication",
-      "location": "PMID 36054547 abstract"
-    },
-    {
-      "id": "raw-header",
+      "id": "protein-lists",
       "kind": "repository",
-      "location": "3 RAW headers (Q Exactive HF-X)"
+      "location": "deposited P1-5_Pancreas_cancer_Proteins_list.txt and P6-14_Pancreas_cancer_Proteins_list.txt (file names in files_compact.json)"
     }
   ],
   "claims": [
@@ -30,9 +25,10 @@
       "value": "14 PDAC patients × 4 laser-captured compartments (neoplastic parenchyma, tumour-adjacent benign exocrine parenchyma, and stroma next to each)",
       "source_ids": [
         "pride-files",
-        "abstract"
+        "protein-lists",
+        "pride"
       ],
-      "evidence": "RAW names encode patient and compartment (Patient_N_NeoplasticParenchyma/HealthyAcinar, Set_2_Patient_N_NeoStroma/HealthyStroma, PC_NN-b_NePa/HePa/NeSt/HeSt); abstract: n = 14, four compartments"
+      "evidence": "RAW names encode patient and compartment (Patient_N_NeoplasticParenchyma/HealthyAcinar, Set_2_Patient_N_NeoStroma/HealthyStroma, PC_NN-b_NePa/HePa/NeSt/HeSt); the deposited protein lists are split P1-5 and P6-14, i.e. 14 patients"
     },
     {
       "location": "comment[technical replicate]",
@@ -46,16 +42,24 @@
       "location": "comment[instrument], acquisition, collision energy",
       "value": "Q Exactive HF-X; DDA top 20; HCD NCE 28",
       "source_ids": [
-        "pride",
-        "raw-header"
+        "pride"
       ],
-      "evidence": "sample protocol + RAW headers"
+      "evidence": "PRIDE instrument and data processing / sample protocol"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "protocol alkylates with iodoacetamide; PRIDE identified PTMs include iodoacetamide derivatized residue (MOD:00397)"
     }
   ],
   "limitations": [
-    "INFERRED: 'Set_2_Patient_N' (stroma) is the same person as 'Patient_N' (parenchyma, set 1). Basis: 5 + 9 (PC_06–PC_14) = 14 patients as stated in the abstract; if Set 2 were different people the cohort would be 19.",
+    "HCD written as MS:1000422 (beam-type collision-induced dissociation), the spec-canonical term.",
+    "INFERRED: 'Set_2_Patient_N' (stroma) is the same person as 'Patient_N' (parenchyma, set 1). Basis: 5 + 9 (PC_06–PC_14) = 14 patients, matching the deposited P1-5 / P6-14 protein lists; if Set 2 were different people the cohort would be 19.",
     "Benign-appearing compartments are annotated disease = normal with phenotype 'tumour-adjacent…'; the donors all have PDAC.",
-    "Search modifications are not stated in PRIDE and the paper is closed: comment[modification parameters] = not available.",
+    "Search settings are not stated in PRIDE and the paper is closed. Carbamidomethyl C (fixed) is annotated from the IAA alkylation and the PRIDE PTM list; PRIDE also lists carbamoylated residue (MOD:00398), but whether carbamylation or other variable modifications were searched is unknown, so none is added.",
     "Age and sex per patient not available.",
     "'Tube_11_HealthyAcinarHNE' (patient 1) is kept as a second benign-parenchyma source; the meaning of 'HNE' is unknown."
   ]

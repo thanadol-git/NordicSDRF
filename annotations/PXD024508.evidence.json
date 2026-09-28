@@ -21,12 +21,12 @@
     {
       "id": "raw-header",
       "kind": "repository",
-      "location": "DMSO_01.raw, P_SB80_01.raw, VX_03_N2.raw headers"
+      "location": "DMSO_01.raw, P_SB80_01.raw, VX_03_N2.raw headers (extract not saved; the paper names the Orbitrap Fusion)"
     },
     {
       "id": "cellosaurus",
       "kind": "database",
-      "location": "https://api.cellosaurus.org/cell-line/CVCL_0063"
+      "location": "Cellosaurus CVCL_0063 (HEK293T), CVCL_0030 (HeLa) — accessions only, records not saved"
     }
   ],
   "claims": [
@@ -83,18 +83,29 @@
     },
     {
       "location": "HeLa.raw",
-      "value": "HeLa QC run, cellosaurus accession not available",
+      "value": "HeLa QC run (HeLa, CVCL_0030)",
       "source_ids": [
         "pride-files"
       ],
       "evidence": "only the file name identifies it"
+    },
+    {
+      "location": "characteristics[genetic modification], [genotype], [exposure duration]",
+      "value": "overexpression; alpha-synuclein A53T-GFP; 48 hour",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE: 'HEK293T overexpressing alpha-synucleinA53T-GFP when treated with kinase inhibitors', 'treated 48 hours with inhibitors or DMSO'; paper: inhibitor kinetics in 'a HEK293T cell line with the single α-synA53T-GFP fusion construct'"
     }
   ],
   "limitations": [
-    "The paper performs proteomics on inhibitor-treated HEK293T; whether the NPR-H-001 α-syn FRET reporter derivative or parental cells were used is not stated — parental HEK293T (CVCL_0063) annotated as in PRIDE.",
-    "Inhibitor concentration/duration for the proteomics samples is not stated in Methods (PRIDE says 48 h) — no dose column.",
+    "Digestion: Lys-C and trypsin (two comment[cleavage agent details] columns); an earlier draft dropped trypsin.",
+    "HCD written as MS:1000422 (beam-type collision-induced dissociation), the spec-canonical term.",
+    "Cells are HEK293T (CVCL_0063) stably overexpressing α-syn A53T-GFP, as the PRIDE record states; the cellosaurus accession is that of the parental line because the derivative has no Cellosaurus entry.",
+    "Inhibitor concentration for the proteomics samples is not stated — no dose column; exposure duration 48 hour is from PRIDE.",
     "GF109203X has no ChEBI/NCIT label in the offline cache (validator warning).",
-    "HeLa.raw: HeLa vs HeLa S3 cannot be resolved; cellosaurus accession 'not available'.",
+    "HeLa.raw is a QC digest identified only by file name; annotated as HeLa (CVCL_0030) — HeLa S3 cannot be excluded.",
     "Search modifications from paper/PRIDE text; the 12 GB PD .msf files were not read."
   ]
 }

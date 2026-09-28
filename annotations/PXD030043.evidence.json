@@ -56,8 +56,16 @@
       "evidence": "400,000 FACS-sorted LSK cells per replicate"
     },
     {
+      "location": "characteristics[sex], [age]",
+      "value": "pooled; adult 10W-20W, fetal not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "'Adult mice used in experiments were 10–20 weeks old'; 'For proteome analysis, equal numbers of male and female mice were used'"
+    },
+    {
       "location": "comment[modification parameters], tolerances",
-      "value": "iodoTMT6plex on C as label; Ox M, Acetyl N-term variable; no fixed modification; 20 ppm / 0.5 Da",
+      "value": "iodoTMT6plex on C as the isobaric label (annotated Fixed, SDRF convention for TMT labels; the authors set no other fixed modification); Ox M, Acetyl N-term variable; 20 ppm / 0.5 Da",
       "source_ids": [
         "paper"
       ],
@@ -74,8 +82,9 @@
     }
   ],
   "limitations": [
-    "Each HSPC replicate is pooled from several sorts (Supplementary Fig. 2a); sex not available.",
+    "Each HSPC replicate is pooled from several sorts (Supplementary Fig. 2a) of equal numbers of male and female mice, so sex = pooled; adult mice were 10–20 weeks old, fetal age is captured by the E14.5 developmental stage.",
     "The two thiol pools of one lysate are separate source names (…_SH, …_Sox); the pool is described in characteristics[treatment].",
-    "reconcile reads only one of the two cleavage-agent columns (Trypsin and Lys-C are both annotated)."
+    "reconcile reads only one of the two cleavage-agent columns (Trypsin and Lys-C are both annotated).",
+    "The validator warns that 'pooled' is not in the installed vertebrates template's sex list; the SDRF spec (README, TERMS.tsv) allows 'pooled' for pooled samples."
   ]
 }

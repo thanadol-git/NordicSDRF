@@ -26,13 +26,13 @@
     {
       "id": "raw-header",
       "kind": "repository",
-      "location": "all 45 RAW headers (instrument string)"
+      "location": "scratchpad evidence/raw_header_check.json: all 45 RAW headers (HTTP range read, instrument string)"
     }
   ],
   "claims": [
     {
       "location": "source name, characteristics[phenotype], characteristics[disease]",
-      "value": "acute wound fluid WF1–WF5; non-infected dressings 13/21/33; S. aureus-infected dressings 31/34/39",
+      "value": "acute wound fluid WF1–WF5; non-infected dressings 13/21/33; S. aureus-infected dressings 31/34/39; disease = staphylococcal infection for infected dressings, not available otherwise",
       "source_ids": [
         "github",
         "paper"
@@ -74,9 +74,12 @@
     }
   ],
   "limitations": [
+    "HCD written as MS:1000422 (beam-type collision-induced dissociation), the spec-canonical term.",
     "38_* RAWs are attributed to sample 39 per the authors' PEAKS export; the numbering conflict (38 vs 39) is unexplained.",
     "first_33_1/2 not referenced by any PEAKS export; assigned to sample 33 by name.",
     "Plasma samples mentioned in the papers are not in this deposit.",
-    "Donor age/sex not available."
+    "Donor age/sex not available.",
+    "characteristics[disease] = not available for the post-mastectomy drainage fluids and non-infected skin-graft dressings: donors are surgical patients, not healthy individuals, and their underlying condition is not stated; the wound state is carried in phenotype.",
+    "comment[technical replicate] numbers all injections of a sample in one series although they span acquisition sessions (170303_ vs WF*_80uL_long; first_ vs plain) — the sessions are not recorded as a batch column."
   ]
 }

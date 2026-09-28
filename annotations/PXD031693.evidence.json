@@ -14,53 +14,61 @@
       "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD031693/files/all"
     },
     {
-      "id": "xlsx",
-      "kind": "repository",
-      "location": "deposited MR_DF003_retina_wt_rd1-rd2-rd10__1_.xlsx (sheets wt/rd1/rd2/rd10; columns DF003_cAMP … EtOH_DF003)"
-    },
-    {
       "id": "mzid",
       "kind": "repository",
-      "location": "deposited mzIdentML (spectra lists, observed modifications; scratchpad/PXD031693/evidence/mzid_modification_tally.json)"
+      "location": "deposited mzIdentML files and PD results CSV, parsed 2026-09-28 (scratchpad/PXD031693/evidence/mzid_and_results_check.json; earlier residue tally in mzid_modification_tally.json)"
     },
     {
       "id": "raw-header",
       "kind": "repository",
-      "location": "RAW method header (scratchpad/PXD031693/evidence/raw_method_header.txt)"
+      "location": "RAW method header of one file (scratchpad/PXD031693/evidence/raw_method_header.txt, raw_header_check.json)"
     }
   ],
   "claims": [
     {
-      "location": "source name, characteristics[genotype], [treatment], [compound]",
-      "value": "WT, rd1, rd2, rd10 retina × DF003 matrix / EtOH control matrix × DF003 / cAMP / cGMP elution",
+      "location": "source name, characteristics[genotype], factor value[genotype]",
+      "value": "wild type, rd1 (Pde6b), rd10 (Pde6b), rd2 (Prph2) retina",
       "source_ids": [
+        "pride",
         "pride-files",
-        "xlsx",
         "mzid"
       ],
-      "evidence": "file names MR_<matrix>_<eluent>_<genotype>; results xlsx and mzid SpectraData use the same labels per genotype"
+      "evidence": "PRIDE: retinas of rd1, rd10 and rd2 models; one mzIdentML per genotype (wt, rd1, rd2, rd10) listing six runs each; file names end in the genotype"
+    },
+    {
+      "location": "characteristics[treatment], factor value[treatment]",
+      "value": "affinity chromatography, condition label DF003_cAMP / DF003_cGMP / DF003_DF003 / EtOH_cAMP / EtOH_cGMP / EtOH_DF003",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "mzid"
+      ],
+      "evidence": "PRIDE: affinity chromatography to isolate Rp-8-Br-PET-cGMPS interactors; the six condition labels are the file-name tokens, the mzid SpectraData names and the abundance columns of the deposited results CSV"
     },
     {
       "location": "comment[modification parameters] (per row)",
-      "value": "all: CAM fixed, Ox M; rd2 and rd10 searches also Acetyl protein N-term; rd2 also Phospho S/T",
+      "value": "all: CAM C fixed, Ox M; rd2 and rd10 also Acetyl (protein N-term); rd2 also Phospho S/T",
       "source_ids": [
         "mzid"
       ],
-      "evidence": "every Cys-containing peptide carries CAM; other modifications as observed in each genotype's mzid"
+      "evidence": "modification elements observed in each genotype's mzIdentML (rd10: Oxidation 911, Carbamidomethyl 347, Acetyl 19); no SearchModification block is deposited"
     },
     {
       "location": "comment[instrument], [dissociation method], [collision energy]",
       "value": "Orbitrap Fusion, HCD, 30 %",
       "source_ids": [
-        "raw-header"
+        "raw-header",
+        "pride"
       ],
-      "evidence": "RAW header"
+      "evidence": "RAW header of one run; PRIDE: Orbitrap Fusion Tribrid, DDA"
     }
   ],
   "limitations": [
-    "Paper full text not accessible: mouse background strains, ages, sex, pooling, reduction/alkylation and search tolerances are not annotated.",
-    "Meaning of 'DF003' (analog affinity matrix) and 'EtOH' (control matrix) and the eluent 'DF003' is read from file labels and the PRIDE description; not verified against the paper.",
-    "Modifications are those observed in the deposited mzIdentML (a lower bound of what was searched).",
+    "The paper is not open access. The six condition labels are annotated verbatim as 'condition label …' without interpreting the tokens (e.g. which is the affinity matrix and which the eluent, or whether EtOH is a control matrix), because that is not stated in any deposited or open source.",
+    "Mouse background strain, age, sex, pooling, reduction/alkylation reagents and search tolerances are not annotated (not in the deposit).",
+    "Each of the 24 runs is its own source with biological replicate 1; whether the six runs of a genotype come from one retinal extract is not documented.",
+    "Modifications are those observed in the deposited mzIdentML (a lower bound of what was searched); Acetyl is placed on the protein N-terminus because every acetylated peptide starts with Met.",
+    "HCD and 30 % NCE are read from one RAW header and assumed for all 24 runs.",
     "reconcile flags trypsin as not named in the PRIDE record; the mzIdentML enzyme is Trypsin."
   ]
 }

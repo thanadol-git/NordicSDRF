@@ -21,7 +21,7 @@
     {
       "id": "raw-header",
       "kind": "repository",
-      "location": "~50 RAW headers sampled across the three file families (instrument + method name)"
+      "location": "~50 RAW headers sampled during annotation (extract not saved; instrument per family is backed by the paper)"
     }
   ],
   "claims": [
@@ -41,16 +41,16 @@
         "paper",
         "pride-files"
       ],
-      "evidence": "20180614_Hypo_dep_01..76 × R1–R3; paper: 75 serum samples"
+      "evidence": "20180614_Hypo_dep_NN × R1–R3 with NN in 01–86 (75 numbers; 07, 12, 14, 21, 23, 44, 67, 68, 75, 77, 78 absent); paper: 75 serum samples"
     },
     {
       "location": "comment[instrument], comment[proteomics data acquisition method]",
       "value": "DTPI = Q Exactive Plus DDA; tp and Hypo_dep = TSQ Quantiva SRM",
       "source_ids": [
-        "raw-header",
-        "paper"
+        "paper",
+        "pride-files"
       ],
-      "evidence": "RAW headers (DDAHV18_Top20 method vs TP_pool_sched MRM methods)"
+      "evidence": "paper Methods: Q-Exactive Plus for DDA discovery (top 10 HCD), TSQ Quantiva for MRM of healthy (tp) and patient (Hypo_dep) samples; file families by name"
     },
     {
       "location": "comment[modification parameters], tolerances",
@@ -62,10 +62,15 @@
     }
   ],
   "limitations": [
-    "Testosterone group (low / borderline / normal) of each infertile patient is not deposited — phenotype states this.",
+    "HCD written as MS:1000422 (beam-type collision-induced dissociation), the spec-canonical term.",
+    "Testosterone group (low / borderline / normal) of each infertile patient is not in the PRIDE deposit (supplementary tables on figshare were not collected), so phenotype is only 'man investigated for infertility'.",
+    "characteristics[compound] = not available for infertile patients: Table 1b reports current medication (insulin, ART) for some men, but not per patient.",
     "Per-subject ages not available (cohort ranges only).",
     "Heavy isotope-labelled reference peptides spiked into MRM samples are not encoded (no spiked-compound column).",
     "Time point C subjects had also received degarelix at week 0; compound column lists only the most recent drug.",
-    "Only ~50 of 770 RAW headers were read; instrument per file family is assumed uniform."
+    "Only ~50 of 770 RAW headers were read and the extract was not saved; instrument per file family follows the paper and is assumed uniform.",
+    "characteristics[biological replicate] = subject number within group (healthy 1–30, shared by time points A/B/C of the same man; infertile 1–75 in patient-number order).",
+    "comment[technical replicate] numbers all runs of a sample in one series: DDA injections _01–_03 first (1–3), then MRM injections in r-number order (r1, r1b, r2, …), so MRM runs are 4–7.",
+    "comment[modification parameters] (CAM C, Ox M) describe the DDA search and are repeated on MRM rows."
   ]
 }

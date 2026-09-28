@@ -22,11 +22,6 @@
       "id": "paper",
       "kind": "publication",
       "location": "PMC8546208"
-    },
-    {
-      "id": "raw-header",
-      "kind": "repository",
-      "location": "RAW headers read by HTTP range request (instrument string; see scratchpad/PXD027173/evidence/raw_header_check.json)"
     }
   ],
   "claims": [
@@ -59,15 +54,16 @@
       "location": "comment[instrument]",
       "value": "Q Exactive HF-X",
       "source_ids": [
-        "raw-header",
-        "paper"
+        "paper",
+        "pride"
       ],
-      "evidence": "RAW headers"
+      "evidence": "paper Methods and PRIDE protocol (PRIDE instrument field says Q Exactive HF)"
     }
   ],
   "limitations": [
     "The file list names '181130_P997_2_phospho.raw' but PRIDE holds '181130_C997_2_phospho.raw' (no other candidate); the deposited name is used.",
     "Region 'HC' annotated as hippocampal formation (UBERON) — the paper's 'total hippocampus' sample.",
-    "Braak stage is carried as phenotype (clinical-metadata template has no staging column for AD)."
+    "Braak stage is carried as phenotype (clinical-metadata template has no staging column for AD); controls are labelled 'control' as in the file list (CTRL).",
+    "The global runs used lysine-blocked (acetylated/d3-acetylated) samples and were searched as Arg-C by the authors; the digestion enzyme itself was trypsin."
   ]
 }

@@ -22,11 +22,6 @@
       "id": "paper",
       "kind": "publication",
       "location": "PMC8155562"
-    },
-    {
-      "id": "raw-header",
-      "kind": "repository",
-      "location": "TDM_M1912_226/277, TDM_M2002_109 headers"
     }
   ],
   "claims": [
@@ -39,20 +34,19 @@
       "evidence": "Sample.information.xlsx maps File.Name → Sample.ID, Type.of.tissue (Breast primary tumor), Mammographic.appearance, ER/PgR status, IntClust"
     },
     {
-      "location": "characteristics[disease], [sex], [organism part]",
-      "value": "breast cancer; female; breast",
+      "location": "characteristics[disease], [organism part]",
+      "value": "breast cancer; breast",
       "source_ids": [
         "paper",
         "sampleinfo"
       ],
-      "evidence": "set 2: 24 primary breast tumours; all from women"
+      "evidence": "Sample.information.xlsx Type.of.tissue = Breast primary tumor for all 24 files"
     },
     {
       "location": "comment[proteomics data acquisition method], comment[instrument]",
       "value": "DIA; Q Exactive HF-X",
       "source_ids": [
-        "paper",
-        "raw-header"
+        "paper"
       ],
       "evidence": "Methods DIA on Q-Exactive HF-X, 32 variable windows"
     },
@@ -67,8 +61,12 @@
   ],
   "limitations": [
     "Per-patient age not available (Table S1 in the ACS PDF supplement not parsed).",
-    "ER/PgR status and IntClust are in the deposited sheet but have no licensed SDRF column; they are listed here only.",
+    "ER/PgR status and IntClust from the deposited Sample.information.xlsx are carried in characteristics[clinical data] (V20, V21: PgR not available).",
+    "Sex is 'not available': the Patients section's 'collected from women' refers to set 1 (21 specimens); for set 2 (these 24 tumours, from a 109-sample study) neither the paper nor the deposited sheet states sex.",
+    "HCD written as MS:1000422 (beam-type collision-induced dissociation), the spec-canonical term.",
     "dia-acquisition template not declared: its validator requires the bare literal 'Data-independent acquisition' instead of NT=/AC= form; the four recommended DIA-window columns are therefore omitted.",
-    "Modifications are from the paper's library-generation description, not from a parsed search file."
+    "Modifications are from the paper's library-generation description, not from a parsed search file.",
+    "sdrf-tools reconcile flags Trypsin as absent from the PRIDE record; the paper's Methods state trypsin digestion for sample sets 1 and 2, so the flag is a false positive.",
+    "Supplementary Table S2 (xlsx, clinical characteristics) was not retrieved; it may hold per-patient age for set 2."
   ]
 }

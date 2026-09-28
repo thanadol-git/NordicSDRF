@@ -19,6 +19,11 @@
       "location": "first_cohort_design.tsv (PRIDE, EXPERIMENTAL DESIGN/OTHER)"
     },
     {
+      "id": "intensity-check",
+      "kind": "repository",
+      "location": "scratchpad evidence/sv39_42_correlation_check.json (correlations from first_cohort_data.tsv)"
+    },
+    {
       "id": "data-header",
       "kind": "repository",
       "location": "first_cohort_data.tsv header rows '# File' / column headers (HTTP range read)"
@@ -31,12 +36,12 @@
     {
       "id": "raw-header",
       "kind": "repository",
-      "location": "Elite_170424_101/97.raw, Elite_181205_98.raw first 400 KB (UTF-16 instrument string)"
+      "location": "Elite_170424_101/97.raw, Elite_181205_98.raw first 400 KB (UTF-16 instrument string; extract not saved — PRIDE instrument LTQ Orbitrap Elite agrees)"
     },
     {
       "id": "abstract",
       "kind": "publication",
-      "location": "Europe PMC abstract PMID 33540068"
+      "location": "scratchpad evidence/abstract_PMID33540068.txt (Europe PMC abstract)"
     }
   ],
   "claims": [
@@ -64,7 +69,7 @@
       "source_ids": [
         "design"
       ],
-      "evidence": "age_at_first_collection 2.5-6.8 years for all bulls (breeding bulls)"
+      "evidence": "age_at_first_collection 2.5–6.8 years for 19 bulls (NA for bull4 and bull19, which are nonetheless breeding bulls with insemination records)"
     },
     {
       "location": "factor value[non-return rate]",
@@ -73,7 +78,7 @@
         "design",
         "abstract"
       ],
-      "evidence": "design column TotPerc = total non-return rate; abstract: bulls with NRR 35-60% correlated to proteome"
+      "evidence": "design column TotPerc = TotPreg / TotIns × 100 per bull (range 35–60 %); abstract: '20 bulls with Non-Return Rates between 35 and 60%'"
     },
     {
       "location": "comment[instrument]",
@@ -102,11 +107,12 @@
     }
   ],
   "limitations": [
+    "characteristics[biological replicate] = 1 on every row: the factor (non-return rate) is a property of the bull, so each bull is one biological unit. Repeated seminal-plasma samples of a bull are distinguished by source name (<bull>_<sample>), characteristics[individual] (bull) and comment[sample preparation batch] (design 'Batch'); no claim is made about how many independent collections each bull contributed.",
+    "comment[sample preparation batch] = design 'Batch' 1/2/3. The abstract says the bulls were 'sampled across three seasons' and PRIDE says 'different time points', so the three batches are the sampling seasons; each was also acquired separately (Elite_170424 / 180117 / 181205).",
+    "Sv39–Sv42 (bulls 17, 19, 21, 12) are flagged IsTechrep=TRUE in the design without naming a parent sample (the design's TechRep column maps each to itself). They are kept as their own sources. The deposited intensities show they are not repeat injections of another batch-2 sample of the same bull (0.70–0.85 vs 0.95–0.96 for true repeat injections; evidence/sv39_42_correlation_check.json), but what IsTechrep denotes is not documented.",
     "Breed not stated anywhere reachable (strain or breed = not available).",
-    "Collection season per batch is not in the deposit; acquisition batch (Elite_170424/180117/181205) equals design 'Batch' 1/2/3 but is not annotated as a season.",
-    "Sv39–Sv42 are flagged IsTechrep=TRUE in the design but the sample they replicate is not named; they are annotated as their own sources.",
     "MS-GF+ was also used; its tolerances were not read (only the X!Tandem block).",
-    "Paper full text not open access; no per-bull fertility group other than the deposited design table was used.",
-    "The design lists 21 bulls; the abstract says 20 — not reconciled."
+    "Paper full text not open access; the per-bull high/low fertility groupings in the design (HighFert, ThreeGroupFert) and age at first collection are not annotated.",
+    "The design lists 21 bulls; the abstract says 20 — not reconciled (bull7 appears only in batch 1)."
   ]
 }

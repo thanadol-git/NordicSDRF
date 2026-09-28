@@ -63,6 +63,6 @@
     }
   ],
   "limitations": [
-    "As PXD032285: precursor tolerance omitted; SUM44PE age not available; reconcile disease/control-arm flag is expected."
+    "As PXD032285: precursor tolerance 4.5 ppm (main search); factor value[cell line] separates MCF-7 and SUM44PE wild types; SUM44PE age not available; reconcile disease/control-arm flag is expected."
   ]
 }

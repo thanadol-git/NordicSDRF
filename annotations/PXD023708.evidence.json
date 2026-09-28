@@ -21,7 +21,7 @@
     {
       "id": "raw-header",
       "kind": "repository",
-      "location": "RAW headers incl. 190326_pooled_SF*.raw method (DDA_QC2b_JM.meth, FULL MS / DD-MS2)"
+      "location": "scratchpad evidence/raw_header_check.json: instrument and method file of all 135 RAW headers"
     }
   ],
   "claims": [
@@ -49,7 +49,7 @@
         "pride-files",
         "raw-header"
       ],
-      "evidence": "file names DDA_/DIA_; unlabelled pooled_SF runs checked in RAW header = DDA"
+      "evidence": "method file in each RAW header: DDA_QC2b_JM / DDA_test_QC1 (DDA) vs DIA_STD_120kMS1_45kMS2_24VarWin (DIA); agrees with the DDA_/DIA_ file-name token for every file except 190411_DDA_B414_nr2b.raw, which was acquired with the DIA method and is annotated DIA; the unlabelled 190326_pooled_SF runs are DDA"
     },
     {
       "location": "pooled_SF rows",
@@ -61,18 +61,23 @@
     },
     {
       "location": "comment[modification parameters]",
-      "value": "CAM C fixed; Deamidation NQ, Gln->pyro-Glu, Ox M, Ox P (hydroxyproline), Acetyl N-term variable",
+      "value": "CAM C fixed; Deamidation NQ, Glu->pyro-Glu (UNIMOD:27, N-term E), Ox M, Ox P (hydroxyproline), Acetyl N-term variable",
       "source_ids": [
-        "pride"
+        "pride",
+        "paper"
       ],
-      "evidence": "PRIDE data processing protocol (Spectronaut Pulsar)"
+      "evidence": "PRIDE data processing protocol and paper Methods: 'pyro-glutamic acid (N-term Glu to pyroglutamic acid)'"
     }
   ],
   "limitations": [
+    "HCD written as MS:1000422 (beam-type collision-induced dissociation), the spec-canonical term.",
     "The B/G/L → group mapping is an inference from group sizes (unique solution), not stated in the deposit — highest-risk call.",
     "Per-subject age/sex not available (cohort summaries only).",
-    "The file mixes DDA (library) and DIA runs; sdrf-tools structure recommends one SDRF per acquisition method. Kept in one file to match the tracker's one-SDRF-per-PXD convention.",
+    "The deposit mixes DDA (library) and DIA runs. Following the repo convention, the combined PXD023708.sdrf.tsv is kept together with PXD023708-dda.sdrf.tsv (65 rows) and PXD023708-dia.sdrf.tsv (70 rows), with technical replicates renumbered within each split; sdrf-tools structure flags the combined file only.",
     "Acetylation site (protein N-term) assumed from Spectronaut defaults; PRIDE says only 'acetylation'.",
-    "Early-stage OA is the authors' label for degenerative meniscal tear patients; disease annotated as 'osteoarthritis, knee' for both OA groups."
+    "Early-stage OA is the authors' label for degenerative meniscal tear patients; disease annotated as 'osteoarthritis, knee' for both OA groups.",
+    "Possibly empty or truncated runs are annotated because they are deposited: 190319_DIA_L441_nr1.raw (230 KB), 190401_DIA_pooled_SF_10.raw (0.24 GB; re-acquired as 190401_DIA_pooled_SF_10_20190406122152 and 190402_DIA_pooled_SF_10), and both 190405_DDA_pooled_SF_12 files (~0.5 GB each).",
+    "The paper says 18 samples were run in duplicate; the deposit has 20 DIA _rep2 pairs, and the SDRF follows the files.",
+    "sdrf-tools reconcile flags disease on the control arm; control (G*) rows carry disease = normal, so this is a tool false positive."
   ]
 }
