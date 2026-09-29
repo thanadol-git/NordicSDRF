@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD012332.sdrf.tsv",
+  "dataset": "PXD012332",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD012332 (scratchpad/PXD012332/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "PRIDE file list (scratchpad/PXD012332/files_compact.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC6547517 (scratchpad/PXD012332/manuscript.txt)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "RAW headers read by HTTP range request (instrument, method file, activation type; scratchpad/PXD012332/evidence/raw_header_check.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[growth condition], [phenotype], [biological replicate]",
+      "value": "glucose (reactors A, B, E) or xylose (reactors A, C, F) × early exponential / late exponential / lipid production phase",
+      "source_ids": [
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "RAW names <date>_SLU_<reactor><n><G|X>: G/X = glucose/xylose, letter = bioreactor (three per carbon source, 'cultivations … performed in triplicate'), n = sampling point; glucose n = 1, 2, 8 and xylose n = 2, 5, 10 are ordered as the three proteome sampling phases t1–t3 of paper Fig 1"
+    },
+    {
+      "location": "characteristics[strain or breed]",
+      "value": "CBS 14",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Table 1: 'batch cultivation of R. toruloides CBS 14'"
+    },
+    {
+      "location": "comment[instrument], [collision energy], acquisition",
+      "value": "Q Exactive; HCD 28 NCE; top-12 DDA",
+      "source_ids": [
+        "paper",
+        "raw-header"
+      ],
+      "evidence": "Methods: 'Q-Exactive … (Top12 method) … NCE setting of 28'; RAW headers: Q Exactive, 120min_top12 method"
+    },
+    {
+      "location": "comment[modification parameters], tolerances, cleavage",
+      "value": "CAM C fixed; Acetyl protein N-term, Ox M, Deamidated N/Q variable; 4.5 ppm / 20 ppm; trypsin",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: MaxQuant 1.5.3.40, 4.5 ppm MS / 20 ppm MS/MS, Trypsin/P, fixed carbamidomethylation, variable protein N-terminal acetylation, Met oxidation, N/Q deamidation"
+    }
+  ],
+  "limitations": [
+    "The growth phase is inferred from the order of the sampling-point token in the file names; the paper gives 8/16/64 h (glucose) and 16/40/96 h (xylose). Glucose tokens 1/2/8 match 8-h sampling intervals, but the xylose lipid-phase token 10 would mean 80 h rather than 96 h, so no sampling time in hours is annotated.",
+    "The same reactor letter 'A' is used for one glucose and one xylose cultivation; they are different bioreactor runs.",
+    "Trypsin/P in the search is annotated as Trypsin. The lysis buffer contained DTT (paper Methods); the alkylation reagent is not stated, and no reagent columns are annotated."
+  ]
+}

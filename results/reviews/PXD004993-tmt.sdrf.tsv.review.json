@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD004993-tmt.sdrf.tsv",
+  "artifact_sha256": "2db48df220007b527a95283be8765283b9d8bcc7d71e316d1f6228583d2934ea",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review of the PXD004993 TMT SDRF (543 rows x 40 columns, 96 RAW files, 17 sources). The channel map was recomputed from the deposited Experimentallayout.pdf (rendered and visually checked: set 1 TMT131 empty), and each file's set, fraction and replicate was recomputed from the Xcalibur sample names of all 99 RAW headers. Search settings were checked against the three verbatim Mascot pepXML search_summary blocks, and sample biology against the EVJ 2017 Methods. Coverage is exact: 96 TMT files here plus 3 MassPrep QC files in the companion LFQ SDRF equals the 99 RAW files in the submitter README, with no overlap. Every controlled term resolved in the offline cache. The official validator (ms-proteomics + vertebrates) passes with exit 0; its one warning is a known validator limitation on the spec-permitted SN= pooled-sample pattern. No blocker or important finding was found. The minor findings are interpretive or optional-column items that the producer already disclosed.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh adversarial reviewer subagent without the producer transcript; read only scratchpad/PXD004993/, the artifact, the companion LFQ SDRF (for file coverage), the manifest and the report (both treated as untrusted), and the spec/templates"
+  },
+  "evidence_manifest": "annotations/PXD004993.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "40 columns with a uniform row shape. No empty cells or stray whitespace. Column order is characteristics, then assay/technology, then comments, then factor values. Templates were derived independently: Equus caballus -> vertebrates (extends sample-metadata) + ms-proteomics v1.1.0, both declared in comment[sdrf template] (repeated columns are allowed per TERMS.tsv). Label uniqueness holds: source name + assay name + comment[label] is unique (0 duplicates of data file + label). TMT rows share an assay name per RAW file, as README.adoc line 535 requires. biological replicate is 'pooled' for the reference channels (README 125/333). pooled sample values are within the allowed set (pooled / SN= list). Age 2Y6M matches the pattern. Characteristics are consistent within each of the 17 source names."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Resolved in the offline parquet cache with matching labels: NCBITaxon:9796 Equus caballus; UBERON:0010996 articular cartilage of joint; PATO:0000461 normal; NCIT:C20522 interleukin-1 beta; NCIT:C61299/EFO:0001461 control; PRIDE:0000627 data-dependent acquisition; MS:1001742 LTQ Orbitrap Velos; MS:1001251 Trypsin; MS:1000422 beam-type CID (the spec-canonical HCD term, README line 457); MS:1000133 CID; PRIDE:0000561 SCX; PRIDE:0000609 TCEP; PRIDE:0000605 MMTS; UNIMOD:737 TMT6plex; UNIMOD:39 Methylthio; UNIMOD:35 Oxidation; PRIDE:0000516-0000529 TMT126-TMT131; PRIDE:0000664 proteomic profiling by MS. sdrf-tools check --offline reported CLEAN (0 hallucinated, 0 label mismatches, 0 UNIMOD swaps). The cache has no obsolescence column, so obsolescence was not checked beyond label/accession resolution."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Channel map: Experimentallayout.pdf Table 1 was rendered and matched per set and label. Set 1: 126 Ref, 127 Ctrl d3, 128 IL-1 d3, 129 Ctrl d6, 130 IL-1 d6, 131 empty. Set 2: 126 Ctrl d22, 127 Ref, 128 Ctrl d9, 129 IL-1 d9, 130 Ctrl d12, 131 IL-1 d12. Set 3: 126 IL-1 d18, 127 IL-1 d22, 128 Ref, 129 Ctrl d15, 130 IL-1 d15, 131 Ctrl d18. Every SDRF source/label/treatment/time row matches. Biology (EVJ 2017 Methods, PMC5573946): articular cartilage of the fetlock joint from two 2.5-year-old horses with no history of joint disease (-> normal, 2Y6M); 16 explants pooled into 2 groups of 8 (-> pooled); IL-1b 10 ng/mL vs none; media harvested on days 3-22. Reference pool = an aliquot of each sample (PRIDE protocol) -> SN= list of all 14. Search settings from all three pepXML search_summary blocks: TOL 10 ppm, ITOL 0.5 Da; Methylthio (C) variable=N (fixed; this overrides the PRIDE/paper text 'variable', a discrepancy the producer disclosed); TMT6plex K and N-term fixed; IT_MODS Oxidation (M); semiTrypsin. RAW headers: LTQ Orbitrap Velos with HCD50andCID methods. TCEP/MMTS/SCX from the PRIDE sample protocol."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "96 unique data files in this SDRF plus 3 (Velos_120203_01-03, MassPrep standard) in PXD004993-lfq equals exactly the 99 RAW files in the submitter README and files.json. The two files overlap in 0 files and none is missing. The 6 files absent from the 93-RAW PRIDE API list (120203_48, 120210_03, 120210_12, 120323_07, 120323_32, 120323_33) are listed with FTP URIs in the README and were read by HTTP range (sample names present), so they exist. All files are .raw. The Set 1 file count of 33 matches README search mapping F020253 (120203_04-19, 120203_60, 120210_03-18 plus QC 01-03 excluded here). Set 2 has 31 files (120203_23-38, 120323_03-17). Set 3 has 32 files (120203_42-57, 120323_21-36). The fraction identifier equals the '#N' in the RAW sample name for all 96 files."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed row count: set 1 = 33 files x 5 channels (165), set 2 = 31 x 6 (186), set 3 = 32 x 6 (192), total 543. TMT131 appears in 63 rows (sets 2 and 3 only). Technical replicate 1 is the first pass and 2 is the exclusion-list rerun ('EXCL' sample name or an EXCL_ method; set 2 has no rerun of fraction 1). Technical replicate 3 is used only for Velos_120203_60 ('set 1 #9 ACN frac'). Factors: 7 time points x 2 treatments = 14 study samples, each in exactly one set. The 3 reference channels are 'not applicable' for both factors. Treatment and time are balanced across sets only partially, per the deposited layout; this is inherent to the design, not an annotation error."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every nontrivial value was traced to a saved source (see source_evidence). Unknowns use reserved words and are not guessed: sex, breed and developmental stage are 'not available' because the Methods do not state them. No unsupported specificity was found: organism part is the general UBERON articular-cartilage term rather than an unstated sub-site. Material omitted: IL-1b dose (10 ng/mL), collision energies (HCD 50%, CID 30%) and semi-specific cleavage. These go in optional or no-column fields and are recorded as minor findings."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "`flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -s annotations/PXD004993-tmt.sdrf.tsv -t ms-proteomics -t vertebrates --use_ols_cache_only` exited 0 with 'There were only warnings'. The only distinct warning is the SN= pooled-sample value, which the validator's value list does not recognise but the spec permits (README.adoc 345-352). Separate single-template runs (ms-proteomics; vertebrates) also exited 0 with the same warning. `sdrf-tools check --offline` exited 0 with status CLEAN. `sdrf-tools score` exited 0 with 100/100."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "sample-annotation",
+      "location": "characteristics[material type], all 543 rows",
+      "message": "The value is 'tissue', but the analysed material is conditioned explant culture medium (secreted proteins), not a solid tissue sample.",
+      "evidence": "PRIDE sampleProcessingProtocol: 'Culture media were concentrated on 3-kDa ... filters'. SAMPLE-GUIDELINES defines tissue as 'Solid tissue sample'. The column is optional in sample-metadata 1.0.0, and the producer disclosed the choice.",
+      "correction": "Optional: keep 'tissue' with the documented rationale, or use a value or free-text companion column (e.g. characteristics[sample type]) that states the sample is explant-conditioned culture medium."
+    },
+    {
+      "severity": "minor",
+      "category": "design-interpretation",
+      "location": "Velos_120203_60.raw rows (source names set1_*, comment[fraction identifier]=9, comment[technical replicate]=3)",
+      "message": "The RAW sample name 'ID1463 set 1 #9 ACN frac' is interpreted as a third injection of fraction 9. It could instead be a distinct acetonitrile-eluted sub-fraction.",
+      "evidence": "raw_sample_names.json. No deposited document defines 'ACN frac'. The producer disclosed the interpretation. The quantitative impact is negligible because the whole set was merged in Proteome Discoverer.",
+      "correction": "Keep the disclosure. If contributing, note the ambiguity in the PR description."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[treatment]; optional comment[collision energy]",
+      "message": "Some known details are not encoded: the IL-1b concentration (10 ng/mL) and the collision energies (HCD 50%, CID 30%).",
+      "evidence": "EVJ 2017 Methods: 'interleukin (IL)-1b (10 ng/mL)'. PRIDE protocol: 'HCD ... collision energy at 50% ... CID-MS2 with collision energy at 30%'.",
+      "correction": "Optional: add the dose to the treatment description or a dose column, and add comment[collision energy] if a per-method value can be represented."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD004993.evidence.json 'artifact' field",
+      "message": "The manifest's primary 'artifact' field names the LFQ file. The TMT file under review appears only in 'additional_artifacts'.",
+      "evidence": "evidence.json: \"artifact\": \"annotations/PXD004993-lfq.sdrf.tsv\"; \"additional_artifacts\": [\"annotations/PXD004993-tmt.sdrf.tsv\"].",
+      "correction": "Optional: list both SDRFs explicitly as artifacts, or split the manifest per file."
+    },
+    {
+      "severity": "minor",
+      "category": "design-interpretation",
+      "location": "source name set1_reference_pool / set2_reference_pool / set3_reference_pool",
+      "message": "The reference channels are modelled as three distinct pooled sources. The deposited evidence does not say whether one master pool was split across the sets or three pools were prepared.",
+      "evidence": "PRIDE protocol: 'reference pools consisting of an aliquot from each sample'. The producer disclosed this.",
+      "correction": "None required. If a single master pool is confirmed, one shared source name would be more precise."
+    }
+  ]
+}

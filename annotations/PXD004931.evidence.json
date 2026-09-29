@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD004931.sdrf.tsv",
+  "dataset": "PXD004931",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD004931 (scratchpad/PXD004931/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "PRIDE file list (scratchpad/PXD004931/files_compact.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC5270547 (scratchpad/PXD004931/manuscript.txt)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "RAW headers read by HTTP range request (instrument, method file, activation type; scratchpad/PXD004931/evidence/raw_header_check.json)"
+    },
+    {
+      "id": "search",
+      "kind": "repository",
+      "location": "deposited 20130830_Jan_E1.zip / 20130830_Jan_E2.zip: interact.pep.xml headers with input RAW lists and tandem.xml search parameters saved verbatim (scratchpad/PXD004931/evidence/E1_interact.pep.xml.head.txt, E2_…, E1_tandem.xml, E2_tandem.xml); 20160911_APEX.xlsx counts (scratchpad/PXD004931/evidence/E1_E2_assignment.json)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "Cellosaurus API record CVCL_0003 (scratchpad/PXD004931/evidence/cellosaurus_api_extracts.txt)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[density gradient fraction], factor value",
+      "value": "high density = HD isolate (Velos_130122_36–53); low density = LD isolate (Velos_130122_59–70, 72–74, 98)",
+      "source_ids": [
+        "search",
+        "paper"
+      ],
+      "evidence": "E1.zip searched Velos_130122_36–53 and E2.zip the other 16 files; APEX sheet: E1 has 1436 and E2 2408 proteins with spectra, MVP/TEP1/PARP4 only in E1; paper: 'For the HD and LD fractions, 1436 and 2408 proteins were identified' and vault proteins 'exclusively detected in the HD fractions' → E1 = HD, E2 = LD"
+    },
+    {
+      "location": "characteristics[density gradient fraction] meaning",
+      "value": "HD: 0.2 µm-filtered medium, sucrose fractions 8–10 (1.24–1.31 g/cm3); LD: unfiltered medium, fractions 2–6 (1.09–1.21 g/cm3)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "'HD exRNA was isolated from fractions 8–10 of the filtered sample, while LD exRNA was isolated from fractions 2–6 of the un-filtered sample'"
+    },
+    {
+      "location": "characteristics[cell line], cellosaurus, disease, sex, age, cell type, organism part",
+      "value": "HMC-1, CVCL_0003, mast cell leukemia, male, 52Y, mast cell, blood",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "paper: 'human mast cell line HMC-1'; Cellosaurus CVCL_0003 (derived from peripheral blood, UBERON_0000178)"
+    },
+    {
+      "location": "characteristics[culture medium]",
+      "value": "IMDM, 10% exosome-depleted FBS, penicillin/streptomycin, 2 mM L-glutamine, 1.2 mM α-thioglycerol",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods, Cells"
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "1–18 (HD) and 1–16 (LD) in file order",
+      "source_ids": [
+        "search",
+        "paper"
+      ],
+      "evidence": "20 SCX fractions were collected; 18 and 16 RAW files were searched"
+    },
+    {
+      "location": "comment[instrument], [dissociation method], [collision energy]",
+      "value": "LTQ Orbitrap Velos; CID; 35% NCE",
+      "source_ids": [
+        "raw-header",
+        "paper"
+      ],
+      "evidence": "all 34 RAW headers: LTQ Orbitrap Velos, TOP10_CID method; paper: 'CID … collision energy of 35%'"
+    },
+    {
+      "location": "comment[modification parameters], tolerances",
+      "value": "Ox M, Carbamidomethyl C, Gln->pyro-Glu, Glu->pyro-Glu variable; 10 ppm / 0.8 Da; trypsin",
+      "source_ids": [
+        "search",
+        "paper"
+      ],
+      "evidence": "E1/E2 tandem.xml (identical): residue potential modification mass 15.994915@M,57.021464@C; parent error ±10 ppm; fragment error 0.8 Da; protein, cleavage semi = yes; missed cleavages 2; paper lists the N-terminal Q/E losses (X!Tandem default refinement)"
+    },
+    {
+      "location": "comment[reduction reagent], [alkylation reagent], [fractionation method]",
+      "value": "TCEP; MMTS; SCX",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Methods: TCEP, methyl methanethiosulfonate, PolySULFOETHYL A SCX"
+    }
+  ],
+  "limitations": [
+    "PRIDE lists the organism part as 'Monocyte' and the disease as 'Lymphoma'; the paper names only the mast cell line HMC-1 for the exRNA isolates, so Cellosaurus values are used.",
+    "The paper also cultured TF-1 cells, but the proteomics section and PRIDE describe HD/LD fractions from HMC-1 only.",
+    "Samples were alkylated with MMTS but searched with carbamidomethyl C as a variable modification; the searched modifications are annotated. The search allowed semi-tryptic peptides.",
+    "Only 18 and 16 of the 20 SCX fractions were deposited/searched; fraction numbers follow file order, not the SCX fraction numbers, which are not recorded. Velos_130122_98 was acquired after 72–74 (71 is absent) and may be a re-run; it is numbered LD fraction 16.",
+    "The HD/LD distinction is a density-gradient fraction of conditioned medium, not a PTM/peptide enrichment, so it is recorded in a custom column characteristics[density gradient fraction] (values 'high density'/'low density') and the matching factor value; the gradient details are in this report.",
+    "One isolate per density fraction was analysed (biological replicate 1)."
+  ]
+}

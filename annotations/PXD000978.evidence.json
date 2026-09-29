@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD000978.sdrf.tsv",
+  "dataset": "PXD000978",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000978 (scratchpad/PXD000978/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "PRIDE file list (scratchpad/PXD000978/files_compact.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC4223487 (scratchpad/PXD000978/manuscript.txt)"
+    },
+    {
+      "id": "table1",
+      "kind": "publication",
+      "location": "PMC4223487 Table I (image; screenshot scratchpad/PXD000978/evidence/PMC4223487_TableI_screenshot.jpg, transcription scratchpad/PXD000978/evidence/TableI_transcription.tsv)"
+    },
+    {
+      "id": "pepxml",
+      "kind": "repository",
+      "location": "Proteome Discoverer search summaries of the deposited 1465set13runs.pep.xml, 1465set23runs.pep.xml, 1465set33runsrep100ppm.pep.xml, saved verbatim (scratchpad/PXD000978/evidence/*.pep.xml.search_summary.txt; RAW lists also in evidence/pepxml_input_files.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[label], source name, characteristics[organism part], [genotype], factor values",
+      "value": "pool 1: 126 standard, 127 GAST WT, 128 DIA WT, 129 GAST dy3K, 130 DIA dy3K; pool 2: 126 standard, 127 DIA dy3K, 128 GAST dy3K, 129 DIA WT, 130 GAST WT; pool 3: 126 standard, 127 GAST dy3K, 128 DIA dy3K, 129 GAST WT, 130 DIA WT",
+      "source_ids": [
+        "table1",
+        "paper"
+      ],
+      "evidence": "Table I 'Experimental setup for gastrocnemius (GAST) and diaphragm (DIA) muscles … three biological replicates (pools 1, 2, and 3). The internal standard was a mixture of all samples.' (label swap design, Methods)"
+    },
+    {
+      "location": "RAW file → TMT set, comment[fraction identifier], comment[technical replicate]",
+      "value": "set N = CF_111024 block N, CFOrbi_120203 block N, CFOrbi_120510 block N (8 consecutive files each); fraction = order within the block; technical replicate 1/2/3 = MS run on 2011-10-24 / 2012-02-03 / 2012-05-10",
+      "source_ids": [
+        "pepxml",
+        "paper"
+      ],
+      "evidence": "each set's pepXML lists exactly its 24 input RAW files (folders 'setN 1110', 'set N 1202 w excl', 'setN excl'); paper: 'eight strong cation exchange fractions per one TMT set and three MS runs'"
+    },
+    {
+      "location": "characteristics[biological replicate], [pooled sample]",
+      "value": "study channels: pool number 1–3, pooled (5 animals, individuals unknown); internal standard: biological replicate 'pooled', pooled sample = SN= list of the four samples of its set",
+      "source_ids": [
+        "paper",
+        "table1"
+      ],
+      "evidence": "'Three different pools for each group … each composed of muscles from five animals'; 'a standard one, composed of equal fractions of the four others'"
+    },
+    {
+      "location": "characteristics[disease], [genotype], [age]",
+      "value": "congenital merosin-deficient muscular dystrophy 1A (dy3K/dy3K) or normal (wild type); 4W",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "'Four-week-old laminin α2 chain–deficient dy3K/dy3K mice and wild-type littermates (n = 15 each)'; MDC1A = laminin α2 chain-deficient congenital muscular dystrophy (MONDO:0011925)"
+    },
+    {
+      "location": "comment[instrument], [dissociation method]",
+      "value": "LTQ Orbitrap XL; HCD and CID",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "'LTQ-OrbitrapXL … collision-induced dissociation and high-energy collision dissociation MS2 scans' (HCD 50%, CID 30%)"
+    },
+    {
+      "location": "comment[modification parameters], tolerances",
+      "value": "TMT6plex K and N-term fixed; Oxidation M and Methylthio C variable; 5 ppm / 0.5 Da; trypsin",
+      "source_ids": [
+        "pepxml",
+        "paper"
+      ],
+      "evidence": "pepXML search summaries: static TMT6plex (K), TMT6plex (N-term); dynamic Methylthio (C), Oxidation (M); precursor 5 ppm, fragment 0.5 Da; paper Methods list the same modifications"
+    },
+    {
+      "location": "comment[reduction reagent], [alkylation reagent], [fractionation method]",
+      "value": "TCEP; iodoacetamide; SCX (fractions 1–8)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: TCEP 55 °C, 375 mM iodoacetamide, strong cation exchange with 30–500 mM KCl steps"
+    }
+  ],
+  "limitations": [
+    "Multiplexed rows of one RAW file share one assay name (the file name without extension), as the spec README requires for TMT runs; comment[label] distinguishes the channels.",
+    "The paper states a 10 ppm precursor tolerance, but the deposited Proteome Discoverer search summaries (the searches behind the deposited results) use 5 ppm; 5 ppm is annotated.",
+    "Samples were alkylated with iodoacetamide, yet the deposited searches use Methylthio (C) as a variable modification and no carbamidomethylation; the searched modifications are annotated as-is.",
+    "Table I is an image; the channel map was transcribed from the rendered page (screenshot saved). Set N in the pepXML folder names is taken to be Pool N in Table I; no file states this equivalence explicitly.",
+    "The internal standard (126) mixes both muscles and both genotypes of its set: organism part 'skeletal muscle tissue', disease/genotype/factor values 'not applicable', biological replicate 'pooled', pooled sample lists its four source names (the validator warns on SN= values, which the spec allows).",
+    "The order of the three MS runs in the paper (run 3 used an exclusion list) cannot be tied to the dates: folder names mark both the 2012-02 and 2012-05 runs as exclusion runs. Technical replicates are numbered chronologically.",
+    "Each MS2 cycle has both HCD (quantification) and CID scans, so both dissociation methods are annotated and no single collision energy column is given (HCD 50%, CID 30%).",
+    "Sex and strain background of the dy3K mice are not stated."
+  ]
+}

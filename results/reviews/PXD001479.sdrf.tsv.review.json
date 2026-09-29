@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD001479.sdrf.tsv",
+  "artifact_sha256": "4fb6ce34e8d20a34a4333453cab432b5ab8b545911f3ebe708bca2424e72d1fa",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. All 24 deposited RAW files map one-to-one to rows whose segment, room and food match the deposited Key.txt; technical values are supported by the PRIDE protocols, the Methods and the per-file RAW header evidence; validator and sdrf-tools checks pass. Three minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer agent without producer transcript; evidence limited to scratchpad/PXD001479/, the spec/templates and the offline ontology cache"
+  },
+  "evidence_manifest": "annotations/PXD001479.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "pass", "evidence": "24 rows x 34 columns, uniform row width. Templates ms-proteomics 1.1.0 + vertebrates 1.1.0 are correct for mouse LC-MS/MS; all required columns are present (organism, organism part, biological replicate, disease, developmental stage, technical replicate, data file, acquisition method, instrument, cleavage agent, label, fraction identifier). Material type 'organism part' is in the fixed list. Reserved words are used only as allowed: cell type 'not applicable', developmental stage 'not available'. sdrf-tools structure: 'Structure OK'."},
+    "ontology_integrity": {"status": "pass", "evidence": "Resolved in the offline cache one parquet at a time: NCBITaxon:10090 mus musculus; UBERON:0001155 colon, UBERON:0002116 ileum (no 'distal colon' label in UBERON, so 'colon' is the correct less-specific choice); PATO:0000461 normal, PATO:0000383 female; MS:1000556 LTQ Orbitrap XL, MS:1001251 trypsin, MS:1000133 collision-induced dissociation; PRIDE:0000627 data-dependent acquisition, PRIDE:0000599 iodoacetamide (IAA); UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, UNIMOD:1 Acetyl. The NT/AC pairs match. sdrf-tools check --offline: CLEAN, 0 hallucinated, 0 label mismatches."},
+    "source_evidence": {"status": "pass", "evidence": "All cited sources exist in scratchpad/PXD001479 and belong to PXD001479 (pride.json accession, the PXD001479 FTP URLs in files_compact.json, the PXD001479 statement in manuscript.txt PMC4328744). Key.txt (1024 bytes, same size as the PRIDE listing) gives segment, room and food for all 24 RAW files. Methods: 'Wild-type female C57BL/6 mice ... (Room 1 and Room 2) ... standard chow diet (Food A: R34 ...) or an autoclaved diet (Food B: 5021 Labdiet ...)'. PRIDE sample protocol: porcine trypsin, FASP, LTQ-Orbitrap XL. PRIDE data protocol: Met oxidation and N-terminal acetylation variable, Cys carbamidomethylation fixed, 6 ppm main search. raw_header_check.json: all 24 files report LTQ Orbitrap XL, method ..._8MS2_... and Activation Type CID. The DOI 10.15252/embr.201439263 and the PRIDE title quoted in the report match pride.json. sdrf-tools reconcile against pride.json: every annotated value agrees."},
+    "file_mapping": {"status": "pass", "evidence": "The 24 RAW files in the PRIDE file list, files_raw_names.json, raw_header_check.json and the SDRF comment[data file] column are identical sets, each used exactly once. The non-raw files (SEARCH.zip, Key.txt) are correctly excluded. assay name = RAW basename. The source-name suffix S<nn> matches the Key.txt sample name for every row."},
+    "design_consistency": {"status": "pass", "evidence": "Recomputed from Key.txt: 2 segments x 2 rooms x 2 foods x 3 = 24, which matches the report's 8 groups of 3. Factor values equal their characteristics in every row. Biological replicate 1-3 within each segment x room x food group is consistent with PRIDE's '3 biological replicates per room and food'. The ileum and colon rows of each Key.txt sample block (01/04, 05/08, ...) share the same replicate number. There is one run per sample, and technical replicate and fraction are both 1."},
+    "omission_safety": {"status": "pass", "evidence": "Every sample characteristic traces to Key.txt or the Methods. Developmental stage is left 'not available', since no age is given. Two technical values are inferences, both disclosed in the report limitations: alkylation reagent IAA (backed by the PRIDE identifiedPTMStrings entry MOD:00397 'iodoacetamide derivatized residue') and the Protein N-term position of the acetylation. The optional fragment tolerance and reduction reagent are omitted rather than guessed. No per-sample value is inferred from cohort summaries."},
+    "deterministic_validation": {"status": "pass", "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf --sdrf_file annotations/PXD001479.sdrf.tsv -t ms-proteomics -t vertebrates --use_ols_cache_only: exit 0 with warnings only, all expected for free text (treatment x2, strain C57BL/6). sdrf-tools structure: exit 0. sdrf-tools check --offline: CLEAN. sdrf-tools reconcile --record pride.json: agrees. sdrf-tools score: 94/100."}
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD001479.evidence.json claims; SDRF comment[alkylation reagent], comment[modification parameters] (Acetyl PP=Protein N-term), comment[proteomics data acquisition method]",
+      "message": "The manifest has no claim entries for the inferred alkylation reagent, the acetylation position or DDA. The report limitations mention the inferences, but the manifest does not tie them to a source.",
+      "evidence": "Neither the Methods nor the PRIDE protocols name the alkylation reagent or the protein N-term position. IAA rests on the PRIDE identifiedPTMStrings entry MOD:00397. DDA rests on the '8MS2' method name in raw_header_check.json. Correction: add claims citing pride.json identifiedPTMStrings and raw_header_check.json, or set the values to 'not available'."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD001479.evidence.json source 'pride-files'",
+      "message": "The source cites an 'FTP directory listing' that does not exist in scratchpad/PXD001479.",
+      "evidence": "Only files_compact.json and files_raw_names.json are present. They alone support the 24-RAW mapping. Correction: drop the FTP-listing reference or save it to the scratchpad."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "characteristics[biological replicate]; report limitation on individuals; material nature",
+      "message": "The evidence supports a mouse-level pairing of ileum and colon samples that the report calls 'not stated'. The mucus nature of the material also appears only in source names.",
+      "evidence": "Key.txt sample numbers form blocks of four (01/04, 05/08, ... 45/48), and each block pairs one ileum and one colon sample with identical room and food. PRIDE states '3 biological replicates per room and food'. The SDRF replicate numbers already follow these blocks. Optional improvement: add characteristics[individual] with the mouse block, and record that the analysed material is secreted mucus (for example in a sample-type column)."
+    }
+  ]
+}

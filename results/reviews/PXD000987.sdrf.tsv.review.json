@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD000987.sdrf.tsv",
+  "artifact_sha256": "3d48f6b17ce5bc5144a6c7d4bf932f281874e09e0bfc03d372e429ca5d91ce22",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. All 112 deposited RAW files are mapped exactly once; the segment, patient and fraction values in every row match the file names; the characteristics and technical values follow the Methods in PMC4159649 and the PRIDE record. Four minor provenance and specificity notes remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh isolated reviewer agent without producer transcript; evidence limited to scratchpad/PXD000987/, spec, sdrf_pipelines templates and local ontology caches; no network"
+  },
+  "evidence_manifest": "annotations/PXD000987.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "The file is 112 rows x 34 columns with a uniform width and no stray whitespace. The column order matches `sdrf-tools contract -t ms-proteomics -t human`. The required human columns age, sex and individual are present. Reserved words are used only where the contract allows them (age: not available; sex: not available). The (source name, assay name, label) triple is unique in every row. Both sdrf template declarations are NT=...;VV=v1.1.0. `sdrf-tools structure` reports OK."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Each controlled value was resolved against the local OLS parquet caches, one file at a time. psi-ms: MS:1000556 ltq orbitrap xl, MS:1001309 lys-c, MS:1001251 trypsin, MS:1000133 collision-induced dissociation. pride: PRIDE:0000627 data-dependent acquisition, PRIDE:0000554 HILIC, PRIDE:0000608 DTT, PRIDE:0000599 IAA. unimod: UNIMOD:4 carbamidomethyl, UNIMOD:35 oxidation, UNIMOD:1 acetyl. uberon: UBERON:0001156, 0001157, 0001158 and 0001159 (ascending, transverse, descending and sigmoid colon). Also CL:0000066 epithelial cell, PATO:0000461 normal and NCBITaxon:9606 Homo sapiens. Every label matches its accession. `sdrf-tools check --offline` is CLEAN, with 0 hallucinated terms and 0 label mismatches."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "The manuscript Methods state that macroscopically normal biopsies of the ascending, descending, transverse and sigmoid colon came from four patients. Epithelial cells were isolated and membrane-extracted; proteins were solubilised in 0.1 M DTT and 4% SDS, then digested by FASP with Lys-C overnight followed by trypsin. Peptides were fractionated by ZIC-HILIC and analysed on an LTQ-Orbitrap XL in data-dependent top-6 mode with ion-trap CID. The search used MaxQuant 1.3.0.5 with 7 ppm (main search) and 0.5 Da tolerances, fixed carbamidomethyl-C, and variable Met oxidation and protein N-terminal acetylation. The PRIDE dataProcessingProtocol repeats the search parameters. raw_header_check.json covers 112 files: the activation type is CID in all 112; the instrument model is 'LTQ Orbitrap XL' in 108 and 'LTQ Orbitrap XL MS' in 4. The manuscript reports no age or sex, so 'not available' is justified. `sdrf-tools reconcile` flags Lys-C as unsupported by the PRIDE record. The manuscript Methods state Lys-C explicitly, so that flag is a record-only false positive."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "The SDRF has 112 unique comment[data file] values with no duplicates. They equal the 112 files in raw_header_check.json exactly, and every entry returned HTTP 206 on a range read from the PRIDE FTP. They also equal files_raw_names.json. The PRIDE API list (files_compact.json, all URLs under archive/2014/07/PXD000987) contains 99 RAW files, all annotated, plus MaxQuantOutput.zip (SEARCH), which is correctly excluded. The 13 FTP-only RAW files match the report's limitation note. The _1 runs are full-size (175-243 MB), so they are real LC-MS runs and not blanks."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Every row was recomputed from the pattern SP_120724_<A|T|D|S><patient>_<n>.RAW. For all 112 rows, 0 mismatches were found in: source name, organism part, factor value[organism part], biological replicate (= patient number), individual, assay name and fraction identifier. There are 16 sources (4 patients x 4 segments) with 7 fractions each; each segment has 28 rows; technical replicate is 1 throughout; the label is 'label free sample' throughout. The factor (organism part) is fully crossed with patient, so there is no confounding."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Each value was traced to the manuscript, the PRIDE record or the RAW headers. Age and sex are left as not available rather than invented. The seven fractions against the six stated in the paper are disclosed; the annotation follows the deposited files. Two values rest only on indirect evidence (minor findings below): the alkylation reagent, and the specificity of the cell type. No per-sample value is inferred from a cohort summary."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "`flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf --sdrf_file annotations/PXD000987.sdrf.tsv -t ms-proteomics -t human --use_ols_cache_only` returned 'Everything seems to be fine. Well done.' with exit 0. `sdrf-tools structure` returned OK with exit 0. `sdrf-tools check --offline` returned CLEAN with exit 0. `sdrf-tools score` gave 97/100; it notes only the missing recommended columns ancestry category and developmental stage. `sdrf-tools reconcile --record pride.json` gave exit 1, from a single Lys-C false positive that the manuscript refutes."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[alkylation reagent] (all rows); evidence manifest claims",
+      "message": "Neither the manuscript nor the PRIDE protocols name the alkylation reagent. 'iodoacetamide (IAA)' is inferred, and the evidence manifest has no claim or source for this column or for comment[reduction reagent].",
+      "evidence": "No match for iodoacet*, alkylat* or chloroacet* in manuscript.txt or pride.json protocols. Indirect support: pride.json identifiedPTMStrings contains MOD:00397 'iodoacetamide derivatized residue', and fixed carbamidomethyl-C is used in the search. The DTT reduction value is supported: '0.1 m DTT, 4% SDS' in Methods. Correction: add a manifest claim citing pride identifiedPTMStrings and the Methods for these two columns, or set the alkylation reagent to 'not available'."
+    },
+    {
+      "severity": "minor",
+      "category": "report-accuracy",
+      "location": "report.md Key evidence; evidence.json claim comment[instrument]",
+      "message": "The report says all 112 RAW headers read 'LTQ Orbitrap XL'. In fact 4 headers read 'LTQ Orbitrap XL MS', and the report does not mention them.",
+      "evidence": "raw_header_check.json: SP_120724_A2_6, A3_2, D3_7 and T3_1 have model 'LTQ Orbitrap XL MS'. This is most likely a string-scan artifact, and MS:1000556 is still correct. Correction: reword the claim to 'all 112 headers identify an LTQ Orbitrap XL'."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "evidence.json sources 'pride-files' and 'ftp'",
+      "message": "The manifest cites an 'FTP directory listing', but no listing file exists in scratchpad/PXD000987/. The FTP-only files are evidenced only by the HTTP range reads in evidence/raw_header_check.json.",
+      "evidence": "scratchpad/PXD000987 contains files_compact.json (99 RAW), files_raw_names.json and evidence/raw_header_check.json (112 RAW, all HTTP 206). There is no separate listing file. Correction: point the 'ftp' source location at evidence/raw_header_check.json."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "characteristics[cell type] (all rows)",
+      "message": "'epithelial cell' (CL:0000066) is correct but generic. The samples are isolated colonic epithelial cells, and CL has a more specific term.",
+      "evidence": "The CL cache contains CL:0011108 'colon epithelial cell'. The Methods describe epithelial cells dissociated from colonic biopsies. Optional correction: use 'colon epithelial cell'."
+    }
+  ]
+}

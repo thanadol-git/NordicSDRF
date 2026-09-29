@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD004993-lfq.sdrf.tsv",
+  "dataset": "PXD004993",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD004993 (scratchpad/PXD004993/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "PRIDE file list (scratchpad/PXD004993/files_compact.json)"
+    },
+    {
+      "id": "layout",
+      "kind": "repository",
+      "location": "deposited Experimentallayout.pdf (scratchpad/PXD004993/evidence/Experimentallayout.pdf)"
+    },
+    {
+      "id": "readme",
+      "kind": "repository",
+      "location": "submission README.txt on the PRIDE FTP: search-file → RAW mappings (scratchpad/PXD004993/evidence/README.txt)"
+    },
+    {
+      "id": "raw-sn",
+      "kind": "repository",
+      "location": "Xcalibur sample names and method files of all 99 RAW files (scratchpad/PXD004993/evidence/raw_sample_names.json)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "RAW headers read by HTTP range request (instrument, method file, activation type; scratchpad/PXD004993/evidence/raw_header_check.json)"
+    },
+    {
+      "id": "pepxml",
+      "kind": "repository",
+      "location": "Mascot search_summary of the deposited F020253_pep_set1.xml, F020257_pep_set2.xml, F020261_pep_set3.xml, saved verbatim (scratchpad/PXD004993/evidence/*_pep_set*.xml.search_summary.txt); submission README saved as evidence/README.txt"
+    },
+    {
+      "id": "paper2",
+      "kind": "publication",
+      "location": "PMC5573946 Methods (scratchpad/PXD004993/manuscript.txt)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[label], source name, characteristics[treatment], [sampling time]",
+      "value": "set 1: 126 reference, 127 ctrl d3, 128 IL-1 d3, 129 ctrl d6, 130 IL-1 d6 (131 unused); set 2: 126 ctrl d22, 127 reference, 128 ctrl d9, 129 IL-1 d9, 130 ctrl d12, 131 IL-1 d12; set 3: 126 IL-1 d18, 127 IL-1 d22, 128 reference, 129 ctrl d15, 130 IL-1 d15, 131 ctrl d18",
+      "source_ids": [
+        "layout"
+      ],
+      "evidence": "Experimentallayout.pdf Table 1"
+    },
+    {
+      "location": "RAW file → set, comment[fraction identifier], comment[technical replicate]",
+      "value": "sample name 'ID1463 set S #F' → set S, fraction F; '… EXCL' or an EXCL_ method → technical replicate 2 (exclusion-list rerun); 'set 1 #9 ACN frac' (Velos_120203_60) → technical replicate 3, fraction 9",
+      "source_ids": [
+        "raw-sn",
+        "readme"
+      ],
+      "evidence": "RAW headers of all 99 files; the submitter's README maps the same files to the set 1/2/3 searches"
+    },
+    {
+      "location": "QC runs (PXD004993-lfq)",
+      "value": "Velos_120203_01–03 = 'MassPrep5 Std 10 fmol/ul' instrument standard, 25-min CID method",
+      "source_ids": [
+        "raw-sn"
+      ],
+      "evidence": "RAW sample names; they are the only runs without a set/fraction name"
+    },
+    {
+      "location": "characteristics[organism part], [age], [pooled sample]",
+      "value": "articular cartilage of joint (UBERON:0010996); 2Y6M; pooled",
+      "source_ids": [
+        "paper2"
+      ],
+      "evidence": "'articular cartilage … of the distal metacarpal bone III of the fetlock joint from two 2.5‐year‐old slaughtered horses … Sixteen cartilage explants were pooled into 2 groups of 8 explants'"
+    },
+    {
+      "location": "characteristics[treatment]",
+      "value": "interleukin-1 beta (10 ng/mL) or control",
+      "source_ids": [
+        "paper2"
+      ],
+      "evidence": "'culturing in the presence or absence of equine recombinant interleukin (IL)‐1b (10 ng/mL) for 25 days. The medium was changed and harvested at Days 0, 3, 6, 9, 12, 15, 18 and 22'"
+    },
+    {
+      "location": "comment[instrument], [dissociation method]",
+      "value": "LTQ Orbitrap Velos; HCD and CID",
+      "source_ids": [
+        "raw-header"
+      ],
+      "evidence": "RAW headers: LTQ Orbitrap Velos, EASY_nLCMS2_HCD50andCID methods (PRIDE lists 'LTQ Orbitrap')"
+    },
+    {
+      "location": "comment[modification parameters], tolerances, cleavage",
+      "value": "TMT6plex K and N-term fixed, Methylthio C fixed, Oxidation M variable; 10 ppm / 0.5 Da; semi-tryptic",
+      "source_ids": [
+        "pepxml",
+        "pride"
+      ],
+      "evidence": "all three pepXML search summaries: aminoacid_modification Methylthio (C) variable=\"N\", MODS = Methylthio (C),TMT6plex (K),TMT6plex (N-term); IT_MODS = Oxidation (M); TOL 10 ppm, ITOL 0.5 Da, CLE semiTrypsin"
+    },
+    {
+      "location": "comment[reduction reagent], [alkylation reagent], [fractionation method]",
+      "value": "TCEP; MMTS; SCX",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE protocol: 'reduced with 50 mM Tris (2-carboxyethyl) phosphine and alkylated with 200 mM S-methyl methanethiosulphonate'; SCX on ÄKTA"
+    }
+  ],
+  "limitations": [
+    "Multiplexed rows of one RAW file share one assay name (the file name without extension), as the spec README requires for TMT runs; comment[label] distinguishes the channels.",
+    "The PRIDE file list has 93 RAW files; the FTP directory has 99 (Velos_120203_48, 120210_03, 120210_12, 120323_07, 120323_32, 120323_33 are FTP-only). All 99 are annotated; the submitter's README maps all of them to a set.",
+    "PRIDE and the paper call Methylthio (C) variable; the deposited Mascot search set it fixed, which is annotated.",
+    "Each channel is the medium of 8 explants pooled from two horses (biological replicate 1, pooled sample 'pooled'). The reference pool channels have biological replicate 'pooled' and pooled sample = SN= list of all 14 study samples (PRIDE: 'reference pools consisting of an aliquot from each sample'); whether the three sets used one shared pool or three separately made pools is not stated. Breed and sex are not stated. Age 2.5 years = 2Y6M.",
+    "The three MassPrep QC runs are in PXD004993-lfq; organism, material and search settings of the commercial standard are not stated, so they are 'not applicable'/'not available'.",
+    "Set 2 has no exclusion rerun of fraction 1; set 1 fraction 16 rerun (Velos_120210_18) used the 1-15 exclusion method file but is named '#16 EXCL', and fraction 16 is annotated.",
+    "Culture medium was changed at each harvest, so the sampling time is the day the medium was collected (3–22); the day-0 medium was not analysed. The analysed material is the conditioned explant medium; organism part names the tissue that released it, and material type is 'tissue' (the template has no value for culture medium).",
+    "Velos_120203_60 is named 'set 1 #9 ACN frac' in its RAW header; it is annotated as a third injection (technical replicate 3) of fraction 9, but what 'ACN frac' means is not documented.",
+    "The Mascot searches were semi-tryptic (CLE semiTrypsin); SDRF has no column for enzyme specificity, so only Trypsin is annotated."
+  ],
+  "additional_artifacts": [
+    "annotations/PXD004993-tmt.sdrf.tsv"
+  ]
+}

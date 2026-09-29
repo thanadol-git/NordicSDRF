@@ -1,0 +1,68 @@
+{
+ "schema_version": 1,
+ "artifact": "annotations/PXD005074-lfq.sdrf.tsv",
+ "artifact_sha256": "91c08a61fa0c94f17bfcc7d9c6d6abfbcecd09d32c713ddd0518a6284d333fbd",
+ "verdict": "PASS",
+ "summary": "Label-free SDRF (18 rows, 6 LPI-lane sources x 3 injections, 2 strains) validates against ms-proteomics 1.1.0; every controlled term resolves; file-to-sample mapping matches the deposited Explanationoffilenames.txt exactly; instrument and CID dissociation are corroborated by RAW headers and the paper; search parameters match the paper's MaxQuant section. Only minor findings.",
+ "reviewer_context": {
+  "independent": true,
+  "context": "fresh reviewer subagent without producer transcript; read only scratchpad/PXD005074/, the SDRFs, spec and installed templates; producer report.md/evidence.json treated as untrusted and re-checked"
+ },
+ "evidence_manifest": "annotations/PXD005074.evidence.json",
+ "checks": {
+  "spec_compliance": {
+   "status": "pass",
+   "evidence": "Active template derived independently: ms-proteomics 1.1.0 (usable_alone; no bacterial/microbe sample-layer template exists; metaproteomics is for communities, not pure isolates). All required columns present (source name, organism, organism part, biological replicate, assay name, technology type, technical replicate, data file, sdrf version/template, acquisition method, instrument, cleavage agent, label, fraction identifier); reserved words 'not applicable' only where allowed; no trailing whitespace; source+assay+label unique; factor value[strain or breed] equals characteristics[strain or breed] on all rows; 'manual curation' matches base template pattern."
+  },
+  "ontology_integrity": {
+   "status": "pass",
+   "evidence": "Offline cache: NCBITaxon:210 Helicobacter pylori; NCIT:C13413 whole organism (material type allowed value); PRIDE:0000664 proteomic profiling by mass spectrometry; PRIDE:0000627 data-dependent acquisition; MS:1000556 LTQ Orbitrap XL; MS:1001251 Trypsin; MS:1002038 label free sample; MS:1000133 collision-induced dissociation; UNIMOD:35 Oxidation; UNIMOD:1 Acetyl. No obsolete or mislabeled terms."
+  },
+  "source_evidence": {
+   "status": "pass",
+   "evidence": "Organism/strains/isolate ID HEALF04731 and host diseases: PRIDE description + sampleProcessingProtocol + paper abstract/methods. Instrument LTQ Orbitrap XL: paper MS section and RAW headers (PRIDE's generic 'LTQ Orbitrap' is less specific). CID only: RAW method auto_nano_6MS2_CID on all 18 runs. Oxidation M + Acetyl N-term variable, trypsin, 10 ppm / 0.5 Da: paper 'Label-Free Protein Quantification' (MaxQuant 1.5.0.30). Lane/injection structure: paper Fig 1 legend + Explanationoffilenames.txt."
+  },
+  "file_mapping": {
+   "status": "pass",
+   "evidence": "18 unique RAW files (CFOrbi_120816_15-17,19-21,23-25,27-29,31-33,35-37) each used once; assay name = file stem; all present in PRIDE file list; together with the 3 TMT runs in the sibling SDRF all 21 deposited RAW files are covered with no extras; mapping N1-3/P1-3 inj1-3 matches Explanationoffilenames.txt row for row."
+  },
+  "design_consistency": {
+   "status": "pass",
+   "evidence": "Recomputed: 2 strains x 3 lanes x 3 injections = 18 runs; 3 sources per factor level; technical replicate 1-3 per lane; fraction 1. Biological replicate = 1 on all lanes is supported: paper/PRIDE describe one scraped biomass per strain, washed and loaded into three flow-cell lanes, so lanes are processing splits, not independent cultures."
+  },
+  "omission_safety": {
+   "status": "pass",
+   "evidence": "Every value traced to PRIDE, paper, deposited filename key or RAW header. No reduction/alkylation columns asserted (paper describes live-cell trypsin shaving without reduction/alkylation). Only mild inference: Acetyl position 'Protein N-term' (paper says 'acetyl (N-terminal)', MaxQuant default is Protein N-term) - noted as minor. No omitted required material evidence found."
+  },
+  "deterministic_validation": {
+   "status": "pass",
+   "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -s annotations/PXD005074-lfq.sdrf.tsv -t ms-proteomics --use_ols_cache_only -> 'Everything seems to be fine' exit 0; same without -t (auto-detected template from comment[sdrf template]) exit 0; sdrf-tools check --offline -> CLEAN (0 hallucinated/mismatched); sdrf-tools score -> 100/100"
+  }
+ },
+ "findings": [
+  {
+   "severity": "minor",
+   "category": "specificity",
+   "location": "comment[modification parameters] (2nd), all rows",
+   "message": "Acetyl is encoded PP=Protein N-term, while the paper only says 'acetyl (N-terminal)'.",
+   "evidence": "manuscript.txt Label-Free Protein Quantification; MaxQuant's default variable mod is Acetyl (Protein N-term), so the inference is plausible but not literally stated.",
+   "correction": "Optional: keep, and note the inference in the evidence manifest."
+  },
+  {
+   "severity": "minor",
+   "category": "provenance",
+   "location": "file (search parameters)",
+   "message": "Per-run Mascot .msf files are also deposited for all 18 label-free runs (PD 1.4/Mascot, Met-oxidation only per PRIDE protocol; PRIDE PTM list also shows iodoacetamide-derivatized residue); the SDRF records the MaxQuant parameters instead.",
+   "evidence": "files_compact.json lists CFOrbi_120816_15..37.msf; PRIDE dataProcessingProtocol and identifiedPTMStrings.",
+   "correction": "Optional: mention in the PR/evidence that parameters follow the paper's MaxQuant label-free search, not the deposited Mascot .msf searches."
+  },
+  {
+   "severity": "minor",
+   "category": "semantics",
+   "location": "characteristics[phenotype], all rows",
+   "message": "Phenotype column holds isolation-origin/host-disease text (e.g. 'Nicaraguan clinical isolate Nic25_A (HEALF04731), from a patient with intestinal metaplasia'), which is a property of the human host, not an observable phenotype of the bacterial sample.",
+   "evidence": "Content is supported by PRIDE sampleProcessingProtocol and paper (paper adds 'and atrophy' for Nic25_A), but spec defines phenotype as observable traits of the sample.",
+   "correction": "Optional: keep as is, or shorten to a strain-descriptive phenotype and move host/isolation context to a free-text comment column; not required for contribution."
+  }
+ ]
+}

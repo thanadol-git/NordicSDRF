@@ -1,0 +1,68 @@
+{
+ "schema_version": 1,
+ "artifact": "annotations/PXD005074-tmt.sdrf.tsv",
+ "artifact_sha256": "8fc4225973146aeae8e45e1fe64f34a6630c0a4e11df124c0545e7de05fc5e83",
+ "verdict": "PASS",
+ "summary": "TMT6plex SDRF (3 runs x 6 channels = 18 rows) validates against ms-proteomics 1.1.0; label-to-lane mapping (126-128 = N1-N3, 129-131 = P1-P3) matches the deposited Explanationoffilenames.txt; HCD+CID and LTQ Orbitrap XL corroborated by RAW headers and paper; Mascot parameters match PRIDE/paper. Only minor findings.",
+ "reviewer_context": {
+  "independent": true,
+  "context": "fresh reviewer subagent without producer transcript; read only scratchpad/PXD005074/, the SDRFs, spec and installed templates; producer report.md/evidence.json treated as untrusted and re-checked"
+ },
+ "evidence_manifest": "annotations/PXD005074.evidence.json",
+ "checks": {
+  "spec_compliance": {
+   "status": "pass",
+   "evidence": "Template ms-proteomics 1.1.0 derived independently. All required columns present; multiplexed rows share assay name per run as README line 535 permits; source+assay+label unique (0 duplicates); two comment[dissociation method] and three comment[modification parameters] columns are allowed multi-cardinality columns; factor column last and consistent with characteristics[strain or breed]."
+  },
+  "ontology_integrity": {
+   "status": "pass",
+   "evidence": "Offline cache: PRIDE:0000516 TMT126, PRIDE:0000517 TMT127, PRIDE:0000520 TMT128, ..., PRIDE:0000529 TMT131 (TMT6 plain labels, correct - not N/C variants); UNIMOD:737 TMT6plex; UNIMOD:35 Oxidation; MS:1000422 beam-type collision-induced dissociation (spec README line 457 canonical HCD term); MS:1000133 CID; MS:1000556 LTQ Orbitrap XL; MS:1001251 Trypsin; PRIDE:0000627 data-dependent acquisition; NCBITaxon:210; NCIT:C13413 whole organism."
+  },
+  "source_evidence": {
+   "status": "pass",
+   "evidence": "Label mapping from Explanationoffilenames.txt 'For TMT6-plex' block (PRIDE protocol lists reporter m/z only up to 130, but the deposited key explicitly assigns 131=P3). Paper: each lane's digest split, one aliquot TMT-labelled and combined; LTQ-Orbitrap XL switched CID/HCD; sample analysed two additional times with exclusion lists. RAW headers of runs 60/62/64: HCD50 + CID method files. Mascot: 10 ppm, 0.5 Da, trypsin, Ox M variable, TMT6plex N-term and K fixed (PRIDE dataProcessingProtocol and paper)."
+  },
+  "file_mapping": {
+   "status": "pass",
+   "evidence": "CFOrbi_120816_60/62/64.RAW each appear in 6 rows (one per channel); all present in PRIDE file list; assay name = file stem; no non-RAW files; the combined search 1542TMTCFOrbi_120816_60_62_64-02.msf confirms these three runs form the TMT set."
+  },
+  "design_consistency": {
+   "status": "pass",
+   "evidence": "Recomputed: 1 TMT6 pool x 3 injections = 18 rows; 3 lanes per strain (3 channels per factor level); technical replicate 1/2/3 by run; source names identical to label-free SDRF lanes (N1-N3/P1-P3 used consistently in the filename key). Biological replicate 1 justified (single culture per strain split over lanes)."
+  },
+  "omission_safety": {
+   "status": "pass",
+   "evidence": "All values traced to cited evidence; no alkylation/reduction asserted; no unsupported specificity found. Exclusion-list nature of runs 62/64 not encoded (minor, no dedicated column)."
+  },
+  "deterministic_validation": {
+   "status": "pass",
+   "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -s annotations/PXD005074-tmt.sdrf.tsv -t ms-proteomics --use_ols_cache_only -> 'Everything seems to be fine' exit 0; same without -t (auto-detected template from comment[sdrf template]) exit 0; sdrf-tools check --offline -> CLEAN (0 hallucinated/mismatched); sdrf-tools score -> 100/100"
+  }
+ },
+ "findings": [
+  {
+   "severity": "minor",
+   "category": "design",
+   "location": "comment[technical replicate] rows 7-18 (CFOrbi_120816_62, _64)",
+   "message": "Runs 62 and 64 are re-injections with exclusion lists (different method files) aimed at extending coverage and were searched together with run 60; annotating them as technical replicates 2/3 is spec-conformant but hides that they are not identical acquisitions.",
+   "evidence": "Explanationoffilenames.txt ('with exclusion list', 'combined excl list'); RAW method names ..._excl_list_120821.meth / ..._combined_excl_list_120821.meth; paper MS section.",
+   "correction": "Optional: note this in the PR description or an additional comment column so reanalysis treats the runs as coverage-extension injections."
+  },
+  {
+   "severity": "minor",
+   "category": "completeness",
+   "location": "comment[collision energy] (absent)",
+   "message": "Optional collision energies are stated in the paper (HCD 50%, CID 30%) but not recorded.",
+   "evidence": "manuscript.txt Mass Spectrometry-Based Analysis of Peptides; RAW method name contains HCD50.",
+   "correction": "Optional: add comment[collision energy] (e.g. '50% NCE' for HCD; CID 30%) if a per-row value convention is agreed."
+  },
+  {
+   "severity": "minor",
+   "category": "semantics",
+   "location": "characteristics[phenotype], all rows",
+   "message": "Phenotype column holds isolation-origin/host-disease text (e.g. 'Nicaraguan clinical isolate Nic25_A (HEALF04731), from a patient with intestinal metaplasia'), which is a property of the human host, not an observable phenotype of the bacterial sample.",
+   "evidence": "Content is supported by PRIDE sampleProcessingProtocol and paper (paper adds 'and atrophy' for Nic25_A), but spec defines phenotype as observable traits of the sample.",
+   "correction": "Optional: keep as is, or shorten to a strain-descriptive phenotype and move host/isolation context to a free-text comment column; not required for contribution."
+  }
+ ]
+}

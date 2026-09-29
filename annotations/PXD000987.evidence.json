@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD000987.sdrf.tsv",
+  "dataset": "PXD000987",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000987 (scratchpad/PXD000987/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "PRIDE file list (scratchpad/PXD000987/files_compact.json)"
+    },
+    {
+      "id": "ftp",
+      "kind": "repository",
+      "location": "PRIDE FTP directory as read for the RAW-header check (112 RAW files, listed in scratchpad/PXD000987/evidence/raw_header_check.json; the PRIDE API file list shows 99)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC4159649 (scratchpad/PXD000987/manuscript.txt)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "RAW headers read by HTTP range request (instrument, method file, activation type; scratchpad/PXD000987/evidence/raw_header_check.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[organism part], [individual], factor value",
+      "value": "4 patients × ascending / transverse / descending / sigmoid colon",
+      "source_ids": [
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "RAW names SP_120724_<A|T|D|S><1–4>_<1–7>: segment letter, patient number, fraction; paper: epithelial cells from biopsies of ascending, transverse, descending and sigmoid colon of four patients"
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "1–7 per sample",
+      "source_ids": [
+        "ftp",
+        "paper"
+      ],
+      "evidence": "7 RAW files per sample on the FTP server (16 × 7 = 112); paper: ZIC-HILIC fractionation"
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "normal",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "'four different patients without any known colon diseases and with macroscopically normal mucosa'"
+    },
+    {
+      "location": "characteristics[cell type]",
+      "value": "epithelial cell",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "isolated colonic epithelial cells, membrane-enriched"
+    },
+    {
+      "location": "comment[instrument], [dissociation method]",
+      "value": "LTQ Orbitrap XL; CID",
+      "source_ids": [
+        "raw-header",
+        "paper"
+      ],
+      "evidence": "all 112 RAW headers: LTQ Orbitrap XL, Activation Type CID; paper: LTQ-Orbitrap XL, top-6 DDA"
+    },
+    {
+      "location": "comment[cleavage agent details], [modification parameters], tolerances",
+      "value": "Lys-C then trypsin; CAM C fixed; Ox M, Acetyl protein N-term variable; 7 ppm / 0.5 Da",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "paper: Lys-C overnight then trypsin (FASP); PRIDE data processing: MaxQuant 1.3.0.5, 7 ppm main search, 0.5 Da fragments, fixed carbamidomethyl, variable Met oxidation and protein N-terminal acetylation"
+    }
+  ],
+  "limitations": [
+    "The PRIDE API file list omits 13 RAW files that are on the FTP server (e.g. SP_120724_A1_2, T1_1); all 112 are annotated, completing 7 fractions for each of the 16 samples.",
+    "The paper says six HILIC fractions were collected, but every sample has seven RAW files (_1–_7); the file suffix is annotated as the fraction identifier. The _1 runs of 12 samples used a separate 'first' method (MS338_first_…).",
+    "The segment letter (A/T/D/S) and patient number are read from the file names; the deposit has no sample table.",
+    "Age and sex of the patients are not reported.",
+    "Membrane enrichment (sodium carbonate wash, ultracentrifugation) is described in the report only; no SDRF column."
+  ]
+}

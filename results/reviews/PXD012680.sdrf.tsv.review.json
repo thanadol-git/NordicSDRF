@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD012680.sdrf.tsv",
+  "artifact_sha256": "ca5cdf65c89339af51fd9b455aaa5bd00b2817bc2d939a10f6a0c3c01d5e3899",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review of the 10-row x 39-column SDRF for PXD012680 (FET-NTD GST pulldown from Raji + BRG1/DDIT3/FLI1 co-IPs in four sarcoma lines). The official validator reports only ontology-lookup warnings for Cellosaurus-style cell-line names and free-text culture medium. All 10 deposited RAW files map one-to-one. The sample-to-run assignments were re-derived from deposited .msf names, result spreadsheets and Table EV2 peptide counts and hold. Cellosaurus attributes match the saved extracts. The one contradiction with the deposit record (Q Exactive HF / HCD for Study 4) was adjudicated in the SDRF's favour, because the deposited Study-4 file is an Orbitrap Fusion run. No blocker or important findings; six minor improvements are listed.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh reviewer subagent with no access to the producer transcript. report.md and evidence.json were treated as untrusted claims and re-checked against scratchpad/PXD012680 only (PRIDE project JSON, file list, manuscript PMC6500973, deposited xlsx, Tables EV1/EV2, source-data PDFs, Cellosaurus extracts, RAW-header scan). Other accessions' folders and reports/superseded were not opened."
+  },
+  "evidence_manifest": "annotations/PXD012680.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates were derived independently. The data are human cell lines with MS DDA, so the set is ms-proteomics + human + cell-lines v1.1.0, all declared in comment[sdrf template]. cell-lines requires a technology layer and a sample layer, and both are present. Required columns are present: cell line, cellosaurus accession, disease, age, sex, organism, technology type, data file, instrument, label, cleavage agent, fraction and technical replicate. The table is 39 columns on every row, LF line endings, no BOM, and has no empty cells or leading/trailing whitespace. Source names, assay names and data files are each unique (10/10/10). Reserved words are used only where the column allows them: not applicable for organism part and individual; not available for age, sex, cell type, CE and reduction/alkylation. Collision energy values match the template pattern (e.g. '30% NCE'). The custom characteristics[bait] + factor value[bait] is justified: TERMS.tsv has no AP-MS bait column, and enrichment process (EFO:0009090) has only PTM/peptide enrichment children in the offline EFO cache."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Every accession-bearing value was resolved in the offline cache (/root/.cache/sdrf-pipelines/ontologies), with matching labels: PRIDE:0000627 data-dependent acquisition; MS:1000448 LTQ FT; MS:1002416 Orbitrap Fusion; MS:1001251 Trypsin; MS:1000133 collision-induced dissociation; PRIDE:0000608 dithiothreitol (DTT); PRIDE:0000605 methyl methanethiosulfonate (MMTS); UNIMOD:24 Propionamide; UNIMOD:39 Methylthio; UNIMOD:35 Oxidation. Label-only values also resolve: Burkitt lymphoma (MONDO:0007243), Ewing sarcoma (MONDO:0012817), myxoid liposarcoma (MONDO:0013280), B cell (CL:0000236), cell line (CLO:0000031), male (PATO:0000384) and Homo sapiens. The CVCL accessions match the Cellosaurus extract for each line. sdrf-tools check --offline: 0 hallucinated terms, 0 label mismatches, 0 UNIMOD swaps."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Study 1 band-to-RAW mapping is confirmed twice: by the 874 xlsx header (band 8=FT10, 3=FT5, 5=FT7, 7=FT9) and independently by the deposited msf names (874_band3_..FT5, band5_..FT7, band7_..FT9, band8_..FT10). The Methods state that Raji extract was used for each pulldown. Study 2 mapping is confirmed by the msf names 2334_1_MLSAvory..160519_08, 2334_2_EWSTC-71..160519_11 and 2334_3_EWSIORCAR..160519_14. The 'Avory' sample is 2645-94: its peptide counts in the 2334 xlsx (BRG1 8, SMARCC1 9, FUS 6, TAF15 1) equal the Table EV2 2645-94 column (402-91: 3, 5, 3, 1). PRIDE lists four BRG1 lines, so the elimination 151126_15 = 402-91 holds. The PRIDE sample protocol assigns Studies 3 and 4 to DDIT3 IP in 402-91 and FLI1 IP in TC-71. Cellosaurus sex/age/disease/cell type match the saved extracts (Raji M/11Y/B cell; TC-71 M/22Y; 402-91 and 2645-94 M; IOR/CAR sex and age unspecified). Culture media match the Methods: RPMI1640 GlutaMAX except the EWS lines, which use IMDM GlutaMAX, with 5 or 10% FBS and pen/strep. Tolerances (5 ppm / 500 mmu) and modifications (propionamide for Study 1; MMTS/methylthio for Studies 2-4; Met oxidation) match both the PRIDE protocol and the paper. sdrf-tools reconcile flagged 'Q Exactive HF' in the protocol as contradicting the SDRF. This was adjudicated in favour of the SDRF: none of the 10 deposited RAW files is a QE HF file, and the Study-4 file is named Fusion_170926_34. Its search file 2714_..._5ppm_500mmu_Fusion_170926_34.msf uses the 500 mmu Fusion/FT tolerance, not the 200 mmu QE HF tolerance, and the saved RAW-header scan reports Orbitrap Fusion with method 'Peptide ID IT CID'."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "The PRIDE file list (all FTP paths under .../PXD012680/) has 10 RAW files: EC_090204_FT05/07/09/10.RAW, Fusion_151126_15, Fusion_160519_08/11/14, Fusion_161116_96 and Fusion_170926_34.raw. comment[data file] contains exactly these 10, with case preserved (.RAW vs .raw), with no duplicates, no missing files and no non-raw files. Assay names equal the file stems."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "There are 10 sources, each a single IP eluate or gel band acquired once: biological replicate 1, technical replicate 1, fraction 1, label free. Recomputed groups are Raji/GST-FET-NTD x4 (bands 3/5/7/8), BRG1 IP x4 (one per cell line), DDIT3 IP in 402-91 x1 and FLI1 IP in TC-71 x1. The two 402-91 rows share every biological characteristic and differ only in bait, which is consistent. Bait, instrument and prep chemistry are fully confounded by study; this is inherent to the deposit and is represented faithfully. No quantitative contrasts are implied."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Each value was traced to PRIDE, the paper, deposited files or Cellosaurus, and no value asserts more than the evidence supports. Unknowns use 'not available': age for 402-91, 2645-94 and IOR/CAR; sex for IOR/CAR; CE for LTQ FT; reduction/alkylation for in-gel Study 1. The bait for each Study-1 band (FUS vs EWSR1 vs TAF15 NTD) is kept at the class level 'GST-FET-NTD' and not guessed. Omitted details that do not block approval (input fraction and elution chemistry) are listed as minor findings."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "Under flock /tmp/sdrf_validate.lock, parse_sdrf validate-sdrf -s annotations/PXD012680.sdrf.tsv -t ms-proteomics -t human -t cell-lines --use_ols_cache_only returned 'Most seems to be fine. There were only warnings.' (exit 0). The six warnings were 4 cell-line names not found in clo/bto/efo, which is warning-level by template design, and 2 free-text culture media not found in ncit. sdrf-tools check --offline: CLEAN (exit 0). sdrf-tools structure: OK. sdrf-tools score: 98/100; the only deductions are the optional ancestry category and developmental stage columns. sdrf-tools reconcile --record pride.json: 1 instrument contradiction, adjudicated under source_evidence. The artifact hash was re-checked after all tools ran and is unchanged."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "rows 5-10 (Fusion_* runs); evidence.json claim for characteristics[bait]",
+      "message": "Differences in the input material and elution are not recorded anywhere. Studies 2-4 used high-salt nuclear extracts; Study 2 was eluted with 1% formic acid, Studies 3-4 with LDS, and DDIT3/FLI1 IPs were Benzonase-treated. Study 1 used a whole-cell NP-40 Raji extract. The evidence manifest claims that 'elution buffer ... [is] in the source names', but no source name contains it.",
+      "evidence": "manuscript.txt, 'Nuclear protein extraction and co-immunoprecipitation' and 'Mass spectrometry' sections. The source names are e.g. '402-91_antiBRG1_IP', with no elution term.",
+      "correction": "Optionally add a comment column (e.g. comment[sample preparation] = 'nuclear extract; formic acid eluate' / 'nuclear extract; LDS eluate' / 'whole-cell extract; in-gel digest'), or fold the terms into the source names. Either way, correct the manifest/report sentence."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "rows 1-4 (Raji_GSTpulldown_band3/5/7/8)",
+      "message": "The four Raji rows are identical in every characteristic and factor and differ only in source name. The deposit does not say whether the bands come from one pulldown lane (gel fractions of one sample) or from different FET-NTD bait lanes, so downstream tools cannot tell what the four sources represent.",
+      "evidence": "The 874 xlsx and Table EV1 give no per-band bait. Fig 1C legend: 'Black arrowheads indicate protein bands and gel parts analyzed'.",
+      "correction": "Keep the current conservative modelling. Record the gel band explicitly in a column (e.g. comment[gel band] = 3/5/7/8) so the distinction does not live only in source name."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "characteristics[disease], rows 1-4",
+      "message": "Cellosaurus lists Raji as 'EBV-related Burkitt lymphoma' (NCIt C27694). The SDRF uses the broader 'Burkitt lymphoma'.",
+      "evidence": "cellosaurus_api_extracts.txt, DI line for CVCL_0511. The EFO cache has 'Epstein-Barr virus-related Burkitts lymphoma' (EFO:1001954).",
+      "correction": "Optional: use the EBV-related term if a MONDO/EFO equivalent is acceptable to the validator. Otherwise keep the broader term."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[organism part], all rows",
+      "message": "Organism part is 'not applicable', although Cellosaurus gives the tissue of origin for Raji (maxilla, UBERON:0002397) and TC-71 (humerus, UBERON:0000976).",
+      "evidence": "cellosaurus_api_extracts.txt, 'Derived from site' lines. The spec (SAMPLE-GUIDELINES.adoc l.76) allows either 'not applicable' or the tissue of origin for cell lines.",
+      "correction": "Optional: give the tissue of origin where Cellosaurus states it, or add characteristics[sampling site]."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "row 10 (Fusion_170926_34): comment[instrument], comment[dissociation method], comment[collision energy]",
+      "message": "Orbitrap Fusion / CID / 35% NCE contradicts the paper and the PRIDE record, which say Q Exactive HF / HCD / CE 28 for Study 4. The SDRF value rests on the RAW-header scan, which cannot be re-run offline, corroborated by the file and .msf names and the 500 mmu search tolerance.",
+      "evidence": "raw_header_check.json (model 'Orbitrap Fusion', method '300nlmin_Peptide ID IT CID...', 'Collision Energy (%) = 35'); PRIDE file 2714_DetRem_MMTS_SDOC_Tryp-1mc_decoy_5ppm_500mmu_Fusion_170926_34.msf; manuscript Methods (Q Exactive HF, HCD, CE 28).",
+      "correction": "Keep the values. State the discrepancy and the RAW-header basis explicitly in the contribution PR description so maintainers do not 'fix' the row back to Q Exactive HF."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[culture medium], all rows",
+      "message": "The culture medium is composite free text, not an ontology term, which produces validator warnings. The offline NCIT cache has no RPMI 1640 or IMDM medium term to substitute.",
+      "evidence": "Validator warnings for both media strings. An ncit.parquet search for 'rpmi'/'imdm' returned no medium terms.",
+      "correction": "Optional: use the base-medium term (e.g. NCIT 'RPMI-1640 Medium' if available online) and move the supplements to a separate comment."
+    }
+  ]
+}

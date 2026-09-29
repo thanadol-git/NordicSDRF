@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD004931.sdrf.tsv",
+  "artifact_sha256": "6530c6c9f8bf06568a141fc1795390ae04d25c6a7b48cf0268509bbcf4edd994",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review of the 34-row x 42-column SDRF (HMC-1 HD/LD extracellular density-gradient isolates, 18+16 SCX fractions, label-free DDA on LTQ Orbitrap Velos) found no blocker or important issues. The official validator (ms-proteomics+human+cell-lines, offline cache) returned only 2 warnings for free-text values, and every controlled term resolved in the offline ontology cache. The HD/LD file assignment is supported by the deposited E1/E2 interact.pep.xml input lists, and independently by the PeptideProphet totals (E2 has 106,672 estimated correct PSMs vs 67,111 for E1, consistent with LD = 2408 proteins). Only minor improvements remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent without producer transcript; producer report.md and evidence.json treated as untrusted and re-checked against scratchpad/PXD004931/ only"
+  },
+  "evidence_manifest": "annotations/PXD004931.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "All 34 rows have 42 fields; no CR, no leading or trailing whitespace, no duplicate rows. Required base, ms-proteomics, human (disease, age, sex) and cell-lines (cell line, disease, cellosaurus accession) columns are present. Factor value[density gradient fraction] is the last column and matches its characteristics column. Values that repeat (sdrf template, modification parameters) use permitted multi-columns. The age value 52Y matches the human template pattern, sex 'male' is an allowed value, material type 'cell line' is an allowed value, and technology type is a single allowed value. The (source, fraction identifier) pairs are unique. The custom characteristics[density gradient fraction] column is appropriate: no template column describes a sucrose-gradient buoyant-density isolate, and characteristics[enrichment process] is scoped to peptide/PTM enrichment."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Every term was resolved in /root/.cache/sdrf-pipelines/ontologies. Accessions: MS:1001742 LTQ Orbitrap Velos; MS:1001251 Trypsin; MS:1000133 collision-induced dissociation; PRIDE:0000627 data-dependent acquisition; PRIDE:0000561 SCX; PRIDE:0000609 TCEP; PRIDE:0000605 MMTS; UNIMOD:35 Oxidation; UNIMOD:4 Carbamidomethyl; UNIMOD:28 Gln->pyro-Glu; UNIMOD:27 Glu->pyro-Glu. Labels: Homo sapiens NCBITaxon:9606; blood UBERON:0000178; mast cell CL:0000097; mast cell leukemia MONDO:0020334 / NCIT:C3169 (not the obsolete MONDO:0005840); adult EFO:0001272; male PATO:0000384; label free sample MS:1002038. Target amino acids and positions are correct (Q/E with PP=Any N-term). HMC-1 is absent from the offline CLO/BTO/EFO cache (warning only) and is anchored by Cellosaurus CVCL_0003. sdrf-tools check --offline: CLEAN."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Cell-line facts match the saved Cellosaurus extract for CVCL_0003: peripheral blood (UBERON_0000178), mast cell (CL_0000097), NCIt C3169 mast cell leukemia, male, 52Y. The PRIDE values monocyte/lymphoma were rightly overridden and the override is disclosed. Culture medium matches the Methods: IMDM, 10% FBS ultracentrifuged to remove serum exosomes, pen/strep, L-glutamine, 1.2 mM alpha-thioglycerol. Proteomics is from HMC-1 only: TF-1 was used only for the RNA-profile check in Fig. S2B. Paper and PRIDE both give TCEP, MMTS, trypsin, SCX with 20 fractions, CID and 35% collision energy. The RAW headers of all 34 files report LTQ Orbitrap Velos MS, TOP10_CID method and Activation Type CID. The E1 and E2 tandem.xml files are byte-identical and give variable 15.994915@M and 57.021464@C, 10 ppm precursor tolerance, 0.8 Da fragment tolerance and 2 missed cleavages. The pyro-Glu modifications are stated in the paper and in the PRIDE data processing protocol. HD = E1 (Velos_130122_36-53) and LD = E2 (59-70, 72-74, 98) comes from the pep.xml inputfile lists. APEX counts 1436/2408 and the E1-only vault proteins come only from the producer-made summary JSON, because the raw xlsx is not saved. The independent PSM totals nevertheless corroborate the mapping."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "The 34 unique comment[data file] values equal the 34 RAW entries in files.json/files_compact.json exactly; every FTP path is under PXD004931. There are no duplicates. The non-raw files (APEX xlsx, FASTA, search zips) are correctly excluded. Each RAW file appears in exactly one of the E1/E2 pep.xml input lists, and the SDRF source matches that list for all 34 files."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "There are 2 sources (HD and LD isolates from split conditioned medium of one HMC-1 culture, each analysed once): biological replicate 1 and technical replicate 1 throughout, with 18 and 16 SCX fraction rows. The factor has 2 levels, 18 and 16 rows, consistent with the paper (one proteome per density fraction; no replicate MS reported). The fraction identifiers are unique within each source and are ordinal in file order; the producer discloses that true SCX fraction numbers are unknown."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value traces to the paper, PRIDE, RAW headers, search parameters or Cellosaurus. Developmental stage 'adult' is a direct consequence of the Cellosaurus age 52Y. characteristics[individual] is set to 'not applicable', not an invented donor ID. No per-sample values were inferred from cohort summaries. Two things the SDRF columns omit are disclosed in the manifest limitations: MMTS vs carbamidomethyl search, and the unknown SCX fraction numbers or possible re-run of Velos_130122_98. These are listed as minor findings below."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -s annotations/PXD004931.sdrf.tsv -t ms-proteomics -t human -t cell-lines --use_ols_cache_only -> exit 0, 'There were only warnings' (HMC-1 not in clo/bto/efo cache; free-text culture medium not in ncit). Without -t: exit 0 'Everything seems to be fine'. sdrf-tools check --offline -> CLEAN, exit 0. sdrf-tools score -> 99/100, exit 0 (only missing recommended ancestry category)."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "search-parameters",
+      "location": "comment[modification parameters] (Carbamidomethyl C) and comment[alkylation reagent], all rows",
+      "message": "Samples were alkylated with MMTS, which gives Methylthio C (UNIMOD:39), but the SDRF, like the original search, lists only Carbamidomethyl C as a variable modification.",
+      "evidence": "PRIDE/paper: 'alkylated with methyl methanethiosulfonate (MMTS)'. tandem.xml: residue, potential modification mass 15.994915@M,57.021464@C. UNIMOD:39 Methylthio resolves in the cache.",
+      "correction": "The annotation faithfully reflects the deposited search, so keep it. Consider adding NT=Methylthio;AC=UNIMOD:39;TA=C;MT=Variable (or noting the mismatch) so that reanalysis does not miss MMTS-modified cysteines."
+    },
+    {
+      "severity": "minor",
+      "category": "search-parameters",
+      "location": "comment[cleavage agent details]; optional data-analysis columns",
+      "message": "The search was semi-tryptic with 2 missed cleavages, but neither setting is captured in an SDRF column.",
+      "evidence": "tandem.xml: protein, cleavage semi = yes; scoring, maximum missed cleavage sites = 2.",
+      "correction": "Optionally add comment[allowed miscleavages]=2 (DATA-ANALYSIS.adoc) and record the semi-specific cleavage in the report."
+    },
+    {
+      "severity": "minor",
+      "category": "fraction-identifier",
+      "location": "comment[fraction identifier], LD rows 13-16 (Velos_130122_72, 73, 74, 98)",
+      "message": "The fraction numbers are ordinal in file order, not SCX fraction numbers. Velos_130122_71 is absent and 98 is out of sequence, which may be a re-run.",
+      "evidence": "The paper collected 20 SCX fractions; the E2 pep.xml lists 59-70, 72-74 and 98.",
+      "correction": "Acceptable as unique within-sample identifiers. If a raw header date or scan metadata shows that 98 re-injects an existing fraction, share that fraction's identifier instead."
+    },
+    {
+      "severity": "minor",
+      "category": "sample-description",
+      "location": "characteristics[culture medium], characteristics[material type], all rows",
+      "message": "The culture medium is a free-text composite that triggers a validator warning. Material type 'cell line' follows the spec guideline, but the extracellular (conditioned-medium EV/exRNA isolate) nature of the sample, and the 0.2 um filtration of HD but not LD, appear only in source name, the custom column and the report.",
+      "evidence": "Validator warning: the culture medium is not in the ncit list. Methods: HD comes from the filtered half and LD from the unfiltered half of the supernatant.",
+      "correction": "Optionally use the NCIT medium term (Iscove's Modified Dulbecco's Medium) and move the supplements to the report. Consider recording the filtration step, for example in the density-gradient column description or a comment, since it is confounded with the factor."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[ancestry category] (absent)",
+      "message": "The recommended human-template column is missing (score 97/100 completeness).",
+      "evidence": "sdrf-tools score lists it as a missing recommended column.",
+      "correction": "Add the column with 'not available' unless Cellosaurus gives a population."
+    }
+  ]
+}

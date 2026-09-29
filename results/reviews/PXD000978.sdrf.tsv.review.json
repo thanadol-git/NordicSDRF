@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD000978.sdrf.tsv",
+  "artifact_sha256": "af331813970c4dfa39cccdfd84686e4b61e2cc1e12a8f884ef0704f8ff461e29",
+  "verdict": "PASS",
+  "summary": "Independent review of the 360-row, 39-column SDRF: 72 RAW files, 3 TMT6plex sets using 5 channels, 8 SCX fractions, and 3 MS runs. I rebuilt every row from Table I (screenshot), the pepXML input-file lists and the RAW headers, and found 0 mismatches. The official validator (ms-proteomics + vertebrates) gives exit 0 with warnings only. All controlled terms resolve in the offline ontology cache. I found no blocker or important issues; 3 minor findings follow.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh reviewer agent without the producer transcript. It read only annotations/PXD000978.* and scratchpad/PXD000978/ and treated report.md and evidence.json as untrusted claims. pride.json accession = PXD000978, and the manuscript carries PMID 24994560 / PMC4223487 and cites PXD000978."
+  },
+  "evidence_manifest": "annotations/PXD000978.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "The active templates are ms-proteomics v1.1.0 and vertebrates v1.1.0. I derived them myself from templates.yaml: mouse tissue is vertebrates at the sample layer and ms-proteomics at the technology layer. All required columns are present, including source name, assay name, technology type, technical replicate, data file, organism, organism part, biological replicate, disease, developmental stage, acquisition method, instrument, cleavage agent, label and fraction identifier. Factor value columns come last. Every row has 39 fields. The file is ASCII with LF line endings, with no empty cells and no stray whitespace. Reserved words are lowercase. Source name + assay name + label is unique across all 360 rows. The multiplexed rows share one assay name per RAW file, as README section 535 requires. The internal standards use biological replicate 'pooled' and pooled sample 'SN=...;SN=...', following README sections 346-365. Age '4W' follows the SAMPLE-GUIDELINES format."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Every term resolves in /root/.cache/sdrf-pipelines/ontologies with the correct label and ontology family. Sample terms: NCBITaxon:10090 Mus musculus; UBERON:0001388 gastrocnemius; UBERON:0001103 diaphragm; UBERON:0001134 skeletal muscle tissue; PATO:0000461 normal; MONDO:0011925 congenital merosin-deficient muscular dystrophy 1A. Label terms: PRIDE:0000516/517/520/523/526 TMT126-130. Instrument, method and enzyme: MS:1000556 LTQ Orbitrap XL; PRIDE:0000627 data-dependent acquisition; MS:1001251 Trypsin; MS:1000422 beam-type CID (HCD); MS:1000133 CID. Preparation: PRIDE:0000561 SCX; PRIDE:0000609 TCEP; PRIDE:0000599 IAA. Modifications: UNIMOD:737 TMT6plex; UNIMOD:35 Oxidation; UNIMOD:39 Methylthio. The labels embedded in NT= match the accessions. LTQ Orbitrap XL is more specific than PRIDE's 'LTQ Orbitrap' (MS:1000449), and the RAW headers and Methods justify it. The MDC1A term is more specific than PRIDE's DOID 'congenital muscular dystrophy', and the paper's MDC1A / laminin alpha2-deficient framing justifies it. sdrf-tools check --offline: CLEAN (0 hallucinated, 0 label mismatch)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Checks against the manuscript Methods: 4-week-old dy3K/dy3K mice and WT littermates, n=15 each; 3 pools per genotype of 5 animals, with diaphragm and gastrocnemius taken from each; an internal standard made of equal fractions of the four samples; TCEP; iodoacetamide; trypsin; 8 SCX fractions; LTQ-OrbitrapXL in DDA with both CID and HCD MS2; three MS runs. The Table I screenshot matches the SDRF channel map exactly for pools 1-3, including the label swap. All 72 RAW headers show LTQ Orbitrap XL with both HCD and CID activation. The pepXML search summaries for all 3 sets agree: Mascot/SwissProt Mus musculus, trypsin with 1 missed cleavage, 5 ppm / 0.5 Da, fixed TMT6plex (K) and (N-term), variable Methylthio (C) and Oxidation (M). The 5 ppm value conflicts with the paper/PRIDE's 10 ppm. The producer disclosed this and chose the deposited search parameters, which is defensible. The genotype label 'Lama2 dy3K/dy3K' is supported by the paper's LAMA2 context and its Lama2-null references."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "The 72 unique comment[data file] values exactly equal the 72 RAW entries in files.json / files_compact.json. The SDRF omits the non-RAW files (.msf, .pep.xml), which is correct. Each RAW file appears 5 times, once per channel, and the 360 (file, label) pairs are unique. The file-to-set assignment matches the Proteome Discoverer 'Spectrum Files' input lists in each set's pepXML (24 RAW files per set). The assay name equals the file stem."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "I rebuilt source name, label, fraction and technical replicate for every row independently. Set is taken from the pepXML lists; channel-to-sample from Table I; fraction from order within each 8-file block; technical replicate from run date (111024=1, 120203=2, 120510=3). Result: 0 mismatches. Each condition (GAST/DIA x WT/dy3K) has biological replicates 1-3, one per pool, and each pool/set is a balanced block with its own internal standard, so the conditions are not confounded with TMT set. Factor value[genotype] mirrors characteristics[genotype]. Factor value[organism part] is 'not applicable' only for the 72 internal-standard rows, which are reference channels and not a study level. Row counts: 72 per condition group and 72 internal-standard rows."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every non-reserved value traces to the paper, Table I, the pepXML or the RAW headers. Unknowns are left as 'not available' rather than guessed: sex, strain background and developmental stage. The manuscript states no sex, strain or background, which I confirmed by grep. Two inferences are not directly stated in any file: pool N = set N, and SCX fraction number = acquisition order. Both are consistent with every saved artifact, and the first is disclosed as a limitation (see minor findings). Nothing asserts more than the evidence supports. The optional parameters that were omitted are known from Methods but are not required: collision energy of HCD 50% / CID 30%, and MS1 range m/z 400-2000."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "Validator, run under flock: 'parse_sdrf validate-sdrf -s annotations/PXD000978.sdrf.tsv -t ms-proteomics -t vertebrates --use_ols_cache_only' exits 0 with 'only warnings'. The 3 warnings are the values-validator flagging the 'SN=...' pooled-sample strings; the template's pattern validator and README section 352 explicitly allow these. The run without explicit -t also exits 0 with the same warnings. 'sdrf-tools check --offline' exits 0: CLEAN. 'sdrf-tools score' exits 0: 100/100."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "source name / comment[label], all 360 rows (set-to-pool mapping)",
+      "message": "The equivalence between pepXML folder 'set N' and Table I 'Pool N' is inferred, not stated in any source. Because of the label swap, a different correspondence would reassign conditions to channels.",
+      "evidence": "pepxml_input_files.json and the search_summary folders use 'set 1/2/3', and Table I uses 'Pool 1/2/3'. No saved file links the two. The producer's evidence.json lists this under limitations.",
+      "correction": "Keep the limitation in the PR description. If a submitter confirmation or channel-level evidence (e.g. reporter-ratio patterns in the .msf) becomes available, verify it; otherwise no change is needed."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[fraction identifier], all rows",
+      "message": "The SCX fraction number is assigned from acquisition order within each 8-file block, e.g. CF_111024_25..32 map to fractions 1..8. No source states this explicitly, and evidence.json does not list it as a limitation.",
+      "evidence": "The Methods give fractions 1-8 by increasing KCl. The RAW header scan did not extract sample or vial names.",
+      "correction": "Add a limitation noting that fraction numbers follow acquisition order. Alternatively, confirm it from the RAW sample-name or vial fields if those can be read."
+    },
+    {
+      "severity": "minor",
+      "category": "source-conflict",
+      "location": "comment[precursor mass tolerance] = '5 ppm'",
+      "message": "The paper Methods and the PRIDE dataProcessingProtocol state 10 ppm, but the deposited search summaries state 5 ppm.",
+      "evidence": "All three *.pep.xml.search_summary.txt files contain 'Precursor Mass Tolerance: 5 ppm', while manuscript.txt line 39 says 'MS peptide tolerance of 10 ppm'. The producer disclosed this.",
+      "correction": "No change is required. Keep the disclosure in the PR notes."
+    }
+  ]
+}

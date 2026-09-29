@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD012332.sdrf.tsv",
+  "artifact_sha256": "7609f1f61f546a7cbcb497bc0e70df05746d82995c90dd6d6d575c9cfa011312",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review found no blocker or important issues. All 18 deposited RAW files map exactly once; carbon source, growth phase and bioreactor replicate assignments are consistent with the RAW naming scheme and the publication; technical columns match the paper Methods and RAW headers. Only minor provenance/completeness findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent without producer transcript; evidence limited to scratchpad/PXD012332/, spec, installed sdrf_pipelines templates and offline ontology caches; no network access"
+  },
+  "evidence_manifest": "annotations/PXD012332.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active template derived independently: R. toruloides (fungus) has no organism layer template (human/vertebrates/invertebrates/plants do not apply), so ms-proteomics v1.1.0 alone (usable_alone: true) is correct. All required base/sample-metadata/ms-proteomics columns present; 18 rows x 32 columns, no CR characters, no duplicate assay names or data files; comment[sdrf template]=NT=ms-proteomics;VV=v1.1.0 matches pattern; collision energy '28% NCE' matches pattern; reserved words (not applicable) only in columns allowing them (organism part, cell type, disease); material type 'cell' is an allowed value; phenotype and growth condition are TERMS.tsv free-text terms; factor columns (growth condition, phenotype) each have matching characteristics columns. sdrf-tools structure: OK."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Resolved offline one parquet at a time: NCBITaxon:5286 rhodotorula toruloides; MS:1001911 q exactive; MS:1000422 beam-type collision-induced dissociation (HCD per spec); MS:1001251 trypsin; PRIDE:0000627 data-dependent acquisition; UNIMOD:4 carbamidomethyl, UNIMOD:1 acetyl, UNIMOD:35 oxidation, UNIMOD:7 deamidated - all labels match. 'label free sample' accepted by the validator's PRIDE ontology check. sdrf-tools check --offline: CLEAN (0 hallucinated, 0 label mismatches, 0 UNIMOD swaps)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "manuscript.txt (PMC6547517, title/authors match PXD012332 record): strain 'Rhodotorula toruloides CBS 14' (Methods, Strain and media; Table 1); triplicate cultivations per carbon source (Fig 1 legend, Yeast cultivation); proteome samples at early exponential (8/16 h), late exponential (16/40 h), lipid production (64/96 h) phases; Q-Exactive Top12, 'NCE setting of 28'; MaxQuant 1.5.3.40, 4.5 ppm MS / 20 ppm MS/MS, Trypsin/P, fixed carbamidomethyl C, variable protein N-term acetyl, Met oxidation, N/Q deamidation - all match SDRF. pride.json accession PXD012332, instrument Q Exactive, organism NEWT:5286. evidence/raw_header_check.json: all 18 RAW headers report Q Exactive and 120min_top12_20170406.meth. Glucose tokens 1/2/8 map exactly to 8/16/64 h at the stated 8-h sampling interval; xylose tokens 2/5/10 are consistent in order with 16/40/96 h (80 vs 96 h discrepancy disclosed; only the ordinal phase is annotated, no hours)."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "files_compact.json (PXD012332 FTP paths) lists 18 RAW + 6 SEARCH files; files_raw_names.json identical 18-name set. SDRF comment[data file] set equals the RAW set, each exactly once; every assay name equals its file stem; no non-RAW files referenced."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed from file names (<date>_SLU_<reactor><n><G|X>): 2 carbon sources x 3 phases x 3 reactors = 18, each group n=3. Every row's growth condition, phenotype (phase), biological replicate (glucose A/B/E=1/2/3, xylose A/C/F=1/2/3) and both factor values match the parsed token with 0 mismatches. Reactor letters each carry exactly one sample per phase, supporting reactor = biological replicate. technical replicate=1 and fraction identifier=1 consistent with one unfractionated DDA run per sample. Shared 'A' letter across carbon sources is disclosed and harmless because replicate numbering is within condition and source names differ."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No value asserts more than the evidence supports: sampling time in hours deliberately omitted given token/paper discrepancy; disease/organism part/cell type use reserved words rather than invented terms; no reduction/alkylation reagent, missed cleavage or scan-range values invented. PRIDE sampleProcessingProtocol mentions a 'beginning of cultivation' sample, but the paper shows t0 was used only for lipid content and no t0 RAW exists, so its absence is correct. Omitted-but-available items (DTT, CL:0000334, sampling hours) are optional/recommended and recorded as minor findings."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf --sdrf_file annotations/PXD012332.sdrf.tsv -t ms-proteomics --use_ols_cache_only -> 'Everything seems to be fine. Well done.' exit 0. sdrf-tools structure exit 0 (Structure OK). sdrf-tools check --offline exit 0 (CLEAN). sdrf-tools score 100/100. sdrf-tools reconcile --record scratchpad/PXD012332/pride.json exit 1 with one heuristic flag cleavage_agent_unsupported for Trypsin; reviewed and dismissed as a false positive: the record prose says 'generation of tryptic peptides' and the paper Methods state 'Trypsin/P was used as digestion enzyme' and FASP-generated tryptic peptides."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD012332.report.md and evidence.json limitations: 'reduction/alkylation reagents of the FASP protocol are not stated'",
+      "message": "The statement is partly false: the reduction reagent is stated. Only the alkylation reagent is unnamed.",
+      "evidence": "manuscript.txt, Preparation of samples for proteome analysis: 'resuspended in 500 ul of a solution of 4% (w/v) SDS, 10 mM DTT and 100 mM Tris-HCl'. To fix, correct the limitation text, and optionally add comment[reduction reagent] for DTT with an accession you have verified (it is not in the offline PSI-MS cache). Leave the alkylation reagent unannotated."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD012332.evidence.json sources[pride-files].location",
+      "message": "The manifest cites an 'FTP directory listing' as a source, but no such file exists in scratchpad/PXD012332/.",
+      "evidence": "scratchpad/PXD012332/ contains only files_compact.json, files_raw_names.json, pride.json, manuscript.txt, samples.tsv, technical.tsv and evidence/raw_header_check.json. The file mapping is fully supported by files_compact.json (FTP URLs). To fix, drop the reference or save the listing."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[cell type], all 18 rows",
+      "message": "Cell type is 'not applicable', but the deposit record supplies CL:0000334 'vegetative cell (sensu Fungi)', which the submitter entered under organism part.",
+      "evidence": "pride.json organismParts/sampleAttributes list CL:0000334, and it resolves in cl.parquet as 'vegetative cell (sensu fungi)'. The column is recommended, so either use this term or say in the report why it was rejected."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[sampling time] (absent)",
+      "message": "The paper gives sampling hours for each phase, so the optional sampling time could be annotated from the paper rather than from the file tokens.",
+      "evidence": "manuscript.txt: 'early exponential phase (8 or 16 h), late exponential (16 or 40 h) and lipid production phase (64 or 96 h), with the later sampling-points referring to xylose'. The phase assignment is already accepted, so the hours follow from the paper. Leaving them out is safe and not required."
+    },
+    {
+      "severity": "minor",
+      "category": "technical",
+      "location": "comment[cleavage agent details], all 18 rows",
+      "message": "The search used Trypsin/P (MS:1001313), but the SDRF records Trypsin (MS:1001251). This choice is disclosed and acceptable for the wet-lab digest enzyme. The reconcile BLOCKER on this column is a keyword false positive.",
+      "evidence": "manuscript.txt Bioinformatics: 'Trypsin/P was used as digestion enzyme and 2 miscleavages were allowed'. pride.json: 'generation of tryptic peptides'."
+    }
+  ]
+}

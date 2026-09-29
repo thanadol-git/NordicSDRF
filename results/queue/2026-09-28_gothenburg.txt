@@ -1,11 +1,11 @@
 # Gothenburg batch 1 — next 10 accessions from lists/sweden/gothenburg.txt to-do (not in corpus, not annotated/blocked here), 2026-09-28
-PXD000978	sweden/gothenburg	queued	
-PXD000987	sweden/gothenburg	queued	
-PXD001479	sweden/gothenburg	queued	
-PXD004931	sweden/gothenburg	queued	
-PXD004993	sweden/gothenburg	queued	
-PXD005074	sweden/gothenburg	queued	
-PXD009198	sweden/gothenburg	queued	
-PXD009652	sweden/gothenburg	queued	
-PXD012332	sweden/gothenburg	queued	
-PXD012680	sweden/gothenburg	queued	
+PXD000978	sweden/gothenburg	done	annotated, review PASS (2026-09-29)
+PXD000987	sweden/gothenburg	done	annotated, review PASS (2026-09-29)
+PXD001479	sweden/gothenburg	done	annotated, review PASS (2026-09-29)
+PXD004931	sweden/gothenburg	done	annotated, review PASS (2026-09-29)
+PXD004993	sweden/gothenburg	done	annotated (-tmt, -lfq), review PASS (2026-09-29)
+PXD005074	sweden/gothenburg	done	annotated (-lfq, -tmt), review PASS (2026-09-29)
+PXD009198	sweden/gothenburg	blocked	blocked: TMT channel-to-sample map not deposited or published (2026-09-29)
+PXD009652	sweden/gothenburg	blocked	blocked: glycosaminoglycan LC-MS, not proteomics (2026-09-29)
+PXD012332	sweden/gothenburg	done	annotated, review PASS (2026-09-29)
+PXD012680	sweden/gothenburg	done	annotated, review PASS (2026-09-29)
