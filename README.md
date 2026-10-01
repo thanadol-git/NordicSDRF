@@ -96,9 +96,9 @@ One chart per country, one bar per city (shared x scale within a country). A
 curated city's bar is its manifest (`lists/<country>/<city>.txt`), split so every PXD
 sits in exactly one block, first match wins: *Annotated* (SDRF in `annotations/`),
 *Blocked*, *In corpus* (already has an SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/bigbio/sdrf-annotated-datasets),
-checked against GitHub bigbio/sdrf-annotated-datasets (2026-09-29)), *Screened*, *To do*.
+checked against local checkout (2026-10-01)), *Screened*, *To do*.
 A city without a manifest shows a dashed outline sized by its raw PRIDE full-text
-hit count (unioned over `search_terms` in `config.yml`, queried 2026-09-23). *Olink PAD*
+hit count (unioned over `search_terms` in `config.yml`, queried 2026-10-01). *Olink PAD*
 is every public Olink dataset in PRIDE's affinity archive, one row per platform
 (`olink_pad/<platform>.txt`, rebuilt by `python scripts/build_pad_manifest.py`).
 The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with
