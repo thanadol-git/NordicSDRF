@@ -5,9 +5,9 @@
 Fifty-four DDA runs from three patient-derived glioblastoma cultures across oxygen condition and surfaceome/endocytome enrichment.
 
 - Rows: 54
-- Columns: 45
+- Columns: 44
 - Deposited acquisition files represented: 54
-- Artifact SHA-256: `0f68d880c7e73bce1b09b485c60effb187fedb82be1b6b83ec083986e3bde890`
+- Artifact SHA-256: `f4ce51e1aacef9f68296b02f4ba69d757cf1d9c505b10229e9e4be082f704f98`
 
 ## Validation
 

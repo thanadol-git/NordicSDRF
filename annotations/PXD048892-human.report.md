@@ -5,9 +5,9 @@
 Eighteen human wound-fluid peptidomics acquisitions mapped to participant, wound, collection day, and infection group.
 
 - Rows: 18
-- Columns: 31
+- Columns: 30
 - Deposited acquisition files represented: 18
-- Artifact SHA-256: `c973d09ef47cc259330e712c3b9b28d92cb408925507a92515c12cff40d949de`
+- Artifact SHA-256: `917fd7bfa9bd88c80948be641781542444b54c8bfcd6dc48f15082de42fb5610`
 
 ## Validation
 

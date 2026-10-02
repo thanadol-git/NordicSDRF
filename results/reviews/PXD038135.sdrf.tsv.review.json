@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD038135.sdrf.tsv",
+  "artifact_sha256": "e78bb0fe26caf39f03a922eca26c44be08c04d80abc9705748bc4b2a923d83d3",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. Two-row ms-proteomics SDRF maps the partial PRIDE deposit of recombinant human osteopontin digested with thermolysin versus trypsin; file names, original ThL raw/search paths, peptide cleavage, and methods all support keeping thermolysin rather than recoding it as trypsin.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh hook agent without producer transcript"
+  },
+  "evidence_manifest": "/tmp/sdrf-scratch/PXD038135-rereview/evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active template independently derived as ms-proteomics v1.1.0 (usable_alone; declared NT=ms-proteomics;VV=v1.1.0). Required ms-proteomics/base/sample-metadata columns present; factor last; no empty cells; unique source+assay; human/cell-lines templates correctly unused for purified recombinant protein. parse_sdrf -t ms-proteomics online: Everything seems to be fine. python3 -m tools structure: Structure OK."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "python3 -m tools check: 11/11 terms verified, 0 hallucinated/mismatched/UNIMOD swaps. OLS4 resolved NT/AC pairs to current labels: PRIDE:0000627 Data-dependent acquisition; MS:1001911 Q Exactive; MS:1003979 Thermolysin (not obsolete); MS:1001251 Trypsin; MS:1000422 beam-type collision-induced dissociation; UNIMOD:21/35/7 Phospho/Oxidation/Deamidated; NCBITaxon:9606 Homo sapiens. Cache-only parse_sdrf missed MS:1003979; online parse_sdrf accepted it."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Identity-checked PRIDE accession PXD038135 title matching PMC9779928 / PMID 36569898 / DOI 10.3389/fimmu.2022.1079775. Methods and PRIDE sampleProcessingProtocol: recombinant human OPN digested with trypsin or thermolysine; QExactive DDA; PEAKS 8.5; 15 ppm / 0.05 Da; phospho STY, ox M, deamidated NQ. mzML MS:1001911 Q Exactive (not PRIDE's Q Exactive HF). Search mods omit carbamidomethyl despite PX MOD:00397."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE files list projectAccessions PXD038135 only. Two RAW files LT_OPN_Thermolysine.raw and LT_OPN_Trypsin.raw match comment[data file] exactly; no extra/missing raw rows. PEAKS Source File names 180924_OPN_Egesten_ThL.raw and 180903_OPN_Egesten_1800.raw are pre-deposit originals of those two runs."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "n=2 assays, 2 sources, 1 technical replicate, fraction 1, label-free, factor=cleavage agent details with two levels matching the two deposited files. Biological replicate=1 each; no hidden fractions or labels. Partial PRIDE deposit (submissionType PARTIAL) of OPN characterization, not the murine infection study."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Did not copy PRIDE sampleAttributes CF/COPD onto recombinant OPN. Did not recode thermolysin as trypsin. Did not add carbamidomethyl or Q Exactive HF against file-level counterevidence. Expression host HEK293 vs E. coli is not in deposited filenames; phospho-positive P10451-only PEAKS tables match pOPN characterization at file granularity without inventing a host factor."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -s annotations/PXD038135.sdrf.tsv --use_ols_cache_only -t ms-proteomics exit 1 (Thermolysin MS:1003979 cache miss). parse_sdrf validate-sdrf -s ... -t ms-proteomics exit 0; default template online exit 0. PYTHONPATH=sdrf-skills python3 -m tools structure exit 0; check exit 0 CLEAN; score 100/100 exit 0."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "comment[ms1 scan range] / comment[ms min mz] omitted",
+      "message": "Paper Mass spectrometry reports an MS scan of 400\u20131800 m/z, which could be recorded in optional ms-proteomics range columns.",
+      "evidence": "PMC9779928: 'An MS scan (400\u20131800 m/z) was recorded in the Orbitrap'. These columns are optional; their absence does not make required annotation unsafe."
+    }
+  ]
+}

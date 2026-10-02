@@ -12,7 +12,8 @@ Reads config.yml, then for every city:
                   or the live GitHub tree with --corpus github); the PXDs are written
                   to results/<country>/<city>_in_corpus.txt so tier 1 can drop them
   * screened    - data rows in results/<country>/<city>_screen.tsv, if present
-  * annotated   - manifest PXDs with annotations/<PXD>.sdrf.tsv
+  * annotated   - manifest PXDs with annotations/<PXD>.sdrf.tsv or split
+                  annotations/<PXD>-*.sdrf.tsv artifacts
   * blocked     - manifest PXDs with annotations/<PXD>.BLOCKED.md or listed in
                   annotations/BLOCKED.md
 
@@ -175,9 +176,14 @@ def blocked_ids() -> set[str]:
     return ids
 
 
+def has_local_annotation(pxd: str) -> bool:
+    """Return true for either a single SDRF or intentional split artifacts."""
+    ann = ROOT / "annotations"
+    return (ann / f"{pxd}.sdrf.tsv").exists() or any(ann.glob(f"{pxd}-*.sdrf.tsv"))
+
+
 def local_counts(country: str, slug: str, city: dict, blocked: set[str], corpus: set[str]) -> dict[str, int]:
     ids = manifest_ids(country, slug, city)
-    ann = ROOT / "annotations"
     in_corpus = sorted(pxd for pxd in ids if pxd in corpus)
     if ids:
         out = ROOT / "results" / country / f"{slug}_in_corpus.txt"
@@ -187,7 +193,7 @@ def local_counts(country: str, slug: str, city: dict, blocked: set[str], corpus:
         "pxd_count": len(ids),
         "in_corpus": len(in_corpus),
         "screened": screened_count(country, slug),
-        "annotated": sum((ann / f"{pxd}.sdrf.tsv").exists() for pxd in ids),
+        "annotated": sum(has_local_annotation(pxd) for pxd in ids),
         "blocked": sum(pxd in blocked for pxd in ids),
     }
 
@@ -208,10 +214,9 @@ def city_categories(country: str, slug: str, city: dict, blocked: set[str], corp
     """
     if not manifest_relpath(country, slug, city):
         return None
-    ann = ROOT / "annotations"
     screened = screened_ids(country, slug)
     tests = {
-        "annotated": lambda p: (ann / f"{p}.sdrf.tsv").exists(),
+        "annotated": has_local_annotation,
         "blocked": lambda p: p in blocked,
         "in_corpus": lambda p: p in corpus,
         "screened": lambda p: p in screened,

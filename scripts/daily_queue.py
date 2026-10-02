@@ -90,7 +90,7 @@ def screen_verdicts(country: str, slug: str) -> dict[str, str]:
 
 def classify(pxd: str, city: str, blocked: set[str], corpus: set[str],
              screen: dict[str, str], live: set[str]) -> tuple[str, str]:
-    if (ANN / f"{pxd}.sdrf.tsv").exists():
+    if (ANN / f"{pxd}.sdrf.tsv").exists() or any(ANN.glob(f"{pxd}-*.sdrf.tsv")):
         return "annotated", "SDRF already in annotations/"
     if pxd in blocked or (ANN / f"{pxd}.BLOCKED.md").exists():
         return "blocked", "blocked here"

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD038318.sdrf.tsv",
+  "artifact_sha256": "490b509fdcf0a6b9daf35fd6fc586e3719881b2cac9f9296e2045edf3b59cafc",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. 128 TMT rows match the deposited 8-channel map, 16 RAW files, and paper Methods for this murine AML eIF6 experiment.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh hook agent without producer transcript"
+  },
+  "evidence_manifest": "/tmp/sdrf-scratch/PXD038318-rereview2/evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates independently derived as ms-proteomics v1.1.0 + vertebrates v1.1.0 from Mus musculus MS proteomics. Required columns present; factor value last; 128 unique source+assay+label keys; no empty/trailing-whitespace cells. python -m tools structure exit 0."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "OLS resolved organism Mus musculus (NCBITaxon:10090), bone marrow (UBERON:0002371), leukemia cell (BTO:0001271), acute myeloid leukemia (MONDO:0018874), adult (EFO:0001272), DDA PRIDE:0000627, Orbitrap Exploris 480 MS:1003028, Trypsin MS:1001251, HCD MS:1000422, TMT channel labels, and UNIMOD 4/737/35/1/765 with matching labels and no obsolete terms or UNIMOD swaps. python -m tools check --offline: CLEAN (0 hallucinated, 0 mismatches, 0 swaps)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project accession/title PXD038318 and paper PMID 39412990 / DOI 10.1016/j.celrep.2024.114864 (Resource availability cites PXD038318). Channel map, organism, disease, adult C57BL/6J mice, Orbitrap Exploris 480 DDA, trypsin/IAA/TMT10plex, HpH-RP 8 fractions with duplicate injections, and PD 2.5 search mods/tolerances match the SDRF."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE v3 files/all: 18 files, all projectAccessions=['PXD038318']; 16 RAW names exactly equal the 16 unique comment[data file] values; SEARCH and TMT_labeling_scheme.txt correctly excluded from data-file column."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "8 sources (control 1-4, eIF6 1-4) x 8 fractions x 2 injection technical replicates = 128 rows. Each RAW file has the same 8 TMT channels. Factor value[experimental group] matches characteristics[experimental group] and the deposited Con/eIF6 map. Unused TMT10plex channels 128C and 131 have no rows. No instrument x condition confounder."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No fabricated per-sample demographics. Sex omitted (recommended only) because hosts are mixed sex and the eight TMT samples lack an individual-level sex table. Cell-lines template not applied (primary FACS-sorted murine leukemia cells, not a named line). Unused TMT channels not invented. Optional HpH-RP/DTT/IAA columns omitted rather than guessed."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf --use_ols_cache_only -t ms-proteomics exit 0 ('Everything seems to be fine'). -t vertebrates exit 0 with warning only that C57BL/6J is not in NCBITaxon. python -m tools structure exit 0; check --offline exit 0 CLEAN; score 100/100."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[strain or breed] all rows",
+      "message": "C57BL/6J is the correct Jackson strain from STAR Methods but is not present in NCBITaxon, so the vertebrates ontology validator warns.",
+      "evidence": "parse_sdrf -t vertebrates: 'Term: C57BL/6J in column characteristics[strain or breed] is not found in the given ontology list ncbitaxon'. TERMS.tsv marks strain or breed as free text; paper lists C57BL6J RRID:IMSR_JAX:000664."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "characteristics[cell type] all rows",
+      "message": "Cell type is the valid BTO parent 'leukemia cell'; the paper states proteomics was of c-Kit+ leukemia cells, and BTO also has the more specific 'acute myeloid leukemia cell'.",
+      "evidence": "Results: 'Quantitative proteomics of c-Kit+ leukemia cells confirmed the increase in ribosomal protein abundance'. OLS: BTO:0001271 leukemia cell; BTO:0001545 acute myeloid leukemia cell. No CL term exactly matches c-Kit+ MLL-AF9 leukemia cells."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "optional MS sample-prep columns",
+      "message": "High-pH reversed-phase fractionation, DTT reduction, and iodoacetamide alkylation are described in Methods but the optional SDRF columns for those facts are absent.",
+      "evidence": "STAR Methods / PRIDE sampleProcessingProtocol: reduced with 5 mM DTT, alkylated with 10 mM iodoacetamide, HpH-RP fractionation, eight fractions injected twice. comment[fractionation method], comment[reduction reagent], and comment[alkylation reagent] are optional in ms-proteomics 1.1.0."
+    }
+  ]
+}

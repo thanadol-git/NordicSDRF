@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-10-01
 
-corpus_source: local checkout (2026-10-01)
+corpus_source: local checkout (2026-10-02)
 
 countries:
   sweden:
@@ -60,8 +60,8 @@ countries:
         pxd_count: 163
         pride_hits: 544
         screened: 0
-        annotated: 52
-        blocked: 73
+        annotated: 58
+        blocked: 77
         in_corpus: 6
       gothenburg:
         name: Gothenburg
@@ -70,7 +70,7 @@ countries:
         pxd_count: 135
         pride_hits: 192
         screened: 0
-        annotated: 31
+        annotated: 33
         blocked: 37
         in_corpus: 9
       uppsala:
