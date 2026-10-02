@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD070089.sdrf.tsv",
+  "dataset": "PXD070089",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD070089 (scratchpad/PXD070089/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "PRIDE file list (scratchpad/PXD070089/files_compact.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC12976852 Methods 2.1–2.9 (scratchpad/PXD070089/manuscript.txt)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "RAW headers read by HTTP range request (instrument, method file, activation type; scratchpad/PXD070089/evidence/raw_header_check.json)"
+    },
+    {
+      "id": "mapping",
+      "kind": "publication+repository",
+      "location": "Supplementary Table S1 (PCa 1–3, Control 1–3 columns; scratchpad/PXD070089/evidence/TableS1_proteins.xls) matched to the F1–F6 abundance columns of the deposited PD export HFX1_FPEP210040125-1A_PeptideGroups.txt (scratchpad/PXD070089/evidence/sample_mapping.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[disease], [treatment], [biological replicate], factor value[disease]",
+      "value": "HFX1_FPEP210040125/126/127 = PCa 1–3; 128/129/130 = Control 1–3",
+      "source_ids": [
+        "mapping",
+        "paper"
+      ],
+      "evidence": "Table S1 'PCa k' / 'Control k' columns equal the PD 'Abundances (Normalized): Fj' sums ×const with j = 1…6 in order (log-ratio SD < 1.2e-4 on 745 proteins; all other pairings SD > 0.3); F1 = HFX1_FPEP210040125-1A (the PD export is named after it), F1–F6 = consecutive RAW numbers 125–130; paper: 'murine PCa model (n = 3) and a control group (n = 3)'"
+    },
+    {
+      "location": "characteristics[organism], [strain or breed], [sex], [age]",
+      "value": "Mus musculus; BALB/c nude; male; 11W",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "'MDA-PCa-2b-luc cells were implanted into the dorsal prostate lobes of 7-week-old male BALB/C nude mice'; 'Four weeks post-injection, we excised the prostate' → 11 weeks at harvest"
+    },
+    {
+      "location": "characteristics[organism part], [material type], [cellular component]",
+      "value": "prostate gland; tissue; extracellular vesicle",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "'isolated sEVs from the prostate tissue' by ultracentrifugation with an iodixanol density cushion; PRIDE organism part Prostate gland"
+    },
+    {
+      "location": "comment[instrument], [dissociation method], [collision energy]",
+      "value": "Q Exactive HF-X; HCD; 27% NCE",
+      "source_ids": [
+        "raw-header"
+      ],
+      "evidence": "RAW headers: 'Q Exactive HF-X - Orbitrap MS', method lfq_15cm_60min, '(N)CE … nce: 27' (PRIDE lists Q Exactive HF; the paper says 'Q Exactive Series')"
+    },
+    {
+      "location": "modifications, tolerances, cleavage, reagents",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term variable; 10 ppm / 0.02 Da; trypsin; DTT; IAA",
+      "source_ids": [
+        "paper",
+        "mapping"
+      ],
+      "evidence": "paper 2.8–2.9: DTT reduction, iodoacetamide alkylation, trypsin, 10 ppm / 0.02 Da, two missed cleavages; PeptideGroups modifications: Carbamidomethyl [C] 2283, Oxidation [M] 767, Acetyl [N-Term] 17"
+    }
+  ],
+  "limitations": [
+    "The run → F-number assignment inside Proteome Discoverer is not written in any deposited file. F1 = HFX1_FPEP210040125-1A is supported by the export file name; F2–F6 = 126–130 assumes PD's default input order (by file name). The group labels per F column are exact (Table S1).",
+    "The tumours are human MDA PCa 2b xenografts in nude mice; the sEVs are a mixture of mouse prostate and human tumour origin. The search was against a mouse database (Mus musculus accessions in the export), so organism is Mus musculus; the xenograft is recorded in characteristics[treatment].",
+    "Age 11W is derived (implanted at 7 weeks, harvested 4 weeks later).",
+    "Whether carbamidomethylation was searched as fixed is not stated; it is present on all Cys-containing peptides in the export and is annotated as fixed."
+  ]
+}

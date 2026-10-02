@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD044264.sdrf.tsv",
+  "artifact_sha256": "700812292efe737654fc05d110ba024f36aeaeecd97c1f95c4ef7d7b1d7fcd3c",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. Frozen SHA-256 matched; PRIDE file list identity was PXD044264; paper PMC10475049 title matched the PRIDE project; 56 RAW files and design.csv group labels agree with the SDRF.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh hook agent without producer transcript"
+  },
+  "evidence_manifest": "/tmp/sdrf-scratch/PXD044264-rereview/evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Declared templates independently reconstructed as ms-proteomics v1.1.0 + human v1.1.0 + clinical-metadata v1.0.0 (phenotype column requires clinical-metadata). python -m tools structure: OK. parse_sdrf validate-sdrf --use_ols_cache_only -t ms-proteomics, -t human, and union -t ms-proteomics -t human -t clinical-metadata: exit 0. Required columns present; no empty/whitespace cells; unique source/assay/data file; factor value last."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "OLS cache resolved Homo sapiens (NCBITaxon:9606), blood plasma (BTO:0000131), acute kidney injury (MONDO:0002492), Data-independent acquisition (PRIDE:0000450), Q Exactive HF-X (MS:1002877), Lys-C (MS:1001309), Trypsin (MS:1001251), label free sample, beam-type CID (MS:1000422). NT+AC accessions match OLS. python -m tools check --offline: CLEAN (0 hallucinated/mismatched). Phenotype free-text triggered parse_sdrf warnings only; clinical-metadata allows free text."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Re-opened PRIDE PXD044264 (accession+title match), PMC10475049 (same title), design.csv, and PXD038394 protocol record. 56 FINNAKI septic-AKI test samples; design.csv group 1/2 maps 1:1 to less/more severe labels, consistent with Wiersema 2020 (subphenotype 2 more severe). Instrument HF-X taken from paper, not the incorrect PRIDE HF field. Cleavage, IAA-derived carbamidomethyl, and DIA method supported."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE files page (projectAccessions=['PXD044264'], total_records=58): 56 RAW + design.csv + results.csv. All 56 SDRF comment[data file] values match RAW names exactly; no extras or missing raw files. Non-raw files correctly excluded."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "56 unique sources = 56 assays = 56 raw files; technical replicate=1; fraction identifier=1; label-free. Factor phenotype 42 more-severe vs 14 less-severe matches design.csv 42 group-2 vs 14 group-1. No technical replication or fractionation claimed. Biological-replicate integers are unique 1-56 (file order) rather than restarted per factor group."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No unsupported sample-level demographics: age/sex/individual are not available and design.csv has only sample,group. Phenotype labels are an interpretation of design groups 1/2 via Wiersema, not fabricated per-sample values. Optional DIA windows, DTT, IAA reagent columns, and iRT spike are omitted despite protocol text; they are not required columns. dia-acquisition was not declared; experiment-layer templates are optional and ms-proteomics already records DIA."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf --use_ols_cache_only -t ms-proteomics exit 0; -t human exit 0; -t clinical-metadata exit 0 with phenotype ontology warnings; union -t ms-proteomics -t human -t clinical-metadata exit 0. python -m tools structure exit 0. python -m tools check --offline exit 0 CLEAN. python -m tools score 93/100. Active-template names clinical-metadata and (if used) dia-acquisition; shorthand -t clinical / -t dia are not in the parse_sdrf registry."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "characteristics[biological replicate] all rows",
+      "message": "Biological replicate numbers run 1-56 in file order instead of restarting at 1 within each factor value[phenotype] group.",
+      "evidence": "README.adoc says numbering restarts per experimental condition. More-severe rows occupy 1-14 and 22-49; less-severe occupy 15-21 and 50-56. Template validator only requires an integer, so this does not fail parse_sdrf."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file",
+      "message": "Recommended columns precursor/fragment mass tolerance, cell type, ancestry category, and developmental stage are absent.",
+      "evidence": "python -m tools score completeness 78/100 listed these recommended gaps. Human/ms-proteomics mark them recommended, not required."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "comment[reduction reagent], comment[alkylation reagent], characteristics[spiked compound], dia-acquisition columns",
+      "message": "Protocol-supported optional fields were not annotated: DTT reduction, IAA alkylation, synthetic iRT spike, and Bruderer 44-variable-window DIA limits.",
+      "evidence": "PRIDE/paper sampleProcessingProtocol describes DTT, IAA, Lys-C/trypsin, and iRT peptides; Methods cite Bruderer variable-window DIA. Those columns are optional or recommended under ms-proteomics/dia-acquisition."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[phenotype] all rows",
+      "message": "Phenotype labels are free text and are not PATO/EFO terms.",
+      "evidence": "parse_sdrf -t clinical-metadata warned both labels are absent from pato;efo. Template documentation allows free text; design.csv only stores 1/2, so the severity wording is a justified mapping, not an ontology label."
+    }
+  ]
+}

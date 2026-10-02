@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD048880-u87mg.sdrf.tsv",
+  "dataset": "PXD048880",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD048880"
+    },
+    {
+      "id": "files",
+      "kind": "repository API",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD048880/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10898066/"
+    },
+    {
+      "id": "design",
+      "kind": "deposited design file",
+      "location": "scratchpad/PXD048880/evidence/K_AB1_6_Search.csv"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows: culture, oxygen, fraction, replicate",
+      "value": "U-87 MG with normoxia/hypoxia and control/surfaceome/endocytome",
+      "source_ids": [
+        "design",
+        "paper"
+      ],
+      "evidence": "Deposited result-table sample headers map F1\u2013F18 to six triplicate groups and RAW names preserve the group/replicate indices."
+    },
+    {
+      "location": "cell line identity",
+      "value": "U-87 MG, CVCL_0022",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "The publication explicitly identifies U87MG; the canonical Cellosaurus accession is recorded."
+    },
+    {
+      "location": "technical columns",
+      "value": "Q Exactive DDA and PD search settings",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods state the U87 instrument and common search settings."
+    }
+  ],
+  "limitations": [
+    "Donor demographic fields are not assigned because the publication does not provide sample-level evidence for the U87 culture.",
+    "The reconciler's control-arm disease warning is a false positive: normoxia is an oxygen control, not a non-glioblastoma biological control."
+  ]
+}

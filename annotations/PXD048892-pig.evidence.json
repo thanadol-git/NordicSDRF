@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD048892-pig.sdrf.tsv",
+  "dataset": "PXD048892",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD048892"
+    },
+    {
+      "id": "files",
+      "kind": "repository API",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD048892/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11336174/"
+    },
+    {
+      "id": "design",
+      "kind": "deposited design file",
+      "location": "scratchpad/PXD048892/evidence/formatted_pig_design.csv"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows: pig, wound, day, infection",
+      "value": "Exact porcine study design",
+      "source_ids": [
+        "design",
+        "paper"
+      ],
+      "evidence": "Deposited formatted_pig_design.csv maps all sample/day identifiers to pig, wound, and bacterial group; identifiers match ZIP acquisition names."
+    },
+    {
+      "location": "technical columns",
+      "value": "timsTOF Pro DDA-PASEF; endogenous peptides",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Methods state timsTOF Pro DDA-PASEF and PEAKS search tolerances; no enzymatic digestion was performed."
+    }
+  ],
+  "limitations": [
+    "Pig sex and developmental stage are not provided.",
+    "Bruker .d acquisitions are deposited as one ZIP per sample and are represented by the deposited ZIP filename.",
+    "The reconciler misreads not applicable cleavage as an unsupported enzyme; this is endogenous peptidomics with no digestion."
+  ]
+}

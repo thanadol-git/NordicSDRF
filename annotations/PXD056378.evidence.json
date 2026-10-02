@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD056378.sdrf.tsv",
+  "dataset": "PXD056378",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD056378 (scratchpad/PXD056378/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "PRIDE file list (scratchpad/PXD056378/files_compact.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC12820052 (scratchpad/PXD056378/manuscript.txt)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "RAW headers read by HTTP range request (instrument, method file, activation type; scratchpad/PXD056378/evidence/raw_header_check.json)"
+    },
+    {
+      "id": "pd",
+      "kind": "repository",
+      "location": "Proteome Discoverer study definition read from the deposited .pdResult (scratchpad/PXD056378/evidence/pd_study_definition.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[label], source name, characteristics[genetic modification], [disease], factor value",
+      "value": "126 M1, 127N M2, 128C M3, 129N C1, 130N C2, 130C C4; 127C, 128N, 129C, 131 without a named sample",
+      "source_ids": [
+        "pd",
+        "paper"
+      ],
+      "evidence": "PD study definition: factor 'Sample' options C1, C2, C4, M1, M2, M3 assigned to these channels (129N SampleType Control); the other four channels point to an option that is not defined in the file; paper: 'leukemia BM (M1-3) … controls were FL cells transduced with empty vector (C1-3)'"
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "1–5 = Lumos_220518_FAIMS_20…24",
+      "source_ids": [
+        "raw-header",
+        "pd"
+      ],
+      "evidence": "RAW sample names '4425 TMT10plex fr1' … 'fr5'; PD FileSet FractionNumber"
+    },
+    {
+      "location": "enrichment / sample type",
+      "value": "anti-HA immunoprecipitation from cell lysates",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: 'Anti HA-magnetic beads … used for immunoprecipitation … 1 mg of cell lysates'"
+    },
+    {
+      "location": "comment[instrument], [dissociation method]",
+      "value": "Orbitrap Fusion Lumos with FAIMS (CV −40/−60/−80); CID 35% MS2 + HCD 65% SPS-MS3",
+      "source_ids": [
+        "raw-header",
+        "pride"
+      ],
+      "evidence": "RAW headers and PRIDE protocol"
+    },
+    {
+      "location": "modifications, tolerances",
+      "value": "TMT6plex K and N-term fixed; Methylthio C fixed; Oxidation M variable; 5 ppm / 0.6 Da; trypsin, 1 missed cleavage",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE data processing protocol"
+    },
+    {
+      "location": "comment[reduction reagent], [alkylation reagent], [fractionation method]",
+      "value": "DTT; MMTS; high-pH reversed-phase (5 fractions)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample processing protocol"
+    }
+  ],
+  "limitations": [
+    "Four TMT channels (127C, 128N, 129C, 131) have no named sample in the deposited study design; they are annotated as 'unassigned_TMT<channel>' with 'not available' characteristics (phenotype included) rather than as empty channels, because the design does not say they were unused.",
+    "The paper names the controls C1-3, the PD study definition C1, C2 and C4; the PD names are used.",
+    "Controls are cultured empty-vector-transduced fetal-liver cells ('controls were FL cells transduced with empty vector'); they are annotated as organism part liver, embryonic day 14.5, C57BL/6 (fetal livers from E14.5 C57Bl/6 embryos) and were never transplanted. The PD name C4 is the third control (biological replicate 3).",
+    "All labelled samples are anti-HA immunoprecipitates; this is recorded in the source names (HA-IP_) and here, because no enrichment-process term for antibody immunoprecipitation exists under EFO:0009090.",
+    "Sex, age and strain of the leukemic bone marrow are 'not available' (recipients were NBSGW mice transplanted with C57BL/6 fetal-liver-derived MNX1-transduced cells; recipient age and sex are not stated, and the cells and host differ).",
+    "Each MS2 cycle uses CID (identification) and HCD MS3 (quantification); both are annotated. FAIMS compensation voltages are in this report only.",
+    "Multiplexed rows of one RAW file share one assay name (the file name without extension)."
+  ]
+}

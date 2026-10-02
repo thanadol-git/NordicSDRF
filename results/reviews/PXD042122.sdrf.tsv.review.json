@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD042122.sdrf.tsv",
+  "artifact_sha256": "9c937aa6e17bf67e64e5df93c06d06be99690bc0e77777da5c8ea7b8ff48a333",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. Human, ms-proteomics, and clinical-metadata validators passed (sampling-site ontology warnings only); sdrf-tools check was CLEAN and all 97 PRIDE RAW files match. Remaining notes are minor: non-ontology laterality as sampling site, a missing compartment factor column, and 13 deposited OA donors versus 12 in the paper table.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh hook agent without producer transcript"
+  },
+  "evidence_manifest": "/tmp/sdrf-scratch/PXD042122-rereview/PXD042122.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Declared templates NT=ms-proteomics;VV=v1.1.0, NT=human;VV=v1.1.0, NT=clinical-metadata;VV=v1.0.0 match active columns. parse_sdrf validate-sdrf --use_ols_cache_only -t human and -t ms-proteomics exited 0 with no messages; -t clinical-metadata exited 0 with ontology warnings only. sdrf-tools structure reported column order and template declaration consistent. 97 rows, unique assay+data file, unique (source, assay, label), unique (source, bio, tech, fraction)."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check verified 13 structured terms, 0 hallucinated/mismatched/wrong-ontology/UNIMOD-swap. OLS exact hits: Homo sapiens NCBITaxon:9606; meniscus UBERON:0000387/BTO:0001592; normal PATO:0000461; cartilage disease EFO:0005802/DOID:1222; osteoarthritis MONDO:0005178; DIA PRIDE:0000450; Q Exactive HF-X MS:1002877; Trypsin MS:1001251; beam-type CID MS:1000422; UNIMOD 4/35/1. Sampling site lateral/medial do not resolve in UBERON/BTO (validator warning); clinical-metadata allows descriptive sampling-site text."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE accession PXD042122 title 'proteomic profiling of human meniscus'. Europe PMC PMC10720269 title matches DOI 10.1016/j.ocarto.2023.100417 and Methods cite PXD042122. Organism, tissue, DIA, Q Exactive HF-X, trypsin, and PTMs match paper/PRIDE. Age/sex not available is supported: Table 1 is cohort-level only; Supplementary Table 1 (mmc3) has scores without demographics."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE v3 files/all asserted projectAccessions=['PXD042122']: 97 RAW + 1 OTHER (samples list) + 1 SEARCH. SDRF comment[data file] set-equals the 97 RAW names. Sample-list spreadsheet has two date typos (OAL4b, OAM13) that do not match deposited filenames; SDRF uses the deposited names."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "38 individuals \u00d7 2 compartments = 76 sources; 21 technical-replicate rows (a/b, _2x, _2dil) \u2192 97 assays. Controls n=12 and mild n=13 match paper Table 1 and mmc3. End-stage OA in SDRF has 13 paired donors (filename OA1\u2013OA13) versus paper/mmc3 n=12; extra files are in PRIDE so inclusion is deposit-faithful. Disease factor mirrors characteristics. Compartment is encoded as sampling site, not as a second factor column. Biological replicate restarts per disease group 1\u2013N, matching the depositor list pattern."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No per-sample age/sex invented from cohort means. Mild-group cartilage disease is a group-level ontology mapping of 'mild joint damage'/'eOA' (not clinical OA). Optional DIA window, reduction/alkylation, and mass-tolerance columns are absent rather than over-specified. Source names and individuals follow filename donor numbers rather than the internally inconsistent OA remapping in the PRIDE xlsx."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf --use_ols_cache_only -t human EXIT 0; -t ms-proteomics EXIT 0; -t clinical-metadata EXIT 0 with sampling-site warnings. PYTHONPATH=sdrf-skills python3 -m tools check EXIT 0 CLEAN (13/13). python3 -m tools score 93/100. python3 -m tools structure EXIT 0."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[sampling site] all rows",
+      "message": "Values 'lateral' and 'medial' are laterality words, not UBERON/BTO anatomy terms; parse_sdrf warns they are not in uberon;bto.",
+      "evidence": "clinical-metadata validator: 'Term: lateral/medial in column characteristics[sampling site], is not found in the given ontology list uberon;bto'. OLS searches hit unrelated brain nuclei. Correction: set organism part or sampling site to lateral meniscus / medial meniscus (or posterior horn terms) so compartment is ontology-backed."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "factor value[disease] (file-level)",
+      "message": "Only disease is a factor, but the paper defines six groups (disease \u00d7 medial/lateral) and models compartment as a fixed effect.",
+      "evidence": "Methods: controlmed/lat, mildmed/lat, end-stage OAmed/lat; mixed models use group, compartment, and interaction. Quickstart lists tissue comparison as factor value[organism part]. Correction: add factor value[sampling site] mirroring lateral/medial, or split organism part and factor that."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "characteristics[individual] osteoarthritis rows",
+      "message": "SDRF has 13 end-stage OA individuals (oa-1..oa-13) while the paper and Supplementary Table 1 list 12 end-stage OA patients.",
+      "evidence": "Table 1 and mmc3: End-stage OA n=12 (patients 1\u201312). PRIDE has RAW files for OAL/OAM 1\u201313 (97 total runs vs paper 94). Inclusion matches the deposit; one deposited OA donor is absent from the published n=12 table. No change required unless the extra donor should be flagged as excluded-from-paper."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file",
+      "message": "Recommended ms-proteomics/human columns are absent (mass tolerances, cell type, ancestry, developmental stage); optional DTT/IAA and DIA windows from supplementary methods are also omitted.",
+      "evidence": "sdrf-tools score completeness 78/100 lists those recommended columns. mmc1 documents 10 mM DTT, 40 mM IAA, and DIA variable windows 350\u20131650 m/z. Not required for template validity."
+    }
+  ]
+}

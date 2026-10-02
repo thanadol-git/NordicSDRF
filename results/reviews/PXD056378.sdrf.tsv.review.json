@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD056378.sdrf.tsv",
+  "artifact_sha256": "e9f7e12e88a592703a853606124bd1b1762a1f6d7cba4bcd3430c96d7a827fc3",
+  "verdict": "PASS",
+  "summary": "Independent review of the 50-row (5 RAW fractions x 10 TMT10plex channels) SDRF for PXD056378 found no blocker or important issues. Channel-to-sample mapping (126 M1, 127N M2, 128C M3, 129N C1, 130N C2, 130C C4) matches the Proteome Discoverer study definition and the paper's 'M1-M3 ... C1, C2, C4'; fraction mapping matches RAW-header sample names fr1-fr5; all protocol values match the PRIDE/paper methods; all controlled terms resolve; official validator reports warnings only. Minor findings concern the four undefined channels, donor-origin annotation asymmetry between groups, optional columns, and an unsupported statement in the producer report.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh reviewer subagent context without the producer transcript; producer report.md and evidence.json treated as untrusted and re-checked against scratchpad/PXD056378/ only (pride.json, files.json, files_compact.json, manuscript.txt, evidence/raw_header_check.json, evidence/pd_study_definition.json). No other accession folders or superseded reports were read. Artifact hash frozen at start and re-checked before writing this report (unchanged)."
+  },
+  "evidence_manifest": "annotations/PXD056378.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates derived independently: TMT bottom-up MS proteomics on mouse samples -> ms-proteomics + vertebrates (v1.1.0; installed templates.yaml). Every required and recommended column of base, sample-metadata, ms-proteomics and vertebrates is present. 38 columns on every row, no CR characters, file ends with newline, no duplicate rows, no empty cells; reserved words limited to 'not available'. comment[sdrf version]=v1.1.0, comment[sdrf template] NT=ms-proteomics;VV=v1.1.0 and NT=vertebrates;VV=v1.1.0. Structured values (NT=/AC=/TA=/PP=/MT=) well formed."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Resolved in offline cache (/root/.cache/sdrf-pipelines/ontologies): Mus musculus NCBITaxon:10090; bone marrow UBERON:0002371; liver UBERON:0002107; hematopoietic cell CL:0000988; acute myeloid leukemia EFO:0000222/MONDO:0018874; normal PATO:0000461; cell (fixed material type value); embryonic day 14.5 EFO:0002565; C57BL/6 EFO:0022397 (validator warning is only because the template checks ncbitaxon; template itself lists C57BL/6 as example); PRIDE:0000627 Data-dependent acquisition; MS:1002732 Orbitrap Fusion Lumos; MS:1001251 Trypsin; MS:1000133 collision-induced dissociation; MS:1000422 beam-type collision-induced dissociation; PRIDE:0000564 High-pH reversed-phase chromatography (hpHRP); PRIDE:0000608 dithiothreitol (DTT); PRIDE:0000605 methyl methanethiosulfonate (MMTS); UNIMOD:737 TMT6plex (correct Unimod entry for TMT10plex), UNIMOD:39 Methylthio (MMTS on C), UNIMOD:35 Oxidation. Labels TMT126..TMT131 are the TMT10plex channel names. Producer claim that no immunoprecipitation term exists under EFO:0009090 confirmed (only 'immunoprecipitate' EFO:0000541 / OBI assay terms, not enrichment-process children)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Paper (PMC12820052): 'leukemia BM (M1-3) were obtained by transplanting NBSGW mice with MNX1 transduced fetal-liver (FL) cells; controls were FL cells transduced with empty vector'; Methods: 'control immunoprecipitations (C1, C2, C4)'; FL from E14.5 embryos of C57Bl/6 matings; anti-HA magnetic-bead IP of 1 mg cell lysate; TMT10plex, one set, five high-pH RP fractions; Orbitrap Fusion Lumos + FAIMS Pro; CID 35% MS2, HCD 65% SPS-MS3; DTT reduction, MMTS alkylation, trypsin; Mascot via PD 2.4, 5 ppm / 0.6 Da, Oxidation M variable, methylthio C and TMT fixed. PD study definition: 126->M1, 127N->M2, 128C->M3, 129N->C1 (Control), 130N->C2, 130C->C4; 127C/128N/129C/131 point to undefined option 64a78239. RAW headers: instrument Orbitrap Fusion Lumos, sample names '4425 TMT10plex fr1..fr5' for files _20.._24, ActivationType CID. Every SDRF value checked matches at the stated granularity."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE file list has exactly 5 RAW files (Lumos_220518_FAIMS_20..24.raw), all present in comment[data file], each with exactly 10 rows and each TMT label once per file; non-raw .pdResult and .msf correctly excluded. assay name = file stem; fraction identifier 1..5 matches RAW-header fr1..fr5."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 10 sources x 5 fractions = 50 rows; each source has identical characteristics across all 5 files; 3 MNX1 IP sources (biological replicate 1-3) vs 3 empty-vector control IP sources (1-3), matching the paper's limma comparison M1-M3 vs C1,C2,C4; single factor value[genetic modification] consistent with characteristics[genetic modification]; technical replicate 1 throughout. Group-level confounding (bone marrow/in vivo vs fetal liver/in vitro) is real in the study design and correctly reflected, not an annotation artifact (see minor finding on donor-origin asymmetry)."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Searched for over-specific claims: sex and age are 'not available' for all rows (manuscript gives no sex for donors or recipients); strain and developmental stage asserted only for the never-transplanted controls where the paper states C57Bl/6 E14.5 fetal livers; the four channels without a defined PD sample are not assigned to any group (genetic modification, disease, phenotype, factor = not available) rather than guessed. Only residual inference: organism Mus musculus for those four channels (reasonable for an all-mouse TMT set, documented). No unsupported value found in the SDRF itself; the producer report's 'male NBSGW recipients' statement is unsupported but does not enter the SDRF."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -s annotations/PXD056378.sdrf.tsv -t ms-proteomics -t vertebrates --use_ols_cache_only -> exit 0, 'There were only warnings' (single warning: C57BL/6 not in ncbitaxon). sdrf-tools check --offline -> exit 0, CLEAN (0 hallucinated, 0 label mismatches, 0 wrong ontology, 0 UNIMOD swaps). sdrf-tools score -> 100/100, exit 0."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "rows with source name unassigned_TMT127C, unassigned_TMT128N, unassigned_TMT129C, unassigned_TMT131 (20 rows)",
+      "message": "Four channels whose PD factor option (64a78239...) is undefined are kept as samples with organism Mus musculus and biological replicate 1; whether they contained material or were empty is not known from the evidence.",
+      "evidence": "pd_study_definition.json lists them as SampleType 'Sample' with a dangling option; paper analyses only M1-M3 and C1, C2, C4. Including them with 'not available' characteristics is transparent and defensible, but a downstream user could treat factor 'not available' as a condition.",
+      "correction": "Acceptable as is. Optionally add characteristics[sample type] or a comment noting these channels are excluded from the published analysis; do not mark them 'empty' unless evidence (e.g., Supplementary Table S3 channel intensities) shows they were unused."
+    },
+    {
+      "severity": "minor",
+      "category": "consistency",
+      "location": "characteristics[strain or breed], characteristics[developmental stage] for HA-IP_MNX1_AML_bone_marrow_M1..M3 vs HA-IP_empty_vector_control_C1/C2/C4",
+      "message": "Controls carry donor-origin attributes (C57BL/6, embryonic day 14.5) while leukemic BM rows are 'not available', although the leukemic cells derive from the same E14.5 C57BL/6 fetal-liver donors; this asymmetry makes the two groups look more different than the annotation basis warrants.",
+      "evidence": "Manuscript Methods: FL from E14.5 embryos of C57Bl/6 matings used for both MNX1 and empty-vector transductions; M samples are BM of transplanted NBSGW recipients (mixed host/donor material). Producer documents the rationale.",
+      "correction": "Optional: either keep as is and note the basis in a comment, or annotate M rows' donor origin consistently; not required for approval."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file-level (optional columns)",
+      "message": "Optional metadata documented in the evidence is not encoded: anti-HA immunoprecipitation/negative-control nature of the samples (only in source names), FAIMS CVs (-40/-60/-80), MS2 ion-trap/MS3 Orbitrap analyzers, 1 missed cleavage.",
+      "evidence": "PRIDE sampleProcessingProtocol and dataProcessingProtocol; TERMS.tsv lists optional characteristics[sample type] (PRIDE:0000895, child 'negative control' PRIDE:0000905), comment[ms2 mass analyzer] (MS:1000443).",
+      "correction": "Optionally add characteristics[sample type] (study sample / negative control) and comment[ms2 mass analyzer]=NT=ion trap; not required by the active templates."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD056378.report.md and PXD056378.evidence.json limitations ('recipients were 8-12-week-old male NBSGW mice')",
+      "message": "Producer notes state the NBSGW recipients were 8-12-week-old males; the manuscript's '8-12-week-old' refers to the C57Bl/6 mice used for mating and no recipient sex or age is given.",
+      "evidence": "manuscript.txt: 'Briefly, 8-12-week-old C57Bl/6 mice ... were used for mating'; only mention of NBSGW gives no sex/age.",
+      "correction": "Correct the note in report/evidence limitations; SDRF values (sex/age not available) are unaffected."
+    }
+  ]
+}

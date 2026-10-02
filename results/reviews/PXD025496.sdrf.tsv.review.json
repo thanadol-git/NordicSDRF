@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD025496.sdrf.tsv",
+  "artifact_sha256": "f42878489a3185e676f0b6e91fd35696279e0d01ebcbad114417c29066ae4e1e",
+  "verdict": "PASS",
+  "summary": "Independent review of 8 rows x 33 columns (4 mouse colon-mucus samples, each injected on two consecutive days) found no blocker or important issues. The official validator (ms-proteomics + vertebrates) passes, all 13 controlled terms resolve in the offline cache, all 8 deposited RAW files map one-to-one, and the technical values (LTQ Orbitrap XL, CID, DDA top-8, trypsin, 10 ppm/1 Da, the four modifications) match the RAW headers and the PEAKS search-parameter table. Remaining issues are minor: there is no factor value column, so OpenMS conversion makes four n=1 conditions; the colon origin is recorded only in source name; the limitation notes leave out the manuscript's C57BL/6N and 8-20 week statements; and germ-free rests on the depositor's 'WT GF' label.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh subagent context with no producer transcript. Read only the task, the SDRF, the evidence manifest and report.md (treated as untrusted claims), the spec and installed templates, the offline ontology cache, and scratchpad/PXD025496/ (pride.json accession PXD025496 verified; manuscript header PMID 34126068/PMC8267560 matches the PRIDE reference; the file list contains only PXD025496 FTP paths). No internet, so the RAW headers and protein.html could not be re-fetched; the saved reads were used and cross-checked against file-name structure and the PEAKS file list."
+  },
+  "evidence_manifest": "annotations/PXD025496.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates were derived independently: Mus musculus with mucus samples and LC-MS/MS DDA means ms-proteomics 1.1.0 (with base and sample-metadata) plus vertebrates 1.1.0. Human, cell-lines, dia-acquisition and the other templates do not apply. Every required column is present: source name, assay name, technology type, technical replicate, data file, organism, organism part, biological replicate, disease, developmental stage, acquisition method, instrument, cleavage agent, label, fraction identifier. Reserved words (not available / not applicable) are used correctly. comment[sdrf template] values match the pattern. Key=value order is NT before AC. Rows are unique on source name + assay name + label. The table is rectangular (33 columns in every row)."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "All terms resolved in /root/.cache/sdrf-pipelines/ontologies, none obsolete: NCBITaxon:10090 Mus musculus; UBERON:0000912 mucus; PATO:0000461 normal; NCIT:C62195 wild type; NCIT:C28027 germ-free; PRIDE:0000627 data-dependent acquisition; MS:1000556 LTQ Orbitrap XL; MS:1001251 Trypsin; MS:1000133 collision-induced dissociation; MS:1002038 label free sample; UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, UNIMOD:1 Acetyl, UNIMOD:7 Deamidated. Labels and accessions agree and each term comes from an ontology family the template allows. sdrf-tools check --offline: 0 hallucinated, 0 label mismatches, 0 wrong ontology, 0 UNIMOD swaps (CLEAN)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Instrument: PRIDE MS:1000556, RAW headers 'Orbitrap XL' for all 8 files, PEAKS 'FT-ICR/Orbitrap' + 'Linear Ion Trap'. CID: RAW 'Activation Type: CID', PEAKS 'CID, CAD'. DDA: the method file '..._LCMS2_8MS2_...' is top-8 DDA. Tolerances and modifications: PEAKS Table 6 gives 10.0 ppm, 1.0 Da, Trypsin, fixed carbamidomethylation, and variable Oxidation (M), Acetylation (Protein N-term), Deamidation (NQ). Organism: PRIDE NEWT:10090. Mucus: manuscript Data availability says 'PXD025496 (mouse colon whole mucus)'; PRIDE protocol says mucus solubilised in GuHCl, then FASP. WT/GF: PEAKS sample group 'WT GF 8 weeks' covers all 8 files. Label-free: manuscript says LFQ with MaxQuant, and no labelling reagent is mentioned. Germ-free comes from the depositor's own abbreviation 'GF'; the manuscript text never says germ-free, but the cited mucus/microbiota method source (Johansson 2015, colonisation of germ-free mice) makes this reading plausible. Recorded as minor F4."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "files_compact.json lists 10 files: 8 RAW, protein.html (SEARCH) and one FASTA. All 8 RAW names appear exactly once in comment[data file], with exact case and the .RAW extension, and there are no extra or duplicate rows. Non-raw files are correctly excluded. Each assay name equals its file stem."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 4 sources (MS375-48/52/56/60), each with 2 assays, so 8 rows. Technical replicate 1 = 2013-06-27 runs and 2 = 2013-06-28 runs. The structure is corroborated outside the RAW-header JSON: the autosampler suffixes _62/_67/_72/_77 repeat on both dates, and a single method file is used. Fraction identifier = 1 everywhere is consistent with the single-shot 90-min FASP method; PEAKS calls every input file a 'fraction' generically. Biological replicate 1-4 for four distinct Xcalibur sample IDs is conventional; the producer disclosed the uncertainty about four mice versus four samples. No confounder: all files come from one group, method and instrument. parse_sdrf convert-openms succeeds; see minor F1 on condition derivation."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Searched for over-specific values. Age, sex, strain and developmental stage are 'not available' rather than inferred from the ambiguous '8 weeks'/'_w8' or from the manuscript's study-wide C57BL/6N statement. No disease, treatment or age values are asserted without evidence. The only nontrivial inference is germ-free from 'GF' (minor F4). Material evidence the producer left out of its limitation notes is recorded as F3 (manuscript C57BL/6N WT and 8-20 week age span) and F5 (semi-specific cleavage; linear ion trap MS2 analyzer); neither changes an annotated value."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -s annotations/PXD025496.sdrf.tsv -t ms-proteomics -t vertebrates --use_ols_cache_only: 'Everything seems to be fine', exit 0. The same command without -t (templates read from the file): exit 0. sdrf-tools check --offline: CLEAN, exit 0. sdrf-tools score: 95/100, exit 0; the only flag is Design 67 for 'No factor value columns defined'. parse_sdrf convert-openms: SUCCESS with 3 warnings (no factors, Acetyl without TA, no sample number identifier)."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "file (no factor value column)",
+      "message": "There is no factor value column. As a result parse_sdrf convert-openms builds the conditions from every characteristic, biological replicate included, and produces 4 MSstats conditions with n=1 each instead of one condition with 4 biological replicates.",
+      "evidence": "convert-openms output: 'No factors specified. Adding non-redundant characteristics as factor'; experimental_design shows MSstats_Condition '...|1|...' to '...|4|...'. sdrf-tools score Design 67/100.",
+      "correction": "Optional: add one constant factor value column after all characteristics and comment columns, for example factor value[phenotype] = germ-free, so downstream tools derive one condition with biological replicates 1-4."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "characteristics[organism part], all rows",
+      "message": "'mucus' (UBERON:0000912) is valid, but the colonic origin that PRIDE (BTO:0000269 colon) and the paper ('mouse colon whole mucus') record is kept only in source name, so it is lost to term-based search.",
+      "evidence": "pride.json organismParts = Colon; manuscript Data availability. The UBERON cache has no colon-specific mucus term.",
+      "correction": "Optional: also record the site in a controlled column, for example characteristics[tissue supergroup] = colon (UBERON:0001155), and keep organism part = mucus."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "evidence.json limitations / report.md (strain, age)",
+      "message": "The limitation notes say strain is 'not stated in the saved evidence', but the manuscript Methods state 'C57BL/6N (WT, in house bred)' and 'age span of 8 to 20 weeks'. Keeping 'not available' is defensible, because those statements describe the 2021 study's animals and may not cover these 2013 GF runs, but the omission is not explained.",
+      "evidence": "manuscript.txt Animals section.",
+      "correction": "No change to SDRF values is required. Amend the limitation text to cite the manuscript statements and say why they were not applied to these 2013 germ-free samples."
+    },
+    {
+      "severity": "minor",
+      "category": "source-evidence",
+      "location": "characteristics[phenotype] = germ-free, all rows",
+      "message": "Germ-free rests only on the depositor's PEAKS group label 'WT GF 8 weeks'. The JBC manuscript text never says germ-free. The reading is plausible (the microbiota/colonisation papers cited for the methods), but an ex-germ-free colonised group cannot be fully excluded from the saved evidence.",
+      "evidence": "protein.html.txt sample group 'WT GF 8 weeks'; a grep of manuscript.txt for 'germ' finds no match; PRIDE protocol cites Jakobsson 2015 EMBO Rep (microbiota and mucus).",
+      "correction": "Keep the value, but add a manifest claim citing the PEAKS label explicitly as the sole source. If Johansson 2015 Cell Host Microbe or Jakobsson 2015 can be checked, confirm the GF group definition."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "optional comment columns",
+      "message": "Optional, evidence-backed technical details are absent: MS2 analyzer (linear ion trap per PEAKS Table 7) and semi-specific enzyme cleavage (PEAKS 'Non-specific Cleavage: one'; manuscript 'semispecific').",
+      "evidence": "protein.html.txt Tables 6-7; manuscript MS and data analysis section.",
+      "correction": "Optional: add comment[ms2 mass analyzer] = NT=ion trap with its PSI-MS accession, resolved from the cache. Note the semi-specific search in the manifest (already partly done)."
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD025496.sdrf.tsv",
+  "dataset": "PXD025496",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD025496 (scratchpad/PXD025496/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "PRIDE file list (scratchpad/PXD025496/files_compact.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC8267560 (scratchpad/PXD025496/manuscript.txt)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "RAW headers read by HTTP range request (instrument, method file, activation type; scratchpad/PXD025496/evidence/raw_header_check.json)"
+    },
+    {
+      "id": "peaks",
+      "kind": "repository",
+      "location": "deposited protein.html (PEAKS 8.5 summary; text in scratchpad/PXD025496/evidence/protein.html.txt)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[biological replicate], comment[technical replicate]",
+      "value": "four samples MS375-48, -52, -56, -60, each run on 2013-06-27 (technical replicate 1) and 2013-06-28 (technical replicate 2)",
+      "source_ids": [
+        "raw-header"
+      ],
+      "evidence": "RAW sample names: AR_1306xx_62 = MS375-48, _67 = MS375-52, _72 = MS375-56, _77 = MS375-60 on both dates, same method file"
+    },
+    {
+      "location": "characteristics[genotype], [phenotype]",
+      "value": "wild type; germ-free",
+      "source_ids": [
+        "peaks"
+      ],
+      "evidence": "PEAKS sample name 'WT GF 8 weeks' covering all eight files (and '_w8' in the file names)"
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "mucus (mouse colon whole mucus)",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "paper Data availability: 'PXD025496 (mouse colon whole mucus)'; PRIDE organism part Colon"
+    },
+    {
+      "location": "comment[instrument], [dissociation method]",
+      "value": "LTQ Orbitrap XL; CID",
+      "source_ids": [
+        "raw-header",
+        "peaks"
+      ],
+      "evidence": "RAW headers: Orbitrap XL, Activation Type CID; PEAKS instrument parameters: CID, FT-ICR/Orbitrap MS, linear ion trap MS/MS"
+    },
+    {
+      "location": "modifications, tolerances, cleavage",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term, Deamidated N/Q variable; 10 ppm / 1 Da; trypsin",
+      "source_ids": [
+        "peaks"
+      ],
+      "evidence": "PEAKS search parameters table (one non-specific cleavage allowed)"
+    }
+  ],
+  "limitations": [
+    "Whether MS375-48/52/56/60 are four mice or four fractions of one mucus sample is not stated; PEAKS grouped all eight files as one sample 'WT GF 8 weeks'. They are annotated as four sources with biological replicates 1–4.",
+    "'8 weeks' in the PEAKS label and '_w8' in the file names may be age or time after an intervention (the cited source study colonised germ-free mice over time), so age is 'not available'; 'germ-free' rests on the PEAKS label 'WT GF'. The mouse strain and sex are not stated in the saved evidence.",
+    "PEAKS allowed one non-specific cleavage (semi-tryptic) to find PH-peptides; SDRF has no column for enzyme specificity, so only Trypsin is annotated."
+  ]
+}

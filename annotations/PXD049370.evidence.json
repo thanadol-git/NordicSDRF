@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD049370.sdrf.tsv",
+  "dataset": "PXD049370",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD049370"
+    },
+    {
+      "id": "files",
+      "kind": "repository API",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD049370/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11317155/"
+    },
+    {
+      "id": "design",
+      "kind": "deposited design file",
+      "location": "scratchpad/PXD049370/evidence/experimentalDesignTemplate.txt"
+    },
+    {
+      "id": "mqpar",
+      "kind": "repository file",
+      "location": "scratchpad/PXD049370/evidence/mqpar.xml"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows: organism and bait factor",
+      "value": "Bacillus subtilis strain 168; bait from run/design name",
+      "source_ids": [
+        "pride",
+        "design"
+      ],
+      "evidence": "Exact organism in PRIDE and exact file-to-experiment map in the deposited MaxQuant design."
+    },
+    {
+      "location": "technical columns",
+      "value": "Q Exactive Plus; Trypsin; MaxQuant search settings",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Instrument and digest are stated in PRIDE; modifications and precursor tolerance were parsed from deposited mqpar.xml."
+    }
+  ],
+  "limitations": [
+    "No sample-level anatomy applies to the bacterial pull-down; organism part is whole organism.",
+    "The factor is a bait protein and has no licensed matching characteristics column in the selected template."
+  ]
+}

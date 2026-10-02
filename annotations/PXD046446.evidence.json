@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD046446.sdrf.tsv",
+  "dataset": "PXD046446",
+  "sources": [
+    {
+      "id": "pride-project",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD046446"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD046446/files"
+    },
+    {
+      "id": "pool-map",
+      "kind": "deposited sample metadata",
+      "location": "PRIDE PXD046446/TMT6plex.pools.xlsx"
+    },
+    {
+      "id": "raw-headers",
+      "kind": "deposited raw metadata",
+      "location": "byte ranges 0-131071 of all 99 PRIDE PXD046446 RAW files"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC10959978; DOI 10.1038/s41598-024-56412-8"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "cell-line registry",
+      "location": "Cellosaurus CVCL_0031 and CVCL_0553"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] all rows",
+      "value": "99 unique deposited RAW files",
+      "source_ids": ["pride-files"],
+      "evidence": "The complete PRIDE v3 file inventory contains 99 vendor RAW files; every name occurs in the SDRF."
+    },
+    {
+      "location": "source name, comment[label], and factor columns all rows",
+      "value": "60 samples mapped to pools 1-10 and six TMT6plex channels",
+      "source_ids": ["pool-map"],
+      "evidence": "The deposited workbook explicitly lists sample name, TMT pool, and numeric channel for every sample."
+    },
+    {
+      "location": "RAW-to-sample mapping all rows",
+      "value": "RAW header pool assignment joined to deposited pool/channel map",
+      "source_ids": ["raw-headers", "pool-map"],
+      "evidence": "Every RAW header contains an author-entered Pool.N label plus fraction or phosphoproteome designation; no file-order inference was used."
+    },
+    {
+      "location": "characteristics[cell line], characteristics[cellosaurus accession], age, sex, organism, organism part, and disease all rows",
+      "value": "MCF-7/CVCL_0031 or T-47D/CVCL_0553 metadata",
+      "source_ids": ["paper", "cellosaurus"],
+      "evidence": "The publication identifies the cell models; Cellosaurus supplies the canonical identities and donor metadata."
+    },
+    {
+      "location": "instrument, acquisition, cleavage, dissociation, collision energy, tolerances, reagents, and common modification columns all rows",
+      "value": "Q Exactive HF-X TMT6plex DDA workflow",
+      "source_ids": ["paper"],
+      "evidence": "The publication Methods state the TMT workflow, Q Exactive HF-X, DDA/HCD settings, trypsin, TCEP/iodoacetamide preparation, and MaxQuant search settings."
+    },
+    {
+      "location": "final comment[modification parameters] column",
+      "value": "Phospho STY only for 306 phosphoproteome rows; not applicable for 288 other rows",
+      "source_ids": ["raw-headers", "paper"],
+      "evidence": "The RAW header labels explicitly distinguish PHOSPHO fractions, and the publication states that phospho STY was enabled for the phosphopeptide search."
+    }
+  ],
+  "limitations": [
+    "The publication does not state the fragment mass tolerance, so the recommended column is omitted.",
+    "Passage numbers, ancestry, and individual donor identifiers are unavailable and use the permitted not available sentinel.",
+    "Independent adversarial review is unavailable in this run; the artifact is a draft awaiting review."
+  ]
+}

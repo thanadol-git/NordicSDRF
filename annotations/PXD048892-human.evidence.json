@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD048892-human.sdrf.tsv",
+  "dataset": "PXD048892",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD048892"
+    },
+    {
+      "id": "files",
+      "kind": "repository API",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD048892/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11336174/"
+    },
+    {
+      "id": "design",
+      "kind": "deposited design file",
+      "location": "scratchpad/PXD048892/evidence/human_design.csv"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows: participant, wound, day, infection",
+      "value": "Exact human study design",
+      "source_ids": [
+        "design",
+        "paper"
+      ],
+      "evidence": "Deposited human_design.csv maps sample numbers to participant, wound, day, and bacterial group; sample numbers match ZIP acquisition names."
+    },
+    {
+      "location": "technical columns",
+      "value": "timsTOF Pro DDA-PASEF; endogenous peptides",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Methods state timsTOF Pro DDA-PASEF and PEAKS search tolerances; no enzymatic digestion was performed."
+    }
+  ],
+  "limitations": [
+    "Age and sex are not available at sample level.",
+    "Bruker .d acquisitions are deposited as one ZIP per sample and are represented by the deposited ZIP filename.",
+    "The reconciler misreads not applicable cleavage as an unsupported enzyme; this is endogenous peptidomics with no digestion."
+  ]
+}

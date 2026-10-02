@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD049366.sdrf.tsv",
+  "dataset": "PXD049366",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD049366"
+    },
+    {
+      "id": "files",
+      "kind": "repository API",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD049366/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11822717/"
+    },
+    {
+      "id": "design",
+      "kind": "deposited design file",
+      "location": "scratchpad/PXD049366/evidence/DF_600_10000ug_Protein.xlsx"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows: extraction method and tissue mass",
+      "value": "Method 1\u20134 or combined Method 5; 0.6\u201310 mg series",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Methods define all extraction procedures and RAW filenames encode method or exact tissue mass."
+    },
+    {
+      "location": "technical columns",
+      "value": "Orbitrap Eclipse DDA with the published PD search",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Publication Methods state instrument, HCD settings, tolerances, reagents, and search modifications."
+    }
+  ],
+  "limitations": [
+    "The deposit does not provide per-piece donor demographics.",
+    "The preparation used sequential Lys-C and Trypsin, but the current builder contract emits one cleavage-agent column and represents Trypsin; Lys-C remains a documented reconciliation warning."
+  ]
+}

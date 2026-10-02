@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029071.sdrf.tsv",
+  "artifact_sha256": "02c2c49b98671e0d55a47c339ae134eed5624032db5e036d677688cba1d1638a",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review of the 6-row x 33-column SDRF for PXD029071 (WT vs Tgm3-/- mouse distal-colon mucus, excised MUC2 monomer band, label-free DDA). Official validator (ms-proteomics + vertebrates) passes with one expected free-text warning; every ontology accession resolves to its stated label; instrument, enzymes, modifications, tolerances, NCE and replicate structure are corroborated by RAW headers, Mascot .dat parameters and the Methods text. No blocker or important finding; five minor findings, including a false 'reduction/alkylation not stated' limitation in the producer manifest (Methods states 10 mM DTT / 55 mM IAA).",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer agent without producer transcript; producer report.md and evidence.json treated as untrusted; only scratchpad/PXD029071/ read; no internet (saved evidence only)"
+  },
+  "evidence_manifest": "annotations/PXD029071.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates derived independently: organism Mus musculus -> vertebrates (usable_alone=false, layered on sample layer) + ms-proteomics (technology, usable_alone=true); templates.yaml and ms-proteomics/vertebrates/base 1.1.0 YAMLs read. All required columns present (source name, assay name, technology type, technical replicate, data file, acquisition method, instrument, cleavage agent, label, fraction identifier, disease, developmental stage, organism, organism part, material type, biological replicate). Recommended strain/sex/dissociation/tolerances/modifications present. 33 fields on every row, no CR/BOM/trailing whitespace; reserved words only 'not available'/'not applicable' in columns that allow them; material type 'organism part' is in the fixed value list; collision energy '27% NCE' matches the TERMS.tsv pattern; comment[sdrf version]=v1.1.0 and template tags NT=...;VV=v1.1.0."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Resolved in offline cache (/root/.cache/sdrf-pipelines/ontologies): PRIDE:0000627 data-dependent acquisition; MS:1002523 Q Exactive HF; MS:1002877 Q Exactive HF-X; MS:1001251 Trypsin; MS:1001304 Asp-N; MS:1000422 beam-type collision-induced dissociation (canonical HCD term per spec README l.457); UNIMOD:4 Carbamidomethyl; UNIMOD:35 Oxidation; labels 'Mus musculus' (NCBITaxon:10090), 'mucus' (UBERON:0000912), 'normal' (PATO:0000461) exist. None obsolete. Free-text columns: strain 'C57BL/6N' (validator warning expected, TERMS.tsv lists strain as free text), genotype 'wild type'/'Tgm3-/-'."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Instrument per file from RAW headers (5x 'Q Exactive HF - Orbitrap MS', 1x 'Q Exactive HF-X' for 200923_QExHFx_...C57), corroborated by file names and distinct method file; paper only says 'Q-Exactive'. Mascot .dat (all six, FILE= paths match the RAW stems): TOL=5 ppm, ITOL=0.2 Da, MODS=Carbamidomethyl (C), IT_MODS=Oxidation (M), CLE=Trypsin&AspN, taxonomy Mus musculus; Methods sentences 494-504 agree (trypsin 12 h then AspN 5 h; 5 ppm/0.2 Da; carbamidomethyl static, Met oxidation variable). RAW activation 'nce: 27' (not stepped), method Top15 -> DDA. Genotypes from RAW sample names ('C57'/'TG3ko') and paper; n=3 biological replicates for the MS coverage (Fig. 3d legend 'n = 3', Results 'three biological replicates'). Strain C57BL/6N: Methods 'C57/BL6N mice were from Taconic' (only WT source listed); Tgm3-/- background not stated -> 'not available' is correct. Mucus scraped from distal colon: RAW names 'dc mucus', Methods 'Collection of colonic mucus'. Sex/age correctly left 'not available' (6-8-week females belong to the separate DSS experiment)."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE file list (files_compact.json, FTP paths under /2022/02/PXD029071/) has 6 RAW + 6 Mascot .dat. All 6 RAW files appear exactly once in comment[data file]; no duplicates, no non-raw files, no unmatched entries; assay names equal the RAW stems."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 2 genotypes x 3 biological replicates = 6 sources, 1 run each (technical replicate 1, fraction 1, label free). factor value[genotype] equals characteristics[genotype] on every row. Batches: MS718 (200508) = WT rep1 + KO rep1; MS726 (200923) = WT rep2 (HF-X), WT rep3, KO rep2, KO rep3 (HF). Only WT rep2 on HF-X - instrument is partially confounded with genotype but recorded correctly per file. Replicate assignment of file TG3ko2 is supported by file name and 'Rep3' despite the 'TG3ko1' sample string (see minor finding)."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every non-reserved value traced to RAW header, .dat, PRIDE or Methods text; no cohort-level values (DSS female/6-8 weeks) propagated to MS samples; KO strain not inferred from WT vendor; disease 'normal' consistent with 'non-treated' untreated animals. Omissions found are optional columns only (reduction/alkylation reagent, fractionation/band excision) and colon site not in a controlled column - recorded as minor."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -s annotations/PXD029071.sdrf.tsv -t ms-proteomics -t vertebrates --use_ols_cache_only -> exit 0, one WARNING (C57BL/6N not in ncbitaxon; free-text strain). Per-template runs: ms-proteomics 'Everything seems to be fine'; vertebrates same single warning. sdrf-tools check --offline -> CLEAN, exit 0 (only 2/8 terms verified by the tool; remaining accessions resolved manually above). sdrf-tools score -> 100/100, exit 0."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "file (missing comment[reduction reagent], comment[alkylation reagent]); evidence.json limitations[4]",
+      "message": "Producer manifest states 'Reduction and alkylation reagents are not stated', which is false; the optional reagent columns were therefore omitted.",
+      "evidence": "manuscript.txt Methods 'In-gel digestion and mass spectrometric analyses': 'reduction with 10 mM DTT for 30 min at 56 C and subsequent alkylation with 55 mM IAA'.",
+      "correction": "Add comment[reduction reagent]=NT=dithiothreitol (DTT);AC=PRIDE:0000608 and comment[alkylation reagent]=NT=iodoacetamide (IAA);AC=PRIDE:0000599 for all rows (both resolve in the offline PRIDE cache), and remove the incorrect limitation from the evidence manifest."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "characteristics[organism part], rows 1-6",
+      "message": "Anatomical site (distal colon) is recorded only in source names; organism part 'mucus' alone drops the colon context that PRIDE itself annotates (BTO:0000269 colon).",
+      "evidence": "RAW sample names 'C57/TG3ko dc mucus'; Methods 'Collection of colonic mucus'; pride.json organismParts = Colon.",
+      "correction": "Optional: keep 'mucus' and add the site via a resolvable term (e.g. UBERON 'left colon' / 'colon') in a supplementary characteristics column or comment, so colon datasets remain discoverable."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "row 6 (200923_QExHF_CR_MS726_TG3ko2_non_treat_Band_1.raw), characteristics[biological replicate]=3",
+      "message": "RAW sample string reads 'TG3ko1 DC mucus, non-treated Band 1, Rep3' while the file name says TG3ko2; the biological-replicate call rests on file name + 'Rep3' + paper n=3.",
+      "evidence": "evidence/raw_header_check.json; parallel WT naming (C57 = Rep2, C57_2 = Rep3) supports a copy-paste sample-string error rather than a repeat of animal ko1. Producer disclosed this.",
+      "correction": "No change required; keep the disclosure. If authors are contacted, confirm ko2 is a distinct animal."
+    },
+    {
+      "severity": "minor",
+      "category": "evidence-hygiene",
+      "location": "scratchpad/PXD029071/evidence/mascot_dat_parameters.json",
+      "message": "The .dat evidence file contains five entries from a different dataset (300818LBDGRMINK1*.mzid.gz, *.wiff2) that are not in the PXD029071 file list.",
+      "evidence": "files_compact.json lists only the six 200508/200923 RAW and .dat files; the six PXD029071 entries carry matching FILE= paths, so SDRF values are unaffected.",
+      "correction": "Regenerate or prune the evidence file so it contains only PXD029071 files."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (sample preparation)",
+      "message": "Gel-based prep (composite agarose-PAGE, excised fastest MUC2 band, Alcian Blue) and the secondary StavroX isopeptide cross-link search are not captured in any column.",
+      "evidence": "PRIDE experimentTypes 'Gel-based experiment'; Methods composite AgPAGE and StavroX (2 ppm / 20 ppm) search.",
+      "correction": "Optional: add comment[fractionation method] or a free-text sample-prep comment for the gel-band excision; the Mascot parameters annotated are correct for the deposited search."
+    }
+  ]
+}

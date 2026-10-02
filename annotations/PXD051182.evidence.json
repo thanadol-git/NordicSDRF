@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD051182.sdrf.tsv",
+  "dataset": "PXD051182",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD051182"
+    },
+    {
+      "id": "files",
+      "kind": "repository API",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD051182/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11252953/"
+    },
+    {
+      "id": "design",
+      "kind": "deposited design file",
+      "location": "scratchpad/PXD051182/evidence/sample.list.PRIDE.20240304xlsx.xlsx"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows: file, donor, group, replicate",
+      "value": "Exact 46-row sample design",
+      "source_ids": [
+        "design"
+      ],
+      "evidence": "Deposited sample sheet maps every RAW filename to donor, study group, and technical replicate."
+    },
+    {
+      "location": "technical columns",
+      "value": "Q Exactive HF-X DIA with Trypsin and stated search modifications",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE protocol and Methods state instrument, DIA method, preparation, tolerances, and modifications."
+    }
+  ],
+  "limitations": [
+    "Age and sex are available only as group summaries, so they are not assigned to individual rows.",
+    "Variable DIA windows are represented as not available for the single scalar isolation-width field.",
+    "The reconciler's control-arm disease warning is a false positive: healthy rows are explicitly normal and only disease rows say osteoarthritis."
+  ]
+}

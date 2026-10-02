@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD042249.sdrf.tsv",
+  "artifact_sha256": "52571d2b4d81e5e67c5c42774f346a7d697d1418cbd914194e2239bec1e03e63",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. 256-row TMTpro-16 map matches the deposited PRIDE labeling scheme and all 16 RAW files; templates ms-proteomics+vertebrates validate with strain OLS warnings only.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh hook agent without producer transcript"
+  },
+  "evidence_manifest": "/tmp/sdrf-scratch/PXD042249-rereview/evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Declared templates NT=ms-proteomics;VV=v1.1.0 and NT=vertebrates;VV=v1.1.0 are active and appropriate for mouse MS proteomics. Required vertebrates columns disease and developmental stage are present. python -m tools structure exited 0. parse_sdrf validate-sdrf --use_ols_cache_only -t ms-proteomics -t vertebrates exited 0 with warnings only. Factors are last; 256 unique assay names; no empty/whitespace cells."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "OLS resolved organism Mus musculus (NCBITaxon:10090), liver (UBERON:0002107), bone marrow (UBERON:0002371), hematopoietic multipotent progenitor cell (CL:0000837), normal (PATO:0000461), precancerous condition (MONDO:0021074), embryo, adult (EFO:0001272), all 16 TMT126-TMT134N PRIDE labels, DDA PRIDE:0000627, Orbitrap Exploris 480 MS:1003028, Trypsin MS:1001251, beam-type CID MS:1000422, and UNIMOD 4/2016/35/1 with matching labels and no obsolete terms. python -m tools check (offline CLEAN 9 terms; online CLEAN 18/18). Strain values are free-text (validator warnings only)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE PXD042249 title/organism/instrument/TMT/trypsin/10 ppm/0.02 Da/32% NCE/HCD/TMTpro mods match the SDRF. PMC11073998 (DOI 10.1038/s41375-024-02235-5) describes n=4 fetal E14.5 FL vs adult BM WT and iMLL::ENL LMPP 4-day cultures; disease=normal vs precancerous condition matches pre-leukemic (not frank leukemia) status. Deposited TMT_labeling_scheme.txt 16-channel map matches every SDRF source/label/genotype/organism part/replicate with 0 mismatches."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE files endpoint (projectAccessions=PXD042249) lists 16 RAW + 1 SEARCH + 1 OTHER. SDRF comment[data file] contains exactly the 16 RAW names (F1-F8 x inj1/inj2), no extras, no SEARCH/OTHER as data files."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed 16 sources (4 conditions x 4 bio reps) x 16 TMTpro channels per file x 8 HpH-RP fractions x 2 injections = 256 rows. Technical replicate 1/2 tracks inj1/inj2; fraction identifier 1-8 tracks F1-F8. Factors genotype and organism part are collinear with characteristics and with the paper 2x2 ontogeny x oncogene design. Channel layout is constant across files, matching the single plex."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Did not copy PRIDE disease 'Acute leukemia' onto 4-day pre-leukemic cultures. Did not invent TMT channels: map taken from deposited TMT_labeling_scheme.txt. Cell type uses a valid parent of LMPP rather than an unsupported cell identity. Optional FAIMS/fractionation columns are absent but not required. Recommended sex is omitted because the paper does not report it (minor)."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf --use_ols_cache_only -t ms-proteomics -t vertebrates exit 0 (2 NCBITaxon strain warnings). python -m tools structure exit 0. python -m tools check --offline exit 0 CLEAN; online exit 0 CLEAN 18/18. python -m tools score 100/100 exit 0."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[sex] (column absent)",
+      "message": "Vertebrates template recommends sex; the column is omitted and the paper does not report per-sample sex for the proteomics mice.",
+      "evidence": "vertebrates.yaml marks characteristics[sex] recommended. PMC11073998 methods state E14.5 FL and 6-10 week adult LMPPs without sex. Using not available would document the gap; omission does not break required columns."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[strain or breed] all rows",
+      "message": "Strain values are not NCBITaxon terms. C57BL/6N matches the paper WT mice but is unresolved in OLS ncbitaxon; Col1a1TetO_MLL-ENL is the transgenic model name rather than a strain taxon.",
+      "evidence": "parse_sdrf warned both values are not in ncbitaxon. TERMS.tsv allows free text for strain. Paper: WT C57Bl/6N and Col1a1TetO_MLL-ENL CD45.1 inducible model. Genotype factor already separates WT vs MLL-ENL."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "characteristics[cell type] all rows",
+      "message": "Cell type is the parent term hematopoietic multipotent progenitor cell rather than LMPP, and the MS samples are 4-day cultured mixed NK1.1- CD11c- B220- Ly6G- progeny, not freshly isolated LMPPs.",
+      "evidence": "PMC11073998 Fig. 3C: 40,000 NK1.1- CD11c- B220- Ly6G- cells from 4-day WT and iMLL::ENL LMPP cultures. CL:0000837 is a valid non-obsolete parent. This does not fabricate a cell identity."
+    }
+  ]
+}

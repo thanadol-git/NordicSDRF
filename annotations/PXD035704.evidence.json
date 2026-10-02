@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD035704.sdrf.tsv",
+  "dataset": "PXD035704",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD035704 (scratchpad/PXD035704/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "PRIDE file list (scratchpad/PXD035704/files_compact.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC9424213 Methods 'ChOP-MS' and 'Mass spectrometry analysis' (scratchpad/PXD035704/manuscript.txt)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "RAW headers read by HTTP range request (instrument, method file, activation type; scratchpad/PXD035704/evidence/raw_header_check.json)"
+    },
+    {
+      "id": "pdlog",
+      "kind": "repository",
+      "location": "deposited 4114_PD_file_search_log.xlsx (run → sample name; scratchpad/PXD035704/evidence/pd_file_search_log.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[bait], factor value[bait], comment[data file]",
+      "value": "Fusion_201127_10 = IER3-AS1 ChOP (antisense oligos against IER3-AS1); Fusion_201127_06 = LacZ ChOP (negative-control oligos)",
+      "source_ids": [
+        "pdlog",
+        "raw-header",
+        "paper"
+      ],
+      "evidence": "PD search log: 'Fusion_201127_10 | Inc RNA M', 'Fusion_201127_06 | Lac Z', 'Fusion_201127_09 | Blank', 'Fusion_201127_05 | Blank'; RAW sample names '4114 #2E' / '4114 #1E' / 'Blank 0.2%FAE'; paper: 'The eluted protein samples from both LacZ control probes and IER3-AS1 probes pulldown were sent for Mass-spectrometry analysis'"
+    },
+    {
+      "location": "characteristics[cell line], [cellosaurus accession], [organism part], [disease], [sex], [age]",
+      "value": "HeLa, CVCL_0030; uterine cervix; cervical adenocarcinoma; female; 30Y6M",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "'ChOP-MS using HeLa cells … around 30 million HeLa cells were used for each pull-down reaction'; donor attributes from Cellosaurus CVCL_0030"
+    },
+    {
+      "location": "comment[instrument], [dissociation method], [collision energy]",
+      "value": "Orbitrap Fusion; HCD; 30% NCE",
+      "source_ids": [
+        "raw-header",
+        "paper"
+      ],
+      "evidence": "RAW headers: Orbitrap Fusion, ActivationType = HCD, Collision Energy (%) = 30; paper: 'HCD at normalized collision energy settings of 30'"
+    },
+    {
+      "location": "comment[reduction reagent], [alkylation reagent], modifications",
+      "value": "DTT; MMTS; Oxidation M and Methylthio C variable",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "'treated with 100 mM DTT … alkylation with 10 mM methyl methanethiosulfonate'; 'Methionine oxidation and cysteine alkylation were set as variable modifications'; pdResult name '…T-1mc_Ox-MMTS…'"
+    },
+    {
+      "location": "comment[precursor mass tolerance], [fragment mass tolerance], cleavage",
+      "value": "5 ppm; 0.03 Da (30 mmu); trypsin, 1 missed cleavage",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "'Precursor mass tolerance was set to 5 ppm and fragment mass tolerance to 30 mmu. Tryptic peptides were accepted with one missed cleavage.'"
+    }
+  ],
+  "limitations": [
+    "The two analytical blank runs (Fusion_201127_05, Fusion_201127_09; RAW sample name 'Blank 0.2%FAE') hold no sample and are not rows of this SDRF.",
+    "Each pulldown was run once (one IER3-AS1 and one LacZ sample), so there is no biological replication; both rows carry biological replicate 1.",
+    "HeLa donor age (30Y6M) and sex are taken from Cellosaurus, not from the paper.",
+    "The bait is antisense DNA oligonucleotides hybridising to an RNA (ChOP), not a protein; it is recorded in a custom characteristics[bait] column."
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD038394.sdrf.tsv",
+  "artifact_sha256": "b9af5c8f35211d737b6fa087e3f5697f87c61c2ab534b2c394a1321b951cb8dc",
+  "verdict": "PASS",
+  "summary": "Independent rereview found no blocker or important issues. All 141 raw files match PRIDE PXD038394; phenotype 60/81 matches the deposited design matrix and Scott et al. Commun Biol 2023; required templates validate.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh hook agent without producer transcript"
+  },
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates independently derived from comment[sdrf template] as ms-proteomics v1.1.0, human v1.1.0, and clinical-metadata v1.0.0. parse_sdrf validate-sdrf --use_ols_cache_only exited 0 for each. python3 -m tools structure reported acquisition, template declaration, and column order consistent. 141 rows x 28 columns; unique source/assay/data-file; factor value[phenotype] present; reserved words used bare."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "parse_sdrf OLS-cache validation passed human and ms-proteomics with no ontology errors. python3 -m tools check verified 10/10 structured terms CLEAN (no hallucinations, mismatches, wrong ontology, or UNIMOD swaps). UNIMOD:4 Carbamidomethyl and UNIMOD:35 Oxidation match the local UNIMOD table. clinical-metadata warned that phenotype labels are not PATO/EFO terms; that template explicitly allows free text at warning level."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE PXD038394 title 'AKI DIA samples for generalized peakgroup scoring model application' and PMC10257694 (DOI 10.1038/s42003-023-04977-x) both name PXD038394. Organism Homo sapiens, blood plasma, Q Exactive HF-X, Lys-C then trypsin, IAA alkylation, label-free DIA, undepleted plasma, and 141 AKI samples match PRIDE plus Methods. Phenotype split 60 less-severe / 81 more-severe matches paper Results and design_matrix_group_de.tsv (group 1=60, group 2=81) with exact per-file mapping. Age/sex/individual left as not available; no sample-level demographic table was deposited."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE v3 files/all (projectAccessions=['PXD038394']) lists 141 RAW files. SDRF comment[data file] set equals that RAW set exactly (0 missing, 0 extra, 0 duplicates). Non-raw SEARCH/OTHER files correctly excluded from comment[data file]."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "141 unique sources, assays, and raw files; technical replicate=1; fraction=1; label-free. Factor is phenotype with 60/81 matching the deposited two-group design matrix and the paper. Paper and PRIDE protocol state 141 samples from 23 patients at up to 5 time points, but design_matrix_group_de.tsv has only sample and group; consecutive filename blocks are not patient units (one 5-file block mixes groups). Individual=not available is therefore the honest public annotation rather than a fabricated donor map."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Per-sample phenotype is taken from the deposited design matrix plus published 60/81 counts, not inferred from cohort summaries. Age/sex were not invented from FINNAKI demographics. Patient/timepoint IDs were not inferred from TM_M2012 well numbers. DIA (PRIDE:0000450) matches the paper's 44-variable-window DIA method (Bruderer 2017) even though PRIDE tags SWATH MS. Variable Oxidation is consistent with MSFragger-DIA/PHL practice; deposited peptide matrix also contains UniMod:1 N-terminal acetyl that was not added as a modification column, which is a completeness gap not an unsupported extra."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf --use_ols_cache_only -t human exit 0; -t ms-proteomics exit 0; -t clinical-metadata exit 0 with phenotype ontology warnings only. PYTHONPATH=sdrf-skills python3 -m tools structure exit 0. python3 -m tools check (online) 10/10 CLEAN exit 0; --offline CLEAN exit 0. python3 -m tools score 93/100 exit 0, flagging recommended-column completeness only."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[phenotype] and factor value[phenotype] all 141 rows",
+      "message": "Subphenotype labels are free text and do not resolve in PATO or EFO.",
+      "evidence": "parse_sdrf -t clinical-metadata warns that 'less severe septic acute kidney injury subphenotype' and 'more severe septic acute kidney injury subphenotype' are not in pato;efo. The clinical-metadata template allows free-text phenotype at warning level, and the wording matches Scott et al. plus the 60/81 design-matrix split."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance], characteristics[cell type], characteristics[ancestry category], characteristics[developmental stage]",
+      "message": "Recommended columns from the active templates are absent.",
+      "evidence": "python3 -m tools score 93/100 lists these as completeness issues. They are recommended, not required; parse_sdrf still passed. FINNAKI is an adult ICU cohort, so developmental stage could be adult from cohort-level evidence."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "characteristics[individual] all rows; characteristics[biological replicate] 1-141",
+      "message": "Repeated-measures structure (23 patients, up to 5 time points) is not encoded.",
+      "evidence": "PRIDE sampleProcessingProtocol and Scott et al. Methods state 141 samples from 23 AKI patients. Deposited design_matrix_group_de.tsv has no donor or sampling-time column, so individual=not available is supported. Unique biological-replicate numbering 1-141 does not capture patient-level independence."
+    }
+  ]
+}

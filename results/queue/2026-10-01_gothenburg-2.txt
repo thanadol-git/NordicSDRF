@@ -1,0 +1,11 @@
+# Gothenburg batches 2 and 3 — the 10 smallest remaining accessions from lists/sweden/gothenburg.txt (not in corpus, not annotated/blocked here), 2026-09-29 to 2026-10-01
+PXD022364	sweden/gothenburg	done	annotated (10 peptide-mapping runs; 5 intact-mass runs excluded), review PASS (2026-10-01)
+PXD025496	sweden/gothenburg	done	annotated, review PASS (2026-09-30)
+PXD029071	sweden/gothenburg	done	annotated, review PASS (2026-09-30)
+PXD035121	sweden/gothenburg	blocked	blocked: TMT10 channel-to-genotype map not deposited or published (2026-09-30)
+PXD056378	sweden/gothenburg	done	annotated, review PASS (2026-10-01)
+PXD014504	sweden/gothenburg	blocked	blocked: glycosaminoglycan glycomics, not proteomics (2026-10-01)
+PXD035704	sweden/gothenburg	done	annotated (2 blank runs excluded), review PASS (2026-10-01)
+PXD057429	sweden/gothenburg	blocked	blocked: no publication; runs R1-R6/G1-G6 not mapped to casein/kinase samples (2026-10-01)
+PXD063285	sweden/gothenburg	done	annotated (RAW files inside a 7z archive), review PASS (2026-10-01)
+PXD070089	sweden/gothenburg	done	annotated (F2-F6 run order inferred), review PASS (2026-10-01)

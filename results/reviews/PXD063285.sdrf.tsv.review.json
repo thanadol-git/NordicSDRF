@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD063285.sdrf.tsv",
+  "artifact_sha256": "584045ea144b02f8af0f9be268f0668d7f6a304fd6ae3486130f2915a5f2f28f",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review of the 6-row x 41-column SDRF for PXD063285 (mitochondrial BioID of TOP3A-BirA*-HA vs COX8A-MTS-BirA*-HA control in Flp-In T-REx 293, 3 replicates each). Official validator (ms-proteomics + human + cell-lines, offline OLS cache) exits 0 with warnings only; sdrf-tools check CLEAN; score 98/100. Every controlled term resolves to the right label/accession; sample-to-file mapping, factor, replicates and all technical parameters trace to the deposited Experimental_design.csv, MaxQuant parameters.txt, RAW header and the paper's Methods. Only minor findings remain (inferred cell-line/construct provenance, Cellosaurus facts not in saved evidence, optional/recommended columns absent).",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent without the producer transcript; producer report.md and evidence.json treated as untrusted claims and re-checked against scratchpad/PXD063285/ only (no other accessions' folders, no superseded reports)"
+  },
+  "evidence_manifest": "annotations/PXD063285.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Templates derived independently from templates.yaml: ms-proteomics (technology) + human (sample) + cell-lines (experiment, requires technology+sample) is the correct set; no AP-MS/proximity-labelling template exists in v1.1.0. All 7 lines have 41 fields, LF line endings, no stray whitespace, 6 unique source names/assay names/data files, no duplicate rows. Required columns present (cell line, cellosaurus accession, disease, age, sex, organism part, material type, label, instrument, cleavage agent, data file, fraction id, technical replicate, sdrf version/template). Reserved words used only where allowed (age not available, individual not applicable, cell type/developmental stage not available). Collision energy '27% NCE' matches the TERMS.tsv pattern; HCD written as MS:1000422 per README note."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Resolved in /root/.cache/sdrf-pipelines/ontologies: MS:1002416 'Orbitrap Fusion', MS:1001313 'Trypsin/P', MS:1000422 'beam-type collision-induced dissociation', PRIDE:0000627 'Data-dependent acquisition', PRIDE:0000609 'tris(2-carboxyethyl)phosphine (TCEP)', PRIDE:0000600 'chloroacetamide (ClAA)', UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, UNIMOD:1 Acetyl, MS:1002038 'label free sample', UBERON:0002113 kidney, PATO:0000461 normal, PATO:0000383 female, NCBITaxon:9606, CLO 'cell line', GO:0005739 mitochondrion. 'Flp-In T-REx 293' is absent from CLO/BTO/EFO (validator warning only; Cellosaurus accession column carries the identifier). sdrf-tools check: 9 terms checked, 0 hallucinated, 0 label mismatches, 0 UNIMOD swaps."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Experimental_design.csv (data_analysis.7z) maps Cox8_01-03 and Top3alpha_01-03 to the six 181126_FS1_IA_NL_DC_* raw files with Genotype Cox8/Top3alpha. Paper BioID section: 'Expression of TOP3A-BirA*-HA and COX8-BirA*-HA (BirA* fused to the MTS of human COX8A) was induced ... with 10 ng/ml doxycycline ... After 24 h, biotin was added to 2 uM, and after a further 24 h, cells were harvested' -> treatment value exact; 'Mitochondria were isolated as described for subcellular fractionation' -> cellular component mitochondrion. Cell line: BioID section does not name it, but the BioID cleavage observation is Fig. 1B, whose legend states 'Stably-transfected Flp-In T-REx 293 cells were induced to express TOP3A-WT-BirA*-HA'; subcellular fractionation was done in Flp-In T-REx 293; U2OS used only for imaging. RAW header of Cox8_01: Orbitrap Fusion, HCD, CE 27%, Orbitrap MS2 30K, top-speed 1 s (DDA); paper confirms 27% NCE HCD on Orbitrap Fusion Tribrid. Trypsin elution + 1 mM TCEP + 5 mM chloroacetamide (paper); MaxQuant parameters.txt: fixed Carbamidomethyl (C), Oxidation (M);Acetyl (Protein N-term), 'MS/MS tol. (FTMS) 20 ppm'; paper 'Trypsin/P'. PRIDE instrument MS:1002416 and organism 9606 agree."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE file list has 4 archives; RAW category is TOP3A_BioID_prox_proteins_raw_data.7z whose decoded 7z header lists exactly the six .raw files used in comment[data file] (1:1, no missing, duplicate or non-raw entries); the same six names appear in Experimental_design.csv. Using inner .raw names is appropriate because the archive bundles six acquisitions (README l.442-444 allows archive names only for single-acquisition archives)."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 2 bait groups x 3 replicates = 6 runs, 1 fraction, 1 technical replicate each; factor value[bait] equals characteristics[bait] per row and matches the Genotype column of Experimental_design.csv; biological replicate 1-3 within each group with distinct source names; treatment, cell line, compartment and all technical columns constant across groups, so no confounder introduced by annotation; all runs acquired 181126 and searched in one MaxQuant run (parameters.txt dated 11/27/2018)."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value traced to Experimental_design.csv, parameters.txt, RAW header or paper Methods/Fig.1 legend, except Cellosaurus-derived constants (CVCL_U427, female, kidney) which are standard reference facts for the named line and disclosed in limitations. Precursor mass tolerance correctly omitted rather than guessed (not in paper or saved parameters.txt). No unsupported specificity found in sample columns; inferred items (cell line for BioID, COX8 construct being a stable Flp-In integrant) are recorded as minor findings below. No material evidence omitted: companion PXD064926 (TMT/PRM) is a separate deposition and correctly out of scope."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -s annotations/PXD063285.sdrf.tsv -t ms-proteomics -t human -t cell-lines --use_ols_cache_only -> exit 0, 'There were only warnings' (free-text treatment; Flp-In T-REx 293 not in clo/bto/efo). Same without -t -> exit 0. sdrf-tools check --offline -> CLEAN, exit 0. sdrf-tools score -> 98/100, exit 0 (missing recommended precursor mass tolerance, ancestry category). sdrf-pipelines 0.1.6."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "characteristics[cell line], [cellosaurus accession], [genetic modification] rows 1-6; evidence.json claim 2",
+      "message": "The paper's BioID section does not name the cell line; Flp-In T-REx 293 is an inference (Fig. 1B legend + fractionation method), and the manifest cites 'Cell culture and transfection', which names both Flp-In T-REx 293 and U2OS. The COX8A-MTS-BirA*-HA line being a stable Flp-In integrant is not described in the paper.",
+      "evidence": "manuscript sentences 30, 64-66, 178, 189-190",
+      "correction": "Cite Fig. 1B legend and 'Mitochondria were isolated as described for subcellular fractionation' as the basis, and add a limitation that the BioID cell line and COX8 construct integration are inferred."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "characteristics[cellosaurus accession]/[sex]/[organism part] rows 1-6",
+      "message": "CVCL_U427, female and kidney come from Cellosaurus, which is not saved in scratchpad/PXD063285 nor listed as a source; reviewer could not verify them from scoped evidence (consistent with reviewer knowledge of Flp-In T-REx 293).",
+      "evidence": "evidence.json sources lack a Cellosaurus entry; limitation 4 mentions Cellosaurus",
+      "correction": "Save the Cellosaurus CVCL_U427 record extract under scratchpad/PXD063285/evidence and add it as a source."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[developmental stage] rows 1-6",
+      "message": "'not available' while the producer's own limitation states the line is fetal-derived per Cellosaurus.",
+      "evidence": "evidence.json limitation 4; SAMPLE-GUIDELINES developmental stage section (embryonic)",
+      "correction": "Optionally use an EFO/HsapDv fetal/embryonic stage term once the Cellosaurus record is saved, or keep 'not available'."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (absent columns)",
+      "message": "Recommended comment[precursor mass tolerance] and characteristics[ancestry category] are absent; optional comment[file uri] and characteristics[enrichment process] (streptavidin affinity capture of biotinylated proteins) not given.",
+      "evidence": "sdrf-tools score completeness issues; paper BioID section",
+      "correction": "Add precursor tolerance only if mqpar.xml/MaxQuant output can be read (not assumed defaults); otherwise leave omitted."
+    },
+    {
+      "severity": "minor",
+      "category": "spec",
+      "location": "characteristics[bait], characteristics[cellular component], characteristics[genetic modification] headers",
+      "message": "bait and cellular component are custom columns not in TERMS.tsv; genetic modification is defined in TERMS.tsv for clinical-metadata as the method (EFO), whereas the value here is free text mixing construct and method.",
+      "evidence": "TERMS.tsv; README 'Extending Templates' requires valid ontology terms for custom column names (bait = MI:0496, cellular component = GO:0005575 are acceptable)",
+      "correction": "No change required; optionally keep construct identity in [bait] and restrict [genetic modification] to the method (e.g. stable transfection / Flp-In integration)."
+    }
+  ]
+}

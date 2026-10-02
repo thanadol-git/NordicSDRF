@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD051266.sdrf.tsv",
+  "dataset": "PXD051266",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD051266"
+    },
+    {
+      "id": "files",
+      "kind": "repository API",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD051266/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11250671/"
+    },
+    {
+      "id": "design",
+      "kind": "deposited design file",
+      "location": "scratchpad/PXD051266/evidence/DF_all_proteins_found_in_prox_and_distal_end.xlsx"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows: subject and nerve end",
+      "value": "Subject, proximal/distal site, and DF identifier",
+      "source_ids": [
+        "design"
+      ],
+      "evidence": "Result-table abundance headers explicitly map every DF identifier to subject and nerve end; DF identifiers match all RAW filenames."
+    },
+    {
+      "location": "technical columns",
+      "value": "Orbitrap Eclipse DIA and Spectronaut modifications",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE protocol and publication Methods state acquisition windows, instrument, digestion, and search modifications."
+    }
+  ],
+  "limitations": [
+    "The cohort publication reports sex and age only in aggregate, so individual rows use not available.",
+    "The preparation used sequential Lys-C and Trypsin, but the current builder contract emits one cleavage-agent column and represents Trypsin; Lys-C remains a documented reconciliation warning."
+  ]
+}

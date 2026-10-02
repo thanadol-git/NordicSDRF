@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD035704.sdrf.tsv",
+  "artifact_sha256": "4348a47b64a1df6676feb01cc7ba0dc2b2710558c4ada0121ef565ff4013a08d",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review of the 2-row x 38-column SDRF for PXD035704 (IER3-AS1 vs LacZ ChOP-MS in HeLa, Orbitrap Fusion, label-free DDA). The official validator passes for ms-proteomics+human+cell-lines and for the declared templates. Every controlled term resolves in the offline cache with the right label and ontology. Technical values match the PRIDE protocols, the paper Methods and the RAW headers. The run-to-condition mapping matches the deposited PD search log. No blocker or important findings; only minor findings (optional enrichments and the documented blank-run exclusion).",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh reviewer subagent without the producer transcript. Producer report.md and evidence.json were treated as untrusted claims and re-checked against scratchpad/PXD035704/ only (pride.json, files_compact.json, files.json, manuscript.txt, evidence/raw_header_check.json, evidence/pd_file_search_log.json). No other accession folders and no superseded reports were read. Hash frozen at the start and re-verified at the end (unchanged)."
+  },
+  "evidence_manifest": "annotations/PXD035704.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates were derived independently from the installed templates.yaml (v1.1.0). PRIDE lists the experiment as AP-MS, but the affinity-proteomics template covers Olink/SomaScan and excludes ms-proteomics. The crosslinking template is for chemical XL-MS, and this study used UV RNA-protein crosslinking without a crosslink search. The correct set is therefore ms-proteomics + human + cell-lines, which matches the declared comment[sdrf template] columns. All required columns are present for base, sample-metadata, ms-proteomics, human and cell-lines. Every row has 38 fields; there is no CRLF and no leading or trailing whitespace. Reserved words are used only where the template allows them: cell type = not available (allow_not_available=True); individual = not applicable (allow_not_applicable=True). Structured values are well formed: NT=/AC=, the modification TA/MT keys, age 30Y6M matches the human age pattern, and '30% NCE' matches the collision-energy pattern. factor value[bait] has a matching characteristics[bait] column. sdrf-tools structure: OK."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Checked against the offline cache: MS:1002416 = 'orbitrap fusion' (ms); MS:1001251 = 'trypsin' (ms); MS:1000422 = 'beam-type collision-induced dissociation' (ms; README.adoc L457 names it the canonical HCD term); PRIDE:0000627 = 'data-dependent acquisition'; PRIDE:0000608 = 'dithiothreitol (DTT)'; PRIDE:0000605 = 'methyl methanethiosulfonate (MMTS)'; UNIMOD:35 = Oxidation; UNIMOD:39 = Methylthio (the correct +CH2S MMTS adduct on C); 'label free sample' = MS:1002038 (ms/pride); 'Homo sapiens' = NCBITaxon:9606; 'uterine cervix' = UBERON:0000002 / BTO:0001421; 'cervical adenocarcinoma' = MONDO:0005153 / EFO:0001416 / DOID:3702 / NCIT:C4029, a valid parent of the Cellosaurus disease NCIt C27677 'HPV-related cervical adenocarcinoma'; 'adult' = EFO:0001272; 'HeLa' = EFO:0001185; CVCL_0030 = HeLa. The instrument is not the Lumos (MS:1002732): the RAW headers and paper both say Orbitrap Fusion. sdrf-tools check --offline: CLEAN (0 hallucinated, 0 label mismatches, 0 UNIMOD swaps)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "pride.json (accession PXD035704 asserted) gives HeLa lysate, biotinylated ASOs against IER3-AS1 or the control LacZ, streptavidin pulldown, 100 mM DTT, 10 mM MMTS, Pierce trypsin, Orbitrap Fusion Tribrid, data-dependent mode, HCD at NCE 30, PD 2.4/Mascot, 5 ppm / 30 mmu, one missed cleavage, and M oxidation plus C alkylation as variable modifications. manuscript.txt (PMID 36038571, PMC9424213) states 'ChOP-MS using HeLa cells', '30 million HeLa cells ... for each pull-down reaction', '8 probes for LacZ and 8 probes for IER3-AS1', 'LacZ-specific antisense oligos were used as negative pull-down control', and 'Analytical blanks were recorded prior to each sample injection'. raw_header_check.json gives Orbitrap Fusion, ActivationType=HCD and CE 30 for all four RAW files, with sample names 4114 #1E (06), 4114 #2E (10) and 'Blank 0.2%FAE' (05, 09). Donor age, sex and disease come from Cellosaurus CVCL_0030, as the cellline.md rule allows. This cannot be re-fetched offline but is consistent with the template's own HeLa example (30Y6M, cervix)."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "files_compact.json lists four RAW files, and every FTP path contains PXD035704. Fusion_201127_06.raw and _10.raw are each annotated exactly once, with assay name equal to the file stem. Fusion_201127_05.raw and _09.raw are analytical blanks (RAW sample name 'Blank 0.2%FAE'; PD log 'Blank'; paper confirms blanks before each injection), and the manifest discloses their exclusion. There are no duplicate or non-raw data files. The PD search log maps Fusion_201127_10 to 'Inc RNA M' (lncRNA, IER3-AS1) and Fusion_201127_06 to 'Lac Z'. The .msf sizes agree: 154 MB and 177 MB for the samples against 11–14 MB for the blanks."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: one HeLa ChOP pulldown per bait (IER3-AS1 and the LacZ negative control), each injected once. That gives 2 sources, 2 assays, biological replicate 1 per group, technical replicate 1, fraction 1, and label-free. The single factor (bait) varies between the two rows and every other characteristic is constant. The lack of replication is real and disclosed. The paper reports two-fold enrichment over LacZ from these single runs; nothing is confounded or hidden."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every specific value traces to PRIDE, the paper, the RAW headers, the PD log or Cellosaurus HeLa. No value overstates its source: the disease is the parent term rather than an unsupported subtype; cell type is 'not available' rather than an inferred epithelial cell; and no passage, medium or ancestry is invented. The omissions are all optional or recommended items (ancestry category, sample type, UV crosslinking and chromatin-fraction context, MS2 analyzer and scan range) and are listed as minor findings."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -s annotations/PXD035704.sdrf.tsv -t ms-proteomics -t human -t cell-lines --use_ols_cache_only reported 'Everything seems to be fine. Well done.' (exit 0). The same command without -t (declared templates) also exited 0. sdrf-tools check --offline: CLEAN (exit 0). sdrf-tools score: 99/100; its only completeness note is the missing recommended characteristics[ancestry category]. sdrf-tools structure: OK."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (missing column characteristics[ancestry category])",
+      "message": "The recommended human-template column characteristics[ancestry category] is absent.",
+      "evidence": "sdrf-tools score flags it. Cellosaurus CVCL_0030 records the HeLa donor population as African American, which is HANCESTRO:0568 'African American' in the cache.",
+      "correction": "Optionally add characteristics[ancestry category] = African American (HANCESTRO:0568), cited to Cellosaurus CVCL_0030, or 'not available'."
+    },
+    {
+      "severity": "minor",
+      "category": "file-mapping",
+      "location": "file: Fusion_201127_05.raw, Fusion_201127_09.raw (not in comment[data file])",
+      "message": "Two deposited and searched RAW files (analytical blanks) are excluded, so the SDRF covers 2 of the 4 RAW files.",
+      "evidence": "files_compact.json lists four RAW files. raw_header_check.json gives 'Blank 0.2%FAE' for 05 and 09, and the PD log says 'Blank'. The exclusion is disclosed in the evidence manifest's limitations.",
+      "correction": "Acceptable as is. If full coverage is wanted, add two rows with characteristics[sample type] = empty (PRIDE child of PRIDE:0000895), biological fields set to not applicable where allowed, and factor value[bait] = not applicable."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "rows 1-2 (sample preparation context)",
+      "message": "UV crosslinking of the cells (250 mJ) and the chromatin/nuclear-lysate input of the ChOP pulldown are not recorded anywhere in the SDRF.",
+      "evidence": "manuscript.txt ChOP-MS Methods: cells 'placed on ice into the cross linker and exposed to 250 mJ'; chromatin prepared from nuclei and DNase-treated before hybridization.",
+      "correction": "Optionally record it, e.g. characteristics[treatment] = 'UV crosslinking 250 mJ' (both rows, so it is not a factor), or note it in the dataset description. Do not apply the XL-MS crosslinking template."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (optional characteristics[sample type])",
+      "message": "The negative-control role of the LacZ pulldown is carried only in the free-text bait value.",
+      "evidence": "Paper: 'LacZ-specific antisense oligos were used as negative pull-down control'. sample-metadata offers the optional characteristics[sample type] with 'negative control' and 'study sample' (PRIDE:0000895 children).",
+      "correction": "Optionally add characteristics[sample type] = negative control (LacZ row) and study sample (IER3-AS1 row)."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "source name / factor value[bait] rows 1-2",
+      "message": "The assignment of LacZ to run 06 and IER3-AS1 to run 10 rests on a single deposited source: the PD search log, available in scope only as the producer's parsed JSON. The RAW sample names (#1E/#2E) do not name the bait.",
+      "evidence": "pd_file_search_log.json rows C2 'Fusion_201127_06 | Lac Z' and A2 'Fusion_201127_10 | Inc RNA M'. No independent second source names the bait per run, and the original xlsx is not saved in scratchpad/PXD035704/.",
+      "correction": "Optionally save the original 4114_PD_file_search_log.xlsx (or its sheet1/sharedStrings extract) in scratchpad/PXD035704/evidence so the mapping can be re-verified byte-for-byte."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (optional technical columns)",
+      "message": "Optional acquisition details that are documented in the source are not captured.",
+      "evidence": "pride.json/paper: MS2 recorded in the Orbitrap at 30K; precursor scan range 375-1500 m/z; charge 2-7.",
+      "correction": "Optionally add comment[ms2 mass analyzer] = NT=orbitrap;AC=MS:1000484, comment[ms1 scan range] = 375m/z-1500m/z, comment[ms min charge] = 2 and comment[ms max charge] = 7."
+    }
+  ]
+}

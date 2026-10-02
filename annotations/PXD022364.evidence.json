@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD022364.sdrf.tsv",
+  "dataset": "PXD022364",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD022364 (scratchpad/PXD022364/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "PRIDE file list (scratchpad/PXD022364/files_compact.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC8080530 (scratchpad/PXD022364/manuscript.txt)"
+    },
+    {
+      "id": "mzid",
+      "kind": "repository",
+      "location": "20 deposited mzIdentML files, read in full (scratchpad/PXD022364/evidence/mzid_summary.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[treatment], factor value",
+      "value": "recombinant GR LBD F602S phosphorylated in vitro by MAP4K4, MINK1, MST1, MST2 or ROCK1; one source per kinase reaction, shared by its two digests (chymotrypsin = technical replicate 1, trypsin+chymotrypsin = technical replicate 2)",
+      "source_ids": [
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "file names 300818LBDGR<kinase><chymo|double> and 290818GR<kinase>; paper: 'GR F602S N514-K777 … used as a substrate for candidate kinases'; Table 3 lists the sites phosphorylated by the five kinases"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "chymo runs: Chymotrypsin; double runs: TrypChymo",
+      "source_ids": [
+        "mzid"
+      ],
+      "evidence": "mzid enzyme: Chymotrypsin (MS:1001306) for *chymo*, TrypChymo (MS:1001312) for *double*; file names *chymo* / *double*. The published protocol describes trypsin + chymotrypsin digestion only; the chymotrypsin-only digests rest on the file names and deposited searches"
+    },
+    {
+      "location": "comment[modification parameters], tolerances",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Phospho S/T, Phospho Y variable; 0.6 Da / 0.6 Da",
+      "source_ids": [
+        "mzid"
+      ],
+      "evidence": "mzid SearchModification and Parent/FragmentTolerance of all 20 files (Mascot 2.7)"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "data-dependent acquisition",
+      "source_ids": [
+        "mzid",
+        "pride-files"
+      ],
+      "evidence": "every annotated run has MS/MS spectra in the deposited MGF/mzIdentML (MGF TITLEs carry cycle/experiment indices of IDA MS/MS scans)"
+    },
+    {
+      "location": "comment[data file], [associated data file]",
+      "value": ".wiff2 with its .wiff.scan companion",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "each run is deposited as <name>.wiff2 + <name>.wiff.scan; there is no .wiff file"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "SCIEX instrument model (MS:1000121)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE instrument; the model is not in the saved evidence and the .wiff2 files carry no readable model string"
+    },
+    {
+      "location": "comment[reduction reagent], [alkylation reagent]",
+      "value": "DTT; iodoacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample processing: 10 mM DTT, 50 mM iodoacetamide, in-gel"
+    }
+  ],
+  "limitations": [
+    "The five 290818GR<kinase> runs (29 Aug 2018; 425,984-byte .wiff2 each, no search results, no LBD/enzyme tag) are NOT in this SDRF. They match the paper's 'Intact mass' experiment (undiluted protein, deconvoluted, Table 3 'intact mass and peptide mapping'), which has no peptide search and no proteomics acquisition method the template can express. 10 of the 15 runs are annotated.",
+    "The exact SCIEX instrument model is not stated in the saved evidence (the MS methods are in the Supporting Information, which could not be read); the generic parent term MS:1000121 is annotated.",
+    "The substrate is a recombinant human protein fragment: material type 'synthetic' (recombinant proteins, SAMPLE-GUIDELINES), organism part, cell type and disease 'not applicable'; the construct (GR F602S N514-K777 from E. coli) is described here.",
+    "The chymotrypsin and trypsin+chymotrypsin digests of the same kinase reaction share one source name; they are distinguished by comment[technical replicate] (1 = chymotrypsin, 2 = trypsin+chymotrypsin) and comment[cleavage agent details]. They are two digests of one sample, not repeated injections of one digest."
+  ]
+}

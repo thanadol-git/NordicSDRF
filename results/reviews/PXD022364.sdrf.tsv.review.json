@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD022364.sdrf.tsv",
+  "artifact_sha256": "3d62f3719296545caad735c72018d8daf8c3e8848b8658a44604c65e90760c8f",
+  "verdict": "PASS",
+  "summary": "Independent review of the 10-row, 30-column ms-proteomics v1.1.0 SDRF for PXD022364 (GR LBD F602S phosphorylated in vitro by MAP4K4/MINK1/MST1/MST2/ROCK1; chymotrypsin and trypsin+chymotrypsin peptide-mapping runs). Validator passes with only free-text treatment warnings; every ontology term resolves; tolerances, modifications, reagents and enzymes trace to the paper's search-parameter section, PRIDE protocol and the per-run mzIdentML summary; all 20 referenced files exist as RAW in the PRIDE file list. No blocker or important findings. Minor: the 5 intact-mass runs (10 RAW files) are excluded because ms-proteomics v1.1.0 has no valid acquisition-method term for MS1-only intact mass; chymotrypsin-only digestion of the *chymo runs rests on file names and the deposited Mascot enzyme, not on the published protocol; technical replicate 1/2 encodes two different digests rather than re-injections.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent without producer transcript; report.md and evidence.json treated as untrusted claims and re-checked against scratchpad/PXD022364/ only (pride.json, files_compact.json, manuscript.txt PMC8080530, evidence/mzid_summary.json); identity asserted: pride.json accession PXD022364, every file URL under /PXD022364/, manuscript PMID 33744286 matches the PRIDE reference"
+  },
+  "evidence_manifest": "annotations/PXD022364.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "30 columns, every row has 30 fields; required ms-proteomics columns present; comment[sdrf template]=NT=ms-proteomics;VV=v1.1.0 and comment[sdrf version]=v1.1.0; assay names and data files unique; reserved words limited to 'not applicable' in organism part/cell type/disease (allowed per TERMS.tsv); 4 modification-parameter columns well formed. Template set derived independently from templates.yaml/TEMPLATES.adoc: ms-proteomics is usable_alone, sample template is only 'recommended', and the spec precedent for purified in-vitro proteins uses no organism template, so omitting 'human' (age/sex) is defensible for a recombinant protein fragment."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Resolved in offline cache: PRIDE:0000627 data-dependent acquisition; MS:1000121 SCIEX instrument model; MS:1001306 Chymotrypsin; MS:1001312 TrypChymo; PRIDE:0000608 dithiothreitol (DTT); PRIDE:0000599 iodoacetamide (IAA); MS:1002038 label free sample; UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, UNIMOD:21 Phospho; NCBITaxon:9606 Homo sapiens; material type 'synthetic' is in the fixed list and SAMPLE-GUIDELINES names recombinant proteins as 'synthetic'. Treatment values are free text (validator warnings only). sdrf-tools check --offline: 0 hallucinated, 0 label mismatches, 0 UNIMOD swaps."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Manuscript: GR F602S N514-K777 expressed in E. coli and used as kinase substrate; MAP4K4, MINK1, MST1, MST2, ROCK1 phosphorylated GR LBD followed by digestion and MS (Table 3). Paper 'Database search parameters': Mascot 2.7.0, fixed carbamidomethyl C, variable oxidized M and phospho S/T/Y, precursor and fragment tolerance +/-0.6 Da, 2 missed cleavages. PRIDE/paper protocol: in-gel, 10 mM DTT, 50 mM iodoacetamide. mzid_summary: all 10 annotated runs have UKCM and SwissProt mzIdentML; *chymo runs searched with MS:1001306, *double runs with MS:1001312 (checked per assay name, 10/10 consistent). Instrument: PRIDE lists only MS:1000121; no model in saved evidence, so the generic term is the most specific supported value. DDA is inferred from Mascot-searched MGF MS/MS peak lists per run (SCIEX peptide mapping with IDA); no contrary evidence."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "files_compact.json (70 files; 30 RAW, 20 PEAK, 20 RESULT; all URLs under /PXD022364/). All 10 comment[data file] (.wiff2) and 10 comment[associated data file] (.wiff.scan) values match RAW entries exactly; no duplicates; no .wiff exists so .wiff2 as primary is correct. 10 RAW files (290818GR<kinase>.wiff2/.wiff.scan, 5 runs) are not referenced; see minor finding (documented scope exclusion: intact-mass runs with no peak lists or search results)."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "5 sources (one per kinase reaction) x 2 digests = 10 rows; factor value[treatment] has 5 levels with 2 rows each and equals characteristics[treatment]; biological replicate 1 per source (single reaction per kinase, consistent with paper); fraction 1 throughout; (source, fraction, technical replicate, label) keys unique; cleavage agent varies with technical replicate within each source, not with factor, so no confounding of factor with enzyme."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every populated value traced to PRIDE, paper or mzIdentML summary; no instrument model, ages, cell lines or other specificity added beyond evidence; 'not applicable' used where concepts do not apply to a recombinant fragment. Omitted material checked: intact-mass runs (documented, cannot be expressed with a valid ms-proteomics acquisition term), dexamethasone present during GR LBD expression/purification (optional, not annotated), missed cleavages=2 (optional)."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -s annotations/PXD022364.sdrf.tsv -t ms-proteomics --use_ols_cache_only -> exit 0, 'only warnings' (5 free-text treatment warnings). Probe with -t human additionally fails on missing age/sex (template not applicable; see spec_compliance). sdrf-tools check --offline -> CLEAN (exit 0); sdrf-tools structure -> 'Structure OK' (exit 0); sdrf-tools score -> 100/100 (exit 0). Hash unchanged before and after review."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "file-mapping",
+      "location": "file-level: 290818GRMAP4K4/MINK1/MST1/MST2/ROCK1 .wiff2 + .wiff.scan (10 RAW files, 5 runs)",
+      "message": "One third of the deposited raw runs are not annotated; the SDRF itself carries no trace of the exclusion.",
+      "evidence": "PRIDE file list has 30 RAW files, SDRF references 20. The 290818 runs have no MGF or mzIdentML, identical 425,984-byte .wiff2 and small .wiff.scan, and match the paper's 'Intact mass' experiment (Table 3: intact mass per kinase). ms-proteomics v1.1.0 requires a PRIDE acquisition-method term (DDA/DIA/PRM/SRM only in cache, no not applicable), so they cannot be validly expressed; the exclusion is documented in the evidence manifest limitations.",
+      "correction": "Keep the exclusion but state it in the contribution PR/README (5 intact-mass MS1 runs not annotated, reason); revisit if a future template adds an intact/MS1-only acquisition term (cleavage agent would be 'not applicable')."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[cleavage agent details], rows with assay name *chymo (5 rows)",
+      "message": "Chymotrypsin-only digestion is supported only by file names and the deposited Mascot search enzyme; the published protocol and PRIDE describe trypsin+chymotrypsin co-digestion for all bands, and the manifest cites 'pride' as a source for this claim although PRIDE does not support it.",
+      "evidence": "PRIDE sampleProcessingProtocol and paper 'Peptide mapping': 'digested with 10 ng/uL trypsin and 12.5 ng/uL chymotrypsin'; mzid_summary: *chymo mzIdentML enzyme MS:1001306 with comment 'LBD GR chymotrypsin'.",
+      "correction": "No value change required (search enzyme is the reanalysis-relevant parameter); amend the evidence manifest to cite mzid only for the chymotrypsin rows and note the protocol discrepancy as a limitation."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "comment[technical replicate], rows with assay name *double (value 2)",
+      "message": "Technical replicate 2 encodes a different digest (TrypChymo vs Chymotrypsin) of the same kinase reaction, not a repeated measurement of the same preparation as the spec definition implies.",
+      "evidence": "README.adoc: technical replicate = 'Repeated measurements of the same sample (e.g., multiple injections)'; producer manifest itself states 'two digests of one sample, not repeated injections'. Encoding is operationally required to keep (source, fraction, techrep) keys unique and the enzyme difference is explicit in comment[cleavage agent details].",
+      "correction": "Acceptable as is; optionally note in the PR that technical replicates correspond to enzyme-specific digests so downstream tools do not average them as re-injections."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "comment[instrument], all rows",
+      "message": "Generic parent term MS:1000121 SCIEX instrument model; exact model unknown.",
+      "evidence": "PRIDE instruments lists only MS:1000121; manuscript MS methods for the instrument are in unread Supporting Information; .wiff2 indicates a SCIEX OS instrument but does not identify the model.",
+      "correction": "Keep generic term unless the Supporting Information or raw-file metadata names the model; do not infer a model from the .wiff2 format alone."
+    }
+  ]
+}

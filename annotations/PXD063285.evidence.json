@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD063285.sdrf.tsv",
+  "dataset": "PXD063285",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD063285 (scratchpad/PXD063285/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "PRIDE file list (scratchpad/PXD063285/files_compact.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC12585908 Methods 'Cell culture', 'BioID', 'BioID protein identification' (scratchpad/PXD063285/manuscript.txt)"
+    },
+    {
+      "id": "7z",
+      "kind": "repository",
+      "location": "7z archive listings decoded from the archive headers (scratchpad/PXD063285/evidence/7z_listing.json)"
+    },
+    {
+      "id": "design",
+      "kind": "repository",
+      "location": "data_analysis.7z → data/Experimental_design.csv and MaxQuant parameters.txt (scratchpad/PXD063285/evidence/experimental_design_and_mq_parameters.json)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "header of 181126_FS1_IA_NL_DC_Cox8_01.raw decoded from the start of the raw_data.7z stream (scratchpad/PXD063285/evidence/raw_header_check.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file], source name, characteristics[bait], factor value[bait], [biological replicate]",
+      "value": "Cox8_01–03 = COX8A MTS-BirA*-HA control; Top3alpha_01–03 = TOP3A-BirA*-HA; replicates 1–3",
+      "source_ids": [
+        "design",
+        "7z"
+      ],
+      "evidence": "Experimental_design.csv: 'Genotype' Cox8 / Top3alpha, Experiment Cox8_01 … Top3alpha_03, Raw file 181126_FS1_IA_NL_DC_<…>; the six .raw files are inside TOP3A_BioID_prox_proteins_raw_data.7z"
+    },
+    {
+      "location": "characteristics[cell line], [genetic modification], [treatment], [cellular component]",
+      "value": "Flp-In T-REx 293 (CVCL_U427) with stable doxycycline-inducible BirA* constructs; 10 ng/ml doxycycline, 2 uM biotin; isolated mitochondria",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "'Expression of TOP3A-BirA*-HA and COX8-BirA*-HA (BirA* fused to the MTS of human COX8A) was induced … with 10 ng/ml doxycycline … After 24 h, biotin was added to 2 μM … Mitochondria were isolated'; Flp-In T-REx 293 stable transfection in 'Cell culture and transfection'"
+    },
+    {
+      "location": "comment[instrument], [dissociation method], [collision energy]",
+      "value": "Orbitrap Fusion; HCD; 27% NCE",
+      "source_ids": [
+        "raw-header",
+        "paper"
+      ],
+      "evidence": "RAW header (Cox8_01): Orbitrap Fusion, ActivationType = HCD, Collision Energy (%) = 27; paper: 'Orbitrap Fusion Tribrid … HCD fragmentation using 27% normalized collision energy'"
+    },
+    {
+      "location": "comment[cleavage agent details], modifications, reagents, fragment tolerance",
+      "value": "Trypsin/P; Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term variable; TCEP; chloroacetamide; 20 ppm",
+      "source_ids": [
+        "paper",
+        "design"
+      ],
+      "evidence": "paper: on-bead elution with trypsin and 1 mM TCEP, 5 mM chloroacetamide; MaxQuant 1.6.1.0, 'Trypsin/P', fixed Carbamidomethyl (C); parameters.txt: Fixed modifications Carbamidomethyl (C), 'MS/MS tol. (FTMS) 20 ppm'"
+    }
+  ],
+  "limitations": [
+    "The RAW files are deposited only inside TOP3A_BioID_prox_proteins_raw_data.7z; comment[data file] gives the .raw names inside the archive.",
+    "Only the first RAW file's header could be read (the archive is one solid LZMA2 stream); the other five are assumed to share its instrument method, consistent with the single MaxQuant run and the paper.",
+    "Precursor mass tolerance is not stated in the paper or the saved MaxQuant parameters.txt (MaxQuant default main-search 4.5 ppm), so the column is omitted.",
+    "Flp-In T-REx 293 is HEK293-derived (female, fetal kidney per Cellosaurus); age and developmental stage are 'not available'.",
+    "The BioID Methods do not name the cell line. Flp-In T-REx 293 is inferred: 'Cell culture and transfection' lists Flp-In T-REx 293 and U2OS cells, the BioID constructs are doxycycline-induced (the Flp-In T-REx system, pcDNA5/FRT/TO) and the paper's other inducible TOP3A experiments use stably transfected Flp-In T-REx 293. That the COX8 control is likewise a stable Flp-In line is assumed."
+  ]
+}
