@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD061235.sdrf.tsv",
+  "dataset": "PXD061235",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD061235"
+    },
+    {
+      "id": "record",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD061235/evidence/pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD061235/evidence/files.json"
+    },
+    {
+      "id": "design",
+      "kind": "deposited design evidence",
+      "location": "scratchpad/PXD061235/evidence/files.json"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "12 DIA pull-down runs from hTERT-immortalized mouse embryonic fibroblasts across genotype and oligonucleotide treatment.",
+      "source_ids": [
+        "record",
+        "files",
+        "design"
+      ],
+      "evidence": "RAW names encode WT/PUS10KO, glybio/scrbio treatment and replicate; the deposit protocol defines the constructs, pull-down and DIA method."
+    }
+  ],
+  "limitations": [
+    "The MEF hTERT cultures have no supplied Cellosaurus accession.",
+    "The deposited SDRF was deliberately not consulted."
+  ]
+}

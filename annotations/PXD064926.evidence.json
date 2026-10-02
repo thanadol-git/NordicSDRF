@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD064926-peptides.sdrf.tsv",
+  "dataset": "PXD064926",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD064926 (scratchpad/PXD064926/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "PRIDE file list (scratchpad/PXD064926/files_compact.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC12585908 Methods 'Determination of TOP3A cleavage by TMT labelling', 'In vitro cleavage of synthesized peptides using MPP', 'Mass spectrometry analysis for TOP3A cleavage' (scratchpad/PXD064926/manuscript.txt)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "RAW headers read by HTTP range request (instrument, method file, activation type; scratchpad/PXD064926/evidence/raw_header_check.json)"
+    },
+    {
+      "id": "topride",
+      "kind": "repository",
+      "location": "deposited ToPrideSummary.xlsx / ToPrideRawfiles.xlsx (scratchpad/PXD064926/evidence/topride_sheets.json)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "Cellosaurus CVCL_U427 (scratchpad/PXD064926/evidence/cellosaurus.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "-tmt: source name, technical replicate",
+      "value": "3164 sample 01 = QEHF_190506_40 and _63 (HiPPR re-run); sample 02 = _43 and _66",
+      "source_ids": [
+        "topride",
+        "raw-header"
+      ],
+      "evidence": "ToPrideSummary '3164 Labelling N-terminal with TMT … QEHF_190506_40 | 3164 sample 01 …'; RAW sample names '3164 sample 01' / '3164 sample 01 HiPPR'"
+    },
+    {
+      "location": "-tmt: characteristics, reagents, modifications",
+      "value": "Flp-In T-REx 293, C-terminally tagged TOP3A pulldown (tag stated as Strep-tag II/3xFLAG in Methods, BirA*-HA in Results/Fig. 2; cellular component left 'not available' for the same reason); TCEP, MMTS; TMT6plex K/N-term variable, Methylthio C fixed, Ox variable; semi-tryptic",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "paper Methods quoted in the source list; 'TMT on lysine and peptide N-termini were set as a variable modification'"
+    },
+    {
+      "location": "-peptides: source name, characteristics[peptide], [treatment]",
+      "value": "4754 S1–S6: WT (KGRQ) or KGRQ>AAAA peptide with MPP at 0.1/0.3/0.5 mM MnCl2; S7/S8 = control reactions. 4860: peptides A/B/C with no MPP, 0.7 uM or 2.1 uM MPP; PRM runs for A and B",
+      "source_ids": [
+        "topride",
+        "raw-header",
+        "paper"
+      ],
+      "evidence": "ToPrideSummary rows 'S6 peptide with KGRQ MnCl2 concentration is 0,1mM' … 'S8 Ctrl 1', 'PeptideB Low concentration 0.7 μM'; RAW '4860 pepA high alk' etc.; paper: MPP at 2.1 µM and 0.7 µM, WT/KGRQ/KGRQF peptides, controls omit MPP"
+    },
+    {
+      "location": "-peptides: acquisition, instrument, tolerances",
+      "value": "Lumos DDA HCD 30 (4754, 5 ppm); QE HF DDA HCD 28 and PRM HCD 30 (4860, 10 ppm per the 10ppm search-file names); 0.02 Da; no enzyme",
+      "source_ids": [
+        "raw-header",
+        "paper"
+      ],
+      "evidence": "RAW methods 4754_ID_45min_OTHCD30, 4860_30min…TOP10, 4860_PRMiSTD (PRM, nce 30); paper: 'In experiments using synthetic peptides, no enzyme was specified'"
+    }
+  ],
+  "limitations": [
+    "Three SDRF files: PXD064926-tmt.sdrf.tsv (2 runs of 3164 sample 01, cell-derived TOP3A), PXD064926-sample02.sdrf.tsv (2 runs of 3164 sample 02) and PXD064926-peptides.sdrf.tsv (21 runs, synthetic peptides); together all 25 RAW files.",
+    "3164 sample 02 (QEHF_190506_43 and _66) is listed by the submitters under '3164 Labelling N-terminal with TMT' but its search file ('3164_NtermTr_semitrypsin') has no TMT and the paper does not describe it; its sample attributes, reagents and TMT status are 'not available' (only oxidation is annotated), in a separate file because the cell-lines template does not allow an unknown cell line. The paper's Methods (Strep-tag II/3xFLAG pulldown) and Results (BirA*-HA) differ on the construct; the Methods text is used.",
+    "Run QEHF_190506_63 is a re-run of sample 01 after an extra HiPPR detergent clean-up (technical replicate 2).",
+    "The TMT reagent labels a single, non-multiplexed sample (N-terminal derivatisation), so comment[label] is 'label free sample' and TMT is a variable modification.",
+    "Peptide A/B/C = wild-type / KGRQ>AAAA / KGRQF>AAAAA is inferred from the summary sheet ('4860 KGRQ, AAAA and AAAAA peptides') and the paper's PRM of wild-type and KGRQ peptides (PRM files exist for A and B only).",
+    "4860 runs without 'low'/'high' are read as no-MPP controls; 4754 controls S7/S8 do not say which peptide they contain. MPP amount for 4754 (3.48 or 10.44 µg) is not stated per run.",
+    "Reduction/alkylation for the 4754 peptides is not stated; only oxidation is annotated there. The 4860 heavy-Arg internal standard is given as a variable Label:13C(6)15N(4) modification.",
+    "In the -peptides file, the DDA and PRM runs of the same 4860 reaction share a source name and are technical replicates 1 (DDA) and 2 (PRM).",
+    "Precursor tolerance is 10 ppm for all 4860 runs (deposited search results are named '4860_peptideA/B/C_10ppm…'; peptide C has DDA runs only) and 5 ppm for the 4754 Lumos runs. factor value[peptide] and factor value[treatment] are both given."
+  ],
+  "additional_artifacts": [
+    "annotations/PXD064926-sample02.sdrf.tsv",
+    "annotations/PXD064926-tmt.sdrf.tsv"
+  ]
+}

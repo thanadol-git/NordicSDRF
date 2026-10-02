@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD059661-dda.sdrf.tsv",
+  "dataset": "PXD059661",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD059661"
+    },
+    {
+      "id": "record",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD059661/evidence/pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD059661/evidence/files.json"
+    },
+    {
+      "id": "design",
+      "kind": "deposited design evidence",
+      "location": "scratchpad/PXD059661/evidence/files.json"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "18 DDA library runs represented as two injections of a nine-fraction pooled LINE-1-knockdown library.",
+      "source_ids": [
+        "record",
+        "files",
+        "design"
+      ],
+      "evidence": "PRIDE describes pooled high-pH fractionation; filenames encode F01-F08 plus FT and injection R1/R2."
+    }
+  ],
+  "limitations": [
+    "The pool's exact contributing sample identifiers are not enumerated in the accessible record.",
+    "The deposited SDRF was deliberately not consulted."
+  ]
+}

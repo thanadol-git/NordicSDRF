@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD064926-sample02.sdrf.tsv",
+  "artifact_sha256": "fa8ab558bf98e585b2628b9d7707c46c6a1faac80f919134a7640745617efcfe",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocker or important issues. Every asserted value in the 2-row sample02 SDRF (Homo sapiens, Q Exactive HF, DDA, HCD at NCE 28, trypsin, 5 ppm / 0.02 Da, Met oxidation, technical replicates 1/2) is traceable to the RAW headers, the deposited ToPride sheets, the PRIDE record or the paper's general search parameters; undocumented sample attributes are honestly 'not available'. Minor wording/provenance improvements only.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer agent without producer transcript; producer report.md and evidence.json treated as untrusted; read only scratchpad/PXD064926/"
+  },
+  "evidence_manifest": "annotations/PXD064926.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "pass", "evidence": "34 columns, 2 rows, unique assay names/data files; templates ms-proteomics + human v1.1.0 declared; all human-template required columns (age, sex, individual, developmental stage, organism part, cell type, disease, material type) present; reserved word 'not available' used correctly; sdrf-tools structure OK."},
+    "ontology_integrity": {"status": "pass", "evidence": "Offline OLS cache: NCBITaxon:9606 homo sapiens; PRIDE:0000627 data-dependent acquisition; MS:1002523 Q Exactive HF; MS:1001251 Trypsin; MS:1000422 beam-type collision-induced dissociation (canonical HCD per spec README l.457); UNIMOD:35 Oxidation. No obsolete or mismatched terms; sdrf-tools check --offline CLEAN."},
+    "source_evidence": {"status": "pass", "evidence": "RAW headers (evidence/raw_header_check.json): QEHF_190506_43 sample '3164 sample 02', QEHF_190506_66 '3164 sample 02 HiPPR' (original file name QEHF_190506_43_190510231733.raw, i.e. re-run of same sample), model Q Exactive HF, FULL MS / DD-MS, nce 28. ToPrideSummary lists both runs as '3164 sample 02'; ToPrideRawfiles search file '3164_NtermTr_semitrypsin_QEHF_190506_43_66' (sample 01's is '..._CtermTr_TMT_semiTrypsin...'). Paper Database-matching section: precursor 5 ppm (10 ppm only for PRM), fragment 0.02 Da, semitryptic, Met oxidation dynamic. PRIDE organism NEWT:9606 only. No sample-level biology for sample 02 exists in the evidence, so 'not available' is correct."},
+    "file_mapping": {"status": "pass", "evidence": "files_all.json lists 25 RAW files; tmt (2) + sample02 (2) + peptides (21) = 25, no duplicates, no missing, no extra. This file covers QEHF_190506_43.raw and QEHF_190506_66.raw only."},
+    "design_consistency": {"status": "pass", "evidence": "One source (3164_sample02), biological replicate 1, technical replicates 1 (_43) and 2 (_66, HiPPR re-cleanup re-injection), fraction 1; no factor columns needed for a single undescribed sample. Source name distinct from the tmt file's 3164_sample01."},
+    "omission_safety": {"status": "pass", "evidence": "Cell line, construct, TMT status, reduction/alkylation reagents and all biological attributes left 'not available' rather than borrowed from sample 01; only search parameters that the paper states globally were applied. No unsupported specificity found. Minor wording points noted in findings."},
+    "deterministic_validation": {"status": "pass", "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -s annotations/PXD064926-sample02.sdrf.tsv -t ms-proteomics -t human --use_ols_cache_only -> 'Everything seems to be fine', exit 0; sdrf-tools check --offline -> CLEAN, exit 0; sdrf-tools structure -> OK, exit 0; sdrf-tools score -> 94/100 (missing recommended ancestry category; no factor columns), exit 0."}
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD064926.evidence.json",
+      "message": "The evidence manifest's artifact is the -peptides SDRF and it has no claims for this file's own values (instrument, NCE 28, 5 ppm/0.02 Da, trypsin, oxidation, technical replicates); sample02 appears only in a -tmt claim and in limitations.",
+      "evidence": "claims[] locations are '-tmt: ...' and '-peptides: ...' only; sample02 listed under additional_artifacts.",
+      "correction": "Add '-sample02:' claims citing raw-header (instrument, DDA, nce 28, sample names, HiPPR re-run), topride (run-to-sample mapping, NtermTr search file) and paper (5 ppm, 0.02 Da, semitryptic, Met oxidation)."
+    },
+    {
+      "severity": "minor",
+      "category": "source-evidence",
+      "location": "characteristics[sample description] rows 1-2",
+      "message": "'(no TMT)' and 'not described in the paper' are stated as facts but are inferences: TMT absence is read from a search-file name, and the paper's search section ('For the C-terminally tagged sample, TMT ... set as a variable modification') implies at least one other, non-C-terminally-tagged sample in the same analysis.",
+      "evidence": "ToPrideRawfiles_extra: '3164_NtermTr_semitrypsin_QEHF_190506_43_66' vs '3164_sample1_CtermTr_TMT_semiTrypsin...'; manuscript Database matching paragraph.",
+      "correction": "Reword e.g. 'search file name 3164_NtermTr_semitrypsin lacks TMT (unlike sample 01's CtermTr_TMT search); sample not explicitly described in the paper'. Do not add a construct or cell line."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "comment[modification parameters] rows 1-2",
+      "message": "The paper sentence used for Met oxidation also states 'cysteine alkylation as fixed'; only oxidation is annotated. Omission is defensible because the alkylating reagent (MMTS vs iodoacetamide) for sample 02 is unknown, but the reason is not recorded.",
+      "evidence": "manuscript: 'Methionine oxidation was set as dynamic and cysteine alkylation as fixed.'",
+      "correction": "Either keep as is and note in the report that the Cys fixed modification is omitted because the reagent is unknown, or leave unchanged; no SDRF change required."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (characteristics[ancestry category])",
+      "message": "Recommended human-template column ancestry category is absent (sdrf-tools score).",
+      "evidence": "TERMS.tsv: ancestry category, templates human/cell-lines, optional.",
+      "correction": "Optionally add characteristics[ancestry category] = not available."
+    }
+  ]
+}

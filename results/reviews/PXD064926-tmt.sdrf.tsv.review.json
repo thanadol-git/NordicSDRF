@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD064926-tmt.sdrf.tsv",
+  "artifact_sha256": "3ea99adf5cad4f19592f6c75c2fc444f2443cc034750af3b74bbea117e030e0a",
+  "verdict": "PASS",
+  "summary": "Independent review of the 2-row TMT-derivatisation SDRF (3164 sample 01, runs QEHF_190506_40/_63) found no blocker or important issues. Validators pass for ms-proteomics+human+cell-lines; all controlled terms resolve; sample-to-run mapping, instrument, NCE, reagents, tolerances and modifications are supported by the deposited ToPride sheets, RAW headers, PRIDE protocol and PMC12585908 Methods. Four minor findings concern under-used evidence (fetal developmental stage, mitochondrial fraction), the label-column semantics, and manifest provenance.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer agent without producer transcript; report.md and evidence.json treated as untrusted; only scratchpad/PXD064926/ evidence read"
+  },
+  "evidence_manifest": "annotations/PXD064926.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "pass", "evidence": "42 columns, 2 rows, no duplicate rows (technical replicate 1/2 distinguish identical source). Templates declared ms-proteomics, human, cell-lines v1.1.0, consistent with Homo sapiens cell-line material. Reserved words used correctly ('not available' for cell type, age, developmental stage, cellular component; 'not applicable' for individual). Structured values (NT=/AC=/TA=/PP=/MT=) well formed. sdrf-tools structure OK."},
+    "ontology_integrity": {"status": "pass", "evidence": "Offline cache: MS:1002523 Q Exactive HF; MS:1001251 Trypsin; MS:1000422 beam-type collision-induced dissociation; PRIDE:0000627 data-dependent acquisition; PRIDE:0000609 TCEP; PRIDE:0000605 MMTS; UNIMOD:39 Methylthio; UNIMOD:35 Oxidation; UNIMOD:737 TMT6plex (same chemistry/mass as the TMT10plex reagent in Methods); kidney UBERON:0002113; normal PATO:0000461; female PATO:0000383; transfection EFO; CVCL_U427 ID 'Flp-In-T-REx-293' matches cellosaurus name and cell line value. Validator warning only that the cell line name is not in CLO/BTO/EFO, which is expected for a Cellosaurus-only line. sdrf-tools check --offline: CLEAN (0 hallucinated, 0 label mismatches)."},
+    "source_evidence": {"status": "pass", "evidence": "ToPrideSummary: '3164 Labelling N-terminal with TMT', QEHF_190506_40 and _63 = '3164 sample 01'; search file 3164_sample1_CtermTr_TMT_semiTrypsin_QEHF_190506_40_63 confirms both runs searched with TMT. RAW headers: model Q Exactive HF, DD-MS, nce 28, isolation 1.2 m/z; _63 sample name '3164 sample 01 HiPPR' with internal path QEHF_190506_40_<timestamp> (re-acquisition of the same sample). PRIDE protocol/Methods: Flp-In T-REx 293, doxycycline-inducible C-terminally tagged TOP3A, TMT before digestion, TCEP, MMTS, trypsin, 5 ppm precursor, 0.02 Da fragment, Met ox dynamic, Cys alkylation fixed, TMT on K and peptide N-term variable, semitryptic. Cellosaurus CVCL_U427: SX Female, parent T-REx-293. Strep-tag II/3xFLAG (Methods) vs BirA*-HA (Results) conflict is real and is disclosed in sample description; genotype is worded tag-neutrally."},
+    "file_mapping": {"status": "pass", "evidence": "PRIDE file list (FTP paths under archive/2025/10/PXD064926) has 25 RAW files; -tmt (2) + -sample02 (2: _43, _66) + -peptides (21) = 25 unique, no overlap, no missing or unmatched files. This artifact maps QEHF_190506_40.raw and QEHF_190506_63.raw, both assigned to sample 01 by the submitters."},
+    "design_consistency": {"status": "pass", "evidence": "One biological sample (biological replicate 1), two injections (technical replicate 1 = original run, 2 = HiPPR clean-up re-run), fraction 1. Single non-multiplexed sample, so no factor value is defined; acceptable for a single-condition identification experiment (score tool notes absence only as a design remark). No confounders possible with one sample."},
+    "omission_safety": {"status": "pass", "evidence": "No value asserts beyond evidence: tag identity left out of genotype, cell type/age left 'not available', TMT channel not invented. Under-used evidence (developmental stage, cellular component) recorded as minor findings; neither omission misstates the sample."},
+    "deterministic_validation": {"status": "pass", "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -s annotations/PXD064926-tmt.sdrf.tsv -t ms-proteomics -t human -t cell-lines --use_ols_cache_only: exit 0, warnings only (cell line name not in clo/bto/efo). sdrf-tools check --offline: CLEAN, exit 0. sdrf-tools structure: OK, exit 0. sdrf-tools score: 94/100, exit 0."}
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "characteristics[developmental stage] rows 1-2",
+      "message": "Cellosaurus CVCL_U427 records AG 'Fetus' but developmental stage (and age) are 'not available'.",
+      "evidence": "scratchpad/PXD064926/evidence/cellosaurus.json: \"AG\": \"Fetus\".",
+      "correction": "Optionally set developmental stage to a fetal-stage term (e.g. HsapDv fetal stage) citing Cellosaurus; age may stay 'not available'."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "characteristics[cellular component] rows 1-2",
+      "message": "Both the PRIDE sample protocol and the paper Methods state the pulldown was done on isolated crude mitochondria, and Results state the C-terminal fragment arises in the mitochondrial matrix; the column is left 'not available' citing the tag conflict, which does not bear on the fraction.",
+      "evidence": "pride.json sampleProcessingProtocol: 'cells were harvested and crude mitochondria isolated ... Affinity pulldown was performed'.",
+      "correction": "Consider 'mitochondrion' (GO:0005739), or document why the Methods fractionation statement is distrusted."
+    },
+    {
+      "severity": "minor",
+      "category": "semantics",
+      "location": "comment[label] rows 1-2",
+      "message": "Spec describes comment[label] as the label applied to the sample; TMT reagent was applied, yet 'label free sample' is used. Defensible because only one unknown channel was used for N-terminal derivatisation without reporter-ion quantification, and TMT is carried as variable modifications, matching the submitters' search.",
+      "evidence": "README.adoc line 397; Methods 'incubated with an excess of tandem mass tag reagent (TMT, 10-plex)'; dataProcessingProtocol 'TMT on lysine and peptide N-termini were set as a variable modification'.",
+      "correction": "No change required; keep the rationale in sample description (already present)."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD064926.evidence.json 'artifact'",
+      "message": "Manifest 'artifact' names the -peptides SDRF; this artifact appears only under 'additional_artifacts', and the manifest's evidence for 'Strep-tag/BirA' and cellular component is narrative only.",
+      "evidence": "evidence.json: \"artifact\": \"annotations/PXD064926-peptides.sdrf.tsv\".",
+      "correction": "Optionally provide per-artifact manifests or list all three SDRFs as artifacts."
+    }
+  ]
+}

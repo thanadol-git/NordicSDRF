@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD031395-celegans.sdrf.tsv",
+  "dataset": "PXD031395",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD031395 (scratchpad/PXD031395/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "PRIDE file list (scratchpad/PXD031395/files_compact.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC10279913 Results 'Immunoprecipitations identify…', Methods (scratchpad/PXD031395/manuscript.txt)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "RAW headers read by HTTP range request (instrument, method file, activation type; scratchpad/PXD031395/evidence/raw_header_check.json)"
+    },
+    {
+      "id": "map",
+      "kind": "repository",
+      "location": "msf names ↔ RAW sample names (scratchpad/PXD031395/evidence/run_mapping.json)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "Cellosaurus CVCL_0045 (scratchpad/PXD031395/evidence/cellosaurus.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "split, source name, characteristics[genotype] (-celegans)",
+      "value": "anti-HA IP from HA::PAQR-2 worms vs paqr-2 mutant control worms; Rd.1 on QE HF (80/83), Rd.2 on Fusion (#1 = 21/32, #2 = 23/34, each injected twice)",
+      "source_ids": [
+        "map",
+        "pride",
+        "paper"
+      ],
+      "evidence": "RAW '2920 HA', '2920 PaQv-2 mut', '3142 #1', '3142 #1 inj 7 uL' …; msf 2920_HA / 2920_PaQr-2_mut, 3142_HA_…_21_32, 3142_mut_…_23_34; paper: HA tag at the N-terminus of the endogenous PAQR-2 locus; controls are 'worms or cells that do not express HA-tagged proteins'"
+    },
+    {
+      "location": "source name, characteristics[genotype], [treatment] (-hek293)",
+      "value": "control (no HA) / HA-AdipoR2 / HA-AdipoR2 + palmitic acid, two rounds (190823_02/05/08 and 190911_38/41/44)",
+      "source_ids": [
+        "map",
+        "pride",
+        "paper"
+      ],
+      "evidence": "RAW '3234 IP ctl', '3234 IP R2-HA', '3234 IP R2-HA PA', '3256 04/05/06'; msf 3256_ctl/R2-HA/R2-HA-PA; paper: 'stable clones of HEK293 cells carrying a HA::AdipoR2 expression construct'; 'HEK293 fatty acid treatment: Palmitic acid … for 24 h'"
+    },
+    {
+      "location": "comment[instrument], dissociation",
+      "value": "QE HF HCD 28 (C. elegans Rd.1, all HEK293); Orbitrap Fusion ion-trap CID 35 (C. elegans Rd.2)",
+      "source_ids": [
+        "raw-header",
+        "pride"
+      ],
+      "evidence": "RAW models and methods; PRIDE protocol"
+    },
+    {
+      "location": "modifications, tolerances, reagents",
+      "value": "Methylthio C fixed, Oxidation M variable; 5 ppm; 0.2 Da (C. elegans) / 0.03 Da (human); DTT; MMTS; trypsin",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE protocols (FASP for worms, S-Trap for HEK293; MMTS alkylation)"
+    }
+  ],
+  "limitations": [
+    "Two SDRF files because the two organisms need different templates: PXD031395-celegans.sdrf.tsv (6 runs) and PXD031395-hek293.sdrf.tsv (6 runs).",
+    "The C. elegans control is labelled 'PaQv-2 mut'/'mut'; it is annotated as 'paqr-2 mutant' (allele not stated). The HA strain is paqr-2(syb364[HA::paqr-2]) per the paper. characteristics[bait] names the tagged bait protein (HA::PAQR-2 / HA::AdipoR2; 'not applicable' for controls). The pull-down antibody (rabbit anti-HA C29F4, RRID:AB_1549585 per the paper) is not in the SDRF.",
+    "'PA' in the HEK293 sample names ('3234 IP R2-HA PA', msf 'R2-HA-PA') is read as palmitic-acid treatment; the IP methods do not describe it, so dose and duration are not annotated (treatment 'palmitic acid' vs 'untreated').",
+    "The Rd.2 Fusion runs 21/32 (HA) and 23/34 (control) are two injections of the same IP (sample names '#1'/'#1 inj 7 uL'); annotated as technical replicates 1 and 2.",
+    "The PRIDE protocol mentions an 'Rd.1 PAQR-1' experiment; no RAW file for it is deposited."
+  ],
+  "additional_artifacts": [
+    "annotations/PXD031395-hek293.sdrf.tsv"
+  ]
+}

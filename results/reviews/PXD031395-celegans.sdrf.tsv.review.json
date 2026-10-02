@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD031395-celegans.sdrf.tsv",
+  "artifact_sha256": "3fc8c0ec8ac16579b95ee82e0fa3e1785747453a3f8a60ce075e6956a6372f8c",
+  "verdict": "PASS",
+  "summary": "Independent review of the C. elegans half of PXD031395 (6 RAW runs, 4 sources, 34 columns). Validator passes for ms-proteomics + invertebrates and for the in-file template declaration; all controlled terms resolve in the offline cache with matching labels; instrument, activation, NCE, sample identity and run-to-condition mapping were re-derived from RAW headers and deposited .msf names; split with the HEK293 file is complete and disjoint (6 + 6 = 12 deposited RAW). Only minor findings remain, chiefly that the evidence manifest/report claim a comment[immunoprecipitation antibody] column that is not in the artifact.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent context without producer transcript; producer report.md and evidence.json treated as untrusted and checked against scratchpad/PXD031395 only"
+  },
+  "evidence_manifest": "annotations/PXD031395.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "pass", "evidence": "Active templates derived independently: organism C. elegans -> invertebrates (sample layer, mutually exclusive with human/vertebrates) + ms-proteomics (technology); both declared as NT=...;VV=v1.1.0 with comment[sdrf version]=v1.1.0. Required invertebrate columns (disease, developmental stage, strain or breed) present with allowed reserved words. sdrf-tools structure: column order/acquisition/template declaration consistent. 6 rows, no duplicate data files, no duplicate (source, assay) pairs. Custom characteristics[bait] carries well-formed values (HA::PAQR-2 / not applicable)."},
+    "ontology_integrity": {"status": "pass", "evidence": "Resolved in offline cache: MS:1002523 q exactive hf, MS:1002416 orbitrap fusion, MS:1001251 trypsin, MS:1000422 beam-type CID, MS:1000133 CID, PRIDE:0000627 data-dependent acquisition, PRIDE:0000608 DTT, PRIDE:0000605 MMTS, UNIMOD:39 Methylthio, UNIMOD:35 Oxidation; labels match. Free-text controlled values resolve: Caenorhabditis elegans (NCBITaxon:6239), whole body (BTO:0001489, also the PRIDE organismPart), whole organism (NCIT), normal (PATO:0000461), label free sample (MS:1002038). sdrf-tools check --offline: 0 hallucinated, 0 label mismatches, 0 UNIMOD swaps."},
+    "source_evidence": {"status": "pass", "evidence": "RAW headers: 180528_80/83 = Q Exactive HF, nce 28 (HCD), samples '2920 HA' / '2920 PaQv-2 mut'; Fusion_190408_21/32/23/34 = Orbitrap Fusion, 'ActivationType = CID', 'Collision Energy (%) = 35', method 'Peptide ID IT CID', samples '3142 #1', '3142 #1 inj 7 uL', '3142 #2', '3142 #2 inj 7 uL'. Deposited msf names 3142_HA_Fusion_190408_21_32 and 3142_mut_Fusion_190408_23_34 bind #1->HA, #2->mutant control. PRIDE protocol: FASP, DTT reduction, MMTS alkylation, trypsin, QE HF HCD 28 / Fusion CID 35 ion trap, Mascot 5 ppm / 200 mmu for C. elegans, Met oxidation variable, Cys alkylation static. Manuscript: paqr-2(syb364) HA tag inserted at the start of the endogenous locus; anti-HA IP from whole-worm lysates; controls are worms not expressing HA-tagged protein. Identity asserted: pride.json accession PXD031395, file URLs under /PXD031395/, manuscript PMID 37164154 = PRIDE reference."},
+    "file_mapping": {"status": "pass", "evidence": "PRIDE file list has 12 RAW files; the 6 C. elegans RAW (QEHF_180528_80/83, Fusion_190408_21/23/32/34) are each listed exactly once here; the other 6 (QEHF_190823_*, QEHF_190911_*) are in the HEK293 SDRF only. No .msf or non-raw files referenced; assay names equal file stems."},
+    "design_consistency": {"status": "pass", "evidence": "Recomputed: 2 genotypes x 2 rounds (Rd.1 QE HF, Rd.2 Fusion) = 4 sources; Rd.2 sources injected twice (technical replicate 1/2 under same source name, same biological replicate). Factor value[genotype] equals characteristics[genotype] (3 runs each). Biological replicate 1/2 = round, consistent with paper '2/2 HA::PAQR-2 immunoprecipitations'. Round is confounded with instrument/activation, which is inherent to the deposited design and correctly encoded per row."},
+    "omission_safety": {"status": "pass", "evidence": "No unsupported specificity found: developmental stage, strain and sex left as 'not available' (paper describes crowded mixed-stage plates; background strain of syb364 and control allele not stated); control genotype kept generic 'paqr-2 mutant' matching 'PaQv-2 mut'/'mut' labels; no dose/age/allele invented. Unannotated Rd.1 PAQR-1 experiment has no deposited RAW (checked file list), so its absence is correct. Only omission noted is the optional IP antibody (minor finding)."},
+    "deterministic_validation": {"status": "pass", "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -s <file> -t ms-proteomics -t invertebrates --use_ols_cache_only -> exit 0 'Everything seems to be fine'; same without -t (templates from file) -> exit 0; sdrf-tools check --offline -> exit 0 CLEAN; sdrf-tools structure -> exit 0 OK; sdrf-tools score -> 100/100."}
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "file (columns); annotations/PXD031395.evidence.json limitations[1]; report.md",
+      "message": "Manifest and report state 'the anti-HA antibody is in comment[immunoprecipitation antibody]', but the artifact has no such column (it exists only in scratchpad/PXD031395/samples_celegans.tsv).",
+      "evidence": "Header of the SDRF has 34 columns, none for the antibody; manuscript Methods: rabbit monoclonal anti-HA C29F4 (Cell Signaling #3724) with protein A-agarose for MS samples.",
+      "correction": "Either add comment[immunoprecipitation antibody]=anti-HA (C29F4) to all 6 rows (also in the HEK293 file), or remove the claim from evidence.json/report.md."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "comment[dissociation method] / missing comment[ms2 mass analyzer], rows 3-6",
+      "message": "Fusion runs used ion-trap CID with ion-trap MS2 detection while QE HF runs used HCD with Orbitrap MS2; the MS2 analyzer difference is not recorded.",
+      "evidence": "RAW method 'Peptide ID IT CID 90min'; PRIDE protocol 'for Fusion collision energy CID setting at 35 with detection in the ion trap'.",
+      "correction": "Optionally add comment[ms2 mass analyzer] (ion trap for Fusion rows, orbitrap for QE HF rows)."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "characteristics[developmental stage], all rows",
+      "message": "'not available' is defensible, but Methods describe worms harvested from crowded, not-starved plates, i.e. a mixed-stage population.",
+      "evidence": "Manuscript 'Worms from five 10-cm plates containing crowded but not starved worms were collected'.",
+      "correction": "Optionally use a mixed-stage term if one is resolvable in the cache; otherwise keep 'not available'."
+    }
+  ]
+}

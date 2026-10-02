@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD053422.sdrf.tsv",
+  "dataset": "PXD053422",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD053422"
+    },
+    {
+      "id": "record",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD053422/evidence/pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD053422/evidence/files.json"
+    },
+    {
+      "id": "design",
+      "kind": "deposited design evidence",
+      "location": "scratchpad/PXD053422/evidence/20230202_135009_20211103_ELSA_CSF_EV1109_60SPD_DirectDIA_sample_metadata.xlsx"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "34 DIA-PASEF CSF runs from people with systemic lupus erythematosus.",
+      "source_ids": [
+        "record",
+        "files",
+        "design"
+      ],
+      "evidence": "RAW names provide participant identifiers; the deposited sample workbook provides exact ages for 32 of 34 identifiers."
+    }
+  ],
+  "limitations": [
+    "Sex and cluster membership are not assigned because the 34 deposited acquisitions do not match the 29-person publication cohort closely enough to broadcast cohort claims.",
+    "The preparation used Lys-C followed by Trypsin; the selected builder contract represents the final Trypsin cleavage column and the reconciler therefore reports incomplete dual-enzyme representation."
+  ]
+}

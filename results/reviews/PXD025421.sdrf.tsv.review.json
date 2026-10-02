@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD025421.sdrf.tsv",
+  "artifact_sha256": "0215b812d849303aee361efceb9dc0c23f7cbccef4c4fd2cf0486ae3e02dba3c",
+  "verdict": "PASS",
+  "summary": "Independent review of 8-row x 29-column ms-proteomics v1.1.0 SDRF (2 OMV + 2 SyBV E. coli vesicle preparations, each injected twice). Validator, structure, offline term check all clean; every controlled term resolves; file mapping and replicate structure are supported by RAW-header sample names, deposited .msf names and Methods 2.3/2.4/2.8/2.9. Only minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent without producer transcript; read only annotations/PXD025421.* and scratchpad/PXD025421/; producer report/evidence treated as untrusted and re-checked against raw sources"
+  },
+  "evidence_manifest": "annotations/PXD025421.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "pass", "evidence": "Only applicable template is ms-proteomics 1.1.0 (no prokaryote/sample-layer template exists in templates.yaml; human/vertebrates/invertebrates/plants/cell-lines do not apply). All 9 lines have 29 fields, no CR or stray whitespace; required columns present; reserved words used correctly (organism part/cell type/disease 'not applicable', strain 'not available'); collision energy '30% NCE' matches template pattern; comment[label] 'label free sample' is a template example value; material type 'whole organism' is in the fixed value list and matches the SAMPLE-GUIDELINES 'E. coli culture' example; factor value[sample preparation] has a matching characteristics column."},
+    "ontology_integrity": {"status": "pass", "evidence": "Resolved in offline cache with matching label and family: NCBITaxon:562 escherichia coli; MS:1002416 orbitrap fusion; PRIDE:0000627 data-dependent acquisition; MS:1001251 trypsin; MS:1000422 beam-type collision-induced dissociation (HCD canonical); UNIMOD:39 methylthio; UNIMOD:35 oxidation; MS:1002038 label free sample. Free-text values are confined to custom columns cellular component / sample preparation."},
+    "source_evidence": {"status": "pass", "evidence": "pride.json (accession PXD025421): instrument MS:1002416, organism NEWT:562, protocol 'Two biological replicates of SyBV and OMV ... injected in duplicates', Mascot 5 ppm / 0.5 Da, 1 missed cleavage, Ox(M) variable, methylthiolation(C) fixed. manuscript.txt (PMC8254025, PXD025421 cited in 2.9): same parameters; HCD collision energy 30; SyBV = 'artificial OMV' purified on iodixanol (OptiPrep) gradient; natural OMV resuspended in PBS. RAW headers (evidence/raw_header_check.json): Orbitrap Fusion, ActivationType=HCD, Collision Energy (%)=30, non-stepped, DDA. No strain or reduction/alkylation reagent stated anywhere in saved evidence, so 'not available' / omission is correct."},
+    "file_mapping": {"status": "pass", "evidence": "files_compact.json (all FTP paths under .../PXD025421/) lists exactly 8 RAW files Fusion_180709_111/112/115/116/119/120/123/124.raw; SDRF comment[data file] lists the same 8, each once, no non-RAW files. Per-file mapping verified against deposited .msf names: OMV-PBS-inj1/2=111/112, OMV-b2-PBS-inj1/2=115/116, aOMV-Opti-inj1/2=119/120, aOMV-b2-Opti-inj1/2=123/124; RAW sample names 'OMV sample1..4 inj1/inj2' agree on sample grouping and injection order."},
+    "design_consistency": {"status": "pass", "evidence": "Recomputed: 4 sources (2 groups x 2 biological replicates), 2 technical replicates (inj1/inj2) each, 8 assays, fraction 1 (no fractionation in Methods), label-free. Biological replicate and technical replicate numbers match msf/RAW names; factor value constant within each source; no confounder beyond the inherent group-wise resuspension medium (PBS vs iodixanol), which is part of the preparation protocol."},
+    "omission_safety": {"status": "pass", "evidence": "Every non-reserved value traced to pride.json, manuscript Methods, file names or RAW headers; no strain, reagent, age or other unsupported specificity added. Producer's aOMV->SyBV reading independently confirmed by abstract ('artificial OMV that we have named SyBV') and Methods (iodixanol only in SyBV prep, PBS for OMV). No material evidence found omitted that a required/recommended column demands."},
+    "deterministic_validation": {"status": "pass", "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -s annotations/PXD025421.sdrf.tsv -t ms-proteomics --use_ols_cache_only -> 'Everything seems to be fine. Well done.' exit 0; sdrf-tools check --offline -> CLEAN (0 hallucinated/mismatch) exit 0; sdrf-tools structure -> Structure OK exit 0; sdrf-tools score -> 100/100 exit 0."}
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[cellular component], rows 1-8",
+      "message": "Values 'outer membrane vesicle' / 'synthetic membrane vesicle' are free text in a custom column.",
+      "evidence": "No vesicle GO term present in the offline cache; GO has 'bacterial extracellular vesicle' (GO:0097691, not verifiable offline) and 'cell outer membrane' (GO:0009279, cached in EFO import). SyBV are Sarkosyl/Na2CO3-purified outer membranes per Methods 2.3.",
+      "correction": "Optionally encode as NT=bacterial extracellular vesicle;AC=GO:0097691 (OMV) and NT=cell outer membrane;AC=GO:0009279 (SyBV) after OLS verification, or leave as free text."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "characteristics[material type], rows 1-8",
+      "message": "'whole organism' describes the E. coli source rather than the analysed vesicle fraction.",
+      "evidence": "Allowed by template value list and spec example 'E. coli culture -> whole organism'; no closer fixed value exists for a subcellular/vesicle fraction.",
+      "correction": "Acceptable as is; optionally note the fraction via cellular component (already present)."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (optional column)",
+      "message": "Optional comment[MS2 mass analyzer] omitted although Methods state MS/MS recorded at 30,000 resolution (Orbitrap).",
+      "evidence": "manuscript.txt section 2.8; template marks the column optional.",
+      "correction": "Optionally add comment[MS2 mass analyzer] = NT=orbitrap;AC=MS:1000484."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "evidence.json claim 1",
+      "message": "RAW instrument sample names label all eight files 'OMV sample1-4'; the SyBV assignment of 119-124 rests on deposited .msf names (aOMV-Opti) plus Methods.",
+      "evidence": "raw_header_check.json sample_name for 119/120/123/124 = '2950 OMV sample3/4'; msf names 2950_aOMV-*-Opti-*; Methods: SyBV purified on iodixanol, OMV in PBS.",
+      "correction": "Add the iodixanol/PBS Methods support to the evidence manifest so the inference is explicit; no SDRF change needed."
+    }
+  ]
+}

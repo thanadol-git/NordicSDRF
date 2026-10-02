@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD056681.sdrf.tsv",
+  "dataset": "PXD056681",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD056681"
+    },
+    {
+      "id": "record",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD056681/evidence/pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD056681/evidence/files.json"
+    },
+    {
+      "id": "design",
+      "kind": "deposited design evidence",
+      "location": "scratchpad/PXD056681/evidence/design_allergens.txt"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "21 antibody immunoprecipitation runs using timothy, velvet-grass or recombinant Phl p 5 allergen material.",
+      "source_ids": [
+        "record",
+        "files",
+        "design"
+      ],
+      "evidence": "The deposited design maps every RAW file to antibody group, batch and allergen source."
+    }
+  ],
+  "limitations": [
+    "Exact reduction and alkylation reagents, tolerances and modification search settings are not stated in the accessible record.",
+    "Recombinant Phl p 5 rows use not-applicable organism part and material type rather than implying intact pollen."
+  ]
+}

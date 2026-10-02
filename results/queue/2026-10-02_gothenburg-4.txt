@@ -1,0 +1,6 @@
+# Gothenburg batch 4 — next 5 smallest remaining accessions (by total PRIDE file size) from lists/sweden/gothenburg.txt, excluding the large-50 queue, 2026-10-02
+PXD025421	sweden/gothenburg	done	annotated, review PASS (2026-10-02)
+PXD034416	sweden/gothenburg	blocked	blocked: 20 runs labelled A2/A3/B1a-C3c with no sample key; paper design does not match (2026-10-02)
+PXD047503	sweden/gothenburg	done	annotated (TMTpro-16, 10 fractions), review PASS (2026-10-02)
+PXD031395	sweden/gothenburg	done	annotated (-celegans, -hek293), review PASS (2026-10-02)
+PXD064926	sweden/gothenburg	done	annotated (-tmt, -sample02, -peptides), review PASS (2026-10-02)

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD056050.sdrf.tsv",
+  "dataset": "PXD056050",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD056050"
+    },
+    {
+      "id": "record",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD056050/evidence/pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD056050/evidence/files.json"
+    },
+    {
+      "id": "design",
+      "kind": "deposited design evidence",
+      "location": "scratchpad/PXD056050/evidence/files.json"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "30 DIA runs spanning seven primary human immune-cell populations and one defined mixed population.",
+      "source_ids": [
+        "record",
+        "files",
+        "design"
+      ],
+      "evidence": "RAW names encode cell population and replicate; the PRIDE protocol supplies the 12 m/z staggered DIA design."
+    }
+  ],
+  "limitations": [
+    "The deposited DIA-NN ZIP did not expose a usable archive index, so search modifications and tolerances remain not available.",
+    "The preparation used Lys-C and Trypsin; the selected contract represents Trypsin and the reconciler flags the unrepresented Lys-C step."
+  ]
+}

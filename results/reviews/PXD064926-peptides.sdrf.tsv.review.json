@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD064926-peptides.sdrf.tsv",
+  "artifact_sha256": "fad708d59af4efeacfb834c556e6c6e400cfd0addede338cd884ceb77d036da4",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review of the 21-run synthetic-peptide SDRF (4754 Lumos DDA MnCl2 series; 4860 QE HF DDA + PRM MPP-concentration series). Every run-level value was re-derived from RAW headers, the deposited ToPrideSummary sheet, PRIDE protocols and the NAR 2025 manuscript; ontology terms resolve; ms-proteomics validation passes with free-text warnings only. No blocker or important findings; minor improvements listed.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent without producer transcript; producer report.md and evidence.json treated as untrusted claims and re-checked against scratchpad/PXD064926 only"
+  },
+  "evidence_manifest": "annotations/PXD064926.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "pass", "evidence": "21 data rows x 32 columns, uniform row width, no empty/whitespace cells, no duplicate rows. Declared template NT=ms-proteomics;VV=v1.1.0; sdrf-tools structure OK. Required ms-proteomics columns present; collision energy ('28% NCE','30% NCE') and tolerances ('5 ppm','10 ppm','0.02 Da') match TERMS.tsv patterns; reserved words used per README. material type 'synthetic' is a TERMS fixed value. Organism=Homo sapiens would map to the human template per TEMPLATES.adoc 'By Organism', but for synthetic peptides the SAMPLE-GUIDELINES synthetic-library rule (sample metadata not applicable, organism MAY be given) makes ms-proteomics-only defensible (see minor finding)."},
+    "ontology_integrity": {"status": "pass", "evidence": "Offline OLS cache: PRIDE:0000627 data-dependent acquisition; PRIDE:0000629 parallel reaction monitoring; MS:1002732 Orbitrap Fusion Lumos; MS:1002523 Q Exactive HF; MS:1000422 beam-type collision-induced dissociation (HCD); PRIDE:0000608 dithiothreitol (DTT); PRIDE:0000599 iodoacetamide (IAA); UNIMOD:4 Carbamidomethyl; UNIMOD:35 Oxidation; UNIMOD:267 Label:13C(6)15N(4). All labels/accessions/families match; sdrf-tools check --offline CLEAN (0 hallucinated, 0 label mismatch, 0 UNIMOD swaps). Treatment and peptide values are free text (validator warnings only)."},
+    "source_evidence": {"status": "pass", "evidence": "RAW headers: Lumos_231023_19..42 = Orbitrap Lumos, method 4754_ID_45min_OTHCD30, HCD, CE 30 (run _25 has same method file); QEHF_240216_* = QE HF, 4860 TOP10 DDA, nce 28; QEHF_240219_09/12/15/18 = PRM method 4860_PRMiSTD, nce 30. ToPrideSummary maps S1-S3=AAAA at 0.5/0.3/0.1 mM MnCl2, S4-S6=KGRQ(WT) at 0.5/0.3/0.1 mM, S7/S8 Ctrl2/Ctrl1, PRM _09/_12 pepB low/high, _15/_18 pepA low/high (0.7/2.1 uM), DDA alk/low/high per peptide - all match SDRF rows exactly. Paper: MPP 2.1/0.7 uM, controls omit MPP, 30 C 1 h, DTT + iodoacetamide for absolute-quant (4860, RAW names 'alk', search 'withalkylation'), heavy-Arg 13C6 15N4 iSTD, no enzyme for synthetic peptides, 0.02 Da fragment tolerance, Lumos for WT/KGRQ monitoring. Peptide A/B/C = WT/KGRQ>AAAA/KGRQF>AAAAA is an inference (order of '4860 KGRQ, AAAA and AAAAA peptides'; PRM only for A,B matches paper PRM of WT and KGRQ; C DDA-only matches paper KGRQF DDA analysis) and is disclosed as such."},
+    "file_mapping": {"status": "pass", "evidence": "PRIDE file list (all URLs under /PXD064926/) has 25 RAW files. The 21 SDRF data files are distinct and all present; the remaining 4 (QEHF_190506_40/63 in the -tmt SDRF; QEHF_190506_43/66 excluded and documented) account for the full set. No non-raw files referenced. assay name = file stem for every row."},
+    "design_consistency": {"status": "pass", "evidence": "17 source names: 8 (4754 S1-S8) + 9 (4860 peptide A/B/C x noMPP/0.7/2.1 uM). 4 sources carry two runs (DDA tech rep 1, PRM tech rep 2), consistent with RAW sample names 'pepX low/high alk' vs 'pepX Low/High PRM alk'. Factor groups recomputed match report counts. Biological replicate 1 throughout (paper's triplicate reactions not deposited as separate runs). Instrument/series confound (Lumos=4754, QE HF=4860) is inherent to the deposit and visible via comment[instrument]."},
+    "omission_safety": {"status": "pass", "evidence": "No value asserts more than evidence supports: unknown 4754 control peptide identity and 4754 reduction/alkylation are 'not available'; 4754 MPP amount not invented; 4860 MnCl2 not invented; cleavage agent 'not applicable' matches 'no enzyme was specified'. Producer's 10 ppm for 4860 DDA runs deviates from paper text (5 ppm except PRM) but is supported by deposited search results '4860_peptideC_10ppm_...' (peptide C has no PRM runs). Omissions noted as minor: yeast origin of MPP, iSTD spike not recorded as characteristics[spiked compound]."},
+    "deterministic_validation": {"status": "pass", "evidence": "flock /tmp/sdrf_validate.lock parse_sdrf validate-sdrf -s annotations/PXD064926-peptides.sdrf.tsv -t ms-proteomics --use_ols_cache_only: exit 0, warnings only (6 free-text characteristics[treatment] values). Same without -t: warnings only. sdrf-tools check --offline: CLEAN, exit 0. sdrf-tools structure: OK. sdrf-tools score: 100/100. (Adding -t human yields errors for missing age/sex; human template judged not applicable to synthetic peptides.)"}
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "template-selection",
+      "location": "file (comment[sdrf template]); characteristics[organism]",
+      "message": "Organism is Homo sapiens but the human template is not declared; validating with -t human fails on missing characteristics[age]/[sex]. Defensible for synthetic peptides, but the rationale is undocumented in the file.",
+      "evidence": "TEMPLATES.adoc 'By Organism' maps Homo sapiens -> human; SAMPLE-GUIDELINES 'Synthetic Peptide Libraries' says organism MAY be given and most sample metadata is not applicable.",
+      "correction": "Either keep ms-proteomics only and state the rationale in the PR, or add the human template with age/sex/etc. set to 'not applicable'. Consider lowercase 'homo sapiens' per TEMPLATES.adoc convention."
+    },
+    {
+      "severity": "minor",
+      "category": "spec-terms",
+      "location": "characteristics[peptide] / factor value[peptide] (cols 9, 31)",
+      "message": "'peptide' is a custom characteristic not in TERMS.tsv, while the spec-defined characteristics[synthetic peptide] (value 'synthetic') is absent.",
+      "evidence": "TERMS.tsv defines 'synthetic peptide' (sample-metadata, values synthetic/not synthetic); README custom-column rule requires ontology-term headers.",
+      "correction": "Optionally add characteristics[synthetic peptide]=synthetic; keep the peptide variant column but confirm its header term is acceptable to the target repository."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "4860 rows (QEHF_240216_*, QEHF_240219_*)",
+      "message": "Heavy-Arg internal standard peptide (TOP3A p.919-942, 13C6 15N4 Arg, 1:2 iSTD:peptide) is represented only as a variable modification, not as a spiked compound.",
+      "evidence": "Paper Methods: 'internal standard peptide was added (1:2 ratio of iSTD:peptide)'; search files 'iSTD15ug'; TERMS.tsv defines characteristics[spiked compound].",
+      "correction": "Optionally add characteristics[spiked compound]=CT=peptide;CN=TOP3A p.919-942 heavy Arg iSTD;QY=... for 4860 rows and 'not applicable' for 4754 rows."
+    },
+    {
+      "severity": "minor",
+      "category": "source-evidence",
+      "location": "characteristics[treatment] / factor value[treatment], all MPP rows",
+      "message": "Treatment text omits that MPP is the recombinant yeast Mas1/Mas2 complex expressed in bacteria.",
+      "evidence": "Manuscript Results: 'purified the yeast MPP homologue, consisting of the two subunits Mas1 and Mas2, using bacterial cells'.",
+      "correction": "Optionally write e.g. 'recombinant yeast MPP (Mas1/Mas2) 2.1 uM, 30 C 1 h'."
+    },
+    {
+      "severity": "minor",
+      "category": "source-evidence",
+      "location": "comment[precursor mass tolerance] rows QEHF_240216_23..58 (4860 DDA)",
+      "message": "10 ppm for 4860 DDA runs contradicts the paper's literal '5 ppm (10 ppm for PRM experiments)'; it rests on deposited search-result names, while per-run msfView files (e.g. Aalk_QEHF_240216_31.msfView) could not be inspected for their tolerance.",
+      "evidence": "PRIDE dataProcessingProtocol; files '4860_peptideA/B/C_10ppm_Xcorr3_iSTD15ug_withalkylation_QE.pdResultView' (peptide C has only DDA runs).",
+      "correction": "Keep 10 ppm but cite the search-file evidence in the PR notes, or confirm by opening the msfView parameters if accessible."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "characteristics[peptide] rows 4860_peptideA*/peptideB*",
+      "message": "Assignment A=wild-type, B=KGRQ>AAAA relies on listing order in ToPrideSummary; C=KGRQF>AAAAA is independently supported (no PRM, matching paper). Disclosed in limitations.",
+      "evidence": "ToPrideSummary '4860 KGRQ, AAAA and AAAAA peptides'; paper Fig. 4E-H PRM of WT and KGRQ peptides.",
+      "correction": "No change required; retain the limitation note in the PR."
+    }
+  ]
+}
