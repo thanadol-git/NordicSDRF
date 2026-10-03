@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD036300.sdrf.tsv",
+  "dataset": "PXD036300",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD036300"
+    },
+    {
+      "id": "evidence-1",
+      "kind": "deposited metadata or publication evidence",
+      "location": "scratchpad/PXD036300/evidence/Sample_list.txt"
+    },
+    {
+      "id": "evidence-2",
+      "kind": "deposited metadata or publication evidence",
+      "location": "scratchpad/PXD036300/evidence/pride.json"
+    },
+    {
+      "id": "evidence-3",
+      "kind": "deposited metadata or publication evidence",
+      "location": "scratchpad/PXD036300/evidence/files.json"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "Eight label-free HepG2 secretome runs: four selenium controls and four selenium-plus-copper biological replicates.",
+      "source_ids": [
+        "pride",
+        "evidence-1",
+        "evidence-2",
+        "evidence-3"
+      ],
+      "evidence": "Values were transcribed from the deposited project record, run manifest, sample sheet, and publication evidence listed above."
+    }
+  ],
+  "limitations": [
+    "Per-run raw-header verification was unavailable; technical metadata comes from the deposited protocol and search description."
+  ]
+}

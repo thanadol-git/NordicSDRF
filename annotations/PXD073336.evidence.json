@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD073336.sdrf.tsv",
+  "dataset": "PXD073336",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD073336"
+    },
+    {
+      "id": "record",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD073336/evidence/pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD073336/evidence/files.json"
+    },
+    {
+      "id": "design",
+      "kind": "design or publication evidence",
+      "location": "scratchpad/PXD073336/evidence/Retinaxhippocampus_Proteomics.xlsx"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "62 DDA runs from paired human retina and hippocampus across Alzheimer disease/control and two extraction methods.",
+      "source_ids": [
+        "record",
+        "files",
+        "design"
+      ],
+      "evidence": "RAW names identify donor, retina/brain arm and extraction; the deposited results workbook maps abundance columns to Alzheimer disease/control, retina/brain, extraction and donor."
+    }
+  ],
+  "limitations": [
+    "Sample-level age, sex and ancestry are not available.",
+    "The reconciler flags hippocampus against filenames containing Brain; hippocampus is retained because it is the more specific tissue stated by the study record and publication."
+  ]
+}

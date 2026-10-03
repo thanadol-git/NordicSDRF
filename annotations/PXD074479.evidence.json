@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD074479.sdrf.tsv",
+  "dataset": "PXD074479",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD074479"
+    },
+    {
+      "id": "record",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD074479/evidence/pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD074479/evidence/files.json"
+    },
+    {
+      "id": "design",
+      "kind": "design or publication evidence",
+      "location": "scratchpad/PXD074479/evidence/pride.json"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "25 DDA hemolymph runs from captive and wild marbled crayfish.",
+      "source_ids": [
+        "record",
+        "files",
+        "design"
+      ],
+      "evidence": "The deposit record explicitly maps K_1UN-K_6UN and K_1R-K_6R to captive animals and K_1O-K_13O to wild animals."
+    }
+  ],
+  "limitations": [
+    "The biological distinction between captive UN and captive R filename codes is not described, so both are conservatively assigned only to the supported captive factor.",
+    "Developmental stage is not provided."
+  ]
+}

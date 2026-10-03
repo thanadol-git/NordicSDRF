@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD074156.sdrf.tsv",
+  "dataset": "PXD074156",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD074156"
+    },
+    {
+      "id": "record",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD074156/evidence/pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD074156/evidence/files.json"
+    },
+    {
+      "id": "design",
+      "kind": "design or publication evidence",
+      "location": "scratchpad/PXD074156/evidence/mmc1.xlsx"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "40 DIA FFPE primary-melanoma samples with patient-level age, sex and histologic subtype.",
+      "source_ids": [
+        "record",
+        "files",
+        "design"
+      ],
+      "evidence": "The publication supplement maps every proteomic identifier to age, sex and melanoma subtype; RAW names encode the same identifiers."
+    }
+  ],
+  "limitations": [
+    "Ancestry is not assigned because residence and nationality are not ancestry evidence.",
+    "The variable-window method has no single supported isolation-window width, so that field remains not available."
+  ]
+}

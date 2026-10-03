@@ -60,8 +60,8 @@ countries:
         pxd_count: 163
         pride_hits: 544
         screened: 0
-        annotated: 58
-        blocked: 77
+        annotated: 72
+        blocked: 80
         in_corpus: 68
       gothenburg:
         name: Gothenburg
@@ -70,8 +70,8 @@ countries:
         pxd_count: 135
         pride_hits: 192
         screened: 0
-        annotated: 33
-        blocked: 37
+        annotated: 37
+        blocked: 38
         in_corpus: 41
       uppsala:
         name: Uppsala

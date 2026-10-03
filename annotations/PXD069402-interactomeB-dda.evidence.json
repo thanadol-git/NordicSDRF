@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD069402-interactomeB-dda.sdrf.tsv",
+  "dataset": "PXD069402",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD069402"
+    },
+    {
+      "id": "record",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD069402/evidence/pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD069402/evidence/files.json"
+    },
+    {
+      "id": "design",
+      "kind": "design or publication evidence",
+      "location": "scratchpad/PXD069402/evidence/interactomeB_experiment_to_MSinjection_copy.xlsx"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "50 bacterial DDA AP-MS and spectral-library runs from interactome B.",
+      "source_ids": [
+        "record",
+        "files",
+        "design"
+      ],
+      "evidence": "The deposited design workbook distinguishes AP-MS samples from CAP/SP library fractions and maps all 50 DDA files."
+    }
+  ],
+  "limitations": [
+    "Library fraction identifiers are preserved in the prey-fraction factor rather than inferred as technical fractions of a single source.",
+    "Search modifications and fixed tolerances are not explicit in the accessible record."
+  ]
+}

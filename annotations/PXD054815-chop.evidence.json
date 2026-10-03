@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD054815-chop.sdrf.tsv",
+  "dataset": "PXD054815",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD054815"
+    },
+    {
+      "id": "evidence-1",
+      "kind": "deposited metadata or publication evidence",
+      "location": "scratchpad/PXD054815/evidence/Samples.xlsx"
+    },
+    {
+      "id": "evidence-2",
+      "kind": "deposited metadata or publication evidence",
+      "location": "scratchpad/PXD054815/evidence/pride.json"
+    },
+    {
+      "id": "evidence-3",
+      "kind": "deposited metadata or publication evidence",
+      "location": "scratchpad/PXD054815/evidence/files.json"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "Two label-free HeLa CHOP runs comparing LacZ control and ARHGEF17-AS1 M30 capture oligonucleotides.",
+      "source_ids": [
+        "pride",
+        "evidence-1",
+        "evidence-2",
+        "evidence-3"
+      ],
+      "evidence": "Values were transcribed from the deposited project record, run manifest, sample sheet, and publication evidence listed above."
+    }
+  ],
+  "limitations": [
+    "This artifact covers only the two label-free CHOP runs; the separate TMT IP arm is blocked pending its channel map.",
+    "Project-level reconciliation reports TMT because the PRIDE record describes the mixed project globally; the two selected QEHF runs are explicitly identified as CHOP and processed label-free in the deposited sample sheet and protocol."
+  ]
+}

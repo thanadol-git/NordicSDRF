@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD065434.sdrf.tsv",
+  "dataset": "PXD065434",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD065434"
+    },
+    {
+      "id": "record",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD065434/evidence/pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD065434/evidence/files.json"
+    },
+    {
+      "id": "design",
+      "kind": "design or publication evidence",
+      "location": "scratchpad/PXD065434/evidence/files.json"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "13 DDA hemolymph runs from young and old marbled crayfish.",
+      "source_ids": [
+        "record",
+        "files",
+        "design"
+      ],
+      "evidence": "The deposit protocol defines RAW identifiers 1O-6O as young and 7O-13O as old."
+    }
+  ],
+  "limitations": [
+    "Developmental-stage detail beyond the young/old experimental grouping is not provided.",
+    "Collision energy and scan range are not stated in the accessible PXD065434 record and are left not available rather than transferred from a related study."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD065687.sdrf.tsv",
+  "dataset": "PXD065687",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD065687"
+    },
+    {
+      "id": "record",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD065687/evidence/pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository API snapshot",
+      "location": "scratchpad/PXD065687/evidence/files.json"
+    },
+    {
+      "id": "design",
+      "kind": "design or publication evidence",
+      "location": "scratchpad/PXD065687/evidence/Report.setup.txt"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "6 diaPASEF runs from Shiga toxin-positive and toxin-negative human extracellular-vesicle preparations.",
+      "source_ids": [
+        "record",
+        "files",
+        "design"
+      ],
+      "evidence": "Bruker acquisition names encode toxin status and replicate; the deposited Spectronaut setup confirms the modification search settings."
+    }
+  ],
+  "limitations": [
+    "The accessible record does not identify the human cell source, individual or demographic metadata.",
+    "The mobility-dependent collision-energy ramp cannot be represented in the template's single scalar collision-energy field and is therefore left not available."
+  ]
+}
