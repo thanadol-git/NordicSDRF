@@ -1,0 +1,11 @@
+# Gothenburg batch 6 — next 10 screened accessions from lists/sweden/gothenburg.txt, excluding the large-50 queue and existing annotated/blocked accessions, 2026-10-03
+PXD021792	sweden/gothenburg	done	validated: separate proteome and phosphoproteome SDRFs; all 30 RAW files represented; independent review pending
+PXD024551	sweden/gothenburg	done	validated: full deposited 16-channel TMTpro map; all 30 RAW files represented; independent review pending
+PXD029140	sweden/gothenburg	done	validated: four TMT10 sets and all 40 RAW files represented; reconstructed channel order documented for review
+PXD029163	sweden/gothenburg	done	validated: deposited six-channel WT/DKO map; all 19 RAW files represented; independent review pending
+PXD033236	sweden/gothenburg	done	validated: two deposited TMT11 designs; all 40 RAW files represented; independent review pending
+PXD036591	sweden/gothenburg	done	validated: epithelial/immune/stromal sets and seven individuals mapped; all 39 RAW files represented; independent review pending
+PXD047498	sweden/gothenburg	done	validated: two explicit TMTpro18 designs; all 30 RAW files represented; independent review pending
+PXD050310	sweden/gothenburg	done	validated: 16-channel and 18-channel TMTpro sets; all 45 RAW files represented; independent review pending
+PXD057292	sweden/gothenburg	done	validated: 30 patients, two references, and unused channels mapped; all 80 RAW files represented; independent review pending
+PXD074305	sweden/gothenburg	done	validated: four TMT10 sets and all 48 RAW files represented; independent review pending

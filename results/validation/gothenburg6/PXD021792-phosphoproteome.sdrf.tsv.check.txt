@@ -1,0 +1,8 @@
+Hallucination Report: ../NordicSDRF/annotations/PXD021792-phosphoproteome.sdrf.tsv
+  Terms checked:     11
+  Verified:          4
+  Hallucinated:      0
+  Label mismatches:  0
+  Wrong ontology:    0
+  UNIMOD swaps:      0
+  Status:            CLEAN

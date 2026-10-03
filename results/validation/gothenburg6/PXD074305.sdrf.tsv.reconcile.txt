@@ -1,0 +1,3 @@
+PXD074305: 1 value(s) disagree with the deposit record:
+
+  BLOCKER  organism_contradicted (characteristics[organism]): the record names only Mus musculus and never Homo sapiens  [declared 'Homo sapiens']

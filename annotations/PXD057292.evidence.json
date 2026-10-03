@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD057292.sdrf.tsv",
+  "dataset": "PXD057292",
+  "sources": [
+    {
+      "id": "pride-project",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD057292"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/files/byProject?accession=PXD057292"
+    },
+    {
+      "id": "deposited-design-1",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/11/PXD057292/4351_QMSresults_studyDesign_PRIDE.xlsx",
+      "name": "4351_QMSresults_studyDesign_PRIDE.xlsx"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] and fraction rows",
+      "value": "All 80 deposited RAW files are represented across the listed SDRF output(s).",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Exact RAW basenames from the PRIDE project file listing."
+    },
+    {
+      "location": "source name, comment[label], biological replicate, and factor values",
+      "value": "The deposited study-design sheet explicitly maps 30 patient plasma samples and two pooled references to two TMTpro18 sets and identifies the unused channels.",
+      "source_ids": [
+        "deposited-design-1"
+      ],
+      "evidence": "The deposited study-design sheet explicitly maps 30 patient plasma samples and two pooled references to two TMTpro18 sets and identifies the unused channels."
+    },
+    {
+      "location": "organism and technical comment columns",
+      "value": "Organism, instrument, acquisition, digestion, tolerances, reagents, and modifications as recorded by the deposit and linked publication.",
+      "source_ids": [
+        "pride-project"
+      ],
+      "evidence": "PRIDE structured metadata and deposited processing/search descriptions."
+    }
+  ],
+  "limitations": [
+    "Participant age and sex were not deposited; unused channels are declared in the source table but emit no SDRF rows."
+  ]
+}

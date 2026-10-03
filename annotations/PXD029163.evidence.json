@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029163.sdrf.tsv",
+  "dataset": "PXD029163",
+  "sources": [
+    {
+      "id": "pride-project",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD029163"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/files/byProject?accession=PXD029163"
+    },
+    {
+      "id": "publication",
+      "kind": "publication",
+      "location": "https://doi.org/10.1038/S41467-022-34931-0"
+    },
+    {
+      "id": "deposited-design-1",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/12/PXD029163/File_List.txt",
+      "name": "File_List.txt"
+    },
+    {
+      "id": "deposited-design-2",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/12/PXD029163/Results_All_Proteins.xlsx",
+      "name": "Results_All_Proteins.xlsx"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] and fraction rows",
+      "value": "All 19 deposited RAW files are represented across the listed SDRF output(s).",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Exact RAW basenames from the PRIDE project file listing."
+    },
+    {
+      "location": "source name, comment[label], biological replicate, and factor values",
+      "value": "The deposited quantitative result headers explicitly map the six TMT channels to three wild-type and three AdipoR1/2 double-knockout mouse embryonic fibroblast samples.",
+      "source_ids": [
+        "deposited-design-1",
+        "deposited-design-2"
+      ],
+      "evidence": "The deposited quantitative result headers explicitly map the six TMT channels to three wild-type and three AdipoR1/2 double-knockout mouse embryonic fibroblast samples."
+    },
+    {
+      "location": "organism and technical comment columns",
+      "value": "Organism, instrument, acquisition, digestion, tolerances, reagents, and modifications as recorded by the deposit and linked publication.",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "PRIDE structured metadata and deposited processing/search descriptions."
+    }
+  ],
+  "limitations": [
+    "Mouse strain and sex were not deposited and remain unavailable."
+  ]
+}

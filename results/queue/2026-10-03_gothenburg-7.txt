@@ -1,0 +1,11 @@
+# Gothenburg batch 7 — next 10 remaining accessions from lists/sweden/gothenburg.txt, excluding existing annotated/blocked/in-corpus accessions, 2026-10-03
+PXD014522	sweden/gothenburg	pending	selected for annotation
+PXD017743	sweden/gothenburg	pending	selected for annotation
+PXD017946	sweden/gothenburg	pending	selected for annotation
+PXD018361	sweden/gothenburg	pending	selected for annotation
+PXD020365	sweden/gothenburg	pending	selected for annotation
+PXD020663	sweden/gothenburg	pending	selected for annotation
+PXD021179	sweden/gothenburg	pending	selected for annotation
+PXD023018	sweden/gothenburg	pending	selected for annotation
+PXD024230	sweden/gothenburg	pending	selected for annotation
+PXD034987	sweden/gothenburg	pending	selected for annotation

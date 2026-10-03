@@ -1,0 +1,8 @@
+Hallucination Report: ../NordicSDRF/annotations/PXD033236.sdrf.tsv
+  Terms checked:     10
+  Verified:          3
+  Hallucinated:      0
+  Label mismatches:  0
+  Wrong ontology:    0
+  UNIMOD swaps:      0
+  Status:            CLEAN

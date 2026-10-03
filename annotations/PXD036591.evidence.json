@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD036591.sdrf.tsv",
+  "dataset": "PXD036591",
+  "sources": [
+    {
+      "id": "pride-project",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD036591"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/files/byProject?accession=PXD036591"
+    },
+    {
+      "id": "publication",
+      "kind": "publication",
+      "location": "https://doi.org/10.1002/PMIC.202200366"
+    },
+    {
+      "id": "deposited-design-1",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/01/PXD036591/PSMs.xlsx",
+      "name": "PSMs.xlsx"
+    },
+    {
+      "id": "deposited-design-2",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/01/PXD036591/Sample_list.xlsx",
+      "name": "Sample_list.xlsx"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] and fraction rows",
+      "value": "All 39 deposited RAW files are represented across the listed SDRF output(s).",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Exact RAW basenames from the PRIDE project file listing."
+    },
+    {
+      "location": "source name, comment[label], biological replicate, and factor values",
+      "value": "The deposited sample list assigns 13 fractions to epithelial, immune, and stromal sets; the publication workflow figure maps the same three Crohn and four control individuals to reporter channels across all sets.",
+      "source_ids": [
+        "deposited-design-1",
+        "deposited-design-2"
+      ],
+      "evidence": "The deposited sample list assigns 13 fractions to epithelial, immune, and stromal sets; the publication workflow figure maps the same three Crohn and four control individuals to reporter channels across all sets."
+    },
+    {
+      "location": "organism and technical comment columns",
+      "value": "Organism, instrument, acquisition, digestion, tolerances, reagents, and modifications as recorded by the deposit and linked publication.",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "PRIDE structured metadata and deposited processing/search descriptions."
+    }
+  ],
+  "limitations": [
+    "Participant identifiers, age, and sex were not deposited; stable CD/control identifiers were assigned from channel order only."
+  ]
+}
