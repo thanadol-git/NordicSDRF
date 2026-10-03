@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD018361.sdrf.tsv",
+  "dataset": "PXD018361",
+  "sources": [
+    {
+      "id": "pride-project",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD018361"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/files/byProject?accession=PXD018361"
+    },
+    {
+      "id": "publication",
+      "kind": "publication",
+      "location": "https://doi.org/10.1073/pnas.1921890117"
+    },
+    {
+      "id": "deposited-design",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2020/08/PXD018361/2827_3055_Johan_TMT_ProteomeXChange.pdf",
+      "name": "2827_3055_Johan_TMT_ProteomeXChange.pdf"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] and fraction rows",
+      "value": "All 40 deposited RAW files are represented.",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Exact RAW basenames from the PRIDE project file listing."
+    },
+    {
+      "location": "source name, comment[label], biological replicate, and factor values",
+      "value": "The deposited design PDF maps the 2827 TMT10 and 3055 TMT11 channels, six study samples per set, pooled references, and both 20-fraction RAW ranges; the publication establishes the CEN.PK113-7D rich/minimal medium and aerobic/anaerobic study design.",
+      "source_ids": [
+        "publication",
+        "deposited-design"
+      ],
+      "evidence": "The deposited design PDF maps the 2827 TMT10 and 3055 TMT11 channels, six study samples per set, pooled references, and both 20-fraction RAW ranges; the publication establishes the CEN.PK113-7D rich/minimal medium and aerobic/anaerobic study design."
+    },
+    {
+      "location": "organism and technical comment columns",
+      "value": "Organism, instruments, acquisition, digestion, tolerances, reagents, and modifications are taken from the PRIDE record, deposited files, and linked publication.",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "PRIDE structured metadata and submitted processing/search descriptions, reconciled against the publication."
+    }
+  ],
+  "limitations": [
+    "Unused channels are declared in the builder input and omitted from the final SDRF.",
+    "Pooled-reference channels have not applicable medium and oxygen factors because their constituent conditions are not resolved by the deposit.",
+    "The evidenced yeast strain is retained in this report rather than an SDRF characteristic because the resolved ms-proteomics template does not license a yeast strain-or-breed column.",
+    "The publication specifies CID MS2 with SPS-HCD MS3; the SDRF's single dissociation-method field records CID MS2, while the SPS-HCD MS3 stage is retained here as a representational limitation."
+  ]
+}

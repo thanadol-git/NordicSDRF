@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD018361.sdrf.tsv",
+  "artifact_sha256": "94705196ab266c91ad941bfcae7d6f946f04d4ddaa8ec053ac3d6da6d2c6bd74",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review found no blocking or important issues. The 300 rows reconstruct the two deposited TMT sets, their 15 populated channels, and all 40 RAW files without unsupported sample-level additions.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer agent without access to the producer transcript or reasoning"
+  },
+  "evidence_manifest": "annotations/PXD018361.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "The only declared and independently derived active template is ms-proteomics v1.1.0. Its resolved contract licenses every non-factor column, all required columns are present, duplicate modification columns are permitted, reserved words occur only where allowed, row widths are uniform, and both the source+assay+label and source+biological-replicate+technical-replicate+fraction keys are unique. sdrf-tools structure exited 0."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Controlled values were checked against the pinned template/specification, the accession-specific PRIDE record, and the bundled offline mappings: Saccharomyces cerevisiae, DDA PRIDE:0000627, Orbitrap Fusion MS:1002416, Trypsin MS:1001251, CID MS:1000133, DTT PRIDE:0000608, MMTS PRIDE:0000605, and UNIMOD 39/35/737 have matching labels and ontology families. All TMT labels are template-recognized channel names. sdrf-tools check --offline exited 0: 0 hallucinated, 0 label mismatches, 0 wrong ontology, 0 UNIMOD swaps."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "The cached PRIDE project record identifies PXD018361 and the matching publication DOI 10.1073/pnas.1921890117. The publication supports CEN.PK113-7D, rich/minimal media, aerobic/anaerobic growth, Orbitrap Fusion, trypsin, TMT, 20 final fractions, DDA CID-MS2/SPS-HCD-MS3, and pooled-reference processing. The accession-specific deposited PDF independently supplies the 2827 TMT10 and 3055 TMT11 channel maps and the two 20-file acquisition ranges."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "The accession-specific PRIDE inventory contains 45 files whose projectAccessions are PXD018361, including exactly 40 RAW files. Those 40 basenames exactly equal the 40 unique comment[data file] values; no RAW is missing or extra and SEARCH/OTHER files are excluded. Each 2827 RAW maps to 7 populated channels and each 3055 RAW maps to 8 populated channels."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "The deposited map recomputes as 7 populated 2827 channels x 20 fractions = 140 rows and 8 populated 3055 channels x 20 fractions = 160 rows, totaling 300. Study channels form three biological replicates per medium arm; three reference channels are marked pooled. The aerobic 2827 and anaerobic 3055 factor assignments agree with the publication/project design, while pooled references conservatively use not applicable for both experimental factors."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No unsupported demographics, unused TMT channels, or per-sample values were introduced. The evidence-backed CEN.PK113-7D strain is omitted because ms-proteomics does not license a strain characteristic. The single-cardinality dissociation field records CID used for MS2 identification, while the SPS-HCD MS3 quantification stage is explicitly retained as a report/manifest limitation."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf --template ms-proteomics --skip-ontology exited 0 ('Everything seems to be fine'). sdrf-tools structure exited 0; check --offline exited 0 CLEAN; reconcile against the accession-asserted cached PRIDE record reported every annotated value agrees; score was 94/100, with the sole deduction caused by the generic factor-to-identically-named-characteristic heuristic."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "quality-score heuristic",
+      "location": "factor value[medium condition] and factor value[oxygen condition]",
+      "message": "The quality scorer deducts six points because neither evidence-backed factor has an identically named characteristic or comment column.",
+      "evidence": "The resolved ms-proteomics v1.1.0 contract licenses neither characteristics[medium condition] nor characteristics[oxygen condition]; adding either would violate the selected template. The factors themselves are supported by the publication and deposited design."
+    },
+    {
+      "severity": "minor",
+      "category": "template limitation",
+      "location": "all rows",
+      "message": "The evidenced CEN.PK113-7D strain cannot be represented in the selected SDRF template.",
+      "evidence": "Publication Materials and Methods names CEN.PK113-7D, but the resolved ms-proteomics v1.1.0 contract contains no characteristics[strain or breed] column. The report and evidence manifest preserve the fact."
+    },
+    {
+      "severity": "minor",
+      "category": "representation limitation",
+      "location": "comment[dissociation method] all rows",
+      "message": "The single-cardinality dissociation column records CID MS2 but cannot also encode the SPS-HCD MS3 reporter-ion stage.",
+      "evidence": "Publication Methods specify CID MS2 for peptide identification followed by SPS-HCD MS3 for reporter quantification. The ms-proteomics v1.1.0 contract marks comment[dissociation method] non-multiple, and the report/manifest explicitly document the omitted MS3 stage."
+    }
+  ]
+}

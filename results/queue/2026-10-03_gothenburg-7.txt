@@ -1,11 +1,11 @@
 # Gothenburg batch 7 — next 10 remaining accessions from lists/sweden/gothenburg.txt, excluding existing annotated/blocked/in-corpus accessions, 2026-10-03
-PXD014522	sweden/gothenburg	pending	selected for annotation
-PXD017743	sweden/gothenburg	pending	selected for annotation
-PXD017946	sweden/gothenburg	pending	selected for annotation
-PXD018361	sweden/gothenburg	pending	selected for annotation
-PXD020365	sweden/gothenburg	pending	selected for annotation
-PXD020663	sweden/gothenburg	pending	selected for annotation
-PXD021179	sweden/gothenburg	pending	selected for annotation
-PXD023018	sweden/gothenburg	pending	selected for annotation
-PXD024230	sweden/gothenburg	pending	selected for annotation
-PXD034987	sweden/gothenburg	pending	selected for annotation
+PXD014522	sweden/gothenburg	blocked	clinical-swab composition and DDA/PRM run mapping not deposited
+PXD017743	sweden/gothenburg	blocked	TMT10 reporter-channel map not deposited
+PXD017946	sweden/gothenburg	blocked	TMT11 reporter-channel map not deposited
+PXD018361	sweden/gothenburg	done	validated annotation; independent review APPROVED
+PXD020365	sweden/gothenburg	blocked	four iTRAQ4 channel maps and missing-fraction explanation required
+PXD020663	sweden/gothenburg	blocked	TMTpro16 and TMT10 channel maps not deposited
+PXD021179	sweden/gothenburg	blocked	animal/replicate channel identity and fixed-cysteine search modification unresolved
+PXD023018	sweden/gothenburg	blocked	GAG glycomics is outside current bottom-up proteomics SDRF scope
+PXD024230	sweden/gothenburg	blocked	biological-source mapping and residual GAG modification representation unresolved
+PXD034987	sweden/gothenburg	blocked	four TMT11 reporter-channel maps not deposited
