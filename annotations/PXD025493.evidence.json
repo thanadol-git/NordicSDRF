@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD025493.sdrf.tsv",
+  "dataset": "PXD025493",
+  "sources": [
+    {
+      "id": "pride-project",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD025493"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/files/byProject?accession=PXD025493"
+    },
+    {
+      "id": "deposited-design",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/06/PXD025493/experimentalDesignTemplate.txt"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] and technical comment columns",
+      "value": "organism, instrument, digestion, acquisition, tolerances, and modifications as recorded",
+      "source_ids": [
+        "pride-project"
+      ],
+      "evidence": "PRIDE project organism, sample-processing protocol, and data-processing protocol."
+    },
+    {
+      "location": "comment[data file] and fraction/technical-replicate rows",
+      "value": "8 unique deposited RAW files represented",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Exact RAW basenames from the PRIDE project file listing."
+    },
+    {
+      "location": "source name, comment[label], biological replicate, and factor values",
+      "value": "The deposited experimental design maps four replicates to paired I/S runs; project protocols define these as guanidinium-insoluble and -soluble fractions.",
+      "source_ids": [
+        "pride-project",
+        "pride-files",
+        "deposited-design"
+      ],
+      "evidence": "The deposited experimental design maps four replicates to paired I/S runs; project protocols define these as guanidinium-insoluble and -soluble fractions."
+    }
+  ],
+  "limitations": [
+    "Mouse sex, age, strain, and individual identifiers were not deposited."
+  ]
+}

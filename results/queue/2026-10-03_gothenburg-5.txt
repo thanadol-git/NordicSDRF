@@ -1,0 +1,11 @@
+# Gothenburg batch 5 — next 10 screened accessions from lists/sweden/gothenburg.txt, excluding the large-50 queue and existing annotated/blocked accessions, 2026-10-03
+PXD025493	sweden/gothenburg	done	annotated (8 label-free runs), validation PASS (2026-10-03)
+PXD026863	sweden/gothenburg	done	annotated (TMT10, 20 fractions), validation PASS (2026-10-03)
+PXD030111	sweden/gothenburg	done	annotated (TMTpro16, 20 fractions), validation PASS (2026-10-03)
+PXD038895	sweden/gothenburg	done	annotated (10 DDA + 10 PRM runs), validation PASS (2026-10-03)
+PXD047199	sweden/gothenburg	done	annotated (TMTpro16 arm; unresolved TMT11 arm excluded), validation PASS (2026-10-03)
+PXD047500	sweden/gothenburg	done	annotated (TMTpro16, 16 fractions), validation PASS (2026-10-03)
+PXD047505	sweden/gothenburg	done	annotated (TMT10, 20 fractions), validation PASS (2026-10-03)
+PXD061695	sweden/gothenburg	done	annotated (27 label-free runs), validation PASS (2026-10-03)
+PXD068552	sweden/gothenburg	done	annotated (TMT11, 20 fractions), validation PASS (2026-10-03)
+PXD071815	sweden/gothenburg	done	annotated (TMTpro18, 30 fractions), validation PASS (2026-10-03)
