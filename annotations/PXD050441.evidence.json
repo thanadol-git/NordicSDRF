@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD050441.sdrf.tsv",
+  "dataset": "PXD050441",
+  "sources": [
+    {
+      "id": "pride-project",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD050441"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD050441/files/all"
+    },
+    {
+      "id": "publication",
+      "kind": "publication",
+      "location": "https://doi.org/10.3389/fcvm.2024.1376367"
+    },
+    {
+      "id": "deposited-evidence-1",
+      "kind": "repository-file",
+      "location": "scratchpad/PXD050441/evidence/Sequence-set1_Lumos_220706.csv",
+      "name": "Sequence-set1_Lumos_220706.csv",
+      "sha256": "0e00000e6b3968e7bb65e66e161cc765db04c58d0beb0a8ddaa7e7c204fdfccc"
+    },
+    {
+      "id": "deposited-evidence-2",
+      "kind": "repository-file",
+      "location": "scratchpad/PXD050441/evidence/Sequence-set2-Lumos_221109.csv",
+      "name": "Sequence-set2-Lumos_221109.csv",
+      "sha256": "c193c024950543bc1bee69ab8b0c863700372fc7aad3d50637b58aa458776cbe"
+    },
+    {
+      "id": "deposited-evidence-3",
+      "kind": "repository-file",
+      "location": "scratchpad/PXD050441/evidence/4454-4513_R18-UPrat_TMTpro_phosSTY_stepped0to2mc_Lumos220706_05-18Lumos221109_36-48_5procFDRphosproteins.xlsx",
+      "name": "4454-4513_R18-UPrat_TMTpro_phosSTY_stepped0to2mc_Lumos220706_05-18Lumos221109_36-48_5procFDRphosproteins.xlsx",
+      "sha256": "a354f18c858c1a1b96336ad3e9721e52d434244e00f7c247a93cd62d9d4ae8e7"
+    },
+    {
+      "id": "deposited-evidence-4",
+      "kind": "repository-file",
+      "location": "scratchpad/PXD050441/evidence/4435-4454-4513_Method_FASP_TMTpro_phospho_BpH_Lumos_230113EB.docx",
+      "name": "4435-4454-4513_Method_FASP_TMTpro_phospho_BpH_Lumos_230113EB.docx",
+      "sha256": "e8e08c9f440d3909642e1f360b5a572a07efce7a744fa282a4899bddb22b4e51"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] and fraction rows",
+      "value": "All RAW files in scope for this output are represented (26 unique basenames).",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Exact RAW basenames were compared with the PRIDE file listing."
+    },
+    {
+      "location": "source name, labels, replicates, and factor values",
+      "value": "The deposited study-design sheet and sequence files provide both TMTpro channel maps and the 13-fraction run sets.",
+      "source_ids": [
+        "deposited-evidence-1",
+        "deposited-evidence-2",
+        "deposited-evidence-3",
+        "deposited-evidence-4"
+      ],
+      "evidence": "The deposited study-design sheet and sequence files provide both TMTpro channel maps and the 13-fraction run sets."
+    },
+    {
+      "location": "organism and technical comment columns",
+      "value": "Biological and technical values are limited to the PRIDE record, linked publication, and deposited evidence files.",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "PRIDE metadata and deposited processing/search descriptions."
+    }
+  ],
+  "limitations": [
+    "The reconciliation helper does not recognize the explicit trypsin statement in the deposited sample-processing protocol."
+  ]
+}

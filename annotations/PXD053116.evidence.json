@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD053116.sdrf.tsv",
+  "dataset": "PXD053116",
+  "sources": [
+    {
+      "id": "pride-project",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD053116"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD053116/files/all"
+    },
+    {
+      "id": "publication",
+      "kind": "publication",
+      "location": "https://doi.org/10.3389/fimmu.2025.1563868"
+    },
+    {
+      "id": "deposited-evidence-1",
+      "kind": "repository-file",
+      "location": "scratchpad/PXD053116/evidence/20240612_LysC_Abcam_Proteins.xlsx",
+      "name": "20240612_LysC_Abcam_Proteins.xlsx",
+      "sha256": "0cd7b543a5c2eeef93229713614746ff31ec195fabba1b398e1dc92f76579107"
+    },
+    {
+      "id": "deposited-evidence-2",
+      "kind": "repository-file",
+      "location": "scratchpad/PXD053116/evidence/20240612_LysC_Abcam_Proteins.csv",
+      "name": "20240612_LysC_Abcam_Proteins.csv",
+      "sha256": "8d79fc751ab9975fc00b89350a484f1ed0509770a9a83a48bd7753f86c355a6b"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] and fraction rows",
+      "value": "All RAW files in scope for this output are represented (1 unique basenames).",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Exact RAW basenames were compared with the PRIDE file listing."
+    },
+    {
+      "location": "source name, labels, replicates, and factor values",
+      "value": "The single RAW run and Lys-C search settings are recorded in the project record and deposited result table.",
+      "source_ids": [
+        "deposited-evidence-1",
+        "deposited-evidence-2"
+      ],
+      "evidence": "The single RAW run and Lys-C search settings are recorded in the project record and deposited result table."
+    },
+    {
+      "location": "organism and technical comment columns",
+      "value": "Biological and technical values are limited to the PRIDE record, linked publication, and deposited evidence files.",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "PRIDE metadata and deposited processing/search descriptions."
+    }
+  ],
+  "limitations": []
+}

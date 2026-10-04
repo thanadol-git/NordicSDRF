@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-10-01
 
-corpus_source: local checkout (2026-10-03)
+corpus_source: local checkout (2026-10-04)
 
 countries:
   sweden:
@@ -60,8 +60,8 @@ countries:
         pxd_count: 163
         pride_hits: 544
         screened: 0
-        annotated: 72
-        blocked: 80
+        annotated: 75
+        blocked: 82
         in_corpus: 6
       gothenburg:
         name: Gothenburg
@@ -70,8 +70,8 @@ countries:
         pxd_count: 135
         pride_hits: 192
         screened: 0
-        annotated: 63
-        blocked: 52
+        annotated: 66
+        blocked: 60
         in_corpus: 9
       uppsala:
         name: Uppsala
@@ -89,7 +89,7 @@ countries:
         search_terms: [Umeå, Umea]
         pride_hits: 48
         screened: 0
-        annotated: 21
+        annotated: 22
         blocked: 11
         pxd_list: lists/sweden/umea.txt
         pxd_count: 39
@@ -99,7 +99,7 @@ countries:
         search_terms: [Linköping, Linkoping]
         pride_hits: 26
         screened: 0
-        annotated: 21
+        annotated: 22
         blocked: 0
         pxd_list: lists/sweden/linkoping.txt
         pxd_count: 26

@@ -1,0 +1,19 @@
+# daily queue 2026-10-03 sweden  (18 PXDs, cap 50)
+PXD053116	sweden/lund	done	annotated, locally validated, and independently reviewed
+PXD058546	sweden/lund	blocked	The 140 clinical melanoma runs lack a recoverable mapping from run identifiers to patients and metastatic sites; the deposited quantitative workbook contains measurements but no source map.
+PXD059892	sweden/lund	blocked	Run names expose cell line and treatment, but the record does not independently establish which acquisition date is the full proteome versus phosphoproteome; the deposited community SDRF was not used as evidence.
+PXD059920	sweden/lund	done	annotated, locally validated, and independently reviewed
+PXD071764	sweden/lund	done	annotated, locally validated, and independently reviewed
+PXD038504	sweden/gothenburg	blocked	The TMT10 result workbook exposes sample codes and fractions but not an exact reporter-channel-to-sample assignment.
+PXD041824	sweden/gothenburg	done	annotated, locally validated, and independently reviewed
+PXD041926	sweden/gothenburg	blocked	The TMT11 deposit has 20 fractionated RAW files but no recoverable reporter-channel map.
+PXD043721	sweden/gothenburg	blocked	The deposit contains several multiplexed TMT and peptidomics experiments but no readable sample/channel assignment table.
+PXD046643	sweden/gothenburg	blocked	Two TMT sets are present, but neither has a recoverable reporter-channel map.
+PXD050441	sweden/gothenburg	done	annotated, locally validated, and independently reviewed
+PXD063334	sweden/gothenburg	blocked	Two TMTpro16 sets are present, but the deposit does not expose their reporter-channel maps.
+PXD065411	sweden/gothenburg	blocked	The search archives expose reporter-channel IDs, but the plex aliases cannot be defensibly mapped to inhibitor 2, inhibitor 17, or DMSO, and the ten channels cannot be tied to exact thermal conditions from the deposited evidence.
+PXD065550	sweden/gothenburg	done	annotated, locally validated, and independently reviewed
+PXD068455	sweden/gothenburg	blocked	The TMTpro18 study describes three conditions with six replicates, but the 24 fractions lack a recoverable channel assignment table.
+PXD069879	sweden/gothenburg	blocked	The channel workbook maps 16 pooled heart-segment samples to reporters, but the deposit does not map those sample IDs to control versus Takotsubo groups; assigning disease status would require inference.
+PXD042571	sweden/umea	done	annotated, locally validated, and independently reviewed
+PXD015725	sweden/linkoping	done	annotated, locally validated, and independently reviewed

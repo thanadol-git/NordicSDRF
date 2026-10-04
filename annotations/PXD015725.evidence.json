@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD015725.sdrf.tsv",
+  "dataset": "PXD015725",
+  "sources": [
+    {
+      "id": "pride-project",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD015725"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD015725/files/all"
+    },
+    {
+      "id": "publication",
+      "kind": "publication",
+      "location": "https://doi.org/10.1073/pnas.1906484116"
+    },
+    {
+      "id": "deposited-evidence-1",
+      "kind": "repository-file",
+      "location": "scratchpad/PXD015725/evidence/PMC6825314.xml",
+      "name": "PMC6825314.xml",
+      "sha256": "3f00b5ae96bd0993036984adccf9148db91249227e0ee08150bdcb97fe018312"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] and fraction rows",
+      "value": "All RAW files in scope for this output are represented (6 unique basenames).",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Exact RAW basenames were compared with the PRIDE file listing."
+    },
+    {
+      "location": "source name, labels, replicates, and factor values",
+      "value": "The linked full text identifies HEK293T BioID with BirA-FOXB2 and BirA controls in three independent experiments; dates in RAW names identify replicates.",
+      "source_ids": [
+        "deposited-evidence-1"
+      ],
+      "evidence": "The linked full text identifies HEK293T BioID with BirA-FOXB2 and BirA controls in three independent experiments; dates in RAW names identify replicates."
+    },
+    {
+      "location": "organism and technical comment columns",
+      "value": "Biological and technical values are limited to the PRIDE record, linked publication, and deposited evidence files.",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "PRIDE metadata and deposited processing/search descriptions."
+    }
+  ],
+  "limitations": [
+    "The publication establishes three independent experiments but does not provide per-culture age, sex, passage, or medium metadata."
+  ]
+}

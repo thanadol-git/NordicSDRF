@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD041824-phospho.sdrf.tsv",
+  "dataset": "PXD041824",
+  "sources": [
+    {
+      "id": "pride-project",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD041824"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD041824/files/all"
+    },
+    {
+      "id": "publication",
+      "kind": "publication",
+      "location": "https://doi.org/10.1073/pnas.2315242121"
+    },
+    {
+      "id": "deposited-evidence-1",
+      "kind": "repository-file",
+      "location": "scratchpad/PXD041824/evidence/4326_Phosphopept_High_MS2_3stages-1-2-Deam-30mmu_CoIso50_NormTotal_ByS02_quanvaluesSENT.xlsx",
+      "name": "4326_Phosphopept_High_MS2_3stages-1-2-Deam-30mmu_CoIso50_NormTotal_ByS02_quanvaluesSENT.xlsx",
+      "sha256": "736e5171d1357c167056e7b8af2bd1c0c6b632908f120c848549388af1dd2919"
+    },
+    {
+      "id": "deposited-evidence-2",
+      "kind": "repository-file",
+      "location": "scratchpad/PXD041824/evidence/4326_Total_HighAndMedium_MS3_0mc_CoIso100_SPSm40_NormTotal_SENT.xlsx",
+      "name": "4326_Total_HighAndMedium_MS3_0mc_CoIso100_SPSm40_NormTotal_SENT.xlsx",
+      "sha256": "8ec3134420f6699c5da7da64a1479cadd57eac813b31096f87f0c40b87abe551"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] and fraction rows",
+      "value": "All RAW files in scope for this output are represented (14 unique basenames).",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Exact RAW basenames were compared with the PRIDE file listing."
+    },
+    {
+      "location": "source name, labels, replicates, and factor values",
+      "value": "Deposited total-proteome and phosphoproteome workbooks provide the TMTpro channel assignments and experimental conditions; the publication identifies the measured line as CLB-Bar.",
+      "source_ids": [
+        "deposited-evidence-1",
+        "deposited-evidence-2"
+      ],
+      "evidence": "Deposited total-proteome and phosphoproteome workbooks provide the TMTpro channel assignments and experimental conditions; the publication identifies the measured line as CLB-Bar."
+    },
+    {
+      "location": "organism and technical comment columns",
+      "value": "Biological and technical values are limited to the PRIDE record, linked publication, and deposited evidence files.",
+      "source_ids": [
+        "pride-project",
+        "publication"
+      ],
+      "evidence": "PRIDE metadata and deposited processing/search descriptions."
+    }
+  ],
+  "limitations": [
+    "The reconciliation helper misreads a mouse-model mention as the measured organism; PRIDE structured organism metadata and the human database/search evidence identify the measured neuroblastoma cells as human."
+  ]
+}
