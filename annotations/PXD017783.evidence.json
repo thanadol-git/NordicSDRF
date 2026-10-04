@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD017783.sdrf.tsv",
+  "dataset": "PXD017783",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD017783 (scratchpad/PXD017783/evidence/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD017783/files/all (scratchpad/PXD017783/evidence/files.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1038/s41467-022-34539-4"
+    },
+    {
+      "id": "support-1",
+      "kind": "repository",
+      "location": "scratchpad/PXD017783/evidence/cellosaurus-COS-7.json"
+    },
+    {
+      "id": "support-2",
+      "kind": "repository",
+      "location": "scratchpad/PXD017783/evidence/cellosaurus-HC11.json"
+    },
+    {
+      "id": "support-3",
+      "kind": "repository",
+      "location": "scratchpad/PXD017783/evidence/cellosaurus-MCF-7.json"
+    }
+  ],
+  "claims": [
+    {
+      "location": "experimental design and exact RAW mapping",
+      "value": "Six Q Exactive HF acquisitions pairing PHA-L lectin pull-down and streptavidin-sepharose control in COS-7, HC11, and MCF-7 cells.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "support-1",
+        "support-2",
+        "support-3"
+      ],
+      "evidence": "PRIDE protocol, complete deposited file inventory, and accession-linked primary record; 6 of 6 RAW basenames covered exactly once."
+    }
+  ],
+  "limitations": [
+    "Each cell-line/affinity-enrichment combination has one deposited acquisition, so biological replication cannot be assessed from this deposit.",
+    "Search precursor and fragment tolerances are not stated in the accession-scoped record and are intentionally omitted.",
+    "Chloroacetamide is stated in the protocol, but no permissible PRIDE/MS accession was found for the alkylation-reagent column; the evidence-backed fixed carbamidomethyl modification is retained instead."
+  ]
+}

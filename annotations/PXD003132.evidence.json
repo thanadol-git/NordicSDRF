@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD003132.sdrf.tsv",
+  "dataset": "PXD003132",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003132 (scratchpad/PXD003132/evidence/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003132/files/all (scratchpad/PXD003132/evidence/files.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "experimental design and technical metadata",
+      "value": "6 Q Exactive RAW files: untreated and PAD2-treated LAP, pilot and inclusion-list acquisitions.",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "PRIDE protocol and explicit LAP/PAD2/inclusion tokens in every RAW basename."
+    }
+  ],
+  "limitations": [
+    "The analyte is a purified recombinant human protein, so the optional closed-vocabulary material-type column is omitted rather than mislabelled.",
+    "PAD2 status is retained in an evidence-backed custom characteristic/factor column."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD005453.sdrf.tsv",
+  "dataset": "PXD005453",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD005453 (scratchpad/PXD005453/evidence/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD005453/files/all (scratchpad/PXD005453/evidence/files.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "experimental design and technical metadata",
+      "value": "12 Q Exactive RAW files: 786-O cells, scramble or PHD3 knockdown, normoxia or hypoxia, three biological replicates.",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "PRIDE protocol and complete Exp1-3 / hox-nox / scr-siPHD3 filename crosswalk."
+    }
+  ],
+  "limitations": [
+    "All samples are the renal-cell-carcinoma line 786-O; scramble denotes the intervention control, not a non-cancer biological control.",
+    "Donor age/sex and kidney origin are sourced from Cellosaurus CVCL_1051."
+  ]
+}

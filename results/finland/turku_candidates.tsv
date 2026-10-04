@@ -1,0 +1,103 @@
+accession	verdict	evidence	in_corpus	title
+PXD000474	confirmed	affiliation~'finland': Turku Centre for Biotechnology, University of Turku and Åbo Akademi University, Finland		Simulated phosphopeptide spectral library for confident site localization
+PXD001374	confirmed	affiliation~'finland': Turku Centre for Biotechnology, University of Turku and Åbo Akademi University, Finland	yes	Label-free quantitative phosphoproteomics with novel pairwise abundance normalization reveals synerg
+PXD001453	confirmed	countries=['Finland']		Spatial variation in transcript and protein abundance of Atlantic salmon during feeding migration in
+PXD001532	confirmed	affiliation~'finland': Turku Centre for Biotechnology, University of Turku and Åbo Akademi University, Turku, Fin		Quantitative Analysis of the erythrocyte membrane proteins in polycythemia vera patients treated wit
+PXD001808	confirmed	countries=['Finland']		BALF exosomes -  Pulmonary Sarcoidosis is Associated With Exosomal Vitamin D-Binding Protein and Inf
+PXD001870	confirmed	countries=['Finland']		Analysis of Plasma Membrane, Endosomal and Cytoplasmic fractions of mouse embryonic fibroblast
+PXD002025	confirmed	countries=['Finland']	yes	Liver lipid metabolism is altered by increased circulating estrogen to androgen ratio in the liver o
+PXD002099	confirmed	countries=['Finland']	yes	Optimization of statistical methods impact on quantitative proteomics data
+PXD002637	confirmed	countries=['Finland']		PME1 interactome -  Relevance Rank Platform (RRP) for Functional Filtering of High Content Protein-P
+PXD003132	confirmed	countries=['Finland']		Citrullination of latency-associated peptide of TGF beta1
+PXD003153	confirmed	countries=['Finland']		Effect of TPA on focal adhesion composition
+PXD004017	confirmed	countries=['Finland']		Extracellular citrullination in synovial fluid
+PXD004734	confirmed	countries=['Finland']		Identification of novel SHARPIN binders
+PXD005453	confirmed	countries=['Finland']		Human ccRCC cell line 786-O with PHD3 knockdown LC-MS/MS
+PXD006232	confirmed	affiliation~'finland': Professor of Protein Technology Lund University, Sweden Finnish Distinguished Professor Åb	yes	Egg proteome changes during fertilization in sterlet Acipenser ruthenus
+PXD006562	confirmed	countries=['Finland']		Comparison of extracellular matrix in prostate tissue samples and in cultures of primary fibroblasts
+PXD006563	confirmed	countries=['Finland']		Analysis of extracellular matrix proteins from 3D cultures of primary prostate fibroblasts, DU145 ce
+PXD006775	confirmed	countries=['Finland']		Characterization of developing proteome during early childhood
+PXD007826	confirmed	countries=['Finland']		Quantitative proteomic characterization and comparison of T helper 17 and iTreg cells in mouse
+PXD008278	confirmed	countries=['Finland']		Serum proteomics of Premature Carotid atherosclerosis: The Cardiovascular Risk in Young Finns Study
+PXD008738	confirmed	countries=['Finland']	yes	Implementation of data-independent acquisition mass spectrometry in metaproteomics of gut microbiota
+PXD008802	confirmed	countries=['Finland']		Proline hydroxylation of collagens in prolyl 4-hydroxylase mutant mice
+PXD008973	confirmed	countries=['Finland']		Human Th17 Cell differentiation
+PXD008983	confirmed	countries=['Finland']		CIP2A interactome in human Th17 Cells
+PXD009900	confirmed	countries=['Finland']		PP2A  inhibition  is  a  druggable  MEK  inhibitor  resistance mechanism  in  KRAS-mutant  lung  can
+PXD010071	confirmed	countries=['Finland']		Thylakoids of Picea abies -  The unique photosynthetic apparatus of Pinaceae - Analysis of photosynt
+PXD010612	confirmed	countries=['Finland']		CIP2A negatively regulates Th17 differentiation
+PXD011671	confirmed	countries=['Finland']		Thylakoid Localized Type 2 NAD(P)H Dehydrogenase NdbA Optimizes Light-Activated Heterotrophic Growth
+PXD012153	confirmed	countries=['Finland']		Coxsackievirus B persistence modifies the proteome of pancreatic ductal cells in a virus-strain-spec
+PXD012154	confirmed	countries=['Finland']		Coxsackievirus B persistence modifies the secretome of pancreatic ductal cells in a virus-strain-spe
+PXD012501	confirmed	affiliation~'turku': Molecular Plant Biology, Department of Biochemistry, University of Turku		Thylakoid protein phosphorylation in Physcomitrella patens
+PXD013113	confirmed	countries=['Finland']		Proteomic analysis of 3D cultures of fibroblasts and Ras-transformed HaCaT keratinocytes
+PXD015078	confirmed	affiliation~'turku': Molecular Plant Biology, Department of Biochemistry, University of Turku		GUN1 controls the accumulation of NEP-dependent transcripts in Arabidopsis cotyledons
+PXD016530	confirmed	countries=['Finland']		Phosphoproteomic analysis of WT and KO JNK1 mice
+PXD016882	confirmed	countries=['Finland']		Study of matrix proteins synthesized by DU145 and PC3 prostate cancer cells alone or in co-culture w
+PXD017059	confirmed	countries=['Finland']	yes	Correlation of Prevotella abundancy with a particular carbohydrate-active CAZy enzyme profile in hea
+PXD017772	confirmed	countries=['Finland']		DICER-interacting partners in juvenile mouse testes
+PXD017783	confirmed	countries=['Finland']		An extracellular receptor tyrosine kinase motif orchestrating intracellular STAT activation
+PXD018941	confirmed	affiliation~'finland': Molecular Plant Biology, Department of Biochemistry, University of Turku, Finland		Specific thylakoid protein phosphorylations are prerequisites for overwintering of Norway spruce (Pi
+PXD019430	confirmed	countries=['Finland']	yes	VAV3 in ERBB4-mediated cancer cell migration
+PXD020411	confirmed	countries=['Finland']		Protein identification of venoms of the African spitting Cobras, Naja mossambica and Naja nigricinct
+PXD023737	confirmed	countries=['Finland']		Minigut Cellular Proteome and Secretome
+PXD024634	confirmed	countries=['Finland']		Talin1-GFP pulldown in U2OS cells
+PXD025111	confirmed	countries=['Finland']		B cell receptor-induced protein dynamics and the emerging role of SUMOylation revealed by proximity 
+PXD025690	confirmed	countries=['Finland']		Comparative Proteomics Analysis of the Mouse Minigut Organoid: Insights into Markers of Gluten Chall
+PXD025729	confirmed	countries=['Finland']		Mapping interactome networks of FOSL1 and FOSL2 in human Th17 cells
+PXD026183	confirmed	affiliation~'turku': Molecular Plant Biology, University of Turku		STN7 kinase-dependent Light-harvesting complex (LHC) protein phosphorylations in the moss Physcomitr
+PXD026546	confirmed	countries=['Finland']		An extracellular receptor tyrosine kinase motif orchestrating intracellular STAT activation
+PXD027229	confirmed	affiliation~'finland': Molecular Plant Biology, University of Turku, Finland		Characterisation of the free and membrane-associated fractions of the thylakoid lumen proteome in Ar
+PXD030297	confirmed	affiliation~'finland': Turku Bioscience Centre, University of Turku and Åbo Akademi University, 20520 Turku, Finl		Structural mechanism for inhibition of PP2A-B56 and oncogenicity by CIP2A
+PXD030630	confirmed	countries=['Finland']		Patterning of the autotrophic, mixotrophic and heterotrophic proteomes of oxygen evolving cyanobacte
+PXD031144	confirmed	countries=['Finland']		Regulators of proteostasis are translationally repressed in fibroblasts from sporadic  and LRRK2-G20
+PXD033023	confirmed	countries=['Finland']		Proteomic analysis of matrisome proteins from laser capture microdissected FFPE tissue slides of HnS
+PXD033555	confirmed	countries=['Finland']		Analysis of citrullination of extracellular matrix proteins in spheroid cultures of fibroblasts and 
+PXD033744	confirmed	countries=['Finland']		Serum APOC1 levels are decreased in seroconverted children who progress to type 1 diabetes at a youn
+PXD033937	confirmed	countries=['Finland']		Proteasome dysfunction leads to enhanced autophagy mediated degradation of mutant lamin A/C
+PXD034182	confirmed	countries=['Finland']		Normalization of adipose oxidative metabolism pathways after bariatric surgery
+PXD035179	confirmed	countries=['Finland']	yes	MDAMB-231 Fusion Lumos, LC-MSMS
+PXD035945	confirmed	countries=['Finland']		Analysis of prolyl 4-hydroxylation of P4ha1 KO MEFs and P4ha2 KO mouse kidneys
+PXD036479	confirmed	countries=['Finland']	yes	IGFBP2 secretion by mammary adipocytes limits breast cancer invasion
+PXD037090	confirmed	countries=['Finland']		Smg6 interacting partners in mouse
+PXD038477	confirmed	countries=['Finland']		Long noncoding RNA LIRIL2R modulates FOXP3 levels and suppressive function of human CD4+ regulatory 
+PXD039337	confirmed	countries=['Finland']		HIC1 interacts with FOXP3 multi protein complex: a novel mechanism to regulate human regulatory T ce
+PXD040166	confirmed	countries=['Finland']	yes	STAT5b is a key effector of NRG-1/ERBB4-mediated cardiomyocyte growth
+PXD044856	confirmed	countries=['Finland']		Germline-specific RNA helicase DDX4 forms cytoplasmic granules in cancer cells and promotes tumor gr
+PXD045258	confirmed	countries=['Finland']		TLNRD1-GFP pulldown in HEK cells
+PXD045755	confirmed	countries=['Finland']		Bacterial extracellular vesicles of human amniotic fluid and maternal feces
+PXD046387	confirmed	countries=['Finland']	yes	Longitudinal serum proteomics of mother-infant dyads with HLA-conferred type 1 diabetes risk
+PXD046503	confirmed	countries=['Finland']		De Novo multi-omics pathway analysis (DMPA) designed for prior data independent inference of cell si
+PXD046544	confirmed	affiliation~'turku': Molecular Plant Biology, University of Turku	yes	Arabidopsis thylakoid domains proteome
+PXD047603	confirmed	affiliation~'finland': Stem Cells and Metabolism Research Program, Faculty of Medicine, University of Helsinki; H		Overactive mitochondrial DNA replication disrupts perinatal cardiac maturation
+PXD048646	confirmed	countries=['Finland']		Dynamic regulation of integrin β1 phosphorylation supports invasion of breast cancer cells
+PXD049407	confirmed	countries=['Finland']		Selectivity of 2J2V for BET proteins in A549 cells
+PXD050005	confirmed	countries=['Finland']		Study of Potent inhibitors for CT5-3hTERT fibroblast cell line
+PXD050033	confirmed	countries=['Finland']	yes	Gut microbiota -derived extracellular vesicles in patients with obesity undergoing gastric bypass su
+PXD050185	confirmed	countries=['Finland']		Pertussis toxin-catalyzed auto- and trans-ADP-ribosylation
+PXD050396	confirmed	countries=['Finland']	yes	Phosphoproteomic analysis reveals the diversity of signaling behind ErbB inhibitor-induced phenotype
+PXD052298	confirmed	countries=['Finland']		LINC01871 is exclusively expressed in T and NK cells and is highly induced upon CD4+ T cell activati
+PXD052438	confirmed	countries=['Finland']	yes	Proteomic insights into human induced regulatory T cells: the role of LPXN and CD160 in immune suppr
+PXD052626	confirmed	countries=['Finland']		Phenotypic profiling of human induced regulatory T cells at early differentiation: insights into dis
+PXD052819	confirmed	countries=['Finland']	yes	EPLINα controls integrin recycling from Rab21 endosomes to drive breast cancer cell migration
+PXD055190	confirmed	countries=['Finland']		Sustained non-photochemical quenching and photoprotection of PSII repair cycle during combined high 
+PXD058465	confirmed	countries=['Finland']	yes	LC-MS/MS from human cell lines PC3, HS578T, MDA-MB-231 and MCF10A
+PXD058691	confirmed	countries=['Finland']		To investigate how Trametinib affects colorectal CAFs in ECM production and remodeling
+PXD059764	confirmed	countries=['Finland']	yes	Gut microbiota-derived extracellular vesicles of patients with Parkinson's disease
+PXD060057	confirmed	countries=['Finland']		JNK-regulated phosphoproteome links synaptic and metabolic pathways to mood regulation
+PXD060721	confirmed	countries=['Finland']		The Notch ligand Jagged1 regulates extracellular matrix production and organization in breast cancer
+PXD060764	confirmed	countries=['Finland']	yes	Mass spectrometry-based profiling of HDF, HDF Vim -/-, and their EVs, and the impact of these EVs on
+PXD061233	confirmed	countries=['Finland']		Acclimation of Synechocystis sp. PCC 6803 to alkaline pH under ambient air
+PXD065042	confirmed	countries=['Finland']		The late chromatoid body component TSSK2 associates with translational machinery in elongating sperm
+PXD065382	confirmed	countries=['Finland']	yes	Proteomic Analysis of the E6 Interactome in Response to Anisomelic Acid Treatment
+PXD065511	confirmed	countries=['Finland']		Proteomic analysis of surface proteins from C1s siRNA-treated UT-SCC-59A  squamous cell carcinoma ce
+PXD065794	confirmed	countries=['Finland']		Sac1 degron A431 cells 3h DMSO vs 3h IAA
+PXD066779	confirmed	affiliation~'finland': Molecular Plant Biology, Department of Life Technologies, University of Turku, Finland	yes	Functional modes of Photosystem II under photomixotrophy in distinct variants of Synechocystis sp. P
+PXD067430	confirmed	countries=['Finland']		Identification of Myosin-X (MYO10) proximal proteins using TurboID in U2-OS and U-87 MG cells
+PXD069597	confirmed	countries=['Finland']	yes	Plasma Proteomics Analysis of a Transglutaminase 2 inhibitor in Celiac Disease
+PXD069806	confirmed	countries=['Finland']		GFP-Tensin 1 phosphoproteomics upon sodium arsenite treatment in U2OS cells
+PXD069837	confirmed	countries=['Finland']		Adhesion-derived condensates control component availability to regulate adhesion dynamics
+PXD069948	confirmed	countries=['Finland']	yes	HPV16 E7 Interactome Proteomics After Anisomelic Acid Treatment
+PXD075504	confirmed	countries=['Finland']		Analysis of lymphoma EV and serum samples
+PXD079775	confirmed	countries=['Finland']		ECM protein expression changes in FAK-expressing and FAK-deficient MOVCAR model
+PXD081286	confirmed	countries=['Finland']		Unravelling the mechanisms of cyanobacterial resilience in photosynthetic living materials

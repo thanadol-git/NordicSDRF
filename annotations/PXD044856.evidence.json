@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD044856.sdrf.tsv",
+  "dataset": "PXD044856",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD044856 (scratchpad/PXD044856/evidence/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD044856/files/all (scratchpad/PXD044856/evidence/files.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1016/j.celrep.2024.114430"
+    },
+    {
+      "id": "support-1",
+      "kind": "repository",
+      "location": "scratchpad/PXD044856/evidence/210820_IgG_IP.msf"
+    },
+    {
+      "id": "support-2",
+      "kind": "repository",
+      "location": "scratchpad/PXD044856/evidence/cellosaurus-PC-3.json"
+    }
+  ],
+  "claims": [
+    {
+      "location": "experimental design and exact RAW mapping",
+      "value": "Three Q Exactive HF acquisitions from PC-3 xenograft tumors: two anti-DDX4 immunoprecipitations and one rabbit-IgG control.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "support-1",
+        "support-2"
+      ],
+      "evidence": "PRIDE protocol, complete deposited file inventory, and accession-linked primary record; 3 of 3 RAW basenames covered exactly once."
+    }
+  ],
+  "limitations": [
+    "The publication identifies two 0.7-g PC-3 xenograft tumors for the replicate DDX4 immunoprecipitations but does not map the single IgG control to a numbered tumor.",
+    "PRIDE's structured instrument dropdown says LTQ Orbitrap Elite, but the accession protocol and publication methods both state Q Exactive HF; the specific prose record is used.",
+    "The reconciler's cleavage-agent warning is resolved by the deposited MSF search database, which explicitly records Trypsin."
+  ]
+}

@@ -27,7 +27,7 @@
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
 <text class="title" x="12" y="22">Finland — in progress</text>
-<text class="sub" x="12" y="40">26 datasets listed · 14 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<text class="sub" x="12" y="40">128 datasets listed · 16 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
 <rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
@@ -44,8 +44,13 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="74.75" width="648.0" height="18.5" rx="3"><title>Helsinki · PRIDE hits, not curated yet: 163</title></rect>
 <text class="total" x="764.0" y="88.0">163 PRIDE hits</text>
 <text class="city" x="12" y="118.0">Turku</text>
-<rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="104.75" width="405.5" height="18.5" rx="3"><title>Turku · PRIDE hits, not curated yet: 102</title></rect>
-<text class="total" x="521.5" y="118.0">102 PRIDE hits</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="17.0" height="20" rx="2"><title>Turku · Annotated: 2</title></rect>
+<text class="seg" x="118.5" y="118.0" text-anchor="middle">2</text>
+<rect class="c-in_corpus" fill="#199e70" x="128.0" y="104" width="90.4" height="20" rx="2"><title>Turku · In corpus: 23</title></rect>
+<text class="seg" x="173.2" y="118.0" text-anchor="middle">23</text>
+<rect class="c-todo" fill="#8a8983" x="219.4" y="104" width="305.1" height="20" rx="2"><title>Turku · To do: 77</title></rect>
+<text class="seg" x="372.0" y="118.0" text-anchor="middle">77</text>
+<text class="total" x="531.5" y="118.0">102 listed</text>
 <text class="city" x="12" y="148.0">Oulu</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="134" width="18.9" height="20" rx="2"><title>Oulu · Annotated: 5</title></rect>
 <text class="seg" x="119.4" y="148.0" text-anchor="middle">5</text>

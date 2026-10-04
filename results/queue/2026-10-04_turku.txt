@@ -1,0 +1,11 @@
+# daily queue 2026-10-04 turku  (10 PXDs, cap 10)
+PXD000474	finland/turku	blocked	see annotations/PXD000474.BLOCKED.md
+PXD001453	finland/turku	blocked	see annotations/PXD001453.BLOCKED.md
+PXD001532	finland/turku	done	validated local SDRF; exact deposited RAW coverage; PR not created
+PXD001870	finland/turku	done	validated local SDRF; exact deposited RAW coverage; PR not created
+PXD002637	finland/turku	blocked	see annotations/PXD002637.BLOCKED.md
+PXD003132	finland/turku	done	validated local SDRF; exact deposited RAW coverage; PR not created
+PXD003153	finland/turku	done	validated local SDRF; exact deposited RAW coverage; PR not created
+PXD004017	finland/turku	blocked	see annotations/PXD004017.BLOCKED.md
+PXD004734	finland/turku	done	validated local SDRF; exact deposited RAW coverage; PR not created
+PXD005453	finland/turku	done	validated local SDRF; exact deposited RAW coverage; PR not created

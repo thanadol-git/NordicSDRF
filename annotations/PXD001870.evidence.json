@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD001870.sdrf.tsv",
+  "dataset": "PXD001870",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD001870 (scratchpad/PXD001870/evidence/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD001870/files/all (scratchpad/PXD001870/evidence/files.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "experimental design and technical metadata",
+      "value": "6 deposited RAW ZIP archives: cytoplasmic, endosomal, and plasma-membrane fractions in two replicates.",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "PRIDE protocol and exact fraction/replicate tokens in deposited archive names."
+    }
+  ],
+  "limitations": [
+    "Each deposited archive contains ten gel-slice RAW files, but only the archive is exposed as a PRIDE RAW entry; the SDRF therefore has one row per archive."
+  ]
+}

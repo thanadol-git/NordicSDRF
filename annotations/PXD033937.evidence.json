@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD033937.sdrf.tsv",
+  "dataset": "PXD033937",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD033937 (scratchpad/PXD033937/evidence/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD033937/files/all (scratchpad/PXD033937/evidence/files.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.3389/fcell.2022.932983"
+    }
+  ],
+  "claims": [
+    {
+      "location": "experimental design and exact RAW mapping",
+      "value": "Two Orbitrap Fusion Lumos acquisitions of an LMNA p.S143P patient-fibroblast digest, with and without a mutation-site inclusion list.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "PRIDE protocol, complete deposited file inventory, and accession-linked primary record; 2 of 2 RAW basenames covered exactly once."
+    }
+  ],
+  "limitations": [
+    "Both acquisitions derive from the same patient-fibroblast source; they are technical/acquisition variants, not biological replicates.",
+    "Patient age, sex, ancestry, and fibroblast sampling site are not available in the accession-scoped record.",
+    "The reconciler's cleavage-agent warning is resolved by the PRIDE data-processing protocol, which explicitly states Enzyme: Trypsin."
+  ]
+}

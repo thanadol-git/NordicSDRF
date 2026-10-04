@@ -1,0 +1,6 @@
+# daily queue 2026-10-04 turku smallest remaining (5 PXDs, cap 5)
+PXD033937	finland/turku	done	validated local SDRF; exact RAW coverage; independent review PASS; PR not created
+PXD017772	finland/turku	done	validated local SDRF; exact RAW coverage; independent review PASS; PR not created
+PXD050185	finland/turku	done	validated local SDRF; exact RAW coverage; independent review PASS; PR not created
+PXD017783	finland/turku	done	validated local SDRF; exact RAW coverage; independent review PASS; PR not created
+PXD044856	finland/turku	done	validated local SDRF; exact RAW coverage; independent review PASS; PR not created

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD017772.sdrf.tsv",
+  "dataset": "PXD017772",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD017772 (scratchpad/PXD017772/evidence/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD017772/files/all (scratchpad/PXD017772/evidence/files.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1093/nar/gkaa460"
+    },
+    {
+      "id": "support-1",
+      "kind": "repository",
+      "location": "scratchpad/PXD017772/evidence/180817_Rabbit_IgG_IP.msf"
+    }
+  ],
+  "claims": [
+    {
+      "location": "experimental design and exact RAW mapping",
+      "value": "Three Q Exactive HF-X acquisitions from juvenile mouse testes: two anti-DICER immunoprecipitations and one rabbit-IgG control.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "support-1"
+      ],
+      "evidence": "PRIDE protocol, complete deposited file inventory, and accession-linked primary record; 3 of 3 RAW basenames covered exactly once."
+    }
+  ],
+  "limitations": [
+    "The paper establishes 17-18-day-old mouse testes but does not expose individual animal identifiers; all rows therefore retain one unsplit biological source, while IP1/IP2 are technical replicates of the anti-DICER condition.",
+    "The local quality scorer flags the evidence-backed age range 17D-18D even though the annotation rules permit hyphenated age ranges."
+  ]
+}

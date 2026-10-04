@@ -225,8 +225,11 @@ countries:
         search_terms: [Turku, Åbo]
         pride_hits: 102
         screened: 0
-        annotated: 0
+        annotated: 2
         blocked: 0
+        pxd_list: lists/finland/turku.txt
+        pxd_count: 102
+        in_corpus: 23
       oulu:
         name: Oulu
         search_terms: [Oulu]

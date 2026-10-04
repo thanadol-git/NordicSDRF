@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD050185.sdrf.tsv",
+  "dataset": "PXD050185",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD050185 (scratchpad/PXD050185/evidence/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD050185/files/all (scratchpad/PXD050185/evidence/files.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1016/j.jbc.2024.108106"
+    },
+    {
+      "id": "support-1",
+      "kind": "repository",
+      "location": "scratchpad/PXD050185/evidence/PTX.msf"
+    }
+  ],
+  "claims": [
+    {
+      "location": "experimental design and exact RAW mapping",
+      "value": "Three Orbitrap Fusion Lumos reaction-mixture acquisitions: rPtxS1 alone, rPtxS1 plus NAD+, and rPtxS1 plus recombinant human G-alpha-i plus NAD+.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "support-1"
+      ],
+      "evidence": "PRIDE protocol, complete deposited file inventory, and accession-linked primary record; 3 of 3 RAW basenames covered exactly once."
+    }
+  ],
+  "limitations": [
+    "The samples are purified recombinant reaction mixtures rather than intact biological specimens; organism and organism part are therefore not applicable at the sample level.",
+    "The mixed rPtxS1/G-alpha-i reaction contains proteins originating from two organisms, retained explicitly in the reaction-condition value instead of broadcasting one organism to the whole row.",
+    "The product-dependent method contains scouting HCD plus triggered second-HCD/EThcD scans; the single-valued SDRF dissociation field records the distinctive combined EThcD method."
+  ]
+}
