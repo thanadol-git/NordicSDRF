@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD048646.sdrf.tsv",
+  "dataset": "PXD048646",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD048646 (scratchpad/PXD048646/evidence/pride.json)"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD048646/files/all (scratchpad/PXD048646/evidence/files.json)"},
+    {"id": "paper", "kind": "publication", "location": "https://doi.org/10.1038/s41556-025-01663-4 (scratchpad/PXD048646/evidence/paper.txt)"},
+    {"id": "raw-headers", "kind": "raw metadata", "location": "scratchpad/PXD048646/evidence/raw_headers/*.raw.head"}
+  ],
+  "claims": [
+    {"location": "design and RAW mapping", "value": "Three HEK293T ITGB1-V1/Dok1-V2 BiCAP replicates and three mVenus-control replicates.", "source_ids": ["pride", "pride-files", "paper"], "evidence": "Run names and the primary paper establish the two three-replicate arms; all 6 RAW basenames are covered exactly once."},
+    {"location": "technical metadata", "value": "Q Exactive HF top-10 DDA-HCD with Trypsin digestion, DTT reduction, and IAA alkylation.", "source_ids": ["pride", "paper", "raw-headers"], "evidence": "The paper and PRIDE provide preparation; representative raw metadata from both arms confirms Q Exactive HF, TopN=10 data-dependent acquisition, and HCD at NCE 27."}
+  ],
+  "limitations": [
+    "No deposited search configuration is available, so modification parameters are explicitly recorded as not available and optional search tolerances are omitted.",
+    "Affinity-purification is evidence-backed free text and yields a non-blocking ontology warning."
+  ]
+}

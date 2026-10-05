@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD018941.sdrf.tsv",
+  "dataset": "PXD018941",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD018941 (scratchpad/PXD018941/evidence/pride.json)"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD018941/files/all (scratchpad/PXD018941/evidence/files.json)"},
+    {"id": "paper", "kind": "publication", "location": "https://doi.org/10.1073/pnas.2004165117 (scratchpad/PXD018941/evidence/paper.txt)"},
+    {"id": "search", "kind": "deposited search", "location": "scratchpad/PXD018941/evidence/LHCII_canonical_winter_band2.msf"},
+    {"id": "raw-headers", "kind": "raw metadata", "location": "scratchpad/PXD018941/evidence/raw_headers/*.raw.head"}
+  ],
+  "claims": [
+    {"location": "design and RAW mapping", "value": "Nineteen pooled Norway-spruce thylakoid gel-band/spot acquisitions mapped by seasonal condition and gel feature from their deposited names.", "source_ids": ["pride", "pride-files", "paper"], "evidence": "The paper defines summer, winter non-quenched, and sustained-NPQ samples; each deposited RAW name identifies its band/spot and all 19 are covered exactly once."},
+    {"location": "per-run instrument and dissociation", "value": "Q Exactive HF for summer/sustained-NPQ HCD runs, Q Exactive for winter HCD runs, and Orbitrap Fusion Lumos for the named EThcD run.", "source_ids": ["pride", "paper", "raw-headers"], "evidence": "Instrument model strings were read from an 8 MiB metadata range of every RAW; mzML activation metadata and the paper distinguish HCD from EThcD."},
+    {"location": "search metadata", "value": "Trypsin, 10 ppm/0.02 Da, fixed Carbamidomethyl, and variable Oxidation, Phospho STY, and Protein N-terminal Acetyl.", "source_ids": ["search", "pride", "paper"], "evidence": "The deposited PD/Mascot MSF confirms the search settings."}
+  ],
+  "limitations": [
+    "Each row represents a gel feature from a pooled five-tree thylakoid sample, not an independent tree-level biological replicate.",
+    "Seasonal states are represented as matched growth-condition characteristic/factor values; gel-band/spot identity remains in source and assay names rather than being modeled as an experimental factor.",
+    "The reconciler treats the file-specific multi-instrument design as a contradiction; direct RAW metadata resolves the per-file assignments."
+  ]
+}

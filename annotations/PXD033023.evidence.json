@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD033023.sdrf.tsv",
+  "dataset": "PXD033023",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD033023 (scratchpad/PXD033023/evidence/pride.json)"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD033023/files/all (scratchpad/PXD033023/evidence/files.json)"},
+    {"id": "mapping", "kind": "deposited design", "location": "scratchpad/PXD033023/evidence/Raw_file_mapping.xlsx"},
+    {"id": "search", "kind": "deposited search", "location": "scratchpad/PXD033023/evidence/maxquant/mqpar.xml and summary.txt"},
+    {"id": "paper", "kind": "publication", "location": "https://doi.org/10.1038/s41388-023-02863-8 (scratchpad/PXD033023/evidence/paper.txt)"}
+  ],
+  "claims": [
+    {"location": "design and RAW mapping", "value": "Experiments 1-4 map respectively to tumor, stroma, tumor-plus-stroma, and tumor-plus-stroma laser-capture regions.", "source_ids": ["mapping", "pride-files", "paper"], "evidence": "The deposited mapping workbook supplies the authoritative per-RAW tissue compartment; all 4 RAW basenames are covered exactly once."},
+    {"location": "technical metadata", "value": "Q Exactive HF DDA-HCD with Trypsin/Lys-C and the deposited MaxQuant modification set.", "source_ids": ["pride", "search", "paper"], "evidence": "The MaxQuant configuration and summary provide enzyme, tolerances, and fixed/variable modifications; paper and PRIDE provide instrument and HCD acquisition."}
+  ],
+  "limitations": [
+    "The mixed-region runs contain human tumor and mouse stroma; because the template has a single organism cell, those rows use template-legal `not applicable` and retain the mixed composition in the matched tissue-compartment characteristic/factor.",
+    "The workbook calls 1-4 experiment numbers and does not establish donor-level independence; singleton tumor/stroma rows use replicate 1 and the two mixed-region experiments use replicates 1 and 2.",
+    "The v1.1 template has one cleavage-agent cell. Trypsin is encoded as the shared terminal specificity, while the deposited Trypsin/Lys-C mixture is preserved here as an explicit limitation and evidence claim.",
+    "The PRIDE title says HnSCC, but raw names and the linked primary paper identify cutaneous SCC; the publication/sample-supported disease label is used."
+  ]
+}

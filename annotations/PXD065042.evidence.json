@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD065042.sdrf.tsv",
+  "dataset": "PXD065042",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD065042 (scratchpad/PXD065042/evidence/pride.json)"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD065042/files/all (scratchpad/PXD065042/evidence/files.json)"},
+    {"id": "paper", "kind": "publication", "location": "https://doi.org/10.1530/REP-25-0297 (scratchpad/PXD065042/evidence/paper.txt)"},
+    {"id": "search", "kind": "deposited search", "location": "scratchpad/PXD065042/evidence/200706_IP_mIgG_00.msf"}
+  ],
+  "claims": [
+    {"location": "design and RAW mapping", "value": "Two biological anti-TSSK2 mouse-testis IP replicates plus one mouse-IgG control.", "source_ids": ["pride", "pride-files", "paper"], "evidence": "The paper explicitly describes both replicate TSSK2 complexes, run names identify the two acquisitions and IgG control, and all 3 RAW basenames are covered exactly once."},
+    {"location": "technical metadata", "value": "Q Exactive HF DDA-HCD; Trypsin; 10 ppm/0.02 Da; fixed Carbamidomethyl and variable Oxidation/Protein N-terminal Acetyl.", "source_ids": ["pride", "paper", "search"], "evidence": "Instrument/acquisition are explicit in PRIDE and the paper; enzyme, tolerances, and modifications were read from the deposited PD/Mascot MSF."}
+  ],
+  "limitations": [
+    "The paper establishes adult (>8-week-old) male mice and identifies the two TSSK2 acquisitions as biological replicates, but does not provide animal-level identifiers.",
+    "The IgG control has no second deposited acquisition, so it is represented as the single available control.",
+    "The reconciler cannot inspect the downloaded MSF and therefore emits a false cleavage-agent warning; deposited search settings explicitly specify Trypsin."
+  ]
+}

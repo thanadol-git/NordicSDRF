@@ -1,0 +1,6 @@
+# daily queue 2026-10-04 turku next smallest remaining (5 PXDs, cap 5)
+PXD065042	finland/turku	annotated	raw_files=3; raw_bytes=1965141047; local SDRF validated
+PXD033023	finland/turku	annotated	raw_files=4; raw_bytes=2983388147; local SDRF validated
+PXD026183	finland/turku	existing-audited	raw_files=13; raw_bytes=3168821088; complete community SDRF retained unchanged
+PXD018941	finland/turku	annotated	raw_files=19; raw_bytes=3396568524; local SDRF validated
+PXD048646	finland/turku	annotated	raw_files=6; raw_bytes=3570013375; local SDRF validated
