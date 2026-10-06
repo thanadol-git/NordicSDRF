@@ -1,0 +1,65 @@
+accession	verdict	evidence	in_corpus	title
+PXD001276	confirmed	affiliation~'norway': Engineer at NTNU, Norway	yes	Modulation of cell metabolic pathways and oxidative stress signaling contribute to acquired melphala
+PXD001278	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Off-target responses in the HeLa proteome subsequent to transient plasmid transfection using SILAC
+PXD001361	rejected	countries=['United Kingdom'] | University of York ; BioArCh, University of York, UK	yes	Direct evidence of milk consumption from ancient human dental calculus, northern Europe
+PXD001582	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Study of reversible oxidation of thiol proteins after hexyl aminolevulinate mediated photodynamic th
+PXD001963	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Proteome alterations associated with transformation of multiple myeloma to secondary plasma cell leu
+PXD003138	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Biomarker discovery and subtype classification within Multiple Myeloma by Super-SILAC
+PXD003549	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Identifying proteins altered during Methyl methanesulfonate treatment
+PXD004288	confirmed	affiliation~'norway': Engineer at NTNU, Norway	yes	Monitoring of the spatial and temporal dynamics of BER/SSBR pathway proteins, including MYH, UNG2, M
+PXD004324	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Identification of BER/SSBR proteins and the DNA glycosylases MPG, UNG2, MYH, NTH1, NEIL1 and NEIL3 i
+PXD004494	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Monitoring of the spatial and temporal dynamics of BER/SSBR pathway proteins, including MYH, UNG2, M
+PXD005286	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Use of a modified Multiplexed Inhibitor Bead assay to study kinome responses to cytostatic treatment
+PXD005402	confirmed	affiliation~'norway': Engineer at NTNU, Norway	yes	Use of a modified Multiplexed Inhibitor Bead assay to study kinome responses to cytostatic treatment
+PXD005970	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Toxicoproteomic and lipidomic analysis of human lung cells chronically exposed to MWCNT
+PXD006458	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Proteome alteration in Myeloma, MGUS to MM transition
+PXD006915	confirmed	affiliation~'norway': Engineer at NTNU, Norway		The proteome alterations associated with treatment with Photodynamic Therapy, endosomes after Bleomy
+PXD008293	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Histone deacetylase inhibitors mediate selective degradation of nuclear uracil-DNA glycosylase 2 and
+PXD008724	confirmed	affiliation~'norway': Engineer at NTNU, Norway		APIM-peptide targeting PCNA improves cisplatin therapy in a rat muscle-invasive bladder cancer model
+PXD009109	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Oxidative posttranslational modifications of cysteine are associated to high intrinsic aerobic capac
+PXD009135	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Identification of adsorbing human plasma proteins on alginate gel beads
+PXD009153	confirmed	countries=['Norway']	yes	PROPEP3-VENUS -  The plant cell wall integrity maintenance and immune signaling systems cooperate to
+PXD010999	confirmed	affiliation~'norway': Engineer at NTNU, Norway		A novel truncated form of Nephronectin is present in small extracellular vesicles isolated from 66cl
+PXD011044	confirmed	affiliation~'norway': Engineer at NTNU, Norway		PCNA-targeting peptide modifies and increases the response to EGFR/HER2/VEGF inhibition in breast ca
+PXD013226	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Exercise training reverses cancer cachexia-induced decrease in muscle COPS2/TRIP15/ALIEN
+PXD016293	confirmed	countries=['Norway']		Human plasma extracellular vesicles LC-MS/MS
+PXD016886	confirmed	affiliation~'norway': Norwegian University of Science and Technology, Trondheim, Norway;  University of Oslo, Os		Structural diversity of toxins contained within the venom of the funnel web spider Hadronyche infens
+PXD017474	confirmed	affiliation~'norway': Engineer at NTNU, Norway		PCNA has specific functions in regulation of metabolism in haematological cells
+PXD017836	rejected	countries=['Denmark'] | University of Copenhagen ; Section for Evolutionary Genomics, Globe Insitute, Universit		Multi-omic detection of Mycobacterium leprae in archaeological human dental calculus
+PXD020167	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Mass spectrometry of P. tricornutum proteome, Bohlin clone Pt1 8.6 (CCMP632) culture, cpsrp54-8, cps
+PXD020561	confirmed	affiliation~'norwegian': Centre of Molecular Inflammation Research (CEMIR, www.ntnu.edu/cemir) Dept. of Clinical an		Smooth muscle-specific MMP17 (MT4-MMP) defines the intestinal ECM niche
+PXD021250	confirmed	countries=['Norway']		A proteomic map of resting and activated CD4+ T cells
+PXD025370	confirmed	affiliation~'norway': Engineer at NTNU, Norway	yes	Nucleoside Analogues are Potent Inducers of Bacterial Mutagenesis
+PXD025512	confirmed	affiliation~'norway': Centre for Ecological and Evolutionary Synthesis, Department of Biosciences, University of		The venom and telopodal defence systems of the centipede Lithobius forficatus are functionally conve
+PXD025770	confirmed	affiliation~'norwegian': Centre of Molecular Inflammation Research (CEMIR, www.ntnu.edu/cemir) Dept. of Clinical an		Smooth muscle-specific MMP17 (MT4-MMP) defines the intestinal ECM niche
+PXD028314	confirmed	affiliation~'norway': Engineer at NTNU, Norway	yes	PCNA regulates metabolism by stabilizing ENO1 and 6PGD
+PXD031340	confirmed	affiliation~'norway': Engineer at NTNU, Norway		CpFTSY mediates co-translational insertion of thylakoid membrane proteins in diatoms, modulating the
+PXD032677	confirmed	countries=['Norway']		MultiOMICs landscape of SARS-CoV2-induced host responses in human lung epithelial cells
+PXD033510	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Targeting PCNA in a subgroup of Multiple Myeloma cells inhibits the glycolysis and pentose phosphate
+PXD033531	confirmed	affiliation~'norway': Engineer at NTNU, Norway	yes	Targeting PCNA in a subgroup of Multiple Myeloma cells inhibits the glycolysis and pentose phosphate
+PXD037288	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Proteomics profiling in primary tumors of metastatic and non-metastatic breast cancers
+PXD037651	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Characterisation of colorectal cancer cell lines through proteomic profiling of their extracellular 
+PXD037863	confirmed	affiliation~'norway': Centre for Advanced Imaging, The University of Queensland, St Lucia, QLD 4072, Australia. 		Intra-colony venom diversity contributes to maintaining eusociality in a cooperatively breeding ant
+PXD042517	confirmed	countries=['Norway']		Postnatal persistence of hippocampal Cajal-Retzius cells has a critical role in the establishment of
+PXD043757	confirmed	countries=['Norway']		Activation of multiple stress responses in Staphylococcus aureus substantially lowers the MIC when c
+PXD045439	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Differential protein expression between Carfilzomib-sensitive (AMO1) and resistant (AMO1-CFZ) multip
+PXD047394	confirmed	countries=['Norway']		SOS Genes Are Rapidly Induced While Mutagenesis Is Temporally Regulated by Changes in Protein Activa
+PXD051824	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Cytotoxic mechanisms of pemetrexed and HDAC inhibition in non-small cell lung cancer cells involving
+PXD055475	confirmed	countries=['Norway']	yes	A dual-mechanism antimicrobial peptide with antimutagenic activity targets the replisome and induces
+PXD055744	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Unravelling the Proteomic Landscape of Imipenem Resistance in Pseudomonas aeruginosa: A Comparative 
+PXD057607	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Proteomics profiling of research models for studying pancreatic ductal adenocarcinoma
+PXD057793	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Proteomics profiling of research models for studying pancreatic ductal adenocarcinoma
+PXD057795	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Proteomics profiling of research models for studying pancreatic ductal adenocarcinoma
+PXD057804	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Proteomics profiling of research models for studying pancreatic ductal adenocarcinoma
+PXD057928	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Proteomics profiling of research models for studying pancreatic ductal adenocarcinoma
+PXD060117	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Arginine restriction of skeletal myotubes
+PXD063154	confirmed	countries=['Norway']		Motor neuron synaptosomes LC-MSMS
+PXD063397	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Distinct Proteomic and Transcriptomic Profiles in T-cells and Monocytes in Patients with Common Vari
+PXD063461	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Duodenal inflammation in common variable immunodeficiency has altered transcriptional response to vi
+PXD064202	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Modeling CLN3 Batten disease in astrocytes reveals dysfunctions in mitochondria, fatty acid metaboli
+PXD065327	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Proteomic analysis uncovers enhanced inflammatory pheno-type and distinct metabolic changes in IDH1 
+PXD072581	confirmed	affiliation~'norway': Engineer at NTNU, Norway		E.coli Dilution mixed with standard HeLa  measured in DIA and DDA mode with timsTOF
+PXD075887	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Renalysis of PXD059683, SpLICE: A reference database enabling in depth proteome and PTM analysis of 
+PXD076616	confirmed	countries=['Norway']		Proteomic profile of hippocampal growth cones through early postnatal development
+PXD077038	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Proteomic description of CT26 and KPC after FUS treatment and reproducibility
+PXD081626	confirmed	countries=['Norway']		Adult zebrafish cerebrospinal fluid (CSF) proteomics generated for ‘Brain defence by the extracellul

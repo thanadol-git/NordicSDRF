@@ -27,7 +27,7 @@
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
 <text class="title" x="12" y="22">Norway — in progress</text>
-<text class="sub" x="12" y="40">14 datasets listed · 5 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<text class="sub" x="12" y="40">76 datasets listed · 18 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
 <rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
@@ -47,8 +47,15 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="104.75" width="354.0" height="18.5" rx="3"><title>Oslo · PRIDE hits, not curated yet: 124</title></rect>
 <text class="total" x="470.0" y="118.0">124 PRIDE hits</text>
 <text class="city" x="12" y="148.0">Trondheim</text>
-<rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="134.75" width="182.7" height="18.5" rx="3"><title>Trondheim · PRIDE hits, not curated yet: 64</title></rect>
-<text class="total" x="298.7" y="148.0">64 PRIDE hits</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="134" width="36.1" height="20" rx="2"><title>Trondheim · Annotated: 13</title></rect>
+<text class="seg" x="128.1" y="148.0" text-anchor="middle">13</text>
+<rect class="c-blocked" fill="#d95926" x="147.1" y="134" width="17.0" height="20" rx="2"><title>Trondheim · Blocked: 1</title></rect>
+<text class="seg" x="155.6" y="148.0" text-anchor="middle">1</text>
+<rect class="c-in_corpus" fill="#199e70" x="165.1" y="134" width="27.5" height="20" rx="2"><title>Trondheim · In corpus: 10</title></rect>
+<text class="seg" x="178.9" y="148.0" text-anchor="middle">10</text>
+<rect class="c-todo" fill="#8a8983" x="193.7" y="134" width="107.5" height="20" rx="2"><title>Trondheim · To do: 38</title></rect>
+<text class="seg" x="247.4" y="148.0" text-anchor="middle">38</text>
+<text class="total" x="308.1" y="148.0">62 listed</text>
 <text class="city" x="12" y="178.0">Ås</text>
 <rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="164.75" width="159.9" height="18.5" rx="3"><title>Ås · PRIDE hits, not curated yet: 56</title></rect>
 <text class="total" x="275.9" y="178.0">56 PRIDE hits</text>
