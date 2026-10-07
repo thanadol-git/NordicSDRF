@@ -193,8 +193,8 @@ countries:
         search_terms: [NMBU, "Norwegian University of Life Sciences"]   # never the bare token "Ås"
         pride_hits: 56
         screened: 0
-        annotated: 9
-        blocked: 1
+        annotated: 21
+        blocked: 12
         pxd_list: lists/norway/aas.txt
         pxd_count: 56
         in_corpus: 23
