@@ -27,7 +27,7 @@
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
 <text class="title" x="12" y="22">Norway — in progress</text>
-<text class="sub" x="12" y="40">132 datasets listed · 45 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<text class="sub" x="12" y="40">132 datasets listed · 54 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
 <rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
@@ -55,11 +55,15 @@
 <text class="seg" x="272.2" y="148.0" text-anchor="middle">10</text>
 <text class="total" x="293.0" y="148.0">62 listed</text>
 <text class="city" x="12" y="178.0">Ås</text>
-<rect class="c-in_corpus" fill="#199e70" x="110.0" y="164" width="64.7" height="20" rx="2"><title>Ås · In corpus: 23</title></rect>
-<text class="seg" x="142.3" y="178.0" text-anchor="middle">23</text>
-<rect class="c-todo" fill="#8a8983" x="175.7" y="164" width="93.2" height="20" rx="2"><title>Ås · To do: 33</title></rect>
-<text class="seg" x="222.3" y="178.0" text-anchor="middle">33</text>
-<text class="total" x="275.9" y="178.0">56 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="164" width="24.7" height="20" rx="2"><title>Ås · Annotated: 9</title></rect>
+<text class="seg" x="122.3" y="178.0" text-anchor="middle">9</text>
+<rect class="c-blocked" fill="#d95926" x="135.7" y="164" width="17.0" height="20" rx="2"><title>Ås · Blocked: 1</title></rect>
+<text class="seg" x="144.2" y="178.0" text-anchor="middle">1</text>
+<rect class="c-in_corpus" fill="#199e70" x="153.7" y="164" width="64.7" height="20" rx="2"><title>Ås · In corpus: 23</title></rect>
+<text class="seg" x="186.0" y="178.0" text-anchor="middle">23</text>
+<rect class="c-todo" fill="#8a8983" x="219.3" y="164" width="64.7" height="20" rx="2"><title>Ås · To do: 23</title></rect>
+<text class="seg" x="251.7" y="178.0" text-anchor="middle">23</text>
+<text class="total" x="291.0" y="178.0">56 listed</text>
 <text class="city" x="12" y="208.0">Tromsø</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="194" width="17.0" height="20" rx="2"><title>Tromsø · Annotated: 5</title></rect>
 <text class="seg" x="118.5" y="208.0" text-anchor="middle">5</text>

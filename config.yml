@@ -187,14 +187,14 @@ countries:
         blocked: 12
         pxd_list: lists/norway/trondheim.txt
         pxd_count: 62
-        in_corpus: 42
+        in_corpus: 49
       aas:
         name: Ås
         search_terms: [NMBU, "Norwegian University of Life Sciences"]   # never the bare token "Ås"
         pride_hits: 56
         screened: 0
-        annotated: 0
-        blocked: 0
+        annotated: 9
+        blocked: 1
         pxd_list: lists/norway/aas.txt
         pxd_count: 56
         in_corpus: 23
