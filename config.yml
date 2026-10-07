@@ -183,11 +183,11 @@ countries:
         search_terms: [Trondheim, NTNU]
         pride_hits: 64
         screened: 0
-        annotated: 22
-        blocked: 7
+        annotated: 40
+        blocked: 12
         pxd_list: lists/norway/trondheim.txt
         pxd_count: 62
-        in_corpus: 19
+        in_corpus: 42
       aas:
         name: Ås
         search_terms: [NMBU, "Norwegian University of Life Sciences"]   # never the bare token "Ås"
@@ -235,7 +235,7 @@ countries:
         blocked: 4
         pxd_list: lists/finland/turku.txt
         pxd_count: 102
-        in_corpus: 47
+        in_corpus: 48
       oulu:
         name: Oulu
         search_terms: [Oulu]
