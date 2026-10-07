@@ -231,8 +231,8 @@ countries:
         search_terms: [Turku, Åbo]
         pride_hits: 102
         screened: 0
-        annotated: 17
-        blocked: 4
+        annotated: 25
+        blocked: 6
         pxd_list: lists/finland/turku.txt
         pxd_count: 102
         in_corpus: 48
