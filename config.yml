@@ -187,7 +187,7 @@ countries:
         blocked: 7
         pxd_list: lists/norway/trondheim.txt
         pxd_count: 62
-        in_corpus: 18
+        in_corpus: 19
       aas:
         name: Ås
         search_terms: [NMBU, "Norwegian University of Life Sciences"]   # never the bare token "Ås"
@@ -195,6 +195,9 @@ countries:
         screened: 0
         annotated: 0
         blocked: 0
+        pxd_list: lists/norway/aas.txt
+        pxd_count: 56
+        in_corpus: 23
       tromso:
         name: Tromsø
         search_terms: [Tromsø, Tromso]
