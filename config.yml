@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-10-01
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-06)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-07)
 
 countries:
   sweden:
@@ -183,11 +183,11 @@ countries:
         search_terms: [Trondheim, NTNU]
         pride_hits: 64
         screened: 0
-        annotated: 13
-        blocked: 1
+        annotated: 22
+        blocked: 7
         pxd_list: lists/norway/trondheim.txt
         pxd_count: 62
-        in_corpus: 10
+        in_corpus: 18
       aas:
         name: Ås
         search_terms: [NMBU, "Norwegian University of Life Sciences"]   # never the bare token "Ås"
