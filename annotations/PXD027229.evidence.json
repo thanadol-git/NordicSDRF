@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD027229.sdrf.tsv",
+  "dataset": "PXD027229",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD027229"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD027229/files"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.3390/ijms22158126 (PMC8346976)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "design and RAW mapping",
+      "value": "FL_repN/MAL_repN = biological replicate N of each fraction; PsbO_band_* = PsbO gel band of each fraction; 2D_Lumen_N = free-lumen 2D gel spot N.",
+      "source_ids": [
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper: four independent biological replicates of FL and MAL fractions; Table S3 lists proteins in 2D CN/SDS-PAGE spots from free lumen; Table S4 the PsbO band."
+    },
+    {
+      "location": "technical metadata",
+      "value": "Q Exactive DDA; trypsin; DTT/IAA; Mascot via PD 2.2, 10 ppm / 0.02 Da; Carbamidomethyl C fixed; Oxidation M, Protein N-term Acetyl, Phospho STY variable.",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Sample-processing and data-processing protocols and paper Methods."
+    }
+  ],
+  "limitations": [
+    "HCD dissociation is assumed from the Q Exactive platform (MS2 resolution 17500); the text does not name the dissociation method.",
+    "Developmental stage is `not available` for rows (plants are 6 weeks old per protocol; recorded as not available in line with sibling Turku plant SDRFs).",
+    "2D_Lumen spots and the PsbO bands have no independent replicate structure; each is biological replicate 1 of its own source. The FL/MAL rows of the same replicate number are separate sources."
+  ]
+}

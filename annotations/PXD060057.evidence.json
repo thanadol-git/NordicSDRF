@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD060057.sdrf.tsv",
+  "dataset": "PXD060057",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD060057"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD060057/files"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1016/j.nbd.2025.107207 (PMID 41319756; not open access, not read)"
+    },
+    {
+      "id": "sample-grouping",
+      "kind": "deposited file",
+      "location": "PRIDE Sample_grouping.txt (TH/DH/TN/DN key)"
+    },
+    {
+      "id": "mq",
+      "kind": "deposited search",
+      "location": "PRIDE parameters.txt (MaxQuant 1.6.17.0)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "design and RAW mapping",
+      "value": "Run-name token <id><D|T><H|N> -> treatment and brain region.",
+      "source_ids": [
+        "pride-files",
+        "sample-grouping"
+      ],
+      "evidence": "Sample_grouping.txt defines TH/DH/TN/DN as TAT control / DJNKI-1 in hippocampus / nucleus accumbens."
+    },
+    {
+      "location": "technical metadata",
+      "value": "LTQ Orbitrap XL DDA; trypsin; fixed Carbamidomethyl; variable Oxidation M, Protein N-term Acetyl, Phospho STY; MS/MS tol 0.5 Da.",
+      "source_ids": [
+        "pride",
+        "mq"
+      ],
+      "evidence": "Instrument and enzyme from the sample-processing protocol; modifications from the data-processing protocol; ITMS MS/MS tolerance from parameters.txt."
+    }
+  ],
+  "limitations": [
+    "Paper is not open access; strain, sex, age/stage of the mice and doses are not stated in the deposit and are `not available`.",
+    "Run-name numbers are not unique animal IDs (e.g. 4DH and 4TH both exist); biological replicate is the order within each treatment x region group. Same-number repeat runs (6TN, 12DN) are technical replicates.",
+    "Precursor tolerance and dissociation method are not stated in the deposit (parameters.txt gives no main-search ppm); recorded as `not available`.",
+    "Gel-slice fractionation is described but only one RAW per sample is deposited, so no fraction columns."
+  ]
+}

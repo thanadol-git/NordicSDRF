@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD037090.sdrf.tsv",
+  "dataset": "PXD037090",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD037090"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD037090/files"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1093/nar/gkac900 (PMC9723633)"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2022/10/PXD037090/SMG6_IP2.msf"
+    }
+  ],
+  "claims": [
+    {
+      "location": "design and RAW mapping",
+      "value": "9 rows from run names: SMG6_IP1/2, SMG7_IP1/2, Rabbit_IgG1, CTRL_CB_IP1/2, KO_CB_IP1/2.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper: SMG6/SMG7/IgG IP and CB-IP (anti-DDX4) from control and Smg6-cKO testes were analysed by MS; run names carry the group."
+    },
+    {
+      "location": "technical metadata",
+      "value": "Orbitrap Fusion Lumos DDA-HCD; Trypsin; 5 ppm/0.02 Da; Carbamidomethyl C fixed, Oxidation M variable.",
+      "source_ids": [
+        "pride",
+        "paper",
+        "search"
+      ],
+      "evidence": "Instrument from the protocol text (PRIDE lists LTQ Orbitrap Elite); enzyme, tolerances and modifications read from the deposited PD/Mascot MSF."
+    }
+  ],
+  "limitations": [
+    "CTRL_CB_IP vs KO_CB_IP is read as control vs Smg6-cKO genotype from the run names and the paper's statement that Smg6-cKO CBs were purified for MS; the deposit has no explicit run-to-sample table.",
+    "Age/developmental stage of the CB-IP donors is not stated, so it is `not available` for those rows; strain is not stated for any row.",
+    "The reconciler cannot inspect the MSF and emits a false cleavage-agent warning; the MSF specifies Trypsin.",
+    "MSF 'MascotXValue' pseudo-modification ignored."
+  ]
+}

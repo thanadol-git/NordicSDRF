@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD079775.sdrf.tsv",
+  "dataset": "PXD079775",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD079775"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD079775/files"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1016/J.MATBIO.2026.102053 (not retrieved; PRIDE record and Raw_files_mapping.xlsx used)"
+    },
+    {
+      "id": "mapping",
+      "kind": "deposited file",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/09/PXD079775/Raw_files_mapping.xlsx"
+    }
+  ],
+  "claims": [
+    {
+      "location": "design and RAW mapping",
+      "value": "Raw_files_mapping.xlsx maps each RAW to its sample type (R1 each).",
+      "source_ids": [
+        "pride-files",
+        "mapping"
+      ],
+      "evidence": "Deposited mapping table lists experiment number, RAW, sample type and biological repeat."
+    },
+    {
+      "location": "technical metadata",
+      "value": "Q Exactive HF DIA (366-1007 m/z, 40 x 17 m/z windows); trypsin/Lys-C; Spectronaut directDIA; Carbamidomethyl C fixed; Oxidation M/P/K and Protein N-term Acetyl variable.",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Sample-processing and data-processing protocols; DIA acquisition method written as plain 'Data-independent acquisition', which the dia-acquisition template explicitly allows (the PRIDE:0000450 form is rejected by the installed validator)."
+    }
+  ],
+  "limitations": [
+    "Abbreviations AA and INH are kept as deposited; their meaning (treatment) is not defined in the deposit and the paper was not retrieved.",
+    "Only one acquisition per sample, so no replication; all are biological repeat 1.",
+    "Dissociation, tolerances, sex and developmental stage are `not available`; tissue type of T241/T223 (ovarian tumour) is inferred from the project title/model.",
+    "Digest was Trypsin/Lys-C; recorded as Trypsin (reconciler flags missing Lys-C)."
+  ]
+}

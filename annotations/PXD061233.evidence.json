@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD061233.sdrf.tsv",
+  "dataset": "PXD061233",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD061233"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD061233/files"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1111/PPL.70474 (not retrieved; PRIDE record used)"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2025/09/PXD061233/201126_Syn_LC_pH9_1_1.msf"
+    }
+  ],
+  "claims": [
+    {
+      "location": "design and RAW mapping",
+      "value": "201126_Syn_LC_pH{7_5|8_1|9_1}_{1-4}.raw = pH 7.5 / 8.2 / 9.2, replicate 1-4.",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Protocol: four biological replicates per condition, BG-11 buffered at pH 7.5 (HEPES), 8.2 (TES-KOH), 9.2 (CHES); run names carry pH and replicate."
+    },
+    {
+      "location": "technical metadata",
+      "value": "Q Exactive HF DDA HCD; trypsin; DTT/IAA; Mascot 10 ppm / 0.02 Da; Carbamidomethyl C fixed, Oxidation M variable.",
+      "source_ids": [
+        "pride",
+        "search"
+      ],
+      "evidence": "Data-processing protocol; enzyme, tolerances and modifications confirmed from the deposited PD/Mascot MSF."
+    }
+  ],
+  "limitations": [
+    "File names say pH 8_1 and 9_1 while the protocol says pH 8.2 and 9.2; the protocol values are used (assumed to be the same conditions, 8_1 -> 8.2, 9_1 -> 9.2).",
+    "The paper full text was not retrieved; only the PRIDE record and deposited MSF were used.",
+    "MSF 'MascotXValue' pseudo-modification ignored."
+  ]
+}

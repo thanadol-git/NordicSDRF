@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD030297.sdrf.tsv",
+  "dataset": "PXD030297",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD030297"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD030297/files"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1038/s41467-023-36693-9 (PMC9974998)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "design and RAW mapping",
+      "value": "ctrl_1-3 = empty vector; V5-CIP2A_1-3 = CIP2A(1-905)-V5 stable cells.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper Fig. 6: AP-MS with three replicate samples, CIP2A(1-905)V5 or empty vector control; PRIDE protocol identical; run names carry the group."
+    },
+    {
+      "location": "cell line",
+      "value": "NIH-3T3 = CVCL_0594 (Cellosaurus name 'NIH 3T3').",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper Methods: NIH-3T3 (ATCC CRL-1658); Cellosaurus CVCL_0594 species Mus musculus."
+    },
+    {
+      "location": "technical metadata",
+      "value": "Orbitrap Elite DDA with CID (35% NCE, linear ion trap MS2); trypsin; Mascot 10 ppm / 0.5 Da; variable Oxidation M.",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE data-processing protocol (Trypsin/P, oxidation M, 10 ppm / 0.5 Da); CID details from paper Methods for the Orbitrap Elite DDA runs."
+    }
+  ],
+  "limitations": [
+    "Carbamidomethylation is not stated in the search parameters, so only Oxidation (M) is recorded.",
+    "The paper Methods describe several LC-MS workflows; the CID/PD 1.4/Mascot 2.2.06 paragraph is matched to this AP-MS by PRIDE's 'Orbitrap Elite' and 'peptide tolerance 10 ppm for MS and 0.5 Da for MS/MS' statements.",
+    "The reconciler flags trypsin although the protocol names it ('Trypsin/P', on-bead trypsin digestion); false positive.",
+    "Sex and developmental stage of NIH-3T3 origin are `not available`."
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD069837.sdrf.tsv",
+  "dataset": "PXD069837",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD069837"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD069837/files"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1038/s41467-026-74001-3 (PMID 42248878; not retrieved, PRIDE record used)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "design and RAW mapping",
+      "value": "230530_<line><rep>.raw = line and biological replicate 1-4.",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Protocol lists the six U2OS lines and 'four independent biological replicates'; run names carry line and replicate."
+    },
+    {
+      "location": "technical metadata",
+      "value": "Orbitrap Exploris 480 (FAIMS) DDA HCD; trypsin; MaxQuant 2.0.3.0; Carbamidomethyl C fixed; Oxidation M, Protein N-term Acetyl, Biotin K and Biotin Protein N-term variable.",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Sample-processing protocol names Exploris 480 (PRIDE's structured field says Q Exactive HF); data-processing protocol lists the modifications."
+    }
+  ],
+  "limitations": [
+    "PRIDE structured instrument field (Q Exactive HF) is contradicted by the protocol text (Exploris 480); the protocol is followed.",
+    "Tolerances are not stated in the deposit text (search.zip not inspected): `not available`.",
+    "Developmental stage and cell type of U2OS not recorded; sex from Cellosaurus (female).",
+    "Paper not retrieved."
+  ]
+}
