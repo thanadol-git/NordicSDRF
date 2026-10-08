@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD015078-supernatant.sdrf.tsv",
+  "artifact_sha256": "628edb72c9307c5b19f5ffbd8f4ef78f2a93870793953d42cb7d3769978f3ce6",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. Split of PXD015078 into supernatant (Q Exactive HF, Deamidation) and FtsH-band (Q Exactive, N-term acetyl) SDRFs is justified by differing instrument, sample prep and search modifications, and together they cover all 36 RAW files once.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent (independent-subagent-3) without producer transcript or report.md; own PRIDE API and .msf checks"
+  },
+  "evidence_manifest": "annotations/PXD015078-supernatant.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf --template ms-proteomics and --template plants (declared) --use_ols_cache_only exit 0, warnings only; tools structure OK."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "tools check: 12/12 terms verified, 0 hallucinated, 0 mismatches. Free-text treatment/enrichment values only warn (no ontology match)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Deposited GUN1_biol2_Supernatant.msf: WorkflowInputFiles instrument 'Q Exactive HF Orbitrap'; Mascot 10 ppm/0.02 Da, trypsin, Carbamidomethyl(C) fixed; Oxidation(M), Deamidated(NQ), Phospho(ST,Y) variable; matches SDRF. Sample protocol states Q-Exactive HF for soluble extract. Project title verified: 'GUN1 controls the accumulation of NEP-dependent transcripts in Arabidopsis cotyledons'."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE v2 file listing (229 files, all projectAccessions=PXD015078) has 36 RAW; the 12 supernatant RAW + 24 FtsH RAW = 36 unique, no missing, no extra, no overlap."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "4 groups (Col-0/gun1-102 x +/- lincomycin) x 3 biological replicates = 12 rows, 1 RAW each."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value traced to PRIDE metadata/protocol or deposited .msf; no unsupported specifics. Semi-tryptic *_semi results are re-searches of same RAW, correctly add no rows."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf (ms-proteomics, plants) exit 0; tools check CLEAN rc0; score 100/100 rc0; structure OK rc0."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[treatment] all rows",
+      "message": "'no lincomycin' / 'lincomycin' free text; concentration not recorded.",
+      "evidence": "Validator warning; PRIDE gives no concentration."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "characteristics[enrichment process]",
+      "message": "Free-text enrichment label is not an ontology term.",
+      "evidence": "Validator warning (not in pride;efo)."
+    }
+  ]
+}
