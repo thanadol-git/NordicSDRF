@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD067430-u87mg.sdrf.tsv",
+  "dataset": "PXD067430",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD067430"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD067430/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.64898/2025.12.03.691809 (bioRxiv preprint)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "design and RAW mapping",
+      "value": "Each row lists its two gel-slice RAW files as fractions 1 and 2.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "PRIDE protocol: lanes sliced into two 2-mm bands."
+    },
+    {
+      "location": "instrument",
+      "value": "Orbitrap Fusion Lumos",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Thermo RAW file headers: raw headers of the 24 2021 files read Orbitrap Fusion Lumos; PRIDE lists only Q Exactive HF."
+    },
+    {
+      "location": "technical metadata",
+      "value": "Trypsin; DTT/IAA; 10 ppm / 0.02 Da; Carbamidomethyl C fixed, Oxidation M and protein N-term Acetyl variable.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "PRIDE protocols (PD 2.4 + Mascot)."
+    }
+  ],
+  "limitations": [
+    "The sample letters A, B and M in the run names are not decoded by the deposit or the preprint: biotin vs avidin control and the meaning of M (U-87 MG only) are unknown, so treatment is `not available` and the letter is kept as factor value[sample group]; to be resolved with the submitter.",
+    "Cell line assignment is inferred from replicate counts (3 U-2 OS, 4 U-87 MG) and corroborated by the instrument change between the 2020 and 2021 runs.",
+    "Replicate 3 of the U-2 OS series pairs 201013_A1 with 201014_A2 (different dates in file names).",
+    "Split from the single deposit because the two cell-line series were acquired on different instruments."
+  ]
+}

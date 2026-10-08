@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD065511.sdrf.tsv",
+  "dataset": "PXD065511",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD065511"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD065511/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1038/S41389-026-00606-4 (PMC12982766, cited in data availability)"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/03/PXD065511/mqpar.xml"
+    }
+  ],
+  "claims": [
+    {
+      "location": "design and RAW mapping",
+      "value": "18 rows; condition, biological replicate 1-3 and injection 1-3 from the deposited File_mapping.xlsx.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "File_mapping.xlsx (file names CS_4-6 map to replicates 1-3)."
+    },
+    {
+      "location": "sample",
+      "value": "UT-SCC-59A (CVCL_A5VI), 120 nM control or C1s siRNA for 3 days, cell-surface biotinylation, streptavidin enrichment.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol; paper (n=3, 72 h)."
+    },
+    {
+      "location": "technical metadata",
+      "value": "Q Exactive HF DDA NCE 27; Trypsin + Lys-C; 4.5 ppm / 20 ppm; DTT, IAA; Carbamidomethyl C fixed, Oxidation M and CAMthiopropanoyl (UNIMOD:293, 145.0197 Da, reduced/carbamidomethylated Sulfo-NHS-SS-biotin remnant) on K variable.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol text and deposited MaxQuant mqpar.xml (search used Trypsin/P)."
+    }
+  ],
+  "limitations": [
+    "Donor attributes (81Y, male, skin of temple, metastatic) are Cellosaurus values; the cell line name has no CLO/BTO/EFO term (tools check flags it; Cellosaurus CVCL_A5VI confirms it).",
+    "Culture medium not stated; cell type left `not available`.",
+    "The second cleavage column (Lys-C) was added after build by script."
+  ]
+}

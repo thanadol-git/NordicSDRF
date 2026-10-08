@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD012501.sdrf.tsv",
+  "dataset": "PXD012501",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD012501"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD012501/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1104/pp.19.00117 (abstract only)"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/ (Ppatens_spot_*.mzid.gz / .msf)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "design and RAW mapping",
+      "value": "78 rows, one source per RAW file stem.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol: 72 spots excised; STN8-region band from WT and stn8 KO."
+    },
+    {
+      "location": "technical metadata",
+      "value": "Q Exactive DDA; Trypsin; DTT/IAA; Carbamidomethyl C fixed; Oxidation M, protein N-term Acetyl, Phospho STY variable.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocols and deposited PD/Mascot mzid."
+    }
+  ],
+  "limitations": [
+    "Genotype of the 2D-gel spots is `not available` (not stated in the deposit); full text of the paper not available to check.",
+    "The three *_overloaded files are not mentioned in the PRIDE text (it says 72 spots); they are treated as additional in-gel digests, so their enrichment value is the neutral 'thylakoid fraction, in-gel digested'.",
+    "No comparison factor is defined: the only experimental variable (genotype) is known for 3 of 78 runs, so no factor value column is written.",
+    "Mass tolerances not stated: `not available`; each RAW is its own source (biological replicate 1)."
+  ]
+}

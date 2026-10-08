@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD049407.sdrf.tsv",
+  "dataset": "PXD049407",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD049407"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD049407/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1039/d4sc03555k (PMC11462456)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "design and RAW mapping",
+      "value": "9 rows; treatment/replicate confirmed by deposited Raw_file_mapping.xlsx.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Raw_file_mapping.xlsx; paper: triplicates."
+    },
+    {
+      "location": "sample",
+      "value": "A549 (CVCL_0023), 0.1% DMSO / 10 nM MZ1 / 10 nM 2J2V for 4 h.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper Results."
+    },
+    {
+      "location": "technical metadata",
+      "value": "Orbitrap Fusion Lumos, FAIMS, DIA 395-1000 m/z; Trypsin + Lys-C (two cleavage columns); Carbamidomethyl C fixed, Oxidation M and protein N-term Acetyl variable.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "PRIDE protocols (Spectronaut 16.2 directDIA+)."
+    }
+  ],
+  "limitations": [
+    "Mass tolerances, reduction/alkylation reagents, dissociation type and DIA window width are not stated: `not available`.",
+    "Culture medium not stated; age/sex are Cellosaurus donor values (58Y, male).",
+    "FAIMS compensation voltages (-50/-70 V) have no SDRF column.",
+    "The second cleavage column (Lys-C) was added after build by script because the build contract treats the column as single-valued."
+  ]
+}

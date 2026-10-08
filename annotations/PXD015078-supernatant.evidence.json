@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD015078-supernatant.sdrf.tsv",
+  "dataset": "PXD015078",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD015078"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD015078/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1111/tpj.14585 (abstract only)"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "PXD015078 deposited .msf files"
+    }
+  ],
+  "claims": [
+    {
+      "location": "design and RAW mapping",
+      "value": "12 RAW files: 4 groups x 3 biological replicates",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE sample protocol and project description."
+    },
+    {
+      "location": "technical metadata",
+      "value": "Q Exactive(HF) DDA; Trypsin; 10 ppm / 0.02 Da; DTT/IAA; Carbamidomethyl C fixed; modifications per subset.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited Proteome Discoverer .msf (Mascot node: 10 ppm, 0.02 Da) and PRIDE data processing protocol."
+    }
+  ],
+  "limitations": [
+    "Subset of PXD015078 split by instrument and modification set; the two files together claim all 36 RAW files exactly once.",
+    "Lincomycin concentration not recorded; 'no lincomycin' is free text. Seedling age (6 days after sowing) is in growth condition; developmental stage is `not available` (no resolvable EFO term).",
+    "Col-0 is the background of gun1-102 (PRIDE text).",
+    "The deposited *_semi.msf files are semi-tryptic re-searches of the same RAW files and add no rows."
+  ]
+}

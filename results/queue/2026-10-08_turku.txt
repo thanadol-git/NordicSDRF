@@ -1,0 +1,11 @@
+# daily queue 2026-10-08 turku next smallest remaining (10 PXDs, cap 10)
+PXD069806	finland/turku	annotated	raw_files=8; raw_bytes=13882558012; local SDRF validated, independent review pending
+PXD030630	finland/turku	annotated	raw_files=19; raw_bytes=13886186069; local SDRF validated, independent review pending
+PXD049407	finland/turku	annotated	raw_files=9; raw_bytes=14448237200; local SDRF validated, independent review pending
+PXD065511	finland/turku	annotated	raw_files=18; raw_bytes=15475507930; local SDRF validated, independent review pending
+PXD012501	finland/turku	annotated	raw_files=78; raw_bytes=16118822081; local SDRF validated, independent review pending
+PXD052626	finland/turku	annotated	raw_files=8; raw_bytes=16682864850; local SDRF validated, independent review pending
+PXD015078	finland/turku	annotated	raw_files=36; raw_bytes=16972384608; local SDRF validated, independent review pending
+PXD067430	finland/turku	annotated	raw_files=36; raw_bytes=17114070065; local SDRF validated, independent review pending
+PXD052298	finland/turku	annotated	raw_files=9; raw_bytes=17288819316; local SDRF validated, independent review pending
+PXD024634	finland/turku	annotated	raw_files=61; raw_bytes=17430375926; local SDRF validated, independent review pending

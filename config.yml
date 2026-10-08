@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-10-01
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-07)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-08)
 
 countries:
   sweden:
@@ -187,7 +187,7 @@ countries:
         blocked: 12
         pxd_list: lists/norway/trondheim.txt
         pxd_count: 62
-        in_corpus: 49
+        in_corpus: 50
       aas:
         name: Ås
         search_terms: [NMBU, "Norwegian University of Life Sciences"]   # never the bare token "Ås"
@@ -197,7 +197,7 @@ countries:
         blocked: 12
         pxd_list: lists/norway/aas.txt
         pxd_count: 56
-        in_corpus: 23
+        in_corpus: 44
       tromso:
         name: Tromsø
         search_terms: [Tromsø, Tromso]
@@ -231,11 +231,11 @@ countries:
         search_terms: [Turku, Åbo]
         pride_hits: 102
         screened: 0
-        annotated: 25
+        annotated: 45
         blocked: 6
         pxd_list: lists/finland/turku.txt
         pxd_count: 102
-        in_corpus: 48
+        in_corpus: 66
       oulu:
         name: Oulu
         search_terms: [Oulu]

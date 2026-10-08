@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD024634.sdrf.tsv",
+  "dataset": "PXD024634",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD024634"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD024634/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1016/j.jbc.2021.100837 (PMC8260872)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "design and RAW mapping",
+      "value": "6 samples of 10 slices; series 101-110/201-210/301-310 = GFP R1-3, 701-710/801-810/901-910 = Talin1-GFP R1-3; slice number = fraction.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Deposited Mascot result names map run ranges to condition/replicate."
+    },
+    {
+      "location": "rerun files",
+      "value": "20131010_GJ_205_repeat.raw is GFP R2 slice 5 (no plain 205 exists); 20131010_GJ_903r.raw is a second injection of Talin1-GFP R3 slice 3 (technical replicate 2, fraction 3).",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Mascot MGF for the R3 search contains spectra titled both ...903 and ...903r."
+    },
+    {
+      "location": "technical metadata",
+      "value": "Orbitrap Elite DDA; Trypsin; 0.5 Da / 0.5 Da; Carbamidomethyl C fixed, Oxidation M variable.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "PRIDE data processing protocol (Mascot Daemon)."
+    }
+  ],
+  "limitations": [
+    "The 903r row was added to the built SDRF by a scripted row copy (fraction 3, technical replicate 2) because the build table cannot place a single file at a given fraction.",
+    "Dissociation method and reduction/alkylation reagents not stated: `not available` / omitted.",
+    "U2OS age/sex are Cellosaurus values; culture medium (DMEM per paper) left `not available`."
+  ]
+}

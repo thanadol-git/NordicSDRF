@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD052626.sdrf.tsv",
+  "dataset": "PXD052626",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD052626"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD052626/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1007/s00018-024-05429-3 (PMC11393232)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "design and RAW mapping",
+      "value": "8 rows from run names 240523_CD103_POS/NEG_Pool_1-4.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "PRIDE protocol; paper: iTregs from four cord-blood donors."
+    },
+    {
+      "location": "sample",
+      "value": "Cord blood naive CD4+ T cells with TGFb, IL2, ATRA and serum for 72 h, sorted by CD103; the comparison is carried by enrichment process / factor value[enrichment process].",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper Methods and PRIDE protocol."
+    },
+    {
+      "location": "technical metadata",
+      "value": "Orbitrap Fusion Lumos FAIMS DIA 395-1005 m/z, NCE 28; Trypsin; DTT/IAA; Carbamidomethyl C fixed; Oxidation M and N-term Acetyl variable.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "PRIDE protocols (Spectronaut v18)."
+    }
+  ],
+  "limitations": [
+    "Run names contain 'Pool'; whether each replicate pools donors is not stated: pooled sample, age, sex `not available`.",
+    "Dissociation method is not stated (only NCE 28): `not available`. Mass tolerances and DIA windows not stated.",
+    "Treatment concentrations (TGFb 10 ng/ml, IL-2 12 ng/ml, ATRA 10 nM, serum 10%) are in the paper but the treatment cell is one free-text summary."
+  ]
+}

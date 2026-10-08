@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD030630.sdrf.tsv",
+  "dataset": "PXD030630",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD030630"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD030630/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.3389/fmicb.2022.891895 (PMC9175036)"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2022/04/PXD030630/171005_WT_ATHC_1.mzid.gz"
+    }
+  ],
+  "claims": [
+    {
+      "location": "design and RAW mapping",
+      "value": "19 rows from run names; condition token and replicate index.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper/PRIDE: four growth conditions, three to four biological replicates; 171005 and 180925 prefixes are two acquisition batches."
+    },
+    {
+      "location": "technical metadata",
+      "value": "Q Exactive HF DDA NCE 27; Trypsin; 4 ppm / 0.02 Da; DTT/IAA; Carbamidomethyl C fixed, Oxidation M variable.",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol text; deposited PD/Mascot mzid (UNIMOD:4, 35)."
+    }
+  ],
+  "limitations": [
+    "ATLC appears in both batches (171005 x4, 180925 x3), numbered replicates 1-4 and 5-7 on the assumption of separate cultures; the deposit does not say so. Acquisition batch is not annotated as a column.",
+    "MTLC replicate-4 RAW is named 180925_WT_MT_LC_4.raw.",
+    "Modifications read from the 171005_WT_ATHC_1 mzid only.",
+    "Declared template is ms-proteomics only (no template covers cyanobacteria); strain, developmental stage and growth condition are extra characteristics columns."
+  ]
+}

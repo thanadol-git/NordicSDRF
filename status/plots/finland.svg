@@ -27,7 +27,7 @@
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
 <text class="title" x="12" y="22">Finland — in progress</text>
-<text class="sub" x="12" y="40">128 datasets listed · 39 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<text class="sub" x="12" y="40">128 datasets listed · 59 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
 <rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
@@ -44,14 +44,14 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="74.75" width="648.0" height="18.5" rx="3"><title>Helsinki · PRIDE hits, not curated yet: 163</title></rect>
 <text class="total" x="764.0" y="88.0">163 PRIDE hits</text>
 <text class="city" x="12" y="118.0">Turku</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="98.4" height="20" rx="2"><title>Turku · Annotated: 25</title></rect>
-<text class="seg" x="159.2" y="118.0" text-anchor="middle">25</text>
-<rect class="c-blocked" fill="#d95926" x="209.4" y="104" width="22.9" height="20" rx="2"><title>Turku · Blocked: 6</title></rect>
-<text class="seg" x="220.8" y="118.0" text-anchor="middle">6</text>
-<rect class="c-in_corpus" fill="#199e70" x="233.2" y="104" width="130.2" height="20" rx="2"><title>Turku · In corpus: 33</title></rect>
-<text class="seg" x="298.3" y="118.0" text-anchor="middle">33</text>
-<rect class="c-todo" fill="#8a8983" x="364.4" y="104" width="150.1" height="20" rx="2"><title>Turku · To do: 38</title></rect>
-<text class="seg" x="439.5" y="118.0" text-anchor="middle">38</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="177.9" height="20" rx="2"><title>Turku · Annotated: 45</title></rect>
+<text class="seg" x="198.9" y="118.0" text-anchor="middle">45</text>
+<rect class="c-blocked" fill="#d95926" x="288.9" y="104" width="22.9" height="20" rx="2"><title>Turku · Blocked: 6</title></rect>
+<text class="seg" x="300.3" y="118.0" text-anchor="middle">6</text>
+<rect class="c-in_corpus" fill="#199e70" x="312.7" y="104" width="130.2" height="20" rx="2"><title>Turku · In corpus: 33</title></rect>
+<text class="seg" x="377.8" y="118.0" text-anchor="middle">33</text>
+<rect class="c-todo" fill="#8a8983" x="443.9" y="104" width="70.6" height="20" rx="2"><title>Turku · To do: 18</title></rect>
+<text class="seg" x="479.2" y="118.0" text-anchor="middle">18</text>
 <text class="total" x="521.5" y="118.0">102 listed</text>
 <text class="city" x="12" y="148.0">Oulu</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="134" width="18.9" height="20" rx="2"><title>Oulu · Annotated: 5</title></rect>
