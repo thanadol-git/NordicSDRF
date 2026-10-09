@@ -1,0 +1,21 @@
+# daily queue 2026-10-09 helsinki (20 PXDs, cap 20)
+PXD000404	finland/helsinki	blocked	missing auditable E/H run-to-strain and fraction manifest
+PXD000631	finland/helsinki	blocked	missing complete sample/blank/replicate/fraction run manifest
+PXD000677	finland/helsinki	blocked	missing iTRAQ channel-to-sample map after full evidence ladder
+PXD000683	finland/helsinki	blocked	unresolved kelt/vihr culture-condition codes
+PXD001201	finland/helsinki	blocked	unresolved A/B/D run groups for the two strains
+PXD001202	finland/helsinki	blocked	unresolved run groups for ERalpha/ERbeta/control constructs
+PXD004424	finland/helsinki	blocked	unresolved exo3/exo4 infected-versus-control mapping
+PXD005022	finland/helsinki	blocked	mzXML only; no primary vendor RAW files
+PXD005144	finland/helsinki	blocked	mzXML only; no primary vendor RAW files
+PXD005263	finland/helsinki	blocked	mzXML only; no primary vendor RAW files
+PXD005729	finland/helsinki	blocked	missing exosome/microvesicle source and replicate manifest
+PXD006446	finland/helsinki	blocked	missing participant-to-HRT study-group mapping
+PXD007249	finland/helsinki	blocked	private twin-pair and BMI phenotype mapping
+PXD008583	finland/helsinki	annotated	57 DIA runs mapped from deposited CRC metadata workbook
+PXD009048	finland/helsinki	annotated	60 DIA and 22 DDA runs mapped from deposited case/control workbook
+PXD009139	finland/helsinki	blocked	missing IPMN-versus-adenocarcinoma run mapping
+PXD010086	finland/helsinki	blocked	glycomics and mzXML only; outside campaign scope
+PXD010276	finland/helsinki	blocked	missing preeclampsia-versus-control run mapping
+PXD010691	finland/helsinki	blocked	missing twin-pair and BMI phenotype mapping
+PXD010852	finland/helsinki	blocked	missing wound-treatment and patient run mapping
