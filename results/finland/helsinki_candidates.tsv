@@ -1,0 +1,164 @@
+accession	verdict	evidence	in_corpus	title
+PAD000006	rejected	countries=['Sweden'] | Karolinska Institutet ; Department of Oncology-Pathology, Karolinska Institutet and 	yes	In-depth plasma proteomics of patients with suspected lung cancer (lung adenocarcinoma and non-cance
+PXD000404	confirmed	countries=['Finland']		Comparative Proteome Profiling of Bovine and Human Staphylococcus epidermidis Strains to Search for 
+PXD000542	rejected	countries=['Sweden'] | Clinical Proteomics Unit, Dep. of Oncology-Pathology ; Clinical Proteomics Mass Spectrometry, Department of Oncolog		Label free HiRIEF deep proteomics of A431 human vulvar cancer cell line.
+PXD000631	confirmed	countries=['Finland']		Comparative Exoprotein Profiling of Different Staphylococcus epidermidis strains Reveals Potential L
+PXD000670	confirmed	affiliation~'helsinki': Institute of Biotechnology, University of Helsinki	yes	Phosphoproteomics combined with quantitative 14-3-3-affinity capture identifies SIRT1 and RAI as new
+PXD000677	confirmed	affiliation~'finland': Institute of Biotechnology, University of Helsinki, Finland		14-3-3 affinity capture to identify new targets of 14-3-3 signaling during dsRNA-stimulation in huma
+PXD000683	confirmed	countries=['Finland']		Genomics and Proteomics Provide New Insight into the Commensal and Pathogenic Lifestyles of Bovine a
+PXD001131	confirmed	affiliation~'finland': Department of Food Safety and Environmental Health, University of Helsinki, Finland	yes	Microbial life in permafrost: predictions of microbial response to natural thaw using a multi-omics 
+PXD001201	confirmed	affiliation~'finland': Institution of Biotechnology University of Helsinki Finland		Surfacome analysis of Lactobacillus rhamnosus GG and Lactobacillus rhamnosus Lc705
+PXD001202	confirmed	affiliation~'helsinki': Institute of Biotechnology, University of Helsinki		Identification of cytoplasmic proteins interacting with unliganded estrogen receptor α and β- in hum
+PXD001561	confirmed	affiliation~'helsinki': Institute of Biotechnology University of Helsinki	yes	Phosphoproteome characterization of Sendai-virus infection in human epithelial cells
+PXD001620	confirmed	affiliation~'helsinki': Institute of Biotechnology, University of Helsinki	yes	Phosphoproteomic characterization of infulenza A virus infected human macrophages
+PXD003218	rejected	countries=['Australia'] | James Cook University ; School of Medicine, Faculty of Health, University of Tasmani		Human serum from patients at multiple time points after ischemic stroke
+PXD003230	rejected	countries=['Germany'] | Helmholtz-Centre for Environmental Research - UFZ ; University Medicine Greifswald Interfaculty Institute for Ge		Whole saliva baseline proteome profile - head and neck cancer
+PXD004098	confirmed	countries=['Finland']	yes	Differential proteomics of human seminal fluid Normo Vs Astehnozoospermia
+PXD004424	confirmed	affiliation~'finland': Institute of Clinical Medicine, Sognsvannsveien 20, Rikshospitalet, 0372 Oslo, Norway Form		Proteomic and bioinformatic characterization of extracellular vesicles released from human primary m
+PXD004781	rejected	countries=['Australia'] | The University of Melbourne ; The University of Sydney		Multiplexed temporal quantification of the human plasma peptidome
+PXD005022	confirmed	countries=['Finland']		Quantitative proteomics of bloodstream infection
+PXD005144	confirmed	countries=['Finland']		Chronic pancreatitis vs pancreatic cancer LC-MS
+PXD005263	confirmed	countries=['Finland']		Novel diagnostic biomarkers in serum identify patients with OSCC
+PXD005613	rejected	countries=['Hong Kong'] | University of Hong Kong ; Department of Infectious Diseases, Immunology and Sexual Hea		Nitration of Tyrosines In Complement Factor H Domains Alters Its Immunological Activity and Mediates
+PXD005729	confirmed	countries=['Finland']		Human Uirnary Extracellular vesicles Proteomics LC-MS
+PXD006298	rejected	countries=['Austria'] | Medical University of Vienna ; Department of Pediatrics and Adolescent Medicine, Medical Un		TMT-FASP-LC-MS analysis of human pediatric omental biopsies
+PXD006424	rejected	countries=['United States'] | OHSU ; Department of Ophthalmology, Casey Eye Institute, Oregon Hea	yes	Biomechanical rigidity and quantitative proteomics analyses of segmental regions of the ocular trabe
+PXD006446	confirmed	countries=['Finland']		Proteomic analysis of skeletal muscle reveals estrogen as a key regulator of muscle signaling in wom
+PXD006840	rejected	countries=['France'] | INRA ; INRA, UMR 1019, Centre de recherche en nutrition humaine, Un		Age-dependent modulation of the human muscle proteome during ultra-endurance running
+PXD007249	confirmed	affiliation~'finland': Research Programs Unit, Diabetes and Obesity, University of Helsinki, Finland.		Aging Twin Population of Human Skeletal Muscle Biopsies
+PXD007535	rejected	countries=['Switzerland'] | Functional Genomics Center Zurich (UZH/ETHZ) ; Department of Dental Medicine, Karolinska Institute Alfred N	yes	LFQ and SRM proteome analysis of Saliva reveals transition signatures from health to periodontal dis
+PXD007592	rejected	countries=['Austria'] | University of Vienna ; University of Vienna, Faculty of Chemistry, Department of An		Proteomics-based insights into mitogen-activated protein kinase inhibitor resistance of cerebral mel
+PXD008119	rejected	countries=['Spain'] | Instituto de Investigación Sanitaria del Principado de Astur ; Hospital Clínico San Carlos, Instituto de Investigación Sani	yes	A Comprehensive Proteomics Study on Platelet Concentrates: Platelet Proteome, Storage Time and Miras
+PXD008354	rejected	countries=['Switzerland'] | University of Zurich ; Lab for Retinal Cell Biology, Department of Ophthalmology, U		The Proteomic Landscape in the Vitreous of Patients With Age-Related and Diabetic Retinal Disease
+PXD008445	confirmed	countries=['Finland']		Patients with early stage oropharyngeal squamous cell carcinoma can be identified with label-free se
+PXD008583	confirmed	countries=['Finland']		Several proteins are altered in serum of patients having colorectal cancer with variable levels of C
+PXD009048	confirmed	countries=['Finland']		Bloodstream infection N-glycoproteomics
+PXD009056	rejected	countries=['Germany'] | Helmholtz-Centre for Environmental Research - UFZ ; Prof. Dr. Martin von Bergen Helmholtz Centre for Environment	yes	Gut microbial functional maturation and succession during early life
+PXD009074	rejected	countries=['Germany'] | Universitätsklinikum Heidelberg ; Universitätsklinikum Heidelberg Medizinische Klinik - Med.V 		Human T-cells EVs LC-MSMS -  Extracellular Vesicle Subtypes Released From Activated or Apoptotic T-L
+PXD009139	confirmed	countries=['Finland']		Comparative serum proteomics of Intraductal papillary mucinous neoplasias and pacreatic adenocarcino
+PXD009196	rejected	countries=['Australia'] | The University of Melbourne ; The University of Sydney	yes	Exercise-induced molecular mechanisms for glycogen supercompensation in human skeletal muscle
+PXD009244	confirmed	countries=['Finland']		Quantitative Label Free Ultra Definition Mass-Spectrometry Provides Novel Data on the Proteomic Sign
+PXD009512	rejected	countries=['China'] | PTM Biolabs lnc. ; Department of Burns and Reconstructive Surgery, Xiangya Hosp		Analysis of muscular proteomics of deep pressure ulcers reveals JAK2 influence on muscle autophagy a
+PXD010086	confirmed	countries=['Finland']		N-glycan profiling of Pseudomyxoma peritonei
+PXD010276	confirmed	countries=['Finland']		Early biomarkers of preeclampsia found by urine proteomics
+PXD010294	rejected	countries=['France'] | EHESP/LERES ; Pathology Department, Beaujon Hospital, Assistance Publique-		Proteomic landscape of cholangiocarcinomas reveals 3 different subgroups according to their localiza
+PXD010691	confirmed	countries=['Finland']		PLASMA PROTEOMIC ANALYSIS OF RARE BMI-DISCORDANT MONOZYGOTIC TWIN PAIRS
+PXD010695	rejected	countries=['China'] | PTM Biolabs lnc. ; Center of Reproductive Medicine, Shengjing Hospital of China	yes	Characterization of the Sperm Proteome and Reproductive Outcomes with in Vitro Fertilization after a
+PXD010852	confirmed	affiliation~'finland': Faculty of Medicine, Department of Pharmacology, University of Helsinki, Finland		Connective tissue regeneration dynamics persistently alter epithelial dynein DNAH10 expression - DNA
+PXD010965	confirmed	countries=['Finland']		PLASMA biomarkers of Idiopathic Pulmonary Fibrosis
+PXD011532	confirmed	affiliation~'finland': Department of Pharmacology, Faculty of Medicine, University of Helsinki, Helsinki, Finland		Lichtenberg figures in high voltage electrical injury
+PXD011602	confirmed	countries=['Finland']		LC-MSMS of RIBOPROTEOMES OF HEALTHY, POTATO VIRUS A- AND AGROBACTERIUM -INFECTED NICOTIANA BENTHAMIA
+PXD011643	rejected	countries=['Germany'] | Heinrich-Heine Universität Düsseldorf ; Molecular Proteomics Laboratory, Biomedical Research Center 		Secretome analysis of human bone marrow derived mesenchymal stromal cells
+PXD012480	rejected	countries=['Netherlands'] | OncoProteomics Laboratory, dept of Medical Oncology, VUmc Me ; Amsterdam UMC, Vrije Universiteit Amsterdam, Medical Oncolog		Combined expression of plasma CA19-9 and thrombospondin-2 for accurate diagnosis of pancreatic cance
+PXD012874	rejected	countries=['Netherlands'] | Sanquin Research ; Laboratory of Proteomics, Department of Molecular and Cellul		Identification of different human CD8 T cell subsets by superior cytotoxicity in human T cells
+PXD013150	confirmed	countries=['Finland']		Label-free proteomics reveal that plasma protein expression differs between colorectal cancer patien
+PXD013230	rejected	countries=['Netherlands'] | OncoProteomics Laboratory, dept of Medical Oncology, VUmc Me ; Amsterdam UMC, Vrije Universiteit Amsterdam, Medical Oncolog	yes	Differential proteomic analysis of cardiac tissue in atrial fibrillation
+PXD013429	confirmed	affiliation~'finland': Institute for Molecular Medicine Finland (FIMM), University of Helsinki, Finland	yes	Human urinary extracellular vesicles protein LC-MS/MS
+PXD014826	rejected	countries=['Australia'] | The University of Melbourne ; The University of Melbourne	yes	Proteomic analysis of donor and cardiomyopathy pre-mortem human hearts
+PXD015223	rejected	countries=['Germany'] | Medizinisches Proteom-Center ; Medizinisches Proteom-Center		Comparative intraindividual proteomic analysis of osteogenic differentiated adipose tissue-derived a
+PXD015375	confirmed	countries=['Finland']		Extracellular vesicles from human plasma and serum are carriers of extravesicular cargo - implicatio
+PXD016158	rejected	countries=['Australia'] | The University of Melbourne ; The University of Melbourne and University of Sydney		Quantification of exercise-regulated ubiquitin-signalling
+PXD016245	rejected	countries=['Netherlands'] | Sanquin Research ; Molecular and Cellular Hemostasis, Sanquin Research, Amsterd		Proteomic analysis reveals core monocyte-derived cell differentiation proteome and highlights cellul
+PXD016709	confirmed	countries=['Finland']		In parallel proteins and glycopeptidomics: Novel diagnostic glycopeptide biomarkers in serum identif
+PXD016727	confirmed	countries=['Finland']		In-parallel proteomics and glycopeptidomics: Novel diagnostic glycopeptide biomarkers in serum ident
+PXD017056	rejected	countries=['United Kingdom'] | Plymouth University Peninsula Schools of Medicine and Dentis ; Department of Biochemistry (286) Radboud University Medical 		VESICULATION OF RED BLOOD CELLS IN THE BLOOD BANK: A MULTI-OMICS APPROACH TOWARDS IDENTIFICATION OF 
+PXD017453	rejected	countries=['Sweden'] | Karolinska Institutet ; Science for Life Laboratory, Department of Oncology-Patholog		Proteogenomic subtyping of chronic lymphocytic leukemia identifies subgroups with contrasting clinic
+PXD017759	rejected	countries=['Italy'] | Life and Environmental Sciences Department (Biomedical Secti ; Department of Life and Environmental Sciences - Biomedical S		HPLC-ESI-MS PROFILE OF SALIVARY PROTEINS IN MASTOCYTOSIS PATIENTS
+PXD018352	confirmed	affiliation~'finland': Max Planck Institute for Biology of Ageing, 50931 Cologne, Germany Cologne Excellence Clus	yes	Niche stiffening compromises stem cell potential during aging by reducing chromatin accessibility at
+PXD018577	rejected	countries=['Brazil'] | Laboratório de Proteômica - LABPROT, Instituto de Química, U ; Laboratory of Proteomics/LADETEC, Federal University of Rio 	yes	Toxicoproteomic-based screening discloses pivotal downregulated mechanisms triggered by chronic pest
+PXD018673	confirmed	countries=['Finland']		N-glycomic profiling of colorectal cancer according to tumor stage and location
+PXD018678	rejected	countries=['Australia'] | The University of Melbourne ; The University of Melbourne	yes	Proteomic analysis of ischemic and dilated cardiomyopathy pre-mortem human hearts
+PXD019393	rejected	countries=['Denmark'] | Aalborg University ; Head of Medical Microbiology and Immunology, Department of H		Complement deposition on Chlamydia trachomatis
+PXD020088	rejected	countries=['France'] | EHESP/LERES ; Sorbonne Université, INSERM, CNRS, Institut de la Vision, 17		First identification of ITM2B interactome in the human retina
+PXD020187	rejected	countries=['Greece'] | Hellenic Cord Blood Bank, Biomedical Research Foundation Aca ; Hellenic Cord Blood Bank, Biomedical Research Foundation Aca	yes	Proteomic evaluation of decellularized human umbilical artery
+PXD020204	rejected	countries=['Spain'] | IIBB-CSIC ; 1Platelet Proteomics Group, Center for Research in Molecular		A phosphoproteomic analysis of platelets in severe obesity uncovers platelet reactivity and signalin
+PXD021194	rejected	countries=['United Kingdom'] | University of Manchester ; Affiliation: Division of Cell Matrix Biology & Regenerative 		Novel skin photoageing biomarkers of epidermis and dermis revealed by traditional relative quantific
+PXD021265	rejected	countries=['Germany'] | Max Delbrück Center for Molecular Medicine, Berlin ; Proteomics Platform, Max Delbrück Center for Molecular Medic		Proteomic profiling reveals CDK6 upregulation as a targetable resistance mechanism for lenalidomide 
+PXD021538	rejected	countries=['Italy'] | Life and Environmental Sciences Department (Biomedical Secti ; Life and Environmental Sciences Department (Biomedical Secti		Top-down proteomics of human saliva in Alzheimer disease
+PXD021838	rejected	countries=['Brazil'] | Post doctor ; Università Cattolica del Sacro Cuore		Proteomics of muscle microdialysates identifies potential circulating biomarkers in Facioscapulohume
+PXD022183	rejected	countries=['Austria'] | Medical University of Vienna ; Medical University of Vienna		Endothelial pathomechanisms in response to in vivo peritoneal dialysis fluid exposure
+PXD023909	rejected	countries=['Singapore'] | Singapore Insitute of Clinical Sciences ; 1Singapore Institute for Clinical Sciences, Agency for Scien		Exosomal Proteins and Brown Fat Activation
+PXD024316	confirmed	countries=['Finland']	yes	ACONITASE 3 is post-translationally controlled in response to mitochondrial stress signals in Arabid
+PXD024544	rejected	countries=['Sweden'] | Karolinska Institutet ; Dept. Oncology Pathology, Karolinska Institutet, and Scilife	yes	Proteogenomic subtyping of chronic lymphocytic leukemia identifies subgroups with contrasting clinic
+PXD026016	rejected	countries=['Spain'] | Department of Medicine and General Service of Cytometry, Can ; Department of Medicine and General Service of Cytometry, Can		Design and development of nanoproteomics strategies for biomarker identification in cerebrospinal fl
+PXD026644	confirmed	countries=['Finland']		Quantitative glycoproteomics of human milk and their association with atopic disease
+PXD026693	confirmed	countries=['Finland']		Serum and bile proteomics reveal candidates for new noninvasive serum markers of primary sclerosing 
+PXD026694	confirmed	countries=['Finland']		Serum and bile proteomics reveal candidates for new noninvasive serum markers of primary sclerosing 
+PXD026936	confirmed	countries=['Finland']		Analysis of human brain tissue derived from DBS surgery
+PXD027055	rejected	countries=['Canada'] | Université de Sherbrooke ; Department of Medecine, Service of Pneumology, Université de		Early and late processes driving NET formation, and the autocrine/paracrine role of endogenous RAGE 
+PXD027525	rejected	countries=['Austria'] | University of Vienna ; University of Vienna, Faculty of Chemistry, Joint Metabolome		Proteomic profiling to predict therapeutic response to anti-PD1 therapy in advanced melanoma
+PXD028310	rejected	countries=['Spain'] | FIDIS ; Health Research Institute of Santiago de Compostela (IDIS)		Detection of Circulating Serum Protein Biomarkers of Non-muscle Invasive Bladder Cancer after the Pr
+PXD028428	rejected	countries=['Turkey'] | Koc University ; Koc University		Quantitative phosphoproteomics analysis uncovers CDK1- and PAK2-mediated malignant signaling pathway
+PXD028679	confirmed	affiliation~'finland': Institute of Biotechnology, PO Box 56,00014 University of Helsinki, Finland Karolinska Ins		Proteomic characterization of sorted peroxisomes
+PXD028916	rejected	countries=['United Kingdom'] | University of Liverpool ; Centre for Proteome Research, University of Liverpool	yes	Quantitative proteomic analysis of bronchoalveolar lavage fluid in West Highland white terriers with
+PXD028936	rejected	countries=['Sweden'] | Karolinska Institutet ; Department of Oncology-Pathology, Karolinska Institutet and 		Proteogenomic subtyping of chronic lymphocytic leukemia identifies subgroups with contrasting clinic
+PXD029144	rejected	countries=['Norway'] | University of Oslo ; Head of Proteomics		Proteomics and immunoproteomics of Anoplocephala perfoliata
+PXD029576	rejected	countries=['United States'] | UAMS ; 1Dept. of Pharmacology and Toxicology, College of Medicine, 		Proteomics Indicates Lactate Dehydrogenase is Prognostic in Acetaminophen-induced Acute Liver Failur
+PXD029632	rejected	countries=['Israel'] | Yifat Merbl Lab, Dept. of Systems Immunology, Weizmann Insti ; Research Centre for Personalized Medicine, Almazov National 	yes	Crenigacestat inhibits osteogenic differentiation of human valve interstitial cells and seems promis
+PXD030065	rejected	countries=['Brazil'] | UNIVERSIDADE ESTADUAL DO CEARA ; Laboratório de Biotecnologia e Biologia Molecular da Univers		Proteomics Analysis of Saliva from Children with Autism Spectrum Disorder
+PXD030609	confirmed	affiliation~'finland': Department of Microbiology Faculty of Agriculture and Forestry University of Helsinki Lato		Two closely related white rot fungi, Obba rivulosa and Gelatoporia subvermispora, produce orthologou
+PXD031107	rejected	countries=['Sweden'] | Karolinska Institutet ; Department of Oncology-Pathology, Karolinska Institutet and 		Proteogenomic analysis of relapsed acute myeloid leukemia in adults and children
+PXD033413	rejected	countries=['United States'] | University at Buffalo ; Department of Pharmaceutical Sciences, School of Pharmacy an		Large-Scale Quantitative Proteomics of Retinal Mitochondrial Fractions from Age-Related Macular Dege
+PXD033591	rejected	countries=['Belgium'] | Medical Protein Chemistry ; Radboud university medical center, Radboud Institute for Hea		The salivary proteome in relation to oral mucositis in autologous hematopoietic stem cell transplant
+PXD033603	rejected	countries=['Belgium'] | Medical Protein Chemistry ; Radboud university medical center, Radboud Institute for Hea	yes	The salivary proteome in relation to oral mucositis in autologous hematopoietic stem cell transplant
+PXD033617	confirmed	countries=['Finland']		Ethinylestradiol in COC has broader effect on serum proteome compared with estradiol valerate - a ra
+PXD033618	confirmed	countries=['Finland']		Ethinylestradiol in COC has broader effect on serum proteome compared with estradiol valerate - a ra
+PXD034451	confirmed	affiliation~'finland': Aalto University, Espoo, Finland		Inducible synthetic protein degradation system for phenotype control
+PXD035147	rejected	countries=['China'] | Clinical Medical Research Center, The Second Clinical Medica ; Clinical Medical Research Center, The Second Clinical Medica		Integrated proteome and malonylome analyses reveal the potential meaning of TLN1 and ACTB in end-sta
+PXD036590	rejected	countries=['United Kingdom'] | UCL ; UCL Biological Mass Spectrometry Lab Head  GOSH University C		Plasma proteomic signature predicts who will get persistent symptoms following SARS-CoV-2 infection
+PXD037002	rejected	countries=['China'] | Shenzhen People’s Hospital ; The Second Clinical Medical College, Jinan University	yes	Integrated Proteomic and Metabolomic Profiling of Urine of Renal Anemia Patients Uncovers Molecular 
+PXD037486	rejected	countries=['Sweden'] | 1. Department of Oncology-Pathology, Karolinska Institute, S ; Science for Life Laboratory; Department of Oncology Patholog		In-depth serum proteomics of hospitalized COVID-19 patients and PCR-negative healthy controls with H
+PXD037811	rejected	countries=['Germany'] | Medizinisches Proteom-Center ; Functional Proteomics Medizinisches Proteom-Center Germany		Investigation of inter- and intra-day variability of tear fluid regarding flow rate, protein concent
+PXD038693	rejected	countries=['Germany'] | Core  Facility -High-Throughput  Mass  Spectrometry,  Charit ; Universitätsmedizin Berlin, corporate member of Freie Univer		The central nervous system’s proteogenomic and spatial imprint upon systemic viral infection, like S
+PXD039179	confirmed	countries=['Finland']		Chromatome of AR and SUMO2/3 idenitified with RIME
+PXD039469	rejected	countries=['Austria'] | University of Vienna ; University of Vienna, Faculty of Chemistry, Department of An		Proteomic profiling of advanced melanoma to predict therapeutic response to anti-PD-1 therapy
+PXD039703	rejected	countries=['Germany'] | Technical University Kaiserslautern ; Molecular Genetics, RPTU Kaiserslautern, Germany	yes	Proteomic landscape of human spermatozoa in patients with different spermatogenic impairments
+PXD039808	rejected	countries=['Australia'] | Macquarie University ; Macquarie Medical School, Faculty of Medicine Health and Hum		Inter-regional proteomic profiling of the human brain using optimized protein extraction method from
+PXD039847	rejected	countries=['Italy'] | Life and Environmental Sciences Department (Biomedical Secti ; Life and Environmental Sciences Department (Biomedical Secti		Bottom-up Proteomics of Saliva in Autoimmune Hepatitis and Primary Biliary Cholangitis
+PXD039877	confirmed	countries=['Finland']	yes	Phosphorylation of RADICAL-INDUCED CELL DEATH1 by Photoregulatory Protein Kinases
+PXD041384	confirmed	countries=['Finland']		Plasma N-Glycoproteomics for BMI-discordant monozygotic twin pairs
+PXD041584	confirmed	countries=['Finland']		Plasma N-Glycoproteomics for BMI-discordant monozygotic twin pairs
+PXD041781	rejected	countries=['Austria'] | University of Vienna ; University of Vienna, Faculty of Chemistry, Department of An		Plasma Instead of Serum Avoids Critical Confounding of Clinical Metabolomics Studies by Platelets – 
+PXD041785	rejected	countries=['Austria'] | University of Vienna ; University of Vienna, Faculty of Chemistry, Department of An		Plasma Instead of Serum Avoids Critical Confounding of Clinical Metabolomics Studies by Platelets – 
+PXD042567	rejected	countries=['Italy'] | Life and Environmental Sciences Department (Biomedical Secti ; Life and Environmental Sciences Department (Biomedical Secti		The Cystatin D Interactome Associated to Systemic Mastocytosis
+PXD043770	rejected	countries=['Germany'] | Department of Peptide-based Immunotherapy, University and Un ; Laboratory of Molecular Neuro-Oncology, Department of Neurol		Mapping naturally presented T-cell antigens in medulloblastoma based on integrative multi-omics
+PXD044022	rejected	countries=['China'] | The Third Hospital of Hebei Medical University ; Third Hospital of Hebei Medical University		Proteomics analysis of deep fascia in acute compartment syndrome
+PXD044040	rejected	countries=['Poland'] | Medical University of Białystok ; UMB		Protein modifications in plasma during SARS-CoV-2 infection
+PXD046676	rejected	countries=['China'] | Tianjin Medical University General Hospital  ; Tianjin Medical University General Hospital		Proteomic profiling comparison for plasma from patients with acute ischemic stroke under rt-PA treat
+PXD046738	rejected	countries=['China'] | Tianjin Medical University General Hospital  ; Tianjin Medical University General Hospital		Proteomic profiling comparison for plasma from patients with acute ischemic stroke under rt-PA treat
+PXD047323	confirmed	countries=['Finland']		Proteomic analysis of human platelet-derived extracellular vesicles generated via activation by diff
+PXD047603	confirmed	affiliation~'finland': Stem Cells and Metabolism Research Program, Faculty of Medicine, University of Helsinki; H		Overactive mitochondrial DNA replication disrupts perinatal cardiac maturation
+PXD050329	rejected	countries=['Netherlands'] | Radboudumc ; Translational Metabolic Laboratory, Department of Human Gene		An automated workflow based on data independent acquisition for practical and high-throughput person
+PXD050550	confirmed	affiliation~'helsinki': Medical Systems Biology Lab Faculty of Medicine University of Helsinki Haartmaninkatu 8		Proteomic analysis of platelets from Essential Thrombocythemia patients links metabolism to platelet
+PXD051013	rejected	countries=['Austria'] | University of Vienna ; University of Vienna, Faculty of Chemistry, Department of An		Lipid class-specific kinetics of plasma fatty acids, oxylipins, endocannabinoids, lysophospholipids 
+PXD051071	rejected	countries=['United States'] | OHSU ; Department of Chemical Physiology and Biochemistry Oregon He		Tear proteins altered in patients with persistent eye pain after refractive surgery: biomarker candi
+PXD051304	confirmed	countries=['Finland']		Chromatomes of GR and SUMO2/3 identified with RIME
+PXD051719	rejected	countries=['China'] | aaa ; Tianjin Medical University General Hospital		Proteomic profiling for isolated human peripheral blood neutrophils treated with HRG and tPA
+PXD051740	rejected	countries=['Spain'] | FIDIS ; Instituto de Investigaciones Sanitarias de Santiago de Compo		Proteomic analysis of Post-COVID Condition: Insights from supernatant and pellet blood fractions
+PXD052171	confirmed	countries=['Finland']		Platelet proteome in Essential Thrombocythemia
+PXD054594	confirmed	countries=['Finland']		Mass spectrometry-based serum biomarker discovery from patients treated with an oncolytic adenovirus
+PXD055139	confirmed	countries=['Finland']		Label-free LC-MS proteomics of oral squamous cell carcinoma patients and healthy controls: proteomic
+PXD055600	confirmed	countries=['Finland']		Serum N-glycopeptidomics of oral squamous cell carcinoma patients and healthy controls: N-glycopepti
+PXD057113	rejected	countries=['China'] | State Key Laboratory of Southwestern Chinese Medicine Resour ; State Key Laboratory of Southwestern Chinese Medicine Resour		Mass Spectrometry Imaging and ScRNA-seq Techniques to Explore the Biosynthetic pathways of Bufadieno
+PXD057155	rejected	countries=['Italy'] | IRCCS Fondazione Bietti ; IRCCS Fondazione Bietti, Rome		ALTERED PATTERN OF PROTEOLYSIS OF EXTRACELLULAR PROTEINS IN RHEGMATOGENOUS RETINAL DETACHMENT BY MIN
+PXD057799	rejected	countries=['China'] | Dalian Institute of Chemical Physics, Chinese Academy of Sci ; Dalian Institute of Chemical Physics, CAS	yes	Library-based virtual match-between-runs quantification scheme enabled by GlyPep-Quant dramatically 
+PXD058014	rejected	countries=['Germany'] | Insitution of Pathology and Anatomy, Technical University Mu ; Institute of Pathology, School of Medicine, Technical Univer		Multi-omics analysis to uncover the molecular basis of tumor budding in head and neck squamous cell 
+PXD058762	rejected	countries=['Germany'] | CECAD Research Center ; Faculty of Medicine and University Hospital of Cologne, Inst		MDM2-amplified esophageal adenocarcinomas exhibit an activated metabolic and immunosuppressive pheno
+PXD059074	rejected	countries=['Australia'] | ProCan, Children's Medical Research Institute, Faculty of Me ; ProCan Oncology - Children’s Medical Research Institute		Mapping the Proteomic Landscape of Pancreatic Cancer: Prognostic Insights and Subtype Stratification
+PXD059243	rejected	countries=['China'] | Eye Hospital of Wenzhou Medical University at Hangzhou ; Eye Hospital of Wenzhou Medical University at Hangzhou, 618 		SH2B1 Promotes Apoptosis in Diabetic Cataract via p38 MAPK Pathway
+PXD059943	rejected	countries=['Estonia'] | University of Tartu ; Institute of Molecular and Cell Biology, University of Tartu		Pathological changes in extracellular matrix composition orchestrate the fibrotic feedback loop thro
+PXD061144	rejected	countries=['Sweden'] | Karolinska Institutet ; Department of Oncology-Pathology, Karolinska Institutet	yes	In-depth plasma proteomics of patients with suspected lung cancer (lung adenocarcinoma and non-cance
+PXD061410	confirmed	affiliation~'finland': Obesity Research Unit, Research Program for clinical and Molecular Metabolism  Faculty of 		Human skeletal muscle proteome responses to weight loss induced by bariatric surgery or low-calorie 
+PXD061758	rejected	countries=['Sweden'] | Karolinska Institutet ; Department of Oncology-Pathology, Karolinska Institutet and 		Proteogenomic subtyping of acute myeloid leukemia and ex-vivo drug response profiling for precision 
+PXD062541	rejected	countries=['Brazil'] | Cruzeiro do Sul University ; Cruzeiro do Sul University	yes	Impact of epicatechin supplementation on plasma proteome profiles in obese men and women – an explor
+PXD065794	confirmed	countries=['Finland']		Sac1 degron A431 cells 3h DMSO vs 3h IAA
+PXD066598	rejected	countries=['United States'] | OHSU ; Department of Ophthalmology School of Medicine Oregon Health		Identification of differentially abundant proteins in glaucomatous and non-glaucomatous trabecular m
+PXD066812	confirmed	countries=['Finland']		Solubility based mechanistic profiling of combinatorial drug therapy
+PXD066834	rejected	countries=['Canada'] | Departement d'immunologie et de biologie cellulaire, Faculté ; FMSS, Département d'immunologie et de biologie cellulaire, U		Stool proteomics for improving colorectal cancer screening
+PXD066939	rejected	countries=['China'] | ymjy296@163.com ; Jiaxing University Master Degree Cultivation Base, Zhejiang 		Serum proteomics and metabolomics reveal the  characteristics of the A1762T/G1764A mutations in conj
+PXD071192	rejected	countries=['Canada'] | Institut national de la recherche scientifique (INRS), Centr ; Institut national de la recherche scientifique(INRS)-Centre 		Effect of depression and serotonin reuptake inhibitors antidepressant treatment during pregnancy on 
+PXD071373	confirmed	countries=['Finland']		Chromatin-associated protein networks of CEBPA and SUMO2/3 identified with RIME
+PXD072559	rejected	countries=['Denmark'] | OmicVision Biosciences ApS ; OmicVision Biosciences ApS		AI-powered Deep Visual Proteomics unmasks critical molecular transitions in pancreatic cancer precur
+PXD074552	confirmed	affiliation~'helsinki': Faculty of Pharmacy, University of Helsinki University Medical Center Groningen / Universi		Amphiregulin drives mitochondrial vesicle packaging and delivery for immune modulation
+PXD075501	confirmed	countries=['Finland']		LC-MS of the VTC Complex BioID from Leishmania tarentolae
+PXD077881	confirmed	countries=['Finland']		Animal-free three-dimensional in vitro angiogenesis tool

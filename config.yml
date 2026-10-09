@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-10-01
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-08)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-09)
 
 countries:
   sweden:
@@ -224,8 +224,11 @@ countries:
         search_terms: [Helsinki, Espoo, Meilahti]
         pride_hits: 163
         screened: 0
-        annotated: 0
-        blocked: 0
+        annotated: 6
+        blocked: 3
+        pxd_list: lists/finland/helsinki.txt
+        pxd_count: 66
+        in_corpus: 19
       turku:
         name: Turku
         search_terms: [Turku, Åbo]
@@ -235,7 +238,7 @@ countries:
         blocked: 8
         pxd_list: lists/finland/turku.txt
         pxd_count: 102
-        in_corpus: 75
+        in_corpus: 91
       oulu:
         name: Oulu
         search_terms: [Oulu]
@@ -290,7 +293,7 @@ countries:
         screened: 0
         annotated: 4
         blocked: 2
-        in_corpus: 3
+        in_corpus: 4
 
   olink_pad:
     name: Olink PAD

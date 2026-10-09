@@ -27,7 +27,7 @@
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
 <text class="title" x="12" y="22">Finland — in progress</text>
-<text class="sub" x="12" y="40">128 datasets listed · 75 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<text class="sub" x="12" y="40">194 datasets listed · 81 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
 <rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
@@ -41,24 +41,31 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="453" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="470" y="62">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="88.0">Helsinki</text>
-<rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="74.75" width="648.0" height="18.5" rx="3"><title>Helsinki · PRIDE hits, not curated yet: 163</title></rect>
-<text class="total" x="764.0" y="88.0">163 PRIDE hits</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="74" width="37.1" height="20" rx="2"><title>Helsinki · Annotated: 6</title></rect>
+<text class="seg" x="128.6" y="88.0" text-anchor="middle">6</text>
+<rect class="c-blocked" fill="#d95926" x="148.1" y="74" width="18.1" height="20" rx="2"><title>Helsinki · Blocked: 3</title></rect>
+<text class="seg" x="157.1" y="88.0" text-anchor="middle">3</text>
+<rect class="c-in_corpus" fill="#199e70" x="167.2" y="74" width="75.2" height="20" rx="2"><title>Helsinki · In corpus: 12</title></rect>
+<text class="seg" x="204.8" y="88.0" text-anchor="middle">12</text>
+<rect class="c-todo" fill="#8a8983" x="243.4" y="74" width="284.9" height="20" rx="2"><title>Helsinki · To do: 45</title></rect>
+<text class="seg" x="385.9" y="88.0" text-anchor="middle">45</text>
+<text class="total" x="535.3" y="88.0">66 listed</text>
 <text class="city" x="12" y="118.0">Turku</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="241.5" height="20" rx="2"><title>Turku · Annotated: 61</title></rect>
-<text class="seg" x="230.8" y="118.0" text-anchor="middle">61</text>
-<rect class="c-blocked" fill="#d95926" x="352.5" y="104" width="30.8" height="20" rx="2"><title>Turku · Blocked: 8</title></rect>
-<text class="seg" x="367.9" y="118.0" text-anchor="middle">8</text>
-<rect class="c-in_corpus" fill="#199e70" x="384.3" y="104" width="130.2" height="20" rx="2"><title>Turku · In corpus: 33</title></rect>
-<text class="seg" x="449.4" y="118.0" text-anchor="middle">33</text>
-<text class="total" x="521.5" y="118.0">102 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="386.5" height="20" rx="2"><title>Turku · Annotated: 61</title></rect>
+<text class="seg" x="303.3" y="118.0" text-anchor="middle">61</text>
+<rect class="c-blocked" fill="#d95926" x="497.5" y="104" width="49.8" height="20" rx="2"><title>Turku · Blocked: 8</title></rect>
+<text class="seg" x="522.4" y="118.0" text-anchor="middle">8</text>
+<rect class="c-in_corpus" fill="#199e70" x="548.4" y="104" width="208.6" height="20" rx="2"><title>Turku · In corpus: 33</title></rect>
+<text class="seg" x="652.7" y="118.0" text-anchor="middle">33</text>
+<text class="total" x="764.0" y="118.0">102 listed</text>
 <text class="city" x="12" y="148.0">Oulu</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="134" width="18.9" height="20" rx="2"><title>Oulu · Annotated: 5</title></rect>
-<text class="seg" x="119.4" y="148.0" text-anchor="middle">5</text>
-<rect class="c-blocked" fill="#d95926" x="129.9" y="134" width="17.0" height="20" rx="2"><title>Oulu · Blocked: 2</title></rect>
-<text class="seg" x="138.4" y="148.0" text-anchor="middle">2</text>
-<rect class="c-in_corpus" fill="#199e70" x="147.9" y="134" width="17.0" height="20" rx="2"><title>Oulu · In corpus: 4</title></rect>
-<text class="seg" x="156.4" y="148.0" text-anchor="middle">4</text>
-<text class="total" x="171.9" y="148.0">11 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="134" width="30.8" height="20" rx="2"><title>Oulu · Annotated: 5</title></rect>
+<text class="seg" x="125.4" y="148.0" text-anchor="middle">5</text>
+<rect class="c-blocked" fill="#d95926" x="141.8" y="134" width="17.0" height="20" rx="2"><title>Oulu · Blocked: 2</title></rect>
+<text class="seg" x="150.3" y="148.0" text-anchor="middle">2</text>
+<rect class="c-in_corpus" fill="#199e70" x="159.8" y="134" width="24.4" height="20" rx="2"><title>Oulu · In corpus: 4</title></rect>
+<text class="seg" x="172.0" y="148.0" text-anchor="middle">4</text>
+<text class="total" x="191.2" y="148.0">11 listed</text>
 <text class="city" x="12" y="178.0">Tampere</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="164" width="17.0" height="20" rx="2"><title>Tampere · Annotated: 1</title></rect>
 <text class="seg" x="118.5" y="178.0" text-anchor="middle">1</text>
@@ -68,11 +75,11 @@
 <text class="seg" x="154.5" y="178.0" text-anchor="middle">2</text>
 <text class="total" x="170.0" y="178.0">4 listed</text>
 <text class="city" x="12" y="208.0">Kuopio</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="194" width="30.8" height="20" rx="2"><title>Kuopio · Annotated: 8</title></rect>
-<text class="seg" x="125.4" y="208.0" text-anchor="middle">8</text>
-<rect class="c-in_corpus" fill="#199e70" x="141.8" y="194" width="17.0" height="20" rx="2"><title>Kuopio · In corpus: 2</title></rect>
-<text class="seg" x="150.3" y="208.0" text-anchor="middle">2</text>
-<text class="total" x="165.8" y="208.0">10 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="194" width="49.8" height="20" rx="2"><title>Kuopio · Annotated: 8</title></rect>
+<text class="seg" x="134.9" y="208.0" text-anchor="middle">8</text>
+<rect class="c-in_corpus" fill="#199e70" x="160.8" y="194" width="17.0" height="20" rx="2"><title>Kuopio · In corpus: 2</title></rect>
+<text class="seg" x="169.3" y="208.0" text-anchor="middle">2</text>
+<text class="total" x="184.8" y="208.0">10 listed</text>
 <text class="city" x="12" y="238.0">Jyväskylä</text>
 <rect class="c-in_corpus" fill="#199e70" x="110.0" y="224" width="17.0" height="20" rx="2"><title>Jyväskylä · In corpus: 1</title></rect>
 <text class="seg" x="118.5" y="238.0" text-anchor="middle">1</text>
