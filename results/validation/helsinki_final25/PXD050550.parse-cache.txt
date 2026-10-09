@@ -1,0 +1,2 @@
+ERROR: Invalid value 'NT=Data-independent acquisition;AC=PRIDE:0000450' - must be one of the allowed values
+There were validation errors.

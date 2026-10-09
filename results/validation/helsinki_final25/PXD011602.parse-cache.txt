@@ -1,0 +1,3 @@
+WARNING: Term: NT=LTQ Orbitrap Elite;AC=MS:1001910 in column 'comment[instrument]', is not found in the given ontology list ms;pride
+ERROR: Required column 'characteristics[disease]' is missing from the SDRF file
+There were validation errors.

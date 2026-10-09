@@ -1,0 +1,3 @@
+ERROR: Term: Ceriporiopsis subvermispora in column 'characteristics[organism]', is not found in the given ontology list ncbitaxon
+WARNING: Term: wood culture in column 'characteristics[organism part]', is not found in the given ontology list uberon;bto
+There were validation errors.

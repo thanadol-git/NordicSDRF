@@ -1,0 +1,2 @@
+WARNING: Term: NT=LTQ Orbitrap Elite;AC=MS:1001910 in column 'comment[instrument]', is not found in the given ontology list ms;pride
+Most seems to be fine. There were only warnings.

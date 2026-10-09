@@ -1,0 +1,1 @@
+PXD026693: every annotated value agrees with the deposit record.

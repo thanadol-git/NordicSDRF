@@ -1,0 +1,3 @@
+PXD034451: 1 value(s) disagree with the deposit record:
+
+  MAJOR    cleavage_agent_incomplete (comment[cleavage agent details]): the record names a Trypsin/Lys-C digest but only Trypsin is declared  [missing: Lys-C]

@@ -1,0 +1,13 @@
+ERROR: Value 'Parkinson disease-7' does not match required pattern
+ERROR: Value 'Parkinson disease-2' does not match required pattern
+ERROR: Value 'Parkinson disease-9' does not match required pattern
+ERROR: Value 'Parkinson disease-11' does not match required pattern
+ERROR: Value 'Parkinson disease-1' does not match required pattern
+ERROR: Value 'Parkinson disease-6' does not match required pattern
+ERROR: Value 'Parkinson disease-4' does not match required pattern
+ERROR: Value 'Parkinson disease-10' does not match required pattern
+ERROR: Value 'Parkinson disease-3' does not match required pattern
+ERROR: Value 'Parkinson disease-8' does not match required pattern
+ERROR: Value 'Parkinson disease-5' does not match required pattern
+WARNING: Term: NT=LTQ Orbitrap Elite;AC=MS:1001910 in column 'comment[instrument]', is not found in the given ontology list ms;pride
+There were validation errors.

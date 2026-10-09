@@ -27,7 +27,7 @@
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
 <text class="title" x="12" y="22">Finland — in progress</text>
-<text class="sub" x="12" y="40">194 datasets listed · 83 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<text class="sub" x="12" y="40">194 datasets listed · 102 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
 <rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
@@ -41,14 +41,12 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="453" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="470" y="62">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="88.0">Helsinki</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="74" width="49.8" height="20" rx="2"><title>Helsinki · Annotated: 8</title></rect>
-<text class="seg" x="134.9" y="88.0" text-anchor="middle">8</text>
-<rect class="c-blocked" fill="#d95926" x="160.8" y="74" width="132.4" height="20" rx="2"><title>Helsinki · Blocked: 21</title></rect>
-<text class="seg" x="227.0" y="88.0" text-anchor="middle">21</text>
-<rect class="c-in_corpus" fill="#199e70" x="294.2" y="74" width="75.2" height="20" rx="2"><title>Helsinki · In corpus: 12</title></rect>
-<text class="seg" x="331.9" y="88.0" text-anchor="middle">12</text>
-<rect class="c-todo" fill="#8a8983" x="370.5" y="74" width="157.8" height="20" rx="2"><title>Helsinki · To do: 25</title></rect>
-<text class="seg" x="449.4" y="88.0" text-anchor="middle">25</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="74" width="170.5" height="20" rx="2"><title>Helsinki · Annotated: 27</title></rect>
+<text class="seg" x="195.3" y="88.0" text-anchor="middle">27</text>
+<rect class="c-blocked" fill="#d95926" x="281.5" y="74" width="170.5" height="20" rx="2"><title>Helsinki · Blocked: 27</title></rect>
+<text class="seg" x="366.8" y="88.0" text-anchor="middle">27</text>
+<rect class="c-in_corpus" fill="#199e70" x="453.1" y="74" width="75.2" height="20" rx="2"><title>Helsinki · In corpus: 12</title></rect>
+<text class="seg" x="490.7" y="88.0" text-anchor="middle">12</text>
 <text class="total" x="535.3" y="88.0">66 listed</text>
 <text class="city" x="12" y="118.0">Turku</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="386.5" height="20" rx="2"><title>Turku · Annotated: 61</title></rect>

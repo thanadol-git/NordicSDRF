@@ -1,0 +1,4 @@
+PXD050550: 2 value(s) disagree with the deposit record:
+
+  MAJOR    disease_with_control_arm_in_record (characteristics[disease]): the record describes a control arm, so 'essential thrombocythemia' cannot hold for every row  [healthy donors]
+  MAJOR    cleavage_agent_incomplete (comment[cleavage agent details]): the record names a Trypsin/Lys-C digest but only Trypsin is declared  [missing: Lys-C]

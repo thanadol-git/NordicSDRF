@@ -224,8 +224,8 @@ countries:
         search_terms: [Helsinki, Espoo, Meilahti]
         pride_hits: 163
         screened: 0
-        annotated: 8
-        blocked: 21
+        annotated: 27
+        blocked: 27
         pxd_list: lists/finland/helsinki.txt
         pxd_count: 66
         in_corpus: 19

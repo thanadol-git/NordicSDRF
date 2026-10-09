@@ -1,0 +1,2 @@
+WARNING: Term: biliary dysplasia or cholangiocarcinoma in column 'characteristics[disease]', is not found in the given ontology list mondo;efo;doid;ncit;pato
+Most seems to be fine. There were only warnings.

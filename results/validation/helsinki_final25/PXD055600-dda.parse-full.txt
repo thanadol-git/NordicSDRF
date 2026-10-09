@@ -1,0 +1,16 @@
+ERROR: Value '01B' does not match required pattern
+ERROR: Value '01C' does not match required pattern
+ERROR: Value '03B' does not match required pattern
+ERROR: Value '04B' does not match required pattern
+ERROR: Value '05B' does not match required pattern
+ERROR: Value '07B' does not match required pattern
+ERROR: Value '10B' does not match required pattern
+ERROR: Value '11B' does not match required pattern
+ERROR: Value '12B' does not match required pattern
+ERROR: Value '13B' does not match required pattern
+ERROR: Value '14B' does not match required pattern
+ERROR: Value '15B' does not match required pattern
+ERROR: Value '21B' does not match required pattern
+ERROR: Value '23B' does not match required pattern
+ERROR: Value '24B' does not match required pattern
+There were validation errors.

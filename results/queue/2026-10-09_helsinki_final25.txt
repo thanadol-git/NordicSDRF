@@ -1,0 +1,26 @@
+# final Helsinki queue 2026-10-09 (25 PXDs)
+PXD010965	finland/helsinki	blocked	47 sequential Waters RAW files; no run-to-participant map
+PXD011532	finland/helsinki	annotated	6/6 vendor RAW files mapped
+PXD011602	finland/helsinki	annotated	32/32 vendor RAW files mapped
+PXD013150	finland/helsinki	annotated	111/111 vendor RAW files mapped
+PXD015375	finland/helsinki	blocked	35 sequential Waters RAW files; no run-to-sample map
+PXD018673	finland/helsinki	blocked	converted mzXML only; no vendor RAW files
+PXD026644	finland/helsinki	partial	70/86 vendor RAW files mapped; 16 DDA runs lack a source map
+PXD026693	finland/helsinki	annotated	73/73 vendor RAW files mapped
+PXD026694	finland/helsinki	annotated	94/94 vendor RAW files mapped
+PXD026936	finland/helsinki	annotated	31/31 vendor RAW files mapped
+PXD028679	finland/helsinki	annotated	20/20 vendor RAW files mapped
+PXD030609	finland/helsinki	annotated	12/12 vendor RAW files mapped
+PXD033617	finland/helsinki	blocked	109 sequential Waters RAW files; no run-to-sample map
+PXD033618	finland/helsinki	blocked	108 sequential Waters RAW files; no run-to-sample map
+PXD034451	finland/helsinki	annotated	36/36 vendor RAW files mapped across 11 TMT channels
+PXD041384	finland/helsinki	annotated	114/114 vendor RAW files mapped
+PXD047323	finland/helsinki	annotated	24/24 vendor RAW files mapped
+PXD050550	finland/helsinki	annotated	71/71 vendor RAW files mapped
+PXD052171	finland/helsinki	annotated	60/60 vendor RAW files mapped
+PXD054594	finland/helsinki	annotated	68/68 vendor RAW files mapped
+PXD055139	finland/helsinki	annotated	103/103 vendor RAW files mapped
+PXD055600	finland/helsinki	annotated	300/300 vendor RAW files mapped; split DIA/DDA
+PXD061410	finland/helsinki	blocked	154 RAW files; filename prefixes cannot be mapped to intervention groups
+PXD074552	finland/helsinki	annotated	36/36 vendor RAW files mapped
+PXD075501	finland/helsinki	annotated	4/4 vendor RAW files mapped

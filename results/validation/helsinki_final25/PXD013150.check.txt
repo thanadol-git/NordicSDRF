@@ -1,0 +1,8 @@
+Hallucination Report: /home/thanadol.sutantiwani@Olink.local/Github/NordicSDRF/annotations/PXD013150.sdrf.tsv
+  Terms checked:     5
+  Verified:          2
+  Hallucinated:      0
+  Label mismatches:  0
+  Wrong ontology:    0
+  UNIMOD swaps:      0
+  Status:            CLEAN

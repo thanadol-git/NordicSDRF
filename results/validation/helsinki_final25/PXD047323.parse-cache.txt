@@ -1,0 +1,25 @@
+ERROR: Value 'sample 1' does not match required pattern
+ERROR: Value 'sample 2' does not match required pattern
+ERROR: Value 'sample 3' does not match required pattern
+ERROR: Value 'sample 4' does not match required pattern
+ERROR: Value 'sample 5' does not match required pattern
+ERROR: Value 'sample 6' does not match required pattern
+ERROR: Value 'sample 7' does not match required pattern
+ERROR: Value 'sample 8' does not match required pattern
+ERROR: Value 'sample 9' does not match required pattern
+ERROR: Value 'sample 10' does not match required pattern
+ERROR: Value 'sample 11' does not match required pattern
+ERROR: Value 'sample 12' does not match required pattern
+ERROR: Value 'sample 13' does not match required pattern
+ERROR: Value 'sample 14' does not match required pattern
+ERROR: Value 'sample 15' does not match required pattern
+ERROR: Value 'sample 16' does not match required pattern
+ERROR: Value 'sample 17' does not match required pattern
+ERROR: Value 'sample 18' does not match required pattern
+ERROR: Value 'sample 19' does not match required pattern
+ERROR: Value 'sample 20' does not match required pattern
+ERROR: Value 'sample 21' does not match required pattern
+ERROR: Value 'sample 22' does not match required pattern
+ERROR: Value 'sample 23' does not match required pattern
+ERROR: Value 'sample 24' does not match required pattern
+There were validation errors.
