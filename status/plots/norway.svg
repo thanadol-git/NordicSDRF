@@ -27,7 +27,7 @@
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
 <text class="title" x="12" y="22">Norway — in progress</text>
-<text class="sub" x="12" y="40">252 datasets listed · 71 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<text class="sub" x="12" y="40">252 datasets listed · 83 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
 <rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
@@ -44,15 +44,15 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="74.75" width="648.0" height="18.5" rx="3"><title>Bergen · PRIDE hits, not curated yet: 227</title></rect>
 <text class="total" x="764.0" y="88.0">227 PRIDE hits</text>
 <text class="city" x="12" y="118.0">Oslo</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="17.0" height="20" rx="2"><title>Oslo · Annotated: 5</title></rect>
-<text class="seg" x="118.5" y="118.0" text-anchor="middle">5</text>
-<rect class="c-blocked" fill="#d95926" x="128.0" y="104" width="17.0" height="20" rx="2"><title>Oslo · Blocked: 3</title></rect>
-<text class="seg" x="136.5" y="118.0" text-anchor="middle">3</text>
-<rect class="c-in_corpus" fill="#199e70" x="146.0" y="104" width="58.9" height="20" rx="2"><title>Oslo · In corpus: 21</title></rect>
-<text class="seg" x="175.5" y="118.0" text-anchor="middle">21</text>
-<rect class="c-todo" fill="#8a8983" x="205.9" y="104" width="258.8" height="20" rx="2"><title>Oslo · To do: 91</title></rect>
-<text class="seg" x="335.3" y="118.0" text-anchor="middle">91</text>
-<text class="total" x="471.7" y="118.0">120 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="41.8" height="20" rx="2"><title>Oslo · Annotated: 15</title></rect>
+<text class="seg" x="130.9" y="118.0" text-anchor="middle">15</text>
+<rect class="c-blocked" fill="#d95926" x="152.8" y="104" width="17.0" height="20" rx="2"><title>Oslo · Blocked: 1</title></rect>
+<text class="seg" x="161.3" y="118.0" text-anchor="middle">1</text>
+<rect class="c-in_corpus" fill="#199e70" x="170.8" y="104" width="58.9" height="20" rx="2"><title>Oslo · In corpus: 21</title></rect>
+<text class="seg" x="200.3" y="118.0" text-anchor="middle">21</text>
+<rect class="c-todo" fill="#8a8983" x="230.8" y="104" width="235.9" height="20" rx="2"><title>Oslo · To do: 83</title></rect>
+<text class="seg" x="348.7" y="118.0" text-anchor="middle">83</text>
+<text class="total" x="473.7" y="118.0">120 listed</text>
 <text class="city" x="12" y="148.0">Trondheim</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="134" width="113.2" height="20" rx="2"><title>Trondheim · Annotated: 40</title></rect>
 <text class="seg" x="166.6" y="148.0" text-anchor="middle">40</text>
@@ -62,10 +62,10 @@
 <text class="seg" x="272.2" y="148.0" text-anchor="middle">10</text>
 <text class="total" x="293.0" y="148.0">62 listed</text>
 <text class="city" x="12" y="178.0">Ås</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="164" width="58.9" height="20" rx="2"><title>Ås · Annotated: 21</title></rect>
-<text class="seg" x="139.5" y="178.0" text-anchor="middle">21</text>
-<rect class="c-blocked" fill="#d95926" x="169.9" y="164" width="33.3" height="20" rx="2"><title>Ås · Blocked: 12</title></rect>
-<text class="seg" x="186.6" y="178.0" text-anchor="middle">12</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="164" width="64.7" height="20" rx="2"><title>Ås · Annotated: 23</title></rect>
+<text class="seg" x="142.3" y="178.0" text-anchor="middle">23</text>
+<rect class="c-blocked" fill="#d95926" x="175.7" y="164" width="27.5" height="20" rx="2"><title>Ås · Blocked: 10</title></rect>
+<text class="seg" x="189.4" y="178.0" text-anchor="middle">10</text>
 <rect class="c-in_corpus" fill="#199e70" x="204.2" y="164" width="64.7" height="20" rx="2"><title>Ås · In corpus: 23</title></rect>
 <text class="seg" x="236.5" y="178.0" text-anchor="middle">23</text>
 <text class="total" x="275.9" y="178.0">56 listed</text>

@@ -176,7 +176,7 @@ countries:
         search_terms: [Oslo, Rikshospitalet, Radiumhospitalet]
         pride_hits: 124
         screened: 0
-        annotated: 5
+        annotated: 15
         blocked: 3
         pxd_list: lists/norway/oslo.txt
         pxd_count: 120
@@ -196,7 +196,7 @@ countries:
         search_terms: [NMBU, "Norwegian University of Life Sciences"]   # never the bare token "Ås"
         pride_hits: 56
         screened: 0
-        annotated: 21
+        annotated: 23
         blocked: 12
         pxd_list: lists/norway/aas.txt
         pxd_count: 56
