@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD046237.sdrf.tsv",
+  "dataset": "PXD046237",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD046237"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD046237/files/all"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "deposited mqpar_*.xml MaxQuant parameter files"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE organisms field and protocol (healthy human donor)"
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "blood plasma",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Protocol: antibodies purified from plasma (PRIDE organismParts says Blood serum, protocol text preferred)"
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "normal",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Protocol: whole blood from a healthy donor"
+    },
+    {
+      "location": "characteristics[immunoglobulin class]",
+      "value": "IgG/IgA/IgM/IgK per file",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "deposited Rawfile_number.xlsx: notes 1-4 IgG, 5-8 IgA, 9-12 IgM, 13-16 IgK"
+    },
+    {
+      "location": "characteristics[digestion protease] / comment[cleavage agent details]",
+      "value": "trypsin, chymotrypsin, chymotrypsin plus trypsin, AspN",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "deposited Rawfile_number.xlsx enzyme column (trp, chym, C+T, AspN) and deposited mqpar_*_hc/lc.xml (identical mods/tolerances in all 8) enzymes field"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF MS:1002523",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE sampleProcessingProtocol: EVOSEP LC coupled to QExactive HF"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Protocol: data-dependent mode"
+    },
+    {
+      "location": "comment[dissociation method] / comment[collision energy]",
+      "value": "HCD / 28% NCE",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Protocol: HCD, normalized HCD collision energy 28%"
+    },
+    {
+      "location": "comment[ms1 scan range]",
+      "value": "375m/z-1500m/z",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Protocol: survey scan m/z 375 to 1,500"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "deposited mqpar_*_hc/lc.xml (identical mods/tolerances in all 8)"
+    },
+    {
+      "location": "comment[precursor mass tolerance] / [fragment mass tolerance]",
+      "value": "4.5 ppm / 20 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "deposited mqpar_*_hc/lc.xml (identical mods/tolerances in all 8): mainSearchTol 4.5 ppm; FTMS MatchTolerance 20 ppm (MaxQuant default for Orbitrap MS2)"
+    },
+    {
+      "location": "comment[ms2 mass analyzer]",
+      "value": "orbitrap",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Protocol: MS/MS scans collected at 30,000 resolution in the Orbitrap cell"
+    },
+    {
+      "location": "comment[data file] / assay name",
+      "value": "EH3396.raw-EH3411.raw (16 files, 1 row each)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE file list; deposited Rawfile_number.xlsx maps file to enzyme and Ig class"
+    }
+  ],
+  "limitations": [
+    "Publication (PMID 38997321) was not read; no claim cites it.",
+    "Per-row comment[cleavage agent details] (two columns: Chymotrypsin then Trypsin; second 'not applicable' except for the combined digest) was patched into the built SDRF by a scripted column edit because the build tool takes only constant technical values; parse_sdrf and structure validation were run after the patch.",
+    "Single healthy donor: age, sex, ancestry, individual identifier, cell type and developmental stage are not disclosed and set to 'not available'. biological replicate=1 for all rows (one donor).",
+    "Source names combine Ig class and enzyme because each (class, enzyme) pair is a separate digest/injection; whether each Ig isolate was a separate aliquot per enzyme is inferred from the 4x4 file layout in the mapping sheet.",
+    "Mapping sheet notes order Ig classes as IgG, IgA, IgM, IgK; the PRIDE protocol lists IgG, IgM, IgA, kappa with different amounts; the sheet (file level) was followed. Amounts per class are in the sheet notes only and not encoded.",
+    "Plasma (protocol) vs serum (PRIDE field): protocol text followed. disease 'normal' derived from 'healthy donor'.",
+    "Reduction and alkylation reagents are not stated in PRIDE text: 'not available' (carbamidomethyl fixed modification comes from the MaxQuant parameter files only).",
+    "Extra non-template columns characteristics[immunoglobulin class] and characteristics[digestion protease] were added to carry the two factors. Enzyme 'Chymotrypsin' is the MaxQuant specificity (MS:1001306); Trypsin is MS:1001251 while MaxQuant used Trypsin/P.",
+    "Searches used custom BCR sequence FASTA databases plus UniProt human; not encoded in the SDRF."
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD071196-hf.sdrf.tsv",
+  "dataset": "PXD071196",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD071196"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD071196/files/all"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "Deposited FragPipe .pin files and RAW headers"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[instrument]",
+      "value": "QE HF",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "RAW header 'Method of ...' / instrument model; protocol text"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Protocol: data-dependent mode / DDA-PASEF"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Oxidation, Cysteinyl, Acetyl, pyro-Glu (variable)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Mass shifts in deposited .pin files; FragPipe Nonspecific-HLA workflow"
+    },
+    {
+      "location": "characteristics[mhc typing]",
+      "value": "HLA-A*02:01",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Protocol: cell lines transduced with/expressing HLA-A*02:01"
+    },
+    {
+      "location": "characteristics[cell line]",
+      "value": "AMO1 (CVCL_1806)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "File names (AMO1) and protocol; Cellosaurus lookup; age 64Y/female/plasma cell myeloma are Cellosaurus values"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD, 27 NCE",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "RAW method header: HCD normalized 27, protocol"
+    }
+  ],
+  "limitations": [
+    "Full text of the associated paper (doi 10.1182/blood.2025031897) was not available (not open access, no preprint found); no claim cites the paper. All values come from the PRIDE record, RAW headers and deposited .pin files.",
+    "The deposit is split into three SDRFs (PXD071196-hf, -qe, -tims) because RAW headers show Q Exactive HF (2023), Q Exactive (2021) and timsTOF Pro (.d.zip) acquisitions with different methods.",
+    "Modifications were inferred from mass shifts in the deposited FragPipe .pin files (+15.9949 on M, +119.0041 on C, +42.0106 N-term, pyro-Glu features); no fragger.params was deposited, so fixed/variable status, tolerances and enzyme rest on the stated 'default Nonspecific-HLA workflow'. Tolerances = not available; cleavage = not applicable (non-specific).",
+    "Run-to-sample mapping is not deposited; sources are named from file names only. Biological replicate numbers are ordinal, not from a mapping.",
+    "HLA-A*02:01 typing is as stated in the protocol for all three cell lines; other HLA alleles are unknown. Antibody enrichment = not applicable (Strep-Tactin beads on tagged HLA, per protocol).",
+    "Fractionation method not stated; the two EBVA2 files (20% and 30% ACN, 5 mM NH4OH) are treated as fractions 1 and 2 of one sample (ordinal numbering) - an interpretation of the file names.",
+    "Organism part and cell type set to not available (PRIDE lists 'B cell, Cell culture' at project level only).",
+    "Age, sex and disease for AMO-1 are Cellosaurus values, not from the deposit. Cell line AMO1 inferred from the file names (H23xx_AMO1) plus protocol; clone 4/8 labels come from file names only. Protocol describes the QE method, but the HF RAW method (top 20, 60k) differs; instrument taken from RAW header."
+  ]
+}

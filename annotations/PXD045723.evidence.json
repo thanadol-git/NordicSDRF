@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD045723.sdrf.tsv",
+  "dataset": "PXD045723",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD045723"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD045723/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/38001909 (PMC10669731, Lunde et al. 2023, Biomedicines 11:2908; full text read)"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/ (mqpar.xml, mqpar_cell_lysate.xml)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[cell line]",
+      "value": "hBMSC-TERT",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper 2.3: human bone marrow-derived mesenchymal stromal stem cells overexpressing TERT (hBMSC-TERT) differentiated to osteoblastic cells; OB-CM is the conditioned medium whose proteome is in PXD045723 (paper 2.9)."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "culture fluid",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "RAW files are secretome (conditioned medium) per PRIDE protocol; BTO:0002233 chosen as closest term."
+    },
+    {
+      "location": "characteristics[cell type]",
+      "value": "osteoblast",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper 2.3: hBMSC-TERT differentiated into osteoblastic cells for 14 days."
+    },
+    {
+      "location": "characteristics[differentiation time point] / factor value",
+      "value": "basal, day 3, day 14, day 21",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "MaxQuant experiment names BASAL_n/DAY3_n/DAY14_n/DAY21_n in deposited mqpar.xml (file map EH10652-EH10682); interpretation as osteoblast differentiation time points is not described in the paper."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-4",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Suffix _1.._4 of mqpar.xml experiment names."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF MS:1002523",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol and paper 2.9: secretomes on EvosepOne + QExactive HF; timsTOF fleX was for cell lysates (.d files only inside LC_MS_files.zip)."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin/P MS:1001313",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml / paper: trypsin without proline restriction."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl Protein N-term variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml parsed with sdrf tools search-params; matches paper 2.9."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "4.5 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml mainSearchTol (paper text says 6 ppm; deposited file preferred)."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml FTMS MS/MS tolerance."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Inferred from MaxQuant LFQ search of Q Exactive HF data; DDA not stated verbatim."
+    },
+    {
+      "location": "comment[data file]",
+      "value": "16 RAW files",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "EH10652-EH10682, each claimed once; mapping to experiments from mqpar.xml."
+    }
+  ],
+  "limitations": [
+    "Only the 16 Thermo RAW files (OB-CM secretome, Q Exactive HF) are annotated. The cell-lysate timsTOF fleX .d files exist only inside the 35 GB LC_MS_files.zip (not listed as individual PRIDE files) and are not covered; mqpar_cell_lysate.xml describes 8 .d runs with no sample mapping in the deposit. A separate SDRF was not built for them.",
+    "The paper describes OB-CM from 14-day differentiated cells (3 of 4 samples reported); the BASAL/DAY3/DAY14/DAY21 x 4 labels in mqpar.xml are not explained in the paper. Time-point meaning (osteoblast differentiation stage) is taken from the labels at face value and may not be exact; replicate numbers are the label suffixes and it is unknown whether they are independent biological replicates.",
+    "Cell line recorded as paper name hBMSC-TERT; Cellosaurus has no entry by this name (hMSC-TERT CVCL_Z015 and clones exist but the clone was not stated), so cellosaurus accession/name, age, sex, passage number and disease are `not available`. parse_sdrf warns that hBMSC-TERT is not in CLO/BTO/EFO and tools check flags it as unverified; unavoidable.",
+    "organism part `culture fluid` (BTO:0002233) is an approximate term for conditioned medium.",
+    "Dissociation method not available (not stated); reduction/alkylation reagents not named. DDA inferred.",
+    "Precursor tolerance 4.5 ppm from mqpar.xml differs from 6 ppm in paper text.",
+    "Paper full text was read (Europe PMC PMC10669731); SKM-CM data are in PXD033025, not this deposit."
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD007894-ttt.sdrf.tsv",
+  "dataset": "PXD007894",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD007894"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD007894/files/all"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive (deposited Mascot .dat headers)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism part]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Matrix of the TTT_180522_M_* runs is not stated in any deposited source."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin MS:1001251",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "CLE=Trypsin in deposited Mascot .dat headers (TTT_180522_M_01R1.dat, M_10R3.dat)"
+    },
+    {
+      "location": "comment[reduction reagent]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE protocol describes serum only; not stated for the TTT runs"
+    },
+    {
+      "location": "comment[alkylation reagent]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE protocol describes serum only; not stated for the TTT runs"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl fixed; Oxidation variable; Dimethyl UNIMOD:36/199/510 on K and any N-term variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Mascot .dat MODS/IT_MODS/delta values"
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "0.05 Da",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Mascot .dat ITOL/ITOLU"
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "10 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Mascot .dat TOL"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive;AC=MS:1001911",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "RAW header and PRIDE protocol"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Parallel reaction monitoring;AC=PRIDE:0000629",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "RAW instrument method names contain PRM"
+    }
+  ],
+  "limitations": [
+    "Split from the serum file after review: the TTT_180522_M_01-10 runs have unknown matrix (organism part not available); only Trypsin (from the deposited Mascot .dat) is recorded, Lys-C, reduction and alkylation are not stated and omitted/not available. Uses a Top10+PRM hybrid method (60min_Top10_15s-Dimeth-PRM), so PRM is only partly supported. Dimethyl channel per run unknown (generic Dimethyl Labeling). File-name tokens M_01-M_10 undecoded.",
+    "Paper (PMID 30112540) not read; no claim cites it.",
+    "R1-R3 suffixes treated as technical replicates of one source is inferred from file names."
+  ]
+}

@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-10-01
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-14)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-15)
 
 countries:
   sweden:
@@ -176,7 +176,7 @@ countries:
         search_terms: [Oslo, Rikshospitalet, Radiumhospitalet]
         pride_hits: 124
         screened: 0
-        annotated: 25
+        annotated: 35
         blocked: 3
         pxd_list: lists/norway/oslo.txt
         pxd_count: 120

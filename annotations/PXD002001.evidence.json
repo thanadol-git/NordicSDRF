@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002001.sdrf.tsv",
+  "dataset": "PXD002001",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002001"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD002001/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/26421188 (PMC4572459, full text read)"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/01/PXD002001/MaxQuantOutput.tar.gz"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[cell line]/cellosaurus",
+      "value": "HeLa / CVCL_0030",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: HeLa P cells; Cellosaurus lookup"
+    },
+    {
+      "location": "characteristics[treatment], factor value[treatment], comment[label]",
+      "value": "normoxia=SILAC light (19% O2); hypoxia=SILAC heavy (1% O2)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper section 2.2 and PRIDE protocol: light cells in 19% O2 are control, heavy (Arg10/Lys6) cells in 1% O2"
+    },
+    {
+      "location": "characteristics[sampling time]",
+      "value": "72 hour",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper 2.2: cells seeded in 75 cm2 flasks and harvested after 72 h"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "LTQ Orbitrap XL (MS:1000556)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "RAW header (range request) of files 130419 SILAC_01, Bousquet_2_1, Bousquet_3_1 reads 'LTQ Orbitrap XL MS'; PRIDE field says LTQ Orbitrap"
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "SDS PAGE",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol and paper 2.4: mixed lysate subjected to SDS-PAGE then trypsinized; one RAW per gel slice"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol text"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Oxidation (M), Acetyl (Protein N-term), Deamidated (N,Q), Gln->pyro-Glu, all variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "MaxQuantOutput/parameters.txt (Modifications included in quantification) and modificationSpecificPeptides.txt columns; fixed modifications empty"
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "0.5 Da",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "parameters.txt MS/MS tol. (ITMS)"
+    },
+    {
+      "location": "characteristics[age], characteristics[sex]",
+      "value": "30Y, female",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Cellosaurus HeLa record, not stated in the paper"
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "cervical carcinoma",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE disease field 'Cervix carcinoma' and HeLa origin"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1,2,3 = file groups 130419_*_01-10, 1306018_Bousquet_2_*, 1306018_Bousquet_3_*",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper mentions 3 replicates; grouping inferred from file-name sets, 10/11/11 gel slices"
+    },
+    {
+      "location": "comment[label], row structure",
+      "value": "each RAW appears twice (SILAC light and SILAC heavy)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Light and heavy lysates mixed 1:1 per injection (paper 2.4)"
+    }
+  ],
+  "limitations": [
+    "Replicate-to-file mapping is inferred from file-name groups (three sets of 10, 11, 11 slices); no deposited mapping file. Which set is replicate 1/2/3 is an ordinal assumption.",
+    "Fraction identifiers are ordinal slice numbers within each set (first set has 10 slices, others 11); the deposited MaxQuant output covers only the 10 files 130419_PaulaBusquet_SILAC_01-10, so modifications and tolerance were read from that search and assumed identical for the other 22 files.",
+    "Carbamidomethylation is not a fixed modification in the deposited search (fixed modifications empty); reduction/alkylation reagents not stated, so those columns are absent.",
+    "Precursor tolerance and dissociation method are not stated in PRIDE, the paper body or parameters.txt: not available. Fragment tolerance 0.5 Da comes from MaxQuant ITMS setting.",
+    "Age 30Y and sex female come from Cellosaurus, not from the study. Cell type, developmental stage, passage, culture medium, storage temperature, ancestry: not available (culture medium is DMEM high glucose with 10% dialyzed FBS in the paper but not mapped to an NCIT term).",
+    "Paper lists detailed LC-MS/MS methods only in the Supplementary Information, which was not read.",
+    "The treatment value 'normoxia' is not found in NCIT/EFO (validator warning); 'hypoxia' kept as the exposure label.",
+    "Heavy label (Arg10/Lys6) taken from paper; no SILAC label-swap is described, so heavy=hypoxia in all three replicates."
+  ]
+}

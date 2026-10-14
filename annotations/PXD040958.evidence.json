@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD040958.sdrf.tsv",
+  "dataset": "PXD040958",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD040958"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD040958/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10247572/fullTextXML"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive (mqpar.xml, search.txt)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[cell line]/cellosaurus",
+      "value": "PC-3 / CVCL_0035",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: PC-3 prostate cancer epithelial cell line from ATCC; Cellosaurus lookup CVCL_0035 (the local cellline tool's PC-3 hit was a different line, PC-3 [JPC-3], and was rejected)"
+    },
+    {
+      "location": "characteristics[age],[sex]",
+      "value": "62Y, male",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Cellosaurus record for CVCL_0035, not stated in the paper"
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "prostate carcinoma",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: prostate cancer cell line; MONDO:0005159"
+    },
+    {
+      "location": "characteristics[cell type]",
+      "value": "epithelial cell",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: epithelial cell line"
+    },
+    {
+      "location": "characteristics[treatment],factor value[treatment]",
+      "value": "SNAP29 siRNA vs non-targeting siRNA",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE title/data processing text; RAW names ctrl/SNAP29"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-4 paired",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "RAW name suffix; MaxQuant experiment names NonExo_1/SNAP29Exo_2/NonExo_4/SNAP29Exo_5/... match experiment numbers in mqpar; paper uses paired t-test"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive Plus MS:1002634",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol text and paper Methods (PRIDE field LTQ Orbitrap overridden)"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl Protein N-term, Phospho STY variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "deposited mqpar.xml"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin/P",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml enzyme; text says trypsin"
+    },
+    {
+      "location": "comment[precursor mass tolerance],[fragment mass tolerance]",
+      "value": "4.5 ppm, 20 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar mainSearchTol and FTMS MatchTolerance"
+    },
+    {
+      "location": "comment[reduction reagent],[alkylation reagent]",
+      "value": "DTT, IAA",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE sample protocol / paper"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper Methods describe a Top10 method with dynamic exclusion (data-dependent acquisition)"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD (MS:1000422)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper Methods: peptide fragmentation by higher energy collision dissociation, NCE 25"
+    }
+  ],
+  "limitations": [
+    "Passage number, culture medium (NCIT term), storage temperature, organ part set to not available; paper gives Ham's F-12/DMEM 1:1 with 7% FCS but no NCIT term was mapped.",
+    "Age and sex taken from Cellosaurus, not the paper.",
+    "Treatment values are free text (no NCIT/EFO term); parse_sdrf warns.",
+    "Fragment tolerance is the mqpar FTMS value; MS2 analyzer not stated in the sources so not annotated.",
+    "Trypsin/P taken from mqpar rather than generic Trypsin.",
+    "PRIDE pubmedID is 0; paper located via DOI 10.1007/s00018-023-04822-8 (PMID 37285022, PMC10247572), title matches. Only the Methods were checked for mass spec and cell culture details.",
+    "Biological replicate pairing inferred from file-name numbers and MaxQuant experiment names; no separate mapping file deposited.",
+    "Revised after review: dissociation set to HCD (paper Methods, NCE 25); Lys-C added as second cleavage column (Methods: Lys-C then trypsin; first column kept as Trypsin/P from mqpar.xml); DDA (Top10, dynamic exclusion) is from the paper Methods."
+  ]
+}

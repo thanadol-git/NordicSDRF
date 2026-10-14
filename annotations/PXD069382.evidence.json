@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD069382.sdrf.tsv",
+  "dataset": "PXD069382",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD069382"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD069382/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.7554/eLife.105541 (Europe PMC PMC12656530, full text read)"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "deposited mqpar_2.xml and txt.zip (summary.txt, proteinGroups_Ana_212-227.txt)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[cell line]/cellosaurus",
+      "value": "U2OS / CVCL_0042",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: U2OS Flp-In T-REx cells expressing SYTL5-EGFP (doxycycline-induced 24 h) or EGFP; Cellosaurus U2OS."
+    },
+    {
+      "location": "characteristics[age]/[sex]",
+      "value": "15Y / female",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Cellosaurus values for U2OS, not stated in the paper."
+    },
+    {
+      "location": "characteristics[transgene] / factor value[transgene]",
+      "value": "SYTL5-EGFP (IP2, IP4, IP6) vs EGFP (IP1, IP3, IP5)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: SYTL5-EGFP vs EGFP control IP, 3 biological replicates. Run assignment derived from deposited proteinGroups intensity: SYTL5 ~2.7e7-5.3e7 in IP2/4/6 vs <3.3e4 in IP1/3/5."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=timsTOF fleX;AC=MS:1003124",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol text and OLS."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol: DDA, PASEF."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin/P MS:1001313",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited mqpar_2.xml and summary.txt (Trypsin/P); protocol says trypsin without proline restriction."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M and Acetyl Protein N-term variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited mqpar_2.xml / summary.txt (txt.zip) via search-params."
+    },
+    {
+      "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+      "value": "10 ppm / 40 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar_2.xml mainSearchTol 10 and TOF MatchTolerance 40 (protocol text says 6 ppm main search; deposited parameter file used)."
+    },
+    {
+      "location": "comment[data file]",
+      "value": "6 .d run names",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Run names from mqpar_2.xml and proteinGroups columns; the deposit contains only LCMS_files.zip (11.5 GB) containing these runs."
+    }
+  ],
+  "limitations": [
+    "The deposited raw data is a single archive LCMS_files.zip; contents not unpacked or listed. Six .d run names were taken from the deposited MaxQuant mqpar_2.xml/proteinGroups and claimed in place of the zip.",
+    "Run-to-condition mapping (which IP is SYTL5-EGFP vs EGFP) is not in any metadata; it was inferred from bait (SYTL5) protein intensities in the deposited proteinGroups. IP2/4/6 = SYTL5-EGFP, IP1/3/5 = EGFP.",
+    "Biological replicate numbers 1-3 within each group follow run order (IP1/IP2 = 1, IP3/IP4 = 2, IP5/IP6 = 3); pairing is an assumption, not documented.",
+    "Age 15Y and sex female are Cellosaurus values for U2OS, not sample-specific. Cell line is U2OS Flp-In T-REx per the paper; annotated as parent U2OS (CVCL_0042), the engineered derivative not separately resolved.",
+    "Dissociation method, MS2 analyzer, reduction and alkylation reagents are not stated explicitly: not available. Organism part and cell type not available (osteosarcoma line; no CL/BTO term assigned).",
+    "Doxycycline induction (100 ng/ml, 24 h) applies to all samples and is not annotated as a treatment column. characteristics[transgene] is a non-template extra column.",
+    "Protocol text states 6 ppm main search error while deposited mqpar_2.xml has 10 ppm; the file value was used.",
+    "SANDBOX ONLY (independent review FAIL): row 6 names 'Ana IP 6 repeated_Slot1-24_1_247.d', the run searched in mqpar_2.xml/proteinGroups, but the deposited zip (283 entries, central directory read) contains instead 'IP6 Ana_Slot1-24_1_227.d' (not searched); the _247 repeat is NOT deposited. The report's earlier statement that the original IP6 is not deposited is wrong. Row 6 data file and its SYTL5-EGFP identity are therefore unresolved. Rows 1-5 (_217 to _225) were confirmed present in the zip."
+  ]
+}

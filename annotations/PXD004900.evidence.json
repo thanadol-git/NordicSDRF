@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD004900.sdrf.tsv",
+  "dataset": "PXD004900",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD004900"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD004900/files/all"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "Mascot .dat files in PXD004900 (HDPR_p1in_Error_0.1__160729_CJK_HeLa2PMoff_01.dat header)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[cell line]",
+      "value": "HeLa / CVCL_0030",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE description: in-solution tryptic digest of HeLa cells; Cellosaurus lookup"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE description and instrument field agree"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M and protein N-term Acetyl variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Deposited Mascot .dat header (MODS, IT_MODS) and PRIDE data processing protocol"
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "10 ppm / 0.05 Da",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Mascot .dat TOL/ITOL and PRIDE data processing protocol"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE protocols and .dat CLE=Trypsin"
+    },
+    {
+      "location": "source name / technical replicate",
+      "value": "HeLa_standard_DDA vs HeLa_exclusion_list_DDA, replicates 1-3",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "RAW file names (excl_020Da = exclusion-list run) and PRIDE sample protocol (second round with exclusion list)"
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "cervix carcinoma",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE diseases field"
+    }
+  ],
+  "limitations": [
+    "Paper full text was not read; no claims cite it.",
+    "Age 30Y and sex female come from Cellosaurus HeLa, not from the deposit.",
+    "Whether the standard and exclusion-list runs used the same digest is not stated; two source names were used, both biological replicate 1; the three runs per group are treated as technical replicates per PRIDE description.",
+    "No factor value column added: the compared variable (acquisition with HDPR exclusion list) has no matching characteristics/comment column in the template.",
+    "Dissociation method, reduction/alkylation reagent, organism part, passage, medium, storage temperature not stated: not available. Carbamidomethyl is from the Mascot search header only.",
+    "Mascot .dat header instrument ESI-TRAP is a search setting and was ignored."
+  ]
+}

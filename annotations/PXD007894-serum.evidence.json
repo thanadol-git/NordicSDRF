@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD007894-serum.sdrf.tsv",
+  "dataset": "PXD007894",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD007894"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD007894/files/all"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive (deposited Mascot .dat headers)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism part]",
+      "value": "blood serum",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE organismParts and serum sample processing protocol; file names Serum*"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin MS:1001251 + Lys-C MS:1001309",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE sample processing: trypsin/Lys-c Mix; Mascot enzyme trypsin"
+    },
+    {
+      "location": "comment[reduction reagent]",
+      "value": "DTT PRIDE:0000608",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE protocol: DTT"
+    },
+    {
+      "location": "comment[alkylation reagent]",
+      "value": "IAA PRIDE:0000599",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE protocol: iodoacetamide"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl fixed; Oxidation variable; Dimethyl UNIMOD:36/199/510 on K and any N-term variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Mascot .dat MODS/IT_MODS/delta values"
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "0.05 Da",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Mascot .dat ITOL/ITOLU"
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "10 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Mascot .dat TOL"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive;AC=MS:1001911",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "RAW header and PRIDE protocol"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Parallel reaction monitoring;AC=PRIDE:0000629",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "RAW instrument method names contain PRM"
+    }
+  ],
+  "limitations": [
+    "The full text of the associated paper (PMID 30112540, Analyst 2018) is not open access and was not read; no claim cites it. Sample information comes from the PRIDE record, file names, Mascot .dat headers and RAW headers only.",
+    "The deposit was split into two SDRFs because the deposited Mascot searches differ: -peptides (75 files, no fixed/oxidation mods, fragment tolerance 0.02 Da) and -serum (33 files, Carbamidomethyl fixed, Oxidation variable, fragment tolerance 0.05 Da). The grouping follows the .dat headers, not a paper description.",
+    "comment[label] is the generic 'Dimethyl Labeling' (PRIDE:0000513) with one row per RAW file: which light/medium/heavy channels are present in each run is not recorded in a deposited mapping and was not inferred. tools check flags this as a wrong-ontology term only because the checker expects MS; the template column is PRIDE-backed.",
+    "S1-S3 / R1-R3 suffixes are treated as technical (analytical) replicate injections of one source with biological replicate 1; this follows the PRIDE abstract statement of three analytical replicates but not a deposited mapping.",
+    "Age, sex, ancestry, individual and disease are not available (commercial/pooled serum origin is not described). PRIDE lists organism part 'Blood cell' in addition to serum; no run could be linked to it.",
+    "Instrument Q Exactive (MS:1001911) confirmed from RAW headers (Method of Q Exactive) and the protocol.",
+    "Only dimethyl labeling modifications Dimethyl (light, UNIMOD:36, +28.0313), Dimethyl:2H(4) (medium, UNIMOD:199, +32.0564) and Dimethyl:2H(4)13C(2) (heavy, UNIMOD:510, +36.0757) were matched by exact delta mass in the Mascot .dat headers; all as K and any N-term variable.",
+    "TTT_180522_M_* runs were split into PXD007894-ttt.sdrf.tsv after review."
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD024737.sdrf.tsv",
+  "dataset": "PXD024737",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD024737"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD024737/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/35471082"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "Deposited MQ_search_output.zip (summary.txt, Pearson_correlation.txt, proteinGroups_Imputed.txt, parameters.txt)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Neisseria gonorrhoeae",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE organism N. gonorrhoeae MS11; NCBITaxon:485 species-level term"
+    },
+    {
+      "location": "characteristics[strain]",
+      "value": "MS11 derivative",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper methods: gonococcal strains were derivatives of strain MS11; PRIDE project description"
+    },
+    {
+      "location": "characteristics[genotype] / factor value[genotype]",
+      "value": "N. gonorrhoeae PglO (B1-B4) vs N. elongata PglO (B17-B20)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited Pearson_correlation.txt/proteinGroups_Imputed.txt group labels N_gonorrhoeae_Otase (LFQ intensity 1-4) and N_elongata_Otase (5-8); MaxQuant summary.txt experiments 1-8 = B1,B2,B3,B4,B17,B18,B19,B20"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-4 per group",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Four replicate files per group; numbering by file order, no explicit deposited mapping"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Fusion Lumos MS:1002732",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol text: Orbitrap Fusion Lumos with FAIMS Pro"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin + Lys-C",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Sample protocol: 8 ug trypsin/Lys-C (Promega)"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD MS:1000422",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: Orbitrap MS/MS HCD scans (NCE 30%); additional EThcD and ion-trap CID triggered scans exist"
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited parameters.txt: MS/MS tol. (FTMS) 20 ppm"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M variable; Bac-Hex2 variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Data processing protocol; Bac-Hex2 (C22H36O14N2) has no exact UNIMOD entry so written without AC"
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "DTT / chloroacetamide",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Sample protocol: 10 mM DTT, 40 mM chloroacetamide"
+    },
+    {
+      "location": "comment[data file]",
+      "value": "8 RAW files",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE file list; all 8 RAW claimed once"
+    }
+  ],
+  "limitations": [
+    "Run-to-sample mapping (B1-B4 = N. gonorrhoeae PglO, B17-B20 = N. elongata PglO) is taken from the deposited MaxQuant/Perseus group labels, not from an explicit sample table; B5-B16 are not deposited.",
+    "Biological replicate numbers 1-4 follow file order; no deposited mapping to cultures.",
+    "Specific strain identifiers (CH numbers) of the two PglO backgrounds are not recoverable from the deposit; strain recorded as 'MS11 derivative'. Paper figure legend mentions N400 for the proteomic comparison, conflicting with MS11 in PRIDE and the methods; MS11 retained.",
+    "Each RAW file holds three FAIMS CVs (-25,-45,-65) that MaxQuant split into fractions; SDRF keeps one row per RAW with fraction identifier 1 and FAIMS CV not encoded.",
+    "Dissociation lists HCD only; product-dependent EThcD and CID scans also acquired.",
+    "Precursor mass tolerance not stated in deposited parameters or text: not available.",
+    "Bac-Hex2 modification has no exact UNIMOD accession; written by name only.",
+    "Organism part, cell type and disease not stated: not available. Whole bacterial culture grown on GC agar 16-18 h (paper) not encoded.",
+    "Paper cited for strain/culture only (full text read via Europe PMC PMC9239064); sample-level proteomics grouping comes from the search output."
+  ]
+}
