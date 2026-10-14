@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD034174-tissue.sdrf.tsv",
+  "dataset": "PXD034174",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD034174"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD034174/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/35761243"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Naja nigricollis",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper tissue proteomics: same N. nigricollis venom gland as fMSI; file prefix Nmoss"
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "venom gland",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Section cut into four equal parts and dissolved"
+    },
+    {
+      "location": "characteristics[gland section quarter] / factor value",
+      "value": "quarter 1-4",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper: section cut into four equal parts; file indices 01-04 used as labels"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin MS:1001251",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper: digested with trypsin overnight"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper: 5 mM DTT then 10 mM iodoacetamide; no other modifications stated"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "TripleTOF 5600 MS:1000932",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper: same setup as LC-MS (5600 TripleTOF); PRIDE instrument field"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA PRIDE:0000627",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper: 20 most intense ions selected for MS2"
+    }
+  ],
+  "limitations": [
+    "PXD034174 is split into three SDRFs because it holds three unrelated assays: tryptic LC-MS/MS of venom gland section quarters (-tissue), intact-venom LC-MS of spat vs milked venom (-venom), and MALDI mass spectrometry imaging (-msi).",
+    "No organism template exists for snakes; only ms-proteomics is declared, with extra characteristics columns added.",
+    "Each .wiff is claimed once; the companion .wiff.scan files are not listed as data files. imzML files (IMAGE DATA) are companions of the .ibd files; only .ibd (RAW category) are claimed.",
+    "File names say Nmoss/Nmos/n-moss (Naja mossambica); the paper and PRIDE name the animal Naja nigricollis (Tanzanian origin), so Naja nigricollis is used. n-mel is mapped to Naja subfulva (paper: non-spitting cobra N. subfulva; PRIDE organism list) - the abbreviation itself is not decoded by any deposited file.",
+    "Sex, age, developmental stage and strain are not reported and are not included.",
+    "Quarter-to-gland-position (anterior/posterior) mapping is not deposited; quarter numbers follow file indices and are unverified. Biological replicate is 1 for all (pieces of one section, not replicates).",
+    "Tolerances and dissociation not stated (not available); ProteinPilot .group/.xlsx outputs contain no readable modification list; variable modifications unknown beyond carbamidomethyl.",
+    "Cell type is not available for tissue."
+  ]
+}

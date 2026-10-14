@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD000642.sdrf.tsv",
+  "dataset": "PXD000642",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000642"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD000642/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1021/pr4012552"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "ftp.pride.ebi.ac.uk PXD000642 110412NewDBsearch.xml, 110412NewDBOct.xml, 120402WojAllIni.xml"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE organism NEWT:9606"
+    },
+    {
+      "location": "characteristics[cell type]",
+      "value": "macrophage",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Title/abstract: monocyte-derived macrophages (CL:0000235)"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "QSTAR (MS:1000190)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE instrument field; deposited ProteinPilot search sets instrument to QSTAR ESI"
+    },
+    {
+      "location": "comment[label]",
+      "value": "iTRAQ114-117",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited ProteinPilot XML: sample type iTRAQ 4plex, fixed iTRAQ4plex on K and peptide N-term; keyword iTRAQ-labeling"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "iTRAQ4plex K/N-term fixed, Carbamidomethyl C fixed",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "fixed=true features in 110412NewDBsearch.xml, 110412NewDBOct.xml, 120402WojAllIni.xml"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "ProteinPilot digest set 'Average trypsin set'"
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "0.2 Da",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "MSTOLERANCE/MSMSTOLERANCE in ProteinPilot XML parameters"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Inferred from QSTAR iTRAQ MS/MS identification search; not stated in protocols"
+    }
+  ],
+  "limitations": [
+    "PRIDE protocols are 'Not available' and the paper (JPR 2014, doi 10.1021/pr4012552, PMID 24670152) is closed access with no PMC/Unpaywall copy; no sample sheet deposited. Channel-to-sample/condition mapping (control vs beta-glucan) is undecodable; all treatment/disease/age/sex/individual are 'not available'.",
+    "Source names are run+channel placeholders (<run>_iTRAQ11x); characteristics[biological replicate]=1 is a placeholder required by the template, NOT a real replicate number. Same donor/condition across runs cannot be linked.",
+    "Run names (A/B/C + number, a/b suffixes, three dates) probably encode SCX fractions/sets/repeats but are undecodable; fraction identifier=1 for every run, no fractionation column claimed.",
+    "Only the 44 .wiff files are listed as data files; the 44 companion .wiff.scan files are part of the same WIFF acquisitions and not separate rows.",
+    "Dissociation, reduction and alkylation reagents not stated -> not available (Carbamidomethyl C fixed taken from search parameters). Variable Paragon biological-mod search set not listed. Acquisition method DDA is inferred.",
+    "Organism part for the vesicle preparation not stated -> not available. No factor values (no mapped comparison).",
+    "UNRESOLVED (independent review FAIL, sandbox only): the file assumes all four iTRAQ channels (114-117) carry a sample in every run, but the deposited ProteinPilot XMLs flag only two channels as used per search set (110412NewDBsearch.xml and 120402WojAllIni.xml: IT115, IT117; 110412NewDBOct.xml: IT114, IT116). Runs were not mapped to these flags, so some of the 176 rows may be empty channels. Also missing: sdrf version, developmental stage; alkylation reagent is iodoacetamide per the deposited search (not recorded)."
+  ]
+}

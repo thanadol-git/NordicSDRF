@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD042540-QE-gluc.sdrf.tsv",
+  "dataset": "PXD042540",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD042540"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD042540/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC10286969"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/07/PXD042540/ (deposited PEAKS .mzid.gz files)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "glutamyl endopeptidase MS:1001917",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mzid enzyme regex (?<=[E])(?!P)"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "RAW header"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Oxidation, Propionamide, Methyl/Dimethyl/Trimethyl (K and protein N-term), variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PEAKS mzid SearchModification"
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Caenorhabditis elegans",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE organisms; paper"
+    }
+  ],
+  "limitations": [
+    "Per-file genotype/strain (wild type N2 vs metl-13(tm6870) etc.) is not stated in PRIDE, file names or deposited files; strain, genotype, developmental stage and cell type set to 'not available'. No factor value column added.",
+    "Biological replicate numbering is unknown; each injection is given biological replicate 1 as a placeholder, not evidence that they are independent animals.",
+    "Dissociation method not stated in PRIDE/paper; set to 'not available'.",
+    "Deposit was split by instrument and enzyme because the cleavage agent differs per injection (chymotrypsin vs Glu-C, taken from the PEAKS .mzid enzyme regex and file names Cym/GluC/Chymo) and the instrument differs (Q Exactive confirmed from RAW headers; timsTOF Pro from paper text and mzid ion mobility values).",
+    "The enzyme for GC1 (timsTOF) is inferred from its mzid (Glu-C regex), file name 'GC'; acquisition method for the timsTOF run is recorded as DDA though not stated explicitly (PASEF details unknown).",
+    "timsTOF data is a Bruker .d folder deposited as 210520_Engelfriet_GC1_698.d.7z; it is used as the data file name (not a RAW file) .",
+    "Organism part 'whole body' follows PRIDE organismParts; the analysed material is an EEF-1A-enriched gel band from whole-animal extracts.",
+    "Modifications/tolerances (15 ppm, 0.03 Da) come from the deposited PEAKS mzid files; propionamide (UNIMOD:24) is listed as variable as in the search; N-terminal methylations are protein N-terminal per mzid 'NT Protein' labels."
+  ]
+}

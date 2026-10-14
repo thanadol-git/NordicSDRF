@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-10-01
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-09)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-14)
 
 countries:
   sweden:
@@ -176,8 +176,11 @@ countries:
         search_terms: [Oslo, Rikshospitalet, Radiumhospitalet]
         pride_hits: 124
         screened: 0
-        annotated: 0
-        blocked: 0
+        annotated: 5
+        blocked: 3
+        pxd_list: lists/norway/oslo.txt
+        pxd_count: 120
+        in_corpus: 26
       trondheim:
         name: Trondheim
         search_terms: [Trondheim, NTNU]
@@ -228,7 +231,7 @@ countries:
         blocked: 27
         pxd_list: lists/finland/helsinki.txt
         pxd_count: 66
-        in_corpus: 19
+        in_corpus: 38
       turku:
         name: Turku
         search_terms: [Turku, Åbo]
@@ -238,7 +241,7 @@ countries:
         blocked: 8
         pxd_list: lists/finland/turku.txt
         pxd_count: 102
-        in_corpus: 91
+        in_corpus: 93
       oulu:
         name: Oulu
         search_terms: [Oulu]

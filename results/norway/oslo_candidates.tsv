@@ -1,0 +1,126 @@
+accession	verdict	evidence	in_corpus	title
+PXD000499	confirmed	countries=['Norway']		miRNA-mediated regulation of hBC cell proteome
+PXD000574	confirmed	countries=['Norway']		Dectin-1/Syk pathway activates autophagy-dependent unconventional protein secretion from human macro
+PXD000577	confirmed	countries=['Norway']	yes	PhosFox: a software tool for peptide-level processing of LC-MS/MS-based phosphoproteomic data
+PXD000621	confirmed	countries=['Norway']		Platelet Activation Results in Modulation of miRNA, mRNA, and Protein Expression Profiles: New Insig
+PXD000642	confirmed	countries=['Norway']		Quantitative proteomics of extracellular vesicles released from human primary macrophages upon beta/
+PXD000722	confirmed	countries=['Norway']		pTyr-CoIP HP/AGS - Quantitative analysis of H. pylori induced phosphotyrosine signaling upon infecti
+PXD001205	confirmed	countries=['Norway']		Different Binding Motifs of the Celiac Disease Associated HLA Molecules DQ2.5, DQ2.2 and DQ7.5 Revea
+PXD001256	confirmed	countries=['Norway']	yes	Diethylation
+PXD002001	confirmed	countries=['Norway']		Human HeLa SILAC LC MS/MS -  Hypoxia Strongly Affects Mitochondrial Ribosomal Proteins and Transloca
+PXD002678	confirmed	countries=['Norway']		Gluten-specific antibodies of celiac disease gut plasma cells recognize long proteolytic fragments t
+PXD003029	rejected	countries=['Austria'] | Medizinische Universität Wien ; Medizinische Universität Wien Center for Pathophysiology, In		CD147 mutants affinity purification mass spectrometry from human T cells
+PXD003165	confirmed	countries=['Norway']	yes	Label-free based quantitative proteomics analysis of primary neonatal porcine Leydig cells exposed t
+PXD003308	confirmed	countries=['Norway']		Half decimal place rule
+PXD003362	confirmed	countries=['Norway']		microRNA-140 inhibits inflammation and stimulates chondrogenesis in a model of IL1β-induced osteoart
+PXD003380	confirmed	countries=['Norway']	yes	Restoration of defective nuclear-mitochondrial DNA damage signaling suppresses neuropathology and ex
+PXD004415	confirmed	countries=['Norway']		Quantitative phosphoproteome analysis of cisplatin-induced apoptosis in Jurkat T cells
+PXD004424	confirmed	countries=['Norway']		Proteomic and bioinformatic characterization of extracellular vesicles released from human primary m
+PXD004900	confirmed	countries=['Norway']		Half decimal place rule -  Application of the half decimal place rule to increase the peptide identi
+PXD005083	confirmed	countries=['Norway']		Proteomic and bioinformatic characterization of proteins secreted conventionally and unconventionall
+PXD005142	confirmed	countries=['Norway']	yes	TORC1 shapes the SUMO proteome to control RNA Polymerase III activity
+PXD005657	rejected	countries=['Spain'] | Institute for Research in Biomedicine ; Institute for Research in Biomedicine (IRB Barcelona), The B	yes	Direct evidence of the presence of cross-linked Aβ dimers in the brains of Alzheimer’s disease patie
+PXD005931	confirmed	countries=['Norway']		Large scale intact glycopeptide identification by Mascot database search
+PXD005944	confirmed	countries=['Norway']		On-bead vs FASP vs InGel sample preparation for LC-MS/MS
+PXD005945	confirmed	countries=['Norway']	yes	Deep LC-MS/MS analysis of the proteome from six cell lines
+PXD006026	confirmed	countries=['Norway']		Identification of alternative splice variants using unique isoform-specific tryptic peptide sequence
+PXD006117	confirmed	countries=['Norway']		Comparative Proteomic Analysis of the Mycobacterium tuberculosis Lineage 7 Reveals Differentially Ab
+PXD006121	confirmed	countries=['Norway']		Comparative proteomic analysis of Neisseria meningitidis wildtype and dprA null mutant strains links
+PXD006157	confirmed	affiliation~'norway': Department of Molecular Cell Biology, Institute for Cancer Research, The Norwegian Radium 		The phosphatase PTPRG controls FGFR1 activity and influences sensitivity to FGFR kinase inhibitors
+PXD006630	confirmed	countries=['Norway']		Nε- and O-Acetylation in Mycobacterium tuberculosis Lineage 7 is Biased Towards Proteins Involved in
+PXD007894	confirmed	countries=['Norway']		Absolute quantitation of proteins by two-point quantitation using dimethylated proteotypic peptides
+PXD008257	confirmed	countries=['Norway']		Vaccination agaisnt intracellular pathogen for aquaculture
+PXD008992	confirmed	countries=['Norway']		Characterization of the small intestinal lesion in celiac disease by label-free quantitative mass sp
+PXD009302	confirmed	countries=['Norway']	yes	Proximity labeling by a recombinant APEX2-FGF1 fusion protein reveals interaction of FGF1 with the p
+PXD009423	confirmed	countries=['Norway']		GRP94 rewires and buffers the FLT3-ITD signaling network and promotes survival of acute myeloid leuk
+PXD009428	confirmed	countries=['Norway']		Comparison of ultracentrifugation and a commercial kit for isolation of exosomes derived from gliobl
+PXD009676	confirmed	countries=['Norway']	yes	Ample glycosylation in membrane and cell envelope protein explains phenotypic diversity, virulence a
+PXD010180	confirmed	countries=['Norway']		Glioblastoma cells´ response to a cancer drug
+PXD010510	confirmed	countries=['Norway']		A high throughput pipeline for antibody validation
+PXD011084	confirmed	countries=['Norway']	yes	Cdk1 Gates Cell Cycle-Dependent tRNA Synthesis by Regulating RNA Polymerase III Activity
+PXD011249	confirmed	affiliation~'oslo': Oslo University Hospital, Institute for experimental medical research		The cardiac syndecan-4 interactome:A role for syndecan-4 innuclear translocation of muscle LIM prote
+PXD011785	confirmed	countries=['Norway']		Quantitative proteomic analyses of CD4+ and CD8+ T cells reveals differentially expressed proteins i
+PXD012051	confirmed	countries=['Norway']		Candida utilis as a protein source for Atlantic salmon
+PXD012416	confirmed	countries=['Norway']		A MITOCHONDRIAL STRESS RESPONSE TRIGGERED BY DEFECTS  IN PROTEIN SYNTHESIS QUALITY CONTROL
+PXD012858	confirmed	countries=['Norway']		Global proteome analysis of ATF4 targets during ER stress.
+PXD013748	confirmed	countries=['Norway']		Sparrow seminal fluid diversification -MS/MS
+PXD013777	confirmed	countries=['Norway']		Immunoglobulin V-gene usage among human serum IgA with or without specificity to the autoantigen tra
+PXD013884	confirmed	countries=['Norway']	yes	Desumoylation of the RNA polymerase III lies at the core of the Sumo-Stress Response
+PXD015644	confirmed	countries=['Norway']		NAD+ augmentation restores mitophagy and limits accelerated aging in Werner syndrome
+PXD016006	confirmed	countries=['Norway']		Proteomic and epi/proteomic response of Mycobacterium tuberculosis to nitric oxide stress
+PXD016828	confirmed	countries=['Norway']		Proteogenomics analysis unveils a novel TFG-RET gene fusion and druggable targets in papillary thyro
+PXD016886	confirmed	affiliation~'norway': Norwegian University of Science and Technology, Trondheim, Norway;  University of Oslo, Os	yes	Structural diversity of toxins contained within the venom of the funnel web spider Hadronyche infens
+PXD017420	confirmed	countries=['Norway']		The proteome of extracellular vesicles secreted in vitro by porcine microbiota grown in complex β-ma
+PXD017766	confirmed	countries=['Norway']		Olfactory bulb, mid-age mice, Thon Collaboration
+PXD018812	confirmed	countries=['Norway']		A cell competition-based drug screen identifies a novel compound that induces dual c-Myc degradation
+PXD019125	confirmed	countries=['Norway']	yes	Black soldier fly as protein source for salmon
+PXD020383	confirmed	countries=['Norway']	yes	Lineage-Specific Proteomic Signatures in the Mycobacterium Tuberculosis Complex Reveal Differential 
+PXD022773	confirmed	countries=['Norway']		GAK and PRKCD are positive regulators of Parkin-independent mitophagy
+PXD022908	confirmed	countries=['Norway']		Identification of response signatures for tankyrase inhibitor treatment in tumor cell lines
+PXD024320	confirmed	countries=['Norway']		SILAC-based quantitative proteomics of cancer cells treated with the anti-tumor antibody 14F7
+PXD024737	confirmed	affiliation~'norway': Department of Biosciences, Center for Integrative Microbial Evolution, University of Oslo,		neisserial OTases have different protein specificies
+PXD025423	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Long-term exposure to nanosized TiO2 triggers stress responses and cell death pathways in pulmonary 
+PXD025512	confirmed	affiliation~'norway': Centre for Ecological and Evolutionary Synthesis, Department of Biosciences, University of	yes	The venom and telopodal defence systems of the centipede Lithobius forficatus are functionally conve
+PXD025929	confirmed	countries=['Norway']	yes	A regulatory network comprising let-7 miRNA and SMUG1 is associated with good prognosis in breast ca
+PXD026942	confirmed	countries=['Norway']		Comparison of LFQ and IPTL for protein identification and relative quantification
+PXD027284	confirmed	countries=['Norway']		NK-cell derived extracellular vesicles LC-MS/MS
+PXD027502	confirmed	countries=['Norway']		: GRAMD1C regulates autophagy initiation and mitochondrial bioenergetics through ER-Mitochondria cho
+PXD027893	confirmed	countries=['Norway']	yes	Proteomic study of apheresis platelets made HLA class I deficient for transfusion of refractory pati
+PXD028702	confirmed	countries=['Norway']		Protein dysregulation during T cell activation in multiple sclerosis patients compared to healthy co
+PXD028862	confirmed	countries=['Norway']		Public T cell epitopes shared among SARS-CoV-2 Public T cell epitopes shared among SARS-CoV-2 varian
+PXD029717	confirmed	affiliation~'oslo': University of Oslo, department of biosciences		Venoms for all occasions: the functional toxin profiles of different anatomical regions in sea anemo
+PXD029719	confirmed	countries=['Norway']		Strategies to inhibit FGFR4 V550L-driven rhabdomyosarcoma
+PXD031975	confirmed	countries=['Norway']	yes	Proteomics profiling of mitotic arrest by transcriptional silencing of the Cdc20 homolog slp1 in fis
+PXD032830	confirmed	countries=['Norway']		Quantitative proteomic changes during anoxia and reoxygenation in anoxia-tolerant crucian carp
+PXD033061	confirmed	countries=['Norway']		Quantitative proteomic analysis of phosphorylated proteins during anoxia and reoxygenation in the an
+PXD033380	confirmed	affiliation~'oslo': University of Oslo		Antarctonemertes valida venomics
+PXD033468	rejected	countries=['Australia'] | University of Melbourne ; Omniose/VaxNewMo, St. Louis, MO 63110		Discovery and characterization of a new class of O-linking oligosaccharyltransferase from bacteria i
+PXD034174	confirmed	affiliation~'oslo': University of Oslo, Department of Biosciences		Physiological constraints dictate toxin spatial heterogeneity in snake venom glands
+PXD034794	confirmed	countries=['Norway']		Ferritin-mediated iron detoxification mediates hypothermia survival in Caenorhabditis elegans and mu
+PXD035010	confirmed	countries=['Norway']	yes	Low dose rate radiation induced secretion of TGF-β3 together 2 with an activator in small extracellu
+PXD037863	confirmed	affiliation~'norway': Centre for Advanced Imaging, The University of Queensland, St Lucia, QLD 4072, Australia. 	yes	Intra-colony venom diversity contributes to maintaining eusociality in a cooperatively breeding ant
+PXD037909	confirmed	countries=['Norway']		Energy metabolism in skeletal muscle cells from donors with different body mass index
+PXD040724	confirmed	countries=['Norway']		Mitochondria preconditioning delays aging and associated diseases in C. elegans impacting on key fer
+PXD040958	confirmed	countries=['Norway']		Proteomic analysis of small Extracellular vesicles in control cells and SNAP-depleted cells
+PXD041255	confirmed	affiliation~'norway': Engineer at NTNU, Norway		Transcriptomic and Proteomic Profiling Reveal Immune and Metabolic Dysregulation in the Colonic Muco
+PXD042503	rejected	countries=['France'] | 3p5-proteom'ic plateform ; Université Paris Cité, IRD, UMR261, MERIT, F-75006 Paris,Fra		Infected erythrocytes and plasma proteomics reveal a specific protein signature of severe malaria.
+PXD042540	confirmed	countries=['Norway']		Characterization of the biochemical activity and tumor-promoting role of the dual protein methyltran
+PXD043908	confirmed	countries=['Norway']	yes	A T-cell receptor targeting a shared neoantigen mediates elimination of primary human acute myeloid 
+PXD044287	confirmed	affiliation~'oslo': University of Oslo	yes	Targeting IRE1α reprograms the tumor microenvironment and enhances anti-tumor immunity in prostate c
+PXD045723	confirmed	countries=['Norway']		Interplay between cultured human osteoblastic and skeletal muscle cells: Effects of conditioned medi
+PXD045913	confirmed	countries=['Norway']		Biopsy proteome scoring to determine mucosal remodeling in celiac disease
+PXD046237	confirmed	countries=['Norway']		Benchmarking and integrating human B-cell receptor genomic and antibody proteomic profiling
+PXD046746	confirmed	countries=['Norway']		Circulating levels of the proinflammatory monomeric isoform of C-reactive protein (mCRP) correlate w
+PXD048264	confirmed	affiliation~'norway': Centre for Ecological and Evolutionary Synthesis, Department of Biosciences, University of		Exaptation of an evolutionary constraint enables behavioural control over the composition of secrete
+PXD048864	confirmed	countries=['Norway']		Evaluation of cerebrospinal fluid (CSF) and interstitial fluid (ISF) mouse proteomes for the validat
+PXD050008	rejected	countries=['United States'] | University of Toledo ; Department of Neurosciences, University of Toledo	yes	human amygdala CS-56 enrichment LC-MS/MS
+PXD050180	confirmed	countries=['Norway']		The Atlantic cod MHC I compartment has the properties needed for cross-presentation in the absence o
+PXD050655	confirmed	affiliation~'norway': Department of Immunology, University of Oslo, Norway		Biopsy  proteome score performs well as an effect measure in a gluten-challenge trial of coeliac dis
+PXD050818	confirmed	countries=['Norway']		HEK293 WT and ATP6AP1 knockout cells treated with and without mitochondrial translation inhibitors
+PXD051559	confirmed	countries=['Norway']		Mass spectrometry of plasma extracellular vesicles before and after exercise
+PXD053250	confirmed	countries=['Norway']		ABCA7 transporter functional role on Alzheimer’s disease onset and progess
+PXD054276	confirmed	countries=['Norway']	yes	TCR-engineered T cells targeting a shared β-catenin mutation eradicate solid tumors in vivo
+PXD055846	confirmed	countries=['Norway']		Benchmarking of mass spectrometry-based antibody repertoire profiling reveals extensive systematic b
+PXD056609	confirmed	countries=['Norway']		MSI-VISUAL: New visualization methods for Mass Spectrometry Imaging and tools for interactive mappin
+PXD056720	confirmed	countries=['Norway']		SNX10 regulates the clearance of mitochondrial proteins and mitochondrial bioenergetics
+PXD057148	confirmed	countries=['Norway']		Immunoprecipitation/Pull-down of ATP6AP1-FLAG in HEK293 WT cells treated with and without a mitochon
+PXD057713	confirmed	countries=['Norway']		Oral delivery of a cholera toxin-binding protein protects against diarrhoea in experimental cholera 
+PXD060821	confirmed	countries=['Norway']		Histidine methylation of MYLK2 and C3H zinc fingers by CARNMT1
+PXD061360	confirmed	countries=['Norway']		Identification of Determinants for Variability in Mitochondrial Biochemical Complex Activities
+PXD061442	confirmed	countries=['Norway']	yes	Seafood project_Allergen exposure in shrimp industry
+PXD062376	confirmed	countries=['Norway']	yes	Noncanonical Caspase 4/-5 Inflammasome Activation in Coronary Artery Endothelial Cells by Lipopolysa
+PXD062610	confirmed	countries=['Norway']		Spatial tissue proteomics analysis of laser capture microdisscted intestinal crypt compartment in ce
+PXD062684	confirmed	countries=['Norway']		Spatial tissue proteomics analysis of laser capture microdisscted intestinal crypt compartment
+PXD063320	confirmed	countries=['Norway']		Proteomic analysis of gemcitabine-resistant (GemR) versus paired control human pancreatic cancer cel
+PXD063326	confirmed	countries=['Norway']		Analysis of serum IgG of Vλ2315m+/-TCR-TG+/- mice
+PXD063561	confirmed	countries=['Norway']		The C-terminal end of engineered albumin variants and fusion proteins after exposure to carboxypepti
+PXD068043	confirmed	countries=['Norway']		Proteomic evaluation and comparison of native and decellularized human saphenous vein extracellular 
+PXD068278	confirmed	countries=['Norway']		Transcriptomic and proteomic insights into progressive myoclonus epilepsy, EPM1
+PXD068287	confirmed	countries=['Norway']		Comparative Proteomics and micro-RNA analysis of Skeletal Muscle Cell Small Extracellular vesicles -
+PXD069382	confirmed	countries=['Norway']		The RAB27A effector SYTL5 regulates mitophagy and mitochondrial metabolism
+PXD069822	confirmed	countries=['Norway']		Intrinsic errors in mitochondrial translation trigger a decline in cell fitness
+PXD070138	confirmed	countries=['Norway']		Ancient origin and dynamic evolution of bivalent spider toxins
+PXD070278	confirmed	countries=['Norway']	yes	Multiple Evolutionary Mechanisms Underlie the Venom Composition of the Green Lacewing
+PXD070562	confirmed	countries=['Norway']		catTFRE mass spectrometry analysis reveals transcription factor network driver of Osteosarcoma
+PXD071196	confirmed	countries=['Norway']		TCR T cells targeting IgA- and IgG-expressing multiple myeloma
+PXD072203	confirmed	countries=['Norway']		Higher concentration of extracellular vesicles in plasma from ME/CFS patients, with protein cargo al

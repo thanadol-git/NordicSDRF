@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD034174-msi.sdrf.tsv",
+  "dataset": "PXD034174",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD034174"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD034174/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/35761243"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "N. subfulva / N. nigricollis / C. rhodostoma",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper results: MSI of N. nigricollis, N. subfulva and C. rhodostoma glands; PRIDE organisms"
+    },
+    {
+      "location": "characteristics[imaging mode]",
+      "value": "MSI vs functional MSI",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper/PRIDE: fMSI (PLA2 substrate PC 16:0/22:6) of N. nigricollis gland; file name fmsi-n-moss"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "ultraflex III TOF/TOF MS:1000705",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Protocol: Bruker Ultraflex III MALDI-TOF/TOF; PRIDE field says autoflex (protocol preferred)"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "not applicable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Intact MALDI imaging, no digestion"
+    }
+  ],
+  "limitations": [
+    "PXD034174 is split into three SDRFs because it holds three unrelated assays: tryptic LC-MS/MS of venom gland section quarters (-tissue), intact-venom LC-MS of spat vs milked venom (-venom), and MALDI mass spectrometry imaging (-msi).",
+    "Each .wiff is claimed once; the companion .wiff.scan files are not listed as data files. imzML files (IMAGE DATA) are companions of the .ibd files; only .ibd (RAW category) are claimed.",
+    "File names say Nmoss/Nmos/n-moss (Naja mossambica); the paper and PRIDE name the animal Naja nigricollis (Tanzanian origin), so Naja nigricollis is used. n-mel is mapped to Naja subfulva (paper: non-spitting cobra N. subfulva; PRIDE organism list) - the abbreviation itself is not decoded by any deposited file.",
+    "Sex, age, developmental stage and strain are not reported and are not included.",
+    "Spatial resolution 50 um, m/z 1000-15000 linear (MSI) and 160-1400 reflectron (fMSI) are not encoded as columns.",
+    "comment[proteomics data acquisition method] column omitted and base template declared (instead of ms-proteomics) because no PRIDE:0000659 term fits this assay; ms-proteomics would require a false value.",
+    "fMSI is treated as the same gland as MSI (paper: same venom gland), biological replicate 1."
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD000722.sdrf.tsv",
+  "dataset": "PXD000722",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000722"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD000722/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4102909/ (PMID 25101063)"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2014/07/PXD000722/"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[cell line]",
+      "value": "AGS / CVCL_0139",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: AGS cells (CRL 1739, ATCC); Cellosaurus lookup"
+    },
+    {
+      "location": "characteristics[age]/[sex]",
+      "value": "54Y / female",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Cellosaurus donor values, not stated in the paper"
+    },
+    {
+      "location": "comment[label]",
+      "value": "SILAC light/medium/heavy",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: Arg0/Lys0, Arg6/Lys4, Arg10/Lys8; one injection per mixed light+medium+heavy sample"
+    },
+    {
+      "location": "characteristics[treatment]",
+      "value": "non-infected control (light); Helicobacter pylori infection (medium, heavy)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: non-infected cells were light reference; infected cells medium or heavy; MOI 100"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "LTQ Orbitrap XL MS:1000556",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper LC-MS section"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "CAM fixed; Ox(M), N-term Ac, Phospho(S,T,Y), SILAC labels variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited Mascot .dat IT_MODS (variable) and PRIDE protocol (fixed Cys-CAM); paper also lists MaxQuant"
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "10 ppm / 0.5 Da",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Mascot .dat TOL/ITOL and paper"
+    }
+  ],
+  "limitations": [
+    "Which treatment (WT 90 min, WT 7 h, dCagA, dPAI) each medium/heavy channel carries, and which of the three RAW date groups is experiment 1/2/3, is not stated in any deposited file: treatment for medium/heavy is generic 'Helicobacter pylori infection', no sampling time or strain recorded.",
+    "Biological replicate 1-4 is inferred from file numbering within each date group (paper: four biological replicates per experiment); not confirmed by a mapping file.",
+    "Age/sex come from Cellosaurus, not the paper.",
+    "Dissociation not stated (LTQ ion trap MS/MS), set to not available.",
+    "Modifications taken from Mascot .dat search (MODS field empty; carbamidomethyl fixed from PRIDE text); paper's MaxQuant search also had pyro-Glu, not included.",
+    "Enrichment process and treatment are free-text (ontology warnings only)."
+  ]
+}

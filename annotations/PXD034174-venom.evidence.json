@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD034174-venom.sdrf.tsv",
+  "dataset": "PXD034174",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD034174"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD034174/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/35761243"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Hemachatus haemachatus / Naja nigricollis / Naja pallida",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper venom collection: single specimens of N. nigricollis, N. pallida, H. haemachatus; file codes Hhae/Nmos/Npal"
+    },
+    {
+      "location": "characteristics[venom collection method] / factor value",
+      "value": "spitting (file 'spit') vs milking (file 'postspit')",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper: spat venom vs milked venom collected after spits; 'postspit' mapped to milked as the paper's only post-spitting sample"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "not applicable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper: lyophilised venom dissolved in 0.5% FA and analysed intact by LC-MS"
+    },
+    {
+      "location": "comment[ms1 scan range]",
+      "value": "300m/z-1800m/z",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper LC-MS methods"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "TripleTOF 5600",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper; WIFF header of 20180501_spit_Nmos.wiff contains 'TripleTOF 5600'"
+    }
+  ],
+  "limitations": [
+    "PXD034174 is split into three SDRFs because it holds three unrelated assays: tryptic LC-MS/MS of venom gland section quarters (-tissue), intact-venom LC-MS of spat vs milked venom (-venom), and MALDI mass spectrometry imaging (-msi).",
+    "Each .wiff is claimed once; the companion .wiff.scan files are not listed as data files. imzML files (IMAGE DATA) are companions of the .ibd files; only .ibd (RAW category) are claimed.",
+    "File names say Nmoss/Nmos/n-moss (Naja mossambica); the paper and PRIDE name the animal Naja nigricollis (Tanzanian origin), so Naja nigricollis is used. n-mel is mapped to Naja subfulva (paper: non-spitting cobra N. subfulva; PRIDE organism list) - the abbreviation itself is not decoded by any deposited file.",
+    "Sex, age, developmental stage and strain are not reported and are not included.",
+    "'postspit' is interpreted as milked venom (paper: milked samples extracted following spits); not stated verbatim in the file names. Biological replicate 1: one specimen per species.",
+    "comment[proteomics data acquisition method] column omitted and base template declared (instead of ms-proteomics) because no PRIDE:0000659 term fits this assay; ms-proteomics would require a false value."
+  ]
+}

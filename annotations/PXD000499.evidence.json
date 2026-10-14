@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD000499.sdrf.tsv",
+  "dataset": "PXD000499",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000499"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD000499/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Nassa et al. 2014 Mol Cell Proteomics PMID 24525454 (abstract only; full text unavailable)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "PRIDE organisms: https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000499"
+    },
+    {
+      "location": "characteristics[cell line] / cellosaurus",
+      "value": "MCF-7 / CVCL_0031",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "PRIDE description (BC MCF-7 cells); Cellosaurus lookup"
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "female",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Cellosaurus MCF-7 (not stated in deposit)"
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "breast cancer",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "PRIDE title/description"
+    },
+    {
+      "location": "comment[label]",
+      "value": "iTRAQ114-117",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "ProteinPilot XML QUANT_LABEL IT114-IT117 and UI_SAMPLE_TYPE iTRAQ 4plex (Peptide Labeled)"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "QSTAR (MS:1000190)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "PRIDE instruments; Paragon UI_INSTRUMENT QSTAR ESI; WIFF header string QSTAR"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "UI_DIGESTION Trypsin in deposited ProteinPilot results 110714GiovannicytoB13toC22replicates.xml / 110802GiovanninuclB11toC32replicates.xml"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Methylthio C fixed; iTRAQ4plex K and N-term fixed",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "fixed=\"true\" occurrences in deposited ProteinPilot results 110714GiovannicytoB13toC22replicates.xml / 110802GiovanninuclB11toC32replicates.xml"
+    },
+    {
+      "location": "comment[alkylation reagent]",
+      "value": "MMTS",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "UI_CYS_ALKYLATION MMTS in deposited ProteinPilot results 110714GiovannicytoB13toC22replicates.xml / 110802GiovanninuclB11toC32replicates.xml"
+    },
+    {
+      "location": "tolerances",
+      "value": "0.2 Da / 0.2 Da",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "MSTOLERANCE/MSMSTOLERANCE in deposited ProteinPilot results 110714GiovannicytoB13toC22replicates.xml / 110802GiovanninuclB11toC32replicates.xml"
+    },
+    {
+      "location": "characteristics[cellular compartment]",
+      "value": "cytoplasmic/nuclear fraction",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "file names cyto/nucl, confirmed in PEAKLIST originalfilename"
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "B_n -> n; C_k -> 13+k (cyto) or 11+k (nucl)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "run names and XML file-name ranges B13toC2 / B11toC3"
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1/2 by acquisition date blocks",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "inferred from names (iTRAQ prefix, dates) and XML names ending replicates"
+    }
+  ],
+  "limitations": [
+    "Full text of Nassa et al. 2014 (PMID 24525454) was not retrievable (Europe PMC 500, PMC/publisher blocked); no sample-prep or iTRAQ channel map was available.",
+    "iTRAQ channel -> condition (ERbeta+ vs ERbeta-, etc.) is undecodable; sources are named by compartment+channel and no factor value or treatment column is given.",
+    "Whether the two fractionation series per compartment are technical or biological replicates is unknown; coded as technical replicate 1/2 (grouping by acquisition date) with biological replicate 1; also unknown whether channel identities are consistent across the two series.",
+    "Fraction numbers were set by a scripted patch of the built file (gaps in deposited fractions; cyto series1 lacks B8,B13 and nucl series1 lacks B11 (not deposited), cyto series2 lacks B11-B13).",
+    "Cellular compartment derives from run-name words cyto/nucl, labelled as cytoplasmic/nuclear fraction.",
+    "Sex (female) is the Cellosaurus value; age left not available. Variable modifications not extractable (ProteinPilot Biological modifications focus uses probability-weighted mod lists); only fixed mods reported. Dissociation not stated, not available. Tolerances are ProteinPilot values recorded in the XML.",
+    ".wiff.scan companion files (52) are not rows; each .wiff claimed once x 4 channels = 208 rows. Fractionation method not stated (not annotated).",
+    "Revised after independent review: the two acquisition series per compartment are NOT asserted to be technical replicates. Each series has its own source names (cyto-s1/cyto-s2/nucl-s1/nucl-s2), all with technical replicate 1 and biological replicate 1 as placeholders; the real replicate design and the channel-to-condition (ERbeta +/-) mapping are unknown."
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD017420.sdrf.tsv",
+  "dataset": "PXD017420",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD017420"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD017420/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/32630095"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/09/PXD017420/190218LeidyEVbasedonMQ14.sps"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE sample protocol and paper: Ultimate 3000 RSLCnano connected to Q Exactive"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: digested with trypsin overnight at 37 C"
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "pig gut metagenome (NCBITaxon:1510822)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Microbiota from pig feces; searched against pig colon MAGs plus Sus scrofa; no single organism"
+    },
+    {
+      "location": "characteristics[environmental medium]",
+      "value": "fecal material",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "EVs from in vitro cultures inoculated with pooled pig fecal slurry"
+    },
+    {
+      "location": "assay/data file",
+      "value": "4 RAW files",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE file list: 180112_Leidly_01-04.raw"
+    }
+  ],
+  "limitations": [
+    "Which of the 4 RAW files are the control (no carbohydrate) vs 2% beta-mannan cultures is not stated in PRIDE, the paper, or the deposited Perseus .sps (only LFQ columns E1-E4); treatment is therefore 'not available' and no factor value is given although the study compares the two conditions (two biological replicates each).",
+    "Biological replicate numbers 1-4 are file-order placeholders, not a true replicate mapping.",
+    "Modifications, tolerances and dissociation not stated and no mqpar deposited (.sps is a Perseus session): set to 'not available'.",
+    "Organism is the pig gut metagenome term; organism part and cell type set to not applicable (EV fraction from a microbial community culture); environmental medium 'fecal material' describes the inoculum, geographic location not stated.",
+    "Paper says 20 ug protein/1 ug trypsin; PRIDE says 50 ug/10 ug; not encoded."
+  ]
+}

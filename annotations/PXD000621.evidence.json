@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD000621.sdrf.tsv",
+  "dataset": "PXD000621",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000621"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD000621/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1160/th14-09-0726"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2015/04/PXD000621/130620GiovanniiTRAQ1all.xml"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE organisms and description (human platelets)."
+    },
+    {
+      "location": "characteristics[organism part]/[cell type]",
+      "value": "blood / platelet",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE description: leucocyte-depleted platelet-rich plasma; keywords Platelets."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "normal",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE description: 15 healthy volunteers."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1 (iTRAQ set 1), 2 (iTRAQ set 2)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE description says two biological replicates; two iTRAQ experiments (file prefixes TRAQ1/TRAQ2) assumed to correspond. Not stated explicitly."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "QSTAR Elite MS:1000655",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited ProteinPilot XML UI_INSTRUMENT = QSTAR Elite ESI; PRIDE field says only QSTAR."
+    },
+    {
+      "location": "comment[label] / source name",
+      "value": "iTRAQ114/115/116 (set 1), iTRAQ114/116/117 (set 2)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "QUANT_LABEL used flags in 130620GiovanniiTRAQ1all.xml and 130701GiovanniiTRAQ2all.xml; sample type iTRAQ 4plex (Peptide Labeled). Unused channel emitted as unused."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "MMTS Methylthio on C fixed; iTRAQ4plex on K and N-term fixed",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE description (MMTS) and ProteinPilot UI settings; biological modifications variable set not itemised (ProteinPilot probability table)."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE description and UI_DIGESTION Trypsin."
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "SCX",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE description: strong cation exchange fractionation; B3-B14 = 12 fractions inferred from file names."
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "0.2 Da",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "MSTOLERANCE/MSMSTOLERANCE in deposited search XML; Paragon calibrates automatically so these are nominal."
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1 / 2 (_2 files)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "File-name suffix _2 interpreted as repeat injection of the same fraction."
+    }
+  ],
+  "limitations": [
+    "Channel-to-condition mapping (control/collagen/TRAP/ADP) is not stated in PRIDE and the paper is paywalled (Thromb Haemost 2015, PMID 25903651); treatment is therefore not available and no factor value is declared.",
+    "Biological replicate 1/2 = iTRAQ set 1/2 is an assumption from the PRIDE description.",
+    "Age, sex, ancestry, individual and pooling status are not available (15 volunteers, no per-sample data).",
+    "Only .wiff files are claimed as data files (48); the 48 .wiff.scan companion files belong to the same acquisitions and are not listed separately.",
+    "Dissociation method and reduction reagent not stated; set to not available. Variable (biological) modifications of the Paragon search are not itemised and omitted.",
+    "Fraction order B3..B14 mapped to fraction identifiers 1..12; _2 repeat for each fraction treated as technical replicate 2.",
+    "Instrument from search XML (QSTAR Elite) overrides PRIDE field QSTAR."
+  ]
+}

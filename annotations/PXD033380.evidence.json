@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD033380.sdrf.tsv",
+  "dataset": "PXD033380",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD033380"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD033380/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/35512366"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/ (ProteinPilot FDR xlsx/.group)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[instrument]",
+      "value": "TripleTOF 5600 MS:1000932",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE field and protocol: Sciex 5600 TripleTOF. Deposited ProteinPilot search settings say 'TripleTOF 6600' (software preset); text preferred."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: 30 ng/ul trypsin overnight"
+    },
+    {
+      "location": "comment[alkylation reagent]/[reduction reagent]",
+      "value": "IAA / DTT",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol (iodoacetamide in file names and ProteinPilot CYS_ALKYLATION=Iodoacetamide); paper: reduced with 10 mM DTT 'as above'"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Inferred from IAA alkylation and ProteinPilot setting; ProteinPilot biological modifications/AA substitutions not itemised"
+    },
+    {
+      "location": "comment[ms1 scan range]/[ms2 scan range]",
+      "value": "300-1800 / 80-1400 m/z",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Sample processing protocol"
+    },
+    {
+      "location": "source name / sample mapping",
+      "value": "P10 = flash-frozen proboscis; LMD = laser-microdissected proboscis",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol describes one flash-frozen and one LMD proboscis; file names LMD vs P10 - P10 mapping is inferred (paper says another flash-frozen proboscis)"
+    }
+  ],
+  "limitations": [
+    "P10 -> flash-frozen proboscis is inferred from protocol text and file names; no explicit mapping file.",
+    "Biological replicate numbers 1 and 2 are arbitrary: two different specimens, not replicates of one condition; no factor value added.",
+    ".wiff.scan companion files (2) are not separate rows; only .wiff files are listed as comment[data file] (sdrf has no associated-data column built).",
+    "Dissociation method (CID is TripleTOF default), tolerances, disease, developmental stage, sex not stated: not available/omitted. Deposited ProteinPilot tolerances (0.05/0.1 Da) are auto-calibration defaults, not used.",
+    "Search used biological modifications and amino-acid substitutions in ProteinPilot; only carbamidomethyl listed as fixed.",
+    "Paper also describes other proteomic samples (mucus, whole animal, in-gel digests via PEAKS/Orbitrap) not in this deposit; this deposit has only the two TripleTOF runs.",
+    "Template revised after independent review: invertebrates v1.1.0 is declared (as for other non-vertebrate animals in this repository), with developmental stage and strain or breed `not available`; comment[sdrf version] added."
+  ]
+}
