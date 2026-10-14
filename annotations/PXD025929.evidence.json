@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD025929.sdrf.tsv",
+  "dataset": "PXD025929",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD025929"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD025929/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC9561369"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "Mascot .dat headers deposited with PXD025929"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[cell line]",
+      "value": "HeLa",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE sample protocol and paper Methods: HeLa clones expressing SMUG1-eGFP or empty vector; Cellosaurus HeLa CVCL_0030."
+    },
+    {
+      "location": "characteristics[age]/[sex]",
+      "value": "30Y6M / female",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Cellosaurus HeLa record (donor attributes), not stated in the paper."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=LTQ Orbitrap XL;AC=MS:1000556",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE sample protocol and paper Methods: LTQ-Orbitrap XL; accession via OLS."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: in-gel digestion with trypsin; Mascot .dat header CLE=Trypsin."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "NT=collision-induced dissociation;AC=MS:1000133",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: CID in the linear ion trap."
+    },
+    {
+      "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+      "value": "10 ppm / 0.6 Da",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Data processing protocol; Mascot .dat TOL=10, ITOL=0.6."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Oxidation M; Acetyl protein N-term; Gln->pyro-Glu N-term Q; Propionamide C (all variable)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Data processing protocol and Mascot .dat IT_MODS header; UNIMOD accessions verified in OLS."
+    },
+    {
+      "location": "comment[data file]",
+      "value": "6 RAW files, one row each",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Each gel lane A-F is one injection; PRIDE file list."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: data-dependent mode."
+    }
+  ],
+  "limitations": [
+    "Run-to-sample mapping is undecodable: lanes A-F are HeLa SMUG1-eGFP immunoprecipitates or empty-vector controls per the protocol, but no deposited file or text states which lane is which. Treatment/genotype columns are therefore 'not available' and no factor value was added.",
+    "Biological replicate numbers 1-6 are ordinal placeholders, one per lane; true replicate structure is unknown.",
+    "Age 30Y6M and sex female come from the Cellosaurus HeLa record, not the deposit.",
+    "Organism part, cell type and disease are 'not available' (not stated in the deposit).",
+    "Reduction/alkylation reagents not stated (propionamide variable mod suggests acrylamide but this is not stated), so 'not available'.",
+    "Deposited community_annotated SDRF in the PRIDE file list was deliberately not consulted.",
+    "Mascot .dat files were checked only for header search parameters (tolerances, enzyme, mods); full-text paper Methods were read via Europe PMC (PMC9561369)."
+  ]
+}

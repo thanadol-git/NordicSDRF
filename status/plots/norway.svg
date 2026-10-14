@@ -27,7 +27,7 @@
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
 <text class="title" x="12" y="22">Norway — in progress</text>
-<text class="sub" x="12" y="40">252 datasets listed · 83 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<text class="sub" x="12" y="40">252 datasets listed · 93 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
 <rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
@@ -44,14 +44,14 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="74.75" width="648.0" height="18.5" rx="3"><title>Bergen · PRIDE hits, not curated yet: 227</title></rect>
 <text class="total" x="764.0" y="88.0">227 PRIDE hits</text>
 <text class="city" x="12" y="118.0">Oslo</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="41.8" height="20" rx="2"><title>Oslo · Annotated: 15</title></rect>
-<text class="seg" x="130.9" y="118.0" text-anchor="middle">15</text>
-<rect class="c-blocked" fill="#d95926" x="152.8" y="104" width="17.0" height="20" rx="2"><title>Oslo · Blocked: 1</title></rect>
-<text class="seg" x="161.3" y="118.0" text-anchor="middle">1</text>
-<rect class="c-in_corpus" fill="#199e70" x="170.8" y="104" width="58.9" height="20" rx="2"><title>Oslo · In corpus: 21</title></rect>
-<text class="seg" x="200.3" y="118.0" text-anchor="middle">21</text>
-<rect class="c-todo" fill="#8a8983" x="230.8" y="104" width="235.9" height="20" rx="2"><title>Oslo · To do: 83</title></rect>
-<text class="seg" x="348.7" y="118.0" text-anchor="middle">83</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="70.4" height="20" rx="2"><title>Oslo · Annotated: 25</title></rect>
+<text class="seg" x="145.2" y="118.0" text-anchor="middle">25</text>
+<rect class="c-blocked" fill="#d95926" x="181.4" y="104" width="17.0" height="20" rx="2"><title>Oslo · Blocked: 1</title></rect>
+<text class="seg" x="189.9" y="118.0" text-anchor="middle">1</text>
+<rect class="c-in_corpus" fill="#199e70" x="199.4" y="104" width="41.8" height="20" rx="2"><title>Oslo · In corpus: 15</title></rect>
+<text class="seg" x="220.3" y="118.0" text-anchor="middle">15</text>
+<rect class="c-todo" fill="#8a8983" x="242.2" y="104" width="224.5" height="20" rx="2"><title>Oslo · To do: 79</title></rect>
+<text class="seg" x="354.4" y="118.0" text-anchor="middle">79</text>
 <text class="total" x="473.7" y="118.0">120 listed</text>
 <text class="city" x="12" y="148.0">Trondheim</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="134" width="113.2" height="20" rx="2"><title>Trondheim · Annotated: 40</title></rect>

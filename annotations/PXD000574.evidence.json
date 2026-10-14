@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD000574.sdrf.tsv",
+  "dataset": "PXD000574",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000574"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD000574/files/all"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "PRIDE organisms field and project description"
+    },
+    {
+      "location": "characteristics[cell type]",
+      "value": "macrophage",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "PRIDE keywords 'Macrophages' and title (human macrophages); CL:0000235"
+    },
+    {
+      "location": "comment[label]",
+      "value": "iTRAQ114/115/116/117",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "PRIDE project description: control 114, LPS 115, Curdlan 116, GBY 117"
+    },
+    {
+      "location": "characteristics[treatment]/factor value[treatment]",
+      "value": "not applicable (control), LPS, curdlan, GBY",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "PRIDE project description channel assignment"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "QSTAR Elite (MS:1000655)",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Protocol text: QSTAR Elite hybrid quadrupole TOF (PRIDE field says only QSTAR); wiff headers show QSTAR acquisition"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Protocol text: trypsin digestion"
+    },
+    {
+      "location": "comment[alkylation reagent]/comment[modification parameters]",
+      "value": "MMTS; Methylthio UNIMOD:39 C Fixed",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Protocol text: cysteine alkylation with MMTS (ProteinPilot search criteria); UNIMOD:39 verified in OLS"
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "SCX",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Protocol text: SCX fractionation (PRIDE:0000561)"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Protocol text: MS data acquired automatically with Analyst QS 2.0, IDA/data-dependent method in wiff headers"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1 / 2",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Two iTRAQ sets (group files 090525LauraiTRAQ1all and 090616LauraiTRAQ2all, 'two biological replicates' in protocol). Assignment of RAW files to sets is INFERRED from acquisition date (files before 2009-05-25 = set 1, from 2009-06-05 = set 2)"
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1-3",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Protocol: each SCX fraction analyzed twice. Repeat order by acquisition date in file name; 090429Laura120minB11b is a third injection of set 1 fraction B11"
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "1-24 from file-name fraction code",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Order A14,A15,B1..B15,C1..C7 assumed to be SCX elution order; patched into built SDRF"
+    }
+  ],
+  "limitations": [
+    "Paper full text not available (no PMC); only PRIDE text and the abstract were used, so no paper-derived claims are made.",
+    "RAW file to iTRAQ set (biological replicate) assignment is inferred from acquisition dates versus the dates in the two deposited .group file names; the .group files (proprietary ProteinPilot binary, ~0.8-0.9 GB) could not be decoded. Set assignment and technical-replicate order are therefore uncertain.",
+    "Fraction identifiers follow the letter/number code in file names (A14..C7 -> 1..24, assumed elution order, patched post-build with a scripted row rewrite); the SCX fraction ordering and the 120min-gradient reruns are assumed.",
+    "Each wiff is a 4-plex iTRAQ injection; one row per channel per file (83 wiff x 4 = 332 rows). The 83 .wiff.scan companion files are not listed as data files (sidecars of the .wiff).",
+    "Cell donor, age, sex, disease, organism part, macrophage differentiation protocol, reduction reagent, tolerances and dissociation are not stated in the PRIDE record: not available. 'GBY' is not expanded in the record. Treatment values LPS, curdlan, GBY are free text (not matched in NCIT/EFO).",
+    "iTRAQ 4plex labelling modification and 'biological modifications' of the ProteinPilot search are not listed as modification parameters (search output undecodable); only MMTS carbamidomethyl-equivalent fixed Methylthio on Cys is declared.",
+    "Two sets treated as separate sources (e.g. control_set1, control_set2) because donors/independence are not documented.",
+    "iTRAQ4plex (UNIMOD:214) added as fixed modification on Lys after review (labelling stated in PRIDE description); peptide N-term labelling not encoded. SANDBOX ONLY (independent review FAIL): iTRAQ set assignment (by file date), technical-replicate order and fraction numbering are inferred because the .group files could not be decoded."
+  ]
+}

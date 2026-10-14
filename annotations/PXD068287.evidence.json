@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD068287.sdrf.tsv",
+  "dataset": "PXD068287",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD068287"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD068287/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12672307/fullTextXML"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "mqpar.xml and txt.zip (summary.txt) from PRIDE"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE organisms; paper 2.2 human skeletal muscle cells"
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "female (sample1-12)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: 12 severely obese female donors; the 15471 row is not available"
+    },
+    {
+      "location": "characteristics[organism part]/[cell type]",
+      "value": "skeletal muscle tissue / myotube",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper 2.2: satellite cells from m. obliquus internus abdominis biopsies differentiated to myotubes for 7 days; sEVs analysed. UBERON:0001134 and CL:0002372 checked in OLS"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol text, paper 2.5.2, and RAW headers of 15455 and 15471 (Q Exactive - Orbitrap MS, Thermo EASY-nLC, 60 min gradient method)"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin/P MS:1001313",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited mqpar.xml enzymes Trypsin/P; protocol 'trypsin without proline restriction'"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M and Acetyl Protein N-term variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml fixedModifications/variableModifications; UNIMOD accessions checked by tools check"
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "4.5 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml mainSearchTol 4.5 ppm; protocol text"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Shotgun LFQ nLC-MS/MS with MaxQuant; DDA not stated explicitly but standard for this workflow"
+    },
+    {
+      "location": "source name / comment[data file]",
+      "value": "sample1-12 -> 15455..15469.raw",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml file-to-experiment map (also summary.txt in txt.zip)"
+    },
+    {
+      "location": "comment[data file]",
+      "value": "15471.raw",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Present in LC-MS_files.zip but absent from mqpar.xml and MaxQuant outputs; identity unknown"
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper/protocol: label-free quantification (LFQ)"
+    }
+  ],
+  "limitations": [
+    "Raw files are only inside LC-MS_files.zip; file names were read from the zip central directory by HTTP range request. PRIDE lists no individual RAW files.",
+    "Run-to-group mapping (T2D vs NGT) is not deposited or in the paper; MaxQuant experiments sample1-12 carry no group info. Disease is therefore 'not available' and no factor value was added. Do not assume sample1-6 = one group.",
+    "Paper states 6 T2D and 6 NGT donors and that two proteomic samples were excluded (n=5 per group), yet all 12 sample1-12 have LFQ data in the deposited search; which were excluded is unknown.",
+    "Mapping of the 12 sEV samples to donors is not stated; biological replicate 1-12 equals the MaxQuant sample number and individual is omitted. Age is only given as group means (NGT 44.0, T2D 49.2 years), so age is 'not available'.",
+    "15471.raw is an extra RAW not searched in the deposited MaxQuant run; it is kept as a separate source with all sample properties 'not available' (could be a QC or excluded sample), biological replicate 13 is a placeholder ordinal.",
+    "Paper and PRIDE text list carbamyl (N-term) as a variable modification, but deposited mqpar.xml and summary.txt show only Oxidation (M) and Acetyl (Protein N-term); the SDRF follows mqpar.xml.",
+    "Fragment tolerance, dissociation method (HCD likely but not stated), reduction/alkylation reagents (carbamidomethylation implies alkylation) are not stated and set to 'not available'/omitted. Primary myotube cultures are not a cell line, so the cell-lines template was not used.",
+    "Acquisition method DDA is inferred from the MaxQuant LFQ shotgun workflow, not explicitly stated."
+  ]
+}

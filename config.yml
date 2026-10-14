@@ -176,11 +176,11 @@ countries:
         search_terms: [Oslo, Rikshospitalet, Radiumhospitalet]
         pride_hits: 124
         screened: 0
-        annotated: 15
+        annotated: 25
         blocked: 3
         pxd_list: lists/norway/oslo.txt
         pxd_count: 120
-        in_corpus: 26
+        in_corpus: 31
       trondheim:
         name: Trondheim
         search_terms: [Trondheim, NTNU]

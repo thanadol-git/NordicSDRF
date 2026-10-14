@@ -1,0 +1,32 @@
+# PXD048264-depleted
+
+Status: validated local annotation; independent review pending. PR not created.
+
+- Scolopendra morsitans venom glands after different venom use (IDA runs), TripleTOF 5600
+- SDRF: `annotations/PXD048264-depleted.sdrf.tsv`
+- Rows: 15; columns: 31
+- SHA-256: `556eb30f928681bfbe2a9731f52cf1c3273b3284985d96bbd5523c7b5ac28129`
+- Evidence manifest: `annotations/PXD048264-depleted.evidence.json`
+- Scope: 15 glands: full (F1-5), after predation (P1-5), after defensive milking (DV1-5)
+
+## Validation
+
+- parse_sdrf validate-sdrf -t ms-proteomics+invertebrates --use_ols_cache_only: 'Everything seems to be fine'
+- tools structure: OK
+- tools check: CLEAN (terms verified, 0 hallucinated)
+- RAW coverage: all 117 .wiff exactly once across the 4 files
+
+## Limitations
+
+- RAW coverage: the 117 .wiff files are each claimed exactly once across the four PXD048264-* SDRFs (gel 79, EVvsDV 8, depleted 15, depletedMS 15); the 117 companion .wiff.scan files are not listed as data files (they are the .wiff index sidecars).
+- The publication (Nat Ecol Evol, doi 10.1038/s41559-024-02556-9, PMID 39496866) is paywalled and no open full text/Methods could be read; only its abstract, supplementary-file legends and data-availability statement (nature.com page) were read. No Methods-derived claim is made.
+- Run-name codes EV and DV are expanded as electrostimulation venom and defensive-milking venom from the PRIDE sample protocol ('two different milking techniques (electrostimulation and defensive milking)'); the expansion is not stated explicitly in a deposited mapping file. Gland codes F, P, DV are decoded as full gland, after predation, after defensive milking from the three gland states listed in the PRIDE abstract; no mapping file was deposited, so this decoding is an inference and moderately confident. Same for 'red' = reduced SDS-PAGE (PRIDE: 'reduced and non-reduced').
+- Biological replicate numbers are taken from the numeric suffix of run names (not stated to be independent animals/glands; pairing of EV3 with DV3 etc. is unknown). Gel series are one sample per series (biological replicate 1).
+- Developmental stage, strain or breed, sex, age, disease: not stated in the PRIDE record; written as not available (contract-required columns). Disease not available rather than healthy.
+- Dissociation method, precursor/fragment mass tolerances, reduction and alkylation reagents are not stated in the PRIDE text or readable search output (ProteinPilot .group files are binary and were not parsed); written as not available. Alkylation reagent is not named; the modification names (Carbamidomethyl in gland/EVvsDV, Carboxymethyl in gel) come from the deposited PeptideSummary.txt files.
+- Modification parameters are a conservative subset: ProteinPilot 5.0 Thorough ID with 'biological modifications and amino acid substitutions' reports many more variable modifications and substitutions (also pyro-Glu, methyl, acetyl, cation adducts); only Cys alkylation (Fixed, effectively applied: >99% of Cys in gland peptide summaries; ~72% in gel summaries) plus Oxidation(M) and Deamidated(N,Q) are encoded.
+- Custom characteristics columns (venom collection method, gel condition, gland state) are not in the templates and are included as extra columns so the factor values have matching characteristics.
+- The split into suffixed SDRFs follows differences found in the RAW headers (acquisition method files, dates, 10 vs 20 MS/MS experiments) and in the deposited search outputs (modification set): gel (2018-09, 'uHPLC 30min 10 ions', Carboxymethyl), EVvsDV (2018-12, 'uHPLC 60min', 20 MS/MS experiments, Carbamidomethyl), depleted glands IDA (2021, 'uHPLC 60min 10 ions', Carbamidomethyl) and depleted glands MS-only (2021, 'uHPLC 55min MS Prot', a single MS experiment, no MS/MS).
+- PRIDE protocol says the 20 most intense ions were selected; the RAW method names for the gel and depleted-gland runs say '10 ions' and contain 11 experiments (1 survey + 10 MS/MS); not reconciled and left unencoded.
+- Gel lanes: fraction identifier is the slice number from the file name (gaps kept: red_DV has no slice 20, red_EV has no slice 7; DV non-reduced starts at slice 0); the build tool produced ordinal fractions which were patched by a scripted rewrite of comment[fraction identifier] from file names.
+- Instrument was confirmed from RAW headers (Mass Spectrometer: TripleTOF 5600, AB Sciex) for one file per sub-experiment, agreeing with PRIDE and the protocol.

@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD054276.sdrf.tsv",
+  "dataset": "PXD054276",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD054276"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD054276/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12479353/fullTextXML"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "Searchresults.xlsx (dummy sheet, no search)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[cell line] / cellosaurus accession",
+      "value": "888-mel / CVCL_4632; HuTu 80 / CVCL_1301",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "File names Mel888_* and Hutu80_*; paper names Mel888 (melanoma) and Hutu80 (small intestine adenocarcinoma); Cellosaurus search returns these identifiers."
+    },
+    {
+      "location": "characteristics[age], [sex]",
+      "value": "26Y female (888-mel); 53Y male (HuTu 80)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Cellosaurus donor age/sex, not stated in the PRIDE record or paper."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "not available (Mel888); small intestine (Hutu80)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: Hutu80 is a small intestine adenocarcinoma line; no site given for Mel888."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "melanoma; small intestine adenocarcinoma",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper results text."
+    },
+    {
+      "location": "characteristics[mhc protein complex], [mhc typing]",
+      "value": "MHC class I protein complex; HLA-A*02:01,HLA-A*24:02",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: peptides eluted from HLA-A*02:01 / HLA-A*24:02; Mel888 A24 + A2 and Hutu80 A2 + A24 (each line has one natural and one transduced allele)."
+    },
+    {
+      "location": "characteristics[immunopeptidome enrichment method]",
+      "value": "immunoaffinity purification",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Pulldown of HLA-bound peptides described as 'previously described'; paper reports bead-based pulldown with acid elution (1% TFA) for the related method. Closest allowed value."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-3 per line",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: n = 3 independent experiments, one technical replicate each; files PRM1-3 per line. Mapping of file number to experiment number assumed."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive HF;AC=MS:1002523",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "RAW header of Mel888_PRM1.raw reads 'Q Exactive HF - Orbitrap MS' and 'Method of Q Exactive HF'; PRIDE field agrees; protocol/paper say 'Q Exactive'."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Parallel reaction monitoring (PRIDE:0000629)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE sample protocol and paper (PRM method)."
+    },
+    {
+      "location": "comment[dissociation method], [collision energy]",
+      "value": "HCD (MS:1000422); 27% NCE",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "RAW header method XML: Fragmentation_HCD / NCE 27; protocol text NCE 27."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "No chemical labelling; heavy-isotope synthetic peptides were spiked as standards."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "not applicable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Native HLA-eluted peptides, no protease digestion."
+    },
+    {
+      "location": "comment[modification parameters], tolerances",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Searchresults.xlsx is a dummy sheet; PRM analysed in Skyline, no database search."
+    },
+    {
+      "location": "factor value[cell line]",
+      "value": "888-mel vs HuTu 80",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Two cell lines quantified for CTNNB1-S37F neopeptide levels."
+    }
+  ],
+  "limitations": [
+    "Deposited PXD054276_community_annotated.sdrf.tsv was deliberately not consulted (independent annotation).",
+    "Cellosaurus age/sex used for the cell lines; not disclosed in the PRIDE record or paper.",
+    "Fully-specified HLA genotype per line is from the paper text (natural plus transduced allele); other HLA class I alleles of the lines are not listed, so mhc typing is partial; mhc typing method not recorded.",
+    "Enrichment method wording is the nearest allowed value; the PRM pulldown protocol is only cited ('as previously described'), and antibody not stated, so antibody enrichment = not available.",
+    "Heavy isotope-labelled spike-in peptides (20 ng each of four peptides) are not encoded in characteristics[spiked compound]; the multi-peptide structured syntax was not attempted.",
+    "Replicate numbering (PRM1-3 = independent experiments 1-3) is an inference from file names plus 'n = 3'; culture medium and passage not available.",
+    "No modification, tolerance or enzyme settings exist (no search); set to not available / not applicable.",
+    "'HuTu 80' (Cellosaurus recommended name) is flagged by tools check because ontology labels read 'HuTu 80 cell' (CLO) / 'HuTu-80 cell' (BTO); kept deliberately.",
+    "Cell-line modification (HLA transduction) not encoded as separate column; Mel888 cells are labelled by parental line."
+  ]
+}

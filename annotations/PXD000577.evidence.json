@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD000577.sdrf.tsv",
+  "dataset": "PXD000577",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000577"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD000577/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4098950/fullTextXML"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2014/06/PXD000577/110803_HaCaT_CTRL_KacetylationF005805.dat"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[cell line]/[cellosaurus accession]",
+      "value": "HaCaT / CVCL_0038",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE description and paper Methods: HaCaT human keratinocytes (from ATCC); Cellosaurus lookup HaCaT = CVCL_0038."
+    },
+    {
+      "location": "characteristics[age]/[sex]",
+      "value": "62Y / male",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Cellosaurus donor annotation for HaCaT, not stated in the deposit or paper."
+    },
+    {
+      "location": "characteristics[treatment], [sampling time], factor value[treatment]",
+      "value": "Poly IC, 1 hour vs untreated (not applicable)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE description: cells transfected with 7 ug/ml poly I:C for 1 h or left untreated; paper Methods. Ontology term NCIT:C758 Poly IC."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1 (prefix 110803), 2 (prefix 110805)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: two biological replicates analysed; two acquisition-date prefixes in the RAW names, each with CTR and polyIC series. Assignment of prefix to replicate number is inferred from the date order."
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "1-6 per sample",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Each sample has six consecutively numbered RAW files (CTR1-6, polyIC1-6); paper/PRIDE state SCX fractionation then IMAC. Numbers taken from file names; that they are SCX fraction indices is inferred."
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "NT=Strong cation-exchange chromatography (SCX);AC=PRIDE:0000561",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE description: peptides fractionated by SCX; paper Methods."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=QSTAR Elite;AC=MS:1000655",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE description and paper: QSTAR Elite hybrid quadrupole TOF with Ultimate 3000 nanoLC; PRIDE structured field says only QSTAR."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin MS:1001251 + Lys-C MS:1001309",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE description: in-solution digestion with lysyl endopeptidase and trypsin (search enzyme was trypsin)."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Phospho S/T, Phospho Y, Acetyl K variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited Mascot .dat header (110803_HaCaT_CTRL_KacetylationF005805.dat: MODS, IT_MODS) and PRIDE description."
+    },
+    {
+      "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+      "value": "50 ppm / 0.2 Da",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Mascot .dat header TOL=50 TOLU=ppm ITOL=0.2 ITOLU=Da (one of the four .dat files inspected)."
+    },
+    {
+      "location": "comment[data file]",
+      "value": "24 .wiff files",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "All 24 .wiff acquisitions claimed once; the 24 .wiff.scan companion files are not rows."
+    }
+  ],
+  "limitations": [
+    "Only the 24 .wiff files are rows; the 24 .wiff.scan companions belong to the same acquisitions and are not separate data files (precedent in other QSTAR deposits).",
+    "Biological replicate numbering (110803 = 1, 110805 = 2) is inferred from file-name date order; no deposited mapping file exists.",
+    "Fraction numbers 1-6 come from the file-name suffixes; that they correspond to SCX fraction order is inferred, and the paper says only that phosphopeptide-containing SCX fractions were analysed.",
+    "Age 62Y and sex male are Cellosaurus values for HaCaT, not sample-level facts from the deposit.",
+    "Mascot parameters were read from one .dat header (110803 control); the other three .dat and the ProteinPilot/Paragon .xml files (iodoacetamide alkylation, phosphorylation emphasis) were not inspected. Paragon search used no listed Unimod set so is not encoded.",
+    "Dissociation method not stated in the deposit or paper text read: not available. Disease not stated: not available. Culture medium, passage number and other optional cell-line fields are not provided and omitted.",
+    "The deposited PXD000577_community_annotated.sdrf.tsv was not consulted.",
+    "Independent review pending."
+  ]
+}

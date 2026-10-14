@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD011084.sdrf.tsv",
+  "dataset": "PXD011084",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD011084"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD011084/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/30247619 (PMC6294503, full text read)"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD011084/ (mqpar.xml, MQsearchresults.zip)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Saccharomyces cerevisiae",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE organism; paper states S288c-derived strains and yeast database."
+    },
+    {
+      "location": "source name / characteristics[biological replicate]",
+      "value": "C31_B1..B3, C35_B1..B3; replicates 1-3",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Experiment names and file map in deposited mqpar.xml and MaxQuant summary.txt (P1780-82 = C31_B1-3, P1784-86 = C35_B1-3)."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive Plus (MS:1002634)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "RAW headers of P1780, P1784 and P1786 read \"Q Exactive Plus - Orbitrap MS\" (PRIDE only says Q Exactive)"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD MS:1000422",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "MaxQuant msms.txt Fragmentation column = HCD."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin/P MS:1001313",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml / summary.txt enzyme Trypsin/P; PRIDE protocol states trypsin."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Acetyl (Protein N-term), Oxidation (M), Phospho (STY) variable; no fixed",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml and parameters.txt (Fixed modifications empty)."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "6 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml mainSearchTol."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "MaxQuant parameters.txt MS/MS tol. (FTMS)."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "proteinGroups.txt has plain Intensity per experiment, no label channels; mqpar no label mods."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "MS/MS scan-triggered MaxQuant DDA search; no DIA described."
+    }
+  ],
+  "limitations": [
+    "C31 vs C35 experiment codes cannot be decoded to strain/genotype/bait from PRIDE, the paper or deposited files (paper mentions Bdp1 IP-MS in WT vs cdk1-as1 but gives no run mapping); no factor value or genotype column added. The community-deposited SDRF was deliberately not consulted.",
+    "Organism part and cell type set to not available; disease not applicable. Yeast strain (S288c-derived, RDKY3615 or BY4741) not assignable per sample.",
+    "Reduction (DTT mentioned in PRIDE protocol) and alkylation reagents left not available: no alkylation stated and no Carbamidomethyl searched; DTT accession not verified.",
+    "Biological replicate numbers 1-3 follow the B1-B3 suffix in experiment names; paper does not confirm they are independent cultures.",
+    "Search: MaxQuant 1.5.2.8, Uniprot S288C fasta, match between runs on.",
+    "Instrument corrected from PRIDE's 'Q Exactive' to Q Exactive Plus after independent RAW-header check."
+  ]
+}

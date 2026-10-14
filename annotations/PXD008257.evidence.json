@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD008257.sdrf.tsv",
+  "dataset": "PXD008257",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD008257"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD008257/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC5748569"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "Ex1.dat, Ex4.dat, Ex5.dat Mascot parameter headers (PRIDE FTP)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism], [organism part]",
+      "value": "Salmo salar; blood serum",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE organism; paper 2.3: EVs isolated from serum"
+    },
+    {
+      "location": "characteristics[disease], factor value[disease], [biological replicate]",
+      "value": "ex1-3 normal (healthy, replicates 1-3); ex4-5 Piscirickettsiaceae Infections (replicates 1-2)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper 2.8: 'healthy (exosome 1-3) and infected (exosome 4-5)'; EFO term chosen by curator"
+    },
+    {
+      "location": "characteristics[sampling time]",
+      "value": "0 day (healthy), 28 day (infected)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper 2.2: serum before cohabitation challenge and 4 weeks after start; 0 day is curator representation of 'before challenge'"
+    },
+    {
+      "location": "characteristics[strain or breed]",
+      "value": "SalmoBreed standard",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper 2.2: unvaccinated Atlantic salmon (SalmoBreed standard)"
+    },
+    {
+      "location": "comment[instrument], acquisition, dissociation, collision energy",
+      "value": "Q Exactive; DDA; HCD; NCE 28",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper 2.7: Q Exactive, data-dependent, HCD NCE 28"
+    },
+    {
+      "location": "comment[cleavage agent details], tolerances, modification parameters",
+      "value": "Trypsin; 10 ppm; 0.1 Da; Carbamidomethyl(C) fixed; Oxidation(M), Acetyl(Protein N-term) variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Mascot parameters header of deposited Ex1/Ex4/Ex5.dat (TOL=10 ppm, ITOL=0.1 Da, MODS, IT_MODS, CLE=Trypsin); paper also reports 0.8 Da for X!Tandem"
+    }
+  ],
+  "limitations": [
+    "Mapping of ex1-ex5 to groups is taken from paper section 2.8 ('exosome 1-3', 'exosome 4-5'), assuming exosome N = exN; no deposited mapping file exists.",
+    "Paper/PRIDE text says three biological replicates, but only two infected files (ex4, ex5) are deposited; replicates numbered within group.",
+    "Developmental stage, sex, cell type not stated: not available. Strain 'SalmoBreed standard' is free text (ontology warning only).",
+    "Disease for infected samples uses EFO 'Piscirickettsiaceae Infections' (no exact MONDO term for piscirickettsiosis found); healthy = PATO 'normal'.",
+    "Reduction/alkylation reagents not stated in paper/PRIDE; columns omitted (carbamidomethyl fixed mod comes from the Mascot search). Deposited .mgf/.dat files are search artefacts, not raw files.",
+    "Fragment tolerance 0.1 Da from Mascot dat; the paper states 0.8 Da for the X!Tandem search. Sample searches also included Homo sapiens taxonomy field in Mascot header (DB=UniProt_SalmoSalar)."
+  ]
+}
