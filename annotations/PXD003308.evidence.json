@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD003308.sdrf.tsv",
+  "dataset": "PXD003308",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003308"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003308/files/all"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/02/PXD003308/Hela_1.dat"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "Hela_1.raw, Hela_2.raw, Hela_3.raw, Hela_HDPRexclusion1.raw, Hela_HDPRexclusion2.raw, Hela_HDPRexclusion3.raw",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "The 6 RAW files listed in the PRIDE file list; each claimed exactly once. The deposit has no zip/tar archives of raw data."
+    },
+    {
+      "location": "source name",
+      "value": "HeLa digest standard DDA (Hela_1-3.raw); HeLa digest HDPR exclusion DDA (Hela_HDPRexclusion1-3.raw)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE protocol: ordinary DDA first, then a second round with an exclusion list of unwanted precursors. Source names are our labels for the two acquisition modes of the same HeLa digest."
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1,2,3 within each source (Hela_N and Hela_HDPRexclusionN get N)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE description: three technical replicates of an in-solution tryptic digest of HeLa. Pairing of exclusion run N with replicate N is from file numbering only."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Single HeLa digest; no biological replicates described."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE organism Homo sapiens (human)."
+    },
+    {
+      "location": "characteristics[cell line]",
+      "value": "HeLa",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE description (HeLa cells); Cellosaurus recommended name."
+    },
+    {
+      "location": "characteristics[cellosaurus accession]",
+      "value": "CVCL_0030",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Cellosaurus lookup for HeLa."
+    },
+    {
+      "location": "characteristics[cellosaurus name]",
+      "value": "HeLa",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Cellosaurus recommended name."
+    },
+    {
+      "location": "characteristics[age]",
+      "value": "30Y6M",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Not in the deposit; taken from the Cellosaurus HeLa donor record (cell-lines template requires it)."
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "female",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Not in the deposit; taken from the Cellosaurus HeLa record."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "uterine cervix",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE organismParts lists epithelial cell and cell culture; HeLa is a cervical line (Cellosaurus tissue Cervix, PRIDE disease Cervix carcinoma)."
+    },
+    {
+      "location": "characteristics[cell type]",
+      "value": "epithelial cell",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE organismParts: Epithelial cell; Cellosaurus cell type epithelial."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "cervical carcinoma",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE diseases: Cervix carcinoma."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive;AC=MS:1001911",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE instrument and protocol text (Q Exactive); RAW header of Hela_1.raw (range read) shows Method of Q Exactive and D:\\QEXACTIVE_1508."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE sample protocol: ordinary DDA mode (both rounds are DDA; the second adds an exclusion list)."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "NT=beam-type collision-induced dissociation;AC=MS:1000422",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Method file name in the Hela_1.raw header: HCD_240min_Top10_fast.meth."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE protocol and CLE=Trypsin in Hela_1.dat Mascot header."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "10 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE data protocol and TOL=10, TOLU=ppm in Hela_1.dat. Applies to the primary search; the extra HDPR_100ppm_* / HDPR_0.15Da_* .dat files are comparison searches and not described here."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "0.05 Da",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE data protocol and ITOL=0.05 in Hela_1.dat."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C, fixed, UNIMOD:4); Oxidation (M, variable, UNIMOD:35); Acetyl (Protein N-term, variable, UNIMOD:1)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "MODS=Carbamidomethyl (C), IT_MODS=Acetyl (Protein N-term),Oxidation (M) in Hela_1.dat; PRIDE data protocol states variable oxidation and N-terminal acetylation and reduction/alkylation."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "No labeling in the protocol."
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "1",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Unfractionated single injections."
+    }
+  ],
+  "limitations": [
+    "Paper (PMID 27806443) full text was not read; no claim cites it.",
+    "Age 30Y6M and sex female come from Cellosaurus, not the deposit.",
+    "No factor value column: the standard vs HDPR-exclusion difference is an acquisition-method difference, expressed only in the source name and data file, not as a sample variable.",
+    "Source names and the pairing of exclusion run N with technical replicate N are our own inference from file names; no deposited mapping file.",
+    "Reduction/alkylation reagents not named in the deposit (Mascot header gives Carbamidomethyl only), so those optional columns are omitted. Collision energy, passage number, culture medium, storage temperature not stated.",
+    "Dissociation HCD is inferred from the method file name in the RAW header (Hela_1.raw only checked), assumed for all runs.",
+    "Search outputs are Mascot .dat; Hela_1.dat header read for parameters, others assumed identical. Mascot instrument field says ESI-TRAP, ignored in favour of protocol text and RAW header."
+  ]
+}

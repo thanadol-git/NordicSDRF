@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD009302-shotgun.sdrf.tsv",
+  "dataset": "PXD009302",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD009302"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD009302/files/all"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/06/PXD009302/RPE1_shotgun_proteomics_txt.zip"
+    }
+  ],
+  "claims": [
+    {
+      "location": "assay name / comment[data file]",
+      "value": "P8838.raw",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Deposited .raw in PRIDE file list; RPE1_shotgun_proteomics_txt.zip txt summary.txt lists Raw file P8838, Experiment RPE, Fraction 1. Zip contains MaxQuant tables only, no raw files."
+    },
+    {
+      "location": "source name",
+      "value": "RPE",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Experiment name RPE in RPE1_shotgun_proteomics_txt/summary.txt."
+    },
+    {
+      "location": "characteristics[cell line], [cellosaurus accession], [cellosaurus name]",
+      "value": "hTERT-RPE1, CVCL_4388, hTERT-RPE1",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Archive name RPE1_shotgun_proteomics and PRIDE description (RPE1 cells); Cellosaurus synonym RPE1 of hTERT-RPE1."
+    },
+    {
+      "location": "characteristics[age], [sex]",
+      "value": "1Y, female",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Cellosaurus record for CVCL_4388; not stated in the deposit."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE organism field and Uniprot human database in protocol."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Single run; no replicate information."
+    },
+    {
+      "location": "characteristics[organism part], [cell type], [disease], [ancestry category], [individual]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Not given in PRIDE text or deposited files."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive Plus;AC=MS:1002634",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "RAW header of P8838.raw (HTTP range) reads 'Q Exactive Plus - Orbitrap MS' and 'Method of Q Exactive Plus'; PRIDE field says Q Exactive."
+    },
+    {
+      "location": "comment[collision energy]",
+      "value": "25 NCE",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Instrument method text in P8838.raw header: '(N)CE / stepped (N)CE nce: 25'."
+    },
+    {
+      "location": "comment[proteomics data acquisition method] / comment[label]",
+      "value": "DDA, label free sample",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "P8838.raw method header: FULL MS / DD-MS2 (TOPN), TopN 10; no labels (MaxQuant multiplicity 1)."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin (MS:1001251)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Protocol text trypsin; summary.txt Trypsin/P recorded as Trypsin."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C) UNIMOD:4 Fixed; Oxidation (M) UNIMOD:35, Acetyl protein N-term UNIMOD:1, Phospho (STY) UNIMOD:21 Variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "RPE1_shotgun_proteomics_txt/parameters.txt (Fixed modifications Carbamidomethyl (C)) and summary.txt (Variable modifications Oxidation (M);Acetyl (Protein N-term);Phospho (STY)). Accessions verified in OLS."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "parameters.txt MS/MS tol. (FTMS) 20 ppm."
+    },
+    {
+      "location": "comment[precursor mass tolerance], comment[dissociation method]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Not given for this run in deposited outputs or the protocol (protocol 6 ppm refers to the other search)."
+    },
+    {
+      "location": "comment[fraction identifier], comment[technical replicate]",
+      "value": "1, 1",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "summary.txt Fraction 1; single injection."
+    },
+    {
+      "location": "comment[sdrf template]",
+      "value": "ms-proteomics v1.1.0, human v1.1.0, cell-lines v1.1.0",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Templates declared."
+    }
+  ],
+  "limitations": [
+    "Nothing in PRIDE text describes how P8838 was prepared (e.g. whether it is phospho-enriched, which cells or treatment); the paper full text could not be read, so only cell line, instrument and search settings are annotated.",
+    "Cell line hTERT-RPE1 inferred from RPE1 name via Cellosaurus synonym; age 1Y and sex female are Cellosaurus values.",
+    "Split from the nine apex runs because the deposited search settings differ (phospho, carbamidomethyl, MaxQuant 1.6.1.0 vs 1.4.0.5). Zip archives contain MaxQuant tables only; no raw file names were taken from search outputs other than those deposited as .raw.",
+    "Dissociation method and precursor tolerance not available. Paper not cited as a source because its full text was not read."
+  ]
+}

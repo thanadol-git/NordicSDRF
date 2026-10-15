@@ -1,0 +1,288 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD016828.sdrf.tsv",
+  "dataset": "PXD016828",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD016828"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD016828/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/32345963"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "Deposited Mascot .dat search files (9)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] (all rows)",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE organism and paper: human patient tissue."
+    },
+    {
+      "location": "characteristics[age] (all rows)",
+      "value": "35Y",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE project description: 35 years old male patient (all three samples come from this patient)."
+    },
+    {
+      "location": "characteristics[sex] (all rows)",
+      "value": "male",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE project description: 35 years old male patient."
+    },
+    {
+      "location": "characteristics[individual] (all rows)",
+      "value": "patient_1",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper Fig. 5a legend: patient 1 is the patient with three technical runs; label formatted as patient_1 to satisfy the template pattern."
+    },
+    {
+      "location": "characteristics[organism part] (all rows)",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper/PRIDE name normal, primary tumor and lymph node metastasis tissue, but no deposited file or text maps 3007/3008/3010 to these tissues."
+    },
+    {
+      "location": "characteristics[disease] (all rows)",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Normal, tumor and LN metastasis tissue share the sample set but run-to-tissue mapping is undecodable, so disease is not assigned per row."
+    },
+    {
+      "location": "characteristics[developmental stage] and characteristics[ancestry category] (all rows)",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Not stated."
+    },
+    {
+      "location": "source name",
+      "value": "sample_3007, sample_3008, sample_3010 (3 rows each)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Sample IDs 3007/3008/3010 taken from the RAW file names; each has 3 injections."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1 for every sample (distinct tissues of one patient, not replicates)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Ordinal numbering of the three distinct tissue samples (no mapping available); the three injections per sample are technical runs."
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1 = 150324_Krishna_<id>.raw, 2 = 150408_Krishna_R2_<id>.raw, 3 = 150408_Krishna_R3_<id>.raw",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Run naming R1/R2/R3 confirmed by deposited Mascot search files, where 150324_Krishna_R1_3010.mgf corresponds to the RAW without R1 in its name; paper: three technical runs from the same sample."
+    },
+    {
+      "location": "comment[data file] / assay name",
+      "value": "All 9 deposited RAW files, each exactly once: 150324_Krishna_3007/3008/3010.raw, 150408_Krishna_R2_3007/3008/3010.raw, 150408_Krishna_R3_3007/3008/3010.raw",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE file list (9 RAW, no archives in the deposit)."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: label-free quantification."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol text: data-dependent mode."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive;AC=MS:1001911",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol text: Q Exactive."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol text: trypsin GOLD; Mascot CLE=Trypsin."
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "1",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Single unfractionated injection per row."
+    },
+    {
+      "location": "comment[dissociation method] and comment[collision energy]",
+      "value": "NT=beam-type collision-induced dissociation;AC=MS:1000422 ; 28 NCE",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol text: HCD, NCE 28."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "10 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited Mascot .dat headers TOL=10 TOLU=ppm (same in prose)."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "0.1 Da",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited Mascot .dat headers ITOL=0.1 ITOLU=Da; PEAKS prose states 0.02 Da (conflict, deposited search file preferred)."
+    },
+    {
+      "location": "comment[reduction reagent]",
+      "value": "NT=Dithiothreitol (DTT);AC=PRIDE:0000608",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol text: DTT."
+    },
+    {
+      "location": "comment[alkylation reagent]",
+      "value": "NT=Iodoacetamide (IAA);AC=PRIDE:0000599",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol text: iodoacetamide."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "NT=Carbamidomethyl;AC=UNIMOD:4;TA=C;MT=Fixed | NT=Oxidation;AC=UNIMOD:35;TA=M;MT=Variable | NT=Acetyl;AC=UNIMOD:1;PP=Protein N-term;MT=Variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited Mascot .dat headers MODS=Carbamidomethyl (C), IT_MODS=Acetyl (Protein N-term), Oxidation (M); identical in all 9 files."
+    },
+    {
+      "location": "comment[ms2 mass analyzer]",
+      "value": "NT=orbitrap;AC=MS:1000484",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Q Exactive HCD MS/MS at R=17,500 (Orbitrap) per protocol text."
+    }
+  ],
+  "limitations": [
+    "The mapping of 3007/3008/3010 to normal, primary tumor and lymph node metastasis tissue is not in the deposit or paper text; organism part and disease are therefore 'not available' and the three samples cannot be compared from the SDRF alone. No factor value column was added.",
+    "Deposited search outputs are Mascot .dat files (fragment tolerance 0.1 Da, variable acetyl protein N-term and oxidation M); the PRIDE/paper text describes a PEAKS v8.5 search (0.02 Da, deamidation N/Q variable). The SDRF follows the deposited files; deamidation is not recorded and the PEAKS fragment tolerance is not represented.",
+    "Age and sex come from the PRIDE project description (35 years old male patient); the paper full text was read for sample context. The individual label 'patient_1' was formatted to meet the template pattern.",
+    "Revised after review: the human template was dropped and base declared (disease and organism part have no honest value because the 3007/3008/3010 tissue mapping is unresolved); biological replicate is 1 for each sample (they are distinct tissues of one patient, not replicates). Instrument Q Exactive and HCD were confirmed from three RAW headers by the independent reviewer."
+  ]
+}

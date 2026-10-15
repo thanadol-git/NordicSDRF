@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD044287.sdrf.tsv",
+  "dataset": "PXD044287",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD044287"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD044287/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC11480464"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/ (metadata.csv, summary.txt)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Mus musculus (all rows)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE organism Mus musculus; protocol searched UniProt Mus musculus."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "prostate adenocarcinoma (all rows)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE disease field; paper: Myc-CaP prostate cancer tumors."
+    },
+    {
+      "location": "characteristics[material type]",
+      "value": "tissue (all rows)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: whole tumor tissue protein extracts."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "not available (all rows)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Tumor tissue is stated but no UBERON/BTO-mappable organ part is given per sample; PRIDE organism part field is not sample-specific."
+    },
+    {
+      "location": "characteristics[cell type], developmental stage, strain or breed, sex",
+      "value": "not available (all rows)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Not stated for the deposited samples; paper mentions FVB hosts for the Fig 2A tumors but the deposited groups (P2, P3, I2, I3) cannot be matched to that experiment, so not asserted."
+    },
+    {
+      "location": "source name",
+      "value": "condition_original from metadata.csv, e.g. WT_3L, P2_KO_3R (all 16 rows)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited metadata.csv column condition_original."
+    },
+    {
+      "location": "characteristics[sample group] and factor value[sample group]",
+      "value": "WT (4 rows), P2, P3, I2, I3 (3 rows each); identical in both columns, deposited label verbatim",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited metadata.csv column condition. Meaning of P2/P3/I2/I3 is not given in the deposit or paper and is not decoded."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-4 for WT, 1-3 for P2, P3, I2, I3 (all 16 rows)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited metadata.csv column rep (rep1..rep4)."
+    },
+    {
+      "location": "comment[label]",
+      "value": "TMT126,127N,127C,128N,128C,129N,129C,130N,130C,131N,131C,132N,132C,133N,133C,134N, mapped in metadata.csv order to the 16 sources",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "metadata.csv col.name signal_sum_126...signal_sum_134N; protocol: TMTpro labelling."
+    },
+    {
+      "location": "comment[data file] / comment[fraction identifier]",
+      "value": "12 RAW files Zelda_221021_P2287_JS_BU_R1_FR1..FR12.raw, fraction 1-12, each repeated for all 16 channels (192 rows); technical replicate 1",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE file list (12 RAW, no archives in the deposit); protocol: 12 high-pH fractions; fraction numbers from file names FR1-FR12."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Orbitrap Fusion Lumos;AC=MS:1002732 (all rows)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol text and PRIDE instrument field agree."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627 (all rows)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: data-dependent acquisition, 3 s cycle."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin;AC=MS:1001251 (all rows)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: sequencing grade modified trypsin."
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "NT=High-pH reversed-phase chromatography (hpHRP);AC=PRIDE:0000564 (all rows)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: off-line fractionation under high pH conditions, 12 fractions; accession verified in OLS."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "not available (all rows)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol states normalized collision energy 38 but not the dissociation type."
+    },
+    {
+      "location": "comment[collision energy]",
+      "value": "38 NCE (all rows)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: normalized collision energy of 38."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "10 ppm (all rows)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Data processing protocol: 10 ppm for full scan MS."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "0.02 Da (all rows)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Data processing protocol: 0.02 Da for MS/MS."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; TMTpro (UNIMOD:2016) K fixed; Acetyl Protein N-term variable; Oxidation M variable; TMTpro any N-term variable (all rows)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Prose gives only 'N-term'; positions taken from IT_MODS in Mascot .dat headers (F117024, F117030, F117036): Acetyl (Protein N-term) -> PP=Protein N-term; TMT16plex (N-term) -> PP=Any N-term; TMT16plex = TMTpro, UNIMOD:2016."
+    }
+  ],
+  "limitations": [
+    "The meaning of the group labels WT, P2, P3, I2, I3 is not stated in the deposit or the paper. Letters were not decoded (e.g. as PTEN or IRE1a knockouts); the paper describes proteomics of IRE1a KO clones #2 and #3 (3 KO vs 4 WT tumors), which does not match the 16 deposited samples (4 WT + 12 others). Labels are kept verbatim.",
+    "Organ part, cell type, developmental stage, strain and sex are `not available`; strain FVB is mentioned in the paper for the Fig 2A tumors but is not asserted because the deposited samples could not be matched to that experiment.",
+    "The mouse templates require these columns, hence `not available`; the cell-lines template was not used because the samples are tumors, not cultured cells.",
+    "Dissociation method is not stated (only NCE 38), so not available.",
+    "Deposited PXD044287_community_annotated.sdrf.tsv was not consulted, per workflow.",
+    "All 16 TMTpro channels (126-134N) carry samples per metadata.csv; one TMTpro plex with 12 fractions, so a single batch.",
+    "Modification positions: Acetyl on protein N-term and TMTpro on any N-term per Mascot .dat IT_MODS headers (three files read); enzyme in .dat is Trypsin/P while the SDRF follows the prose (Trypsin)."
+  ]
+}

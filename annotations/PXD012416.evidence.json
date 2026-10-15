@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD012416.sdrf.tsv",
+  "dataset": "PXD012416",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD012416"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD012416/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6348486/fullTextXML"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/01/PXD012416/mqpar.xml"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] (all rows)",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: human fibroblasts; UniProt human database. PRIDE organism field says Mus musculus and is contradicted by the protocol (human DB search) and the paper."
+    },
+    {
+      "location": "characteristics[organism part] / [cell type] / [material type] (all rows)",
+      "value": "skin / fibroblast / cell",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: cultured human skin fibroblasts; protocol: control and m.9205delTA MT-ATP6 fibroblasts. Material type cell (primary cells immortalized with E7 and hTERT per paper), not a named cell line."
+    },
+    {
+      "location": "source name, characteristics[biological replicate] (all rows)",
+      "value": "JH-37-1..5, JH-45-1..5, dTA37-1..5, dTA45-1..5; replicate 1..5",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Experiment names in the deposited mqpar.xml map each RAW file to one experiment; replicate number is the trailing -1..-5; protocol mentions five replicates (3 of 5 filter). Whether these are independent cultures is not stated."
+    },
+    {
+      "location": "characteristics[genotype] and factor value[genotype]",
+      "value": "wild type for JH-* rows; m.9205delTA MT-ATP6 for dTA* rows",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Decoded from mqpar.xml experiment prefixes (JH = control, dTA = m.9205delTA) with protocol 'control and m.9205delTA MT-ATP6 fibroblasts'. JH-prefix as control is an inference from the protocol listing control first and the paper using wild-type control fibroblasts; no explicit key deposited."
+    },
+    {
+      "location": "characteristics[treatment] and factor value[treatment]",
+      "value": "none for *-37-* / *37-* rows; heat shock, 45 degrees Celsius for 4 hours for *-45-* / *45-* rows",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE sampleProcessingProtocol/dataProcessingProtocol: cultured at 37C or following a 4 hour heat shock at 45C; temperature decoded from experiment suffix 37/45 in mqpar.xml. 'none' means growth at 37C without heat shock."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "normal for JH rows (10 rows); not available for dTA rows (10 rows)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Control fibroblasts labelled normal; the mutant fibroblasts' clinical diagnosis is not given in the PRIDE record, so not available (genotype is captured in characteristics[genotype])."
+    },
+    {
+      "location": "characteristics[age], [sex], [individual] (all rows)",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Donor details not stated in PRIDE text or the methods read."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: data-dependent acquisition."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive Plus;AC=MS:1002634",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: quadrupole Orbitrap QExactivePlus; PRIDE field says Q Exactive; the protocol is preferred. Accession verified in OLS."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "NT=beam-type collision-induced dissociation;AC=MS:1000422",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: HCD cell."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin/P;AC=MS:1001313",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: trypsin without proline restriction option; mqpar.xml enzymes: Trypsin/P, 2 missed cleavages."
+    },
+    {
+      "location": "comment[precursor mass tolerance], [fragment mass tolerance]",
+      "value": "4.5 ppm; 20 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml mainSearchTol 4.5 and FTMS MatchTolerance 20 ppm (first search 20 ppm in protocol)."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed (UNIMOD:4); Oxidation M variable (UNIMOD:35); Acetyl Protein N-term variable (UNIMOD:1)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml fixedModifications Carbamidomethyl (C); protocol and search-params: oxidation and protein N-acetylation variable."
+    },
+    {
+      "location": "comment[label], comment[fraction identifier], comment[technical replicate]",
+      "value": "label free sample; 1; 1",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: label-free quantification; one RAW per sample, no fractionation described."
+    },
+    {
+      "location": "comment[data file] (20 rows)",
+      "value": "P9320..P9324, P9326..P9330, P9332..P9336, P9338..P9342 .raw",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "All 20 deposited RAW files (PRIDE file list) claimed once; numbers P9325, P9331, P9337 absent from the deposit and not claimed."
+    },
+    {
+      "location": "MaxQuant_Output.zip (not claimed as samples)",
+      "value": "txt/ MaxQuant tables only",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Central directory read by HTTP range: txt/{allPeptides,evidence,modificationSpecificPeptides,msms,msmsScans,msScans,mzRange,peptides,proteinGroups,parameters,summary}.txt, Oxidation (M)Sites.txt, tables.pdf plus empty tables; it contains no raw files, so no run names come from it. All run names come from the PRIDE file list and mqpar.xml."
+    }
+  ],
+  "limitations": [
+    "Group assignment (JH = control, dTA = m.9205delTA, 37/45 = temperature) is decoded from mqpar.xml experiment names, not from a deposited sample key.",
+    "Donor age, sex, individual, and the diagnosis of the mutant fibroblasts are not available; disease is 'normal' for control rows and 'not available' for mutant rows.",
+    "Cells are immortalized (E7/hTERT) primary skin fibroblasts, not a Cellosaurus cell line; the cell-lines template was therefore not declared.",
+    "Treatment 'heat shock, 45 degrees Celsius for 4 hours' is a free-text term (not an NCIT/EFO match) and gives a parse_sdrf warning.",
+    "Replicates 1-5 are numbered from experiment names; independence of biological replicates not stated.",
+    "PRIDE structured organism (Mus musculus) and instrument (Q Exactive) were overridden by the protocol text.",
+    "Raw files not inspected by header; instrument taken from protocol."
+  ]
+}

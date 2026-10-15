@@ -1,0 +1,11 @@
+# daily queue 2026-10-15 oslo batch 4 (next smallest 10 PXDs)
+PXD024320	norway/oslo	queued	raw_files=32; raw_bytes=13494118244
+PXD056609	norway/oslo	queued	raw_files=1; raw_bytes=14253828465
+PXD009302	norway/oslo	queued	raw_files=10; raw_bytes=14615835148
+PXD003308	norway/oslo	queued	raw_files=6; raw_bytes=14648257439
+PXD012416	norway/oslo	queued	raw_files=20; raw_bytes=16107099452
+PXD025423	norway/oslo	queued	raw_files=16; raw_bytes=16133763576
+PXD035010	norway/oslo	queued	raw_files=16; raw_bytes=16961793429
+PXD034794	norway/oslo	queued	raw_files=6; raw_bytes=17461621161
+PXD016828	norway/oslo	queued	raw_files=9; raw_bytes=17598451288
+PXD044287	norway/oslo	queued	raw_files=12; raw_bytes=18570051535

@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD034794.sdrf.tsv",
+  "dataset": "PXD034794",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD034794"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD034794/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9391379/fullTextXML"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/10/PXD034794/peptides_1_1_0.mzid.gz"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] (all rows)",
+      "value": "Caenorhabditis elegans",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE organisms; paper Methods (C. elegans)."
+    },
+    {
+      "location": "source name / characteristics[biological replicate] / characteristics[genotype] / factor value[genotype] (6 rows)",
+      "value": "ets-4(rrr16) for 'ets4 repetition 1-3'; ftn-1(syb2550), ets-4(rrr16) for 'ets4 ftn1 FeOx mut repetition 1-3'",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited Sample_info.docx maps each run to sample name, repetition and strain; the ';' in the strain is written as ',' in the SDRF."
+    },
+    {
+      "location": "comment[data file] (6 rows)",
+      "value": "MR_210909_Malecki_3_1587.d.zip; MR_210909_Malecki_2_1585.d.zip; MR_210919_Malecki_ETS4_1715.d.zip; MR_210919_Malecki_mut_1717.d.zip; MR_211115_Ciosk_Malecki_Eb_Slot1-17_1_2646.d.zip; MR_211115_Ciosk_Malecki_Fb_Slot1-19_1_2650.d.zip",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited RAW files per PRIDE file list. HTTP range reads of each zip central directory showed every archive holds exactly one top-level Bruker .d folder named like the zip (e.g. MR_210909_Malecki_2_1585.d, with analysis.tdf); 68-69 entries each. The data-file column carries the deposited .zip names, assay name the inner .d run name. The .mgf files and peptides_1_1_0.mzid.gz are derived search inputs/outputs and are not claimed as runs."
+    },
+    {
+      "location": "comment[technical replicate], comment[fraction identifier] (all rows)",
+      "value": "1, 1",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "One injection per sample; gel band, no fractions."
+    },
+    {
+      "location": "characteristics[developmental stage] (all rows)",
+      "value": "adult",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper Methods: animals grown to 1-day-old adult stage before cold adaptation for the FTN-enrichment MS experiment; mapped to EFO:0001272 adult."
+    },
+    {
+      "location": "characteristics[sampling time] and characteristics[treatment] (all rows)",
+      "value": "3 day; cold exposure, 2 h at 10 C then 4 C for 3 days",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper Methods section on MS detection of FTNs: 1-day-old adults cold-adapted at 10 C for 2 h then 4 C for 3 days. Applied to all six rows; treatment is free text (warning only)."
+    },
+    {
+      "location": "characteristics[material type] (all rows)",
+      "value": "whole organism",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: animals collected and extracts prepared from whole nematodes; gel region around 20 kDa excised."
+    },
+    {
+      "location": "characteristics[organism part], cell type, disease, strain or breed (all rows)",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Not stated in PRIDE text, Sample_info.docx or the paper; the parental background of the mutant strains was not recorded in what was read."
+    },
+    {
+      "location": "comment[instrument] (all rows)",
+      "value": "NT=timsTOF Pro;AC=MS:1003005",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol text (NanoElute coupled to timsTOF Pro); PRIDE structured field says maXis and is overridden. Not verified from the RAW headers."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Method name inside the archives is '60min_Aurora25cm_DDA_0.5s_trap' (zip central directory of MR_210909_Malecki_2_1585.d.zip); DDA also consistent with PEAKS search."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE sample/data protocol: in-gel trypsin digestion, enzyme trypsin, max 1 missed cleavage."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]",
+      "value": "15 ppm / 0.03 Da",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE dataProcessingProtocol (PEAKS Studio 10.6)."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Acetyl (UNIMOD:1, Protein N-term, Variable); Oxidation (UNIMOD:35, M, Variable); Propionamide (UNIMOD:24, C, Variable)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE dataProcessingProtocol lists these as variable; peptides_1_1_0.mzid.gz contains UNIMOD:1, UNIMOD:35, UNIMOD:24 cvParams. Accessions verified in OLS."
+    },
+    {
+      "location": "comment[alkylation reagent]",
+      "value": "NT=Iodoacetamide (IAA);AC=PRIDE:0000599",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE sampleProcessingProtocol states alkylation with 5 mM iodoacetamide."
+    },
+    {
+      "location": "comment[reduction reagent]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "No reduction reagent stated."
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "NT=SDS PAGE;AC=PRIDE:0000568",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: proteins resolved by SDS-PAGE, ~20 kDa gel region excised; one band per sample."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Not stated in text; not verified."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "No labelling described."
+    },
+    {
+      "location": "comment[sdrf version], comment[sdrf annotation tool]",
+      "value": "v1.1.0; manual curation",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Per guide."
+    }
+  ],
+  "limitations": [
+    "Sample-level design is thin: 6 injections, two genotypes (ets-4(rrr16) vs ftn-1(syb2550); ets-4(rrr16)) with three repetitions each, mapped by the deposited Sample_info.docx; biological vs technical replicate status of the 'repetition' numbers is taken as biological replicate by assumption from the sample naming, not stated explicitly.",
+    "The RAW deposits are .d.zip archives; the data-file column lists the zip names. The inner .d folder names (listed from zip central directories) equal the zip stems.",
+    "Cold treatment (3 days at 4 C) is taken from the paper's Methods section for FTN mass-spectrometry and applied to all runs; the Sample_info.docx does not state it.",
+    "Instrument follows protocol text (timsTOF Pro), not the PRIDE field (maXis); RAW headers were not read to confirm.",
+    "Parental strain background, organism part, reduction reagent and dissociation method are not available. Propionamide is listed as a variable modification as in the search description although iodoacetamide alkylation is stated; both are reported as written.",
+    "Treatment is free text and triggers an ontology warning (acceptable)."
+  ]
+}

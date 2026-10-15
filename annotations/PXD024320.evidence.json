@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD024320.sdrf.tsv",
+  "dataset": "PXD024320",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD024320"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD024320/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/36439103 (PMC9682173, full text read)"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/ (130628_Bousquet_SILAC.xlsx)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name / characteristics[biological replicate]",
+      "value": "6 rows: HeLa control Exp1-3 (SILAC light) and HeLa 14F7hT Exp1-3 (SILAC heavy); replicate 1-3",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited search workbook 130628_Bousquet_SILAC.xlsx, sheet 'Peptide evidences' (Experiment Exp1/Exp2/Exp3 per raw file); paper: quantified in at least 2 of 3 biological replicates. Each Exp is one gel lane of a 1:1 heavy/light mix."
+    },
+    {
+      "location": "comment[data file]; comment[fraction identifier]",
+      "value": "Exp1: 130419_Bousquet_SILAC_01..10.raw (fractions 1-10); Exp2: 1306018_Bousquet_2_1..11.raw; Exp3: 1306018_Bousquet_3_1..11.raw (fractions 1-11); each of 32 deposited RAW files listed for both the light and heavy row (64 rows)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited RAW names from PRIDE file list (no archives in the deposit, 32 .raw + 1 .xlsx). Fraction numbers from the workbook 'Fraction' column. The workbook spells Exp1 files 130419_PaulaBusquet_SILAC_nn; the SDRF uses the deposited names."
+    },
+    {
+      "location": "comment[label]",
+      "value": "SILAC light (control) and SILAC heavy (14F7hT-treated)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE sampleProcessingProtocol: heavy 13C/15N-arg and 13C-lys vs light media; paper Fig 1 and Results: heavy cells treated with 14F7hT, light cells control. Applied to all three experiments; per-experiment label swaps are not described."
+    },
+    {
+      "location": "characteristics[treatment]; factor value[treatment]",
+      "value": "light rows: untreated; heavy rows: 14F7hT antibody 25 ug/ml for 3 h (identical in both columns)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper Methods: cells treated with 14F7hT (25 ug/ml) for 3 h; light cells served as control."
+    },
+    {
+      "location": "characteristics[cell line]; cellosaurus accession; cellosaurus name",
+      "value": "HeLa; CVCL_0030; HeLa",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Title/description/protocol (HeLa cells); Cellosaurus lookup via sdrf tools (exact match)."
+    },
+    {
+      "location": "characteristics[organism]; organism part; disease; sex",
+      "value": "Homo sapiens; uterine cervix; cervical adenocarcinoma; female",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE organism, organismParts/diseases (Cervix carcinoma); organism part, disease and sex taken from the Cellosaurus HeLa entry."
+    },
+    {
+      "location": "characteristics[age]; cell type",
+      "value": "not available; not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "HeLa donor age is a cell line attribute not given in the deposit or paper; cell type not stated."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=LTQ Orbitrap XL;AC=MS:1000556",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol text (linear quadrupole ion trap-orbitrap) and paper Methods (LTQ-Orbitrap XL); OLS label."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: data-dependent mode switching between Orbitrap-MS and LTQ-MS/MS."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: in-gel digestion with trypsin."
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "NT=SDS PAGE;AC=PRIDE:0000568",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: SDS-PAGE, each lane cut into slices; one row per lane lists slices as fractions."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Oxidation (M), Deamidated (N,Q), Gln->pyro-Glu (Q), Acetyl (Protein N-term), all Variable; no fixed modification",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Observed in workbook sheet 'Peptide evidences' Modifications column (MaxQuant output); accessions verified in OLS UNIMOD. No mqpar.xml deposited, so the search settings are inferred from reported modifications."
+    },
+    {
+      "location": "comment[dissociation method]; precursor mass tolerance; fragment mass tolerance",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Not stated in protocol; no parameter file deposited."
+    },
+    {
+      "location": "comment[sdrf version]; comment[sdrf annotation tool]",
+      "value": "v1.1.0; manual curation",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Template version from contract."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "6 ppm",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper (PMC9682173) Protein identification: 6 ppm MS1 tolerance"
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper (PMC9682173): 20 ppm MS/MS tolerance"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "CID (MS:1000133)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper (PMC9682173) NanoLC-LTQ section: CID fragmentation"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed (all rows)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper (PMC9682173): carbamidomethylation of Cys as fixed modification"
+    }
+  ],
+  "limitations": [
+    "Exp1 has 10 files and Exp2/Exp3 have 11, whereas the paper says each lane was cut into 12 slices; fraction numbers follow the workbook and gaps are not explained.",
+    "Heavy=treated and light=control are applied uniformly to all three experiments per the paper description; no per-experiment label-swap information was found.",
+    "Organism part, disease and sex come from Cellosaurus (HeLa), not from the deposit; Cellosaurus age (30Y6M) was not used and age is not available. Treatment values are free text and give ontology warnings.",
+    "Biological replicates 1-3 follow the workbook Experiment names Exp1-3 (one gel lane each); whether they are independent cultures is taken from the paper's 'three biological replicates' wording.",
+    "The deposit has no zip/tar archives; all run names claimed are deposited RAW file names.",
+    "Revised after review: tolerances (6 ppm / 20 ppm), CID and fixed carbamidomethyl Cys taken from the paper Methods. 'untreated' for light rows is the curator's wording for the control (paper also mentions an unspecific secondary antibody control elsewhere, context unclear)."
+  ]
+}

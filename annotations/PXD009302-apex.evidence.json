@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD009302-apex.sdrf.tsv",
+  "dataset": "PXD009302",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD009302"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD009302/files/all"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/06/PXD009302/RPE_APX_txt.zip"
+    }
+  ],
+  "claims": [
+    {
+      "location": "assay name / comment[data file] rows 1-9",
+      "value": "P1408, P1409, P1410, P1412, P1413, P1414, P1416, P1417, P1418 (.raw)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "The nine .raw files deposited in PRIDE file list for PXD009302 that are processed in RPE_APX_txt.zip (txt/summary.txt lists exactly these nine raw files). The two zip archives contain MaxQuant text outputs only, no raw files; P8838.raw is covered in the shotgun SDRF."
+    },
+    {
+      "location": "source name rows 1-9",
+      "value": "S1_1, S1_2, S1_3, S2_1, S2_2, S2_3, S3_1, S3_2, S3_3 (in order of P1408..P1418)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Experiment names S1_1..S3_3 appear in txt/summary.txt of RPE_APX_txt.zip and in proteinGroups.txt column names. Mapping to raw files is by identical Peptide Sequences Identified counts per row (P1408=1569=S1_1, P1409=1618=S1_2, P1410=1641=S1_3, P1412=2138=S2_1, P1413=2154=S2_2, P1414=2222=S2_3, P1416=3456=S3_1, P1417=3341=S3_2, P1418=3539=S3_3)."
+    },
+    {
+      "location": "characteristics[biological replicate] rows 1-9",
+      "value": "1,2,3 repeated for each of S1,S2,S3 (suffix of experiment name)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Taken from the _1/_2/_3 suffix of the deposited MaxQuant experiment names; that suffixes denote biological replicates is an assumption, not stated in any deposited text."
+    },
+    {
+      "location": "characteristics[cell line], [cellosaurus accession], [cellosaurus name] (all rows)",
+      "value": "hTERT-RPE1, CVCL_4388, hTERT-RPE1",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE project description states a screen in RPE1 cells and zip archive is named RPE_APX; Cellosaurus lists RPE1 as a synonym of hTERT-RPE1 (CVCL_4388) via sdrf tools cellline lookup. That the line is the hTERT-immortalised line is inferred from the synonym."
+    },
+    {
+      "location": "characteristics[age], [sex] (all rows)",
+      "value": "1Y, female",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Cellosaurus record values for CVCL_4388 (cell line donor), required by the cell-lines/human templates; not stated in the deposit."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE organism field Homo sapiens (human) and protocol text: Uniprot human database."
+    },
+    {
+      "location": "characteristics[organism part], [cell type], [disease], [ancestry category], [individual]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE organismPart 'Cell culture' is not an UBERON/BTO term; no other information in PRIDE text or deposited files."
+    },
+    {
+      "location": "comment[instrument] (all rows)",
+      "value": "NT=Q Exactive Plus;AC=MS:1002634",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "RAW header of P1408.raw (HTTP range, first 300 kB) reads 'Q Exactive Plus - Orbitrap MS' and 'Method of Q Exactive Plus'; MaxQuant summary.txt says Q Exactive; PRIDE field says Q Exactive. Header preferred."
+    },
+    {
+      "location": "comment[proteomics data acquisition method] / comment[label]",
+      "value": "DDA, label free sample",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Protocol: label-free quantitation in MaxQuant (multiplicity 1, no labels). P1408.raw instrument-method header (HTTP range, first 300 kB) reads 'FULL MS / DD-MS2 (TOPN)', i.e. data-dependent acquisition; only P1408 header was inspected, the remaining apex runs share the same method assumed from the identical MaxQuant search."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin (MS:1001251)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Protocol: trypsin digestion on beads; 'Trypsin without proline restriction' = Trypsin/P in txt/summary.txt; recorded as Trypsin."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Acetyl (Protein N-term) UNIMOD:1; Gln->pyro-Glu UNIMOD:28 (N-term Q); Glu->pyro-Glu UNIMOD:27 (N-term E); Oxidation (M) UNIMOD:35; all variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "txt/parameters.txt and txt/summary.txt in RPE_APX_txt.zip list Variable modifications Acetyl (Protein N-term);Gln->pyro-Glu;Glu->pyro-Glu;Oxidation (M); no fixed modifications ('Fixed modifications' empty). Accessions verified against OLS/UNIMOD. Protocol prose lists only acetyl and oxidation."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "6 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "dataProcessingProtocol: 'both precursor and MS/MS main search error set to 6 ppm'; parameters.txt in the zip does not give a precursor tolerance."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "txt/parameters.txt: MS/MS tol. (FTMS) 20 ppm. This conflicts with the protocol sentence (6 ppm for MS/MS); deposited search output preferred."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Not stated in PRIDE text or deposited search outputs; the inspected P1408.raw header excerpt did not show the fragmentation type, so not claimed."
+    },
+    {
+      "location": "comment[fraction identifier], comment[technical replicate]",
+      "value": "1, 1",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "One injection per raw file; no fractionation described."
+    },
+    {
+      "location": "comment[sdrf template]",
+      "value": "ms-proteomics v1.1.0, human v1.1.0, cell-lines v1.1.0",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Templates declared for human cell-line label-free MS."
+    }
+  ],
+  "limitations": [
+    "Biological meaning of sample groups S1, S2, S3 (e.g. APEX2-FGF1 vs FGF1 control, plus/minus heparin, time) is not given in PRIDE text or any deposited file; the paper full text could not be read (no open full text in Europe PMC). Therefore no treatment/factor columns were added and no factor value exists.",
+    "Biological replicate numbers 1-3 follow the suffix of MaxQuant experiment names and are an assumption.",
+    "P8838.raw (MaxQuant 1.6.1.0, fixed Carbamidomethyl, phospho search, acquired 2017) is annotated in the separate PXD009302-shotgun SDRF because its deposited search settings differ from those of P1408-P1418 (MaxQuant 1.4.0.5, 2015). The two zip archives contain MaxQuant tables only, no raw files; listings were made from the zip central directories and file names claimed are the ones deposited as .raw in PRIDE.",
+    "Cell line identity hTERT-RPE1 is inferred from the 'RPE1' name via the Cellosaurus synonym; age 1Y and sex female are Cellosaurus values, not from the deposit. PRIDE also mentions U2OS-FGFR4 cells in the protocol, but none of the deposited runs could be assigned to U2OS-FGFR4.",
+    "Tolerance conflict: protocol says MS/MS 6 ppm, deposited parameters.txt says 20 ppm (20 ppm used). Protocol prose says MaxQuant 1.4.0.8, parameters.txt says 1.4.0.5.",
+    "Dissociation method, organism part, cell type, disease not available. Mass spectrometer is a Q Exactive Plus per RAW headers, whereas PRIDE lists Q Exactive.",
+    "The deposited PXD009302_community_annotated.sdrf.tsv exists (all-not-available sample info, Q Exactive, no cell line); it was consulted but not reused.",
+    "Paper not cited as a source because its full text was not read."
+  ]
+}

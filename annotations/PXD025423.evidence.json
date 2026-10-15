@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD025423.sdrf.tsv",
+  "dataset": "PXD025423",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD025423"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD025423/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/34069552 (PMC8161419, full text read)"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/07/PXD025423/txt.zip"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows / data file",
+      "value": "20160930_STAMI_01.raw, _02 ... _08.raw, _C1 ... _C4.raw, _T1 ... _T4.raw (16 deposited RAW files, one row each)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE v3 file list for PXD025423 lists exactly these 16 RAW files; each claimed once. txt.zip contains no RAW files; its ExpDes.txt/mqpar.xml name 24 runs (additionally 20160930_STAMI_09 ... _16) which are searched but not deposited as RAW, so they are not claimed."
+    },
+    {
+      "location": "source name / assay name",
+      "value": "= RAW file stem (e.g. 20160930_STAMI_01)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Each deposited RAW file is treated as its own source because no deposited or published mapping assigns runs to Ctrl/LD/HD samples."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE organisms: Homo sapiens (human); protocol: human bronchial epithelial cells 3KT."
+    },
+    {
+      "location": "characteristics[cell line]",
+      "value": "HBEC3-KT",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE sample protocol: HBEC-3KT (ATCC CRL-4051); Cellosaurus recommended name HBEC3-KT."
+    },
+    {
+      "location": "characteristics[cellosaurus accession] / [cellosaurus name]",
+      "value": "CVCL_X491 / HBEC3-KT",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Cellosaurus API search for HBEC3-KT."
+    },
+    {
+      "location": "characteristics[age] / [sex]",
+      "value": "65Y / female",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Taken from the Cellosaurus entry CVCL_X491, not from the study; disclosed in limitations."
+    },
+    {
+      "location": "characteristics[organism part] / [cell type]",
+      "value": "bronchus / bronchial epithelial cell",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol: human bronchial epithelial cells; general tissue of origin, ontology terms chosen by curator."
+    },
+    {
+      "location": "characteristics[material type]",
+      "value": "cell line",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol: cultured immortalized HBEC-3KT cells."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Cells described as normal non-tumorigenic; no disease term assigned."
+    },
+    {
+      "location": "characteristics[treatment]",
+      "value": "not available (all 16 rows)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Study design has Ctrl, low dose (0.96 ug/cm2) and high dose (1.92 ug/cm2) TiO2 for 13 weeks, but the deposited run-to-group files (GroupsForThisStudy.txt, Lab.xlsx in txt.zip) label runs NM1/NM4/media/UnTcell and cannot be reconciled with Ctrl/LD/HD, so no per-run treatment is assigned."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-16 (ordinal, in RAW file order 01-08, C1-C4, T1-T4)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Ordinal placeholder, one per RAW file; not a decoded replicate structure."
+    },
+    {
+      "location": "characteristics[passage number] / [culture medium] / [sample storage temperature]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Medium (LHC-9 + RPMI-1640 1:1) is described in text but no NCIT term was assigned; passage and storage not stated."
+    },
+    {
+      "location": "comment[technical replicate] / [fraction identifier] / comment[label]",
+      "value": "1 / 1 / label free sample",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "No fractionation or labelling described; one injection per RAW file; MaxQuant ExpDes.txt has empty Fraction column and parameters show no labels."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Data processing protocol: data-dependent strategy."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Orbitrap Elite;AC=MS:1001910",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: EASY-nLC 1000 interfaced with an Orbitrap Elite; PRIDE instrument LTQ Orbitrap Elite; OLS label for MS:1001910 is Orbitrap Elite."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin/P;AC=MS:1001313",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml / summary.txt in txt.zip: enzyme Trypsin/P."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C) Fixed; Deamidated (N,Q), Methyl (K,R), Oxidation (M), Acetyl (Protein N-term) Variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "txt.zip parameters.txt (fixed Carbamidomethyl (C); variable Deamidation (NQ), Methyl (KR), Oxidation (M), Acetyl (Protein N-term)); UNIMOD accessions 4, 7, 34, 35, 1 verified in OLS/search-params."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "4.5 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "txt.zip mqpar.xml main search tolerance read via sdrf search-params."
+    },
+    {
+      "location": "comment[fragment mass tolerance] / comment[dissociation method]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar lists both FTMS 20 ppm and ITMS 0.5 Da; the analyzer used for MS2 and fragmentation type are not stated, so not assigned."
+    },
+    {
+      "location": "comment[sdrf version] / [sdrf annotation tool]",
+      "value": "v1.1.0 / manual curation",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Annotation procedure."
+    }
+  ],
+  "limitations": [
+    "No deposited or published mapping assigns the 16 RAW files to Ctrl, low dose (LD) or high dose (HD) exposure. The deposited GroupsForThisStudy.txt and txt.zip Lab.xlsx label runs NM1, NM4, media and UnTcell (runs 01-08 as NM1 in duplicate injections, C1-C4 media, T1-T4 UnTcell), which does not correspond to the Ctrl/LD/HD design in the paper; they appear to come from a shared batch. Treatment is therefore `not available` and no factor value is given.",
+    "Paper design is two biological replicates per group (Ctrl, LD, HD) = 6 samples, versus 16 RAW files; the relation between samples and runs (and whether some runs belong to other projects) is undecodable. Source name = RAW file stem and biological replicate = ordinal 1-16 are placeholders; technical replicate 1 throughout.",
+    "txt.zip (MaxQuant txt output, 24 runs) was searched by range requests only; it includes runs 20160930_STAMI_09 to _16 that are not deposited as RAW and are not claimed. The search also covers the unrelated-looking NM4/media/UnTcell conditions.",
+    "Age 65Y and sex female come from Cellosaurus CVCL_X491 (HBEC3-KT), not from the study. Organism part (bronchus) and cell type (bronchial epithelial cell) are curator assignments from the tissue of origin.",
+    "HBEC3-KT is not found in CLO/BTO/EFO, so the cell line value yields a validator warning and a tools check 'hallucinated' flag; it is the Cellosaurus recommended name (study text uses HBEC-3KT).",
+    "Dissociation method and fragment tolerance not stated (mqpar has both FTMS 20 ppm and ITMS 0.5 Da); set to not available. Exposure time (13 weeks) and doses are not recorded in the SDRF because they cannot be attached to specific runs.",
+    "SANDBOX ONLY (independent review FAIL): replicate numbers 1-16 are placeholders; deposited GroupsForThisStudy.txt pairs runs 01+02, 03+04, 05+06, 07+08 as technical replicates (samples NM1C11, NM1C12, NM1C21, NM1C22) and labels C1-C4 'media' and T1-T4 'UnTcell', which may not be HBEC3-KT lysate, so the blanket cell-line/organism-part/cell-type assignment is not source-supported; treatment (control, 0.96 and 1.92 ug/cm2 TiO2) cannot be mapped to runs. Instrument (Orbitrap Elite) was confirmed from the RAW header; the method path (top20CID) suggests CID dissociation, not recorded."
+  ]
+}
