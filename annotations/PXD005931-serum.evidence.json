@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD005931-serum.sdrf.tsv",
+  "dataset": "PXD005931",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD005931"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD005931/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC5795011"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/02/PXD005931/ (Janus_MascotSearch.dat, RB_161031_Aplha1acid_HCD_15.dat headers; RAW headers read by HTTP range)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]/[organism part]/[sex]",
+      "value": "Homo sapiens / blood serum / male",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE organism and organismParts; paper Methods: 'men diagnosed with ... prostate cancer'"
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "prostate adenocarcinoma",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE disease field; paper: all 24 donors are prostate cancer patients (12 localized, 12 high-risk/metastatic)"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1 for every row",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "No mapping of runs to case/control groups available; each file is a distinct donor (Janus_<n> from the file name)"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper Methods and RAW headers ('Method of Q Exactive'); embedded acquisition paths match file names for all 24"
+    },
+    {
+      "location": "comment[dissociation method]/[collision energy]",
+      "value": "HCD MS:1000422; 15 NCE;25 NCE;35 NCE",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper and PRIDE protocol (stepped NCE 15, 25, 35); RAW method name HCD_120min_Top7_Quickstart_NCE15_35"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin MS:1001251",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol; Mascot .dat header CLE=Trypsin"
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "10 ppm / 0.05 Da",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Janus_MascotSearch.dat header TOL/ITOL"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M variable; Glyco_Fuc_HexNAc variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Janus_MascotSearch.dat header MODS/IT_MODS; paper"
+    }
+  ],
+  "limitations": [
+    "PRIDE text says serum from 'healthy individuals and prostate cancer patients' while the paper Methods describe all 24 donors as prostate cancer patients; the paper was followed (disease = prostate adenocarcinoma, per PRIDE disease field).",
+    "Mapping of Janus numbers to the two clinical groups (localized vs high-risk/metastatic) is not deposited in files read (the 5 GB .rov Distiller file was not parsed); no factor value was added, and age/ancestry/individual are not available.",
+    "Biological replicate set to 1 for all donors because no replicate structure is supported; RB_161102_JANUS39_TIO2.raw was acquired two days before the rest (161102 vs 161104) but is a serum sample with the same method.",
+    "The deposit contains no archives (.zip/.tar); only individual RAW files were claimed (29 RAW: 24 serum, 5 standards, each exactly once).",
+    "Glyco_Fuc_HexNAc (Mascot custom modification on the residue code O = HexNAc, 'fucose addition on HexNAc') has no Unimod entry; written without AC.",
+    "Reduction/alkylation reagents and enrichment process (TiO2) are described in the paper but not encoded (optional columns, ontology terms not verified)."
+  ]
+}

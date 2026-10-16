@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD006026.sdrf.tsv",
+  "dataset": "PXD006026",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006026"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD006026/files/all"
+    },
+    {
+      "id": "europepmc",
+      "kind": "publication abstract",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:28508642 (PMID 28508642, abstract only; full text not open access)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "curated lookup",
+      "location": "python -m tools cellline lookup HeLa|LNCaP|Jurkat (CVCL_0030, CVCL_0395, CVCL_0065)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "20 RAW files (RB_151029_Hela_1-3, CJK_150824_Hela_4h_3, RB_160123_LNCap_1-4, 12 TTT_*Jurkat* files)",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "PRIDE file list: 20 RAW, plus .mgf peak lists and F0*.dat Mascot results. Each RAW claimed exactly once."
+    },
+    {
+      "location": "characteristics[cell line]",
+      "value": "HeLa, LNCaP, Jurkat",
+      "source_ids": [
+        "pride",
+        "europepmc",
+        "pride-files"
+      ],
+      "evidence": "Abstract: in-solution digests of LNCaP and HeLa; phosphoproteomes of Jurkat T cells. Cell line assigned from run names."
+    },
+    {
+      "location": "characteristics[cellosaurus accession], [age], [sex], [disease]",
+      "value": "CVCL_0030/30Y6M/female; CVCL_0395/50Y/male; CVCL_0065/14Y/male",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Taken from Cellosaurus, not from the deposit. Disease uses the Cellosaurus disease label."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "not applicable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Cultured cell lines; reconcile flags a tissue value as unsupported, so a sentinel is written."
+    },
+    {
+      "location": "characteristics[treatment] / factor value[treatment]",
+      "value": "cisplatin (Jurkat Cis/Cisplatin runs); not applicable otherwise",
+      "source_ids": [
+        "pride-files",
+        "europepmc"
+      ],
+      "evidence": "Abstract: control vs apoptotic Jurkat phosphoproteomes. Run names 'Cisplatin'/'Cis' vs 'control'/'K'; reading Cis = cisplatin-induced apoptosis and K = control is an inference from names."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "HeLa 1-4, LNCaP 1-4, Jurkat 1,3,4",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Inferred from file numbering and R3/R4/1st tags in run names; no deposited mapping."
+    },
+    {
+      "location": "comment[technical replicate] / comment[collision energy]",
+      "value": "1 = 25 NCE, 2 = 35 NCE for Jurkat; blank for HeLa/LNCaP",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Run names HCD25/HCD35 and 25NCE/35NCE; same sample acquired at two collision energies. Treated as technical replicates. HeLa/LNCaP collision energy not stated (not available)."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE instruments field and consistent with HCD NCE settings."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Mascot search of MS/MS peak lists; DDA is assumed from the workflow, not stated explicitly."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "dataProcessingProtocol: digestion enzyme trypsin."
+    },
+    {
+      "location": "comment[precursor mass tolerance], [fragment mass tolerance]",
+      "value": "10 ppm; 0.05 Da",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "dataProcessingProtocol."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Oxidation (M, variable); Acetyl (Protein N-term, variable)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "dataProcessingProtocol lists only these two as variable modifications. Fixed Carbamidomethyl and Phospho (for phosphoproteome runs) are not stated and not annotated."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "beam-type collision-induced dissociation",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Inferred from HCD in Jurkat run names and NCE settings on a Q Exactive; assumed for HeLa/LNCaP."
+    }
+  ],
+  "limitations": [
+    "Full text of PMID 28508642 not read (not open access); only abstract used.",
+    "Raw files and Mascot .dat headers were not inspected.",
+    "Treatment mapping (K = control, Cis = cisplatin) and biological replicate numbers are inferred from file names.",
+    "CJK_150824_Hela_4h_3 meaning of '4h' unknown; treated as a fourth HeLa digest.",
+    "Phosphopeptide enrichment of Jurkat samples not annotated (no verified term for characteristics[enrichment process]); Phospho and Carbamidomethyl modifications not annotated because not stated."
+  ]
+}

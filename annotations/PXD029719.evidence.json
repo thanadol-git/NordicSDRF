@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029719.sdrf.tsv",
+  "dataset": "PXD029719",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD029719"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD029719/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9681859/fullTextXML"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "mqpar.xml (PXD029719)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE organisms field; MaxQuant FASTA is UniProt reviewed human"
+    },
+    {
+      "location": "characteristics[cell line]/[cellosaurus accession]/[cellosaurus name]",
+      "value": "RMS559 / CVCL_S640 / RMS559",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: RMS559 patient-derived cell line (full text, PMC9681859); Cellosaurus API search returned CVCL_S640 (identifier RMS559)"
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "male",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Cellosaurus entry CVCL_S640 only; paper does not state donor sex"
+    },
+    {
+      "location": "characteristics[age]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Cellosaurus: age unspecified; not in paper"
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "rhabdomyosarcoma",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper title/abstract and PRIDE description"
+    },
+    {
+      "location": "characteristics[treatment] / factor value[treatment]",
+      "value": "FGF1 100 ng/ml (FGF_1-3: H1685,H1687,H1689); LY2874455 100 nM (LY_1-3: H1691,H1693,H1695)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml experiment names FGF_n/LY_n per file; RAW header sample names FGF1_Ellen (H1685) and LY3 (H1695); paper Fig. 4 legend gives FGF1 100 ng/ml or LY2874455 100 nM, three replicates per condition"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-3 within each treatment",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar experiment suffix _1.._3 and paper 'three replicates for each condition'"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive HF;AC=MS:1002523",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol text, paper Methods, RAW headers of H1685 and H1695 ('Q Exactive HF - Orbitrap MS')"
+    },
+    {
+      "location": "comment[dissociation method]/[collision energy]",
+      "value": "beam-type collision-induced dissociation (HCD) / 28% NCE",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: high-energy collision-induced dissociation; RAW method of H1685 'nce: 28'"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol: data-dependent mode; RAW method FULL MS / DD-MS2 TopN 20"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin/P MS:1001313",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml enzymes Trypsin/P (paper says trypsin)"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl Protein N-term, Phospho STY variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml (search-params); paper states Carbamidomethyl, protein N-acetylation, oxidation, phospho STY"
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "4.5 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml mainSearchTol 4.5 (paper text says 6 ppm)"
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml FTMS MatchTolerance 20 ppm"
+    },
+    {
+      "location": "comment[data file]",
+      "value": "H1685, H1687, H1689, H1691, H1693, H1695 .raw",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE files list: 6 RAW files, each claimed once; one injection each, no fractionation"
+    }
+  ],
+  "limitations": [
+    "Phospho-enrichment (TiO2-IMAC) and the absence of fractionation are not encoded as columns (optional enrichment process term not selected).",
+    "Treatment durations before lysis are not stated for the phosphoproteomics samples in the PRIDE record or the paper text read; the treatment value carries concentration only. Serum-starvation before treatment is described for other experiments only and is not annotated.",
+    "characteristics[treatment] values and cell line RMS559 are not in the ontology lists used by the validator (warnings only); tools check flags RMS559 as not in its local cell line database, but it is the Cellosaurus identifier (CVCL_S640).",
+    "Sex 'male' comes from Cellosaurus only; age is not available (Cellosaurus age unspecified).",
+    "Organism part and cell type set to not available; the paper does not give an ontology-backed cell type.",
+    "Precursor tolerance: mqpar.xml (4.5 ppm main search) conflicts with the paper text (6 ppm); the deposited search file was used. Enzyme: mqpar Trypsin/P used, paper says trypsin.",
+    "The run-to-sample mapping relies on the deposited mqpar.xml experiment names, corroborated by RAW header sample names for two files (H1685 FGF1, H1695 LY3); other four RAW headers were not read.",
+    "No RAW file was identified as a duplicate of another by size; embedded paths were read only for H1685 and H1695. No archives (.zip/.tar) are in the deposit; deposit holds 6 RAW, Phospho__STY_Sites.txt and mqpar.xml.",
+    "Producer draft only; independent review not performed."
+  ]
+}

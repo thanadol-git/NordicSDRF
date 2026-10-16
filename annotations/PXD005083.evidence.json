@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD005083.sdrf.tsv",
+  "dataset": "PXD005083",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD005083"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD005083/files/all"
+    },
+    {
+      "id": "mqpar-ev",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/03/PXD005083/mqpar_EV.xml"
+    },
+    {
+      "id": "mqpar-rs",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/03/PXD005083/mqpar_RS1.xml"
+    },
+    {
+      "id": "raw-header",
+      "kind": "raw file header",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/03/PXD005083/9807.raw (first 300 kB; also 9808, 9813, 9841)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5393394/ (PMID 28196878)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "60 RAW files 9807-9841 (EV) and 9845-9884 (RS)",
+      "source_ids": [
+        "pride-files",
+        "mqpar-ev",
+        "mqpar-rs"
+      ],
+      "evidence": "All 60 deposited RAW files claimed once; file-to-experiment mapping read from the experiments/fractions arrays of mqpar_EV.xml and mqpar_RS1.xml (E34/E35/E36 x EV1/EV2 or RS1/RS2 x fractions 1-5); RAW header sample names (e.g. 'E34 EV1_1', 'E36 EV2_5') agree."
+    },
+    {
+      "location": "source name",
+      "value": "E34 EV1 ... E36 RS2 (12 sources)",
+      "source_ids": [
+        "mqpar-ev",
+        "mqpar-rs",
+        "raw-header"
+      ],
+      "evidence": "MaxQuant experiment names; each source = one gel lane cut into 5 fractions."
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "1-5",
+      "source_ids": [
+        "mqpar-ev",
+        "mqpar-rs",
+        "paper"
+      ],
+      "evidence": "Gel lanes cut into 5-6 pieces; MaxQuant fraction column 1-5."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organism NEWT:9606; paper: human primary macrophages."
+    },
+    {
+      "location": "characteristics[cell type]",
+      "value": "macrophage",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Monocyte-derived primary human macrophages (GM-CSF, M1-polarised)."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "normal",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Buffy coats from healthy blood donors."
+    },
+    {
+      "location": "characteristics[treatment] / factor value[treatment]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Experiments 1 and 2 are mock-transfected vs LPS-transfected (1.5 h) but the deposit does not state which number is which; not inferred."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Sample is cell-culture secretome (EV and rest-secretome fractions); no tissue stated."
+    },
+    {
+      "location": "characteristics[age]/[sex]/[ancestry category]/[individual]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Anonymous blood-bank donors; three donors per experiment, no per-donor data."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive;AC=MS:1001911",
+      "source_ids": [
+        "pride",
+        "raw-header",
+        "paper"
+      ],
+      "evidence": "RAW header 'Q Exactive - Orbitrap MS'; protocol text."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Protocol: data-dependent acquisition, top 10."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": [
+        "pride",
+        "mqpar-ev"
+      ],
+      "evidence": "Trypsin digest; MaxQuant enzyme 'Trypsin/P' (reported in report)."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl(C) fixed; Oxidation(M), Acetyl(Protein N-term) variable",
+      "source_ids": [
+        "mqpar-ev",
+        "mqpar-rs",
+        "pride"
+      ],
+      "evidence": "mqpar fixedModifications/variableModifications; matches data processing protocol."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "4.5 ppm",
+      "source_ids": [
+        "mqpar-ev",
+        "pride"
+      ],
+      "evidence": "mainSearchTol 4.5 ppm."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "mqpar-ev"
+      ],
+      "evidence": "msmsParams FTMS MatchTolerance 20 ppm (not stated in text)."
+    },
+    {
+      "location": "comment[dissociation method]/[collision energy]",
+      "value": "HCD; 25% NCE",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: HCD, normalized collision energy 25 %."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "mqpar-ev"
+      ],
+      "evidence": "LFQ; no labels in mqpar."
+    }
+  ],
+  "limitations": "Which of experiment 1/2 is mock vs LPS is not stated in the deposit; treatment left as not available. Mix of three donors per experiment unclear (individual not available). Fragment tolerance read from mqpar default, mqpar version 1.5.4.3 vs text 1.5.3.8. Paper read via PMC HTML; supplementary tables not read."
+}

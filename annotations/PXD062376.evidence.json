@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD062376.sdrf.tsv",
+  "dataset": "PXD062376",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD062376"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD062376/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13237317/fullTextXML"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/01/PXD062376/ (mqpar_EV.xml, mqpar_RS.xml)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE organism; paper Methods (human coronary artery endothelial cells, PromoCell C-12221)"
+    },
+    {
+      "location": "characteristics[cell type]/[organism part]",
+      "value": "endothelial cell of coronary artery (CL:2000018) / coronary artery",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: primary human coronary artery endothelial cells (HCAEC) purchased from PromoCell; term IDs verified in OLS"
+    },
+    {
+      "location": "characteristics[secretome fraction]",
+      "value": "EV (100 kDa retentate) vs RS (10 kDa retentate)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE sample protocol and paper Methods; EV runs P8523-P8545 (mqpar_EV.xml), RS runs P8748-P8772 (mqpar_RS.xml)"
+    },
+    {
+      "location": "source name / characteristics[biological replicate]",
+      "value": "HC2 A/B/C, HC7, HC exp1 (HC1 in RS) -> 1..5 within each group number",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar experiment names consistent across groups and fractions; paper states five biological replicates. Ordering to 1-5 is an annotator assumption"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive Plus;AC=MS:1002634",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol text (QExactivePlus) and RAW headers (range reads of P8523, P8526, P8527, P8545, P8748, P8772 show 'Q Exactive Plus'); PRIDE field says Q Exactive"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD MS:1000422",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "RAW header range reads show HCD energy type entries"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin/P MS:1001313",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar enzymes = Trypsin/P; protocol 'trypsin without proline restriction'"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M variable; Acetyl Protein N-term variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar fixedModifications/variableModifications; UNIMOD:4 verified in OLS"
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "4.5 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar mainSearchTol=4.5 (ppm), protocol text"
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar msmsParams Name=FTMS MatchTolerance=20 ppm"
+    },
+    {
+      "location": "comment[data file]",
+      "value": "40 RAW files, each once",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE file list: 40 RAW; 20 in EV mqpar, 20 in RS mqpar; txt_EV.zip and txt_RS.zip central directories (HTTP range) hold only MaxQuant txt tables, no run names"
+    },
+    {
+      "location": "characteristics[treatment]/[age]/[sex]/[disease]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Not stated in PRIDE text, mqpar or paper for these runs / donor"
+    }
+  ],
+  "limitations": [
+    "Run groups 2, 3, 5, 6 in the experiment names presumably correspond to the four conditions (mock/LPS at 3 h and 6 h) described in the paper (Fig. 3a), but no deposited file or text maps group numbers to conditions; treatment and sampling time are therefore 'not available' and no factor value is given. The group number is kept in the source name.",
+    "Biological replicate numbers 1-5 are assigned by the label order HC2 A, HC2 B, HC2 C, HC7, HC exp1 (HC1 in RS) based on consistent naming and the paper's five biological replicates; the deposit does not confirm that A/B/C are independent biological replicates or that HC exp1 equals HC1.",
+    "HCAECs are primary cells (PromoCell); the cell-lines template was not used. Donor age, sex and disease status are not given; marked 'not available'.",
+    "Missing P-numbers (P8528, P8534, P8540, ...) are not deposited and not claimed. The two archives txt_EV.zip and txt_RS.zip (listed by range read on the central directory) hold only MaxQuant output tables.",
+    "Collision energy, alkylation/reduction reagents and LC column/gradient details per fraction were not extracted (RAW methods differ between EV: 50 cm column and RS: 25 cm column per embedded method path); only recorded here. Acquisition method DDA is assumed from the MaxQuant label-free workflow, not read from the RAW method.",
+    "A community-annotated SDRF is present in the deposit; it was not consulted.",
+    "Independent review not performed (producer only).",
+    "SANDBOX ONLY (independent review FAIL): the group numbers 2/3/5/6 cannot be mapped to conditions (mock/LPS at 3 h/6 h is plausible but undeposited), so treatment is unresolved. The HC1/HC7 labels of 8 rest-secretome rows (P8751/52, P8758/59, P8765/66, P8771/72) were swapped relative to mqpar_RS.xml and have been corrected (HC1 = replicate 5, HC7 = replicate 4). The deposited community SDRF was read by the reviewer (it is a bare skeleton)."
+  ]
+}

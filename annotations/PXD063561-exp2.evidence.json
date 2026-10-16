@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD063561-exp2.sdrf.tsv",
+  "dataset": "PXD063561",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD063561"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD063561/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/40419755 (PMC12106674 full text read)"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/05/PXD063561/mqpar_exp2.xml"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "22 RAW names",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Listed from the central directory of https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/05/PXD063561/LC-MS_files_exp2.zip via HTTP range request (zip64); only .raw members actually inside the archive are claimed, each exactly once. The PRIDE file list itself only shows the archive."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF (MS:1002523)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "RAW header range-read from inside the zip (embedded text: Evosep One 30 samples per day, DDA_30 samples per day_HF_fastest.meth, Method of Q Exactive HF); overrides the PRIDE/paper statement that all runs used Q Exactive HF."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD, MS:1000422",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE sample protocol: high-energy collision-induced dissociation; paper Methods (read in full text) say the same."
+    },
+    {
+      "location": "comment[collision energy]",
+      "value": "28 NCE",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "RAW header method table: (N)CE nce: 28"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE protocol and paper Methods: data-dependent mode; RAW header method."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin/P",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited mqpar_exp2.xml enzymes=Trypsin/P, 2 missed cleavages; digestion with trypsin (Promega) in PRIDE protocol."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M and Acetyl Protein N-term variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited mqpar_exp2.xml and parameters.txt in the txt zip; matches PRIDE data processing protocol."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "4.5 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mainSearchTol in mqpar_exp2.xml (first search 20 ppm); PRIDE data processing protocol."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "MaxQuant FTMS MatchTolerance 20 ppm in mqpar_exp2.xml (Orbitrap MS2, resolution 17,500 or 15,000 in RAW header); default value, not stated in prose."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Analytes are human albumin variants/fusions (MaxQuant fasta E:\\Databases\\Jeannette_L_variants.fasta, protein HSA entries); PRIDE lists human and mouse, mouse is not evident in the MS data."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1 for every row",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "No deposited mapping of runs to samples or replicates; each run treated as a separate unmapped sample, not as a replicate series."
+    },
+    {
+      "location": "source name",
+      "value": "run name without .raw",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Sample identity (albumin variant WT/LX/QMP/QMP-LX/fusion, with or without carboxypeptidase A) is not mapped to runs anywhere in the deposit or paper."
+    },
+    {
+      "location": "template",
+      "value": "ms-proteomics + human",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "human template requires age/sex; recombinant protein so age=not available, sex=not applicable."
+    }
+  ],
+  "limitations": [
+    "The deposit holds only archives (LC-MS_files_exp1.zip, LC-MS_files_exp2.zip, txt_exp1/2.zip) plus mqpar xml files; run names were read from the zip central directories, not from the PRIDE file list.",
+    "The deposit was split into -exp1 and -exp2 SDRFs because the RAW headers show different instruments (Q Exactive Plus + EASY-nLC vs Q Exactive HF + Evosep), different NCE, MaxQuant versions and fasta files. No single PXD063561.sdrf.tsv exists.",
+    "Which run is which protein sample (WT albumin, LX, QMP, QMP-LX, GLP-1/FIX/ACE2/scFv fusions) and whether it was exposed to carboxypeptidase A is NOT decodable from the deposit or the paper; no treatment or variant columns were added, and no factor value. MaxQuant evidence suggests exp1 runs are dominated by an scFv-HSA entry and exp2 by HSA_WT, but this was not used as annotation.",
+    "The paper and PRIDE state Q Exactive HF and MaxQuant 2.0.3.0 for the whole dataset; the exp1 RAW headers and parameters.txt (MaxQuant 1.6.1.0, 2018, different fasta) contradict this, so exp1 follows the deposited files.",
+    "Biological replicate is 1 for all rows only because no replicate structure is documented; technical replicate 1, fraction 1.",
+    "Fragment tolerance is the MaxQuant FTMS default (20 ppm), not stated in the paper prose.",
+    "PRIDE organism list includes Mus musculus; no mouse material is identifiable among the analysed MS runs, so it is not annotated.",
+    "Search files were read: mqpar_exp2.xml and parameters.txt; the exp1 MaxQuant fixed modification is read from the XML directly because the search-params tool omitted it.",
+    "SANDBOX RECOMMENDED (review PASS, but sample identity unresolved): MaxQuant experiment names are bare integers and the paper gives no run-to-file key for the albumin variants/carboxypeptidase A treatment, so rows cannot be distinguished biologically. exp2 was searched with MaxQuant 1.6.17.0 per its mqpar (paper/PRIDE say 2.0.3.0); fixed Carbamidomethyl was read directly from the exp2 mqpar."
+  ]
+}

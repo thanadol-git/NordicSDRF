@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD012858.sdrf.tsv",
+  "dataset": "PXD012858",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD012858"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD012858/files/all"
+    },
+    {
+      "id": "mzid-ms1",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/07/PXD012858/150213_siATF4_MS1_A01.mzid.gz"
+    },
+    {
+      "id": "mzid-ms2",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/07/PXD012858/161122_siATF4_MS2_R1_Ao01.mzid.gz"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://www.cellosaurus.org/CVCL_0395"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "18 RAW files (6 MS-I 2015, 12 MS-II 2016)",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "All 18 .raw files in the PRIDE file list, each claimed once; mzid.gz results and MGF peak lists not used as data files."
+    },
+    {
+      "location": "characteristics[cell line]",
+      "value": "LNCaP / CVCL_0395",
+      "source_ids": [
+        "pride",
+        "cellosaurus"
+      ],
+      "evidence": "PRIDE keywords and protocol: LNCaP cells; accession from Cellosaurus."
+    },
+    {
+      "location": "characteristics[age]/[sex]",
+      "value": "50Y / male",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Donor age and sex of LNCaP from Cellosaurus, not from the deposit."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "prostate carcinoma",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE disease annotation (prostate cancer); LNCaP is a prostate carcinoma line."
+    },
+    {
+      "location": "characteristics[treatment]",
+      "value": "thapsigargin",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: cells treated with Tg (300 nM 5 h for MS-I; 30 nM 12 h for MS-II). Dose/time not encoded: no ontology-valid column."
+    },
+    {
+      "location": "characteristics[genetic modification] / factor value[genetic modification]",
+      "value": "control siRNA vs ATF4 siRNA",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Protocol: transfection with control or ATF4-specific siRNA; assignment from run names siCTRL/siATF4."
+    },
+    {
+      "location": "source name / characteristics[biological replicate]",
+      "value": "file stem; 1-3 (MS-I), 1-3 and 4-6 (MS-II R1, R2)",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Our inference from run names (contr01-03, A01-03, K01-03, Ao01-03, R1/R2); no deposited sample map."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE instrument field; RAW headers not inspected."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD",
+      "source_ids": [
+        "mzid-ms1",
+        "mzid-ms2"
+      ],
+      "evidence": "Spectrum titles in Scaffold mzIdentML end with HCD."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M and Acetyl protein N-term variable",
+      "source_ids": [
+        "mzid-ms1",
+        "mzid-ms2"
+      ],
+      "evidence": "SearchModification entries in both mzid files (MS-II file also lists unknown fixed mods O-34, J+49, U+140, ignored as non-biological Scaffold artefacts)."
+    },
+    {
+      "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+      "value": "5 ppm / 0.025 Da",
+      "source_ids": [
+        "mzid-ms1",
+        "mzid-ms2"
+      ],
+      "evidence": "ParentTolerance/FragmentTolerance in both mzid files."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin MS:1001251",
+      "source_ids": [
+        "pride",
+        "mzid-ms1"
+      ],
+      "evidence": "Protocol: tryptic digestion; mzid enzyme Trypsin."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA PRIDE:0000627",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Shotgun proteomics with Mascot search; DDA assumed from MS2 spectra identification."
+    }
+  ],
+  "limitations": [
+    "No publication was read; sample design from PRIDE protocol text only.",
+    "Only two of 18 mzid files were inspected for search parameters; assumed identical within each batch.",
+    "Age 50Y and sex male from Cellosaurus.",
+    "Thapsigargin dose/time differ between MS-I and MS-II but are not in a column (sampling time pattern unsuited); recoverable from source name MSI/MSII.",
+    "Biological replicate numbering and whether K01-03/A01-03 are independent cultures are inferred.",
+    "Cell type not available; DDA and Q Exactive not verified from RAW headers."
+  ]
+}

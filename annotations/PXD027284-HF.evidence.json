@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD027284-HF.sdrf.tsv",
+  "dataset": "PXD027284",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD027284"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD027284/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/35119498 (PMC9374793, full text read)"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "mqpar.xml (deposited MaxQuant 1.6.17.0 parameters, read) and RAW header range reads"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF (MS:1002523)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "RAW header range-read of all 21 EH* files shows Q Exactive HF; tune file HF_05022020, method DDA_30 samples per day_HF_fastest. PRIDE lists only \"Q Exactive\"; paper Methods say QExactive HF, which matches the EH series only, so the deposit is split by instrument."
+    },
+    {
+      "location": "comment[data file]",
+      "value": "EH1722-EH1742 (21 RAW)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "all 21 RAW files of this series claimed once; the other series is in the sibling SDRF; proteinGroups.txt and mqpar.xml are not RAW runs"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "beam-type collision-induced dissociation (HCD)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "RAW header scan-event text \"nce: 28\" and Fragmentation_HCD method element; Orbitrap HCD instrument"
+    },
+    {
+      "location": "comment[collision energy]",
+      "value": "28 NCE",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "RAW headers, \"nce: 28\" in all 21 files of the series"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper Methods: data-dependent mode; method names DDA"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin/P (MS:1001313)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml enzymes=Trypsin/P, 2 missed cleavages; paper/PRIDE: trypsin, 1 ug overnight; PRIDE protocol: trypsin without proline restriction"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C) fixed; Oxidation (M) and Acetyl (Protein N-term) variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml fixedModifications / variableModifications; PRIDE data processing protocol agrees"
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "4.5 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml mainSearchTol (first search 20 ppm)"
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "mqpar.xml FTMS MatchTolerance 20 (Orbitrap MS2)"
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "DTT / iodoacetamide",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper Methods: 10 mM DTT, 20 mM iodoacetamide"
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE organism; paper: human donor NK cells and human NK lines"
+    },
+    {
+      "location": "characteristics[cell type]",
+      "value": "natural killer cell (CL:0000623)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "All seven EV groups (primary NK cells, NK-92, KHYG-1) derive from NK cells per PRIDE description and paper"
+    },
+    {
+      "location": "source name",
+      "value": "experiment 1..21",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Experiment names 1-21 from mqpar.xml (each experiment pairs one E* and one EH* RAW file, so sibling SDRFs use identical source names); no deposited sample names"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1 for all rows",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "No mapping of experiments to triplicate groups; single value used only because source names are unique, not a claim of replicate identity"
+    }
+  ],
+  "limitations": [
+    "Which of the 21 experiments is primary NK / NK-92 / KHYG-1, and which is IL-15, IL-12/15/18 or anti-CD16 stimulated, is not recorded in any deposited file (mqpar.xml and proteinGroups.txt use numeric experiment names 1-21 only; RAW headers carry no sample names). The paper describes 7 groups x triplicates but not the run order. Therefore cell line, cellosaurus, treatment, organism part, disease, age, sex are not in the SDRF (or are `not available`) and there is no factor value. The cell-lines template was not declared because primary cells and cell lines cannot be assigned per row (cell line column has no reserved word).",
+    "characteristics[biological replicate] is 1 for every row as a placeholder because the triplicate grouping is undecodable; do not read it as replicate identity. Distinct experiments are distinguished by source name.",
+    "The paper states Q Exactive HF for the analysis, but RAW headers show the E* series was acquired on a Q Exactive (NCE 25) and EH* on a Q Exactive HF (NCE 28); the deposit is split into -QE and -HF SDRFs. The pairing of E* and EH* files as the same sample is inferred only from shared MaxQuant experiment names 1-21 in mqpar.xml (one combined search), not from a deposited mapping.",
+    "Sample is EVs isolated by precipitation (Total Exosome Isolation kit) from culture supernatants; no enrichment/material-type column was added because the contract has no honest single value across rows.",
+    "Both series were searched together in one MaxQuant run; tolerances and modifications are identical for both SDRFs. Fragment tolerance 20 ppm is the mqpar FTMS default for the Orbitrap analyzer.",
+    "Age, sex, ancestry and individual are `not available`: donors were anonymous healthy buffy-coat donors without per-sample data; cell lines are not assigned. Developmental stage omitted (optional).",
+    "SANDBOX ONLY (independent review FAIL): run-to-sample mapping is undecodable (mqpar.xml experiments 'experiment 1-21' appear in both series, proteinGroups columns are numbered only, RAW headers carry no sample names, paper supplements are figures), so cell line (primary NK / NK-92 / KHYG-1) and treatment (IL-15, IL-12/15/18, anti-CD16) are missing and biological replicate = 1 is a placeholder that contradicts the triplicate design (the ms-proteomics/human templates reject 'not available' for it). Precursor tolerance: mqpar.xml 4.5 ppm vs PRIDE text 6 ppm. Instrument split confirmed from all 42 RAW headers (E* = Q Exactive NCE 25, EH* = Q Exactive HF NCE 28)."
+  ]
+}

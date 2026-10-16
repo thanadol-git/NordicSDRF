@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD001256.sdrf.tsv",
+  "dataset": "PXD001256",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD001256"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD001256/files/all"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "deposited DiET_13C2.zip / DiEt_d4.zip txt/parameters.txt (MaxQuant 1.3.0.5), read via HTTP range"
+    }
+  ],
+  "claims": [
+    {
+      "location": "organism",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE organisms field and protocol text: HeLa cell lysates"
+    },
+    {
+      "location": "characteristics[cell line] / cellosaurus accession / name",
+      "value": "HeLa / CVCL_0030 / HeLa",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE text 'HeLa cell lysates'; Cellosaurus exact match for HeLa"
+    },
+    {
+      "location": "characteristics[age], [sex]",
+      "value": "30Y6M, female",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Cellosaurus HeLa donor record, NOT stated in the deposit; required by human+cell-lines templates"
+    },
+    {
+      "location": "characteristics[organism part], [cell type], [disease]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE organismParts says 'Hela cell' which is not a tissue; no tissue or disease stated in the text read"
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1-10 per labeling version",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE description: 'ten technical replicates of each labeling version'; numbering from RAW file suffix 01-10"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "single HeLa lysate per labeling version per PRIDE text; no mapping to a separate biological replicate"
+    },
+    {
+      "location": "comment[label]",
+      "value": "Diethyl 13C light/heavy (13C2 dataset), Diethyl 2H light/heavy (d4 dataset)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE sample/data protocol: acetaldehyde-13C2/13C1 and acetaldehyde-2H4/1H4 labeling, light and heavy combined 1:1; no PRIDE ontology term exists for diethyl labels, so free text"
+    },
+    {
+      "location": "assay structure",
+      "value": "each RAW file listed on two rows (light and heavy peptide halves, same assay and file)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Peptides split in half, labeled separately and recombined (PRIDE sample processing protocol); rows added by scripted copy because the builder refuses one file claimed by two sources"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "LTQ Orbitrap XL (MS:1000556)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "RAW header (HTTP range) of 140213_CJK35_D_DiEt13C2_01.raw and 140214_CJK35_C_DiEt_d4_01.raw: 'LTQ Orbitrap XL MS', method FT_IT_top7_240min_CID"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "collision-induced dissociation (MS:1000133)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "RAW embedded method name '..._CID.meth' in both RAW headers; PRIDE keywords Orbitrapxl"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "method name FT_IT_top7 (top-7 data-dependent) in RAW header"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE sample processing protocol: trypsin digestion; MaxQuant parameters"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C) Fixed; Oxidation (M) Variable; Acetyl Protein N-term Variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE data protocol and deposited DiET_13C2.zip / DiEt_d4.zip txt/parameters.txt (MaxQuant 1.3.0.5), read via HTTP range"
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "0.5 Da",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "parameters.txt MS/MS tol. (ITMS) 0.5 Da; ion-trap MS/MS per method name FT_IT"
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "not in parameters.txt or PRIDE text"
+    },
+    {
+      "location": "comment[reduction reagent], [alkylation reagent]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE text says reduced and alkylated, reagents not named"
+    },
+    {
+      "location": "comment[data file]",
+      "value": "20 RAW files",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "all 20 PRIDE RAW files claimed; the two zip archives hold only MaxQuant txt outputs (no run files), verified from the zip central directory"
+    }
+  ],
+  "limitations": [
+    "comment[label] values are free text and fail the PRIDE ontology check in parse_sdrf (4 errors, all in comment[label]); PRIDE has no diethyl-labeling terms, and the only other label terms (SILAC, dimethyl, 13C heavy) would misstate the chemistry. All other columns validate.",
+    "Diethyl label mass shifts (light +56.063 Da, heavy +60.076 Da per PRIDE data protocol) are not in comment[modification parameters]: UNIMOD:518 Diethyl is a different composition (+28.03), so no verified accession was used. The labels are recorded in comment[label] only.",
+    "Each RAW file appears on two rows (light and heavy halves of the 1:1 mixture); the SDRF builder cannot place one file under two sources, so the heavy rows were created by scripted copy of the light rows.",
+    "Age 30Y6M and sex female are Cellosaurus values for HeLa, not stated in the deposit. Organism part, cell type and disease set to not available (the deposit says only 'Hela cell').",
+    "Biological replicate is 1 for both labeling versions; whether the 13C and 2H experiments used the same lysate batch is not stated. Technical replicate = injection number in file name. No factor value column: the two labeling versions are separate RAW sets and differ in comment[label].",
+    "Precursor tolerance, reduction and alkylation reagents are not stated. Full text of the paper (PMID 26377011) was not open in Europe PMC and was not read; no claim cites it.",
+    "The deposit also contains PXD001256_community_annotated.sdrf.tsv; it was not used as a source for this annotation.",
+    "SANDBOX ONLY (independent review FAIL): comment[label] uses free-text 'Diethyl 13C/2H light/heavy' values, which parse_sdrf rejects (4 errors) because no diethyl-labeling term exists in the PRIDE/MS vocabularies; PRIDE:0000513 Dimethyl Labeling would validate but names the wrong chemistry, and 'not available' is rejected for the label column. The diethyl mass shifts (+56.063 / +60.076 Da) are not in the modification column (UNIMOD:518 Diethyl is a different composition)."
+  ]
+}

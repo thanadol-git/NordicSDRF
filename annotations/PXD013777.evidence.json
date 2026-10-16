@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD013777.sdrf.tsv",
+  "dataset": "PXD013777",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD013777"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD013777/files/all"
+    },
+    {
+      "id": "mq",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/07/PXD013777/1497_1502_1508_1524.zip (txt/parameters.txt, txt/summary.txt)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "48 RAW files",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "48 RAW files in PRIDE file list, each claimed once; 3 SEARCH zips and Igdatabase.txt not raw data."
+    },
+    {
+      "location": "source name / characteristics[individual]",
+      "value": "12 patients (CD1291 ... CD1581) x 2 fractions",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Protocol: 12 celiac patients; file names CD<id>_Marsh<grade>_<fraction>_<rep>.raw. Source = patient + fraction (our labelling)."
+    },
+    {
+      "location": "factor value[TG2 specificity]",
+      "value": "anti-TG2 (TG2-specific IgA) vs TG2 flow-through (non-TG2-specific IgA)",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Protocol: TG2-specific fraction eluted from biotin-TG2 beads; flow-through saved as non-TG2-specific. File name tokens Anti-TG2 / TG2FT."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "celiac disease",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Title/protocol: 12 celiac patients (established or potential). Applied to all patients; no healthy control arm."
+    },
+    {
+      "location": "characteristics[phenotype]",
+      "value": "Marsh 0/1/3B/3C",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Marsh grade taken from file names only; paper not read."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "blood serum",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: IgA purified from 1 ml serum."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol text and PRIDE instrument field. RAW header not checked."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin MS:1001251",
+      "source_ids": [
+        "pride",
+        "mq"
+      ],
+      "evidence": "Protocol: digested with trypsin; MaxQuant used Trypsin/P (specific)."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C) fixed; Oxidation (M), Acetyl (Protein N-term) variable",
+      "source_ids": [
+        "mq"
+      ],
+      "evidence": "MaxQuant 1.5.3.8 parameters.txt/summary.txt."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "mq"
+      ],
+      "evidence": "parameters.txt MS/MS tol. (FTMS) 20 ppm."
+    },
+    {
+      "location": "comment[reduction reagent] / comment[alkylation reagent]",
+      "value": "DTT / iodoacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol text."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "mq"
+      ],
+      "evidence": "Inferred: MaxQuant MS/MS-triggered search on Q Exactive; not stated explicitly."
+    },
+    {
+      "location": "characteristics[age] / characteristics[sex]",
+      "value": "not available",
+      "source_ids": [],
+      "evidence": "Not in PRIDE record; paper not read."
+    }
+  ],
+  "limitations": [
+    "Paper (PMID 31285344) not read; age, sex and Marsh/histology definitions not verified.",
+    "Age and sex are not available.",
+    "Precursor tolerance not in MaxQuant parameters.txt (only MS/MS tol); dissociation method not verified from RAW; both set not available.",
+    "Acquisition method DDA is inferred.",
+    "Source names, technical replicate numbering (_1/_2 in file name) and fraction labels are our inference from file names.",
+    "Marsh grade (0,1 vs 3B,3C) recorded from file names only; Marsh 0 patients are 'potential' celiac per project description; disease set to celiac disease for all.",
+    "Only one of three search zips read (parameters assumed identical across them).",
+    "reconcile flags disease_with_control_arm_in_record because of the phrase 'untreated disease'; false positive, there is no control arm."
+  ]
+}

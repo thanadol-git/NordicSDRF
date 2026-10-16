@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD056720.sdrf.tsv",
+  "dataset": "PXD056720",
+  "sources": [
+    {"id":"pride","kind":"repository","location":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD056720"},
+    {"id":"pride-files","kind":"repository","location":"https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD056720/files/all"},
+    {"id":"samplenames","kind":"deposited file","location":"https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/05/PXD056720/Sample_Name.xlsx"},
+    {"id":"mqpar","kind":"deposited search","location":"https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/05/PXD056720/mqpar.xml"},
+    {"id":"paper","kind":"publication","location":"https://europepmc.org/article/PMC/PMC11893173"}
+  ],
+  "claims": [
+    {"location":"comment[data file]","value":"14 RAW files H1813..H2122","source_ids":["pride-files","samplenames"],"evidence":"14 RAW files in PRIDE; each claimed once. H1823.raw (NV2_R3 in Sample_Name.xlsx) is listed in mqpar.xml but not deposited."},
+    {"location":"source name / characteristics[biological replicate] / factor value[sample group]","value":"WT_rep1-3, NV2_R1-2, V1_R1-3, V2_R1-3, EGF_R1-3","source_ids":["samplenames"],"evidence":"Sample_Name.xlsx maps run IDs to sample names. Biological replicate parsed from the suffix. Meaning of NV2/V1/V2 is not stated in the deposit or paper."},
+    {"location":"characteristics[cell line] / cellosaurus / organism / age / sex / disease / organism part","value":"U2OS; CVCL_0042; Homo sapiens; 15Y; female; osteosarcoma; bone","source_ids":["paper","mqpar"],"evidence":"Paper: U2OS T-REx Flp-In stable inducible SNX10-EGFP lines, GFP-trap pulldown; human UniProt FASTA in mqpar. Age, sex, disease, tissue from Cellosaurus (via sdrf-tools cellline lookup), not the deposit."},
+    {"location":"comment[instrument]","value":"NT=Q Exactive HF;AC=MS:1002523","source_ids":["pride","paper"],"evidence":"Protocol text and paper state QExactive HF. RAW header not checked."},
+    {"location":"comment[cleavage agent details]","value":"NT=Trypsin/P;AC=MS:1001313","source_ids":["mqpar","pride"],"evidence":"mqpar enzyme Trypsin/P; protocol 'Trypsin without proline restriction'."},
+    {"location":"comment[modification parameters]","value":"Carbamidomethyl C fixed; Oxidation M, Acetyl Protein N-term variable","source_ids":["mqpar"],"evidence":"mqpar fixed/variable modification lists. Protocol text also mentions PTY, not present in mqpar; not annotated."},
+    {"location":"comment[precursor mass tolerance]/comment[fragment mass tolerance]","value":"4.5 ppm / 20 ppm","source_ids":["mqpar"],"evidence":"mainSearchTol 4.5 (paper text says 6 ppm); FTMS MatchTolerance 20 ppm."},
+    {"location":"comment[proteomics data acquisition method]/comment[dissociation method]/comment[label]","value":"DDA; HCD; label free","source_ids":["pride","paper","mqpar"],"evidence":"Protocol: data-dependent, high-energy collision-induced dissociation; no isobaric labels in mqpar, LFQ enabled."}
+  ]
+}

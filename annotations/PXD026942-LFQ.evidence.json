@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD026942-LFQ.sdrf.tsv",
+  "dataset": "PXD026942",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD026942"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD026942/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8433885/fullTextXML (Johannsen et al., Molecules 2021, PMID 34500763, full text read)"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "LFQ_Merge_F030562.dat"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[cell line]/cellosaurus accession",
+      "value": "Jurkat E6.1 / CVCL_0367",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper Methods: \"Jurkat T-cell line E6\"; Cellosaurus lookup gave Jurkat E6.1 (CVCL_0367)"
+    },
+    {
+      "location": "characteristics[age]/[sex]",
+      "value": "14Y / male",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Cellosaurus record for CVCL_0367, not stated in paper"
+    },
+    {
+      "location": "characteristics[cell type]",
+      "value": "T cell",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: Jurkat T cells"
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1-8",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: one prepared sample measured in eight replicate LC-MS runs (technical replicates); biological replicate 1"
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper Methods 4.1/4.4 and PRIDE protocol"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: QExactive; RAW headers (range request, all 16) show Q Exactive, method 180min_Top10_fast_excl15.meth"
+    },
+    {
+      "location": "comment[dissociation method]/[collision energy]",
+      "value": "HCD / 28% NCE",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper Methods 4.4: HCD, normalized collision energy 28%"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin + Lys-C",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper/PRIDE: Trypsin/LysC digestion 1:200"
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "10 ppm / 0.05 Da",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "LFQ_Merge_F030562.dat header TOL/ITOL and paper"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Acetyl Protein N-term, Oxidation M variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "LFQ_Merge_F030562.dat MODS/IT_MODS/delta lines; Mascot IsobaricSILAC_* deltas 4.025107/28.0313/32.056407 mapped to Unimod by mass"
+    },
+    {
+      "location": "characteristics[sample storage temperature]",
+      "value": "-80°C",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: cell pellets frozen at -80 C (pellet storage, not cell line stock)"
+    }
+  ],
+  "limitations": [
+    "organism part, disease, passage number, culture medium set to not available (paper does not give ontology-ready values; Cellosaurus tissue/disease not copied).",
+    "Age 14Y and sex male come from Cellosaurus, not from the paper.",
+    "All 8 injections are replicates of one prepared sample per the paper; technical replicate numbers follow file-name order 1-8 (no deposited mapping beyond file names).",
+    "Deposit split into -LFQ and -IPTL SDRFs because label and modification sets differ; the two share the same cell material. Reduction/alkylation reagent columns omitted (optional).",
+    "Arg-d4 (SILAC) has no matching Unimod entry used in the deposited search; only Label:2H(4) on K is declared; the Mascot custom mod IsobaricSILAC_Lct (-0.0013 Da on KR) is not represented.",
+    "Dimethyl and Dimethyl:2H(4) at Any N-term are inferred from Mascot custom modification mass deltas; the dat headers only name them IsobaricSILAC_*.",
+    "The deposit holds no archives; only the two Mascot .dat files are non-RAW. Only LFQ_1-8 RAW files claimed here.",
+    "Mascot headers were read by HTTP range (first 60 kB) only; the full .dat files were not parsed."
+  ]
+}

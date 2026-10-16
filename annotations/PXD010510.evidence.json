@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD010510.sdrf.tsv",
+  "dataset": "PXD010510",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD010510"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD010510/files/all"
+    },
+    {
+      "id": "sample-description",
+      "kind": "deposited file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/07/PXD010510/sample_description.txt"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/07/PXD010510/maxquantoutpttxt.zip (txt/mqpar.xml, txt/parameters.txt)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "raw file header",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/07/PXD010510/12115.raw (first 300 KB)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "53 RAW files 12115.raw..12235.raw",
+      "source_ids": [
+        "pride-files",
+        "sample-description"
+      ],
+      "evidence": "All 53 deposited RAW files, each with 3 SILAC channel rows. sample_description.txt also lists run 12237 which has no deposited RAW; omitted."
+    },
+    {
+      "location": "source name / factor value[antibody target]",
+      "value": "<run>_<channel>_<antibody>",
+      "source_ids": [
+        "sample-description"
+      ],
+      "evidence": "sample_description.txt maps each file and channel (Light/Medium/Heavy) to an antibody target_antibody number. Entries like 'L 12115' / 'M 12119' / 'H 12131' are placeholders with no antibody; target recorded as not available."
+    },
+    {
+      "location": "comment[label]",
+      "value": "SILAC light/medium/heavy",
+      "source_ids": [
+        "mqpar",
+        "pride"
+      ],
+      "evidence": "mqpar labelMods: none; Arg6;Lys6; Arg11;Lys8 (multiplicity 3); PRIDE protocol states medium and heavy amino acids and 3 channels per run."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "PRIDE organism NEWT:9606; human reviewed UniProt database. reconcile flagged mouse (mouse monoclonal antibodies / mouse IgG in fasta) - false positive."
+    },
+    {
+      "location": "characteristics[cell line] etc.",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol names Jurkat, HeLa, A431, RT4 pooled fractions; no per-run mapping, so organ part/cell type/disease/age/sex are not available and cell-lines template not used."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive;AC=MS:1001911",
+      "source_ids": [
+        "pride",
+        "raw-header"
+      ],
+      "evidence": "PRIDE field and RAW header string 'Q Exactive'."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin/P;AC=MS:1001313",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Protocol: trypsin without proline restriction; mqpar enzyme Trypsin/P."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Oxidation (M), Acetyl (Protein N-term), SILAC labels Lys8, Arg11(=Arg10), Lys6, Arg6",
+      "source_ids": [
+        "mqpar",
+        "pride"
+      ],
+      "evidence": "mqpar variableModifications and labelMods; no fixed modifications."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]",
+      "value": "4.5 ppm / 20 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mqpar mainSearchTol 4.5 (paper text says 6 ppm); parameters.txt MS/MS tol FTMS 20 ppm."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "beam-type collision-induced dissociation",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Assumed HCD for Q Exactive; not stated in deposit."
+    }
+  ]
+}

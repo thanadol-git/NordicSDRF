@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD041255.sdrf.tsv",
+  "dataset": "PXD041255",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD041255"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD041255/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC12484174"
+    },
+    {
+      "id": "mq",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/09/PXD041255/txt.zip (txt/mqpar.xml, parameters.txt, summary.txt)"
+    },
+    {
+      "id": "rawhdr",
+      "kind": "raw file header",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/09/PXD041255/20190603_MariK_DDA_01.raw (first 256 KB; files 01,02,15,16,30)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "20190603_MariK_DDA_01..30.raw",
+      "source_ids": [
+        "pride-files",
+        "mq"
+      ],
+      "evidence": "30 RAW files in the PRIDE list, each claimed once; same 30 files in mqpar.xml."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism NEWT:9606; human gut biopsies."
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "male",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods 2.1: all INR and IR were male; healthy controls were men."
+    },
+    {
+      "location": "characteristics[developmental stage]",
+      "value": "adult",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Adult participants (median ages 47-55 y, Table 1B)."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "not available",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Biopsies from sigmoid colon and terminal ileum (15 participants x 2 sites = 30 files), but no deposited file-to-sample map; per-file site unknown."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "not available",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Groups INR/IR/HC (n=5 each) but per-file group unknown."
+    },
+    {
+      "location": "characteristics[age]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Only group medians reported (Table 1B)."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF",
+      "source_ids": [
+        "pride",
+        "paper",
+        "rawhdr"
+      ],
+      "evidence": "Raw header: Q Exactive HF - Orbitrap MS; paper EASY-nLC 1200 + QE HF."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin/P",
+      "source_ids": [
+        "mq"
+      ],
+      "evidence": "mqpar.xml enzymes Trypsin/P, max 2 missed cleavages."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C) fixed; Oxidation (M), Acetyl (Protein N-term), Deamidation (NQ) variable",
+      "source_ids": [
+        "mq"
+      ],
+      "evidence": "parameters.txt / summary.txt of MaxQuant 1.6.6.0."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "4.5 ppm",
+      "source_ids": [
+        "mq"
+      ],
+      "evidence": "mqpar.xml mainSearchTol 4.5 ppm (first search 20 ppm)."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "mq"
+      ],
+      "evidence": "parameters.txt MS/MS tol. (FTMS) 20 ppm."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD",
+      "source_ids": [
+        "paper",
+        "rawhdr"
+      ],
+      "evidence": "Not stated explicitly; assumed for Q Exactive HF FullMS-ddMS2 (flag for review)."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "FullMS-ddMS2 mode; file names DDA."
+    }
+  ]
+}

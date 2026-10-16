@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD009423.sdrf.tsv",
+  "dataset": "PXD009423",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD009423"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD009423/files/all"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2020/09/PXD009423/mqpar.xml"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE organisms: Homo sapiens (human)."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "acute myeloid leukemia",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE title/description: FLT3-ITD+ AML study; MV-411 and RS4-11 cell lysates per sample protocol. Per-run cell line not decodable."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive;AC=MS:1001911",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE instrument field and RAW headers (HTTP range) of all 12 files report Q Exactive."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "beam-type collision-induced dissociation (HCD)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "RAW headers of all 12 files: HCD fragmentation with NCE 25.0."
+    },
+    {
+      "location": "comment[collision energy]",
+      "value": "25 NCE",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "RAW header 'NCE 25.0' in all 12 files."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin/P;AC=MS:1001313",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "mqpar.xml and txt.zip summary.txt (enzyme Trypsin/P); PRIDE protocol states tryptic digestion."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "6 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "mqpar.xml main search tolerance via tools search-params."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "txt.zip txt/parameters.txt: MS/MS tol. (FTMS) 20 ppm (read via HTTP range of the zip central directory/local entry)."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Acetyl (Protein N-term) variable; Oxidation (M) variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "mqpar.xml; parameters.txt lists no fixed modifications."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "MaxQuant DDA search of Orbitrap MS/MS (summary.txt MS/MS Submitted); top-N method in RAW headers."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "summary.txt: multiplicity 1, no labels; no labelling in PRIDE protocol."
+    },
+    {
+      "location": "source name / biological replicate",
+      "value": "S1_1..S4_3; replicate = suffix 1-3",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "MaxQuant experiment names in mqpar.xml/summary.txt (file 8427=S1_1 ... 8441=S4_3, fraction 1)."
+    },
+    {
+      "location": "comment[data file]",
+      "value": "12 RAW files, each once",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE file list (12 RAW); txt.zip central directory lists only MaxQuant txt outputs, no run files."
+    }
+  ],
+  "limitations": [
+    "Paper full text could not be read (Europe PMC fullTextXML returned HTTP 500; PMC page showed only front matter), so no claim cites the publication; PMID 31040234 is only the PRIDE-listed reference.",
+    "The mapping of the four MaxQuant experiment groups S1-S4 to cell line (MV-411 vs RS4-11), FLT3-ITD vs FLT3-WT status, or antibody/control IP is not stated in deposited files or PRIDE text; it is not decoded. Hence characteristics[cell line] (required by cell-lines template) cannot be given honestly: cell-lines template is not declared; only ms-proteomics + human are.",
+    "Because cell line is undecodable, age, sex, organism part, cell type, developmental stage and individual are 'not available'; no factor value column was added because no condition can be assigned.",
+    "Biological replicate numbers 1-3 follow only the _1/_2/_3 suffix of MaxQuant experiment names; whether these are biological or technical replicates is unconfirmed. Each file is a separate source row, technical replicate 1, fraction 1.",
+    "Disease 'acute myeloid leukemia' is taken from the project title/description (both cell lines are used in an AML study) rather than per-sample Cellosaurus annotation.",
+    "No fixed modifications, carbamidomethylation or alkylation reagents are stated in the deposited search parameters or PRIDE text, so none are claimed. Precursor 6 ppm is the MaxQuant main-search value from mqpar.xml.",
+    "txt.zip (377,852,379 bytes) was listed by HTTP range on its central directory: contents are txt/ MaxQuant tables (allPeptides, evidence, msms, peptides, proteinGroups, summary, parameters, etc.); no deposited run names inside, so only the 12 top-level RAW files are claimed.",
+    "RAW headers (first ~400 kB, all 12 files) show embedded paths D:\\Data\\<name>.raw matching file names, so no duplicated/mislabelled files detected.",
+    "SANDBOX ONLY (independent review FAIL): the S1-S4 groups cannot be mapped to MV-411 / RS4-11 cell lines or FLT3-ITD vs FLT3-WT from PRIDE, mqpar.xml or the (non-open-access) paper, so cell line, cell type and the experimental factor are missing. Disease is 'acute myeloid leukemia' for all rows from the project title, but RS4;11 is a B-cell ALL line, so this may be wrong for some rows once the mapping is known. HCD/NCE 25 come from RAW headers."
+  ]
+}

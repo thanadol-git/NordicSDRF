@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002678.sdrf.tsv",
+  "dataset": "PXD002678",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002678"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD002678/files/all"
+    },
+    {
+      "id": "names",
+      "kind": "deposited file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/05/PXD002678/Rawfilesamplenames.txt"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/05/PXD002678/mqpar3223_3227.xml"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4857092/fullTextXML (PMID 27146306, doi 10.1038/srep25565)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "27 RAW files (3225.raw ... 7270.raw)",
+      "source_ids": [
+        "pride-files",
+        "names"
+      ],
+      "evidence": "All 27 deposited RAW files each appear once; Rawfilesamplenames.txt maps every one to an antibody pull-down, pre-enrichment gliadin fraction or Rota-2B04 negative control."
+    },
+    {
+      "location": "source name",
+      "value": "hmAb <id> pull-down / TG2-gliadin fraction input / Rota-2B04 negative control + raw file number",
+      "source_ids": [
+        "names",
+        "paper"
+      ],
+      "evidence": "Source names are our labels built from Rawfilesamplenames.txt. Files 3229, 4230, 4209, 6567, 6565, 3227 are shared by several antibodies in the mapping file but are one raw file, so one row each."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Triticum aestivum",
+      "source_ids": [
+        "pride",
+        "paper",
+        "mqpar"
+      ],
+      "evidence": "Analytes are gliadin peptides from grocery-store wheat flour; search database is Triticum aestivum UniProt. Pulled down by human recombinant hmAbs (PRIDE lists Homo sapiens, which describes the antibodies, not the analyzed peptides)."
+    },
+    {
+      "location": "characteristics[enrichment process] / factor value[enrichment process]",
+      "value": "immunoprecipitation | IgG control immunoprecipitation | not applicable",
+      "source_ids": [
+        "paper",
+        "names"
+      ],
+      "evidence": "hmAb + Dynabeads Protein G pull-down; Rota-2B04 rotavirus hmAb as negative control; pre-enrichment fraction is the input."
+    },
+    {
+      "location": "characteristics[organism part], [developmental stage], [strain or breed], [growth condition]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Only 'gliadin extracted from grocery store wheat flour (Mollerens)'; no tissue, stage or cultivar stated."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "not applicable",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Sample is a wheat gluten digest; celiac disease relates to the source of the antibodies, not the analyzed material."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive;AC=MS:1001911",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Q Exactive with EASY-Spray; model not verified from RAW headers."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Q Exactive operated in data-dependent acquisition mode."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "HCD MS/MS at 25% normalized collision energy."
+    },
+    {
+      "location": "comment[collision energy]",
+      "value": "25 NCE",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "25% normalized collision energy."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=unspecific cleavage;AC=MS:1001956",
+      "source_ids": [
+        "paper",
+        "mqpar"
+      ],
+      "evidence": "Peptides were pre-digested (chymotrypsin, pepsin, trypsin, elastase, carboxypeptidase A) so no enzyme was used in-search; MaxQuant enzyme specificity set to none (mqpar enzymes empty). Reconcile flags this as unsupported because the digest is a mix; unspecific search is the honest description."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "6 ppm",
+      "source_ids": [
+        "paper",
+        "mqpar"
+      ],
+      "evidence": "mainSearchTol 6 ppm (first search 20 ppm)."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "MS/MS tolerance 20 ppm."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Gln->pyro-Glu (Q, variable); Deamidated (N,Q, variable); Oxidation (M, variable)",
+      "source_ids": [
+        "paper",
+        "mqpar"
+      ],
+      "evidence": "mqpar variableModifications; fixedModifications empty."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "No labeling described."
+    }
+  ]
+}

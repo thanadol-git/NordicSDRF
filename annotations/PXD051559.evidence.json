@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD051559.sdrf.tsv",
+  "dataset": "PXD051559",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD051559"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD051559/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC12351667 (full text read, PMID 40810354)"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/02/PXD051559/peptides_1_1_0.mzid.gz"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "14 Bruker .d run folders: Llorente_1-9,17,19,20,21,23",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Listed from the 7z header of TIMS_2301.7z by HTTP range read (start header + LZMA-encoded header); only these 14 .d names are in the archive. The mgf/mzXML/search files for runs 10-16,18,22,24 are derived files without a deposited raw run."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE organism field and protein database (human UniProt) in dataProcessingProtocol."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "blood plasma",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE title/description: EVs isolated from plasma; organismParts Blood plasma."
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "female",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE description: 7 endurance running-trained healthy females; Europe PMC full text Methods 2.1/3.3."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "healthy",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE description and Europe PMC full text (healthy females)."
+    },
+    {
+      "location": "characteristics[age]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper Table 1 gives ages for 15 participants but no deposited mapping tells which 7 were analysed or which run belongs to whom."
+    },
+    {
+      "location": "characteristics[treatment]/sampling time",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Pre/post-exercise status of each run is not given in any deposited file or in the paper; run names are not decodable."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "No mapping of runs to participants; each run given its own source with replicate 1 as placeholder required column; not a claim of identical biology."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=timsTOF Pro;AC=MS:1003005",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE sampleProcessingProtocol and paper: timsTOF pro with Nanoelute; OLS label timsTOF Pro."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Protocol: data-dependent acquisition, PASEF top10."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin MS:1001251",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited mzid Enzyme MS:1001251 with (?<=[KR])(?!P); paper text says 'no proline restriction' (conflict disclosed)."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "15 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited mzid ParentTolerance 15 ppm; PRIDE protocol and paper."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "0.03 Da",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited mzid FragmentTolerance 0.03 dalton; PRIDE protocol and paper."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M variable; Acetyl Any N-term variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Deposited mzid ModificationParams (UNIMOD:4, 35, 1; acetyl residues '.' with MS:1001189 N-term specificity, so Any N-term); PRIDE text says protein N-term (differs)."
+    },
+    {
+      "location": "comment[reduction reagent]",
+      "value": "DTT",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE sampleProcessingProtocol / paper 2.8."
+    },
+    {
+      "location": "comment[alkylation reagent]",
+      "value": "IAA",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "PRIDE sampleProcessingProtocol (iodoacetamide)."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Not stated as HCD/CID in protocol; RAW .d content not readable (inside solid 7z)."
+    }
+  ],
+  "limitations": [
+    "TIMS_2301.7z (25.1 GB) holds 14 Bruker .d folders (runs 1-9, 17, 19, 20, 21, 23); listing obtained from the 7z header via HTTP range, only these are claimed. Runs 10-16, 18, 22 and 24 exist only as derived .mgf (24 files) / .mzXML (23 files) and in the PEAKS search (24 spectra files) and are not claimed as raw runs.",
+    "Mapping of runs to the 7 participants and to pre-/post-exercise is not in any deposited file or the paper text read; treatment, sampling time, individual and age are therefore `not available`, no factor value was added, and biological replicate is 1 for every row only because the column is required (pre/post pairs from one person are not independent replicates).",
+    "Paper Table 1 lists 15 participants but only 7 were analysed by MS and which ones is not stated, so per-run age cannot be assigned.",
+    "RAW headers could not be read by range (files are inside a solid LZMA 7z); instrument, dissociation and collision energy were not verified from analysis.tdf and rely on protocol text. Dissociation method left `not available`.",
+    "Enzyme conflict: paper/PRIDE text says trypsin with no proline restriction, the deposited mzid/pepXML encode trypsin with the P restriction; Trypsin (MS:1001251) used per deposited search. N-terminal acetylation recorded as Any N-term per mzid; PRIDE text says protein N-term.",
+    "Templates: ms-proteomics + human. Disease value 'healthy' taken from the description wording (no ontology term lookup performed beyond parse_sdrf).",
+    "SANDBOX RECOMMENDED (review PASS, but sample mapping unresolved): the PEAKS search covers 24 spectra files while only 14 .d runs are deposited as raw (runs 1-9, 17, 19, 20, 21, 23), so the '7 females x pre/post' arithmetic is unsupported; run-to-participant and timepoint mapping is not deposited. Enzyme: mzid regex is Trypsin with proline restriction while paper/PRIDE say no proline restriction; the deposited search value was used."
+  ]
+}

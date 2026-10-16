@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD015644.sdrf.tsv",
+  "dataset": "PXD015644",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD015644"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD015644/files?pageSize=500"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6872719/fullTextXML (Fang et al., Nat Commun 2019, PMID 31754102), Methods: Whole worm body proteomics"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "32 RB_160611_Henok_{NC,NN,WC,WN}{1,7}_{1-4}.raw",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "32 RAW files in PRIDE, each claimed once; .mgf (PEAK) and .dat (SEARCH) files are derived and excluded."
+    },
+    {
+      "location": "source name / characteristics[genotype] / [treatment] / [sampling time] / factor values",
+      "value": "N2 vs wrn-1(gk99); vehicle vs NR (1 mM); adult day 1 vs day 7; 4 biological replicates",
+      "source_ids": [
+        "paper",
+        "pride-files"
+      ],
+      "evidence": "Paper: L4 N2 and wrn-1 worms treated with NR (1 mM) for up to 7 days, four independent experiments; D1 and D7 collections. Mapping of file-name codes (first letter N=N2/W=wrn-1; second C=control vehicle/N=NR; 1/7=day; last=replicate) is INFERRED from the design, not stated in the deposit."
+    },
+    {
+      "location": "characteristics[organism], [organism part], [material type]",
+      "value": "Caenorhabditis elegans; whole body; whole organism",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism NEWT:6239 and organism part whole body; paper: whole worm body proteomics."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "normal (N2); Werner syndrome (wrn-1)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "wrn-1(gk99) described as a C. elegans model of Werner syndrome; N2 is wild type. Model-organism assignment, flagged for review."
+    },
+    {
+      "location": "characteristics[developmental stage]",
+      "value": "adult",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Worms collected at adult day 1 and day 7."
+    },
+    {
+      "location": "characteristics[strain or breed]",
+      "value": "N2 (wild type); not available for wrn-1(gk99)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper names N2 and wrn-1(gk99) (strain shared by H.-S. Koo); strain ID of the mutant not given."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE instrument and Methods: Ultimate 3000 nanoUHPLC with Q Exactive."
+    },
+    {
+      "location": "comment[proteomics data acquisition method], [dissociation method]",
+      "value": "DDA; HCD",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Data-dependent top10, HCD fragmentation."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Sequencing grade trypsin; Mascot trypsin, max 1 missed cleavage."
+    },
+    {
+      "location": "comment[reduction reagent], [alkylation reagent]",
+      "value": "DTT; iodoacetamide",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "30 min DTT; IAA 1 h dark, quenched with DTT."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M variable; Acetyl protein N-term variable",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE data processing protocol and Methods (Mascot 2.4.0). Taken from prose; .dat search files not opened."
+    },
+    {
+      "location": "comment[precursor mass tolerance], [fragment mass tolerance]",
+      "value": "10 ppm; 0.02 Da",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Mascot settings in the data processing protocol."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "No labelling described."
+    }
+  ]
+}

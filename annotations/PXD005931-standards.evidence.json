@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD005931-standards.sdrf.tsv",
+  "dataset": "PXD005931",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD005931"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD005931/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC5795011"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/02/PXD005931/ (Janus_MascotSearch.dat, RB_161031_Aplha1acid_HCD_15.dat headers; RAW headers read by HTTP range)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Bos taurus",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Paper: 'two standard bovine glycoproteins (alpha-1-acid glycoprotein and fetuin)'"
+    },
+    {
+      "location": "comment[collision energy]",
+      "value": "15, 25, 35 NCE or stepped 15;25;35",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "File names (HCD_15/25/35/15_35), RAW method names (NCE15, NCE25, NCE35, NCE15_35) and paper stepped NCE 15, 25, 35"
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1-4 for alpha-1-acid files",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "Same standard injected at different NCE settings, numbered in sorted file-name order; no deposited replicate mapping"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "RAW headers (Method of Q Exactive); embedded paths match file names for all 5"
+    },
+    {
+      "location": "comment[cleavage agent details]/[tolerances]/[modifications]",
+      "value": "Trypsin; 10 ppm/0.05 Da; Carbamidomethyl, Oxidation, Glyco_Fuc_HexNAc",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "paper",
+        "search"
+      ],
+      "evidence": "RB_161031_Aplha1acid_HCD_15.dat header (CLE, TOL, ITOL, MODS, IT_MODS); paper: standards digested with trypsin"
+    },
+    {
+      "location": "comment[fragment mass tolerance]/comment[modification parameters] (fetuin row)",
+      "value": "0.1 Da; Carbamidomethyl fixed + Oxidation variable; no Glyco_Fuc_HexNAc",
+      "source_ids": [
+        "search"
+      ],
+      "evidence": "Deposited RB_161031_Fetuin_HCD_15_35.dat header (ITOL=0.1, DB=O-GlyStandard, variable Oxidation (M) only) per independent reviewer; the alpha-1-acid glycoprotein rows use 0.05 Da and Glyco_Fuc_HexNAc from their own .dat"
+    }
+  ],
+  "limitations": [
+    "Standards' sample preparation (reduction/alkylation, supplier) is not described in the paper text read; organism part, developmental stage, strain and sex are not applicable/not available.",
+    "Alpha-1-acid files with different NCE are labelled technical replicates 1-4 only to keep rows unique; they are distinct acquisition settings, not true replicates.",
+    "The deposit contains no archives (.zip/.tar); only individual RAW files were claimed (29 RAW: 24 serum, 5 standards, each exactly once).",
+    "Glyco_Fuc_HexNAc (Mascot custom modification on the residue code O = HexNAc, 'fucose addition on HexNAc') has no Unimod entry; written without AC.",
+    "Reduction/alkylation reagents and enrichment process (TiO2) are described in the paper but not encoded (optional columns, ontology terms not verified)."
+  ]
+}

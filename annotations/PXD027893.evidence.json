@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD027893.sdrf.tsv",
+  "dataset": "PXD027893",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD027893"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD027893/files/all"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/02/PXD027893/mqpar.xml"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE organisms and protocol (human UniProt DB)"
+    },
+    {
+      "location": "characteristics[organism part]/[cell type]",
+      "value": "blood platelet / platelet",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE protocol: apheresis platelet (PLT) concentrates; organismParts Blood, Platelet"
+    },
+    {
+      "location": "characteristics[treatment] and factor value[treatment]",
+      "value": "control vs citric acid treatment",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE protocol: one half of each of 7 apheresis products acid treated (citric acid buffer pH 2.9-3.0, 5 min on ice), other half control. Run-to-group mapping from deposited mqpar.xml experiment names 'C n' / 'S n' and proteinGroups columns; C read as control, S as acid treated by elimination (letter meaning not spelled out in deposit)"
+    },
+    {
+      "location": "source name / file map",
+      "value": "C/S + number -> P15521..P15547.raw",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "mqpar.xml file map (experiment=C 8.1 etc.), 14 RAW files each claimed once"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-7",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "7 products (n=7) per PRIDE protocol; numbering is ordinal in file order, pair partners share the number; the deposited ID numbers (8.1, 24.9, ...) are not mapped to replicate numbers"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive Plus MS:1002634",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "PRIDE protocol 'QExactive Plus'; confirmed in RAW headers (P15521, P15547: 'Method of Q Exactive Plus'; embedded path D:\\Data\\<own name>.raw); PRIDE field says Q Exactive"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin/P MS:1001313",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "mqpar.xml enzyme Trypsin/P; protocol 'trypsin without proline restriction'"
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "4.5 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "mqpar.xml mainSearchTol=4.5 ppm (first search 20 ppm); protocol"
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "mqpar.xml msmsParams FTMS MatchTolerance 20 ppm"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl Protein N-term, Carbamyl N-term variable",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Protocol text; mqpar.xml lists carbamidomethyl, oxidation, acetyl protein N-term (carbamyl N-term only stated in protocol text, UNIMOD:5 verified via OLS; written as Any N-term)"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Protocol: data dependent acquisition; label-free quantification"
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Protocol: label-free quantitation"
+    },
+    {
+      "location": "age/sex/disease",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "search"
+      ],
+      "evidence": "Not stated in PRIDE record or deposited files"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD (MS:1000422)",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "RAW method headers of P15521, P15525, P15535, P15547 (read by independent reviewer): Fragmentation_HCD, normalized"
+    },
+    {
+      "location": "comment[collision energy]",
+      "value": "25 NCE",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "RAW method headers: (N)CE nce: 25"
+    }
+  ],
+  "limitations": [
+    "The scientific paper (PMID 34510746) is not open access in Europe PMC and was not read; no claim cites it. Parameters come from PRIDE text and deposited mqpar.xml/RAW headers.",
+    "Group letters: C is read as control and S as acid treated (by elimination of the two-group design); the deposit does not define the letters explicitly.",
+    "Biological replicate numbers 1-7 are ordinal per donor pair in file order; the deposited ID numbers (8.1...) are not decoded; no individual column since donor identity is not documented.",
+    "Carbamyl N-term is in the protocol text but not in the deposited mqpar.xml; it is included from the text, written as Any N-term (position not verifiable).",
+    "The deposited community-annotated SDRF in the PRIDE file list was not consulted.",
+    "Treatment values are free text (not NCIT/EFO terms); parse_sdrf warns accordingly.",
+    "Revised after review: HCD and 25 NCE taken from RAW method headers of four files (confirmed for all 14 by the independent reviewer); C/S = control/acid-treated corroborated by higher B2M LFQ in C than S in proteinGroups; Carbamyl N-term comes from PRIDE protocol text only (not in mqpar.xml)."
+  ]
+}
