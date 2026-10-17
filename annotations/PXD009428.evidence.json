@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD009428.sdrf.tsv",
+  "dataset": "PXD009428",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD009428"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD009428/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/30652024 (PMC6331754, doi:10.4155/FSOA-2018-0088)"
+    },
+    {
+      "id": "supp-methods",
+      "kind": "supplementary",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6331754/supplementaryFiles (fsoa-05-359-s2.docx, Supplementary Methods S-1 to S-9)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "raw file header",
+      "location": "first 300 KB of each of the 40 .raw files under https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/02/PXD009428/ (acquisition method path 'Glioblastomaeksosomer fra Kamilla'; Q Exactive)"
+    },
+    {
+      "id": "msf",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/02/PXD009428/RB_170808_WILSONBERG_S1.msf and R18_130-.msf (Proteome Discoverer 1.4 workflow parameters)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "40 RAW files",
+      "source_ids": "pride-files",
+      "evidence": "All 40 RAW files in the PRIDE file list each claimed once (32 in-gel = 8 sample sets x 4 gel fractions; 8 in-solution)."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism; Swiss-Prot human search; GBM cells T1018 are human. Blanks: not applicable."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "glioblastoma",
+      "source_ids": [
+        "pride",
+        "paper",
+        "supp-methods"
+      ],
+      "evidence": "Exosomes from patient-derived primary glioblastoma multiforme cells (T1018). Blank isolates: not applicable."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "brain",
+      "source_ids": [
+        "supp-methods"
+      ],
+      "evidence": "Supp Table S.1: T1018 = Brain, GBM, primary. Sample actually analysed is exosomes in culture medium of cells derived from a brain biopsy."
+    },
+    {
+      "location": "characteristics[sample type] / factor value[sample type]",
+      "value": "study sample vs negative control",
+      "source_ids": [
+        "paper",
+        "raw-header"
+      ],
+      "evidence": "Blanks (Gb, Sb, GB, SB) are the isolation blanks described in the paper (blank isolates for each isolation method). Mapping of file-name codes to blanks is inferred from the 'b'/'B' suffix; not stated in the deposit."
+    },
+    {
+      "location": "source name (group G / group S)",
+      "value": "G and S",
+      "source_ids": [
+        "raw-header",
+        "pride-files"
+      ],
+      "evidence": "File-name prefixes G and S each have exactly one blank and three replicates in both in-gel and in-solution sets; interpreted as the two isolation methods (UC vs kit) but which is which is NOT stated anywhere retrievable, so it is not annotated."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-3 within group/prep, 1 for blanks",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE: three isolate replicates for each of in-gel and in-solution. Numbering follows file-name order (G18,G18T,R18 -> 1,2,3; S1-1..S3-1; G1..G3; S1..S3); inferred."
+    },
+    {
+      "location": "comment[fraction identifier] / comment[fractionation method]",
+      "value": "1-4 gel slices; SDS-PAGE",
+      "source_ids": [
+        "pride",
+        "supp-methods"
+      ],
+      "evidence": "Gel cut in four fractions (0-25, 25-70, 70-130, 130-up kDa); fraction ids follow that order. In-solution files unfractionated (not applicable)."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride",
+        "supp-methods",
+        "raw-header"
+      ],
+      "evidence": "PRIDE instrument; Supp S-8: Q Exactive in both laboratories; RAW headers 'Method of Q Exactive'."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "msf"
+      ],
+      "evidence": "Protocol and msf Enzyme = Trypsin (Full)."
+    },
+    {
+      "location": "comment[reduction reagent] / comment[alkylation reagent]",
+      "value": "DTT / iodoacetamide",
+      "source_ids": [
+        "pride",
+        "supp-methods"
+      ],
+      "evidence": "Protocol: DTT reduction, IAM alkylation for both in-gel and in-solution."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C) fixed; Oxidation (M), Acetyl any N-term variable",
+      "source_ids": [
+        "msf"
+      ],
+      "evidence": "Both msf files: StaticModification Carbamidomethyl C; Dynamic Oxidation M and Acetyl any N-terminus. Protocol text also lists deamidation (N/Q), which is absent from the msf parameters, so omitted."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]",
+      "value": "10 ppm / 0.1 Da",
+      "source_ids": [
+        "pride",
+        "msf"
+      ],
+      "evidence": "Protocol and msf PeptideTolerance 10 ppm, FragmentTolerance 0.1 Da."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "supp-methods",
+        "raw-header"
+      ],
+      "evidence": "Supp S-8: data-dependent positive mode, Top8/Top10 method names in RAW headers."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "beam-type collision-induced dissociation (HCD)",
+      "source_ids": [
+        "supp-methods"
+      ],
+      "evidence": "Not stated explicitly; Q Exactive HCD assumed (Supp S-8.1 gives normalized collision energy 28 for lab 1)."
+    }
+  ],
+  "limitations": [
+    "Which file-name group (G or S) is ultracentrifugation vs Total Exosome Isolation kit is not stated in the deposit or retrievable paper/supplement; isolation method is therefore not annotated and the factor value is only sample type (study sample vs negative control).",
+    "Source names, replicate numbering and blank assignment are inferred from file names.",
+    "Whether in-gel and in-solution replicates derive from the same three isolates is not stated; treated as separate sources.",
+    "Patient age, sex, individual id not reported (not available).",
+    "Deamidation listed in the protocol is not present in the deposited msf parameters (two msf files read); not annotated.",
+    "Dissociation HCD and the in-solution (laboratory 2) instrument identity are assumptions from the paper; RAW header of in-solution files shows a truncated instrument string.",
+    "Breast cancer (MDA-MB-231) exosomes are described in the paper but no deposited RAW file names or paths refer to them; all 40 RAW files treated as GBM (in-gel RAW headers reference 'Glioblastomaeksosomer').",
+    "The PRIDE organismPart field (cell suspension culture) was not used.",
+    "Full-network parse_sdrf validation passed; the cache-only run only complained that 'study sample' is missing from the local OLS cache."
+  ]
+}

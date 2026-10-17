@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD016006.sdrf.tsv",
+  "dataset": "PXD016006",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD016006"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD016006/files/all"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/02/PXD016006/mqpar_protein.xml"
+    },
+    {
+      "id": "design",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/02/PXD016006/experimentalDesignTemplate.txt"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC8811941 (PMID 35128256, ACS Omega 2022)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "24 RAW files (H37Rv_{Cntr,stress}_{30min,2h,6h,20h}_R{1-3}__NNNN.raw)",
+      "source_ids": [
+        "pride-files",
+        "mqpar",
+        "design"
+      ],
+      "evidence": "All 24 RAW files in PRIDE list, each claimed once; mqpar and experimentalDesignTemplate list the same 24."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Mycobacterium tuberculosis H37Rv",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism NEWT:83332; paper: strain H37Rv."
+    },
+    {
+      "location": "characteristics[treatment]; factor value[treatment]",
+      "value": "DETA NONOate (DETA/NO) vs control",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper 5.2: DETA-NO added at 1 mM final. Control = no DETA/NO inferred from file names (Cntr) and paper 'versus the control'; control medium treatment not explicitly described."
+    },
+    {
+      "location": "characteristics[sampling time]; factor value[sampling time]",
+      "value": "30 minute, 2 hour, 6 hour, 20 hour",
+      "source_ids": [
+        "paper",
+        "pride-files"
+      ],
+      "evidence": "Paper 5.2 harvest times; file names."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-3 (R1-R3 in file names)",
+      "source_ids": [
+        "paper",
+        "design"
+      ],
+      "evidence": "Three biological replicates per condition and time point; 24 runs = 2 x 4 x 3."
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "1",
+      "source_ids": [
+        "paper",
+        "design"
+      ],
+      "evidence": "Six gel fractions per lane were pooled before LC-MS (paper 5.3.2); one run per sample; design template Fraction=1."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Paper 5.3.3 Q Exactive Hybrid Quadrupole-Orbitrap; RAW headers not checked."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Data-dependent top10."
+    },
+    {
+      "location": "comment[dissociation method]; comment[collision energy]",
+      "value": "HCD; 28 NCE",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "HCD at normalized collision energy 28."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "paper",
+        "mqpar"
+      ],
+      "evidence": "Trypsin [KR].[^P], 2 missed cleavages."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term, Gln->pyro-Glu, Glu->pyro-Glu variable",
+      "source_ids": [
+        "mqpar",
+        "paper"
+      ],
+      "evidence": "mqpar_protein.xml fixedModifications/variableModifications plus paper text for pyro-Glu. mqpar_ptm.xml glycosyl/acyl search not represented."
+    },
+    {
+      "location": "comment[precursor mass tolerance]; comment[fragment mass tolerance]",
+      "value": "4.5 ppm; 20 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mainSearchTol 4.5; FTMS MatchTolerance 20 ppm."
+    },
+    {
+      "location": "comment[reduction reagent]; comment[alkylation reagent]; comment[fractionation method]",
+      "value": "DTT; iodoacetamide; SDS PAGE",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper 5.3.2: 10 mM DTT, 55 mM IAA, gel-lane divided into six fractions."
+    }
+  ]
+}

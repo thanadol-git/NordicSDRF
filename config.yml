@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-10-01
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-16)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-17)
 
 countries:
   sweden:
@@ -180,7 +180,7 @@ countries:
         blocked: 3
         pxd_list: lists/norway/oslo.txt
         pxd_count: 120
-        in_corpus: 47
+        in_corpus: 58
       trondheim:
         name: Trondheim
         search_terms: [Trondheim, NTNU]

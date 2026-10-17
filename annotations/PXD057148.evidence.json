@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD057148.sdrf.tsv",
+  "dataset": "PXD057148",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD057148"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD057148/files/all"
+    },
+    {
+      "id": "diann-log",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/11/PXD057148/DINNN_result.log.txt"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "cell line lookup",
+      "location": "sdrf-tools cellline lookup HEK293 (CVCL_0045)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "9 Bruker .d acquisitions (3464,3465,3466,3477,3478,3480,3481,3474,3475)",
+      "source_ids": [
+        "diann-log",
+        "pride-files"
+      ],
+      "evidence": "Run names taken from the DIA-NN command line/log; PRIDE lists only LCMS_file.zip (47.6 GB), whose contents were not inspected."
+    },
+    {
+      "location": "source name / biological replicate / technical replicate",
+      "value": "4 conditions x 2 biological replicates; ACT15_IP_1 has two injections (3464,3465, same slot 35)",
+      "source_ids": [
+        "diann-log"
+      ],
+      "evidence": "Inferred from file names and slot numbers; NT_ETOH files 3474/3475 are both named IP_1 but in slots 41/42, treated as two biological replicates."
+    },
+    {
+      "location": "characteristics[cell line]",
+      "value": "HEK293 / CVCL_0045 / kidney / female",
+      "source_ids": [
+        "pride",
+        "cellosaurus"
+      ],
+      "evidence": "Title and description: HEK293 WT cells. Organ part and sex from Cellosaurus, not the deposit."
+    },
+    {
+      "location": "characteristics[treatment] / factor value[treatment]",
+      "value": "actinonin (ACT15) vs ethanol (ETOH)",
+      "source_ids": [
+        "pride",
+        "diann-log"
+      ],
+      "evidence": "Description: 15 uM actinonin; ETOH = vehicle is an inference from file names."
+    },
+    {
+      "location": "characteristics[genetic modification] / factor value[genetic modification]",
+      "value": "ATP6AP1-FLAG overexpression (ATP6AFLAG) vs not applicable (NT)",
+      "source_ids": [
+        "pride",
+        "diann-log"
+      ],
+      "evidence": "Description: transfection with ATP6AP1-FLAG; NT read as non-transfected control (inference)."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "timsTOF Pro 2 MS:1003230",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: timsTOF PRO2 with nanoElute; PRIDE instruments field agrees."
+    },
+    {
+      "location": "comment[proteomics data acquisition method] / dia method",
+      "value": "Data-independent acquisition; diaPASEF",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: DIA-PASEF mode. Plain DIA label used because the validator rejects NT=;AC= forms."
+    },
+    {
+      "location": "comment[scan window lower/upper limit], isolation window width",
+      "value": "475, 1000, 25",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: MS/MS m/z 475-1000, 25 Da windows."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin MS:1001251",
+      "source_ids": [
+        "pride",
+        "diann-log"
+      ],
+      "evidence": "Protocol: trypsin; DIA-NN --cut K*,R*."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C) fixed",
+      "source_ids": [
+        "diann-log"
+      ],
+      "evidence": "DIA-NN --unimod4; no variable modifications set."
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "20 ppm / 15 ppm",
+      "source_ids": [
+        "diann-log"
+      ],
+      "evidence": "--mass-acc-ms1 20, --mass-acc 15."
+    },
+    {
+      "location": "comment[alkylation reagent]",
+      "value": "iodoacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol says only 'alkylated'; PRIDE PTM string MOD:00397 iodoacetamide derivatized residue. Reduction reagent not stated."
+    }
+  ],
+  "limitations": [
+    "Raw zip contents not inspected; file list from DIA-NN log.",
+    "DIA-NN used a mouse FASTA for human HEK293 data (log); not reflected in SDRF.",
+    "Whole-cell lysate DDA samples described in the processing protocol are not in this deposit (PARTIAL submission)."
+  ]
+}

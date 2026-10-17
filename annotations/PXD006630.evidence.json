@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD006630.sdrf.tsv",
+  "dataset": "PXD006630",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006630"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD006630/files/all"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "162 RAW files",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "All 162 RAW files in the PRIDE file list, each claimed once; FASTA and MaxQuant_Output.zip not rows."
+    },
+    {
+      "location": "characteristics[organism] / strain / factor value[strain]",
+      "value": "Mycobacterium tuberculosis; H37Rv, L7 isolate 28, L7 isolate 35",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Title/abstract: lineage 7 clinical isolates vs H37Rv; isolate tags from RAW names (inferred)."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1,2,3",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Inferred from file-name tags (none / rep2 / rep3)."
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "1-6",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Protocol: gel lane divided into 6 fractions; lane1-6 in file names."
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1-3",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Protocol: injected in triplicate; numbering by run-number rank (inferred)."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol and instruments field."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: data-dependent acquisition, top10."
+    },
+    {
+      "location": "comment[dissociation method] / collision energy",
+      "value": "HCD; NCE 28",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol text."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C; N-term acetyl; pyro-Glu; Oxidation M; Acetyl KSTY",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "dataProcessingProtocol (MaxQuant 1.5.7.4)."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: Trypsin/P, up to two missed cleavages."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "cell lysate",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "sampleAttributes BTO:0004304; total protein lysate in protocol."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "tuberculosis",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE disease field (DOID:399); caveat in report."
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Not stated in deposit text; MaxQuant zip not inspected."
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD006117.sdrf.tsv",
+  "dataset": "PXD006117",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006117"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD006117/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC5423352 (PMID 28536560, doi 10.3389/fmicb.2017.00795)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "159 RAW files",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "All 159 .raw files in the PRIDE file list each claimed once; FASTA and MaxQuantOutput.tar.gz (SEARCH) not used."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Mycobacterium tuberculosis",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Paper: M. tuberculosis lineage 7 clinical isolates and H37Rv."
+    },
+    {
+      "location": "characteristics[strain] / factor value[strain]",
+      "value": "H37Rv; L7-28; L7-35",
+      "source_ids": [
+        "paper",
+        "pride-files"
+      ],
+      "evidence": "Paper Methods: strains L7-35, L7-28 (lineage 7, Amhara Ethiopia) and lineage 4 H37Rv; strain from file names."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1,2,3",
+      "source_ids": [
+        "paper",
+        "pride-files"
+      ],
+      "evidence": "Paper: three biological experiments (plates in triplicate); file names carry no tag (rep1), rep2, rep3."
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1-3 by run number order within strain/replicate/lane",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "PRIDE: peptides injected in triplicate. Ordinal of run number within lane is our inference."
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "lane 1-6 from file name",
+      "source_ids": [
+        "paper",
+        "pride-files"
+      ],
+      "evidence": "Gel lane divided into 6 fractions; file names carry laneN."
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "SDS PAGE (PRIDE:0000568)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Pre-fractionation by NuPAGE Bis-Tris SDS-PAGE."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Protocol text and PRIDE field agree; RAW header not checked."
+    },
+    {
+      "location": "comment[dissociation method]/collision energy",
+      "value": "HCD; 28 NCE",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: HCD with normalized collision energy 28."
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "6 ppm; 0.5 Da",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper database search: main search 6 ppm, fragment 0.5 Da (MaxQuant 1.4.0.5)."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term, Gln->pyro-Glu, Glu->pyro-Glu variable",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper Database search section. MaxQuantOutput.tar.gz (3 GB) not opened."
+    },
+    {
+      "location": "comment[reduction/alkylation reagent]",
+      "value": "DTT; iodoacetamide",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "10 mM DTT, 55 mM iodoacetamide in-gel."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Sequencing-grade trypsin; search set Trypsin/P."
+    },
+    {
+      "location": "characteristics[disease/organism part/cell type]",
+      "value": "not applicable",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Cultured bacterial isolates, not host tissue; no infection state."
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD057713.sdrf.tsv",
+  "dataset": "PXD057713",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD057713"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD057713/files/all"
+    },
+    {
+      "id": "zip-directory",
+      "kind": "deposited raw archive",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/02/PXD057713/CTXB_data.zip (zip64 central directory read via HTTP range request; no data downloaded)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "30 Waters .raw directories (CtxB_*min[b|c|A], CtxB-BL31_*min[b|c|A], CtxB_ND01-06)",
+      "source_ids": [
+        "pride-files",
+        "zip-directory"
+      ],
+      "evidence": "The only RAW file is CTXB_data.zip; its directory lists 30 Data/*.raw folders, each claimed once."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Vibrio cholerae",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organism NEWT:1093790 Vibrio cholerae h1; sample is the CTXB protein. Recorded at species level."
+    },
+    {
+      "location": "factor value[ligand]",
+      "value": "none / BL3.1",
+      "source_ids": [
+        "pride",
+        "zip-directory"
+      ],
+      "evidence": "Protocol: CTXB unbound vs CTXB-BL3.1 complex (1:5); run names CtxB_ vs CtxB-BL31_."
+    },
+    {
+      "location": "factor value[deuterium exchange time]",
+      "value": "1, 10, 40, 100 min; 0 min for ND",
+      "source_ids": [
+        "pride",
+        "zip-directory"
+      ],
+      "evidence": "Protocol: HDX at 1, 10, 40, 100 min; ND01-06 are non-deuterated runs used for the peptide library."
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1-3 (suffix none/b/c); 1-6 for ND",
+      "source_ids": [
+        "pride",
+        "zip-directory"
+      ],
+      "evidence": "Protocol: samples measured in triplicate; suffix to replicate mapping is inferred from file names."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "SYNAPT G2-Si MS:1002726",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: Synapt G2-Si, Waters; HDMSE acquisition m/z 50-2000."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "PepsinA MS:1001311",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: online pepsin digestion (HDX column)."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-independent acquisition PRIDE:0000450",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "HDMSE is an MSE-type alternating low/high energy DIA mode; choice is ours."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "CID MS:1000133",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: peptide ID by tandem MS (CID); applied to all runs by assumption."
+    }
+  ],
+  "limitations": [
+    "Raw data are inside a 44.8 GB zip; the archive was not downloaded, so .raw headers (_HEADER.TXT) were not checked.",
+    "Source rows, replicate suffixes and ND state are inferred from file names.",
+    "BL3.1 (deposit) vs BL3.2 (title/paper): paper not read.",
+    "No tolerances or modifications in deposit (PLGS output zips not opened)."
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD011785.sdrf.tsv",
+  "dataset": "PXD011785",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD011785"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD011785/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/31080378 (PMC6505067, Clin Proteomics 2019;16:19)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "44 CD4_*/CD8_* .raw files",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "All 44 RAW files in the PRIDE list, each claimed once; MaxQuantCD4/CD8.zip and FASTA not annotated."
+    },
+    {
+      "location": "characteristics[disease]; factor value[disease]",
+      "value": "multiple sclerosis (MS* files) / normal (K* files)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Paper: 13 treatment-naive RRMS patients and 14 healthy controls; file prefix MS vs K (K = kontroll) is our inference."
+    },
+    {
+      "location": "characteristics[cell type]; factor value[cell type]",
+      "value": "CD4-positive, alpha-beta T cell / CD8-positive, alpha-beta T cell",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Paper: CD8+ positive selection then CD4+ negative selection from PBMC; file prefix CD4/CD8. Subtype alpha-beta is a term-level inference."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "blood",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "T cells purified from PBMC isolated from whole blood."
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "female",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "All patients and controls female."
+    },
+    {
+      "location": "characteristics[age]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Only age categories (5-year bins) per anonymised patient ID in Table 1; no mapping to file IDs."
+    },
+    {
+      "location": "characteristics[ancestry category]",
+      "value": "European",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Self-declared Nordic ancestry; mapped to the parent term European."
+    },
+    {
+      "location": "characteristics[treatment status]",
+      "value": "treatment naive (patients) / not applicable (controls)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Untreated MS patients, no steroids in prior 3 months."
+    },
+    {
+      "location": "characteristics[individual]",
+      "value": "K004.. / MS1409..",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Derived from file names (suffixes a/_2/_Batch1/ny stripped); CD4 and CD8 files of one ID assumed same donor."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "LTQ Orbitrap Elite",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE instrument MS:1001910; paper Orbitrap Elite."
+    },
+    {
+      "location": "comment[dissociation method]; comment[collision energy]",
+      "value": "CID; 35 NCE",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "12 most intense ions to CID, NCE 35."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C fixed); Oxidation (M variable)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Stated in data processing protocol; MaxQuant zip not inspected."
+    },
+    {
+      "location": "comment[precursor mass tolerance]; comment[fragment mass tolerance]",
+      "value": "20 ppm; 0.5 Da",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Data processing protocol."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Protocol."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Top-12 CID method."
+    }
+  ]
+}

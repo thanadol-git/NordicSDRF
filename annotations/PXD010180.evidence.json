@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD010180.sdrf.tsv",
+  "dataset": "PXD010180",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD010180"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD010180/files?pageSize=500"
+    },
+    {
+      "id": "epmc",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/30964684",
+      "note": "abstract only; full text not open access"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "36 RAW files (9 samples x 4 gel fractions)",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "PRIDE file list; each RAW claimed once; 36 .msf search files not listed as data files."
+    },
+    {
+      "location": "source name / characteristics[cell line]",
+      "value": "K1-3 combined DMSO control of both lines; IY1-3 = T1454 YM155; IIY1-3 = T1459 YM155",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE protocol: lines T1459 and T1454, DMSO control n=3, YM155 n=3; controls of both lines mixed. Mapping of file prefixes IY/IIY to T1454/T1459 is INFERRED from order; paper full text unavailable."
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "SDS PAGE (PRIDE:0000568)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Gel cut into 0-25, 25-70, 70-130, 130- kDa pieces; fraction identifiers 1-4 in that order."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE instruments field and keyword Q-exactive."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl fixed; Oxidation M variable; Acetyl protein N-term variable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "dataProcessingProtocol text; .msf files not opened."
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "10 ppm / 0.1 Da",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "dataProcessingProtocol."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "not available",
+      "source_ids": [],
+      "evidence": "Not stated in deposit."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "glioblastoma",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Title, description and PRIDE disease DOID:3073."
+    }
+  ]
+}

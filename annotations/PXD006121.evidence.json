@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD006121.sdrf.tsv",
+  "dataset": "PXD006121",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006121"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD006121/files/all"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "108 RAW files",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "PRIDE file list; each RAW used once; filenames encode strain, gel lane, replicate, run number"
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Neisseria meningitidis",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Title and PRIDE organism NEWT:491 serogroup B; protocol: strain MC58"
+    },
+    {
+      "location": "characteristics[genotype]/factor value[genotype]",
+      "value": "wild type (MC58) vs dprA null mutant (Dpra)",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Title; file name prefixes MC58 / Dpra"
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "1-6",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Protocol: gel lane divided into 6 fractions; lane1-6 in file names"
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1-3",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Protocol: peptides injected in triplicate; ordering inferred from run numbers (inference)"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Data processing protocol and PRIDE instruments field"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, protein N-term acetyl, Gln/Glu->pyro-Glu variable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Data processing protocol text"
+    },
+    {
+      "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+      "value": "6 ppm / 0.5 Da",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: main search 6 ppm, fragment 0.5 Da"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD, NCE 28",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol"
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "SDS PAGE",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: pre-fractionated by NuPAGE gel, lane cut into 6"
+    }
+  ]
+}

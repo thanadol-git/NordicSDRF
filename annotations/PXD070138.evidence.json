@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD070138.sdrf.tsv",
+  "dataset": "PXD070138",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD070138"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD070138/files/all"},
+    {"id": "mq-settings", "kind": "deposited search", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/06/PXD070138/R11_Hce_MQ-settings.xml"},
+    {"id": "paper", "kind": "publication", "location": "https://europepmc.org/article/MED/41877653 (PMC13172734)"},
+    {"id": "ncbi-taxonomy", "kind": "ontology lookup", "location": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=taxonomy"}
+  ],
+  "claims": [
+    {"location": "comment[data file]", "value": "MR_241024_Undheim_R1..R11 .d.tar.gz (11 archives)", "source_ids": ["pride-files"], "evidence": "11 RAW-category archives in the PRIDE file list, each claimed once."},
+    {"location": "source name / characteristics[organism] / factor value[organism]", "value": "11 spider venoms; species per R-number", "source_ids": ["pride", "pride-files", "paper", "ncbi-taxonomy"], "evidence": "Species inferred from search-file prefixes R1_Aavi..R11_Hcer and RAW numbering R1..R11; PRIDE organism list gives genus/species for 9; paper names C. hosei and C. natanicharum. Ranks lowered where NCBI Taxonomy lacks the species (Harpactira, Xenesthis, Fufius, Theraphosidae)."},
+    {"location": "characteristics[organism part]", "value": "venom", "source_ids": ["pride", "paper"], "evidence": "Venom collected by milking/electrical stimulation; PRIDE organism part BTO venom."},
+    {"location": "comment[instrument]", "value": "NT=timsTOF Pro;AC=MS:1003005", "source_ids": ["pride", "paper"], "evidence": "UHPLC-timsTOF Pro (Bruker) in protocol and PRIDE instrument field."},
+    {"location": "comment[proteomics data acquisition method]", "value": "Data-dependent acquisition", "source_ids": ["pride", "mq-settings"], "evidence": "PRIDE experiment type DDA; MaxQuant lcmsRunType TIMS-DDA."},
+    {"location": "comment[cleavage agent details]", "value": "Trypsin", "source_ids": ["pride"], "evidence": "Digested with trypsin overnight at 37 C; MaxQuant searched Trypsin/P with 2 missed cleavages."},
+    {"location": "comment[modification parameters]", "value": "Carbamidomethyl fixed; Oxidation, Amidated (protein C-term), Glu->pyro-Glu variable", "source_ids": ["mq-settings", "pride"], "evidence": "fixedModifications / variableModifications in the MaxQuant settings xml (identical in all 11 files)."},
+    {"location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]", "value": "10 ppm / 25 ppm", "source_ids": ["mq-settings"], "evidence": "mainSearchTol 10 ppm; TOF MS/MS MatchTolerance 25 ppm."},
+    {"location": "comment[reduction reagent] / comment[alkylation reagent]", "value": "DTT / IAA", "source_ids": ["pride"], "evidence": "Samples reduced with DTT and alkylated with iodoacetamide."},
+    {"location": "comment[dissociation method], characteristics[developmental stage], characteristics[strain or breed]", "value": "not available", "source_ids": [], "evidence": "Not stated in the deposit or paper methods read."}
+  ]
+}
