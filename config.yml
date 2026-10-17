@@ -176,7 +176,7 @@ countries:
         search_terms: [Oslo, Rikshospitalet, Radiumhospitalet]
         pride_hits: 124
         screened: 0
-        annotated: 65
+        annotated: 75
         blocked: 3
         pxd_list: lists/norway/oslo.txt
         pxd_count: 120
