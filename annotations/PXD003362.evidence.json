@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD003362.sdrf.tsv",
+  "dataset": "PXD003362",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003362"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003362/files/all"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD003362/mqpar.xml"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/27727249 (PMC5095680 full text, Mol Ther Nucleic Acids 2016, doi 10.1038/mtna.2016.64)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]/assay name",
+      "value": "6486.raw ... 6508.raw (18 files)",
+      "source_ids": [
+        "pride-files",
+        "mqpar"
+      ],
+      "evidence": "18 RAW files in PRIDE file list, each claimed once; txt.zip and mqpar.xml are search outputs, not claimed."
+    },
+    {
+      "location": "source name",
+      "value": "S1_A ... S6_C",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mqpar.xml experiments list S3_A..S2_C mapped to filePaths in order: S3=6486-88, S4=6490-92, S1=6494-96, S2=6498-6500, S5=6502-04, S6=6506-08."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism NEWT:9606; human articular chondrocytes."
+    },
+    {
+      "location": "characteristics[organism part]/[cell type]",
+      "value": "articular cartilage / chondrocyte",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Paper: human articular chondrocytes (ACs) from OA cartilage; PRIDE organismParts Chondrocyte."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "osteoarthritis",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "ACs derived from OA cartilage; study is an in vitro OA model."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-3 (suffix A-C)",
+      "source_ids": [
+        "mqpar",
+        "paper"
+      ],
+      "evidence": "Each group S1-S6 has A/B/C; paper says three donors (A),(B),(C). Mapping of experiment suffix to donor is inferred."
+    },
+    {
+      "location": "characteristics[individual]",
+      "value": "A, B, C",
+      "source_ids": [
+        "mqpar",
+        "paper"
+      ],
+      "evidence": "Inferred from experiment suffix and paper donor labels A/B/C (paired t-tests across donors)."
+    },
+    {
+      "location": "characteristics[treatment]/factor value[treatment]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper describes rhIL1B stimulation and control/miR-140 electroporation, but no deposited file maps S1-S6 to those conditions."
+    },
+    {
+      "location": "characteristics[age]/[sex]/[ancestry category]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Donor demographics not stated in the paper text read."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Protocol and paper: EASY nLC1000 + Q Exactive."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper: data-dependent mode, top 10."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "beam-type collision-induced dissociation",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper: HCD, normalized collision energy 25%."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Trypsin 1:50 w/w; mqpar enzyme Trypsin/P."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Oxidation (M) variable; Acetyl (Protein N-term) variable; no fixed",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mqpar variableModifications; fixedModifications None."
+    },
+    {
+      "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+      "value": "6 ppm / 20 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mainSearchTol 6; FTMS msmsParams tolerance 20 ppm."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "MaxQuant LFQ, no labels."
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "1",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "All fractions = 1."
+    }
+  ],
+  "limitations": [
+    "Condition of each group S1-S6 (e.g. unstimulated, rhIL1B, control mimic + rhIL1B, miR-140 + rhIL1B) is not recoverable from the deposit or paper text read; treatment and factor value[treatment] are 'not available'.",
+    "Donor identity A/B/C inferred from experiment-name suffix; individual 'A' etc. not validated against deposit.",
+    "Donor age, sex, ancestry not stated.",
+    "txt.zip (MaxQuant output, ~975 MB) not opened; supplementary dataset 1 not read.",
+    "Reduction/alkylation reagents not stated; no fixed carbamidomethyl in the search, so none annotated."
+  ]
+}

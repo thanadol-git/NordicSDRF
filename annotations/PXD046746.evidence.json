@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD046746.sdrf.tsv",
+  "dataset": "PXD046746",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD046746"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD046746/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC12145102 (PMID 40487285, doi 10.2147/jir.s485050)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "Sample_{70,86.d,93,124,167,186,203,280,300,301,306,325,347,383,410,411,453,464,473,536}.7z",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "20 RAW-category 7z archives, each claimed once; 20 companion .mgf peak lists and proteins.csv/peptide.csv are not data files. Archive names used as the deposit has no unpacked RAW names."
+    },
+    {
+      "location": "source name",
+      "value": "Sample_<n>",
+      "source_ids": [
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "One plasma sample per archive; paper states MS on n=20 plasma samples. Names derived from archive names; no patient mapping deposited."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE NEWT:9606; human patients."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "blood plasma",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "EDTA plasma used for MS."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "colon cancer",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "All 40 patients stage II-III colon cancer; the 20 MS samples are a subset. Per-sample CRP group (<10 vs >=10 mg/l) not deposited, so not used as a factor."
+    },
+    {
+      "location": "characteristics[age]/[sex]/[ancestry category]/[individual]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper gives cohort summaries only (median age 72.5, 57.5% male, n=40); no per-sample table for the 20 MS samples."
+    },
+    {
+      "location": "characteristics[spiked compound]",
+      "value": "CT=peptide;QY=0.5 pmol;PS=GYSIFSYAT(K) ; PS=YEVQGEVFT(K)PQLWP",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "0.5 pmol each of two heavy AQUA peptides added before digestion. Samples themselves are unlabelled, hence label free sample (reconcile BLOCKER on lys8 is a false positive: spike-in, not sample labelling)."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Native endogenous peptides quantified against AQUA standards; no sample-level labelling."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=timsTOF Pro;AC=MS:1003005",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Protocol and paper: nanoElute coupled to timsTOF pro (Bruker). PRIDE structured instrument field only says 'Bruker software'. RAW header not checked."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Data-dependent mode, top 10."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Trypsin Gold overnight."
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "dithiothreitol (DTT) / iodoacetamide (IAA)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "10 mM DTT, 25 mM iodoacetamide."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C, fixed); Oxidation (M), Acetyl (Protein N-term), Label:13C(6)15N(2) (K) variable",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "From PRIDE data processing protocol / paper (PEAKS 10.6); search settings files (proteins.csv/peptide.csv) not parsed for parameters."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "NT=collision-induced dissociation;AC=MS:1000133",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Inferred: not stated; timsTOF PASEF fragmentation is CID. Assumed, not extracted."
+    },
+    {
+      "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Not reported."
+    }
+  ]
+}

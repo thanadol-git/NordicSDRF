@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD040724.sdrf.tsv",
+  "dataset": "PXD040724",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD040724"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD040724/files/all"
+    },
+    {
+      "id": "mzid",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/04/PXD040724/RB_151022_Hilde_5.mzid.gz (and the other 29 *.mzid.gz)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10067770/ (PMID 37020951, iScience 2023)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "30 RAW files RB_1510xx_Hilde_1..30.raw",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "All 30 RAW files in the PRIDE file list, each claimed once."
+    },
+    {
+      "location": "source name / factor value[treatment] / factor value[age] / characteristics[biological replicate]",
+      "value": "Control_Day4/7/14, Frh_Day4/7/14, 4440 groups",
+      "source_ids": [
+        "mzid",
+        "paper"
+      ],
+      "evidence": "Each mzid Sample name holds the Scaffold category path (e.g. scaffold:/Frh/Frh_Day7/RB_151023_Hilde_17). Group = Control|Frh|4440, day = 4/7/14. Replicate index = order of file number within group (our numbering). Paper: wild type vs frh-1 RNAi at 4, 7, 14 days, 5 biological replicates per condition."
+    },
+    {
+      "location": "characteristics[organism], [organism part]",
+      "value": "Caenorhabditis elegans; whole body",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organism NEWT:6239 and organism part BTO whole body; protocol says ~4000 worms lysed."
+    },
+    {
+      "location": "characteristics[strain or breed]",
+      "value": "N2 (Control, Frh groups); not available (4440 group)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper compares wild-type (N2) with frh-1 depleted animals; strain for proteomic samples inferred from that, not stated per sample."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive;AC=MS:1001911",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol text: Q Exactive mass spectrometer. RAW header not read."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "mzid"
+      ],
+      "evidence": "In-solution tryptic digestion; mzid enzyme Trypsin, 1 missed cleavage."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M variable; Acetyl variable (Protein N-term)",
+      "source_ids": [
+        "mzid"
+      ],
+      "evidence": "mzid SearchModification entries. Acetyl residues='.' with empty specificity rules; Protein N-term is our reading."
+    },
+    {
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance]",
+      "value": "5 ppm; 0.01 Da",
+      "source_ids": [
+        "mzid"
+      ],
+      "evidence": "mzid ParentTolerance 5 ppm, FragmentTolerance 0.01 Da (Scaffold re-search settings)."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Shotgun proteomics, Mascot search; DDA assumed, not stated explicitly."
+    }
+  ],
+  "limitations": [
+    "Control vs 4440 groups: both look like control RNAi (paper uses PL4440 empty vector) but the deposit does not say what 'Control' means versus '4440'.",
+    "Age for 4440 group not stated: age / factor value[age] = not available.",
+    "Sample-to-file mapping comes only from Scaffold category names inside mzid files. Replicate numbering is ours. Group sizes uneven vs 5 per condition in paper.",
+    "Dissociation method not verified: not available.",
+    "Reduction/alkylation reagents not stated: optional columns omitted.",
+    "Developmental stage adult inferred from day 4/7/14 ages."
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD018812.sdrf.tsv",
+  "dataset": "PXD018812",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD018812"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD018812/files/all"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2020/12/PXD018812/ (DJ34protein, Imatinibprotein, DJ34phospho1, DJ34phospho2, Imatinibphospho _mqpar.xml)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/33303632 (PMID 33303632, PMC7948465)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://api.cellosaurus.org/cell-line/CVCL_0161?format=txt"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "30 RAW files (8724-26,8728-30,8734-36,8738-40,P748-50,P752-54,P829-31,P833-35,P2318-20,P2322-24)",
+      "source_ids": [
+        "pride-files",
+        "mqpar"
+      ],
+      "evidence": "All 30 RAW files in the PRIDE list claimed once. File-to-condition mapping read from filePaths/experiments order in the five mqpar.xml files and from the PRIDE data processing protocol (DMSO vs DJ34 experiment numbering)."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Mus musculus",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "PRIDE organism NEWT:10090; mouse UniProt database in mqpar."
+    },
+    {
+      "location": "characteristics[cell line] / cellosaurus accession / name",
+      "value": "Ba/F3 / CVCL_0161 / Ba/F3",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Paper: BCR-Abl stably transfected Ba/F3 cells; Cellosaurus record CVCL_0161."
+    },
+    {
+      "location": "characteristics[organism part], [cell type]",
+      "value": "bone marrow; pro-B cell",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Cellosaurus 'Derived from site: Bone marrow' and 'Cell type: Pro-B cell'. Inferred from the cell line record, not stated in the deposit."
+    },
+    {
+      "location": "characteristics[treatment], factor value[treatment]",
+      "value": "Dimethyl Sulfoxide / DJ34 / Imatinib",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "PRIDE sample protocol: cells treated with imatinib or DJ34 or DMSO control. DMSO runs = experiments 24-26 / DMSO1-3 / S1 / 'DMSO Ctrl'; compound runs = 28-30 / DJ1-3 / S2 / 'Treated' per data processing protocol and mqpar experiment names. Dose and duration for the MS experiments are in the paper's Supporting information (not read)."
+    },
+    {
+      "location": "characteristics[enrichment process]",
+      "value": "enrichment of phosphorylated protein (phospho sets) / not applicable (proteome sets)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample protocol: TiO2 enrichment for phosphoproteomic analyses; proteome sets analysed without enrichment. Enrichment is at peptide level; the controlled term is the spec's phospho enrichment value."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-3 within each condition",
+      "source_ids": [
+        "mqpar",
+        "pride"
+      ],
+      "evidence": "Triplicate experiments per condition (experiments S1_1..3, DMSO1..3, etc.); treated as biological replicates by inference."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive Plus (MS:1002634)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample protocol text: Qexactive Plus. PRIDE structured field says Q Exactive; protocol text preferred. RAW headers not checked."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin (MS:1001251)",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Protocol: digested with trypsin; mqpar enzyme Trypsin/P, 2 missed cleavages."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Oxidation (M), Acetyl (Protein N-term) variable for all; Phospho (STY) variable for the 3 phospho sets; Carbamidomethyl (C) fixed only for the two imatinib sets",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "Read from fixedModifications/variableModifications of each mqpar.xml; DJ34 sets have empty fixedModifications."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "6 ppm (DJ34protein, Imatinib x2); 4.5 ppm (DJ34phospho1, DJ34phospho2)",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mainSearchTol in each mqpar.xml."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "FTMS MatchTolerance 20 ppm in msmsParams of every mqpar.xml."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "beam-type collision-induced dissociation (HCD)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Assumed: standard for Q Exactive Plus DDA; not stated in deposit."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Assumed: LC-MS/MS, MaxQuant LFQ, no DIA indicated. Not explicitly stated."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "LFQ MaxQuant search, multiplicity 1, no labelMods."
+    },
+    {
+      "location": "characteristics[disease], [developmental stage], [strain or breed], [sex]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Not stated for the sample; Cellosaurus notes strain origin dispute (BALB/c vs C3H) and no sex."
+    }
+  ]
+}

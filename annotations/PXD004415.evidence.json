@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD004415.sdrf.tsv",
+  "dataset": "PXD004415",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD004415"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD004415/files/all"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "Cellosaurus CVCL_0065 via sdrf-tools cellline lookup Jurkat"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "32 RAW files R{1-4}-{Kontrol,Cisplatin}{1,2}-HCD-{25,35}.raw",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "All 32 deposited RAW files, each claimed once; mzid/MGF/mzTab not used."
+    },
+    {
+      "location": "source name",
+      "value": "Jurkat control R1-4; Jurkat cisplatin R1-4",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Four biological replicates of both states (PRIDE description); labels are ours."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-4",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "R1-R4 prefix of file names; description says four biological replicates."
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1-4 per source (Kontrol1/2 x NCE 25/35)",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Our inference: Kontrol1 vs Kontrol2 interpreted as two injections of one sample; numbering is a row coordinate only. No deposited mapping."
+    },
+    {
+      "location": "comment[collision energy]",
+      "value": "25 NCE / 35 NCE",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Description and data processing protocol: HCD NCE 25 and 35; file names carry HCD-25/HCD-35."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organism NEWT:9606."
+    },
+    {
+      "location": "characteristics[cell line]",
+      "value": "Jurkat (CVCL_0065)",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "cellosaurus"
+      ],
+      "evidence": "Title: Jurkat T cells; Cellosaurus lookup."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "blood",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Cellosaurus tissue for Jurkat; not stated in deposit."
+    },
+    {
+      "location": "characteristics[cell type]",
+      "value": "T cell",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organismParts CL:0000084 and title."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "T-cell childhood acute lymphocytic leukemia",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Cellosaurus disease of the cell line origin, not of treatment arm."
+    },
+    {
+      "location": "characteristics[age]/[sex]",
+      "value": "14Y / male",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Cellosaurus donor values, not in deposit."
+    },
+    {
+      "location": "characteristics[treatment] / factor value[treatment]",
+      "value": "cisplatin (60 uM, 16 h) vs untreated",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Sample processing protocol: 60 uM cisplatin for 16 h along with control cells."
+    },
+    {
+      "location": "characteristics[enrichment process]",
+      "value": "phosphopeptide enrichment",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Description: TiO2 bead phosphopeptide enrichment."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol text and PRIDE instrument; RAW header not checked."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Data-dependent mode, top 10."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: higher-energy collision induced dissociation."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Mascot: enzyme trypsin, 2 missed cleavages."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Spectrum counting quantification; no labels used in this study (SILAC mention refers to earlier work)."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / [fragment mass tolerance]",
+      "value": "10 ppm / 0.1 Da",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Mascot parameters in data processing protocol."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Acetyl protein N-term, Oxidation M, Phospho S/T/Y variable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Mascot parameters in data processing protocol (prose; search files not read)."
+    }
+  ],
+  "limitations": [
+    "Paper (PMID 28464451) full text not read.",
+    "Meaning of Kontrol1/Kontrol2 and Cisplatin1/Cisplatin2 is not stated; treated as repeat injections (technical replicates); could be separate enrichment replicates.",
+    "Organ part blood, age 14Y, sex male, disease come from Cellosaurus, not the deposit.",
+    "Modifications taken from protocol prose; deposited mzid not parsed. Instrument not verified from RAW header.",
+    "Reconcile flagged cleavage agent, SILAC and disease-with-control; judged false positives (tryptic peptides; SILAC refers to prior work; disease is cell line property).",
+    "Treatment and enrichment values carry validator ontology warnings (free-text descriptive values, as in other annotations)."
+  ]
+}

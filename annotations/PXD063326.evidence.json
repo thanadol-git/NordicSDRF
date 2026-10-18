@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD063326.sdrf.tsv",
+  "dataset": "PXD063326",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD063326"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD063326/files?pageSize=500"},
+    {"id": "archives", "kind": "deposited raw archives", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/01/PXD063326/ (LCMS_rawfile.zip, LCMS_rawfile_2.7z, LCMS_rawfile_3.zip, LCMS_rawfile_4.zip; central directories read)"},
+    {"id": "mqpar", "kind": "deposited search", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/01/PXD063326/mqpar_1.xml (also mqpar_2-4.xml)"},
+    {"id": "paper", "kind": "publication", "location": "https://europepmc.org/article/PMC/PMC13057116 (PMID 41741475, doi 10.1038/s41467-026-69916-w)"}
+  ],
+  "claims": [
+    {"location": "comment[data file]", "value": "12 .d folders", "source_ids": ["pride-files", "archives", "mqpar"], "evidence": "Run folder names read from zip/7z directories; archives are the deposited files."},
+    {"location": "characteristics[organism]; characteristics[organism part]", "value": "Mus musculus; blood serum", "source_ids": ["pride"], "evidence": "PRIDE organism NEWT:10090, organism part blood serum, description 'immunoprecipitated IgG isolated from mouse serum'."},
+    {"location": "characteristics[genotype]; characteristics[developmental stage]", "value": "Vlambda2 315m+/- TCR-TG+/-; adult", "source_ids": ["pride", "paper"], "evidence": "Description: serum from 10 month old Vlambda2 315m+/- TCR TG+/- mice. Applied to all non-rIG runs by inference; C_Rama genotype not available."},
+    {"location": "characteristics[strain or breed]", "value": "BALB/c", "source_ids": ["paper"], "evidence": "Paper states lymphomas had BALB/c background; cohort strain inferred."},
+    {"location": "source name / characteristics for rIG_Slot1-46", "value": "recombinant hIgG3 control", "source_ids": ["pride", "mqpar"], "evidence": "Description: recombinant human IgG3 processed in parallel as positive control; run name rIG."},
+    {"location": "comment[instrument]", "value": "timsTOF fleX", "source_ids": ["pride"], "evidence": "Sample processing protocol and PRIDE instrument MS:1003124."},
+    {"location": "comment[cleavage agent details]", "value": "Trypsin", "source_ids": ["pride", "mqpar"], "evidence": "Protocol: AspN 1 h then trypsin overnight; MaxQuant Trypsin/P. Asp-N not representable in single column."},
+    {"location": "comment[modification parameters]", "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term variable", "source_ids": ["pride", "mqpar"], "evidence": "mqpar_1-4 fixedModifications/variableModifications and dataProcessingProtocol."},
+    {"location": "comment[precursor mass tolerance]; comment[fragment mass tolerance]", "value": "10 ppm; 40 ppm", "source_ids": ["mqpar"], "evidence": "mainSearchTol 10 ppm; TOF MatchTolerance 40 ppm (MaxQuant default)."},
+    {"location": "comment[proteomics data acquisition method]", "value": "Data-dependent acquisition", "source_ids": ["pride", "mqpar"], "evidence": "Protocol: DDA with PASEF; lcmsRunType TIMS-DDA."},
+    {"location": "comment[label]", "value": "label free sample", "source_ids": ["pride"], "evidence": "Label-free quantification in protocol."}
+  ],
+  "limitations": [
+    "No run-to-sample map is deposited; sample identity of non-rIG runs inferred from project description.",
+    "Raw files are only inside archives; mqpar lists additional runs not deposited.",
+    "Asp-N co-digestion not representable in single-valued cleavage column.",
+    "Dissociation method, sex, disease, alkylation reagent not stated."
+  ]
+}

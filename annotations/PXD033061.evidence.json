@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD033061.sdrf.tsv",
+  "dataset": "PXD033061",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD033061"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD033061/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC11170284 (doi 10.3389/fphys.2024.1407834)"
+    },
+    {
+      "id": "paper-suppl",
+      "kind": "supplementary",
+      "location": "Europe PMC supplementaryFiles PMC11170284, Table1.xlsx (Suppl. Tables S1/S2: per-sample columns)"
+    },
+    {
+      "id": "mzid",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/05/PXD033061/peptides_1_1_0.mzid.gz and peptides_1_1_0_liver.mzid.gz"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "18 Marg_170928_Anettephospho_N.raw (brain), 18 BT_191118_AnetteJ_NN.raw (liver)",
+      "source_ids": [
+        "pride-files",
+        "mzid"
+      ],
+      "evidence": "36 RAW files in PRIDE list, each claimed once; mgf are peak lists, not used. mzid SpectraData paths: Brain_phospho/Marg_*, Liver_phospho/BT_*."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "brain (Marg_*); liver (BT_*)",
+      "source_ids": [
+        "mzid",
+        "pride"
+      ],
+      "evidence": "mzid input paths place Marg_* under Brain_phospho and BT_* under Liver_phospho; PRIDE organismParts lists both."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Carassius carassius",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE species NEWT:217509; paper title/methods. Search DB was Carassius auratus."
+    },
+    {
+      "location": "characteristics[treatment] / factor value[treatment]",
+      "value": "normoxia / anoxia / anoxia followed by reoxygenation",
+      "source_ids": [
+        "paper",
+        "paper-suppl",
+        "pride"
+      ],
+      "evidence": "Groups: 5 d normoxia, 5 d anoxia, 5 d anoxia + 1 d reoxygenation. Brain Suppl. Table S1 columns 'Sample k' with N/A/R header row give group per sample; assumed Sample k = Marg_..._k.raw (INFERRED, not stated). Samples 3,10,13 absent from LFQ table -> not available. Liver S2 uses N1..R12 labels with no file mapping -> not available."
+    },
+    {
+      "location": "characteristics[enrichment process]",
+      "value": "enrichment of phosphorylated protein",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "TiO2 phosphopeptide enrichment (EFO:0010806 description cites TiO2)."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Methods: Ultimate 3000 nano-UHPLC coupled to Q Exactive; not checked in RAW header."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: data-dependent top-10 acquisition."
+    },
+    {
+      "location": "comment[dissociation method]/collision energy",
+      "value": "HCD / 28 NCE",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: HCD, NCE 28."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "mzid"
+      ],
+      "evidence": "Trypsin Gold, 1 missed cleavage."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl N-term, Phospho STY variable",
+      "source_ids": [
+        "mzid"
+      ],
+      "evidence": "mzid SearchModification blocks in both files (PEAKS X+ 10.5). Phospho is in the mzid though absent from the PRIDE prose."
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "10 ppm / 0.1 Da",
+      "source_ids": [
+        "pride",
+        "mzid"
+      ],
+      "evidence": "PRIDE data processing protocol and mzid tolerances."
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "DTT / iodoacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample protocol: 10 mM DTT, 30 mM iodoacetamide."
+    },
+    {
+      "location": "characteristics[sex]/[developmental stage]/[strain or breed]/[disease]",
+      "value": "not available / not available / not available / not applicable",
+      "source_ids": [],
+      "evidence": "Paper says fish of both sexes, no per-sample sex; stage and strain not stated; no disease (experimental exposure)."
+    }
+  ]
+}

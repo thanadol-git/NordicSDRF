@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD062610.sdrf.tsv",
+  "dataset": "PXD062610",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD062610"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD062610/files/all"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/08/PXD062610/mqpar.xml"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC12520675 (PMID 40828615, doi 10.1172/jci194858)"
+    },
+    {
+      "id": "suppS1",
+      "kind": "supplement",
+      "location": "jci-135-194858-s078.xlsx (Supplemental Table 1: patient, sex, age at biopsy, group) via Europe PMC supplementaryFiles for PMC12520675"
+    },
+    {
+      "id": "suppS2",
+      "kind": "supplement",
+      "location": "jci-135-194858-s079.xlsx sheet M7_all_no_imp (LFQ intensity <EH number> -> sample label GROUP_patient)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "EH548.raw ... EH655.raw, EH676_200911125823.raw (109)",
+      "source_ids": [
+        "pride-files",
+        "mqpar"
+      ],
+      "evidence": "All 109 deposited RAW files, each claimed once; mqpar.xml lists the same 109 files."
+    },
+    {
+      "location": "source name / characteristics[biological replicate]",
+      "value": "GROUP_patientID (CTR/TCD/UCD); replicate = order of EH number among captures of same biopsy",
+      "source_ids": [
+        "suppS2",
+        "suppS1",
+        "pride"
+      ],
+      "evidence": "Header row 2 of LFQ sheet maps each EH number to a label; two LCM crypt captures per biopsy per PRIDE protocol. Replicate numbering is our inference from EH order."
+    },
+    {
+      "location": "characteristics[disease]; factor value[disease]",
+      "value": "celiac disease (TCD, UCD); normal (CTR)",
+      "source_ids": [
+        "suppS1",
+        "paper"
+      ],
+      "evidence": "Untreated/treated CeD Marsh 3 / Marsh 0; controls non-CeD with normal histology."
+    },
+    {
+      "location": "characteristics[treatment status]; factor value[treatment status]",
+      "value": "treatment naive (UCD); post-treatment (TCD, gluten-free diet); not applicable (CTR)",
+      "source_ids": [
+        "paper",
+        "suppS1"
+      ],
+      "evidence": "UCeD at diagnosis, TCeD after gluten-free diet in histological remission."
+    },
+    {
+      "location": "characteristics[age]; characteristics[sex]; characteristics[individual]",
+      "value": "per patient and group",
+      "source_ids": [
+        "suppS1"
+      ],
+      "evidence": "Supplemental Table 1 lists age at biopsy and sex per patient/group; patient ID used as individual."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "duodenum",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "FFPE duodenal biopsies; crypt compartment isolated by LCM."
+    },
+    {
+      "location": "characteristics[developmental stage]",
+      "value": "adult",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Cohort described as adults."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive HF;AC=MS:1002523",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Sample protocol: QExactive HF with Evosep; PRIDE instrument field agrees. RAW header not checked."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: data-dependent mode."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Digest with trypsin; MaxQuant search used Trypsin/P."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: HCD, normalized collision energy 28%."
+    },
+    {
+      "location": "comment[precursor mass tolerance]; comment[fragment mass tolerance]",
+      "value": "4.5 ppm; 20 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mainSearchTol 4.5 ppm; FTMS MatchTolerance 20 ppm."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M and Protein N-term Acetyl variable",
+      "source_ids": [
+        "mqpar",
+        "pride"
+      ],
+      "evidence": "mqpar fixedModifications/variableModifications."
+    }
+  ]
+}

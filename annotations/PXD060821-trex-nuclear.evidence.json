@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD060821-trex-nuclear.sdrf.tsv",
+  "dataset": "PXD060821",
+  "scope": "Analysis 4 (2 files): nuclear extract WT vs KO, in-solution digest",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD060821"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD060821/files/all"
+    },
+    {
+      "id": "docx",
+      "kind": "deposited sample table",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/07/PXD060821/CARNMT1_MS_samples_4_PRIDE.docx"
+    },
+    {
+      "id": "7z",
+      "kind": "raw archive header (range-read)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/07/PXD060821/raw_files.7z"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC12275196 (PMID 40473212, doi 10.1016/j.jbc.2025.110335)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://api.cellosaurus.org/cell-line/CVCL_U427"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "20 Bruker .d directories",
+      "source_ids": [
+        "pride-files",
+        "7z"
+      ],
+      "evidence": "PRIDE lists a single raw_files.7z (RAW) plus 20 .mgf; the 7z central header was range-read and its 20 top-level .d folders map 1:1 to the .mgf names and to sample ids in the docx. Split across four SDRFs by PEAKS search project."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "timsTOF Pro",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE instrument field, protocol text and paper: nanoElute + timsTOF Pro."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: data-dependent mode, top 10; experimentTypes DDA."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]",
+      "value": "15 ppm / 0.03 Da",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper PEAKS search parameters."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "No labelling described."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Not stated in deposit or paper."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C) fixed; Oxidation (M), Methyl (H) variable",
+      "source_ids": [
+        "docx"
+      ],
+      "evidence": "docx search project 4; iodoacetamide alkylation in sample protocol."
+    },
+    {
+      "location": "characteristics[cell line]",
+      "value": "Flp-In-T-REx cell; CVCL_U427",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "As for trex-gel."
+    }
+  ],
+  "limitations": [
+    "Four SDRFs because the five PEAKS search projects use different fixed/variable modifications (build supports one modification set per file); Analyses 2 and 3 are merged since their modification sets are identical and enzyme is a per-row column.",
+    "Raw data are one 56 GB raw_files.7z; names were read from its header, not downloaded. Instrument model and dissociation not verified from analysis.tdf; dissociation left not available.",
+    "Cell line term is the BTO label 'Flp-In-T-REx cell'; the Cellosaurus name/accession columns carry the exact identity. Sex female from Cellosaurus, not the deposit. Which KO clone (#1-#3) each sample used is not stated.",
+    "Culture medium, passage number, storage temperature, disease, cell type, age not stated: not available.",
+    "RNF113A-GFP samples are GFP-Trap immunoprecipitates from transfected cells (not encoded as a column).",
+    "Lys-C for 14508/14510 comes from the deposited docx; reconcile flags it against PRIDE prose (trypsin) - docx is more specific.",
+    "C. elegans organism part 'whole body' is an assumption: nuclei-enriched fraction prepared from whole-worm pellets. Strain N2 triggers an ontology warning (not in NCBITaxon).",
+    "Modification target for Amidated in the in vitro file is C-terminal (PP=Any C-term) while the docx says amidation of Ile."
+  ]
+}
