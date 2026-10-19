@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD037909.sdrf.tsv",
+  "dataset": "PXD037909",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD037909"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD037909/files/all"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/03/PXD037909/mqpar.xml"
+    },
+    {
+      "id": "proteingroups",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/03/PXD037909/proteinGroups.txt"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/36467688 (PMC9714574, doi 10.3389/fphys.2022.982842)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "32 Param_N_Slot1-*.d.zip archives (N=1..32)",
+      "source_ids": [
+        "pride-files",
+        "mqpar",
+        "proteingroups"
+      ],
+      "evidence": "32 RAW archives in PRIDE list; same 32 experiments in mqpar.xml and proteinGroups.txt columns; each claimed once."
+    },
+    {
+      "location": "source name",
+      "value": "myotube_run01..32 (ordered by Param number)",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Our labels; the deposit has no run-to-donor mapping."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism NEWT:9606."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "skeletal muscle tissue",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Satellite cells from vastus lateralis biopsies (Methods 4.2)."
+    },
+    {
+      "location": "characteristics[cell type]",
+      "value": "myotube",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Primary human skeletal muscle cells differentiated to myotubes, harvested day 7 (PRIDE protocol; Methods 4.4)."
+    },
+    {
+      "location": "characteristics[material type]",
+      "value": "cell",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Cultured primary cells."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper: 8 donors per group (lean vs obesity) used for proteomics, but no deposited file maps runs to groups; 32 runs vs 16 donors unresolved. Not asserted."
+    },
+    {
+      "location": "characteristics[age]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Only group means (48 +/- 3 y); no per-run data."
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Only group counts (F/M); no per-run data."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Placeholder: donor identity per run unknown, each run its own source."
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Placeholder; no replicate structure documented."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=timsTOF fleX;AC=MS:1003124",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE instrument field and protocol text (nanoElute + timsTOF fleX)."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mqpar lcmsRunType TIMS-DDA."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Label-free quantification."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin/P;AC=MS:1001313",
+      "source_ids": [
+        "mqpar",
+        "pride"
+      ],
+      "evidence": "mqpar enzymes Trypsin/P; protocol 'Trypsin without proline restriction'."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C) fixed; Oxidation (M), Acetyl (Protein N-term) variable",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mqpar fixed/variable modification lists. Protocol text also lists carbamyl (N-term) variable, absent from mqpar, so omitted."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "10 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mqpar mainSearchTol=10 ppm (protocol text says 4.5 ppm; deposited parameter file used)."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "Not given in mqpar or text."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Not stated in deposit."
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "1",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Unfractionated single injections."
+    }
+  ],
+  "limitations": [
+    "No run-to-sample mapping (lean vs obesity donor, sex, age) is deposited or in the paper text; disease/age/sex are not available per run. No factor value column could be written, so the main comparison (lean vs obesity) is not encoded.",
+    "Paper states 8 donors per group for proteomics (16 donors) while 32 RAW runs are deposited; the 2 runs per donor structure is unverified (could be technical/biological duplicates).",
+    "Cell-line (Cellosaurus) not applicable: primary cells. No raw-file headers were read (RAW archives ~5 GB each; not downloaded).",
+    "Protocol text mismatches mqpar: 4.5 ppm vs 10 ppm main search tolerance; carbamyl (N-term) variable mod not in mqpar. mqpar followed.",
+    "sdrf-tools reconcile raised one cleavage_agent_unsupported BLOCKER for Trypsin/P; judged false positive (record says 'Trypsin without proline restriction' = Trypsin/P).",
+    "Supplementary Tables S1/S2 (differential proteins only) not examined for run mapping."
+  ]
+}

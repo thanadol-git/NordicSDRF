@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD050655.sdrf.tsv",
+  "dataset": "PXD050655",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD050655"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD050655/files?pageSize=500"
+    },
+    {
+      "id": "zip-dirs",
+      "kind": "archive directory",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/04/PXD050655/rawfiles_T1_T38.zip, rawfiles_T39-T77.zip, rawfiles_T79-T109.zip (central directories read by HTTP range request; no data downloaded)"
+    },
+    {
+      "id": "metadata",
+      "kind": "deposited metadata",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/04/PXD050655/metadata.txt"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/04/PXD050655/mqpar_T1-T38.xml (mqpar_run2.xml, same settings)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "112 Bruker .d directories",
+      "source_ids": [
+        "zip-dirs",
+        "pride-files"
+      ],
+      "evidence": "Directory names read from the zip central directories: 41+39+32 .d folders; all claimed exactly once. PRIDE lists only 3 zip archives."
+    },
+    {
+      "location": "source name",
+      "value": "T1..T109",
+      "source_ids": [
+        "metadata",
+        "zip-dirs"
+      ],
+      "evidence": "metadata.txt sample column T1-T109 matches .d prefixes; one source per FFPE biopsy section."
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "T36-T38 run1=1, run2=2",
+      "source_ids": [
+        "metadata",
+        "zip-dirs"
+      ],
+      "evidence": "T36-T38 have *_run1.d and *_run2.d re-measurements; our inference of technical replicates. T62/T67 only a run2 file (replicate 1)."
+    },
+    {
+      "location": "characteristics[individual]",
+      "value": "P1-P16",
+      "source_ids": [
+        "metadata"
+      ],
+      "evidence": "patient_number column."
+    },
+    {
+      "location": "characteristics[treatment], [treatment status]",
+      "value": "gluten 3 g or 10 g/day for 14 days; Day -6 pre-treatment, Day 15 post-treatment",
+      "source_ids": [
+        "metadata",
+        "pride"
+      ],
+      "evidence": "gluten_dose and time_point columns; description says 3 g (n=6) or 10 g (n=7) for 14 days. P15 (T1-T8) has dose NA -> not available."
+    },
+    {
+      "location": "characteristics[organism part], [disease], [organism]",
+      "value": "duodenum; celiac disease; Homo sapiens",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE fields and title/description (treated CeD patients, gut biopsies)."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "timsTOF fleX",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol text and PRIDE instruments; not verified from analysis.tdf."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "pride",
+        "search"
+      ],
+      "evidence": "Protocol: data-dependent PASEF; mqpar lcmsRunType TIMS-DDA."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl fixed C; Oxidation M and Acetyl protein N-term variable",
+      "source_ids": [
+        "search",
+        "pride"
+      ],
+      "evidence": "mqpar fixedModifications/variableModifications."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "search",
+        "pride"
+      ],
+      "evidence": "mqpar Trypsin/P, max 2 missed cleavages; protocol says trypsin."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "10 ppm",
+      "source_ids": [
+        "search"
+      ],
+      "evidence": "mqpar mainSearchTol=10, searchTolInPpm=True."
+    },
+    {
+      "location": "comment[reduction reagent], [alkylation reagent]",
+      "value": "DTT; iodoacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "sampleProcessingProtocol."
+    },
+    {
+      "location": "comment[fragment mass tolerance], [dissociation method]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "search"
+      ],
+      "evidence": "Not stated in deposit."
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD069822-dataset1.sdrf.tsv",
+  "dataset": "PXD069822",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD069822"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD069822/files"
+    },
+    {
+      "id": "zip",
+      "kind": "raw archive central directory (HTTP range read)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/10/PXD069822/LC-MS_files_dataset1.zip"
+    },
+    {
+      "id": "mqpar_dataset1.xml",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/10/PXD069822/mqpar_dataset1.xml"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "16 .d folders in LC-MS_files_dataset1.zip",
+      "source_ids": [
+        "pride-files",
+        "zip"
+      ],
+      "evidence": "Run folder names listed from the zip central directory; each claimed once."
+    },
+    {
+      "location": "characteristics[genotype]/factor value[genotype]/treatment",
+      "value": "WT untreated x5 (WT1-5; WT2 injected twice -> 2 technical replicates), PolgD257A no CA x5 (CA-1..5), PolgD257A + CA x5 (CA+1..5)",
+      "source_ids": [
+        "pride",
+        "zip",
+        "mqpar_dataset1.xml"
+      ],
+      "evidence": "Groups from PRIDE sample processing protocol and run names (inferred mapping, see report)."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Mus musculus",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organism NEWT:10090 and protocol (mouse MEFs / BMDM)."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=timsTOF Pro 2;AC=MS:1003230",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: nanoElute coupled to timsTOF PRO2; PRIDE instrument MS:1003230. Not verified from analysis.tdf."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "pride",
+        "mqpar_dataset1.xml"
+      ],
+      "evidence": "Protocol: DDA (dataset1) / DIA (dataset3); dataset2 processed with DIA-NN and .d folders contain diaSettings.diasqlite."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "see SDRF",
+      "source_ids": [
+        "mqpar_dataset1.xml"
+      ],
+      "evidence": "mqpar fixedModifications/variableModifications"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin/P",
+      "source_ids": [
+        "mqpar_dataset1.xml"
+      ],
+      "evidence": "mqpar enzymes Trypsin/P"
+    }
+  ],
+  "unavailable": [
+    "Genotype of the CA-/CA+ runs (PolgD257A) and of WT1-5 (wild type, no chloramphenicol) is inferred from file names plus the PRIDE protocol (dataset1 = Polg wt or PolgD257A +/- CA); no deposited sample table maps names to genotype.",
+    "WT2_Slot2-24_1_1345.d and WT2_Slot2-24_1_1351.d share a name; treated as two injections (technical replicates 1 and 2) of one sample. The mqpar lists both under separate experiment names.",
+    "The protocol lists carbamyl (N-term) as a variable modification but mqpar_dataset1.xml (authoritative) has only Carbamidomethyl (C) fixed, Oxidation (M) and Acetyl (Protein N-term) variable; the SDRF follows mqpar.",
+    "Fragment tolerance not stated for MaxQuant TOF search (not available).",
+    "Publication: PRIDE lists no DOI/PMID/references; no paper was read. All claims come from the PRIDE record, the zip central directories, and the deposited search logs/mqpar.",
+    "Dose of chloramphenicol: protocol gives \"124M\" (unclear unit), so no dose column.",
+    "Disease, sex, strain and developmental stage are not available. Dissociation method and fragment tolerance not available.",
+    "Trypsin/P (MS:1001313) used: mqpar says Trypsin/P and the protocol says \"Trypsin without proline restriction\". `tools reconcile` flags this against the record word \"trypsin\" (BLOCKER/MAJOR on dataset1); judged a false positive of the keyword match.",
+    "Raw data are zip archives of Bruker .d folders (45-186 GB); only zip central directories were range-read. Data-file names are the .d folder names inside the zips."
+  ]
+}

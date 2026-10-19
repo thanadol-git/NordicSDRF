@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD008992.sdrf.tsv",
+  "dataset": "PXD008992",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD008992"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD008992/files/all"
+    },
+    {
+      "id": "filelist",
+      "kind": "deposited metadata",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/11/PXD008992/Filelist.xlsx"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/11/PXD008992/P1-P10mqpar.xml"
+    },
+    {
+      "id": "mqpar2",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/11/PXD008992/B-Emqpar.xml"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]/source name/technical replicate",
+      "value": "83 RAW files (P*.raw, 59xx.raw)",
+      "source_ids": [
+        "pride-files",
+        "filelist"
+      ],
+      "evidence": "Filelist.xlsx maps patient, biopsy, sample (S1_1..) and file number; 83 of 84 listed files are deposited (5941.raw, sample D1_1, absent). S8_2 listed twice for files 51 and 52; treated as S8_3."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "celiac disease",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE title/disease DOID:10608; all patients have celiac disease at different stages."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "small intestine",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organism part BTO small intestine; FFPE biopsy sections."
+    },
+    {
+      "location": "characteristics[phenotype]/factor value[phenotype]",
+      "value": "UCD/TCD/d0/d4 groups",
+      "source_ids": [
+        "pride",
+        "filelist"
+      ],
+      "evidence": "Filelist Biopsy column (UCD, TCD, d0, d4); PRIDE abstract: untreated vs treated after 1 year gluten-free diet; 4 treated patients 3-day gluten challenge. d0/d4 meaning inferred from abstract."
+    },
+    {
+      "location": "characteristics[spiked compound]",
+      "value": "lysozyme 0.2% w/w; MassPREP mix 150 fmol for P1-P10 only",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "sampleProcessingProtocol; patients B-E not spiked."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE instruments; protocol says Q Exactive or Q Exactive Plus without per-file assignment."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Protocol: Trypsin with no proline restriction (mqpar Trypsin/P)."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Acetyl Protein N-term, Oxidation M, Deamidated NQ, Gln->pyro-Glu, Glu->pyro-Glu (all variable)",
+      "source_ids": [
+        "pride",
+        "mqpar",
+        "mqpar2"
+      ],
+      "evidence": "Variable modifications in both mqpar.xml and dataProcessingProtocol; no fixed modifications."
+    },
+    {
+      "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+      "value": "6 ppm / 20 ppm",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "mainSearchTol 6; FTMS MatchTolerance 20 ppm."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Shotgun proteomics, Q Exactive, MaxQuant FTMS Topx 12; inferred, not explicitly stated."
+    }
+  ],
+  "limitations": [
+    "Paper (PMID 29684362) full text not available via Europe PMC; no claim cites it.",
+    "Age, sex, ancestry and cell type not available per patient.",
+    "5941.raw (D1_1) not deposited; D1 technical replicates renumbered 1-2 for the two deposited files.",
+    "Instrument may be Q Exactive Plus for some runs; dissociation method not stated (not available).",
+    "Treating _1/_2/_3 suffixes as technical replicates of one biopsy is an inference.",
+    "Reduction/alkylation not stated; no fixed modifications in mqpar."
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD022908.sdrf.tsv",
+  "dataset": "PXD022908",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD022908"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC8313754 (Mygland et al., iScience 2021, PMID 34337362)"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/09/PXD022908/mqpar.xml"
+    },
+    {
+      "id": "github",
+      "kind": "code repository",
+      "location": "https://github.com/MartinFStrand/TNKSiRes (branch SILAC-NOISeq-Vulcanoplots: SILAC-NOISeq-Vulcanoplots.R, Silacfull.txt)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "P807..P980.raw (60 files)",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "All 60 deposited RAW files, each claimed by one light and one heavy row. File-to-experiment (S1.1 ... S9.Z) map is the parallel filePaths/experiments arrays in mqpar.xml."
+    },
+    {
+      "location": "characteristics[cell line] S1,S2,S3,S4,S8",
+      "value": "COLO 320DM, ABC-1, UO-31, OVCAR-4, RKO",
+      "source_ids": [
+        "github",
+        "paper"
+      ],
+      "evidence": "Vulcanoplots R script analyses Silacfull.txt columns for S1.1-4 as COLO320DM, S2.1-4 as ABC-1, S3.1-4 as UO-31, S4.1-4 as OVCAR-4, S8.1-4 as RKO; the five lines are the proteomics panel in the paper. Mapping of S-number to line is by column position in the script (inference, not an explicit deposited key)."
+    },
+    {
+      "location": "characteristics[cell line] S5,S6,S7,S9",
+      "value": "unidentified cell line (set Sn)",
+      "source_ids": [
+        "mqpar",
+        "github"
+      ],
+      "evidence": "Experiments S5-S7 and S9 appear in mqpar.xml (S9 also in Silacfull.txt) but are not described in the paper or the analysis script; identity unavailable."
+    },
+    {
+      "location": "characteristics[cellosaurus accession]",
+      "value": "CVCL_0219, CVCL_1066, CVCL_1911, CVCL_1627, CVCL_0504",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Key resources table gives RRID CVCL_0219 (COLO 320DM) and CVCL_1911 (UO-31); ABC-1, OVCAR-4 and RKO accessions from Cellosaurus lookup (sdrf-tools cellline)."
+    },
+    {
+      "location": "characteristics[treatment] / factor value[treatment] / biological replicate",
+      "value": "dimethyl sulfoxide (x1,x2 -> rep 1,2); G007-LK (x3,x4 -> rep 1,2); not available for .W/.X/.Y/.Z",
+      "source_ids": [
+        "github",
+        "paper",
+        "pride"
+      ],
+      "evidence": "Script labels columns .1-.4 as Control,Control,Treatment,Treatment replicates 1,2,1,2; paper and PRIDE: duplicates treated with 1 uM G007-LK or 0.01% DMSO for 24 h. Meaning of .W-.Z not documented."
+    },
+    {
+      "location": "characteristics[sampling time]",
+      "value": "24 hour (.1-.4 only)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "24 h treatment per PRIDE sample protocol."
+    },
+    {
+      "location": "comment[label]",
+      "value": "SILAC light + SILAC heavy per file",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Each sample (100 ug) mixed with 100 ug of heavy-SILAC cells of the same cell line; mqpar multiplicity 2, labels Arg10;Lys6 in heavy state; output ratios L/H."
+    },
+    {
+      "location": "source name (heavy rows)",
+      "value": "<line>_<experiment>_heavy-reference",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Heavy partner is the corresponding SILAC-labelled cells; one source per file by our convention."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive Plus MS:1002634",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE protocol: nEASY-LC coupled to Q-Exactive Plus."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Acetyl(Protein N-term), Deamidated(NQ), Oxidation(P) [hydroxyproline], Oxidation(M), Phospho(STY), Label 13C(6)15N(4) R, Label 13C(6) K",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "Variable modifications and labels from mqpar.xml; no fixed modifications; hydroxyproline = Oxidation on P."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin/P MS:1001313",
+      "source_ids": [
+        "mqpar",
+        "pride"
+      ],
+      "evidence": "mqpar enzymes Trypsin/P; protocol says trypsin digestion. reconcile flags Trypsin vs Trypsin/P: kept Trypsin/P as the searched enzyme."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / [fragment mass tolerance]",
+      "value": "6 ppm / 20 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mainSearchTol 6 ppm; FTMS MatchTolerance 20 ppm."
+    },
+    {
+      "location": "comment[dissociation method] / [collision energy]",
+      "value": "beam-type collision-induced dissociation / 25 NCE",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "NCE 25 stated in protocol; HCD inferred from Q Exactive Plus beam-type fragmentation with NCE."
+    },
+    {
+      "location": "comment[reduction reagent]",
+      "value": "dithiothreitol (DTT)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "5 mM DTT, 56 C, 20 min. No alkylation reported -> not available."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition PRIDE:0000627",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Top 10 data-dependent mode."
+    }
+  ]
+}

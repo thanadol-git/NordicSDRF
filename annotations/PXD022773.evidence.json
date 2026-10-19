@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD022773.sdrf.tsv",
+  "dataset": "PXD022773",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD022773"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD022773/files/all"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/09/PXD022773/mqpar.xml"
+    },
+    {
+      "id": "mqpar-sty",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/09/PXD022773/Final_STY_mqpar.xml"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/34671015 (PMC8528926, Nat Commun 2021;12:6101)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "144 RAW files (48 proteome, 96 phospho), each once",
+      "source_ids": [
+        "pride-files",
+        "mqpar",
+        "mqpar-sty"
+      ],
+      "evidence": "PRIDE file list has 144 RAW + 2 mqpar.xml + 2 txt; every RAW appears in one mqpar file list."
+    },
+    {
+      "location": "source name / factor value[treatment] / characteristics[treatment]",
+      "value": "6 conditions x 8 biological replicates x 2 analyses",
+      "source_ids": [
+        "mqpar",
+        "mqpar-sty",
+        "paper"
+      ],
+      "evidence": "mqpar experiment names (C/GAKC/GAKI x Plus/Minus x 1-8). Paper: GAKi=SGC-GAK-1, GAKc=SGC-GAK-1N negative control, DMSO control, DFP 1 mM 24 h."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-8",
+      "source_ids": [
+        "mqpar",
+        "mqpar-sty"
+      ],
+      "evidence": "Experiment suffix number. One file (190918_black_Gaki_pluss_190924143754) is labelled GAKI_Plus_3 in Final_STY_mqpar.xml, treated as 4 following the pairing pattern."
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1-2 for phospho (two injections per replicate: red/blue/black files sharing one experiment name); 1 for proteome",
+      "source_ids": [
+        "mqpar-sty"
+      ],
+      "evidence": "Order by acquisition date; assignment of which file is 1 vs 2 is arbitrary. Meaning of red/blue/black colour not stated in deposit."
+    },
+    {
+      "location": "characteristics[cell line]",
+      "value": "U2OS (CVCL_0042), U-2-OS",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: U2OS FlpIN TRex IMLS cells (dox-inducible MLS-EGFP-mCherry). Age 15Y, female, osteosarcoma, bone from Cellosaurus lookup, not the deposit."
+    },
+    {
+      "location": "characteristics[enrichment process]",
+      "value": "enrichment of phosphorylated Protein (phospho), not applicable (proteome)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Methods: phosphopeptide enrichment based on TiO2; Final_STY search has Phospho (STY)."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE instrument field and Methods (Q Exactive, Ultimate 3000 nano-UHPLC)."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA PRIDE:0000627",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Data-dependent mode, top 10, HCD."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD MS:1000422",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: higher collision-induced dissociation."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin/P MS:1001313",
+      "source_ids": [
+        "mqpar",
+        "pride"
+      ],
+      "evidence": "mqpar enzymes Trypsin/P; PRIDE: trypsin without proline restriction."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term variable; Phospho STY variable (phospho runs only)",
+      "source_ids": [
+        "mqpar",
+        "mqpar-sty"
+      ],
+      "evidence": "fixedModifications/variableModifications of the two MaxQuant parameter files."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "4.5 ppm",
+      "source_ids": [
+        "mqpar",
+        "mqpar-sty"
+      ],
+      "evidence": "mainSearchTol (paper text says 6 ppm; deposit used)."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "mqpar",
+        "mqpar-sty"
+      ],
+      "evidence": "FTMS MatchTolerance."
+    },
+    {
+      "location": "characteristics[culture medium]",
+      "value": "Dulbecco's Modified Eagle Medium",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: DMEM + 10% FBS + penicillin/streptomycin."
+    }
+  ],
+  "limitations": [
+    "Treatment concentrations for the MS experiment (GAKi/GAKc) not stated in the deposit; only DFP 1 mM/24 h generic induction in Methods.",
+    "Meaning of red/blue/black in phospho file names unknown; modelled as technical replicates.",
+    "Whether proteome and phospho of the same replicate number share one lysate is not stated, so source names are separate.",
+    "Reduction reagent not stated; alkylation reagent not named (carbamidomethyl only).",
+    "Zebrafish/C. elegans experiments in the paper are not part of this MS dataset; reconcile flagged Danio rerio as a false positive."
+  ]
+}

@@ -1,0 +1,11 @@
+# daily queue 2026-10-19 oslo batch 10 (ranked by PRIDE raw size; final 25 Oslo PXDs)
+PXD037909	norway/oslo	queued	raw_files=32; raw_bytes=174833680295
+PXD022908	norway/oslo	queued	raw_files=60; raw_bytes=203238233205
+PXD062684	norway/oslo	queued	raw_files=4; raw_bytes=226292617674
+PXD068043	norway/oslo	queued	raw_files=1; raw_bytes=231938830264
+PXD022773	norway/oslo	queued	raw_files=144; raw_bytes=232255716120
+PXD048864	norway/oslo	queued	raw_files=2; raw_bytes=264459007803
+PXD050818	norway/oslo	queued	raw_files=2; raw_bytes=265900164322
+PXD068278	norway/oslo	queued	raw_files=3; raw_bytes=316800947762
+PXD053250	norway/oslo	queued	raw_files=1; raw_bytes=330766946304
+PXD069822	norway/oslo	queued	raw_files=3; raw_bytes=340895820487

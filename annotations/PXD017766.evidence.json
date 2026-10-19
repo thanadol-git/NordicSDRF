@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD017766.sdrf.tsv",
+  "dataset": "PXD017766",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD017766"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD017766/files/all"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2020/09/PXD017766/OB_midage_mqpar.xml"
+    },
+    {
+      "id": "de-xlsx",
+      "kind": "deposited results",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2020/09/PXD017766/MOBmidage_DE_Proteomics_MS_TR.xlsx"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/33083725"
+    },
+    {
+      "id": "raw-header",
+      "kind": "raw file header (HTTP range read, first 300 KB)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2020/09/PXD017766/6807_OB_AD_FASP__4903.raw"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "32 RAW files",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "All 32 RAW files in PRIDE list, each once."
+    },
+    {
+      "location": "characteristics[genotype]/factor value[genotype]",
+      "value": "wild type; Polb+/-; 3xTg-AD; 3xTg-AD + Polb+/-",
+      "source_ids": [
+        "mqpar",
+        "de-xlsx",
+        "paper"
+      ],
+      "evidence": "mqpar experiment names Midage_OB_{WT,PolB,3xTg,4xTg}_<animal>__<run> map files to groups; paper defines WT, PB, 3xAD, 3xPB. 4xTg=3xPB is inferred."
+    },
+    {
+      "location": "characteristics[organism]/[organism part]",
+      "value": "Mus musculus; olfactory bulb",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Title and description."
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE says female, paper says male; conflict."
+    },
+    {
+      "location": "characteristics[age]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Only cohort range 8-13 months; no per-animal age."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive",
+      "source_ids": [
+        "pride",
+        "raw-header"
+      ],
+      "evidence": "Protocol says Q-Exactive; RAW header shows Q Exactive; PRIDE field says HF."
+    },
+    {
+      "location": "comment[modification parameters]; tolerances; cleavage",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl N-term, pyro-Glu Q/E variable; 4.5 ppm; 20 ppm; Trypsin",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "fixedModifications, variableModifications, mainSearchTol, FTMS MatchTolerance, enzymes."
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1/2 per animal",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "Two runs per animal ID; ordering by run number is our inference."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "not available",
+      "source_ids": [],
+      "evidence": "Not stated in available evidence."
+    }
+  ]
+}

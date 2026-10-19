@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD055846.sdrf.tsv",
+  "dataset": "PXD055846",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD055846"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD055846/files"},
+    {"id": "raw-zip-directories", "kind": "repository", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/12/PXD055846/ (central directories of the 16 LCMS*.zip RAW archives, HTTP range reads)"},
+    {"id": "mqpar", "kind": "deposited search", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/12/PXD055846/MQPR_1st_submission.zip, MQPR_2nd_submission.zip, MQPR_3rd_Submission.zip, MQPR_4th_Submission.zip"},
+    {"id": "preprint", "kind": "publication", "location": "https://www.biorxiv.org/content/10.1101/2024.11.11.622451v1 (JATS XML https://www.biorxiv.org/content/early/2024/11/12/2024.11.11.622451.source.xml)"}
+  ],
+  "claims": [
+    {"location": "comment[data file]", "value": "5441 EH####.raw files", "source_ids": ["raw-zip-directories", "pride-files"], "evidence": "All RAW entries of the 16 RAW zips, each claimed once; includes blank runs, which cannot be distinguished without Supplementary Table 6 (unavailable)."},
+    {"location": "characteristics[biological replicate]", "value": "1-4", "source_ids": ["raw-zip-directories", "preprint", "mqpar"], "evidence": "Zip names / mqpar names encode 1st-4th submission; preprint: four experimental replicates (Supplementary Table 5)."},
+    {"location": "comment[cleavage agent details]; factor value[cleavage agent details]", "value": "Trypsin / Chymotrypsin / Asp-N / Chymotrypsin+Trypsin", "source_ids": ["pride", "raw-zip-directories", "mqpar"], "evidence": "PRIDE protocol: four plates with trypsin, chymotrypsin, AspN, chymotrypsin+trypsin; protease per row taken from the RAW zip name."},
+    {"location": "comment[instrument]", "value": "Q Exactive HF (MS:1002523)", "source_ids": ["pride"], "evidence": "PRIDE instruments field and protocol text (QExactive HF)."},
+    {"location": "comment[modification parameters]", "value": "Carbamidomethyl (C) fixed; Oxidation (M), Acetyl (Protein N-term) variable", "source_ids": ["mqpar"], "evidence": "fixedModifications / variableModifications in all 16 mqpar.xml."},
+    {"location": "comment[precursor mass tolerance]; comment[fragment mass tolerance]", "value": "4.5 ppm; 20 ppm", "source_ids": ["mqpar"], "evidence": "mainSearchTol=4.5 ppm; FTMS MatchTolerance=20 ppm."},
+    {"location": "comment[reduction reagent]; comment[alkylation reagent]; comment[dissociation method]; comment[collision energy]", "value": "DTT; IAA; HCD; 28% NCE", "source_ids": ["pride"], "evidence": "PRIDE sample processing protocol."},
+    {"location": "characteristics[organism]", "value": "Homo sapiens", "source_ids": ["pride", "preprint"], "evidence": "PRIDE organism; human mAbs and human donor polyclonal IgG."},
+    {"location": "sample identity per run (not annotated)", "value": "unavailable", "source_ids": ["preprint"], "evidence": "Supplementary Table 6 (sample description) was not retrievable; per-run sample/blank assignment, mAb composition and concentrations are therefore not annotated."}
+  ]
+}

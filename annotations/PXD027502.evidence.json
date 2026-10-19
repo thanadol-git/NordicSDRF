@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD027502.sdrf.tsv",
+  "dataset": "PXD027502",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD027502"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD027502/files?pageSize=500"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/10/PXD027502/mqpar.xml"
+    },
+    {
+      "id": "evo-mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/10/PXD027502/EVo_mqpar.xml"
+    },
+    {
+      "id": "pg",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/10/PXD027502/proteinGroups.txt"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.biorxiv.org/content/10.1101/2021.08.04.455032v1.full"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "local sdrf-tools cellline lookup U2OS (CVCL_0042)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "44 RAW files (15 H*.raw, 29 EP*.raw)",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "All 44 RAW files in PRIDE file list, each claimed once."
+    },
+    {
+      "location": "characteristics[cell line]",
+      "value": "U2OS (CVCL_0042)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE sample protocol: U2OS cells expressing EGFP, GRAMD1C-EGFP or GRAMD1C(delta-GRAM)-EGFP; siNC/siGRAMD1C U2OS. Age 15Y/female/osteosarcoma/bone from Cellosaurus, not the deposit."
+    },
+    {
+      "location": "factor value[expressed construct]",
+      "value": "H1813-H1823 EGFP; H1825-H1833 GRAMD1C-EGFP; H2116-H2122 GRAMD1C-delta-GRAM-EGFP",
+      "source_ids": [
+        "pg",
+        "pride"
+      ],
+      "evidence": "INFERRED. proteinGroups.txt experiment names 1813..2122 match H files (mqpar.xml). GRAMD1C LFQ is ~0 in 1813-1823 and 2116-2120, 900-2300 (x1e6) in 1825-1833, low in 2122; correlation clusters agree with these three groups. No deposited mapping file."
+    },
+    {
+      "location": "factor value[expressed construct]",
+      "value": "not available (EP runs)",
+      "source_ids": [
+        "evo-mqpar",
+        "pride"
+      ],
+      "evidence": "EVo_mqpar.xml lists 24 EP files as experiments 1-24 with no condition names; paper gives no run mapping."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE instrument MS:1002523; paper: Easy nLC1000 coupled to QExactive HF. EP file path 'ORBITRAP HF Evosep'."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper: data-dependent mode, HCD."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "high-energy collision-induced dissociation."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Protocol: Trypsin without proline restriction (mqpar Trypsin/P), 2 missed cleavages. reconcile's cleavage_agent_unsupported flag is a false positive on capitalisation/wording."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "4.5 ppm",
+      "source_ids": [
+        "mqpar",
+        "evo-mqpar"
+      ],
+      "evidence": "mainSearchTol 4.5 in both mqpar files (text says 6 ppm; deposited parameter used)."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "FTMS MatchTolerance 20 ppm in mqpar.xml."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl Protein N-term variable",
+      "source_ids": [
+        "mqpar",
+        "evo-mqpar"
+      ],
+      "evidence": "fixed/variableModifications in both mqpar files."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "lfqMode 1, no labels."
+    }
+  ],
+  "limitations": [
+    "Condition-to-file mapping is inferred (H runs from GRAMD1C abundance/correlation; EP runs undocumented).",
+    "Unbalanced H groups (6/5/4) could not be confirmed against a deposited design table.",
+    "EP runs (24 searched in EVo_mqpar.xml + 5 unsearched: EP428/433/438/443/448) are labelled U2OS with factor 'not available'; likely siNC/siGRAMD1C proteome and other experiments, and the unsearched ones may be QC runs.",
+    "Paper is a bioRxiv preprint; methods describe only the Easy-nLC1000 interactome workflow, not the Evosep runs.",
+    "Evosep LC method not captured; fragment tolerance is the MaxQuant FTMS default."
+  ]
+}

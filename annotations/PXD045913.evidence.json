@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD045913.sdrf.tsv",
+  "dataset": "PXD045913",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD045913"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD045913/files/all"
+    },
+    {
+      "id": "metadata",
+      "kind": "deposited metadata",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/03/PXD045913/metadata.txt"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/03/PXD045913/mqparEH8662-70.xml (also mqpar1a-4b.xml, mqparS121-S154.xml, and the other mqpar*.xml)"
+    },
+    {
+      "id": "zipdirs",
+      "kind": "archive directory (HTTP range read of ZIP central directory)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/03/PXD045913/1a-4b.zip, S54_10320.zip, S121-S154.zip, C5-C60.zip"
+    },
+    {
+      "id": "pmid",
+      "kind": "publication record",
+      "location": "https://europepmc.org/article/MED/38467384 (abstract only; DOI 10.1053/j.gastro.2024.03.006)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "136 .raw (Q Exactive HF) + 99 .d folders (timsTOF fleX) = 235 rows",
+      "source_ids": [
+        "pride-files",
+        "metadata",
+        "zipdirs"
+      ],
+      "evidence": "All 136 PRIDE RAW files appear in metadata.txt exactly once. The 99 timsTOF .d folders are inside 4 deposited ZIPs; names listed from ZIP central directories and matched to metadata.txt rows."
+    },
+    {
+      "location": "source name / characteristics[individual] / characteristics[disease status] / characteristics[cohort] / factor value[disease status]",
+      "value": "per-run group, cohort, patient IDs",
+      "source_ids": [
+        "metadata"
+      ],
+      "evidence": "metadata.txt columns Experiment, Patient_ID_techn_evaluation, Paired_patient_ID_validation_cohort, Group, cohort. Source grouping of Anette/_1_2/a-b files into technical replicates is our inference from file names."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organism NEWT:9606; human biopsies."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "duodenum",
+      "source_ids": [
+        "pride",
+        "metadata"
+      ],
+      "evidence": "Gut (duodenal) biopsies; Group labels reference duodenal inflammation. Paper abstract: gut biopsies from celiac disease patients."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "celiac disease / normal / duodenitis / Helicobacter pylori infectious disease",
+      "source_ids": [
+        "pride",
+        "metadata",
+        "pmid"
+      ],
+      "evidence": "Group labels from metadata.txt mapped to disease; abstract describes CeD vs non-CeD controls."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF; timsTOF fleX",
+      "source_ids": [
+        "pride",
+        "metadata"
+      ],
+      "evidence": "metadata.txt Instrument_setup per run; sample processing protocol names Q Exactive HF and timsTOFfleX."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: data-dependent mode (QE HF) and DDA-PASEF (timsTOF)."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Protocol: trypsin digestion; MaxQuant enzyme Trypsin/P."
+    },
+    {
+      "location": "comment[reduction reagent] / comment[alkylation reagent]",
+      "value": "DTT / iodoacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Sample processing protocol: 10 mM DTT, 10 mM iodoacetamide."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl(C) fixed; Oxidation(M), Acetyl(Protein N-term) variable",
+      "source_ids": [
+        "mqpar",
+        "pride"
+      ],
+      "evidence": "fixedModifications/variableModifications in mqpar*.xml; matches data processing protocol."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]",
+      "value": "QE: 4.5 ppm / 20 ppm; tims: 10 ppm / 40 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mainSearchTol 4.5 (msInstrument 0) or 10 (msInstrument 4); MatchTolerance FTMS 20, TOF 40 ppm. Tims fragment tolerance is the MaxQuant TOF default, assumed applied for msInstrument 4."
+    },
+    {
+      "location": "comment[collision energy] / comment[dissociation method] / scan ranges / ms2 mass analyzer",
+      "value": "QE: NCE 28, HCD, 375-1500 / 200-2000 m/z, orbitrap; tims: 100-1700 m/z, IM 0.60-1.60, TOF",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Instrument method prose in sampleProcessingProtocol. Tims collision energy and dissociation not stated as a value; marked not available."
+    },
+    {
+      "location": "characteristics[age] / characteristics[sex] / characteristics[ancestry category]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "metadata"
+      ],
+      "evidence": "No per-sample demographics in the deposit or accessible abstract."
+    }
+  ]
+}

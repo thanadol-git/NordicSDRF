@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD070562.sdrf.tsv",
+  "dataset": "PXD070562",
+  "sources": [
+    {"id":"pride","kind":"repository","location":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD070562"},
+    {"id":"pride-files","kind":"repository","location":"https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD070562/files/all"},
+    {"id":"xlsx","kind":"deposited search","location":"https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/08/PXD070562/2105_Martinsen_proteins.xlsx"},
+    {"id":"cellosaurus","kind":"database","location":"sdrf-tools cellline lookup (HOS CVCL_0312, MG-63 CVCL_0426, U2OS CVCL_0042)"}
+  ],
+  "claims": [
+    {"location":"comment[data file]","value":"36 deposited 210508_Emily_NN_*.d.zip files","source_ids":["pride-files"],"evidence":"36 RAW .d.zip files in the PRIDE file list, each used once; .mgf (PEAK) and xlsx (SEARCH) excluded."},
+    {"location":"source name; characteristics[cell line]; characteristics[biological replicate]; factor value[pull-down condition]","value":"samples 1-12 HOS, 13-24 MG-63, 25-36 U2OS; conditions C1/C4/NE x replicates 1-4","source_ids":["xlsx"],"evidence":"Sheets HOS 1-12, MG63 13-24, U2OS 25-36 list Sample, Cell line, Condition. File order mapped by the NN run index in the file name."},
+    {"location":"characteristics[disease]; characteristics[organism]","value":"osteosarcoma; Homo sapiens","source_ids":["pride"],"evidence":"PRIDE diseases DOID:3347 and organism NEWT:9606; title and keywords."},
+    {"location":"characteristics[age]; characteristics[sex]; characteristics[cellosaurus accession]; characteristics[organism part]","value":"Cellosaurus donor values and bone","source_ids":["cellosaurus"],"evidence":"Not in the deposit; taken from Cellosaurus cell-line records."},
+    {"location":"comment[instrument]","value":"NT=timsTOF Pro;AC=MS:1003005","source_ids":["pride"],"evidence":"PRIDE instruments and data processing protocol (LC-MS timsTOF Pro)."},
+    {"location":"comment[cleavage agent details]; comment[precursor mass tolerance]; comment[fragment mass tolerance]; comment[modification parameters]","value":"Trypsin; 15 ppm; 0.03 Da; Carbamidomethyl fixed","source_ids":["pride"],"evidence":"dataProcessingProtocol: PEAKS X+ v10, trypsin, parent 15.0 ppm, fragment 0.03 Da, fixed carbamidomethylation."},
+    {"location":"comment[proteomics data acquisition method]","value":"Data-dependent acquisition","source_ids":[],"evidence":"INFERRED, not stated in the record (timsTOF Pro with PEAKS search and mgf peak lists). RAW metadata not inspected."},
+    {"location":"comment[dissociation method]","value":"not available","source_ids":[],"evidence":"Not stated."}
+  ]
+}

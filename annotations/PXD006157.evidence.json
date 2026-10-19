@@ -1,0 +1,18 @@
+{"schema_version":1,"artifact":"annotations/PXD006157.sdrf.tsv","dataset":"PXD006157",
+"sources":[
+{"id":"pride","kind":"repository","location":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006157"},
+{"id":"pride-files","kind":"repository","location":"https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD006157/files/all"},
+{"id":"design","kind":"deposited file","location":"https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/01/PXD006157/experimentalDesignTemplate.txt"},
+{"id":"mqpar","kind":"deposited search","location":"https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/01/PXD006157/mqpar.xml"},
+{"id":"pubmed","kind":"abstract","location":"https://pubmed.ncbi.nlm.nih.gov/29371290/"}],
+"claims":[
+{"location":"comment[data file]","value":"54 RAW files 6637.raw ... 9397.raw","source_ids":["pride-files","design"],"evidence":"All 54 RAW files in the file list, each mapped once via experimentalDesignTemplate.txt."},
+{"location":"source name / comment[technical replicate] / characteristics[biological replicate]","value":"E1-S1 ... C3-S6; replicate 1-3","source_ids":["design","mqpar"],"evidence":"Experiment names E{n}-S{m}-{r} in design file and mqpar experiments; interpretation of indices is inferred."},
+{"location":"characteristics[disease]","value":"osteosarcoma","source_ids":["pride","pubmed"],"evidence":"Description: proximity labelling in an osteosarcoma cell line."},
+{"location":"characteristics[organism]","value":"Homo sapiens","source_ids":["pride"],"evidence":"NEWT:9606."},
+{"location":"comment[instrument]","value":"Q Exactive","source_ids":["pride"],"evidence":"MS:1001911 in record and protocol."},
+{"location":"comment[dissociation method] / comment[collision energy]","value":"HCD; 25% NCE","source_ids":["pride"],"evidence":"Sample processing protocol."},
+{"location":"comment[cleavage agent details]","value":"Trypsin","source_ids":["pride","mqpar"],"evidence":"Trypsin/P in mqpar, trypsin digestion in protocol."},
+{"location":"comment[modification parameters]","value":"Oxidation (M) variable; Acetyl (Protein N-term) variable","source_ids":["mqpar","pride"],"evidence":"variableModifications in mqpar.xml; fixedModifications empty."},
+{"location":"comment[precursor mass tolerance] / comment[fragment mass tolerance]","value":"6 ppm / 20 ppm","source_ids":["mqpar","pride"],"evidence":"mainSearchTol 6; FTMS MatchTolerance 20 ppm."}],
+"limitations":["Full text unavailable; E/C and S1-S6 meaning not documented, no factor value","Cell line identity not stated in deposit","Biological replicate inferred from naming"]}

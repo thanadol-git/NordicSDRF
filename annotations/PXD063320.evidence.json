@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD063320.sdrf.tsv",
+  "dataset": "PXD063320",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD063320"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD063320/files?pageSize=1000"
+    },
+    {
+      "id": "zip-dir",
+      "kind": "archive directory (HTTP range read of zip central directory)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/11/PXD063320/LC-MS_files_C1.zip (also LC-MS_files_C2.zip, LC-MS-files_C3.zip, LC-MS-files_C4.zip)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC12551111 (PMID 41133621, doi:10.3390/proteomes13040048)"
+    },
+    {
+      "id": "diann-log",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/11/PXD063320/reportC1.zip :: reportC1/report.log.txt (also report.pg_matrix.tsv)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "144 Bruker .d folders (C1-C4 x P10/20/25/30/35/40 x 6)",
+      "source_ids": [
+        "zip-dir",
+        "pride-files"
+      ],
+      "evidence": "RAW is deposited as 4 zip archives; folder names (.d) listed from zip central directories, each claimed once. Files are folder names, not individual files."
+    },
+    {
+      "location": "characteristics[cell line]",
+      "value": "PCC-1, PCC-2, PCC-7, MIA PaCa-2; C1..C4 = those lines in that order",
+      "source_ids": [
+        "paper",
+        "pride",
+        "diann-log"
+      ],
+      "evidence": "Project description lists PCC-1 (c1), PCC-2 (c2), PCC-7 (c3), Mia PaCa-2 (c4); file names C1-C4."
+    },
+    {
+      "location": "characteristics[age]/[sex]",
+      "value": "PCC-1 67Y female; PCC-2 62Y male; PCC-7 73Y female (donors); MIA PaCa-2 65Y male",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper 2.1 gives donor age/sex for primary lines. MIA PaCa-2 age/sex from Cellosaurus CVCL_0428 (not from the deposit)."
+    },
+    {
+      "location": "characteristics[cellosaurus accession]",
+      "value": "CVCL_0428 for MIA PaCa-2; not available for primary lines",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Primary lines established in-house; not in Cellosaurus."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "pancreatic ductal adenocarcinoma",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Resected treatment-naive PDACs; MIA PaCa-2 is PDAC."
+    },
+    {
+      "location": "characteristics[passage number]",
+      "value": "10,20,25,30,35,40 from file names P10..P40",
+      "source_ids": [
+        "pride",
+        "paper",
+        "zip-dir"
+      ],
+      "evidence": "Passages p10-p40 in description and file names."
+    },
+    {
+      "location": "factor value[treatment] / characteristics[treatment]",
+      "value": "control (files _1,_2,_3) vs gemcitabine resistant (files _11,_12,_13)",
+      "source_ids": [
+        "zip-dir",
+        "diann-log"
+      ],
+      "evidence": "INFERRED: no deposited file maps run names to condition. Convention (_1-3 control, _11-13 GemR; 3 replicates per condition per paper) plus cross-check: RRM1 is higher in _11-13 than _1-3 at p40 in PCC-1 DIA-NN pg_matrix, consistent with paper statement of higher RRM1 in GemR PCC-1 at p40."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-3 (file _1-_3 and _11-_13 minus 10)",
+      "source_ids": [
+        "paper",
+        "zip-dir"
+      ],
+      "evidence": "Triplicate cultures per condition and passage; each analysed once."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-independent acquisition;AC=PRIDE:0000450",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "diaPASEF."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=timsTOF Pro 2;AC=MS:1003230",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE instrument and protocol."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": [
+        "pride",
+        "diann-log"
+      ],
+      "evidence": "Trypsin; --cut K*,R*, 1 missed cleavage."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed",
+      "source_ids": [
+        "pride",
+        "diann-log"
+      ],
+      "evidence": "Protocol and --unimod4. No variable modifications in the DIA-NN command line."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / [fragment mass tolerance]",
+      "value": "20 ppm / 15 ppm",
+      "source_ids": [
+        "diann-log"
+      ],
+      "evidence": "--mass-acc-ms1 20, --mass-acc 15 (protocol says 15 ppm mass accuracy)."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "NT=collision-induced dissociation;AC=MS:1000133",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol gives a collision energy ramp; CID assumed for timsTOF PASEF (not stated explicitly)."
+    },
+    {
+      "location": "comment[scan window lower limit]/[upper limit]/[isolation window width]",
+      "value": "100 / 1700 / 25",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "MS range m/z 100-1700; DIA windows of 25 Da."
+    },
+    {
+      "location": "comment[reduction reagent]",
+      "value": "NT=dithiothreitol (DTT);AC=PRIDE:0000608",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "10 mM DTT."
+    },
+    {
+      "location": "comment[alkylation reagent]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper writes 'indole-3-acetic acid (IAA)', likely a typo for iodoacetamide; not asserted."
+    },
+    {
+      "location": "characteristics[culture medium]",
+      "value": "Dulbecco's Modified Eagle Medium",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "DMEM with 10% FBS."
+    },
+    {
+      "location": "characteristics[sample storage temperature]",
+      "value": "-80\u00b0C",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Cell lysates stored at -80 C."
+    },
+    {
+      "location": "characteristics[cell line authentication]",
+      "value": "Short tandem repeat analysis",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "STR analysis (Eurofins Genomics)."
+    }
+  ]
+}

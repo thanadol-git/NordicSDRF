@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD069822-dataset3.sdrf.tsv",
+  "dataset": "PXD069822",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD069822"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD069822/files"
+    },
+    {
+      "id": "zip",
+      "kind": "raw archive central directory (HTTP range read)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/10/PXD069822/LC-MS_files_dataset3.zip"
+    },
+    {
+      "id": "report.log_dataset3.txt",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/10/PXD069822/report.log_dataset3.txt"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "14 .d folders in LC-MS_files_dataset3.zip",
+      "source_ids": [
+        "pride-files",
+        "zip"
+      ],
+      "evidence": "Run folder names listed from the zip central directory; each claimed once."
+    },
+    {
+      "location": "characteristics[genotype]/factor value[genotype]/treatment",
+      "value": "WT BMDM x5 (untreated), PolgD257A BMDM no CA x5, PolgD257A BMDM + CA x4 (CA2-5; no CA1 file deposited)",
+      "source_ids": [
+        "pride",
+        "zip",
+        "report.log_dataset3.txt"
+      ],
+      "evidence": "Groups from PRIDE sample processing protocol and run names (inferred mapping, see report)."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Mus musculus",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organism NEWT:10090 and protocol (mouse MEFs / BMDM)."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=timsTOF Pro 2;AC=MS:1003230",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: nanoElute coupled to timsTOF PRO2; PRIDE instrument MS:1003230. Not verified from analysis.tdf."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DIA",
+      "source_ids": [
+        "pride",
+        "report.log_dataset3.txt"
+      ],
+      "evidence": "Protocol: DDA (dataset1) / DIA (dataset3); dataset2 processed with DIA-NN and .d folders contain diaSettings.diasqlite."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "see SDRF",
+      "source_ids": [
+        "report.log_dataset3.txt"
+      ],
+      "evidence": "DIA-NN log: cysteine carbamidomethylation fixed (--unimod4)."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin/P",
+      "source_ids": [
+        "report.log_dataset3.txt"
+      ],
+      "evidence": "DIA-NN --cut K*,R*, 1 missed cleavage."
+    }
+  ],
+  "unavailable": [
+    "Precursor tolerance is not available: the PRIDE protocol says 15 ppm for datasets 2 and 3 but the dataset3 DIA-NN log shows automatic mass-accuracy optimisation (about 12-13 ppm).",
+    "\"MUT\" is read as PolgD257A homozygous from the protocol; \"10wk\" in file names suggests 10-week-old animals but no age/sex/strain is stated, so these stay not available.",
+    "DIA window/isolation columns not available.",
+    "Acquisition method written as bare literal (see dataset2).",
+    "Publication: PRIDE lists no DOI/PMID/references; no paper was read. All claims come from the PRIDE record, the zip central directories, and the deposited search logs/mqpar.",
+    "Dose of chloramphenicol: protocol gives \"124M\" (unclear unit), so no dose column.",
+    "Disease, sex, strain and developmental stage are not available. Dissociation method and fragment tolerance not available.",
+    "Trypsin/P (MS:1001313) used: mqpar says Trypsin/P and the protocol says \"Trypsin without proline restriction\". `tools reconcile` flags this against the record word \"trypsin\" (BLOCKER/MAJOR on dataset1); judged a false positive of the keyword match.",
+    "Raw data are zip archives of Bruker .d folders (45-186 GB); only zip central directories were range-read. Data-file names are the .d folder names inside the zips."
+  ]
+}

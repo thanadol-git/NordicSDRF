@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD068278.sdrf.tsv",
+  "dataset": "PXD068278",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD068278"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD068278/files?pageSize=500"
+    },
+    {
+      "id": "zip-cd",
+      "kind": "archive directory (HTTP range read of ZIP central directory)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/04/PXD068278/LC-MS_files_CB.zip, LC-MS_files_cortex.zip, LC-MS_files_HC.zip"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/04/PXD068278/mqpar_CB.xml, mqpar_cortex.xml, mqpar_HC.xml"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC13225231 (Malyutina et al., Dis Model Mech 2026, PMID 41782446, doi 10.1242/dmm.052681)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "190 RAW files: EH2641-EH2709 subset (60, cerebellum), EH1902-EH1971 (70, cortex), EH2920-EH2980 subset (60, hippocampus)",
+      "source_ids": [
+        "pride-files",
+        "zip-cd"
+      ],
+      "evidence": "RAW files are only deposited inside three ZIP archives; names read from ZIP central directories by range request. Each claimed once. File names are the inner names, not the archive names."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Mus musculus",
+      "source_ids": [
+        "pride",
+        "mqpar",
+        "paper"
+      ],
+      "evidence": "PRIDE organism NEWT:10090; mouse UniProt FASTA in mqpar; paper Methods."
+    },
+    {
+      "location": "characteristics[organism part] / factor value[organism part]",
+      "value": "cerebellum | cerebral cortex | hippocampal formation",
+      "source_ids": [
+        "zip-cd",
+        "paper"
+      ],
+      "evidence": "Region taken from the archive each file sits in (LC-MS_files_CB/cortex/HC); paper abbreviations CB, CTX, HC."
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "male",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: 'All mice used were male.'"
+    },
+    {
+      "location": "source name",
+      "value": "CB_<n>, CTX_<n>, HC_<n>, CTX_unsearched_<run>",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "Numeric/CTX experiment names from mqpar <experiments> mapped to raw files. Six cortex RAW files (EH1933-36, EH1938-39) are absent from mqpar and get a run-based name. Own labels; no genotype or age key is deposited."
+    },
+    {
+      "location": "characteristics[disease/genotype/age/developmental stage/strain or breed]",
+      "value": "not available",
+      "source_ids": [
+        "paper",
+        "mqpar",
+        "pride"
+      ],
+      "evidence": "Paper describes WT and Cstb-/- mice at P14, 1, 3, 6 months, but no deposited file or table maps individual RAW files/experiments to genotype or age. Not inferred."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive HF;AC=MS:1002523",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE instrument and protocol text 'QExactive HF'. RAW header not read."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: all analyses in data-dependent acquisition mode."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "NT=beam-type collision-induced dissociation;AC=MS:1000422",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: 'high-energy collision-induced dissociation' on a Q Exactive HF (HCD)."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Digest with trypsin; MaxQuant search used Trypsin/P ('without proline restriction')."
+    },
+    {
+      "location": "comment[reduction reagent] / comment[alkylation reagent]",
+      "value": "DTT (PRIDE:0000608) / iodoacetamide (PRIDE:0000599)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: 10 mM DTT, 20 mM IAA."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C) fixed; Oxidation (M) and Acetyl (Protein N-term) variable",
+      "source_ids": [
+        "mqpar",
+        "pride"
+      ],
+      "evidence": "Identical in all three mqpar.xml files and the data processing protocol."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "4.5 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mainSearchTol 4.5 ppm in mqpar (protocol text says 6 ppm; mqpar preferred)."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "MaxQuant FTMS MS/MS match tolerance 20 ppm."
+    }
+  ]
+}

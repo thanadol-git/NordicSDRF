@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD032830.sdrf.tsv",
+  "dataset": "PXD032830",
+  "sources": [
+    {"id":"pride","kind":"repository","location":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD032830"},
+    {"id":"pride-files","kind":"repository","location":"https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD032830/files/all"},
+    {"id":"paper","kind":"publication","location":"https://europepmc.org/article/PMC/PMC10007964"},
+    {"id":"mzid-header","kind":"deposited search","location":"https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/01/PXD032830/Heart_peptides_1_1_0.mzid.gz"}
+  ],
+  "claims": [
+    {"location":"comment[data file]","value":"55 RAW files (18 Brain_Q01-Q18, 17 Liver N01-06/A07-12/R13-17, 20 Heart_0310_01-20)","source_ids":["pride-files"],"evidence":"RAW entries of the PRIDE file list; each claimed once."},
+    {"location":"characteristics[organism]","value":"Carassius carassius","source_ids":["paper","pride"],"evidence":"Paper Methods: crucian carp collected from Tjernsrud pond; PRIDE lists NEWT:7953 Cyprinidae only."},
+    {"location":"characteristics[organism part]","value":"brain, heart, liver","source_ids":["paper","pride","pride-files"],"evidence":"Tissue sampling in paper; file names Brain/Heart/Liver."},
+    {"location":"characteristics[treatment]; factor value[treatment]","value":"normoxia / anoxia / reoxygenation","source_ids":["paper","pride-files"],"evidence":"Paper: 5 days normoxia, 5 days anoxia, 5 days anoxia + 1 day reoxygenation. Liver file letters N/A/R explicit. Brain Q01-18 mapped by inference (6 per group, same numbering as liver). Heart: not available (20 files, no mapping)."},
+    {"location":"characteristics[sex]","value":"not available","source_ids":["paper"],"evidence":"Fish of both sexes (n=18) without per-sample assignment."},
+    {"location":"comment[instrument]","value":"Q Exactive (MS:1001911)","source_ids":["paper","pride"],"evidence":"Paper and PRIDE instruments field agree; RAW header not checked."},
+    {"location":"comment[proteomics data acquisition method]","value":"DDA","source_ids":["paper"],"evidence":"Data-dependent mode, top 10, dynamic exclusion 60 s."},
+    {"location":"comment[dissociation method]; comment[collision energy]","value":"HCD; 28 NCE","source_ids":["paper"],"evidence":"HCD fragmentation with NCE 28."},
+    {"location":"comment[cleavage agent details]","value":"Trypsin","source_ids":["pride","paper"],"evidence":"Trypsin, one missed cleavage."},
+    {"location":"comment[modification parameters]","value":"Carbamidomethyl fixed; Oxidation (M) and Acetyl (Protein N-term) variable","source_ids":["pride","paper","mzid-header"],"evidence":"PRIDE data processing protocol and paper PEAKS parameters; mzid not fully read."},
+    {"location":"comment[precursor mass tolerance]; comment[fragment mass tolerance]","value":"10 ppm; 0.1 Da","source_ids":["pride","paper"],"evidence":"PEAKS search parameters."},
+    {"location":"comment[reduction reagent]; comment[alkylation reagent]","value":"DTT; iodoacetamide","source_ids":["pride"],"evidence":"Sample processing protocol: 10 mM DTT, 30 mM iodoacetamide."},
+    {"location":"comment[label]","value":"label free sample","source_ids":["pride"],"evidence":"Quantification method: MS1 intensity based label-free; SILAC only names the lysis buffer."}
+  ],
+  "unavailable": ["heart group assignment","brain group mapping (inferred)","per-sample sex/age","developmental stage","RAW header instrument check","PeerJ supplementary Files S1-S3 (HTTP 403)"]
+}

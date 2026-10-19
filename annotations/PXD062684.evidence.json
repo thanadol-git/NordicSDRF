@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD062684.sdrf.tsv",
+  "dataset": "PXD062684",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD062684"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD062684/files"},
+    {"id": "zip-dirs", "kind": "deposited raw archives", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/08/PXD062684/ (central-directory range reads of the 4 RAW zips)"},
+    {"id": "search", "kind": "deposited search", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/08/PXD062684/MSFragger.zip (fragger.params, experiment_annotation.tsv)"},
+    {"id": "paper", "kind": "publication", "location": "https://europepmc.org/article/PMC/PMC12520675"}
+  ],
+  "claims": [
+    {"location": "comment[data file], source name, rows", "value": "63 .d runs", "source_ids": ["zip-dirs", "search"], "evidence": "zip listings; 63 runs match experiment_annotation.tsv and n=63 samples in paper"},
+    {"location": "characteristics[organism]", "value": "Mus musculus", "source_ids": ["pride", "paper"], "evidence": "NEWT:10090"},
+    {"location": "characteristics[organism part]", "value": "small intestine", "source_ids": ["pride", "paper"], "evidence": "crypt regions from proximal small intestine unless otherwise specified"},
+    {"location": "characteristics[strain or breed], characteristics[sex]", "value": "C57BL/6J, female", "source_ids": ["paper"], "evidence": "Methods: repeat IFN-gamma injection experiments in female C57BL/6 mice (9-11 weeks, Janvier)"},
+    {"location": "characteristics[treatment]", "value": "not available", "source_ids": ["pride", "paper"], "evidence": "dose groups described but no run-to-group map in deposit or paper text"},
+    {"location": "comment[instrument]", "value": "timsTOF fleX MS:1003124", "source_ids": ["pride"], "evidence": "PRIDE instrument field and protocol text (four experiments on timsTOF fleX)"},
+    {"location": "comment[proteomics data acquisition method]", "value": "Data-dependent acquisition PRIDE:0000627", "source_ids": ["pride", "search"], "evidence": "protocol: DDA PASEF; fragger.params data_type = 0"},
+    {"location": "comment[cleavage agent details]", "value": "Trypsin MS:1001251", "source_ids": ["pride", "search"], "evidence": "protocol trypsin; fragger.params stricttrypsin KR"},
+    {"location": "comment[precursor mass tolerance], comment[fragment mass tolerance]", "value": "20 ppm / 20 ppm", "source_ids": ["search"], "evidence": "fragger.params precursor_mass_lower/upper -20/20 ppm, fragment_mass_tolerance 20 ppm"},
+    {"location": "comment[modification parameters]", "value": "Carbamidomethyl C fixed; Oxidation M and Acetyl Protein N-term variable", "source_ids": ["pride", "search"], "evidence": "protocol text; fragger.params add_C_cysteine 57.02146, variable_mod_01/02"},
+    {"location": "comment[dissociation method]", "value": "collision-induced dissociation MS:1000133", "source_ids": [], "evidence": "inferred generic PASEF fragmentation; not stated in deposit"},
+    {"location": "characteristics[developmental stage], characteristics[disease], characteristics[cell type]", "value": "not available", "source_ids": [], "evidence": "not stated per sample in deposit"}
+  ]
+}

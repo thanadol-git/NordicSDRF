@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD048864.sdrf.tsv",
+  "dataset": "PXD048864",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD048864"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD048864/files/all"
+    },
+    {
+      "id": "raw-isf-7z-directory",
+      "kind": "archive directory (HTTP range read of 7z end header only)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/08/PXD048864/Anna_Maria_ISF_20ul_rawfiles.7z"
+    },
+    {
+      "id": "raw-csf-7z-directory",
+      "kind": "archive directory (HTTP range read of 7z end header only)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/08/PXD048864/CSF_rawfiles.7z"
+    },
+    {
+      "id": "paper",
+      "kind": "publication PDF (OSF)",
+      "location": "https://osf.io/download/y3rw9/ (Gorska et al. 2024, J Neurosci Methods 411:110239, doi 10.1016/j.jneumeth.2024.110239)"
+    },
+    {
+      "id": "osf-upload",
+      "kind": "author OSF supplementary zip",
+      "location": "https://osf.io/download/ukqr3/ (OSF.io upload.zip: ISF_DIA_2023.xlsx, CSF_DIA_2023_B6 vs APP_200d.xlsx, Perseus exports)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "47498_S1-A12_1_10549.d ... (47 ISF + 49 CSF .d folders)",
+      "source_ids": [
+        "raw-isf-7z-directory",
+        "raw-csf-7z-directory",
+        "pride-files"
+      ],
+      "evidence": "Run folders listed from 7z archive directories; 47 in ISF archive, 49 in CSF archive (CSF 48178 .d is duplicated nested inside itself, counted once)."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Mus musculus",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism NEWT:10090; paper Methods."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "interstitial fluid / cerebrospinal fluid",
+      "source_ids": [
+        "paper",
+        "raw-isf-7z-directory",
+        "raw-csf-7z-directory"
+      ],
+      "evidence": "Archive names (Anna_Maria_ISF vs CSF) and paper: ISF by microdialysis, CSF from lateral ventricle."
+    },
+    {
+      "location": "characteristics[genotype]/[strain or breed]/[sex]/[age]/factor values (ISF, 47 rows)",
+      "value": "per-animal values",
+      "source_ids": [
+        "osf-upload"
+      ],
+      "evidence": "Sample ID, group, sex and age rows in ISF_DIA_2023.xlsx Sheet1 keyed to run number prefix; cross-checked against Perseus ISF export (32 samples, 0 conflicts)."
+    },
+    {
+      "location": "characteristics[genotype]/[sex]/[age]/factor values (CSF, 39 of 49 rows)",
+      "value": "per-animal values",
+      "source_ids": [
+        "osf-upload"
+      ],
+      "evidence": "12 samples from CSF_DIA_2023_B6 vs APP_200d.xlsx plus 35 samples from Perseus CSF export (overlap consistent); 10 CSF runs (47801,47805,47847,47852,47955,47969,47976,50337,50514,50779) have no deposited mapping and are not available."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "Alzheimer disease / normal / not available",
+      "source_ids": [
+        "paper",
+        "osf-upload"
+      ],
+      "evidence": "APPPS1-21 carriers: Alzheimer disease model (paper); C57BL/6J controls: normal; hA7ko-only: not stated."
+    },
+    {
+      "location": "characteristics[strain or breed]",
+      "value": "C57BL/6J; APPPS1-21",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper section 2.1."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "timsTOF fleX MS:1003124",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE instruments field and protocol text."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-independent acquisition PRIDE:0000450",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "dia-PASEF per protocol."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: trypsin 1:50, 37 C overnight; DIA-NN trypsin, 1 missed cleavage."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C) fixed",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol text: Carbamidomethyl (C) set as fixed modification (DIA-NN). Deposited DIA-NN result archives not unpacked."
+    },
+    {
+      "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+      "value": "15 ppm",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: mass accuracy set to 15 ppm; applied to both as DIA-NN has one setting here (assumption)."
+    },
+    {
+      "location": "comment[ms1 scan range]/[ms2 scan range]/[scan window lower limit]/[upper limit]/[isolation window width]/[ms min im]/[ms max im]",
+      "value": "100-1700; 475-1000; 475; 1000; 25; 0.85; 1.30",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol LC-MS/MS paragraph."
+    }
+  ],
+  "unavailable": [
+    "Run-to-sample mapping for 10 CSF runs",
+    "Age/developmental stage ontology term",
+    "Reduction/alkylation reagent names",
+    "Collision energy values beyond ramp 20-59 eV",
+    "DIA-NN result archives (Result_ISF.7z, result_CSF_21.12.23.7z) not unpacked; modifications taken from protocol text"
+  ]
+}

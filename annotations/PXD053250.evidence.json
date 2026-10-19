@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD053250.sdrf.tsv",
+  "dataset": "PXD053250",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD053250"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD053250/files/all"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/05/PXD053250/mqpar.xml"
+    },
+    {
+      "id": "txt7z",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/05/PXD053250/txt.7z (HTTP range read of header and first 16 MB; member 'txt/2023-11 AD+A7 list samples DDA - MaxQuant.xlsx')"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/39871385 (PMC11773842; PMID 39871385)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] / source name / assay name",
+      "value": "138 Bruker .d runs",
+      "source_ids": [
+        "mqpar",
+        "txt7z"
+      ],
+      "evidence": "filePaths and experiments in mqpar.xml (138 entries, identical to Intensity columns of the deposited proteinGroups table). The RAW archive LC_MS_file.7z (330.8 GB) is truncated relative to its own header (header points past EOF) so its member list could not be read; file names come from mqpar.xml."
+    },
+    {
+      "location": "source name / comment[technical replicate]",
+      "value": "mouse <numeric animal ID>; 8 IDs occur twice",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "Leading number of the run name taken as animal ID (our inference). 35033, 38319, 44998, 34243, 35967, 37201, 19786 occur twice (S1 and S2/G slots) and are treated as technical replicate 2 of the same source."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Mus musculus",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "PRIDE organism NEWT:10090; UniProt mouse FASTA in mqpar."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "brain",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Protocol: brain tissue homogenate; PRIDE organism part brain."
+    },
+    {
+      "location": "characteristics[disease]; factor value[disease]",
+      "value": "Alzheimer's disease",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Paper: APPPS1 and APPPS1-hA7ko Alzheimer mouse model cohorts. Genotype per run is not deposited, so the factor value mirrors the disease column only to satisfy the template (not a real comparison)."
+    },
+    {
+      "location": "characteristics[sex], [developmental stage], [strain or breed]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper gives group sizes (n=8 male/7 female hA7ko; 7/7 APPPS1) and 50-200 days but no per-run mapping; run-name prefixes f/m on 86 of 138 runs are not documented."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=timsTOF Pro 2;AC=MS:1003230",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol text: timsTOF pro2 with Evosep One; PRIDE dropdown says timsTOF Pro (text preferred)."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Protocol: DDA PASEF; mqpar lcmsRunType TIMS-DDA."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Trypsin 1:50 overnight; mqpar enzyme Trypsin/P, i.e. no proline restriction, as the protocol states."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C) fixed; Oxidation (M), Acetyl (Protein N-term) variable",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mqpar.xml fixedModifications/variableModifications. Protocol also mentions carbamyl (N-term) variable, absent from mqpar, so omitted."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "10 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mainSearchTol 10 ppm in mqpar (protocol prose says 4.5 ppm, the post-recalibration figure)."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "25 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "TOF MatchTolerance 25 ppm in mqpar."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "collision-induced dissociation",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Inferred: PASEF on timsTOF uses collision cell CID; not stated explicitly."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Label-free quantitation; multiplicity 1."
+    }
+  ],
+  "limitations": [
+    "RAW archive header unreadable (truncated 7z), so .d names are from mqpar.xml and not verified against archive members.",
+    "No per-run genotype, sex or age mapping in the deposit; those are not available.",
+    "Animal ID is inferred from run names; deposit has 130 IDs while the paper analyses 29 mice, so the deposit appears to cover more cohorts than the paper."
+  ]
+}

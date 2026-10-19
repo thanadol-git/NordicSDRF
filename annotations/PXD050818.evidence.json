@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD050818.sdrf.tsv",
+  "dataset": "PXD050818",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD050818"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD050818/files"
+    },
+    {
+      "id": "zip-dir-ds1",
+      "kind": "archive directory (HTTP range read of central directory)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/11/PXD050818/Data_Set1_LCMS.zip"
+    },
+    {
+      "id": "zip-dir-ds2",
+      "kind": "archive directory (HTTP range read of central directory)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/11/PXD050818/Data_Set2_LCMS.zip"
+    },
+    {
+      "id": "mqpar1",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/11/PXD050818/Data_Set_1mqpar.xml"
+    },
+    {
+      "id": "mqpar2",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/11/PXD050818/Data_set2mqpar.xml"
+    },
+    {
+      "id": "summary1",
+      "kind": "deposited search (range read of member)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/11/PXD050818/Data_Set1_txt_file.zip#Data_Set1_txt_file/txt/summary.txt"
+    },
+    {
+      "id": "summary2",
+      "kind": "deposited search (range read of member)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/11/PXD050818/Data_Set2_txt.zip#Data_Set2_txt/txt/summary.txt"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC12769673 (doi 10.1038/s41467-025-66656-1)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "reference",
+      "location": "https://api.cellosaurus.org/cell-line/CVCL_0045?format=json"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "25 .d folders in Data_Set1_LCMS.zip (16 used) + 16 in Data_Set2_LCMS.zip; 32 rows",
+      "source_ids": [
+        "zip-dir-ds1",
+        "zip-dir-ds2",
+        "summary1",
+        "summary2"
+      ],
+      "evidence": "Run names from zip central directories; rows only for runs processed in the deposited MaxQuant summary.txt. Data_Set1: 9 .d folders (Taru1_S1-A1, 2-4_S1-A2..A4, 9-12_S1-B1..B4, 18_S1-C2_1_941) are not in the search and carry no mapping, so are not annotated."
+    },
+    {
+      "location": "source name / factor value[treatment] (dataset 1)",
+      "value": "ETOH, CAP, ACT, ACT-CAP x 4",
+      "source_ids": [
+        "summary1",
+        "mqpar1",
+        "pride"
+      ],
+      "evidence": "MaxQuant Experiment names ETOH_1-4, CAP_1-4, ACT15_1-4, ACT-CAP_1-4 mapped to files in summary.txt; PRIDE description gives 15-day treatment: EtOH, 15 uM ACT, 5 ug/ml CAP, ACT+CAP in HEK293 WT."
+    },
+    {
+      "location": "characteristics[treatment] (dataset 2)",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "summary2",
+        "mqpar2"
+      ],
+      "evidence": "Dataset 2 = 3-day EtOH or 15 uM ACT in Cas9 and ATP6AP1 KO HEK293, quadruplicates, but experiment names in search are file names; no deposited file-to-condition map. Attempted proteinGroups.txt ATP6AP1 intensities: inconclusive."
+    },
+    {
+      "location": "characteristics[cell line] etc.",
+      "value": "HEK293 / CVCL_0045; kidney; female",
+      "source_ids": [
+        "pride",
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Paper: HEK293 from ATCC, STR authenticated, DMEM + 10% FBS; sex/tissue from Cellosaurus."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "timsTOF fleX MS:1003124",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE field and protocol; paper says timsTOF flex for both datasets. Not verified from analysis.tdf."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin MS:1001251",
+      "source_ids": [
+        "pride",
+        "mqpar1",
+        "mqpar2"
+      ],
+      "evidence": "Protocol: trypsin 1:50; MaxQuant enzyme Trypsin/P."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C) fixed; Oxidation (M), Acetyl (protein N-term) variable",
+      "source_ids": [
+        "mqpar1",
+        "mqpar2"
+      ],
+      "evidence": "Read from both mqpar.xml files; identical."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / fragment",
+      "value": "10 ppm / 40 ppm",
+      "source_ids": [
+        "mqpar1",
+        "mqpar2"
+      ],
+      "evidence": "mainSearchTol 10; TOF MatchTolerance 40 ppm (MaxQuant default). Protocol text says 6 ppm main search; deposited parameter file used."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA (PASEF)",
+      "source_ids": [
+        "pride",
+        "mqpar1"
+      ],
+      "evidence": "Protocol: DDA-PASEF; mqpar lcmsRunType TIMS-DDA."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "collision-induced dissociation MS:1000133",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Not stated in deposit; inferred as standard for timsTOF PASEF."
+    }
+  ],
+  "limitations": [
+    "Dataset 2 (16 runs) has no deposited sample map: genotype, treatment are not available; biological replicate numbers are run order, not true replicate numbers.",
+    "9 Data_Set1 .d folders are unannotated (not in search, identity unknown).",
+    "Dataset 1 order ETOH/CAP/ACT/ACT-CAP assumed to follow MaxQuant experiment-to-file pairing in summary.txt.",
+    "Cell line sex/organism part from Cellosaurus, not the deposit; genotype 'wild type (Cas9-expressing)' from paper.",
+    "Treatment doses (15 uM ACT, 5 ug/ml CAP) are in the PRIDE description, not in the SDRF values (NCIT/EFO term only); ACT+CAP combination doses not stated.",
+    "Dissociation CID inferred; instrument not verified from analysis.tdf; reduction/alkylation reagents not named."
+  ]
+}

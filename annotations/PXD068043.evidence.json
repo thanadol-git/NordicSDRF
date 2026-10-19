@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD068043.sdrf.tsv",
+  "dataset": "PXD068043",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD068043"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD068043/files"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/03/PXD068043/mqpar_replicas_combined.xml"
+    },
+    {
+      "id": "zip-directory",
+      "kind": "archive directory",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/03/PXD068043/LC-MS_files.zip (central directory read by HTTP range; 40 .d runs)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC13071391 (PMID 41982326, doi 10.3389/fbioe.2026.1773372)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "40 Bruker .d run folders (Essi 1..40) inside LC-MS_files.zip",
+      "source_ids": [
+        "pride-files",
+        "zip-directory",
+        "mqpar"
+      ],
+      "evidence": "Zip central directory lists 40 .d folders; mqpar filePaths lists the same 40; each claimed once. PRIDE lists only the zip as RAW."
+    },
+    {
+      "location": "source name / characteristics[biological replicate] / comment[technical replicate]",
+      "value": "N1-N10, D1-D10; two runs each",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mqpar experiments map each file to N1..N10 or D1..D10, two files per experiment (protocol: duplicates; technical duplicates combined in search). Technical replicate order follows Essi run number."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "NEWT:9606; human saphenous vein."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "saphenous vein",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Title and Methods 2.1."
+    },
+    {
+      "location": "characteristics[treatment] / factor value[treatment]",
+      "value": "Tissue Decellularization (D) vs not applicable / native (N)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Native and CHAPS-based decellularized counterparts; NCIT:C112947 term label."
+    },
+    {
+      "location": "characteristics[age], [sex], [disease], [cell type]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper gives only cohort summary (20 male, 1 female, 46-80 y, CABG patients); per-sample data in Supplementary Table S1 not accessed. Disease not asserted."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "timsTOF fleX MS:1003124",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Protocol text names timsTOF fleX."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA (PASEF)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: data-dependent PASEF."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin MS:1001251",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Protocol: trypsin; mqpar enzyme Trypsin/P (no proline restriction); declared as Trypsin."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C) fixed; Oxidation (M), Acetyl (Protein N-term) variable",
+      "source_ids": [
+        "mqpar",
+        "pride"
+      ],
+      "evidence": "mqpar fixedModifications/variableModifications."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "10 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mqpar mainSearchTol=10; protocol prose says 4.5 ppm (discrepancy)."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "40 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mqpar msmsParams TOF MatchTolerance=40 ppm."
+    },
+    {
+      "location": "comment[reduction reagent] / [alkylation reagent]",
+      "value": "DTT / IAA",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: 10 mM DTT then 30 mM IAA."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "not available",
+      "source_ids": [],
+      "evidence": "Not stated in deposit."
+    }
+  ]
+}

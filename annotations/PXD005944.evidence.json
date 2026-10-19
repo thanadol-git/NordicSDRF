@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD005944.sdrf.tsv",
+  "dataset": "PXD005944",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD005944"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD005944/files?pageSize=500"
+    },
+    {
+      "id": "mq-pg",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/07/PXD005944/proteinGroups.zip (txt/summary.txt, txt/parameters.txt via HTTP range read)"
+    },
+    {
+      "id": "mq-kris",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/07/PXD005944/proteinGroups_30.05.2016_Kris.zip (txt/summary.txt, parameters.txt)"
+    },
+    {
+      "id": "mq-gel",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/07/PXD005944/proteinGroups_gelalkylated.zip (txt/summary.txt, parameters.txt)"
+    },
+    {
+      "id": "mq-p4180",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/07/PXD005944/proteinGroups_Kris_26.08.2016_P4180-P4202.zip (txt/summary.txt, parameters.txt)"
+    },
+    {
+      "id": "rawhdr",
+      "kind": "raw header",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/07/PXD005944/P3617.raw, P3640.raw, P3665.raw, P3734.raw, P3782.raw, P4180.raw (first 256 KB range read)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "ontology lookup",
+      "location": "sdrf-tools cellline lookup Jurkat (CVCL_0065)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "72 RAW files, each claimed once",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "All 72 RAW names in PRIDE file list assigned to six groups of 12."
+    },
+    {
+      "location": "characteristics[cell line]",
+      "value": "Jurkat (CVCL_0065)",
+      "source_ids": [
+        "pride",
+        "cellosaurus"
+      ],
+      "evidence": "Protocol: total lysate from Jurkat cells; organism part BTO Jurkat cell."
+    },
+    {
+      "location": "characteristics[age]/[sex]/[disease]/[cell type]/[organism part]",
+      "value": "14Y; male; T-cell childhood acute lymphocytic leukemia; T cell; blood",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "From Cellosaurus record, not the deposit."
+    },
+    {
+      "location": "source name / files (P3734-P3756)",
+      "value": "Jurkat GelFree on-bead digestion, fractions 1-12",
+      "source_ids": [
+        "mq-pg",
+        "pride"
+      ],
+      "evidence": "proteinGroups.zip summary.txt experiments 1B-12B; protocol: GelFree fractions split, one part on-bead (streptavidin) digestion. B=on-bead is an inference from protocol + naming."
+    },
+    {
+      "location": "source name / files (P3758-P3780)",
+      "value": "Jurkat GelFree FASP digestion, fractions 1-12",
+      "source_ids": [
+        "mq-pg",
+        "pride"
+      ],
+      "evidence": "summary.txt experiments F1-F12; F=FASP inferred from protocol."
+    },
+    {
+      "location": "source name / files (P3782-P3804, P4180-P4202)",
+      "value": "Jurkat in-gel digestion, two runs (technical replicate 1, 2)",
+      "source_ids": [
+        "mq-gel",
+        "mq-p4180",
+        "pride"
+      ],
+      "evidence": "Experiments G1-G12 in both; protocol: SDS-PAGE lane cut into 12 strips. Both searches have Carbamidomethyl (C) fixed. Relationship between the two runs is inferred."
+    },
+    {
+      "location": "source name / files (P3665-P3687, P3617-P3640)",
+      "value": "preparation not recorded; digestion protocol = not available",
+      "source_ids": [
+        "mq-kris",
+        "pride-files"
+      ],
+      "evidence": "P3665-P3687 only has a MaxQuant summary with experiments 1-12 and no prep label; P3617-P3640 appear in no deposited search."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive Plus",
+      "source_ids": [
+        "rawhdr",
+        "pride"
+      ],
+      "evidence": "Raw headers read 'Q Exactive Plus - Orbitrap MS'; PRIDE field says Q Exactive, protocol text says Qexactive plus."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "mq-pg"
+      ],
+      "evidence": "Protocol: trypsin (Promega); MaxQuant Trypsin/P."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Oxidation (M), Acetyl (Protein N-term) variable all rows; Carbamidomethyl (C) fixed for in-gel rows only; not applicable third column for others",
+      "source_ids": [
+        "mq-pg",
+        "mq-kris",
+        "mq-gel",
+        "mq-p4180"
+      ],
+      "evidence": "parameters.txt / summary.txt Fixed and Variable modifications per search."
+    },
+    {
+      "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+      "value": "6 ppm / 20 ppm",
+      "source_ids": [
+        "pride",
+        "mq-pg"
+      ],
+      "evidence": "Main search 6 ppm (protocol); MS/MS tol FTMS 20 ppm (parameters.txt); protocol states 20 ppm first search."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: HCD fragmentation."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: data-dependent mode, top 10."
+    },
+    {
+      "location": "factor value[digestion protocol]",
+      "value": "on-bead / FASP / in-gel; not available for two groups",
+      "source_ids": [
+        "pride",
+        "mq-pg"
+      ],
+      "evidence": "The study compares the three sample preparation protocols."
+    }
+  ],
+  "limitations": [
+    "No publication linked; Methods rely on the PRIDE protocol text.",
+    "B=on-bead and F=FASP mapping is inferred from the protocol and file/experiment naming; deposit does not label them explicitly.",
+    "Two groups (P3665-P3687, P3617-P3640; 24 files) cannot be tied to a preparation method.",
+    "Cell-line age/sex/disease from Cellosaurus.",
+    "Fractionation method, collision energy (25% NCE), reduction/alkylation reagents, LC settings not encoded as optional columns."
+  ]
+}
