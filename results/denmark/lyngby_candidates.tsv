@@ -1,0 +1,60 @@
+accession	verdict	evidence	in_corpus	title
+PXD000503	confirmed	countries=['Denmark']		Time-resolved substrate degradomics
+PXD000901	confirmed	countries=['Denmark']	yes	Phospho-networks in Ovarian Cancer Cell Lines
+PXD006582	confirmed	countries=['Denmark']		Unrestricted analysis of modifications in proteins exposed to metal-catalyzed oxidation
+PXD007972	confirmed	countries=['Denmark']		Drug-driven phenotypic convergence supports rational treatment strategies of chronic infections
+PXD008055	confirmed	countries=['Denmark']		The global acetylome of the human pathogen Vibrio cholerae V52 reveals lysine acetylation of major t
+PXD012802	confirmed	affiliation~'denmark': Professor. Department of Biology and Biological Engineering, Chalmers University of Techno		TMT and Label-Free Quantification of Yeast Mitochondrial and Cellular Proteome During Different Stag
+PXD012803	confirmed	affiliation~'denmark': Professor. Department of Biology and Biological Engineering, Chalmers University of Techno		Label-Free Quantification of Yeast Cellular Proteome
+PXD013635	confirmed	countries=['Denmark']		Tendon tissue degradome in response to the patho-physiological niche
+PXD014962	confirmed	affiliation~'denmark': Professor, Department of Biology and Biological Engineering, Chalmers University of Techno		TMT-based study of yeast metabolism and translation under nitrogen limitation
+PXD015025	confirmed	affiliation~'denmark': Professor, Department of Biology and Biological Engineering, Chalmers University of Techno	yes	Absolute Quantification of Yeast Proteins Using Synthetic Peptide Standards and TMT labeling
+PXD015045	confirmed	countries=['Denmark']	yes	Shotgun proteomics of Roseburia grown on human milk oligosaccharides and of Roseburia grown on mucin
+PXD015536	confirmed	countries=['Denmark']	yes	LC-MS of S. cerevisiae scale-down cultivations
+PXD017432	confirmed	countries=['Denmark']		Proteolysis of zyxin by HtrA1 induces nuclear translocation of the resulting C-terminal fragment of 
+PXD018116	confirmed	affiliation~'denmark': Professor.  Department of Biology and Biological Engineering, Chalmers University of Techn	yes	TMT-based proteome analysis of three Saccharomyces cerevisiae strains with different protein product
+PXD018361	confirmed	affiliation~'denmark': Professor, Department of Biology and Biological Engineering, Chalmers University of Techno	yes	Proteome re-allocation in amino acid supplemented S. cerevisiae using TMT-based quantitative proteom
+PXD020101	confirmed	countries=['Denmark']		Loss of AA13 LPMOs impairs degradation of resistant starch and reduces the growth of Aspergillus nid
+PXD021218	confirmed	affiliation~'denmark': Professor. Department of Biology and Biological Engineering, Chalmers University of Techno	yes	Quantifying gene expression control by growth and metabolism reveals distinct regulation of central 
+PXD021470	confirmed	countries=['Denmark']	yes	An engineered promoter-reporter for insoluble protein in Saccharomyces cerevisiae
+PXD022668	confirmed	affiliation~'denmark': Technical University of Denmark (lab head)		Distinct extracellular-matrix remodeling events precede symptoms of inflammation
+PXD023249	confirmed	countries=['Denmark']		Chitin degradation machinery and secondary metabolite profiles in the marine bacterium Pseudoalterom
+PXD025067	confirmed	countries=['Denmark']	yes	A microbial supply chain for production of anti-cancer drug vinblastine
+PXD025431	confirmed	countries=['Denmark']		Atopic dermatitis epidermis PCT-DIA
+PXD026313	confirmed	affiliation~'denmark': Professor. Department of Biology and Biological Engineering, Chalmers University of Techno		Adaptations in metabolism and protein translation give rise to the Crabtree effect in yeast
+PXD029320	confirmed	countries=['Denmark']		Real-Time Search Assisted Acquisition on a Tribrid Mass Spectrometer Improves Coverage in Multiplexe
+PXD029710	rejected	countries=['Taiwan'] | Department of Chemical Engineering, National Taiwan Universi ; Institute of Biotechnology, Vietnam Academy of Science and T		Nanodiamond Solid Phase Extraction and Triton X-114 Cloud Point Separation for Robust Fractionation 
+PXD031490	confirmed	countries=['Denmark']		Cyclodepsipeptides, solonamides, influence motility in the native producer Photobacterium galatheae 
+PXD035448	confirmed	countries=['Denmark']		Tropodithietic acid, a multifunctional antimicrobial, facilitates adaption and  colonization of the 
+PXD036161	confirmed	countries=['Denmark']		High-throughput proteomics of the 26 medically most important elapids and vipers from sub-Saharan Af
+PXD036796	confirmed	countries=['Denmark']		Antimicrobial activity of graphene oxide is associated with alteration in stress response and membra
+PXD037700	confirmed	countries=['Denmark']		Quantitative proteomics analysis of lung tissue from E18.5 embryos with mesenchymal deletion of VLK
+PXD047109	confirmed	countries=['Denmark']		Exploring the secretome of Corynebacterium glutamicum ATCC 13032
+PXD049360	confirmed	countries=['Denmark']	yes	A germline PAF1 paralog complex ensures cell type-specific gene expression (co-IP data)
+PXD049375	confirmed	countries=['Denmark']	yes	A germline PAF1 paralog complex ensures cell type-specific gene expression (proximity labeling data)
+PXD050151	confirmed	countries=['Denmark']		Mulit-omics analysis of keratinocytes reveals dermokine as regulator keratinocyte differentiation an
+PXD050580	confirmed	countries=['Denmark']		Protease Regulation by Subtrate O-Glycosylation
+PXD050581	confirmed	countries=['Denmark']	yes	Protease Regulation by Subtrate O-Glycosylation
+PXD050644	confirmed	countries=['Denmark']	yes	Protease Regulation by Subtrate O-Glycosylation
+PXD050647	confirmed	countries=['Denmark']	yes	Protease Regulation by Subtrate O-Glycosylation
+PXD052229	confirmed	countries=['Denmark']		Multi-omics analysis reveals the impact of influenza A virus host adaptation on immune signatures in
+PXD052685	confirmed	affiliation~'denmark': Novo Nordisk Foundation Center for Biosustainability,  Technical University of Denmark		Phosphorylation of the juxta-membrane domain of the membrane serine/threonine-kinase StkP and charac
+PXD053727	rejected	countries=['Croatia'] | Ruder Boskovic Institute, Zagreb, Croatia ; Ruđer Bošković Institute, Laboratory of Evolutionary Genetic		Evolutionary expression patterns in developing biofilms of uropathogenic Escherichia coli reveal emb
+PXD055812	confirmed	countries=['Denmark']		Mulit-omics analysis of keratinocytes reveals dermokine as regulator keratinocyte differentiation an
+PXD056558	confirmed	countries=['Denmark']		Proteomic profiling of tissue and plasma from mares with endometrial fibrosis
+PXD056947	confirmed	countries=['Denmark']	yes	Interaction of genetic variants activates latent metabolic pathways in yeast
+PXD057429	confirmed	countries=['Denmark']		Heterologous production of phosphorylated casein
+PXD057843	confirmed	countries=['Denmark']		Ant yogurt LC-MS caseinolytic potential
+PXD061167	confirmed	countries=['Denmark']		A multi-omics analysis identifies retinol metabolism in fibroblasts as a key pathway in wound healin
+PXD061256	confirmed	countries=['Denmark']		A multi-omics analysis identifies retinol metabolism in fibroblasts as a key pathway in wound healin
+PXD061994	confirmed	countries=['Denmark']	yes	Tryptic shaving of Staphylococcus aureus
+PXD062859	confirmed	countries=['Denmark']		InstaNovo-P T47D cell phosphoproteomics
+PXD066160	confirmed	countries=['Denmark']		Generalizable direct protein sequencing with InstaNexus
+PXD067738	confirmed	countries=['Denmark']		Dextran-based T-cell expansion nanoparticles for manufacturing CAR T cells with augmented efficacy
+PXD069977	confirmed	countries=['Denmark']		Analysis of proteome dynamics in early-stage sporulation-inhibited variants of Parageobacillus therm
+PXD074105	confirmed	countries=['Denmark']	yes	InstaNovo-P: A de novo peptide sequencing model for phosphoproteomics
+PXD074160	confirmed	countries=['Denmark']	yes	Human milk oligosaccharides’ impact on maturation of the gut microbiota
+PXD074506	confirmed	countries=['Denmark']	yes	Proteomic profiling of obesity-associated metabolic and immune changes in Göttingen minipigs
+PXD074943	confirmed	countries=['Denmark']		Mulit-omics analysis of keratinocytes reveals dermokine as regulator keratinocyte differentiation an
+PXD075760	confirmed	countries=['Denmark']		An Lsr2-like xenogeneic silencer confers immunity against AT-rich bacteriophage infection
+PXD079632	confirmed	countries=['Denmark']		The ALLPreT panel of legume allergen preparations: Optimization of total protein extracts and charac

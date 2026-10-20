@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-10-01
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-19)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-20)
 
 countries:
   sweden:
@@ -52,7 +52,7 @@ countries:
         annotated: 68
         blocked: 93
         notes: "line 1 is PRD000423, a legacy ProteomeXchange id — resolve to a PXD before screening"
-        in_corpus: 77
+        in_corpus: 79
       lund:
         name: Lund
         search_terms: [Lund, Malmö, Skåne]
@@ -148,8 +148,11 @@ countries:
         search_terms: [Lyngby, "Technical University of Denmark"]
         pride_hits: 58
         screened: 0
-        annotated: 0
-        blocked: 0
+        annotated: 12
+        blocked: 6
+        pxd_list: lists/denmark/lyngby.txt
+        pxd_count: 57
+        in_corpus: 19
       roskilde:
         name: Roskilde
         search_terms: [Roskilde]
@@ -180,7 +183,7 @@ countries:
         blocked: 3
         pxd_list: lists/norway/oslo.txt
         pxd_count: 120
-        in_corpus: 73
+        in_corpus: 87
       trondheim:
         name: Trondheim
         search_terms: [Trondheim, NTNU]

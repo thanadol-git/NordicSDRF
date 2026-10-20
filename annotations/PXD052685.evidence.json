@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD052685.sdrf.tsv",
+  "dataset": "PXD052685",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD052685"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD052685/files/all"
+    },
+    {
+      "id": "mq",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/03/PXD052685/txt.rar (txt/parameters.txt, txt/summary.txt via HTTP range read)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC12077195"
+    },
+    {
+      "id": "rawhdr",
+      "kind": "raw header",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/03/PXD052685/QE_160621_07.raw and QEHF_171005_100.raw (first 3-4 MB range read)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "21 RAW files",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "All RAW files in the PRIDE list, each once."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "QE files: Q Exactive; QEHF files: Q Exactive HF",
+      "source_ids": [
+        "pride",
+        "rawhdr"
+      ],
+      "evidence": "RAW header strings 'Q Exactive - Orbitrap MS' / 'Q Exactive HF - Orbitrap MS'; PRIDE lists Q Exactive only."
+    },
+    {
+      "location": "source name / fraction",
+      "value": "one source per MaxQuant Experiment; exp17 = QE_160621_39/40",
+      "source_ids": [
+        "mq"
+      ],
+      "evidence": "summary.txt Raw file/Experiment/Fraction columns; experiment names WT/TA/TE for QEHF files."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term, Phospho STY variable",
+      "source_ids": [
+        "mq",
+        "pride"
+      ],
+      "evidence": "summary.txt modification columns and PRIDE data processing protocol."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "mq"
+      ],
+      "evidence": "parameters.txt: MS/MS tol. (FTMS) 20 ppm."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin (search enzyme Trypsin/P)",
+      "source_ids": [
+        "mq",
+        "pride"
+      ],
+      "evidence": "summary.txt Enzyme Trypsin/P."
+    },
+    {
+      "location": "comment[reduction reagent]/comment[alkylation reagent]",
+      "value": "DTT / iodoacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sampleProcessingProtocol."
+    },
+    {
+      "location": "characteristics[genotype]",
+      "value": "gfp-stkP; gfp-stkP-7TA; gfp-stkP-7TE",
+      "source_ids": [
+        "paper",
+        "mq"
+      ],
+      "evidence": "Paper: GFP-StkP-7TA/7TE cut from gel and analysed; MaxQuant experiment names WT/TA/TE. WT=gfp-stkP is inferred."
+    },
+    {
+      "location": "characteristics[enrichment process]",
+      "value": "phosphopeptide enrichment (QE files)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper: GFP-StkP purified from cells +/- ampicillin and analysed after phosphopeptide enrichment."
+    },
+    {
+      "location": "characteristics[treatment]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Ampicillin vs none exists but file mapping unavailable (supplement not retrievable)."
+    }
+  ]
+}

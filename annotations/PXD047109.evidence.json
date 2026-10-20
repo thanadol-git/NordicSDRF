@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD047109.sdrf.tsv",
+  "dataset": "PXD047109",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD047109"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD047109/files"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/38415189 (PMC10896948, doi 10.3389/fbioe.2024.1348184)"
+    },
+    {
+      "id": "txt.zip",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/01/PXD047109/txt.zip (summary.txt, parameters.txt, proteinGroups.txt header read by HTTP range; stored entries)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "Prot122_1..12.raw",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "12 RAW files in PRIDE; each claimed once. txt.zip is a MaxQuant output archive, not a raw archive."
+    },
+    {
+      "location": "source name / characteristics[genotype] / [sampling time] / [biological replicate]",
+      "value": "WT|LGB x 14|24 hour x 1|2 for Prot122_1,2,5,6,7,8,11,12",
+      "source_ids": [
+        "txt.zip",
+        "paper"
+      ],
+      "evidence": "MaxQuant summary.txt maps Raw file to Experiment (e.g. Prot122_5 = LGB 14h-1). Paper: WT and beta-lactoglobulin strains sampled at 14 and 24 h, experimental duplicates."
+    },
+    {
+      "location": "characteristics[genotype] / source name",
+      "value": "not available for Prot122_3,4,9,10",
+      "source_ids": [
+        "txt.zip"
+      ],
+      "evidence": "These 4 RAW files are absent from summary.txt/proteinGroups; condition not stated anywhere. The paper also made an alpha-lactalbumin (LALBA) strain; by file order these may be LALBA 14h/24h but this is not documented, so left unassigned."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Corynebacterium glutamicum ATCC 13032",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism NEWT:196627; paper title."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "not applicable",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Cultured bacterium, secretome of culture supernatant; no anatomical source."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Orbitrap Exploris 480;AC=MS:1003028",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE instrument and paper section 3.8."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA PRIDE:0000627",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper: data-dependent Top 20 Speed mode."
+    },
+    {
+      "location": "comment[dissociation method] / [collision energy]",
+      "value": "HCD; 28% NCE",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper: HCD collision energy 28%."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin MS:1001251",
+      "source_ids": [
+        "pride",
+        "txt.zip"
+      ],
+      "evidence": "Trypsin, specific (summary.txt)."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M variable; Acetyl Protein N-term variable",
+      "source_ids": [
+        "txt.zip",
+        "pride"
+      ],
+      "evidence": "summary.txt Fixed/Variable modifications columns."
+    },
+    {
+      "location": "comment[reduction reagent] / [alkylation reagent]",
+      "value": "dithiothreitol (DTT); chloroacetamide (ClAA)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Rehydration buffer with 20 mM DTT; 50 mM chloroacetamide alkylation in FASP filters."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "txt.zip"
+      ],
+      "evidence": "parameters.txt MS/MS tol. (FTMS) 20 ppm."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "txt.zip"
+      ],
+      "evidence": "Main-search precursor tolerance not written in parameters.txt."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "LFQ/iBAQ, no labels."
+    },
+    {
+      "location": "comment[fraction identifier] / [technical replicate]",
+      "value": "1 / 1",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "One RAW per sample, no fractionation described."
+    }
+  ],
+  "limitations": [
+    "Paper does not contain a table mapping RAW files to samples; mapping comes from MaxQuant summary.txt only (8 of 12 files).",
+    "Four RAW files (Prot122_3,4,9,10) have no stated condition; rows carry not available and biological replicate 1 as a placeholder.",
+    "The -1/-2 experiment suffixes are treated as biological replicates (paper: experimental duplicates, three biological growth replicates for curves); unconfirmed.",
+    "Precursor tolerance, MS2 analyzer, fractionation, culture medium and growth conditions not annotated in structured columns; the genotype value for LGB is our descriptive text for the pECLGB plasmid (no strain ontology column in ms-proteomics).",
+    "characteristics[genotype], factor value[genotype] and factor value[sampling time] are outside the ms-proteomics template column set; sampling time uses sample-metadata pattern (number + hour)."
+  ]
+}

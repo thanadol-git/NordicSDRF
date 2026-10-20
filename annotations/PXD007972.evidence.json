@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD007972.sdrf.tsv",
+  "dataset": "PXD007972",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD007972"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD007972/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC5766827 (Cell 2018, PMID 29307490)"
+    },
+    {
+      "id": "zip",
+      "kind": "archive directory",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD007972/EXP_16_DL5557_C_AZY.raw.zip (range read)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "9 EXP_16_DL5557_[B_|C_]{WTE,CIP,AZY}.raw.zip",
+      "source_ids": [
+        "pride-files",
+        "zip"
+      ],
+      "evidence": "9 RAW zips in PRIDE file list; each contains one Waters .raw directory (central directory read by HTTP range for C_AZY and WTE). 10 SEARCH .mse/.msE zips and a FASTA are not data files."
+    },
+    {
+      "location": "source name / biological replicate",
+      "value": "{WTE,CIP,AZY}_rep{1,2,3}",
+      "source_ids": [
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper: MexC data are means of three biological replicates. Mapping unprefixed/B_/C_ to replicates 1/2/3 is our inference from file names."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Pseudomonas aeruginosa PAO1",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism NEWT:208964; paper: PAO1 evolved in SCFM. OLS NCBITaxon:208964."
+    },
+    {
+      "location": "characteristics[strain] / factor value[strain]",
+      "value": "WTE = PAO1 adapted to SCFM without antibiotic; CIP/AZY = PAO1 evolved to ciprofloxacin/azithromycin resistance",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper (PMC5766827): WTE is the media control; proteomics of CIP and AZY nfxB-mutant strains vs WTE. File-name codes WTE/CIP/AZY expanded from this."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "not applicable",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Laboratory strains cultured in vitro; PRIDE disease tag (cystic fibrosis) is a project-level dropdown and not a property of these cultures."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Synapt G2 MS (MS:1001778)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Protocol: Synapt G2 Q-ToF (Waters). PRIDE lists generic Synapt MS; sub-model HDMS vs MS not stated."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "MSE (PRIDE:0000451)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE experiment type MSE; alternating low/high energy scans in protocol."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: trypsin digestion, 1 missed cleavage."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C, fixed); Oxidation (M, variable)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Data processing protocol (PLGS in Progenesis QI). Search files are zipped proprietary .msE and were not opened."
+    },
+    {
+      "location": "comment[reduction reagent] / comment[alkylation reagent]",
+      "value": "DTT / iodoacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Sample processing protocol."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "collision-induced dissociation",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Collision energy ramp in elevated-energy mode; subtype not stated."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Quantification method MS1 label-free."
+    }
+  ],
+  "limitations": [
+    "Replicate mapping from file prefixes is inferred.",
+    "Mass tolerances not stated in deposit: not available.",
+    "Search outputs not opened (zipped Waters .msE)."
+  ]
+}

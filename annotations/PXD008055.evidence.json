@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD008055.sdrf.tsv",
+  "dataset": "PXD008055",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD008055"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD008055/files/all"},
+    {"id": "paper", "kind": "publication", "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5768985/fullTextXML"},
+    {"id": "params", "kind": "deposited search", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/01/PXD008055/txt.zip (txt/parameters.txt, txt/summary.txt, read by HTTP range)"},
+    {"id": "rawhdr", "kind": "raw header", "location": "HTTP range read of first 300 KB of midlogBR1.raw, 2.5mg.raw, 7.5mgPTMbiolabs.raw on https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/01/PXD008055/"}
+  ],
+  "claims": [
+    {"location": "comment[data file]", "value": "7 RAW files", "source_ids": ["pride-files"], "evidence": "7 RAW files listed, each claimed once; FASTA and txt.zip excluded."},
+    {"location": "characteristics[organism]", "value": "Vibrio cholerae", "source_ids": ["pride", "paper"], "evidence": "V. cholerae V52 (NEWT:345076)."},
+    {"location": "factor value[growth phase]", "value": "mid-logarithmic / stationary", "source_ids": ["paper"], "evidence": "Cultures grown to OD600 0.5 (mid-log) and 1.2 (stationary), two biological replicates. File names midlogBR1/2, stationaryBR1/2 and summary.txt experiment names (Elite_..._mid log BR1 etc.) map runs to samples."},
+    {"location": "growth phase of 2.5mg / 7.5mg files", "value": "not available", "source_ids": ["paper", "params"], "evidence": "Paper only says a preliminary experiment was appended to the search; summary.txt names them QE_161206_66_2.5mg, QE_161206_63_7.5 mg PTM biolabs."},
+    {"location": "comment[instrument]", "value": "Orbitrap Elite (4 BR files); Q Exactive (3 others)", "source_ids": ["rawhdr", "paper", "params"], "evidence": "RAW header strings 'Orbitrap Elite MS' vs 'Q Exactive'; paper Methods says Elite; summary.txt prefixes Elite_/QE_."},
+    {"location": "comment[dissociation method]", "value": "CID (Elite); not available (QE)", "source_ids": ["paper", "rawhdr"], "evidence": "Paper: top 10 data-dependent, CID collision energy 35; Elite method file name top10_CID. QE fragmentation not stated."},
+    {"location": "comment[fragment mass tolerance]", "value": "0.5 Da (Elite); 20 ppm (QE)", "source_ids": ["params"], "evidence": "parameters.txt MS/MS tol. (ITMS) 0.5 Da, (FTMS) 20 ppm."},
+    {"location": "comment[cleavage agent details]", "value": "Trypsin/P", "source_ids": ["paper", "params"], "evidence": "Lys-C then trypsin digest; summary.txt Enzyme Trypsin/P;LysC/P. Single-valued column; Lys-C not representable."},
+    {"location": "comment[modification parameters]", "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term, Acetyl K variable", "source_ids": ["params", "paper"], "evidence": "parameters.txt fixed modifications and summary.txt variable modifications."}
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD055812.sdrf.tsv",
+  "dataset": "PXD055812",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD055812"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD055812/files?pageSize=500"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/42024445 (PMC13460826, JCI Insight 2026, doi 10.1172/jci.insight.197838)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://api.cellosaurus.org/search/cell-line?q=id:N/TERT-1 (CVCL_CW92)"
+    },
+    {
+      "id": "suppl",
+      "kind": "deposited analysis",
+      "location": "https://github.com/VahapCan/Dermokine_Analysis_2026/blob/HEAD/data/Supplementary_Table_2.xlsx"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "9 RAW files: ..._global_{WT,B11,D2}_{1,2,3}_1.raw",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "9 RAW files in PRIDE, each claimed once; the 10th file (.sne Spectronaut search archive) is not raw."
+    },
+    {
+      "location": "characteristics[cell line] / cellosaurus",
+      "value": "N/TERT-1, CVCL_CW92, male",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Paper: N/TERT-1 keratinocytes, male origin, clinically normal foreskin; Cellosaurus CVCL_CW92."
+    },
+    {
+      "location": "characteristics[genotype]; factor value[genotype]",
+      "value": "WT vs dermokine knockout clones B11 and D2",
+      "source_ids": [
+        "paper",
+        "suppl",
+        "pride-files"
+      ],
+      "evidence": "Paper: WT, DMKN beta/gamma -/- and DMKN alpha/beta -/- 3D cultures, triplicates; supplement table 2 columns WT 1-3, DMKN BG KO 1-3, DMKN AB KO 1-3. File names use WT/B11/D2; the B11/D2 to BG/AB mapping is not stated anywhere read, so not asserted."
+    },
+    {
+      "location": "source name / biological replicate",
+      "value": "3 per genotype group",
+      "source_ids": [
+        "paper",
+        "suppl"
+      ],
+      "evidence": "Supplement table 2 has 3 replicate columns per group; file suffix _1/_2/_3 mapped to replicate 1/2/3 (inferred)."
+    },
+    {
+      "location": "characteristics[organism part]/[cell type]",
+      "value": "skin / keratinocyte",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "3D organotypic skin cultures of keratinocytes on dermal fibroblasts in Matrigel; lysate is the whole culture (fibroblasts also present, not annotated as a second cell type)."
+    },
+    {
+      "location": "comment[instrument]; acquisition",
+      "value": "Orbitrap Exploris 480, DIA, FAIMS Pro CV -35/-55/-75",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "sampleProcessingProtocol; instruments field."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin (after Lys-C)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Lys-C 4 h then trypsin 16 h; single column holds trypsin."
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "TCEP / chloroacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "5 mM TCEP, 20 mM CAA."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Gln->pyro-Glu, Acetyl protein N-term variable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "dataProcessingProtocol (Spectronaut directDIA+). Search archive .sne not opened."
+    },
+    {
+      "location": "comment[collision energy]",
+      "value": "30% NCE",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "normalised HCD collision energy 30; unit written as % NCE."
+    },
+    {
+      "location": "comment[isolation window width]; scan range",
+      "value": "38 m/z; MS1 350-1650 m/z",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol text. Scan window limits set to the MS1 range 350/1650 as the DIA window span (assumed)."
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Spectronaut defaults, no values stated."
+    },
+    {
+      "location": "characteristics[age],[passage number],[culture medium],[sample storage temperature]",
+      "value": "not available",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Cellosaurus age <1M does not fit the age pattern; medium for the 3D cultures and passage not stated; snap-frozen in liquid nitrogen not given as a temperature."
+    }
+  ]
+}

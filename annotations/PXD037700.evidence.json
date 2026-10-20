@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD037700.sdrf.tsv",
+  "dataset": "PXD037700",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD037700"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD037700/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10017657/fullTextXML (PMID 36920550, doi 10.1007/s00018-023-04735-6)"
+    },
+    {
+      "id": "esm1",
+      "kind": "supplementary",
+      "location": "https://static-content.springer.com/esm/art%3A10.1007%2Fs00018-023-04735-6/MediaObjects/18_2023_4735_MOESM1_ESM.xlsx"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "22 RAW files NPO1..NPO22 (fractions 1-22), each claimed by all 8 channel rows",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "PRIDE file list: 22 RAW; protocol: 45 fractions pooled into 22 samples, 8plex TMT, one pooled run set. Fraction order = numeric suffix (assumed)."
+    },
+    {
+      "location": "label",
+      "value": "wt: TMT126,127N,127C,128N; ko: TMT128C,129N,129C,130N",
+      "source_ids": [
+        "esm1"
+      ],
+      "evidence": "Supplementary Table S1 column headers 'Abundances (Scaled): F1: <channel>, Sample, ko|wt'."
+    },
+    {
+      "location": "characteristics[genotype] / factor value[genotype]",
+      "value": "ko = Pkdcc knockout (Col1a2-Cre); wt = floxed no Cre control",
+      "source_ids": [
+        "esm1",
+        "paper"
+      ],
+      "evidence": "ko/wt group labels from ESM1; Methods define knockout vs Pkdcc-floxed Cre-negative controls."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-4 per genotype",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Fig. 6 legend: N = 4 mice per genotype (MS data). Numbering within group is arbitrary (order of channels)."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Mus musculus",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "NEWT:10090; sp_canonical TaxID=10090"
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "lung",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Title: lung tissue"
+    },
+    {
+      "location": "characteristics[developmental stage]",
+      "value": "embryonic day 18.5",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "E18.5 embryos"
+    },
+    {
+      "location": "characteristics[strain or breed]",
+      "value": "C57BL/6",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "All mice were in C57BL/6 genetic background"
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Mixed sex; per-sample sex not given"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF-X",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol text names Q Exactive HF-X (archive dropdown says Q Exactive; protocol preferred)"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; TMT6plex K fixed and N-term variable; Acetyl N-term, pyro-Glu Q N-term, Deamidated N/Q, Oxidation M variable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "dataProcessingProtocol. Paper additionally lists Phospho(Y) and Oxidation(P); not in the deposit protocol, so omitted."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Trypsin Gold 1:100, 16 h at 37C; search used semi-ArgC"
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "High-pH reversed-phase chromatography (hpHRP)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Peptides fractionated in 5 mM NH4HCO3 pH 10, ACN gradient, 45 fractions pooled to 22"
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "10 ppm / 0.02 Da",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "dataProcessingProtocol"
+    },
+    {
+      "location": "comment[collision energy]",
+      "value": "30% NCE",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "HCD NCE 30%"
+    }
+  ],
+  "unavailable": [
+    "Raw file headers not inspected; instrument and dissociation taken from deposit text.",
+    "Mapping of mice (biological replicate numbers) to individual channels beyond genotype group is not documented."
+  ]
+}
