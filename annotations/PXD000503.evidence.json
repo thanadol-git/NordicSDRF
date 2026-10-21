@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "dataset": "PXD000503",
+  "artifacts": [
+    "annotations/PXD000503-gluc.sdrf.tsv",
+    "annotations/PXD000503-mmp10.sdrf.tsv"
+  ],
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000503"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000503/files?pageSize=500"
+    },
+    {
+      "id": "raw-header-2011",
+      "kind": "raw file header (HTTP range 0-200000)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2013/12/PXD000503/20110318_01_PO_1.RAW"
+    },
+    {
+      "id": "raw-header-2013",
+      "kind": "raw file header (HTTP range 0-200000)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2013/12/PXD000503/20130214_02_PO1.raw"
+    },
+    {
+      "id": "epmc",
+      "kind": "publication abstract",
+      "location": "https://europepmc.org/article/MED/24281761"
+    }
+  ],
+  "claims": [
+    {
+      "artifact": "annotations/PXD000503-gluc.sdrf.tsv",
+      "location": "comment[label]",
+      "value": "iTRAQ113..iTRAQ121 (8plex)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE projectDescription gives the labelling scheme 113-121 (no 120) and time points per channel."
+    },
+    {
+      "artifact": "annotations/PXD000503-gluc.sdrf.tsv",
+      "location": "characteristics[treatment]/factor value[treatment]",
+      "value": "per channel incubation: GluC 1/2/4/8/16 h; buffer 0/12/16 h",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Channel->time map from projectDescription."
+    },
+    {
+      "artifact": "annotations/PXD000503-gluc.sdrf.tsv",
+      "location": "comment[instrument]",
+      "value": "LTQ Orbitrap XL MS:1000556",
+      "source_ids": [
+        "raw-header-2011",
+        "pride"
+      ],
+      "evidence": "Instrument model string in RAW header; PRIDE lists both LTQ Orbitrap and Velos."
+    },
+    {
+      "artifact": "annotations/PXD000503-gluc.sdrf.tsv",
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl(C) and iTRAQ8plex(K) fixed; Acetyl protein N-term, iTRAQ8plex N-term, Oxidation(M), Deamidated(N,Q) variable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Mascot parameters in projectDescription (not read from search files; the iprophet pep.xml header was inspected but contained no search_summary in its first 60 KB)."
+    },
+    {
+      "artifact": "annotations/PXD000503-gluc.sdrf.tsv",
+      "location": "comment[precursor mass tolerance]/comment[fragment mass tolerance]",
+      "value": "10 ppm / 0.8 Da",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "projectDescription."
+    },
+    {
+      "artifact": "annotations/PXD000503-gluc.sdrf.tsv",
+      "location": "comment[cleavage agent details]",
+      "value": "Arg-C MS:1001303",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Search used semi-Arg-C (TAILS: trypsin on K-blocked proteins); digest enzyme not stated in the deposit. Reconcile flags GluC prose: false positive, GluC/MMP10 is the test protease, not the digest."
+    },
+    {
+      "artifact": "annotations/PXD000503-gluc.sdrf.tsv",
+      "location": "comment[data file]/fraction/technical replicate",
+      "value": "RAW files only; PO and NPO series as fractions 1-8",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "File names PO_n / NPO_n; peptide fractions per projectDescription of TPP. Duplicate PO_1/PO_2 names in 2011 set (runs 01-04) coded as technical replicate 2."
+    },
+    {
+      "artifact": "annotations/PXD000503-mmp10.sdrf.tsv",
+      "location": "comment[label]",
+      "value": "iTRAQ113..iTRAQ121 (8plex)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE projectDescription gives the labelling scheme 113-121 (no 120) and time points per channel."
+    },
+    {
+      "artifact": "annotations/PXD000503-mmp10.sdrf.tsv",
+      "location": "characteristics[treatment]/factor value[treatment]",
+      "value": "per channel incubation: MMP10 1/2/4/8/12/16 h; buffer 0/16 h",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Channel->time map from projectDescription."
+    },
+    {
+      "artifact": "annotations/PXD000503-mmp10.sdrf.tsv",
+      "location": "comment[instrument]",
+      "value": "LTQ Orbitrap Velos MS:1001742",
+      "source_ids": [
+        "raw-header-2013",
+        "pride"
+      ],
+      "evidence": "Instrument model string in RAW header; PRIDE lists both LTQ Orbitrap and Velos."
+    },
+    {
+      "artifact": "annotations/PXD000503-mmp10.sdrf.tsv",
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl(C) and iTRAQ8plex(K) fixed; Acetyl protein N-term, iTRAQ8plex N-term, Oxidation(M), Deamidated(N,Q) variable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Mascot parameters in projectDescription (not read from search files; the iprophet pep.xml header was inspected but contained no search_summary in its first 60 KB)."
+    },
+    {
+      "artifact": "annotations/PXD000503-mmp10.sdrf.tsv",
+      "location": "comment[precursor mass tolerance]/comment[fragment mass tolerance]",
+      "value": "10 ppm / 0.8 Da",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "projectDescription."
+    },
+    {
+      "artifact": "annotations/PXD000503-mmp10.sdrf.tsv",
+      "location": "comment[cleavage agent details]",
+      "value": "Arg-C MS:1001303",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Search used semi-Arg-C (TAILS: trypsin on K-blocked proteins); digest enzyme not stated in the deposit. Reconcile flags GluC prose: false positive, GluC/MMP10 is the test protease, not the digest."
+    },
+    {
+      "artifact": "annotations/PXD000503-mmp10.sdrf.tsv",
+      "location": "comment[data file]/fraction/technical replicate",
+      "value": "RAW files only; PO and NPO series as fractions 1-8",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "File names PO1-8 / NPO1-8, one run each."
+    }
+  ],
+  "unavailable": [
+    "Full text of Schlage et al. 2013 (PMID 24281761, PMC3916655) not retrievable"
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD075760.sdrf.tsv",
+  "dataset": "PXD075760",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD075760"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD075760/files?pageSize=500"
+    },
+    {
+      "id": "diann-log",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/03/PXD075760/report.log.txt"
+    },
+    {
+      "id": "lib-log",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/03/PXD075760/lib.log.txt"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "20251211_MH_ELBE_KK_FAIMS_1CV_uPAC50_38min_1475_DIA_NP7..NP32.raw (26)",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "26 RAW files in PRIDE list, each once; .quant/report files not RAW."
+    },
+    {
+      "location": "source name",
+      "value": "NP7..NP32",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Our labels derived from file names; no deposited file-to-sample map."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Corynebacterium glutamicum",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Title/keywords/PRIDE organism (MB001 derivative); strain-level label not used as it is not a characteristics column in the contract."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Whole bacterial cells implied but not stated as a term."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1 (placeholder)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol states n=3 biological replicates and timepoints t0/15/30/60 min, but the mapping of NP files to replicates/timepoints/strains is not deposited; every file is its own source."
+    },
+    {
+      "location": "factor value[sampling time]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Time points described in the protocol; per-file assignment unknown."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Exploris 480 (MS:1003028)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol and PRIDE instruments; FAIMS Pro interface."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-independent acquisition",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol/keywords DIA. Written as plain label because validator rejects the NT=;AC=PRIDE:0000450 form with dia-acquisition."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin/P;AC=MS:1001313",
+      "source_ids": [
+        "pride",
+        "diann-log"
+      ],
+      "evidence": "Protocol: Trypsin/P protease; DIA-NN --cut K*,R*."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M variable; Acetyl any N-term variable",
+      "source_ids": [
+        "diann-log",
+        "lib-log"
+      ],
+      "evidence": "DIA-NN --unimod4, --var-mod UniMod:35 M, UniMod:1 *n."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD; 30% NCE",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: HCD at 30% normalized collision energy."
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "TCEP; iodoacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol text."
+    },
+    {
+      "location": "comment[ms1 scan range]",
+      "value": "400m/z-1000m/z",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol MS1 mass range."
+    },
+    {
+      "location": "comment[isolation window width]",
+      "value": "6",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol 6 m/z isolation window."
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "diann-log"
+      ],
+      "evidence": "DIA-NN auto-optimised; no fixed value."
+    }
+  ],
+  "limitations": [
+    "No publication/DOI available; the file-to-sample map (strain, time point, replicate) is not in the deposit.",
+    "Deposited DIA-NN main report covers only NP6 (not deposited) and first-pass 14 files; no per-file condition information."
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD036161.sdrf.tsv",
+  "dataset": "PXD036161",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD036161"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD036161/files?pageSize=500"
+    },
+    {
+      "id": "names",
+      "kind": "deposited metadata",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/10/PXD036161/snake_names.csv"
+    },
+    {
+      "id": "rawhdr",
+      "kind": "raw header (HTTP range read, first 3 MB of ..Batch3_El.raw)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/10/PXD036161/20220218_KMJ_MWN_15cm_70min_100ng_Carol_Batch3_El.raw"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "26 RAW files",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "PRIDE file list: 26 .raw (Batch2 16 files, Batch3 10 files); each claimed once."
+    },
+    {
+      "location": "source name / characteristics[organism] / factor value[organism]",
+      "value": "26 snake species",
+      "source_ids": [
+        "names",
+        "pride"
+      ],
+      "evidence": "snake_names.csv maps file-name suffix codes (Da, Nan, Bar...) to species; matches the 26 NEWT organisms in PRIDE."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "venom",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organismParts BTO venom; protocol: lyophilized whole venom."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "One venom sample per species, one run each; no replicates described."
+    },
+    {
+      "location": "characteristics[sex/developmental stage/strain or breed]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Not stated in the deposit; paper not read."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive;AC=MS:1001911",
+      "source_ids": [
+        "pride",
+        "rawhdr"
+      ],
+      "evidence": "Protocol text says Q Exactive; RAW header shows Q Exactive - Orbitrap and method DDMS2_70min_noheat_precolumn.meth. PRIDE dropdown says Q Exactive HF (disagreement)."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "pride",
+        "rawhdr"
+      ],
+      "evidence": "Protocol: MS2 with intensity threshold and dynamic exclusion; method DDMS2."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: LysC then trypsin; Sequest fully tryptic. Single-valued column, so only trypsin recorded."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Deamidated N/Q, Acetyl Protein N-term variable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE dataProcessingProtocol (Proteome Discoverer 2.4/Sequest HT). .msf (10 GB) not read."
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "TCEP / chloroacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: 10 mM TCEP, 40 mM 2-chloroacetamide."
+    },
+    {
+      "location": "comment[collision energy]",
+      "value": "25 NCE",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: normalized collision energy of 25."
+    },
+    {
+      "location": "comment[ms1 scan range]",
+      "value": "300m/z-1750m/z",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: scan range 300-1,750 m/z."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "NT=beam-type collision-induced dissociation;AC=MS:1000422",
+      "source_ids": [
+        "rawhdr",
+        "pride"
+      ],
+      "evidence": "Inferred: HCD string present in RAW header and NCE used on Q Exactive; not explicitly stated in protocol."
+    },
+    {
+      "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol says default Sequest settings; values not stated and the .msf was not read."
+    }
+  ]
+}

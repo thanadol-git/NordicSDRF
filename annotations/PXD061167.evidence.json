@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD061167.sdrf.tsv",
+  "dataset": "PXD061167",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD061167"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD061167/files?pageSize=500"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC12643503 (PMID 41100455, JCI Insight 2025;10(22):e194188)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "10 RAW files",
+      "evidence": "RAW files listed in PRIDE (5 ND, 5 VAD); one .sne Spectronaut search archive not a sample file.",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ]
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Mus musculus",
+      "evidence": "PRIDE organism NEWT:10090 and Spectronaut mouse UniProt database.",
+      "source_ids": [
+        "pride"
+      ]
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "skin",
+      "evidence": "Wound/skin lysates in PRIDE protocol; file names say 'wound'. Skin wound tissue.",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ]
+    },
+    {
+      "location": "characteristics[strain or breed]",
+      "value": "C57BL/6",
+      "evidence": "Paper Methods: VAD experiments used wild-type C57BL/6 mice (in-house or Janvier).",
+      "source_ids": [
+        "paper"
+      ]
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "female",
+      "evidence": "Paper Methods 'Sex as a biological variable': wound healing studies only in female mice.",
+      "source_ids": [
+        "paper"
+      ]
+    },
+    {
+      "location": "characteristics[treatment] / factor value[diet]",
+      "value": "chow diet (ND) vs vitamin A-deficient diet (VAD)",
+      "evidence": "File names ND/VAD; paper: wounds of VAD- versus chow-fed controls. ND interpreted as normal/chow diet (inferred).",
+      "source_ids": [
+        "pride-files",
+        "paper"
+      ]
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-5 within each diet group",
+      "evidence": "Numbering is ours, ordered by file number; no deposited sample mapping.",
+      "source_ids": [
+        "pride-files"
+      ]
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Exploris 480",
+      "evidence": "PRIDE sample processing protocol.",
+      "source_ids": [
+        "pride"
+      ]
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-independent acquisition",
+      "evidence": "PRIDE title/description (DIA).",
+      "source_ids": [
+        "pride"
+      ]
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "evidence": "Lys-C then trypsin per protocol; Spectronaut set to trypsin and Lys-C.",
+      "source_ids": [
+        "pride"
+      ]
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Acetyl Protein N-term, Oxidation M variable",
+      "evidence": "PRIDE data processing protocol (Spectronaut). Deposited .sne not opened.",
+      "source_ids": [
+        "pride"
+      ]
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "TCEP / chloroacetamide",
+      "evidence": "PRIDE sample processing protocol.",
+      "source_ids": [
+        "pride"
+      ]
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD",
+      "evidence": "Protocol: HCD NCE 32%.",
+      "source_ids": [
+        "pride"
+      ]
+    },
+    {
+      "location": "comment[scan window lower/upper limit], ms1 scan range",
+      "value": "400 / 1000, 400m/z-1000m/z",
+      "evidence": "Protocol: MS and DIA isolation windows span 400-1000 m/z.",
+      "source_ids": [
+        "pride"
+      ]
+    }
+  ],
+  "limitations": [
+    "Mass tolerances, isolation window width and DIA method variant not stated in the record; set to not available. Deposited .sne (2 GB) not opened.",
+    "Cleavage agent column is single-valued; Lys-C (used before trypsin) is not represented, so sdrf-tools reconcile flags cleavage_agent_incomplete.",
+    "Validator rejects the documented form NT=Data-independent acquisition;AC=PRIDE:0000450 for comment[proteomics data acquisition method]; plain label 'Data-independent acquisition' (documented as allowed) was used.",
+    "ND assumed to mean normal (chow) diet; wound age (paper describes 5-day wounds) not confirmed for these files; age, per-mouse identity and developmental stage not available.",
+    "Disease and cell type set to not available (wounded tissue, no disease phenotype asserted).",
+    "Treatment terms and strain C57BL/6 produce non-blocking ontology warnings (free text)."
+  ]
+}

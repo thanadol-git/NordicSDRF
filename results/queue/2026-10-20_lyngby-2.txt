@@ -1,0 +1,11 @@
+# daily queue 2026-10-20 lyngby batch 2 (next 10 smallest by PRIDE raw size; 23 remaining before this batch)
+PXD067738	denmark/lyngby	queued	raw_files=9; raw_bytes=13553312774
+PXD000503	denmark/lyngby	queued	raw_files=34; raw_bytes=14117337263
+PXD006582	denmark/lyngby	queued	raw_files=24; raw_bytes=14717542044
+PXD036161	denmark/lyngby	queued	raw_files=26; raw_bytes=15526434454
+PXD050580	denmark/lyngby	queued	raw_files=37; raw_bytes=16824237663
+PXD013635	denmark/lyngby	queued	raw_files=10; raw_bytes=20853649019
+PXD020101	denmark/lyngby	queued	raw_files=29; raw_bytes=24180591991
+PXD075760	denmark/lyngby	queued	raw_files=26; raw_bytes=29819325787
+PXD061256	denmark/lyngby	queued	raw_files=22; raw_bytes=39386287028
+PXD061167	denmark/lyngby	queued	raw_files=10; raw_bytes=40174609644

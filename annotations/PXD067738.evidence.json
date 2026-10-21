@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD067738.sdrf.tsv",
+  "dataset": "PXD067738",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD067738"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD067738/files?pageSize=500"},
+    {"id": "paper", "kind": "publication", "location": "https://europepmc.org/article/MED/41559042"}
+  ],
+  "claims": [
+    {"location": "comment[data file]", "value": "9 RAW files ..._500ng_A1-C3.raw", "source_ids": ["pride-files"], "evidence": "9 RAW files in the PRIDE list, each claimed once; 2 xlsx are search results."},
+    {"location": "characteristics[organism]", "value": "Homo sapiens", "source_ids": ["pride"], "evidence": "Organism NEWT:9606 and keyword Human serum."},
+    {"location": "characteristics[organism part]", "value": "blood serum", "source_ids": ["pride"], "evidence": "Keyword Human serum; project describes protein corona formed in biological media on nanoparticles (inference)."},
+    {"location": "characteristics[biological replicate]", "value": "1-9", "source_ids": [], "evidence": "Unavailable: grouping of A1-C3 not documented; numbering is ours."},
+    {"location": "comment[instrument]", "value": "Q Exactive", "source_ids": ["pride"], "evidence": "Protocol text and instruments field."},
+    {"location": "comment[cleavage agent details]", "value": "Trypsin", "source_ids": ["pride"], "evidence": "LysC 4 h then trypsin 18 h; single-valued column, Lys-C not recorded."},
+    {"location": "comment[proteomics data acquisition method]", "value": "DDA", "source_ids": ["pride"], "evidence": "DD-MS2 top10 method."},
+    {"location": "comment[collision energy]", "value": "25 NCE", "source_ids": ["pride"], "evidence": "Normalised collision energy of 25."},
+    {"location": "comment[dissociation method]", "value": "HCD", "source_ids": ["pride"], "evidence": "Inferred from Q Exactive; not verified from raw headers."},
+    {"location": "comment[modification parameters]", "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term, Met-loss variable", "source_ids": ["pride"], "evidence": "dataProcessingProtocol prose (Proteome Discoverer 2.4/SequestHT); no search parameter file read."},
+    {"location": "comment[precursor mass tolerance]", "value": "not available", "source_ids": [], "evidence": "Unavailable: not stated."}
+  ]
+}

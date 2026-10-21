@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD020101.sdrf.tsv",
+  "dataset": "PXD020101",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD020101"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD020101/files?pageSize=200"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/32774456 (PMC7405360, doi:10.1186/s13068-020-01775-z)"
+    },
+    {
+      "id": "rawhdr",
+      "kind": "raw header (HTTP range read, first 200 kB of S1)",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/09/PXD020101/20200615_MB_MWN_Maria_Hachem_S1.raw"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "29 RAW files S1-S32 (S4, S11, S13 not deposited)",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "29 RAW files listed, each claimed once; also a 16.5 GB .pdResult not downloaded."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Aspergillus nidulans",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Project organism NEWT:227321 (strain FGSC A4) and paper title."
+    },
+    {
+      "location": "source name / characteristics[biological replicate]",
+      "value": "one source per RAW file; replicate 1",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Paper: 4 strains (reference, AnAA13A KO, AnAA13B KO, double KO) x day 3 and 5 x 4 biological replicates = 32 samples, but no deposited file maps S1-S32 to strain/day/replicate. Source names and replicate=1 are placeholders, not true replicate numbering."
+    },
+    {
+      "location": "characteristics[organism part]/[cell type]/[disease]",
+      "value": "not applicable",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Fungal culture-filtrate secretome; no tissue, cell type or disease."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF-X",
+      "source_ids": [
+        "pride",
+        "rawhdr"
+      ],
+      "evidence": "Protocol text and RAW header (PRIDE dropdown says Q Exactive; text and header win)."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "LysC 3 h then trypsin 18 h; column single-valued, Trypsin kept (final digest); Lys-C not recorded."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "beam-type collision-induced dissociation",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: higher-energy collision dissociation, NCE 25."
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "TCEP / chloroacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Lysis buffer: 10 mM TCEP, 40 mM 2-chloroacetamide."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Deamidated N/Q, Acetyl protein N-term variable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Data processing protocol (Proteome Discoverer 2.4). Read from prose; .pdResult not parsed (16.5 GB)."
+    },
+    {
+      "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Not stated in protocol; would require the .pdResult."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "rawhdr"
+      ],
+      "evidence": "Top 15 DDA."
+    }
+  ]
+}
