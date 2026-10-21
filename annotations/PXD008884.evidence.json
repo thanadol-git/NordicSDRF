@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD008884.sdrf.tsv",
+  "dataset": "PXD008884",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD008884"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD008884/files?pageSize=200"
+    },
+    {
+      "id": "maxquant",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/11/PXD008884/MaxQ_LFQ_txt.zip (txt/parameters.txt and txt/summary.txt, HTTP range reads of zip members)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "raw file header",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/11/PXD008884/AT06.raw (first 60 kB range read)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6202851/fullTextXML (Bundgaard et al., Stem Cell Res Ther 2018, PMID 30359315, doi 10.1186/s13287-018-1041-8)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "BM06.raw, BM09.raw, BM10.raw, AT06.raw, AT10.raw, AT11.raw",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "maxquant"
+      ],
+      "evidence": "6 RAW files in the PRIDE file list, each claimed once; MaxQuant summary.txt lists the same six experiments."
+    },
+    {
+      "location": "source name",
+      "value": "BM06, BM09, BM10, AT06, AT10, AT11",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE processing protocol: RAW named BM6,9,10 and AT6,10,11 (n=3 biological replicates). Names are the file stems."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Equus caballus",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism NEWT:9796; paper: equine MSCs."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "bone marrow (BM*); adipose tissue (AT*)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE protocol: AT-MSC from adipose tissue, BM-MSC from sternal bone marrow aspirates; file prefix gives the origin."
+    },
+    {
+      "location": "characteristics[cell type]",
+      "value": "mesenchymal stem cell",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Title and protocol: equine mesenchymal stem (stromal) cells expanded to passage 3."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-6",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Six distinct samples. The paper says cells came from three horses (1-3) but no file-to-horse map is deposited, so each sample is its own replicate number."
+    },
+    {
+      "location": "characteristics[developmental stage]",
+      "value": "adult",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper: donors were mares aged 13 to 17 years (inferred adult)."
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "female",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper: cells obtained from mares."
+    },
+    {
+      "location": "characteristics[strain or breed]",
+      "value": "mixed breed",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper: mares of mixed breeds, approx. 500 kg."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Horses were euthanized for unrelated reasons; no disease status stated, so no claim is made."
+    },
+    {
+      "location": "factor value[organism part]",
+      "value": "bone marrow vs adipose tissue",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "The study contrasts BM-MSC and AT-MSC surface proteomes."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive HF;AC=MS:1002523",
+      "source_ids": [
+        "paper",
+        "raw-header"
+      ],
+      "evidence": "Paper: Q Exactive HF; AT06.raw header strings 'Q Exactive HF - Orbitrap MS'. PRIDE dropdown says Q Exactive (MS:1001911), overridden by the paper and RAW header."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "raw-header",
+        "paper"
+      ],
+      "evidence": "Method file name in RAW header: Nano75_Top20_30min_r30kv1; paper: up to 20 precursors per MS1 scan (Top20 DDA). Value written is DDA PRIDE:0000627."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": [
+        "paper",
+        "maxquant"
+      ],
+      "evidence": "Paper: in-gel trypsin digestion; MaxQuant enzyme Trypsin/P, max 2 missed cleavages."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C) fixed; Oxidation (M) variable; Acetyl (Protein N-term) variable",
+      "source_ids": [
+        "maxquant"
+      ],
+      "evidence": "parameters.txt Fixed modifications Carbamidomethyl (C); summary.txt Variable modifications Oxidation (M);Acetyl (Protein N-term). (Paper names chloroacetamide as alkylator; search used carbamidomethyl.)"
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "maxquant"
+      ],
+      "evidence": "parameters.txt MS/MS tol. (FTMS) 20 ppm."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "maxquant"
+      ],
+      "evidence": "parameters.txt does not record the precursor tolerance (MaxQuant defaults not written)."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "not available",
+      "source_ids": [],
+      "evidence": "Not stated in the deposit or the paper methods; not inferred."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "maxquant"
+      ],
+      "evidence": "PRIDE quantification: spectrum counting; MaxQuant LFQ, multiplicity 1."
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "1",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "One excised gel band per sample, one injection."
+    }
+  ]
+}

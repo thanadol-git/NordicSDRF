@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD052229.sdrf.tsv",
+  "dataset": "PXD052229",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD052229"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD052229/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/39247193 (PMC11378526, doi:10.3389/fimmu.2024.1432743), Methods 2.2, 2.3"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "84 sample RAW (\u2026_MS1..MS84.raw) + 40 fractionated pool RAW + 20 unfractionated pool RAW",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "All 144 deposited RAW files claimed once; FASTA and .sne Spectronaut archive are not data files."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Sus scrofa",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Danish Landrace crossbred pigs; PRIDE organism NEWT:9825."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "trachea",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Upper and lower trachea mucosa analysed; per-file upper/lower assignment not deposited, so the generic term is used."
+    },
+    {
+      "location": "characteristics[strain or breed]",
+      "value": "Danish Landrace crossbred",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods 2.2."
+    },
+    {
+      "location": "characteristics[disease] / treatment",
+      "value": "not available",
+      "source_ids": [
+        "paper",
+        "pride-files"
+      ],
+      "evidence": "Groups were control (6 pigs), swH1N1 (8), huH1N1 (8), but MS1-MS84 file numbers are not mapped to pigs, tissue or group anywhere in the deposit or paper; 84 files vs 22 pigs x 2 tissues = 44 so the file/sample relation is itself unknown."
+    },
+    {
+      "location": "characteristics[pooled sample]",
+      "value": "pooled (library pools); not pooled (MS files)",
+      "source_ids": [
+        "paper",
+        "pride-files"
+      ],
+      "evidence": "Protocol: spectral-library pools of control and infected samples; file names poolCTR/poolSWINE/poolHUMAN/poolMEXI. Meaning of 'MEXI' is not stated; pool composition beyond 'control and infected' is inferred from names only."
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "High-pH reversed-phase chromatography (hpHRP) for *_frac1-10 files",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Pools fractionated into 10 fractions by high pH fractionation."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Exploris 480",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Evosep One + Exploris 480, FAIMS -45 CV."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-independent acquisition (plain text form; NT/AC form rejected by validator)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "DIA; also PRIDE experimentTypes."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin (Lys-C also used; not representable)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Digested with LysC then trypsin; Spectronaut library digestion set to Trypsin/P and LysC. Column is single-valued; Trypsin recorded."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Acetyl protein N-term, Oxidation M, Deamidated N variable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "dataProcessingProtocol (Spectronaut library settings). Deposited .sne was not opened (14 GB, proprietary)."
+    },
+    {
+      "location": "comment[reduction reagent] / [alkylation reagent]",
+      "value": "TCEP / chloroacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Lysis buffer 1."
+    },
+    {
+      "location": "comment[dissociation method] / [collision energy]",
+      "value": "HCD / 32% NCE",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "HCD collision energy 32%; 'NCE' unit is our reading of the normalized setting."
+    },
+    {
+      "location": "comment[isolation window width], scan window limits, ms1/ms2 scan range",
+      "value": "6 m/z; 400-1000 m/z",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "DIA window 6 m/z, overlap 1 m/z, MS/MS ranges 400-600, 600-800, 800-1000."
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Spectronaut dynamic tolerances not stated."
+    }
+  ]
+}

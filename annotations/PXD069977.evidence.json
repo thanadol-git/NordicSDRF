@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD069977.sdrf.tsv",
+  "dataset": "PXD069977",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD069977"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD069977/files/all"
+    },
+    {
+      "id": "design",
+      "kind": "deposited metadata",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/12/PXD069977/Experimental_design.xlsx"
+    },
+    {
+      "id": "mztab",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/12/PXD069977/Prot146.mzTab (header range read)"
+    },
+    {
+      "id": "rawhdr",
+      "kind": "raw header",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/12/PXD069977/Prot146_1.raw (first 300 kB range read)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "Prot146_1.raw ... Prot146_93.raw",
+      "source_ids": [
+        "pride-files",
+        "mztab"
+      ],
+      "evidence": "93 RAW files, each claimed once; mzTab ms_run[1..93] lists the same files."
+    },
+    {
+      "location": "source name / characteristics[genotype] / factor value[strain] / factor value[sampling time] / characteristics[biological replicate]",
+      "value": "WT, Δspo0A, Δspo0B, Δspo0F, ΔsigF x time points x R1-R3",
+      "source_ids": [
+        "design"
+      ],
+      "evidence": "Experimental_design.xlsx sample_ID F1..F93 mapped to Prot146_1..93.raw by number (assumption: PD file order = run number; consistent with mzTab ms_run order)."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Parageobacillus thermoglucosidasius",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE title and organism field."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Exploris 480",
+      "source_ids": [
+        "pride",
+        "rawhdr"
+      ],
+      "evidence": "Protocol text and RAW header string."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "rawhdr"
+      ],
+      "evidence": "Protocol says DDA; method file name CapLC_DDA_60min_TopSpeed."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin; Lys-C",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Sample protocol: trypsin and LysC 1:1; search enzyme trypsin (full)."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]",
+      "value": "10 ppm / 0.02 Da",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Data processing protocol."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl, Met-loss, Met-loss+Acetyl variable",
+      "source_ids": [
+        "mztab"
+      ],
+      "evidence": "mzTab MTD fixed_mod/variable_mod lines; CAA alkylation in protocol. Protein N-term position for Acetyl/Met-loss variants is our inference from the modification definitions."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "not available",
+      "source_ids": [],
+      "evidence": "Not stated in the deposit; evidence unavailable."
+    },
+    {
+      "location": "characteristics[developmental stage] / characteristics[strain or breed]",
+      "value": "not available",
+      "source_ids": [],
+      "evidence": "Not stated; PRIDE organism field names NBRC 107763 but was not trusted as the strain."
+    },
+    {
+      "location": "characteristics[sampling time]",
+      "value": "e.g. 6 hour",
+      "source_ids": [
+        "design"
+      ],
+      "evidence": "Time column of design file; units in the file are hours after culture start (inferred)."
+    }
+  ]
+}

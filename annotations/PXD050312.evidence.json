@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD050312.sdrf.tsv",
+  "dataset": "PXD050312",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD050312"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD050312/files/all"
+    },
+    {
+      "id": "params",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/06/PXD050312/parameters.txt"
+    },
+    {
+      "id": "summary",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/06/PXD050312/summary.txt"
+    },
+    {
+      "id": "rawhdr",
+      "kind": "raw header",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/06/PXD050312/TF_unf_LJ_SGE_PROVIDE.raw (first 256 kB range read)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "doi:10.3390/antiox13030346 (PMID 38539879); full text not read"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] / source name",
+      "value": "7 RAW files: AF_unf, AF_1, AF_1-3, AF_3-5, TF_unf, TF_1-3, TF_3-5",
+      "source_ids": [
+        "pride-files",
+        "summary"
+      ],
+      "evidence": "7 RAW in file list, each claimed once; summary.txt lists the same 7 experiments. No TF_1 RAW deposited."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Solanum tuberosum",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: search against Solanum tuberosum (tax:4113) database; NEWT:4113."
+    },
+    {
+      "location": "factor value[enzyme combination] / factor value[ultrafiltration fraction]",
+      "value": "AF=Alcalase+Flavourzyme, TF=Trypsin+Flavourzyme; unfractionated, <1, 1-3, 3-5 kDa",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Sample protocol: sequential hydrolysis and ultrafiltration; file-name prefix AF/TF mapped to AlcFla/TryFla and suffix to membrane cut-off (inference from names, 1 = <1 kDa)."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Four hydrolysis replicates were merged into one sample before fractionation."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF",
+      "source_ids": [
+        "pride",
+        "rawhdr"
+      ],
+      "evidence": "Protocol text and RAW header 'Q Exactive HF'."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "unspecific cleavage",
+      "source_ids": [
+        "pride",
+        "params"
+      ],
+      "evidence": "Hydrolysates (peptidomics, no digestion step before MS); MaxQuant Enzyme mode Unspecific, 3-65 aa. Alcalase/Trypsin/Flavourzyme have no suitable PSI-MS term."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term variable",
+      "source_ids": [
+        "params",
+        "summary"
+      ],
+      "evidence": "summary.txt variable/fixed modifications columns."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "params"
+      ],
+      "evidence": "MS/MS tol. (FTMS) 20 ppm."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Deposited spectra files named allSpectra.HCD.FTMS.*; inference."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "not available",
+      "source_ids": [],
+      "evidence": "Main-search precursor tolerance not in parameters.txt or protocol."
+    },
+    {
+      "location": "characteristics[organism part] / developmental stage / strain or breed / growth condition / material type",
+      "value": "not available",
+      "source_ids": [],
+      "evidence": "PRIDE organismParts field (root, plant cell) not corroborated; protocol only says food-grade potato protein concentrate."
+    }
+  ]
+}

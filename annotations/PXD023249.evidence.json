@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD023249.sdrf.tsv",
+  "dataset": "PXD023249",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD023249"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD023249/files?pageSize=200"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.3390/md19020108 (Europe PMC PMC7917724; PMID 33673118), Methods 4.1, 4.4, 4.5"
+    },
+    {
+      "id": "pdresult-mannose",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/03/PXD023249/20200904_FJ_LoneGram_Chitin_mannose.pdResult (SQLite; AnalysisDefinition StudyDefinition + Workflows tables read via HTTP range reads)"
+    },
+    {
+      "id": "pdresult-chitin",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/03/PXD023249/20200904_FJ_LoneGram_Chitinbacteria_chitin.pdResult (same tables, range reads)"
+    },
+    {
+      "id": "pdresult-shrimp",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/03/PXD023249/20200904_FJ_LoneGram_Chitinbacteria_shrimpshells.pdResult (same tables, range reads)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "36 RAW files ...Chitin_01.raw to ...Chitin_36.raw",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "36 RAW files in PRIDE file list, each claimed exactly once; 3 pdResult files are search outputs, not annotated as assays."
+    },
+    {
+      "location": "source name; characteristics[genotype]; characteristics[organism part]; characteristics[biological replicate]; factor value[*]",
+      "value": "WT/dGH19 x sup/cells x replicate 1-3 per carbon source",
+      "source_ids": [
+        "pdresult-mannose",
+        "pdresult-chitin",
+        "pdresult-shrimp"
+      ],
+      "evidence": "StudyDefinition Samples factor in each pdResult maps Chitin_01-12 (mannose), 13-24 (chitin), 25-36 (shrimpshells) to e.g. 'WT sup 1', 'dGH19 cells 3'. Project names of the three pdResults give the carbon source."
+    },
+    {
+      "location": "characteristics[organism]; characteristics[strain or breed]",
+      "value": "Pseudoalteromonas rubra; S4059",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism NEWT:43658; strain S4059 in title and Methods 4.1."
+    },
+    {
+      "location": "characteristics[genotype]",
+      "value": "wild type / GH19 chitinase deletion",
+      "source_ids": [
+        "paper",
+        "pdresult-mannose"
+      ],
+      "evidence": "Paper section 2.7 and 4.4: wild type and GH19 chitinase deletion mutant; pdResult labels 'dGH19'."
+    },
+    {
+      "location": "characteristics[treatment]",
+      "value": "Mannose / Chitin / shrimp shells",
+      "source_ids": [
+        "paper",
+        "pdresult-chitin",
+        "pdresult-shrimp"
+      ],
+      "evidence": "Paper 4.4 states MMM with crystalline chitin; PRIDE description says crystalline chitin or mannose. Third set named 'shrimpshells' only in the pdResult file name; interpretation as natural shrimp shells is inferred."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "cell lysate / culture supernatant",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods 4.4: culture supernatant acetone-precipitated; washed cell pellets lysed in guanidinium buffer."
+    },
+    {
+      "location": "comment[instrument]; comment[dissociation method]; comment[collision energy]",
+      "value": "Q Exactive; beam-type CID (HCD); 25 NCE",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE instrument MS:1001911; Methods 4.5 DD-MS2 top10, NCE 25. HCD inferred from Q Exactive + NCE (not named explicitly)."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "paper",
+        "pdresult-mannose"
+      ],
+      "evidence": "Search enzyme in Sequest HT node is Trypsin (KR, no P). Digestion also used LysC (1:50, 4 h) before trypsin; SDRF contract allows a single cleavage agent, so Lys-C is not encoded."
+    },
+    {
+      "location": "comment[precursor mass tolerance]; comment[fragment mass tolerance]",
+      "value": "10 ppm; 0.02 Da",
+      "source_ids": [
+        "pdresult-mannose",
+        "pdresult-chitin",
+        "pdresult-shrimp"
+      ],
+      "evidence": "Workflows table: Sequest HT node PeptideTolerance 10 ppm, FragmentTolerance 0.02 Da in all three pdResults (a second, non-search node holds 20 ppm/0.5 Da; ignored)."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term, Met-loss, Met-loss+Acetyl variable",
+      "source_ids": [
+        "pdresult-mannose",
+        "pdresult-chitin",
+        "pdresult-shrimp"
+      ],
+      "evidence": "Sequest HT node static/dynamic modification parameters. Paper/PRIDE also state Deamidation (N,Q) but it is not set in the deposited workflows; not encoded."
+    },
+    {
+      "location": "comment[reduction reagent]; comment[alkylation reagent]",
+      "value": "TCEP; chloroacetamide",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Lysis buffer 10 mM TCEP, 40 mM CAA (PRIDE sampleProcessingProtocol, Methods 4.4)."
+    }
+  ]
+}

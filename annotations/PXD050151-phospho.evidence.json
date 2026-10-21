@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD050151-phospho.sdrf.tsv",
+  "dataset": "PXD050151",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD050151"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD050151/files?pageSize=500"
+    },
+    {
+      "id": "condition",
+      "kind": "deposited metadata",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/04/PXD050151/ConditionSetup_v1.txt"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/42024445 (PMC13460826, JCI Insight 2026;11(13):e197838, doi 10.1172/jci.insight.197838)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "18 RAW per SDRF",
+      "source_ids": [
+        "pride-files",
+        "condition"
+      ],
+      "evidence": "36 RAW files in PRIDE (18 *_phospho.raw, 18 *_global_Ntert_DMKN_KO_*.raw); each claimed once. Two .sne Spectronaut archives (SEARCH, 7.8 and 11.8 GB) not downloaded."
+    },
+    {
+      "location": "source name / genotype / treatment / biological replicate",
+      "value": "6 conditions x 3 replicates",
+      "source_ids": [
+        "condition",
+        "paper"
+      ],
+      "evidence": "ConditionSetup_v1.txt maps each run to condition (WT/DMKN_BG_KO/DMKN_AB_KO x Endogenous/Supplemented) and replicate. BG = beta/gamma isoform KO (labelled DTU), AB = alpha/beta KO (labelled CS): inferred from paper naming DMKN betagamma-/- and alphabeta-/-; DTU/CS labels in file are clone names."
+    },
+    {
+      "location": "characteristics[treatment]",
+      "value": "recombinant dermokine-beta",
+      "source_ids": [
+        "condition",
+        "paper"
+      ],
+      "evidence": "'Supplemented' (Rescue) = treatment with recombinant dermokine-beta per paper Results; 'Endogenous' = untreated. Whether WT-supplemented received the same is inferred from the label."
+    },
+    {
+      "location": "characteristics[cell line]",
+      "value": "N/TERT-1",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper Methods: hTERT-immortalized N/TERT-1 keratinocytes from clinically normal foreskin, male origin. Cellosaurus accession not verified (not in local DB) -> not available."
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "male",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: 'N/TERT-1 keratinocyte cell line ... is of male origin'."
+    },
+    {
+      "location": "characteristics[organism part] / cell type / disease",
+      "value": "skin / keratinocyte / normal",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organismParts Skin, Keratinocyte; paper: clinically normal foreskin. PRIDE disease field 'Wounds and injuries' NOT used: cultured cells are not diseased; 'normal' chosen."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Exploris 480 (MS:1003028)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE instruments and protocol text (both proteome and phospho)."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-independent acquisition",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: HRMS1-DIA, Spectronaut directDIA+."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: Lys-C then trypsin; single-valued column so Trypsin recorded; Lys-C pre-digestion noted in report."
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "DTT / iodoacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: reduced with DTT, alkylated by iodoacetamide."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term variable; phospho set also Phospho STY, Deamidated NQ",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "dataProcessingProtocol (Spectronaut 18.5 settings stated in prose). .sne search archives not opened, so from prose not from results."
+    },
+    {
+      "location": "characteristics[enrichment process]",
+      "value": "phosphopeptide enrichment (phospho SDRF only)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Fe(III)-NTA phosphopeptide enrichment on Bravo platform."
+    },
+    {
+      "location": "factor value[genotype], factor value[treatment]",
+      "value": "",
+      "source_ids": [
+        "condition",
+        "paper"
+      ],
+      "evidence": "The two compared variables (KO isoform vs WT; recombinant dermokine rescue)."
+    }
+  ],
+  "limitations": [
+    "Age of the N/TERT-1 donor is not stated -> not available.",
+    "Cellosaurus accession for N/TERT-1 not verified (not in local cell-line DB, no verified source) -> not available; cellosaurus name omitted.",
+    "Precursor/fragment tolerances, dissociation method, collision energy, DIA window columns not stated in prose; Spectronaut .sne archives not downloaded (11.8 GB / 7.8 GB) -> not available / omitted. RAW headers not read.",
+    "Lys-C used before trypsin; cleavage column is single-valued so only Trypsin recorded.",
+    "Proteome and phospho runs are separate preparations/instruments/LC (EvoSep vs Easy-nLC 1200) and have different modification sets, hence two SDRFs.",
+    "Whether the proteome and phospho runs derive from the same lysates is not stated; source names are per-run labels.",
+    "characteristics[genotype] and [treatment] are not in the selected templates (genotype belongs to clinical-metadata/single-cell/invertebrates); used as free columns.",
+    "3D organotypic culture proteomics from the paper are not in this PRIDE project (only 2D monolayer files).",
+    "Template dia-acquisition not applied: its values validator rejects the documented form NT=Data-independent acquisition;AC=PRIDE:0000450 when combined with ms-proteomics (parse_sdrf: 'Invalid value ... must be one of the allowed values'), although the template YAML lists that form; the plain label validates. The PRIDE-accession form was kept with templates ms-proteomics+human+cell-lines instead; no DIA window parameters are stated in the deposit anyway."
+  ]
+}

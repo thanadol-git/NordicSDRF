@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD037565.sdrf.tsv",
+  "dataset": "PXD037565",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD037565"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD037565/files?pageSize=200"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/04/PXD037565/mqpar.xml"
+    },
+    {
+      "id": "mztab",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/04/PXD037565/mzTab.mzTab.gz (first 300 kB range read)"
+    },
+    {
+      "id": "rawhdr",
+      "kind": "raw header",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/04/PXD037565/BT341_JSP_JLN_stud.raw (first 60 kB range read)"
+    },
+    {
+      "id": "pubmed",
+      "kind": "publication",
+      "location": "https://pubmed.ncbi.nlm.nih.gov/36965770/ (abstract only; full text not open access)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "BT341..BT348_JSP_JLN_stud.raw",
+      "source_ids": [
+        "pride-files",
+        "mqpar"
+      ],
+      "evidence": "8 RAW files, each claimed once; mqpar lists the same 8 as experiments 1-8."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Ideonella sakaiensis",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organism NEWT:1547922; title and FASTA UP000037660."
+    },
+    {
+      "location": "source name / characteristics[biological replicate]",
+      "value": "BT341..BT348; replicate 1",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Condition-to-file and replicate mapping not in deposit or abstract; one source per RAW file, replicate set to 1 as placeholder (flagged)."
+    },
+    {
+      "location": "characteristics[treatment]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "pubmed"
+      ],
+      "evidence": "Conditions (PET, terephthalic acid, ethylene glycol, ethyl glycolate, sodium glyoxylate, presumably a control) are named but not mapped to files."
+    },
+    {
+      "location": "characteristics[organism part]/[cell type]/[disease]",
+      "value": "not applicable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Bacterial culture secretome."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF",
+      "source_ids": [
+        "pride",
+        "rawhdr"
+      ],
+      "evidence": "PRIDE instrument and RAW header 'Q Exactive HF - Orbitrap MS'."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Protocol: in-solution trypsin digestion; mqpar enzyme Trypsin/P, max 2 missed cleavages."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C) fixed; Oxidation (M), Acetyl (Protein N-term) variable",
+      "source_ids": [
+        "mqpar",
+        "mztab"
+      ],
+      "evidence": "mqpar fixed/variable modifications; mzTab header agrees."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / [fragment mass tolerance]",
+      "value": "4.5 ppm / 20 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mainSearchTol 4.5 ppm; FTMS MS/MS match tolerance 20 ppm (MaxQuant defaults)."
+    },
+    {
+      "location": "comment[dissociation method] / [collision energy]",
+      "value": "HCD / 28 NCE",
+      "source_ids": [
+        "pride",
+        "mztab"
+      ],
+      "evidence": "Protocol: NCE 28; peak lists are allSpectra.HCD.FTMS (Andromeda); 'eV' in protocol read as NCE (inference)."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Top 20 method (protocol)."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "LFQ, multiplicity 1."
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD031490.sdrf.tsv",
+  "dataset": "PXD031490",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD031490"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD031490/files?pageSize=1000"
+    },
+    {
+      "id": "raw-header",
+      "kind": "raw file header",
+      "location": "HTTP range read, first 300 kB of 20210506_FJ_MWN_15cm_140min_500ng_Shengda_WT_Cell_Exp_01.raw (ftp.pride.ebi.ac.uk/pride/data/archive/2022/08/PXD031490/)"
+    },
+    {
+      "id": "epmc",
+      "kind": "publication metadata",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=PXD031490 (PMID 36000852, doi 10.1128/aem.01105-22; full text not retrieved)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "40 .raw files",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "All 40 RAW files in the PRIDE list, each claimed once; the .pdResult search file is not a data file. Four 20210521 'reruns' files (WT_SN_Exp_02/04/05, Sol_SN_Stat_05) are the only file for their condition/replicate, so they are not treated as technical replicates."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Photobacterium galatheae",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organism NEWT:1654360; title and description."
+    },
+    {
+      "location": "characteristics[strain] / factor value[strain]",
+      "value": "wild type; solonamides-deficient mutant (delta sol)",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Description: in-frame deletion mutant of sol gene vs wild-type S2753; file names WT / Sol."
+    },
+    {
+      "location": "characteristics[growth phase] / factor value[growth phase]",
+      "value": "exponential; stationary",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Sample protocol: samples collected at exponential and stationary growth points; file names Exp / Stat."
+    },
+    {
+      "location": "characteristics[organism part] / factor value[cell fraction]",
+      "value": "cell culture (cell pellet); culture supernatant",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Protocol: culture centrifuged, supernatant filtered and protein-precipitated separately from washed cell pellet; file names Cell / SN. Labels are our wording; PRIDE organism part BTO cell culture."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-5",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Replicate index from file names (_01.._05); 5 per condition. Not confirmed in paper text."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride",
+        "raw-header"
+      ],
+      "evidence": "PRIDE field and RAW header ('Q Exactive - Orbitrap MS', Thermo EASY-nLC)."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "LysC 1:50 then trypsin 1:100 overnight; only Trypsin recorded since column is single-valued."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Deamidated N/Q, Acetyl protein N-term variable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "dataProcessingProtocol (Proteome Discoverer 2.4). Deposited .pdResult (36.9 GB) not opened."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "raw-header"
+      ],
+      "evidence": "Label-free DDA presumed from Q Exactive/Proteome Discoverer LFQ; no explicit statement of DDA in protocol."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "beam-type collision-induced dissociation",
+      "source_ids": [
+        "raw-header"
+      ],
+      "evidence": "Q Exactive fragmentation is HCD; RAW header has Fragmentation_HCD method node. Inferred."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Not stated in protocol; would be in the unopened .pdResult."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "LFQ enabled in Proteome Discoverer; no labelling."
+    }
+  ],
+  "limitations": [
+    "Paper full text not retrieved (Europe PMC fullTextXML returned 500; PMC efetch gave metadata only); design is taken from the PRIDE protocol and file names.",
+    "DDA, HCD and replicate numbering are inferred, not stated verbatim.",
+    "Mass tolerances unavailable: the only search output is a 36.9 GB Proteome Discoverer .pdResult, not opened.",
+    "Lys-C step not representable (single-valued cleavage agent column); reconcile flags this as MAJOR cleavage_agent_incomplete, deliberately left as Trypsin.",
+    "Strain/growth phase/cell fraction are custom characteristics and are not in the ms-proteomics template; no organism-specific template exists for bacteria.",
+    "Culture medium, temperature and time points not stated in PRIDE record."
+  ]
+}

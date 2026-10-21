@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002996.sdrf.tsv",
+  "dataset": "PXD002996",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002996"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002996/files?pageSize=100"
+    },
+    {
+      "id": "epmc",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/27128991 (abstract only; full text PMC5030692 not open access)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "R13_8.raw, R13_24.raw, R13_48.raw, R13_192.raw",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "4 RAW files, each claimed once; TOPPAS_out.zip is a search result, not an SDRF data file."
+    },
+    {
+      "location": "factor value[sampling time] / characteristics[sampling time]",
+      "value": "8, 24, 48, 192 hour",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "File-name suffixes match the sampling times 8, 24, 32, 48, 96, 144, 192 h listed in the sample processing protocol (32/96/144 h not deposited). Inference that suffix = hours; R13 presumably reactor 13 (inference)."
+    },
+    {
+      "location": "characteristics[treatment]",
+      "value": "[U-13C]acetate",
+      "source_ids": [
+        "pride",
+        "epmc"
+      ],
+      "evidence": "Abstract/description: incubation with [U-13C]acetate; labeled peptides analysed by protein-SIP. Not in NCIT/EFO; kept as accurate free text."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "anaerobic digester metagenome",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Biogas reactor microbial community (Foulum); PRIDE organism field lists Methanoculleus sp. 10 only, a submitter dropdown, not the whole community."
+    },
+    {
+      "location": "characteristics[environmental medium]",
+      "value": "anaerobic digester sludge",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Liquid samples (5 mL) from anaerobic digester reactors; ENVO term chosen as closest."
+    },
+    {
+      "location": "characteristics[geographic location]",
+      "value": "Kingdom of Denmark",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Metagenome of the anaerobic reactor of Foulum (Denmark)."
+    },
+    {
+      "location": "characteristics[sample storage]",
+      "value": "-20 C",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Samples stored at -20 C until analysis."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol text: UltiMate 3000 RSLCnano coupled to Q Exactive. PRIDE dropdown says LTQ Orbitrap; text outranks."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "In-gel tryptic digestion."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carboxymethyl (C, fixed); Oxidation (M, variable)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Data processing protocol: carboxymethylation of cysteine fixed, methionine oxidation dynamic. Search parameter files not deposited (only TOPPAS_out.zip, not inspected)."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]",
+      "value": "5 ppm / 0.5 Da",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Main OMSSA search; the PD/Mascot survey search used 20 ppm / 0.05 Da."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Inferred: LC-MS/MS identification on Q Exactive with database search; acquisition parameters not stated."
+    }
+  ],
+  "limitations": [
+    "Paper full text not accessible (not open access); abstract and PRIDE text only.",
+    "TOPPAS_out.zip not downloaded/inspected.",
+    "Dissociation method, collision energy not stated.",
+    "Which reactor/condition R13 denotes, and whether all four files are 13C-acetate incubated (no unlabeled controls deposited), are inferred.",
+    "Environmental medium and organism terms are closest-match choices."
+  ]
+}

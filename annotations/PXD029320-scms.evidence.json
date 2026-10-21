@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029320-scms.sdrf.tsv",
+  "dataset": "PXD029320",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD029320"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD029320/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC8961214 (Furtwangler et al. 2022, Mol Cell Proteomics 21(4):100219, doi:10.1016/j.mcpro.2022.100219)"
+    },
+    {
+      "id": "github",
+      "kind": "repository",
+      "location": "https://github.com/bfurtwa/RETICLE (cited in the paper Data Availability; data/<method>/{file_sample_mapping,plate_layout_mapping,sample_layout,sort_layout,balanced_channels_N}.txt, data/diluted_sample/*/mapping.csv, code/diluted_sample.ipynb)"
+    },
+    {
+      "id": "pdstudy",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/03/PXD029320/scMS_MS2_500.pdStudy (QuanChannel list only; no sample names)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name / comment[data file]",
+      "value": "58 June-2021 scMS RAW files (MS2/RTS-MS3/RETICLE x 500/750 ms); one source per TMTpro channel per run (14 cells + carrier)",
+      "source_ids": [
+        "pride-files",
+        "github"
+      ],
+      "evidence": "Each RAW file is claimed once; file -> (plate, sample) from file_sample_mapping.txt of each method folder."
+    },
+    {
+      "location": "comment[label]; characteristics[cell population]; characteristics[enrichment marker]; factor value[cell population]",
+      "value": "TMT126 = carrier; 127N..134N (127C empty) = cells; population per channel",
+      "source_ids": [
+        "github",
+        "paper"
+      ],
+      "evidence": "balanced_channels_N.txt gives channel per well, sample_layout.txt gives wells per injection, sort_layout.txt gives CD34-/CD34+CD38-/CD34+CD38+ per well; names LSC/PROG/BLAST from paper Introduction. Paper: 14 single cells + 200-cell carrier per sample, carrier labelled TMTpro-126; sceptre notebook lists the 14 single-cell channels (no 126, no 127C)."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "acute myeloid leukemia",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "OCI-AML8227 AML culture model; PRIDE disease acute leukemia."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "NEWT:9606"
+    },
+    {
+      "location": "characteristics[single cell isolation protocol]; comment[facs nozzle size]; comment[facs sorting mode]",
+      "value": "FACS; 100 um; single cell (cells) / 4-way purity (carrier)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "FACSAria III, 100 um nozzle, single-cell sort into 384-well plates; carrier 500 cells in four-way purity mode."
+    },
+    {
+      "location": "characteristics[cells per well]",
+      "value": "1 (cells), 500 (carrier)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Sample Processing Protocol."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Eclipse (MS:1003029)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE instruments and Methods."
+    },
+    {
+      "location": "comment[modification parameters]; comment[precursor mass tolerance]; comment[fragment mass tolerance]",
+      "value": "TMTpro K and any N-term fixed; Oxidation M, Acetyl and Met-loss protein N-term variable; 10 ppm; 0.02 Da (MS2, RETICLE) or 0.6 Da (RTS-MS3)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE Data Processing Protocol and paper Mass Spectrometry Raw Data Analysis; carbamidomethyl not set for scMS samples (no TCEP/CAA). Not re-read from the .msf/.pdResult files (large)."
+    },
+    {
+      "location": "comment[dissociation method]; comment[collision energy]",
+      "value": "HCD; 32% NCE (MS2, RETICLE) or 45% NCE (RTS-MS3 MS3 scan)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper MS acquisition methods: quant MS2 HCD NCE 32; SPS-MS3 HCD NCE 45. CID 30% LIT scans for RTS are not captured."
+    },
+    {
+      "location": "factor value[acquisition strategy]",
+      "value": "MS2 / RTS-MS3 / RETICLE at 500 or 750 ms max injection time",
+      "source_ids": [
+        "pride-files",
+        "github"
+      ],
+      "evidence": "Parsed from file names and the per-method folders of the repository."
+    },
+    {
+      "location": "comment[carrier channel]",
+      "value": "TMT126",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Carrier plate labelled with TMTpro-126."
+    }
+  ],
+  "limitations": [
+    "Cell-level source names (method_plate_well) assume each method used its own plates; facs_data files are identical across method folders, so reuse of the same physical cells cannot be excluded from the repository alone, but one lysate can only be injected once.",
+    "characteristics[cell type] left not available: LSC/PROG/BLAST are author-defined sorted gates with no exact CL term; the population is carried by cell population, enrichment marker and the factor value.",
+    "organism part, age, sex, individual, ancestry are not available (patient-derived OCI-AML8227 culture; no donor data in the deposit).",
+    "Search parameters taken from the PRIDE protocol text and paper, not from the 1-2 GB .msf/.pdResult files.",
+    "Carrier is one pooled 500-cell plate source; technical replicate is its injection index (1..58) to keep rows unique. The RETICLE_750 file marked faulty is annotated like the others (it is listed in the repository's file mapping).",
+    "Dissociation: only the quantification scan (HCD) is recorded; the CID 30% LIT scans used for RTS identification are not."
+  ]
+}

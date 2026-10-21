@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD058233.sdrf.tsv",
+  "dataset": "PXD058233",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD058233"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD058233/files?pageSize=200"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/05/PXD058233/mqpar.xml"
+    },
+    {
+      "id": "summary",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/05/PXD058233/summary.txt"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMID 39982318, doi 10.3390/proteomes13010008 (referenced by PRIDE; full text not read)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] / source name",
+      "value": "9 RAW files: Grass/Juice/Pulp x A/B/C",
+      "source_ids": [
+        "pride-files",
+        "mqpar"
+      ],
+      "evidence": "9 RAW files; mqpar filePaths and experiments Grass_A..Pulp_C; one row per file."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Lolium perenne",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Title and protocol: Lolium perenne var. Abosan 1; NEWT 281081."
+    },
+    {
+      "location": "characteristics[strain or breed]",
+      "value": "Abosan 1",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "sampleProcessingProtocol: var. Abosan 1, DLF Seeds A/S."
+    },
+    {
+      "location": "factor value[fraction]",
+      "value": "raw grass biomass / green juice / pulp",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Initial crude fractions (grass, juice, pulp) prepared in triplicates."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol and instruments field."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin; Lys-C",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Protocol: Trypsin/LysC digestion; MaxQuant enzyme Trypsin/P."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M; Acetyl protein N-term variable",
+      "source_ids": [
+        "mqpar",
+        "summary"
+      ],
+      "evidence": "mqpar fixed/variable modifications. Protocol prose says N-terminal methylation instead; deposited parameters used."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "4.5 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mainSearchTol 4.5."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "msmsParams FTMS MatchTolerance 20 ppm."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "fragmentationParams HCD; protocol gives NCE 28."
+    }
+  ],
+  "unavailable": [
+    "developmental stage (only cultivation days stated)",
+    "per-replicate cultivation batch mapping",
+    "raw file header not read"
+  ]
+}

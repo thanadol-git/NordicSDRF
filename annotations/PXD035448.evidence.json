@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD035448.sdrf.tsv",
+  "dataset": "PXD035448",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD035448"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD035448/files?pageSize=500"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9942592/fullTextXML (PMID 36622251, mSphere 2023)"
+    },
+    {
+      "id": "paper-supp",
+      "kind": "publication supplementary",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9942592/supplementaryFiles (Supplemental Text S1 docx msphere.00517-22-s0002; Data Set 1 xlsx s0001)"
+    },
+    {
+      "id": "pd-results",
+      "kind": "deposited search",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2023/01/PXD035448/20210205_KMJ_LauraLL_Ppiscinae.xlsx"
+    },
+    {
+      "id": "raw-header",
+      "kind": "raw file header",
+      "location": "HTTP range read of first 1-2 MB of ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2023/01/PXD035448/20210114_KMJ_MWN_LauraLL_140min_500ng_21.raw and ..._260ng_3.raw"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "40 RAW files, each claimed once",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "PRIDE file list: 40 RAW + 1 PD result xlsx"
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Phaeobacter piscinae",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism NEWT:1580596; paper title"
+    },
+    {
+      "location": "characteristics[strain or breed]",
+      "value": "S26",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper: P. piscinae S26 wild type and S26 delta-tdaB"
+    },
+    {
+      "location": "characteristics[genotype]/factor value[genotype] rows 21-40",
+      "value": "wild type vs tdaB deletion; fraction cell culture vs secretion",
+      "source_ids": [
+        "pd-results",
+        "paper-supp",
+        "paper"
+      ],
+      "evidence": "Not stated in deposit. Inferred: log2(KO/WT) of PD abundances per 5-sample block correlates r=0.94 (samples 21-25 vs 26-30) with Cell_log2FC and r=0.92 (31-35 vs 36-40) with SN_log2FC in paper Supplemental Data Set 1 (matching OL67_00NNNNN to MJADLLNJ_NNNNN ids); HvrA down and flagellin up in even blocks as paper describes for the mutant"
+    },
+    {
+      "location": "characteristics[genotype]/factor value rows 1-20",
+      "value": "not available",
+      "source_ids": [
+        "pd-results",
+        "paper"
+      ],
+      "evidence": "PD result shows 4 further 5-sample blocks (1-5,6-10,11-15,16-20) with even blocks looking like the mutant, but their fraction/condition cannot be determined from deposit or paper; left unassigned"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-5 within each 5-sample block",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper: five biological replicates; ordering by file number is our convention"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "raw-header",
+        "paper",
+        "pride"
+      ],
+      "evidence": "RAW header 'Q Exactive - Orbitrap MS'; paper 'Q-Exactive'; PRIDE metadata says Q Exactive HF (conflict, header preferred)"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "paper-supp"
+      ],
+      "evidence": "Supplemental Text S1: LysC 1:50 3h then trypsin 1:100 overnight; single column permits only one agent"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "'DD-MS2 top10 method'"
+    },
+    {
+      "location": "comment[dissociation method]/collision energy",
+      "value": "HCD; 25 NCE",
+      "source_ids": [
+        "pride",
+        "raw-header"
+      ],
+      "evidence": "NCE 25 stated; HCD implied by Q Exactive, not stated explicitly"
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "TCEP / chloroacetamide",
+      "source_ids": [
+        "pride",
+        "paper-supp"
+      ],
+      "evidence": "Lysis buffer 10 mM TCEP, 40 mM CAA"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Deamidated N/Q, Acetyl protein N-term variable",
+      "source_ids": [
+        "pride",
+        "paper-supp"
+      ],
+      "evidence": "Methods text (Proteome Discoverer 2.4); PD msf not deposited"
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "paper-supp"
+      ],
+      "evidence": "not stated anywhere in the record"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD062029.sdrf.tsv",
+  "dataset": "PXD062029",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD062029"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD062029/files?pageSize=200"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/10/PXD062029/mqpar.xml"
+    },
+    {
+      "id": "summary",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/10/PXD062029/summary.txt"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.biorxiv.org/content/10.1101/2025.03.26.645420v1.full (preprint of 10.1016/j.ifset.2025.104277)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] / assay name",
+      "value": "12 RAW files, each claimed once",
+      "source_ids": [
+        "pride-files",
+        "mqpar"
+      ],
+      "evidence": "Listing has 12 .raw (Barley/Malt/BSG/BSG_cryo x3); mqpar lists the same 12."
+    },
+    {
+      "location": "source name / factor value[sample type] / characteristics[biological replicate]",
+      "value": "Barley, Malt, BSG, BSG cryo-milled x R1-R3",
+      "source_ids": [
+        "paper",
+        "summary"
+      ],
+      "evidence": "Paper: barley, malt, BSG and cryo-milled BSG analysed; all extractions in triplicate. Replicate number taken from file name."
+    },
+    {
+      "location": "characteristics[organism] / strain or breed",
+      "value": "Hordeum vulgare; Planet",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "NCBITaxon 4513; paper: barley var. Planet (Viking Malt, Vordingborg)."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "seed",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Grain, malted grain and spent malted grain; BSG as 'seed' is an approximation (inference)."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin; Lys-C",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Protocol: Trypsin/LysC mix (iST plant kit); MaxQuant enzyme Trypsin/P."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "EASY-nLC 1200 coupled to Q Exactive HF."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Full MS/ddMS2 Top20."
+    },
+    {
+      "location": "comment[dissociation method] / collision energy",
+      "value": "HCD; 28 NCE",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Collisional energy 28 eV in text; HCD inferred from Q Exactive HF (inference); unit written NCE per prior examples."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / fragment mass tolerance",
+      "value": "4.5 ppm / 20 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mainSearchTol 4.5; FTMS MS/MS MatchTolerance 20 ppm."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C) fixed; Oxidation (M), Acetyl (Protein N-term) variable",
+      "source_ids": [
+        "mqpar",
+        "summary"
+      ],
+      "evidence": "mqpar/summary list Acetyl (Protein N-term); the PRIDE text says N-terminal methylation, which contradicts the files."
+    }
+  ]
+}

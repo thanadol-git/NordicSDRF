@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD025431.sdrf.tsv",
+  "dataset": "PXD025431",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD025431"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD025431/files?pageSize=500"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "33 RAW files",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "All 33 deposited .raw files claimed once; the 7.5 GB Spectronaut .sne search archive was not downloaded and is not an SDRF data file."
+    },
+    {
+      "location": "source name / characteristics[individual]",
+      "value": "e.g. AD-22 lesional, control-09 healthy control, pool lesional",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Parsed from RAW names 20160817_<run>_<donor>_<Ko|NL|L>. Ko = control (German Kontrolle) is our inference, consistent with the PRIDE description of healthy volunteers vs lesional and non-lesional AD skin. 10 controls (09,13,14,17,20,24,25,28,29,30), 10 AD patients (01-05,21-23,26,27) each with L and NL, plus 3 pool runs (L, NL, Ko). Donor ids are unique across groups; the AD-/control- prefix is ours."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "epidermis",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: dermis peeled from epidermis, epidermis analysed."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "atopic dermatitis (L, NL); normal (Ko, controls)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Title and description: healthy volunteers and lesional and non-lesional skin of AD patients. Non-lesional skin of patients carries the patient disease."
+    },
+    {
+      "location": "characteristics[lesional status] / factor value[lesional status]",
+      "value": "healthy control, non-lesional, lesional",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Compared groups per description; lesional status is a custom characteristic derived from file-name tags L/NL/Ko."
+    },
+    {
+      "location": "characteristics[pooled sample] / biological replicate / individual",
+      "value": "pooled",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Files 40_NL_pool, 41_L_pool, 42_Ko_pool; protocol says library built from pooled lesional, NL and control samples. Pool composition inferred from names."
+    },
+    {
+      "location": "characteristics[age], [sex], [cell type]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "No per-sample demographics in the deposit; paper (PMID 36108803, J Invest Dermatol 2022) not open access and full text not read."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-independent acquisition (PRIDE:0000450)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: DIA mode, multiplexed MS2 25 Da windows over 350-1500 m/z."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF (MS:1002523)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol text and PRIDE instruments field agree."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin; Lys-C",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: Lys-C 1:50 and trypsin 1:40 tandem digestion (two repeated columns)."
+    },
+    {
+      "location": "comment[dissociation method] / collision energy",
+      "value": "HCD (MS:1000422); 28 NCE",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: HCD at NCE 28."
+    },
+    {
+      "location": "comment[scan window lower/upper limit], [isolation window width]",
+      "value": "350 / 1500 / 25",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: MS2 tiling 350-1500 m/z in 25 Da windows."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C, fixed); Oxidation (M, variable); Acetyl (protein N-term, variable)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol states Spectronaut with default BGS Factory Settings; these are the BGS defaults (assumed, not read from a deposited settings file). PRIDE PTM field lists iodoacetamide-derivatized residue."
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Spectronaut dynamic tolerances; none stated."
+    },
+    {
+      "location": "comment[acquisition date]",
+      "value": "2016-08-17",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Taken from the file-name prefix, not from RAW headers."
+    }
+  ],
+  "limitations": [
+    "Paper full text not read.",
+    "Spectronaut .sne archive not inspected.",
+    "Control = Ko inferred from file names.",
+    "Validator rejects the documented DIA acquisition term with dia-acquisition template."
+  ]
+}

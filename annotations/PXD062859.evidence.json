@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD062859.sdrf.tsv",
+  "dataset": "PXD062859",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD062859"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD062859/files/all"
+    },
+    {
+      "id": "summary",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/03/PXD062859/summary.txt"
+    },
+    {
+      "id": "parameters",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/03/PXD062859/parameters.txt"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://www.cellosaurus.org/CVCL_0553"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "180 RAW files",
+      "source_ids": [
+        "pride-files",
+        "summary"
+      ],
+      "evidence": "All 180 deposited RAW files claimed once; summary.txt maps each to a MaxQuant experiment."
+    },
+    {
+      "location": "source name / characteristics[biological replicate]",
+      "value": "120 sources (60 phospho, 60 proteome), rep 1-3",
+      "source_ids": [
+        "summary",
+        "pride-files"
+      ],
+      "evidence": "MaxQuant experiment names ph_<40|72>_<UN|F1|F3|F7|F10>_<WT|KO>_<01-03> and PRO_*; RAW names carry the same factors."
+    },
+    {
+      "location": "characteristics[cell line]",
+      "value": "T47D / CVCL_0553",
+      "source_ids": [
+        "pride",
+        "cellosaurus"
+      ],
+      "evidence": "Title and protocol: T47D cells; Cellosaurus T-47D."
+    },
+    {
+      "location": "characteristics[genetic modification] / factor value",
+      "value": "FGFR2 knockout vs wild type",
+      "source_ids": [
+        "pride-files",
+        "summary"
+      ],
+      "evidence": "RAW names T47D-FGFR2KO vs T47D; experiment suffix KO/WT. Knockout method not stated."
+    },
+    {
+      "location": "characteristics[treatment]",
+      "value": "fibroblast growth factor 1/3/7/10 or untreated",
+      "source_ids": [
+        "pride-files",
+        "summary",
+        "pride"
+      ],
+      "evidence": "RAW tags F1/F3/F7/F10/UT; expansion to FGF ligands inferred from the FGFR2 signalling context in the abstract. Dose/source not stated."
+    },
+    {
+      "location": "characteristics[exposure duration]",
+      "value": "40 minute / 72 hour",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Time tags 40min and 72h in RAW names."
+    },
+    {
+      "location": "characteristics[enrichment process]",
+      "value": "phosphopeptide enrichment (STY runs); not applicable (PRO runs)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: TiO2 enrichment for phosphoproteome, 1% of peptides kept for proteome."
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "STY: 1 or 2 from file suffix _01/_02; PRO: 1",
+      "source_ids": [
+        "summary"
+      ],
+      "evidence": "summary.txt assigns fraction 1/2 to the two phospho files of each experiment. Physical meaning of the two fractions not stated (possibly 5% and 10% NH3 elutions; unverified)."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF MS:1002523",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol and instruments field."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin MS:1001251",
+      "source_ids": [
+        "pride",
+        "parameters"
+      ],
+      "evidence": "Protocol: Lys-C then trypsin; search used Trypsin/P. Template column is single-valued, Lys-C not representable."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl(C) fixed; Oxidation(M), Acetyl(Protein N-term), Gln->pyro-Glu, Phospho(STY) variable",
+      "source_ids": [
+        "summary",
+        "parameters"
+      ],
+      "evidence": "summary.txt per-file variable/fixed modifications (identical for all files, including proteome)."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / [fragment mass tolerance]",
+      "value": "7 ppm / 20 ppm",
+      "source_ids": [
+        "pride",
+        "parameters"
+      ],
+      "evidence": "Protocol: 7 ppm precursor, 0.02 Da (or 20 ppm) fragment; parameters.txt FTMS 20 ppm."
+    },
+    {
+      "location": "comment[dissociation method] / [collision energy]",
+      "value": "HCD; 28 NCE",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: HCD-MS/MS peak lists, normalized collision energy 28."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA PRIDE:0000627",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Data-dependent Top8/Top12."
+    },
+    {
+      "location": "comment[reduction reagent] / [alkylation reagent]",
+      "value": "DTT / chloroacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: 1 mM DTT, 5.5 mM CAA."
+    },
+    {
+      "location": "characteristics[age] / [sex] / [disease] / [organism part] / [cell type]",
+      "value": "54Y / female / invasive breast carcinoma / breast / epithelial cell",
+      "source_ids": [
+        "cellosaurus",
+        "pride"
+      ],
+      "evidence": "Donor facts from Cellosaurus (not the deposit); cell type from PRIDE organismParts."
+    }
+  ],
+  "limitations": [
+    "Publication not found (no DOI/PMID in the PRIDE record); no Methods beyond the PRIDE protocol text.",
+    "FGF1/3/7/10 identity of F1/F3/F7/F10 is inferred; ligand dose and source not stated.",
+    "Meaning of the phospho file suffix _01/_02 as fractions follows summary.txt only.",
+    "Lys-C co-digestion not representable (single cleavage-agent column).",
+    "One MaxQuant search covers phospho and proteome runs; modifications listed apply to all rows although the protocol text gives a different variable set for proteome runs.",
+    "Age/sex/disease from Cellosaurus; passage number, medium, storage temperature not stated."
+  ]
+}

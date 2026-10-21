@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD079632.sdrf.tsv",
+  "dataset": "PXD079632",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD079632"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD079632/files (195 files, 117 RAW)"
+    },
+    {
+      "id": "metadata",
+      "kind": "deposited metadata",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/10/PXD079632/2006_Metadata.csv"
+    },
+    {
+      "id": "search",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/10/PXD079632/20260218_134613_2006_roasted_peanut_Report.setup.txt (Spectronaut settings; other species setup.txt files spot-checked for modifications)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "117 RAW files (rep1/2/3 x S1-S39)",
+      "source_ids": [
+        "pride-files",
+        "metadata"
+      ],
+      "evidence": "All 117 deposited RAW files each claimed once; they match the Raw File column of 2006_Metadata.csv (one entry has a stray leading space)."
+    },
+    {
+      "location": "source name",
+      "value": "S<n>_<Species> (39 digests)",
+      "source_ids": [
+        "metadata"
+      ],
+      "evidence": "Sample Name column of 2006_Metadata.csv with the replicate suffix removed; one typo 'Unroasedt' normalised."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-3 = Digest 1-3 of each species",
+      "source_ids": [
+        "metadata"
+      ],
+      "evidence": "Condition column 'X Digest N'. Three independent digests of one extract per legume; mapping to 'biological' is our reading."
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1-3 = injection rep1-3",
+      "source_ids": [
+        "metadata",
+        "pride"
+      ],
+      "evidence": "Replicate column; protocol states triplicate injections."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "13 legume extracts, 12 species (roasted and unroasted peanut share Arachis hypogaea); pea written as Lathyrus oleraceus",
+      "source_ids": [
+        "pride",
+        "metadata"
+      ],
+      "evidence": "PRIDE organisms and description; lentil NCBI 3864 Lens culinaris, fenugreek 78534, white clover 3899 Trifolium repens. Lathyrus oleraceus is the current NCBITaxon label of 3888 (verified), accepted by the validator in place of Pisum sativum."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "seed",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: dried legume seeds ground and extracted."
+    },
+    {
+      "location": "characteristics[treatment]/factor value[treatment]",
+      "value": "roasted / unroasted (peanut only), not available for others",
+      "source_ids": [
+        "pride",
+        "metadata"
+      ],
+      "evidence": "Roasted vs unroasted peanut in Condition column; terms not found in NCIT/EFO (warning only)."
+    },
+    {
+      "location": "factor value[organism]",
+      "value": "species",
+      "source_ids": [
+        "pride",
+        "metadata"
+      ],
+      "evidence": "Study compares allergen composition across legume species."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Exploris 480 (MS:1003028)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE instrument field and protocol text."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-independent acquisition (plain label)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "DIA with FAIMS. NT/AC form (PRIDE:0000450) rejected by validator, plain label accepted."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin (MS:1001251)",
+      "source_ids": [
+        "search",
+        "pride"
+      ],
+      "evidence": "Spectronaut Trypsin/P, specific, 2 missed cleavages; LysC was also used in digestion but column is single-valued."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M and P (hydroxyproline), Acetyl protein N-term variable",
+      "source_ids": [
+        "search"
+      ],
+      "evidence": "Spectronaut Pulsar settings; Hydroxyproline written as Oxidation UNIMOD:35 on P."
+    },
+    {
+      "location": "comment[dissociation method]/[collision energy]",
+      "value": "HCD; 32 NCE",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: normalised HCD collision energy 32."
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "TCEP / chloroacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: reduced with TCEP, alkylated with CAA."
+    },
+    {
+      "location": "comment[ms1 scan range]/[scan window lower|upper limit]/[isolation window width]",
+      "value": "400m/z-1000m/z; 400; 1000; 6",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: MS1 400-1000 m/z, 6 m/z isolation windows with 1 m/z overlap."
+    }
+  ],
+  "limitations": [
+    "Paper (doi 10.3389/FALGY.2026.1938923) not read; PRIDE record, deposited metadata CSV and Spectronaut setup file used.",
+    "Mass tolerances are dynamic in Spectronaut (no fixed value): precursor/fragment tolerance set to not available.",
+    "Lys-C used in the digest but only Trypsin declared (single-valued column); reconcile flags this.",
+    "Developmental stage, strain/cultivar, growth condition not stated: not available.",
+    "Hydroxyproline expressed as Oxidation (UNIMOD:35) on P.",
+    "Modification and tolerance settings read from the roasted peanut Spectronaut setup file; other species setup files assumed identical (white clover and white bean spot-checked for modifications).",
+    "RAW headers were not inspected; instrument/dissociation from PRIDE protocol text.",
+    "Biological vs technical replicate assignment of 'digests' is an interpretation of the metadata CSV."
+  ]
+}

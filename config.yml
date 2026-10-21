@@ -141,14 +141,17 @@ countries:
         search_terms: [Aalborg]
         pride_hits: 68
         screened: 0
-        annotated: 0
+        annotated: 10
         blocked: 0
+        pxd_list: lists/denmark/aalborg.txt
+        pxd_count: 65
+        in_corpus: 20
       lyngby:
         name: Lyngby
         search_terms: [Lyngby, "Technical University of Denmark"]
         pride_hits: 58
         screened: 0
-        annotated: 21
+        annotated: 34
         blocked: 7
         pxd_list: lists/denmark/lyngby.txt
         pxd_count: 57

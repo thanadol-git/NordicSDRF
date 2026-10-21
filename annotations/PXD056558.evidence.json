@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD056558.sdrf.tsv",
+  "dataset": "PXD056558",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD056558"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD056558/files/all"
+    },
+    {
+      "id": "raw-header",
+      "kind": "raw file header",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/01/PXD056558/20231130_EV_Evo_RD_Whisper100_20SPD_WISH-DIA_1CV_Aurora_TS_120k_60k_auto_60w_10mz_Natacha_T26_500ng_S1.raw (first 300 KB range read; strings 'Orbitrap Eclipse', FAIMS, HCD)"
+    },
+    {
+      "id": "epmc",
+      "kind": "publication abstract",
+      "location": "https://academic.oup.com/biolreprod/article/114/1/158/8266795 (doi 10.1093/biolre/ioaf217, PMID 41014196; abstract only, full text/supplement paywalled)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "222 RAW files",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "All 222 RAW files in the file list, each claimed once; non-RAW files (.sne, .kit, .fasta) are search/library outputs, not rows."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Equus caballus",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organism NEWT:9796; title 'mares'."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "endometrium / blood plasma",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Title and protocol: endometrial tissue and plasma; file names carry Plasma_ vs bare/Tissue_."
+    },
+    {
+      "location": "source name / characteristics[biological replicate]",
+      "value": "tissue_<ID> S1-S3 = replicates 1-3; plasma_<ID> single",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "Protocol: tissue in biological triplicates, plasma in singlets; file suffix _S1/_S2/_S3 only on tissue. Mare ID taken from file name; identical IDs in tissue and plasma assumed to be the same animal (inference)."
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "female (mare rows)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Title/abstract: mares. Library pools: not available."
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "epmc"
+      ],
+      "evidence": "Abstract defines control/moderate/severe groups (n=9 each = 27 mares) but 35 mares are deposited and no mare-to-group map is in the deposit or accessible abstract."
+    },
+    {
+      "location": "characteristics[depletion]",
+      "value": "depletion (plasma) / not applicable (tissue)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: plasma depleted with Top 14 abundant protein depletion columns."
+    },
+    {
+      "location": "characteristics[pooled sample] / biological replicate",
+      "value": "pooled (library pools)",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Files named Tissue_/Plasma_Fractionated_high_ph_library; deposited .kit libraries. Pool composition not stated."
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "High-pH reversed-phase chromatography",
+      "source_ids": [
+        "pride-files",
+        "pride"
+      ],
+      "evidence": "Library file names 'Fractionated_high_ph_library' (45 tissue, 37 plasma fractions); fraction id = S number (contiguous 1..N)."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Eclipse",
+      "source_ids": [
+        "pride",
+        "raw-header"
+      ],
+      "evidence": "PRIDE instrument field and RAW header strings."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-independent acquisition",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE experiment type PRIDE:0000450; WISH-DIA."
+    },
+    {
+      "location": "comment[dissociation method] / collision energy",
+      "value": "HCD, 33% NCE",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Data processing protocol text."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin (Lys-C also used)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Trypsin/Lys-C mix; column is single-valued in the contract, Lys-C omitted."
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "TCEP / chloroacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Sample protocol: 10 mM TCEP, 40 mM CAA."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Acetyl Protein N-term and Oxidation M variable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol text for Spectronaut library settings; no search-parameter file was read (.sne are 71 GB / 3.8 GB, not downloaded). N-term acetyl specified as protein N-term is an assumption (Spectronaut BGS default)."
+    },
+    {
+      "location": "comment[scan window lower/upper limit], ms1 scan range, isolation window width",
+      "value": "400-1000 m/z; 10 m/z",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: m/z 400-1000, 10 m/z isolation increments."
+    },
+    {
+      "location": "comment[ms2 mass analyzer]",
+      "value": "Orbitrap",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "MS2 scanned at resolution 60,000 (Orbitrap Eclipse)."
+    },
+    {
+      "location": "comment[dia method]",
+      "value": "WISH-DIA",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol text; free text, not a PRIDE term."
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Spectronaut dynamic tolerances not stated."
+    }
+  ],
+  "limitations": [
+    "Disease/fibrosis group (control n=9, moderate n=9, severe n=9) could not be assigned: 35 mares deposited vs 27 grouped, full text and supplementary tables paywalled, no mapping in deposit. disease = not available and no factor value column.",
+    "Age, breed and developmental stage not stated: not available.",
+    "Cleavage agent column is single-valued; Lys-C (MS:1001309) cannot be added, reconcile reports cleavage_agent_incomplete.",
+    "Modifications taken from protocol prose, not from search results (.sne Spectronaut archives not downloaded).",
+    "parse_sdrf rejects the documented form NT=Data-independent acquisition;AC=PRIDE:0000450 for comment[proteomics data acquisition method] (same for existing PXD013150); kept as documented. WISH-DIA gives a non-PRIDE warning.",
+    "Mare identity across tissue and plasma, and equating _S1-_S3 with biological replicates, are inferred from file names/protocol.",
+    "Tissue mass (~10 mg), FAIMS CV -45 V and Evosep Whisper 20 SPD gradient have no column used."
+  ]
+}

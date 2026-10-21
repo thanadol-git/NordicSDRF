@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD058237.sdrf.tsv",
+  "dataset": "PXD058237",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD058237"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD058237/files/all"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/05/PXD058237/mqpar.xml"
+    },
+    {
+      "id": "parameters",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/05/PXD058237/parameters.txt"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/39982318 (PMC11843917, doi 10.3390/proteomes13010008)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "15 RAW files F3..F55_BT8-5_SGE_stud.raw",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "15 RAW files, each claimed once; one row each."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Lolium perenne",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Title and Methods."
+    },
+    {
+      "location": "characteristics[strain or breed]",
+      "value": "Abosan 1",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Variety Abosan 1 (DLF Seeds A/S)."
+    },
+    {
+      "location": "characteristics[growth condition]",
+      "value": "climate chamber 18h/6h, 21/19 C, 50% RH, 48 days batch 1",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Methods 2.1; batch 1 juice was used for SEC protein fractions."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Green juice of wet-fractionated grass biomass; PRIDE dropdown says leaf but text does not specify tissue."
+    },
+    {
+      "location": "source name / factor value[SEC fraction]",
+      "value": "SEC fraction N (N = 3,5,7,16,19,22,25,28,34,37,39,43,48,51,55)",
+      "source_ids": [
+        "pride-files",
+        "pride"
+      ],
+      "evidence": "Fraction number taken from file name; selected SEC fractions of 4 mL collected at 1.8 mL/min. Interpretation of Fn as SEC fraction number is our inference from the file names and protocol."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "nLC-1200 coupled to Q Exactive HF; matches archive field."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "full MS/ddMS2 data-dependent, TopN 20."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Trypsin/P, 2 missed cleavages (mqpar); sequencing-grade trypsin (Promega) in protocol."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M variable; Acetyl Protein N-term variable",
+      "source_ids": [
+        "mqpar",
+        "parameters"
+      ],
+      "evidence": "mqpar.xml/parameters.txt. Prose says protein N-terminal methylation; the deposited parameters say Acetyl (Protein N-term), which was used."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "4.5 ppm",
+      "source_ids": [
+        "mqpar",
+        "pride"
+      ],
+      "evidence": "mainSearchTol 4.5 ppm."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "FTMS MatchTolerance 20 ppm (MaxQuant default for Orbitrap MS2; not stated in the paper)."
+    },
+    {
+      "location": "comment[collision energy]",
+      "value": "28 NCE",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "(N)CE 28 eV in protocol, read as NCE 28."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Inferred: Q Exactive with NCE; method not named explicitly."
+    }
+  ]
+}
