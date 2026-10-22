@@ -1,0 +1,22 @@
+{
+ "accession":"PXD028885","status":"validated annotation; independent review pending","existing_community_annotation":"none found in sdrf-annotated-datasets",
+ "sources":{
+  "pride":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD028885",
+  "files":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD028885/files?pageSize=500 (94 RAW, all projectAccessions=PXD028885)",
+  "paper":"https://europepmc.org/article/MED/34996345 (PMC8903681; Pedersen et al., Clin Proteomics 2022, doi 10.1186/s12014-021-09339-5)",
+  "raw_header":"range read of first 300 KB of 100kB1_1.raw; no instrument string found (unavailable)"},
+ "claims":[
+  {"column":"characteristics[organism]","value":"Homo sapiens","source":"pride sampleAttributes; paper","basis":"extracted"},
+  {"column":"characteristics[organism part]","value":"blood plasma","source":"pride sampleProtocol (EVs from platelet-poor plasma); paper Methods","basis":"extracted"},
+  {"column":"characteristics[disease]/factor value[disease]","value":"small cell lung carcinoma (100kB files) / normal (100kCON files)","source":"pride sampleProcessingProtocol: 46 baseline files 100kB, 48 control files 100kCON","basis":"extracted"},
+  {"column":"characteristics[treatment status]","value":"treatment naive for 100kB (newly diagnosed baseline); not applicable for controls","source":"pride sampleProcessingProtocol","basis":"inferred from 'newly diagnosed'/'baseline'"},
+  {"column":"characteristics[age]/[sex]/[ancestry category]","value":"not available","source":"paper Table 1 gives only cohort summary (12M/12F each; mean age 67+-7 vs 63.3+-3)","basis":"unavailable per sample"},
+  {"column":"comment[instrument]","value":"Orbitrap Fusion (MS:1002416)","source":"paper Methods 'Orbitrap Fusion Tribrid'; PRIDE instruments","basis":"extracted; not verified from raw header"},
+  {"column":"comment[cleavage agent details]","value":"Trypsin","source":"paper: S-Trap, Pierce trypsin; single protease","basis":"extracted"},
+  {"column":"comment[modification parameters]","value":"Carbamidomethyl(C) fixed; Oxidation(M) and Acetyl(protein N-term) variable","source":"PRIDE dataProcessingProtocol and paper (MaxQuant 1.6.6.0); search output Protein_ID__100k.txt is a protein table, not parameters","basis":"extracted from prose"},
+  {"column":"comment[precursor mass tolerance]/[fragment mass tolerance]","value":"4.5 ppm / 0.5 Da","source":"paper Methods (main search)","basis":"extracted"},
+  {"column":"comment[proteomics data acquisition method]","value":"DDA","source":"paper discusses DDA approach used","basis":"extracted"},
+  {"column":"comment[dissociation method]","value":"not available","source":"not stated","basis":"unavailable"},
+  {"column":"rows/files","value":"94 rows = 94 RAW; SCLC1-24 minus patient 11 (100kB11_1/_2 not deposited; paper: one patient not analysed), HC1-24 x 2 technical replicates","source":"files list","basis":"extracted"}],
+ "validation":{"parse_sdrf":"validate-sdrf -t ms-proteomics -t human -t oncology-metadata: 'Everything seems to be fine'","structure":"OK","check_offline":"CLEAN","reconcile":"1 MAJOR disease_with_control_arm_in_record: false positive, control rows are 'normal'"}
+}

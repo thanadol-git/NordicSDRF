@@ -1,0 +1,16 @@
+# daily queue 2026-10-22 aalborg batch 4 (by PRIDE raw size; ranks 21-35 of the 35 remaining after batch 1)
+PXD001219	denmark/aalborg	queued	raw_files=16; raw_bytes=37911269391
+PXD005211	denmark/aalborg	queued	raw_files=16; raw_bytes=42660742244
+PXD030482	denmark/aalborg	queued	raw_files=113; raw_bytes=45854899976
+PXD028885	denmark/aalborg	queued	raw_files=94; raw_bytes=47490765362
+PXD015939	denmark/aalborg	queued	raw_files=44; raw_bytes=50299662530
+PXD028944	denmark/aalborg	queued	raw_files=94; raw_bytes=53811163817
+PXD015938	denmark/aalborg	queued	raw_files=47; raw_bytes=65569568053
+PXD003550	denmark/aalborg	queued	raw_files=72; raw_bytes=73821546004
+PXD001457	denmark/aalborg	queued	raw_files=21; raw_bytes=89793191759
+PXD001800	denmark/aalborg	queued	raw_files=48; raw_bytes=99167700957
+PXD003946	denmark/aalborg	queued	raw_files=54; raw_bytes=105497057532
+PXD064483	denmark/aalborg	queued	raw_files=72; raw_bytes=204263049738
+PXD001373	denmark/aalborg	queued	raw_files=288; raw_bytes=307726449864
+PXD071394	denmark/aalborg	queued	raw_files=281; raw_bytes=330429421623
+PXD014619	denmark/aalborg	queued	raw_files=205; raw_bytes=490843060507

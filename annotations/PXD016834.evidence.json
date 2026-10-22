@@ -1,0 +1,31 @@
+{
+ "accession": "PXD016834",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride_record": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD016834",
+  "file_list": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD016834/files/all",
+  "mq_output_zip": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2020/03/PXD016834/MQ_output.zip (HTTP range reads of txt/Experiment design.txt, parameters.txt, summary.txt)",
+  "raw_header": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2020/03/PXD016834/AA.raw (first 256 KB range read)",
+  "paper": "PMID 32163748, doi 10.1016/j.cbd.2020.100678 - closed access, Europe PMC and Unpaywall give no full text; unavailable"
+ },
+ "claims": [
+  {"columns":["characteristics[organism]"],"value":"Galleria mellonella","evidence":"PRIDE organisms NEWT:7137; title","kind":"extracted"},
+  {"columns":["characteristics[organism part]"],"value":"salivary gland","evidence":"PRIDE sampleAttributes BTO:0001203; title","kind":"extracted"},
+  {"columns":["characteristics[treatment]","factor value[treatment]"],"value":"polyethylene / no polyethylene","evidence":"MQ Experiment design.txt: PE Yes for AA+..DD+, No for aa-..dd-; abstract","kind":"extracted"},
+  {"columns":["characteristics[biological replicate]"],"value":"A-D -> 1-4","evidence":"Experiment design.txt Replicate column","kind":"extracted"},
+  {"columns":["comment[data file]"],"value":"AA.raw..DD.raw (+), aa-.raw..dd-.raw (-)","evidence":"file list; MQ raw file names AA+ etc. match RAW header path D:\\Data\\O0311_HK_NDJ\\AA+.raw","kind":"extracted"},
+  {"columns":["characteristics[developmental stage]"],"value":"larval stage","evidence":"abstract: larvae of G. mellonella","kind":"inferred (stage of larvae not given)"},
+  {"columns":["comment[instrument]"],"value":"Q Exactive HF MS:1002523","evidence":"RAW header string 'Q Exactive HF - Orbitrap MS'; PRIDE field agrees","kind":"verified from raw"},
+  {"columns":["comment[cleavage agent details]"],"value":"Trypsin/P MS:1001313","evidence":"MQ summary.txt Enzyme Trypsin/P, max missed cleavages 2; PRIDE protocol says only 'digested in solution'","kind":"extracted from search params"},
+  {"columns":["comment[modification parameters]"],"value":"Carbamidomethyl(C) fixed; Oxidation(M), Acetyl(Protein N-term) variable","evidence":"MQ summary.txt","kind":"extracted"},
+  {"columns":["comment[fragment mass tolerance]"],"value":"20 ppm","evidence":"MQ parameters.txt MS/MS tol. (FTMS)","kind":"extracted"},
+  {"columns":["comment[dissociation method]"],"value":"HCD","evidence":"Q Exactive HF fragments by HCD only; not stated in the record","kind":"inferred"},
+  {"columns":["comment[proteomics data acquisition method]"],"value":"DDA","evidence":"shotgun, MaxQuant LFQ, MS/MS scans in summary.txt; no explicit statement","kind":"inferred"},
+  {"columns":["comment[precursor mass tolerance]","comment[reduction reagent]","comment[alkylation reagent]","characteristics[strain or breed]"],"value":"not available","evidence":"not in parameters.txt / protocol / inaccessible paper","kind":"unavailable"},
+  {"columns":["characteristics[disease]"],"value":"not applicable","evidence":"healthy larvae, no disease studied","kind":"inferred"}
+ ],
+ "validation": {
+  "parse_sdrf": "validate-sdrf -t ms-proteomics -t invertebrates: only warnings (treatment terms not in NCIT/EFO)",
+  "tools_structure": "OK", "tools_check": "CLEAN", "tools_reconcile": "1 BLOCKER cleavage_agent_unsupported (protocol prose names no enzyme; enzyme taken from deposited MaxQuant output)"
+ }
+}

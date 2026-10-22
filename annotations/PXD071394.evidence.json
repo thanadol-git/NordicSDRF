@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD071394.sdrf.tsv",
+  "dataset": "PXD071394",
+  "status": "validated annotation; independent review pending",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD071394"},
+    {"id": "files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD071394/files (283 entries: 281 RAW .d.ZIP, 1 .d.sne SEARCH, 1 xlsx OTHER)"},
+    {"id": "overview", "kind": "deposited-file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/09/PXD071394/PRIS_sample_overview.xlsx (sheets 'PRIS overview', 'PRIS codes')"},
+    {"id": "paper", "kind": "publication", "location": "PMID 42693446; doi:10.1186/s42836-026-00414-6; PMC13543562 (Arthroplasty 2026 8(1):67)"}
+  ],
+  "claims": [
+    {"location": "characteristics[organism] all rows", "value": "Homo sapiens", "source_ids": ["pride", "paper"], "evidence": "PRIDE organism NEWT:9606; human PRIS cohort"},
+    {"location": "characteristics[organism part] all rows", "value": "blood plasma", "source_ids": ["pride", "paper"], "evidence": "PRIDE organismParts BTO:0000131; Methods 'Blood plasma samples'"},
+    {"location": "characteristics[disease], factor value[disease], characteristics[phenotype]", "value": "periprosthetic joint infection / aseptic loosening / chronic pain / not available", "source_ids": ["overview", "paper"], "evidence": "Overview column Diagnosis_after_PRIS mapped via 'PRIS codes' sheet (0 chronic problem, 1 and 4 aseptic loosening, 2 infection (=acute infection), 3 chronic infection, 5 undetermined, 6 culture negative infection); paper defines the six diagnostic classes. Aseptic loosening is the code label used for the 'aseptic failure' group (inference on naming)."},
+    {"location": "characteristics[age], [sex], [height], [weight], [individual]", "value": "per patient", "source_ids": ["overview"], "evidence": "Columns AGE (years, at inclusion), SEX (0 female, 1 male), HEIGHT cm, WEIGHT kg; patient number from file name PRIS_<patient>-<visit>. Notes sheet states patients 394 and 428 are the same person (individual set to PRIS_394 for both)."},
+    {"location": "source name / file-name tokens", "value": "PRIS_<patient>-<n>", "source_ids": ["files", "overview"], "evidence": "n matches the n-th sampling date (PRIS 1-4) of the patient in 'PRIS overview' for all numbered files except 7 with a missing or malformed date (322-4, 332-3, 336-3, 343-2, 380-2, 333-1, 376-6) left as named. Interpretation of n as visit is inferred, not stated."},
+    {"location": "characteristics[disease] etc. for PRIS_323-2, PRIS_pic1-4", "value": "not available", "source_ids": ["files", "overview"], "evidence": "Patient 323 is absent from the overview sheet; pic1-4 are not described anywhere in the record."},
+    {"location": "comment[technical replicate] (9 sources, 2 runs each)", "value": "1,2", "source_ids": ["files"], "evidence": "Same PRIS_<patient>-<n> token with two different plate positions/run numbers (310-1, 315-1, 320-1, 327-1, 327-2, 331-2, 357-2, 363-1, 381-2); ordered by run number. Paper reports three samples collected in two tubes and measured twice, so the nature of these duplicates (tube vs repeat injection) is uncertain."},
+    {"location": "comment[instrument]", "value": "NT=timsTOF Pro 2;AC=MS:1003230", "source_ids": ["pride", "paper"], "evidence": "'timsTOF Pro2 mass spectrometer (Bruker)' in Methods and PRIDE instruments"},
+    {"location": "comment[cleavage agent details]", "value": "NT=Trypsin;AC=MS:1001251", "source_ids": ["pride", "paper"], "evidence": "'digested with trypsin' (PAC, Opentrons OT-2); no second protease reported"},
+    {"location": "comment[proteomics data acquisition method]", "value": "Data-independent acquisition (plain label; the NT=;AC= form is rejected by the installed validator, diaPASEF PRIDE:0000650 also rejected)", "source_ids": ["pride", "paper"], "evidence": "'DIA-PASEF' in Methods"},
+    {"location": "comment[label]", "value": "label free sample", "source_ids": ["paper"], "evidence": "No labelling described; Spectronaut label-free DIA"},
+    {"location": "comment[data file]", "value": "281 PRIS_*.d.ZIP files", "source_ids": ["files"], "evidence": "All RAW entries of the project; each claimed once; zipped Bruker .d directories"}
+  ],
+  "limitations": [
+    "Modification parameters, mass tolerances, dissociation method and DIA window columns are 'not available': search results are only a 37 GB Spectronaut .d.sne archive (not read) and the paper says only 'default settings'. No RAW .d content was inspected.",
+    "Reduction/alkylation reagents not stated in the record; columns omitted.",
+    "Ancestry not stated (Danish cohort) -> not available.",
+    "Meaning of -x/-xx/-xxx suffixes (317, 320) and pic1-4 not documented; kept as separate sources.",
+    "Diagnosis is the final PRIS classification per patient, applied to every visit of that patient; blood draw may precede final diagnosis.",
+    "Independent review not yet performed."
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "accession": "PXD043456",
+  "status": "validated annotation; independent review pending",
+  "sources": [
+    {
+      "id": "pride",
+      "url": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD043456",
+      "claims": [
+        "organism Homo sapiens -> characteristics[organism]",
+        "disease urinary bladder cancer -> characteristics[disease]",
+        "timsTOF Pro 2 MS:1003230 -> comment[instrument]",
+        "trypsin O/N, TCEP reduction -> cleavage agent, reduction reagent",
+        "Evosep One 100SPD, nESI-PASEF, 500 ng -> DDA (inferred) acquisition"
+      ]
+    },
+    {
+      "id": "files",
+      "url": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD043456/files",
+      "claims": [
+        "40 RAW .d.zip files -> 40 rows, comment[data file]",
+        "Search.zip present"
+      ]
+    },
+    {
+      "id": "mqpar",
+      "url": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2025/05/PXD043456/Search.zip (Set02 search Maxquant/mqpar.xml, txt/parameters.txt via HTTP range read)",
+      "claims": [
+        "Carbamidomethyl C fixed; Oxidation M and Acetyl protein N-term variable -> modification parameters",
+        "FTMS MS/MS 20 ppm -> fragment tolerance (assumed; TOF default is 25 ppm)",
+        "precursor 10 ppm (search-params output)"
+      ]
+    },
+    {
+      "id": "paper",
+      "url": "https://europepmc.org/article/PMC/PMC11958914 (PMID 40163213, doi 10.1007/s12672-025-02167-1)",
+      "claims": [
+        "linked paper describes JAM-ICR cell line 2-DE immunoproteomics, pooled sera; conflicts with PRIDE description of 42 patient tissues; no spot-to-sample map"
+      ]
+    }
+  ],
+  "unavailable": [
+    "per-spot sample identity (tissue patient / cell line / stage)",
+    "age, sex, ancestry, individual",
+    "organism part, cell type",
+    "alkylation reagent term (chloroacetic acid not found in PRIDE/MS CV)",
+    "ms2 mass analyzer"
+  ],
+  "validation": [
+    "parse_sdrf validate-sdrf -t ms-proteomics -t human: pass",
+    "python -m tools check --offline: CLEAN",
+    "python -m tools structure: OK",
+    "python -m tools reconcile: agrees"
+  ]
+}

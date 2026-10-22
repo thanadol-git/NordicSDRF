@@ -1,0 +1,10 @@
+{"accession":"PXD008508","status":"validated annotation; independent review pending",
+"sources":[
+{"id":"pride","url":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD008508","claims":["organism NEWT 217219 -> characteristics[organism]","Q Exactive -> comment[instrument]","protocols: tryptic in-gel, tryptic in-solution, AspN in-solution -> comment[cleavage agent details] per row"]},
+{"id":"filedesc","url":"https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/03/PXD008508/FileNameDescription.txt","claims":["ASP_IS=AspN in-solution, Tryp_IS=trypsin in-solution, Tryp_IG=trypsin in-gel, replicates 1-3 -> source name, biological replicate, cleavage agent"]},
+{"id":"files","url":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD008508/files","claims":["9 RAW files, one per row -> comment[data file]"]},
+{"id":"raw-header","url":"https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/03/PXD008508/Meganema_Tryp_IS1.raw (HTTP range bytes 0-2000000 only)","claims":["Full MS 70,000, 400-1200 m/z, dd-MS 17,500, TopN 12, NCE 30 -> DDA, HCD, collision energy, ms1 scan range"]},
+{"id":"paper","url":"https://doi.org/10.1002/pmic.201800330","claims":[],"note":"PMID 30865376; not open access, Methods not read (abstract only)"},
+{"id":"search-archives","url":"https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/03/PXD008508/6FDB.rar","claims":[],"note":"MaxQuant outputs (rar, ~400 MB); parameter files not read, so modifications and tolerances unavailable"}],
+"unavailable":["modification parameters","precursor/fragment tolerance","fractionation (in-gel band count)","organism part/cell type"],
+"validation":["parse_sdrf validate-sdrf -t ms-proteomics: pass","python -m tools check --offline: CLEAN","tools structure: OK","tools reconcile: agrees"]}

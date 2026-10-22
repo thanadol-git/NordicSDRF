@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD009353.sdrf.tsv",
+  "dataset": "PXD009353",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD009353"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD009353/files (13 files: 12 RAW zip archives, 1 SEARCH pdf)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1002/rcm.8521 (PMID 31307118; abstract via Europe PMC only; full text not available)"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "organism Mus musculus, brain, female, strain APPPS1-21 (transgenic), Alzheimer's disease model",
+      "columns": [
+        "characteristics[organism]",
+        "characteristics[organism part]",
+        "characteristics[sex]",
+        "characteristics[strain or breed]",
+        "characteristics[disease]"
+      ],
+      "sources": [
+        "pride",
+        "paper"
+      ],
+      "basis": "extracted (PRIDE description, sample attributes)"
+    },
+    {
+      "claim": "3 mice (Tg1, Tg3, Tg4) as 3 biological replicates; one RAW archive per mouse x matrix; 4 per mouse",
+      "columns": [
+        "source name",
+        "characteristics[biological replicate]",
+        "comment[technical replicate]",
+        "comment[data file]"
+      ],
+      "sources": [
+        "pride-files"
+      ],
+      "basis": "inferred from file names; numbering Tg1/3/4 -> 1/2/3 is an assumption"
+    },
+    {
+      "claim": "factor = MALDI matrix/additive (S-DHB+PA, S-DHB+TFA, SA+TFA, CHCA+TFA)",
+      "columns": [
+        "factor value[matrix]"
+      ],
+      "sources": [
+        "pride",
+        "pride-files"
+      ],
+      "basis": "extracted from sampleProcessingProtocol and file names"
+    },
+    {
+      "claim": "Bruker UltrafleXtreme MALDI TOF/TOF",
+      "columns": [
+        "comment[instrument]"
+      ],
+      "sources": [
+        "pride"
+      ],
+      "basis": "dataProcessingProtocol text (MS:1001544); PRIDE dropdown says ultraflex MS:1000201"
+    },
+    {
+      "claim": "intact protein MALDI imaging, no digestion, no database search; cleavage agent, dissociation, tolerances, modifications not applicable",
+      "columns": [
+        "comment[cleavage agent details]",
+        "comment[dissociation method]",
+        "comment[precursor mass tolerance]",
+        "comment[fragment mass tolerance]",
+        "comment[modification parameters]"
+      ],
+      "sources": [
+        "pride"
+      ],
+      "basis": "extracted (no protease in protocol; PRIDE:0000398 no PTMs)"
+    },
+    {
+      "claim": "acquisition method DDA",
+      "columns": [
+        "comment[proteomics data acquisition method]"
+      ],
+      "sources": [],
+      "basis": "unsupported placeholder: required column restricted to DDA/DIA/PRM/SRM, none describes MALDI imaging"
+    },
+    {
+      "claim": "developmental stage, cell type",
+      "columns": [
+        "characteristics[developmental stage]",
+        "characteristics[cell type]"
+      ],
+      "sources": [],
+      "basis": "unavailable: mouse age not in PRIDE record; paper full text not read"
+    }
+  ],
+  "unavailable": [
+    "RAW file contents (zip archives of 0.7-1 GB; not downloaded)",
+    "paper full text"
+  ]
+}

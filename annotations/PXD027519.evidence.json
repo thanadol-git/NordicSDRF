@@ -1,0 +1,14 @@
+{"accession":"PXD027519","status":"validated annotation; independent review pending",
+"sources":{"pride":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD027519","files":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD027519/files","paper":"doi:10.1016/J.SCITOTENV.2021.151254 (PMID 34710425; not open access, full text unavailable, abstract only)","raw_header":"HTTP range read of first 256 KB of P45A.raw","idXML":"HTTP range read of P45A_0.idXML / P45B_1.idXML header (OMSSA search parameters)","mzML":"HTTP range read of P45A.mzML header"},
+"claims":[
+{"columns":["characteristics[organism]"],"value":"anaerobic digester metagenome","source":"PRIDE sampleAttributes NEWT:1263854","type":"extracted"},
+{"columns":["comment[instrument]"],"value":"Q Exactive HF","source":"PRIDE instruments; confirmed in raw header 'Q Exactive HF - Orbitrap MS'","type":"verified"},
+{"columns":["comment[cleavage agent details]"],"value":"Trypsin","source":"PRIDE sampleProcessingProtocol (in-gel tryptic digestion); idXML enzyme=trypsin","type":"extracted"},
+{"columns":["comment[modification parameters]"],"value":"Carbamidomethyl (C) fixed; Oxidation (M) variable","source":"idXML SearchParameters","type":"extracted"},
+{"columns":["comment[precursor mass tolerance]"],"value":"10 ppm","source":"idXML precursor_peak_tolerance=10 ppm; PRIDE prose says 5 ppm (conflict, deposited result preferred)","type":"conflict"},
+{"columns":["comment[fragment mass tolerance]"],"value":"0.01 Da","source":"PRIDE dataProcessingProtocol (idXML records 0)","type":"extracted"},
+{"columns":["comment[dissociation method]","comment[collision energy]","comment[ms2 mass analyzer]","comment[proteomics data acquisition method]"],"value":"HCD; 28 NCE; Orbitrap; DDA (top20)","source":"P45A.raw method header (dd-MS2 TopN 20, nce 28, resolution 15,000)","type":"verified"},
+{"columns":["comment[label]"],"value":"label free sample","source":"13C is a metabolic protein-SIP label, not a quantitative tag; no isobaric/SILAC tags","type":"inferred"},
+{"columns":["characteristics[environmental medium]","characteristics[treatment]"],"value":"not available","source":"No evidence-supported ontology term (paper unavailable); 13C-labelled bicarbonate failed NCIT/EFO lookup","type":"unavailable"},
+{"columns":["characteristics[biological replicate]"],"value":"1","source":"No sample-to-condition/replicate map available; placeholder per unique source","type":"assumed"}],
+"unavailable":["Full paper text and sample/condition map for P45-P56 A/B","Factor values (design not recoverable)"]}

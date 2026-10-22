@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002686.sdrf.tsv",
+  "dataset": "PXD002686",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002686"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002686/files?pageSize=200"},
+    {"id": "maxq-params", "kind": "deposited search results", "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2016/01/PXD002686/MaxQ.zip (txt/parameters.txt and txt/summary.txt, HTTP range read, member-level)"}
+  ],
+  "claims": [
+    {"location": "characteristics[organism] rows 1-30", "value": "Homo sapiens", "source_ids": ["pride", "maxq-params"], "evidence": "Project record organism NEWT:9606; MaxQuant search against reviewed human UniProt. Note reconcile flags Mus musculus only because of goat-anti-mouse Dynabeads in the protocol (false positive)."},
+    {"location": "characteristics[disease] rows 1-30", "value": "rheumatoid arthritis", "source_ids": ["pride"], "evidence": "Description: 59-year-old patient diagnosed with RA"},
+    {"location": "characteristics[age] rows 1-30", "value": "59Y", "source_ids": ["pride"], "evidence": "Description: 'a 59 year old patient'"},
+    {"location": "characteristics[cell type]/factor value[cell type]", "value": "CD14+ monocyte, CD4 T, CD8 T, CD19 B, CD56 NK", "source_ids": ["pride", "pride-files"], "evidence": "Description lists CD14, CD4, CD8, CD19, CD56 enrichment; run names carry the marker. Mapping of markers to CL cell types (CD4/CD8 to alpha-beta T cell, CD19 to B cell, CD56 to NK cell) is inferred."},
+    {"location": "characteristics[treatment status], factor value[treatment status], characteristics[treatment]", "value": "pre-treatment (no '4month' in run name) vs on treatment (tocilizumab, '4month' in run name)", "source_ids": ["pride", "pride-files"], "evidence": "Title/description: tocilizumab treatment; run names with and without '4month'. Baseline = unlabelled runs is INFERRED from naming; no paper/explicit sampling table available."},
+    {"location": "comment[technical replicate]", "value": "1-3 from file suffix _01.._03", "source_ids": ["pride-files"], "evidence": "Replicate numbers taken from run names; whether they are technical or biological replicates is not stated (single patient, one draw => treated as technical)."},
+    {"location": "comment[instrument] rows 1-30", "value": "Q Exactive Plus (MS:1002634)", "source_ids": ["pride"], "evidence": "Protocol text names Q Exactive Plus; archive dropdown says Q Exactive (MS:1001911). Text outranks dropdown."},
+    {"location": "comment[cleavage agent details]", "value": "Trypsin", "source_ids": ["pride", "maxq-params"], "evidence": "Protocol: overnight trypsin digestion. MaxQuant enzyme setting Trypsin/P, max 2 missed cleavages (search parameter, not recorded as the digest)."},
+    {"location": "comment[modification parameters]", "value": "Carbamidomethyl C fixed; Acetyl Protein N-term, Oxidation M, Deamidated N/Q/R (MaxQuant Deimidation NQR; protocol: deamidation NQ and citrullination R), Phospho STY variable", "source_ids": ["pride", "maxq-params"], "evidence": "parameters.txt Fixed modifications and summary.txt Variable modifications"},
+    {"location": "comment[fragment mass tolerance]", "value": "20 ppm", "source_ids": ["maxq-params"], "evidence": "parameters.txt MS/MS tol. (FTMS) 20 ppm"},
+    {"location": "comment[precursor mass tolerance]", "value": "not available", "source_ids": ["maxq-params"], "evidence": "MaxQuant first/main search precursor tolerance not recorded in parameters.txt"},
+    {"location": "comment[reduction reagent]/comment[alkylation reagent]", "value": "TCEP; iodoacetamide", "source_ids": ["pride"], "evidence": "Protocol: 12 mM TCEP and 40 mM iodoacetamide"},
+    {"location": "comment[dissociation method]", "value": "HCD", "source_ids": ["pride"], "evidence": "Protocol: up to 12 precursors for HCD fragmentation"},
+    {"location": "comment[proteomics data acquisition method]/label", "value": "DDA / label free sample", "source_ids": ["pride"], "evidence": "Top-N selection by intensity; label-free quantification (PRIDE quantification method label-free)"},
+    {"location": "comment[data file] rows 1-30", "value": "30 vendor .raw files", "source_ids": ["pride-files"], "evidence": "All 30 RAW entries in file list, each with projectAccessions containing PXD002686; one file per row, no fractionation"}
+  ],
+  "limitations": [
+    "No publication (no DOI/references in PRIDE record); no paper Methods or supplementary available.",
+    "Sex not stated; ancestry not stated.",
+    "Baseline vs 4 month assignment and replicate nature inferred from run names.",
+    "PRIDE experimentTypes says Top-down proteomics, contradicted by bottom-up trypsin digestion protocol; ignored.",
+    "RAW file headers not read (no raw metadata verification of instrument or acquisition)."
+  ]
+}

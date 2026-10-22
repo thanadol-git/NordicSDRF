@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD014619.sdrf.tsv",
+  "dataset": "PXD014619",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD014619"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD014619/files/all"},
+    {"id": "codes-xlsx", "kind": "deposited file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/03/PXD014619/ProteomXchangeIDcodes.xlsx"},
+    {"id": "mq-params", "kind": "deposited search", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/03/PXD014619/MaxQuanttxt_txt.zip (txt/parameters.txt, txt/summary.txt via HTTP range read)"},
+    {"id": "baf-header", "kind": "raw file header", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/03/PXD014619/analysis24.baf and analysis60a.baf (first 0.3-1 MB, HTTP range read)"}
+  ],
+  "claims": [
+    {"location": "comment[data file]", "value": "analysis01.baf .. analysis74a.baf (205 files)", "source_ids": ["pride-files"], "evidence": "205 RAW-category .baf files; the MaxQuant zip and codes xlsx are not RAW."},
+    {"location": "source name", "value": "pig<animal>_<D1|Day5> (74 sources)", "source_ids": ["codes-xlsx", "baf-header", "mq-params"], "evidence": "Code sheet maps label to RAW code; analysis24 header = Mudi24, analysis60a header = Mudi60a; summary.txt uses MudiNN stems. Codes 75-82 have no file."},
+    {"location": "characteristics[organism]", "value": "Sus scrofa domesticus", "source_ids": ["pride"], "evidence": "PRIDE organism NEWT:9825; preterm pig model in description."},
+    {"location": "characteristics[organism part]", "value": "blood plasma", "source_ids": ["pride"], "evidence": "Protocol: blood samples used for plasma proteomics; PRIDE organism part Blood plasma. Raw folder name says MudiCSF (conflict noted in report)."},
+    {"location": "characteristics[disease]", "value": "not available", "source_ids": ["codes-xlsx"], "evidence": "No CON/LPS assignment per animal anywhere in the deposit."},
+    {"location": "characteristics[sampling time]; factor value[sampling time]", "value": "1 day / 5 day", "source_ids": ["codes-xlsx", "pride"], "evidence": "Code sheet labels D1 and Day5; protocol: euthanasia at d 1 and d 5."},
+    {"location": "characteristics[developmental stage]", "value": "neonate", "source_ids": ["pride"], "evidence": "Inferred: preterm pigs delivered by caesarean and sampled at birth/day 5."},
+    {"location": "characteristics[sex]", "value": "not available", "source_ids": [], "evidence": "Not stated in the available record."},
+    {"location": "comment[instrument]", "value": "NT=Bruker Daltonics timsTOF series;AC=MS:1003123", "source_ids": ["pride", "baf-header"], "evidence": "Protocol: timsTOF; header string TIMS TOF; exact model not stated."},
+    {"location": "comment[cleavage agent details]", "value": "NT=Trypsin;AC=MS:1001251", "source_ids": ["pride", "mq-params"], "evidence": "Protocol: trypsin 1:35 overnight; summary.txt enzyme Trypsin/P."},
+    {"location": "comment[modification parameters]", "value": "Carbamidomethyl C fixed; Oxidation M and Acetyl protein N-term variable", "source_ids": ["pride", "mq-params"], "evidence": "Data processing protocol and parameters.txt (modifications in quantification: Oxidation (M); Acetyl (Protein N-term))."},
+    {"location": "comment[reduction reagent]; comment[alkylation reagent]", "value": "TCEP; chloroacetamide", "source_ids": ["pride"], "evidence": "Sample protocol: 10 mM TCEP, 50 mM chloroacetamide."},
+    {"location": "comment[proteomics data acquisition method]", "value": "Data-dependent acquisition", "source_ids": ["pride", "baf-header"], "evidence": "Protocol: DDA Top20; header method Proteomics Top 20."},
+    {"location": "comment[fragment mass tolerance]", "value": "40 ppm", "source_ids": ["mq-params"], "evidence": "parameters.txt MS/MS tol. (TOF) 40 ppm (MaxQuant default)."},
+    {"location": "comment[precursor mass tolerance]; comment[dissociation method]", "value": "not available", "source_ids": ["mq-params"], "evidence": "Not stated in parameters.txt or protocol."}
+  ],
+  "limitations": [
+    "No per-animal CON/LPS group assignment in the deposit; disease not available and no treatment factor.",
+    "Code sheet lists 82 animals; files exist for codes 1-74 only, and protocol sample sizes differ from the sheet.",
+    "Exact timsTOF model not stated; generic series term used.",
+    "Linked publication is not the renal study; no manuscript text used for sample properties.",
+    "Raw folder name mentions CSF while PRIDE and the protocol say plasma."
+  ]
+}

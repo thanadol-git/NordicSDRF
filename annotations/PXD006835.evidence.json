@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD006835.sdrf.tsv",
+  "dataset": "PXD006835",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006835"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006835/files?pageSize=500"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Danielsen et al. 2017 Biomolecules PMC5618239, doi:10.3390/biom7030058 (Europe PMC full text)"
+    },
+    {
+      "id": "maxquant-params",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2017/08/PXD006835/UK4_Fap.rar and EColi_Curli.rar (txt/parameters.txt, txt/summary.txt via HTTP range reads)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2017/08/PXD006835/Ecoli_SM2258_0_FA1.raw (first 300 kB range read)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Escherichia coli; Pseudomonas sp. UK4",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organisms NEWT:562, NEWT:452680; file names Ecoli_SM2258 / UK4_WT"
+    },
+    {
+      "location": "characteristics[strain or breed]",
+      "value": "SM2258; UK4",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods 4.1"
+    },
+    {
+      "location": "characteristics[treatment] / factor value[treatment]",
+      "value": "0-100% formic acid",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Sample processing protocol; Methods 4.2; run names"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-4",
+      "source_ids": [
+        "paper",
+        "pride-files"
+      ],
+      "evidence": "four biological replicates; FA1-FA4 in run names"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive Plus MS:1002634",
+      "source_ids": [
+        "paper",
+        "raw-header"
+      ],
+      "evidence": "Methods 4.3; RAW path QEplus (method template says Q Exactive HF; PRIDE says Q Exactive)"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin MS:1001251",
+      "source_ids": [
+        "pride",
+        "paper",
+        "maxquant-params"
+      ],
+      "evidence": "tryptic in-gel digestion; summary.txt enzyme Trypsin/P"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl Protein N-term variable",
+      "source_ids": [
+        "maxquant-params"
+      ],
+      "evidence": "parameters.txt / summary.txt"
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "maxquant-params"
+      ],
+      "evidence": "parameters.txt MS/MS tol. (FTMS)"
+    },
+    {
+      "location": "comment[dissociation method] / [collision energy]",
+      "value": "HCD; 27 NCE",
+      "source_ids": [
+        "raw-header"
+      ],
+      "evidence": "embedded Xcalibur method"
+    },
+    {
+      "location": "comment[ms2 mass analyzer]",
+      "value": "Orbitrap",
+      "source_ids": [
+        "raw-header"
+      ],
+      "evidence": "MS2 resolution 15000; FTMS tolerance in parameters.txt"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA PRIDE:0000627",
+      "source_ids": [
+        "raw-header",
+        "paper"
+      ],
+      "evidence": "Top20 data-dependent method"
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "not available",
+      "source_ids": [],
+      "evidence": "unavailable: not in parameters.txt or paper"
+    },
+    {
+      "location": "comment[reduction reagent] / [alkylation reagent]",
+      "value": "not available",
+      "source_ids": [],
+      "evidence": "unavailable: not stated in deposit or paper"
+    }
+  ]
+}

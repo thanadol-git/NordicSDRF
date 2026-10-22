@@ -1,0 +1,27 @@
+{
+ "accession": "PXD064483",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride_project": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD064483",
+  "pride_files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD064483/files/all",
+  "paper": "https://europepmc.org/article/PMC/PMC12650084 (Biomedicines 2025, 13(11):2709, PMID 41301803)",
+  "maxquant_summary_parameters": "range-read from https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/12/PXD064483/combined_MaxQ.zip (summary.txt, parameters.txt via zip central directory)",
+  "raw_headers": "HTTP range 0-262143 of 2_1.raw, 4_1.raw, 14_2.raw, 20_1.raw, 37_2.raw",
+  "numbering_xlsx": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/12/PXD064483/Cell_line_numbering_technical_dublicate.xlsx"
+ },
+ "claims": [
+  {"column":"characteristics[organism]","value":"Homo sapiens","basis":"PRIDE organism NEWT:9606; paper; human DLBCL cell lines","type":"extracted"},
+  {"column":"comment[instrument]","value":"Q Exactive HF-X (MS:1002877)","basis":"raw file headers report 'Q Exactive HF-X - Orbitrap MS'; PRIDE field says Q Exactive HF, protocol prose says QE+; raw data outranks both","type":"extracted from raw"},
+  {"column":"comment[cleavage agent details]","value":"Trypsin (MS:1001251)","basis":"sample processing protocol: 'Trypsin (1 ug) was added... overnight'; single protease; MaxQuant used Trypsin/P specificity","type":"extracted"},
+  {"column":"comment[modification parameters]","value":"Carbamidomethyl C fixed; Oxidation M variable; Acetyl Protein N-term variable","basis":"MaxQuant summary.txt columns Fixed/Variable modifications","type":"extracted from deposited search"},
+  {"column":"comment[fragment mass tolerance]","value":"20 ppm","basis":"MaxQuant parameters.txt MS/MS tol. (FTMS)","type":"extracted"},
+  {"column":"comment[precursor mass tolerance]","value":"not available","basis":"not in parameters.txt (MaxQuant 1.6.17 default not written); not inferred","type":"unavailable"},
+  {"column":"comment[dissociation method]","value":"not available","basis":"not stated in protocol; not inferred","type":"unavailable"},
+  {"column":"comment[reduction reagent]/[alkylation reagent]","value":"TCEP / iodoacetamide","basis":"sample processing protocol","type":"extracted"},
+  {"column":"comment[label]","value":"label free sample","basis":"PRIDE quantification method PRIDE:0000312; LFQ","type":"extracted"},
+  {"column":"comment[proteomics data acquisition method]","value":"Data-dependent acquisition","basis":"raw method DDA_75cm_trap_g120t140_top15.meth in headers","type":"extracted from raw"},
+  {"column":"source name / comment[technical replicate]","value":"sample_2..sample_37, replicates _1/_2","basis":"72 raw files named N_1/N_2 for N=2..37; xlsx name 'technical dublicate'; paper: duplicates per cell line","type":"inferred (pairing)"},
+  {"column":"characteristics[cell line]/[disease]/[cell type]/[organism part]","value":"not available (cell line columns omitted; cell-lines template not applied)","basis":"No deposited file maps sample numbers 2-37 to cell lines; xlsx lists 36 haematological lines (rows 2-37) with lineage marks but no explicit number column; paper analyses only 16 DLBCL lines","type":"unavailable"},
+  {"column":"MaxQuant version","value":"deposited parameters.txt says 1.6.17.0; paper says 1.6.12.0","basis":"discrepancy, not encoded in SDRF","type":"note"}
+ ]
+}

@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-10-01
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-21)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-22)
 
 countries:
   sweden:
@@ -141,11 +141,11 @@ countries:
         search_terms: [Aalborg]
         pride_hits: 68
         screened: 0
-        annotated: 10
+        annotated: 44
         blocked: 0
         pxd_list: lists/denmark/aalborg.txt
         pxd_count: 65
-        in_corpus: 20
+        in_corpus: 29
       lyngby:
         name: Lyngby
         search_terms: [Lyngby, "Technical University of Denmark"]
@@ -155,7 +155,7 @@ countries:
         blocked: 7
         pxd_list: lists/denmark/lyngby.txt
         pxd_count: 57
-        in_corpus: 26
+        in_corpus: 30
       roskilde:
         name: Roskilde
         search_terms: [Roskilde]

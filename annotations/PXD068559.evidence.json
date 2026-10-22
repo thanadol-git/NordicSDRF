@@ -1,0 +1,31 @@
+{
+ "accession": "PXD068559",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride_project": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD068559",
+  "pride_files": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD068559/files?pageSize=200",
+  "maxquant_params": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/10/PXD068559/txt.zip (txt/parameters.txt, txt/summary.txt via HTTP range read)",
+  "paper": "https://europepmc.org/article/MED/41188034 (PMC12758402; doi 10.1101/gr.280639.125)"
+ },
+ "claims": [
+  {"column": "characteristics[organism]", "value": "Sorex araneus", "source": "pride_project organisms NEWT:42254; paper", "kind": "extracted"},
+  {"column": "characteristics[organism part]", "value": "liver", "source": "pride_project title/sampleProcessingProtocol", "kind": "extracted"},
+  {"column": "characteristics[developmental stage]", "value": "juvenile (J runs) / adult (A runs)", "source": "pride_project description (run-name legend); paper Methods", "kind": "extracted"},
+  {"column": "characteristics[season] / factor value[season]", "value": "summer 2020, autumn 2020, winter 2021, spring 2021, summer 2021", "source": "run names (2020_07, 2020_11, 2021_02, 2021_04, 2021_06) + paper group descriptions", "kind": "extracted; 2021_02 to winter inferred from paper n=5 winter juveniles"},
+  {"column": "characteristics[sex], cell type, disease, strain or breed", "value": "not available", "source": "per-animal data only in supplementary tables, not retrieved", "kind": "unavailable"},
+  {"column": "comment[instrument]", "value": "Q Exactive HF MS:1002523", "source": "pride_project instruments and protocol", "kind": "extracted"},
+  {"column": "comment[cleavage agent details]", "value": "Trypsin/P MS:1001313", "source": "txt/summary.txt Enzyme column (all raw files)", "kind": "extracted from search results; not named in prose"},
+  {"column": "comment[modification parameters]", "value": "Carbamidomethyl C fixed; Oxidation M and Acetyl protein N-term variable", "source": "txt/summary.txt and parameters.txt (MaxQuant 2.4.2.0)", "kind": "extracted; prose lists extra deamidation/formylation not in parameters"},
+  {"column": "comment[fragment mass tolerance]", "value": "20 ppm", "source": "txt/parameters.txt MS/MS tol. (FTMS)", "kind": "extracted"},
+  {"column": "comment[precursor mass tolerance]", "value": "not available", "source": "not in parameters.txt", "kind": "unavailable"},
+  {"column": "comment[dissociation method]", "value": "beam-type collision-induced dissociation (HCD)", "source": "pride_project sampleProcessingProtocol", "kind": "extracted"},
+  {"column": "comment[proteomics data acquisition method]", "value": "Data-dependent acquisition PRIDE:0000627", "source": "pride_project experimentTypes", "kind": "extracted"},
+  {"column": "comment[label]", "value": "label free sample", "source": "pride_project quantificationMethods; dataProcessingProtocol", "kind": "extracted"}
+ ],
+ "validation": {
+  "parse_sdrf": "pass with 1 warning (juvenile not in EFO)",
+  "tools_check": "CLEAN", "tools_structure": "OK", "tools_score": "100/100",
+  "reconcile": "1 blocker cleavage_agent_unsupported, answered from summary.txt"
+ },
+ "independent_review": "not performed (subagent spawning prohibited); pending"
+}

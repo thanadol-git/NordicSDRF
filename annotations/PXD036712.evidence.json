@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD036712.sdrf.tsv",
+  "dataset": "PXD036712",
+  "status": "validated annotation; independent review pending",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD036712"},
+    {"id": "files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD036712/files/all"},
+    {"id": "paper", "kind": "publication", "location": "PMC10685487 (doi 10.1186/S13068-023-02432-X, Biotechnol Biofuels 2023)"},
+    {"id": "idxml", "kind": "search-output", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/11/PXD036712/{0H,8H,48H}_JSP_JLN_UPLIFT.idXML (MS-GF+ adapter parameters)"},
+    {"id": "rawhdr", "kind": "raw-header", "location": "HTTP range read of first 256 KB of 8H_JSP_JLN_UPLIFT.raw (instrument string 'Q Exactive HF')"},
+    {"id": "envo", "kind": "ontology", "location": "OLS4 ENVO:00003965 anaerobic digester sludge"}
+  ],
+  "claims": [
+    {"location": "characteristics[organism] rows 1-10", "value": "anaerobic digester metagenome", "source_ids": ["pride"], "evidence": "PRIDE organism NEWT:1263854; community from semi-continuous wheat-straw reactor"},
+    {"location": "characteristics[environmental medium] rows 1-10", "value": "anaerobic digester sludge", "source_ids": ["paper", "envo"], "evidence": "Biomass from anaerobic digestion reactor; inferred ENVO term"},
+    {"location": "characteristics[sampling time] / factor value[sampling time] rows 1-10", "value": "0,2,4,6,8,12,24,36,48,60 hour", "source_ids": ["paper", "files"], "evidence": "Methods: sampled after 0,2,4,6,8,12,24,36,48,60 h; one RAW per time point named NH_JSP_JLN_UPLIFT"},
+    {"location": "characteristics[treatment] rows 1-10", "value": "13C-cellulose", "source_ids": ["paper"], "evidence": "Batch incubation with 13C-cellulose as sole carbon source (protein-SIP)"},
+    {"location": "characteristics[temperature], [ph]", "value": "55 C; 7.8", "source_ids": ["paper"], "evidence": "Batch incubated at 55 C; pH of bulk adjusted to 7.8 at set-up"},
+    {"location": "comment[instrument]", "value": "Q Exactive HF", "source_ids": ["pride", "rawhdr"], "evidence": "PRIDE and RAW header agree"},
+    {"location": "comment[cleavage agent details]", "value": "Trypsin", "source_ids": ["paper", "idxml"], "evidence": "Tryptic peptides; MS-GF+ enzyme Trypsin/P. Single protease."},
+    {"location": "comment[modification parameters]", "value": "Carbamidomethyl (C) fixed; Oxidation (M) variable", "source_ids": ["idxml"], "evidence": "MSGFPlusAdapter fixed/variable_modifications in idXML for 0H, 8H, 48H"},
+    {"location": "comment[precursor mass tolerance]", "value": "10 ppm", "source_ids": ["idxml"], "evidence": "MS-GF+ precursor_mass_tolerance 10 ppm; conflicts with PRIDE prose (5 ppm, OMSSA)"},
+    {"location": "comment[fragment mass tolerance]", "value": "0.01 Da", "source_ids": ["pride"], "evidence": "PRIDE data processing prose only; MS-GF+ has no fragment tolerance"},
+    {"location": "comment[label]", "value": "label free sample", "source_ids": ["pride", "paper"], "evidence": "13C is metabolic (substrate) incorporation, no chemical/isobaric tag"},
+    {"location": "comment[data file] rows 1-10", "value": "10 RAW files", "source_ids": ["files"], "evidence": "All 10 RAW files claimed once; mzML/idXML derivatives excluded"}
+  ],
+  "limitations": [
+    "Geographic location of the reactor not stated in paper or PRIDE; not available",
+    "Dissociation method not stated; not available",
+    "No biological replicates evidenced; replicate set to 1",
+    "Digestion protocol (in-gel) cited only by reference; reduction/alkylation reagents not recorded",
+    "Precursor tolerance conflict: PRIDE prose 5 ppm (OMSSA) vs deposited MS-GF+ idXML 10 ppm",
+    "characteristics[treatment] '13C-cellulose' not in NCIT/EFO (validator warning)",
+    "Independent review not performed"
+  ]
+}

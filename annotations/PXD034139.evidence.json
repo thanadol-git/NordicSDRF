@@ -1,0 +1,18 @@
+{"accession":"PXD034139","status":"validated annotation; independent review pending",
+"sources":{"pride":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD034139","files":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD034139/files","mqpar":"https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/03/PXD034139/mqpar.xml","parameters":"https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/03/PXD034139/parameters.txt","summary":"https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/03/PXD034139/summary.txt","paper":"doi:10.1016/J.FOODHYD.2022.108299 (not read; full text not retrieved)"},
+"claims":[
+{"column":"characteristics[organism]","value":"Solanum tuberosum","source":"pride organisms NEWT:4113","type":"extracted"},
+{"column":"comment[instrument]","value":"Q Exactive HF","source":"pride sampleProcessingProtocol and instruments","type":"extracted"},
+{"column":"comment[proteomics data acquisition method]","value":"DDA","source":"protocol: Top-20 data-dependent","type":"extracted"},
+{"column":"comment[dissociation method]","value":"HCD","source":"protocol: HCD fragmentation","type":"extracted"},
+{"column":"comment[precursor mass tolerance]","value":"4.5 ppm","source":"mqpar.xml mainSearchTol","type":"extracted"},
+{"column":"comment[fragment mass tolerance]","value":"20 ppm","source":"parameters.txt MS/MS tol. (FTMS)","type":"extracted"},
+{"column":"comment[modification parameters]","value":"Carbamidomethyl C fixed; Oxidation M, Acetyl Protein N-term variable","source":"summary.txt / mqpar.xml","type":"extracted"},
+{"column":"comment[cleavage agent details]","value":"Trypsin MS:1001251 for Trypsin files; unspecific cleavage MS:1001956 for Alcalase/Neutrase/Flavourzyme files","source":"protocol (hydrolysis proteases) + mqpar Unspecific enzyme mode","type":"inferred: no PSI-MS terms exist for Alcalase/Neutrase/Flavourzyme"},
+{"column":"factor value[protease], factor value[enzyme to substrate ratio]","value":"4 proteases x E/S 0.1/1/3%","source":"file names (_01, _1, _3) + protocol E/S ratios","type":"inferred: _01/_1/_3 mapped to 0.1/1/3% (protocol lists 0.1/1/3% only for method B)"},
+{"column":"characteristics[disease]","value":"not applicable","source":"food protein isolate, no disease","type":"inferred"},
+{"column":"characteristics[organism part], cell type, developmental stage, strain, growth condition, material type","value":"not available","source":"record silent (PRIDE organismPart 'plant cell' is a dropdown)","type":"unavailable"},
+{"column":"comment[ms1 scan range]","value":"200m/z-3000m/z","source":"protocol survey scans","type":"extracted"},
+{"column":"comment[reduction reagent], comment[alkylation reagent]","value":"not available","source":"protocol says reduced and alkylated, reagents unnamed","type":"unavailable"}],
+"validation":{"parse_sdrf":"validate-sdrf -t ms-proteomics -t plants --use_ols_cache_only: rc 0, warnings only (treatment free text not in NCIT/EFO)","structure":"OK","check":"CLEAN","reconcile":"1 BLOCKER cleavage_agent_unsupported - heuristic false positive, record names the hydrolysis proteases in sampleProcessingProtocol but not with digest wording"},
+"limitations":["Paper not read","No raw-file header verification (no range reads)","Independent review not performed"]}

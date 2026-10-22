@@ -1,0 +1,23 @@
+{
+ "accession": "PXD003981",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride_project": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003981",
+  "pride_files": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003981/files",
+  "maxquant_parameters": "HTTP range read of Search/Maxquant txt/parameters.txt and summary.txt inside https://ftp.ebi.ac.uk/pride/data/archive/2016/08/PXD003981/MaxQuantOutput.zip",
+  "publication": "PMID 27456748, doi 10.1111/jnc.13747 (full text not fetched; PRIDE protocol prose used)"
+ },
+ "claims": [
+  {"column": "characteristics[organism]/[organism part]/[strain or breed]/[developmental stage]", "value": "Mus musculus; brain; C57BL/6; adult", "source": "pride_project sampleProcessingProtocol (6-10 week old C57BL/6 mice)", "kind": "extracted"},
+  {"column": "characteristics[cell type]", "value": "brain microvascular endothelial cell", "source": "pride_project (primary brain capillary endothelial cells, mBCECs)", "kind": "extracted"},
+  {"column": "characteristics[treatment]/factor value[treatment]", "value": "monoculture | co-culture with mixed glial cells", "source": "pride_project protocol (mono-culture n=2, co-glia culture n=2)", "kind": "extracted"},
+  {"column": "source name / file mapping", "value": "monoculture01,02 / coculture03,04 -> <name>_0N.raw", "source": "pride_files names; MaxQuant summary Sample01..04 order matches (Sample01_0N=monoculture01 etc.)", "kind": "inferred (Sample01-04 to file-name correspondence)"},
+  {"column": "characteristics[sex], [disease]", "value": "not available", "source": "not stated in PRIDE record", "kind": "unavailable"},
+  {"column": "comment[instrument]", "value": "Q Exactive Plus MS:1002634", "source": "pride_project protocol: Thermo Electron Qexactive plus (archive dropdown says Q Exactive)", "kind": "extracted"},
+  {"column": "comment[cleavage agent details]", "value": "Trypsin MS:1001251", "source": "protocol: trypsin only; MaxQuant parameters Trypsin/P, max 2 missed cleavages; single protease so one column", "kind": "extracted"},
+  {"column": "comment[modification parameters]", "value": "Carbamidomethyl C fixed; Oxidation M, Oxidation P (hydroxyproline), Deamidated N/Q, Acetyl Protein N-term variable", "source": "MaxQuant parameters.txt/summary.txt", "kind": "extracted; hydroxyproline mapped to Oxidation on P (UNIMOD:35)"},
+  {"column": "comment[fragment mass tolerance]", "value": "20 ppm", "source": "parameters.txt MS/MS tol. (FTMS)", "kind": "extracted"},
+  {"column": "comment[precursor mass tolerance], [dissociation method], reduction/alkylation reagents", "value": "not available", "source": "precursor tolerance not in parameters.txt; HCD not stated; TCEP/chloroacetamide described in prose but not accepted by template ontology lists", "kind": "unavailable"},
+  {"column": "comment[label], acquisition", "value": "label free sample; DDA", "source": "PRIDE quantificationMethods Label free; shotgun", "kind": "extracted"}
+ ]
+}

@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD005211.sdrf.tsv",
+  "dataset": "PXD005211",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD005211"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD005211/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Herbst et al. 2019 Proteomes 7(2):16, PMID 31027192, PMC6630437 (Europe PMC full text)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "raw-file",
+      "location": "HTTP range read bytes 0-262143 of https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/03/PXD005211/FAH_Ec_Ox_1.raw"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Escherichia coli / Phycicoccus elongatus Lp2 (NCBITaxon:1193181)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Paper: T. elongata str. Lp2 and E. coli str. K-12; PRIDE organism NEWT:1193181; run names Ec/TEl"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-4",
+      "source_ids": [
+        "paper",
+        "pride-files"
+      ],
+      "evidence": "Four biological replicates; run suffix _1.._4"
+    },
+    {
+      "location": "characteristics[treatment] / factor value[treatment]",
+      "value": "Aerobic / Anaerobic",
+      "source_ids": [
+        "paper",
+        "pride-files"
+      ],
+      "evidence": "Samples harvested at end of aerobic phase or after 3 h anoxic incubation; run codes Ox / 3H"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride",
+        "paper",
+        "raw-header"
+      ],
+      "evidence": "RAW header: Q Exactive - Orbitrap MS"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Tryptic peptides (sample protocol)"
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE quantification: MS1 intensity based label-free; paper: LFQ"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition (inferred)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Inferred from MaxQuant LFQ on Q Exactive; not stated"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE PTM MOD:00397 iodoacetamide derivatized residue; variable mods unverified"
+    },
+    {
+      "location": "comment[precursor mass tolerance] / [fragment mass tolerance] / [dissociation method]",
+      "value": "not available",
+      "source_ids": [],
+      "evidence": "Unavailable: MaxQuant outputs are RAR archives, not unpacked; paper defers details"
+    },
+    {
+      "location": "comment[data file]",
+      "value": "16 .raw files",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "All 16 RAW files claimed exactly once"
+    }
+  ]
+}

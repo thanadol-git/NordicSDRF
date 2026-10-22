@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD055506.sdrf.tsv",
+  "dataset": "PXD055506",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD055506"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD055506/files?pageSize=500"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Rusbjerg-Weberskov et al. 2025 Food Bioprocess Technol 18:9574-9593, doi 10.1007/s11947-025-03989-1, https://link.springer.com/article/10.1007/s11947-025-03989-1 (open access Methods read)"
+    },
+    {
+      "id": "mzTab",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/09/PXD055506/ (mzTab_LyseExtracts, mzTab_AcidPrec_Search, mzTabFermentationTime20h_40h_90h .mzTab.gz; MaxQuant 2.2.0.0, mods, ms_run lists)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Hordeum vulgare",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "BSG is barley spent grain; PRIDE organisms list barley and Rhizopus arrhizus. Column is single-valued: barley used for all rows (inferred); fungal biomass in F-BSG is not captured here."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "germinated grain; mycelium (second column, F-BSG rows only)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organismParts BTO:0003365 germinated grain, BTO:0001436 mycelium; assignment of mycelium to F-BSG rows is inferred from fermentation by R. oryzae."
+    },
+    {
+      "location": "sample groups",
+      "value": "BSG/F-BSG biomass lysate x3, BSG/F-BSG protein extract x3, F-BSG 20/40/90 h x2",
+      "source_ids": [
+        "pride-files",
+        "mzTab",
+        "paper"
+      ],
+      "evidence": "Run names and mzTab ms_run lists; paper: MS on BSG, F-BSG, BSG protein extract, F-BSG protein extract, and F-BSG sampled at 20, 40, 90 h in biological duplicates. Mapping LyseExtract=biomass lysate and AcidPrec_Product=protein extract is inferred from names and paper."
+    },
+    {
+      "location": "characteristics[sampling time]",
+      "value": "20/40/90 hour",
+      "source_ids": [
+        "paper",
+        "pride-files"
+      ],
+      "evidence": "Paper: samples taken after 20 h, 40 h and 90 h; run names F-BSG_20h/40h/90h"
+    },
+    {
+      "location": "characteristics[growth condition]",
+      "value": "SSF with Rhizopus oryzae, 30 C, 90% humidity, pH 5.5, forced aeration",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper Methods: 30 C for 4 days, humidity 90%, pH 5.5, forced aeration"
+    },
+    {
+      "location": "characteristics[treatment] / factor value[treatment]",
+      "value": "fermentation vs control",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Fermented BSG vs non-fermented BSG; 'control' for unfermented is an inferred label"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF (MS:1002523)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE instruments and paper Methods"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin (MS:1001251), single column",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "MaxQuant digestion set to trypsin, 2 missed cleavages. PreOmics iST digestion enzymes not named in deposit/paper, so no second (Lys-C) column."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M variable; Acetyl Protein N-term variable",
+      "source_ids": [
+        "paper",
+        "mzTab"
+      ],
+      "evidence": "Paper Methods and mzTab fixed_mod/variable_mod (57.0215 C; 15.9949 M; 42.0106 protein N-term)"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA (PRIDE:0000627)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Data-dependent acquisition, top-20"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "HCD NCE 28"
+    },
+    {
+      "location": "comment[collision energy]",
+      "value": "28 NCE",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "NCE 28"
+    },
+    {
+      "location": "comment[ms1 scan range]",
+      "value": "300-1600 m/z",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Scan range for MS1 300-1600 m/z"
+    },
+    {
+      "location": "comment[ms2 mass analyzer]",
+      "value": "orbitrap",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "MS/MS at resolution 15,000 on Q Exactive HF (instrument architecture)"
+    },
+    {
+      "location": "comment[precursor mass tolerance] / [fragment mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper says other MaxQuant settings default; values not stated and no mqpar deposited"
+    },
+    {
+      "location": "comment[reduction reagent] / [alkylation reagent]",
+      "value": "not available",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Paper: PreOmics Lyse buffer reduces and alkylates; reagent not named. PRIDE PTM string mentions iodoacetamide derivatized residue but not used as reagent evidence."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "No labels used"
+    },
+    {
+      "location": "comment[data file]",
+      "value": "18 vendor RAW files",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "All 18 RAW files claimed once; 3 mzTab result files not listed as rows"
+    },
+    {
+      "location": "developmental stage / strain or breed / cell type / material type",
+      "value": "not available",
+      "source_ids": [],
+      "evidence": "Not stated in available evidence"
+    }
+  ]
+}

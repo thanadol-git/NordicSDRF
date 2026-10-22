@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD015938.sdrf.tsv",
+  "dataset": "PXD015938",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD015938"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD015938/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Jiang et al. 2020 Front Immunol PMID 33133078, PMC7578346 (Europe PMC full text)"
+    },
+    {
+      "id": "sampleidlist",
+      "kind": "deposit-file",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2021/09/PXD015938/SampleIDlist.xlsx"
+    },
+    {
+      "id": "mq-params",
+      "kind": "deposit-file",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2021/09/PXD015938/MaxQcombinedtxt.zip (txt/parameters.txt, txt/summary.txt read via HTTP range)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Sus scrofa domesticus",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism NEWT:9825; preterm pigs"
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "blood plasma",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "EDTA plasma proteomics"
+    },
+    {
+      "location": "characteristics[developmental stage]",
+      "value": "neonate",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Preterm pigs delivered day 106, euthanized day 5 of life (inferred label)"
+    },
+    {
+      "location": "characteristics[strain or breed]",
+      "value": "Large White x Danish Landrace x Duroc",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: sows Large White x Danish Landrace x Duroc"
+    },
+    {
+      "location": "characteristics[treatment] / factor value[treatment]",
+      "value": "saline | enteral antibiotics | parenteral antibiotics | not available",
+      "source_ids": [
+        "sampleidlist",
+        "paper"
+      ],
+      "evidence": "SampleIDlist.xlsx groups CON, ORA, SYS; ORA mapped to ENT (enteral), SYS to PAR (parenteral) by inference from paper treatment names; 20 raw files absent from sheet are not available"
+    },
+    {
+      "location": "characteristics[disease] / factor value[disease]",
+      "value": "normal | necrotizing enterocolitis | not available",
+      "source_ids": [
+        "sampleidlist"
+      ],
+      "evidence": "Sheet groups Healthy CON, NEC CON, Healthy SYS; ORA group has no NEC status given"
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Sex per pig not in deposit"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Methods: Q-Exactive HF (PRIDE dropdown lists Q Exactive; paper outranks)"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "paper",
+        "mq-params"
+      ],
+      "evidence": "Trypsin Promega; MaxQuant Trypsin/P, 2 missed cleavages"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M and Acetyl Protein N-term variable",
+      "source_ids": [
+        "mq-params"
+      ],
+      "evidence": "parameters.txt / summary.txt"
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "mq-params"
+      ],
+      "evidence": "MS/MS tol. (FTMS) 20 ppm"
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "mq-params"
+      ],
+      "evidence": "Not recorded in parameters.txt"
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "TCEP / chloroacetamide",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Top12 DDA"
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "mq-params"
+      ],
+      "evidence": "Label free; Multiplicity 1"
+    },
+    {
+      "location": "comment[data file]",
+      "value": "47 .raw files",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "47 raw files, 47 pigs; deposit lacks sample 03-14 and 07-14 (sheet lists 3-14 but no raw)"
+    }
+  ]
+}

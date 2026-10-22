@@ -1,0 +1,143 @@
+{
+ "schema_version": 1,
+ "artifact": "annotations/PXD030482.sdrf.tsv",
+ "dataset": "PXD030482",
+ "status": "validated annotation; independent review pending",
+ "sources": [
+  {
+   "id": "pride",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD030482"
+  },
+  {
+   "id": "files",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD030482/files?pageSize=100"
+  },
+  {
+   "id": "filename_description",
+   "kind": "repository",
+   "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2021/12/PXD030482/Filename_description.xlsx"
+  },
+  {
+   "id": "paper",
+   "kind": "publication",
+   "location": "doi:10.1016/J.DIB.2022.107959 (cited in PRIDE record; full text not fetched)"
+  }
+ ],
+ "claims": [
+  {
+   "location": "characteristics[organism] rows 1-113",
+   "value": "Ursus arctos arctos",
+   "source_ids": [
+    "pride"
+   ],
+   "evidence": "PRIDE organism NEWT:563924; title/description state Ursus arctos arctos; NCBITaxon:563924 label verified"
+  },
+  {
+   "location": "characteristics[organism part] rows 1-113",
+   "value": "blood plasma",
+   "source_ids": [
+    "pride"
+   ],
+   "evidence": "EDTA-plasma in sampleProcessingProtocol"
+  },
+  {
+   "location": "characteristics[sex], [age], [individual], [season], [sampling year] rows 1-113",
+   "value": "per-file values",
+   "source_ids": [
+    "filename_description"
+   ],
+   "evidence": "Deposited Filename_description.xlsx lists Bear ID, Season, Sampling Year, Sex, Age (years) for all 113 raw files"
+  },
+  {
+   "location": "characteristics[hibernation state] / factor value[hibernation state]",
+   "value": "hibernating (Winter) / active (Summer)",
+   "source_ids": [
+    "pride",
+    "filename_description"
+   ],
+   "evidence": "Description: samples collected during hibernation and active state, 'two winters and two summers'; Season column Winter/Summer mapped to hibernating/active (inferred mapping)"
+  },
+  {
+   "location": "comment[technical replicate] rows 1-113",
+   "value": "1-3 (two bears-season have 2)",
+   "source_ids": [
+    "pride",
+    "filename_description"
+   ],
+   "evidence": "'All plasma samples were analyzed in triplicates, except one in duplicate'; Replicate column 1/3.. ; interpreted as technical replicates (inferred)"
+  },
+  {
+   "location": "comment[instrument]",
+   "value": "Q Exactive HF",
+   "source_ids": [
+    "pride"
+   ],
+   "evidence": "Protocol: Q Exactive HF with EASY-nLC 1200; PRIDE instrument MS:1002523"
+  },
+  {
+   "location": "comment[cleavage agent details]",
+   "value": "Trypsin",
+   "source_ids": [
+    "pride"
+   ],
+   "evidence": "'digested with trypsin (porcine, Promega)'; MaxQuant search used Trypsin/P semi-specific (not encoded; see report)"
+  },
+  {
+   "location": "comment[dissociation method], [collision energy]",
+   "value": "HCD, 28 eV",
+   "source_ids": [
+    "pride"
+   ],
+   "evidence": "HCD at 28 eV"
+  },
+  {
+   "location": "comment[modification parameters]",
+   "value": "Carbamidomethyl(C) fixed; Oxidation(M), Acetyl(Protein N-term) variable",
+   "source_ids": [
+    "pride"
+   ],
+   "evidence": "dataProcessingProtocol (MaxQuant 1.6.10.43); no mqpar.xml deposited"
+  },
+  {
+   "location": "comment[reduction reagent], [alkylation reagent]",
+   "value": "TCEP, iodoacetamide",
+   "source_ids": [
+    "pride"
+   ],
+   "evidence": "sampleProcessingProtocol"
+  },
+  {
+   "location": "comment[ms1 scan range]",
+   "value": "400m/z-1200m/z",
+   "source_ids": [
+    "pride"
+   ],
+   "evidence": "Full MS m/z 400-1200"
+  },
+  {
+   "location": "comment[proteomics data acquisition method]",
+   "value": "Data-dependent acquisition",
+   "source_ids": [
+    "pride"
+   ],
+   "evidence": "Data dependent top-20 mode"
+  },
+  {
+   "location": "comment[data file] rows 1-113",
+   "value": "113 raw files",
+   "source_ids": [
+    "files"
+   ],
+   "evidence": "All 113 RAW files in PRIDE file list, each claimed exactly once; projectAccessions asserted = PXD030482"
+  }
+ ],
+ "limitations": [
+  "Paper full text not fetched; metadata from PRIDE record and deposited Filename_description.xlsx",
+  "Mass tolerances not stated in deposit (no mqpar.xml): not available",
+  "Disease/health status and developmental stage (subadult) not mapped to ontology terms: not available",
+  "Triplicates assumed technical replicates; description does not say whether sample-prep replicates were independent",
+  "Independent review not performed"
+ ]
+}

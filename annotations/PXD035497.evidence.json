@@ -1,0 +1,20 @@
+{"accession":"PXD035497","status":"validated annotation; independent review pending",
+"sources":[
+{"id":"pride","url":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD035497","local":"scratchpad/PXD035497/pride.json"},
+{"id":"files","url":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD035497/files","local":"scratchpad/PXD035497/files.json"},
+{"id":"mqpar","url":"https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/04/PXD035497/mqpar.xml","local":"scratchpad/PXD035497/mqpar.xml"},
+{"id":"mztab","url":"https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/04/PXD035497/mzTab.mzTab.gz","note":"header range read only"},
+{"id":"paper","url":"https://doi.org/10.1016/j.jprot.2023.104888","note":"PMID 36965770; paywalled, full text UNAVAILABLE (abstract only via Europe PMC)"}],
+"claims":[
+{"column":"characteristics[organism]","value":"Pseudideonella sakaiensis","source":"pride (NEWT:1547922 = Ideonella sakaiensis); NCBITaxon label for 1547922 via OLS is Pseudideonella sakaiensis","kind":"extracted"},
+{"column":"comment[instrument]","value":"Q Exactive HF","source":"pride instruments field (submitter-selected; not verified from RAW headers)","kind":"extracted"},
+{"column":"comment[cleavage agent details]","value":"Trypsin","source":"pride sampleProcessingProtocol; mqpar says Trypsin/P, 2 missed cleavages","kind":"extracted"},
+{"column":"comment[dissociation method], comment[collision energy]","value":"HCD, 28 NCE","source":"pride sampleProcessingProtocol (NCE 28 eV; HCD inferred from Q Exactive HF + .apl HCD names)","kind":"extracted/inferred"},
+{"column":"comment[proteomics data acquisition method]","value":"DDA","source":"pride protocol: top 20 method","kind":"extracted"},
+{"column":"comment[precursor/fragment mass tolerance]","value":"4.5 ppm / 20 ppm","source":"mqpar mainSearchTol; FTMS MatchTolerance","kind":"extracted"},
+{"column":"comment[modification parameters]","value":"Carbamidomethyl(C) fixed; Oxidation(M), Acetyl(Protein N-term) variable","source":"mqpar; mzTab header","kind":"extracted"},
+{"column":"comment[alkylation reagent]","value":"Iodoacetamide","source":"pride identifiedPTMStrings (iodoacetamide derivatized residue) + fixed carbamidomethyl","kind":"inferred"},
+{"column":"characteristics[treatment]/factor value[treatment]","value":"C=control; EG=ethylene glycol; EEG=ethyl glycolate; SGM=sodium glyoxylate monohydrate; TPA=terephthalic acid; 1-4 and 1+-4+ = not available","source":"file-name prefixes matched to compounds listed in pride abstract; mapping UNVERIFIED (paper unavailable)","kind":"inferred"},
+{"column":"comment[label]","value":"label free sample","source":"mqpar LFQ, no labels","kind":"extracted"},
+{"column":"characteristics[organism part], [cell type], [disease]","value":"not applicable","source":"bacterial culture","kind":"assumed"}],
+"unavailable":["paper full text","sample-to-condition legend","meaning of numeric groups 1-4 and 1+-4+","RAW header verification"]}

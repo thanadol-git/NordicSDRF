@@ -1,0 +1,16 @@
+{"accession":"PXD003755","status":"validated annotation; independent review pending","claims":[
+{"column":"characteristics[organism]","value":"Drosophila melanogaster","source":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003755 (organisms, NEWT:7227; protocol text)","kind":"extracted"},
+{"column":"characteristics[developmental stage]","value":"adult","source":"PRIDE sampleProcessingProtocol: male flies 2-3 days of age","kind":"inferred"},
+{"column":"characteristics[organism part]","value":"whole body","source":"Protocol: protein extracted from 13 whole flies per replicate (B-PER)","kind":"inferred"},
+{"column":"characteristics[temperature]/factor value[temperature]","value":"12C, 25C, 31C","source":"PRIDE projectDescription (12, 25, 31 oC); file names say 13oC","kind":"extracted; discrepancy flagged"},
+{"column":"characteristics[strain or breed]","value":"not available","source":"strain not stated in PRIDE record; no publication linked","kind":"unavailable"},
+{"column":"comment[instrument]","value":"Q Exactive MS:1001911","source":"PRIDE protocol text + utf-16 header of 25oC_01.raw (HTTP range 0-256KB)","kind":"verified"},
+{"column":"comment[cleavage agent details]","value":"Trypsin MS:1001251","source":"https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/03/PXD003755/MaxQuantOutput.zip txt/summary.txt (Trypsin/P, 2 missed cleavages; single protease)","kind":"verified"},
+{"column":"comment[modification parameters]","value":"Carboxymethyl (C) fixed UNIMOD:6; Oxidation (M) variable UNIMOD:35","source":"MaxQuantOutput.zip txt/parameters.txt and summary.txt (ZIP central directory + member range reads)","kind":"verified"},
+{"column":"comment[fragment mass tolerance]","value":"20 ppm","source":"parameters.txt MS/MS tol. (FTMS)","kind":"verified"},
+{"column":"comment[precursor mass tolerance]","value":"4.5 ppm","source":"PRIDE: 'All other settings left as default' (MaxQuant 1.5 main-search default); not in parameters.txt","kind":"inferred"},
+{"column":"comment[reduction reagent]/[alkylation reagent]","value":"DTT / iodoacetic acid","source":"Protocol: DTT; PRIDE PTM MOD:00399 iodoacetic acid derivatized; Carboxymethyl fixed mod","kind":"extracted+inferred"},
+{"column":"comment[dissociation method]","value":"HCD MS:1000422","source":"Q Exactive is HCD-only; not stated in record","kind":"inferred"},
+{"column":"comment[data file]","value":"9 RAW files","source":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003755/files","kind":"extracted"}],
+"unavailable":["publication (no DOI/PMID in PRIDE)","strain","explicit MaxQuant precursor tolerance"],
+"validation":["parse_sdrf validate-sdrf -t ms-proteomics -t invertebrates: pass","tools structure: OK","tools check: CLEAN","tools reconcile: clean"]}

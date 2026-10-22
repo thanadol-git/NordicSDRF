@@ -1,0 +1,26 @@
+{
+ "accession": "PXD039265",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride_project": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD039265",
+  "pride_files": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD039265/files",
+  "europepmc_abstract": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1016/J.BIORTECH.2023.129430 (PMID 37399952; full text unavailable, not open access)",
+  "raw_header_range_read": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/07/PXD039265/TP0_JSP_JLN_UPLIFT.raw (first 300 kB only)",
+  "idxml_range_read": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/07/PXD039265/TP006_JSP_JLN_UPLIFT_20221214060327.idXML (first 400 kB only)"
+ },
+ "claims": [
+  {"column":"comment[instrument]","value":"Q Exactive HF","source":"PRIDE instruments field; confirmed by RAW header string 'Q Exactive HF - Orbitrap MS'","basis":"extracted"},
+  {"column":"comment[cleavage agent details]","value":"Trypsin","source":"PRIDE sampleProcessingProtocol ('tryptic peptides'); idXML enzyme=trypsin/p","basis":"extracted"},
+  {"column":"comment[modification parameters]","value":"Carbamidomethyl (C) fixed; Oxidation (M) variable","source":"idXML SearchParameters","basis":"extracted"},
+  {"column":"comment[precursor mass tolerance]/[fragment mass tolerance]","value":"5 ppm / 0.01 Da","source":"PRIDE dataProcessingProtocol; idXML header records precursor 10 ppm and fragment 0","basis":"extracted from prose; conflicts with idXML header"},
+  {"column":"comment[dissociation method]","value":"HCD","source":"RAW method header contains Fragmentation_HCD","basis":"inferred from method header"},
+  {"column":"comment[proteomics data acquisition method]","value":"DDA","source":"RAW method 'Complex_NoLockMass_tt120min_g90min'; shotgun proteomics; no DIA statement","basis":"inferred"},
+  {"column":"comment[label]","value":"label free sample","source":"13C labelling is in the substrate, not a quantitation label","basis":"inferred"},
+  {"column":"characteristics[organism]","value":"metagenome","source":"PRIDE organisms NEWT:256318; abstract: digester sludge","basis":"extracted"},
+  {"column":"characteristics[environmental medium]","value":"sludge","source":"abstract: anaerobic digester sludge from municipal wastewater treatment plant","basis":"extracted (ENVO:00002044)"},
+  {"column":"characteristics[treatment]/factor value[treatment]","value":"13C-labelled adipic acid | 1,4-butanediol | terephthalic acid","source":"file prefixes AA/BD/TP; abstract names AA and BD, title/description name PBAT building blocks","basis":"inferred from file prefix; TP = terephthalic acid assumed"},
+  {"column":"characteristics[sampling time]/factor value[sampling time]","value":"0,6,24,48,120 hour","source":"file name suffixes 000/006/024/048/120","basis":"inferred; unit not stated in accessible record"},
+  {"column":"characteristics[geographic location]/[temperature]","value":"not available","source":"full text unavailable","basis":"unavailable"}
+ ],
+ "unavailable_evidence": ["full text/Methods of the paper", "sample-to-file map beyond file names", "digester location, temperature, replicates"]
+}

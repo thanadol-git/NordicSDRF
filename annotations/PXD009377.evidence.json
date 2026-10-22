@@ -1,0 +1,33 @@
+{
+ "accession": "PXD009377",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride_project": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD009377",
+  "pride_files": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD009377/files?pageSize=200",
+  "sample_sheet": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2019/11/PXD009377/Samplesforproteomanalysis.xlsx",
+  "maxquant_parameters": "Maxquantsearchtxt.zip:txt/parameters.txt and txt/summary.txt (HTTP range read, MaxQuant 1.6.0.13 file header)",
+  "raw_header": "Orm_1a.raw first 600 kB (HTTP range): 'Q Exactive HF - Orbitrap MS'",
+  "paper": "PMC6383609 / PMID 30815237 / doi 10.1080/20013078.2019.1578116 (Europe PMC full text)"
+ },
+ "claims": [
+  {"columns": ["characteristics[organism]"], "value": "Ascaris suum", "basis": "extracted: PRIDE organism NEWT:6253, title, paper"},
+  {"columns": ["characteristics[developmental stage]"], "value": "adult", "basis": "extracted: paper Fig 6/7 legends (adult ES, adult body fluid)"},
+  {"columns": ["characteristics[biological replicate]","source name"], "basis": "extracted: Samplesforproteomanalysis.xlsx (Orm01-Orm23 names, replicate numbers)"},
+  {"columns": ["comment[technical replicate]","assay name"], "basis": "INFERRED: a/b suffix pairs of RAW files per sample treated as technical replicate injections; not stated in deposit"},
+  {"columns": ["characteristics[pooled sample]","characteristics[biological replicate]"], "rows": "Orm1314", "basis": "INFERRED from file name Orm_1314a/b only; not in sample sheet or paper; pooled sample set to not available"},
+  {"columns": ["characteristics[sample fraction]","factor value[sample fraction]"], "basis": "extracted: sample sheet 'Treatment before MS' column (translated from Danish)"},
+  {"columns": ["characteristics[organism part]"], "basis": "ES rows: not applicable (culture medium secretion); ABF rows: bodily fluid (adult body fluid, paper)"},
+  {"columns": ["comment[instrument]"], "value": "Q Exactive HF MS:1002523", "basis": "RAW header + protocol text 'QE HF'; PRIDE lists generic Q Exactive"},
+  {"columns": ["comment[cleavage agent details]"], "value": "Trypsin", "basis": "protocol (FASP tryptic digestion); MaxQuant enzyme Trypsin/P; single protease"},
+  {"columns": ["comment[modification parameters]"], "basis": "extracted: MaxQuant parameters.txt (fixed Carbamidomethyl C; variable Oxidation M, Acetyl protein N-term)"},
+  {"columns": ["comment[fragment mass tolerance]"], "value": "20 ppm", "basis": "MaxQuant parameters.txt MS/MS tol (FTMS)"},
+  {"columns": ["comment[precursor mass tolerance]","comment[dissociation method]","characteristics[strain or breed]"], "value": "not available", "basis": "unavailable: not in parameters.txt / not stated in deposit"},
+  {"columns": ["comment[proteomics data acquisition method]"], "value": "Data-dependent acquisition", "basis": "ASSUMED: label-free MaxQuant DDA workflow on QE HF; acquisition mode not stated explicitly"}
+ ],
+ "validation": {
+  "parse_sdrf validate-sdrf -t ms-proteomics -t invertebrates": "Everything seems to be fine",
+  "python -m tools structure": "OK",
+  "python -m tools check --offline": "CLEAN",
+  "python -m tools reconcile": "all values agree with record"
+ }
+}

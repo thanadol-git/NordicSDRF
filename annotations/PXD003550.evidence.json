@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD003550.sdrf.tsv",
+  "dataset": "PXD003550",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003550"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003550/files?pageSize=200"},
+    {"id": "paper", "kind": "publication", "location": "https://europepmc.org/article/PMC/PMC4831147 (PMID 27075204, Stem Cell Res Ther 2016)"},
+    {"id": "mq-proteom", "kind": "deposited search", "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2016/04/PXD003550/MaxQ_search_txt_proteom.zip (txt/parameters.txt, summary.txt, proteinGroups.txt read by HTTP range)"},
+    {"id": "mq-peptidom", "kind": "deposited search", "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2016/04/PXD003550/MaxQ_search_txt_peptidom.zip (txt/parameters.txt, summary.txt)"},
+    {"id": "mq-secretom", "kind": "deposited search", "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2016/04/PXD003550/MaxQ_seaech_txt_secretom.zip (txt/parameters.txt, summary.txt)"}
+  ],
+  "claims": [
+    {"location": "comment[data file]", "value": "72 RAW files", "source_ids": ["pride-files"], "evidence": "75 files in PRIDE list: 72 RAW (each claimed once) + 3 MaxQuant txt zips (not data files). All entries list PXD003550."},
+    {"location": "characteristics[cell compartment] / comment[data file]", "value": "P<g>_<r>.raw = proteome; TF<g><r>.raw = secretome; <g>_<r>.raw = peptidome (g=1-6, r=1-4)", "source_ids": ["mq-proteom", "mq-secretom", "mq-peptidom"], "evidence": "summary.txt raw-file lists of the three separate MaxQuant searches (proteome, secretome, peptidome zips) name exactly these files."},
+    {"location": "source name / characteristics[biological replicate]", "value": "3 donors x 2 oxygen conditions x 4 replicates x 3 compartments = 72", "source_ids": ["paper"], "evidence": "Paper: ASC12, ASC21, ASC23 in normoxia and hypoxia, quadruplicate biological replicates of secretome, peptidome and proteome. Replicate number taken from the file-name suffix (inferred)."},
+    {"location": "factor value[oxygen level]", "value": "odd groups 20% O2 normoxia; even groups 1% O2 hypoxia", "source_ids": ["mq-proteom", "paper"], "evidence": "INFERRED, not stated in deposit. Proteome proteinGroups LFQ intensities: hypoxia-responsive proteins (LDHA, PGK1, ENO1, SLC2A1, BNIP3L, PLOD2, HK2, LOX, P4HA1/2) are consistently higher in groups 2, 4, 6 than 1, 3, 5. Paper confirms 20% vs 1% O2."},
+    {"location": "characteristics[individual]", "value": "donorA=groups 1,2; donorB=3,4; donorC=5,6", "source_ids": ["mq-proteom", "paper"], "evidence": "INFERRED. Group pairs follow the normoxia/hypoxia alternation and Y-chromosome proteins (RPS4Y1, DDX3Y) appear only in groups 3 and 4. Mapping to ASC12/ASC21/ASC23 is not recoverable from the deposit."},
+    {"location": "characteristics[sex]", "value": "male for donorB; not available otherwise", "source_ids": ["mq-proteom"], "evidence": "INFERRED from detection of RPS4Y1 and DDX3Y only in donorB runs; absence in other donors is not proof of female, so left not available."},
+    {"location": "characteristics[organism] / [organism part] / [cell type]", "value": "Homo sapiens; adipose tissue; mesenchymal stem cell of adipose tissue", "source_ids": ["pride", "paper"], "evidence": "Human adipose-derived stem cells (CL:0002570 in PRIDE sample attributes)."},
+    {"location": "comment[instrument] / comment[dissociation method]", "value": "Q Exactive Plus; HCD", "source_ids": ["paper", "pride"], "evidence": "Methods: QExactive Plus, up to 12 precursors for HCD fragmentation. PRIDE lists Q Exactive; paper is more specific."},
+    {"location": "comment[cleavage agent details]", "value": "Trypsin", "source_ids": ["pride", "paper", "mq-proteom"], "evidence": "Trypsin 0.5 ug, overnight 37 C (protocol); MaxQuant special AAs KR."},
+    {"location": "comment[modification parameters]", "value": "Carbamidomethyl (C) fixed; Oxidation (M) variable", "source_ids": ["pride", "mq-proteom"], "evidence": "dataProcessingProtocol and parameters.txt (Fixed modifications: Carbamidomethyl (C))."},
+    {"location": "comment[fragment mass tolerance]", "value": "20 ppm", "source_ids": ["mq-proteom"], "evidence": "parameters.txt MS/MS tol. (FTMS) 20 ppm. Precursor tolerance not recorded in parameters.txt: not available."},
+    {"location": "comment[reduction reagent]", "value": "TCEP", "source_ids": ["pride"], "evidence": "sampleProcessingProtocol: TCEP reduction; chloroacetamide alkylation (no suitable PRIDE/MS term found; left not available)."},
+    {"location": "comment[proteomics data acquisition method]", "value": "DDA", "source_ids": ["pride", "paper"], "evidence": "Top-12 intensity-based precursor selection."},
+    {"location": "characteristics[age], [disease], [ancestry category]", "value": "not available", "source_ids": ["paper"], "evidence": "Donor age, health status and ancestry are not given in the deposit or paper."}
+  ]
+}
