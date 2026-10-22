@@ -52,7 +52,7 @@ countries:
         annotated: 68
         blocked: 93
         notes: "line 1 is PRD000423, a legacy ProteomeXchange id — resolve to a PXD before screening"
-        in_corpus: 79
+        in_corpus: 80
       lund:
         name: Lund
         search_terms: [Lund, Malmö, Skåne]
@@ -141,7 +141,7 @@ countries:
         search_terms: [Aalborg]
         pride_hits: 68
         screened: 0
-        annotated: 44
+        annotated: 45
         blocked: 0
         pxd_list: lists/denmark/aalborg.txt
         pxd_count: 65
@@ -155,7 +155,7 @@ countries:
         blocked: 7
         pxd_list: lists/denmark/lyngby.txt
         pxd_count: 57
-        in_corpus: 30
+        in_corpus: 31
       roskilde:
         name: Roskilde
         search_terms: [Roskilde]

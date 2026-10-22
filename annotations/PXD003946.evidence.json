@@ -1,0 +1,27 @@
+{
+ "accession": "PXD003946",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride_project": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003946",
+  "pride_files": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003946/files",
+  "filename_description": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2016/09/PXD003946/FilenameDescription.xlsx (small xlsx, downloaded in full; RAW files not downloaded)",
+  "publication": "PMID 27609515 (J Biol Chem 2016; full text not fetched; PRIDE protocol prose used)"
+ },
+ "claims": [
+  {"column": "source name / files / technical replicate", "value": "18 sources (B1-B7 x W/S, PMW, PMS, Hs1, Hs2) x 3 technical replicates -> 54 RAW files", "source": "filename_description", "kind": "extracted"},
+  {"column": "characteristics[organism]", "value": "Ursus arctos; Homo sapiens (Hs1, Hs2 commercial reference plasma)", "source": "pride_project sampleProcessingProtocol", "kind": "extracted"},
+  {"column": "characteristics[organism part]", "value": "blood plasma", "source": "pride_project sampleAttributes / title", "kind": "extracted"},
+  {"column": "characteristics[physiological state]/factor value", "value": "hibernating (W, winter) / active (S, summer); not applicable for human", "source": "filename_description W/S codes + abstract (hibernating vs active)", "kind": "extracted (W=winter, S=summer decoded from codes and protocol 'summer and winter')"},
+  {"column": "characteristics[pooled sample]", "value": "pooled for PMW/PMS (ProteoMiner-enriched winter/summer pools)", "source": "pride_project sampleProcessingProtocol", "kind": "extracted"},
+  {"column": "characteristics[developmental stage]", "value": "subadult", "source": "title (sub-adult brown bear)", "kind": "extracted"},
+  {"column": "characteristics[sex], [disease], [strain or breed]", "value": "not available (bear); human reference sex/disease not available", "source": "not stated in record", "kind": "unavailable"},
+  {"column": "comment[instrument]", "value": "Q Exactive MS:1001911", "source": "pride_project instruments and protocol", "kind": "extracted"},
+  {"column": "comment[cleavage agent details]", "value": "Trypsin MS:1001251", "source": "protocol (FASP trypsin digestion)", "kind": "extracted"},
+  {"column": "comment[dissociation method]/[collision energy]", "value": "HCD; 30 NCE", "source": "protocol", "kind": "extracted"},
+  {"column": "comment[precursor/fragment mass tolerance]", "value": "6 ppm / 20 ppm", "source": "dataProcessingProtocol (Mascot)", "kind": "extracted"},
+  {"column": "comment[modification parameters]", "value": "Carboxymethyl UNIMOD:6 C fixed; Oxidation UNIMOD:35 M variable", "source": "dataProcessingProtocol; PRIDE PTM iodoacetic acid derivatized residue", "kind": "extracted (Mascot params stated in prose, search result files are xlsx only)"},
+  {"column": "comment[ms1 scan range]/[ms2 mass analyzer]", "value": "350m/z-1850m/z; orbitrap", "source": "protocol (Q Exactive, 350-1850 m/z, resolution 70,000/17,500)", "kind": "extracted"},
+  {"column": "comment[proteomics data acquisition method]", "value": "Data-dependent acquisition PRIDE:0000627", "source": "protocol", "kind": "extracted"},
+  {"column": "characteristics[enrichment process]", "value": "omitted for ProteoMiner pools", "source": "no suitable EFO/PRIDE term verified", "kind": "unavailable"}
+ ]
+}
