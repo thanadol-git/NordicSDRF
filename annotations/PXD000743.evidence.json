@@ -1,0 +1,113 @@
+{
+  "accession": "PXD000743",
+  "status": "validated annotation; independent review pending",
+  "sources": [
+    {
+      "id": "pride",
+      "url": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000743",
+      "local": "/home/thanadol/Documents/GitHub/sdrf-skills/scratchpad/PXD000743/pride.json",
+      "supports": [
+        "organism",
+        "instrument",
+        "trypsin",
+        "DTT/IAA",
+        "tolerances",
+        "modifications",
+        "DDA/CID (IDA)",
+        "sdrf rows via project description"
+      ]
+    },
+    {
+      "id": "files",
+      "url": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD000743/files/all",
+      "local": ".../scratchpad/PXD000743/files.json",
+      "supports": [
+        "comment[data file]: 20 .wiff RAW files (companion .wiff.scan, .mgf, .dat, pride.xml.gz not listed as data files)"
+      ]
+    },
+    {
+      "id": "paper",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4617654/ (PMID 26500418, via NCBI efetch pmc id 4617654)",
+      "supports": [
+        "3 eyelid + 1 conjunctival + 1 orbital specimen; 2 females+1 male eyelid; conjunctiva and orbit patients female; two technical replicates; amyloid vs internal control tissue; Mascot semiTrypsin"
+      ]
+    },
+    {
+      "id": "pride-xml",
+      "url": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2014/05/PXD000743/*.dat-pride.xml.gz (HTTP range, first 3 kB)",
+      "supports": [
+        "file stem to patient/plaque-vs-control/replicate map: NSN-36=patient1, 38=2, 39=3, 40=4, 41=5; A=plaque, B=control; -2=replicate1 (2014-03-14), -3=replicate2 (2014-03-15)"
+      ]
+    },
+    {
+      "id": "mascot-dat",
+      "url": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2014/05/PXD000743/2014-03-15-NSN-36A-3.dat (range read)",
+      "supports": [
+        "TOL=10 ppm, ITOL=0.2 Da, CLE=semiTrypsin, fixed Carbamidomethyl (C), variable Oxidation (P),(M)"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "column": "characteristics[organism part]",
+      "rows": "patient1-3",
+      "value": "eyelid",
+      "basis": "paper: three eyelid specimens; PRIDE patient numbering 1-3 assumed to equal specimens 1-3 (inferred)"
+    },
+    {
+      "column": "characteristics[organism part]",
+      "rows": "patient4,patient5",
+      "value": "not available",
+      "basis": "conjunctiva vs orbit assignment to patient 4/5 not found in any accessible source"
+    },
+    {
+      "column": "characteristics[sex]",
+      "rows": "patient4,patient5",
+      "value": "female",
+      "basis": "paper: conjunctival and orbital patients both female"
+    },
+    {
+      "column": "characteristics[sex]",
+      "rows": "patient1-3",
+      "value": "not available",
+      "basis": "paper: two female, one male, not assigned per specimen"
+    },
+    {
+      "column": "characteristics[disease]",
+      "rows": "amyloid",
+      "value": "AL amyloidosis (MONDO:0019438)",
+      "basis": "paper/title"
+    },
+    {
+      "column": "characteristics[disease]",
+      "rows": "control",
+      "value": "not available",
+      "basis": "internal tissue without apparent deposits; not asserted"
+    },
+    {
+      "column": "comment[cleavage agent details]",
+      "value": "Trypsin MS:1001251",
+      "basis": "porcine trypsin 16 h; Mascot searched semiTrypsin (search setting only, single protease)"
+    },
+    {
+      "column": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M variable; Oxidation P variable (hydroxyproline)",
+      "basis": "Mascot dat parameters"
+    },
+    {
+      "column": "comment[proteomics data acquisition method]",
+      "value": "DDA PRIDE:0000627",
+      "basis": "IDA survey + up to 50 product ion scans"
+    }
+  ],
+  "unavailable": [
+    "supplementary PDF NIHMS703905-supplement-1.pdf (not retrievable)",
+    "patient-level age, ethnicity"
+  ],
+  "validation": {
+    "parse_sdrf": "only warnings (free-text phenotype not found in pato/efo)",
+    "structure": "OK",
+    "check": "CLEAN",
+    "reconcile": "1 MAJOR disease_with_control_arm_in_record, judged false positive (controls carry not available)"
+  }
+}

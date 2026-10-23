@@ -1,0 +1,121 @@
+{
+ "accession": "PXD006494",
+ "status": "validated annotation; independent review pending",
+ "sdrf": "PXD006494.sdrf.tsv",
+ "sources": {
+  "pride_project": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006494",
+  "pride_files": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006494/files?pageSize=1000",
+  "paper": "PMID 29117645, doi 10.1111/febs.14321, PMC5760277 (NCBI efetch db=pmc id=5760277)",
+  "peptide_summaries": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2017/11/PXD006494/2016-08-31-ETP-TGFBIpKOiTRAQ-{1,2}_PeptideSummary.txt",
+  "wiff_header_range_reads": "first 4 MB of 2013-10-20KRUC1-1.wiff and 2013-10-21KRUC2-1.wiff (HTTPS range)"
+ },
+ "claims": [
+  {
+   "columns": [
+    "characteristics[organism]",
+    "characteristics[organism part]"
+   ],
+   "value": "Mus musculus; cornea",
+   "evidence": "PRIDE organisms/organismParts; paper Methods",
+   "type": "extracted"
+  },
+  {
+   "columns": [
+    "characteristics[developmental stage]",
+    "characteristics[strain or breed]"
+   ],
+   "value": "adult; C57BL/6J",
+   "evidence": "paper: adult mice 8-10 weeks, C57BL/6J background",
+   "type": "extracted"
+  },
+  {
+   "columns": [
+    "characteristics[sex]"
+   ],
+   "value": "not available",
+   "evidence": "paper: equal ratios of male and female mice; per-sample sex not given; corneas of two mice pooled",
+   "type": "extracted"
+  },
+  {
+   "columns": [
+    "characteristics[genotype]",
+    "factor value[genotype]"
+   ],
+   "value": "TGFBI+/+ vs TGFBI-/-",
+   "evidence": "PRIDE description/paper: n=3 pooled biological replicates per genotype",
+   "type": "extracted"
+  },
+  {
+   "rows": "all",
+   "columns": [
+    "comment[label]",
+    "source name"
+   ],
+   "value": "iTRAQ114=reference master mix; 115/116/117=samples",
+   "evidence": "paper: master mix labelled 114; samples 115, 116 or 117; two iTRAQ sets",
+   "type": "extracted"
+  },
+  {
+   "rows": "channel->genotype per set",
+   "value": "set1: 115 WT, 116 WT, 117 KO; set2: 115 WT, 116 KO, 117 KO",
+   "evidence": "NOT stated in paper. Inferred from summed Area of BGH3_MOUSE (TGFBIp) peptides (conf>=95) in PeptideSummary: set1 [114,115,116,117]=[15210,27169,58615,4672]; set2=[8434,18174,1293,1918]; 3 WT + 3 KO overall as designed",
+   "type": "inferred"
+  },
+  {
+   "rows": "file->set",
+   "value": "KRUC1 (2013-10-20) = iTRAQ set 1; KRUC2 (2013-10-21) = set 2",
+   "evidence": "NOT verifiable from deposit; assumed from acquisition order and numbering of 'ETP-TGFBIpKOiTRAQ-1/-2' searches. Spectrum-count vs scan-size correlation inconclusive",
+   "type": "assumed"
+  },
+  {
+   "columns": [
+    "comment[cleavage agent details] x2"
+   ],
+   "value": "Trypsin; CNBr",
+   "evidence": "paper/PRIDE protocol: CNBr chemical cleavage in 70% TFA, then trypsin. Column order trypsin first because sdrf-tools reconcile only reads the first column",
+   "type": "extracted"
+  },
+  {
+   "columns": [
+    "comment[instrument]"
+   ],
+   "value": "TripleTOF 5600",
+   "evidence": "PRIDE instruments; paper; wiff headers (Analyst, 5600 path)",
+   "type": "extracted"
+  },
+  {
+   "columns": [
+    "comment[modification parameters]"
+   ],
+   "value": "Carbamidomethyl C, iTRAQ4plex K/N-term fixed; Oxidation M/P, Deamidated N/Q, Dioxidation W, Met->Hse variable",
+   "evidence": "Modifications field counts in deposited PeptideSummary.txt (ProteinPilot); paper states iodoacetamide fixed and default standard workup set variable",
+   "type": "extracted (subset of ProteinPilot workup set)"
+  },
+  {
+   "columns": [
+    "comment[fractionation method]",
+    "comment[fraction identifier]"
+   ],
+   "value": "SCX, 12 fractions per set",
+   "evidence": "paper Methods; 12 wiff per set",
+   "type": "extracted"
+  },
+  {
+   "columns": [
+    "comment[precursor mass tolerance]",
+    "comment[fragment mass tolerance]",
+    "comment[dissociation method]"
+   ],
+   "value": "not available",
+   "evidence": "ProteinPilot instrument-default tolerances, not stated; dissociation not stated",
+   "type": "unavailable"
+  }
+ ],
+ "excluded": "18 SRM Qtrap 6500 periostin runs (2015-0312-ETP-Periostin23minSRMScheduled-A1..F3.wiff): sample/replicate mapping not stated, separate fresh digests; .wiff.scan companions; search/peak list files",
+ "validation": {
+  "parse_sdrf": "WARNING only (C57BL/6J not in ncbitaxon)",
+  "tools_check": "CLEAN 19/19",
+  "tools_structure": "OK",
+  "tools_reconcile": "agrees (after cleavage column order)"
+ }
+}

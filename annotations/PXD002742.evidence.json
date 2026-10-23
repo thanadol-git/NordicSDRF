@@ -1,0 +1,17 @@
+{
+ "accession": "PXD002742",
+ "status": "validated annotation; independent review pending",
+ "claims": [
+  {"claim": "organism Mus musculus; organ part liver", "columns": ["characteristics[organism]","characteristics[organism part]"], "source": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002742 (title, protocol, keywords)", "basis": "extracted"},
+  {"claim": "iTRAQ 8plex, channels 113-121 (PD quantification method lists 113,114,115,116,117,118,119,121; ratios vs 114)", "columns": ["comment[label]"], "source": "range read of first 300 kB of JP18-1-MPlav-mergeallvs114.msf-pride-filtered.xml.gz (ftp.pride.ebi.ac.uk/pride/data/archive/2016/04/PXD002742/)", "basis": "extracted; occupancy of 119/121 not confirmed"},
+  {"claim": "trypsin; Methylthio(C), iTRAQ8plex(K, N-term) fixed; Oxidation(M), iTRAQ8plex(Y) variable; 5 ppm; fragment 0.5 Da (Mascot parameter; prose says 0.7 Da)", "columns": ["comment[cleavage agent details]","comment[modification parameters]","comment[precursor mass tolerance]","comment[fragment mass tolerance]"], "source": "same PRIDE XML processingMethod userParams; PRIDE sampleProcessingProtocol/dataProcessingProtocol", "basis": "extracted"},
+  {"claim": "IEF peptide fractionation; 12 fractions, second injection set named 'excl' treated as technical replicate 2", "columns": ["comment[fractionation method]","comment[fraction identifier]","comment[technical replicate]"], "source": "PRIDE protocol text; RAW file names from files endpoint", "basis": "fractionation extracted; excl=replicate inferred from file numbering"},
+  {"claim": "pulsed q dissociation", "columns": ["comment[dissociation method]"], "source": "ReporterIonQuantifierNode ActivationTypeFilter=PQD in PRIDE XML", "basis": "inferred from software filter; not confirmed from RAW"},
+  {"claim": "instrument LTQ Orbitrap, DDA", "columns": ["comment[instrument]","comment[proteomics data acquisition method]"], "source": "PRIDE project record (instruments) and protocol prose", "basis": "extracted/inferred (DDA assumed for Mascot shotgun)"}
+ ],
+ "unavailable": [
+  {"item": "iTRAQ channel to sample/genotype map (control vs ETHE1-deficient)", "reason": "paper doi 10.1002/pmic.201500336 behind Cloudflare 403, no PMC full text, no map in PRIDE files, mzTab, or XML header"},
+  {"item": "sex, age/stage, strain, cell type, disease per sample", "reason": "not in accessible record"}
+ ],
+ "validation": ["parse_sdrf validate-sdrf -t ms-proteomics -t vertebrates: pass", "python -m tools structure: OK", "python -m tools check: CLEAN (12/12 verified)", "python -m tools reconcile: no disagreements"]
+}

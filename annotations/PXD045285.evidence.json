@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD045285.sdrf.tsv",
+  "dataset": "PXD045285",
+  "status": "validated annotation; independent review pending",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD045285"},
+    {"id": "files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD045285/files/all"},
+    {"id": "rawhdr", "kind": "raw-header", "location": "HTTP range read (first 512 KB) of each of the 22 .raw files under https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/01/PXD045285/"},
+    {"id": "msf", "kind": "search-output", "location": "Proteome Discoverer .msf (SQLite) for Dermal_Silvergel_Gelband_1, Dermal_Silvergel_Gelband_4, Lung_Silvergel_Gelband_1, Lung_Silvergel_Gelband_7, Skin_Donor1_LowerBand"},
+    {"id": "zhrs", "kind": "search-output", "location": "StavroX .zhrs (zip) 20230713_Dermal_ImmunoPuri_..._Zeropoint05Tolerance.zhrs (properties.ssf, report.txt)"},
+    {"id": "paper", "kind": "publication", "location": "doi:10.1021/acs.biochem.4c00240 / PMID 39352075 (closed access; abstract only via Europe PMC)"}
+  ],
+  "claims": [
+    {"location": "characteristics[organism] rows 1-22", "value": "Homo sapiens", "source_ids": ["pride"], "evidence": "PRIDE organism NEWT:9606; human reference proteome FASTA in msf"},
+    {"location": "characteristics[organism part]/[cell type] Dermal_* rows and Dermal ImmunoPuri", "value": "skin / fibroblast / cell", "source_ids": ["pride", "files"], "evidence": "Title/abstract: dermal and pulmonary fibroblasts in vitro; run names; PRIDE sampleAttributes list fibroblast, cell culture, skin"},
+    {"location": "characteristics[organism part]/[cell type] Lung_* rows and Lung ImmunoPuri", "value": "lung / fibroblast / cell", "source_ids": ["pride", "files"], "evidence": "Abstract names pulmonary fibroblasts; run names Lung_*; PRIDE organismParts omit lung (structured field incomplete)"},
+    {"location": "characteristics[organism part]/[material type] Skin_Donor* rows", "value": "skin / tissue", "source_ids": ["pride", "files"], "evidence": "Abstract: human skin in vivo; run names Skin_Donor1-3"},
+    {"location": "characteristics[biological replicate]/[individual] Skin_Donor* rows", "value": "1-3 / Donor1-3", "source_ids": ["files"], "evidence": "Run-name donor numbers only; Upper and Lower band of one donor share a replicate number"},
+    {"location": "characteristics[gel band] / factor value[gel band]", "value": "upper/lower (skin); band N (fibroblast gels); not applicable (IP)", "source_ids": ["files"], "evidence": "Run names only; meaning of band numbers not recoverable without the paper"},
+    {"location": "characteristics[age,sex,ancestry category,disease,individual (fibroblasts)]", "value": "not available", "source_ids": [], "evidence": "No per-sample demographics in the open record"},
+    {"location": "comment[instrument] Dermal_Silvergel_Gelband_*, Lung_Silvergel_Gelband_4, both ImmunoPuri", "value": "Orbitrap Eclipse (MS:1003029)", "source_ids": ["rawhdr", "msf", "pride"], "evidence": "Raw header string; msf InstrumentDescription (gel runs checked)"},
+    {"location": "comment[instrument] Lung_Silvergel_Gelband_1-3,5-7 and Skin_Donor* (12 rows)", "value": "Q Exactive Plus (MS:1002634)", "source_ids": ["rawhdr", "msf"], "evidence": "Raw header string; contradicts PRIDE structured field (Orbitrap Eclipse only)"},
+    {"location": "comment[cleavage agent details]", "value": "Trypsin (MS:1001251)", "source_ids": ["pride", "msf", "zhrs"], "evidence": "Protocol: tryptic in-gel digestion; Sequest HT enzyme Trypsin (Full), 2 missed cleavages; StavroX protease K/R. No second protease evidenced"},
+    {"location": "comment[modification parameters] gel/skin rows", "value": "Carbamidomethyl C fixed; Oxidation M variable; Acetyl protein N-term variable", "source_ids": ["msf"], "evidence": "Sequest HT static/dynamic modifications in 5 msf files (identical)"},
+    {"location": "comment[modification parameters] ImmunoPuri rows", "value": "Oxidation M variable; other two columns not applicable", "source_ids": ["zhrs"], "evidence": "StavroX VARMODIFICATION M->m, no static modification"},
+    {"location": "comment[precursor/fragment mass tolerance] gel rows", "value": "10 ppm / 0.6 Da", "source_ids": ["msf"], "evidence": "Sequest HT PeptideTolerance/FragmentTolerance"},
+    {"location": "comment[precursor/fragment mass tolerance] ImmunoPuri rows", "value": "10 ppm / 0.05 Da", "source_ids": ["zhrs"], "evidence": "StavroX PRECISIONMS=10, PRECISIONMS2=0.05 Da"},
+    {"location": "comment[dissociation method] gel rows", "value": "beam-type collision-induced dissociation (HCD)", "source_ids": ["msf"], "evidence": "MSnSpectrumInfo ActivationTypes=32 (HCD) in 5 msf files"},
+    {"location": "comment[dissociation method] ImmunoPuri rows", "value": "EThcD (MS:1002631)", "source_ids": ["files"], "evidence": "Run names contain EThcD; no method file inspected"},
+    {"location": "comment[ms2 mass analyzer] gel rows", "value": "orbitrap", "source_ids": ["msf"], "evidence": "MSnSpectrumInfo MassAnalyzer=2 (FTMS) in 5 msf files; interpretation of the enum is from PD conventions"},
+    {"location": "comment[alkylation reagent] gel rows", "value": "Iodoacetamide (IAA)", "source_ids": ["pride", "msf"], "evidence": "Carbamidomethyl static modification; PRIDE PTM MOD:00397 iodoacetamide derivatized residue. Inferred, not stated in protocol text"},
+    {"location": "comment[proteomics data acquisition method]", "value": "Data-dependent acquisition", "source_ids": ["pride", "msf"], "evidence": "Sequest HT search of MS2 spectra; PD workflow; DDA inferred (no DIA indicators)"},
+    {"location": "comment[label]", "value": "label free sample", "source_ids": ["pride"], "evidence": "No quantification method or labelling in record"},
+    {"location": "all rows / comment[data file]", "value": "22 raw files", "source_ids": ["files"], "evidence": "22 RAW entries in file list, each claimed by exactly one row"}
+  ],
+  "limitations": [
+    "Paper is closed access; only the abstract was available. Sample prep details (reduction, alkylation, gel band identity, donor demographics, fibroblast origin/cell line) are unverified.",
+    "msf search settings were read from 5 of 21 msf files (one or more per sample group); the remaining are assumed identical. Lung_Silvergel_Gelband_4 (Eclipse) and Dermal_Silvergel_Gelband_1-8 msf for Eclipse runs only partially sampled.",
+    "ImmunoPuri runs have no .msf; settings come from the Dermal StavroX file only and are applied to the Lung IP run as well (its .zhrs name indicates the same Zeropoint05Tolerance setting).",
+    "The crosslinking template was not used: disulfide bonds are native, there is no chemical cross-linker to record in comment[cross-linker].",
+    "Collision energy (NCE 27-28 seen in msf) not recorded as it was not verified for all runs.",
+    "tools reconcile raised run_names_name_another_organ (BLOCKER) based on the first row only; every Lung_* row already says lung, so it is treated as a false positive."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD067552.sdrf.tsv",
+  "dataset": "PXD067552",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD067552"},
+    {"id": "mzid", "kind": "repository", "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2025/09/PXD067552/APP-WT.mzid (Proteome Discoverer 3.0.0.757 export; full file read)"},
+    {"id": "rawhdr", "kind": "repository", "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2025/09/PXD067552/APP-WT.raw (HTTP range read of first 200 kB only)"},
+    {"id": "paper", "kind": "publication", "location": "doi:10.1038/s41467-025-65536-y (PMID 41173884); cited by PRIDE, full text not consulted"}
+  ],
+  "claims": [
+    {"location": "characteristics[organism] rows 1-2", "value": "Homo sapiens", "source_ids": ["pride"], "evidence": "Organism NEWT:9606; recombinant human APP751; human UniProt database"},
+    {"location": "characteristics[organism part] rows 1-2", "value": "not applicable", "source_ids": ["pride"], "evidence": "Analyte is purified recombinant protein on beads; cortex lysate (mouse) is a capture reagent, not the analysed sample"},
+    {"location": "factor value[genotype] rows 1-2", "value": "WT / KO", "source_ids": ["pride"], "evidence": "File names APP-WT and APP-KO; protocol says beads were incubated with cortex lysate from PDAPP/KO animal; gene of the KO not stated in the deposit (keyword Sorcs2)"},
+    {"location": "characteristics[age,sex,disease,material type]", "value": "not available", "source_ids": ["pride"], "evidence": "No evidence in record"},
+    {"location": "comment[instrument]", "value": "Q Exactive HF-X", "source_ids": ["pride", "rawhdr"], "evidence": "Protocol text and RAW header string 'Q Exactive HF-X - Orbitrap MS'; PRIDE dropdown says Q Exactive HF (overridden)"},
+    {"location": "comment[cleavage agent details]", "value": "Trypsin", "source_ids": ["pride", "mzid"], "evidence": "in-solution trypsin digestion overnight; mzid Enzyme Trypsin, 2 missed cleavages; no second protease reported"},
+    {"location": "comment[reduction reagent]/[alkylation reagent]", "value": "DTT / iodoacetamide", "source_ids": ["pride"], "evidence": "Coupled APP reduced with dithiothreitol and alkylated with iodoacetamide"},
+    {"location": "comment[modification parameters]", "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term, Met-loss+Acetyl variable", "source_ids": ["mzid"], "evidence": "Modification elements in APP-WT.mzid; fixed/variable status inferred (Carbamidomethyl treated as fixed since alkylation is a protocol step)"},
+    {"location": "comment[proteomics data acquisition method]", "value": "Data-dependent acquisition", "source_ids": ["pride"], "evidence": "MS2 in data-dependent mode with dynamic exclusion"},
+    {"location": "comment[precursor/fragment mass tolerance, dissociation method]", "value": "not available", "source_ids": [], "evidence": "Not stated in PRIDE record or mzid"},
+    {"location": "comment[data file] rows 1-2", "value": "APP-WT.raw, APP-KO.raw", "source_ids": ["pride"], "evidence": "Only two RAW files in the deposit; one per row"}
+  ],
+  "limitations": [
+    "Paper full text not consulted; genotype identity (which gene KO, PDAPP background of WT) unconfirmed",
+    "Mass tolerances and fragmentation not in deposit",
+    "Modification fixed/variable flags taken from protocol logic, not a search-parameter file",
+    "Independent review not performed (no subagents allowed in this run)"
+  ]
+}

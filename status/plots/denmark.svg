@@ -27,7 +27,7 @@
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
 <text class="title" x="12" y="22">Denmark — in progress</text>
-<text class="sub" x="12" y="40">129 datasets listed · 86 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<text class="sub" x="12" y="40">242 datasets listed · 107 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
 <rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
@@ -47,8 +47,15 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="104.75" width="648.0" height="18.5" rx="3"><title>Odense · PRIDE hits, not curated yet: 604</title></rect>
 <text class="total" x="764.0" y="118.0">604 PRIDE hits</text>
 <text class="city" x="12" y="148.0">Aarhus</text>
-<rect class="uncurated" fill="none" stroke="#8a8983" x="110" y="134.75" width="125.5" height="18.5" rx="3"><title>Aarhus · PRIDE hits, not curated yet: 117</title></rect>
-<text class="total" x="241.5" y="148.0">117 PRIDE hits</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="134" width="25.0" height="20" rx="2"><title>Aarhus · Annotated: 21</title></rect>
+<text class="seg" x="122.5" y="148.0" text-anchor="middle">21</text>
+<rect class="c-blocked" fill="#d95926" x="136.0" y="134" width="17.0" height="20" rx="2"><title>Aarhus · Blocked: 1</title></rect>
+<text class="seg" x="144.5" y="148.0" text-anchor="middle">1</text>
+<rect class="c-in_corpus" fill="#199e70" x="154.0" y="134" width="32.3" height="20" rx="2"><title>Aarhus · In corpus: 31</title></rect>
+<text class="seg" x="170.1" y="148.0" text-anchor="middle">31</text>
+<rect class="c-todo" fill="#8a8983" x="187.3" y="134" width="63.4" height="20" rx="2"><title>Aarhus · To do: 60</title></rect>
+<text class="seg" x="218.9" y="148.0" text-anchor="middle">60</text>
+<text class="total" x="257.6" y="148.0">113 listed</text>
 <text class="city" x="12" y="178.0">Aalborg</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="164" width="47.3" height="20" rx="2"><title>Aalborg · Annotated: 45</title></rect>
 <text class="seg" x="133.6" y="178.0" text-anchor="middle">45</text>

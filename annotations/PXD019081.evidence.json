@@ -1,0 +1,28 @@
+{
+  "accession": "PXD019081",
+  "status": "validated annotation; independent review pending",
+  "sources": {
+    "pride_record": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD019081",
+    "pride_files": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD019081/files?pageSize=200",
+    "paper": "https://europepmc.org/article/PMC/PMC8167298 (doi 10.1016/j.mcpro.2021.100090)"
+  },
+  "claims": [
+    {"claim": "Homo sapiens", "columns": ["characteristics[organism]"], "source": "PRIDE organisms NEWT:9606; paper (human A2M)", "kind": "extracted"},
+    {"claim": "One row per RAW file; each file is a distinct digest of A2M LNK/LNK (pepsin; trypsin; chymotrypsin; trypsin+chymotrypsin)", "columns": ["source name","comment[data file]","comment[cleavage agent details]"], "source": "PRIDE file list names + sampleProcessingProtocol", "kind": "extracted"},
+    {"claim": "Pepsin run had no reduction/alkylation; other digests alkylated with 10 mM IAA", "columns": ["comment[alkylation reagent]","comment[reduction reagent]"], "source": "PRIDE sampleProcessingProtocol", "kind": "extracted (reduction: none stated -> not applicable, inferred)"},
+    {"claim": "Orbitrap Eclipse, DDA", "columns": ["comment[instrument]","comment[proteomics data acquisition method]"], "source": "PRIDE instruments + sampleProcessingProtocol ('running a DDA method')", "kind": "extracted"},
+    {"claim": "Sample is recombinant A2M (Thr654Cys/Thr661Cys) expressed in HEK293 Freestyle cells and purified; no per-sample age/sex/tissue", "columns": ["characteristics[organism part]","characteristics[age]","characteristics[sex]","characteristics[disease]"], "source": "paper Methods (PMC8167298)", "kind": "inferred; sentinel values"}
+  ],
+  "unavailable": [
+    "Byonic search parameters (modifications, tolerances): in Byonic_results_A2M_LNK_LNK.zip (557 MB); not read (range read not honoured by server, aborted, nothing retained)",
+    "Fragmentation/dissociation method for this deposit not stated in record",
+    "Paper tolerances/modifications describe XlinkX searches of other deposits, not used"
+  ],
+  "validation": {
+    "parse_sdrf": "validate-sdrf -t ms-proteomics -t human --use_ols_cache_only: PASS",
+    "tools structure": "OK",
+    "tools check --offline": "CLEAN (7 terms)",
+    "tools reconcile": "1 BLOCKER cleavage_agent_contradicted = false positive (pepsin run documented in record; tool only knows trypsin/chymotrypsin)"
+  },
+  "existing_annotation": "none in sdrf-annotated-datasets"
+}

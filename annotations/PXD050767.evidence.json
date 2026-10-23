@@ -1,0 +1,30 @@
+{
+ "accession": "PXD050767",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride_project": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD050767",
+  "pride_files": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD050767/files",
+  "europepmc_paper": "PMC12241816 (PMID 40642767, doi 10.1016/j.csbj.2025.06.027), sections 4.1.7-4.1.9",
+  "raw_header_range_read": "first 4 MB of Orom_TC_silver_plus_1.raw via HTTP range request (instrument string 'Q Exactive Plus - Orbitrap MS')",
+  "local_scratch": "/home/thanadol/Documents/GitHub/sdrf-skills/scratchpad/PXD050767/"
+ },
+ "claims": [
+  {"column":"characteristics[cell line] / cellosaurus accession / name / organism","value":"K-562 / CVCL_0004 / Homo sapiens","basis":"extracted","source":"paper 4.1.7 'K-562 cells'; sdrf-tools cellline lookup K562"},
+  {"column":"characteristics[sex]","value":"female","basis":"inferred from Cellosaurus donor record, not from the deposit","source":"sdrf-tools cellline lookup"},
+  {"column":"characteristics[age]","value":"not available","basis":"cell line donor age not stated in deposit"},
+  {"column":"characteristics[disease]","value":"chronic myeloid leukemia","basis":"inferred from cell line identity (Cellosaurus)","source":"cellline lookup"},
+  {"column":"characteristics[treatment] / factor value[treatment]","value":"RNase A/T1 treatment vs no RNase treatment","basis":"extracted from paper 4.1.7 (IP 'in the absence or presence of RNase A/T1'); mapping of file names (plus/minus) to arms is INFERRED, not stated","source":"paper 4.1.7; run names Orom_TC_silver_{plus,minus}_{1,2,3}.raw"},
+  {"column":"characteristics[biological replicate]","value":"1-3 per arm","basis":"paper: 'Triplicates'; numbering from file suffix"},
+  {"column":"comment[instrument]","value":"Q Exactive Plus MS:1002634","basis":"extracted: paper and RAW header; PRIDE metadata lists the less specific 'Exactive Plus' MS:1002526"},
+  {"column":"comment[cleavage agent details]","value":"Trypsin MS:1001251","basis":"extracted: 'tryptic in-gel digestion'"},
+  {"column":"comment[modification parameters]","value":"Carbamidomethyl C fixed; Acetyl protein N-term variable; Oxidation M variable","basis":"extracted from PRIDE dataProcessingProtocol / paper 4.1.9 (MaxQuant); mqpar.xml not deposited, txt.zip not opened"},
+  {"column":"comment[precursor mass tolerance]/[fragment mass tolerance]","value":"4.5 ppm / 20 ppm","basis":"extracted: paper 4.1.9"},
+  {"column":"comment[collision energy]/[dissociation method]","value":"25 NCE / HCD","basis":"paper: normalized collision energy 25 eV (unit written as NCE; HCD inferred from Q Exactive platform)"},
+  {"column":"comment[proteomics data acquisition method]","value":"Data-dependent acquisition PRIDE:0000627","basis":"extracted: 'data-dependent MS/MS scans'"},
+  {"column":"comment[label]","value":"label free sample","basis":"extracted: MaxQuant LFQ intensities, no labels"},
+  {"column":"comment[reduction reagent]/[alkylation reagent]","value":"not available","basis":"prep refers to an external protocol; PRIDE lists iodoacetamide-derivatized residue but no primary source for the reagent"}
+ ],
+ "unavailable_evidence": ["mqpar.xml / summary.txt (txt.zip not opened)", "supplementary table linking file names to RNase arm", "deposited SDRF (none, intentionally not consulted)"],
+ "existing_annotation": "none in sdrf-annotated-datasets (checked)",
+ "independent_review": "pending (no subagent permitted in this run; review-gate not run)"
+}

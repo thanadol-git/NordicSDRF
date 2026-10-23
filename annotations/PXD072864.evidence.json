@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD072864.sdrf.tsv",
+  "dataset": "PXD072864",
+  "status": "validated annotation; independent review pending",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD072864"},
+    {"id": "files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD072864/files"},
+    {"id": "rawhdr", "kind": "raw-file-header", "location": "HTTP range read bytes 0-262143 of Y5505-Anna-Sept-1-Fem-a.raw (PRIDE FTP/HTTPS mirror)"}
+  ],
+  "claims": [
+    {"location": "characteristics[organism] rows 1-9", "value": "Ascaridia galli", "source_ids": ["pride"], "evidence": "Title, keywords and description name Ascaridia galli (PRIDE organism field says unclassified Anisakis, overridden by title/description; searched against Ascaris suum/Anisakis simplex proteomes as surrogates)."},
+    {"location": "characteristics[developmental stage]/[sex], factor value, rows 1-9", "value": "larva / adult female / adult male", "source_ids": ["pride", "files"], "evidence": "Description: larvae, female and male worms compared; run names Larv/Fem/Male a-c. 'adult' for female/male is inferred (worms vs larvae); larva sex not available."},
+    {"location": "characteristics[biological replicate]", "value": "1-3 per group", "source_ids": ["pride", "files"], "evidence": "dataProcessingProtocol: sample names indicate replicate number (a-c)."},
+    {"location": "characteristics[organism part]", "value": "whole body", "source_ids": ["pride"], "evidence": "Worms and larvae were mashed; whole-organism homogenate (inferred)."},
+    {"location": "comment[instrument]", "value": "Q Exactive HF-X", "source_ids": ["pride", "rawhdr"], "evidence": "Protocol text and RAW header both say Q Exactive HF-X; PRIDE structured field says Q Exactive HF (overridden)."},
+    {"location": "comment[cleavage agent details]", "value": "Trypsin", "source_ids": ["pride"], "evidence": "S-Trap digestion, trypsin 2 h at 47 C; single protease."},
+    {"location": "comment[reduction reagent], comment[alkylation reagent], fixed Methylthio", "value": "TCEP / MMTS / Methylthio (C) fixed", "source_ids": ["pride"], "evidence": "Cysteines reduced by TCEP and blocked by MMTS."},
+    {"location": "comment[modification parameters] Oxidation (M) variable", "value": "Oxidation", "source_ids": ["pride"], "evidence": "Only PRIDE identifiedPTMStrings 'monohydroxylated residue' supports it; deposited .msf (15.8 GB) not read, so the full PD variable-mod list is unverified."},
+    {"location": "comment[dissociation method], comment[collision energy], comment[ms1 scan range], comment[proteomics data acquisition method]", "value": "HCD, NCE 30, 392-1700 m/z, DDA", "source_ids": ["pride"], "evidence": "sampleProcessingProtocol."},
+    {"location": "comment[label]", "value": "label free sample", "source_ids": ["pride"], "evidence": "Default label-free PD workflow; quantificationMethods label-free."},
+    {"location": "comment[data file] rows 1-9", "value": "9 RAW files", "source_ids": ["files"], "evidence": "All 9 .raw files claimed once; .msf and 3 FASTA files are not run files."}
+  ],
+  "limitations": [
+    "No publication or DOI; the record is PRIDE text only.",
+    "Precursor/fragment tolerances not stated; set to not available (PD defaults not assumed).",
+    "Deposited .msf (15.8 GB, SQLite) not parsed; search modifications beyond MMTS/oxidation unverified.",
+    "Strain/breed, larva sex and larva stage (L-number) not stated; disease not stated.",
+    "developmental stage 'larva' is not an EFO label (validator warning); EFO has only nematode-specific L1-L4 larva terms.",
+    "sdrf-tools reconcile raised BLOCKER cleavage_agent_unsupported; judged a false positive of the sentence-cue heuristic because the protocol states 'Trypsin was added' and 'Trypsin cleavage was performed'."
+  ]
+}

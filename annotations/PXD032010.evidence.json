@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD032010.sdrf.tsv",
+  "dataset": "PXD032010",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD032010"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD032010/files?pageSize=200"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC9156758 / PMID 35641520 / doi:10.1038/s41467-022-30758-x (Methods)"
+    },
+    {
+      "id": "raw_headers",
+      "kind": "raw-file-range-read",
+      "location": "first 300 kB (HTTP range) of 20210316_NSN_L1.raw, _Chymo.raw, _PPE.raw, a2ml1_trypsin.raw, a2ml1_trypsin_chymotrypsin.raw at ftp.pride.ebi.ac.uk/pride/data/archive/2022/06/PXD032010/"
+    },
+    {
+      "id": "pdresult_L1",
+      "kind": "search-result",
+      "location": "20210316_NSN_L1.pdResult (Proteome Discoverer 2.5 settings, SQLite Workflows table)"
+    },
+    {
+      "id": "byrslt",
+      "kind": "search-result",
+      "location": "a2ml1_trypsin_glycosylation.byrslt, a2ml1_trypsin_chymotrypsin_glycosylation.byrslt (Byonic 3.7.13 SearchParameters)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] rows 1-9",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism NEWT:9606; recombinant human A2ML1 expressed in HEK293-F cells"
+    },
+    {
+      "location": "characteristics[organism part|cell type|disease|material type] rows 1-9",
+      "value": "not applicable",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Samples are purified recombinant protein digests; no tissue/disease. Inferred, not stated."
+    },
+    {
+      "location": "factor value[protease] rows 1-9",
+      "value": "per-file protease",
+      "source_ids": [
+        "paper",
+        "pride_files"
+      ],
+      "evidence": "Seven proteases listed in Methods (trypsin, thermolysin, HNE, cathepsin G, V8, PPE, chymotrypsin) match file suffixes Thermo, HNE, CatG, GluC, PPE, Chymo; glyco files named a2ml1_trypsin and a2ml1_trypsin_chymotrypsin. Row 1 (20210316_NSN_L1.raw) = trypsin is INFERRED by elimination."
+    },
+    {
+      "location": "comment[instrument] rows 1-7",
+      "value": "Q Exactive Plus",
+      "source_ids": [
+        "raw_headers",
+        "pdresult_L1",
+        "paper"
+      ],
+      "evidence": "Raw headers and PD InstrumentDescription say Q Exactive Plus Orbitrap; paper says Q Exactive Orbitrap. PRIDE metadata (Orbitrap Eclipse) is wrong for these files."
+    },
+    {
+      "location": "comment[instrument] rows 8-9",
+      "value": "Orbitrap Eclipse",
+      "source_ids": [
+        "raw_headers",
+        "paper",
+        "pride"
+      ],
+      "evidence": "Raw headers and Methods"
+    },
+    {
+      "location": "comment[cleavage agent details] rows 1-9",
+      "value": "Trypsin/Chymotrypsin/GluC/elastase/thermolysin/unspecific",
+      "source_ids": [
+        "paper",
+        "byrslt",
+        "pdresult_L1"
+      ],
+      "evidence": "Methods; row 9 two agents (trypsin and chymotrypsin; Byonic cleavage residues KRFWYLMAIV). PPE and cathepsin G have no MS CV term: MS:1001956 unspecific cleavage used, matching authors' no-enzyme search."
+    },
+    {
+      "location": "comment[modification parameters] rows 1-7",
+      "value": "Oxidation(M,P), Deamidated(N), Acetyl N-term, Met-loss, Met-loss+Acetyl (all variable)",
+      "source_ids": [
+        "pdresult_L1",
+        "paper"
+      ],
+      "evidence": "PD DynamicModification settings; paper says Q/N deamidation but PD node lists N only; no static modification"
+    },
+    {
+      "location": "comment[modification parameters] rows 8-9",
+      "value": "Carbamidomethyl C fixed",
+      "source_ids": [
+        "byrslt"
+      ],
+      "evidence": "Byonic fixed mod; N-glycan search (132 human N-glycans, rare1) not encoded"
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "10 ppm / 0.02 Da (rows 1-7); 10 ppm / 10 ppm (rows 8-9)",
+      "source_ids": [
+        "pdresult_L1",
+        "byrslt"
+      ],
+      "evidence": "Search settings (paper says 0.02 Da for PD)"
+    },
+    {
+      "location": "comment[dissociation method] / collision energy",
+      "value": "HCD 27% NCE (rows 1-7); HCD+EThcD, stepped 27/30/32% NCE (rows 8-9)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods. EThcD supplemental HCD 10% not encoded."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: data-dependent acquisition"
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "No labelling described"
+    }
+  ],
+  "limitations": [
+    "No existing PXD032010 SDRF in sdrf-annotated-datasets (Step 0.5 checked).",
+    "Row 1 protease (trypsin) inferred by elimination; paper does not name which file is trypsin in the bait-region series.",
+    "PPE and cathepsin G not in MS CV; encoded as unspecific cleavage.",
+    "Skin-extract gel-slice experiment described in the paper has no raw files in the deposit and is not annotated.",
+    "Whether trypsin and chymotrypsin were applied simultaneously or sequentially in the glyco digest is not stated.",
+    "Alkylation/reduction for in-solution digests not described; columns omitted.",
+    "Q/N deamidation: PD settings list N only.",
+    "sdrf-tools reconcile flags 3 cleavage and 1 instrument finding as false positives (its digest vocabulary lacks thermolysin/elastase/unspecific; dataset has two instruments)."
+  ],
+  "review": "independent review pending"
+}

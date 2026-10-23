@@ -1,0 +1,118 @@
+accession	verdict	evidence	in_corpus	title
+PXD000743	confirmed	countries=['Denmark']		Insight into the protein composition of immunoglobulin light chain deposits of eyelid, orbital, and 
+PXD000746	confirmed	countries=['Denmark']		Proteomics of Fuchs Endothelial Corneal Dystrophy support that the extracellular matrix of Descemet¹
+PXD000760	confirmed	countries=['Denmark']		SILAC study on the effect of trans fatty acids in HepG2 cells
+PXD001174	confirmed	countries=['Denmark']		Un-conditioned commercial embryo culture media contain a large variety of non-declared proteins: a c
+PXD001343	confirmed	countries=['Denmark']		Characterization of the gila monster (Heloderma suspectum suspectum) venom proteome
+PXD001462	confirmed	affiliation~'denmark': University of Aarhus, Denmark		Identification of Alpha-Synuclein Interacting Synaptosomal Proteins
+PXD001465	confirmed	countries=['Denmark']		Effect of TGFbeta-2 on pig gut epithelial cells
+PXD001729	confirmed	affiliation~'aarhus': Center for Interactions of Proteins in Epithelial Transport, Department of Biomedicine, Aa	yes	Quantitative Phosphoproteomic Identification of Novel Vasopressin-mediated Signaling Networks in Kid
+PXD001775	confirmed	countries=['Denmark']	yes	Synaptosome Proteomics, Fraction 2
+PXD001776	confirmed	countries=['Denmark']	yes	Synaptosome Proteomics, Fraction 3
+PXD001777	confirmed	countries=['Denmark']		Synaptosome Proteomics, Fraction 4
+PXD001997	confirmed	countries=['Denmark']		Protein accumulation post-LASIK surgery in granular corneal dystrophy type II patients involves alte
+PXD002500	confirmed	countries=['Denmark']		The spider clot proteome -  The spider hemolymph clot proteome reveals high concentrations of hemocy
+PXD002741	confirmed	countries=['Denmark']		Quantitative Proteomics Reveals Metabolic Reprogramming during ETHE1 Deficiency, Part 1
+PXD002742	confirmed	countries=['Denmark']		Quantitative Proteomics Reveals Metabolic Reprogramming during ETHE1 Deficiency, Part 2
+PXD005454	confirmed	countries=['Denmark']	yes	Comparative proteomic analysis of kidney distal convoluted tubule and cortical collecting duct cells
+PXD005556	confirmed	countries=['Denmark']		Mouse retina LC-MSMS -  Diurnal expression of proteins in the retina of the blind cone-rod homeobox 
+PXD006494	confirmed	countries=['Denmark']		Proteomic profiling of TGFBIp-null mouse corneas reveals minor changes in the extracellular matrix c
+PXD006663	confirmed	countries=['Denmark']	yes	Protein lysine modification by a 3-hydroxy-2,5-hexanedione probe and LC-MS/MS detection
+PXD006665	confirmed	countries=['Denmark']		A Proteomic Survey of Enzymes in the Plasma and Gastric Fluid of Burmese Python
+PXD006788	confirmed	countries=['Denmark']	yes	Mass spectrometry analysis of proteins interacting with STAT3
+PXD009218	rejected	countries=['Australia'] | University of the Sunshine Coast ; University of the Sunshine Coast, Maroochydore DC, Queenslan		Sequencing Greenlip Abalone - We have used the greenlip abalone draft genome (PRJNA433241) to genera
+PXD009538	confirmed	countries=['Denmark']		Major metabolic pathway alterations in the rat myocardium during development of Type 2 diabetes mell
+PXD009554	confirmed	countries=['Denmark']		Major metabolic pathway alterations in the rat myocardium during development of Type 2 diabetes mell
+PXD009555	confirmed	countries=['Denmark']		Major metabolic pathway alterations in the rat myocardium during development of Type 2 diabetes mell
+PXD009688	confirmed	countries=['Denmark']	yes	Neuroproteomics in Brd1 knockout mice (frontal cortex _ cell lysate)
+PXD009689	confirmed	countries=['Denmark']		Neuroproteomics in Brd1 knockout mice (frontal cortex _ synaptosome)
+PXD009690	confirmed	countries=['Denmark']		Neuroproteomics in Brd1 knockout mice (striatum _ cell lysate)
+PXD009691	confirmed	countries=['Denmark']		Neuroproteomics in Brd1 knockout mice (striatum _ synaptosome)
+PXD009692	confirmed	countries=['Denmark']		Neuroproteomics in Brd1 knockout mice (hippocampus - synaptosome)
+PXD009880	confirmed	countries=['Denmark']		LC-MS/MS proteomics of ETHE1 deficient patient fibroblasts_Study-1
+PXD009961	confirmed	countries=['Denmark']	yes	Neuroproteomics in Brd1 knockout mice (hippocampus _ cell lysate)
+PXD010032	confirmed	countries=['Denmark']		Rapid Aldosterone Effects in Mouse Kidney Distal Convoluted Tubules Cells
+PXD010838	confirmed	countries=['Denmark']		Characterizing the molecular architecture of mitochondrial energy metabolism
+PXD011314	confirmed	countries=['Denmark']	yes	Profiling of Methylglyoxal Blood Metabolism and Advanced Glycation End-Product Proteome using a Chem
+PXD012902	confirmed	countries=['Denmark']		Corneal protome of trangenic TGFBI R124H mouse model
+PXD013346	confirmed	countries=['Denmark']		SUMOylation proteomic analysis of renal cortical collecting duct cells
+PXD013363	confirmed	countries=['Denmark']		Quantitative proteomic analysis of SUMOylation in renal cortical collecting duct cells after aldoste
+PXD014286	confirmed	countries=['Denmark']		Idiopathic epiretinal membrane compared with inner limiting membrane
+PXD014383	confirmed	countries=['Denmark']		Proteomic analysis of isolated mouse distal convoluted tubules following high potassium or low sodiu
+PXD017083	confirmed	countries=['Denmark']		Quantitative proteomic analysis of urinary exosomes from patients with primary aldosteronism that un
+PXD017952	rejected	countries=['Netherlands'] | Erasmus MC ; Neurology Lab. Neuro-Oncology and Clinical and Cancer Proteo		Multi-omics profiling of paired primary and recurrent glioblastoma patient tissues
+PXD018363	confirmed	countries=['Denmark']		Proteome-scale correlation analysis between urinary extracellular vesicle (uEV) and kidney
+PXD019048	confirmed	countries=['Denmark']	yes	A2M-3K DSSO cross-linking to identify the bait region position
+PXD019051	confirmed	countries=['Denmark']		Acute effects of Salbutamol in Mouse Kidney Distal Convoluted Tubules (mpkDCT) Cells
+PXD019081	confirmed	countries=['Denmark']		A2M Thr654Cys Thr661Cys mutant disulfide mapping
+PXD019082	confirmed	countries=['Denmark']		A2M Q975C and C3 Q1013C disulfide mutants
+PXD019101	confirmed	countries=['Denmark']	yes	CX-MS of DSSO-cross-linked A2M - Structural investigations of human α2-macroglobulin elucidate its n
+PXD019159	confirmed	countries=['Denmark']		Protein composition of the subretinal fluid suggest selective diffusion of vitreous proteins in reti
+PXD019987	rejected	countries=['Germany'] | Leibniz Universtät Hannover ; Leibniz Universität Hannover Institute of Plant Genetics		MULocDeep: An Interpretable Deep Learning Model for Protein Localization Prediction with Sub-organel
+PXD020826	confirmed	countries=['Denmark']	yes	A2ML1's and A2M's reactivity towards glycine and glycerol, A2ML1 crosslinking to thermolysin
+PXD021685	confirmed	countries=['Denmark']	yes	SARS-CoV-2 Evades immune detection in Alveolar Macrophages
+PXD022327	confirmed	countries=['Denmark']		Protein quantification of mouse inner medulla (IM) sections using MS based proteomics -  WT vs. Dice
+PXD022653	confirmed	countries=['Denmark']		Quantitative proteome of urinary extracellular vesicles (uEVs) from hypertensive patients with raise
+PXD022976	confirmed	countries=['Denmark']		The structures of R124H and R555W TGFBIp suggest a direct role of the mutated residues in the aggreg
+PXD023651	confirmed	countries=['Denmark']	yes	A2M bait region engineering - autoconjugation product cross-link identification and PRM quantificati
+PXD024216	confirmed	countries=['Denmark']		Shotgun-based Proteomics of Extracellular Vesicles in Alzheimer’s Disease Reveals Biomarkers Involve
+PXD024481	confirmed	countries=['Denmark']		Tripartite separation of glomerular proteomes from reporter-free mice
+PXD025915	confirmed	countries=['Denmark']		Proteomics analysis of bile acids modulation on rat colonic expression of water, electrolyte and dru
+PXD028507	confirmed	countries=['Denmark']		SUMOylation proteomic analysis of renal distal convoluted tubule cells
+PXD028885	confirmed	countries=['Denmark']		Circulating Microvesicles and Exosomes in Small Cell Lung Cancer by Quantitative Proteomics
+PXD028944	confirmed	countries=['Denmark']		Circulating Microvesicles and Exosomes in Small Cell Lung Cancer by Quantitative Proteomics
+PXD029232	confirmed	countries=['Denmark']		L-Lysine treated rats' kidney shotgun proteome
+PXD029696	confirmed	countries=['Denmark']		Proteomic analysis of kidney organoid supernatant during TNFa stimulation
+PXD029716	confirmed	countries=['Denmark']	yes	LC MS/MS of kidney organoids during differentiation from day 21 to 29
+PXD029718	confirmed	countries=['Denmark']		Proteome analysis of kidney organoid cells during TNFa stimulation
+PXD032010	confirmed	countries=['Denmark']		A2ML1 bait region mapping and glycan determination
+PXD032107	confirmed	affiliation~'aarhus': Aarhus University Department of Biomedicine DK-8000 Aarhus C (lab head)		Proteomic analyisis of cultured human podocytes stimulated with TNFa - cell pellet
+PXD032130	confirmed	affiliation~'aarhus': Aarhus University Department of Biomedicine DK-8000 Aarhus C		Proteomic analyisis of cultured human podocytes stimulated with TNFa - supernatant
+PXD032972	confirmed	countries=['Denmark']	yes	Differential RNA aptamer affinity profiling on plasma as a potential diagnostic tool for bladder can
+PXD034358	confirmed	countries=['Denmark']	yes	Lysosomal alterations in senescence
+PXD035354	confirmed	countries=['Denmark']		Effects of the differential K+ diets on mouse kidney cortex tissue
+PXD036817	confirmed	countries=['Denmark']	yes	Metabolic reconfiguration through SGLT2 inhibition improves metabolic waste excretion
+PXD038063	confirmed	countries=['Denmark']		Mass spectrometry analysis of proteins interacting with STING mutants
+PXD040164	confirmed	countries=['Denmark']		The C-terminal domain of periostin is intrinsically disordered and interacts with 143 proteins in an
+PXD040812	confirmed	countries=['Denmark']		Kidney Organoids treated with TNFa at 5 ng/mL and 50ng/mL for 24h and 48h
+PXD040963	confirmed	countries=['Denmark']	yes	lExtracellular vesicle proteins of E. coli O83
+PXD041154	confirmed	countries=['Denmark']		G4-RNA binding proteins from K562
+PXD043021	confirmed	affiliation~'aarhus': Aarhus university		Escherichia coli displays a conserved membrane proteomic response to a range of alcohols
+PXD044246	confirmed	countries=['Denmark']	yes	Dissection of prognostic traits in colorectal cancer using multi-dimensional proteomics
+PXD044323	confirmed	countries=['Denmark']		Autoantigen screening using pull-down and LC-MS
+PXD045285	confirmed	countries=['Denmark']		Periostin is a disulfide bonded homodimer and forms a complex with fibronectin in human skin
+PXD045287	confirmed	countries=['Denmark']		Mapping the Periostin splice isoforms in atopic dermatitis and an in vitro asthma model – A multi-pl
+PXD045560	confirmed	countries=['Denmark']	yes	Development of a top-down MS assay for specific identification of human periostin isoforms
+PXD047614	confirmed	countries=['Denmark']		Pulldown of human serum proteins with Trypanosoma brucei Invariant Surface Glycoprotein 75
+PXD048918	confirmed	countries=['Denmark']	yes	Proteomics effects of HSP60 deficiency in HEK cells, using an inducible transgenic HSP60 ATPase defi
+PXD048920	confirmed	countries=['Denmark']	yes	The proteomics effects of HSP60 chaperone deficiency in zebrafish larvae
+PXD048923	confirmed	countries=['Denmark']	yes	Proteomic mapping of fibroblasts from patients with HSP60 deficiency
+PXD049360	confirmed	countries=['Denmark']	yes	A germline PAF1 paralog complex ensures cell type-specific gene expression (co-IP data)
+PXD049375	confirmed	countries=['Denmark']	yes	A germline PAF1 paralog complex ensures cell type-specific gene expression (proximity labeling data)
+PXD050187	confirmed	countries=['Denmark']		Neuroretinal and photoreceptor degeneration in a mouse model of systemic chronic immune activation o
+PXD050767	confirmed	affiliation~'denmark': Aarhus University Institute of Molecular Biology and Genetics Universitetsbyen 81 8000 Aar		Non-canonical RNA-binding of the histone lysine demethylase KDM5 through interactions with G-quadrup
+PXD050854	rejected	countries=['Australia'] | University of Queensland ; Institute for Molecular Biosciences, The University of Queen		Reduviid venom composition to inform venom evolution and evolution of blood-feeding
+PXD051273	confirmed	countries=['Denmark']		13C6-Lysine-labelled mouse serum N-terminomics
+PXD052178	confirmed	countries=['Denmark']	yes	Proteomics of E. coli extracellular vesicles
+PXD054534	confirmed	countries=['Denmark']	yes	In vitro investigations on the impact of constituents on fermented dairy on fecal microbiota composi
+PXD054811	confirmed	countries=['Denmark']		FADD is recruited to activated STING oligomers initiating caspase mediated NF-κB activation in Droso
+PXD055083	confirmed	countries=['Denmark']	yes	Mouse female hippocampus proteomics of Alzheimer Tg-SwDI Model
+PXD057281	confirmed	countries=['Denmark']		Proteomics effects of exposure of fatty acids in the human liver cell line Huh7
+PXD058044	confirmed	countries=['Denmark']	yes	Recessive variants in the intergenic NOS1AP-C1orf226 locus cause monogenic kidney disease responsive
+PXD058323	confirmed	countries=['Denmark']		HepG2-derived Cell Membrane Vesicle Camouflaged Artificial Cells
+PXD058697	confirmed	affiliation~'denmark': Department of Biomedicine, Aarhus University, Aarhus, Denmark  STENO Diabetes Center Aarhu		Combined loss of obscurin and obscurin-like 1 in murine  hearts results in diastolic dysfunction, al
+PXD064297	confirmed	countries=['Denmark']	yes	Labelfree proteomics in Extracellular vesicles from human microglia cells
+PXD064425	confirmed	affiliation~'aarhus': Department of Molecular Biology and Genetics - Cellular Health, Intervention, and Nutritio		Zscan4 as a candidate conveyor of early developmental defects in O-GlcNAc transferase intellectual d
+PXD065322	confirmed	affiliation~'aarhus': Aarhus University Department of Biomedicine DK-8000 Aarhus		Proteomic analysis of glomeruli from Thsd7a podocyte knockout and WT mice
+PXD065323	confirmed	affiliation~'aarhus': Aarhus University Department of Biomedicine DK-8000 Aarhus		THSD7A interactome in native mouse glomeruli
+PXD065344	confirmed	affiliation~'aarhus': Aarhus University Department of Biomedicine DK-8000 Aarhus		Deficiency of THSD7A reverses glomerular proteomic profiles in anti-THSD7A antibody induced membrano
+PXD067552	confirmed	countries=['Denmark']		Delta-cleavage verification in recombinant human APP
+PXD068574	confirmed	countries=['Denmark']		Unilateral IRI induction in pigs
+PXD070889	confirmed	countries=['Denmark']		Dectin-1 recognizes bacterial EF-Tu during infection
+PXD072864	confirmed	countries=['Denmark']		Proteomic profiling of the parasitic nematode Ascaridia galli
+PXD072877	confirmed	countries=['Denmark']		Abdominal-B regulates the male seminal fluid transferome and new female fecundity factors required f
+PXD074604	confirmed	countries=['Denmark']		Pathogenic O-GlcNAc dyshomeostasis is associated with cortical malformations and hyperactivity
+PXD075285	confirmed	countries=['Denmark']		Proteomic profile of urinary extracellular vesicles from rats with lithium-induced nephrogenic diabe
+PXD078629	confirmed	countries=['Denmark']		Perifusion of kidney tissues - Glomeruli vs tubules
+PXD078634	confirmed	countries=['Denmark']		Perifusion of kidney tissues - Amino acid (AA) vs. AA and hydrogen peroxide treatment for evaluation
+PXD079004	confirmed	countries=['Denmark']		Perifusion of kidney tissues - Comparison of segment contribution in different tubule extractions

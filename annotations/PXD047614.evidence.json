@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD047614.sdrf.tsv",
+  "dataset": "PXD047614",
+  "status": "validated annotation; independent review pending",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD047614"},
+    {"id": "files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD047614/files"},
+    {"id": "readme", "kind": "repository", "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2024/02/PXD047614/readme.txt"},
+    {"id": "mqpar", "kind": "search-output", "location": "mqpar.xml inside https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/02/PXD047614/1.zip (HTTP range read of ZIP; 2/3/4.zip carry the same layout, only 1.zip read)"},
+    {"id": "rawhdr", "kind": "raw-file-metadata", "location": "first 3 MB of https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/02/PXD047614/S3-1.raw (HTTP range read)"}
+  ],
+  "claims": [
+    {"location": "characteristics[organism], [organism part] rows 1-11", "value": "Homo sapiens; blood serum", "source_ids": ["pride"], "evidence": "sampleAttributes NEWT:9606 and BTO blood serum; title 'human serum proteins'"},
+    {"location": "characteristics[pulldown group], factor value[pulldown group] S1,S2 / S3,S4", "value": "negative control / ISG75+ pulldown", "source_ids": ["readme", "pride"], "evidence": "readme: 'Sample 1 and 2 are negative controls, while sample 3 and 4 are ISG75+ pulldowns'. Nature of the negative control not stated."},
+    {"location": "rows / comment[data file]", "value": "S1-1..3, S2-1..3, S3-1..3, S4-1..2 (.raw)", "source_ids": ["files"], "evidence": "11 RAW files in PRIDE; S4 has only two. Treated as technical-replicate injections of one source each (protocol: 'Triplicates for each sample were combined')."},
+    {"location": "comment[cleavage agent details] x2", "value": "Lys-C; Trypsin", "source_ids": ["pride"], "evidence": "sampleProcessingProtocol: Lys-C 1:100 2 h then trypsin 1:50 overnight"},
+    {"location": "comment[reduction reagent], [alkylation reagent]", "value": "DTT; IAA", "source_ids": ["pride"], "evidence": "50 mM DTT 37C 1 h; 50 mM IAA 20 min dark"},
+    {"location": "comment[modification parameters] x3", "value": "Carbamidomethyl C fixed; Oxidation M variable; Acetyl protein N-term variable", "source_ids": ["mqpar", "pride"], "evidence": "mqpar.xml fixed/variable modification lists, matching dataProcessingProtocol"},
+    {"location": "comment[precursor mass tolerance], [fragment mass tolerance]", "value": "4.5 ppm; 20 ppm", "source_ids": ["mqpar"], "evidence": "MaxQuant main-search tolerance and FTMS MS/MS tolerance (MS2 acquired in Orbitrap)"},
+    {"location": "comment[instrument], [dissociation method], [ms2 mass analyzer]", "value": "Orbitrap Fusion; HCD; orbitrap", "source_ids": ["pride", "rawhdr"], "evidence": "PRIDE instrument MS:1002416; RAW header method 'OTOT_HCD_105min', ActivationType=HCD, Detector Type=Orbitrap, MS2 resolution 15K"},
+    {"location": "comment[proteomics data acquisition method]", "value": "Data-dependent acquisition", "source_ids": ["rawhdr", "mqpar"], "evidence": "Inferred: top-speed style Orbitrap/Orbitrap HCD method with MaxQuant DDA search; not stated in prose"},
+    {"location": "comment[label]", "value": "label free sample", "source_ids": ["pride", "mqpar"], "evidence": "iBAQ label-free; labelMods empty"}
+  ],
+  "limitations": [
+    "No publication; no per-sample demographics, so age, sex, ancestry category, individual and disease are 'not available'.",
+    "Identity of the negative control (e.g. bait-less beads vs control protein) is not stated.",
+    "The deposit's MaxQuant search lists Trypsin only; the Lys-C step comes from the protocol prose.",
+    "DDA is inferred, not stated.",
+    "characteristics[pulldown group] is a non-template custom column.",
+    "2.zip, 3.zip, 4.zip mqpar.xml not read; 1.zip only (same MaxQuant version/settings assumed).",
+    "Independent review not yet performed."
+  ]
+}

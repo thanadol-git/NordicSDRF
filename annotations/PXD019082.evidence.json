@@ -1,0 +1,15 @@
+{
+ "accession": "PXD019082",
+ "status": "validated annotation; independent review pending",
+ "claims": [
+  {"claim": "organism Homo sapiens; instrument Orbitrap Eclipse (MS:1003029)", "columns": ["characteristics[organism]", "comment[instrument]"], "source": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD019082", "kind": "extracted"},
+  {"claim": "pepsin digest (1:20 w/w, pH 3, 37 C overnight) -> PepsinA MS:1001311; single protease", "columns": ["comment[cleavage agent details]"], "source": "PRIDE sampleProcessingProtocol", "kind": "extracted"},
+  {"claim": "data-dependent acquisition", "columns": ["comment[proteomics data acquisition method]"], "source": "PRIDE sampleProcessingProtocol", "kind": "extracted"},
+  {"claim": "Mascot search, variable dehydro on Cys (UNIMOD:374)", "columns": ["comment[modification parameters]"], "source": "PRIDE dataProcessingProtocol", "kind": "extracted"},
+  {"claim": "TCEP (25 mM, 30 min, 37 C) reduction in the two *_TCEP_* runs only", "columns": ["comment[reduction reagent]", "characteristics[treatment]", "factor value[treatment]"], "source": "PRIDE sampleProcessingProtocol; run names", "kind": "extracted"},
+  {"claim": "A2M Q975C / C3 Q1013C recombinant mutants, from run names and title", "columns": ["characteristics[genotype]", "factor value[genotype]"], "source": "PRIDE title; file names", "kind": "extracted"},
+  {"claim": "4 RAW files, one row each", "columns": ["comment[data file]"], "source": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD019082/files", "kind": "extracted"},
+  {"claim": "organ/cell source, expression host, tolerances, dissociation method", "columns": ["organism part", "cell type", "tolerances", "dissociation method"], "source": "unavailable: paper is not open access (PMID 33301305), no search parameter files deposited, RAW not read", "kind": "unavailable"}
+ ],
+ "validation": ["parse_sdrf validate-sdrf -t ms-proteomics -t human (warnings only)", "python -m tools structure (OK)", "python -m tools check --offline (CLEAN)", "python -m tools reconcile (1 blocker, false positive, see report)"]
+}

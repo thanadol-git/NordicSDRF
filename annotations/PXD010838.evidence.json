@@ -1,0 +1,18 @@
+{
+ "accession": "PXD010838",
+ "status": "validated annotation; independent review pending",
+ "claims": [
+  {"column":"characteristics[organism]","value":"Mus musculus","sources":["https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD010838 (organisms: NEWT:10090)","MaxQuant parameters.txt in Maxquant_files_Wang_et_al.zip (Fasta: Mus-2014-16658 uniprot musculus)","PMC6699831 Results: 'isolated mouse heart mitochondria supercomplexes were analyzed by MS'"],"counter_evidence":"PRIDE sampleProcessingProtocol and the paper Methods/Fig 5 say rat heart mitochondria; Methods says 'mouse/rat'. Unresolved; reconcile flags BLOCKER organism_contradicted, overridden by majority of evidence"},
+  {"column":"characteristics[organism part]","value":"heart","sources":["PRIDE sampleProcessingProtocol and organismParts BTO:0000562"]},
+  {"column":"comment[instrument]","value":"Q Exactive Plus","sources":["PRIDE sampleProcessingProtocol (Q Exactive Plus Hybrid Quadrupole-Orbitrap); structured field says Q Exactive, protocol outranks"]},
+  {"column":"comment[cleavage agent details]","value":"Trypsin","sources":["PRIDE sampleProcessingProtocol: in-gel trypsin","MaxQuant summary.txt lists Trypsin/P (search setting, 2 missed cleavages)"],"note":"single protease; one column"},
+  {"column":"comment[modification parameters]","value":"Carbamidomethyl C fixed; Oxidation M, Acetyl Protein N-term variable","sources":["Maxquant_files_Wang_et_al.zip parameters.txt and summary.txt (range-read via HTTPS from ftp.pride.ebi.ac.uk/pride/data/archive/2019/07/PXD010838/)"]},
+  {"column":"comment[fragment mass tolerance]","value":"20 ppm","sources":["parameters.txt MS/MS tol. (FTMS)"]},
+  {"column":"comment[proteomics data acquisition method]","value":"DDA","sources":["PRIDE sampleProcessingProtocol: data dependent mode"]},
+  {"column":"comment[label]","value":"label free sample","sources":["PRIDE quantificationMethods PRIDE:0000312; summary.txt Multiplicity 1"]},
+  {"column":"comment[data file]/source name/factor value[gel slice]","value":"11 RAW files Q3325..Q3345-Yudong-s{1,2}-n","sources":["PRIDE files API; experimentalDesignTemplate.txt (one experiment per file, fraction 1)"],"note":"gel slice factor is the file-name suffix only; slice-to-complex mapping not in the record"},
+  {"column":"not available columns","value":"developmental stage, strain, sex, cell type, disease, precursor tolerance, dissociation method","sources":["no evidence in record"]}
+ ],
+ "unavailable_evidence": ["Supplementary tables S1-S3 (not fetched)","RAW headers not read","Europe PMC fullTextXML returned HTTP 500; paper read via pmc.ncbi.nlm.nih.gov HTML"],
+ "existing_annotation": "none found in /home/thanadol/Documents/GitHub/sdrf-annotated-datasets"
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD006665.sdrf.tsv",
+  "dataset": "PXD006665",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006665"},
+    {"id": "files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006665/files"},
+    {"id": "paper", "kind": "publication", "location": "PMC5597892 (Duan et al., GigaScience 2017, PMID 28873961, doi 10.1093/gigascience/gix057)"},
+    {"id": "mzid", "kind": "search-result", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD006665/Python_plasma.mzid (SearchModification, Enzyme, tolerances)"}
+  ],
+  "claims": [
+    {"location": "characteristics[organism] rows 1-7", "value": "Python bivittatus", "source_ids": ["pride", "paper"], "evidence": "PRIDE organism NEWT:176946; Burmese python in Methods"},
+    {"location": "characteristics[organism part] / factor value[organism part] rows 1-6", "value": "gastric juice", "source_ids": ["pride", "paper"], "evidence": "Six digestive-fluid samples analysed by MS/MS"},
+    {"location": "characteristics[organism part] / factor value[organism part] row 7", "value": "blood plasma", "source_ids": ["pride", "paper", "files"], "evidence": "Single plasma run 2012-01-03-KWS-Python_Plasma_0.1ug.wiff"},
+    {"location": "comment[instrument] all rows", "value": "TripleTOF 5600", "source_ids": ["pride", "paper"], "evidence": "TripleTOF 5600 (AB Sciex) with EASY-nLC II"},
+    {"location": "comment[cleavage agent details] all rows", "value": "Trypsin", "source_ids": ["paper", "mzid"], "evidence": "Sequencing-grade trypsin digestion; mzid Enzyme MS:1001251, 1 missed cleavage; single protease"},
+    {"location": "comment[modification parameters] all rows", "value": "Carbamidomethyl C fixed; Oxidation M and P variable", "source_ids": ["mzid", "paper"], "evidence": "mzid SearchModification 57.021464 C fixed, 15.994915 M and P variable; Methods text matches"},
+    {"location": "comment[precursor/fragment mass tolerance] all rows", "value": "15 ppm / 0.2 Da", "source_ids": ["paper"], "evidence": "Mascot parameters in Methods"},
+    {"location": "comment[reduction reagent]/[alkylation reagent] all rows", "value": "DTT / iodoacetamide", "source_ids": ["pride", "paper"], "evidence": "5 mM DTT; 25 mM iodoacetamide"},
+    {"location": "comment[proteomics data acquisition method] all rows", "value": "Data-dependent acquisition", "source_ids": ["paper"], "evidence": "Information dependent acquisition, up to 25 MS/MS per cycle"},
+    {"location": "comment[data file] rows 1-7", "value": "7 .wiff files", "source_ids": ["files"], "evidence": "All 7 vendor .wiff runs in the deposit, each claimed once; .wiff.scan companions and .mgf peak lists excluded"},
+    {"location": "characteristics[disease/developmental stage/strain or breed/sex]", "value": "not applicable / not available", "source_ids": ["paper"], "evidence": "Animals not described beyond body weight and feeding; no sex, age or strain given"}
+  ],
+  "limitations": [
+    "File-to-individual mapping is not stated anywhere: Methods give 2 samples from each of 3 snakes (6 digestive fluid samples) but name no run-to-animal link; each run is therefore its own source and biological replicate numbers are per-run counters.",
+    "Methods say the peptone snake gave 2 samples but only one TS-Peptone run exists; diet (rodent meal vs peptone) is not encoded as a column because only the TS-Peptone run can be tied to peptone from its name.",
+    "Plasma: Methods state one plasma sample per snake but a single plasma run is deposited; the animal is unknown.",
+    "Dissociation method not stated in the record; set to not available.",
+    "No independent review has been performed."
+  ]
+}

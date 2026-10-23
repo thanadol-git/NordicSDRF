@@ -1,0 +1,31 @@
+{
+ "accession": "PXD070889",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride_project": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD070889",
+  "pride_files": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD070889/files?pageSize=500",
+  "pd_search_xlsx": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/09/PXD070889/Seqeust_PD-Search.xlsx",
+  "publication": "unavailable (none linked in PRIDE record)",
+  "raw_headers": "not read"
+ },
+ "claims": [
+  {"column": "comment[instrument]", "value": "Orbitrap Eclipse", "source": "pride_project sampleProcessingProtocol + instruments field"},
+  {"column": "comment[cleavage agent details]", "value": "Trypsin", "source": "pride_project sampleProcessingProtocol/dataProcessingProtocol (trypsin, 37C 16 h)"},
+  {"column": "comment[modification parameters]", "value": "Carbamidomethyl C fixed; Oxidation M variable", "source": "pride_project dataProcessingProtocol"},
+  {"column": "comment[precursor mass tolerance]/[fragment mass tolerance]", "value": "10 ppm / 0.02 Da", "source": "pride_project dataProcessingProtocol"},
+  {"column": "comment[reduction reagent]/[alkylation reagent]", "value": "DTT / iodoacetamide", "source": "pride_project sampleProcessingProtocol (FASP)"},
+  {"column": "comment[proteomics data acquisition method]", "value": "DDA", "source": "pride_project experimentTypes PRIDE:0000627"},
+  {"column": "comment[label]", "value": "label free sample", "source": "pride_project (no labeling described)"},
+  {"column": "characteristics[organism]", "value": "Haemophilus influenzae (S, EB); Homo sapiens (CB, Bait)", "source": "protocol: NTHi 3655 lysate; recombinant human Dectin-1 bait", "confidence": "inferred for CB/Bait"},
+  {"column": "factor value[affinity purification condition]", "value": "4 groups", "source": "run names S/EB/CB/Bait + protocol controls + PD xlsx 'Found in Sample' labels", "confidence": "CB and Bait interpretation inferred"},
+  {"column": "characteristics[biological replicate]", "value": "1-3", "source": "file name suffixes; 'three biological replicates' in protocol"},
+  {"column": "comment[dissociation method]", "value": "not available", "source": "not stated in record"}
+ ],
+ "validation": {
+  "parse_sdrf validate-sdrf -t ms-proteomics": "pass",
+  "tools check --offline": "CLEAN",
+  "tools structure": "OK",
+  "tools reconcile": "no disagreements"
+ },
+ "independent_review": "pending (not performed)"
+}

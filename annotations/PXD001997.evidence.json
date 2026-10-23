@@ -1,0 +1,17 @@
+{"accession":"PXD001997","status":"validated annotation; independent review pending",
+"sources":{"pride":"https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD001997","files":"https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD001997/files/all","paper":"PMID 26864644, doi:10.1002/pmic.201500287 (abstract via Europe PMC; full text not open access/not retrieved)"},
+"claims":[
+{"column":"characteristics[organism]","value":"Homo sapiens","source":"PRIDE organisms NEWT:9606; Swiss-Prot human search"},
+{"column":"characteristics[organism part]","value":"cornea","source":"PRIDE organismParts; title"},
+{"column":"characteristics[disease]/factor value[disease]","value":"granular corneal dystrophy type II (P1-P6) / normal (C3-C8)","source":"title; protocol 'GCDII patient and control tissues'; run names GCDIIP*/GCDIIC*; MONDO:0011855"},
+{"column":"characteristics[biological replicate]","value":"1-6 ordinal within group","source":"inferred from run names P1-P6, C3-C8 (inferred)"},
+{"column":"comment[technical replicate]","value":"1-3","source":"protocol 'run in triplicates'; run suffix -1/-2/-3"},
+{"column":"comment[cleavage agent details] x2","value":"CNBr MS:1001307; Trypsin MS:1001251","source":"sample processing protocol (CNBr in TFA, then trypsin overnight)"},
+{"column":"comment[modification parameters]","value":"Carbamidomethyl C fixed; Oxidation M, Oxidation P (hydroxyproline), Met->Hse, Met->Hsl variable","source":"data processing protocol and PRIDE PTM list; read from prose, .dat Mascot files not parsed"},
+{"column":"comment[instrument]","value":"TripleTOF 5600+ MS:1002584","source":"protocol text 'TripleTOF 5600+'; PRIDE field says 5600 (text outranks)"},
+{"column":"tolerances","value":"10 ppm / 0.2 Da","source":"data processing protocol"},
+{"column":"comment[proteomics data acquisition method]","value":"DDA","source":"protocol 'information-dependent acquisition'"},
+{"column":"reduction/alkylation","value":"DTT / iodoacetamide","source":"protocol"},
+{"column":"comment[data file]","value":"36 .wiff files","source":"PRIDE file list; .wiff.scan companions and mgf not used"},
+{"column":"age, sex, ancestry category, cell type, dissociation method","value":"not available","source":"unavailable: no per-patient data in the record"}],
+"validation":{"parse_sdrf":"passed","structure":"OK","check":"CLEAN (14/14 terms)","reconcile":"1 MAJOR disease_with_control_arm: false positive, control rows carry 'normal'"}}
