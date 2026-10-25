@@ -1,0 +1,190 @@
+{
+ "schema_version": 1,
+ "artifact": "annotations/PXD035354.sdrf.tsv",
+ "dataset": "PXD035354",
+ "status": "validated annotation; independent review pending",
+ "sources": [
+  {
+   "id": "pride",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD035354"
+  },
+  {
+   "id": "pridefiles",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD035354/files?pageSize=500"
+  },
+  {
+   "id": "paper",
+   "kind": "publication",
+   "location": "https://doi.org/10.1172/jci.insight.156437 (PMC10077486, PMID 36719746)"
+  },
+  {
+   "id": "suppmethods",
+   "kind": "publication",
+   "location": "Europe PMC supplementaryFiles PMC10077486: jciinsight-8-156437-s264.pdf (Supplemental Methods)"
+  },
+  {
+   "id": "suppdata",
+   "kind": "publication",
+   "location": "Europe PMC supplementaryFiles PMC10077486: jciinsight-8-156437-s265.xlsx (sheets '4 Days raw TMT_MS2', '21 Days raw TMT_MS2': column headers give sample group per TMT column)"
+  },
+  {
+   "id": "msf1",
+   "kind": "deposited-search-output",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/05/PXD035354/Lei_Set1_MS2_NEW.msf (SQLite read by HTTP range requests: Workflows, WorkflowInputFiles)"
+  },
+  {
+   "id": "msf2",
+   "kind": "deposited-search-output",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/05/PXD035354/Lei_Set2_MS2_F.msf (same tables)"
+  }
+ ],
+ "claims": [
+  {
+   "location": "characteristics[organism] all rows",
+   "value": "Mus musculus",
+   "source_ids": [
+    "pride",
+    "paper"
+   ],
+   "evidence": "PRIDE organism NEWT:10090; mouse kidney cortex in paper"
+  },
+  {
+   "location": "characteristics[organism part] all rows",
+   "value": "cortex of kidney",
+   "source_ids": [
+    "pride",
+    "paper"
+   ],
+   "evidence": "Title/protocol: mouse kidney cortex tissue; paper: kidney cortex homogenates"
+  },
+  {
+   "location": "characteristics[sex]=male, strain=C57BL/6J, developmental stage=adult (animal rows)",
+   "value": "male; C57BL/6J; adult",
+   "source_ids": [
+    "paper",
+    "suppmethods"
+   ],
+   "evidence": "Supp Methods: 'Male C57Bl6/J mice (Janvier) of 10-12 weeks of age'; Methods: 12-week-old mice. Applied to the proteomics cohort (cohort 2) on the basis that all animals were male C57BL/6J; cohort 2 sex not restated separately"
+  },
+  {
+   "location": "characteristics[treatment]/factor value[treatment] animal rows",
+   "value": "normal potassium diet / high potassium diet, 4 or 21 days",
+   "source_ids": [
+    "paper",
+    "suppdata",
+    "suppmethods"
+   ],
+   "evidence": "NS/NK = 1.05% K+ 0.3% Na+ control; NS/HK = NS/+KCl 5.25% K+; short-term = 4 days (Set1), chronic = 21 days (Set2)"
+  },
+  {
+   "location": "label TMT126..TMT131C, Set1 rows",
+   "value": "channel to group map",
+   "source_ids": [
+    "suppdata",
+    "msf1"
+   ],
+   "evidence": "Sheet '4 Days' columns: Ctrl, 5x NS/NK, 5x NS/HK = 11 columns; msf1 TMTpro quant method has exactly 11 active tags 126-131C. Assignment of columns to channels in increasing channel order is INFERRED, not stated"
+  },
+  {
+   "location": "label TMT126..TMT132C, Set2 rows",
+   "value": "channel to group map",
+   "source_ids": [
+    "suppdata",
+    "msf2"
+   ],
+   "evidence": "Sheet '21 Days' columns: Ctrl, 7x NS/NK, 5x NS/HK = 13 columns; msf2 method has all 18 tags active so it does not corroborate; first 13 channels in order is INFERRED"
+  },
+  {
+   "location": "Set*_Ctrl rows (TMT126)",
+   "value": "not available for disease/treatment/sex/etc.",
+   "source_ids": [
+    "suppdata"
+   ],
+   "evidence": "'Ctrl' column is 100 for every protein (normalisation reference); nature (pool vs sample) not documented"
+  },
+  {
+   "location": "technical replicate 1 vs 2; fraction 1-8",
+   "value": "2 injections x 8 fractions per set",
+   "source_ids": [
+    "msf1",
+    "msf2",
+    "pridefiles"
+   ],
+   "evidence": "WorkflowInputFiles: F1..F8 plain-name files acquired first, F1..F8 timestamp-suffixed files re-acquired ~24 h later, all searched together; paper: high pH fractionation"
+  },
+  {
+   "location": "comment[instrument]",
+   "value": "Orbitrap Fusion",
+   "source_ids": [
+    "pride",
+    "msf1",
+    "msf2"
+   ],
+   "evidence": "PRIDE MS:1002416; msf WorkflowInputFiles instrument 'Orbitrap Fusion'; protocol: Tribrid Fusion"
+  },
+  {
+   "location": "comment[cleavage agent details]",
+   "value": "Trypsin",
+   "source_ids": [
+    "msf1",
+    "msf2"
+   ],
+   "evidence": "Sequest/Mascot enzyme 'Trypsin (Full)', 2 missed cleavages. Digestion enzyme not named in PRIDE text or Supp Methods (FASP 'as described (9)'); reconcile flags this"
+  },
+  {
+   "location": "comment[modification parameters]",
+   "value": "Carbamidomethyl C, TMTpro K and N-term (fixed); Oxidation M, Acetyl protein N-term (variable)",
+   "source_ids": [
+    "msf1",
+    "msf2",
+    "pride"
+   ],
+   "evidence": "Sequest node StaticModification/DynamicModification values; matches PRIDE data processing protocol"
+  },
+  {
+   "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+   "value": "10 ppm / 0.02 Da",
+   "source_ids": [
+    "msf1",
+    "pride"
+   ],
+   "evidence": "Sequest node PeptideTolerance/FragmentTolerance; PRIDE protocol"
+  },
+  {
+   "location": "comment[dissociation method]",
+   "value": "beam-type collision-induced dissociation",
+   "source_ids": [
+    "msf1"
+   ],
+   "evidence": "Quantification node ActivationTypeFilter = HCD; raw method not read"
+  },
+  {
+   "location": "comment[proteomics data acquisition method]",
+   "value": "Data-dependent acquisition",
+   "source_ids": [
+    "pride",
+    "msf1"
+   ],
+   "evidence": "Shotgun proteomics, PD workflow; DDA not stated verbatim"
+  },
+  {
+   "location": "comment[fractionation method]",
+   "value": "High-pH reversed-phase chromatography (hpHRP)",
+   "source_ids": [
+    "suppmethods"
+   ],
+   "evidence": "'fractionated using high pH fractionation'"
+  }
+ ],
+ "limitations": [
+  "TMT channel to sample assignment is inferred from spreadsheet column order; no deposited file states it explicitly",
+  "Nature of the 'Ctrl' channel (pooled reference vs control sample) undocumented",
+  "Digestion enzyme (trypsin) taken from search settings, not from sample-preparation text",
+  "Sex/strain/age taken from general Methods, not restated for the proteomics cohort",
+  "characteristics[treatment] values have no matching NCIT/EFO term (validator warning)",
+  "Acquisition method (DDA), HCD and mass analyzer not verified from RAW headers (no RAW header range read performed)",
+  "Independent review not performed in this run"
+ ]
+}

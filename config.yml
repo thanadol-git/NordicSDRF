@@ -134,8 +134,8 @@ countries:
         search_terms: [Aarhus, Århus]
         pride_hits: 117
         screened: 0
-        annotated: 28
-        blocked: 4
+        annotated: 37
+        blocked: 5
         pxd_list: lists/denmark/aarhus.txt
         pxd_count: 113
         in_corpus: 48

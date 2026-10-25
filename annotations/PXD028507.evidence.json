@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD028507.sdrf.tsv",
+  "dataset": "PXD028507",
+  "status": "validated annotation; independent review pending",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD028507"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD028507/files (33 RAW files)"},
+    {"id": "readme", "kind": "deposit-file", "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2021/11/PXD028507/Readme.docx (file -> experiment, enzyme, treatment table)"},
+    {"id": "paper", "kind": "publication", "location": "PMC8646034 / PMID 34881291 / doi:10.3389/fmolb.2021.790606"},
+    {"id": "rawhdr", "kind": "raw-file-header", "location": "HTTP range read of first 1.5 MB of each of the 33 RAW files at ftp.ebi.ac.uk/pride/data/archive/2021/11/PXD028507/ (no full download)"},
+    {"id": "cellosaurus", "kind": "database", "location": "https://api.cellosaurus.org/search/cell-line?q=mpkDCT (CVCL_R773)"}
+  ],
+  "claims": [
+    {"location": "characteristics[organism] rows 1-33", "value": "Mus musculus", "source_ids": ["pride", "cellosaurus"], "evidence": "NEWT:10090; mouse UniProt search; mpkDCT is a mouse line"},
+    {"location": "characteristics[cell line]/[cellosaurus accession]/[cellosaurus name] rows 1-33", "value": "mpkDCT / CVCL_R773", "source_ids": ["paper", "cellosaurus"], "evidence": "Paper: mpkDCT-SUMO1 T95K and -SUMO2 T90K cells; Cellosaurus lists mpkDCT as CVCL_R773, kidney distal convoluted tubule"},
+    {"location": "characteristics[organism part], [cell type] rows 1-33", "value": "distal convoluted tubule; epithelial cell", "source_ids": ["pride", "cellosaurus"], "evidence": "Cellosaurus derived-from site; PRIDE sample attribute CL:0000066 epithelial cell"},
+    {"location": "characteristics[genetic modification] rows 1-33", "value": "6xHis-SUMO1 T95K (SUMO1 rows) / 6xHis-SUMO2 T90K (SUMO2 rows)", "source_ids": ["paper", "pride"], "evidence": "Methods: His-tagged SUMO with T-to-K mutation preceding GG; cell names mpkDCT-SUMO1 T95K / SUMO2 T90K"},
+    {"location": "characteristics[treatment], factor value[treatment]", "value": "MG132 and PR619 | heat shock", "source_ids": ["readme", "paper"], "evidence": "Readme assigns each file to MG132+PR619 or Heat shock; paper: 10 uM MG132 5 h with PR619 22 uM last hour, or 43 C heat 1 h"},
+    {"location": "characteristics[biological replicate], source name", "value": "SUMOx-ExpN-{LysC|LysC+GluC}", "source_ids": ["readme"], "evidence": "Experiment labels SUMO1-Exp1..4, SUMO2-Exp1..6 from Readme; file pairs with and without _timestamp treated as technical replicates (assumption)"},
+    {"location": "comment[cleavage agent details] x2", "value": "Lys-C; glutamyl endopeptidase (Glu-C) for LysC+GluC pools, second column not applicable for Lys-C-only pools", "source_ids": ["pride", "paper", "readme"], "evidence": "Lys-C digest, supernatant collected; remaining large peptides digested with Glu-C (sequential)"},
+    {"location": "comment[instrument] rows with SUMO2-Exp3 (2 files)", "value": "Orbitrap Fusion", "source_ids": ["rawhdr"], "evidence": "Raw headers of 071016_2_Lys-C_HCD_OT_Lei_2h_50cm.raw and 071016_3_Glu-C_HCD_OT_Lei_2h_50cm.raw name Orbitrap Fusion, acquired 2016-10-07; contradicts paper/PRIDE Q Exactive"},
+    {"location": "comment[instrument] other 31 rows", "value": "Q Exactive", "source_ids": ["paper", "pride", "rawhdr"], "evidence": "Methods: easy nLC-1000 / QExactive; raw headers confirm Q Exactive"},
+    {"location": "comment[proteomics data acquisition method], [dissociation method], [collision energy]", "value": "DDA; HCD; 30% NCE (QE rows)", "source_ids": ["paper"], "evidence": "Methods: data-dependent acquisition, HCD collision energy 30%. DDA/HCD assumed for the 2 Fusion files (filename says HCD)"},
+    {"location": "comment[modification parameters]", "value": "Carbamidomethyl C fixed; Acetyl protein N-term, Oxidation M, Phospho STY, GlyGly K variable", "source_ids": ["pride"], "evidence": "PRIDE dataProcessingProtocol (MaxQuant 2.0.1.0); mqpar not inspected (archives are multi-GB)"},
+    {"location": "comment[precursor mass tolerance], [fragment mass tolerance]", "value": "4.5 ppm; 20 ppm", "source_ids": ["pride"], "evidence": "Inferred: protocol states all other MaxQuant parameters default (main search 4.5 ppm; FTMS MS/MS 20 ppm). Not read from mqpar.xml"},
+    {"location": "comment[data file] rows 1-33", "value": "33 RAW file names", "source_ids": ["pride-files"], "evidence": "Every RAW file in the deposit is claimed by exactly one row; non-RAW files (MaxQuant zip, rar search outputs, fasta, Readme) excluded"}
+  ],
+  "limitations": [
+    "Developmental stage, sex, strain, passage, culture medium, disease are not stated per sample; written as not available or not applicable",
+    "Pairing of _timestamp files as technical replicates is inferred from the Readme listing two files per experiment/enzyme",
+    "Search tolerances inferred from MaxQuant defaults; DCT-SUMO1.rar / DCT-SUMO2.rar (4.8 and 6.1 GB) not opened",
+    "Fusion acquisition details (DDA, HCD energy) for SUMO2-Exp3 not verified",
+    "sdrf-tools reconcile cleavage_agent_incomplete finding is a tool limitation: it reads only the first of the two cleavage columns"
+  ]
+}

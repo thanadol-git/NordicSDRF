@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD078629.sdrf.tsv",
+  "dataset": "PXD078629",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD078629"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD078629/files/all"
+    },
+    {
+      "id": "samplekey",
+      "kind": "deposited file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/08/PXD078629/SampleKey_GlomTubule.txt"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "not available (no publication linked; methods cite Demir et al. PMID 41145914, not read)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Rattus norvegicus",
+      "source_ids": [
+        "pride",
+        "samplekey"
+      ],
+      "evidence": "PRIDE organism NEWT:10116; protocol 'Rat glomeruli'"
+    },
+    {
+      "location": "characteristics[organism part] / factor value[organism part]",
+      "value": "renal glomerulus; renal tubule",
+      "source_ids": [
+        "samplekey",
+        "pride"
+      ],
+      "evidence": "SampleKey: glom vs tubule per file"
+    },
+    {
+      "location": "characteristics[treatment] / factor value[treatment]",
+      "value": "perifusion (ch1-8); on ice; cooked",
+      "source_ids": [
+        "samplekey"
+      ],
+      "evidence": "SampleKey descriptions; specific stimuli per chamber not stated"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-4 for chambers; 1 for controls",
+      "source_ids": [
+        "samplekey"
+      ],
+      "evidence": "Interpretation: chamber order within tissue; animal identity not stated"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Exploris 480 (FAIMS Pro)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "sampleProcessingProtocol"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-independent acquisition",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "experimentTypes PRIDE:0000450; directDIA in Spectronaut"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "1:50 trypsin overnight 37C; single protease"
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "TCEP / chloroacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "sampleProcessingProtocol"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term variable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "dataProcessingProtocol (stated in text; Spectronaut settings file not parsed)"
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Spectronaut default dynamic; not stated"
+    },
+    {
+      "location": "characteristics[sex/strain/age/developmental stage/disease/cell type]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "not stated in deposit"
+    },
+    {
+      "location": "comment[data file]",
+      "value": "12 RAW files, each once",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "files/all, projectAccessions verified PXD078629"
+    }
+  ]
+}

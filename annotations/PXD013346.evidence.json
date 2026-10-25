@@ -1,0 +1,34 @@
+{
+ "accession": "PXD013346",
+ "status": "validated annotation; independent review pending",
+ "sources": [
+  {"id": "pride", "url": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD013346", "available": true},
+  {"id": "files", "url": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD013346/files", "available": true},
+  {"id": "readme", "url": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2019/10/PXD013346/Readme.docx", "available": true},
+  {"id": "raw_header", "url": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/10/PXD013346/L1-SUMO-1.raw", "method": "HTTP range 0-262143", "available": true},
+  {"id": "paper", "url": "https://doi.org/10.1021/acs.jproteome.9b00306", "available": false, "note": "not open access; Methods not read"},
+  {"id": "search_outputs", "url": "CCD-S1.rar, CCD-S2.rar", "available": false, "note": "12 GB archives not opened; MaxQuant_1.5.5.1.zip contains program only"}
+ ],
+ "claims": [
+  {"column": "characteristics[organism]", "value": "Mus musculus", "source": "pride", "kind": "extracted"},
+  {"column": "characteristics[cell line]", "value": "mpkCCD14", "source": "pride title/description; abstract (Europe PMC)", "kind": "extracted"},
+  {"column": "characteristics[cell type]", "value": "epithelial cell", "source": "pride sampleAttributes CL:0000066", "kind": "extracted"},
+  {"column": "characteristics[treatment]/factor value[treatment]", "value": "MG132 and PR619 | heat shock", "source": "readme", "kind": "extracted"},
+  {"column": "characteristics[genetic modification]/factor value[genetic modification]", "value": "His-tagged SUMO1/SUMO2 (Thr-to-Lys mutant) expression", "source": "pride sampleProcessingProtocol; readme", "kind": "extracted"},
+  {"column": "characteristics[biological replicate]", "value": "Readme experiment number", "source": "readme", "kind": "inferred"},
+  {"column": "comment[technical replicate]", "value": "repeat injections per experiment/digest", "source": "readme", "kind": "inferred"},
+  {"column": "comment[instrument]", "value": "Q Exactive MS:1001911", "source": "raw_header; pride", "kind": "extracted"},
+  {"column": "comment[cleavage agent details] x2", "value": "Lys-C MS:1001309; glutamyl endopeptidase MS:1001917", "source": "pride sampleProcessingProtocol; readme", "kind": "extracted"},
+  {"column": "comment[modification parameters]", "value": "Carbamidomethyl C fixed; Acetyl N-term, Oxidation M, Phospho STY, GG K variable", "source": "pride dataProcessingProtocol", "kind": "extracted"},
+  {"column": "comment[fraction identifier]", "value": "SUMO1-Exp5 Lys-C 1-4; SUMO2-Exp4 Lys-C 2-4", "source": "readme", "kind": "extracted"},
+  {"column": "comment[data file] (SUMO2-Exp3 L4.raw, G4.raw)", "value": "Readme lists L3/G3 twice", "source": "readme; files", "kind": "inferred"},
+  {"column": "tolerances, dissociation, disease, sex, strain, developmental stage, cellosaurus", "value": "not available", "source": "none", "kind": "unavailable"}
+ ],
+ "validation": {
+  "parse_sdrf": "warnings only (--use_ols_cache_only)",
+  "structure": "OK",
+  "check": "CLEAN",
+  "reconcile": "1 MAJOR cleavage_agent_incomplete (design false positive: first cleavage column only)",
+  "independent_review": "pending"
+ }
+}

@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD025915.sdrf.tsv",
+  "dataset": "PXD025915",
+  "status": "validated annotation; independent review pending",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD025915"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD025915/files?pageSize=500"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "HTTP range read (first 128 bytes) of each of the 16 RAW files under https://ftp.ebi.ac.uk/pride/data/archive/2021/11/PXD025915/ ; Thermo FileHeader acquisition timestamp"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Yde et al. 2021 Am J Physiol Gastrointest Liver Physiol, PMID 34643455, doi 10.1152/ajpgi.00178.2021 (abstract only; full text not open access)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Rattus norvegicus",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organisms NEWT:10116; title and keywords"
+    },
+    {
+      "location": "characteristics[organism part] / cell type",
+      "value": "colon / epithelial cell",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "sampleProcessingProtocol: colonic epithelial cells isolated by Ca2+ chelation; PRIDE organismParts CL:0000066"
+    },
+    {
+      "location": "characteristics[sex] / strain or breed",
+      "value": "male / Wistar Munich",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "projectDescription: twelve male Wistar Munich rats"
+    },
+    {
+      "location": "characteristics[disease] / treatment / factor value[treatment]",
+      "value": "control: normal, control diet; treated: diarrhea, 1% w/w bile acid-mixed diet",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "projectDescription (control vs 1% w/w bile acid diet, 10 days); abstract: bile acid-fed rats suffered diarrhea"
+    },
+    {
+      "location": "characteristics[developmental stage]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Age not stated in deposit"
+    },
+    {
+      "location": "comment[label] / source name",
+      "value": "control: TMT126,127N,128C,129N,130N; bile acid: TMT127C,128N,129C,130C,131N (131 written as TMT131N)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "sampleProcessingProtocol channel assignment; individual rat identities per channel not given, source names are channel-based"
+    },
+    {
+      "location": "comment[data file] / fraction identifier / technical replicate",
+      "value": "8 fractions x 2 injections = 16 RAW files; Hanne-Di-N.raw = replicate 1, Hanne-Di-N_<timestamp>.raw = replicate 2",
+      "source_ids": [
+        "pride-files",
+        "raw-header",
+        "pride"
+      ],
+      "evidence": "Fraction number from file name (8 fractions per protocol). Replicates ordered by RAW header acquisition time (unsuffixed file acquired first for all 8 fractions; suffix timestamps match header times). Whether the second injection is a technical replicate or re-run is inferred."
+    },
+    {
+      "location": "comment[cleavage agent details] x2",
+      "value": "Lys-C (MS:1001309); Trypsin (MS:1001251)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "sampleProcessingProtocol: lysyl endopeptidase 3 h then trypsin overnight"
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "High-pH reversed-phase chromatography (PRIDE:0000564)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Pierce high pH fractionation kit, 8 fractions"
+    },
+    {
+      "location": "comment[reduction reagent] / alkylation reagent",
+      "value": "DTT / iodoacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "sampleProcessingProtocol"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Acetyl protein N-term, Oxidation M, TMT6plex peptide N-term and K variable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "dataProcessingProtocol (TMT stated variable in deposit); TMT10plex uses TMT6plex UNIMOD:737; PD .msf not parsed (9.5 GB)"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive (MS:1001911)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE instruments; not verified from raw files or paper full text"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition (PRIDE:0000627)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "INFERRED: TMT with Sequest/Mascot search; acquisition mode not stated"
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance, dissociation method]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Not stated in deposit text; PD msf not read"
+    }
+  ],
+  "unavailable_evidence": [
+    "Full text of Yde et al. 2021",
+    "MS acquisition method, tolerances and dissociation (not in deposit prose)",
+    "Individual rat IDs per TMT channel"
+  ]
+}

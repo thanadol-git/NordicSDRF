@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD041154.sdrf.tsv",
+  "dataset": "PXD041154",
+  "status": "validated annotation; independent review pending",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD041154"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD041154/files (raw.zip, mqpar.xml, txt.zip)"
+    },
+    {
+      "id": "raw-zip-listing",
+      "kind": "repository",
+      "location": "HTTP range read of central directory of ftp.pride.ebi.ac.uk/pride/data/archive/2024/02/PXD041154/raw.zip (8 Bruker .d runs); analysis.tdf of run 1 extracted by range read (GlobalMetadata)"
+    },
+    {
+      "id": "mqpar",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/02/PXD041154/mqpar.xml"
+    },
+    {
+      "id": "txt-zip",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/02/PXD041154/txt.zip (summary.txt, proteinGroups.txt)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Luige et al. 2024 Nat Commun 15:2585, PMID 38519458, PMC10959947 (open access full text)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "sdrf-tools cellline lookup K562 -> CVCL_0004"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organisms NEWT:9606; K562 nuclear extract",
+      "basis": "extracted"
+    },
+    {
+      "location": "characteristics[cell line] / cellosaurus accession / name",
+      "value": "K-562 / CVCL_0004 / K-562",
+      "source_ids": [
+        "pride",
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Title and description: K562 nuclear extracts",
+      "basis": "extracted"
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "female",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Not stated in deposit; Cellosaurus K-562 record",
+      "basis": "inferred"
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "chronic myeloid leukemia",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "K-562 derived from CML patient (Cellosaurus); not stated in deposit",
+      "basis": "inferred"
+    },
+    {
+      "location": "characteristics[organism part]/[cell type]/[age]/[individual]/[enrichment process]/[ancestry category]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Not given per sample; PRIDE organismParts (bone marrow/lymphoblast) are submitter dropdowns and not adopted",
+      "basis": "assumed"
+    },
+    {
+      "location": "characteristics[treatment] / factor value[treatment]",
+      "value": "G4A4 RNA pulldown in K+ buffer (odd runs C1,C3,C5,C7) vs Li+ buffer (even runs C2,C4,C6,C8)",
+      "source_ids": [
+        "pride",
+        "paper",
+        "txt-zip"
+      ],
+      "evidence": "Paper: pulldown with biotinylated G4A4 RNA in 150 mM KCl or LiCl. Run-to-condition mapping is NOT in the deposit; inferred from proteinGroups.txt LFQ of NCL (paper: NCL binding K+-dependent): log2 LFQ 19.0/16.5/18.7/16.3/18.6/16.6/19.0/16.7 for runs 1-8, a clean alternating pattern",
+      "basis": "inferred"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-4 per condition (K+ and Li+ pairs C1/C2 ... C7/C8)",
+      "source_ids": [
+        "raw-zip-listing",
+        "paper"
+      ],
+      "evidence": "8 runs, 4 per condition by inference; paper text says 'in triplicate' (discrepancy)",
+      "basis": "inferred"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=timsTOF Pro;AC=MS:1003005",
+      "source_ids": [
+        "paper",
+        "raw-zip-listing"
+      ],
+      "evidence": "analysis.tdf GlobalMetadata InstrumentName=timsTOF Pro; paper says timsTOF pro; PRIDE dropdown says timsTOF SCP (not adopted)",
+      "basis": "extracted"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "mqpar",
+        "paper"
+      ],
+      "evidence": "mqpar lcmsRunType TIMS-DDA; PASEF; analysis.tdf Frames MsMsType 8 (DDA-PASEF)",
+      "basis": "extracted"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "mqpar",
+        "paper"
+      ],
+      "evidence": "mqpar enzymes Trypsin/P; paper: on-bead trypsin elution (single protease)",
+      "basis": "extracted"
+    },
+    {
+      "location": "comment[reduction reagent]",
+      "value": "DTT",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Elution buffer 1 contains 2 mM DTT",
+      "basis": "extracted"
+    },
+    {
+      "location": "comment[alkylation reagent]",
+      "value": "chloroacetamide",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Elution buffer 2 contains 10 mM chloroacetamide",
+      "basis": "extracted"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M and Acetyl Protein N-term variable",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mqpar fixedModifications/variableModifications",
+      "basis": "extracted"
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "10 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mqpar mainSearchTol=10",
+      "basis": "extracted"
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "40 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mqpar msmsParams TOF MatchTolerance=40 ppm",
+      "basis": "extracted"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Not stated",
+      "basis": "extracted"
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE quantification: MS1 intensity based label-free (MaxLFQ)",
+      "basis": "extracted"
+    },
+    {
+      "location": "comment[data file]",
+      "value": "8 .d directories inside raw.zip",
+      "source_ids": [
+        "raw-zip-listing"
+      ],
+      "evidence": "20210909_PRI_TIMS4_PRIEvo3_P0082_R0268_{1..8}_S2-C{1..8}_1_{2492..2499}.d; deposit is a single raw.zip, so data file names are the contained .d folders",
+      "basis": "extracted"
+    }
+  ]
+}

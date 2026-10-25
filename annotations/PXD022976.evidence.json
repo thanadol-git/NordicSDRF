@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD022976.sdrf.tsv",
+  "dataset": "PXD022976",
+  "status": "validated annotation; independent review pending",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD022976"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD022976/files?pageSize=500"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Nielsen et al. J Biol Chem 2021;297(1):100858, PMID 34097874, PMC8220419 (Europe PMC full text XML)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "raw-file",
+      "location": "HTTP range read of first 256 KB of https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/09/PXD022976/20200612_NSN_WT3_dimer.raw"
+    },
+    {
+      "id": "pdresult",
+      "kind": "search-output",
+      "location": "Wild-typeTGFBIpXLs.pdResult (Proteome Discoverer, read with python -m tools search-params)"
+    },
+    {
+      "id": "unimod-obo",
+      "kind": "ontology",
+      "location": "/usr/share/openms/CV/unimod.obo; OLS4 queries for XLMOD:02126, MS:1001917, MS:1003029, MS:1000133, PRIDE:0000430"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism NEWT:9606; recombinant human TGFBIp (residues 45-632, 6xHis) expressed in Freestyle 293-F cells"
+    },
+    {
+      "location": "characteristics[material type] / [sample type]",
+      "value": "synthetic / study sample",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Purified recombinant protein, not a tissue or cell lysate; modelling choice, see report"
+    },
+    {
+      "location": "characteristics[organism part], [cell type], [disease]",
+      "value": "not applicable",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Sample is purified recombinant protein; GCD/LCD mutations are protein variants, not patient disease status"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-3",
+      "source_ids": [
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Run names WT1..3 etc. and 'triplicates' in sample processing protocol"
+    },
+    {
+      "location": "factor value[protein variant]",
+      "value": "wild type, R124H, R555W, A546T",
+      "source_ids": [
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "File names WT/RH/RW/AT; paper Fig. 5 compares wild type, R124H, R555W, A546T. RH=R124H, RW=R555W, AT=A546T inferred from paper and file codes"
+    },
+    {
+      "location": "factor value[gel band]",
+      "value": "monomer / dimer",
+      "source_ids": [
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "File names *_monomer/*_dimer; monomer and dimer SDS-PAGE bands excised"
+    },
+    {
+      "location": "comment[cross-linker]",
+      "value": "DSSO XLMOD:02126",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "155 uM DSSO, 3.1 uM TGFBIp; accession verified in OLS"
+    },
+    {
+      "location": "comment[crosslinker concentration] / [crosslinker to protein ratio]",
+      "value": "155 uM / 50:1",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "155/3.1 = 50"
+    },
+    {
+      "location": "comment[quenching reagent]",
+      "value": "Tris-HCl",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Quenched by 25 mM Tris-HCl pH 8.8"
+    },
+    {
+      "location": "characteristics[crosslinking reaction time]",
+      "value": "30 min",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "30 min at room temperature; temperature not numeric so not available"
+    },
+    {
+      "location": "characteristics[crosslink distance]",
+      "value": "26.4 \u00c5",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Template guidance for DSSO; paper states 26 \u00c5 maximum"
+    },
+    {
+      "location": "comment[reduction reagent] / [alkylation reagent]",
+      "value": "DTT / iodoacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "7 mM DTT, 21 mM iodoacetamide"
+    },
+    {
+      "location": "comment[cleavage agent details] x2",
+      "value": "Trypsin MS:1001251; glutamyl endopeptidase MS:1001917",
+      "source_ids": [
+        "pride",
+        "paper",
+        "pdresult"
+      ],
+      "evidence": "Trypsin 18 h then GluC 4 h in-gel; pdResult enzyme Tryp_GluC"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Eclipse MS:1003029",
+      "source_ids": [
+        "pride",
+        "raw-header"
+      ],
+      "evidence": "RAW header lists Orbitrap Eclipse; method file 20191008_MS2_CID25_MS3_CID35_noTMT_DSSO_60min"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "CID MS:1000133",
+      "source_ids": [
+        "pride",
+        "raw-header"
+      ],
+      "evidence": "CID at MS2 and MS3 (MS2_MS3 method)"
+    },
+    {
+      "location": "comment[collision energy]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "raw-header"
+      ],
+      "evidence": "Paper says 20% CID MS2 / 35% MS3, method file name says CID25; conflict and template pattern requires NCE/eV"
+    },
+    {
+      "location": "comment[precursor mass tolerance] / [fragment mass tolerance]",
+      "value": "10 ppm / 20 ppm",
+      "source_ids": [
+        "paper",
+        "pdresult"
+      ],
+      "evidence": "Paper Methods (MS3 0.5 Da not representable); pdResult 10 ppm / 20 ppm"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Deamidated N, Xlink:DSSO[176] K, Xlink:DSSO[279] K variable",
+      "source_ids": [
+        "paper",
+        "pdresult"
+      ],
+      "evidence": "Paper lists CAM fixed, Ox variable; pdResult adds Deamidated and DSSO hydrolyzed (176.014) / Tris-quenched (279.078) monolinks; UNIMOD:1878/1880 matched by mass in unimod.obo"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA PRIDE:0000627",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "MS2_MS3 data-dependent method; not stated as DDA verbatim (inferred)"
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "No labelling mentioned"
+    },
+    {
+      "location": "comment[fraction identifier] / [technical replicate]",
+      "value": "1 / 1",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "One raw file per gel band; no fractionation"
+    },
+    {
+      "location": "comment[fractionation method], [crosslink enrichment method]",
+      "value": "not applicable / not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "No LC fractionation; gel band excision is not a declared enrichment term"
+    },
+    {
+      "location": "characteristics[age], [sex] (human template)",
+      "value": "not available / not applicable",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Recombinant protein; no donor"
+    },
+    {
+      "location": "comment[data file] / assay name",
+      "value": "24 RAW files",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "All 24 .raw files in the deposit each claimed by one row; 3 .pdResult files are search outputs"
+    }
+  ],
+  "unavailable_evidence": [
+    "Supplementary Tables S1/S2 not read",
+    "Only the Wild-type pdResult was inspected; R124H, R555W, A546T pdResults not opened",
+    "No independent reviewer run yet"
+  ]
+}

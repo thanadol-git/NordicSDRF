@@ -1,0 +1,30 @@
+{
+ "accession": "PXD065323",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride_project": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD065323",
+  "pride_files": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD065323/files",
+  "condition_setup": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/01/PXD065323/apms_thsd7a_ConditionSetup.tsv",
+  "paper": "https://europepmc.org/article/PMC/PMC13135397 (PMID 41746732, doi 10.1172/jci.insight.198363)",
+  "raw_header": "HTTP range read (first 3 kB) of 221007_HH-CTRL_CoIP_WT-P0046-8.raw"
+ },
+ "claims": [
+  {"column": "characteristics[organism]", "value": "Mus musculus", "basis": "extracted", "source": "pride_project organisms NEWT:10090"},
+  {"column": "characteristics[organism part]", "value": "renal glomerulus", "basis": "extracted", "source": "title and protocol: isolated mouse glomeruli"},
+  {"column": "factor value[immunoprecipitation antibody]", "rows": "all", "basis": "extracted", "source": "condition_setup Condition column (wt_ctrligg, wt_thsd7aigg) and paper Methods Co-IP"},
+  {"column": "comment[instrument]", "value": "Orbitrap Exploris 480", "basis": "extracted", "source": "pride_project sampleProcessingProtocol; raw_header (Thermo Xcalibur)"},
+  {"column": "comment[proteomics data acquisition method]", "value": "Data-independent acquisition", "basis": "extracted", "source": "sampleProcessingProtocol: MS2 DIA scans, 15 windows"},
+  {"column": "comment[scan window lower/upper limit, isolation window width]", "value": "400 / 1000 / 40", "basis": "inferred", "source": "15 windows over 400-1000 m/z (1000-400)/15 = 40"},
+  {"column": "comment[cleavage agent details]", "value": "Trypsin", "basis": "extracted", "source": "sampleProcessingProtocol and dataProcessingProtocol (Trypsin/P)"},
+  {"column": "comment[reduction reagent] / [alkylation reagent]", "value": "TCEP / chloroacetamide", "basis": "extracted", "source": "sampleProcessingProtocol"},
+  {"column": "comment[modification parameters]", "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl Protein N-term variable", "basis": "extracted", "source": "dataProcessingProtocol (Spectronaut); no search-parameter file deposited"},
+  {"column": "comment[dissociation method]", "value": "beam-type collision-induced dissociation", "basis": "inferred", "source": "Orbitrap DIA; not stated in text"},
+  {"column": "sex, strain or breed, developmental stage, cell type, disease, tolerances, dia method", "value": "not available", "basis": "evidence silent"}
+ ],
+ "unavailable_evidence": ["Supplemental Appendix of the paper (not fetched)", "search parameter files (only .sne Spectronaut archive and quant table deposited)"],
+ "validation": {
+  "parse_sdrf": "pass (ms-proteomics, vertebrates, dia-acquisition; --use_ols_cache_only)",
+  "tools_check": "clean", "tools_structure": "OK", "tools_reconcile": "no disagreements"
+ },
+ "independent_review": "pending"
+}
