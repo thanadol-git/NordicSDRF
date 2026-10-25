@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-10-01
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-23)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-25)
 
 countries:
   sweden:
@@ -52,7 +52,7 @@ countries:
         annotated: 68
         blocked: 93
         notes: "line 1 is PRD000423, a legacy ProteomeXchange id — resolve to a PXD before screening"
-        in_corpus: 80
+        in_corpus: 84
       lund:
         name: Lund
         search_terms: [Lund, Malmö, Skåne]
@@ -134,11 +134,11 @@ countries:
         search_terms: [Aarhus, Århus]
         pride_hits: 117
         screened: 0
-        annotated: 21
-        blocked: 1
+        annotated: 28
+        blocked: 4
         pxd_list: lists/denmark/aarhus.txt
         pxd_count: 113
-        in_corpus: 33
+        in_corpus: 48
       aalborg:
         name: Aalborg
         search_terms: [Aalborg]
@@ -189,7 +189,7 @@ countries:
         blocked: 3
         pxd_list: lists/norway/oslo.txt
         pxd_count: 120
-        in_corpus: 87
+        in_corpus: 89
       trondheim:
         name: Trondheim
         search_terms: [Trondheim, NTNU]
@@ -240,7 +240,7 @@ countries:
         blocked: 27
         pxd_list: lists/finland/helsinki.txt
         pxd_count: 66
-        in_corpus: 39
+        in_corpus: 40
       turku:
         name: Turku
         search_terms: [Turku, Åbo]

@@ -1,0 +1,11 @@
+# daily queue 2026-10-24 aarhus batch 2 (10 smallest by PRIDE raw size; 60 remaining of 113 before this batch)
+PXD044323	denmark/aarhus	queued	raw_files=24; raw_bytes=8277051542
+PXD002741	denmark/aarhus	queued	raw_files=26; raw_bytes=8799478578
+PXD002500	denmark/aarhus	queued	raw_files=32; raw_bytes=9172389852
+PXD078634	denmark/aarhus	queued	raw_files=8; raw_bytes=9761035958
+PXD058697	denmark/aarhus	queued	raw_files=36; raw_bytes=10816709892
+PXD009689	denmark/aarhus	queued	raw_files=16; raw_bytes=11291056276
+PXD001174	denmark/aarhus	queued	raw_files=124; raw_bytes=11752862640
+PXD012902	denmark/aarhus	queued	raw_files=18; raw_bytes=11911097711
+PXD032130	denmark/aarhus	queued	raw_files=36; raw_bytes=12050457274
+PXD074604	denmark/aarhus	queued	raw_files=6; raw_bytes=12548172815

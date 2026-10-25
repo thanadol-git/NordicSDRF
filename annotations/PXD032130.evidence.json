@@ -1,0 +1,94 @@
+{
+ "accession": "PXD032130",
+ "status": "validated annotation; independent review pending",
+ "templates": [
+  "ms-proteomics v1.1.0",
+  "human v1.1.0",
+  "cell-lines v1.1.0"
+ ],
+ "claims": [
+  {
+   "claim": "36 label-free DDA runs, 24 podocyte supernatants (TNFa/vehicle x 24/48h x 6 reps) + 12 cell-free medium controls",
+   "columns": [
+    "source name",
+    "comment[data file]",
+    "characteristics[treatment]",
+    "characteristics[sampling time]",
+    "factor value[*]"
+   ],
+   "rows": "all",
+   "source": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/05/PXD032130/experimentalDesignTemplate.txt",
+   "type": "extracted"
+  },
+  {
+   "claim": "TNFa 5 ng/mL vs PBS vehicle, 24/48 h; human podocytes; trypsin 1:50; DTT/IAA",
+   "columns": [
+    "characteristics[treatment]",
+    "comment[cleavage agent details]"
+   ],
+   "source": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD032130",
+   "type": "extracted"
+  },
+  {
+   "claim": "Cell line = CIHP-1 (CVCL_W186, synonym AB8/13); paper cites Saleem 2002 (PMID 11856766) which is Cellosaurus' reference for this line; line name not stated in paper",
+   "columns": [
+    "characteristics[cell line]",
+    "characteristics[cellosaurus accession]",
+    "characteristics[cellosaurus name]"
+   ],
+   "source": [
+    "https://api.cellosaurus.org/cell-line/CVCL_W186?format=txt",
+    "PMC10425428 (Europe PMC full text)"
+   ],
+   "type": "inferred"
+  },
+  {
+   "claim": "Instrument Orbitrap Fusion, HCD NCE 30, ion-trap MS2: from embedded method in RAW header (range read 0-1.5MB of 211222_sh_ML_P0007_25.raw); contradicts PRIDE metadata (Q Exactive HF) and PRIDE protocol text (QExactive, 70k/17.5k, NCE 25)",
+   "columns": [
+    "comment[instrument]",
+    "comment[dissociation method]",
+    "comment[collision energy]",
+    "comment[ms2 mass analyzer]"
+   ],
+   "source": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/05/PXD032130/211222_sh_ML_P0007_25.raw (HTTP range read)",
+   "type": "extracted from raw; conflicts with record"
+  },
+  {
+   "claim": "MaxQuant 1.6.17.0, Trypsin/P, 2 missed cleavages, fixed Carbamidomethyl(C), variable Oxidation(M) and Acetyl(Protein N-term); MS/MS tol ITMS 0.5 Da",
+   "columns": [
+    "comment[modification parameters]",
+    "comment[cleavage agent details]",
+    "comment[fragment mass tolerance]"
+   ],
+   "source": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/05/PXD032130/txt.zip (parameters.txt, summary.txt via HTTP range read)",
+   "type": "extracted"
+  },
+  {
+   "claim": "Precursor tolerance not in deposited parameters.txt",
+   "columns": [
+    "comment[precursor mass tolerance]"
+   ],
+   "source": null,
+   "type": "unavailable -> not available"
+  },
+  {
+   "claim": "minimal_medium / full_medium runs are cell-free medium controls; composition not described",
+   "columns": [
+    "characteristics[culture medium]",
+    "characteristics[cell line]"
+   ],
+   "source": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/05/PXD032130/experimentalDesignTemplate.txt",
+   "type": "inferred from run names"
+  }
+ ],
+ "validation": [
+  "parse_sdrf validate-sdrf (--use_ols_cache_only; network lost midway): 0 errors, 5 ontology-lookup warnings",
+  "python -m tools structure: OK",
+  "python -m tools check --offline: CLEAN",
+  "python -m tools reconcile: agrees with record"
+ ],
+ "limitations": [
+  "Independent adversarial review not performed (no subagents permitted)",
+  "Online OLS validation not completed (DNS failure)"
+ ]
+}

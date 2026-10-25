@@ -1,0 +1,19 @@
+{
+ "accession": "PXD012902",
+ "sdrf": "PXD012902.sdrf.tsv",
+ "existing_annotation": "none found in /home/thanadol/Documents/GitHub/sdrf-annotated-datasets (Step 0.5)",
+ "claims": [
+  {"claim": "Organism Mus musculus, tissue cornea, label-free, genotypes WT/heterozygous/homozygous TGFBI R124H, 3 mice per genotype, technical duplicates", "columns": ["characteristics[organism]","characteristics[organism part]","characteristics[genotype]","factor value[genotype]","comment[label]"], "source": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD012902 (projectDescription, sampleProcessingProtocol); Europe PMC abstract PMID 32558206", "kind": "extracted"},
+  {"claim": "Run name pattern <genotype>_<A>_<B>: B = mouse (biological replicate 1-3), A = technical run (1-2)", "columns": ["characteristics[biological replicate]","comment[technical replicate]"], "source": "LFQ intensity Pearson r from MaxQuantOutput/proteinGroups.txt (https://ftp.pride.ebi.ac.uk/pride/data/archive/2020/10/PXD012902/MaxQuantOutput.tar.gz): same B different A r=0.992-0.996; same A different B r=0.91-0.994 (Het lowest); consistent with 3 mice x 2 runs in the protocol", "kind": "inferred"},
+  {"claim": "CNBr then trypsin, 1 missed cleavage", "columns": ["comment[cleavage agent details] x2"], "source": "PRIDE sampleProcessingProtocol; mqpar.txt <enzymes>CNBr Trypsin</enzymes>, maxMissedCleavages 1", "kind": "extracted"},
+  {"claim": "Modifications: Carbamidomethyl(C) fixed; Oxidation(M), Oxidation(P), Met->Hse, Met->Hsl variable", "columns": ["comment[modification parameters] x5"], "source": "mqpar.txt fixedModifications/variableModifications; parameters.txt", "kind": "extracted"},
+  {"claim": "Tolerances 4.5 ppm precursor (main search), 20 ppm fragment (FTMS)", "columns": ["comment[precursor mass tolerance]","comment[fragment mass tolerance]"], "source": "mqpar.txt mainSearchTol, msmsParams FTMS MatchTolerance", "kind": "extracted"},
+  {"claim": "Instrument Q Exactive Plus, DDA top10, HCD (NCE 28)", "columns": ["comment[instrument]","comment[proteomics data acquisition method]","comment[dissociation method]","comment[collision energy]"], "source": "HTTP range read (first 256 KB) of 09022019_MVL_R124H_WT_1_1.raw: 'Q Exactive Plus', FULL MS / DD-MS2 (TOPN) 10, (N)CE 28; HCD inferred from NCE on Q Exactive", "kind": "extracted (HCD inferred)"},
+  {"claim": "DTT reduction, IAA alkylation", "columns": ["comment[reduction reagent]","comment[alkylation reagent]"], "source": "PRIDE sampleProcessingProtocol", "kind": "extracted"},
+  {"claim": "sex, strain, developmental stage, cell type: not available", "columns": ["characteristics[sex]","characteristics[strain or breed]","characteristics[developmental stage]","characteristics[cell type]"], "source": "Protocol says only 'different genders', 'age-matched'; no per-mouse values; paper full text not open access", "kind": "unavailable"},
+  {"claim": "disease normal for WT; not available for Het/Hom (model mice show no corneal deposits)", "columns": ["characteristics[disease]"], "source": "PRIDE projectDescription", "kind": "judgement"}
+ ],
+ "unavailable_evidence": ["paper full text (not open access)", "per-mouse sex/age/strain", "no deposited SDRF consulted"],
+ "validation": {"parse_sdrf": "validate-sdrf -t ms-proteomics -t vertebrates (--use_ols_cache_only): passed", "tools check --offline": "CLEAN", "tools structure": "OK", "tools reconcile": "2 findings (cleavage_agent_contradicted/incomplete) = tool reads only first repeated cleavage column; Trypsin is present in 2nd column; false positive"},
+ "status": "validated annotation; independent review pending"
+}

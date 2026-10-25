@@ -1,0 +1,16 @@
+{"accession":"PXD078634","status":"validated annotation; independent review pending",
+"sources":[
+{"id":"pride","url":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD078634","local":"/home/thanadol/Documents/GitHub/sdrf-skills/scratchpad/PXD078634/pride.json"},
+{"id":"files","url":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD078634/files","local":"/home/thanadol/Documents/GitHub/sdrf-skills/scratchpad/PXD078634/files_raw.json"},
+{"id":"samplekey","url":"https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/08/PXD078634/SampleKey_AAvsAAH2O2.txt"},
+{"id":"publication","status":"unavailable","note":"no PubMed reference in record; methods cite Demir et al. PMID:41145914 (not fetched)"}],
+"claims":[
+{"columns":["characteristics[organism]","characteristics[organism part]","characteristics[cell type]"],"value":"Mus musculus; kidney; kidney tubule cell","source":"pride (sampleProcessingProtocol, organisms, organismParts)"},
+{"columns":["comment[instrument]"],"value":"Orbitrap Exploris 480 MS:1003028","source":"pride instruments + protocol"},
+{"columns":["comment[proteomics data acquisition method]"],"value":"Data-independent acquisition","source":"pride protocol (DIA) and SampleKey '(DIA)'"},
+{"columns":["comment[cleavage agent details]"],"value":"Trypsin","source":"pride protocol (trypsin 1:50) and dataProcessingProtocol"},
+{"columns":["comment[modification parameters]"],"value":"Carbamidomethyl C fixed; Oxidation M and Protein N-term Acetyl variable","source":"pride dataProcessingProtocol (Spectronaut); search report not parsed"},
+{"columns":["comment[reduction reagent]","comment[alkylation reagent]"],"value":"TCEP; chloroacetamide","source":"pride sampleProcessingProtocol"},
+{"columns":["characteristics[treatment]","factor value[treatment]"],"value":"chambers 1-4 AAH2O2 -> hydrogen peroxide; chambers 5-8 AA -> not applicable","source":"samplekey + title"},
+{"columns":["comment[data file]","assay name"],"value":"8 raw files, one per chamber","source":"files"},
+{"columns":["characteristics[disease]","characteristics[developmental stage]","characteristics[strain or breed]","characteristics[sex]"],"value":"not available","source":"not stated in record"}]}

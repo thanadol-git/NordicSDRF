@@ -1,0 +1,28 @@
+{
+ "accession": "PXD074604",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD074604",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD074604/files/all",
+  "paper": "https://europepmc.org/article/PMC/PMC13597087 (eLife, doi 10.7554/elife.107170)",
+  "raw_header": "HTTP/FTP range read of first 256 KB of 20240910_MSRI063_OGT_Tissue_13_CY.raw (Orbitrap Eclipse strings)"
+ },
+ "claims": [
+  {"column": "characteristics[organism]", "value": "Mus musculus", "source": "pride sampleAttributes NEWT:10090; paper", "kind": "extracted"},
+  {"column": "characteristics[organism part]", "value": "prefrontal cortex", "source": "PRIDE sample protocol; paper Methods", "kind": "extracted"},
+  {"column": "characteristics[sex]", "value": "male", "source": "paper: only male mice used", "kind": "extracted"},
+  {"column": "characteristics[age]", "value": "16W", "source": "PRIDE sample protocol: 16 week old", "kind": "extracted"},
+  {"column": "characteristics[developmental stage]", "value": "adult", "source": "inferred from 16 weeks", "kind": "inferred"},
+  {"column": "characteristics[strain or breed]", "value": "C57BL/6J", "source": "paper: line maintained on C57BL/6J background", "kind": "extracted"},
+  {"column": "characteristics[genotype]/factor value[genotype]", "value": "wild type | OGT C921Y", "source": "run names _WT / _CY (CY = C921Y) and paper", "kind": "extracted; CY=C921Y is inferred from file suffix", "rows": "Tissue_16-18 WT; Tissue_13-15 CY"},
+  {"column": "characteristics[disease]", "value": "normal (WT) | not available (C921Y)", "source": "no disease term evidenced for mutants (mouse model of OGT-ID)", "kind": "assumed sentinel"},
+  {"column": "comment[instrument]", "value": "Orbitrap Eclipse MS:1003029", "source": "PRIDE, paper, RAW header", "kind": "verified"},
+  {"column": "comment[cleavage agent details]", "value": "Trypsin", "source": "PRIDE protocol (S-Trap, trypsin 16 h)", "kind": "extracted"},
+  {"column": "comment[modification parameters]", "value": "Carbamidomethyl C fixed; Oxidation M, HexNAc S/T variable", "source": "PRIDE data processing protocol", "kind": "extracted"},
+  {"column": "comment[precursor/fragment mass tolerance]", "value": "10 ppm / 0.02 Da", "source": "PRIDE data processing protocol", "kind": "extracted"},
+  {"column": "comment[proteomics data acquisition method]", "value": "Data-dependent acquisition", "source": "not stated; inferred from Sequest/PD label-free workflow on Eclipse", "kind": "inferred"},
+  {"column": "comment[label]", "value": "label free sample", "source": "paper: label-free quantification", "kind": "extracted"}
+ ],
+ "unavailable": ["fragmentation/dissociation method", "reduction/alkylation reagents", "fractionation (none stated)", "deposited .pdResult (27 GB) not read; search parameters taken from PRIDE text"],
+ "validation": {"parse_sdrf": "pass, 1 warning (strain checked against NCBITaxon, spurious)", "tools check --offline": "CLEAN", "tools structure": "OK", "tools reconcile": "agrees"},
+ "status": "validated annotation; independent review pending"
+}

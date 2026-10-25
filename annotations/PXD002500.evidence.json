@@ -1,0 +1,21 @@
+{
+ "accession": "PXD002500",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride_project": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002500",
+  "pride_files": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002500/files?pageSize=500",
+  "publication": "https://doi.org/10.1016/j.bbapap.2015.11.004 (PMID 26621385; full text not fetched, PRIDE protocol text used)"
+ },
+ "claims": [
+  {"claim": "organism Acanthoscurria geniculata", "columns": ["characteristics[organism]"], "source": "pride_project organisms (NEWT:575412) and sampleProcessingProtocol", "basis": "extracted"},
+  {"claim": "four male individuals; 4 biological x 4 technical = 16 runs", "columns": ["characteristics[sex]", "characteristics[biological replicate]", "comment[technical replicate]"], "source": "pride_project sampleProcessingProtocol", "basis": "extracted"},
+  {"claim": "organism part hemolymph (clot)", "columns": ["characteristics[organism part]"], "source": "pride_project organismParts BTO:0000572 + protocol", "basis": "extracted"},
+  {"claim": "LPS 65 ug/ml added to all samples", "columns": ["characteristics[treatment]"], "source": "sampleProcessingProtocol", "basis": "extracted"},
+  {"claim": "TripleTOF 5600+, DDA (information dependent acquisition), 5-35% 50 min gradient", "columns": ["comment[instrument]", "comment[proteomics data acquisition method]"], "source": "sampleProcessingProtocol", "basis": "extracted"},
+  {"claim": "trypsin, DTT, iodoacetamide, carbamidomethyl fixed, Met oxidation variable, 20 ppm / 0.2 Da", "columns": ["comment[cleavage agent details]", "comment[reduction reagent]", "comment[alkylation reagent]", "comment[modification parameters]", "comment[precursor mass tolerance]", "comment[fragment mass tolerance]"], "source": "sampleProcessingProtocol / dataProcessingProtocol", "basis": "extracted"},
+  {"claim": "CID dissociation", "columns": ["comment[dissociation method]"], "source": "none in deposit", "basis": "inferred from instrument type"},
+  {"claim": "disease, developmental stage, strain", "columns": ["characteristics[disease]", "characteristics[developmental stage]", "characteristics[strain or breed]"], "source": "unavailable", "basis": "not available"},
+  {"claim": "file to run mapping", "columns": ["comment[data file]", "assay name"], "source": "pride_files (16 .wiff files)", "basis": "extracted"}
+ ],
+ "validation": {"parse_sdrf": "passed", "tools_check": "CLEAN", "structure": "OK", "reconcile": "no findings"}
+}
