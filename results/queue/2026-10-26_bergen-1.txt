@@ -1,0 +1,21 @@
+# daily queue 2026-10-26 bergen batch 1 (20 PXDs, accession order; no raw-size info)
+PXD000282	norway/bergen	pending	bergen: no screen yet; queued as a candidate
+PXD002106	norway/bergen	pending	bergen: no screen yet; queued as a candidate
+PXD002318	norway/bergen	pending	bergen: no screen yet; queued as a candidate
+PXD002347	norway/bergen	pending	bergen: no screen yet; queued as a candidate
+PXD002912	norway/bergen	pending	bergen: no screen yet; queued as a candidate
+PXD003338	norway/bergen	pending	bergen: no screen yet; queued as a candidate
+PXD003710	norway/bergen	pending	bergen: no screen yet; queued as a candidate
+PXD003822	norway/bergen	pending	bergen: no screen yet; queued as a candidate
+PXD004311	norway/bergen	pending	bergen: no screen yet; queued as a candidate
+PXD004362	norway/bergen	pending	bergen: no screen yet; queued as a candidate
+PXD004540	norway/bergen	pending	bergen: no screen yet; queued as a candidate
+PXD004572	norway/bergen	pending	bergen: no screen yet; queued as a candidate
+PXD004888	norway/bergen	pending	bergen: no screen yet; queued as a candidate
+PXD005259	norway/bergen	pending	bergen: no screen yet; queued as a candidate
+PXD006165	norway/bergen	pending	bergen: no screen yet; queued as a candidate
+PXD006349	norway/bergen	pending	bergen: no screen yet; queued as a candidate
+PXD006856	norway/bergen	pending	bergen: no screen yet; queued as a candidate
+PXD007193	norway/bergen	pending	bergen: no screen yet; queued as a candidate
+PXD008361	norway/bergen	pending	bergen: no screen yet; queued as a candidate
+PXD010260	norway/bergen	pending	bergen: no screen yet; queued as a candidate

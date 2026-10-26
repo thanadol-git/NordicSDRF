@@ -138,7 +138,7 @@ countries:
         blocked: 10
         pxd_list: lists/denmark/aarhus.txt
         pxd_count: 113
-        in_corpus: 60
+        in_corpus: 70
       aalborg:
         name: Aalborg
         search_terms: [Aalborg]
@@ -178,8 +178,11 @@ countries:
         pride_hits: 227
         screened: 0
         annotated: 0
-        blocked: 0
+        blocked: 2
         notes: "'Bergen' also matches Bergen NJ (USA) and Bergen op Zoom (NL)"
+        pxd_list: lists/norway/bergen.txt
+        pxd_count: 99
+        in_corpus: 29
       oslo:
         name: Oslo
         search_terms: [Oslo, Rikshospitalet, Radiumhospitalet]
