@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD000760.sdrf.tsv",
+  "dataset": "PXD000760",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000760"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD000760/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC4665887 (Krogager et al. 2015 Proteome Sci, PMID 26628894)"
+    },
+    {
+      "id": "distiller-xml-A",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2015/12/PXD000760/20131210_TVACVAEA.xml (HTTP range read of first 90 KB: rawfile list, 47 files)"
+    },
+    {
+      "id": "distiller-xml-B",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2015/12/PXD000760/2013-12-09LVN_TVACLAOA.xml (HTTP range read of first 90 KB: rawfile list, 48 files)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "sdrf-tools cellline lookup HepG2 -> Hep-G2 CVCL_0027 (hepatoblastoma, male, 15Y)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organisms NEWT:9606; Swiss-Prot Homo sapiens search"
+    },
+    {
+      "location": "characteristics[cell line] / cellosaurus",
+      "value": "HepG2 / CVCL_0027",
+      "source_ids": [
+        "pride",
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Title 'HepG2 cells'; paper uses serum-free adapted HepG2-SF; Cellosaurus lookup of HepG2"
+    },
+    {
+      "location": "characteristics[disease]/age/sex",
+      "value": "hepatoblastoma / 15Y / male",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Cellosaurus-derived, not stated in deposit"
+    },
+    {
+      "location": "characteristics[treatment] / factor value[treatment]",
+      "value": "trans-vaccenic acid, elaidic acid, cis-vaccenic acid, oleic acid, cis-9,trans-11 conjugated linoleic acid (100 uM, 7 d)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Sample processing protocol: two SILAC triplex setups"
+    },
+    {
+      "location": "comment[label]",
+      "value": "SILAC light/medium/heavy = Arg0/Arg6/Arg10",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Setup A: light trans-VA, medium EA, heavy cis-VA; Setup B: light trans-VA, medium OA, heavy CLA"
+    },
+    {
+      "location": "characteristics[cellular compartment]",
+      "value": "cell lysate (IC) / culture medium (EC)",
+      "source_ids": [
+        "paper",
+        "distiller-xml-A",
+        "distiller-xml-B"
+      ],
+      "evidence": "File names IC/EC; protocol: lysates and albumin-depleted medium run in separate gel lanes"
+    },
+    {
+      "location": "characteristics[pooled sample]",
+      "value": "pooled",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "4 biological replicas per group pooled, then groups mixed 1:1:1"
+    },
+    {
+      "location": "comment[data file] / setup assignment",
+      "value": "95 .wiff files: 120705_* = triplex A (EC_Gel_18-39 medium, IC_Gel_40-64 lysate); 2012_09_23/25/26 *TVACLAOA*/ICrerun = triplex B (IC 1-30 incl. 13/16/17/21 dilute and 24-30 rerun; EC31-48)",
+      "source_ids": [
+        "pride-files",
+        "distiller-xml-A",
+        "distiller-xml-B"
+      ],
+      "evidence": "Distiller quantitation XML rawfile lists (47 + 48 = 95) match the 95 deposited .wiff files exactly; paths 'SILAC TVACVAEA' and 'SILAC TVACLAOA_2'"
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "gel band order by file number; B-IC bands 1-30 assumed (dilute reruns replace bands 13,16,17,21)",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Inferred from file numbering; not stated"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "TripleTOF 5600 (MS:1000932)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Protocol text and PRIDE instruments"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "In-gel trypsin digestion; one missed cleavage"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Propionamide (C, fixed), Oxidation (M, variable), Label:13C(6) and Label:13C(6)15N(4) (R)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Mascot search parameters and SILAC R+6 R+10 protocol; label mods listed on all rows as in repo convention"
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "10 ppm / 0.2 Da",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Data processing protocol"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Information dependent acquisition, 25 MS/MS per cycle"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Not stated"
+    }
+  ]
+}

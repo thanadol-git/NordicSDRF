@@ -1,0 +1,25 @@
+{
+ "accession": "PXD019159",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD019159",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD019159/files (92 entries, all projectAccessions=PXD019159)",
+  "paper": "Europe PMC PMC7571286 (PMID 33117608, doi 10.1167/tvst.9.11.16), Methods",
+  "supplement": "Europe PMC supplementaryFiles PMC7571286: tvst-9-11-16_s001.pdf (SI Table 1 patient data), s004.xlsx (MaxQuant SRF LFQ intensity 1-19,21-25)",
+  "wiff_header": "range/partial read of 2019-03-29ELN174.ID1.wiff (15.5 MB index file) shows 'TripleTOF 6600'; local scratchpad copy deleted"
+ },
+ "claims": [
+  {"column":"comment[data file] / source name","value":"ELN174.ID1-19,21-25 (24 files) = SRF; ELN207.ID1-20 (20 files) = vitreous","basis":"inferred from counts (n=24 SRF, n=20 vitreous, paper) and SI Table 4 LFQ numbering 1-19,21-25; no explicit file-to-group table deposited","confidence":"high-inferred"},
+  {"column":"comment[instrument]","value":"TripleTOF 6600 (MS:1002533)","basis":"paper Methods + wiff header; PRIDE metadata says TripleTOF 5600 (overridden)"},
+  {"column":"comment[cleavage agent details]","value":"Trypsin","basis":"paper / PRIDE sampleProcessingProtocol (FASP, 250 ng trypsin 16 h)"},
+  {"column":"comment[modification parameters]","value":"CAM(C) fixed, protein N-term acetyl fixed, Oxidation M and P variable","basis":"paper/PRIDE dataProcessingProtocol (MaxQuant 1.6.5.0); deposited search TXT 7z archives not opened (0.5-1 GB)"},
+  {"column":"comment[precursor/fragment mass tolerance]","value":"20 ppm / 0.2 Da","basis":"20 ppm = MaxQuant peptide tolerance; 0.2 Da = Mascot fragment tolerance (MaxQuant fragment tolerance not stated)"},
+  {"column":"comment[proteomics data acquisition method]","value":"DDA","basis":"paper: data-dependent acquisition, up to 50 MS/MS"},
+  {"column":"comment[dissociation method]","value":"CID","basis":"paper: collision-induced dissociation, sweep CE 35+/-15 eV"},
+  {"column":"comment[ms1 scan range]","value":"300m/z-1800m/z","basis":"paper"},
+  {"column":"reduction/alkylation","value":"DTT / iodoacetamide","basis":"PRIDE sample protocol"},
+  {"column":"characteristics[disease]","value":"SRF rows: retinal detachment; vitreous rows: normal","basis":"paper: vitreous from donors with no history of ocular pathology"},
+  {"column":"characteristics[age]/[sex]","value":"not available","basis":"SI Table 1 gives per-patient age/sex numbered 1-24 / 1-20, but linkage of patient number to file ID is not stated (MaxQuant experiments skip 20), so not assigned"}
+ ],
+ "unavailable": ["file-to-patient mapping", "deposited MaxQuant mqpar/summary (inside 7z, not read)", "OLS online (network unreachable; cache-only validation)"]
+}

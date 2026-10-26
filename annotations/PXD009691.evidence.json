@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD009691.sdrf.tsv",
+  "dataset": "PXD009691",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD009691"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD009691/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Paternoster et al. 2018 Neurobiol Dis PMID 30590179, doi:10.1016/j.nbd.2018.12.011 (accepted manuscript, King's College London repository)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "raw-file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/01/PXD009691/1736-MariaS-syn-ST-F2.raw (first 200 KB, HTTP range read)"
+    },
+    {
+      "id": "msf",
+      "kind": "search-result",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/01/PXD009691/Veerle-TMT-synapt-ST-21files.msf (SQLite; Workflows table read by HTTP range requests)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Mus musculus",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organisms NEWT:10090; Mascot taxonomy Mus musculus"
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "striatum",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "msf"
+      ],
+      "evidence": "Title 'striatum - synaptosome'; run names ST-syn; keywords Striatum"
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "female",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Abstract and Methods: female Brd1+/- mice and WT littermates"
+    },
+    {
+      "location": "characteristics[disease]/[strain or breed]/[developmental stage]/[cell type]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Genotype per TMT channel not recoverable; strain and stage not stated (age 6-8 weeks only)"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive Plus (MS:1002634)",
+      "source_ids": [
+        "raw-header",
+        "paper"
+      ],
+      "evidence": "Raw header string 'Q Exactive Plus - Orbitrap MS'; Methods"
+    },
+    {
+      "location": "comment[label]",
+      "value": "TMT126..TMT131 (10 channels)",
+      "source_ids": [
+        "paper",
+        "msf"
+      ],
+      "evidence": "TMT10plex labelling; msf ReporterIonQuantifier method 'TMT 10plex'. Channel->sample map unavailable"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin (MS:1001251)",
+      "source_ids": [
+        "paper",
+        "msf"
+      ],
+      "evidence": "Trypsin overnight; msf Enzyme=Trypsin; single protease"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; TMT6plex K and any N-term fixed; Oxidation M variable",
+      "source_ids": [
+        "msf"
+      ],
+      "evidence": "msf workflow parameters StaticMod_1-3, DynMod_1"
+    },
+    {
+      "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+      "value": "7 ppm / 0.01 Da",
+      "source_ids": [
+        "msf",
+        "pride"
+      ],
+      "evidence": "msf PeptideTolerance 7 ppm, FragmentTolerance 10 mmu; PRIDE dataProcessingProtocol"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD (MS:1000422)",
+      "source_ids": [
+        "paper",
+        "msf"
+      ],
+      "evidence": "Methods: HCD; msf ActivationTypeFilter HCD"
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "TCEP / iodoacetamide",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: reduced and alkylated with TCEP and IAA"
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "F-number from file name",
+      "source_ids": [
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "8 MCX fractions; files F2-F8 deposited (F1 absent)"
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1 standard, 2 lang-gradient, 3 exclusion",
+      "source_ids": [
+        "paper",
+        "pride-files"
+      ],
+      "evidence": "Methods: three LC-MS analyses per sample, third with exclusion list; order of 2 vs 3 inferred (limitation)"
+    },
+    {
+      "location": "comment[ms1 scan range]",
+      "value": "380m/z-1800m/z",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: scan range 380-1800 m/z"
+    }
+  ],
+  "unavailable": [
+    {
+      "item": "TMT channel -> sample/genotype map",
+      "reason": "Not in PRIDE record, paper text, or msf quantification method"
+    },
+    {
+      "item": "Supplementary information 1 of the paper",
+      "reason": "Not retrieved"
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD054811.sdrf.tsv",
+  "dataset": "PXD054811",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD054811"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD054811/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Winther et al. EMBO J 2026, doi 10.1038/s44318-026-00761-9, PMC13144350 (Europe PMC fullTextXML, Methods: dSTING immunoprecipitation and mass spectrometry)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "raw-file",
+      "location": "HTTP/FTP range read (first 256 KB) of 20231219_KK_Sting_3.raw and 20240206_KK_IP_Sting_3.raw under ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/04/PXD054811/"
+    },
+    {
+      "id": "search-tables",
+      "kind": "deposit",
+      "location": "20231219_/20240206_StingIP_EGFP_Sting_StingcGAS_1FDR_Proteins.txt (PD protein tables; confirm 3 conditions x Rep1-3 per batch)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://api.cellosaurus.org/cell-line/CVCL_Z232"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Drosophila melanogaster",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organisms NEWT:7227; S2 cells"
+    },
+    {
+      "location": "characteristics[cell line] / cellosaurus",
+      "value": "S2 / CVCL_Z232 (Schneider 2)",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "S2 cells (Methods); Cellosaurus parent line Schneider 2"
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "embryo",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Cellosaurus: derived from whole embryo (inferred, not stated in deposit)"
+    },
+    {
+      "location": "characteristics[treatment] / factor value[treatment]",
+      "value": "EGFP control; V5-tagged Sting; V5-tagged Sting with cGAS",
+      "source_ids": [
+        "pride",
+        "paper",
+        "search-tables"
+      ],
+      "evidence": "Transfection of EGFP, dSTING-C-V5 +/- cGAS[155-522]; protein table groups EGFP/Sting/Sting cGAS Rep1-3"
+    },
+    {
+      "location": "characteristics[enrichment process]",
+      "value": "immunoprecipitation",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Anti-V5 agarose IP"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-3 (batch 20231219), 4-6 (batch 20240206)",
+      "source_ids": [
+        "search-tables",
+        "raw-header"
+      ],
+      "evidence": "Rep1-3 per batch; numbering across batches is an annotator choice"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Eclipse MS:1003029",
+      "source_ids": [
+        "pride",
+        "paper",
+        "raw-header"
+      ],
+      "evidence": "Raw header: Orbitrap Eclipse"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Search: trypsin, 2 missed cleavages"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term, Met-loss, Met-loss+Acetyl variable",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE dataProcessingProtocol and Methods (no search params file deposited)"
+    },
+    {
+      "location": "comment[dissociation method] / collision energy",
+      "value": "HCD; 25%;27%;32% NCE stepped",
+      "source_ids": [
+        "raw-header"
+      ],
+      "evidence": "Method text in raw header: ActivationType=HCD, Collision Energies (%)=25,27,32"
+    },
+    {
+      "location": "comment[ms2 mass analyzer]",
+      "value": "orbitrap",
+      "source_ids": [
+        "raw-header"
+      ],
+      "evidence": "Raw header: MS2 Orbitrap Resolution 30K"
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "10 ppm; 0.02 Da",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Search parameters"
+    }
+  ],
+  "unavailable": [
+    "developmental stage, strain, cell type, passage, medium details, storage temperature (not stated; not available)",
+    "reduction/alkylation reagents (FASP; not stated)",
+    "per-batch LC gradient (raw method headers: 58 min method for 20231219 ~50 min gradient; 88 min method for 20240206 ~80 min gradient) not encoded: no per-row column used"
+  ]
+}

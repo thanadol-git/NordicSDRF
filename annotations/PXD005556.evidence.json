@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD005556.sdrf.tsv",
+  "dataset": "PXD005556",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD005556"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD005556/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Moller et al. 2017 Acta Ophthalmol PMID 28371363 DOI 10.1111/aos.13429 (abstract only via Europe PMC; closed access per Unpaywall)"
+    },
+    {
+      "id": "webarchive",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/04/PXD005556/250912_4_MMoller_0203.webarchive (Mascot report: Trypsin, Carbamidomethyl (C) fixed, ESI-QUAD-TOF)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Mus musculus",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organisms NEWT:10090; abstract (mouse)"
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "retina",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organismParts BTO:0001175; title and abstract"
+    },
+    {
+      "location": "characteristics[strain or breed] / disease / sex / developmental stage",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Run files are individual excised 2D-gel spots; genotype (129/Sv vs Crx-/-) and time (midday/midnight) per spot are not stated in the deposit; paper full text unavailable"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q-Tof Premier MS:1000632",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE instruments and data processing protocol (Q-TOF Premier, Waters)"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin MS:1001251",
+      "source_ids": [
+        "pride",
+        "webarchive"
+      ],
+      "evidence": "In-gel tryptic digestion; Mascot report Enzyme: Trypsin"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed",
+      "source_ids": [
+        "pride",
+        "webarchive"
+      ],
+      "evidence": "Protocol: one fixed modification Cys carbamidomethyl; Mascot report; no variable mods"
+    },
+    {
+      "location": "comment[precursor mass tolerance] / [fragment mass tolerance]",
+      "value": "20 ppm / 0.05 Da",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Data processing protocol"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA PRIDE:0000627",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "MS survey scans with switching to MS/MS on intensity threshold"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "CID MS:1000133",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Peak list names *_CID.pkl"
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "2D-PAGE PRIDE:0000122",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Sample processing protocol and keywords"
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "No labeling described; gel-based experiment"
+    },
+    {
+      "location": "comment[data file]",
+      "value": "60 .raw.zip",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "60 RAW files; .pkl peak lists and .webarchive search reports excluded"
+    }
+  ],
+  "unavailable": [
+    "Per-spot genotype/time mapping",
+    "Paper full text"
+  ]
+}

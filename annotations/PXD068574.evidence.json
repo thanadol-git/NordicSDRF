@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD068574.sdrf.tsv",
+  "dataset": "PXD068574",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD068574"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD068574/files?pageSize=1000"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "unavailable: no DOI/PubMed reference in the PRIDE record"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Sus scrofa",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "organisms NEWT:9825; UniProt pig proteome UP000314985_9825.fasta"
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "cortex of kidney (CTRL, IR); liver (Liver)",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "sampleProcessingProtocol 'Kidney cortex tissue was homogenized'; keywords Kidney cortex; liver inferred from run names *_Liver.raw only"
+    },
+    {
+      "location": "characteristics[disease] / factor value[disease]",
+      "value": "ischemia reperfusion injury (IR rows); not available otherwise",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "title 'Unilateral IRI induction in pigs'; run suffix _IR. CTRL/Liver left not available (control nature not described)"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "animal index 1-6 from run number 0013..0023",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "inferred from shared run number across CTRL/IR/Liver; not stated in record"
+    },
+    {
+      "location": "characteristics[sex/strain/developmental stage/cell type]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "not stated in record"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Exploris 480 (MS:1003028)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "sampleProcessingProtocol; instruments field"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition (PRIDE:0000627)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "'DDA mode'"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin (MS:1001251)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "'digested with trypsin 1:100'; FragPipe open search trypsin"
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "DTT / chloroacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "10 mM DTT; 50 mM chloroacetamide"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M and Acetyl protein N-term variable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "dataProcessingProtocol (MaxQuant); not read from deposited search files (FragPipe zip not opened)"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD (MS:1000422)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "'28% normalized HCD collision energy'"
+    },
+    {
+      "location": "comment[ms1 scan range]",
+      "value": "350m/z-1350m/z",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "'scan range of 350-1350m/z'"
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "not stated; MaxQuant 'standard settings' only"
+    },
+    {
+      "location": "comment[data file]",
+      "value": "15 vendor .raw files",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "file list: 15 RAW, 1 SEARCH zip, 1 FASTA; no mzXML/peak lists listed"
+    }
+  ],
+  "unavailable": [
+    "publication/full text",
+    "FAIMS CV settings and fractionation not encoded (single injection per file assumed)"
+  ]
+}

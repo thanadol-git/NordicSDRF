@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD024216.sdrf.tsv",
+  "dataset": "PXD024216",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD024216"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD024216/files (58 files: 57 RAW + proteinGroups.txt)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Nielsen et al. 2021 Sci Rep PMID 34531462, PMC8445922, doi:10.1038/s41598-021-97969-y"
+    },
+    {
+      "id": "supp-s2",
+      "kind": "publication",
+      "location": "Europe PMC supplementaryFiles PMC8445922, 41598_2021_97969_MOESM1_ESM.txt (sample ID list: EV number -> Con/MCI/AD)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organisms NEWT:9606; human plasma"
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "blood plasma",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: citrate platelet-free plasma, EVs enriched from 1 mL plasma"
+    },
+    {
+      "location": "characteristics[disease] / factor value[disease]",
+      "value": "normal | mild cognitive impairment | Alzheimer disease",
+      "source_ids": [
+        "paper",
+        "supp-s2"
+      ],
+      "evidence": "MOESM1: EV1-10 Con (EV8 absent), EV11-20 MCI, EV21-30 AD; file names carry the EV number"
+    },
+    {
+      "location": "source name",
+      "value": "Con_N / MCI_N / AD_N",
+      "source_ids": [
+        "supp-s2"
+      ],
+      "evidence": "Sample ID list names (Con 1 ... AD 10)"
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1 or 2",
+      "source_ids": [
+        "paper",
+        "supp-s2",
+        "pride-files"
+      ],
+      "evidence": "Samples injected twice; file suffix _2 = second injection (matches MOESM1 replicate 1/2); EV12 injected once"
+    },
+    {
+      "location": "characteristics[age]/[sex]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Only group-level Table 1 (age mean+-SD, M/F counts); per-sample values not in deposit or supplement read"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Fusion MS:1002416",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Methods: Orbitrap Fusion with EASY-Spray"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "S-Trap digestion with 2-5 ug trypsin overnight 37C; no Lys-C step stated"
+    },
+    {
+      "location": "comment[dissociation method] / [ms2 mass analyzer] / [collision energy]",
+      "value": "CID / ion trap / 35% NCE",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: linear ion trap MS2, rapid scan, CID energy 35 % (NCE unit inferred as Thermo normalised collision energy)"
+    },
+    {
+      "location": "comment[reduction reagent] / [alkylation reagent]",
+      "value": "TCEP / iodoacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: 10 mM TCEP 95C; 40 mM iodoacetamide"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl(C) fixed; Oxidation(M), Acetyl(Protein N-term) variable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: MaxQuant 1.6.5.0, carbamidomethyl fixed; quantification used oxidation (M) and protein N-term acetyl. mqpar.xml not deposited, so variable-mod set not verified from search files"
+    },
+    {
+      "location": "comment[precursor mass tolerance] / [fragment mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Not stated; mqpar.xml not deposited"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Top-speed (3 s cycle) precursor selection, MS2 on intensity-ranked precursors"
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "MaxQuant LFQ; PRIDE quantification MS1 label-free"
+    },
+    {
+      "location": "comment[data file]",
+      "value": "57 .raw files",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "All 57 RAW files claimed once; proteinGroups.txt is a search output, not a row"
+    }
+  ]
+}

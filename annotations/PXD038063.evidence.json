@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD038063.sdrf.tsv",
+  "dataset": "PXD038063",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD038063"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD038063/files?pageSize=500"
+    },
+    {
+      "id": "readme",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/02/PXD038063/readme.txt"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "van der Horst et al. 2024 Commun Biol, PMID 38454028, PMC10920828 (Methods)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "lookup",
+      "location": "sdrf-tools cellline lookup HEK293T"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organisms NEWT:9606"
+    },
+    {
+      "location": "characteristics[cell line]/cellosaurus",
+      "value": "HEK293T / CVCL_0063",
+      "source_ids": [
+        "pride",
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Description: HEK 293T cells; Cellosaurus lookup"
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "kidney",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Cellosaurus tissue of origin, not stated in deposit"
+    },
+    {
+      "location": "source name / biological replicate / factor values",
+      "value": "S1-S4 x 9 samples (WT, WT-cGAS, CTT, CTT-cGAS, Del6, Del6-cGAS, WT-IgG, CTT-IgG, Del6-IgG)",
+      "source_ids": [
+        "readme",
+        "pride"
+      ],
+      "evidence": "readme.txt sample numbering 1-9 per set; sampleProcessingProtocol"
+    },
+    {
+      "location": "characteristics[treatment]",
+      "value": "pcDNA-cGAS vs empty pcDNA co-transfection; not available for IgG controls",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "projectDescription; cGAS status of IgG samples not stated"
+    },
+    {
+      "location": "characteristics[genotype]",
+      "value": "STING WT / delCTT (aa343-379 deletion) / del6 (aa325-379 deletion), overexpressed",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "projectDescription"
+    },
+    {
+      "location": "characteristics[immunoprecipitation antibody]",
+      "value": "anti-STING / anti-IgG",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "projectDescription"
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "timestamped file = replicate 2",
+      "source_ids": [
+        "readme"
+      ],
+      "evidence": "readme: timestamped file is the duplicate run"
+    },
+    {
+      "location": "comment[cleavage agent details] x2",
+      "value": "Lys-C then Trypsin",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "FASP: Lys-C 3 h 37C then trypsin overnight"
+    },
+    {
+      "location": "comment[reduction/alkylation reagent]",
+      "value": "DTT / IAA",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods FASP"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Methods; PRIDE MS:1001911"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Data dependent acquisition, loop count 10"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "HCD energy 30%"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term variable",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "dataProcessingProtocol (MaxQuant 1.5.5.1)"
+    },
+    {
+      "location": "comment[ms1 scan range]",
+      "value": "300m/z-1800m/z",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods"
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "not available",
+      "source_ids": [],
+      "evidence": "Not stated; MaxQuant defaults only; search RARs (3 GB each) not opened"
+    },
+    {
+      "location": "comment[data file]",
+      "value": "72 RAW files, each claimed once",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Project file list; all entries carry PXD038063"
+    }
+  ]
+}

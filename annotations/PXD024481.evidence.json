@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD024481.sdrf.tsv",
+  "dataset": "PXD024481",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD024481"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD024481/files"
+    },
+    {
+      "id": "sample-code",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/11/PXD024481/Sample_Code.txt"
+    },
+    {
+      "id": "raw-header",
+      "kind": "raw-file",
+      "location": "HTTP range read of first 256 KB of 20190626_Q1_AWH_ColID_837c_ProjID_1795_Benzing_sample_01.raw"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8729851/ (Hatje et al. 2021, PMID 34074698)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Mus musculus",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organisms NEWT:10090"
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "renal glomerulus",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Glomerular cells isolated; PRIDE organism part kidney"
+    },
+    {
+      "location": "characteristics[cell type] / factor value[cell type]",
+      "value": "mesangial cell | glomerular capillary endothelial cell | podocyte",
+      "source_ids": [
+        "sample-code",
+        "paper"
+      ],
+      "evidence": "Sample_Code.txt mes/endo/podo per sample 1-15"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-5",
+      "source_ids": [
+        "sample-code"
+      ],
+      "evidence": "within-cell-type ordering of sample numbers; inferred, not mouse identity"
+    },
+    {
+      "location": "characteristics[strain or breed], [sex], [developmental stage], [disease]",
+      "value": "not available",
+      "source_ids": [
+        "paper",
+        "sample-code"
+      ],
+      "evidence": "run-to-group mapping not given"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive Plus MS:1002634",
+      "source_ids": [
+        "raw-header",
+        "paper"
+      ],
+      "evidence": "RAW header and Methods"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "trypsin used for all digestion steps"
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "MaxQuant LFQ"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA PRIDE:0000627",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "assumed from MaxQuant LFQ; not verified"
+    },
+    {
+      "location": "comment[reduction reagent]",
+      "value": "DTT",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "5 mM DTT"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl (C, fixed); Oxidation (M) and Acetyl (protein N-term) variable",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "prose only; result archives unreadable; alkylation reagent text says iodoacetate"
+    },
+    {
+      "location": "comment[data file]",
+      "value": "15 raw files",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "all RAW files claimed once"
+    }
+  ],
+  "unavailable": [
+    "MaxQuant parameter files (unreadable)",
+    "run-to-strain/sex mapping",
+    "tolerances"
+  ]
+}

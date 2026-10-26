@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD058323.sdrf.tsv",
+  "dataset": "PXD058323",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD058323"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD058323/files?pageSize=1000"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited-search",
+      "location": "HepG2_MaxQuant_Query.zip::HepG2_MaxQuant_Query/mqpar.xml (single member read via HTTP range, ftp.pride.ebi.ac.uk/pride/data/archive/2025/02/PXD058323/)"
+    },
+    {
+      "id": "rawhdr",
+      "kind": "raw-header",
+      "location": "First 256 KB of 210805_Noga_HepG2_RI_150m_CaCl-R1.raw and its timestamped sibling (HTTP range read)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "none: PRIDE lists no reference; Europe PMC accession and title search found no matching paper (unavailable)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organisms NEWT:9606"
+    },
+    {
+      "location": "characteristics[cell line] / cellosaurus",
+      "value": "HepG2 / CVCL_0027",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE title and keywords (HepG2); Cellosaurus lookup via tools cellline"
+    },
+    {
+      "location": "characteristics[disease]/age/sex",
+      "value": "hepatoblastoma / 15Y / male",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Cellosaurus Hep-G2 record, not stated in the deposit"
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE lists liver but the samples are HepG2 cell membrane vesicles; reconcile flags run names as cell line, so the tissue is not asserted"
+    },
+    {
+      "location": "characteristics[treatment] / factor value[treatment]",
+      "value": "CaCl vs Trypsin",
+      "source_ids": [
+        "pride-files",
+        "mqpar"
+      ],
+      "evidence": "Group labels taken verbatim from run names and MaxQuant experiment names (CaCl-R1..3, Trypsin-R1..3); the biological meaning is not described in the deposit (unverified)"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-3 per group",
+      "source_ids": [
+        "pride-files",
+        "mqpar"
+      ],
+      "evidence": "R1-R3 in file names; MaxQuant experiments"
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1 and 2",
+      "source_ids": [
+        "pride-files",
+        "mqpar"
+      ],
+      "evidence": "Two raw files per R-number; MaxQuant merges both into one experiment (inferred: second file has acquisition timestamp in name)"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Exploris 480",
+      "source_ids": [
+        "pride",
+        "rawhdr"
+      ],
+      "evidence": "PRIDE instruments, protocol text and raw header string"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Sample processing protocol: DDA method"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "mqpar"
+      ],
+      "evidence": "Digest with trypsin (Serva) 1:50; MaxQuant enzyme Trypsin/P"
+    },
+    {
+      "location": "comment[reduction reagent] / [alkylation reagent]",
+      "value": "DTT / chloroacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: 10 mM DTT, 50 mM CAA"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M and Acetyl Protein N-term variable",
+      "source_ids": [
+        "mqpar",
+        "pride"
+      ],
+      "evidence": "mqpar.xml fixedModifications/variableModifications"
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "4.5 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "mainSearchTol"
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "FTMS MatchTolerance (MaxQuant Orbitrap default)"
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "labelMods empty, no isobaric labels, LFQ mode"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "not available",
+      "source_ids": [],
+      "evidence": "not stated in the deposit; raw not parsed beyond header"
+    },
+    {
+      "location": "comment[data file]",
+      "value": "12 .raw files",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "mzXML zip members are FAIMS CV splits (-40/-55/-70) of the raw files and are not listed as data files"
+    }
+  ],
+  "limitations": [
+    "No publication available",
+    "Full RAW files not downloaded",
+    "OLS unreachable; validation used cached ontologies"
+  ]
+}

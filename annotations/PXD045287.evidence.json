@@ -1,0 +1,99 @@
+{
+ "schema_version": 1,
+ "artifact": "annotations/PXD045287.sdrf.tsv",
+ "dataset": "PXD045287",
+ "status": "validated annotation; independent review pending",
+ "sources": [
+  {
+   "id": "pride",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD045287"
+  },
+  {
+   "id": "pridefiles",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD045287/files?pageSize=200"
+  },
+  {
+   "id": "paper",
+   "kind": "publication",
+   "location": "https://doi.org/10.1016/j.bbapap.2024.141031 (PMID 38977230); abstract only via Europe PMC, full text unavailable"
+  },
+  {
+   "id": "msf_skin",
+   "kind": "deposited-search-output",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/07/PXD045287/20230512_Skin_AD1-4_500ng_PRM45min_Merge.msf (Workflows, WorkflowInputFiles via HTTP range reads)"
+  },
+  {
+   "id": "msf_derm",
+   "kind": "deposited-search-output",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/07/PXD045287/20230601_DermalFib_FASP_PRM_R1-3Merge_PeriostinDatabase.msf"
+  },
+  {
+   "id": "msf_pos",
+   "kind": "deposited-search-output",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/07/PXD045287/20230521_FL_PN_1umol_FAS-CTD_Iso457810_PRM.msf"
+  },
+  {
+   "id": "sky",
+   "kind": "deposited-file",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/07/PXD045287/PRM_Periostin_isoforms_BU_MS_SkinSamples_10Transitions.sky (replicate names)"
+  }
+ ],
+ "claims": [
+  {
+   "location": "characteristics[organism] all rows",
+   "value": "Homo sapiens",
+   "source": "pride",
+   "basis": "extracted"
+  },
+  {
+   "location": "skin rows: organism part skin, disease normal/atopic dermatitis",
+   "value": "Control1-5 / AD1-4",
+   "source": "pride, sky, msf_skin",
+   "basis": "extracted from run names and PRIDE description"
+  },
+  {
+   "location": "skin rows comment[cleavage agent details] x2",
+   "value": "CNBr; Trypsin",
+   "source": "pride (sampleProcessingProtocol), msf_skin (Trypsin_CNBr KMR)",
+   "basis": "extracted"
+  },
+  {
+   "location": "fibroblast rows organism part skin/lung, cell type fibroblast",
+   "value": "DermalFib / LungFib",
+   "source": "pride, run names",
+   "basis": "extracted; conditions unavailable"
+  },
+  {
+   "location": "comment[instrument]",
+   "value": "Orbitrap Eclipse MS:1003029",
+   "source": "pride, msf_skin",
+   "basis": "extracted"
+  },
+  {
+   "location": "tolerances and modification parameters",
+   "value": "10 ppm, 0.6 Da, Carbamidomethyl, Oxidation, Acetyl, Met->Hse, Met->Hsl",
+   "source": "msf_skin, msf_derm",
+   "basis": "extracted; assumed same for DDA runs (no msf)"
+  },
+  {
+   "location": "comment[technical replicate] for skin PRM rows",
+   "value": "3,4",
+   "source": "curation",
+   "basis": "assumed to disambiguate from DDA TR1/2"
+  },
+  {
+   "location": "skin Patient N = AD N",
+   "value": "same individuals",
+   "source": "none",
+   "basis": "assumed"
+  },
+  {
+   "location": "fibroblast disease/treatment/factor, age, sex, dissociation",
+   "value": "not available",
+   "source": "none",
+   "basis": "evidence unavailable"
+  }
+ ]
+}

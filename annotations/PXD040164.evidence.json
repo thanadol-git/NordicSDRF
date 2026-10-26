@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD040164.sdrf.tsv",
+  "dataset": "PXD040164",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD040164"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD040164/files (pageSize 500 + page 1 of 100)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10552548/fullTextXML"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://api.cellosaurus.org/cell-line/CVCL_CW92?format=json"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[cell line]/[cellosaurus accession]/[cellosaurus name]",
+      "value": "N/TERT-1 / CVCL_CW92",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Paper: immortalized human keratinocyte line 'NTERT1' from van den Bogaard lab. Mapping to Cellosaurus N/TERT-1 (synonym NTERT1) is inferred."
+    },
+    {
+      "location": "characteristics[sex]",
+      "value": "male",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Cellosaurus donor sex for N/TERT-1; not stated in deposit. Age (Cellosaurus '<1M') not a valid pattern: not available."
+    },
+    {
+      "location": "characteristics[organism part]/[cell type]",
+      "value": "skin epidermis / keratinocyte",
+      "source_ids": [
+        "pride",
+        "cellosaurus"
+      ],
+      "evidence": "PRIDE organismParts CL:0000312 keratinocyte; Cellosaurus derived-from site skin epidermis (UBERON:0001003)."
+    },
+    {
+      "location": "characteristics[treatment]/factor value[treatment] (pull-down, native PAGE)",
+      "value": "interleukin-4 and interleukin-13",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Matrix is conditioned medium of differentiated NTERT1 cells treated with 10 ng/mL IL-4/-13 for 3 days."
+    },
+    {
+      "location": "characteristics[treatment]/factor value[treatment] (NTERT_R1-R12)",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper compares IL-4/-13 treated vs nontreated conditioned medium but no file-to-condition map is in the deposit or paper text."
+    },
+    {
+      "location": "factor value[bait protein]",
+      "value": "FL / deltaCTD / CTD",
+      "source_ids": [
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "File names Pulldown_FL/deltaC/CTR map to PN FL, PN deltaCTD and the third bait PN CTD (three baits, triplicates, no beads-only control described). CTR=CTD is inferred."
+    },
+    {
+      "location": "characteristics[biological replicate]/comment[technical replicate] (pull-down)",
+      "value": "R1-3 / 1 (20210420), 2 (20210421)",
+      "source_ids": [
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper: pull-down in triplicate, each replicate analysed twice; two acquisition dates. Date order to technical replicate number is inferred."
+    },
+    {
+      "location": "rows NativePAGE",
+      "value": "3 lanes (A,B,C) x 10 bands as fractions 1-10",
+      "source_ids": [
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "Paper: three gel lanes each cut into 10 pieces. Lane letter to lane content (CM alone / +PN CTD / +PN FAS-CTD) is not stated: bait not available."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Eclipse MS:1003029",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE instruments and paper Methods."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin MS:1001251",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Sample processing: trypsin only (spin-filter, in-solution and in-gel digests)."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term, Met-loss variable",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE data processing protocol (Proteome Discoverer 2.5/SequestHT). The deposited .msf files (0.9-6 GB) were not opened."
+    },
+    {
+      "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+      "value": "10 ppm / 0.2 Da",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE data processing protocol."
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "DTT / IAA",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Methods for all three preparations."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA PRIDE:0000627",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Label-free DDA on Orbitrap Eclipse; inferred from experiment type and SequestHT search."
+    },
+    {
+      "location": "comment[data file]",
+      "value": "60 vendor .raw files",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "126 deposited files; 60 RAW each claimed once. .mgf and .msf excluded."
+    }
+  ],
+  "limitations": [
+    "NTERT_R1-R12 (12 RAW) are not mapped to IL-4/-13 treated vs untreated or to replicates; treatment is not available and biological replicate = file index (placeholder numbering).",
+    "Pull-down 'CTR' bait inferred to be PN CTD; tech replicate by acquisition date inferred.",
+    "Native PAGE lane letters A/B/C not mapped to sample content; bait/treatment factor not available for those lanes beyond cell treatment.",
+    "Gel-band fractionation has no suitable PRIDE:0000550 child for native PAGE: fractionation method not available.",
+    "characteristics[treatment] 'interleukin-4 and interleukin-13' is a compound value not found in NCIT/EFO (validator warning); N/TERT-1 not found in CLO/BTO/EFO (warning).",
+    "Search parameters taken from PRIDE protocol text; deposited .msf not inspected. Dissociation method not stated: not available. Age: not available.",
+    "Not previously annotated in sdrf-annotated-datasets (no PXD040164 directory). Independent review pending."
+  ]
+}
