@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002347.sdrf.tsv",
+  "artifact_sha256": "2162764253747e5f2017dffa0cf3b4ff721a686d3cf0d4aae3ba215e0c9d5494",
+  "verdict": "PASS",
+  "summary": "Independent review of the single-plex TMT6 cuprizone/calcitriol mouse brain SDRF (6 condition pools x 54 fractions = 324 rows) found no blocking or important issues. Channel-to-sample mapping is stated verbatim in the PRIDE protocol and cross-checked against the deposited PD table headers; all 54 RAW files match PRIDE exactly; both template validations pass. Four minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent context (bergen-reviewer-PXD002347); producer transcript and report.md not read; PRIDE project, file list, Europe PMC abstracts and PD peptide table fetched fresh into scratchpad/PXD002347/review-PXD002347/"
+  },
+  "evidence_manifest": "annotations/PXD002347.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates derived from the file: ms-proteomics v1.1.0 + vertebrates v1.1.0 (mouse sample, DDA TMT technology), consistent with templates.yaml layers (vertebrates=sample layer, ms-proteomics=technology). 39 columns, all rows 39 cells, no empty cells; all required columns of base/sample-metadata/vertebrates/ms-proteomics present (developmental stage present as 'not available', which the vertebrates template allows). source name+assay name unique (324 unique assay names). Label values TMT126..TMT131 valid for TMT6plex. Modification, ms1 scan range, collision energy and template syntax accepted by validators; tools structure reports column order and template declaration consistent."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4 lookups: NCBITaxon:10090 Mus musculus; UBERON:0002810 right frontal lobe; MONDO:0020800 demyelinating disease of central nervous system; PATO:0000383 female; PRIDE:0000627 Data-dependent acquisition; MS:1001910 Orbitrap Elite (current label; 'LTQ Orbitrap Elite' is a synonym); MS:1001251 Trypsin; MS:1000422 beam-type collision-induced dissociation (spec-canonical HCD); PRIDE:0000565 High-performance liquid chromatography (child of PRIDE:0000550 as the column requires); MS:1000484 orbitrap; PRIDE:0000516 TMT126; calcitriol (NCIT:C330/CHEBI:17823), placebo (NCIT:C753/EFO:0001674); C57BL/6 resolves as EFO:0022397. None obsolete. tools check: 13/13 verified, 0 label mismatches; tools verify confirmed UNIMOD:4 Carbamidomethyl, UNIMOD:737 TMT6plex, UNIMOD:35 Oxidation, MS:1001910."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE PXD002347 (title 'Multiple sclerosis cuprizone mouse model and vitamin D supplementation') sampleProcessingProtocol states C57Bl/6, right frontal brain incl. some corpus callosum, pooling per condition (n=6/6/4/6/6/6), labels 'Ctr7 (TMT126), Ctr8 (TMT 127), Ctr10 (TMT 128), VitD7 (TMT129), VitD8 (TMT 130), VitD10 (TMT131)', mixed-mode HPLC into 60 fractions with 1-3 pooled and 4-7 excluded (54), Orbitrap Elite DDA, HCD NCE 40%, FTMS 300-2000 m/z, fragments in Orbitrap at R=7500. dataProcessingProtocol: trypsin, 10 ppm, 0.05 Da, Carbamidomethyl C/TMT6plex K/TMT6plex N-term fixed, Oxidation M variable. Nystad 2014 APMIS abstract (PMID 24862867, cited by PRIDE for the animal work): 'female C57Bl/6 mice', 0.2% cuprizone 7 weeks, calcitriol or placebo (vehicle). Deposited PD table headers 'A6: 129 D7/126 Pl7', '130 D8/127 Pl8', '131 D10/128 Pl10' independently confirm the channel map. Sampling times 7/8/10 week from the project description."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE file list (55 files, projectAccessions={PXD002347}): 54 RAW + 1 SEARCH xlsx. The set of 54 SDRF comment[data file] values equals the PRIDE RAW set exactly (no missing, extra or non-raw). Each file appears in exactly 6 rows (one per TMT channel); each (file,label) pair is unique; fraction identifier 1 = TMT6_frac_1to3.raw and 2..54 = TMT6_frac_8..60.raw in order, one id per file."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 6 source names (one pool per condition) x 54 fractions = 324 rows; single TMT6plex mix, technical replicate 1 throughout. Each label maps to exactly one source with consistent characteristics and factor values: TMT126 Ctr7 placebo 7 week, TMT127 Ctr8 placebo 8 week, TMT128 Ctr10 placebo 10 week, TMT129 VitD7 calcitriol 7 week, TMT130 VitD8 calcitriol 8 week, TMT131 VitD10 calcitriol 10 week. Factors (treatment x sampling time) form a full 2x3 design matching the VitD/Ctr ratios per timepoint in the processing protocol. pooled sample/biological replicate 'pooled' is consistent with README guidance for pooled samples; no hidden confounder beyond the inherent one-pool-per-condition design."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value traced to PRIDE protocol, Nystad 2014 abstract or deposited table. Unsupported-specificity search: no age/developmental stage invented ('not available'), no pool members invented (plain 'pooled'), no reduction/alkylation reagents invented (columns omitted), fraction identifiers declared ordinal in the manifest limitations, MaxQuant listing in PRIDE correctly ignored. Remaining omissions (corpus callosum component, cuprizone exposure, ITMS/Orbitrap wording conflict) are minor and recorded below."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf -t ms-proteomics --use_ols_cache_only: exit 0, 'Everything seems to be fine. Well done.' timeout 900 parse_sdrf validate-sdrf -t vertebrates --use_ols_cache_only: exit 0, only warning 'C57BL/6 ... not found in ncbitaxon' (strain is the template's own example and resolves live as EFO:0022397). python -m tools check: exit 0, CLEAN 13/13. python -m tools score: exit 0, 100/100. python -m tools structure: exit 0. SHA-256 re-checked unchanged at end of review."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "characteristics[organism part], all rows",
+      "message": "Organism part records only 'right frontal lobe' (UBERON:0002810, defined as frontal cortex of the right hemisphere), but the source states the tissue is 'right frontal including some corpus callosum'; the corpus callosum is the principal cuprizone demyelination site.",
+      "evidence": "PRIDE sampleProcessingProtocol: 'individual mouse brain samples (right frontal including some corpus callosum)'. OLS UBERON:0002810 definition: 'A frontal cortex that is part of a right cerebral hemisphere.' Correction criterion: optionally add a second characteristics[organism part] column 'corpus callosum' (UBERON:0002336), which the column's multiple cardinality allows."
+    },
+    {
+      "severity": "minor",
+      "category": "spec-guidance",
+      "location": "characteristics[disease], all rows",
+      "message": "Disease uses the broader 'demyelinating disease of central nervous system' rather than the modelled human disease; SAMPLE-GUIDELINES suggests the human disease name for animal models. The broader term is accurate for toxic cuprizone demyelination, so no change is required.",
+      "evidence": "SAMPLE-GUIDELINES.adoc: 'For animal disease models, use the human disease name to facilitate cross-species comparisons.' PRIDE diseases: DOID:2377 Multiple sclerosis; keywords 'Multiple sclerosis'. Correction criterion: either keep with rationale or use 'multiple sclerosis' (MONDO:0005301)."
+    },
+    {
+      "severity": "minor",
+      "category": "source-conflict",
+      "location": "comment[ms2 mass analyzer], all rows",
+      "message": "The protocol is internally inconsistent: it says '10 MS/MS acquisitions (ITMS)' but later 'Fragments were detected in the Orbitrap at a resolution of 7500'. The SDRF value 'orbitrap' follows the more specific statement (a resolution value only applies to Orbitrap detection), but the manifest does not record the conflict.",
+      "evidence": "PRIDE sampleProcessingProtocol text. Correction criterion: note the ITMS/Orbitrap wording conflict in the evidence manifest limitations; value can stay."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "characteristics[treatment], all rows",
+      "message": "The shared 0.2% cuprizone dietary exposure for all animals is not captured as a treatment; it is only implied via the disease value. Treatment column distinguishes only calcitriol vs placebo, which is the experimental factor and is correct.",
+      "evidence": "Nystad 2014 abstract: 'demyelinated with dietary 0.2% cuprizone for 7 weeks'; PRIDE protocol 'cuprizone administration'. Correction criterion: optional; could be added as an extra characteristics[treatment] column 'cuprizone' if desired."
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD005259.sdrf.tsv",
+  "artifact_sha256": "23f605fa0f0bc645346631611b9fd748dc24603622b86b34e9278249be36bbde",
+  "verdict": "PASS",
+  "summary": "Independent review of 54 runs (27 E. coli cultures x Lys-C/P fraction 1 + Trypsin/P fraction 2) found no blocking or important issues. Sample-to-file, fraction and enzyme mapping reproduce the deposited MaxQuant summary.txt with 0 mismatches; every deposited RAW file is claimed exactly once; official validator, check, score and structure pass. Only minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh-context reviewer bergen-reviewer-PXD005259-r2; no producer transcript or report.md read; PRIDE record, file list, MaxQuantOutput.zip and raw headers fetched fresh into scratchpad/PXD005259/review-PXD005259/"
+  },
+  "evidence_manifest": "annotations/PXD005259.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active template derived independently: ms-proteomics v1.1.0 (extends sample-metadata 1.0.0 / base 1.1.0); no bacterial sample-layer template exists in templates.yaml. All required base/sample-metadata/ms-proteomics columns present; 33 columns x 54 rows, uniform row length; no duplicate assay names or data files; comment[sdrf template]=NT=ms-proteomics;VV=v1.1.0 matches; collision energy, ms1 scan range, tolerances match template patterns; parse_sdrf validate-sdrf -t ms-proteomics --use_ols_cache_only exit 0 ('Everything seems to be fine'); tools structure OK."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "tools check: 13/13 terms verified, 0 hallucinated/label mismatch/wrong ontology/UNIMOD swaps. Live OLS4 via tools verify: PRIDE:0000627 Data-dependent acquisition, MS:1001910 Orbitrap Elite, MS:1001310 Lys-C/P, MS:1001313 Trypsin/P, MS:1000133 collision-induced dissociation, MS:1000264 ion trap, UNIMOD:4/35/1/28/27, NCBITaxon:562 all label-match; MS and PRIDE terms confirmed is_obsolete=false. Modification TA/PP values consistent with UNIMOD sites (Gln->pyro-Glu Q Any N-term, Glu->pyro-Glu E Any N-term, Acetyl Protein N-term and K)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE PXD005259 project record (fresh): E. coli NEWT:562, LTQ Orbitrap Elite MS:1001910, label-free, 3-4 biological replicates per strain on blood agar, MED-FASP trypsin+LysC two-step digestion, DDA Orbitrap MS / LTQ CID MS/MS, survey m/z 300-2000, MaxQuant 1.5.3.30, Carbamidomethyl C fixed, Oxidation M / N-term acetyl / K acetyl / pyro-Glu variable, 20 ppm / 0.50 Da. MaxQuant summary.txt: Enzyme LysC/P on all _L, Trypsin/P on all _T; Variable modifications identical on all 54 runs. Abstract (Europe PMC PMID 29185342): seven ETEC strains plus BL21(DE3). Raw files (54 x 8 KB headers): every lc batch string found in the file's own header path; all methods contain CE35; embedded instrument method in BL21_T1 and TW10598_L1 (3 MB read, one per method variant) shows 'Activation Type: CID' and 'Normalized Coll. Energy: 35.0'. TW10598/TW14425 corroborated as ETEC isolates (PMC4309559, PMID 21078854)."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE /files (projectAccessions={PXD005259}) lists 54 RAW + 1 SEARCH zip + 6 FASTA. SDRF comment[data file] set equals the PRIDE RAW set exactly (0 missing, 0 extra, 0 duplicates, case preserved incl. Bl21_L3/Bl21_T3). Each SDRF row matched to MaxQuant summary.txt Raw file (H608_* <-> HA608_*): Experiment -> strain + replicate, Fraction, Enzyme all agree; 0 mismatches across 54 rows; all 54 MaxQuant raw files consumed."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "27 source names = 27 MaxQuant experiments (BL21(DE3) 4, H10407 3, H608 3, TW10598 4, TW10722 3, TW10828 3, TW11681 3, TW14425 4); each source has exactly two runs, fraction 1 = Lys-C/P (_L) and fraction 2 = Trypsin/P (_T), matching summary.txt Fraction column and the protocol statement that LysC and tryptic fractions of the same replicate were combined. Biological replicate indices match MaxQuant experiment suffixes; technical replicate 1 throughout; factor value[strain or breed] equals characteristics[strain or breed]; both runs of each source share one lc batch (0 sources with >1 batch). Label free sample on all rows."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every nontrivial value traced to PRIDE record, MaxQuant summary.txt, abstract or raw-file content. No reagent, age/sex, lineage, serotype or colonization-factor values added; organism part/cell type/disease set to 'not applicable' for pure bacterial cultures (allowed by TERMS.tsv). ms2 analyzer given as generic 'ion trap' (less specific than evidence, safe). H608 strain label is the depositor's own file label (alias HA608 in MaxQuant), disclosed as a limitation; no unsupported specificity found."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 .venv/bin/parse_sdrf validate-sdrf -s <artifact> -t ms-proteomics --use_ols_cache_only -> exit 0; .venv/bin/python -m tools check -> CLEAN exit 0; tools score -> 100/100 exit 0; tools structure -> OK exit 0; tools reconcile --record project.json -> exit 1 with 2 BLOCKER + 1 MAJOR lexical cleavage-agent findings, adjudicated false positive (see findings); tools verify on 12 controlled terms -> all label match."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "deterministic_validation",
+      "location": "comment[cleavage agent details] rows 1-54",
+      "message": "tools reconcile flags 'Lys-C/P' and 'Trypsin/P' as contradicting/incomplete versus the record's 'trypsin and LysC'. Adjudicated as a lexical false positive: the dataProcessingProtocol states 'allowing N-terminal cleavage to proline' and summary.txt lists Enzyme LysC/P on every _L run and Trypsin/P on every _T run, so the /P terms are the deposited per-run specificities.",
+      "evidence": "PRIDE dataProcessingProtocol; MaxQuant output txt/summary.txt Enzyme column."
+    },
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "comment[precursor mass tolerance] rows 1-54",
+      "message": "20 ppm is the MaxQuant initial (first-search) precursor tolerance stated in the protocol; the main-search tolerance under MaxQuant standard settings would be 4.5 ppm, which is not stated in the deposit. Value is literally supported; optionally note the first-search context.",
+      "evidence": "dataProcessingProtocol: 'The initial allowed mass deviation of the precursor ion was as high as 20 ppm'; 'Standard settings were used'."
+    },
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "characteristics[strain or breed] / factor value[strain or breed] rows 15-20",
+      "message": "'H608' is the depositor's file label; MaxQuant names the same runs HA608 (experiments HA-1..HA-3) and no public strain record was found in Europe PMC for H608/HA608. Acceptable as the depositor label and disclosed in the manifest; resolve to the published designation if the full paper becomes available.",
+      "evidence": "PRIDE file names H608_*.raw; summary.txt HA608_*; Europe PMC searches '\"HA608\"' and '\"H608\" AND coli' returned no relevant hits."
+    },
+    {
+      "severity": "minor",
+      "category": "design_consistency",
+      "location": "comment[lc batch] rows 1-54",
+      "message": "Values are the acquisition-session folder names embedded in each raw header (8 sessions, e.g. 2015-01-23_OrbitrapElite_Unknown); they act as an acquisition/LC session proxy rather than a documented LC batch. Sessions partly confound with replicate index across strains (e.g. 2014-01-24 holds replicate 1 of H608, TW10598, TW10828), which is a property of the experiment, not an annotation error.",
+      "evidence": "Raw header paths in all 54 files contain the stated folder string; both runs of every source share one session."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD007193.sdrf.tsv",
+  "dataset": "PXD007193",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD007193"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD007193/files?pageSize=1000"},
+    {"id": "mq-summary", "kind": "deposited-search-result", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/08/PXD007193/MaxQuantResults_txt.7z :: txt/summary.txt (archive SHA-1 8298e66c6e72f73a03a7d36c2720368c0ecb850b, matches PRIDE checksum)"},
+    {"id": "mq-parameters", "kind": "deposited-search-result", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/08/PXD007193/MaxQuantResults_txt.7z :: txt/parameters.txt"},
+    {"id": "raw-headers", "kind": "raw-data", "location": "HTTP range reads of all 25 https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/08/PXD007193/*.raw (file header, embedded instrument method, instrument-ID block at the RunHeader address)"},
+    {"id": "paper", "kind": "publication", "location": "Rahman MA et al. Br J Cancer 2019; PMID 31413318; PMC6888814; doi:10.1038/s41416-019-0551-1 (Europe PMC fullTextXML)"},
+    {"id": "paper-supp", "kind": "publication", "location": "PMC6888814 supplementary 41416_2019_551_MOESM1_ESM.docx (md5 94ae932b46982b5f0411d751347871e4): Supplementary Results, Supplementary Methods, Supplementary Figure 1 and legend"},
+    {"id": "ols", "kind": "ontology", "location": "https://www.ebi.ac.uk/ols4/api/ (MS, PRIDE, UBERON, MONDO, EFO, PATO lookups)"}
+  ],
+  "claims": [
+    {"location": "comment[data file] rows 1-25", "value": "25 .raw files", "source_ids": ["pride-files", "mq-summary"], "evidence": "All 25 RAW entries in the PRIDE file list (projectAccessions contain PXD007193) and all 25 'Raw file' rows of summary.txt; each claimed once."},
+    {"location": "source name, factor value[treatment], factor value[disease] rows 1-25", "value": "8 groups: CTR, CTR T, BTZ, BTZ T, TMZ 25, TMZ 50, BTZ TMZ25, BTZ TMZ50", "source_ids": ["mq-summary"], "evidence": "summary.txt 'Experiment' column maps each raw file to '<group> <cage><animal>' (e.g. 10_C6A1ny -> 'TMZ 50 C6A1'); animal code matches the file name in every row."},
+    {"location": "characteristics[treatment] / factor value[treatment]", "value": "temozolomide 25 mg/kg, temozolomide 50 mg/kg, bortezomib 0.5 mg/kg", "source_ids": ["paper", "paper-supp"], "evidence": "Paper Drugs section: 'mouse 25 mg/kg and 50 mg/kg TMZ doses are equivalent to human doses of 84 mg/m2 and 164 mg/m2 ... BTZ 0.5 mg/kg ... equivalent to 1.3 mg/m2'; Supplementary Methods lists the treatment groups with the same doses. MaxQuant labels 'TMZ 25/50' interpreted as these mouse doses."},
+    {"location": "characteristics[treatment] rows of group CTR / CTR T", "value": "untreated / vehicle", "source_ids": ["paper-supp", "paper"], "evidence": "Suppl. Fig. 1F legend: 'Ctrl -Tumour' and 'Ctrl +Tumour (vehicle)'; Fig. 5 legend: 'Control non-tumour-bearing mice were untreated'."},
+    {"location": "characteristics[disease] / factor value[disease]", "value": "glioblastoma (groups with T and all TMZ arms) / normal (CTR, BTZ)", "source_ids": ["mq-summary", "paper-supp", "ols"], "evidence": "'T' suffix in MaxQuant group names plus Suppl. Fig. 1F legend groups -T/+T (TMZ and BTZ+TMZ arms are +T). Inference from labels; MONDO:0018177 glioblastoma and PATO:0000461 normal confirmed in OLS."},
+    {"location": "characteristics[organism]", "value": "Mus musculus", "source_ids": ["pride", "paper"], "evidence": "PRIDE organisms NEWT:10090; paper: NOD-SCID mice; MaxQuant FASTA Mouse_Reviewed."},
+    {"location": "characteristics[organism part]", "value": "blood plasma", "source_ids": ["pride", "paper-supp", "ols"], "evidence": "PRIDE title/protocol 'Plasma samples'; Suppl. Fig. 1E 'proteins ... in the plasma of all animals'; UBERON:0001969."},
+    {"location": "characteristics[cell type]", "value": "not applicable", "source_ids": ["pride"], "evidence": "Cell-free plasma."},
+    {"location": "characteristics[developmental stage]", "value": "adult (tumour-bearing) / not available (non-tumour)", "source_ids": ["paper"], "evidence": "Paper: spheroids implanted into 7-week-old mice; plasma sampled at sacrifice weeks later. Age of non-tumour mice not stated. Cohort-level inference."},
+    {"location": "characteristics[strain or breed]", "value": "NOD-SCID (tumour-bearing) / not available (non-tumour)", "source_ids": ["paper"], "evidence": "Paper: 'severe combined immunodeficient (NOD-SCID) mice (C.B.-Igh-1b/lcrTac-Prkdc) (Janvier Labs)' for xenograft hosts; strain of non-tumour controls not stated."},
+    {"location": "characteristics[sex]", "value": "not available", "source_ids": ["paper"], "evidence": "Paper: 'male and female' mice and 'Both sexes were used'; no per-animal sex."},
+    {"location": "comment[instrument]", "value": "NT=Orbitrap Elite;AC=MS:1001910", "source_ids": ["raw-headers", "ols"], "evidence": "Instrument-ID block of all 25 raw files: model 'Orbitrap Elite', serial 04000B, software 2.7.0 SP1; method instrument 'Orbitrap Elite MS'. Contradicts paper/PRIDE protocol 'LTQ-Orbitrap Velos Pro' and PRIDE field 'LTQ Orbitrap Velos'; raw data preferred."},
+    {"location": "comment[proteomics data acquisition method]", "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627", "source_ids": ["raw-headers"], "evidence": "Method header: 'Nth Order Double Play', 'Scan Event 2 repeated for top 12 peaks', data dependent settings."},
+    {"location": "comment[dissociation method], comment[collision energy], comment[ms2 mass analyzer], comment[ms1 scan range]", "value": "CID (MS:1000133); 35 NCE; radial ejection linear ion trap (MS:1000083); 300m/z-2000m/z", "source_ids": ["raw-headers"], "evidence": "Method header: 'FTMS + p norm o(300.0-2000.0)', 'ITMS + c norm Dep ... MS/MS', 'Activation Type: CID', 'Normalized Coll. Energy: 35.0'."},
+    {"location": "comment[cleavage agent details]", "value": "NT=Trypsin;AC=MS:1001251", "source_ids": ["pride", "paper-supp", "mq-summary"], "evidence": "Protocol: digestion with modified porcine trypsin (Promega V5111); MaxQuant search enzyme Trypsin/P, specific."},
+    {"location": "comment[modification parameters]", "value": "Carbamidomethyl C fixed; Acetyl Protein N-term variable; Oxidation M variable", "source_ids": ["mq-parameters", "mq-summary", "pride"], "evidence": "parameters.txt 'Fixed modifications: Carbamidomethyl (C)'; summary.txt 'Variable modifications: Acetyl (Protein N-term);Oxidation (M)'; PRIDE data processing protocol agrees."},
+    {"location": "comment[fragment mass tolerance]", "value": "0.5 Da", "source_ids": ["mq-parameters", "raw-headers"], "evidence": "parameters.txt 'MS/MS tol. (ITMS) 0.5 Da'; MS2 acquired in the ion trap."},
+    {"location": "comment[precursor mass tolerance]", "value": "not available", "source_ids": ["mq-parameters", "pride"], "evidence": "Not recorded in the deposited MaxQuant txt files; protocol only says MaxQuant default settings."},
+    {"location": "comment[label]", "value": "label free sample", "source_ids": ["pride"], "evidence": "PRIDE quantificationMethods: MS1 intensity based label-free quantification; MaxQuant LFQ."},
+    {"location": "comment[fraction identifier], comment[technical replicate]", "value": "1 / 1", "source_ids": ["pride", "mq-summary"], "evidence": "One injection of 1 ug tryptic peptides per animal; one raw file per MaxQuant experiment; no fractionation described."}
+  ],
+  "limitations": [
+    "Group-to-treatment/tumour-status interpretation of MaxQuant labels relies on paper dose statements and Suppl. Fig. 1F legend; no deposited table spells out the regimens per file.",
+    "Xenograft line (P3 vs BG7) per plasma donor is not stated; not annotated.",
+    "Per-animal sex and age unavailable; developmental stage is cohort-level inference for tumour-bearing mice only.",
+    "Strain of non-tumour-bearing control mice not stated explicitly.",
+    "Precursor mass tolerance not recorded in deposited search files.",
+    "PRIDE/paper MaxQuant version 1.5.2.8 conflicts with deposited parameters.txt version 1.5.1.2.",
+    "Suppl. Fig. 1E heat map shows 19 animals in 6 groups while the deposit has 25 runs in 8 groups; all 25 deposited runs annotated per the MaxQuant table.",
+    "Treatment schedules and sampling times are not encoded."
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002912.sdrf.tsv",
+  "dataset": "PXD002912",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002912"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002912/files?pageSize=1000"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC5013306 (PMID 27364158, doi:10.1074/mcp.M116.060582), Europe PMC fullTextXML"
+    },
+    {
+      "id": "paper_table1",
+      "kind": "publication",
+      "location": "PMC5013306 Table I: E. coli strains used in this study"
+    },
+    {
+      "id": "mq_parameters",
+      "kind": "search_output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/07/PXD002912/MaxQuant_search.zip :: parameters.txt (range-read)"
+    },
+    {
+      "id": "mq_proteingroups",
+      "kind": "search_output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/07/PXD002912/MaxQuant_search.zip :: proteinGroups1.txt header (range-read)"
+    },
+    {
+      "id": "raw_headers",
+      "kind": "raw_data",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/07/PXD002912/{CN11_T,536BA11_L,Ref_T1,GN12_T}.raw bytes 0-2000000"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/"
+    },
+    {
+      "id": "raw_original_names",
+      "kind": "raw_data",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/07/PXD002912/<all 90 .raw> bytes 0-8191 (original acquisition path in Thermo file header); extracted to sdrf-skills/scratchpad/PXD002912/raw_original_names.json"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] rows 1-90",
+      "value": "90 .raw files",
+      "source_ids": [
+        "pride_files"
+      ],
+      "evidence": "All 90 RAW-category files in the PRIDE file list, each used once; every entry's projectAccessions contains PXD002912"
+    },
+    {
+      "location": "comment[fraction identifier] rows 1-90",
+      "value": "1 for *_L.raw, 2 for *_T.raw",
+      "source_ids": [
+        "paper",
+        "pride",
+        "mq_proteingroups"
+      ],
+      "evidence": "MED-FASP LysC then trypsin digestion; 'Data for LysC and tryptic fractions originating from the same replicate were combined in MaxQuant'; 45 LFQ experiments for 90 files"
+    },
+    {
+      "location": "comment[cleavage agent details] rows 1-90",
+      "value": "NT=Lys-C;AC=MS:1001309 (_L rows); NT=Trypsin;AC=MS:1001251 (_T rows)",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "MED-FASP 'using LysC and trypsin'; group-specific enzyme trypsin or LysC; L/T suffix mapping inferred from file names"
+    },
+    {
+      "location": "characteristics[strain or breed], factor value[strain or breed]",
+      "value": "C4n, D4n, E4n, F4d, G5m, UPEC 536, mixture",
+      "source_ids": [
+        "paper_table1",
+        "pride_files"
+      ],
+      "evidence": "Table I strain names; run-name prefixes C/D/E/F/G/536/Ref"
+    },
+    {
+      "location": "characteristics[growth condition], factor value[growth condition]",
+      "value": "anaerobic blood culture, aerobic blood culture, blood agar, lactose agar, mixture",
+      "source_ids": [
+        "paper",
+        "paper_table1",
+        "pride_files"
+      ],
+      "evidence": "Table I N=anaerobic, O=aerobic; run-name tokens N/O/BA/LA; Methods 'Harvesting Bacterial Cells from Solid Media' (blood or lactose agar)"
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Escherichia coli; Escherichia coli 536 (NCBITaxon:362663) for UPEC 536 rows",
+      "source_ids": [
+        "pride",
+        "paper_table1",
+        "ols"
+      ],
+      "evidence": "PRIDE organism NEWT:562; reference strain 536; OLS exact match for Escherichia coli 536"
+    },
+    {
+      "location": "characteristics[organism part], characteristics[disease]",
+      "value": "not applicable",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Analysed material is purified bacterial cells; host clinical context documented in report only"
+    },
+    {
+      "location": "characteristics[material type]",
+      "value": "whole organism",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Whole-cell lysates of bacterial cells"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Orbitrap Elite;AC=MS:1001910",
+      "source_ids": [
+        "raw_headers",
+        "paper",
+        "pride"
+      ],
+      "evidence": "Raw header method instrument 'Orbitrap Elite MS', method path OrbitrapElite...TOP10CID_240K; 240,000 resolution at m/z 400 only possible on Elite; PRIDE dropdown LTQ Orbitrap Velos overruled"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "pride",
+        "paper",
+        "raw_headers"
+      ],
+      "evidence": "'operated in the data-dependent-acquisition mode'; method TOP10CID"
+    },
+    {
+      "location": "comment[dissociation method], comment[ms2 mass analyzer]",
+      "value": "CID (MS:1000133); radial ejection linear ion trap (MS:1000083)",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "'fragmentation on the linear ion trap using collisionally induced dissociation'"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl Protein N-term, Acetyl K, Gln->pyro-Glu, Glu->pyro-Glu variable",
+      "source_ids": [
+        "mq_parameters",
+        "paper"
+      ],
+      "evidence": "parameters.txt 'Fixed modifications Carbamidomethyl (C)' and 'Modifications included in protein quantification Oxidation (M);Acetyl (Protein N-term);Acetyl (K);Gln->pyro-Glu;Glu->pyro-Glu'; Methods agree"
+    },
+    {
+      "location": "comment[ms1 scan range]",
+      "value": "300m/z-2000m/z",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "'full-scan MS spectra (from m/z 300 to 2000)'"
+    },
+    {
+      "location": "comment[label]",
+      "value": "NT=label free sample;AC=MS:1002038",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Label-free LFQ (MaxLFQ)"
+    },
+    {
+      "location": "source name, characteristics[biological replicate], comment[technical replicate] (all rows)",
+      "value": "one source per blood culture / agar replicate (21 sources)",
+      "source_ids": [
+        "raw_original_names",
+        "paper_table1",
+        "mq_proteingroups",
+        "paper"
+      ],
+      "evidence": "Original acquisition names group the deposited files into sample codes that match the MaxQuant experiment names; Table I gives cultures per strain; Methods: two independent biological replicates on agar"
+    },
+    {
+      "location": "D4n rows (DN11, DN12, DN21, DN22)",
+      "value": "D21 = {DN11, DN21} bio rep 1; D22 = {DN12, DN22} bio rep 2",
+      "source_ids": [
+        "raw_original_names",
+        "mq_proteingroups",
+        "paper_table1"
+      ],
+      "evidence": "DN11 = D21_L/T (2015-05-22), DN21 = D21_L/T (2015-05-26), DN12 and DN22 = D22; MaxQuant D21-1, D21-2, D22-1, D22-2; Table I: 2 N cultures"
+    },
+    {
+      "location": "C4n rows",
+      "value": "C1 = {CN11, CN13 (C11), CN12, CN14 (C12)}; C3 = {CO31, CO33 (C31), CO32, CO34 (C32)}; tech reps 1-4",
+      "source_ids": [
+        "raw_original_names",
+        "mq_proteingroups",
+        "paper_table1"
+      ],
+      "evidence": "Original names C11/C12/C31/C32 on 05-22 and 05-26; MaxQuant C11-1..C32-2; Table I: 1 N, 1 O culture"
+    },
+    {
+      "location": "E4n rows",
+      "value": "E1 = {EO11, EO12}; E2 = {EO21, EO22}",
+      "source_ids": [
+        "raw_original_names",
+        "mq_proteingroups",
+        "paper_table1"
+      ],
+      "evidence": "Original names E11, E12, E21, E22; Table I: 2 O cultures"
+    },
+    {
+      "location": "F4d rows",
+      "value": "F1 = FO1, F2 = FN2, F3 = FO3, F4 = FN4; 2 injections each",
+      "source_ids": [
+        "raw_original_names",
+        "mq_proteingroups",
+        "paper_table1"
+      ],
+      "evidence": "Original names LF<n>_1/TF<n>_1 (2015-01-23) and F<n>_L2/F<n>_T2 (2015-02-02); MaxQuant F1-1..F4-2; Table I: 2 N, 2 O"
+    },
+    {
+      "location": "G5m rows",
+      "value": "G1 = GO11, G2 = GN12, G3 = GO13, G4 = GN14; 1 injection each",
+      "source_ids": [
+        "raw_original_names",
+        "mq_proteingroups",
+        "paper_table1",
+        "pride_files"
+      ],
+      "evidence": "Acquired 2015-07-03 as C11-C14; assignment to G5m from deposited names and MaxQuant G1-G4 (the 8 C experiments are accounted for by the C4n files); Table I: 2 N, 2 O"
+    },
+    {
+      "location": "UPEC 536 rows",
+      "value": "W1 = 536O11/12 (aerobic BC), W2 = 536N21/22 (anaerobic BC), U1/U2 = 536BA (blood agar), L1/L2 = 536LA (lactose agar)",
+      "source_ids": [
+        "raw_original_names",
+        "mq_proteingroups",
+        "pride_files",
+        "paper"
+      ],
+      "evidence": "Original codes W11-W22, U11-U22, L11-L22 match MaxQuant experiments; conditions follow deposited names; Methods: two biological replicates per agar"
+    },
+    {
+      "location": "characteristics[pooled sample], characteristics[biological replicate] of control_mixed_sample",
+      "value": "pooled; pooled",
+      "source_ids": [
+        "paper",
+        "raw_original_names"
+      ],
+      "evidence": "'A control mixed sample was prepared by combining equal volumes of processed peptide mixtures ... of five strains (C4n, D4n, E4n, G5m, and 536)'; Ref_L1-5/Ref_T1-5, MaxQuant R1-R5"
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "First-search (initial) precursor tolerance: 'The initial allowed mass deviation of the precursor ion was as high as 20 ppm'; MaxQuant main-search tolerance not deposited"
+    }
+  ],
+  "limitations": [
+    "No mqpar.xml or evidence.txt deposited; replicate grouping rests on RAW-header original acquisition names, Table I culture counts and MaxQuant experiment names",
+    "Second digit of sample codes (C11/C12, C31/C32, E11/E12, W11/W12) interpreted as sub-samples of one culture (technical replicates); for D4n, D21/D22 interpreted as the two Table I cultures, alternative reading (sub-samples of one culture) not fully excluded",
+    "G5m files were acquired under original names C11-C14 (2015-07-03); G5m assignment and N/O split rest on deposited names and MaxQuant experiment counts",
+    "UPEC 536 condition assignment (W = blood culture, U = blood agar, L = lactose agar) follows deposited names",
+    "Precursor tolerance 20 ppm is the first-search value; main-search tolerance not deposited",
+    "_L = Lys-C and _T = trypsin inferred from file-name suffixes and the MED-FASP protocol",
+    "Exact bottle composition of the control mixed sample not reported; written as 'pooled'",
+    "Reduction/alkylation reagents, collision energy and acquisition dates not annotated",
+    "Raw-file instrument evidence from a 2 MB header range-read of four files, not a full raw parse"
+  ]
+}

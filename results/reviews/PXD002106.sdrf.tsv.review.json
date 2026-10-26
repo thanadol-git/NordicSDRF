@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002106.sdrf.tsv",
+  "artifact_sha256": "495eb71847c3583c91c4b66bc3eb28ed45c4c1fcbf6f074dc4d632a8688243bf",
+  "verdict": "PASS",
+  "summary": "Independent round-2 review of the 10-row label-free DDA SDRF (4 2K1C + 6 sham Wistar rats, FFPE microdissected tubulointerstitial kidney tissue, Orbitrap Elite) found no blocker or important issues. Both declared templates validate (ms-proteomics clean; vertebrates one expected warning), every raw file maps 1:1 to a rat, every technical value was re-derived from freshly fetched raw headers (all 10 files) and the mzid search protocol, and study-level sex/strain are supported by PubMed MeSH. Only minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh-context reviewer subagent (bergen-reviewer-PXD002106-r2); no producer transcript, report.md or prior review consulted; all evidence fetched fresh into scratchpad/PXD002106/review-PXD002106/r2_* with accession/title asserted"
+  },
+  "evidence_manifest": "annotations/PXD002106.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates derived independently from the file: ms-proteomics v1.1.0 and vertebrates v1.1.0 (both latest in templates.yaml; base and sample-metadata inherited). All required columns of base, sample-metadata, ms-proteomics and vertebrates present (source name, assay name, technology type, technical replicate, data file, organism, organism part, biological replicate, disease, developmental stage, acquisition method, instrument, cleavage agent, label, fraction identifier). Key order NT then AC; reserved word 'not available' only in developmental stage (allow_not_available=true). 10 rows, 35 columns, no duplicate rows/assay names/data files. sdrf-tools structure: 'Structure OK'. parse_sdrf validate-sdrf passed for both templates."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4 exact search: NCBITaxon:10116 Rattus norvegicus; UBERON:0002113/BTO:0000671 kidney; DOID:1591 and MONDO:0006947 renovascular hypertension; PATO:0000461 normal; EFO:0001342 Wistar (no NCBITaxon term for Wistar exists). sdrf-tools verify: PRIDE:0000627 Data-dependent acquisition, MS:1001910 Orbitrap Elite, MS:1001251 Trypsin, MS:1000133 collision-induced dissociation, MS:1000083 radial ejection linear ion trap, UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, UNIMOD:1 Acetyl, UNIMOD:28 Gln->pyro-Glu, UNIMOD:27 Glu->pyro-Glu, UNIMOD:385 Ammonia-loss - all labels match the SDRF NT values, none obsolete. Unimod record 385 lists specificity 'C, Any N-term, Artefact: Pyro-carbamidomethyl as a delta from Carbamidomethyl-Cys', matching TA=C;PP=Any N-term. sdrf-tools check: 15/15 verified, 0 hallucinated, 0 label mismatches, 0 UNIMOD swaps."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project (fresh, accession PXD002106, title matches PMID 26745798): organism NEWT:10116, organism part BTO kidney, disease DOID:1591, instrument MS:1001910, MS1 label-free quantification, protocol: laser-microdissected tubulointerstitial tissue, in-gel trypsin digestion, top-7 fragmentation. PubMed efetch 26745798 (title asserted): abstract states FFPE kidney sections from four 2K1C rats and 6 sham rats; MeSH includes 'Rats, Wistar' and 'Male' (no 'Female'). Raw headers of all 10 RAW files (HTTP range 0-400000): method TOP7_Labelfree_240K_..._CE35, 'Orbitrap Elite MS' method section, tune Elite_nano_20130410, data folder '2013-10-05_OrbitrapElite_Kidney-FFPE-tubuli', 240K resolution (beyond Velos Pro capability), FTMS + p (300.0-2000.0), ITMS CID, NCE 35.0, top 7. mzid AnalysisProtocolCollection (streamed fresh): Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term, -17.026549 on C peptide N-term, Glu->pyro-Glu E peptide N-term, Gln->pyro-Glu Q peptide N-term variable; Trypsin MS:1001251; parent 10 ppm; fragment 0.5 Da."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE /files (all 14 entries carry projectAccessions ['PXD002106']) and README.txt list exactly 10 RAW files; all 10 appear once in comment[data file], no non-raw files. Embedded original acquisition filenames confirm the order: FFPE_TUBULI_2K1C-1..4 -> KF_FFPE_TUB_1..4.raw and FFPE_TUBULI_SHAM-5..10 -> KF_FFPE_TUB_5..10.raw; group assignment comes directly from the deposited file names, not inferred."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 10 distinct source names (one rat each), 4 renovascular hypertension + 6 normal, matching the abstract (four 2K1C, 6 sham). factor value[disease] equals characteristics[disease] on every row. One RAW per rat: fraction identifier 1, technical replicate 1. Biological replicate numbered 1-4 and 1-6 within group (unique within condition). Label 'label free sample' on all rows consistent with PRIDE MS1 label-free quantification. No confounding batch or instrument variation across runs (identical method in all 10 headers)."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value traced to a cited source at the granularity asserted. Specificity is conservative: strain 'Wistar' (not 'Wistar Hannover', which only appears in a sister paper with unconfirmed shared cohort); organism part 'kidney' (not a sub-structure); developmental stage 'not available' (no age in any accessible source); no cell type asserted despite PRIDE's CL 'Epithelial cell' (tubulointerstitium is mixed). Sex 'male' and strain rest on study-level MeSH applied uniformly to a single cohort, recorded as a limitation in the manifest. UNIMOD:385 replaces the mzid's UNIMOD:28 label on the C N-term entry; the mass (-17.026549 relative to fixed carbamidomethyl-Cys) and site exactly match Unimod 385's C/Any N-term specificity, so this is a correction, not an addition. No material evidence found omitted that the template has a column for."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf -t ms-proteomics --use_ols_cache_only: exit 0, 'Everything seems to be fine. Well done.' timeout 900 parse_sdrf validate-sdrf -t vertebrates --use_ols_cache_only: exit 0, one WARNING 'Wistar ... not found in the given ontology list ncbitaxon' (no NCBITaxon term exists; EFO:0001342 confirmed live). sdrf-tools check: exit 0, CLEAN 15/15. sdrf-tools score: exit 0, 100/100. sdrf-tools structure: exit 0, OK. sdrf-tools reconcile --record <fresh PRIDE json>: exit 1, one BLOCKER disease_on_control_runs, confirmed a false positive - record_reconcile.py line 527 reads only the first non-empty characteristics[disease] value, while rows 5-10 (SHAM) carry 'normal'. sdrf-tools verify on all 11 MS/PRIDE/UNIMOD accessions: all resolved with matching labels. sdrf-pipelines 0.1.6."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[strain or breed] rows 1-10",
+      "message": "'Wistar' is an EFO term (EFO:0001342) while the vertebrates template restricts this column to NCBITaxon, producing a validator warning.",
+      "evidence": "parse_sdrf vertebrates warning; live OLS4 exact search for 'Wistar' in ncbitaxon returns no rat strain. No correction possible within NCBITaxon; acceptable as is."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "characteristics[organism part] rows 1-10",
+      "message": "Organism part is 'kidney' although the analysed material is laser-microdissected tubulointerstitial tissue (non-clipped kidney in 2K1C rats). A more specific UBERON term could be considered if evidence supports cortex/tubule localisation; current value is safe, not over-specific.",
+      "evidence": "PRIDE sampleProcessingProtocol and abstract ('Tubulointerstitial tissue ... was microdissected')."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "characteristics[sex], characteristics[strain or breed] rows 1-10",
+      "message": "Sex and strain rest only on study-level PubMed MeSH headings ('Male', 'Rats, Wistar'); the Nephron full text could not be accessed to confirm per-animal values.",
+      "evidence": "PubMed efetch 26745798 MeSH list; Europe PMC isOpenAccess=N; Karger page not retrievable. Single uniform cohort, so uniform application is reasonable; already listed in manifest limitations."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[modification parameters] (Ammonia-loss column)",
+      "message": "The SDRF encodes the C N-term -17.026549 Da search modification as UNIMOD:385 Ammonia-loss while the deposited mzid and PRIDE PTM list label it UNIMOD:28 Gln->pyro-Glu. The SDRF encoding is the correct Unimod term; downstream users comparing to the mzid should be aware of the relabelling.",
+      "evidence": "mzid SearchModification residues='C' massDelta='-17.026549' cvParam UNIMOD:28; Unimod 385 specificity 3: C, Any N-term, 'Pyro-carbamidomethyl as a delta from Carbamidomethyl-Cys'."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (characteristics[cell type] column absent)",
+      "message": "Recommended column characteristics[cell type] is absent. Omission is defensible because tubulointerstitial tissue is a mixed population; PRIDE's 'Epithelial cell' would overstate. Could be added as 'not applicable' or 'not available' for completeness.",
+      "evidence": "sample-metadata template marks cell type as recommended; PRIDE organismParts lists CL:0000066."
+    }
+  ]
+}

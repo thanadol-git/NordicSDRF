@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD003338.sdrf.tsv",
+  "artifact_sha256": "9a2e49b278c73a97e0df3c5c7224927cc08f5ad604e856d19cb2cac943d8c409",
+  "verdict": "PASS",
+  "summary": "Independent fresh-context review (bergen-reviewer-PXD003338-r2) found no blocker or important issues. Channel-to-time-point mapping matches the deposited result table headers; design (one TMT10-plex, triplicates day 0/17, duplicates day 5/12, 12 hpH-RP fractions) matches the paper; raw-header sample IDs, vial positions and acquisition timestamps support the two 12-fraction injection series plus one re-injection of T2 fraction 10; all controlled terms resolve in live OLS; parse_sdrf passes for all three declared templates. Two tool flags (sdrf-tools check on the free-text in-house cell line, sdrf-tools reconcile on Trypsin) were adjudicated as false positives against the paper and the cell-lines guidance. Remaining findings are minor.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent context without producer transcript or report.md; all PRIDE, raw-header, result-table, BioC/PMC and Cellosaurus evidence re-fetched into scratchpad/PXD003338/review-PXD003338 (r2_* files and r2raw/) with accession/title identity asserted"
+  },
+  "evidence_manifest": "annotations/PXD003338.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Templates declared: ms-proteomics v1.1.0, human v1.1.0, cell-lines v1.1.0; independently derived as correct (human iPSC-derived cultures, MS proteomics; cell-lines requires technology + sample layers, both present). 250 rows x 44 columns, uniform width, no leading/trailing whitespace, no duplicate assay names, no duplicate (data file, label) pairs. All required columns of base, sample-metadata, ms-proteomics, human and cell-lines present; reserved words used only where allowed (organism part 'not applicable'; cellosaurus accession/name 'not available', both allow_not_available=true). sampling time '0 day' etc. match number_with_unit; age '69Y' matches human pattern; collision energy '35% NCE' and ms1 scan range '400m/z-1400m/z' pass validators. sdrf-tools structure: 'Structure OK'."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4 term lookups (label, not obsolete): NCBITaxon:9606 Homo sapiens; CL:0002248 pluripotent stem cell; CL:0000223 endodermal cell; PATO:0000461 normal; HANCESTRO:0005 European ancestry; UBERON:0002427 arm skin; MS:1002416 Orbitrap Fusion; MS:1001251 Trypsin; MS:1001309 Lys-C; MS:1000133 collision-induced dissociation; MS:1000264 ion trap; PRIDE:0000627 Data-dependent acquisition; PRIDE:0000564 High-pH reversed-phase chromatography (hpHRP); PRIDE:0000609 TCEP; PRIDE:0000599 Iodoacetamide (IAA); UNIMOD:4 Carbamidomethyl; UNIMOD:737 TMT6plex (correct for TMT10plex); UNIMOD:35 Oxidation. All ten labels TMT126..TMT131 resolve to PRIDE:0000516-0000529. CL has no definitive-endoderm, foregut-endoderm or pancreatic-progenitor cell class (OLS search returned only hepatoblast / endocrine-pancreas progenitor), so the broader 'endodermal cell' is accurate rather than over-specific. The only non-ontology value is characteristics[cell line] 'AG16102-derived hiPSC' (see minor finding)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project (accession/title asserted PXD003338): Orbitrap Fusion, TMT, search settings (carbamidomethyl C, TMT N-term+K fixed, Met oxidation variable, 10 ppm / 0.5 Da, trypsin). Paper (PMC7289403 BioC, title asserted): AG16102 Coriell control fibroblasts reprogrammed in-house; triplicates day 0/17, duplicates day 5/12; one TMT10-plex; LysC 1:100 3 h then trypsin 1:50 overnight; TCEP / iodoacetamide; basic-pH RP, 96 -> 12 fractions; ~5 ug per fraction dissolved, ~1 ug per analysis (supports repeated injections); MS1 400-1400 m/z, CID NCE 35 ion-trap MS2, HCD 55 Orbitrap MS3; TopSpeed DDA. Deposited all_protein_identifications.xlsx (re-downloaded) ratio headers: Day 0 TMT 126/127C/127N, Day 5 128C/128N, Day 12 129C/129N, Day 17 130C/130N/131 - exactly matches SDRF label->sampling time/cell type mapping; sheet name 't1_and_t2_all_search_engines_pr' supports T1 and T2 being searched together. Cellosaurus CVCL_2G48 (AG16102): male, 69Y, Population Caucasian, arm skin UBERON:0002427, no disease - matches sex/age/ancestry/sampling site/disease. sdrf-tools reconcile flagged Trypsin as unsupported by the deposit record; adjudicated as false positive because the paper Methods explicitly describe trypsin digestion."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE /files: 26 RAW + 1 SEARCH xlsx, all projectAccessions PXD003338. SDRF references 25 RAW files, all present in PRIDE, each with exactly 10 rows (one per TMT channel). Only m03515.raw is unannotated (disclosed limitation; see minor finding). Re-fetched raw headers (first 256 KiB): m03490-m03501 sample IDs hv_0016_T1..hv_0027_T1, vials C5-D8, acquired consecutively 2014-11-22 20:48 to 2014-11-24 15:30; m03503-m03514 hv_0028_T2..hv_0039_T2, vials B1-C4, 2014-11-24 16:23 to 2014-11-26 11:09; m03545 hv_0037_T2 (same ID as m03512), vial A8, 2014-11-29; all same SPS-MS3 method. SDRF technical replicate / fraction coding (T1=1, T2=2, fractions in sequence order; m03545 = technical replicate 3, fraction 10) is consistent with this evidence."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "10 source names, one per TMT channel, each mapped to a single label, cell type, sampling time and biological replicate across all 25 files. Counts recomputed: day 0 = 3 samples (75 rows), day 5 = 2 (50), day 12 = 2 (50), day 17 = 3 (75), matching the paper. Fractions 1-12 in technical replicates 1 and 2 (120 rows each) plus technical replicate 3 for fraction 10 only (10 rows). factor value[sampling time] equals characteristics[sampling time] on every row. Cell type co-varies with time point by design (differentiation course), not a hidden confounder. Single individual / single line, as stated in the paper."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every non-trivial value traced to PRIDE, the paper, the deposited result table, raw headers or Cellosaurus. No value is more specific than evidence: cell type for days 5-17 deliberately broad; cellosaurus accession/name 'not available' rather than borrowing CVCL_2G48 (parental fibroblast) or CVCL_B5PL (Coriell AG28269 iPSC, created 2022, no link to this study); m03515.raw left out instead of guessing its content; PRIDE 'diabetes mellitus' and 'pancreas' correctly not propagated as donor disease / organism part. Inferences (technical-replicate interpretation of T1/T2, within-series fraction order, arbitrary biological-replicate numbering, m03545 coding) are disclosed in the manifest limitations and supported by raw metadata."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf --use_ols_cache_only: -t ms-proteomics exit 0 'Everything seems to be fine'; -t human exit 0 'Everything seems to be fine'; -t cell-lines exit 0 with one WARNING (cell line 'AG16102-derived hiPSC' not in clo;bto;efo); union of all three templates exit 0, same single warning. sdrf-tools score exit 0, 99/100 (only missing recommended developmental stage). sdrf-tools structure exit 0. sdrf-tools check exit 1: 17/18 terms verified, 1 'hallucinated' = the free-text cell line name (no accession asserted; uncatalogued in-house line; cell-lines guidance says keep in-house names verbatim; column does not allow reserved words) - adjudicated as false positive. sdrf-tools reconcile exit 1 on Trypsin - adjudicated as false positive against the paper Methods. Outputs saved in scratchpad/PXD003338/review-PXD003338/r2_*.txt."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "file_mapping",
+      "location": "file-level: PRIDE file m03515.raw (not in comment[data file])",
+      "message": "One deposited RAW file is not annotated. Its raw-header sample ID is hv_0040_pg (vial C5, same method, acquired 2014-11-26 11:09 directly after T2 fraction 12, 194 MB vs ~390 MB for fractions). Its content is not described in the paper or deposit, so omission is the evidence-safe choice and is disclosed in the manifest limitations.",
+      "evidence": "PRIDE /files lists 26 RAW; SDRF covers 25. Correction criterion: annotate only if the submitters or a deposited search configuration identify what hv_0040_pg contains."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[cell line], rows 1-250",
+      "message": "'AG16102-derived hiPSC' is a descriptive label, not a catalogued name, which triggers a cell-lines ontology warning and a sdrf-tools check 'hallucinated' flag. The paper does not name the proteomics line (the validation line is named iAGb), and the column forbids reserved words, so no better value is available.",
+      "evidence": "parse_sdrf cell-lines WARNING; Cellosaurus search for AG16102 children returns only AG28269 (CVCL_B5PL), with no link to this study. Correction criterion: replace with the lab's line name if the authors provide it."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "comment[technical replicate], comment[fraction identifier], all rows",
+      "message": "Treating T1/T2 as two injection series of the same 12 fractions, and assigning fraction numbers by sample-ID order, is inference. It is well supported (paper: one 10-plex, 12 fractions, ~5 ug dissolved and ~1 ug per analysis; sequential sample IDs, vials and timestamps; T1 and T2 searched together; m03545 repeats the hv_0037_T2 ID), but no deposited fraction table confirms it.",
+      "evidence": "Raw headers (r2raw/), xlsx sheet name; limitation disclosed in the evidence manifest."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file-level: missing optional/recommended columns",
+      "message": "Recommended cell-lines columns (passage number, culture medium, sample storage temperature) and characteristics[developmental stage] are absent. The MS3 HCD (NCE 55) reporter-ion step is not represented alongside the CID MS2 settings. None of these are required.",
+      "evidence": "cell-lines.yaml marks passage number / culture medium / sample storage temperature as recommended; sdrf-tools score lists developmental stage as missing recommended; paper Methods describe HCD 55 MS3."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "characteristics[individual], rows 1-250",
+      "message": "The donor is identified by the Coriell fibroblast line ID AG16102. Cellosaurus shows the same individual also donated AG12956 (at 50Y), so AG16102 identifies a biopsy rather than the person. This is harmless here because only one donor is present.",
+      "evidence": "Cellosaurus CVCL_2G48 OI line: CVCL_2F02 ! AG12956."
+    }
+  ]
+}

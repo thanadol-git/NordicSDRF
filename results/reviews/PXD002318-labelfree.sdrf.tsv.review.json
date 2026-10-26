@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002318-labelfree.sdrf.tsv",
+  "artifact_sha256": "dbb1d1a14e8fe9a6163e337e52876982219c46ba99742f82978bc4855f7f3246",
+  "verdict": "PASS",
+  "summary": "Independent review of the 34-row label-free SDRF for PXD002318 (Oveland et al. 2021, Sci Rep 11:7174) found no blocker or important issues. Sample-to-file mapping, groups, time points and MS/search parameters were re-derived from freshly fetched PRIDE metadata, the deposited sample overview workbook, the full text, Supplementary Methods and Supplementary Data 2. Only minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent context; producer report.md and transcript not read; all sources re-fetched into scratchpad/PXD002318/review-PXD002318-labelfree/"
+  },
+  "evidence_manifest": "annotations/PXD002318-labelfree.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates declared in file: ms-proteomics v1.1.0 and vertebrates v1.1.0 (correct for Mus musculus tissue LC-MS; no cell-line/DIA/clinical layer applies). 35 lines (header + 34 rows), 37 columns on every row, no CR or stray whitespace. All required columns of base/sample-metadata/vertebrates/ms-proteomics present (source name, assay name, technology type, technical replicate, data file, organism, organism part, biological replicate, disease, developmental stage, acquisition method, instrument, cleavage agent, label, fraction identifier). Collision energy '40% NCE', tolerances '10 ppm'/'0.7 Da', ms1 scan range '300m/z-2000m/z', sampling time 'N day' match TERMS.tsv/template patterns. Factor value columns match their characteristics on every row. parse_sdrf passes for both templates."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4 (2026-10-26): MS:1003096 Orbitrap Velos Pro, MS:1000291 linear ion trap, MS:1000133 collision-induced dissociation, MS:1001251 Trypsin, PRIDE:0000627 Data-dependent acquisition, PRIDE:0000608 Dithiothreitol (DTT), PRIDE:0000599 Iodoacetamide (IAA) all resolve, labels match, none obsolete. UNIMOD:4 Carbamidomethyl and UNIMOD:35 Oxidation verified via sdrf-tools verify. Label-only values resolve exactly: frontal cortex UBERON:0001870, demyelinating disease MONDO:0002562, experimental autoimmune encephalomyelitis MONDO:0005134, normal PATO:0000461, adult EFO:0001272, C57BL/6 EFO:0022397 (strain column is free text per TERMS.tsv). sdrf-tools check: 16/16 terms verified, 0 hallucinated/mismatched."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Organism/sex/strain: paper Methods 'Female C57Bl/6 mice obtained from Tacomic'. Organism part: 'The frontal cortex of the right hemisphere anterior to bregma + 1.0 mm'. Adult: both CPZ and EAE 'induced in eight-week-old female mice', all mice mean 20.4 g. Disease/time: CPZ 0.2% for six weeks (CPZ-42d) with histological demyelination (Suppl. Fig. 1); EAE sacrificed p.i. day 16 and day 32. Instrument: paper and Suppl. Methods 'LTQ-Orbitrap Velos Pro' (PRIDE lists LTQ Orbitrap Velos; the publication is more specific and authoritative). Suppl. Methods label-free section: DDA, 'Survey full scan MS spectra (from 300 to 2000 m/z)', CID NCE 40% in linear ion trap, fragments 'scanned out in the low-pressure ion trap', DTT reduction / iodoacetamide alkylation, trypsin. Search: 'fixed carbamidomethylation on cystein, variable oxidation on methionine, precursor mass tolerance of 10 ppm, fragment mass tolerance of 0.7' (unit not stated; see minor finding). One 2.5 ug injection per animal, no fractionation -> fraction 1, technical replicate 1, label free."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE /files (pages 0-2, all projectAccessions = PXD002318): 102 files, 97 RAW. This SDRF lists 34 unique RAW files, all present in PRIDE; the sibling PXD002318-tmt.sdrf.tsv lists 63 unique RAW files; overlap 0, union = all 97 RAW, none unclaimed. Every row's source name/data file matches the deposited Sampleoverviewlabel-freeandTMT.xlsx 'Label-free' sheet (raw file name -> group -> individual index) and Supplementary Data 2 column headers (same 34 codes under CTR-CPZ 42d, CTR-EAE 36d, CPZ-42d, EAE-16d, EAE-32d). File sizes (1.67-2.11 GB) are consistent with 220-min single-animal runs, distinct from the 0.14-0.64 GB TMT fraction/optimisation runs."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed groups: CTR-CPZ 5, CTR-EAE 6, CPZ-42d 5, EAE-16d 6, EAE-32d 12 = 34 animals, one run each. Biological replicate = within-group index from the sheet's 'Individual samples' column (CTR42d_1..5, CTR36d_1..6, CPZ42d_1..5, EAE16d_1..6, EAE32d_1..12); source name unique per animal so no cross-group collision. Paper states CTR-EAE N=5, but 6 RAW files are deposited and both the sheet and Supplementary Data 2 list 6 CTR-EAE animals; annotating all 6 follows the deposit. Factors disease x sampling time separate all five groups. sdrf-tools reconcile flags labelled_annotated_as_label_free because the PRIDE record also registers TMT (PRIDE:0000314); this is a false positive for this file - PRIDE also registers PRIDE:0000425 MS1 label-free, the paper/protocol describe individual label-free lysates, and the TMT pools/fractions are in the sibling SDRF."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value traced to a cited source (above). Producer avoided overclaims: CTR-EAE sampling time set to 'not available' given paper (p.i. day 32) vs sheet/Supplementary Data 2 (36 days) conflict; strain kept at C57BL/6 rather than an inferred substrain; CPZ disease kept at the general 'demyelinating disease'. No age column invented. The only inferred specificity is the 'Da' unit on fragment tolerance, which is the only physically possible unit for low-resolution linear-ion-trap CID fragments and is disclosed in the manifest limitations (minor). No material evidence omitted that would change sample identity or grouping."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf -t ms-proteomics --use_ols_cache_only: 'Everything seems to be fine', exit 0. timeout 900 parse_sdrf validate-sdrf -t vertebrates --use_ols_cache_only: exit 0, one warning 'C57BL/6 ... not found in ncbitaxon' (strain is free text per TERMS.tsv; EFO:0022397 exists in live OLS). sdrf-tools check: CLEAN 16/16, exit 0. sdrf-tools score: 100/100, exit 0. sdrf-tools structure: OK, exit 0. sdrf-tools reconcile --record pride.json: exit 1, single labelled_annotated_as_label_free flag adjudicated as false positive (see design_consistency)."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "comment[fragment mass tolerance], all rows ('0.7 Da')",
+      "message": "Fragment tolerance unit is inferred; sources give '0.7' without a unit.",
+      "evidence": "PRIDE dataProcessingProtocol and Supplementary Methods: 'fragment mass tolerance of 0.7'. Da is the only plausible unit for ion-trap CID fragments searched with X!Tandem via SearchGUI 1.8.9, and the manifest discloses the inference. Optional: note the inference in the report or keep as is."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "characteristics[sampling time] / factor value[sampling time], rows CTR-EAE (EAE_A1_ctr..EAE_B1_ctr)",
+      "message": "CTR-EAE sampling time is 'not available' because sources conflict (paper text p.i. day 32; deposited sample sheet and Supplementary Data 2 '36 days'). The sampling-time factor also mixes reference points (CPZ diet duration vs EAE post-immunization day).",
+      "evidence": "Conservative choice is acceptable; consider stating both reference points in the report so downstream users do not compare 42 day (diet) with 32 day (p.i.) as one continuous axis."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (optional columns)",
+      "message": "Optional context could be added: characteristics[treatment] (cuprizone diet / rhMOG1-125 immunisation) and comment[fractionation method] = 'no fractionation'.",
+      "evidence": "Both are optional in sample-metadata / ms-proteomics v1.1.0; the disease factor already separates groups."
+    },
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "comment[instrument], all rows",
+      "message": "PRIDE project record lists LTQ Orbitrap Velos (MS:1001742) while the SDRF uses Orbitrap Velos Pro (MS:1003096); RAW headers were not opened.",
+      "evidence": "Paper and Supplementary Methods both state 'LTQ-Orbitrap Velos Pro', so the SDRF value follows the more specific primary source."
+    }
+  ]
+}

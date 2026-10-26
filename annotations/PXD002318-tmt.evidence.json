@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002318-tmt.sdrf.tsv",
+  "dataset": "PXD002318",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002318 (sdrf-skills/scratchpad/PXD002318/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002318/files?pageSize=100&page=0 and page=1, merged: 102 files (sdrf-skills/scratchpad/PXD002318/files_all.json)"
+    },
+    {
+      "id": "sample-sheet",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/03/PXD002318/Sampleoverviewlabel-freeandTMT.xlsx (sdrf-skills/scratchpad/PXD002318/sampleoverview.xlsx)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC8010076, Sci Rep 2021 11:7174, DOI 10.1038/s41598-021-86191-5, Europe PMC fullTextXML (sdrf-skills/scratchpad/PXD002318/paper.xml, sdrf-skills/scratchpad/PXD002318/paper.txt)"
+    },
+    {
+      "id": "supp-methods",
+      "kind": "publication",
+      "location": "PMC8010076 Supplementary Methods 41598_2021_86191_MOESM3_ESM.docx via Europe PMC supplementaryFiles (sdrf-skills/scratchpad/PXD002318/supp/, text in sdrf-skills/scratchpad/PXD002318/suppdocs.txt)"
+    },
+    {
+      "id": "supp-data-1",
+      "kind": "publication",
+      "location": "PMC8010076 Supplementary Data 1, 41598_2021_86191_MOESM4_ESM.xlsx (sdrf-skills/scratchpad/PXD002318/supp/)"
+    },
+    {
+      "id": "pd-proteins",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/03/PXD002318/TMT6plex_EAE_CPZ_PDun-normalized_proteins.xlsx (sdrf-skills/scratchpad/PXD002318/tmt_proteins.xlsx)"
+    },
+    {
+      "id": "pd-peptides",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/03/PXD002318/TMT_EAECPZ_PDun-normalized_peptides.xlsx (sdrf-skills/scratchpad/PXD002318/tmt_peptides.xlsx)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism], characteristics[sex], characteristics[strain or breed] (all rows)",
+      "value": "Mus musculus; female; C57BL/6",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Methods 'Mice': 'Female C57Bl/6 mice obtained from Tacomic (Tornbjerg, Denmark)'; PRIDE organism Mus musculus"
+    },
+    {
+      "location": "characteristics[organism part], characteristics[material type] (all rows)",
+      "value": "frontal cortex (UBERON:0001870); tissue",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods 'Dissection of mouse brains': 'The frontal cortex of the right hemisphere anterior to bregma + 1.0 mm was collected by dissection'"
+    },
+    {
+      "location": "characteristics[developmental stage] (all rows)",
+      "value": "adult",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Inferred: CPZ and EAE induced in 'eight-week-old female mice'; CPZ controls from the same randomised 10 mice; EAE controls' age not stated (assumed same cohort)"
+    },
+    {
+      "location": "characteristics[disease], factor value[disease]",
+      "value": "normal (CTR-CPZ, CTR-EAE); demyelinating disease, MONDO:0002562 (CPZ-42d); experimental autoimmune encephalomyelitis, MONDO:0005134 (EAE-16d, EAE-32d)",
+      "source_ids": [
+        "paper",
+        "supp-methods",
+        "sample-sheet"
+      ],
+      "evidence": "Groups from the sample sheet; CPZ = 0.2% cuprizone diet for 6 weeks with demyelination confirmed histologically (Supplementary Fig. 1); EAE induced with rhMOG1-125; controls 'Healthy control mice'. CPZ disease term is the closest ontology term (inference)"
+    },
+    {
+      "location": "characteristics[sampling time], factor value[sampling time]",
+      "value": "42 day (CTR-CPZ, CPZ-42d); 16 day (EAE-16d); 32 day (EAE-32d); not available (CTR-EAE)",
+      "source_ids": [
+        "paper",
+        "sample-sheet"
+      ],
+      "evidence": "Paper: CPZ six weeks (CPZ-42d), EAE sacrificed p.i. day 16 and day 32; sheet 'CTR for cuprizone, 42 days'. CTR-EAE: paper says p.i. day 32, sheet says 36 days -> conflict, not available"
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method], comment[cleavage agent details]",
+      "value": "NT=Orbitrap Velos Pro;AC=MS:1003096; DDA PRIDE:0000627; Trypsin MS:1001251",
+      "source_ids": [
+        "paper",
+        "supp-methods",
+        "pride"
+      ],
+      "evidence": "'coupled to an LTQ-Orbitrap Velos Pro'; 'operated in the DDA-mode (data-dependent-acquisition)'; trypsin in both search descriptions"
+    },
+    {
+      "location": "comment[label], source name (all 315 rows)",
+      "value": "TMT126 = pool CTR-CPZ; TMT127 = pool CPZ-42d; TMT128 = pool CTR-EAE; TMT129 = pool EAE-16d; TMT130 = pool EAE-32d; TMT131 unused",
+      "source_ids": [
+        "sample-sheet",
+        "supp-data-1",
+        "pd-proteins",
+        "pd-peptides"
+      ],
+      "evidence": "Sample sheet 'TMT' and Supplementary Data 1 'TMT raw data files' give 'Pool TMT-label' TMT-126/127/128/129/130 per group; PD exports report only ratios 127/126, 129/128, 130/128, which Supplementary Data 1 labels 'CPZ-42d / CTR-CPZ', 'EAE-16d / CTR-EAE', 'EAE-32d / CTR-EAE'. CONFLICTS with paper Methods / PRIDE protocol prose (CTR-CPZ=TMT130, CTR-EAE=TMT127, CPZ-42d=TMT126, EAE-16d=TMT128, EAE-32d=TMT129), which the PD ratio headers do not support"
+    },
+    {
+      "location": "characteristics[pooled sample], characteristics[biological replicate]",
+      "value": "SN= list of the animals pooled into each channel; biological replicate 1",
+      "source_ids": [
+        "sample-sheet",
+        "supp-data-1",
+        "paper"
+      ],
+      "evidence": "Sheet lists the animals ('Random labeled samples (raw file name)') per pool; EAE-32d pool = A4..F4 ('These samples (and not A2..F2) were chosen because mouse-MRI data is available'); Methods: 'Equal amounts of protein ... representing the same condition were pooled'"
+    },
+    {
+      "location": "comment[data file], comment[fraction identifier] (technical replicate 1)",
+      "value": "CPZ_EAE_TMT_MP1_3 = 1, MP7_9 = 2, MP10..MP60 = 3..53",
+      "source_ids": [
+        "sample-sheet",
+        "paper",
+        "pride-files"
+      ],
+      "evidence": "Sheet: MP1_3 and MP7_9 'Combined mixed-mode fractions', MP4_6 'Discarded', MP10..MP60 'Mixed-mode fraction N'; paper: '53 fractions plus the unfractionated sample'; all 53 RAW files in the PRIDE file list"
+    },
+    {
+      "location": "comment[data file], comment[technical replicate] 2-11, comment[fractionation method] = not applicable",
+      "value": "10 TOP10_*/TOP7_* RAW files",
+      "source_ids": [
+        "sample-sheet",
+        "pride-files"
+      ],
+      "evidence": "Sheet: 'Unfractioned sample, parameters optimization 1..10' (order used for technical replicate 2..11)"
+    },
+    {
+      "location": "comment[fractionation method] (fraction rows)",
+      "value": "NT=High-performance liquid chromatography;AC=PRIDE:0000565",
+      "source_ids": [
+        "supp-methods"
+      ],
+      "evidence": "'fractionated in 60 fractions using mixed-mode HPLC chromatography' (Sielc Promix column); no more specific PRIDE child for mixed-mode"
+    },
+    {
+      "location": "comment[modification parameters], comment[precursor mass tolerance], comment[fragment mass tolerance]",
+      "value": "TMT6plex K fixed, TMT6plex Any N-term fixed, Carbamidomethyl C fixed, Oxidation M variable; 10 ppm; 0.05 Da",
+      "source_ids": [
+        "pride",
+        "supp-methods"
+      ],
+      "evidence": "PD 1.4.1.14: 'precursor mass tolerance was 10 ppm ... fragment mass tolerance was 0.05 Da. Carbamidomethyl of C, TMT6plex on K and TMT6plex on any N-terminus were set to fixed modifications. Oxidation of M was set to variable'"
+    },
+    {
+      "location": "comment[reduction reagent], comment[alkylation reagent]",
+      "value": "TCEP (PRIDE:0000609); not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "'as outlined in the manual for the TMTsixplex Isobaric Label Reagent Set ... except that the TCEP reduction was done at RT'; alkylation reagent not named in any study source"
+    }
+  ],
+  "limitations": [
+    "TMT channel map: paper Methods and PRIDE protocol prose contradict the deposited sample sheet, Supplementary Data 1 and the PD ratio headers; the latter (consistent) map is annotated.",
+    "CTR-EAE: paper says N=5 at p.i. day 32; deposited sheets list 6 animals at 36 days; 6 animals pooled per sheet; sampling time not available.",
+    "Dissociation method / collision energy / MS2 analyzer omitted: fraction runs used CID+HCD back-to-back and the column is single-valued; optimisation runs' settings are only in file names.",
+    "The 10 optimisation runs are re-injections of the unfractionated mix with different MS methods, annotated as technical replicates 2-11.",
+    "No search settings file (.msf) deposited; modifications and tolerances from Methods.",
+    "RAW files not opened (no techsdrf verification)."
+  ]
+}

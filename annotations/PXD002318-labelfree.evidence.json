@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002318-labelfree.sdrf.tsv",
+  "dataset": "PXD002318",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002318 (sdrf-skills/scratchpad/PXD002318/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002318/files?pageSize=100&page=0 and page=1, merged: 102 files (sdrf-skills/scratchpad/PXD002318/files_all.json)"
+    },
+    {
+      "id": "sample-sheet",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/03/PXD002318/Sampleoverviewlabel-freeandTMT.xlsx (sdrf-skills/scratchpad/PXD002318/sampleoverview.xlsx)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC8010076, Sci Rep 2021 11:7174, DOI 10.1038/s41598-021-86191-5, Europe PMC fullTextXML (sdrf-skills/scratchpad/PXD002318/paper.xml, sdrf-skills/scratchpad/PXD002318/paper.txt)"
+    },
+    {
+      "id": "supp-methods",
+      "kind": "publication",
+      "location": "PMC8010076 Supplementary Methods 41598_2021_86191_MOESM3_ESM.docx via Europe PMC supplementaryFiles (sdrf-skills/scratchpad/PXD002318/supp/, text in sdrf-skills/scratchpad/PXD002318/suppdocs.txt)"
+    },
+    {
+      "id": "supp-data-2",
+      "kind": "publication",
+      "location": "PMC8010076 Supplementary Data 2, 41598_2021_86191_MOESM5_ESM.xlsx (sdrf-skills/scratchpad/PXD002318/supp/)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism], characteristics[sex], characteristics[strain or breed] (all rows)",
+      "value": "Mus musculus; female; C57BL/6",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Methods 'Mice': 'Female C57Bl/6 mice obtained from Tacomic (Tornbjerg, Denmark)'; PRIDE organism Mus musculus"
+    },
+    {
+      "location": "characteristics[organism part], characteristics[material type] (all rows)",
+      "value": "frontal cortex (UBERON:0001870); tissue",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods 'Dissection of mouse brains': 'The frontal cortex of the right hemisphere anterior to bregma + 1.0 mm was collected by dissection'"
+    },
+    {
+      "location": "characteristics[developmental stage] (all rows)",
+      "value": "adult",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Inferred: CPZ and EAE induced in 'eight-week-old female mice'; CPZ controls from the same randomised 10 mice; EAE controls' age not stated (assumed same cohort)"
+    },
+    {
+      "location": "characteristics[disease], factor value[disease]",
+      "value": "normal (CTR-CPZ, CTR-EAE); demyelinating disease, MONDO:0002562 (CPZ-42d); experimental autoimmune encephalomyelitis, MONDO:0005134 (EAE-16d, EAE-32d)",
+      "source_ids": [
+        "paper",
+        "supp-methods",
+        "sample-sheet"
+      ],
+      "evidence": "Groups from the sample sheet; CPZ = 0.2% cuprizone diet for 6 weeks with demyelination confirmed histologically (Supplementary Fig. 1); EAE induced with rhMOG1-125; controls 'Healthy control mice'. CPZ disease term is the closest ontology term (inference)"
+    },
+    {
+      "location": "characteristics[sampling time], factor value[sampling time]",
+      "value": "42 day (CTR-CPZ, CPZ-42d); 16 day (EAE-16d); 32 day (EAE-32d); not available (CTR-EAE)",
+      "source_ids": [
+        "paper",
+        "sample-sheet"
+      ],
+      "evidence": "Paper: CPZ six weeks (CPZ-42d), EAE sacrificed p.i. day 16 and day 32; sheet 'CTR for cuprizone, 42 days'. CTR-EAE: paper says p.i. day 32, sheet says 36 days -> conflict, not available"
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method], comment[cleavage agent details]",
+      "value": "NT=Orbitrap Velos Pro;AC=MS:1003096; DDA PRIDE:0000627; Trypsin MS:1001251",
+      "source_ids": [
+        "paper",
+        "supp-methods",
+        "pride"
+      ],
+      "evidence": "'coupled to an LTQ-Orbitrap Velos Pro'; 'operated in the DDA-mode (data-dependent-acquisition)'; trypsin in both search descriptions"
+    },
+    {
+      "location": "source name, comment[data file], group (all 34 rows)",
+      "value": "RAW file stem = animal code; groups CTR-CPZ (5), CTR-EAE (6), CPZ-42d (5), EAE-16d (6), EAE-32d (12)",
+      "source_ids": [
+        "sample-sheet",
+        "supp-data-2",
+        "pride-files"
+      ],
+      "evidence": "Sheet 'Label-free': 'Random labeled samples (raw file name)' per group; Supplementary Data 2 lists the same codes under the same groups and as abundance columns; all 34 RAW files in the PRIDE file list"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "index within group from 'Individual samples' (e.g. CTR42d_3 -> 3)",
+      "source_ids": [
+        "sample-sheet"
+      ],
+      "evidence": "Sheet 'Label-free' column 'Individual samples'"
+    },
+    {
+      "location": "comment[label], comment[fraction identifier], comment[technical replicate]",
+      "value": "label free sample; 1; 1",
+      "source_ids": [
+        "paper",
+        "supp-methods"
+      ],
+      "evidence": "'The individual mouse brain frontal cortex lysates ... were trypsinised ... (2.5 µg) were subjected to LC-MS' (220 min run, one per mouse, no fractionation)"
+    },
+    {
+      "location": "comment[dissociation method], comment[collision energy], comment[ms2 mass analyzer], comment[ms1 scan range]",
+      "value": "CID MS:1000133; 40% NCE; linear ion trap MS:1000291; 300m/z-2000m/z",
+      "source_ids": [
+        "supp-methods"
+      ],
+      "evidence": "'Survey full scan MS spectra (from 300 to 2000 m/z)'; 'fragmented in the high-pressure linear ion trap by low-energy CID ... normalized collision energy of 40%'; 'scanned out in the low-pressure ion trap'"
+    },
+    {
+      "location": "comment[reduction reagent], comment[alkylation reagent]",
+      "value": "DTT (PRIDE:0000608); iodoacetamide (PRIDE:0000599)",
+      "source_ids": [
+        "supp-methods"
+      ],
+      "evidence": "'Proteins were reduced by adding 4 µl of fresh 100 mM DTT ... alkylated by adding 5 µl of fresh 200 mM iodoacetamide'"
+    },
+    {
+      "location": "comment[modification parameters], comment[precursor mass tolerance], comment[fragment mass tolerance]",
+      "value": "Carbamidomethyl C fixed, Oxidation M variable; 10 ppm; 0.7 Da",
+      "source_ids": [
+        "pride",
+        "supp-methods"
+      ],
+      "evidence": "SearchGUI v1.8.9 / X!Tandem: 'fixed carbamidomethylation on cystein, variable oxidation on methionine, precursor mass tolerance of 10 ppm, fragment mass tolerance of 0.7' (unit Da inferred: ion-trap fragments, X!Tandem Da)"
+    }
+  ],
+  "limitations": [
+    "CTR-EAE: paper says N=5 at p.i. day 32; 6 RAW files deposited and the sheet / Supplementary Data 2 list 6 animals at 36 days; all 6 annotated, sampling time not available.",
+    "Fragment tolerance unit not stated in the source; Da assumed.",
+    "reconcile reports labelled_annotated_as_label_free because the project also registers TMT; the TMT runs are in PXD002318-tmt.sdrf.tsv (false positive for this file).",
+    "No search settings file deposited; modifications and tolerances from Methods.",
+    "RAW files not opened (no techsdrf verification)."
+  ]
+}

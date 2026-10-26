@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002347.sdrf.tsv",
+  "dataset": "PXD002347",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002347"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002347/files?pageSize=1000"
+    },
+    {
+      "id": "pd-peptides",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/08/PXD002347/CPZ_VitD_7_8_10weeks_TMT6plex_PD_pepeptides_2016.xlsx"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Oveland E et al. 2017 Neurochem Int, PMID 28818673, doi:10.1016/j.neuint.2017.08.008 (abstract only via Europe PMC; full text not open access)"
+    },
+    {
+      "id": "nystad2014",
+      "kind": "publication",
+      "location": "Nystad AE et al. 2014 APMIS, PMID 24862867 (abstract via Europe PMC; cited by the PRIDE sample protocol for the animal work)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] all rows",
+      "value": "Mus musculus",
+      "source_ids": ["pride", "nystad2014"],
+      "evidence": "PRIDE organisms NEWT:10090; sample protocol 'C57Bl/6 mice'; PD table descriptions 'OS=Mus musculus'"
+    },
+    {
+      "location": "characteristics[strain or breed] all rows",
+      "value": "C57BL/6",
+      "source_ids": ["pride", "nystad2014"],
+      "evidence": "PRIDE sampleProcessingProtocol 'cuprizone administration of C57Bl/6 mice'; Nystad 2014 abstract 'female C57Bl/6 mice'"
+    },
+    {
+      "location": "characteristics[sex] all rows",
+      "value": "female",
+      "source_ids": ["nystad2014", "pride"],
+      "evidence": "Nystad 2014 abstract 'female C57Bl/6 mice were demyelinated with dietary 0.2% cuprizone for 7 weeks'; PRIDE protocol states the animal work is described in Nystad et al., APMIS, 2014"
+    },
+    {
+      "location": "characteristics[organism part] all rows",
+      "value": "right frontal lobe (UBERON:0002810)",
+      "source_ids": ["pride"],
+      "evidence": "PRIDE sampleProcessingProtocol 'individual mouse brain samples (right frontal including some corpus callosum)'"
+    },
+    {
+      "location": "characteristics[disease] all rows",
+      "value": "demyelinating disease of central nervous system (MONDO:0020800)",
+      "source_ids": ["pride", "paper", "nystad2014"],
+      "evidence": "All six groups were cuprizone-demyelinated for 7 weeks (protocol: 'mice after 7 weeks of cuprizone demyelination including injections ... with either vitD or placebo', then remyelination after withdrawal). Placebo is vehicle injection, not a healthy arm. PRIDE 'multiple sclerosis' is the modelled human disease, not a diagnosis of the mice"
+    },
+    {
+      "location": "characteristics[treatment] and factor value[treatment]",
+      "value": "placebo (Ctr*) / calcitriol (VitD*)",
+      "source_ids": ["pride", "nystad2014", "pd-peptides"],
+      "evidence": "Protocol: 'intra-peritoneal injections of 1,25-(OH)2D3 or placebo'; Nystad 2014 'calcitriol or placebo (vehicle)'; PD ratio headers 'D7/Pl7' etc."
+    },
+    {
+      "location": "characteristics[sampling time] and factor value[sampling time]",
+      "value": "7 week / 8 week / 10 week",
+      "source_ids": ["pride"],
+      "evidence": "Project description: 'Brain samples were taken after 7 weeks (demyelinated), after 8 weeks (1 week remyelination) and after 10 weeks (3 weeks of remyelination)'"
+    },
+    {
+      "location": "characteristics[pooled sample] / characteristics[biological replicate] all rows",
+      "value": "pooled / pooled",
+      "source_ids": ["pride"],
+      "evidence": "Protocol: 'Equal amounts of protein from the individual mouse brain samples ... representing the same condition were pooled' (VitD7 n=6, Ctr7 n=6, VitD8 n=4, Ctr8 n=6, VitD10 n=6, Ctr10 n=6)"
+    },
+    {
+      "location": "comment[label] channel-to-sample map",
+      "value": "Ctr7=TMT126, Ctr8=TMT127, Ctr10=TMT128, VitD7=TMT129, VitD8=TMT130, VitD10=TMT131",
+      "source_ids": ["pride", "pd-peptides"],
+      "evidence": "Protocol: 'Ctr7 (TMT126), Ctr8 (TMT 127), Ctr10 (TMT 128), VitD7 (TMT129), VitD8 (TMT 130), VitD10 (TMT131)'; cross-validated by PD ratio headers '129 D7/126 Pl7', '130 D8/127 Pl8', '131 D10/128 Pl10'"
+    },
+    {
+      "location": "comment[data file] / comment[fraction identifier]",
+      "value": "54 RAW files of one TMT6plex mix; fraction id 1 = TMT6_frac_1to3.raw, ids 2-54 = TMT6_frac_8..60.raw",
+      "source_ids": ["pride-files", "pride"],
+      "evidence": "PRIDE file list has exactly 54 RAW files (1to3, 8-60); protocol: 'fractions 1-3 were pooled, and fractions 4 to 7 ... were excluded, resulting in a total of 54 fractions'"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Orbitrap Elite;AC=MS:1001910",
+      "source_ids": ["pride"],
+      "evidence": "PRIDE instruments MS:1001910; protocol 'LC-MS ... on an Orbitrap Elite'"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition (PRIDE:0000627)",
+      "source_ids": ["pride"],
+      "evidence": "Protocol 'operated in the DDA-mode (data-dependent-acquisition)'"
+    },
+    {
+      "location": "comment[dissociation method] / comment[collision energy] / comment[ms2 mass analyzer]",
+      "value": "HCD (MS:1000422) / 40% NCE / orbitrap (MS:1000484)",
+      "source_ids": ["pride"],
+      "evidence": "Protocol 'using HCD ... normalized collision energy of 40% ... Fragments were detected in the Orbitrap at a resolution of 7500'"
+    },
+    {
+      "location": "comment[ms1 scan range]",
+      "value": "300m/z-2000m/z",
+      "source_ids": ["pride"],
+      "evidence": "Protocol 'The FTMS scans (from 300 to 2000 m/z)'"
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "NT=High-performance liquid chromatography;AC=PRIDE:0000565",
+      "source_ids": ["pride"],
+      "evidence": "Protocol: mixed-mode HPLC on a Sielc Promix column, Agilent 1260 LC; no mixed-mode term exists under PRIDE:0000550, so the generic HPLC term is used"
+    },
+    {
+      "location": "comment[cleavage agent details] / tolerances",
+      "value": "Trypsin (MS:1001251); 10 ppm; 0.05 Da",
+      "source_ids": ["pride"],
+      "evidence": "Data processing protocol: 'enzyme was set to trypsin ... precursor mass tolerance was 10 ppm ... fragment mass tolerance was 0.05 Da'"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; TMT6plex K fixed; TMT6plex Any N-term fixed; Oxidation M variable",
+      "source_ids": ["pride", "pd-peptides"],
+      "evidence": "Data processing protocol lists exactly these; deposited PD peptide table Modifications column contains only N-Term(TMT6plex) 60880, K(TMT6plex) 42300, C(Carbamidomethyl) 9191, M(Oxidation) 1883"
+    }
+  ],
+  "limitations": [
+    "Primary paper (Oveland 2017, Neurochem Int) is not open access; only its abstract was read. All design details come from the PRIDE protocol text, the Nystad 2014 abstract and the deposited PD peptide table.",
+    "Sex (female) comes from the Nystad 2014 abstract, which the PRIDE protocol cites for the animal work; the PRIDE record itself does not state sex.",
+    "Developmental stage / age of the mice is not stated in any accessible source; written as 'not available'.",
+    "Individual mouse identities in each pool are not deposited; pooled sample is written as 'pooled' without SN= members.",
+    "Fraction identifiers are ordinal positions (1-54), not the original HPLC well numbers (pooled 1-3, then 8-60).",
+    "Reduction and alkylation reagents are not stated; the columns are omitted.",
+    "PRIDE 'softwares' lists MaxQuant, but the protocol and the deposited table show Proteome Discoverer 1.4 (MS Amanda, Mascot, SequestHT); this does not affect any SDRF column."
+  ]
+}

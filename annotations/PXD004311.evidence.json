@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "artifact": "/home/thanadol/Documents/GitHub/NordicSDRF/annotations/PXD004311.sdrf.tsv",
+  "dataset": "PXD004311",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD004311"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD004311/files?pageSize=1000"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC4974784 (PMID 27496535, doi:10.1186/s12864-016-2864-2), Methods sections via Europe PMC full text"
+    },
+    {
+      "id": "progenesis_peptides",
+      "kind": "deposited_result",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/08/PXD004311/MeHg_Ensemble_MSGF_Xt_Amanda_Progenesis_export_Peptides.csv (header rows, byte range 0-6000)"
+    },
+    {
+      "id": "peptideshaker_export",
+      "kind": "deposited_result",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/08/PXD004311/MeHg_Ensemble_MSGF_Xt_Amanda_PeptideShaker_Export.txt (full file, 83,568 PSM rows)"
+    },
+    {
+      "id": "raw_header",
+      "kind": "raw_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/08/PXD004311/OAK_K1.raw (bytes 0-400000, UTF-16 instrument method header)"
+    },
+    {
+      "id": "skyline_srm",
+      "kind": "deposited_result",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/08/PXD004311/SRM_Skyline_MeHg.xlsx"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/search"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] rows 1-28",
+      "value": "OAK_K1..K10.raw, OAK_05_1..9.raw, OAK_2_1..9.raw",
+      "source_ids": [
+        "pride_files"
+      ],
+      "evidence": "All 28 RAW-category .raw files in the PRIDE file list; projectAccessions asserted to contain PXD004311"
+    },
+    {
+      "location": "factor value[dose], characteristics[dose], characteristics[compound] rows 1-28",
+      "value": "0 mg/kg (K1-K10, compound not applicable); 0.5 mg/kg (05_1-05_9); 2 mg/kg (2_1-2_9), methylmercury chloride",
+      "source_ids": [
+        "progenesis_peptides",
+        "paper",
+        "pride"
+      ],
+      "evidence": "Progenesis export condition header groups OAK_K1-K10 under 'Kontrol', OAK_2_1-2_9 under '2', OAK_05_1-05_9 under '0,5'; paper/PRIDE: vehicle control (n=10), 0.5 mg/kg (n=9), 2 mg/kg BW (n=9) methylmercury chloride i.p.; counts match file groups exactly"
+    },
+    {
+      "location": "characteristics[organism] rows 1-28",
+      "value": "Gadus morhua",
+      "source_ids": [
+        "pride",
+        "paper",
+        "ols"
+      ],
+      "evidence": "PRIDE organism NEWT:8049; paper Methods 'juvenile Atlantic cod (G. morhua)'; NCBITaxon:8049"
+    },
+    {
+      "location": "characteristics[organism part] rows 1-28",
+      "value": "liver",
+      "source_ids": [
+        "pride",
+        "paper",
+        "ols"
+      ],
+      "evidence": "Liver samples dissected; UBERON:0002107"
+    },
+    {
+      "location": "characteristics[developmental stage] rows 1-28",
+      "value": "juvenile stage",
+      "source_ids": [
+        "paper",
+        "ols"
+      ],
+      "evidence": "Methods: 'juvenile Atlantic cod ... body weight 260-530 g' (whole cohort); UBERON:0034919 (in EFO)"
+    },
+    {
+      "location": "characteristics[sampling time] rows 1-28",
+      "value": "14 day",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Fish sacrificed after 14 days of exposure"
+    },
+    {
+      "location": "characteristics[biological replicate] rows 1-28",
+      "value": "1-10 (control), 1-9 (each dose), from file-name fish index",
+      "source_ids": [
+        "pride_files",
+        "paper"
+      ],
+      "evidence": "One liver per individual fish, one injection per fish"
+    },
+    {
+      "location": "characteristics[sex], characteristics[strain or breed] rows 1-28",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper says 'mixed gender' without per-fish sex; no strain/stock stated"
+    },
+    {
+      "location": "characteristics[disease] rows 1-28",
+      "value": "not applicable",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Healthy fish in a toxicant-exposure study; no disease studied"
+    },
+    {
+      "location": "comment[instrument] rows 1-28",
+      "value": "NT=Orbitrap Velos Pro;AC=MS:1003096",
+      "source_ids": [
+        "raw_header",
+        "paper",
+        "ols"
+      ],
+      "evidence": "Raw header 'Orbitrap Velos Pro MS'; paper 'LTQ-Orbitrap Velos Pro'. PRIDE structured field says LTQ Orbitrap Velos (less specific, overridden)"
+    },
+    {
+      "location": "comment[proteomics data acquisition method] rows 1-28",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "raw_header"
+      ],
+      "evidence": "Method: FTMS full scan + ITMS 'Dep ... MS/MS Most intense ion'"
+    },
+    {
+      "location": "comment[dissociation method], comment[collision energy], comment[ms2 mass analyzer], comment[ms1 scan range]",
+      "value": "CID MS:1000133; 35 NCE; ion trap MS:1000264; 300m/z-2000m/z",
+      "source_ids": [
+        "raw_header",
+        "paper"
+      ],
+      "evidence": "Scan event 1 FTMS o(300.0-2000.0); event 2 ITMS Activation Type CID, Normalized Coll. Energy 35.0; paper NCE 35%"
+    },
+    {
+      "location": "comment[cleavage agent details], tolerances",
+      "value": "Trypsin MS:1001251; 10 ppm; 0.5 Da",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Identification settings: trypsin, max 1 missed cleavage, 10 ppm MS1, 0.5 Da MS2"
+    },
+    {
+      "location": "comment[modification parameters] (6 columns)",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term, Gln->pyro-Glu, Glu->pyro-Glu, Pyro-carbamidomethyl variable",
+      "source_ids": [
+        "peptideshaker_export",
+        "paper",
+        "pride"
+      ],
+      "evidence": "Methods: carbamidomethyl C fixed, oxidation M variable. Deposited PeptideShaker export modif strings additionally contain 'acetylation of protein n-term' (452 PSMs), 'pyro-glu from n-term q' (452), 'pyro-cmc' (349), 'pyro-glu from n-term e' (12) - X!Tandem refinement-pass mods; deposited search outranks Methods"
+    },
+    {
+      "location": "comment[reduction reagent], comment[alkylation reagent]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Prep refers to Berle et al. 2013; reagents not stated in this paper or PRIDE record; carbamidomethyl fixed implies alkylation occurred"
+    }
+  ],
+  "limitations": [
+    "SRM data (SRM_MeHg.wiff + .wiff.scan, QTRAP 5500, 28 Skyline replicates in one multi-sample wiff) not represented: one file cannot be assigned to 28 label-free sources by sdrf-tools build, and the within-file sample order was not verified.",
+    "Per-fish sex unavailable (cohort 'mixed gender').",
+    "Reduction/alkylation reagents not stated (prep cited to Berle et al. 2013).",
+    "PeptideShaker export also contains PSMs from 6 inclusion-list runs (OAK_EO_Incl_*, OAK_HG_Incl_*) whose raw files were not deposited; they are not in the SDRF.",
+    "Biological replicate integers are the fish index from file names within each dose group."
+  ]
+}

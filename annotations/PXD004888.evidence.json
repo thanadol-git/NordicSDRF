@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD004888.sdrf.tsv",
+  "dataset": "PXD004888",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD004888"},
+    {"id": "pride_files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD004888/files?pageSize=1000"},
+    {"id": "mq_params", "kind": "search_output", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/03/PXD004888/parametersFn.txt; https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/03/PXD004888/parametersPg.txt"},
+    {"id": "mq_tables", "kind": "search_output", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/03/PXD004888/peptidesFn.txt; peptidesPg.txt; proteinGroupsFn.txt; proteinGroupsPg.txt (same folder)"},
+    {"id": "raw_header", "kind": "raw_data", "location": "HTTP byte-range reads of https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/03/PXD004888/Fn_ECM1.raw (bytes 0-2000000), Pg_ECM1.raw and FnPg_ECM4.raw (bytes 0-40000)"},
+    {"id": "abstract", "kind": "publication", "location": "Europe PMC MED:28285095 (abstract only; doi:10.1016/j.anaerobe.2017.03.002, not open access)"},
+    {"id": "ols", "kind": "ontology", "location": "https://www.ebi.ac.uk/ols4/api/"}
+  ],
+  "claims": [
+    {"location": "characteristics[organism] rows 1-4", "value": "Fusobacterium nucleatum subsp. nucleatum ATCC 25586", "source_ids": ["pride", "ols"], "evidence": "PRIDE organisms/sampleAttributes NEWT:190304; dataProcessingProtocol names type strain ATCC 25586; Fn_ECM* runs are the F. nucleatum mono-species biofilm"},
+    {"location": "characteristics[organism] rows 5-8", "value": "Porphyromonas gingivalis ATCC 33277", "source_ids": ["pride", "ols"], "evidence": "PRIDE organisms/sampleAttributes NEWT:431947; dataProcessingProtocol names type strain ATCC 33277"},
+    {"location": "characteristics[organism] rows 9-12", "value": "Bacteria", "source_ids": ["pride", "abstract", "ols"], "evidence": "Dual-species biofilm of both organisms; single-valued column so the common ancestor NCBITaxon:2 is used; both species named in growth condition"},
+    {"location": "characteristics[growth condition] and factor value[growth condition] rows 1-12", "value": "F. nucleatum mono / P. gingivalis mono / dual-species biofilm", "source_ids": ["pride", "abstract", "mq_tables"], "evidence": "Title and description: EPM of mono- and dual-species biofilms; file names Fn_/Pg_/FnPg_ match MaxQuant experiment names FnECM/PgECM/FnPgECM"},
+    {"location": "characteristics[biological replicate] rows 1-12", "value": "1-4 per group", "source_ids": ["pride", "pride_files"], "evidence": "sampleProcessingProtocol: 'prepared in four biological replicates'; replicate number = digit in file name ECM1-ECM4"},
+    {"location": "characteristics[organism part], characteristics[cell type], characteristics[disease] rows 1-12", "value": "not applicable", "source_ids": ["pride"], "evidence": "In-vitro bacterial biofilm culture; no anatomy, cell type or disease state applies"},
+    {"location": "comment[data file] rows 1-12", "value": "12 RAW files", "source_ids": ["pride_files"], "evidence": "All 12 RAW entries in the PRIDE file list, each projectAccessions == PXD004888, claimed once"},
+    {"location": "comment[instrument] rows 1-12", "value": "NT=Orbitrap Elite;AC=MS:1001910", "source_ids": ["raw_header", "pride", "ols"], "evidence": "Raw method block names 'Orbitrap Elite MS', tune file Elite_nano, folder 2014-11-20_OrbitrapElite_P14-47, method TOP10CID_240K; protocol R=240,000; PRIDE field generic LTQ Orbitrap"},
+    {"location": "comment[proteomics data acquisition method] rows 1-12", "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627", "source_ids": ["pride", "raw_header"], "evidence": "Protocol: data-dependent acquisition, top 10; raw method 'Scan Event 2 repeated for top 10 peaks'"},
+    {"location": "comment[dissociation method], comment[collision energy] rows 1-12", "value": "CID (MS:1000133); 35% NCE", "source_ids": ["pride", "raw_header"], "evidence": "Protocol: collision-induced dissociation in the linear ion trap; raw method 'Activation Type: CID', 'Normalized Coll. Energy: 35.0'"},
+    {"location": "comment[ms2 mass analyzer] rows 1-12", "value": "NT=linear ion trap;AC=MS:1000291", "source_ids": ["pride", "raw_header"], "evidence": "Protocol: fragmentation on the linear ion trap; raw method MS2 scan event 'ITMS + c'"},
+    {"location": "comment[ms1 scan range] rows 1-12", "value": "300m/z-2000m/z", "source_ids": ["pride", "raw_header"], "evidence": "Protocol: full-scan MS m/z 300 to 2,000; raw method 'FTMS + p norm o(300.0-2000.0)'"},
+    {"location": "comment[cleavage agent details] rows 1-12", "value": "NT=Trypsin;AC=MS:1001251", "source_ids": ["pride", "mq_params"], "evidence": "Protocol: digested with trypsin; MaxQuant Special AAs KR"},
+    {"location": "comment[reduction reagent], comment[alkylation reagent] rows 1-12", "value": "DTT (PRIDE:0000608); iodoacetamide (PRIDE:0000599)", "source_ids": ["pride"], "evidence": "Protocol: 10 mM dithiothreitol; 0.05 M iodoacetamide"},
+    {"location": "comment[modification parameters] (3 columns) rows 1-12", "value": "Carbamidomethyl C Fixed; Oxidation M Variable; Acetyl Protein N-term Variable", "source_ids": ["mq_params", "mq_tables"], "evidence": "parameters.txt 'Fixed modifications: Carbamidomethyl (C)', 'Modifications included in protein quantification: Acetyl (Protein N-term);Oxidation (M)', 'Site tables: Oxidation (M)Sites.txt'; peptides/proteinGroups have Oxidation (M) site IDs"},
+    {"location": "comment[fragment mass tolerance] rows 1-12", "value": "0.5 Da", "source_ids": ["mq_params", "raw_header"], "evidence": "parameters.txt 'MS/MS tol. (ITMS) 0.5 Da'; MS2 acquired in ion trap (ITMS)"},
+    {"location": "comment[precursor mass tolerance] rows 1-12", "value": "not available", "source_ids": ["mq_params", "pride"], "evidence": "Not recorded in MaxQuant 1.5 parameters.txt; protocol only says default settings"},
+    {"location": "comment[label] rows 1-12", "value": "label free sample", "source_ids": ["pride"], "evidence": "PRIDE quantificationMethods Label free; protocol LFQ"}
+  ],
+  "limitations": [
+    "Full text of the Anaerobe 2017 paper (PMID 28285095) not accessible; only abstract and PRIDE protocol text used",
+    "Dual-species rows use organism 'Bacteria' because build cannot emit a repeated characteristics[organism] column; species are given in growth condition",
+    "Strain identity for cultures inferred from the PRIDE organism fields and the type-strain search databases",
+    "Precursor mass tolerance not recorded in deposited search parameters",
+    "Acetyl (Protein N-term) variable modification read from the quantification-modifications line; no mqpar.xml/summary.txt deposited",
+    "Instrument run-header record not located by range read; model taken from the embedded method block",
+    "characteristics[growth condition] (EFO:0000523) is registered for the plants template and used here as an extra characteristic"
+  ]
+}

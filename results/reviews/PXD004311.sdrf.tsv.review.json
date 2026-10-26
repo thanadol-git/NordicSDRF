@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD004311.sdrf.tsv",
+  "artifact_sha256": "6b4f15b113da42ad8fcbd4eb24dfa111da3641d5e4f80cf8cd1f2c517d6dde69",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. All 28 label-free Orbitrap .raw files are mapped once each; per-run dose groups are corroborated by the deposited Progenesis export condition headers and the Skyline replicate names; instrument, acquisition, CID/35 NCE, ion-trap MS2 and scan range were re-read from two raw-file headers; all controlled terms resolve. Omission of the multi-sample SRM .wiff (QTRAP 5500) is a documented, defensible coverage gap rather than an error; it and four other observations are recorded as minor findings.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh-context subagent (bergen-reviewer-PXD004311) without the producer transcript or report.md; all evidence re-fetched into scratchpad/PXD004311/review-PXD004311/"
+  },
+  "evidence_manifest": "annotations/PXD004311.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates derived independently: organism Gadus morhua (non-human vertebrate) + MS proteomics -> ms-proteomics v1.1.0 + vertebrates v1.1.0 (both latest in templates.yaml; vertebrates extends sample-metadata, not mutually exclusive with ms-proteomics). All required columns present (source name, organism, organism part, biological replicate, disease, developmental stage, assay name, technology type, technical replicate, data file, acquisition method, instrument, cleavage agent, label, fraction identifier); 40 columns x 28 rows, uniform width; (source name, assay name, label) unique; reserved words lower-case; structured NT=/AC= and modification key=value syntax valid; sdrf-tools structure reports column order and template declaration consistent. characteristics[compound]/[dose] are TERMS.tsv (clinical-metadata) columns used as additional columns, dose in number+unit form."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS / sdrf-tools verify: NCBITaxon:8049 Gadus morhua; UBERON:0002107 liver; UBERON:0034919 juvenile stage (present in EFO, satisfies vertebrates efo validator); PRIDE:0000627 Data-dependent acquisition; MS:1003096 Orbitrap Velos Pro; MS:1001251 Trypsin; MS:1000133 collision-induced dissociation; MS:1000264 ion trap; UNIMOD:4 Carbamidomethyl, 35 Oxidation, 1 Acetyl, 28 Gln->pyro-Glu, 27 Glu->pyro-Glu, 26 Pyro-carbamidomethyl - all label matches, none obsolete. 'label free sample' is the spec-standard value for PRIDE:0000434 (OLS primary label 'Unlabeled sample'). methylmercury chloride = CHEBI:28216 (exact OLS hit). sdrf-tools check: 14/14 verified, 0 hallucinated, 0 label mismatches, 0 wrong ontology, 0 UNIMOD swaps."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project record (fresh, accession PXD004311 asserted): juvenile Atlantic cod, mixed gender, liver, vehicle/0.5/2 mg/kg BW methylmercury chloride i.p., sacrificed after 14 days, controls n=10, 0.5 mg/kg n=9, 2 mg/kg n=9, LTQ-Orbitrap Velos Pro, NCE 35%, trypsin, 10 ppm / 0.5 Da, carbamidomethyl C fixed, oxidation M variable. Paper PMC4974784 (Europe PMC full text; title matches, cites PXD004311) confirms the same and explains n=9 (one fish died in each of the 0.5 and 2 mg groups). Raw headers of OAK_K1.raw and OAK_2_9.raw (range reads): instrument 'Orbitrap Velos Pro', scan event 1 FTMS o(300.0-2000.0), event 2 ITMS Dep MS/MS most intense (top 7), Activation CID, NCE 35.0, acquired 2012-06 in folder 20120629_Labelfree. Deposited PeptideShaker export (83,568 PSM rows) modif strings: oxidation of m 2778, acetylation of protein n-term 452, pyro-glu from n-term q 452, pyro-cmc 349, pyro-glu from n-term e 12 - supporting the four extra variable modifications."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE /files list (35 files, all with projectAccessions containing PXD004311): 30 RAW-category files = 28 OAK_*.raw + SRM_MeHg.wiff + SRM_MeHg.wiff.scan. SDRF lists exactly the 28 OAK_*.raw, each once, no unmatched names, no peak lists. Assay name = file stem for every row. The SRM .wiff/.wiff.scan pair is not represented (see minor finding); this is disclosed in the evidence manifest limitations."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 10 control (0 mg/kg) + 9 x 0.5 mg/kg + 9 x 2 mg/kg = 28 individual fish, one liver digest and one injection each (technical replicate 1, fraction 1). Dose per run verified against the deposited Progenesis peptide export header (row 2 condition groups: 'Kontrol' over OAK_K1-K10, '2' over OAK_2_1-2_9, '0,5' over OAK_05_1-05_9, repeated for normalized/raw abundance and spectral counts) and independently corroborated by the Skyline SRM replicate names (K1-K10, 0.5-1..0.5-9, 2_1..2_9). characteristics[dose] = factor value[dose] on every row; biological replicate restarts per dose group per spec and equals the file-name fish index. Single factor (dose); compound co-varies with dose only through the control rows; no confounding batch/instrument column varies."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every non-reserved value traced to PRIDE, the paper, the Progenesis/PeptideShaker exports or raw headers. No per-sample demographics invented: sex and strain are 'not available' (cohort 'mixed gender'); developmental stage 'juvenile stage' follows an unambiguous cohort-wide statement (all fish juvenile, 260-530 g). Instrument specificity (Orbitrap Velos Pro over PRIDE's LTQ Orbitrap Velos) is supported by the raw header. Reduction/alkylation left 'not available' rather than guessed from the cited Berle et al. protocol. Material omissions reviewed: SRM sub-experiment (minor, disclosed), vehicle composition (minor), undeposited inclusion-list runs present in the PeptideShaker export (correctly excluded; manifest miscounts them)."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf -s annotations/PXD004311.sdrf.tsv -t ms-proteomics --use_ols_cache_only -> exit 0 'Everything seems to be fine. Well done.'; same with -t vertebrates -> exit 0, same message; sdrf-tools check -> exit 0, 14/14 verified, CLEAN; sdrf-tools score -> exit 0, 100/100; sdrf-tools structure -> exit 0, Structure OK; sdrf-tools reconcile --record <fresh PRIDE project.json> --accession PXD004311 -> exit 0, every annotated value agrees with the deposit record. No term needed live-OLS fallback for the validator."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "file_coverage",
+      "location": "file (comment[data file]); PRIDE RAW files SRM_MeHg.wiff and SRM_MeHg.wiff.scan",
+      "message": "The SRM validation sub-experiment (QTRAP 5500, one multi-sample .wiff with .wiff.scan sidecar) is not represented. Omission is acceptable for this label-free DDA SDRF: SDRF cannot address individual samples inside a multi-sample .wiff, the .wiff also contains non-study injections (e.g. 'Blank2'), the SRM preps carry spiked SIS heavy peptides and a different instrument/acquisition method, and the gap is disclosed. However, the manifest's justification is incomplete: the deposited SRM_Skyline_MeHg.xlsx ReplicateName values (K1-K10, 0.5-1..0.5-9, 2_1..2_9) do give a fish-level mapping for the 28 SRM replicates.",
+      "evidence": "PRIDE /files lists SRM_MeHg.wiff (222 MB) and SRM_MeHg.wiff.scan as RAW; PRIDE experimentTypes include SRM/MRM (PRIDE:0000311); wiff header shows 'Mass Spectrometer:QTRAP 5500', 'Samples20130821.wiff', 'Blank2'; Skyline xlsx has 28 non-empty ReplicateName values matching the 28 fish.",
+      "correction_criterion": "Optional: state in the report/manifest that the SRM data are intentionally out of scope (multi-sample wiff, not addressable per row) and correct the stated reason; or add a separate SRM SDRF (Selected reaction monitoring PRIDE:0000630, QTRAP 5500, comment[associated data file] = SRM_MeHg.wiff.scan, spiked compound for SIS peptides) only if the within-wiff sample identity can be cited."
+    },
+    {
+      "severity": "minor",
+      "category": "sample_metadata",
+      "location": "characteristics[compound], characteristics[dose], rows 1-10 (cod_liver_K1..K10)",
+      "message": "Control rows pair compound 'not applicable' with dose '0 mg/kg', so the zero dose has no stated compound, and the vehicle actually administered to controls (i.p. 20% acetone / 80% soybean oil, also the carrier for treated fish) is not captured anywhere.",
+      "evidence": "PRIDE sampleProcessingProtocol and paper Methods: 'The fish were injected (i.p.) with vehicle (control), 0.5 or 2 mg/kg body weight methylmercury chloride'.",
+      "correction_criterion": "Optional: either use 'methylmercury chloride' with '0 mg/kg' on control rows, or add characteristics[treatment] (e.g. vehicle control) so the control is self-describing."
+    },
+    {
+      "severity": "minor",
+      "category": "spec_guidance",
+      "location": "characteristics[disease], rows 1-28",
+      "message": "'not applicable' is permitted by the template, but SAMPLE-GUIDELINES designates 'normal' (PATO:0000461) as the term for samples without disease, and a disease state is applicable to whole fish. 'normal' is clearly defensible at least for vehicle controls; for MeHg-exposed fish (same groups suffered mortality) the conservative reserved value is acceptable.",
+      "evidence": "spec SAMPLE-GUIDELINES.adoc 'Healthy Samples: normal vs healthy vs control'; no disease studied in the paper.",
+      "correction_criterion": "Optional: consider 'normal' for control rows (or all rows) per spec guidance."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD004311.evidence.json limitations[3]",
+      "message": "Manifest says the PeptideShaker export contains PSMs from 6 undeposited inclusion-list runs; there are 7 distinct run names. Exclusion from the SDRF is correct; only the count is wrong.",
+      "evidence": "Spectrum titles in MeHg_Ensemble_MSGF_Xt_Amanda_PeptideShaker_Export.txt: OAK_EO_Incl_2_noDynExcl4, OAK_EO_Incl_8_noDynExcl5, OAK_EO_Incl_K_noDynExcl3, OAK_HGKontr_Incl, OAK_HG_Incl_2_noDynExcl2, OAK_HG_Incl_K_noDynExcl1 (6 'noDynExcl' runs plus OAK_HGKontr_Incl); none in PRIDE file list.",
+      "correction_criterion": "Correct the count to 7 in the manifest."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD004311.evidence.json claim for comment[modification parameters]",
+      "message": "The four extra variable modifications (protein N-term acetyl, Gln/Glu->pyro-Glu, pyro-carbamidomethyl) are X!Tandem refinement/default modifications evidenced only by the PeptideShaker output; Methods and PRIDE list only Carbamidomethyl C fixed and Oxidation M variable. Including them is supported by deposited search output, but the claim would be clearer if it noted they apply to the X!Tandem engine rather than to all three engines.",
+      "evidence": "PeptideShaker export modif counts: acetylation of protein n-term 452, pyro-glu from n-term q 452, pyro-cmc 349, pyro-glu from n-term e 12; PRIDE dataProcessingProtocol lists only carbamidomethyl Cys fixed and oxidation of Met variable.",
+      "correction_criterion": "Optional: annotate the manifest claim with the engine scope; no SDRF change required."
+    }
+  ]
+}

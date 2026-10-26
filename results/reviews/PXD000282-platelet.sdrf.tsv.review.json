@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD000282-platelet.sdrf.tsv",
+  "artifact_sha256": "6454d5fdb82235e19aabbe383030c2acfee314e69b4fe819892601e2043558f3",
+  "verdict": "PASS",
+  "summary": "Independent fresh-context review of the 48-row PXD000282 platelet SDRF (Epac1-/- vs wild-type mouse platelets, SDS-PAGE fractionated, label-free DDA on Orbitrap Velos Pro). Both declared templates validate (ms-proteomics clean; vertebrates only a free-text strain warning), all 14 controlled terms resolve live in OLS, every deposited RAW file is claimed exactly once across the platelet and plasma SDRFs, and acquisition parameters match the RAW headers. Per-file genotype rests on the depositor's deposition-time file names (P_WT_n / P_KO_n), which are not contradicted by any deposited source. Fraction numbering follows file number, and the interleaved acquisition order supports pairing fraction n across genotypes. Only minor findings remain: 24 deposited runs per genotype versus 23 published bands, the genotype provenance relying on a deposition rename, a strain with no ontology term, and an undocumented re-injection.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent context without producer transcript; producer report.md not read; sources re-fetched into scratchpad/PXD000282/review-PXD000282-platelet/"
+  },
+  "evidence_manifest": "annotations/PXD000282-platelet.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates derived independently: ms-proteomics 1.1.0 + vertebrates 1.1.0 (with inherited sample-metadata 1.0.0 and base 1.1.0); matches the two comment[sdrf template] columns. All required columns present (organism, organism part, biological replicate, disease, developmental stage, technology type, technical replicate, data file, acquisition method, instrument, cleavage agent, label, fraction identifier). 34 columns, 48 rows, uniform width, no empty cells, no trailing whitespace, assay names unique, source+assay unique. Collision energy '35% NCE', ms1 scan range '300m/z-2000m/z' and tolerances pass their patterns. sdrf-tools structure: 'Structure OK'."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4 lookups (none obsolete, labels exact): MS:1003096 Orbitrap Velos Pro, MS:1001251 Trypsin, MS:1000133 collision-induced dissociation, MS:1000083 radial ejection linear ion trap, MS:1002038 label free sample, PRIDE:0000627 Data-dependent acquisition, PRIDE:0000568 SDS PAGE, NCBITaxon:10090 Mus musculus, UBERON:0000178 blood, CL:0000233 platelet, PATO:0000461 normal, UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, UNIMOD:1 Acetyl. sdrf-tools check: 12/12 verified, 0 hallucinated. Strain 'C57BL/6JBomTac' is free text per TERMS.tsv (GENO:0000112, free text) and has no NCBITaxon/EFO term (live OLS exact search empty); see minor finding."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Re-fetched PRIDE project (title/accession PXD000282 asserted), PRIDE file list (all 83 entries projectAccessions == [PXD000282]), Europe PMC PMC5562764 full text (title 'Epac1-deficient mice have bleeding phenotype...', cites PXD000282), Springer ESM xls (S4/S5), PRIDE XML 29636/29637 (full) and generated mzTab, and 64 KB headers of all 48 P_*.raw files. RAW headers: instrument 'Orbitrap Velos Pro', method TOP7_..._CE35, 'FTMS + p norm o(300.0-2000.0)', ITMS CID NCE 35.0, top 7. Paper/PRIDE: Epac1-/- on C57BL/6JBomTac (>=10 generations backcross), WT littermates and Taconic mice; mice 'healthy'; gel-filtered platelets from cardiac blood; 10% SDS-PAGE, in-gel trypsin; MaxQuant 1.3.05. S5: Cys carbamidomethyl fixed, Met oxidation and protein N-term acetyl variable, main search 6 ppm. PRIDE XML 29636 is 'Wild-type mice' (Scaffold folder 'Mouse platelets wild type', E1) and 29637 is 'EPAC knockout mice' (E2). S4 Gp1bb Intensity E1 7048600 / E2 919540 equals paper Table 2 WT/Epac1-/-, so E1 = WT. Sex and developmental stage are not stated for the proteomics donors, so 'not available' is correct."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "48 rows map 1:1 to the 48 deposited P_WT_1..24.raw and P_KO_1..24.raw; the sibling plasma SDRF claims the other 23 RAW files; the union equals all 71 PRIDE RAW files with no duplicates, missing or extra entries. Genotype per file follows the deposited WT/KO tokens. RAW headers show these were renamed at deposition: deposited P_WT_n was acquired as P_KO_n and deposited P_KO_n as P_KO_1nn (P_KO_3 as P_KO_103ny), all in folder 20120625_Platelets_KO. The acquisition names do not encode genotype ('KO' is the project folder), so they do not contradict the deposited labels. PRIDE XML, mzTab and S4 carry no per-run reference, so no deposited source contradicts or independently confirms the per-file genotype."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "2 sources (WT_platelets, Epac1KO_platelets), 1 biological replicate each, 24 fraction rows each, technical replicate 1, fraction identifier == file number for all 48 rows, factor value[genotype] == characteristics[genotype]. Acquisition timestamps (25-29 June 2012) strictly alternate P_WT_n then P_KO_n for every n, which supports pairing fraction n across genotypes; the re-injected P_KO_3 (P_KO_103ny) replaces the missing slot-3 run. S4 slice numbering (Slice 201-223 / 301-323) anti-correlates with protein molecular weight (Spearman about -0.67 / -0.61), consistent with gel-order numbering. Unresolved: 24 runs per genotype versus 23 published bands and 46 MaxQuant runs; see minor finding."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value traced to a source. Conservative 'not available' used for sex, developmental stage and fragment mass tolerance (S5 says only 'MaxQuant default settings'). No pooling, age, or per-mouse identity asserted. Biological replicate count of 1 per genotype matches the single gel lane per genotype. The PRIDE 'LTQ Orbitrap' instrument was correctly overridden by RAW-header evidence. No value is stated more specifically than the evidence supports: fraction n is the depositor's own run index, paired across genotypes by interleaved acquisition, and the 24 vs 23 discrepancy is disclosed in the manifest limitations."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics --use_ols_cache_only: exit 0, 'Everything seems to be fine'. parse_sdrf validate-sdrf -t vertebrates --use_ols_cache_only: exit 0, one WARNING (C57BL/6JBomTac not in ncbitaxon; confirmed absent in live OLS; free-text column). sdrf-tools check: exit 0, CLEAN 12/12. sdrf-tools score: 100/100. sdrf-tools structure: OK. sdrf-tools reconcile --record (fresh PRIDE project JSON): 'every annotated value agrees with the deposit record'."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "comment[fraction identifier], all 48 rows",
+      "message": "Each genotype has 24 deposited runs numbered as fractions 1-24, but the paper and the PRIDE protocol say the gel was cut into 23 bands, and MaxQuant used 23 slices per group (S4 'Slice 201-223' and 'Slice 301-323'; Scaffold source 'P_KO_1 and 45 more' = 46 runs). Which run per genotype was left out, or why 24 exist, cannot be determined from deposited evidence.",
+      "evidence": "Paper Methods: 'sliced crosswise into 23 bands'; S4 column headers; PRIDE XML nameOfFile 'E1/E2 from FrodeSelheim_ P_KO_1 and 45 more.mzid'. All 48 files are full-size 80-min runs (380-557 MB), and acquisition strictly interleaves P_WT_n/P_KO_n, so the 1:1 fraction=file-number index is the best deposited mapping. Correction criterion: keep as is unless an author or source identifies the unused run; the manifest limitation already records this."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "characteristics[genotype], factor value[genotype], source name, all rows",
+      "message": "Per-file wild type vs Epac1-/- assignment rests only on the deposition-time file names. The original acquisition names (P_KO_1..24 and P_KO_101..124) do not encode genotype, and no deposited result file links runs to E1 (WT) or E2 (KO).",
+      "evidence": "RAW headers for all 48 files; PRIDE XML 29636/29637 spectra and mzTab have no per-run references; S4 gives only E1/E2 totals and anonymous slice counts. The depositor's renaming (P_KO_n to P_WT_n, P_KO_1nn to P_KO_n) is an explicit deposited per-file label and nothing contradicts it. Correction criterion: none required; keep the existing manifest limitation."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[strain or breed], all rows",
+      "message": "'C57BL/6JBomTac' has no NCBITaxon or EFO term, which triggers a parse_sdrf vertebrates warning.",
+      "evidence": "Live OLS exact search for C57BL/6JBomTac returns nothing; the closest terms are EFO:0000606 C57BL/6J and EFO:0022397 C57BL/6. TERMS.tsv defines strain or breed as free text, and the value is verbatim from the paper's Methods. Correction criterion: optional; keep the exact substrain or note the warning."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "row 27 (P_KO_3.raw); evidence manifest",
+      "message": "Deposited P_KO_3.raw is a re-injection (original name P_KO_103ny.raw, acquired 2012-06-26 20:31, after band 8) that fills the missing slot-3 run. The manifest does not mention this.",
+      "evidence": "RAW header path C:\\Xcalibur\\Data\\FrodeS\\20120625_Platelets_KO\\P_KO_103ny.raw; there is a gap in the interleaved sequence between P_WT_3 (00:49) and P_WT_4 (04:06). No original P_KO_103 was deposited, so technical replicate 1 and fraction 3 remain correct. Correction criterion: optionally add to the manifest limitations or to comment[acquisition date]."
+    }
+  ]
+}

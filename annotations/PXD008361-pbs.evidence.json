@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD008361-pbs.sdrf.tsv",
+  "dataset": "PXD008361",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD008361"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD008361/files?pageSize=1000 (45 files: 43 RAW + 2 MaxQuant SEARCH zips; every entry's projectAccessions contains PXD008361)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC5796241 (PMID 29351208, doi:10.3390/ijms19010296), Europe PMC fullTextXML, open access; Methods 4.1-4.4 read in full"
+    },
+    {
+      "id": "supplement",
+      "kind": "publication",
+      "location": "Europe PMC supplementaryFiles for PMC5796241 -> ijms-19-00296-s001.zip -> 'Figures and Tables.pdf' (Table S1 patient samples; Figure S1/S2 captions on QC pools)"
+    },
+    {
+      "id": "upstream",
+      "kind": "repository",
+      "location": "gh api repos/bigbio/sdrf-annotated-datasets/contents/{datasets,sandbox}/PXD008361 -> 404 both"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api"
+    },
+    {
+      "id": "search_summary",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/01/PXD008361/MaxQuant-results_PBS.txt.zip -> MaxQuant-results_PBS.txt/summary.txt (read from the ZIP via HTTP range requests)"
+    },
+    {
+      "id": "search_params",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/01/PXD008361/MaxQuant-results_PBS.txt.zip -> MaxQuant-results_PBS.txt/parameters.txt"
+    },
+    {
+      "id": "raw_headers",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/01/PXD008361/{PBS_P1_0xPBS,PBS_QC1}.raw (first 3 MB via HTTP range request: instrument method text, tune file, scan settings)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] / assay name, rows 1-19",
+      "value": "19 PBS_*.raw files",
+      "source_ids": [
+        "pride_files",
+        "search_summary"
+      ],
+      "evidence": "All 19 PBS_* raw files in the PRIDE file list; the same 19 runs are the only raw files in the PBS MaxQuant summary.txt (experiments P1-P6 x 0x/1x/2xPBS and QC1-3)"
+    },
+    {
+      "location": "characteristics[individual] rows 1-16",
+      "value": "P1-P6",
+      "source_ids": [
+        "search_summary",
+        "supplement",
+        "paper"
+      ],
+      "evidence": "Run names PBS_P<n>_<k>xPBS; Table S1 lists patients P1-P6; paper 4.1 'Six patient samples'"
+    },
+    {
+      "location": "characteristics[treatment] and factor value[treatment] rows 1-16",
+      "value": "no PBS wash / 1 PBS wash / 2 PBS washes",
+      "source_ids": [
+        "search_summary",
+        "supplement",
+        "paper"
+      ],
+      "evidence": "Run-name tokens 0xPBS / 1xPBS / 2xPBS; paper 4.1 'unwashed or subjected to one or two PBS washes'; Table S1 shows no 2nd wash for P1 and P4, matching the absent PBS_P1_2xPBS / PBS_P4_2xPBS files. No NCIT/EFO term exists for a PBS wash count (OLS searched), so the values are free text"
+    },
+    {
+      "location": "characteristics[treatment] and factor value[treatment] rows 17-19 (QC)",
+      "value": "not applicable",
+      "source_ids": [
+        "pride",
+        "supplement"
+      ],
+      "evidence": "The QC pool mixes aliquots of all three wash levels, so no single treatment applies"
+    },
+    {
+      "location": "characteristics[biological replicate] rows 1-16",
+      "value": "patient number (P1=1 ... P6=6)",
+      "source_ids": [
+        "search_summary",
+        "supplement"
+      ],
+      "evidence": "Each wash group holds independent patient samples; numbering by patient keeps the pairing across washes"
+    },
+    {
+      "location": "sample context, all patient rows",
+      "value": "(no column) cryopreserved primary cells",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Paper 4.1 / PRIDE protocol: patient cells were stored in liquid nitrogen in 10% DMSO / 20% FBS before thawing and the wash experiment; constant across rows, so not encoded as a column"
+    },
+    {
+      "location": "QC rows 17-19 (source 'AML patient QC pool')",
+      "value": "pooled; individual pooled; biological replicate pooled; technical replicate 1-3",
+      "source_ids": [
+        "pride",
+        "supplement"
+      ],
+      "evidence": "PRIDE: 'A pool containing equal amounts of all the samples was used as QC and analyzed three times'; Figure S1 caption: 'QC1-3 are pools of P1-P6 samples'"
+    },
+    {
+      "location": "characteristics[disease] all rows",
+      "value": "acute myeloid leukemia",
+      "source_ids": [
+        "paper",
+        "pride",
+        "ols"
+      ],
+      "evidence": "Paper 4.1: AML patient samples from the AML biobank; MONDO:0018874. PRIDE dropdown says 'acute leukemia' (DOID:12603), the paper is more specific. No healthy-control arm exists"
+    },
+    {
+      "location": "characteristics[organism part], [cell type] all rows",
+      "value": "blood; peripheral blood mononuclear cell",
+      "source_ids": [
+        "paper",
+        "ols"
+      ],
+      "evidence": "Paper 4.1: patients with high peripheral blood blast counts; density-gradient (Lymphoprep) separated circulating mononuclear cells, >=95% leukemic blasts; UBERON:0000178, CL:2000001"
+    },
+    {
+      "location": "characteristics[organism] all rows",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organisms NEWT:9606; AML patients; human Swiss-Prot FASTA in parameters.txt"
+    },
+    {
+      "location": "characteristics[age], [sex] all rows",
+      "value": "not available",
+      "source_ids": [
+        "paper",
+        "supplement"
+      ],
+      "evidence": "Neither the paper nor Table S1 gives per-patient age or sex"
+    },
+    {
+      "location": "comment[instrument] all rows",
+      "value": "NT=Q Exactive HF;AC=MS:1002523",
+      "source_ids": [
+        "raw_headers",
+        "paper",
+        "ols"
+      ],
+      "evidence": "Raw header 'Method of Q Exactive HF', 'Q Exactive HF - Orbitrap MS', folder '2017-04-30_QExactiveHF_3h_PBS-wash-test'; paper 4.4. PRIDE dropdown says 'Q Exactive' (less specific)"
+    },
+    {
+      "location": "comment[dissociation method], [collision energy], [ms2 mass analyzer], [ms1 scan range]",
+      "value": "HCD (MS:1000422); 28 NCE; orbitrap (MS:1000484); 375m/z-1500m/z",
+      "source_ids": [
+        "raw_headers"
+      ],
+      "evidence": "Method 'Sensitive_TOP12HCD_120K-30K...'; 'NCE / stepped NCE 28'; full MS scan range 375 to 1500 m/z at 120,000, dd-MS2 at 30,000 (Orbitrap)"
+    },
+    {
+      "location": "comment[fragment mass tolerance] all rows",
+      "value": "20 ppm",
+      "source_ids": [
+        "search_params"
+      ],
+      "evidence": "parameters.txt 'MS/MS tol. (FTMS) 20 ppm'; MS2 was acquired in the Orbitrap"
+    },
+    {
+      "location": "comment[cleavage agent details] all rows",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": [
+        "search_summary",
+        "pride",
+        "paper"
+      ],
+      "evidence": "summary.txt Enzyme=Trypsin, mode Specific for every raw file; PRIDE data processing protocol 'Trypsin was set as protease'; paper 4.4 'Trypsin was used as digestion protease'"
+    },
+    {
+      "location": "comment[modification parameters] all rows (3 columns)",
+      "value": "Carbamidomethyl (UNIMOD:4, C, Fixed); Oxidation (UNIMOD:35, M, Variable); Acetyl (UNIMOD:1, Protein N-term, Variable)",
+      "source_ids": [
+        "search_params",
+        "search_summary",
+        "paper"
+      ],
+      "evidence": "parameters.txt 'Fixed modifications: Carbamidomethyl (C)'; summary.txt 'Variable modifications: Oxidation (M);Acetyl (Protein N-term)' for every raw file; matches paper section 4.4"
+    },
+    {
+      "location": "comment[proteomics data acquisition method] all rows",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "raw_headers",
+        "pride"
+      ],
+      "evidence": "Raw-file method names TOP12CID / TOP12HCD (top-12 data-dependent MS/MS); PRIDE experiment type Shotgun proteomics"
+    },
+    {
+      "location": "comment[label] all rows",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "paper",
+        "search_summary"
+      ],
+      "evidence": "PRIDE quantification 'MS1 intensity based label-free quantification'; paper 4.4 LFQ mode; summary.txt multiplicity 1, no labels"
+    }
+  ],
+  "limitations": [
+    "Age, sex and ancestry of the six patients are not reported (age/sex = not available; ancestry omitted).",
+    "Cell type 'peripheral blood mononuclear cell' describes the density-gradient fraction (>=95% leukemic blasts); no CL term for leukemic blast was used.",
+    "QC pool encoded as one pooled source with technical replicates 1-3.",
+    "Instrument/acquisition settings read from 2 of 19 raw headers; the rest assumed identical (same folder and search).",
+    "Precursor mass tolerance omitted: MaxQuant 1.5 parameters.txt does not report it and no mqpar.xml was deposited.",
+    "characteristics[treatment] values are free text (no NCIT/EFO term for a PBS wash count); the validator reports 3 ontology warnings.",
+    "QC age/sex stay not available: the installed validator rejects pooled for age and sex (tested).",
+    "QC pooled sample stays pooled: an SN= list of the 16 source names raised a values warning (tested); the pool composition is documented here instead."
+  ]
+}

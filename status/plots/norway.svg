@@ -27,7 +27,7 @@
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
 <text class="title" x="12" y="22">Norway — in progress</text>
-<text class="sub" x="12" y="40">351 datasets listed · 178 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<text class="sub" x="12" y="40">351 datasets listed · 198 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
 <rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
@@ -41,12 +41,14 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="453" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="470" y="62">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="88.0">Bergen</text>
-<rect class="c-blocked" fill="#d95926" x="110.0" y="74" width="17.0" height="20" rx="2"><title>Bergen · Blocked: 2</title></rect>
-<text class="seg" x="118.5" y="88.0" text-anchor="middle">2</text>
-<rect class="c-in_corpus" fill="#199e70" x="128.0" y="74" width="147.2" height="20" rx="2"><title>Bergen · In corpus: 28</title></rect>
-<text class="seg" x="201.6" y="88.0" text-anchor="middle">28</text>
-<rect class="c-todo" fill="#8a8983" x="276.2" y="74" width="364.3" height="20" rx="2"><title>Bergen · To do: 69</title></rect>
-<text class="seg" x="458.4" y="88.0" text-anchor="middle">69</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="74" width="104.9" height="20" rx="2"><title>Bergen · Annotated: 20</title></rect>
+<text class="seg" x="162.4" y="88.0" text-anchor="middle">20</text>
+<rect class="c-blocked" fill="#d95926" x="215.9" y="74" width="17.0" height="20" rx="2"><title>Bergen · Blocked: 2</title></rect>
+<text class="seg" x="224.4" y="88.0" text-anchor="middle">2</text>
+<rect class="c-in_corpus" fill="#199e70" x="233.9" y="74" width="147.2" height="20" rx="2"><title>Bergen · In corpus: 28</title></rect>
+<text class="seg" x="307.5" y="88.0" text-anchor="middle">28</text>
+<rect class="c-todo" fill="#8a8983" x="382.1" y="74" width="258.4" height="20" rx="2"><title>Bergen · To do: 49</title></rect>
+<text class="seg" x="511.3" y="88.0" text-anchor="middle">49</text>
 <text class="total" x="647.5" y="88.0">99 listed</text>
 <text class="city" x="12" y="118.0">Oslo</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="581.4" height="20" rx="2"><title>Oslo · Annotated: 110</title></rect>

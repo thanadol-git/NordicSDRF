@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD008361-storage.sdrf.tsv",
+  "artifact_sha256": "164aa398a15afe45e174ec90823704d13f90c1488fc245a5f836fa979bfc343c",
+  "verdict": "PASS",
+  "summary": "Independent review of the storage-condition arm (THP-1 / MOLM-13, Orbitrap Elite) of PXD008361 found no blocker or important issue. All 24 RW_* raw files map one-to-one; together with the sibling PXD008361-pbs SDRF (19 PBS_* files) every one of the 43 deposited RAW files is claimed exactly once. Per-run storage method, cell line, instrument and search settings were re-derived from fresh PRIDE, MaxQuant summary/parameters, raw headers, paper PMC5796241 and Cellosaurus. Only minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh-context adversarial reviewer subagent (bergen-reviewer-PXD008361-storage); no producer transcript or report.md read; all sources re-fetched into scratchpad/PXD008361/review-PXD008361-storage/"
+  },
+  "evidence_manifest": "annotations/PXD008361-storage.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "38 columns, 24 rows, uniform row width; declared templates ms-proteomics v1.1.0 + human v1.1.0 + cell-lines v1.1.0 are the correct combination (cell-lines requires a technology and a sample layer; human cell lines). Required cell-lines columns (cell line, cellosaurus accession, disease) present; reserved words lowercase; biological replicate integer/pooled; technical replicate integer; assay name == data-file stem for every row; factor value[sample storage] mirrors characteristics[sample storage] and sits after all comment columns; characteristics[sample storage] is a TERMS.tsv term (PRIDE:0000730 'storage conditions', free text) so the extra column satisfies the 'column names MUST be ontology terms' rule. sdrf-tools structure: OK."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4 resolution, none obsolete, labels match: MONDO:0007896 acute monocytic leukemia; MONDO:0000875 adult acute monocytic leukemia; UBERON:0000178 blood; HANCESTRO:0019 Japanese; MS:1001910 Orbitrap Elite; MS:1000133 collision-induced dissociation; MS:1000291 linear ion trap; MS:1001251 Trypsin; PRIDE:0000627 Data-dependent acquisition; PRIDE:0000730 storage conditions. UNIMOD:4/35/1 verified by sdrf-tools check (14/14 terms verified, 0 hallucinated, 0 label mismatch, 0 UNIMOD swaps). Cellosaurus CVCL_0006 = THP-1 and CVCL_2119 = MOLM-13 confirmed via api.cellosaurus.org."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Cellosaurus: THP-1 male, AG 1Y, Population Japanese, peripheral blood, NCIt C9163 childhood acute monocytic leukemia; MOLM-13 male, AG 20Y, Japanese, peripheral blood, NCIt C8263 adult acute monocytic leukemia -> characteristics match. Paper 4.2 and PRIDE sample protocol: cells split into three aliquots: (a) lysed in 4% SDS, 95 C, stored at -80 C; (b) RPMI + 20% FBS + 10% DMSO, -80 C 24-48 h then liquid nitrogen; (c) dried pellet in liquid nitrogen -> the three sample-storage strings are faithful. Fresh MaxQuant-results_StorageConditions.txt.zip summary.txt (range-read): 24 raw files, experiment names = raw names minus 'RW_', Enzyme Trypsin, variable Oxidation (M);Acetyl (Protein N-term), multiplicity 1; parameters.txt: MaxQuant 1.5.5.1, fixed Carbamidomethyl (C), MS/MS tol. (ITMS) 0.6 Da, MBR True. Raw header of RW_MOLM13_PELLET-2 (not one of the producer's sampled files): 'Orbitrap Elite MS', tune Elite_nano, folder 2017-03-30_OrbitrapElite_Freezing-effect, FTMS o(300.0-2000.0), ITMS Dep MS/MS, Activation Type CID, Normalized Coll. Energy 35.0, method 05b_TOP12CID -> instrument, DDA, CID, 35 NCE, linear ion trap, 300-2000 m/z all confirmed. Paper 4.4 states THP-1/Molm-13 run on Orbitrap Elite."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE /files (45 entries, every projectAccessions contains PXD008361): 43 RAW + 2 SEARCH zips. This SDRF lists the 24 RW_* files; sibling PXD008361-pbs lists the 19 PBS_* files; union = all 43 RAW, 0 duplicates, 0 missing, 0 extras, no non-raw files. Per-run storage method follows the DMSO/PELLET/SDS token in the run name and the identical MaxQuant experiment name; QC-THP1-1..3 / QC-MOLM13-1..3 map to the per-cell-line QC pools (Figure S2: 'QC samples are a pool of the replicates for each of the cell line samples')."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 2 cell lines x 3 storage methods x 3 replicates = 18 runs (biological replicate 1-3 restarting per cell-line x storage group) + 2 cell-line QC pools x 3 injections (biological replicate 'pooled', technical replicate 1-3, one source name per pool) = 24. No fractions (fraction identifier 1), label free, one instrument. Factor = sample storage with 3 levels + 'pooled' for QC. The -1/-2/-3 suffixes were checked against Figure S2 ('triplicates of each preservation method') and paper 4.4 (paired t-tests across methods); see minor finding on the biological-vs-technical nature."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every populated value traced to Cellosaurus, PRIDE, paper, MaxQuant output or raw headers; no value is more specific than its source (THP-1 disease is, if anything, less specific than Cellosaurus). Precursor tolerance correctly omitted (not in MaxQuant 1.5 parameters.txt, no mqpar.xml deposited). The only inferential value (biological nature of triplicates) is disclosed in the manifest limitations and is forced by the spec (biological replicate does not allow 'not available'). Recommended columns left out (cell type, developmental stage, culture medium, sample storage temperature, passage number) are omissions, not unsupported additions."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf --use_ols_cache_only, run once per declared template: -t ms-proteomics exit 0, -t human exit 0, -t cell-lines exit 0 ('Everything seems to be fine'). sdrf-tools check: CLEAN 14/14. sdrf-tools score: 97/100 (completeness 90: missing recommended precursor mass tolerance, cell type, developmental stage). sdrf-tools structure: OK. sdrf-tools reconcile --record <fresh PRIDE json> exit 1 with 3 heuristic flags, each adjudicated as false positive: (1) disease_on_control_runs - the tool treats 'DMSO' in RW_*_DMSO-* as a vehicle-control arm, but here DMSO is a cryopreservation medium and the cell line's donor disease is intrinsic; (2) cleavage_agent_unsupported - PRIDE data-processing protocol says 'Trypsin was set as protease' and paper 4.4 'Trypsin was used as digestion protease', summary.txt Enzyme Trypsin; (3) instrument_contradicted - 'Q Exactive HF' in the shared PRIDE protocol belongs to the PBS arm; this arm's raw headers and paper 4.4 say Orbitrap Elite. sdrf-tools verify is accession-oriented and not applicable to a file; ontology resolution was done directly in OLS4 instead."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "design_consistency",
+      "location": "characteristics[biological replicate] rows 2-10 and 17-25 (all non-QC rows)",
+      "message": "Recording the -1/-2/-3 triplicates as biological replicates is an inference, not a stated fact. Methods 4.2 describe a single split into three aliquots (one per storage method) and the supplement only says 'triplicates'/'replicates', without saying whether they are independent cultures/splits or repeated preparations of one aliquot.",
+      "evidence": "The encoding is acceptable rather than over-specific because (a) characteristics[biological replicate] does not allow 'not available' (TERMS.tsv allow_not_available=false), so an integer must be chosen; (b) the authors analysed the triplicates with paired t-tests across preservation methods, which only makes sense if replicate k is a matched split of cells into the three arms; (c) the producer discloses the inference in the manifest limitations. Correction criterion: if the authors or a later source state that the triplicates are repeated FASP preparations of a single preserved aliquot, re-encode as biological replicate 1 with technical replicate 1-3."
+    },
+    {
+      "severity": "minor",
+      "category": "spec_compliance",
+      "location": "characteristics[sample storage] and factor value[sample storage], QC rows 11-16",
+      "message": "QC pools carry the reserved word 'pooled' in characteristics[sample storage], although TERMS.tsv marks sample storage allow_pooled=false.",
+      "evidence": "TERMS.tsv row 'sample storage ... true true false'. The README general rule allows 'pooled' when a pooled sample cannot take a single value, and the validators do not check this column, so this is cosmetic. Possible alternative: 'not applicable', or keep 'pooled' and accept the TERMS mismatch."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "characteristics[pooled sample], QC rows 11-16",
+      "message": "The members of each QC pool are known (the nine storage-arm samples of the same cell line, per Figure S2), so the SN=source1;SN=source2;... form would be more informative than plain 'pooled'.",
+      "evidence": "README 'Pooled samples': 'pooled: Sample is pooled but individual sources are unknown; SN=...: Lists source names of pooled samples when known'. PRIDE says 'a pool containing equal amounts of all the samples', while Figure S2 says it is per cell line, so the exact membership is slightly ambiguous; that is why this stays minor."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "file (cell-lines recommended columns)",
+      "message": "Recommended cell-lines columns are absent: characteristics[sample storage temperature] (-80 °C is documented for the SDS arm; the liquid-nitrogen arms could use 'not available'), characteristics[culture medium] (paper 4.2: in-house RPMI-based medium with 10% FCS and adjusted metabolites, so the manifest's statement that the medium is 'not stated' is inaccurate) and characteristics[passage number].",
+      "evidence": "cell-lines.yaml marks sample storage temperature, culture medium and passage number as recommended. They are not required, so approval is not blocked."
+    }
+  ]
+}

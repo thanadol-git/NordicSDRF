@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD003338.sdrf.tsv",
+  "dataset": "PXD003338",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003338"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003338/files?pageSize=1000"
+    },
+    {
+      "id": "result_table",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/08/PXD003338/all_protein_identifications.xlsx"
+    },
+    {
+      "id": "raw_headers",
+      "kind": "repository",
+      "location": "First 128 KiB (HTTP range request) of each https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/08/PXD003338/m0*.raw (Thermo sequence-row sample ID, vial, creation time, instrument, method name)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Loo LSW, Vethe H, et al. Stem Cells 2020;38(4):542-555. doi:10.1002/stem.3135; PMID 31828876; PMC7289403 (author manuscript text via NCBI BioC PMC OA API)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://api.cellosaurus.org/cell-line/CVCL_2G48 (AG16102) and search hi:CVCL_2G48"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/search (CL, PATO, HANCESTRO, UBERON, PRIDE, MS, UNIMOD)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file], comment[technical replicate], comment[fraction identifier] all rows",
+      "value": "m03490-m03501 = technical replicate 1, fractions 1-12; m03503-m03514 = technical replicate 2, fractions 1-12; m03545 = technical replicate 3, fraction 10",
+      "source_ids": [
+        "raw_headers",
+        "paper"
+      ],
+      "evidence": "Raw-file sample IDs hv_0016_T1..hv_0027_T1 and hv_0028_T2..hv_0039_T2, acquired consecutively 2014-11-22 to 2014-11-26 on one instrument with one method; paper: one TMT10-plex fractionated into 12 fractions, ~5 ug per fraction dissolved and ~1 ug loaded per analysis. Fraction order inferred from sequential sample IDs/acquisition order; T1/T2 read as two injection series of the same 12 fractions (inference). m03545.raw: RAW sample ID hv_0037_T2 (same as m03512.raw, T2 fraction 10), same SPS-MS3 method, full size (421 MB), acquired 2014-11-29 from vial A8 -> re-injection of T2 fraction 10, coded as technical replicate 3, fraction 10 (fraction set by documented post-processing script). Whether m03545 replaced m03512 in the published search is unknown."
+    },
+    {
+      "location": "comment[label] + source name all rows",
+      "value": "Day 0 = TMT126/TMT127N/TMT127C; Day 5 = TMT128N/TMT128C; Day 12 = TMT129N/TMT129C; Day 17 = TMT130N/TMT130C/TMT131",
+      "source_ids": [
+        "result_table",
+        "paper"
+      ],
+      "evidence": "Ratio column headers of deposited all_protein_identifications.xlsx (sheet t1_and_t2_all_search_engines_pr): 'Day 0 TMT 126', 'Day 0 TMT 127C', 'Day 0 TMT 127N', 'Day 5 TMT 128C', 'Day 5 TMT 128N', 'Day 12 TMT 129C', 'Day 12 TMT 129N', 'Day 17 TMT 130C', 'Day 17 TMT 130N', 'Day 17 TMT 131'; paper: triplicates day 0 and 17, duplicates day 5 and 12."
+    },
+    {
+      "location": "characteristics[biological replicate] all rows",
+      "value": "1-3 (day 0, 17), 1-2 (day 5, 12)",
+      "source_ids": [
+        "paper",
+        "result_table"
+      ],
+      "evidence": "Paper reports replicate cultures per time point; numbering within a time point follows channel order (126<127N<127C etc.) and is arbitrary."
+    },
+    {
+      "location": "characteristics[sampling time], factor value[sampling time] all rows",
+      "value": "0 day / 5 day / 12 day / 17 day",
+      "source_ids": [
+        "paper",
+        "result_table"
+      ],
+      "evidence": "Figure 1 legend: cells harvested at day 0 (hiPSC), day 5 (definitive endoderm), day 12 (foregut endoderm), day 17 (pancreatic progenitors)."
+    },
+    {
+      "location": "characteristics[cell type] all rows",
+      "value": "pluripotent stem cell (day 0); endodermal cell (days 5, 12, 17)",
+      "source_ids": [
+        "paper",
+        "ols"
+      ],
+      "evidence": "Stage names from Figure 1 legend; CL:0002248 and CL:0000223 verified in OLS. CL has no exact definitive-endoderm/foregut-endoderm/pancreatic-progenitor cell term, so the broader endodermal cell is used for days 5-17 (inference)."
+    },
+    {
+      "location": "characteristics[organism] all rows",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "PRIDE organism NEWT:9606; paper: human iPSCs; Cellosaurus OX 9606."
+    },
+    {
+      "location": "characteristics[individual], characteristics[cell line] all rows",
+      "value": "AG16102 / AG16102-derived hiPSC",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Paper: Coriell control fibroblasts AG16102 reprogrammed in-house into hiPSCs (two independent lines, Teo and Kulkarni labs); the line used for proteomics is not named, so a descriptive cell-line label is used."
+    },
+    {
+      "location": "characteristics[cellosaurus accession], characteristics[cellosaurus name] all rows",
+      "value": "not available",
+      "source_ids": [
+        "cellosaurus",
+        "paper"
+      ],
+      "evidence": "Cellosaurus lists only Coriell AG28269 (CVCL_B5PL) as an AG16102-derived iPSC; the study's in-house lines are not in Cellosaurus."
+    },
+    {
+      "location": "characteristics[sex], characteristics[age], characteristics[ancestry category], characteristics[sampling site] all rows",
+      "value": "male / 69Y / European ancestry / arm skin",
+      "source_ids": [
+        "cellosaurus",
+        "ols"
+      ],
+      "evidence": "Cellosaurus CVCL_2G48 (AG16102): SX Male, AG 69Y, Population: Caucasian, Derived from site: arm skin UBERON:0002427. HANCESTRO:0005 European ancestry is the OLS hit for 'Caucasian'. Donor attributes of the parental fibroblast inherited by the derived hiPSC."
+    },
+    {
+      "location": "characteristics[disease] all rows",
+      "value": "normal",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Paper: 'Commercial control fibroblasts (AG16102)'; Cellosaurus lists no disease. PRIDE 'diabetes mellitus' is the research motivation, not a donor disease."
+    },
+    {
+      "location": "characteristics[organism part] all rows",
+      "value": "not applicable",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Samples are in vitro differentiated hiPSC cultures, not tissue; PRIDE 'pancreas'/'stem cell' dropdowns describe the target lineage."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Orbitrap Fusion;AC=MS:1002416",
+      "source_ids": [
+        "pride",
+        "paper",
+        "raw_headers"
+      ],
+      "evidence": "PRIDE instrument, Methods, and raw header 'Orbitrap Fusion'."
+    },
+    {
+      "location": "comment[cleavage agent details] (two columns) all rows",
+      "value": "NT=Trypsin;AC=MS:1001251 and NT=Lys-C;AC=MS:1001309",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Methods: 'digested with LysC ... at an enzyme to protein ratio of 1:100 for 3 hours at RT. This was followed by trypsin digestion at an enzyme to protein ratio of 1:50 overnight at 37C'; search enzyme trypsin. MS:1001309 label 'Lys-C' verified in OLS. Second column added by documented post-processing script."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; TMT6plex K and any N-term fixed; Oxidation M variable",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Search settings in Methods and PRIDE data processing protocol; PRIDE identified PTMs MOD:00397, MOD:01720, MOD:00425 consistent."
+    },
+    {
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance]",
+      "value": "10 ppm / 0.5 Da",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Search settings."
+    },
+    {
+      "location": "comment[dissociation method], comment[collision energy], comment[ms2 mass analyzer], comment[ms1 scan range]",
+      "value": "CID / 35% NCE / ion trap / 400m/z-1400m/z",
+      "source_ids": [
+        "paper",
+        "raw_headers"
+      ],
+      "evidence": "Methods: MS1 400-1400 m/z; MS2 CID in ion trap NCE 35; MS3 HCD NCE 55 in Orbitrap (SPS-MS3). Raw method name ..._ITMS2_..._CID35_..._FTMS3_10prec_HCD55_... confirms."
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "NT=High-pH reversed-phase chromatography (hpHRP);AC=PRIDE:0000564",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Basic pH RP HPLC, 96 fractions combined into 12."
+    },
+    {
+      "location": "comment[reduction reagent], comment[alkylation reagent]",
+      "value": "TCEP / Iodoacetamide",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: reduced with 10 mM TCEP, alkylated with 15 mM iodoacetamide."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "TopSpeed 2 s precursor selection for MS2/MS3 (data-dependent)."
+    }
+  ],
+  "limitations": [
+    "T1/T2 are interpreted as two injection series of the same 12 fractions (technical replicates); they were loaded from different autosampler vials, so a split into 24 distinct fractions cannot be fully excluded from the available evidence.",
+    "Fraction numbering within each series follows sequential raw sample IDs/acquisition order; no deposited fraction table exists.",
+    "Biological replicate numbering within a time point is arbitrary (channel order).",
+    "Which of the two in-house AG16102-derived hiPSC lines was used for proteomics is not stated in the paper.",
+    "Donor sex, age and ancestry come from the parental fibroblast's Cellosaurus record, not from the paper.",
+    "m03545.raw (hv_0037_T2, re-injection of T2 fraction 10) is annotated as technical replicate 3, fraction 10; whether it replaced m03512 in the published search is unknown.",
+    "m03515.raw (sample ID hv_0040_pg) is not annotated: it ran immediately after m03514 (2014-11-26 11:09) from vial C5 (same tray position as T1 fraction 1 / m03490), is about half size (194 MB), and its content ('pg') is not described in the paper or the deposit.",
+    "Two values are set by a deterministic post-processing script (scratchpad/PXD003338/postprocess.py) applied to the built file: fraction identifier 10 on the 10 m03545 rows, and the second comment[cleavage agent details] column (Lys-C). Diff against the build confirmed only those cells/that column changed."
+  ]
+}

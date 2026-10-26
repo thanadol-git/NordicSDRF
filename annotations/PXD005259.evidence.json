@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "artifact": "/home/thanadol/Documents/GitHub/NordicSDRF/annotations/PXD005259.sdrf.tsv",
+  "dataset": "PXD005259",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD005259"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD005259/files?pageSize=1000"
+    },
+    {
+      "id": "maxquant_summary",
+      "kind": "deposited_search_output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/12/PXD005259/MaxQuantOutput.zip#MaxQuant output txt/summary.txt"
+    },
+    {
+      "id": "raw_headers",
+      "kind": "raw_data",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/12/PXD005259/<file>.raw (HTTP range 0-8191 for all 54 runs; 0-1500000 for BL21_T1, H608_L1, H104_L1)"
+    },
+    {
+      "id": "paper_abstract",
+      "kind": "publication",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:29185342%20AND%20SRC:MED&resultType=core (PMID 29185342, doi:10.1021/acs.jproteome.7b00593; abstract only)"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[biological replicate], characteristics[strain or breed], comment[data file], comment[fraction identifier], factor value[strain or breed] rows 1-54",
+      "value": "54 runs = 27 cultures x (_L fraction 1, _T fraction 2)",
+      "source_ids": [
+        "pride_files",
+        "maxquant_summary"
+      ],
+      "evidence": "summary.txt Raw file -> Experiment (27 experiments, one per culture) and Fraction (1 for every _L file, 2 for every _T file); row-by-row cross-check found 0 mismatches"
+    },
+    {
+      "location": "comment[cleavage agent details] rows 1-54",
+      "value": "NT=Lys-C/P;AC=MS:1001310 on _L rows; NT=Trypsin/P;AC=MS:1001313 on _T rows",
+      "source_ids": [
+        "maxquant_summary",
+        "pride"
+      ],
+      "evidence": "summary.txt Enzyme LysC/P (_L) and Trypsin/P (_T); dataProcessingProtocol: 'group-specific parameters as either to trypsin or LysC, allowing N-terminal cleavage to proline'. Filled per row by fill_cleavage.py after build (diff-verified)"
+    },
+    {
+      "location": "characteristics[strain or breed] rows 9-14",
+      "value": "H10407",
+      "source_ids": [
+        "pride",
+        "pride_files"
+      ],
+      "evidence": "Inferred: file stem H104; PRIDE keyword 'H10407'; deposited FASTA H10407_AA.fas"
+    },
+    {
+      "location": "characteristics[strain or breed] rows 15-20",
+      "value": "H608",
+      "source_ids": [
+        "pride_files",
+        "maxquant_summary",
+        "raw_headers"
+      ],
+      "evidence": "Depositor file label H608; aliases HA608 (MaxQuant raw files, experiments HA-1..HA-3) and VK_608L/VK_608T (replicate-1 raw acquisition names); no public strain record found"
+    },
+    {
+      "location": "characteristics[strain or breed] rows 1-8",
+      "value": "BL21(DE3)",
+      "source_ids": [
+        "paper_abstract",
+        "pride"
+      ],
+      "evidence": "Abstract: 'nonpathogenic E. coli B strain BL21(DE3)'; PRIDE description: 'E. coli B strain BL21'"
+    },
+    {
+      "location": "characteristics[strain or breed] rows 21-54",
+      "value": "TW10598, TW10722, TW10828, TW11681, TW14425",
+      "source_ids": [
+        "pride_files",
+        "maxquant_summary"
+      ],
+      "evidence": "File stems and matching deposited FASTA files <strain>_AA.fas"
+    },
+    {
+      "location": "characteristics[biological replicate] rows 1-54",
+      "value": "1-4",
+      "source_ids": [
+        "pride",
+        "maxquant_summary",
+        "raw_headers"
+      ],
+      "evidence": "sampleProcessingProtocol: '3 or 4 parallel biological replicates'; replicate index from file name and MaxQuant experiment suffix. H104_L2/T2 have internal acquisition names LH104_1/TH104_1 but deposit and MaxQuant (H104-2) say replicate 2"
+    },
+    {
+      "location": "characteristics[organism] rows 1-54",
+      "value": "Escherichia coli",
+      "source_ids": [
+        "pride",
+        "paper_abstract",
+        "ols"
+      ],
+      "evidence": "PRIDE organisms NEWT:562 Escherichia coli; OLS NCBITaxon:562"
+    },
+    {
+      "location": "characteristics[disease], characteristics[organism part], characteristics[cell type] rows 1-54",
+      "value": "not applicable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Pure bacterial cultures on blood agar; PRIDE disease 'diarrhea' describes the human infection, not the sample, and BL21(DE3) is non-pathogenic"
+    },
+    {
+      "location": "comment[instrument] rows 1-54",
+      "value": "NT=Orbitrap Elite;AC=MS:1001910",
+      "source_ids": [
+        "pride",
+        "raw_headers",
+        "ols"
+      ],
+      "evidence": "PRIDE instruments MS:1001910; raw header string 'Orbitrap Elite MS' (BL21_T1, H608_L1, H104_L1)"
+    },
+    {
+      "location": "comment[modification parameters] rows 1-54",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term, Acetyl K, Gln->pyro-Glu, Glu->pyro-Glu variable",
+      "source_ids": [
+        "maxquant_summary",
+        "pride"
+      ],
+      "evidence": "summary.txt Variable modifications; fixed Carbamidomethyl from dataProcessingProtocol (MaxQuant 1.5 summary.txt lists no fixed mods)"
+    },
+    {
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance] rows 1-54",
+      "value": "20 ppm; 0.5 Da",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "dataProcessingProtocol: initial precursor deviation 20 ppm, fragment tolerance 0.50 Da"
+    },
+    {
+      "location": "comment[proteomics data acquisition method], comment[dissociation method], comment[ms2 mass analyzer], comment[ms1 scan range] rows 1-54",
+      "value": "DDA; CID; ion trap; 300m/z-2000m/z",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "sampleProcessingProtocol: data-dependent Orbitrap-MS / LTQ-MS/MS, CID in the linear ion trap, survey m/z 300-2000"
+    },
+    {
+      "location": "comment[collision energy] rows 1-54",
+      "value": "35 NCE",
+      "source_ids": [
+        "raw_headers"
+      ],
+      "evidence": "All 54 raw headers name a method ..._240K_10minDelay_Trig1000ctns_195minRUN_CE35_Preview_...meth (48 04_TOP10CID_..., 6 TOP10_Labelfree_...)"
+    },
+    {
+      "location": "comment[lc batch] rows 1-54",
+      "value": "instrument session folder per raw file (8 sessions)",
+      "source_ids": [
+        "raw_headers"
+      ],
+      "evidence": "Folder path in each raw file header (first 8 KB range-read), e.g. ...\\2014-05-20_OrbitrapElite_P14-13\\Raw\\; both runs of each culture share a session"
+    }
+  ],
+  "limitations": [
+    "Paper full text not available (closed access; Europe PMC/Unpaywall closed, ACS 403); abstract only.",
+    "H10407 inferred from file stem H104 plus PRIDE keyword and deposited FASTA name.",
+    "H608 is the depositor label (aliases: MaxQuant HA608, raw acquisition name VK_608L/VK_608T); no public strain record or FASTA found; official designation, lineage and serotype unknown.",
+    "H104_L2/H104_T2 carry internal acquisition names LH104_1/TH104_1; deposited name and MaxQuant experiment H104-2 used.",
+    "comment[cleavage agent details] filled per run by a diff-verified post-build script (scratchpad/PXD005259/fill_cleavage.py) because build sets one value per sample row.",
+    "reconcile reports lexical cleavage-agent findings for the /P term names; the /P variants are the deposited search settings.",
+    "Per-strain lineage and colonization-factor profile not annotated (paper unreadable).",
+    "Reduction/alkylation reagents not stated in readable record; columns omitted.",
+    "comment[collision energy] and comment[lc batch] derived from raw-header method and folder names."
+  ]
+}

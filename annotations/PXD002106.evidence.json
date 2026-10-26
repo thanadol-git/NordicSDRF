@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002106.sdrf.tsv",
+  "dataset": "PXD002106",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002106"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002106/files"
+    },
+    {
+      "id": "readme",
+      "kind": "deposited file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2015/12/PXD002106/README.txt"
+    },
+    {
+      "id": "abstract",
+      "kind": "publication",
+      "location": "PMID 26745798, DOI 10.1159/000442825 (Europe PMC abstract only; full text not open access)"
+    },
+    {
+      "id": "pubmed-mesh",
+      "kind": "publication",
+      "location": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=26745798&retmode=xml (MeSH headings; ArticleTitle matches PXD002106)"
+    },
+    {
+      "id": "mzid",
+      "kind": "deposited file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2015/12/PXD002106/FFPE_TUBULI_2K1C_SHAM_1-10.mzid.gz (streamed to AnalysisProtocolCollection / Inputs)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "deposited file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2015/12/PXD002106/FFPE_TUBULI_2K1C-1.raw (HTTP range read, bytes 0-300000)"
+    },
+    {
+      "id": "sister-paper",
+      "kind": "publication",
+      "location": "PMC4240179 (Finne K et al., Nephrol Dial Transplant 2014, FFPE glomeruli from 2K1C rats; context only, not used for per-sample values)"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/ontologies/ms/terms?obo_id=MS:1001910"
+    },
+    {
+      "id": "unimod",
+      "kind": "ontology",
+      "location": "https://www.unimod.org/modifications_view.php?editid1=385 and https://www.ebi.ac.uk/ols4/api/ontologies/unimod/terms?obo_id=UNIMOD:26"
+    },
+    {
+      "id": "ols-efo",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/search?q=Wistar&exact=true (EFO:0001342 Wistar)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "rows 1-10 / comment[data file]",
+      "value": "10 RAW files, one per rat: FFPE_TUBULI_2K1C-1..4.raw and FFPE_TUBULI_SHAM-5..10.raw",
+      "source_ids": [
+        "pride-files",
+        "readme"
+      ],
+      "evidence": "PRIDE file list (all entries carry PXD002106) and README list exactly these 10 RAW files."
+    },
+    {
+      "location": "source name, characteristics[disease], factor value[disease] rows 1-4",
+      "value": "2K1C_rat1-4; renovascular hypertension",
+      "source_ids": [
+        "pride-files",
+        "abstract",
+        "pride"
+      ],
+      "evidence": "Run names 2K1C-1..4; abstract: four 2K1C rats with hypertensive kidney damage; PRIDE disease DOID:1591 renovascular hypertension."
+    },
+    {
+      "location": "source name, characteristics[disease], factor value[disease] rows 5-10",
+      "value": "SHAM_rat5-10; normal",
+      "source_ids": [
+        "pride-files",
+        "abstract"
+      ],
+      "evidence": "Run names SHAM-5..10; abstract: 6 sham rats used as controls."
+    },
+    {
+      "location": "characteristics[organism] rows 1-10",
+      "value": "Rattus norvegicus",
+      "source_ids": [
+        "pride",
+        "abstract"
+      ],
+      "evidence": "PRIDE organism NEWT:10116; title says rats."
+    },
+    {
+      "location": "characteristics[organism part] rows 1-10",
+      "value": "kidney",
+      "source_ids": [
+        "pride",
+        "abstract"
+      ],
+      "evidence": "Microdissected tubulointerstitial tissue from FFPE kidney sections; PRIDE organism part BTO:0000671 kidney."
+    },
+    {
+      "location": "characteristics[material type] rows 1-10",
+      "value": "tissue",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Sample processing protocol: laser-microdissected tubulointerstitial tissue."
+    },
+    {
+      "location": "characteristics[sex] rows 1-10",
+      "value": "male",
+      "source_ids": [
+        "pubmed-mesh"
+      ],
+      "evidence": "PubMed record PMID 26745798 MeSH heading 'Male' (D008297); study-level, single animal cohort."
+    },
+    {
+      "location": "characteristics[strain or breed] rows 1-10",
+      "value": "Wistar",
+      "source_ids": [
+        "pubmed-mesh",
+        "ols-efo"
+      ],
+      "evidence": "PubMed MeSH heading 'Rats, Wistar' (D017208); EFO:0001342 Wistar. Sub-strain (Hannover) not asserted."
+    },
+    {
+      "location": "characteristics[developmental stage] rows 1-10",
+      "value": "not available",
+      "source_ids": [
+        "abstract",
+        "pubmed-mesh"
+      ],
+      "evidence": "No age or stage in PRIDE, abstract or MeSH; full text unavailable."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Orbitrap Elite;AC=MS:1001910",
+      "source_ids": [
+        "pride",
+        "raw-header",
+        "ols"
+      ],
+      "evidence": "PRIDE instrument MS:1001910; raw method header: 'Orbitrap Elite MS', tune 'Elite_nano_20130410', method 'TOP7_Labelfree_240K'; configured instrument name reads 'Orbitrap Velos Pro'. OLS label is 'Orbitrap Elite'."
+    },
+    {
+      "location": "comment[proteomics data acquisition method], comment[dissociation method], comment[collision energy], comment[ms2 mass analyzer], comment[ms1 scan range]",
+      "value": "DDA; CID; 35 NCE; radial ejection linear ion trap; 300m/z-2000m/z",
+      "source_ids": [
+        "raw-header",
+        "pride"
+      ],
+      "evidence": "Raw method: Nth Order Double Play, FTMS + p (300.0-2000.0), ITMS CID top 7, Normalized Coll. Energy 35.0; PRIDE protocol: seven most intense peptides fragmented."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": [
+        "pride",
+        "mzid"
+      ],
+      "evidence": "Protocol: Trypsin Porcine (Promega); mzid Enzyme MS:1001251, 2 missed cleavages."
+    },
+    {
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance]",
+      "value": "10 ppm; 0.5 Da",
+      "source_ids": [
+        "mzid"
+      ],
+      "evidence": "mzid ParentTolerance 10.0 ppm, FragmentTolerance 0.5 Da."
+    },
+    {
+      "location": "comment[modification parameters] (6 columns)",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl Protein N-term, Gln->pyro-Glu N-term Q, Glu->pyro-Glu N-term E, Ammonia-loss N-term C variable",
+      "source_ids": [
+        "mzid",
+        "unimod"
+      ],
+      "evidence": "mzid ModificationParams; the C entry (-17.026549 Da relative to fixed carbamidomethyl-Cys, labelled UNIMOD:28 by PeptideShaker) is encoded as UNIMOD:385 Ammonia-loss, which Unimod specifies for C Any N-term as 'Pyro-carbamidomethyl as a delta from Carbamidomethyl-Cys'."
+    },
+    {
+      "location": "comment[label], comment[fraction identifier], comment[technical replicate]",
+      "value": "label free sample; 1; 1",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "MS1 intensity label-free quantification (PRIDE); one RAW file per sample."
+    }
+  ],
+  "limitations": [
+    "Independent review round 1 returned FAIL (sex/strain); fixed, re-review pending.",
+    "Nephron 2016 full text not openly available; only the abstract and PubMed MeSH headings were used.",
+    "Sex (male) and strain (Wistar) come from study-level PubMed MeSH headings, applied to all rows; sub-strain not asserted (sister paper PMC4240179 says Wistar Hannover, shared cohort unconfirmed).",
+    "Developmental stage not available: no age in the available record.",
+    "Instrument chosen as Orbitrap Elite over the raw header's configured name and the sister paper's 'Velos Pro'.",
+    "N-term C modification (-17.026549 Da, mislabelled UNIMOD:28 in the mzid) interpreted as UNIMOD:385 Ammonia-loss.",
+    "Organism part kept at kidney; cortex vs medulla not stated. FFPE preservation not captured in any column.",
+    "Biological replicate numbering within group is an annotator convention.",
+    "sdrf-tools reconcile reports a false-positive disease_on_control_runs blocker (reads only row 1's disease value); SHAM rows are 'normal'."
+  ]
+}

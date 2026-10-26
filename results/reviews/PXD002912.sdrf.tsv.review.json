@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002912.sdrf.tsv",
+  "artifact_sha256": "b8815ad3040791fbc264e3509af250bcf4fca3b8039c154b71475324d038c3c9",
+  "verdict": "PASS",
+  "summary": "Independent fresh-context review (bergen-reviewer-PXD002912-r2) found no blocker or important issues. All 90 RAW files are mapped exactly once; per-run source, biological and technical replicate grouping was rebuilt from the original acquisition names in all 90 RAW headers. It agrees with the 45 MaxQuant experiment names and was independently confirmed by matching the paper's supplementary Table S7 LFQ columns to proteinGroups3.txt LFQ columns value for value. Only minor optional-annotation findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent context, reviewer bergen-reviewer-PXD002912-r2; did not read the producer report.md, transcript or the prior review JSON; all PRIDE, Europe PMC, RAW-header, MaxQuant-zip and supplementary evidence re-fetched into scratchpad/PXD002912/review-PXD002912/ with accession/title identity asserted"
+  },
+  "evidence_manifest": "annotations/PXD002912.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active template derived from the file: only comment[sdrf template]=NT=ms-proteomics;VV=v1.1.0 (usable_alone=true; extends sample-metadata 1.0.0 and base 1.1.0). No organism template applies to pure-culture bacterial isolates and metaproteomics does not apply (single-organism cultures). All required base, sample-metadata and ms-proteomics columns are present: source name, organism, organism part, biological replicate, assay name, technology type, technical replicate, data file, acquisition method, instrument, cleavage agent, label and fraction identifier. 90 rows x 34 columns; 6 modification-parameter columns; characteristics[strain or breed] and characteristics[growth condition] are TERMS.tsv terms. biological replicate uses integers or 'pooled' (allowed); pooled sample uses 'not pooled'/'pooled' (allowed values); material type 'whole organism' is an allowed value; annotation tool 'manual curation' matches the pattern. parse_sdrf and sdrf-tools structure confirm column order, no empty cells and no duplicate source+assay+label."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Each controlled value was resolved with sdrf-tools verify and live OLS4, and none is obsolete: MS:1001910 Orbitrap Elite, MS:1001309 Lys-C, MS:1001251 Trypsin, MS:1002038 label free sample, MS:1000133 collision-induced dissociation, MS:1000083 radial ejection linear ion trap, PRIDE:0000627 Data-dependent acquisition, UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, UNIMOD:1 Acetyl, UNIMOD:28 Gln->pyro-Glu and UNIMOD:27 Glu->pyro-Glu (correct TA/PP). NCBITaxon:562 Escherichia coli and NCBITaxon:362663 Escherichia coli 536 (rank strain, parent NCBITaxon:562) are both non-obsolete. sdrf-tools check: 15/15 verified, 0 hallucinated, 0 label mismatches, 0 wrong ontology. The parse_sdrf OLS-cache run raised no term failures, so no live-OLS fallback was needed."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project PXD002912 (title and accession asserted), Europe PMC PMC5013306 (title asserted) and its supplementary archive (index names mcp.M116.060582) were checked. Organism, strains and per-strain culture counts come from Table I (C4n 1N 1O, D4n 2N, E4n 2O, F4d 2N 2O, G5m 2N 2O, UPEC 536 1N 1O). Two biological replicates on blood and lactose agar, and the control mix of C4n, D4n, E4n, G5m and 536, come from Methods. The sequential MED-FASP digestion with LysC then trypsin, combined per replicate in MaxQuant, comes from Methods and the PRIDE protocol; the original names LF*/TF* and *_L/*_T plus the supplementary missed-cleavage columns (Trypsin/P vs LysC/P) support the L=Lys-C, T=trypsin mapping. The instrument is supported by the RAW method instrument 'Orbitrap Elite MS', the Elite_nano.LTQTune file in all 90 headers, OrbitrapElite acquisition folders and the 240K method; R=240,000 at m/z 400 is only achievable on the Elite, which justifies overruling PRIDE's 'LTQ Orbitrap Velos'. DDA, CID and the ion-trap MS2 analyzer come from the PRIDE and paper text. MS1 range m/z 300-2000 is in both. The fixed and variable modifications match the MaxQuant parameters.txt and the paper. Fragment tolerance 0.5 Da matches parameters.txt 'MS/MS tol. (ITMS) 0.5 Da' and the paper. Precursor tolerance 20 ppm is the paper's stated 'initial allowed mass deviation'."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE /files listing gave 91 files (90 RAW and 1 SEARCH, MaxQuant_search.zip), with every entry's projectAccessions containing PXD002912. The set of 90 SDRF comment[data file] values equals the set of 90 PRIDE RAW names exactly: no duplicates, no missing files and no non-raw files. assay name equals the file stem on every row."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed from 16 KB headers of all 90 RAW files: original acquisition name, session folder and method. There are 21 sources and 45 (source, technical replicate) groups, each holding exactly one Lys-C (fraction 1) and one trypsin (fraction 2) file. In every group the L and T files share the same original base name and acquisition session. The 45 groups equal the 45 MaxQuant LFQ experiments in proteinGroups1.txt. Grouping was confirmed independently by mapping supplementary Table S7 LFQ columns to proteinGroups3.txt LFQ columns (150-183 exact value matches per column). CN-11..14 = C11-1, C11-2, C12-1, C12-2, which are C1 technical replicates 1-4 (Table I: one anaerobic culture). CO-11..14 = C31-1..C32-2, which are C3 replicates 1-4. DN-11/12 = D21-1/D21-2 (SDRF source D21, files DN11 and DN21) and DN-21/22 = D22-1/D22-2 (source D22, files DN12 and DN22). This is the authors' culture-then-replicate labelling, the same as FO-11/12 = F1 and FO-21/22 = F3, which supports D21 and D22 as the two Table I anaerobic cultures (biological replicates 1 and 2). EO-11/12 = E11/E12 (E1) and EO-21/22 = E21/E22 (E2). FO-11/12 = F1-1/2, FO-21/22 = F3-1/2, FN-11/12 = F2-1/2 and FN-21/22 = F4-1/2: four cultures with two injections each (2015-01-23 and 2015-02-02). GO-1 = G1, GO-2 = G3, GN-1 = G2 and GN-2 = G4: four cultures with one injection each, acquired 2015-07-03 under original names C11-C14. The eight C MaxQuant experiments account for all 16 C4n files, so the G assignment is consistent. 536O-11/12 = W11/W12 (W1, aerobic), 536N-21/22 = W21/W22 (W2, anaerobic), BA-11/12, BA-21/22 = U11..U22 and LA-11..LA-22 = L11..L22 give two biological replicates x two technical replicates per agar, matching Table II's footnote of four agar replicates. R1-R5 = Ref_L1-5 and Ref_T1-5 (pooled, technical replicates 1-5). Technical replicates start at 1 and are contiguous per source. Biological replicate numbering restarts per strain x condition. Factor values equal the corresponding characteristics on every row. The deposited D-file names do not follow the authors' supplementary labels (deposited DN21 is supplementary DN-12), and the SDRF correctly follows the RAW headers rather than the deposited names."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every annotated value was traced to PRIDE, the paper, MaxQuant parameters.txt, proteinGroups or the RAW headers. No per-sample value is inferred from cohort summaries: condition and strain come from per-file names, and replicate structure comes from per-file headers and per-column LFQ matches. The pooled control is written as 'pooled' rather than listing unstated bottle composition, and its strain list excludes F4d exactly as Methods state. No unsupported specificity was found: the instrument is evidenced at model level, Escherichia coli 536 is a real NCBI strain taxon used only for the reference strain, and the clinical isolates stay at species level. Omitted optional items are listed as minor findings and do not make any annotated value wrong."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 .venv/bin/parse_sdrf validate-sdrf -s annotations/PXD002912.sdrf.tsv -t ms-proteomics --use_ols_cache_only exited 0 with 'Everything seems to be fine. Well done.' This was run once, for the single declared template. Other results: '.venv/bin/python -m tools check' exit 0, CLEAN, 15/15 verified; 'tools score' exit 0, 100/100; 'tools structure' exit 0, 'Structure OK'; 'tools reconcile --record project.json --accession PXD002912' exit 0, every annotated value agrees with the deposit record; 'tools verify' passed for 12 accession/label pairs."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[precursor mass tolerance], all rows (20 ppm)",
+      "message": "20 ppm is MaxQuant's first-search (initial) precursor tolerance; the main-search tolerance under 'standard settings' (MaxQuant default 4.5 ppm) is not deposited.",
+      "evidence": "Paper Methods: 'The initial allowed mass deviation of the precursor ion was as high as 20 ppm'. parameters.txt has no main-search value and no mqpar.xml is deposited. The value is as reported and the manifest discloses it; optionally note this in the report."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "characteristics[cell type] (column absent)",
+      "message": "The recommended sample-metadata column characteristics[cell type] is absent.",
+      "evidence": "sample-metadata 1.0.0 marks cell type as recommended, and PRIDE lists CL:0000520 'prokaryotic cell'. Adding 'prokaryotic cell' or 'not applicable' would be acceptable; this does not affect validity."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "characteristics[disease] (not applicable, all rows)",
+      "message": "The host clinical context of the isolates is not captured anywhere in the SDRF.",
+      "evidence": "Table I: C4n, D4n, E4n and F4d come from UTI with sepsis and G5m from immunosuppression with sepsis; UPEC 536 was grown in a blood culture of a healthy volunteer. PRIDE lists DOID:104 bacterial infectious disease. 'not applicable' is allowed and defensible for bacterial material, so a comment-level note is optional."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "optional acquisition columns (comment[collision energy] etc.)",
+      "message": "Optional method details are unannotated: CID 35 NCE (method names contain 'CE35'), and two acquisition methods were used (TOP10 in the 2015-01-23, 2015-02-02 and 2015-05-22 sessions; TOP12 in the 2015-05-26 and 2015-07-03 sessions).",
+      "evidence": "RAW-header method paths 04_TOP10CID_240K_..._CE35 and 04b_TOP12CID_240K_..._CE35. The PRIDE protocol says up to 10 precursors; the paper says up to 12. Neither column is required, and no annotated value contradicts this."
+    }
+  ]
+}

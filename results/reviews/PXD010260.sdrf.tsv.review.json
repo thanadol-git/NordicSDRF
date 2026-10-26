@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD010260.sdrf.tsv",
+  "artifact_sha256": "6070e142fcc08d28cae6598cb435f644c0e94e838e5bf66a7b07b5fdcaaba39a",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. All 26 PRIDE RAW files are mapped once; T<n>/N<n> pairing follows the deposited file names; the 8 included tumour biopsies (file IDs 1,2,3,5,7,8,9,11) carry MONDO:0004200 (exact match of NCIT:C27474 Non-Muscle Invasive Bladder Carcinoma), matching the paper's 'primary NMIBC' cohort (Table 1: all pTa/pT1); file IDs 4 and 10 are independently confirmed as the two excluded patients (present in AllIdentifications, absent from the 8-patient Progenesis quantification table) and their tumour rows correctly carry 'not available'; macroscopically normal biopsies carry 'normal' as the spec's adjacent-normal example prescribes. Only minor improvements remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh-context reviewer subagent (bergen-reviewer-PXD010260); no producer transcript or report.md read; PRIDE record, file list, Europe PMC full text and both deposited xlsx files re-fetched into scratchpad/PXD010260/review-PXD010260/"
+  },
+  "evidence_manifest": "annotations/PXD010260.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Declared templates ms-proteomics v1.1.0, human v1.1.0, oncology-metadata v1.0.0 match templates.yaml latest versions; human+ms-proteomics+oncology-metadata is the documented 'Human cancer proteomics' combination (TEMPLATES.adoc). 37 columns, 26 rows, all rows full width, no empty or whitespace-padded cells; reserved words used only where TERMS.tsv allows (disease allows not available/not applicable; biological replicate, individual allow pooled; sex allows not applicable). sdrf-tools structure: OK. parse_sdrf passes for all three templates."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS: MONDO:0004200 'superficial urinary bladder carcinoma' (not obsolete; parent MONDO:0004986 urinary bladder carcinoma; exactMatch NCIT:C27474 Non-Muscle Invasive Bladder Carcinoma, DOID:7371), PATO:0000461 normal, UBERON:0001255 urinary bladder, MS:1002523 Q Exactive HF, MS:1000422 beam-type CID, MS:1001251 Trypsin, MS:1000484 orbitrap all resolve with matching labels and are not obsolete. sdrf-tools check: 13/13 terms verified, 0 hallucinated, 0 label mismatches, 0 UNIMOD swaps (UNIMOD:4 Carbamidomethyl C fixed, UNIMOD:35 Oxidation M variable; PRIDE:0000627/0000608/0000599)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE record (projectAccessions/title asserted = PXD010260): Homo sapiens (NEWT:9606), urinary bladder (BTO:0001418), Q Exactive HF, DDA top-15, scan range 375-1500 m/z, MS2 R=30,000, NCE 28%, FASP trypsin, 0.1 M DTT lysis, iodoacetamide, carbamidomethyl C fixed / oxidation M variable, 5 ppm / 0.05 Da, label-free Progenesis QI; QC = equal mix of all samples run six times. PMC6231613 (title/PMID 30419021 asserted): eight primary NMIBC patients, Table 1 stages pTa (6) / pT1 (2); two additional patients analysed by proteomics but excluded for pathology not matching inclusion criteria; normal biopsies from macroscopically normal bladder surface opposite the tumour. Excluded-patient identity independently verified: Bladdercancer_Progenesisquantification_Berle.xlsx columns = T/N 1,2,3,5,7,8,9,11 only; Bladdercancer_AllIdentifications_Berle.xlsx adds T/N 4 and 10."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE /files (29 entries, all projectAccessions == ['PXD010260']): 26 RAW files; SDRF lists 26 comment[data file] values, no duplicates, none missing, none extra; every assay name equals data-file stem; 3 non-RAW xlsx files correctly excluded."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 10 individuals x (tumour + normal) = 20 runs + 6 QC technical replicates = 26. Disease counts: normal 10, superficial urinary bladder carcinoma 8, not available 2 (T4, T10), not applicable 6 (QC). factor value[disease] equals characteristics[disease] on every row. source name / individual pairing patient<n>_{tumor,normal} matches file IDs on every row. QC_pool shares one source name with comment[technical replicate] 1-6. Label-free, fraction 1, no fractionation described. Independent PCA of the deposited quantification reproduces the paper's outliers as file T3, N1, N11 (paper 'N8'), confirming paper patient numbers are not file IDs, so per-row age/sex/stage/grade are correctly left 'not available'."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No value asserts more than the evidence: tumour disease term is the MONDO equivalent of the paper's own 'primary NMIBC' category and applies to all 8 included patients regardless of numbering key; excluded patients' pathology is undisclosed so their tumour rows are 'not available' rather than a guessed cancer term; age/sex/stage/grade/recurrence withheld because no deposited key links paper patients 1-8 to file IDs (verified: identity numbering contradicted by PCA). Material omissions are limited to optional/recommended context (see minor findings)."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf --use_ols_cache_only -t ms-proteomics: exit 0 'Everything seems to be fine'; -t human: exit 0 same; -t oncology-metadata: exit 0 same. sdrf-tools check: exit 0 CLEAN (13/13). sdrf-tools score: 99/100 (only missing recommended developmental stage). sdrf-tools structure: exit 0 OK. sdrf-tools reconcile --record pride.json: exit 1 with one BLOCKER 'organism_contradicted (record names only Rattus norvegicus)' adjudicated as a tool false positive: the only rat mention is the cited reference title 'two-kidney, one-clip rat model' in sampleProcessingProtocol; the record's organisms field is NEWT:9606 Homo sapiens, the search DB is SwissProt Homo sapiens and the paper describes Haukeland University Hospital patients."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "sample_context",
+      "location": "rows 8 and 18 (patient4_tumor, patient10_tumor); all rows 1-20",
+      "message": "Tumour-vs-normal biopsy identity is encoded only in source name/file name. For the excluded patients' tumour rows, disease and factor are 'not available', so no structured column records that these are tumour biopsies; the 'normal' rows are only macroscopically normal (not histologically verified) tissue from cancer patients. Consider adding characteristics[sampling site] (available via clinical-metadata, inherited by oncology-metadata), e.g. 'tumor' vs 'normal tissue' (opposite bladder wall).",
+      "evidence": "Paper Methods: biopsies 'from the tumor itself and from macroscopically normal bladder surface on the opposite side of the bladder'; AllIdentifications.xlsx groups T4/T10 under 'Tumor'. SAMPLE-GUIDELINES.adoc endorses 'normal' for adjacent normal tissue, so the disease values themselves are correct."
+    },
+    {
+      "severity": "minor",
+      "category": "reserved_words",
+      "location": "rows 21-26 (QC_pool), characteristics[sex] and characteristics[age]",
+      "message": "QC pool mixes material from male and female patients; sex 'not applicable' is less accurate than the allowed reserved word 'pooled' (age also allows 'pooled').",
+      "evidence": "TERMS.tsv: sex fixed values include 'pooled' (allow_pooled true); age allow_pooled true. Paper/PRIDE: 'Internal control (QC) was made as an equal mix of all samples'; cohort is five male, three female."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (missing column characteristics[developmental stage])",
+      "message": "Recommended human column absent; 'adult' is supported for all donors.",
+      "evidence": "sdrf-tools score: 'Missing recommended column: characteristics[developmental stage]'; paper reports patient ages 55-85 years."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology_specificity",
+      "location": "characteristics[disease] / factor value[disease] rows 2,4,6,10,12,14,16,20",
+      "message": "MONDO:0004200's textual definition says 'infiltrating carcinoma ... not invaded into the muscularis propria', while 6 of 8 tumours are pTa (non-invasive papillary). The term remains the correct MONDO match for the paper's explicit 'primary NMIBC' category (exactMatch NCIT:C27474 NMIBC; synonym 'superficial bladder cancer'), so no change is required; noting it only so the definitional nuance is not later mistaken for an error.",
+      "evidence": "OLS MONDO:0004200 definition and exactMatch list; paper Table 1 stages pTa x6, pT1 x2."
+    }
+  ]
+}

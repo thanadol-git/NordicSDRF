@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD000282-plasma.sdrf.tsv",
+  "dataset": "PXD000282",
+  "artifact_sha256": "2798d7c85f1ddccc15b784251a530c5ac0600a96cfdd3be0b27a6d98795e2573",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000282"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000282/files?pageSize=1000"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC5562764 (https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5562764/fullTextXML); doi:10.1038/s41598-017-08975-y; PMID 28821815"
+    },
+    {
+      "id": "supp",
+      "kind": "publication supplementary",
+      "location": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41598-017-08975-y/MediaObjects/41598_2017_8975_MOESM1_ESM.xls (sheets S1_Plasma Peptides, S4_Platelets Proteins, S5_Material_Methods)"
+    },
+    {
+      "id": "upstream",
+      "kind": "repository",
+      "location": "gh api repos/bigbio/sdrf-annotated-datasets/contents/datasets/PXD000282 and .../sandbox/PXD000282 (both HTTP 404)"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/ (live lookups: MS:1003096, MS:1001251, MS:1002038, MS:1000133, MS:1000083, UBERON:0001969, UBERON:0000178, CL:0000233, NCBITaxon:10090, PRIDE:0000568 ancestors, PRIDE:0000608, PRIDE:0000599, PRIDE:0000627, UNIMOD:4/35/1, PATO:0000461)"
+    },
+    {
+      "id": "raw-headers",
+      "kind": "raw file header (HTTP range 0-8191, utf-16-le)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/07/PXD000282/<file> for all 23 plasma RAW files; e.g. https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/07/PXD000282/12a_CTR_Crude.raw"
+    },
+    {
+      "id": "pride-xml-plasma",
+      "kind": "deposited result file (first ~3 MB of gzip stream)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/07/PXD000282/PRIDE_Exp_Complete_Ac_29638.xml.gz and https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/07/PXD000282/PRIDE_Exp_Complete_Ac_29639.xml.gz"
+    }
+  ],
+  "claims": [
+    {
+      "artifact": "annotations/PXD000282-plasma.sdrf.tsv",
+      "location": "characteristics[organism] all rows",
+      "value": "Mus musculus",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organisms NEWT:10090; Methods 'Mouse strains'."
+    },
+    {
+      "artifact": "annotations/PXD000282-plasma.sdrf.tsv",
+      "location": "characteristics[strain or breed] all rows",
+      "value": "C57BL/6JBomTac",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: knockouts bred against C57BL/6JBomTac background for >=10 generations; WT C57BL/6JBomTac littermates and commercial mice (Taconic)."
+    },
+    {
+      "artifact": "annotations/PXD000282-plasma.sdrf.tsv",
+      "location": "characteristics[genotype], factor value[genotype]",
+      "value": "Epac1-/- | wild type",
+      "source_ids": [
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "KO/CTR (plasma) and KO/WT (platelet) tokens in deposited RAW names; paper compares Epac1-/- vs WT."
+    },
+    {
+      "artifact": "annotations/PXD000282-plasma.sdrf.tsv",
+      "location": "characteristics[disease] all rows",
+      "value": "normal",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: 'Epac1-/- and Epac2-/- mice are healthy and apparently indistinguishable from WT mice under standard housing.'"
+    },
+    {
+      "artifact": "annotations/PXD000282-plasma.sdrf.tsv",
+      "location": "characteristics[sex], characteristics[developmental stage]",
+      "value": "not available",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Neither stated for blood-donor mice; unavailable evidence."
+    },
+    {
+      "artifact": "annotations/PXD000282-plasma.sdrf.tsv",
+      "location": "comment[instrument] all rows",
+      "value": "NT=Orbitrap Velos Pro;AC=MS:1003096",
+      "source_ids": [
+        "raw-headers",
+        "paper",
+        "ols"
+      ],
+      "evidence": "RAW header strings 'Orbitrap Velos Pro'; Methods 'LTQ-Orbitrap Velos Pro'. PRIDE field 'LTQ Orbitrap' overridden as too generic."
+    },
+    {
+      "artifact": "annotations/PXD000282-plasma.sdrf.tsv",
+      "location": "comment[proteomics data acquisition method], comment[dissociation method], comment[collision energy], comment[ms2 mass analyzer], comment[ms1 scan range]",
+      "value": "DDA PRIDE:0000627; CID MS:1000133; 35% NCE; radial ejection linear ion trap MS:1000083; 300m/z-2000m/z",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE sampleProcessingProtocol: DDA, survey 300-2000 m/z in Orbitrap, top-7 low-energy CID in linear ion trap, normalized collision energy 35%; RAW method name TOP7_..._CE35."
+    },
+    {
+      "artifact": "annotations/PXD000282-plasma.sdrf.tsv",
+      "location": "comment[cleavage agent details], comment[label]",
+      "value": "Trypsin MS:1001251; label free sample",
+      "source_ids": [
+        "pride",
+        "paper",
+        "supp"
+      ],
+      "evidence": "Trypsin digestion; label-free quantification throughout."
+    },
+    {
+      "location": "source name / comment[data file] rows 1-23",
+      "value": "one row per plasma RAW; source = genotype + mouse number + preparation",
+      "source_ids": [
+        "pride-files",
+        "raw-headers",
+        "supp"
+      ],
+      "evidence": "Deposited names <mouse>_<KO|CTR>_<Crude|Depl>.raw; header acquisition paths C:\\Xcalibur\\Data\\FrodeS\\20120621_EPAC_FSEO\\<same name>; S1 sample columns KO1, KO2and7, KO3-KO6, CTR8, CTR9, CTR10, CTR12, CTR13."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "mouse number (1-7 KO; 8,9,10,12,13 WT); 12a_CTR_Crude.raw = separate source WT_mouse12a_plasma_crude, biological replicate 14",
+      "source_ids": [
+        "pride-files",
+        "raw-headers",
+        "supp",
+        "paper"
+      ],
+      "evidence": "Number prefix of RAW names. 12a is not tied to mouse 12 by any ID (RAW header has only the file name; S1 has a single CTR12 column). It is coded as a separate animal, inferred from the paper's Figure 4 legend (WT n = 6), which needs six WT animals from five WT IDs. Replicate 14 is an arbitrary distinct integer."
+    },
+    {
+      "location": "characteristics[depletion]",
+      "value": "no depletion (Crude) | depletion (Depl)",
+      "source_ids": [
+        "pride-files",
+        "pride",
+        "paper"
+      ],
+      "evidence": "Plasma 'crude or depleted for Albumin' (PRIDE description); Qproteome Murine Albumin Depletion Kit (Methods); Crude/Depl tokens in names; PRIDE XML titles 'plasma crude' (29639) and 'plasma-depleted' (29638)."
+    },
+    {
+      "location": "characteristics[organism part], characteristics[cell type]",
+      "value": "blood plasma | not applicable",
+      "source_ids": [
+        "pride",
+        "paper",
+        "ols"
+      ],
+      "evidence": "Plasma samples; UBERON:0001969."
+    },
+    {
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance]",
+      "value": "10 ppm | 0.7 Da",
+      "source_ids": [
+        "pride",
+        "supp",
+        "pride-xml-plasma"
+      ],
+      "evidence": "Methods 'precursor mass tolerance of 10 ppm, fragment mass tolerance of 0.7'; PRIDE XML 'Peptide mass tolerance setting 10.0', 'Fragment mass tolerance setting 0.7'. Da unit inferred (OMSSA, ion-trap MS2)."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C Fixed (UNIMOD:4); Oxidation M Variable (UNIMOD:35)",
+      "source_ids": [
+        "pride",
+        "supp"
+      ],
+      "evidence": "'fixed carbamidomethylation on cystein, variable oxidation on methionine'. No native search parameter file deposited."
+    },
+    {
+      "location": "comment[reduction reagent], comment[alkylation reagent]",
+      "value": "DTT PRIDE:0000608; iodoacetamide PRIDE:0000599",
+      "source_ids": [
+        "supp"
+      ],
+      "evidence": "S5 'Trypsination of protein samples in solution': DTT reduction, iodoacetamide alkylation; assigned to plasma (the in-solution digest) by inference."
+    }
+  ],
+  "limitations": [
+    "Mouse 12a: whether 12a_CTR_Crude.raw comes from a separate animal from mouse 12 (12_CTR_Depl.raw) is not stated; coded as a separate source (biological replicate 14), inferred from WT n = 6 in the Figure 4 legend.",
+    "Figure 4 legend gives WT n = 6 / KO n = 7, while Table S1 has 5 WT and 6 KO columns (CTR12 and KO2and7 each apparently cover two animals). 'Mouse1-6: Epac1 KO' / 'Mouse7-11: WT' in the S2 ANOVA sheets are column positions, not animal IDs.",
+    "Mouse 7 (KO) has only a depleted run; S1 shows a merged 'KO2and7' quantification column.",
+    "Sex and developmental stage of donor mice not stated.",
+    "Fragment tolerance unit (Da) inferred.",
+    "Modifications taken from Methods prose; PRIDE-generated mzTab lists MOD:01090/MOD:01047, judged a mass-mapping artefact.",
+    "Independent adversarial review not yet performed."
+  ]
+}

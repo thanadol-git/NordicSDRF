@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD006349.sdrf.tsv",
+  "dataset": "PXD006349",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006349"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006349/files?pageSize=1000"},
+    {"id": "paper", "kind": "publication", "location": "Bjorkum AA et al. PLoS One 2017;12(10):e0185765, PMID 28977037, PMC5627932, doi:10.1371/journal.pone.0185765 (open-access full text via Europe PMC)"},
+    {"id": "quant-xlsx", "kind": "deposited-result", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/10/PXD006349/Bjorkum_DivingRats_Progenesissearchandquantificationresults.xlsx"},
+    {"id": "peptides-xlsx", "kind": "deposited-result", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/10/PXD006349/Bjorkum_DivingRats_Progenesispeptides.xlsx"},
+    {"id": "raw-header", "kind": "raw-data", "location": "HTTP range read (first 1 MiB) of FD1_AH_6B_D1.raw, SD1_AH_1_K11.raw and FD9_AH_14B_10.raw from https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/10/PXD006349/"},
+    {"id": "ols", "kind": "ontology", "location": "https://www.ebi.ac.uk/ols4/api/"}
+  ],
+  "claims": [
+    {"location": "comment[data file] rows 1-20", "value": "20 .raw files (FD1-FD10, SD1-SD10)", "source_ids": ["pride-files"], "evidence": "All 20 RAW-category files in the PRIDE file list; every entry's projectAccessions = PXD006349; each file used exactly once. The two .xlsx result files are not runs."},
+    {"location": "source name, factor value[treatment], characteristics[treatment] rows 1-20", "value": "FD1-FD10 = fast decompression (1 bar/20 s); SD1-SD10 = slow decompression (1 bar/10 min)", "source_ids": ["quant-xlsx", "peptides-xlsx", "pride-files", "paper"], "evidence": "Deposited Progenesis table header groups sample columns FD1-FD10 under 'Fast decompression rate (1 bar/20 s) after heliox saturation (FD)' and SD1-SD10 under 'Slow decompression rate (1 bar/10 min) after heliox saturation diving (SD)'; raw file names carry the same FD#/SD# prefix; paper: FD n=10, SD n=10."},
+    {"location": "characteristics[organism] rows 1-20", "value": "Rattus norvegicus", "source_ids": ["pride", "paper", "ols"], "evidence": "PRIDE organisms NEWT:10116; paper 'female Wistar rats'; NCBITaxon:10116."},
+    {"location": "characteristics[strain or breed] rows 1-20", "value": "Wistar", "source_ids": ["paper", "pride"], "evidence": "'Two groups of female Wistar rats (Charles Rivers Laboratories, USA)'."},
+    {"location": "characteristics[sex] rows 1-20", "value": "female", "source_ids": ["paper", "pride"], "evidence": "'female Wistar rats' (whole cohort)."},
+    {"location": "characteristics[organism part] rows 1-20", "value": "cerebral hemisphere", "source_ids": ["paper", "pride", "ols"], "evidence": "'From each animal one of the cerebral hemispheres (approximately 0.7 g), excluding both the frontal lobes and the cerebellum'; UBERON:0001869. PRIDE dropdown says brain (BTO:0000142), less specific."},
+    {"location": "characteristics[material type] rows 1-20", "value": "tissue", "source_ids": ["paper"], "evidence": "Hemisphere tissue homogenised in HEPES/KCl buffer; supernatant analysed."},
+    {"location": "characteristics[biological replicate] rows 1-20", "value": "1-10 within each group", "source_ids": ["quant-xlsx", "pride-files"], "evidence": "Animal number within group from sample labels FD#/SD#; numbering restarts per condition as the spec states. One run per animal."},
+    {"location": "characteristics[pooled sample] rows 1-20", "value": "not pooled", "source_ids": ["paper"], "evidence": "One hemisphere per animal, analysed per animal (n=10 per group)."},
+    {"location": "characteristics[disease] rows 11-20 (SD)", "value": "normal", "source_ids": ["paper"], "evidence": "Results: DCS symptoms 'were not observed in any rats from the SD group'."},
+    {"location": "characteristics[disease] rows 1-10 (FD)", "value": "not available", "source_ids": ["paper"], "evidence": "12 of 21 FD rats showed DCS symptoms; per-animal DCS status of the 10 analysed FD rats is not reported."},
+    {"location": "characteristics[sampling time] rows 1-20", "value": "7 day", "source_ids": ["paper", "pride"], "evidence": "'One week after the dive the animals were euthanized'."},
+    {"location": "characteristics[developmental stage] rows 1-20", "value": "not available", "source_ids": ["paper"], "evidence": "Age/stage not stated (only weight ~250 g)."},
+    {"location": "comment[instrument] rows 1-20", "value": "NT=Orbitrap Velos Pro;AC=MS:1003096", "source_ids": ["raw-header", "paper", "ols"], "evidence": "Raw headers read 'Orbitrap Velos Pro'; paper 'LTQ-Orbitrap Velos Pro'. PRIDE dropdown 'LTQ Orbitrap Velos' (MS:1001742) is less specific and overridden."},
+    {"location": "comment[proteomics data acquisition method] rows 1-20", "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627", "source_ids": ["raw-header", "paper"], "evidence": "Method: 'ITMS + c norm Dep ... MS/MS Most intense ion', 'Scan Event 2 repeated for top 7 peaks'; paper 'top 7 peaks ... fragmented'."},
+    {"location": "comment[dissociation method] rows 1-20", "value": "NT=collision-induced dissociation;AC=MS:1000133", "source_ids": ["raw-header"], "evidence": "Method: 'Activation Type: CID'."},
+    {"location": "comment[collision energy] rows 1-20", "value": "35 NCE", "source_ids": ["raw-header"], "evidence": "Method: 'Normalized Coll. Energy: 35.0'."},
+    {"location": "comment[ms2 mass analyzer] rows 1-20", "value": "NT=linear ion trap;AC=MS:1000291", "source_ids": ["raw-header"], "evidence": "MS2 scan event is ITMS (ion trap)."},
+    {"location": "comment[ms1 scan range] rows 1-20", "value": "300m/z-2000m/z", "source_ids": ["raw-header"], "evidence": "Scan event 1: 'FTMS + p norm o(300.0-2000.0)'."},
+    {"location": "comment[cleavage agent details] rows 1-20", "value": "NT=Trypsin;AC=MS:1001251", "source_ids": ["paper", "pride"], "evidence": "'Protein samples were trypsinized in solution'; search 'trypsin with one miss-cleavages accepted'."},
+    {"location": "comment[label] rows 1-20", "value": "label free sample", "source_ids": ["paper", "pride"], "evidence": "Label-free Progenesis MS1 quantification; PRIDE quantification method PRIDE:0000425."},
+    {"location": "comment[precursor mass tolerance] rows 1-20", "value": "10 ppm", "source_ids": ["paper", "pride"], "evidence": "'precursor mass tolerance of 10 ppm'."},
+    {"location": "comment[fragment mass tolerance] rows 1-20", "value": "0.7 Da", "source_ids": ["paper", "raw-header"], "evidence": "Paper gives 'fragment mass tolerance of 0.7' without unit; Da inferred because MS2 is ion-trap (ITMS) CID, where 0.7 ppm is not plausible."},
+    {"location": "comment[modification parameters] Carbamidomethyl C Fixed, Oxidation M Variable", "value": "UNIMOD:4 Fixed; UNIMOD:35 Variable", "source_ids": ["paper", "pride", "peptides-xlsx"], "evidence": "Paper/PRIDE: 'fixed carbamidomethylation on cystein, variable oxidation on methionine'; oxidation of M in deposited peptide table; PRIDE identifiedPTMs MOD:00397/MOD:00425."},
+    {"location": "comment[modification parameters] Acetyl protein N-term, Gln->pyro-Glu, Glu->pyro-Glu, Pyro-carbamidomethyl, Acetyl K (all Variable)", "value": "UNIMOD:1 PP=Protein N-term; UNIMOD:28 Q N-term; UNIMOD:27 E N-term; UNIMOD:26 C N-term; UNIMOD:1 TA=K", "source_ids": ["peptides-xlsx", "ols"], "evidence": "Deposited Progenesis peptide table 'Modifications' column reports '[1] acetylation of protein n-term' (121), '[1] pyro-glu q' (47), '[1] pyro-glu e' (25), '[1] pyro-cmc' (23), '[1] acetylation of k' (2) alongside oxidation of m; these were therefore in the search space even though the paper lists only C/M mods. No search-parameter file was deposited."},
+    {"location": "comment[reduction reagent], comment[alkylation reagent] rows 1-20", "value": "not available", "source_ids": ["paper"], "evidence": "Fixed carbamidomethyl searched (alkylation done), but the in-solution Orbitrap prep reagents are only given 'as previously described'; DTT/IAA in the paper refer to the iontrap gel workflow, which is not in this deposit."},
+    {"location": "comment[fraction identifier], comment[technical replicate] rows 1-20", "value": "1, 1", "source_ids": ["paper", "pride-files"], "evidence": "Orbitrap samples were digested in solution and run once each (one raw per animal); the 12-fraction SDS-PAGE workflow applies only to the undeposited iontrap dataset."}
+  ],
+  "limitations": [
+    "Per-animal DCS symptom status for FD rats is not reported; FD disease is 'not available'.",
+    "Developmental stage/age not reported.",
+    "Fragment tolerance unit (Da) inferred from the ion-trap MS2 analyzer.",
+    "No search-parameter file deposited; modifications beyond Carbamidomethyl/Oxidation are inferred from mods reported in the deposited peptide table.",
+    "Reduction and alkylation reagents for the in-solution Orbitrap workflow not stated.",
+    "The iontrap (Agilent LC/MSD Trap XCT plus, 240 files) dataset described in the paper is not in this deposit and is not annotated.",
+    "Raw headers range-read for 3 of 20 files only (FD1, SD1, FD9); FD9 is ~212 MB versus ~830-850 MB for the other runs (cause unknown; it has values in the deposited quant table).",
+    "Animal codes in file names (e.g. AH_6B_D1, AH_2_K10) are not decoded; source names use the FD#/SD# labels from the deposited table."
+  ]
+}

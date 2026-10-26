@@ -1,0 +1,240 @@
+{
+ "schema_version": 1,
+ "artifact": "annotations/PXD003710-lf.sdrf.tsv",
+ "dataset": "PXD003710",
+ "sources": [
+  {
+   "id": "pride",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003710"
+  },
+  {
+   "id": "pride-files",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003710/files/all"
+  },
+  {
+   "id": "paper",
+   "kind": "publication",
+   "location": "PMC5061044 (PMID 27746629, doi:10.4172/jpb.1000408), full text via NCBI efetch db=pmc id=5061044"
+  },
+  {
+   "id": "supp-methods",
+   "kind": "publication supplement",
+   "location": "https://pmc-oa-opendata.s3.amazonaws.com/PMC5061044.1/NIHMS820356-supplement-supp_methods.pdf"
+  },
+  {
+   "id": "stats-xlsx",
+   "kind": "deposited result file",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/09/PXD003710/ProteinexportandandstatisticsofTMTandLFdatasets_Peli1.xlsx"
+  },
+  {
+   "id": "tmt-white-peptides",
+   "kind": "deposited result file",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/09/PXD003710/TMT_exp1_white_peptides.xlsx"
+  },
+  {
+   "id": "lf-peptides",
+   "kind": "deposited result file (HTTP range 0-300000)",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/09/PXD003710/LF_Peptides.csv"
+  },
+  {
+   "id": "raw-headers",
+   "kind": "raw file headers (HTTP range 0-400000 of every one of the 176 .raw files)",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/09/PXD003710/<file>.raw"
+  }
+ ],
+ "claims": [
+  {
+   "location": "characteristics[organism]",
+   "value": "Mus musculus",
+   "source_ids": [
+    "pride",
+    "paper"
+   ],
+   "evidence": "PRIDE organism NCBITaxon 10090; paper: Peli1 KO and WT mice."
+  },
+  {
+   "location": "characteristics[organism part]",
+   "value": "cerebral hemisphere",
+   "source_ids": [
+    "paper",
+    "pride"
+   ],
+   "evidence": "Paper/protocol: 'The frontal part of the right cerebral hemisphere was excised'. UBERON:0001869; the frontal sub-region is not encoded."
+  },
+  {
+   "location": "characteristics[strain or breed]",
+   "value": "C57BL/6 x 129/Sv",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Paper: 'Peli1 KO and WT mice (C57/BL/6 x 129/Sv genetic background)'. Free text; not an NCBITaxon term (validator warning)."
+  },
+  {
+   "location": "characteristics[genotype] / factor value[genotype]",
+   "value": "Peli1 knockout | wild type | not applicable (reference pools)",
+   "source_ids": [
+    "paper",
+    "supp-methods",
+    "pride-files"
+   ],
+   "evidence": "Conditions KO/WT in Supplementary Methods Table 1 and in run names (KO/WT)."
+  },
+  {
+   "location": "characteristics[sampling time] / factor value[sampling time]",
+   "value": "0 day | 10 day | 20 day | not applicable (reference pools)",
+   "source_ids": [
+    "paper",
+    "supp-methods"
+   ],
+   "evidence": "Brains harvested before immunization (0), 10 dpi (onset) and 20 dpi (peak); condition names 0/10/20 = days post immunization."
+  },
+  {
+   "location": "characteristics[disease]",
+   "value": "normal (0 day) | experimental autoimmune encephalomyelitis (10, 20 day) | not applicable (reference pools)",
+   "source_ids": [
+    "supp-methods",
+    "paper"
+   ],
+   "evidence": "0-day mice were euthanized before EAE immunization; 10/20 dpi mice were MOG35-55-immunized. PRIDE 'multiple sclerosis' not used: mice carry the EAE model, MONDO:0005134."
+  },
+  {
+   "location": "characteristics[sex] / characteristics[developmental stage]",
+   "value": "not available",
+   "source_ids": [
+    "supp-methods"
+   ],
+   "evidence": "Only 'age- and sex-matched mice were used'; no values given."
+  },
+  {
+   "location": "comment[instrument]",
+   "value": "NT=Orbitrap Elite;AC=MS:1001910",
+   "source_ids": [
+    "raw-headers",
+    "pride",
+    "paper"
+   ],
+   "evidence": "All 176 raw headers read 'Orbitrap Elite MS'; PRIDE MS:1001910; live OLS label is 'Orbitrap Elite'."
+  },
+  {
+   "location": "comment[cleavage agent details]",
+   "value": "NT=Trypsin;AC=MS:1001251",
+   "source_ids": [
+    "paper",
+    "pride"
+   ],
+   "evidence": "Paper FASP: 'the protein to trypsin ratio was 50:1'; protocol: 'Trypsin was set as enzyme'. Reconcile 'cleavage_agent_unsupported' is a false positive."
+  },
+  {
+   "location": "comment[proteomics data acquisition method]",
+   "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+   "source_ids": [
+    "pride",
+    "raw-headers"
+   ],
+   "evidence": "Protocol: 'operated in the data-dependent-acquisition mode'; raw methods TOP10."
+  },
+  {
+   "location": "comment[reduction reagent]",
+   "value": "NT=Dithiothreitol (DTT);AC=PRIDE:0000608",
+   "source_ids": [
+    "pride",
+    "paper"
+   ],
+   "evidence": "Lysis buffer contained 0.1 M DTT. Alkylation reagent not stated; column omitted."
+  },
+  {
+   "location": "comment[ms1 scan range]",
+   "value": "300m/z-2000m/z",
+   "source_ids": [
+    "pride",
+    "supp-methods",
+    "raw-headers"
+   ],
+   "evidence": "Survey scans 300-2000 m/z; raw header scan event 'FTMS + p norm o(300.0-2000.0)'."
+  },
+  {
+   "location": "source name / comment[data file] (individual mice)",
+   "value": "LF <KO|WT> <0|10|20> dpi mouse <n>, one per run 20150910_Peli1_<d>-<KO|WT><n>.raw",
+   "source_ids": [
+    "pride-files",
+    "stats-xlsx",
+    "lf-peptides",
+    "supp-methods"
+   ],
+   "evidence": "38 run names encode condition and mouse number; group sizes 5/7/7 per genotype match Supplementary Methods; the Progenesis exports group the same runs under 0KO..20WT."
+  },
+  {
+   "location": "source name / comment[technical replicate] (reference)",
+   "value": "LF reference pool of all 38 mice; 26 runs = technical replicates 1-26",
+   "source_ids": [
+    "supp-methods",
+    "pride-files",
+    "stats-xlsx"
+   ],
+   "evidence": "4 aliquots of a pool of all 38 samples, each injected several times with one of 12 precursor m/z selection windows; 26 REF runs deposited and listed in the Progenesis export."
+  },
+  {
+   "location": "characteristics[pooled sample]",
+   "value": "not pooled (individual mice) | pooled (reference)",
+   "source_ids": [
+    "supp-methods"
+   ],
+   "evidence": "Individual 20 ug lysates; reference is a pool of all samples."
+  },
+  {
+   "location": "characteristics[biological replicate]",
+   "value": "mouse number within condition (1-7); reference = pooled",
+   "source_ids": [
+    "pride-files"
+   ],
+   "evidence": "From run names."
+  },
+  {
+   "location": "comment[label]",
+   "value": "label free sample",
+   "source_ids": [
+    "pride",
+    "supp-methods"
+   ],
+   "evidence": "Label-free arm. Reconcile 'labelled_annotated_as_label_free' is a false positive: the project registers both TMT and MS1 label-free quantification."
+  },
+  {
+   "location": "comment[dissociation method] / comment[collision energy] / comment[ms2 mass analyzer]",
+   "value": "CID MS:1000133 / 35% NCE / linear ion trap MS:1000291",
+   "source_ids": [
+    "pride",
+    "raw-headers"
+   ],
+   "evidence": "Raw headers: 'ITMS + c norm Dep Wideband MS/MS', CID, NCE 35.0."
+  },
+  {
+   "location": "comment[modification parameters]",
+   "value": "Carbamidomethyl C fixed; Oxidation M variable",
+   "source_ids": [
+    "pride",
+    "supp-methods"
+   ],
+   "evidence": "LF search modifications stated in the protocol."
+  },
+  {
+   "location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]",
+   "value": "10 ppm / 0.7 Da",
+   "source_ids": [
+    "pride",
+    "supp-methods"
+   ],
+   "evidence": "LF search 'as for the TMT 10-plex' (10 ppm) except fragment mass error 0.7 Da."
+  }
+ ],
+ "limitations": [
+  "Individual-mouse membership of the TMT pools is not deposited, so TMT pool sources cannot be linked to the label-free individual-mouse sources.",
+  "Sex, age and developmental stage not reported per mouse (only 'age- and sex-matched'): not available.",
+  "Organism part encoded as cerebral hemisphere; the paper specifies the frontal part of the right hemisphere.",
+  "No search-engine parameter file (.msf/.pdResult) deposited; modifications and tolerances come from protocol text (TMT mods cross-checked in the peptide table).",
+  "Alkylation reagent not stated (carbamidomethylation searched); column omitted.",
+  "Precursor m/z selection window of each reference run (12 windows) is only in the file/assay name; no SDRF column for it.",
+  "Methods text says 24 reference runs; 26 deposited (two re-runs), all included."
+ ]
+}

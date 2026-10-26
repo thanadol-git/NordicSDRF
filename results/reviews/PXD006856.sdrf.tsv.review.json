@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD006856.sdrf.tsv",
+  "artifact_sha256": "3cc322b08e03b0f94ae44dca2cf645c19aa0fe8e5f02234116acf8d4bcfc7f3d",
+  "verdict": "PASS",
+  "summary": "Independent fresh-context review of the 2-run HAP1 control vs NAA80 KO1 N-terminomics SDRF found no blocking or important issues. The file-to-sample mapping was confirmed from the deposited Mascot results (actin N-termini light/in-vivo acetylated only in the WT file, heavy/in-vitro acetylated in the KO file), the KO1 -> CVCL_SZ97 identity is supported by the matching 17 bp deletion (with KO2's 404 bp insertion matching the sibling CVCL_SZ98), MOD:01965 is the correct and only available term for 13C2D3-acetyl-K, and 'label free sample' is the only structurally correct comment[label] value because each run holds exactly one sample. Two reconcile heuristics were adjudicated as false positives. Remaining items are minor.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent (bergen-reviewer-PXD006856) without producer transcript; producer report.md not read; all evidence re-fetched into scratchpad/PXD006856/review-PXD006856/"
+  },
+  "evidence_manifest": "annotations/PXD006856.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates derived independently: human cell line + MS DDA -> ms-proteomics 1.1.0 (technology) + human 1.1.0 (sample) + cell-lines 1.1.0 (experiment, requires technology+sample layers per templates.yaml); matches the three declared comment[sdrf template] values. All required columns of base/sample-metadata/human/cell-lines/ms-proteomics present; 44 columns, uniform row width, no leading/trailing whitespace; source name+assay name+label unique; column order characteristics -> assay name/technology type -> comments -> factor value (sdrf-tools structure: OK). Value formats checked: age 40Y, collision energy '28% NCE', tolerances '10 ppm'/'0.02 Da', scan ranges 'Xm/z-Ym/z', NT/AC key order in structured values."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4 exact-match lookups: HAP-1 = EFO:0007598; chronic myeloid leukemia = MONDO:0011996; bone marrow = UBERON:0002371; male = PATO:0000384; label free sample = MS:1002038; Q Exactive HF = MS:1002523; Trypsin = MS:1001251; higher energy beam-type collision-induced dissociation = MS:1002481; orbitrap = MS:1000484; Data-dependent acquisition = PRIDE:0000627; none obsolete. sdrf-tools verify confirmed UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, UNIMOD:1 Acetyl, UNIMOD:28 Gln->pyro-Glu and MOD:01965 '2xC(13),3x(2)H labeled N6-acetyl-L-lysine' (OLS: DiffMono 47.036106, Origin K, not obsolete; PSI-MOD OBO synonym 'COFRADIC heavy acetyl 13C2 2H3'). Absence of a Unimod term for 13C2D3-acetyl confirmed from unimod.xml (only Acetyl 42.0106, Acetyl:2H(3) 45.0294 and Acetyl:13C(2) 44.0173); the PSI-MOD OBO has exactly one term at DiffMono 47.0361 (MOD:01965, K only). Cellosaurus CVCL_Y019 (ID HAP1) and CVCL_SZ97 (ID 'HAP1 NAT6 (-) 1') resolve and match characteristics[cellosaurus name]. sdrf-tools check: 14/14 terms verified, CLEAN."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project (title/accession asserted PXD006856), PMC5924898 full text and the SI PDF re-fetched from Europe PMC. Paper: N-terminal proteomics compared 'control and NAA80 KO1 cell lysates'; SI: SCX enrichment 'from HAP1 control and NAA80 KO1 cells', 'From both samples ~2 ug injected', Q Exactive HF, DDA top16, MS1 375-1,500 m/z, MS2 200-2,000 m/z at 15,000 in the orbitrap, NCE 28%, 10 ppm / 20 mDa, heavy 13C2D3-acetyl K and carbamidomethyl C fixed, oxidation M variable, pyro-Glu in second search; cells from Horizon (C631 = parental HAP1 per Cellosaurus DR), IMDM + 10% FBS. Raw-file headers (first 1.5 MB of each RAW) show 'Q Exactive HF - Orbitrap MS', scan ranges 375-1500 and 200-2000 m/z, TopN 16, HCD NCE 28. Mascot .dat parameter blocks (all four, re-fetched): MODS=Acetyl:2H(3)C13(2) (K),Carbamidomethyl (C); IT_MODS Oxidation (M) + Gln->pyro-Glu (N-term Q) or + Acetyl (N-term) and Acetyl:2H(3)C13(2) (N-term); TOL 10 ppm; ITOL 20 mmu; CLE semiArgC/P. KO1 identity: SI Fig. S2A KO1 = 17 bp deletion in exon 2, KO2 = 404 bp insertion; Cellosaurus CVCL_SZ97 synonym 'NAT6 knockout cell line 17bp deletion' (Horizon HZGHC003171c003, CRISPR/Cas9 NAA80 KO, HI CVCL_Y019) and sibling CVCL_SZ98 '404bp insertion' (HZGHC003171c012) - both clones' lesions match the same Horizon pair. Donor values (male, 40Y, bone marrow, CML) are Cellosaurus parental-line attributes shared by CVCL_Y019 and CVCL_SZ97; SI states KBM-7 origin is male CML."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE /files (all 14 entries projectAccessions=['PXD006856']) has exactly two RAW files, both present once in comment[data file]; no non-raw files referenced. Sample assignment verified from data, not only filenames: in F134362.dat (FILE=...SCX_RT_WT.raw) the ACTB/ACTG N-terminal peptides DDDIAALVVDNGSGMCKAGFAGDDAPR (64 PSMs) and EEEIAALVIDNGSGMCKAGFAGDDAPR (84 PSMs) carry only the light Acetyl (N-term) (in vivo acetylated = NAA80-competent control), whereas in F134282.dat (FILE=...SCX_RT_KO.raw) they carry the heavy Acetyl:2H(3)C13(2) (N-term) (21 and 19 PSMs; 1 low-score light ACTG PSM), i.e. unacetylated in vivo = NAA80 KO - consistent with SI Fig. S2B (100% vs 0%). Note: the WT RAW's internal acquisition filename is '..._SCX_RT_KO_170202183625.raw' (Xcalibur duplicate-name suffix; vial GA1 vs GC4 for the KO file), so the file was renamed after acquisition; the actin evidence confirms the deposited WT/KO names are correct."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 2 biological samples (HAP1 control, HAP1 NAA80 KO1) x 1 injection each = 2 runs; biological replicate 1, technical replicate 1, fraction 1 (SCX run-through is a single negative-selection enrichment, not fractionation; one RAW per sample). factor value[genotype] mirrors characteristics[genotype] and is the only varying biological variable; KO2 was not measured by MS (paper/SI only report MS for control vs KO1). comment[label] 'label free sample': each RAW contains one biological sample and the light/heavy acetyl pair is an intra-sample in vivo vs in vitro readout, not a sample channel, so no PRIDE channel label applies; the 13C2D3 reagent is encoded as the fixed K modification. reconcile heuristic 'labelled_annotated_as_label_free' (PRIDE quantificationMethods 'MS1 based isotope labeling') adjudicated as a false positive for this reason. reconcile heuristic 'disease_on_control_runs' adjudicated as a false positive: the cell-lines template defines characteristics[disease] as the disease of the donor tissue of the line, and the WT control is the same CML-derived HAP1 line."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every populated value traced to PRIDE, paper/SI, Mascot .dat, RAW headers or Cellosaurus at the stated granularity; no value found stated more specifically than its source (CVCL_SZ97 rests on two independent lesion matches and is disclosed as such in the manifest). 'not available' used for cell type, ancestry and passage number, none of which the sources state (SI only says cells were passaged until diploid). Omitted items checked: heavy N-terminal acetyl variable mod has no Unimod or PSI-MOD term (verified) and is disclosed; culture medium IMDM has no NCIT/OBI term in OLS (verified; DMEM exists but would be wrong); no PRIDE/EFO enrichment-process term for N-terminal peptide enrichment exists (verified); reduction/alkylation reagents are not stated in the paper/SI. No unsupported additions found."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf --use_ols_cache_only (timeout 900), run separately: -t ms-proteomics exit 0, -t human exit 0, -t cell-lines exit 0, each 'Everything seems to be fine. Well done.' sdrf-tools check exit 0 (14/14 verified, CLEAN); sdrf-tools score exit 0 (99/100; only missing recommended developmental stage); sdrf-tools structure exit 0 ('Structure OK'); sdrf-tools reconcile --record PRIDE project exit 1 with two heuristic BLOCKER flags (disease_on_control_runs, labelled_annotated_as_label_free), both adjudicated as false positives with evidence in design_consistency. SHA-256 unchanged from start to end of review."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "modification_parameters",
+      "location": "comment[modification parameters] columns, rows 1-2",
+      "message": "The heavy N-terminal acetylation (Mascot 'Acetyl:2H(3)C13(2) (N-term)', +47.036105, the heavy component of the Ac/AcDC quantitation) is not encoded, so the SDRF alone cannot reproduce the in-vivo acetylation-degree search; the semiArgC/P search enzyme is likewise not captured (Trypsin is correct as the digestion agent).",
+      "evidence": "Unimod has no 13C2D3-acetyl entry and PSI-MOD's only 47.036 Da acetyl term (MOD:01965) is lysine-specific, so omission is forced by vocabulary and is disclosed in the manifest limitations. Correction criterion: if Unimod/PSI-MOD gains an N-terminal 13C2D3-acetyl term, add it as MT=Variable;PP=Any N-term."
+    },
+    {
+      "severity": "minor",
+      "category": "label_semantics",
+      "location": "comment[label], rows 1-2",
+      "message": "'label free sample' (MS:1002038, defined as 'not labelled or modified') sits in tension with the in-vitro 13C2D3-acetylation of every sample and PRIDE's 'MS1 based isotope labeling'; it is nonetheless the only structurally correct value because each run holds one sample and no PRIDE label term describes in-vitro heavy acetyl blocking.",
+      "evidence": "PRIDE:0000514 descendants (OLS) contain no acetyl-label term; spec README: comment[label] distinguishes samples within a run. Correction criterion: none required; keep the limitation note so consumers do not treat the runs as conventional LFQ."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "evidence manifest, claim for comment[data file]/genotype mapping",
+      "message": "The manifest cites the RAW headers but does not record that the WT RAW's internal acquisition filename is '..._SCX_RT_KO_170202183625.raw'; the mapping rests on post-rename filenames and Mascot FILE= lines.",
+      "evidence": "Header string 8 of the WT RAW; actin N-terminal Ac vs AcDC PSMs in F134362.dat/F134282.dat independently confirm WT=control and KO=NAA80 KO1. Correction criterion: add the actin-based confirmation to the manifest."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (absent optional/recommended columns)",
+      "message": "SCX N-terminal peptide enrichment, IMDM culture medium and diploid status of the HAP1 lines are not represented; developmental stage (optional) and individual (recommended in human) are absent.",
+      "evidence": "No PRIDE/EFO enrichment-process term for N-terminal enrichment and no NCIT term for IMDM were found in OLS; score tool reports only missing developmental stage. Correction criterion: optional; add if suitable terms become available."
+    }
+  ]
+}

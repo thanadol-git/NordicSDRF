@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002318-tmt.sdrf.tsv",
+  "artifact_sha256": "d7c2d31c839bbffdabf93caae7c8f62671e58870875fba8653f16dd3dd20555c",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. The TMT channel-to-sample map (126=CTR-CPZ, 127=CPZ-42d, 128=CTR-EAE, 129=EAE-16d, 130=EAE-32d) contradicts the paper Methods and PRIDE protocol prose, but is supported by the deposited sample sheet, Supplementary Data 1, the PD export ratio structure, a cuprizone biological signature in 127/126, and correlation with the independent per-animal label-free data. All 97 deposited RAW files are claimed exactly once across the TMT (63) and label-free (34) SDRFs. Only minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh-context reviewer subagent (bergen-reviewer-PXD002318-tmt); no producer transcript; producer report.md not read; sibling label-free SDRF read only for file-coverage and SN= source-name cross-check"
+  },
+  "evidence_manifest": "annotations/PXD002318-tmt.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "315 rows x 36 columns, uniform row width; templates declared ms-proteomics v1.1.0 + vertebrates v1.1.0 (both 'latest' in templates.yaml, independently judged correct for mouse tissue TMT DDA); sdrf version v1.1.0; 315 unique assay names; no duplicate (data file, label) pairs; 5 labels x 63 files; fraction identifiers are integers (1-53 for the fractionated set, 1 for unfractionated runs, per template guidance); modification parameters use NT/AC/TA|PP/MT syntax; characteristics[pooled sample] SN= values match the template pattern ^(not pooled|pooled|SN=.+(;SN=.+)*)$; sdrf-tools structure: 'Structure OK'."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4: MS:1003096 'Orbitrap Velos Pro', MS:1001251 'Trypsin', PRIDE:0000627 'Data-dependent acquisition', PRIDE:0000565 'High-performance liquid chromatography' (a child of PRIDE:0000550; no mixed-mode child exists), PRIDE:0000609 'Tris(2-carboxyethyl)phosphine (TCEP)', UBERON:0001870 'frontal cortex', MONDO:0002562 'demyelinating disease', MONDO:0005134 'experimental autoimmune encephalomyelitis', PATO:0000461 'normal', EFO:0001272 'adult', PRIDE:0000516/0000517/0000520/0000523/0000526 = TMT126/127/128/129/130; none obsolete. sdrf-tools verify: UNIMOD:737 TMT6plex, UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, MS:1003096 all exist with matching labels. sdrf-tools check: 16/16 terms verified, 0 hallucinated, 0 mismatches. Instrument independently confirmed from the CPZ_EAE_TMT_MP30.raw header (byte-range read): 'Orbitrap Velos Pro'."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Re-fetched PRIDE project/files (projectAccessions = {PXD002318}), sample sheet, both PD exports and Europe PMC PMC8010076 full text + supplementary files (title matches). Organism, female sex, C57BL/6, frontal cortex, 8-week-old induction, CPZ 0.2% for 6 weeks, EAE sacrifice on p.i. days 16 and 32, PD 1.4.1.14 tolerances and modifications, TCEP, DDA on an LTQ-Orbitrap Velos Pro and 53 fractions plus the unfractionated sample all match the cited text. Channel map: the sheet and Supplementary Data 1 give 126=CTR-CPZ, 127=CPZ, 128=CTR-EAE, 129=EAE-16d, 130=EAE-32d. The paper Methods and PRIDE prose give a different map, refuted as follows. (1) The PD ratios 127/126, 129/128 and 130/128 share denominator 128, which only fits 128 = CTR-EAE; under the prose map 128 would be EAE-16d. (2) In median-normalised 127/126, myelin proteins fall (MOBP 0.48, Opalin 0.43, MOG 0.57, MBP 0.67) and gliosis/microglia markers rise (Gpnmb 12.2, C1qb 5.3, Gfap 2.6), the cuprizone signature with CPZ in the numerator. (3) The published Supplementary Data 1 'CPZ42d/EAE16d/EAE32d TMT' values equal median-normalised PD 127/126, 129/128 and 130/128 (median absolute difference below 0.004). (4) Against independent per-animal label-free ratios (n=1871), 127/126 vs LF CPZ r=0.70 (vs LF EAE about 0), 129/128 vs LF EAE-16d r=0.58 (vs EAE-32d 0.43), and 130/128 vs LF EAE-32d r=0.56 (vs EAE-16d 0.37). Pool membership per channel matches the sheet exactly, including the EAE-32d pool A4..F4 and the 6-animal CTR-EAE pool."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE lists 102 files, 97 of them RAW. The TMT SDRF has 63 unique RAW files, each with 5 rows (TMT126-130); the sibling label-free SDRF has 34. The two sets don't overlap, every RAW file is covered and there are no extras. MP1_3 maps to fraction 1, MP7_9 to 2 and MP10..MP60 to 3..53, matching the sheet's 'Combined mixed-mode fractions'/'Mixed-mode fraction N'. MP4_6 ('Discarded') is correctly absent from PRIDE and the SDRF. The 10 TOP7/TOP10 runs match the sheet's 'Unfractioned sample, parameters optimization 1..10'. No non-raw files are listed."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "5 pooled conditions (CTR-CPZ n=5, CPZ-42d n=5, CTR-EAE n=6, EAE-16d n=6, EAE-32d n=6 animals) in one TMT6plex mix; TMT131 unused, consistent with the 1:1:1:1:1 mix. Factor values (disease plus sampling time) separate all 5 conditions: the two 'normal' controls differ by sampling time (42 day vs not available). Technical replicate 1 is the 53-fraction set; technical replicates 2-11 are the 10 unfractionated optimisation re-injections. Sampling time for CTR-EAE is 'not available' because the paper (p.i. day 32) and the sheet (36 days) conflict. The paper's CTR-EAE N=5 conflicts with the sheet's 6 animals, but 6 matches the PRIDE prose 'pool of N=6' and the 6 label-free CTR-EAE RAW files."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No value is more specific than its evidence: strain C57BL/6 (not a sub-strain), disease terms broad or exact, alkylation reagent 'not available' (iodoacetamide appears only in the label-free digestion section; TMT only cites the kit manual), sampling time 'not available' where sources conflict, developmental stage 'adult' supported by 8-week-old induction plus 16-42 days. Dissociation method and collision energy are omitted rather than single-valued, which is safe because fraction runs used back-to-back CID (NCE 35) and HCD (NCE 40), confirmed in the RAW method header. Material evidence the producer could have omitted (the paper/PRIDE prose channel map) is disclosed in the manifest limitations."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics --use_ols_cache_only: exit 0, 'only warnings' (5 characteristics[pooled sample] 'values' warnings, spurious because the SN= values pass the template's pattern validator). parse_sdrf validate-sdrf -t vertebrates --use_ols_cache_only: exit 0, the same 5 warnings plus 'C57BL/6 not found in ncbitaxon' (template restricts strain to NCBITaxon, which has no strain terms; the template's own example value C57BL/6 would trigger the same warning). sdrf-tools check: exit 0, CLEAN 16/16. sdrf-tools score: exit 0, 100/100. sdrf-tools structure: exit 0. sdrf-tools reconcile --record PRIDE: exit 0, 'every annotated value agrees with the deposit record'. Hash re-checked after validation: unchanged."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "spec_guidance",
+      "location": "characteristics[biological replicate], all 315 rows",
+      "message": "Each channel is a pool of 5-6 animals but biological replicate is '1'. The spec README says 'For pooled samples, use pooled for biological replicate'.",
+      "evidence": "spec README.adoc 'Encoding sample technical and biological replicates'; the sample-metadata validator accepts both integer and 'pooled'. Correction criterion: consider 'pooled', or keep 1 and rely on characteristics[pooled sample]."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology_specificity",
+      "location": "characteristics[disease] / factor value[disease], 63 'pool CPZ-42d' rows",
+      "message": "'demyelinating disease' (MONDO:0002562) is accurate but broad. Cuprizone causes CNS demyelination (corpus callosum histology), so 'demyelinating disease of central nervous system' (MONDO:0020800) is a closer, still-supported term.",
+      "evidence": "OLS4 exact search; paper Methods 'Cuprizone' and Supplementary Fig. 1."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (missing recommended comment[dissociation method] / comment[collision energy])",
+      "message": "The fractionated runs used documented back-to-back CID (ion trap, NCE 35) plus HCD (Orbitrap, NCE 40). If multi-valued annotation is acceptable, these could be added for the fraction rows. Omitting them is safe.",
+      "evidence": "Supplementary Methods 'Orbitrap LC-MS of TMT-labeled mixed mode fractions'; the CPZ_EAE_TMT_MP30.raw method header shows 'Activation Type: CID ... 35.0' and 'Activation Type: HCD ... 40.0'."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD002318-tmt.evidence.json, claim 'comment[label], source name'",
+      "message": "The channel-map justification rests on deposited sheets and PD ratio headers, which come from the authors. The manifest would be stronger with the label-independent confirmation: the cuprizone myelin/gliosis signature in 127/126 and the TMT vs per-animal label-free ratio correlations.",
+      "evidence": "Reviewer analysis in the source_evidence check above."
+    }
+  ]
+}

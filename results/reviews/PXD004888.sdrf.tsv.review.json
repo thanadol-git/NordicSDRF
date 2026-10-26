@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD004888.sdrf.tsv",
+  "artifact_sha256": "e24a12a575570c53edcd9b6e27e5231dba230d6662a82a466bfa3fb0fc6b064d",
+  "verdict": "PASS",
+  "summary": "Independent review of the 12-row label-free SDRF for PXD004888 (F. nucleatum / P. gingivalis mono- and dual-species biofilm EPM, Orbitrap Elite) found no blocking or important issues. The dual-species rows' organism value 'Bacteria' (NCBITaxon:2) is the true lowest common NCBI ancestor and is consistent with the single-cardinality characteristics[organism] column; two organism columns are not required. Instrument Orbitrap Elite (MS:1001910) is confirmed in all 12 raw method headers and in the Fn_ECM1 run-header instrument ID block. Only minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent context; producer transcript and report.md not read; all PRIDE, Europe PMC, bioRxiv, NCBI, OLS and raw-file evidence fetched fresh into scratchpad/PXD004888/review-PXD004888/"
+  },
+  "evidence_manifest": "annotations/PXD004888.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Declared template NT=ms-proteomics;VV=v1.1.0, independently confirmed as the only applicable template (no organism layer template applies to bacteria; metaproteomics is for environmental/host-associated communities, not a defined two-strain culture). All required/recommended columns of base 1.1.0, sample-metadata 1.0.0 and ms-proteomics 1.1.0 present. characteristics[organism] has no 'cardinality: multiple' in sample-metadata.yaml (unlike organism part and cell type), so a single organism column is the spec-conformant shape. Collision energy '35% NCE' and ms1 scan range '300m/z-2000m/z' match the spec patterns/examples. 12 unique source names, assay names and data files; one row per file; sdrf-tools structure: OK."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4: NCBITaxon:190304 'Fusobacterium nucleatum subsp. nucleatum ATCC 25586', NCBITaxon:431947 'Porphyromonas gingivalis ATCC 33277', NCBITaxon:2 'Bacteria', MS:1001910 'Orbitrap Elite', MS:1001251 'Trypsin', MS:1000133 'collision-induced dissociation', MS:1000291 'linear ion trap', PRIDE:0000627 'Data-dependent acquisition', PRIDE:0000608 'Dithiothreitol (DTT)', PRIDE:0000599 'Iodoacetamide (IAA)', EFO:0000523 'growth condition' - all non-obsolete with matching labels. sdrf-tools verify: UNIMOD:1 Acetyl, UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation. sdrf-tools check: 13/13 verified, 0 hallucinated/mismatched. NCBI lineages: Fusobacterium in kingdom Fusobacteriati, Porphyromonas in Pseudomonadati, so the lowest common ancestor is Bacteria (NCBITaxon:2)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project PXD004888 (accession and title asserted): mono- and dual-species biofilm EPM, four biological replicates, FASP with 10 mM DTT and 0.05 M iodoacetamide, trypsin, DDA top-10, Orbitrap full scan m/z 300-2000 at R=240,000, CID in the linear ion trap, MaxQuant 1.5.2.8 LFQ; PRIDE organisms NEWT:190304 and NEWT:431947. Strain level is also supported by the same group's companion preprint (bioRxiv 10.1101/2020.11.23.393850, same model and LC-MS setup): 'F. nucleatum type strain ATCC 25586 and Porphyromonas gingivalis type strain ATCC 33277 were used'. Raw headers (fresh byte-range reads): method header 'Orbitrap Elite MS' in all 12 files; run-header instrument ID block of Fn_ECM1.raw (offset 995394840) reads 'Orbitrap Elite'; 'Activation Type: CID', 'Normalized Coll. Energy: 35.0', 'FTMS + p norm o(300.0-2000.0)', 'ITMS + c ... MS/MS', 'top 10 peaks'. The 'Orbitrap Velos Pro' string in the headers is an embedded-method storage name, not the instrument ID. PRIDE's generic MS:1000449 'LTQ Orbitrap' is less specific; MS:1001910 is evidence-backed, not over-specified. parametersFn/Pg.txt: fixed Carbamidomethyl (C), 'Modifications included in protein quantification: Acetyl (Protein N-term);Oxidation (M)', 'MS/MS tol. (ITMS) 0.5 Da', no precursor tolerance recorded (so 'not available' is the right value)."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE file list: 20 files, all with projectAccessions ['PXD004888'], 12 of category RAW. All 12 RAW names appear exactly once in comment[data file]; there are no non-raw or unmatched entries. The Fn_/Pg_/FnPg_ prefixes match MaxQuant experiment columns FnECM1-4, PgECM1-4, FnPgECM1-4 in proteinGroupsFn/Pg.txt and peptidesFn.txt (FnPg runs searched against both species databases). Internal acquisition names show systematic renaming at deposition (deposited ECM1 = 2014-11-20 session; ECM2/ECM3 = 2015-01-27 session runs '_ECM1'/'_ECM2'; ECM4 = separate 'MM_*' session) applied identically to all three groups. Each deposited file is a distinct acquisition with distinct sizes, so the replicate numbering follows the deposited names and is not a fabricated mapping."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "3 groups x 4 biological replicates = 12 samples = 12 files; technical replicate 1, fraction 1, label free throughout; factor value[growth condition] equals characteristics[growth condition] with 3 levels of 4 rows each, matching the 'four biological replicates' statement and the 4+4+4 MaxQuant experiments. The acquisition sessions are balanced across groups (each group has one run in session A, two in B and one in C), so batch does not confound the factor."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value is traced to PRIDE protocol text, MaxQuant parameters/tables, raw headers or OLS. No value is more specific than its evidence: strain-level organisms are backed by PRIDE submitter metadata and the companion study; the dual-species rows use the least-specific true common taxon rather than claiming a single species; the instrument model is raw-verified; precursor tolerance is honestly 'not available' rather than an inferred MaxQuant default. organism part, cell type and disease are 'not applicable' for in vitro bacterial biofilm culture. Omitted optional information (acquisition batch, LC/gradient details, MaxQuant version) is non-blocking; see minor findings."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf -s annotations/PXD004888.sdrf.tsv -t ms-proteomics --use_ols_cache_only -> exit 0, 'Everything seems to be fine. Well done.' (the only declared template). sdrf-tools check -> exit 0, CLEAN (13/13). sdrf-tools score -> exit 0, 100/100. sdrf-tools structure -> exit 0, Structure OK. No term needed a live-OLS fallback. SHA-256 re-checked at the end of review: unchanged."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "organism encoding",
+      "location": "characteristics[organism], rows 9-12 (FnPg_EPM_biofilm_1-4); evidence.json claim for rows 9-12 and limitation 2",
+      "message": "'Bacteria' for the dual-species biofilm is acceptable and two organism columns are not required. characteristics[organism] is single-cardinality in sample-metadata 1.0.0 (only organism part and cell type are 'multiple'), and NCBITaxon:2 is the exact lowest common ancestor, so this does not overclaim. The trade-off is that the two species appear only as free text in growth condition, so an organism-based search will not return these rows. The manifest justifies the choice by a build-tool limitation rather than by the spec's single cardinality.",
+      "evidence": "sample-metadata.yaml lines 39-56 (no cardinality key) versus 58-62 (organism part, cardinality: multiple). README 'Column Cardinality': repeated columns are for terms whose cardinality allows it. NCBI lineages: Bacteria; Fusobacteriati vs Bacteria; Pseudomonadati. A scratch variant with two organism columns also passed parse_sdrf, so the validator does not enforce cardinality either way. Correction criterion (optional): restate the manifest rationale in spec terms; keep both species named in growth condition/factor value."
+    },
+    {
+      "severity": "minor",
+      "category": "style",
+      "location": "characteristics[organism], all rows",
+      "message": "Organism values use NCBI capitalisation ('Fusobacterium nucleatum subsp. nucleatum ATCC 25586', 'Bacteria'), while the sample-metadata documentation asks for lowercase NCBI names.",
+      "evidence": "sample-metadata.yaml documentation: 'Use NCBI Taxonomy names in lowercase (e.g., homo sapiens)'. The validator accepts either case."
+    },
+    {
+      "severity": "minor",
+      "category": "column semantics",
+      "location": "characteristics[growth condition] and factor value[growth condition], all rows",
+      "message": "growth condition (EFO:0000523) is registered for the plants template, and the values describe culture composition (mono- vs dual-species) rather than physical growth conditions. This is acceptable as an extra characteristic, but the column name is a loose fit.",
+      "evidence": "TERMS.tsv: growth condition, usage 'plants', 'Growth conditions for the plant (photoperiod, temperature, growth medium)'. Disclosed in manifest limitation 7."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "file-level (no batch column)",
+      "message": "The three acquisition sessions are not recorded: replicate 1 on 2014-11-20, replicates 2-3 on 2015-01-27, and replicate 4 in a separate session. They are balanced across groups, so this is not a confounder, but an optional batch annotation would help reuse.",
+      "evidence": "Embedded raw paths: '2014-11-20_OrbitrapElite_P14-47\\Raw\\Fn_ECM.raw' (Fn_ECM1.raw), '2015-01-27_OrbitrapElite_P14-53\\Raw\\Fn_ECM1.raw' (Fn_ECM2.raw), '...P14-53\\Raw\\Fn_ECM2_150128145051.raw' (Fn_ECM3.raw), 'Veronika_Kucharova\\Marwan_etc\\MM_Fn.raw' (Fn_ECM4.raw); same pattern for Pg_ and FnPg_."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "evidence.json limitation 6 and comment[instrument] claim",
+      "message": "The manifest says the run-header instrument record was not located. It exists: the instrument ID block after the run header of Fn_ECM1.raw reads 'Orbitrap Elite'. This strengthens rather than contradicts the SDRF value, and the manifest could cite it.",
+      "evidence": "Run-header address 995394840 (u64 at offset 2972 of the file header); a byte-range read of 995394840-995800000 shows 'Orbitrap Elite' twice, followed by the instrument status log."
+    }
+  ]
+}

@@ -127,8 +127,11 @@ countries:
         search_terms: [Odense, "University of Southern Denmark"]
         pride_hits: 604
         screened: 0
-        annotated: 0
+        annotated: 3
         blocked: 0
+        pxd_list: lists/denmark/odense.txt
+        pxd_count: 178
+        in_corpus: 45
       aarhus:
         name: Aarhus
         search_terms: [Aarhus, Århus]
@@ -177,7 +180,7 @@ countries:
         search_terms: [Bergen, Haukeland]
         pride_hits: 227
         screened: 0
-        annotated: 0
+        annotated: 20
         blocked: 2
         notes: "'Bergen' also matches Bergen NJ (USA) and Bergen op Zoom (NL)"
         pxd_list: lists/norway/bergen.txt

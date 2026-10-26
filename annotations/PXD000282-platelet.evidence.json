@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD000282-platelet.sdrf.tsv",
+  "dataset": "PXD000282",
+  "artifact_sha256": "6454d5fdb82235e19aabbe383030c2acfee314e69b4fe819892601e2043558f3",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000282"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000282/files?pageSize=1000"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC5562764 (https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5562764/fullTextXML); doi:10.1038/s41598-017-08975-y; PMID 28821815"
+    },
+    {
+      "id": "supp",
+      "kind": "publication supplementary",
+      "location": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41598-017-08975-y/MediaObjects/41598_2017_8975_MOESM1_ESM.xls (sheets S1_Plasma Peptides, S4_Platelets Proteins, S5_Material_Methods)"
+    },
+    {
+      "id": "upstream",
+      "kind": "repository",
+      "location": "gh api repos/bigbio/sdrf-annotated-datasets/contents/datasets/PXD000282 and .../sandbox/PXD000282 (both HTTP 404)"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/ (live lookups: MS:1003096, MS:1001251, MS:1002038, MS:1000133, MS:1000083, UBERON:0001969, UBERON:0000178, CL:0000233, NCBITaxon:10090, PRIDE:0000568 ancestors, PRIDE:0000608, PRIDE:0000599, PRIDE:0000627, UNIMOD:4/35/1, PATO:0000461)"
+    },
+    {
+      "id": "raw-headers",
+      "kind": "raw file header (HTTP range 0-8191 / 0-65535, utf-16-le)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/07/PXD000282/<file> for all 48 P_*.raw files; e.g. https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/07/PXD000282/P_KO_1.raw"
+    },
+    {
+      "id": "pride-xml-platelet",
+      "kind": "deposited result file (first ~3 MB of gzip stream)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/07/PXD000282/PRIDE_Exp_Complete_Ac_29636.xml.gz (WT) and https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/07/PXD000282/PRIDE_Exp_Complete_Ac_29637.xml.gz (KO)"
+    }
+  ],
+  "claims": [
+    {
+      "artifact": "annotations/PXD000282-platelet.sdrf.tsv",
+      "location": "characteristics[organism] all rows",
+      "value": "Mus musculus",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organisms NEWT:10090; Methods 'Mouse strains'."
+    },
+    {
+      "artifact": "annotations/PXD000282-platelet.sdrf.tsv",
+      "location": "characteristics[strain or breed] all rows",
+      "value": "C57BL/6JBomTac",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: knockouts bred against C57BL/6JBomTac background for >=10 generations; WT C57BL/6JBomTac littermates and commercial mice (Taconic)."
+    },
+    {
+      "artifact": "annotations/PXD000282-platelet.sdrf.tsv",
+      "location": "characteristics[genotype], factor value[genotype]",
+      "value": "Epac1-/- | wild type",
+      "source_ids": [
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "KO/CTR (plasma) and KO/WT (platelet) tokens in deposited RAW names; paper compares Epac1-/- vs WT."
+    },
+    {
+      "artifact": "annotations/PXD000282-platelet.sdrf.tsv",
+      "location": "characteristics[disease] all rows",
+      "value": "normal",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: 'Epac1-/- and Epac2-/- mice are healthy and apparently indistinguishable from WT mice under standard housing.'"
+    },
+    {
+      "artifact": "annotations/PXD000282-platelet.sdrf.tsv",
+      "location": "characteristics[sex], characteristics[developmental stage]",
+      "value": "not available",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Neither stated for blood-donor mice; unavailable evidence."
+    },
+    {
+      "artifact": "annotations/PXD000282-platelet.sdrf.tsv",
+      "location": "comment[instrument] all rows",
+      "value": "NT=Orbitrap Velos Pro;AC=MS:1003096",
+      "source_ids": [
+        "raw-headers",
+        "paper",
+        "ols"
+      ],
+      "evidence": "RAW header strings 'Orbitrap Velos Pro'; Methods 'LTQ-Orbitrap Velos Pro'. PRIDE field 'LTQ Orbitrap' overridden as too generic."
+    },
+    {
+      "artifact": "annotations/PXD000282-platelet.sdrf.tsv",
+      "location": "comment[proteomics data acquisition method], comment[dissociation method], comment[collision energy], comment[ms2 mass analyzer], comment[ms1 scan range]",
+      "value": "DDA PRIDE:0000627; CID MS:1000133; 35% NCE; radial ejection linear ion trap MS:1000083; 300m/z-2000m/z",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE sampleProcessingProtocol: DDA, survey 300-2000 m/z in Orbitrap, top-7 low-energy CID in linear ion trap, normalized collision energy 35%; RAW method name TOP7_..._CE35."
+    },
+    {
+      "artifact": "annotations/PXD000282-platelet.sdrf.tsv",
+      "location": "comment[cleavage agent details], comment[label]",
+      "value": "Trypsin MS:1001251; label free sample",
+      "source_ids": [
+        "pride",
+        "paper",
+        "supp"
+      ],
+      "evidence": "Trypsin digestion; label-free quantification throughout."
+    },
+    {
+      "location": "source name / comment[data file] / comment[fraction identifier] rows 1-48",
+      "value": "WT_platelets: P_WT_1..24 fractions 1-24; Epac1KO_platelets: P_KO_1..24 fractions 1-24",
+      "source_ids": [
+        "pride-files",
+        "raw-headers",
+        "pride-xml-platelet",
+        "supp"
+      ],
+      "evidence": "Deposited names P_WT_n / P_KO_n. Headers show original names P_KO_n (deposited as P_WT_n) and P_KO_1nn (deposited as P_KO_n) in folder 20120625_Platelets_KO. Scaffold XML 29636 'Wild-type mice' (folder 'Mouse platelets wild type', E1) vs 29637 'EPAC knockout mice' (E2), source 'P_KO_1 and 45 more'. S4 E1 GPIb-beta intensity 7048600 = paper Table 2 WT. Fraction order = file number (inferred)."
+    },
+    {
+      "location": "characteristics[organism part], characteristics[cell type]",
+      "value": "blood | platelet",
+      "source_ids": [
+        "pride",
+        "paper",
+        "ols"
+      ],
+      "evidence": "Gel-filtered platelets from blood; CL:0000233; UBERON:0000178."
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "NT=SDS PAGE;AC=PRIDE:0000568",
+      "source_ids": [
+        "pride",
+        "paper",
+        "pride-xml-platelet",
+        "ols"
+      ],
+      "evidence": "10% SDS-PAGE, sliced into 23 bands, in-gel trypsin digestion; Scaffold XML 'Gel-based experiment', 'excised band'."
+    },
+    {
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance]",
+      "value": "6 ppm | not available",
+      "source_ids": [
+        "supp"
+      ],
+      "evidence": "S5: first and main Andromeda search tolerances 20 and 6 ppm; MS/MS tolerance only 'MaxQuant default settings'."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C Fixed (UNIMOD:4); Oxidation M Variable (UNIMOD:35); Acetyl Protein N-term Variable (UNIMOD:1)",
+      "source_ids": [
+        "supp"
+      ],
+      "evidence": "S5 MaxQuant settings. No mqpar.xml/summary.txt deposited."
+    }
+  ],
+  "limitations": [
+    "Per-file genotype rests on the deposited file names: original acquisition names were P_KO_n and P_KO_1nn in one 'Platelets_KO' folder; the PRIDE XML spectra carry no per-file reference.",
+    "24 files per genotype deposited, but 23 bands per genotype analysed (46 runs in MaxQuant); the unused file per genotype is not identifiable.",
+    "Fraction order assumed from the file numbers.",
+    "Pooling of mice per genotype lane not stated.",
+    "Sex and developmental stage not stated.",
+    "Fragment tolerance and in-gel reduction/alkylation reagents not stated.",
+    "Independent adversarial review not yet performed."
+  ]
+}

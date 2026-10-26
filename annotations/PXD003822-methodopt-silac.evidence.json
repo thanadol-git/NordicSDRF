@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD003822-methodopt-silac.sdrf.tsv",
+  "dataset": "PXD003822",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003822"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003822/files?pageSize=100&page=0..1 (168 files; every entry's projectAccessions contains PXD003822)"
+    },
+    {
+      "id": "raw_headers",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/04/PXD003822/{F_LFQ_1_sdig_trp,IsD_SILAC_1_MM_x1,DD_L_IMAC,20151016_AML-FF1-A,20151023_AML-SS-FF1A-x1,HR82_FRESH,SS-1,LF-1}.raw (first 3 MB via HTTP range request: instrument method text, tune file, scan events)"
+    },
+    {
+      "id": "abstract",
+      "kind": "publication",
+      "location": "Europe PMC MED/27107777 abstract (doi:10.1016/j.jprot.2016.03.049); full text not accessible (subscription; Unpaywall closed; ScienceDirect 403)"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api (MONDO:0018874, CL:0000055 obsolete, MS:1001910, MS:1000133, MS:1000291, MS:1001251, MS:1003586, MS:1001309, PRIDE:0000587 (IMAC, child of EFO:0009090), PRIDE:0000627, PRIDE:0000561, PRIDE:0000550 descendants, EFO:0009090 descendants incl. EFO:0010806)"
+    },
+    {
+      "id": "upstream",
+      "kind": "repository",
+      "location": "gh api repos/bigbio/sdrf-annotated-datasets/contents/{datasets,sandbox}/PXD003822 -> 404 both"
+    },
+    {
+      "id": "search_summary",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/04/PXD003822/Search_MethodOptimization_SS-Proteome.zip -> Search_MethodOptimization_SS-Proteome/summary.txt (read from the ZIP via HTTP range requests)"
+    },
+    {
+      "id": "search_params",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/04/PXD003822/Search_MethodOptimization_SS-Proteome.zip -> Search_MethodOptimization_SS-Proteome/parameters.txt"
+    },
+    {
+      "id": "peptide_evidence",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/04/PXD003822/Search_MethodOptimization_SS-Proteome.zip -> Search_MethodOptimization_SS-Proteome/evidence.txt (size-checked against this run's ZIP listing; per-raw-file C-terminal residue statistics in scratchpad/PXD003822/cterm_stats.json)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] all rows",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "abstract"
+      ],
+      "evidence": "PRIDE organisms NEWT:9606; abstract: AML patients; human Swiss-Prot FASTA in parameters.txt"
+    },
+    {
+      "location": "characteristics[disease] SILAC light / label-free rows",
+      "value": "acute myeloid leukemia",
+      "source_ids": [
+        "pride",
+        "abstract",
+        "ols"
+      ],
+      "evidence": "Title 'Human AML patient samples'; abstract 'cell lysates from patients with AML'; MONDO:0018874"
+    },
+    {
+      "location": "comment[instrument] all rows",
+      "value": "NT=Orbitrap Elite;AC=MS:1001910",
+      "source_ids": [
+        "pride",
+        "raw_headers",
+        "ols"
+      ],
+      "evidence": "PRIDE instruments MS:1001910; raw header method 'Orbitrap Elite MS', tune 'Elite_nano', folder names 'OrbitrapElite', 240K resolution methods"
+    },
+    {
+      "location": "comment[proteomics data acquisition method], comment[dissociation method], comment[collision energy], comment[ms2 mass analyzer] all rows",
+      "value": "DDA; CID; 35 NCE; linear ion trap",
+      "source_ids": [
+        "raw_headers"
+      ],
+      "evidence": "Scan events 'FTMS + p norm o(300.0-2000.0)' then 'ITMS + c norm Dep ... MS/MS Most intense ion', Activation Type CID, Normalized Coll. Energy 35.0 (8 sampled files)"
+    },
+    {
+      "location": "comment[cleavage agent details] (two columns) per data file",
+      "value": "Lys-C eluate (*_ddig_Lys*, DD_L_*) = Lys-C | not applicable; trypsin eluate (*_ddig_Trp, DD_T_*) = Trypsin | not applicable; in-solution double digests (MQ IsD*_DD/Ddig) = Lys-C | Trypsin; single digests = Trypsin | not applicable",
+      "source_ids": [
+        "peptide_evidence",
+        "search_summary",
+        "pride"
+      ],
+      "evidence": "evidence.txt unique peptides per raw file: Lys-C eluates 92-97% K-terminal with 30-56% uncleaved R; trypsin eluates 60-71% R-terminal; in-solution double digests K-terminal share and uncleaved R raised vs single digests; MQ experiment names give single/double digestion; PRIDE 'single and double digested'. Values set by documented post-processing script (postprocess_cleavage.py) because build writes one constant cleavage column"
+    },
+    {
+      "location": "comment[fragment mass tolerance] all rows",
+      "value": "0.6 Da",
+      "source_ids": [
+        "search_params"
+      ],
+      "evidence": "parameters.txt 'MS/MS tol. (ITMS) 0.6 Da'; MS2 acquired in ion trap"
+    },
+    {
+      "location": "comment[modification parameters] all rows",
+      "value": "Carbamidomethyl C fixed; Acetyl protein N-term, Oxidation M variable (+ Phospho STY in phospho SDRFs; + Label:13C(6) R, Label:13C(6)15N(2) K in SILAC SDRFs)",
+      "source_ids": [
+        "search_params",
+        "search_summary"
+      ],
+      "evidence": "parameters.txt 'Fixed modifications Carbamidomethyl (C)'; summary.txt Variable modifications and Labels1 'Arg6;Lys8' per raw file"
+    },
+    {
+      "location": "characteristics[organism part], characteristics[cell type], characteristics[age], characteristics[sex]",
+      "value": "not available",
+      "source_ids": [
+        "abstract",
+        "pride"
+      ],
+      "evidence": "No per-sample tissue/demographic data in record or abstract; PRIDE CL:0000055 is obsolete"
+    },
+    {
+      "location": "source name / comment[fraction identifier] / comment[technical replicate] SILAC light rows",
+      "value": "11 workflows x 2 replicates; fractions in MaxQuant order",
+      "source_ids": [
+        "search_summary",
+        "pride"
+      ],
+      "evidence": "summary.txt Experiment/Fraction per raw file (66 files); PRIDE dataProcessingProtocol item 2"
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "SCX PRIDE:0000561 / mixed mode chromatography MS:1003586 / not applicable",
+      "source_ids": [
+        "pride",
+        "search_summary",
+        "ols"
+      ],
+      "evidence": "PRIDE: 'three-fraction SDB-RPS plugs and six-fraction SCX plugs' and 'SDB-RPS (also referred to as mixed-mode)'; MQ experiment names contain SCX / MM"
+    },
+    {
+      "location": "comment[label] + source name all rows",
+      "value": "SILAC light = AML sample; SILAC heavy = super-SILAC spike-in standard",
+      "source_ids": [
+        "search_summary",
+        "pride",
+        "abstract"
+      ],
+      "evidence": "summary.txt Multiplicity 2, Labels0 '' (light), Labels1 'Arg6;Lys8'; PRIDE 'super-SILAC (SS) experiments', 'SILAC-spiked samples'"
+    }
+  ],
+  "limitations": [
+    "Same AML material across workflows is not stated, so `individual` = not available and `pooled sample` = not available for the light rows. The replicates are encoded as technical replicates, which is an interpretation (see the label-free method-optimization report).",
+    "SDB-RPS term. `mixed mode chromatography` (MS:1003586) is outside the PRIDE list the validator expects, which produces 1 warning. The term is accurate for SDB-RPS. The alternative was `not available`, which would discard known information.",
+    "Super-SILAC standard. Its composition (which heavy-labelled cell lines) is not in the evidence. The heavy rows therefore carry `pooled sample` = pooled, `individual` = pooled, `material type` = cell line (SILAC metabolic labelling requires cultured cells), `disease` = not available and `cell type` = not available.",
+    "Cleavage agent. The Lys-C/trypsin split is evidenced by the deposited peptide data and the eluate tags in the file names. The paper's Methods were not read, so enzyme ratios and digestion times are unknown. For the in-solution double digests, the second enzyme is identified only from the peptide termini (a raised K-terminal and uncleaved-R share). `reconcile` flags Lys-C and Trypsin as unsupported because the PRIDE prose names no enzyme.",
+    "Paper not read. The J Proteomics paper is closed access, so only the abstract, the PRIDE protocol text and the deposited MaxQuant files were used. Any detail that lives only in the paper's Methods is absent or marked `not available`. This includes patient demographics, cell isolation (blood or bone marrow, density-gradient or not), the super-SILAC cell-line composition, enzyme amounts and digestion times, reduction/alkylation reagents, LC gradient and precursor tolerance.",
+    "Organism part and cell type are `not available`. The abstract says only \"AML cells\" and \"cell lysates from patients with AML\". PRIDE's dropdown lists CL:0000055 \"non-terminally differentiated cell\", which is obsolete in CL (the suggested replacement is progenitor cell, CL:0011026), so it was not used. Blood versus bone marrow origin is not stated in the evidence I could read.",
+    "Age, sex and ancestry are `not available` (ancestry omitted). No per-patient table was available.",
+    "Precursor mass tolerance is not recorded, because MaxQuant 1.5 `parameters.txt` does not report it.",
+    "Instrument. The model is `Orbitrap Elite`, from the method text and folder names. One header field says \"Orbitrap Velos Pro\" (see Technical values). Only 8 of 163 raw files were range-read. The other files' CID/ion-trap settings are assumed to be the same, because they share the five method templates and the same MaxQuant ITMS tolerance."
+  ]
+}

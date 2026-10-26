@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD003710-lf.sdrf.tsv",
+  "artifact_sha256": "8cc5190956b8aa817b115e9867bf7f434c42c0d5346f9f7e236e6ca2595cd839",
+  "verdict": "PASS",
+  "summary": "Independent review of the PXD003710 label-free SDRF (64 runs: 38 individual Peli1 KO/WT mice at 0/10/20 dpi plus 26 reference-pool runs) found no blocker or important issues. Every run maps to one deposited RAW file, and the label-free and TMT SDRFs together cover all 176 deposited RAW files exactly once. Group sizes, instrument and acquisition settings, and search parameters were re-derived from PRIDE, the paper and its Supplementary Methods, the Progenesis LF_Peptides.csv export and the RAW headers. Only minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh-context Bergen reviewer subagent (bergen-reviewer-PXD003710-lf); no producer transcript; producer report.md not read; sibling PXD003710-tmt.sdrf.tsv read only for the cross-file RAW coverage check"
+  },
+  "evidence_manifest": "annotations/PXD003710-lf.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Templates ms-proteomics v1.1.0 and vertebrates v1.1.0 were derived independently from templates.yaml and the template YAMLs; all required columns are present (source name, assay name, technology type, technical replicate, data file, organism, organism part, biological replicate, disease, developmental stage, acquisition method, instrument, cleavage agent, label, fraction identifier). Row shape: 64 rows x 36 columns, no empty or whitespace-padded cells, LF line endings, no BOM, unique assay names. Repeated columns are only comment[sdrf template] x2 and comment[modification parameters] x2. Biological replicate numbering restarts per condition and uses 'pooled' for the reference, as README 'Encoding sample technical and biological replicates' requires. sdrf-tools structure: OK."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4: NCBITaxon:10090 Mus musculus; UBERON:0001869 cerebral hemisphere; PATO:0000461 normal; MONDO:0005134 experimental autoimmune encephalomyelitis (also exact-match in EFO); PRIDE:0000627 Data-dependent acquisition; MS:1001910 Orbitrap Elite; MS:1001251 Trypsin; MS:1002038 label free sample; MS:1000133 collision-induced dissociation; PRIDE:0000608 Dithiothreitol (DTT); MS:1000291 linear ion trap; PRIDE:0000664 proteomic profiling by mass spectrometry. None are obsolete and all labels match. UNIMOD:4 Carbamidomethyl and UNIMOD:35 Oxidation were confirmed with sdrf-tools verify. sdrf-tools check: 11/11 verified, 0 hallucinated. Strain 'C57BL/6 x 129/Sv' is free text for a mixed background (no single NCBITaxon term); the validator only warns."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE v2 project (accession and title asserted as PXD003710), PMC5061044 efetch (title asserted) and the Supplementary Methods PDF were fetched fresh. Group sizes KO/WT n=5/5 at 0 days and 7/7 at 10 and 20 dpi match the Supplementary Methods. Strain, frontal right cerebral hemisphere, DTT lysis buffer, trypsin FASP at 50:1, and LF CID at 35% NCE with ion-trap readout come from the paper and Supplementary Methods. The 300-2000 m/z survey range, the 10 ppm precursor tolerance inherited 'as for TMT', the 0.7 Da fragment tolerance, and Carbamidomethyl C fixed / Oxidation M variable come from the Supplementary Methods label-free section. RAW headers (byte ranges of 6 LF files, including 20KO1, the 10-KO1 rerun and the REF1/REF2/REF3 window runs) read 'Orbitrap Elite MS', 'FTMS + p norm o(300.0-2000.0)', 'ITMS + c norm Dep Wideband MS/MS', Activation Type CID, NCE 35.0 and TOP10. 'normal' at 0 days is supported: mice were 'euthanized before EAE immunization'. 'Sex' and 'developmental stage' are 'not available', which is consistent with the bare 'age- and sex-matched'. sdrf-tools reconcile flagged two BLOCKER heuristics, and both were disproved. Trypsin is the digest reagent ('protein to trypsin ratio was 50:1'; 'tryptic peptides'). The label-free label is correct: the project registers both TMT and MS1 label-free quantification, these runs sit in the 'Peli1-LF-individual' acquisition directory, and every run appears in the Progenesis LF_Peptides.csv export."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE v3 files/all (projectAccessions={PXD003710}) lists 180 files, 176 of them RAW. This SDRF claims 64 unique RAW files; the sibling TMT SDRF claims 112 unique RAW files. The two sets do not overlap and their union equals the 176 deposited RAW files, with none missing and no extras. The four non-RAW files (3 SEARCH, 1 OTHER) are correctly excluded. Each individual run name parses to genotype, time and mouse number, and these agree with the factor values, biological replicate and source name on every row. The Progenesis LF_Peptides.csv header groups the oddly named 20150910_Peli1_20KO1 under 20KO and 10-KO1_150912212641 under 10KO, and puts all 26 REF runs under one REF group, confirming the mapping."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed groups: KO/WT x 0/10/20 days = 5/5/7/7/7/7 individual mice (38 = paper n=38), plus 26 reference runs, for 64 rows and 39 sources. Reference runs: 12 precursor windows x 2 = 24, plus 2 deposited reruns (REF1_500-560_150917182918 and the second REF2_300-460), giving 26; each window appears 2-3 times, consistent with 'repeated twice' plus the reruns. Factors genotype and sampling time match the design. Disease co-varies with time by design (0 days = pre-immunization), which is expected. No fractionation (fraction 1) and one injection per individual sample (technical replicate 1)."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No value is stated more specifically than the evidence supports. Organism part is coarsened to 'cerebral hemisphere' rather than the frontal right part. Sex, developmental stage and age are left unreported or 'not available'. The alkylation reagent is omitted because the text does not state it. The reference pool's disease, genotype and sampling time are 'not applicable' rather than invented. No individual-mouse link to the TMT pools is asserted. EAE disease on 10/20 dpi rows follows the immunization design: the paper reports EAE clinical scores for both KO and WT at 20 dpi, and 10 dpi is described as disease onset. Material evidence the producer did not encode (each reference run's precursor window and its aliquot REF1-4) is acknowledged in the manifest limitations and is raised below as minor."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics --use_ols_cache_only: exit 0, 'Everything seems to be fine'. parse_sdrf validate-sdrf -t vertebrates --use_ols_cache_only: exit 0, with one warning that the strain value is not in NCBITaxon. sdrf-tools check: CLEAN, 11/11. sdrf-tools score: 100/100. sdrf-tools structure: OK. sdrf-tools reconcile --record project.json: exit 1, with 2 heuristic BLOCKERs (cleavage_agent_unsupported, labelled_annotated_as_label_free), both disproved as false positives (see source_evidence)."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "spec_convention",
+      "location": "characteristics[pooled sample], rows 40-65 (reference pool)",
+      "message": "The reference pool is annotated 'pooled', which the spec defines as 'pooled but individual sources are unknown'. Here the composition is known: an equal portion of all 38 individual lysates, each of which has a source name in this file.",
+      "evidence": "README 'Pooled samples' lists 'SN=sample1;SN=sample2' for known sources. Supplementary Methods say the label-free pool contained 'all the samples'; the paper says 'pool of equal protein amount from all the 38 individual lysates'. Correction: use SN=<the 38 individual source names> (optional improvement; the source name already states the composition)."
+    },
+    {
+      "severity": "minor",
+      "category": "design_detail",
+      "location": "comment[technical replicate] and missing per-run metadata, rows 40-65",
+      "message": "The 26 reference runs are numbered as technical replicates 1-26 of one source. They are actually 4 separately digested aliquots (REF1-REF4), each acquired with one of 12 precursor-selection windows. The aliquot and window are recoverable only from the file and assay names.",
+      "evidence": "Supplementary Methods: '4 20 ul aliquots of a pool ... digested by FASP' and 'one of 12 different precursor mass range fragmentation windows'. Optional improvement: record the aliquot in comment[sample preparation batch] (REF1-REF4) and the precursor-selection window in a dedicated comment column."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[strain or breed], all rows",
+      "message": "'C57BL/6 x 129/Sv' is free text, not an NCBITaxon term, so the vertebrates validator warns.",
+      "evidence": "Paper: 'C57/BL/6 x 129/Sv genetic background'. No single ontology term describes this mixed background, so free text is acceptable; no change required."
+    }
+  ]
+}

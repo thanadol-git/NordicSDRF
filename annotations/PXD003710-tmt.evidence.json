@@ -1,0 +1,255 @@
+{
+ "schema_version": 1,
+ "artifact": "annotations/PXD003710-tmt.sdrf.tsv",
+ "dataset": "PXD003710",
+ "sources": [
+  {
+   "id": "pride",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003710"
+  },
+  {
+   "id": "pride-files",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003710/files/all"
+  },
+  {
+   "id": "paper",
+   "kind": "publication",
+   "location": "PMC5061044 (PMID 27746629, doi:10.4172/jpb.1000408), full text via NCBI efetch db=pmc id=5061044"
+  },
+  {
+   "id": "supp-methods",
+   "kind": "publication supplement",
+   "location": "https://pmc-oa-opendata.s3.amazonaws.com/PMC5061044.1/NIHMS820356-supplement-supp_methods.pdf"
+  },
+  {
+   "id": "stats-xlsx",
+   "kind": "deposited result file",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/09/PXD003710/ProteinexportandandstatisticsofTMTandLFdatasets_Peli1.xlsx"
+  },
+  {
+   "id": "tmt-white-peptides",
+   "kind": "deposited result file",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/09/PXD003710/TMT_exp1_white_peptides.xlsx"
+  },
+  {
+   "id": "lf-peptides",
+   "kind": "deposited result file (HTTP range 0-300000)",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/09/PXD003710/LF_Peptides.csv"
+  },
+  {
+   "id": "raw-headers",
+   "kind": "raw file headers (HTTP range 0-400000 of every one of the 176 .raw files)",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/09/PXD003710/<file>.raw"
+  }
+ ],
+ "claims": [
+  {
+   "location": "characteristics[organism]",
+   "value": "Mus musculus",
+   "source_ids": [
+    "pride",
+    "paper"
+   ],
+   "evidence": "PRIDE organism NCBITaxon 10090; paper: Peli1 KO and WT mice."
+  },
+  {
+   "location": "characteristics[organism part]",
+   "value": "cerebral hemisphere",
+   "source_ids": [
+    "paper",
+    "pride"
+   ],
+   "evidence": "Paper/protocol: 'The frontal part of the right cerebral hemisphere was excised'. UBERON:0001869; the frontal sub-region is not encoded."
+  },
+  {
+   "location": "characteristics[strain or breed]",
+   "value": "C57BL/6 x 129/Sv",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Paper: 'Peli1 KO and WT mice (C57/BL/6 x 129/Sv genetic background)'. Free text; not an NCBITaxon term (validator warning)."
+  },
+  {
+   "location": "characteristics[genotype] / factor value[genotype]",
+   "value": "Peli1 knockout | wild type | not applicable (reference pools)",
+   "source_ids": [
+    "paper",
+    "supp-methods",
+    "pride-files"
+   ],
+   "evidence": "Conditions KO/WT in Supplementary Methods Table 1 and in run names (KO/WT)."
+  },
+  {
+   "location": "characteristics[sampling time] / factor value[sampling time]",
+   "value": "0 day | 10 day | 20 day | not applicable (reference pools)",
+   "source_ids": [
+    "paper",
+    "supp-methods"
+   ],
+   "evidence": "Brains harvested before immunization (0), 10 dpi (onset) and 20 dpi (peak); condition names 0/10/20 = days post immunization."
+  },
+  {
+   "location": "characteristics[disease]",
+   "value": "normal (0 day) | experimental autoimmune encephalomyelitis (10, 20 day) | not applicable (reference pools)",
+   "source_ids": [
+    "supp-methods",
+    "paper"
+   ],
+   "evidence": "0-day mice were euthanized before EAE immunization; 10/20 dpi mice were MOG35-55-immunized. PRIDE 'multiple sclerosis' not used: mice carry the EAE model, MONDO:0005134."
+  },
+  {
+   "location": "characteristics[sex] / characteristics[developmental stage]",
+   "value": "not available",
+   "source_ids": [
+    "supp-methods"
+   ],
+   "evidence": "Only 'age- and sex-matched mice were used'; no values given."
+  },
+  {
+   "location": "comment[instrument]",
+   "value": "NT=Orbitrap Elite;AC=MS:1001910",
+   "source_ids": [
+    "raw-headers",
+    "pride",
+    "paper"
+   ],
+   "evidence": "All 176 raw headers read 'Orbitrap Elite MS'; PRIDE MS:1001910; live OLS label is 'Orbitrap Elite'."
+  },
+  {
+   "location": "comment[cleavage agent details]",
+   "value": "NT=Trypsin;AC=MS:1001251",
+   "source_ids": [
+    "paper",
+    "pride"
+   ],
+   "evidence": "Paper FASP: 'the protein to trypsin ratio was 50:1'; protocol: 'Trypsin was set as enzyme'. Reconcile 'cleavage_agent_unsupported' is a false positive."
+  },
+  {
+   "location": "comment[proteomics data acquisition method]",
+   "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+   "source_ids": [
+    "pride",
+    "raw-headers"
+   ],
+   "evidence": "Protocol: 'operated in the data-dependent-acquisition mode'; raw methods TOP10."
+  },
+  {
+   "location": "comment[reduction reagent]",
+   "value": "NT=Dithiothreitol (DTT);AC=PRIDE:0000608",
+   "source_ids": [
+    "pride",
+    "paper"
+   ],
+   "evidence": "Lysis buffer contained 0.1 M DTT. Alkylation reagent not stated; column omitted."
+  },
+  {
+   "location": "comment[ms1 scan range]",
+   "value": "300m/z-2000m/z",
+   "source_ids": [
+    "pride",
+    "supp-methods",
+    "raw-headers"
+   ],
+   "evidence": "Survey scans 300-2000 m/z; raw header scan event 'FTMS + p norm o(300.0-2000.0)'."
+  },
+  {
+   "location": "comment[label] / source name per channel",
+   "value": "exp1 (Y files): TMT126 KO 0 A, 127C KO 10 A, 127N KO 0 B, 128C KO 20 A, 128N KO 10 B, 129C WT 0 A, 129N KO 20 B, 130C WT 20 A, 130N WT 10 A, 131 reference; exp2 (B files): 126 KO 0 C, 127C KO 20 C, 127N KO 10 C, 128C WT 10 B, 128N WT 0 B, 129C WT 0 C, 129N WT 20 B, 130C WT 20 C, 130N WT 10 C, 131 reference",
+   "source_ids": [
+    "supp-methods",
+    "stats-xlsx"
+   ],
+   "evidence": "Supplementary Methods Table 1 (channel, pool name, mice per pool; white = experiment 1, grey = experiment 2) agrees 18/18 + 2 reference with the pool-name headers above the 'A6: <channel>/131' ratio columns in sheets TMT_exp1_White and TMT_exp2_Grey."
+  },
+  {
+   "location": "comment[data file] B vs Y prefix",
+   "value": "TMT10_Y* = experiment 1 (white); TMT10_B* = experiment 2 (grey)",
+   "source_ids": [
+    "raw-headers",
+    "stats-xlsx"
+   ],
+   "evidence": "All 56 TMT10_B raw headers were acquired into folder '2014-03-17_OrbitrapElite_TMT10-RRL-mousebrain-blue', all 56 TMT10_Y into '2014-03-23_..._mousebrain-yellow'. In sheet 'TMT Grey and White' the 'TMT Blue experiment' block equals TMT_exp2_Grey for 6262 proteins (white: 287 coincidental) and 'TMT Yellow experiment' equals TMT_exp1_White for 6290 (grey: 287). The blue<->Blue label link is an inference from the authors' own naming."
+  },
+  {
+   "location": "characteristics[pooled sample]",
+   "value": "pooled (2-3 mice) | not pooled (KO 0 C, WT 0 C: 1 mouse) | pooled (reference)",
+   "source_ids": [
+    "supp-methods"
+   ],
+   "evidence": "Mice per pool from Supplementary Methods Table 1 (sum 38). Pool membership by mouse ID not given, so SN= not used."
+  },
+  {
+   "location": "characteristics[biological replicate]",
+   "value": "pool A/B/C = 1/2/3; reference = pooled",
+   "source_ids": [
+    "supp-methods"
+   ],
+   "evidence": "Three small pools per condition."
+  },
+  {
+   "location": "comment[technical replicate] (reference)",
+   "value": "1 in experiment 1, 2 in experiment 2",
+   "source_ids": [
+    "supp-methods"
+   ],
+   "evidence": "Two identical reference pools of all 38 samples, one per 10-plex."
+  },
+  {
+   "location": "comment[fraction identifier]",
+   "value": "1-56 by file position (TMT10_x1-3 = 1, x4 = 2, ..., x58-60 = 56)",
+   "source_ids": [
+    "supp-methods",
+    "pride-files"
+   ],
+   "evidence": "60 mixed-mode fractions, 1-3 and 58-60 pooled, giving 56 runs per 10-plex; all 56 files present per plex."
+  },
+  {
+   "location": "comment[fractionation method]",
+   "value": "NT=High-performance liquid chromatography;AC=PRIDE:0000565",
+   "source_ids": [
+    "supp-methods"
+   ],
+   "evidence": "Mixed-mode Promix MP HPLC; no mixed-mode term under PRIDE:0000550."
+  },
+  {
+   "location": "comment[dissociation method] / comment[collision energy] / comment[ms2 mass analyzer]",
+   "value": "HCD PRIDE:0000590 / 40% NCE / orbitrap MS:1000484",
+   "source_ids": [
+    "pride",
+    "raw-headers"
+   ],
+   "evidence": "Raw headers: Activation Type HCD, NCE 40.0, FTMS MS2."
+  },
+  {
+   "location": "comment[modification parameters]",
+   "value": "TMT6plex K fixed; TMT6plex any N-term fixed; Carbamidomethyl C fixed; Oxidation M variable",
+   "source_ids": [
+    "pride",
+    "tmt-white-peptides"
+   ],
+   "evidence": "Protocol text; TMT6plex (N-term, K) and Carbamidomethyl (C) present in the deposited peptide table Modifications column. No search parameter file deposited."
+  },
+  {
+   "location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]",
+   "value": "10 ppm / 0.005 Da",
+   "source_ids": [
+    "pride",
+    "supp-methods"
+   ],
+   "evidence": "As stated in the protocol; 0.005 Da not verifiable from search files."
+  }
+ ],
+ "limitations": [
+  "Individual-mouse membership of the TMT pools is not deposited, so TMT pool sources cannot be linked to the label-free individual-mouse sources.",
+  "Sex, age and developmental stage not reported per mouse (only 'age- and sex-matched'): not available.",
+  "Organism part encoded as cerebral hemisphere; the paper specifies the frontal part of the right hemisphere.",
+  "No search-engine parameter file (.msf/.pdResult) deposited; modifications and tolerances come from protocol text (TMT mods cross-checked in the peptide table).",
+  "Alkylation reagent not stated (carbamidomethylation searched); column omitted.",
+  "B/Y prefix -> experiment 2/1 rests on the raw acquisition folder names (blue/yellow) matching the workbook's 'TMT Blue/Yellow experiment' blocks; that label link is an inference, cross-checked numerically.",
+  "Fragment mass tolerance 0.005 Da is as stated but unusual (possibly 0.05 Da).",
+  "Fraction identifiers are positional (1-56); merged fractions 1-3 and 58-60 are single runs.",
+  "4 of 112 TMT runs used an isolation-width 3 method (header) vs 2.5 Da stated; not encoded."
+ ]
+}

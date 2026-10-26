@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "artifact": "NordicSDRF/annotations/PXD006165.sdrf.tsv",
+  "dataset": "PXD006165",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006165"},
+    {"id": "pride_files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006165/files?pageSize=1000"},
+    {"id": "mq_summary", "kind": "search_output", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/09/PXD006165/txt.zip#txt/summary.txt"},
+    {"id": "mq_parameters", "kind": "search_output", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/09/PXD006165/txt.zip#txt/parameters.txt"},
+    {"id": "raw_header", "kind": "raw_file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/09/PXD006165/20151208_Sample1_WT_84_L2.raw (bytes 0-1048575)"},
+    {"id": "paper", "kind": "publication", "location": "PMC6760117 (PMID 31551444, DOI 10.1038/s41598-019-50219-8)"},
+    {"id": "paper_supp", "kind": "publication_supplement", "location": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41598-019-50219-8/MediaObjects/41598_2019_50219_MOESM1_ESM.pdf"},
+    {"id": "ols", "kind": "ontology", "location": "https://www.ebi.ac.uk/ols4/api/"}
+  ],
+  "claims": [
+    {"location": "comment[data file] rows 1-16", "value": "16 RAW files 20151208_Sample1..16_*.raw", "source_ids": ["pride_files", "mq_summary"], "evidence": "All 16 RAW entries in the PRIDE file list (projectAccessions contains PXD006165); MaxQuant summary.txt lists the same 16 raw files, each as its own experiment"},
+    {"location": "characteristics[organism] rows 1-16", "value": "Mus musculus", "source_ids": ["pride", "paper"], "evidence": "PRIDE organisms NEWT:10090; paper Methods: male mice, C57BL/6J background"},
+    {"location": "characteristics[organism part] rows 1-16", "value": "liver", "source_ids": ["pride", "paper_supp"], "evidence": "PRIDE organismParts BTO:0000759 Liver; supplementary Methods: frozen liver tissue harvested pre- and 36h post-PH"},
+    {"location": "characteristics[genotype] / factor value[genotype] rows 1-16", "value": "wild type (rows of Sample1-6,13,14); Epac1/2 double knockout (Rapgef3-/- Rapgef4-/-) (rows of Sample7-12,15,16)", "source_ids": ["pride_files", "paper_supp"], "evidence": "WT / dKO / KO tokens in raw file names; supplementary Methods groups WT and Epac1/2-/- pre/post PH"},
+    {"location": "characteristics[sampling time] / factor value[sampling time] rows 1-16", "value": "0 hour (L1/L2 or no Reg tag) / 36 hour (regenerert or Reg tag)", "source_ids": ["pride_files", "paper", "paper_supp"], "evidence": "File-name tokens 'regenerert'/'Reg' (Norwegian 'regenerated') vs 'L1'/'L2'/none; paper: proteomics on liver harvested pre- and 36 h post-PH; pre-PH = tissue resected at surgery (inferred mapping of L1/L2)"},
+    {"location": "characteristics[individual] rows of Sample1-12", "value": "mouse 84, 88, 93, 46, 47, 55", "source_ids": ["pride_files"], "evidence": "Mouse number embedded in raw file names; paired pre/post files share the number"},
+    {"location": "characteristics[individual] rows of Sample13-16", "value": "not available", "source_ids": ["pride_files"], "evidence": "File names 1WT, 2WT_Reg, 3KO, 4KO_Reg carry no mouse ID"},
+    {"location": "characteristics[biological replicate] rows 1-16", "value": "1-4 within each genotype x time group", "source_ids": ["pride_files", "paper_supp"], "evidence": "4 runs per group; supplementary Methods four groups; index follows mouse ID where known"},
+    {"location": "characteristics[sex] rows 1-16", "value": "male", "source_ids": ["paper"], "evidence": "Abstract: 'Male C57BL/6J mice'; Methods: 'Male mice (C57BL/6J background, 8-12 weeks)' (cohort-level)"},
+    {"location": "characteristics[developmental stage] rows 1-16", "value": "adult", "source_ids": ["paper", "ols"], "evidence": "8-12 week old mice (cohort-level); EFO:0001272 adult"},
+    {"location": "characteristics[strain or breed] rows 1-16", "value": "C57BL/6J", "source_ids": ["paper"], "evidence": "Methods: C57BL/6J background; WT littermates or C57BL/6JBomTac"},
+    {"location": "characteristics[disease] rows 1-16", "value": "normal", "source_ids": ["paper", "ols"], "evidence": "No disease induced; genetic knockouts recorded in genotype; partial hepatectomy is a surgical procedure; PATO:0000461"},
+    {"location": "characteristics[material type] rows 1-16", "value": "tissue", "source_ids": ["paper_supp"], "evidence": "Frozen liver tissue lysed in SDS buffer"},
+    {"location": "comment[instrument] rows 1-16", "value": "NT=Q Exactive HF;AC=MS:1002523", "source_ids": ["raw_header", "pride", "paper_supp"], "evidence": "Raw header string 'Q Exactive HF - Orbitrap MS'; PRIDE protocol and supplementary Methods say Q Exactive HF; PRIDE structured field (Q Exactive MS:1001911) overridden"},
+    {"location": "comment[cleavage agent details] rows 1-16", "value": "NT=Trypsin;AC=MS:1001251", "source_ids": ["mq_summary"], "evidence": "summary.txt Enzyme=Trypsin, Enzyme mode=Specific, Max. missed cleavages=2 for all runs"},
+    {"location": "comment[modification parameters] rows 1-16", "value": "Carbamidomethyl C Fixed (UNIMOD:4); Acetyl Protein N-term Variable (UNIMOD:1); Oxidation M Variable (UNIMOD:35)", "source_ids": ["mq_parameters", "mq_summary", "pride", "paper_supp"], "evidence": "parameters.txt 'Fixed modifications Carbamidomethyl (C)'; summary.txt 'Variable modifications Acetyl (Protein N-term);Oxidation (M)'"},
+    {"location": "comment[fragment mass tolerance] rows 1-16", "value": "20 ppm", "source_ids": ["mq_parameters"], "evidence": "parameters.txt 'MS/MS tol. (FTMS) 20 ppm'; Orbitrap MS2"},
+    {"location": "comment[precursor mass tolerance] rows 1-16", "value": "not available", "source_ids": ["mq_parameters", "mq_summary"], "evidence": "Not reported in deposited MaxQuant 1.5.1.2 outputs; no mqpar.xml deposited"},
+    {"location": "comment[proteomics data acquisition method] rows 1-16", "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627", "source_ids": ["paper_supp"], "evidence": "'data-dependent-acquisition-mode (DDA)', top 15"},
+    {"location": "comment[dissociation method] rows 1-16", "value": "NT=beam-type collision-induced dissociation;AC=MS:1000422", "source_ids": ["paper_supp"], "evidence": "Q Exactive HF fragmentation at normalized collision energy (HCD)"},
+    {"location": "comment[collision energy] rows 1-16", "value": "28% NCE", "source_ids": ["paper_supp"], "evidence": "'28 % normalized collision energy'"},
+    {"location": "comment[ms2 mass analyzer] rows 1-16", "value": "NT=orbitrap;AC=MS:1000484", "source_ids": ["paper_supp"], "evidence": "MS/MS at resolution R=30,000 on Q Exactive HF"},
+    {"location": "comment[ms1 scan range] rows 1-16", "value": "375m/z-1500m/z", "source_ids": ["paper_supp"], "evidence": "'Full MS spectra were acquired in the scan range 375-1500 m/z'"},
+    {"location": "comment[label] rows 1-16", "value": "NT=label free sample;AC=MS:1002038", "source_ids": ["pride", "mq_summary"], "evidence": "PRIDE quantification: MS1 label-free; MaxQuant Multiplicity=1, LFQ"},
+    {"location": "comment[fraction identifier] / comment[technical replicate] rows 1-16", "value": "1 / 1", "source_ids": ["paper_supp", "mq_summary"], "evidence": "1 ug per sample injected once, no fractionation; one raw file per experiment"}
+  ],
+  "limitations": [
+    "Samples 13-16 carry no mouse ID; pairing 13/14 and 15/16 is plausible but undocumented, so characteristics[individual] is not available",
+    "Mapping L1/L2 (and untagged 13/15) to pre-PH resected tissue is inferred from file names contrasted with 'regenerert'/'Reg' and the paper's pre- vs 36 h post-PH design; the meaning of L1 vs L2 is undocumented",
+    "Sex, developmental stage and strain are cohort-level statements applied to all rows",
+    "Precursor mass tolerance absent from deposited search outputs",
+    "Reduction/alkylation reagents not stated; optional columns omitted",
+    "No deposited sample metadata table or BioSamples records exist",
+    "sdrf-tools reconcile flags Trypsin as unsupported by the PRIDE project record text; retained on the basis of the deposited MaxQuant summary.txt"
+  ]
+}

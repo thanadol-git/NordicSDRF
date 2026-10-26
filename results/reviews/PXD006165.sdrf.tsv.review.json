@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD006165.sdrf.tsv",
+  "artifact_sha256": "d0259468429847220455dcc53eb2a1e5eb0708802a13eb0f7a373868ca37c8d9",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. All 16 runs map 1:1 to the PRIDE RAW files; genotype and pre/post-PH timing per run are confirmed not only by file-name tokens but directly by the column group headers of the paper's Supplementary file 2 (MOESM2 'Main data' sheet), and the mouse IDs/pairing are corroborated by the paired t-test layout in the same sheet. Both template validators pass (one non-blocking strain warning), sdrf-tools check/score/structure are clean, all controlled terms resolve live in OLS. Only minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent context without producer transcript; producer report.md not read; all sources (PRIDE project/files, Europe PMC full text PMC6760117, Springer ESM1 PDF and ESM2 xlsx, MaxQuant parameters.txt/summary.txt via HTTP range read of deposited txt.zip, first 1 MiB of 20151208_Sample13_1WT.raw, OLS4) fetched fresh into scratchpad/PXD006165/review-PXD006165/"
+  },
+  "evidence_manifest": "annotations/PXD006165.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Declared templates ms-proteomics v1.1.0 + vertebrates v1.1.0 independently confirmed appropriate (Mus musculus tissue, DDA label-free; vertebrates required for non-human vertebrate; no cell-line/clinical/DIA layer applies). 36 columns, 16 data rows, uniform row width. All required columns of base/sample-metadata/vertebrates/ms-proteomics present (developmental stage, disease, biological replicate, technical replicate, fraction identifier, label, instrument, cleavage agent, acquisition method). Extra columns characteristics[genotype], characteristics[individual], characteristics[sampling time] are TERMS.tsv terms. Patterns OK: sampling time 'N hour', collision energy '28% NCE', ms1 scan range '375m/z-1500m/z', sdrf template 'NT=..;VV=v1.1.0', annotation tool 'manual curation'. sdrf-tools structure: OK. parse_sdrf passes for both templates."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4 exact search: NCBITaxon:10090 Mus musculus; UBERON:0002107 liver; EFO:0001272 adult; PATO:0000461 normal; PATO:0000384 male; MS:1002523 Q Exactive HF; MS:1001251 Trypsin; MS:1000422 beam-type collision-induced dissociation; MS:1000484 orbitrap; MS:1002038 label free sample; PRIDE:0000627 Data-dependent acquisition - all exist, labels match, none obsolete. sdrf-tools verify: UNIMOD:4 Carbamidomethyl, UNIMOD:1 Acetyl, UNIMOD:35 Oxidation, MS:1002523, PRIDE:0000627 all label-match. sdrf-tools check: 11/11 verified, 0 hallucinated/mismatch/wrong-ontology/UNIMOD swaps. Only warning: 'C57BL/6J' not in NCBITaxon - TERMS.tsv defines strain or breed as free text and the template's own example 'C57BL/6' is likewise absent from NCBITaxon in live OLS, so non-blocking."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Organism/organ: PRIDE NEWT:10090, BTO Liver. Sex male, C57BL/6J, 8-12 weeks (adult): paper Abstract + Methods 'Male mice (C57BL/6J background, 8-12 weeks) were used in this study' (cohort-wide, applies to all study mice). Genotype/timing per run: Supplementary file 2 'Main data' row 1-3 headers place 1_WT_84_L2, 13_1WT, 3_WT_88_L2, 5_WT_93_L2 under WTprePH; 11_dKO_55_L1, 15_3KO, 7_dKO_46_L2, 9_dKO_47_L2_151209144217 under Epac1/2-/-prePH; 2/14/4/6 under WTpostPH; 12/16/8/10 under Epac1/2-/-postPH - exactly matching SDRF rows. Supp. Methods: four groups WTprePH/WTpostPH/Epac1/2-/-prePH/Epac1/2-/-postPH; 'Quantified values in # mice per group of 4'. 36 h post-PH and pre-PH = tissue removed at surgery (paper Methods: Hepatectomy) supports 0 hour / 36 hour. Mouse IDs: paired T.TEST(F:I, N:Q, 2, 1) and T.TEST(J:M, R:U, 2, 1) align 84-84, 13-14, 88-88, 93-93 and 55-55, 15-16, 46-46, 47-47, consistent with paper's 'paired t-test for statistical evaluation of the same mice before and after regeneration'. Instrument: raw header 'Q Exactive HF - Orbitrap MS', method 'Fast_TOP15HCD_120K-30K'. Search: parameters.txt fixed Carbamidomethyl (C), MS/MS tol (FTMS) 20 ppm; summary.txt Trypsin Specific, variable Acetyl (Protein N-term);Oxidation (M), Multiplicity 1 for all 16 runs. Supp. Methods: DDA top15, 375-1500 m/z, R=30,000 MS2, 28% NCE, 1 ug injected once."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE /files (all entries projectAccessions == ['PXD006165']): 18 files = 16 RAW + 1 FASTA + txt.zip. SDRF comment[data file] lists exactly those 16 RAW names, no duplicates, no non-raw files; assay names equal file stems; MaxQuant summary.txt lists the same 16 raw files, one experiment each."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 2 genotypes x 2 time points x 4 = 16 runs, 16 unique source names, 1 run per sample, fraction 1, technical replicate 1, label free. Biological replicate 1-4 within genotype, shared by the pre/post pair of the same mouse (84/88/93/13-14 for WT; 46/47/55/15-16 for dKO), consistent with the supplementary paired-test layout. Factors genotype and sampling time vary as designed; no confounding beyond the inherent design (pre-PH vs post-PH tissue also differs by lobe; see minor finding)."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value traced to PRIDE, paper, ESM1, ESM2, deposited MaxQuant output or raw header. Unknowns left as 'not available' (precursor mass tolerance absent from MaxQuant 1.5.1.2 parameters.txt; individual for runs 13-16). No over-specification: organism part kept at 'liver' (the specific lobe used for proteomics is not stated), strain C57BL/6J stated in Abstract, genotype free text matches paper/PRIDE (Epac1=Rapgef3, Epac2=Rapgef4). Optional reduction/alkylation reagents omitted because unstated. sdrf-tools reconcile 'cleavage_agent_unsupported' (Trypsin absent from PRIDE prose) overridden: deposited summary.txt shows Enzyme=Trypsin, Enzyme mode=Specific for every run."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf -t ms-proteomics --use_ols_cache_only: exit 0 'Everything seems to be fine'. timeout 900 parse_sdrf validate-sdrf -t vertebrates --use_ols_cache_only: exit 0, single WARNING strain 'C57BL/6J' not in ncbitaxon (free-text column, see ontology_integrity). sdrf-tools check: exit 0 CLEAN 11/11. sdrf-tools score: exit 0, 100/100. sdrf-tools structure: exit 0 OK. sdrf-tools reconcile --record project.json: exit 1 on Trypsin only, refuted by deposited MaxQuant summary.txt."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD006165.evidence.json claims for genotype, sampling time, individual, biological replicate; limitations[0-1]",
+      "message": "The manifest treats genotype/timing as inferred from file-name tokens and the 13/14 and 15/16 pairing as undocumented, but Supplementary file 2 (41598_2019_50219_MOESM2_ESM.xlsx, 'Main data' rows 1-3) explicitly assigns every run to WTprePH/WTpostPH/Epac1/2-/-prePH/Epac1/2-/-postPH, and its paired T.TEST(F:I,N:Q,2,1)/T.TEST(J:M,R:U,2,1) column order pairs 13_1WT with 14_2WT_Reg and 15_3KO with 16_4KO_Reg.",
+      "evidence": "Cells F1:U3 of 'Main data'; Supp. Methods 'two-tailed paired t-test for statistical evaluation of the same mice before and after regeneration'. Correction: cite MOESM2 as the source for genotype/timing/pairing and update the limitations."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "characteristics[individual], rows 13-16 (WT_Sample13_prePH, WT_Sample14_postPH36h, dKO_Sample15_prePH, dKO_Sample16_postPH36h)",
+      "message": "Rows 13/14 and 15/16 share biological replicate 4 (asserting same animal) while individual is 'not available'; the pairing is supported by the supplementary paired-test layout, so a shared individual label (e.g., a pair identifier derived from the supplement) could be given, or left as is. Not wrong, merely less informative and internally asymmetric.",
+      "evidence": "SDRF rows 13-16 col characteristics[biological replicate]=4, characteristics[individual]='not available'; MOESM2 paired T.TEST column alignment."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "characteristics[organism part], all rows",
+      "message": "Pre-PH tissue is the resected left lateral/median lobes and post-PH tissue the regenerated right lateral/caudate lobes, so time point is inherently confounded with lobe. 'liver' is correct because the specific lobe used for proteomics is not stated; consider noting this in limitations.",
+      "evidence": "Paper Methods, Hepatectomy: 'Tissue removed at time of surgery (left lateral and median lobes) and regenerated tissue (right lateral and caudate lobes) removed at selected endpoints were flash-frozen'."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[strain or breed], all rows",
+      "message": "parse_sdrf vertebrates warns 'C57BL/6J' not in NCBITaxon. Column is free text per TERMS.tsv and the value is stated in the paper Abstract; WT animals were C57BL/6JBomTac (a C57BL/6J substrain). No change required.",
+      "evidence": "parse_sdrf vertebrates WARNING; live OLS ncbitaxon exact search returns no hit for C57BL/6J or C57BL/6."
+    }
+  ]
+}

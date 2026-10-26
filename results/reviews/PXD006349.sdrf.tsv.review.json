@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD006349.sdrf.tsv",
+  "artifact_sha256": "7ed3bcdf89a2ec2f26d110c3d9e9031951369a9d1b76f4a4ffbd261bea024c44",
+  "verdict": "PASS",
+  "summary": "Independent review of the 20-run label-free rat brain (fast vs slow decompression) SDRF found no blocker or important issues. File mapping, design, instrument/acquisition metadata, the seven modification parameters (re-derived from the deposited Progenesis peptide table) and the per-group disease values (SD = normal, FD = not available) are supported by PRIDE, the PLoS One paper, deposited result tables and raw-file headers. Only minor notes remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh-context reviewer subagent (bergen-reviewer-PXD006349); did not read the producer report.md or transcript; all sources re-fetched into scratchpad/PXD006349/review-PXD006349/ with accession/title asserted."
+  },
+  "evidence_manifest": "annotations/PXD006349.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates derived independently: rat tissue, label-free DDA -> ms-proteomics v1.1.0 + vertebrates v1.1.0 (both latest in templates.yaml; mutually-exclusive rules respected). All required columns present (source name, organism, organism part, disease [required by vertebrates], developmental stage [required, not available allowed], biological replicate, assay name, technology type, technical replicate, data file, acquisition method, instrument, cleavage agent, label, fraction identifier). Structured values checked against YAML patterns: collision energy '35 NCE', sampling time '7 day', ms1 scan range '300m/z-2000m/z', pooled sample 'not pooled', biological replicate integers restarting per factor group (README: 'Numbering restarts per experimental condition'), sdrf template NT=...;VV=v1.1.0, annotation tool 'manual curation'. 20 rows, unique source names, assay names and data files; no duplicate rows."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4 lookups, all non-obsolete with matching labels: MS:1003096 Orbitrap Velos Pro; MS:1000133 collision-induced dissociation; MS:1000291 linear ion trap; MS:1001251 Trypsin; PRIDE:0000627 Data-dependent acquisition; UBERON:0001869 cerebral hemisphere; PATO:0000461 normal; NCBITaxon:10116 Rattus norvegicus; UNIMOD:4 Carbamidomethyl; UNIMOD:35 Oxidation; UNIMOD:1 Acetyl; UNIMOD:26 Pyro-carbamidomethyl; UNIMOD:27 Glu->pyro-Glu; UNIMOD:28 Gln->pyro-Glu. TA/PP pairs match Unimod specificities (pyro mods at Any N-term on C/E/Q, Acetyl at Protein N-term and on K). sdrf-tools check: 14 terms verified, 0 hallucinated/mismatched/wrong-ontology/UNIMOD swaps. Free-text treatment values and 'Wistar' produce non-blocking ontology warnings only."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project (accession/title asserted PXD006349): rat NEWT:10116, female Wistar, fast 1 bar/20 s (n=10) vs slow 1 bar/10 min (n=10), one cerebral hemisphere per animal, in-solution trypsin, LTQ-Orbitrap Velos Pro top-7, label-free Progenesis, fixed CAM C / variable Ox M, 10 ppm / 0.7. Paper (PMC5627932, title asserted): Table 1 FD 21 rats/SD 11 rats, 10 brains each; Results '12 of 21 rats in the FD group got DCS symptoms ... not observed in any rats from the SD group'; euthanasia one week after dive. Raw-header range reads (SD5_AH_5_K7, FD9_AH_14B_10, independent of the producer's FD1/SD1/FD9 reads) show 'Orbitrap Velos Pro', FTMS MS1 o(300.0-2000.0), ITMS Dep MS/MS, Activation Type CID, Normalized Coll. Energy 35.0, top 7. Deposited peptide table (re-downloaded) modification column counts: oxidation of m 390, acetylation of protein n-term 116 (+5 combined with Ox M = 121), pyro-glu q 47, pyro-glu e 25, pyro-cmc 23, acetylation of k 2; positions are all residue 1 for N-terminal mods on the expected residue (Q/E/C/K) and measured-minus-theoretical masses are within ~0.01 Da with CAM on every C, confirming the mods were in the search space. Disease: SD = normal is supported because no SD rat showed DCS; FD = not available is correct because only 12/21 FD rats had symptoms and the 10 analysed animals are not identified."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE /files (all 22 entries' projectAccessions = PXD006349): 20 RAW + 2 xlsx result files. Each of the 20 RAW files appears exactly once in comment[data file]; no non-raw files listed; no unmatched names. Source name FD#/SD# taken verbatim from file-name prefix and matches the FD1-FD10/SD1-SD10 column headers of both deposited Progenesis tables, so the sample-to-file mapping is explicit, not inferred."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 2 groups x 10 animals = 20 biological samples, one in-solution digest/run each (fraction 1, technical replicate 1), consistent with paper n=10 per group and the deposited quant table (each sample has a quantified column; per-sample spectral-count totals 4241-4615). factor value[treatment] mirrors characteristics[treatment]; peptide table labels FD as 'Diving' and SD as 'Control', consistent with SD as control. Disease differs by group but is not a factor and is set at the granularity the evidence supports. Iontrap/SDS-PAGE 12-fraction workflow (240 files) is not deposited and correctly not annotated."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Checked every value for over-specificity: organism part 'cerebral hemisphere' (paper explicitly), sex female and strain Wistar apply to whole cohort; developmental stage not stated -> not available (not inferred 'adult' from 250 g); FD disease left not available rather than asserting DCS; reduction/alkylation left not available rather than borrowing DTT/IAA from the gel workflow; fragment tolerance unit Da is an inference but corroborated by ion-trap MS2 (0.7 ppm impossible) and by the cited method paper Berle 2011 ('product mass tolerance of 0.7 Da'). Extra modifications are directly evidenced in the deposited identification output, not guessed. No material omissions found that are required by the active templates."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf -t ms-proteomics --use_ols_cache_only: exit 0, warnings only (treatment free text not in ncit/efo). timeout 900 parse_sdrf validate-sdrf -t vertebrates --use_ols_cache_only: exit 0, warnings only (treatment free text; 'Wistar' not in ncbitaxon). python -m tools check: exit 0, CLEAN (14/14 verified). python -m tools score: exit 0, 100/100."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "repository-data",
+      "location": "row FD9 / comment[data file] FD9_AH_14B_10.raw",
+      "message": "The PRIDE raw file for FD9 is 211,875,840 bytes versus ~823-853 MB for the other 19 runs, yet the deposited quant table has a full FD9 column (4566 spectral counts, comparable to other samples). The deposited file is likely truncated; reprocessing from PRIDE may not reproduce FD9. Not an SDRF error.",
+      "evidence": "PRIDE /files fileSizeBytes; quant.xlsx per-sample spectral-count totals. Header range read of FD9 shows the same method as other runs."
+    },
+    {
+      "severity": "minor",
+      "category": "modification-parameters",
+      "location": "comment[modification parameters] columns 3-7 (Acetyl Protein N-term, Gln->pyro-Glu, Glu->pyro-Glu, Pyro-carbamidomethyl, Acetyl K)",
+      "message": "These five are supported by the deposited peptide table but were not listed in the paper's search criteria; they are probably X!Tandem/SearchGUI refinement or quick-search modifications, so MT=Variable is an approximation and searched-but-unobserved modifications cannot be excluded. Already disclosed in the manifest limitations; acceptable.",
+      "evidence": "Peptide table counts 121/47/25/23/2 with correct residue at position 1 and mass deltas within ~0.01 Da; paper lists only fixed CAM C and variable Ox M; no SearchGUI parameter file deposited."
+    },
+    {
+      "severity": "minor",
+      "category": "sample-prep",
+      "location": "comment[reduction reagent], comment[alkylation reagent] rows 1-20",
+      "message": "Values are 'not available'. The method paper cited for the Orbitrap LC-MS ('as previously described', Berle et al. 2011, PMC3120722) uses in-solution digestion with DTT and iodoacetamide, but the citation is attached to the LC-MS sentence, so attributing the reagents is ambiguous. Leaving 'not available' is the conservative choice; optionally record DTT/IAA with a provenance note if the producer judges the citation to cover digestion.",
+      "evidence": "PMC5627932 Methods sentence 68; PMC3120722 Methods 'dissolved in 6 M Urea and 100 mM DTT ... alkylated using 200 mM iodoacetamide'."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[treatment], factor value[treatment], characteristics[strain or breed] rows 1-20",
+      "message": "Treatment values are descriptive free text and 'Wistar' is not an NCBITaxon term, producing validator warnings. No suitable EFO/NCIT term for these decompression regimes was expected; acceptable as-is.",
+      "evidence": "parse_sdrf warnings for both templates."
+    }
+  ]
+}

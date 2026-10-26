@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD003822-freshfrozen-silac.sdrf.tsv",
+  "dataset": "PXD003822",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003822"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003822/files?pageSize=100&page=0..1 (168 files; every entry's projectAccessions contains PXD003822)"
+    },
+    {
+      "id": "raw_headers",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/04/PXD003822/{F_LFQ_1_sdig_trp,IsD_SILAC_1_MM_x1,DD_L_IMAC,20151016_AML-FF1-A,20151023_AML-SS-FF1A-x1,HR82_FRESH,SS-1,LF-1}.raw (first 3 MB via HTTP range request: instrument method text, tune file, scan events)"
+    },
+    {
+      "id": "abstract",
+      "kind": "publication",
+      "location": "Europe PMC MED/27107777 abstract (doi:10.1016/j.jprot.2016.03.049); full text not accessible (subscription; Unpaywall closed; ScienceDirect 403)"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api (MONDO:0018874, CL:0000055 obsolete, MS:1001910, MS:1000133, MS:1000291, MS:1001251, MS:1003586, MS:1001309, PRIDE:0000587 (IMAC, child of EFO:0009090), PRIDE:0000627, PRIDE:0000561, PRIDE:0000550 descendants, EFO:0009090 descendants incl. EFO:0010806)"
+    },
+    {
+      "id": "upstream",
+      "kind": "repository",
+      "location": "gh api repos/bigbio/sdrf-annotated-datasets/contents/{datasets,sandbox}/PXD003822 -> 404 both"
+    },
+    {
+      "id": "search_summary",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/04/PXD003822/Search_FreshFrozen_SS.zip -> Search_FreshFrozen_SS/summary.txt (read from the ZIP via HTTP range requests)"
+    },
+    {
+      "id": "search_params",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/04/PXD003822/Search_FreshFrozen_SS.zip -> Search_FreshFrozen_SS/parameters.txt"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] all rows",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "abstract"
+      ],
+      "evidence": "PRIDE organisms NEWT:9606; abstract: AML patients; human Swiss-Prot FASTA in parameters.txt"
+    },
+    {
+      "location": "characteristics[disease] SILAC light / label-free rows",
+      "value": "acute myeloid leukemia",
+      "source_ids": [
+        "pride",
+        "abstract",
+        "ols"
+      ],
+      "evidence": "Title 'Human AML patient samples'; abstract 'cell lysates from patients with AML'; MONDO:0018874"
+    },
+    {
+      "location": "comment[instrument] all rows",
+      "value": "NT=Orbitrap Elite;AC=MS:1001910",
+      "source_ids": [
+        "pride",
+        "raw_headers",
+        "ols"
+      ],
+      "evidence": "PRIDE instruments MS:1001910; raw header method 'Orbitrap Elite MS', tune 'Elite_nano', folder names 'OrbitrapElite', 240K resolution methods"
+    },
+    {
+      "location": "comment[proteomics data acquisition method], comment[dissociation method], comment[collision energy], comment[ms2 mass analyzer] all rows",
+      "value": "DDA; CID; 35 NCE; linear ion trap",
+      "source_ids": [
+        "raw_headers"
+      ],
+      "evidence": "Scan events 'FTMS + p norm o(300.0-2000.0)' then 'ITMS + c norm Dep ... MS/MS Most intense ion', Activation Type CID, Normalized Coll. Energy 35.0 (8 sampled files)"
+    },
+    {
+      "location": "comment[cleavage agent details] all rows",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": [
+        "search_summary",
+        "pride"
+      ],
+      "evidence": "summary.txt Enzyme=Trypsin, Enzyme mode=Specific for every annotated raw file; PRIDE: fresh/frozen study used FASP single digestion"
+    },
+    {
+      "location": "comment[fragment mass tolerance] all rows",
+      "value": "0.6 Da",
+      "source_ids": [
+        "search_params"
+      ],
+      "evidence": "parameters.txt 'MS/MS tol. (ITMS) 0.6 Da'; MS2 acquired in ion trap"
+    },
+    {
+      "location": "comment[modification parameters] all rows",
+      "value": "Carbamidomethyl C fixed; Acetyl protein N-term, Oxidation M variable (+ Phospho STY in phospho SDRFs; + Label:13C(6) R, Label:13C(6)15N(2) K in SILAC SDRFs)",
+      "source_ids": [
+        "search_params",
+        "search_summary"
+      ],
+      "evidence": "parameters.txt 'Fixed modifications Carbamidomethyl (C)'; summary.txt Variable modifications and Labels1 'Arg6;Lys8' per raw file"
+    },
+    {
+      "location": "characteristics[organism part], characteristics[cell type], characteristics[age], characteristics[sex]",
+      "value": "not available",
+      "source_ids": [
+        "abstract",
+        "pride"
+      ],
+      "evidence": "No per-sample tissue/demographic data in record or abstract; PRIDE CL:0000055 is obsolete"
+    },
+    {
+      "location": "source name / characteristics[individual] / factor value[sample storage] / comment[fraction identifier]",
+      "value": "4 patients x fresh/frozen x 3 SDB-RPS fractions",
+      "source_ids": [
+        "search_summary",
+        "pride"
+      ],
+      "evidence": "summary.txt Experiment Exp_nA/Exp_nB, Fraction 1-3; HR82_FRESH in Exp_1A and HR82_FROZEN in Exp_1B (same pattern for 17, 23, FIL); PRIDE item 5 '24 raw files from the proteome samples'"
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "NT=mixed mode chromatography;AC=MS:1003586",
+      "source_ids": [
+        "pride",
+        "raw_headers",
+        "ols"
+      ],
+      "evidence": "PRIDE 'FASP fractionated with SDB-RPS plugs (also referred to as mixed-mode)'; raw folder '2015-10-18_OrbitrapElite_50cm-AML-MM-FreshFrozen'"
+    },
+    {
+      "location": "comment[label] + source name all rows",
+      "value": "SILAC light = AML sample; SILAC heavy = super-SILAC spike-in standard",
+      "source_ids": [
+        "search_summary",
+        "pride"
+      ],
+      "evidence": "summary.txt Multiplicity 2, Labels1 'Arg6;Lys8'"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "patient number 1-4 (fresh and frozen share it); pooled for QC pool / super-SILAC heavy",
+      "source_ids": [
+        "search_summary",
+        "pride"
+      ],
+      "evidence": "MaxQuant experiments 1-A..4-B / Exp_1A..Exp_4B pair each patient's fresh and frozen sample; HR82=1, 17=2, 23=3, FIL=4 from the phospho files in Exp_nA/B; contract allows 'integer or pooled'"
+    },
+    {
+      "location": "file scope",
+      "value": "one combined MaxQuant search split by parameter group",
+      "source_ids": [
+        "search_summary"
+      ],
+      "evidence": "Search_FreshFrozen_SS/summary.txt: 24 proteome files without Phospho (STY) -> PXD003822-freshfrozen-silac; 8 enriched files with Phospho (STY) -> PXD003822-freshfrozen-phospho"
+    }
+  ],
+  "limitations": [
+    "Patient identity across sub-datasets. FF_patient_1 to 4 follow the `FF<n>` numbering. Linking them to the label-free FF runs is inferred from the shared naming scheme. Within this search, the patient codes are HR82 (1), 17 (2), 23 (3) and FIL (4), taken from the phospho file names in the same MaxQuant experiments.",
+    "SDB-RPS term. `mixed mode chromatography` (MS:1003586) is not in the PRIDE fractionation list, which produces 1 validator warning.",
+    "Super-SILAC standard. Its composition (which heavy-labelled cell lines) is not in the evidence. The heavy rows therefore carry `pooled sample` = pooled, `individual` = pooled, `material type` = cell line (SILAC metabolic labelling requires cultured cells), `disease` = not available and `cell type` = not available.",
+    "Cleavage agent. `reconcile` flags Trypsin as unsupported because the PRIDE prose never names the enzyme. The value comes from the deposited MaxQuant `summary.txt` (Trypsin, Specific, every file), and the fresh/frozen arm used FASP single digestion, so it was kept.",
+    "Paper not read. The J Proteomics paper is closed access, so only the abstract, the PRIDE protocol text and the deposited MaxQuant files were used. Any detail that lives only in the paper's Methods is absent or marked `not available`. This includes patient demographics, cell isolation (blood or bone marrow, density-gradient or not), the super-SILAC cell-line composition, enzyme amounts and digestion times, reduction/alkylation reagents, LC gradient and precursor tolerance.",
+    "Organism part and cell type are `not available`. The abstract says only \"AML cells\" and \"cell lysates from patients with AML\". PRIDE's dropdown lists CL:0000055 \"non-terminally differentiated cell\", which is obsolete in CL (the suggested replacement is progenitor cell, CL:0011026), so it was not used. Blood versus bone marrow origin is not stated in the evidence I could read.",
+    "Age, sex and ancestry are `not available` (ancestry omitted). No per-patient table was available.",
+    "Precursor mass tolerance is not recorded, because MaxQuant 1.5 `parameters.txt` does not report it.",
+    "Instrument. The model is `Orbitrap Elite`, from the method text and folder names. One header field says \"Orbitrap Velos Pro\" (see Technical values). Only 8 of 163 raw files were range-read. The other files' CID/ion-trap settings are assumed to be the same, because they share the five method templates and the same MaxQuant ITMS tolerance."
+  ]
+}

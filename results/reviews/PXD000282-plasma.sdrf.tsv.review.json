@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD000282-plasma.sdrf.tsv",
+  "artifact_sha256": "2798d7c85f1ddccc15b784251a530c5ac0600a96cfdd3be0b27a6d98795e2573",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. All 23 plasma RAW files map one-to-one to rows, and together with the platelet SDRF every one of the 71 deposited RAW files is claimed exactly once. Both declared templates validate, all controlled terms resolve in live OLS, and the technical and biological values trace to PRIDE, the paper, supplementary sheet S5 and RAW headers. The one judgement call, coding 12a_CTR_Crude.raw as a sixth wild-type animal, is backed by the paper's explicit plasma-proteomics count (WT n = 6) and is disclosed as an inference in the manifest. Three minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent context (bergen-reviewer-PXD000282-plasma-r2) without the producer transcript or report.md. PRIDE project and file list, Europe PMC full text PMC5562764, the Springer supplementary MOESM1 xls, RAW headers (HTTP range) for all 23 plasma files, PRIDE XML 29639/29638 headers and OLS4 were fetched fresh into r2_-prefixed files under scratchpad/PXD000282/review-PXD000282-plasma/. Identity was asserted on each: projectAccessions = PXD000282 on all 83 file records, paper PMID 28821815 / DOI 10.1038/s41598-017-08975-y, and PRIDE XML 29639 title 'Mus EPAC-KO plasma crude'. Earlier reviewer files in the same folder were not used."
+  },
+  "evidence_manifest": "annotations/PXD000282-plasma.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Templates derived independently: Mus musculus with a technology layer means ms-proteomics + vertebrates; both are declared at v1.1.0, the latest in templates.yaml, and comment[sdrf version] is v1.1.0. All required columns are present, including the vertebrates disease and developmental stage, ms-proteomics acquisition method, instrument, cleavage agent, label and fraction identifier, and base biological replicate, technical replicate and data file. There are 23 rows x 35 fields, with no duplicate source name, assay name or data file. characteristics[depletion] uses the fixed vocabulary (depletion / no depletion), and biological replicate values match ^\\d+$. Collision energy '35% NCE', the tolerances '10 ppm' / '0.7 Da' and ms1 scan range '300m/z-2000m/z' pass the validators. Repeated comment[sdrf template] and comment[modification parameters] columns are allowed."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4 IRI lookups: MS:1003096 'Orbitrap Velos Pro' (synonym LTQ Orbitrap Velos Pro), MS:1001251 Trypsin, MS:1000133 collision-induced dissociation, MS:1000083 radial ejection linear ion trap, PRIDE:0000627 Data-dependent acquisition, PRIDE:0000608 Dithiothreitol (DTT), PRIDE:0000599 Iodoacetamide (IAA), UBERON:0001969 blood plasma, NCBITaxon:10090 Mus musculus, PATO:0000461 normal and MS:1002038 label free sample. All labels match and none is obsolete. UNIMOD:4 is Carbamidomethyl and UNIMOD:35 is Oxidation, with standard C and M targets. sdrf-tools check: 11/11 terms verified, 0 hallucinated, 0 label mismatches. The only gap is the strain C57BL/6JBomTac, which has no NCBITaxon entry (warning-level validator; see minor finding)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Organism: PRIDE NEWT:10090 and paper Methods. Strain: Methods says KOs were 'bred against a C57BL/6JBomTac (Taconic, Denmark) genetic background for at least ten generations' and 'wild type C57BL/6JBomTac animals included were littermates and commercial mice'. Disease 'normal': Methods says 'Epac1-/- ... mice are healthy and apparently indistinguishable from WT', and the Discussion says the bleeding phenotype appears only after challenge. Sex and age 'not available': the only age (8-10 weeks) and sex determination in the paper concern the pregnant mice and embryos for liver sections, not plasma donors. Instrument: all 23 RAW headers read 'Orbitrap Velos Pro', and Methods say LTQ-Orbitrap Velos Pro. Acquisition: PRIDE says DDA, survey scan 300-2000 m/z in the Orbitrap, top-7 low-energy CID in the linear ion trap at NCE 35%, and the RAW method name is TOP7_..._CE35. Search: PRIDE and S5 give trypsin, fixed carbamidomethyl C, variable oxidation M, precursor 10 ppm and fragment 0.7. PRIDE XML 29639 gives 'Peptide mass tolerance setting 10.0' and 'Fragment mass tolerance setting 0.7'. The Da unit is not stated, but OMSSA fragment tolerance is in Da and MS2 was in the ion trap. Reduction/alkylation: S5 'Trypsination of protein samples in solution' uses 100 mM DTT and 200 mM iodoacetamide. Plasma is the only in-solution digest (platelets were digested in-gel per the paper), so assigning these to plasma is sound. Depletion: Methods describe the Qproteome Murine Albumin Depletion Kit, and file tokens are Crude/Depl."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "The fresh PRIDE /files listing has 83 records, 71 of them RAW. This SDRF lists 23 unique RAWs (all non-'P_' files), and the sibling platelet SDRF lists 48 unique RAWs (P_KO_1-24, P_WT_1-24). Union = 71, intersection = 0, none missing, none extra. Every data file exists in PRIDE, and each RAW header's acquisition path C:\\Xcalibur\\Data\\FrodeS\\20120621_EPAC_FSEO\\<name>.raw matches the deposited name. Non-RAW files (PRIDE XML, mgf, mzTab) are correctly not listed."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: KO has 7 animals (1-7) and 13 runs; mouse 7 has a depleted run only. WT has 6 animals (8, 9, 10, 12, 13 and 12a, coded as replicate 14) and 10 runs; mouse 12 has a depleted run only and 12a a crude run only. That gives 12 depleted plus 11 crude runs. Paper Fig. 4 legend: 'Plasma samples from WT (n = 6) and Epac1-/- (n = 7) mice were analyzed by label-free quantitative proteomics'. These counts match only if 12a is a sixth WT animal. S1 has 11 Progenesis columns (KO1, KO2and7, KO3-6, CTR8-10, CTR12, CTR13), each with fractions 1 and 2, i.e. crude and depleted. 'KO2and7' shows the analysts merged a depleted-only animal into another animal's column, and 'CTR12' is consistent with the same treatment of 12 (depleted only) plus 12a (crude only). Crude and depleted rows of the same mouse share the biological replicate, technical replicate is 1 and fraction identifier is 1 throughout, and factor value[genotype] equals characteristics[genotype] on every row. No confounding: depleted and crude runs alternate KO/WT within one acquisition series (21-25 June 2012)."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Each non-trivial value was traced to a cited source at the stated granularity, and no value claims more than its source. Sex and developmental stage are honestly 'not available'. Strain is quoted verbatim from Methods. Per-sample values come from file names or apply study-wide; none is inferred from cohort summaries. The one inferred identity (12a as a separate animal) is disclosed in manifest limitations and is backed by the explicit plasma n. Material evidence not encoded is limited to optional parameters (zero missed cleavages, Progenesis/SearchGUI/PeptideShaker software, 180 min gradient), and none is required by the active templates. The PRIDE-listed MOD:01090/MOD:01047 PTMs are PRIDE mzTab mass-mapping artefacts, and the producer correctly used the Methods modifications."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "Run from /home/thanadol/Documents/GitHub/sdrf-skills. 'timeout 900 .venv/bin/parse_sdrf validate-sdrf -s <artifact> -t ms-proteomics --use_ols_cache_only' exited 0 with 'Everything seems to be fine. Well done.' The same command with '-t vertebrates' exited 0 with one warning: 'Term: C57BL/6JBomTac in column characteristics[strain or breed], is not found in the given ontology list ncbitaxon'. '.venv/bin/python -m tools check' exited 0 (CLEAN, 11/11 verified). '.venv/bin/python -m tools score' exited 0 (100/100). '.venv/bin/python -m tools structure' exited 0 (Structure OK)."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "row 9 (WT_mouse12a_plasma_crude, 12a_CTR_Crude.raw), characteristics[biological replicate] = 14; evidence manifest limitations",
+      "message": "Coding 12a as a sixth WT animal is the best-supported reading, but the manifest does not record the counter-evidence. Supplementary S1 names the merged column 'CTR12', not 'CTR12and12a' as it did for 'KO2and7'. In the interleaved acquisition sequence (RAW header creation times), 12a_CTR_Crude occupies the slot that 12_CTR_Depl held in the depleted block (between mouse 4 and mouse 5). Replicate number 14 is an arbitrary placeholder, since no mouse 14 exists.",
+      "evidence": "Fig. 4 legend says WT n = 6 (supports a separate animal). S1 header row 3 has a CTR12 column. RAW header FILETIME at offset 40: 12_CTR_Depl 2012-06-22 15:28 between 4_KO_Depl and 5_KO_Depl; 12a_CTR_Crude 2012-06-24 13:26 between 4_KO_Crude and 5_KO_Crude.",
+      "correction": "Add the S1 naming and run-slot observations to the manifest limitation for 12a, and note that replicate 14 is a placeholder ID. No SDRF change is required."
+    },
+    {
+      "severity": "minor",
+      "category": "convention",
+      "location": "characteristics[biological replicate], all rows",
+      "message": "Biological replicate numbers are global mouse IDs (KO 1-7; WT 8, 9, 10, 12, 13, 14) rather than numbering that restarts within each factor group, which the spec README recommends.",
+      "evidence": "spec README 'Encoding sample technical and biological replicates': 'Numbering restarts per experimental condition (factor value group).' The pattern validator passes either way, and the mouse IDs aid traceability to file names.",
+      "correction": "Optional: renumber per genotype (KO 1-7, WT 1-6) if strict convention is preferred. The source name already preserves mouse IDs."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[strain or breed], all rows = C57BL/6JBomTac",
+      "message": "The substrain C57BL/6JBomTac has no NCBITaxon term, so the vertebrates validator raises a warning.",
+      "evidence": "parse_sdrf -t vertebrates warning. OLS4 exact search for 'C57BL/6JBomTac' returns no hits. The value is verbatim from paper Methods ('Mouse strains').",
+      "correction": "Keep as is (most faithful to source), or record the warning as an accepted limitation in the manifest."
+    }
+  ]
+}

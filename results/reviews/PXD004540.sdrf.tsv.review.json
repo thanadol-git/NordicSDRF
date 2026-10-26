@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD004540.sdrf.tsv",
+  "artifact_sha256": "b3e93b13389c1ea1e207f6a5c59027825e1a48e0e32823589aa99d99766fdb75",
+  "verdict": "PASS",
+  "summary": "Independent fresh-context review (bergen-reviewer-PXD004540-r2) found no blocking or important issues. All 25 PRIDE RAW files are mapped 6x (one row per TMT channel, 150 rows); the TMT channel-to-pool mapping matches paper Table 1 (deglycoproteome row); fraction/rerun/prefractionation structure matches the paper's 'n = 25: 15 fractions + 9 re-runs + 1 prefractionation sample'; instrument, method durations, search parameters and modifications were re-derived from fresh raw-header range reads and the deposited mzid. Both declared templates validate (one expected warning). Four minor findings only.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent context (bergen-reviewer-PXD004540-r2) without the producer transcript or report.md; PRIDE project/files, raw headers and the mzid AnalysisProtocolCollection were fetched fresh; the publication PDF (UiB accepted manuscript) was re-read after confirming its title matches the PXD004540 PRIDE reference (PMID 27728768)"
+  },
+  "evidence_manifest": "annotations/PXD004540.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Templates derived independently from the file: comment[sdrf template] declares NT=ms-proteomics;VV=v1.1.0 and NT=human;VV=v1.1.0 (both latest per templates.yaml; human is a sample layer, ms-proteomics the technology layer, compatible). 150 data rows x 42 columns, uniform row length, no empty cells, no leading/trailing whitespace. All required columns of base, sample-metadata, ms-proteomics and human are present (source name, assay name, technology type, technical replicate, data file, organism, organism part, biological replicate, disease, age, sex, acquisition method, instrument, cleavage agent, label, fraction identifier). (source name, assay name, label) unique; (source, biological replicate, technical replicate, fraction) unique; assay name = data-file stem + '-' + label on all rows. sdrf-tools structure: 'Structure OK: acquisition, template declaration and column order are consistent.' Reserved words used only where allowed (age 'not available', sex 'not applicable', individual 'pooled', ancestry 'not available', elution conditions 'not available', fractionation method 'not applicable')."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4 exact lookups (2026-10-26), none obsolete: NCBITaxon:9606 Homo sapiens; UBERON:0001359 cerebrospinal fluid; MONDO:0005314 relapsing-remitting multiple sclerosis; MONDO:0005071 nervous system disorder; MS:1002523 Q Exactive HF; MS:1001251 Trypsin; MS:1000422 beam-type collision-induced dissociation (HCD synonym, spec example form); MS:1000484 orbitrap; MS:1003586 mixed mode chromatography; PRIDE:0000627 Data-dependent acquisition; TMT126/127/128/129/130/131 = PRIDE:0000516/0000517/0000520/0000523/0000526/0000529. sdrf-tools verify confirmed UNIMOD:4 Carbamidomethyl, 737 TMT6plex, 35 Oxidation, 7 Deamidated, 1 Acetyl, 27 Glu->pyro-Glu, 28 Gln->pyro-Glu, 385 Ammonia-loss. sdrf-tools check: 21 terms checked, 21 verified, 0 hallucinated, 0 label mismatches, 0 wrong ontology, 0 UNIMOD swaps (CLEAN). OLS hierarchicalDescendants of EFO:0009090 (EFO and PRIDE) contain no glycopeptide-enrichment term, so omitting characteristics[enrichment process] is justified; PRIDE:0000550 has no mixed-mode child, so MS:1003586 is a justified, more accurate choice (warning-level only)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project (fresh): title/description 3 RRMS pools vs 3 OND pools, CSF, TMT, hydrazide N-glycopeptide enrichment, mixed-mode fractionation, Q-Exactive HF in sample protocol (structured instrument field says Q Exactive, overridden correctly). Paper (Kroksveen et al. J Proteome Res 2017, PMID 27728768): Table 1 'TMT label deglycoproteome analysis' Pool1-6 = 128,130,127,126,129,131 and Diagnosis RRMS x3 / OND x3 -> exactly the SDRF mapping (the different global-proteome row was correctly not used); 7 donors per pool, 1 male/6 female per pool, only mean(SD) age; Figure 1 legend 'Only the global experiment included protein depletion' -> no depletion; 15 mixed-mode fractions on Sielc Promix MP; fractions 7-15 reanalysed with a longer (105 min) gradient; DDA top-12, HCD NCE 32%, MS1 375-1500 m/z, MS2 R=60,000 (Orbitrap); precursor/fragment tolerance 10 ppm; trypsin, 2 missed cleavages; deamidation of N added as variable for the deglycoproteome search. Fresh raw-header range reads (MM_6, MM_15, MM_12_Rerun, 50cm_90min): all 'Q Exactive HF - Orbitrap MS'; initial fraction and 50cm runs TMT_sensitive_90min.meth (method duration 90 min); rerun TMT_sensitive_105min_AG_Late_Elution_Update2.meth (105 min). Fresh mzid AnalysisProtocolCollection: fixed Carbamidomethyl C, TMT6plex K, TMT6plex peptide N-term; variable Oxidation M, Deamidated N, Acetyl protein N-term, Glu->pyro-Glu E N-term, Gln->pyro-Glu Q N-term, Ammonia-loss C N-term; Trypsin MS:1001251, 2 missed cleavages; parent and fragment tolerance 10.0 ppm -> all 9 modification columns, cleavage agent and tolerances match exactly. sdrf-tools reconcile reported cleavage_agent_unsupported only because the PRIDE record text says 'in-solution digestion'; trypsin is explicit in the paper ('in-solution trypsin digested', Promega trypsin) and the mzid Enzyme element, so this is a heuristic false positive, not an artifact defect."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE /files (77 files, every record's projectAccessions contains PXD004540): 25 RAW files. SDRF comment[data file] set = exactly those 25 (missing 0, extra 0), each appearing on exactly 6 rows with the 6 distinct TMT labels. No mgf/mzid/mztab files referenced. MM_n.raw -> fraction n, tech rep 1 (15 files); MM_n_Rerun.raw -> fraction n, tech rep 2 (9 files, n = 7..15, matching the paper's reanalysed fractions); 20150309_TMT_SPEG_50cm_90min.raw (the only non-MM file, separate 2015-03-09 acquisition folder, consistent with the paper's single prefractionation sample) -> fraction 1, tech rep 3, fractionation method 'not applicable'. File-level assignments follow file names and the paper's file breakdown; no mapping was guessed."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 6 source names (CSF_RRMS_pool1-3, CSF_OND_pool4-6), each with one label, constant disease, biological replicate 1-3 within each disease group (3 independent pools per group). 25 runs x 6 channels = 150 rows. factor value[disease] equals characteristics[disease] on every row (2 levels, 3 pools each, balanced; no label/disease confound beyond the published design). Every channel present in every file (single TMT6plex multiplex, all fractions). Fraction identifiers 1-15 per series, reruns only for 7-15, (source, biorep, techrep, fraction) unique. Pool-level pooled sample = 'pooled' and individual = 'pooled' are consistent with 7-donor pools."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value traced to PRIDE, the paper, the mzid or fresh raw headers; no value is more specific than its source: OND controls use the broad MONDO:0005071 because per-donor diagnoses (Table S1) are unavailable; age 'not available' and sex 'not applicable' because only pool means and 1M/6F mixtures exist (I confirmed 'pooled' is rejected for both by the installed parse_sdrf human validator, so these are the most informative validator-compatible values); elution conditions '105 min gradient' only where the paper states it, 'not available' elsewhere (conservative); instrument upgraded from PRIDE's generic Q Exactive to Q Exactive HF on raw-header and paper evidence. Omitted material evidence (N-glycopeptide SPEG/hydrazide enrichment) has no ontology term under EFO:0009090 and is documented in the manifest limitations; noted as minor below. No unsupported additions found."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics --use_ols_cache_only: exit 0, 'Most seems to be fine. There were only warnings.' (single WARNING: MS:1003586 not in pride ontology list for comment[fractionation method]; term confirmed live in OLS). parse_sdrf validate-sdrf -t human --use_ols_cache_only: exit 0, 'Everything seems to be fine. Well done.' sdrf-tools check: CLEAN, exit 0. sdrf-tools score: 97/100 (missing recommended cell type and developmental stage only), exit 0. sdrf-tools structure: OK, exit 0. sdrf-tools reconcile --record (fresh PRIDE project.json): exit 1, single cleavage_agent_unsupported, refuted by paper and mzid (see source_evidence). sdrf-tools verify on all 8 UNIMOD accessions and MS:1003586/MS:1000422: labels match OLS. SHA-256 re-checked after validation: unchanged."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "file (no characteristics[enrichment process] column)",
+      "message": "The defining design feature, N-glycopeptide capture by hydrazide SPEG with PNGase F release, is not represented anywhere in the SDRF.",
+      "evidence": "Paper 'Glycopeptide enrichment' section and PRIDE sample protocol. No glycopeptide-enrichment term exists under EFO:0009090 in OLS (EFO/PRIDE hierarchicalDescendants), so omission is justified and documented. Optional improvement: add the column with the template's own example value 'enrichment of glycopeptides' (warning-level ontology check) or request a new term."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "comment[elution conditions], 96 non-rerun rows (MM_1..MM_15 and 20150309_TMT_SPEG_50cm_90min)",
+      "message": "Recorded as 'not available' although the raw headers state method TMT_sensitive_90min.meth with 'Method duration 90.00 min'.",
+      "evidence": "Fresh raw-header reads of MM_6, MM_15 and 20150309_TMT_SPEG_50cm_90min. The conservative choice is acceptable because method duration is not necessarily the gradient length and the paper does not state it; optionally record e.g. '90 min LC method' to keep the two run series distinguishable."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "comment[technical replicate]/comment[fraction identifier], 6 rows of 20150309_TMT_SPEG_50cm_90min.raw",
+      "message": "The unfractionated prefractionation run is encoded as fraction 1 / technical replicate 3, which shares fraction identifier 1 with MM_1 and could be read as a third replicate series by fraction-aggregating tools.",
+      "evidence": "Paper: '15 fractions + 9 re-runs of late eluting fractions + 1 prefractionation sample'. The encoding is spec-valid (fraction 1 = unfractionated), unique, and disambiguated by comment[fractionation method] = 'not applicable'; no change required."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[disease] / factor value[disease], CSF_OND_pool4-6 rows",
+      "message": "Control level 'nervous system disorder' (MONDO:0005071) is a hierarchical ancestor of the case level 'relapsing-remitting multiple sclerosis' (MONDO:0005314), so the two factor levels are nested rather than disjoint.",
+      "evidence": "Paper: '21 controls with other neurological diseases (OND)', individual diagnoses only in unavailable Table S1. The broad term is the most specific supported value; consumers should rely on the source-name OND/RRMS distinction. No change required."
+    }
+  ]
+}

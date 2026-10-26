@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD003822-freshfrozen-lf.sdrf.tsv",
+  "artifact_sha256": "92066e73b316503c00288625a126d1fdf0ef1eeed7190302228b44a8d9859f0e",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. Fresh/frozen assignment (A = fresh, B = frozen) and patient numbering verified against MaxQuant grouping and cross-dataset peptide profiles; 11/11 RAW files mapped.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh-context adversarial reviewer bergen-reviewer-PXD003822-freshfrozen-lf-r2; producer report.md and transcript not read; all producer claims re-derived from PRIDE, Europe PMC, live OLS and deposited MaxQuant tables"
+  },
+  "evidence_manifest": "annotations/PXD003822-freshfrozen-lf.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Templates derived independently from the file: comment[sdrf template] = ms-proteomics v1.1.0 + human v1.1.0 (both active in templates.yaml). All required ms-proteomics/human/base columns present; reserved words lowercase; no leading/trailing whitespace; uniform row width; assay names unique; (data file, label) pairs unique; factor value columns after all characteristics/comment columns; biological replicate integer or 'pooled' per TERMS.tsv; pooled sample uses allowed values. characteristics[pooled sample], characteristics[sample storage] (free text) and factor value[sample storage] present."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS: MS:1001910 Orbitrap Elite, MS:1000133 CID, MS:1000291 linear ion trap, MS:1001251 Trypsin, MS:1001309 Lys-C, PRIDE:0000627 DDA, PRIDE:0000561 SCX, MS:1003586 mixed mode chromatography, PRIDE:0000587 IMAC, EFO:0010806 enrichment of phosphorylated protein (child of EFO:0009090): all resolve, labels match, none obsolete. UNIMOD:4/1/35/21/188/259 verified by sdrf-tools check (CLEAN, 0 label mismatches, 0 UNIMOD swaps). Arg6/Lys8 = Label:13C(6) R / Label:13C(6)15N(2) K match MaxQuant Labels1 'Arg6;Lys8'. Obsolete PRIDE-record CL:0000055 correctly not used."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE items 4/5 and abstract: effect of liquid nitrogen storage vs fresh lysis on four AML patients. MaxQuant FreshFrozen_SS summary.txt groups HR82_FRESH with Exp_1A and HR82_FROZEN with Exp_1B (17 -> Exp_2A/B, 23 -> Exp_3A/B, FIL -> Exp_4A/B), so suffix A = fresh, B = frozen, and HR82/17/23/FIL = patients 1-4. Independent data checks on deposited peptides.txt (fresh range-read from Search_FreshFrozen-LF.zip / Search_FreshFrozen_SS.zip; summary.txt byte-identical to cached copy): (a) patient identity: patient-centred log2 peptide profiles (7843 peptides) correlate block-diagonally between LF experiments n-A/n-B and SS light Exp_nA/nB (same-patient r = 0.28-0.74, other-patient r <= 0.19), so LF patient n = SS patient n for all four; Y-chromosome peptides appear only for patient 4 in both sets; (b) A/B orientation: per-patient (A - B) difference vectors correlate positively between LF and SS for all 16 patient pairs (diagonal 0.10-0.20, none negative), so LF -A has the same orientation as SS A (= FRESH). Cleavage: partial (first 20 MB compressed) range-read of each FreshFrozen evidence.txt covering all raw files: every LF, SS-proteome and phospho run shows a single-trypsin pattern (K-terminal 48-65%, R-terminal 34-49%, no Lys-C-eluate signature), consistent with Trypsin only and PRIDE 'FASP single digested'. MaxQuant FreshFrozen-LF summary.txt experiments 1-A..4-B and QC1-3, Enzyme Trypsin, MBR True."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE /files (168 entries, every projectAccessions == PXD003822): 163 RAW + 5 SEARCH zips. Across the six sibling SDRFs all 163 RAW files are claimed exactly once (no duplicates, no unclaimed, no names absent from PRIDE). 11 SDRF data files = 11 MaxQuant FreshFrozen-LF raw files = PRIDE item 4 ('four fresh/frozen pairs and 3 quality controls')."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "4 patients x {freshly lysed, liquid nitrogen storage}: biological replicate = patient number 1-4 within each storage group (spec: numbering restarts per factor-value group), fresh and frozen of a patient share characteristics[individual] FF_patient_n. QC pool (PRIDE: 'a mix of all samples') = 3 technical replicates of one pooled source, biological replicate/individual/pooled sample = pooled. Patient IDs consistent with sibling freshfrozen-silac/phospho SDRFs and supported by data (see source_evidence)."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Organism part, cell type, age, sex = not available: PRIDE record and abstract give no per-patient tissue/demographic data (abstract: 'cell lysates from patients with AML'); ancestry/developmental stage omitted rather than guessed; no precursor tolerance invented; disease AML (MONDO:0018874) stated by title/abstract; instrument/CID/35 NCE/ion-trap MS2 confirmed in RAW headers (method text 'Orbitrap Elite MS', 'Activation Type: CID', 'Normalized Coll. Energy: 35.0', ITMS MS/MS); fragment tolerance 0.6 Da = parameters.txt 'MS/MS tol. (ITMS) 0.6 Da'; fixed Carbamidomethyl (C), variable Acetyl (Protein N-term)/Oxidation (M) from parameters/summary. Sex left not available even though Y-peptides suggest patient 4 is male; inferring sex from proteomic data would exceed the stated evidence."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf --use_ols_cache_only (timeout 900), run separately with -t ms-proteomics and -t human: both exit 0. sdrf-tools check: CLEAN, exit 0; sdrf-tools score: exit 0. Logs: scratchpad/PXD003822/review-PXD003822-methodopt-lf/r2/{validate_r2.log,tools_r2.log}."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (comment[precursor mass tolerance] absent)",
+      "message": "Recommended column comment[precursor mass tolerance] is absent.",
+      "evidence": "MaxQuant 1.5.2.8 parameters.txt in the deposited search zip does not record the main-search precursor tolerance; omission is safer than guessing. sdrf-tools score lists it as a missing recommended column."
+    }
+  ]
+}

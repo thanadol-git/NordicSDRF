@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD004572.sdrf.tsv",
+  "dataset": "PXD004572",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD004572 (sdrf-skills/scratchpad/PXD004572/project.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD004572/files?pageSize=100&page=0..3, merged: 201 files = 100 RAW + 100 MGF + 1 mzid; /files/count = 201; every entry's projectAccessions contains PXD004572 (sdrf-skills/scratchpad/PXD004572/files_all.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Kroksveen AC et al., J Proteome Res 2017;16(1), DOI 10.1021/acs.jproteome.6b00659, PMID 27728768 (not in PMC). Accepted manuscript (postprint, 44 pages) from the University of Bergen repository, hdl.handle.net/1956/23324 -> NVA registration 0198cc941b84-8d72316f-1a10-4496-9af0-b8bf1106dcc7, file 40ab5c87-4a24-4197-a058-555402718465 (sdrf-skills/scratchpad/PXD004572/paper.pdf, paper.txt). The manuscript states 'PXD004572 for the global data and PXD004540 for the glycoproteome data'."
+    },
+    {
+      "id": "mzid",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/10/PXD004572/TMT_MS_OND.mzid (PeptideShaker v1.12.2 export, 7,308,537,311 bytes). AnalysisCollection/AnalysisProtocolCollection read by HTTP byte-range near offset 472,173,260 (sdrf-skills/scratchpad/PXD004572/mzid_protocol.xml, locator mzid_locate.py)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/10/PXD004572/MM_F1.raw, first 2 MB by HTTP range (sdrf-skills/scratchpad/PXD004572/MM_F1.head)"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/search (MONDO, UBERON, MS, PRIDE lookups, 2026-10-26)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, comment[label], factor value[disease], characteristics[disease] (rows 1-600)",
+      "value": "pool 1 RRMS=TMT126 (rows 1-100); pool 2 RRMS=TMT128 (101-200); pool 3 RRMS=TMT130 (201-300); pool 4 OND=TMT127 (301-400); pool 5 OND=TMT129 (401-500); pool 6 OND=TMT131 (501-600)",
+      "source_ids": ["paper"],
+      "evidence": "Paper Table 1, row 'TMT label global proteome analysis': Pool 1..6 = 126, 128, 130, 127, 129, 131; row 'Diagnosis': Pools 1-3 RRMS, Pools 4-6 OND. The separate 'deglycoproteome analysis' label row belongs to PXD004540 and was not used."
+    },
+    {
+      "location": "characteristics[disease], factor value[disease] (rows 1-300)",
+      "value": "relapsing-remitting multiple sclerosis (MONDO:0005314)",
+      "source_ids": ["paper", "pride", "ols"],
+      "evidence": "Methods 'CSF collection and patient information': 21 RRMS patients diagnosed by revised McDonald criteria; PRIDE keyword 'Multiple sclerosis'"
+    },
+    {
+      "location": "characteristics[disease], factor value[disease] (rows 301-600)",
+      "value": "nervous system disorder (MONDO:0005071)",
+      "source_ids": ["paper", "ols"],
+      "evidence": "Methods: '21 controls with other neurological diseases (OND) ... evaluated by a neurologist to have no risk of developing MS'. Specific diagnoses are in Table S1, which was not accessible; the generic MONDO parent is used rather than 'normal'."
+    },
+    {
+      "location": "characteristics[organism], characteristics[organism part] (all rows)",
+      "value": "Homo sapiens; cerebrospinal fluid (UBERON:0001359)",
+      "source_ids": ["pride", "paper"],
+      "evidence": "PRIDE organism Homo sapiens, organism part Cerebrospinal fluid; Methods: CSF collected by diagnostic lumbar puncture at Haukeland University Hospital"
+    },
+    {
+      "location": "characteristics[pooled sample], characteristics[individual], characteristics[biological replicate] (all rows)",
+      "value": "pooled; pooled; 1,2,3 within each diagnosis group",
+      "source_ids": ["paper"],
+      "evidence": "Methods 'Preparation of pooled samples': 42 CSF samples randomly divided into three RRMS pools and three OND pools, seven individuals each, 200 ug protein per donor. Biological replicate = pool index within its group (RRMS pools 1-3 -> 1-3; OND pools 4-6 -> 1-3)."
+    },
+    {
+      "location": "characteristics[age], characteristics[sex] (all rows)",
+      "value": "not available; not applicable",
+      "source_ids": ["paper"],
+      "evidence": "Table 1: each pool is 1 male / 6 female with mean age 34.1-38.3 y; no single per-sample value exists. 'pooled' (spec-permitted) is rejected by the installed validator for these two columns."
+    },
+    {
+      "location": "characteristics[treatment status] (rows 1-300 / 301-600)",
+      "value": "treatment naive / not available",
+      "source_ids": ["paper"],
+      "evidence": "Methods: 'None of the RRMS patients received medication prior to the LP.' Nothing is stated for OND controls."
+    },
+    {
+      "location": "characteristics[depletion] (all rows)",
+      "value": "depletion",
+      "source_ids": ["paper"],
+      "evidence": "Methods 'Global proteome analysis': 500 ug of each pool immunodepleted on MARS Hu-14 (Agilent)"
+    },
+    {
+      "location": "characteristics[cell type], characteristics[ancestry category] (all rows)",
+      "value": "not applicable; not available",
+      "source_ids": ["paper"],
+      "evidence": "Cell-free CSF proteome of pooled donors; no per-sample ancestry reported"
+    },
+    {
+      "location": "comment[data file], comment[fraction identifier], assay name (all rows)",
+      "value": "100 RAW files, fraction 1-100 from the number in the file name (MM_F1..MM_F12, MMF13/14, MM_F15-17_rerun, MMF18/19, MM_F20_rerun, MMF21/22, MM_F23/24_rerun, MM25-27, MM_F28-31_rerun, MM32-35, MM_F36_rerun, MM37-42, MM_F43-62 incl. MM_F51_normgrad_2ul and MM_F60_newgrad, MM_F63_rerun, MM_F64-83 incl. reruns 67/70/77/82, MMF84-93, MM_F94-100); each file x 6 channels",
+      "source_ids": ["pride-files", "paper", "mzid"],
+      "evidence": "Paper: 'TMT labeled peptides were fractionated (100 fractions for the global proteome analysis)'; exactly one RAW per number 1-100; the mzid lists exactly these 100 runs as InputSpectra (.mgf of the same stems). The fraction-number reading of file names is inferred."
+    },
+    {
+      "location": "comment[instrument] (all rows)",
+      "value": "NT=Q Exactive HF;AC=MS:1002523",
+      "source_ids": ["raw-header", "paper"],
+      "evidence": "RAW header string 'Q Exactive HF - Orbitrap MS'; Methods 'Q-Exactive HF'. PRIDE dropdown says Q Exactive (MS:1001911) - superseded."
+    },
+    {
+      "location": "comment[modification parameters] x8, comment[cleavage agent details], comment[precursor mass tolerance], comment[fragment mass tolerance] (all rows)",
+      "value": "TMT6plex K fixed; TMT6plex peptide N-term fixed; Carbamidomethyl C fixed; Oxidation M variable; Acetyl protein N-term variable; Glu->pyro-Glu (E, pep N-term) variable; Gln->pyro-Glu (Q, pep N-term) variable; Ammonia-loss (C, pep N-term) variable; Trypsin (2 missed cleavages); 10 ppm; 10 ppm",
+      "source_ids": ["mzid", "paper"],
+      "evidence": "mzid SpectrumIdentificationProtocol SearchModification list (UNIMOD:4, 737, 737, 35, 1, 27, 28, 385), Enzyme Trypsin MS:1001251 missedCleavages=2, ParentTolerance and FragmentTolerance 10.0 ppm. Paper Methods list only the first four modifications; the other four are SearchGUI/X!Tandem defaults recorded in the deposited search ('All other settings were left to default')."
+    },
+    {
+      "location": "comment[proteomics data acquisition method], comment[dissociation method], comment[collision energy], comment[ms2 mass analyzer], comment[ms1 scan range] (all rows)",
+      "value": "DDA (PRIDE:0000627); beam-type CID/HCD (MS:1000422); 32% NCE; orbitrap (MS:1000484); 375m/z-1500m/z",
+      "source_ids": ["paper"],
+      "evidence": "Methods 'Liquid chromatography mass spectrometry analysis': data-dependent acquisition, top 12, HCD at normalized collision energy 32%, MS2 at R=60,000 (Orbitrap), MS1 scan range 375-1500 m/z"
+    },
+    {
+      "location": "comment[fractionation method] (all rows)",
+      "value": "NT=High-performance liquid chromatography;AC=PRIDE:0000565",
+      "source_ids": ["paper", "ols"],
+      "evidence": "Methods 'Sample fractionation': mixed-mode chromatography on a Sielc Promix MP column, Agilent 1260 LC; no more specific PRIDE child of PRIDE:0000550 for mixed-mode"
+    },
+    {
+      "location": "comment[reduction reagent], comment[alkylation reagent] (all rows)",
+      "value": "Dithiothreitol (DTT) PRIDE:0000608; Iodoacetamide (IAA) PRIDE:0000599",
+      "source_ids": ["paper", "mzid"],
+      "evidence": "Inferred: 'Chemical, reagents and solutions' lists IAA and DTT as purchased reagents; digestion 'as described in ref 25' (protocol not re-read); Carbamidomethyl C fixed in the deposited search is consistent with IAA alkylation"
+    }
+  ],
+  "limitations": [
+    "Supplementary Tables S1-S3 (per-donor patient data, fractionation gradient, LC methods per fraction) are on the ACS site (HTTP 403) and were not read.",
+    "OND control diagnoses are per-individual in Table S1; the pools are annotated with the generic MONDO 'nervous system disorder'.",
+    "Age and sex are pool-level summaries (1M/6F per pool; means 34.1-38.3 y); written as 'not available' / 'not applicable' because the validator rejects 'pooled' for these columns.",
+    "Fraction identifiers are taken from the number embedded in each file name; the reruns/'newgrad'/'normgrad_2ul' suffixes are treated as the single deposited acquisition of that fraction (no duplicate fraction numbers exist).",
+    "DTT/IAA are inferred from the reagent list, not from an explicit step description.",
+    "Per-fraction LC gradients differ (Table S3, not read); no per-row LC method column was added."
+  ]
+}

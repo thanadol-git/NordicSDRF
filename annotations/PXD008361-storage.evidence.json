@@ -1,0 +1,226 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD008361-storage.sdrf.tsv",
+  "dataset": "PXD008361",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD008361"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD008361/files?pageSize=1000 (45 files: 43 RAW + 2 MaxQuant SEARCH zips; every entry's projectAccessions contains PXD008361)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC5796241 (PMID 29351208, doi:10.3390/ijms19010296), Europe PMC fullTextXML, open access; Methods 4.1-4.4 read in full"
+    },
+    {
+      "id": "supplement",
+      "kind": "publication",
+      "location": "Europe PMC supplementaryFiles for PMC5796241 -> ijms-19-00296-s001.zip -> 'Figures and Tables.pdf' (Table S1 patient samples; Figure S1/S2 captions on QC pools)"
+    },
+    {
+      "id": "upstream",
+      "kind": "repository",
+      "location": "gh api repos/bigbio/sdrf-annotated-datasets/contents/{datasets,sandbox}/PXD008361 -> 404 both"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api"
+    },
+    {
+      "id": "search_summary",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/01/PXD008361/MaxQuant-results_StorageConditions.txt.zip -> MaxQuant-results_Freezing.txt/summary.txt (read from the ZIP via HTTP range requests)"
+    },
+    {
+      "id": "search_params",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/01/PXD008361/MaxQuant-results_StorageConditions.txt.zip -> MaxQuant-results_Freezing.txt/parameters.txt (combined folder 'H:\\Users\\Rebecca\\2017-03-30_OrbitrapElite_Freezing-effect\\Result Molm-13+THP-1')"
+    },
+    {
+      "id": "raw_headers",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/01/PXD008361/{RW_THP1_SDS-1,RW_QC-MOLM13-1}.raw (first 3 MB via HTTP range request: instrument method text, tune file, scan events)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://api.cellosaurus.org/cell-line/CVCL_0006?format=txt and .../CVCL_2119?format=txt"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] / assay name, rows 1-24",
+      "value": "24 RW_*.raw files",
+      "source_ids": [
+        "pride_files",
+        "search_summary"
+      ],
+      "evidence": "All 24 RW_* raw files in the PRIDE file list; the same 24 runs are the only raw files in the StorageConditions MaxQuant summary.txt (experiments THP1_/MOLM13_{DMSO,PELLET,SDS}-1..3 and QC-THP1/QC-MOLM13-1..3)"
+    },
+    {
+      "location": "characteristics[cell line], [cellosaurus accession], [cellosaurus name]",
+      "value": "THP-1 / CVCL_0006 (rows 13-24); MOLM-13 / CVCL_2119 (rows 1-12)",
+      "source_ids": [
+        "paper",
+        "pride",
+        "cellosaurus"
+      ],
+      "evidence": "Paper 4.2 'Two AML cell lines, THP-1 and Molm-13'; run names RW_THP1_* and RW_MOLM13_*; Cellosaurus ID/AC lines"
+    },
+    {
+      "location": "characteristics[organism] all rows",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "cellosaurus"
+      ],
+      "evidence": "PRIDE organisms NEWT:9606; Cellosaurus OX NCBI_TaxID=9606"
+    },
+    {
+      "location": "characteristics[disease] rows 13-24 (THP-1)",
+      "value": "acute monocytic leukemia",
+      "source_ids": [
+        "cellosaurus",
+        "ols"
+      ],
+      "evidence": "Cellosaurus DI 'NCIt C9163 Childhood acute monocytic leukemia' / 'Orphanet_514 Acute monoblastic/monocytic leukemia'; MONDO:0007896"
+    },
+    {
+      "location": "characteristics[disease] rows 1-12 (MOLM-13)",
+      "value": "adult acute monocytic leukemia",
+      "source_ids": [
+        "cellosaurus",
+        "ols"
+      ],
+      "evidence": "Cellosaurus DI 'NCIt C8263 Adult acute monocytic leukemia' (also MDS); MONDO:0000875"
+    },
+    {
+      "location": "characteristics[age], [sex], [ancestry category]",
+      "value": "THP-1 1Y male Japanese; MOLM-13 20Y male Japanese",
+      "source_ids": [
+        "cellosaurus",
+        "ols"
+      ],
+      "evidence": "Cellosaurus AG/SX lines and 'CC Population: Japanese'; HANCESTRO:0019"
+    },
+    {
+      "location": "characteristics[sampling site] all rows; characteristics[organism part] all rows",
+      "value": "blood; not applicable",
+      "source_ids": [
+        "cellosaurus",
+        "ols"
+      ],
+      "evidence": "Cellosaurus 'Derived from site: In situ; Peripheral blood; UBERON_0000178' for both lines. organism part left 'not applicable' for cultured cell-line material (sdrf-tools reconcile rule)"
+    },
+    {
+      "location": "characteristics[sample storage] and factor value[sample storage], rows with SDS/DMSO/PELLET in the run name",
+      "value": "lysed in 4% SDS and stored at -80 °C | cryopreserved in medium with 20% FBS and 10% DMSO in liquid nitrogen | dried cell pellet stored in liquid nitrogen",
+      "source_ids": [
+        "paper",
+        "pride",
+        "search_summary"
+      ],
+      "evidence": "Paper 4.2 / PRIDE sample protocol describe the three aliquots: SDS lysate at -80 °C, RPMI with 20% FBS/10% DMSO in liquid nitrogen, dried pellet in liquid nitrogen; run-name tokens SDS / DMSO / PELLET"
+    },
+    {
+      "location": "QC rows 10-15 (source 'MOLM-13 QC pool', 'THP-1 QC pool')",
+      "value": "pooled; biological replicate pooled; technical replicate 1-3; sample storage pooled",
+      "source_ids": [
+        "pride",
+        "supplement"
+      ],
+      "evidence": "PRIDE: 'A pool containing equal amounts of all the samples was used as QC and analyzed three times'; Figure S2 caption: 'QC samples are a pool of the replicates for each of the cell line samples'"
+    },
+    {
+      "location": "characteristics[biological replicate] rows 1-9, 16-24",
+      "value": "1-3 from run-name suffix",
+      "source_ids": [
+        "search_summary",
+        "supplement",
+        "paper"
+      ],
+      "evidence": "Run/experiment suffix -1/-2/-3; Figure S2 'triplicates of each preservation method'; paired t-tests in paper 4.4. Biological (vs technical) nature of the triplicates is inferred"
+    },
+    {
+      "location": "comment[instrument] all rows",
+      "value": "NT=Orbitrap Elite;AC=MS:1001910",
+      "source_ids": [
+        "raw_headers",
+        "paper",
+        "pride",
+        "ols"
+      ],
+      "evidence": "Raw header 'Orbitrap Elite MS', tune 'Elite_nano', folder '2017-03-30_OrbitrapElite_Freezing-effect'; paper 4.4 'THP-1 and Molm-13 samples were analyzed on an Orbitrap Elite'"
+    },
+    {
+      "location": "comment[dissociation method], [collision energy], [ms2 mass analyzer], [ms1 scan range]",
+      "value": "CID (MS:1000133); 35 NCE; linear ion trap (MS:1000291); 300m/z-2000m/z",
+      "source_ids": [
+        "raw_headers"
+      ],
+      "evidence": "Scan events 'FTMS + p norm o(300.0-2000.0)', 'ITMS + c norm Dep Wideband MS/MS', 'Activation Type: CID', 'Normalized Coll. Energy: 35.0', method 05b_TOP12CID_240K..._CE35"
+    },
+    {
+      "location": "comment[fragment mass tolerance] all rows",
+      "value": "0.6 Da",
+      "source_ids": [
+        "search_params"
+      ],
+      "evidence": "parameters.txt 'MS/MS tol. (ITMS) 0.6 Da'; MS2 was acquired in the ion trap"
+    },
+    {
+      "location": "comment[cleavage agent details] all rows",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": [
+        "search_summary",
+        "pride",
+        "paper"
+      ],
+      "evidence": "summary.txt Enzyme=Trypsin, mode Specific for every raw file; PRIDE data processing protocol 'Trypsin was set as protease'; paper 4.4 'Trypsin was used as digestion protease'"
+    },
+    {
+      "location": "comment[modification parameters] all rows (3 columns)",
+      "value": "Carbamidomethyl (UNIMOD:4, C, Fixed); Oxidation (UNIMOD:35, M, Variable); Acetyl (UNIMOD:1, Protein N-term, Variable)",
+      "source_ids": [
+        "search_params",
+        "search_summary",
+        "paper"
+      ],
+      "evidence": "parameters.txt 'Fixed modifications: Carbamidomethyl (C)'; summary.txt 'Variable modifications: Oxidation (M);Acetyl (Protein N-term)' for every raw file; matches paper section 4.4"
+    },
+    {
+      "location": "comment[proteomics data acquisition method] all rows",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "raw_headers",
+        "pride"
+      ],
+      "evidence": "Raw-file method names TOP12CID / TOP12HCD (top-12 data-dependent MS/MS); PRIDE experiment type Shotgun proteomics"
+    },
+    {
+      "location": "comment[label] all rows",
+      "value": "label free sample",
+      "source_ids": [
+        "pride",
+        "paper",
+        "search_summary"
+      ],
+      "evidence": "PRIDE quantification 'MS1 intensity based label-free quantification'; paper 4.4 LFQ mode; summary.txt multiplicity 1, no labels"
+    }
+  ],
+  "limitations": [
+    "Biological vs technical nature of the -1/-2/-3 triplicates is not stated; annotated as biological replicates 1-3.",
+    "QC pools encoded as one pooled source per cell line with technical replicates 1-3.",
+    "Instrument/acquisition settings read from 2 of 24 raw headers; the rest assumed identical (same folder and search).",
+    "Precursor mass tolerance omitted: MaxQuant 1.5 parameters.txt does not report it and no mqpar.xml was deposited.",
+    "Culture medium, passage number and numeric liquid-nitrogen storage temperature are not stated; columns omitted.",
+    "characteristics[sample storage] / factor value[sample storage] is free text outside the ms-proteomics/human/cell-lines templates."
+  ]
+}

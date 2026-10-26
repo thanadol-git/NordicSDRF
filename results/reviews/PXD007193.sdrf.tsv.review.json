@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD007193.sdrf.tsv",
+  "artifact_sha256": "5d5ec76d3560658855c88530204d75e56c083ec906fc1dfe70656c7a172418c5",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. All 25 rows map one-to-one to the 25 deposited RAW files and to the 25 MaxQuant experiments; group labels were translated correctly to treatment doses and tumour status using the paper and Supplementary Figure 1F; Orbitrap Elite is confirmed in the instrument-ID block of all 25 RAW files. Three minor provenance/strain observations are recorded.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh-context adversarial reviewer subagent (bergen-reviewer-PXD007193); did not read the producer report.md or transcript; re-fetched PRIDE project/files, Europe PMC full text, MaxQuant archive and RAW header ranges"
+  },
+  "evidence_manifest": "annotations/PXD007193.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Declared templates ms-proteomics v1.1.0 and vertebrates v1.1.0 (Mus musculus, non-human vertebrate; no mutually exclusive template). All required columns of base, sample-metadata, vertebrates (disease, developmental stage required) and ms-proteomics present; characteristics before assay name, comments after, factor values last; factor value[disease]/[treatment] have matching characteristics columns. parse_sdrf validate-sdrf passed (warnings only) for each template; sdrf-tools structure: 'Structure OK'. 25 rows, no duplicate assay names or data files."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS: MONDO:0018177 glioblastoma, PATO:0000461 normal, UBERON:0001969 blood plasma, MS:1001910 Orbitrap Elite, MS:1000133 collision-induced dissociation, MS:1000083 radial ejection linear ion trap, MS:1001251 Trypsin, PRIDE:0000627 Data-dependent acquisition all resolve with matching labels and is_obsolete=false; EFO:0001272 adult found by exact search. sdrf-tools verify confirmed UNIMOD:4 Carbamidomethyl, UNIMOD:1 Acetyl, UNIMOD:35 Oxidation, MS:1001910 Orbitrap Elite. sdrf-tools check: 13/13 terms verified, 0 hallucinated, 0 label mismatches. parse_sdrf warnings concern only free-text treatment strings (optional column, warning level) and 'NOD-SCID' not in NCBITaxon (warning level; NCBITaxon has no mouse strain terms; EFO:0002740 'NOD.scid' exists)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Organism/organism part: PRIDE (NEWT:10090, BTO plasma) and Supplementary Methods 'Plasma samples...'. Doses: paper Drugs section 'mouse 25 mg/kg and 50 mg/kg TMZ ... BTZ 0.5 mg/kg'; Supplementary Methods treatment groups. Tumour status: Supplementary Figure 1F legend (inspected in the supplementary docx, md5 94ae932b46982b5f0411d751347871e4 equal to the md5 in the Europe PMC XML) lists exactly 8 groups: Ctrl -Tumour, Ctrl +Tumour (vehicle), BTZ 1.3 mg/m2 -T, BTZ 1.3 mg/m2 +T, TMZ 82 mg/m2 +T, TMZ 164 mg/m2 +T, BTZ+TMZ 82 mg/m2 +T, BTZ+TMZ 164 mg/m2 +T, matching the 8 MaxQuant groups (CTR, CTR T, BTZ, BTZ T, TMZ 25, TMZ 50, BTZ TMZ25, BTZ TMZ50); 82/164 mg/m2 = 25/50 mg/kg per paper. 'untreated' for Ctrl -Tumour: Fig. 5 legend 'Control non-tumour-bearing mice were untreated'. Instrument: own RunHeader instrument-ID read of all 25 RAW files gives model 'Orbitrap Elite', serial 04000B, software 2.7.0 SP1; method 'Orbitrap Elite MS', tune file Elite_nano, acquisition folder '2017-06-13_OrbitrapElite_Plasma-mus'; this outweighs paper/PRIDE 'LTQ-Orbitrap Velos Pro'. DDA top-12, FTMS 300-2000, ITMS CID NCE 35 confirmed in embedded method of 1_C15A1ny and 24_C13A3. parameters.txt: Carbamidomethyl (C) fixed, ITMS MS/MS tol 0.5 Da; summary.txt: Trypsin/P, Acetyl (Protein N-term);Oxidation (M), multiplicity 1. Strain NOD-SCID and age 7 weeks at implantation are stated for xenografted hosts; sex given only as 'male and female'."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE /files (projectAccessions = PXD007193 on every entry): 25 RAW + 1 SEARCH archive. The 25 comment[data file] values equal the 25 RAW names exactly, each once. MaxQuant archive SHA-1 8298e66c6e72f73a03a7d36c2720368c0ecb850b equals the PRIDE checksum; summary.txt Raw file -> Experiment mapping reproduced per row (e.g. 10_C6A1ny -> 'TMZ 50 C6A1', 24_C13A3 -> 'BTZ T C13 A3'); the animal code in source name matches the MaxQuant experiment in all 25 rows."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed groups: CTR 3, CTR T 3, BTZ 3, BTZ T 3, TMZ 25 3, TMZ 50 4, BTZ TMZ25 3, BTZ TMZ50 3 = 25 animals, one label-free injection each (technical replicate 1, fraction 1). Biological replicate numbering 1..n within each group is consistent. Factors disease (2 levels) x treatment (7 levels: untreated/vehicle split control by tumour status) reproduce the 8-group design. Strain and developmental stage are filled only for tumour-bearing rows and are therefore aliased with disease (see minor finding)."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No value asserts more than the evidence: sex 'not available' (only cohort 'male and female'); precursor tolerance 'not available' (absent from deposited parameters.txt and mqpar not deposited); xenograft line P3/BG7 per animal unknown and not annotated; strain/stage for non-tumour mice left 'not available' because the paper describes NOD-SCID/7-week-old only for implanted hosts; 'adult' is supported (implanted at 7 weeks, plasma taken at sacrifice weeks later). Omitted evidence identified (embedded acquisition filename of 1_C15A1ny.raw; strain nomenclature conflict) is recorded below as minor."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf -t ms-proteomics --use_ols_cache_only: exit 0, 'Most seems to be fine. There were only warnings.' (7 treatment free-text warnings). timeout 900 parse_sdrf validate-sdrf -t vertebrates --use_ols_cache_only: exit 0, warnings only (7 treatment + NOD-SCID not in ncbitaxon). sdrf-tools check: exit 0, CLEAN 13/13. sdrf-tools score: exit 0, 100/100. sdrf-tools structure: exit 0, Structure OK. Artifact SHA-256 re-checked unchanged at end of review."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "row 1 (assay name 1_C15A1ny, comment[data file] 1_C15A1ny.raw)",
+      "message": "The RAW header of 1_C15A1ny.raw records the acquisition file path '...\\2017-06-13_OrbitrapElite_Plasma-mus\\Raw\\4_C2A1.raw' (first run of the series, 2017-06-13 23:04), i.e. the file was acquired under the name of animal C2A1 and later renamed; 4_C2A1ny.raw was acquired separately on 2017-06-15. The SDRF correctly follows the depositor's file name and MaxQuant experiment 'CTR C15A1', but this unresolved sample-identity ambiguity is not recorded in the evidence manifest limitations.",
+      "evidence": "UTF-16 strings in the first 4 MB of 1_C15A1ny.raw (HTTP range read); all other 24 files embed their own name (12A_C7A3.raw embeds 12A_C7A3ny.raw, a benign rename). Correction criterion: add a limitation note; do not change the mapping without depositor confirmation."
+    },
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "characteristics[strain or breed] rows 4-6, 10-25",
+      "message": "'NOD-SCID' reproduces the authors' common name, but the formal designation given in the same sentence (C.B-Igh-1b/IcrTac-Prkdc[scid], Janvier Labs) is CB17-SCID nomenclature, not NOD.CB17-Prkdc[scid]. The source is internally inconsistent and the conflict is not noted.",
+      "evidence": "Paper Methods: 'severe combined immunodeficient (NOD-SCID) mice (C.B.-Igh-1b/lcrTac-Prkdc) (Janvier Labs)'; abstract 'NOD-SCID C.B.-Igh-1b/lcrTac-Prkdc mice'. Correction criterion: record the conflict in limitations or quote the full author designation; EFO:0002740 'NOD.scid' is available if the NOD-SCID reading is kept."
+    },
+    {
+      "severity": "minor",
+      "category": "design_consistency",
+      "location": "characteristics[strain or breed], characteristics[developmental stage] rows 1-3, 7-9",
+      "message": "Strain and developmental stage are 'not available' exactly for the non-tumour rows and populated for all tumour-bearing rows, so these characteristics are perfectly aliased with factor value[disease]. This is a conservative evidence-driven choice (the paper states strain/age only for implanted hosts), but downstream users may misread it as a biological difference.",
+      "evidence": "Paper describes NOD-SCID 7-week-old mice only in 'Intracranial implantation'; Supplementary Methods mention non-tumour-bearing control and BTZ-treated mice without strain/age. Correction criterion: optional note in limitations; no value change required without evidence."
+    }
+  ]
+}

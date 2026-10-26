@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD004572.sdrf.tsv",
+  "artifact_sha256": "415c74094b9eeec1a5d31b03948031bdb8262bae606dfc27351bdb3bb66ec478",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. The TMT channel-to-pool map uses the 'global proteome analysis' row of Table 1 (126/128/130/127/129/131 for pools 1-6), which belongs to this deposit; the deglycoproteome row (128/130/127/126/129/131) belongs to PXD004540 and is not used. All 100 RAW files map 1:1 to fractions 1-100 with 6 channels each. All three official template validations pass. Remaining findings are minor.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh-context reviewer subagent; producer report.md and transcript not read; paper, PRIDE metadata, file list, mzid protocol and RAW header re-fetched independently"
+  },
+  "evidence_manifest": "annotations/PXD004572.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "45 columns in every row, with no empty cells and no stray whitespace; reserved words are lowercase. The declared templates are ms-proteomics v1.1.0, human v1.1.0 and clinical-metadata v1.0.0, which are the latest in templates.yaml. Columns used are allowed by those templates. characteristics[treatment status] is defined only by clinical-metadata (TERMS.tsv usage = clinical-metadata), so declaring that template is warranted. The study is an observational clinical cohort (diagnostic lumbar puncture, RRMS diagnosed by McDonald criteria, treatment-naive patients), which fits the template's scope. Assay names are unique and (data file, label) pairs are unique."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Checked in live OLS4 (2026-10-26); none are obsolete and all labels match: MONDO:0005314 relapsing-remitting multiple sclerosis; MONDO:0005071 nervous system disorder; UBERON:0001359 cerebrospinal fluid; MS:1002523 Q Exactive HF; PRIDE:0000565 High-performance liquid chromatography, a child of PRIDE:0000550 Fractionation method; PRIDE:0000608 DTT; PRIDE:0000599 IAA; MS:1000422 beam-type CID; MS:1000484 orbitrap; PRIDE:0000627 DDA; MS:1001251 Trypsin. The UNIMOD accessions 737, 4, 35, 1, 27, 28 and 385 match the mzid SearchModification cvParams. sdrf-tools check reports 22 of 22 terms verified, 0 hallucinated, 0 label mismatches and 0 UNIMOD swaps."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "The accepted manuscript was re-fetched from NVA/BORA (registration 0198cc941b84-8d72316f-1a10-4496-9af0-b8bf1106dcc7, file 40ab5c87...; 44 pages; title matches PMID 27728768; it states 'PXD004572 for the global data and PXD004540 for the glycoproteome data'). Table 1 word coordinates from pdftotext -bbox on page 5: the 'TMT label global / proteome analysis' row at y=239.57 reads 126, 128, 130, 127, 129, 131 for Pool 1-6, and the 'TMT label / deglycoproteome analysis' row at y=258.53 reads 128, 130, 127, 126, 129, 131. The SDRF has pool1=TMT126, pool2=TMT128, pool3=TMT130, pool4=TMT127, pool5=TMT129, pool6=TMT131, which is the global row. Diagnosis row: Pools 1-3 RRMS, Pools 4-6 OND. This deposit is the global arm: 100 RAW files match '100 fractions for the global proteome analysis', the mzid is named TMT_MS_OND, and PRIDE says 'global CSF proteome' and links PXD004540 as the other arm. Methods support: depletion (MARS Hu-14), 'None of the RRMS patients received medication prior to the LP' (treatment naive; OND left as not available), Q-Exactive HF (RAW header 'Q Exactive HF - Orbitrap MS'), DDA top-12, HCD at NCE 32%, MS1 375-1500 m/z, MS2 at R=60,000, mixed-mode fractionation on an Agilent 1260 LC. The mzid protocol, re-read by byte range, gives fixed Carbamidomethyl C, TMT6plex K and peptide N-term; variable Oxidation M, Acetyl protein N-term, Glu->pyro-Glu, Gln->pyro-Glu and Ammonia-loss C at peptide N-term; Trypsin with 2 missed cleavages; 10 ppm parent and fragment tolerances. DTT/IAA: the paper's reagent list (urea, methylamine, DTT, IAA) matches ref 25's in-solution digestion arm, the deposited search uses Carbamidomethyl C, and PRIDE lists the PTM 'iodoacetamide derivatized residue'."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE /files fetched fresh: count 201 (100 .raw, 100 .mgf, 1 .mzid). Every entry's projectAccessions contains PXD004572. The SDRF's comment[data file] set equals the 100 RAW names exactly (none missing, none extra), and the MGF stems equal the RAW stems. Each RAW file has 6 rows (TMT126-131) and a single fraction identifier. Fraction identifiers 1-100 each map to exactly one file, matching the number embedded in the file name; the rerun, normgrad and newgrad suffixes do not create duplicate fraction numbers."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "6 pools x 100 fractions = 600 rows. Each source name has a single consistent set of characteristics. Biological replicate 1-3 runs within each diagnosis group (3 RRMS and 3 OND pools of 7 donors each, Methods). Technical replicate is 1 everywhere. factor value[disease] equals characteristics[disease], and RRMS vs OND is the study comparison. pooled sample = pooled and individual = pooled are consistent with the 7-donor pools."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No value claims more than the evidence supports. OND uses the generic MONDO parent because per-donor diagnoses are in the inaccessible Table S1. Treatment naive is applied only to RRMS, and OND is left as not available. Age and sex use reserved words rather than pool summaries, with no invented per-sample values. No developmental stage, ancestry or cell type was invented. The instrument was corrected from the PRIDE dropdown (Q Exactive) to the HF model using RAW-header evidence. The four extra variable modifications come from the deposited mzid, not from guesswork. No material omission found: isolation window, LC gradients per fraction (Table S3) and OCB/EDSS are optional and not required by the declared templates."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf --use_ols_cache_only, run once per template: -t ms-proteomics exit 0, -t human exit 0, -t clinical-metadata exit 0 ('Everything seems to be fine. Well done.'). No term needed live-OLS fallback. python -m tools check: exit 0, status CLEAN, 22/22 verified. python -m tools score: exit 0, 99/100; the only completeness issue is the missing recommended characteristics[developmental stage]. Probe on a scratch copy with age and sex set to 'pooled': parse_sdrf -t human exit 1 ('pooled' rejected by both the age pattern and the sex values list)."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "reserved-word semantics",
+      "location": "characteristics[sex] rows 1-600 ('not applicable'); characteristics[age] rows 1-600 ('not available')",
+      "message": "For mixed-donor pools the spec-correct value for both columns is 'pooled' (README reserved words, and the TIP 'use pooled for individual-specific fields (biological replicate, age, sex)'; human template allow_pooled: true). 'not applicable' for sex is semantically imprecise: sex applies to every donor, and each pool's composition is known (1 male / 6 female, Table 1). 'not available' for age is defensible because only the pool mean (SD) is reported and per-donor ages are in the inaccessible Table S1; 'not applicable' is not allowed for age. Both values are permitted reserved words that assert nothing false, and the installed validator rejects 'pooled' for these columns (reproduced), so this is a workaround forced by the tooling and does not block approval. Correction criterion: switch both to 'pooled' once parse_sdrf honours allow_pooled. Until then, prefer the same reserved word for both columns, or keep the current values and record the validator conflict, as the manifest already does.",
+      "evidence": "human.yaml: age allow_pooled true and allow_not_applicable false; sex allow_pooled true. Scratch probe validate_pooled_test.log: 'Value 'pooled' does not match required pattern' and 'Invalid value 'pooled' - must be one of the allowed values'."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[reduction reagent], comment[alkylation reagent] rows 1-600; evidence.json DTT/IAA claim",
+      "message": "The manifest says ref 25's protocol was 'not re-read'. Re-reading ref 25 (Kroksveen 2013 J Proteomics, BORA postprint) shows its iTRAQ arm used the kit reductant with MMTS alkylation, while its in-solution SRM arm used a UiB in-solution protocol with exactly the reagents this paper lists (urea, methylamine, DTT, iodoacetamide). Combined with the deposited Carbamidomethyl C fixed search and PRIDE's 'iodoacetamide derivatized residue' PTM, DTT/IAA are adequately supported. The manifest rationale should cite this rather than the reagent list alone.",
+      "evidence": "ref25.txt lines 139-140 (chemicals), 166-169 (iTRAQ kit + MMTS), 284-285 (in-solution protocol); mzid SearchModification UNIMOD:4 fixed."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "comment[fractionation method] rows 1-600",
+      "message": "Fractionation was mixed-mode chromatography (Sielc Promix MP). PSI-MS has MS:1003586 'mixed mode chromatography', but the ms-proteomics template restricts this column to PRIDE children of PRIDE:0000550, so the generic HPLC term is acceptable. Optionally record the mixed-mode detail elsewhere.",
+      "evidence": "OLS4 search 'mixed-mode' in pride,ms returned MS:1003586 and no PRIDE term; ms-proteomics.yaml parent_term PRIDE:0000550."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[developmental stage] (absent)",
+      "message": "This recommended human-template column is absent (sdrf-tools score 96/100 completeness). Pool mean ages are 34.1-38.3 y with SD up to 9.7, so 'adult' is likely but not stated per donor. Omitting the column is safe; add it only if Table S1 confirms that all donors are adults.",
+      "evidence": "Table 1 'Age at LP' row; human.yaml developmental stage requirement optional / score report."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "characteristics[disease], factor value[disease] rows 301-600 ('nervous system disorder')",
+      "message": "OND controls are annotated with the generic MONDO parent. This is conservative and correct given the paper text ('other neurological diseases'); per-donor diagnoses in Table S1 were not available to refine it.",
+      "evidence": "Methods 'CSF collection and patient information'; Table S1 not accessible."
+    }
+  ]
+}
