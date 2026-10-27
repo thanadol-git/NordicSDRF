@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD012872.sdrf.tsv",
+  "dataset": "PXD012872",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD012872"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD012872/files?pageSize=1000"
+    },
+    {
+      "id": "raw-header",
+      "kind": "raw-data",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/06/PXD012872/20171024_EndoCSF_TMT_Rest_Charge1.raw (HTTP range read, bytes 0-1048575, UTF-16LE strings)"
+    },
+    {
+      "id": "identifications",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/06/PXD012872/Identifications.tsv (header and first rows via HTTP range read)"
+    },
+    {
+      "id": "github-readme",
+      "kind": "code",
+      "location": "https://github.com/barsnes-group/isobaric-peptidomics/blob/master/README.md"
+    },
+    {
+      "id": "github-code",
+      "kind": "code",
+      "location": "https://github.com/barsnes-group/isobaric-peptidomics/tree/master/Rscript (makeAAdb.R, getIdentifications.R, getMGF.R, readMGFcpp.cpp)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Burger B, Lereim RR, Berven FS, Barsnes H. Eur J Mass Spectrom 2019;25(6):451-456. PMID 31189351, doi:10.1177/1469066719857006 (abstract and PubMed/MeSH record only; full text subscription-only)"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/ (live lookups of every controlled term)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] rows 1-6",
+      "value": "20171024_EndoCSF_TMT_Rest_Charge1.raw",
+      "source_ids": ["pride-files"],
+      "evidence": "Only RAW file in the deposit (the other file, Identifications.tsv, is SEARCH); projectAccessions = PXD012872"
+    },
+    {
+      "location": "source name rows 1-6; comment[label] rows 1-6",
+      "value": "CSF pool aliquot 1..6 on TMT126, TMT127, TMT128, TMT129, TMT130, TMT131",
+      "source_ids": ["pride", "github-code", "identifications"],
+      "evidence": "Sample protocol: test pool of human CSF split into six aliquots, 'six identical samples, now labelled by separate TMT-labels, were combined' (TMTsixplex). All six reporter ions tested in readMGFcpp.cpp and Identifications.tsv columns tmt1-tmt6. Aliquot number follows channel order (aliquots are identical by design)."
+    },
+    {
+      "location": "characteristics[organism] rows 1-6",
+      "value": "Homo sapiens",
+      "source_ids": ["pride", "github-readme"],
+      "evidence": "PRIDE organism NEWT:9606; protocol 'human cerebrospinal fluid'; README title 'in human cerebrospinal fluid'"
+    },
+    {
+      "location": "characteristics[organism part] rows 1-6",
+      "value": "cerebrospinal fluid",
+      "source_ids": ["pride", "ols"],
+      "evidence": "Title keywords, protocol text and PRIDE organismParts BTO:0000237; UBERON:0001359 verified in OLS"
+    },
+    {
+      "location": "characteristics[biological replicate], characteristics[pooled sample], characteristics[individual] rows 1-6",
+      "value": "pooled",
+      "source_ids": ["pride"],
+      "evidence": "'A test pool of human cerebrospinal fluid'"
+    },
+    {
+      "location": "characteristics[disease], characteristics[ancestry category], characteristics[age] rows 1-6",
+      "value": "not available",
+      "source_ids": ["pride", "paper"],
+      "evidence": "No donor information in PRIDE record, abstract or MeSH headings; full text not accessible"
+    },
+    {
+      "location": "characteristics[sex] rows 1-6",
+      "value": "not applicable",
+      "source_ids": ["pride", "paper"],
+      "evidence": "Mixed-donor pool; validator rejects 'pooled' for sex (campaign convention); no sex in MeSH"
+    },
+    {
+      "location": "characteristics[cell type] rows 1-6",
+      "value": "not applicable",
+      "source_ids": ["pride"],
+      "evidence": "Cell-free fluid (CSF peptidome)"
+    },
+    {
+      "location": "comment[instrument] rows 1-6",
+      "value": "NT=Q Exactive HF;AC=MS:1002523",
+      "source_ids": ["raw-header", "ols"],
+      "evidence": "RAW header 'Q Exactive HF - Orbitrap MS', 'Method of Q Exactive HF', folder '2017-10-24_QExHF_EndogenePeptider_TMT_Test'; PRIDE says Q Exactive (MS:1001911), overridden by raw data"
+    },
+    {
+      "location": "comment[proteomics data acquisition method] rows 1-6",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": ["raw-header"],
+      "evidence": "RAW method 'FULL MS / DD-MS2 (TOPN)', TopN 10, method file EndoPep_TOP10_..."
+    },
+    {
+      "location": "comment[dissociation method], comment[collision energy] rows 1-6",
+      "value": "NT=beam-type collision-induced dissociation;AC=MS:1000422; 32 NCE",
+      "source_ids": ["raw-header"],
+      "evidence": "RAW method '(N)CE / stepped (N)CE nce: 32'; Q Exactive HF fragments by HCD"
+    },
+    {
+      "location": "comment[ms2 mass analyzer] rows 1-6",
+      "value": "NT=orbitrap;AC=MS:1000484",
+      "source_ids": ["raw-header"],
+      "evidence": "dd-MS2 resolution 30,000 on Q Exactive HF (Orbitrap)"
+    },
+    {
+      "location": "comment[ms1 scan range] rows 1-6",
+      "value": "300m/z-1500m/z",
+      "source_ids": ["raw-header"],
+      "evidence": "Full MS 'Scan range 300 to 1500 m/z'"
+    },
+    {
+      "location": "comment[ms min charge], comment[ms max charge] rows 1-6",
+      "value": "1 / 1",
+      "source_ids": ["raw-header", "pride"],
+      "evidence": "RAW method 'Charge exclusion unassigned, 2 - 8, >8'; protocol 'fragmentation of singly charged precursors only'"
+    },
+    {
+      "location": "comment[cleavage agent details] rows 1-6",
+      "value": "not applicable",
+      "source_ids": ["pride", "paper"],
+      "evidence": "Endogenous peptidome ('small endogenous peptides', 'isolating the cerebrospinal fluid peptidome'); no protease named anywhere in the record"
+    },
+    {
+      "location": "comment[fraction identifier] rows 1-6",
+      "value": "1",
+      "source_ids": ["pride", "pride-files"],
+      "evidence": "'the fractions were pooled and injected' - one injection, one RAW file"
+    },
+    {
+      "location": "comment[precursor mass tolerance] rows 1-6",
+      "value": "5 ppm",
+      "source_ids": ["github-code", "github-readme"],
+      "evidence": "getIdentifications.R matches abs(MZ - monomass) < singleTol/2 with singleTol = monomass*1e-5 (makeAAdb.R); README '10 ppm (+ and - 5ppm relative to the theoretical mass)'"
+    },
+    {
+      "location": "comment[fragment mass tolerance] rows 1-6",
+      "value": "not applicable",
+      "source_ids": ["github-readme"],
+      "evidence": "'Only the precursor mass is used for identification'"
+    },
+    {
+      "location": "comment[modification parameters] rows 1-6 (9 columns)",
+      "value": "TMT6plex UNIMOD:737 Any N-term Fixed; Carbamidomethyl UNIMOD:4 C, Oxidation UNIMOD:35 M, Biotin UNIMOD:3 K, Phospho UNIMOD:21 S/T/Y, Methyl UNIMOD:34 D/E, Sulfo UNIMOD:40 S/T/Y, Dioxidation UNIMOD:425 M, Crotonyl UNIMOD:1363 K all Variable",
+      "source_ids": ["github-code", "github-readme", "ols"],
+      "evidence": "makeAAdb.R adds TMT6 mass to every molecule; adds CAM-Cys and Met+O alongside unmodified residues; README table of 11 common non-N-term PTMs (max one per molecule); all UNIMOD ids verified in OLS"
+    }
+  ],
+  "limitations": [
+    "Paper full text not accessible (subscription-only Letter, no PMC, no Unpaywall OA location); only abstract and PubMed/MeSH record read",
+    "Number of donors, disease status, age, sex and ancestry of the CSF pool not stated anywhere read",
+    "Peptidome isolation details and reduction/alkylation reagents not stated (protocol cites Hansson/Skillbaeck workflow); reduction/alkylation columns omitted",
+    "High-pH RP fractionation preceded the run but fractions were recombined into one injection; fractionation method column omitted, fraction identifier 1",
+    "Per-fraction runs mentioned in the protocol ('separate analysis') are not part of the deposit",
+    "sdrf-tools reconcile reports a false-positive cleavage_agent_unsupported blocker because it treats the reserved word 'not applicable' as an enzyme name"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+ "accession": "PXD029718",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD029718",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD029718/files/all (100 entries, all projectAccessions=PXD029718; 24 RAW)",
+  "paper": "Europe PMC PMC10425428 (PMID 37580326) Methods",
+  "maxquant": "HTTP range read of Set2_Pellet-MaxQuant-txt.zip: mqpar.xml, parameters.txt",
+  "raw_header": "first 400 KB of 210702_FD_Organoids_Set2_24h_TNFa-1.raw: Orbitrap Exploris 480, method 2.5h_3CVs_2col_HCD28_CV40_55_70_optLC.meth"
+ },
+ "claims": [
+  {
+   "column": "source name/treatment/sampling time",
+   "value": "parsed from RAW name: 24h|48h x TNFa|VC x rep 1-3",
+   "basis": "file names + PRIDE description",
+   "confidence": "high"
+  },
+  {
+   "column": "comment[technical replicate]",
+   "value": "210702 = 1, 210704 = 2",
+   "basis": "inferred from two acquisition dates per sample; MaxQuant used only 210702 files",
+   "confidence": "inferred"
+  },
+  {
+   "column": "comment[modification parameters]",
+   "value": "CAM C fixed; Ox M, protein N-term acetyl variable",
+   "basis": "mqpar.xml in deposited zip"
+  },
+  {
+   "column": "comment[precursor/fragment mass tolerance]",
+   "value": "4.5 ppm / 20 ppm",
+   "basis": "mqpar mainSearchTol / parameters.txt FTMS MS/MS tol"
+  },
+  {
+   "column": "comment[dissociation method]/[collision energy]",
+   "value": "HCD, 28 NCE",
+   "basis": "inferred from RAW method file name (HCD28)",
+   "confidence": "inferred"
+  },
+  {
+   "column": "characteristics[cell line]/sex",
+   "value": "not available",
+   "basis": "paper uses two lines (female ESC UM77-2, male iPSC 19A); which one is Set2 is not stated"
+  }
+ ],
+ "unavailable": [
+  "cell line identity for this set",
+  "whether 210704 files are re-injections"
+ ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD012889.sdrf.tsv",
+  "artifact_sha256": "f554bf5509c690ffc07c4d62e891a2d24bbb049f3028528f130d912decd0272d",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. All 20 deposited RAW files are annotated exactly once; per-file rat number and cortex region are confirmed by the original acquisition names embedded in every RAW header, and 2K1C/sham group plus region are confirmed by the deposited Progenesis export (which lacks only 11OC, matching the authors' exclusion of one control outer-cortex run). Three minor findings only.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent context; producer report.md, transcript and scratchpad/_stale_2026-10-27/ not read; all PRIDE metadata, RAW headers (HTTP range 0-65535 of all 20 files), Progenesis header rows, Europe PMC/MeSH and OLS terms fetched fresh into scratchpad/PXD012889/review-PXD012889/"
+  },
+  "evidence_manifest": "annotations/PXD012889.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates derived independently: rat (NCBITaxon:10116) -> vertebrates v1.1.0 + ms-proteomics v1.1.0, matching both declared comment[sdrf template] columns. 36 columns x 20 rows, uniform width; only comment[sdrf template] and comment[modification parameters] repeated (both cardinality multiple). All required columns of base/sample-metadata/ms-proteomics/vertebrates present (incl. vertebrates-required developmental stage and disease). source name and assay name each 20 unique; no empty cells. parse_sdrf validate-sdrf -t ms-proteomics: 'Everything seems to be fine'; -t vertebrates: warnings only; sdrf-tools structure: 'Structure OK'."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4 lookups, all non-obsolete with matching labels: NCBITaxon:10116 Rattus norvegicus; UBERON:0005271 juxtamedullary cortex (synonym 'inner cortex of kidney', matching Progenesis 'Inner cortex'); UBERON:0002189 outer cortex of kidney; MONDO:0006947 renovascular hypertension; PATO:0000461 normal; PRIDE:0000627 Data-dependent acquisition; MS:1003096 Orbitrap Velos Pro; MS:1001251 Trypsin; MS:1000133 collision-induced dissociation; PRIDE:0000608 Dithiothreitol (DTT); PRIDE:0000599 Iodoacetamide (IAA); MS:1000083 radial ejection linear ion trap; MS:1002038 label free sample; UNIMOD:4 Carbamidomethyl; UNIMOD:35 Oxidation. sdrf-tools check: 16/16 verified, 0 hallucinated/mismatch/wrong-ontology/UNIMOD swaps. Only 'Wistar Hannover' (strain) is free text, not an NCBITaxon term (see minor finding)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project (fresh; accession/title asserted PXD012889): organism NEWT:10116; sampleProcessingProtocol states immuno-depletion of 7 abundant plasma proteins, DTT reduction, iodoacetamide alkylation, porcine trypsin, individual single LC-MS/MS runs, DDA top-7 CID on LTQ Orbitrap Velos Pro; dataProcessingProtocol states Progenesis LC-MS label-free, X!Tandem with fixed carbamidomethyl C, variable oxidation M, 10 ppm precursor, 0.5 Da fragment, and exclusion of one control outer-cortex run. RAW headers of all 20 files: 'Creator: Orbitrap Velos Pro', method TOP7_Labelfree..._CE35, 'FTMS + p norm o(300.0-2000.0)', 'ITMS + c norm Dep Wideband MS/MS', 'Activation Type: CID', 'Normalized Coll. Energy: 35.0', 'Scan Event 2 repeated for top 7 peaks' - supports instrument (overriding PRIDE's MS:1001742 LTQ Orbitrap Velos correctly), DDA, CID, 35 NCE, ion-trap MS2, 300-2000 m/z. Europe PMC MED:25304470 abstract: juxtamedullary and outer cortex of 2K1C male Wistar-Hannover rats (n=4) vs sham-operated controls (n=6), normotensive controls; MeSH includes 'Hypertension, Renovascular', 'Rats, Wistar', 'Male' (no 'Female'). Full text inaccessible: not in PMC, OpenAlex reports no repository copy, publisher returns HTTP 403 Cloudflare challenge - so developmental stage 'not available' is correct."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE /files (all 21 entries projectAccessions == ['PXD012889']): 20 RAW + 1 SEARCH (Progenesis export). Set of comment[data file] == set of 20 PRIDE RAW names, no duplicates, no non-raw files. For every row the original acquisition name in the RAW header (e.g. 2K1C_1IC.raw -> 1ICny.raw, 2K1C_4IC.raw -> 4IC_130227004736.raw, SHAM_11OC.raw -> 11OC.raw) carries the same animal number and IC/OC region as the deposited name, source name, assay name and organism part. Progenesis export row 4 sample IDs 1IC..11IC with row 2 region (Inner cortex/outer cortex) and rows 1/3 group (2K1C/treated for 1,3,4,5; Control for 6-11) match every row's disease and organism part; 11OC is the only file absent from Progenesis."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 10 rats (2K1C 1,3,4,5 = n 4; sham 6-11 = n 6, matching abstract) x 2 cortex regions = 20 tissue samples, 1 run each; fraction 1, technical replicate 1 throughout (single LC-MS/MS run per sample per protocol). Factors disease x organism part give 4 groups; biological replicate restarts per factor-value group as README.adoc prescribes (2K1C: rat1->1, rat3->2, rat4->3, rat5->4; sham: rat6..11->1..6) and is identical for the IC and OC samples of the same rat, so animal pairing is preserved. Rat numbers come from deposited names confirmed by RAW acquisition names, not invented. Label free throughout. SHAM_11OC.raw is deposited and annotated with correct metadata; its exclusion from quantification is a downstream analysis choice documented in the manifest limitations."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value traced to a fresh source: no age/stage, kidney side, tissue mass or acquisition date asserted beyond evidence (developmental stage 'not available'; laterality omitted and declared as limitation). Instrument value is supported by RAW headers rather than PRIDE's less specific/incorrect model. Disease 'renovascular hypertension' matches MeSH and the 2K1C (Goldblatt) model; PRIDE's 'Essential hypertension' was correctly not copied. The only inferred value is sex 'male' for sham rows (study-level MeSH 'Male' with no 'Female' tag; abstract names male rats for 2K1C) - accepted as supported at study level, recorded as a minor provenance note. Optional columns that the evidence would support (e.g. treatment, MS2 charge settings) are absent, which is safe."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "cd sdrf-skills: timeout 900 .venv/bin/parse_sdrf validate-sdrf -s <artifact> -t ms-proteomics --use_ols_cache_only -> exit 0, 'Everything seems to be fine. Well done.'; same with -t vertebrates -> exit 0, one WARNING ('Wistar Hannover' not found in ncbitaxon), 'Most seems to be fine. There were only warnings.'; .venv/bin/python -m tools check <artifact> -> exit 0, 16/16 verified, Status CLEAN; .venv/bin/python -m tools score <artifact> -> exit 0, 100/100; .venv/bin/python -m tools structure <artifact> -> exit 0, 'Structure OK'. All terms used were also confirmed in live OLS4."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[strain or breed] rows 1-20",
+      "message": "'Wistar Hannover' is free text and triggers a vertebrates-template warning (not in NCBITaxon). The supplier sub-strain (e.g. RS:0001592 HanTac:WH, RS:0001833 Crl:WI(Han)) is not stated in available evidence, so the free-text value is the appropriately specific choice; no change required.",
+      "evidence": "parse_sdrf -t vertebrates WARNING; OLS search 'Wistar Han' returns only supplier-specific RS strains and NCIT:C76191 'WH, Rat Strain'; abstract says 'Wistar-Hannover'."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "characteristics[sex] rows 9-20 (SHAM rows)",
+      "message": "Sex 'male' for sham controls is inferred from study-level MeSH 'Male' (no 'Female' tag) and the abstract's 'male Wistar-Hannover rats' for the 2K1C arm; no per-animal table exists. Acceptable, and the producer discloses it as a limitation; re-confirm if the full text becomes accessible.",
+      "evidence": "Europe PMC MED:25304470 meshHeadingList includes 'Male' only; abstract sentence scopes 'male' to the 2K1C rats; full text blocked (HTTP 403 Cloudflare, no repository copy per OpenAlex)."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "row 20 (SHAM rat 11 outer cortex of kidney / SHAM_11OC.raw)",
+      "message": "The SDRF row for SHAM_11OC.raw carries no in-file indication that the authors excluded this run from Progenesis quantification (technical failure of MS read-out). Annotating the deposited file is correct; optionally add a free-text comment column so reanalyses reproducing the published comparison can drop it.",
+      "evidence": "dataProcessingProtocol: 'The raw data from one control sample (outer cortex) were excluded'; Progenesis export has 19 sample columns, 11OC absent; RAW header of SHAM_11OC.raw shows acquisition name 11OC.raw with the same method as all other runs."
+    }
+  ]
+}

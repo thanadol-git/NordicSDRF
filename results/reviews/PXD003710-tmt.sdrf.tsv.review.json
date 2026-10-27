@@ -1,72 +1,65 @@
 {
   "schema_version": 1,
   "artifact": "annotations/PXD003710-tmt.sdrf.tsv",
-  "artifact_sha256": "81859e80a0b5a345e214a2d8acb5fe08bc2780ddf459594a046fc6b6ada16b54",
+  "artifact_sha256": "167e8d3f2983e8eb5f91a283506dace390fe9d3fac90b183c6c80f801018a6a6",
   "verdict": "PASS",
-  "summary": "Independent review of the PXD003710 TMT SDRF (1120 rows = 112 raw files x 10 TMT channels, 2 plexes x 56 fractions) found no blocker or important issues. The channel-to-pool map matches Supplementary Methods Table 1 and the deposited workbook headers 18/18 (+2 reference). The within-plex grouping is forced uniquely by channel collisions, and the TMT10_Y*/TMT10_B* -> experiment 1 (white)/experiment 2 (grey) assignment is supported by deposited evidence: all 112 raw headers (blue/yellow acquisition folders) and the workbook's 'TMT Blue/Yellow experiment' blocks, which numerically equal the Grey/White sheets. Together with the LF sibling, each of the 176 deposited RAW files is claimed exactly once. Only minor findings remain.",
+  "summary": "Independent fresh-context review (round 2) found no blocking or important issues. The TMT channel-to-pool map for both 10-plexes matches Supplementary Methods Table 1 (rendered to verify white/grey cell backgrounds) and the pool-name headers of the deposited statistics workbook; TMT10_Y = experiment 1 (white) and TMT10_B = experiment 2 (grey) is supported by RAW acquisition folders (yellow/blue) and by exact numeric identity of the workbook's Yellow/Blue blocks with the White/Grey sheets. sdrf-tools check exits 0; parse_sdrf passes both templates (one free-text strain warning).",
   "reviewer_context": {
     "independent": true,
-    "context": "fresh-context adversarial reviewer subagent (bergen-reviewer-PXD003710-tmt); producer transcript and report.md not read; evidence re-fetched from PRIDE, NCBI efetch, PMC OA S3 and PRIDE FTP into scratchpad/PXD003710/review-PXD003710-tmt/ with accession/title identity asserted"
+    "context": "fresh subagent (bergen-reviewer-PXD003710-tmt-r2) without producer transcript; producer report.md not read; prior review JSON not read before overwrite"
   },
   "evidence_manifest": "annotations/PXD003710-tmt.evidence.json",
   "checks": {
     "spec_compliance": {
       "status": "pass",
-      "evidence": "Active templates derived independently: Mus musculus tissue + TMT MS -> ms-proteomics v1.1.0 + vertebrates v1.1.0 (both declared). All required columns of base, sample-metadata, ms-proteomics and vertebrates are present (source name, assay name, technology type, technical replicate, data file, organism, organism part, biological replicate, disease, developmental stage, acquisition method, instrument, cleavage agent, label, fraction identifier). 39 columns on every row; 1120 unique assay names; no duplicate (data file, label) pairs; reserved words lower-case; biological replicate values in {1,2,3,pooled} (pattern ^\\d+$|^pooled$); pooled sample in {pooled, not pooled}; sampling time '0/10/20 day' matches number+unit; collision energy '40% NCE' and ms1 scan range '300m/z-2000m/z' pass the template patterns; sdrf-tools structure: 'Structure OK'."
+      "evidence": "1120 rows x 39 columns, uniform row width. Declared templates ms-proteomics v1.1.0 + vertebrates v1.1.0 are the correct pair for Mus musculus TMT MS data (vertebrates is a sample-layer template that must combine with a technology template). parse_sdrf validate-sdrf -t ms-proteomics --use_ols_cache_only: exit 0, 'Everything seems to be fine'. -t vertebrates: exit 0, only a warning that 'C57BL/6 x 129/Sv' is not an NCBITaxon term (recommended column, warning level). 1120 unique assay names, each equal to '<data file stem>-<label>'. Reserved words used per README: biological replicate 'pooled' for the TMT131 reference (README line 148/333; sample-metadata pattern ^\\d+$|^pooled$), pooled sample 'pooled'/'not pooled' (README 350-351). HCD encoded as MS:1000422 as required by the README note."
     },
     "ontology_integrity": {
       "status": "pass",
-      "evidence": "Live OLS4 resolution, all non-obsolete with matching labels: NCBITaxon:10090 Mus musculus; UBERON:0001869 cerebral hemisphere; MONDO:0005134 experimental autoimmune encephalomyelitis; PRIDE:0000627 Data-dependent acquisition; MS:1001910 Orbitrap Elite; MS:1001251 Trypsin; PRIDE:0000590 HCD; PRIDE:0000565 High-performance liquid chromatography; PRIDE:0000608 Dithiothreitol (DTT); MS:1000484 orbitrap; UNIMOD:737 TMT6plex (description lists TMT10plex reporter ions), UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation; labels TMT126..TMT131 resolve to PRIDE:0000516/0518/0519/0521/0522/0524/0525/0527/0528/0529. sdrf-tools check: 14/14 verified, 0 hallucinated, 0 label mismatches; its single 'wrong ontology' hit (HCD in PRIDE, expected MS) is a tool false positive because TERMS.tsv and ms-proteomics.yaml allow MS or PRIDE for comment[dissociation method]. Strain 'C57BL/6 x 129/Sv' is free text per TERMS.tsv (GENO:0000112, free text); a hybrid background has no NCBITaxon term."
+      "evidence": "Live OLS4 (not cache) resolved every controlled term with exact label and non-obsolete status: MS:1001910 Orbitrap Elite, MS:1000422 beam-type collision-induced dissociation, MS:1000484 orbitrap, MS:1001251 Trypsin, PRIDE:0000627 Data-dependent acquisition, PRIDE:0000565 High-performance liquid chromatography, PRIDE:0000608 Dithiothreitol (DTT), UBERON:0001869 cerebral hemisphere, MONDO:0005134 experimental autoimmune encephalomyelitis, PATO:0000461 normal, NCBITaxon:10090 Mus musculus. sdrf-tools check: 14/14 terms verified incl. UNIMOD:737 TMT6plex (correct mass for TMT10plex), UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation; 0 hallucinated, 0 label mismatches, 0 UNIMOD swaps."
     },
     "source_evidence": {
       "status": "pass",
-      "evidence": "PRIDE v2 project (accession PXD003710, title asserted): organism mouse, Orbitrap Elite, DDA TOP10, survey 300-2000 m/z, HCD NCE 40%, orbitrap MS2, DTT in lysis buffer, fixed TMT N-term/K + carbamidomethyl C, variable oxidation M, 10 ppm / 0.005 Da. Paper PMC5061044 (title asserted): C57/BL/6 x 129/Sv, frontal part of right cerebral hemisphere, FASP 'protein to trypsin ratio was 50:1', two identical reference pools. Supplementary Methods (fresh PDF, page rendered): Table 1 channel/pool/mice-per-pool with white = experiment 1 (A pools + KO 0/10/20 B + ref) and grey = experiment 2 (WT 0/10/20 B + C pools + ref); n = 5/7/7 per genotype at 0/10/20 dpi (sum 38); 0-day mice euthanized before immunization; 60 fractions with 1-3 and 58-60 pooled -> 56 per plex; only 'age- and sex-matched' (sex/stage correctly not available). Deposited workbook sheets TMT_exp1_White and TMT_exp2_Grey: pool names sit exactly above the A6:<channel>/131 ratio columns and match the SDRF 9/9 + 9/9. Raw headers (all 112 TMT files, PRIDE FTP byte range): Orbitrap Elite, TOP10 HCD CE40 methods."
+      "evidence": "Fetched fresh: PRIDE v2 project (accession PXD003710, title matches), PRIDE files (2 pages, 181 files, projectAccessions={PXD003710}), Europe PMC PMC5061044 (PMID 27746629, doi 10.4172/jpb.1000408, abstract cites PXD003710), Supplementary Methods PDF, the 38 MB statistics workbook, both TMT peptide workbooks, and 64 KB range reads of 6 TMT RAW headers (Y1-3, Y30, Y58-60, B1-3, B30, B58-60). Table 1 (page rendered to PNG): white = KO/WT 0/10/20 A + KO 0/10/20 B + reference; grey = WT 0/10/20 B + KO/WT 0/10/20 C + reference; mice per pool sum to 38 and reproduce n=5/7/7 per genotype. Workbook sheet TMT_exp1_White pool headers over 126,127C,127N,128C,128N,129C,129N,130C,130N = KO0A,KO10A,KO0B,KO20A,KO10B,WT0A,KO20B,WT20A,WT10A; TMT_exp2_Grey = KO0C,KO20C,KO10C,WT10B,WT0B,WT0C,WT20B,WT20C,WT10C - identical to SDRF Y and B channel maps respectively (20/20 channels). Plex link: RAW headers place Y files in '2014-03-23_..._mousebrain-yellow' and B files in '2014-03-17_..._mousebrain-blue'; in sheet 'TMT Grey and White' the 'TMT Blue experiment' block equals TMT_exp2_Grey for 6262/6262 shared proteins (vs White 289/6290) and 'TMT Yellow experiment' equals TMT_exp1_White for 6290/6290 (vs Grey 289/6262). RAW headers: Orbitrap Elite, HCD, NCE 40.0, isolation width 2.50, activation 0.1 ms, FTMS MS1 300.0-2000.0, FTMS MS2. Protocol text supports trypsin, DTT, TMT K/N-term fixed, carbamidomethyl C fixed, Met oxidation variable, 10 ppm / 0.005 Da, Peli1 KO/WT, C57/BL/6 x 129/Sv, frontal right cerebral hemisphere, 0/10/20 days."
     },
     "file_mapping": {
       "status": "pass",
-      "evidence": "PRIDE v3 files/all (projectAccessions == {PXD003710}): 180 files, 176 .raw. The TMT SDRF claims exactly the 112 TMT10_* raw files (56 B + 56 Y), the LF SDRF the other 64; intersection 0; union equals the deposited raw set (0 missing, 0 extra). Each TMT file carries exactly 10 rows (one per channel) and one fraction identifier. Plex assignment: all 56 TMT10_B headers record acquisition folder '2014-03-17_OrbitrapElite_TMT10-RRL-mousebrain-blue', all 56 TMT10_Y '2014-03-23_..._mousebrain-yellow' (five Y files were originally named TMT10_G*, consistent with Norwegian 'gul' = yellow). In the workbook sheet 'TMT Grey and White' the 'TMT Blue experiment' block (columns suffixed 'B') equals TMT_exp2_Grey PSM counts for 6262 of 6857 proteins (vs 689 coincidental with White), and the 'TMT Yellow experiment' block equals TMT_exp1_White for 6290 (vs 689 with Grey). Within-plex grouping is uniquely forced by channel collisions in Table 1 (A and C rows share 126/127C/129C/130N/130C; KO B shares 128N/129N with WT B), so only the colour-to-file-set link is inferential, and it rests on the authors' own deposited labels, not on a guess."
+      "evidence": "PRIDE lists 176 .raw files: 56 TMT10_B, 56 TMT10_Y, 64 label-free. This SDRF references exactly the 112 TMT10_* files, each with exactly 10 rows carrying 10 distinct labels. Sibling annotations/PXD003710-lf.sdrf.tsv references the other 64 files once each with no TMT10_* files; overlap = 0 and union equals the PRIDE RAW set exactly, so every deposited RAW file is claimed exactly once. Fraction identifiers 1-56 per plex map positionally (x1-3 -> 1, xN -> N-2, x58-60 -> 56) with no exceptions, matching the 60-fraction / pooled 1-3 and 58-60 design."
     },
     "design_consistency": {
       "status": "pass",
-      "evidence": "Recomputed: 19 source names (18 condition pools + 1 reference) across 2 plexes; per plex 9 pools + 1 reference on TMT131; exp1 = 6 KO + 3 WT pools, exp2 = 3 KO + 6 WT pools, matching Table 1 shading. Each condition (genotype x 0/10/20 day) has pools A/B/C = biological replicate 1/2/3 (336 rows each per value). KO 0 C and WT 0 C are single mice and are 'not pooled'; all others are 'pooled'. The reference has biological replicate 'pooled', technical replicate 1 (exp1) / 2 (exp2), disease/genotype/sampling time 'not applicable'; the supplement says the two references were identical, which supports one source with technical replicates. Factors genotype x sampling time are complete; disease co-varies with time by design (0 day un-immunized = normal). Fractions 1-56 contiguous in both plexes."
+      "evidence": "19 source names: 18 pools + 1 reference; characteristics constant per source. Each pool appears in exactly one plex; reference appears in both with comment[technical replicate] 1 (Y) / 2 (B), all other channels technical replicate 1. Biological replicate A/B/C = 1/2/3; pooled sample 'not pooled' only for KO 0 C and WT 0 C (1 mouse each per Table 1), 'pooled' for the 2-3 mouse pools (membership not deposited, so SN= correctly not used). Disease normal for 0 day (euthanized before immunization) and EAE for 10/20 day. Factor values genotype and sampling time match characteristics; reference is 'not applicable'. Every genotype x time condition has pools in both plexes (KO: A,B in Y and C in B; WT: A in Y and B,C in B), so plex is not confounded with condition, though it is partially confounded with genotype (Y holds 6 KO + 3 WT pools, B holds 3 KO + 6 WT), as designed by the authors."
     },
     "omission_safety": {
       "status": "pass",
-      "evidence": "Every value was traced to PRIDE, paper, supplement, workbook or raw headers. No over-specification: organism part is stated less specifically (cerebral hemisphere) than the evidence (frontal part of right hemisphere); sex and developmental stage are 'not available' because only 'age- and sex-matched' is reported; the alkylation reagent is omitted because it is not stated; there is no SN= pool membership because mouse IDs per pool are not deposited; fragment tolerance 0.005 Da is copied as stated. No material omission found: the 4 isolation-width-3 runs (B: 3, Y: 1 by header) have no required column; the 'fractionated into 58 fractions' wording in PRIDE is superseded by the supplement's 60 -> 56 pooled, which the file list confirms."
+      "evidence": "No value asserts more than evidence supports: organism part is the less specific 'cerebral hemisphere' (source says frontal part of right hemisphere); sex and developmental stage 'not available' (source only says age- and sex-matched); alkylation reagent column omitted because not stated; pooled-sample membership not invented. No search parameter file exists, and modifications/tolerances match the protocol verbatim with TMT/carbamidomethyl confirmed by PRIDE identified PTMs. A PRIDE-hosted PXD003710_community_annotated.sdrf.tsv (Last-Modified 2026-10-27) is identical to this artifact except dissociation method NT=HCD;AC=PRIDE:0000590; it is treated as the same lineage, not independent evidence, and the artifact uses the spec-required MS:1000422."
     },
     "deterministic_validation": {
       "status": "pass",
-      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics --use_ols_cache_only: exit 0, 'Everything seems to be fine. Well done.'; parse_sdrf validate-sdrf -t vertebrates --use_ols_cache_only: exit 0, one WARNING (strain free text not in ncbitaxon; acceptable per TERMS.tsv free-text definition). sdrf-tools score: 100/100. sdrf-tools structure: OK (exit 0). sdrf-tools check: exit 1 solely due to the HCD PRIDE-vs-MS false positive described above. sdrf-tools reconcile --record PRIDE project: exit 1 with 'cleavage_agent_unsupported' (Trypsin); this is a false positive, since PRIDE dataProcessingProtocol says 'Trypsin was set as enzyme' and the paper's FASP text says 'the protein to trypsin ratio was 50:1'. sdrf-tools verify confirmed PRIDE:0000590, MS:1001910, UNIMOD:737/4/35."
+      "evidence": "From /home/thanadol/Documents/GitHub/sdrf-skills: '.venv/bin/python -m tools check <artifact>' exit 0 (14/14 verified, Status CLEAN); '.venv/bin/python -m tools score <artifact>' exit 0 (100/100); 'timeout 900 .venv/bin/parse_sdrf validate-sdrf -s <artifact> -t ms-proteomics --use_ols_cache_only' exit 0 (no errors/warnings); '... -t vertebrates --use_ols_cache_only' exit 0 (1 warning: strain free text not in NCBITaxon). Artifact SHA-256 re-checked unchanged after review."
     }
   },
   "findings": [
     {
       "severity": "minor",
-      "category": "file mapping / provenance",
-      "location": "comment[data file] TMT10_B* (rows with exp2 pools) and TMT10_Y* (exp1 pools)",
-      "message": "The B -> experiment 2 (grey) and Y -> experiment 1 (white) assignment rests on the authors' colour labels (raw acquisition folders blue/yellow; workbook 'TMT Blue/Yellow experiment' blocks numerically equal to Grey/White sheets). A content-level confirmation (reporter-ion patterns in raw spectra vs the per-plex peptide tables) was not performed because no raw-file parser was available in the review environment.",
-      "evidence": "112/112 raw headers checked; workbook block equality 6262/6857 (Blue=Grey) and 6290/6857 (Yellow=White). Residual risk is low. If desired, confirm by matching reporter ratios of one B and one Y run to TMT_exp2_grey_peptides.xlsx / TMT_exp1_white_peptides.xlsx."
+      "category": "specification",
+      "location": "characteristics[disease], characteristics[sampling time], characteristics[genotype] for source 'TMT reference pool of all 38 mice' (112 TMT131 rows)",
+      "message": "The reference is a mixture of KO/WT, normal/EAE and 0/10/20-day material; README line 365 recommends 'pooled' for individual-specific fields of pooled samples. 'not applicable' is accepted by the validators and factor values 'not applicable' are conventional, so this is optional.",
+      "evidence": "Supplementary Methods: 'The reference consisted of equal amounts of all the 38 samples.'"
     },
     {
       "severity": "minor",
-      "category": "design / readability",
-      "location": "comment[fraction identifier], all rows",
-      "message": "Fraction identifiers are renumbered positionally 1-56 (TMT10_x1-3 = 1, x4 = 2, ..., x57 = 55, x58-60 = 56) rather than following the original fraction numbers in the file names, so e.g. TMT10_Y4.raw is fraction 2.",
-      "evidence": "Valid integers, consistent across both plexes, and documented in the manifest; optionally use the original numbering (or document it in a comment) to avoid misreading."
+      "category": "ontology",
+      "location": "characteristics[strain or breed] all rows",
+      "message": "Free-text 'C57BL/6 x 129/Sv' triggers a vertebrates-template NCBITaxon warning; there is no single term for this mixed background, so free text is acceptable.",
+      "evidence": "parse_sdrf vertebrates warning; protocol 'Peli1 KO and WT mice (C57/BL/6 x 129/Sv)'."
     },
     {
       "severity": "minor",
-      "category": "naming",
-      "location": "source name 'TMT pool KO 0 C' and 'TMT pool WT 0 C' (112 rows)",
-      "message": "These source names say 'pool' but each contains a single mouse; characteristics[pooled sample] correctly says 'not pooled'.",
-      "evidence": "Supplementary Methods Table 1: KO 0 C = 1 sample, WT 0 C = 1 sample."
-    },
-    {
-      "severity": "minor",
-      "category": "specificity",
-      "location": "characteristics[organism part], all rows",
-      "message": "Encoded as cerebral hemisphere; the source specifies the frontal part of the right cerebral hemisphere. This is conservative (less specific), not over-claimed.",
-      "evidence": "Paper Methods: 'The frontal part of the right cerebral hemisphere was excised'. Limitation is stated in the manifest."
+      "category": "source_evidence",
+      "location": "comment[fragment mass tolerance] all rows",
+      "message": "0.005 Da is reproduced verbatim from the protocol but is unusually tight for Orbitrap HCD MS2 at R=30000; it cannot be verified because no search parameter file was deposited. Keep as stated.",
+      "evidence": "PRIDE dataProcessingProtocol: 'The fragment mass tolerance was set to 0.005 Da'."
     }
   ]
 }

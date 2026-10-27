@@ -1,0 +1,46 @@
+{
+ "accession": "PXD064425",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD064425",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD064425/files/all (30 entries, all projectAccessions=PXD064425; 24 RAW)",
+  "tmt_table": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2025/10/PXD064425/TMT-labelling-info.xlsx",
+  "mqpar": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2025/10/PXD064425/mqpar.xml",
+  "paper": "Europe PMC PMC12744332 (PMID 41033462) Methods",
+  "raw_header": "first 400 KB of 1.raw: Q Exactive Plus, HCD NCE 35"
+ },
+ "claims": [
+  {
+   "column": "comment[label]/source name",
+   "value": "Ctrl 130C,131N,131C; N648Y 127N,128N,129N; C921Y 126,127C,128C",
+   "basis": "deposited TMT-labelling-info.xlsx (stated)",
+   "confidence": "high"
+  },
+  {
+   "column": "comment[fraction identifier]",
+   "value": "file number 1-24",
+   "basis": "inferred from file naming and paper (24 consolidated fractions)",
+   "confidence": "inferred"
+  },
+  {
+   "column": "comment[instrument]",
+   "value": "Q Exactive Plus (MS:1002634)",
+   "basis": "paper + RAW header; PRIDE field Orbitrap Fusion overridden"
+  },
+  {
+   "column": "comment[cleavage agent details]",
+   "value": "Trypsin + Lys-C (two columns)",
+   "basis": "PRIDE protocol, mqpar.xml enzymes LysC/P, Trypsin/P"
+  },
+  {
+   "column": "comment[modification parameters]",
+   "value": "CAM C, TMT K/N-term fixed; Ox M, protein N-term acetyl variable",
+   "basis": "mqpar.xml"
+  }
+ ],
+ "unavailable": [
+  "fragment tolerance",
+  "strain",
+  "TMT10 vs TMT11 reagent set"
+ ]
+}

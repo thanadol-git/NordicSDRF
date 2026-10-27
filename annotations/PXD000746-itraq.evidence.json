@@ -1,0 +1,65 @@
+{
+ "accession": "PXD000746",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000746",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD000746/files/all (872 entries, all projectAccessions=PXD000746; 206 .wiff)",
+  "paper": "Europe PMC PMC4227554 (PMID 24846694, doi 10.1021/pr500252r), Experimental Procedures",
+  "supplement": "Europe PMC supplementaryFiles PMC4227554: pr-2014-00252r_0001.jpg = Figure 1 (experimental setup, iTRAQ channel layout)"
+ },
+ "claims": [
+  {
+   "column": "comment[label] / source name",
+   "value": "SCX1: 114 Mix,115 P1,116 P2,117 C1; SCX2: Mix,P3,P4,C2; SCX3: Mix,P5,P6,C3; SCX4: Mix,P7,P8,C4; SCX5: Mix,P9,P10,Mix",
+   "basis": "paper Figure 1 (stated)",
+   "confidence": "high"
+  },
+  {
+   "column": "comment[technical replicate]",
+   "value": "series A (FuchsiTRAQ) =1, series B (iTRAQmethod) =2",
+   "basis": "inferred; CE enabled/disabled assignment not stated",
+   "confidence": "arbitrary"
+  },
+  {
+   "column": "comment[modification parameters]",
+   "value": "iTRAQ4plex K and N-term fixed",
+   "basis": "inferred from Mascot iTRAQ 4plex quantitation protocol in PRIDE data processing protocol"
+  },
+  {
+   "column": "comment[instrument]",
+   "value": "TripleTOF 5600 (MS:1000932)",
+   "basis": "paper Methods and PRIDE agree; raw not read"
+  },
+  {
+   "column": "comment[modification parameters]",
+   "value": "CAM(C) fixed; Oxidation M (XIC only) and P variable",
+   "basis": "PRIDE dataProcessingProtocol (Mascot 2.3.02)"
+  },
+  {
+   "column": "comment[precursor/fragment mass tolerance]",
+   "value": "10 ppm / 0.2 Da",
+   "basis": "PRIDE dataProcessingProtocol"
+  },
+  {
+   "column": "characteristics[sex]",
+   "value": "P1-5 female, P6-10 male, C1-4 female",
+   "basis": "paper Methods + Figure 1"
+  },
+  {
+   "column": "characteristics[disease]",
+   "value": "Fuchs' endothelial dystrophy (MONDO:0005321); controls bullous keratopathy (MONDO:0001180)",
+   "basis": "paper: controls are secondary bullous keratopathy tissue"
+  },
+  {
+   "column": "characteristics[age]",
+   "value": "not available",
+   "basis": "only group means in paper"
+  }
+ ],
+ "unavailable": [
+  "per-patient age",
+  "CE-adjusted vs not series mapping",
+  "deposited search parameters (Mascot .dat only; modifications from prose)",
+  "wiff headers (download timed out)"
+ ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD012889.sdrf.tsv",
+  "dataset": "PXD012889",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD012889"},
+    {"id": "pride_files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD012889/files?pageSize=1000"},
+    {"id": "progenesis", "kind": "deposited_file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/02/PXD012889/Progenesis-export_Protein-measurements.txt"},
+    {"id": "raw_headers", "kind": "raw_file_header", "location": "HTTP range reads (bytes 0-2000000) of all 20 .raw files under https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/02/PXD012889/"},
+    {"id": "abstract", "kind": "publication", "location": "Europe PMC MED:25304470 (abstract only; doi:10.1097/HJH.0000000000000370; full text not openly retrievable)"},
+    {"id": "pubmed_mesh", "kind": "publication", "location": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=25304470&retmode=xml"},
+    {"id": "ols", "kind": "ontology", "location": "https://www.ebi.ac.uk/ols4/api/"}
+  ],
+  "claims": [
+    {"location": "comment[data file] rows 1-20", "value": "20 deposited .raw files, one row each", "source_ids": ["pride_files"], "evidence": "PRIDE file list has 20 RAW + 1 SEARCH file; every entry's projectAccessions contains PXD012889; all 20 RAW files are claimed exactly once"},
+    {"location": "source name, characteristics[disease], factor value[disease] rows 1-8", "value": "2K1C rats 1,3,4,5; renovascular hypertension", "source_ids": ["pride_files", "progenesis", "pubmed_mesh", "ols"], "evidence": "Deposited file prefix 2K1C_; Progenesis export header puts samples 1,3,4,5 under '2K1C'/'treated'; MeSH heading 'Hypertension, Renovascular'; MONDO:0006947 renovascular hypertension"},
+    {"location": "source name, characteristics[disease], factor value[disease] rows 9-20", "value": "sham rats 6-11; normal", "source_ids": ["pride_files", "progenesis", "abstract", "ols"], "evidence": "Deposited file prefix SHAM_; Progenesis export puts samples 6-11 under 'Control'; abstract: sham-operated controls (n=6); PATO:0000461 normal"},
+    {"location": "characteristics[organism part], factor value[organism part] odd rows (IC files)", "value": "juxtamedullary cortex", "source_ids": ["pride_files", "progenesis", "abstract", "ols"], "evidence": "File suffix IC; Progenesis label 'Inner cortex'; abstract: juxtamedullary cortex and outer cortex; UBERON:0005271"},
+    {"location": "characteristics[organism part], factor value[organism part] even rows (OC files)", "value": "outer cortex of kidney", "source_ids": ["pride_files", "progenesis", "abstract", "ols"], "evidence": "File suffix OC; Progenesis label 'outer cortex'; UBERON:0002189"},
+    {"location": "characteristics[biological replicate] rows 1-20", "value": "2K1C rats 1,3,4,5 -> 1-4; sham rats 6-11 -> 1-6", "source_ids": ["pride_files", "raw_headers", "progenesis"], "evidence": "Animal number taken from file names; original acquisition names in RAW headers (1ICny, 1OC, 3IC ... 11OC, 4IC_130227004736) carry the same animal number and region; Progenesis columns 1IC..11IC use the same IDs"},
+    {"location": "characteristics[organism] rows 1-20", "value": "Rattus norvegicus", "source_ids": ["pride", "abstract", "ols"], "evidence": "PRIDE organisms NEWT:10116; abstract: Wistar-Hannover rats; NCBITaxon:10116"},
+    {"location": "characteristics[sex] rows 1-20", "value": "male", "source_ids": ["abstract", "pubmed_mesh"], "evidence": "Abstract: '2K1C male Wistar-Hannover rats'; MeSH heading 'Male'. Applied to sham controls on the basis of MeSH 'Male' and no mention of female animals; per-animal sex table not available"},
+    {"location": "characteristics[strain or breed] rows 1-20", "value": "Wistar Hannover", "source_ids": ["abstract", "pubmed_mesh"], "evidence": "Abstract: 'male Wistar-Hannover rats'; MeSH 'Rats, Wistar'"},
+    {"location": "characteristics[depletion] rows 1-20", "value": "depletion", "source_ids": ["pride"], "evidence": "sampleProcessingProtocol: tissue fluid immuno-depleted of seven highly abundant plasma proteins"},
+    {"location": "characteristics[developmental stage] rows 1-20", "value": "not available", "source_ids": [], "evidence": "Age/stage not stated in PRIDE record or abstract; full text unavailable"},
+    {"location": "characteristics[cell type] rows 1-20", "value": "not applicable", "source_ids": ["pride"], "evidence": "Analysed material is tissue fluid recovered by centrifugation, not a cell population"},
+    {"location": "comment[instrument] rows 1-20", "value": "NT=Orbitrap Velos Pro;AC=MS:1003096", "source_ids": ["raw_headers", "pride", "ols"], "evidence": "Every RAW header: 'Creator: Orbitrap Velos Pro'; sampleProcessingProtocol: LTQ Orbitrap Velos Pro; PRIDE instruments field says LTQ Orbitrap Velos (MS:1001742) and was overridden"},
+    {"location": "comment[proteomics data acquisition method] rows 1-20", "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627", "source_ids": ["raw_headers", "pride"], "evidence": "RAW method: 'Scan Event 2 repeated for top 7 peaks', Dep MS/MS; protocol: data-dependent acquisition"},
+    {"location": "comment[dissociation method], comment[collision energy] rows 1-20", "value": "collision-induced dissociation (MS:1000133); 35 NCE", "source_ids": ["raw_headers", "pride"], "evidence": "RAW method in all 20 files: 'Activation Type: CID', 'Normalized Coll. Energy: 35.0'"},
+    {"location": "comment[ms2 mass analyzer] rows 1-20", "value": "NT=radial ejection linear ion trap;AC=MS:1000083", "source_ids": ["raw_headers"], "evidence": "RAW method scan event 2: 'ITMS + c norm Dep Wideband MS/MS' in all 20 files"},
+    {"location": "comment[ms1 scan range] rows 1-20", "value": "300m/z-2000m/z", "source_ids": ["raw_headers"], "evidence": "RAW method scan event 1: 'FTMS + p norm o(300.0-2000.0)' in all 20 files"},
+    {"location": "comment[cleavage agent details] rows 1-20", "value": "NT=Trypsin;AC=MS:1001251", "source_ids": ["pride"], "evidence": "sampleProcessingProtocol: digestion with porcine trypsin; dataProcessingProtocol: trypsin, two missed cleavages"},
+    {"location": "comment[reduction reagent], comment[alkylation reagent] rows 1-20", "value": "Dithiothreitol (DTT) PRIDE:0000608; Iodoacetamide (IAA) PRIDE:0000599", "source_ids": ["pride", "ols"], "evidence": "sampleProcessingProtocol: reduced with dithiothreitol and alkylated using iodoacetamide"},
+    {"location": "comment[modification parameters] (2 columns) rows 1-20", "value": "Carbamidomethyl C Fixed (UNIMOD:4); Oxidation M Variable (UNIMOD:35)", "source_ids": ["pride"], "evidence": "dataProcessingProtocol: fixed carbamidomethylation of cysteine, variable oxidation of methionine (X!Tandem via SearchGUI). No search-parameter file deposited"},
+    {"location": "comment[precursor mass tolerance], comment[fragment mass tolerance] rows 1-20", "value": "10 ppm; 0.5 Da", "source_ids": ["pride"], "evidence": "dataProcessingProtocol: precursor 10 ppm, fragment 0.5 Da"},
+    {"location": "comment[fractionation method], comment[fraction identifier] rows 1-20", "value": "not applicable; 1", "source_ids": ["pride"], "evidence": "sampleProcessingProtocol: samples analysed individually by single LC-MS/MS runs; no fractionation described"},
+    {"location": "comment[label] rows 1-20", "value": "label free sample", "source_ids": ["pride"], "evidence": "dataProcessingProtocol: Progenesis LC-MS label-free relative quantification"}
+  ],
+  "limitations": [
+    "Full text of the paper (J Hypertens 2015;33:126-135) could not be retrieved (Europe PMC: not in PMC; publisher page behind Cloudflare; no repository copy); only the abstract, MeSH headings and PRIDE protocols were used.",
+    "Developmental stage / age not stated in available evidence: not available.",
+    "Analysed material is tissue (interstitial) fluid extracted by centrifugation from dissected cortex pieces; there is no SDRF column/term used to express this beyond the organism part region.",
+    "The abstract states the 2K1C comparison used the non-clipped kidney; kidney side is not stated in available evidence and is not encoded.",
+    "SHAM_11OC.raw was excluded from the Progenesis quantification by the authors (technical failure of MS read-out); it is still deposited and annotated.",
+    "Modifications come from the dataProcessingProtocol prose; no deposited search-parameter file (only a Progenesis protein export).",
+    "Sex of sham controls inferred from MeSH 'Male' and study-level description; no per-animal table."
+  ]
+}

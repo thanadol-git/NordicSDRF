@@ -1,0 +1,39 @@
+{
+ "accession": "PXD072877",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD072877",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD072877/files/all (88 entries, all projectAccessions=PXD072877; 87 RAW)",
+  "preprint": "Europe PMC PPR1228102 (doi 10.64898/2026.01.10.698609) Methods"
+ },
+ "claims": [
+  {
+   "column": "source name/genotype/treatment/organism part",
+   "value": "cs|cocu x acg_nm|mated_male|mated_fem x rep x injection parsed from file names",
+   "basis": "file names + PRIDE protocol (three tissue types, wild type vs iab-6cocu)",
+   "confidence": "high-inferred"
+  },
+  {
+   "column": "factor value[genotype] (female rows)",
+   "value": "genotype of the male mate",
+   "basis": "preprint: female RT proteome after mating to wild type vs iab-6cocu males"
+  },
+  {
+   "column": "comment[proteomics data acquisition method]",
+   "value": "DDA",
+   "basis": "inferred; not stated",
+   "confidence": "inferred"
+  },
+  {
+   "column": "comment[precursor/fragment mass tolerance]",
+   "value": "10 ppm / 0.6 Da",
+   "basis": "PRIDE dataProcessingProtocol (PD 2.4 Sequest HT)"
+  }
+ ],
+ "unavailable": [
+  "strain",
+  "exact genotypes (Supplementary Table 4)",
+  "acquisition mode and dissociation",
+  "RAW headers"
+ ]
+}

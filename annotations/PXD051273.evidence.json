@@ -1,0 +1,47 @@
+{
+ "accession": "PXD051273",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD051273",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD051273/files/all (56 entries, all projectAccessions=PXD051273; 54 RAW)",
+  "fragpipe_zip": "HTTP range read of FragPipe_Search_240117_13CLys-PC-H.zip central directory (mzML of _FS_ files)",
+  "raw_header": "first 500 KB of 230310-...40PT_0w-R2.raw: Orbitrap Exploris 480, DIA method"
+ },
+ "claims": [
+  {
+   "column": "source name/sampling time/biological replicate",
+   "value": "<n>w-R<k> parsed from file name",
+   "basis": "file names",
+   "confidence": "high-inferred"
+  },
+  {
+   "column": "comment[technical replicate]",
+   "value": "original=1, _FS_-45V=2, _FS_-65V=3",
+   "basis": "file variants are FAIMS CV splits of one acquisition; numbering only keeps rows distinct",
+   "confidence": "device"
+  },
+  {
+   "column": "comment[label]",
+   "value": "SILAC light/heavy channels as separate sources",
+   "basis": "FragPipe plexDIA with 13C6-Lys variable modification; interpretation",
+   "confidence": "judgement"
+  },
+  {
+   "column": "comment[modification parameters]",
+   "value": "CAM C, Dimethyl:2H(4)13C(2) K/N-term fixed; Label:13C(6) K, Ox M variable",
+   "basis": "PRIDE dataProcessingProtocol (FragPipe 21.1, +34.0631)"
+  },
+  {
+   "column": "comment[isolation window width]",
+   "value": "25 (scan window 400-1000)",
+   "basis": "PRIDE protocol; '40 25 m/z windows' is internally inconsistent",
+   "confidence": "as stated"
+  }
+ ],
+ "unavailable": [
+  "dissociation/collision energy",
+  "tolerances",
+  "strain/sex/age",
+  "paper not consulted"
+ ]
+}

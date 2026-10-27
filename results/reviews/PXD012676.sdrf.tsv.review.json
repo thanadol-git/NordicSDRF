@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD012676.sdrf.tsv",
+  "artifact_sha256": "95c1269eaa2c2614c520dc1b5b26df2e64045954fafc6d113fea990869338ebd",
+  "verdict": "PASS",
+  "summary": "Independent fresh-context review (round 2) found no blocker or important issue. Validators are clean. The 112 RAW files map one-to-one, and all 20 TMT channel-to-sample assignments were independently re-derived from three sources: the deposited PD StudyDefinition, the Proteins.xlsx headers, and thesis Paper IV Table S2. The code meaning C = fingolimod / F = placebo is corroborated by the xlsx relabel row and by S1PR1 abundances. Only minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent (bergen-reviewer-PXD012676-r2) without producer transcript; did not read annotations/PXD012676.report.md, the prior review JSON, or scratchpad/_stale_2026-10-27/; all sources re-fetched fresh into scratchpad/PXD012676/review-PXD012676/"
+  },
+  "evidence_manifest": "annotations/PXD012676.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates derived independently: mouse brain tissue + MS TMT -> ms-proteomics v1.1.0 + vertebrates v1.1.0 (matches both comment[sdrf template] columns). 1120 rows x 38 columns, uniform row width; every required column from base/sample-metadata/ms-proteomics/vertebrates YAMLs present (source name, assay name, technology type, technical replicate, data file, organism, organism part, biological replicate, disease, developmental stage, acquisition method, instrument, cleavage agent, label, fraction identifier). Reserved words valid: 'not applicable' used only in columns with allow_not_applicable=true (cell type, treatment, sampling time); 'pooled' only in biological replicate (allow_pooled=true) and pooled sample (fixed value). Assay names unique (1120) and equal to <file stem>-<label>. Factor value columns equal their characteristics columns in all rows. HCD is MS:1000422, as required by the README NOTE. sdrf-tools structure: 'Structure OK'."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4 (2026-10-27) resolved every controlled value with matching label and is_obsolete=false: NCBITaxon:10090 Mus musculus; UBERON:0001869 cerebral hemisphere; MONDO:0020800 demyelinating disease of central nervous system; EFO:0001272 adult; NCIT:C753 Placebo; NCIT:C74202 Fingolimod (label match, case-insensitive); MS:1002523 Q Exactive HF; MS:1001251 Trypsin; MS:1000422 beam-type collision-induced dissociation; MS:1003586 mixed mode chromatography; MS:1000484 orbitrap; PRIDE:0000608 Dithiothreitol (DTT); PRIDE:0000627 Data-dependent acquisition; UNIMOD:737 TMT6plex, UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation (accessions also match the PD workflow UnimodAccession 737/4/35). sdrf-tools check: 15/15 verified, 0 hallucinated, CLEAN. Two warning-level template deviations (fractionation method outside the PRIDE subtree, free-text strain) are recorded as minor findings."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE project record (accession PXD012676, title matches): TMT10plex split in two, 18 sample pools + 2 identical reference samples, mixed-mode RP fractionation, DTT lysis, PD 2.0. Thesis PDF re-downloaded from NVA (SHA-256 c19c753b...e0db, title 'Effects of calcitriol and fingolimod on remyelination in the cuprizone model'). Paper IV: female, five-week-old c57Bl/6 from Taconic; 0.2% cuprizone for 6 weeks; fingolimod or placebo daily by gavage from week 5; frontal right hemisphere lysed; euthanasia at DM/1RM/3RM, which Fig. S1 places at weeks 6/7/9. Supplementary methods: Q-Exactive HF, DDA top15, MS2 at R=30,000, NCE 32%, trypsin with 2 missed cleavages, TMT N-term/K and carbamidomethyl C fixed, Met oxidation variable, 10 ppm precursor, 0.02 Da Sequest fragment tolerance. RAW header range reads (R4, G7_test, G58-60) give 'Q Exactive HF - Orbitrap MS' and method '...TOP15_TMTFast_60K30K...'. The fresh pdResult range read (0-4 MB) confirms the TMT6plex/Carbamidomethyl/Oxidation UNIMOD accessions and the Trypsin enzyme."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE /files (pages 0-1, count 114; every entry's projectAccessions = {PXD012676}): 112 RAW + 1 SEARCH (pdResult, 31.7 GB, range-read only) + 1 OTHER (xlsx). SDRF comment[data file] has 112 unique values, set-equal to the PRIDE RAW list (0 missing, 0 extra). Each file has exactly 10 rows, one per TMT10 channel, with no duplicate (file, label) pairs. pdResult StudyDefinition FileSet 1 '20151105_R1' = 56 R-series files and FileSet 2 = 56 G-series files, including the four *_test files. Fraction identifiers are unique within each plex (56 per plex) and follow the file names (R1-3/G1_3 -> 1, R58-60/G58-60 -> 58)."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Channel map re-derived independently. PD StudyDefinition samples S1-S20 ('20151105_R1 - [126]' = S1/F1, '20151105_G1 - [126]' = S2/F2, ...) carry the codes R: C6C,C9C,C7C,F6C,F6B,F7C(xlsx; corrupted byte in pd header),F7B,F9C,F9B,REFR and G: C6A,C7A,C6B,C9A,C7B,F6A,C9B,F9A,F7A,REFG, matching the xlsx 'Found in Sample: [Sn] Fx: <ch>' headers. Code C = fingolimod / F = placebo is supported three ways: (1) xlsx row 2 relabels C->F(ingolimod) and F->P(lacebo); (2) S1PR1 (O08530) scaled abundance is 55.5-97.7 in all 9 C pools and 106.7-139.8 in all 9 F pools, matching the paper's finding that fingolimod downregulates S1PR1; (3) thesis Table S2 lists the channels fingolimod DM {126,127C,126}, 1RM {127N,128C,127C}, 3RM {128N,129C,127N} and placebo DM {129N,128C,128N}, 1RM {130C,129C,129N}, 3RM {130N,130C,130N}, which reproduces every SDRF assignment exactly. Digit mapping 6/7/9 -> DM/1RM/3RM -> 6/7/9 week is consistent with Fig. S1. Counts: 6 conditions x 3 mini-pools (biological replicate 1-3) = 18 pools, 504 fingolimod and 504 placebo rows. The reference pool (biological replicate 'pooled') appears in TMT131 of both plexes with technical replicate 1 (R) and 2 (G), consistent with 'two identical reference samples'. Plex membership (R vs G) is captured by the file names and is not confounded with treatment; both arms and all time points occur in both plexes."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Searched for values stated more specifically than the evidence supports. Organism part 'cerebral hemisphere' is less specific than the source ('frontal right hemisphere'). Strain 'C57BL/6' has no invented substrain (Taconic substrain not stated). Developmental stage 'adult' is an inference (5 weeks old on arrival + 12 days + 6-9 weeks gives roughly 12-16 weeks) and the manifest flags it as inferred; no numeric age is asserted. Disease MONDO:0020800 does not overclaim: all proteomics mice received cuprizone, and the PRIDE 'multiple sclerosis' label was correctly not applied to a toxic mouse model. Reference-pool treatment and sampling time are 'not applicable' rather than invented. The reference pool's shared characteristics are supported by Table S2 ('36 samples', equal amounts of each lysate). No alkylation reagent or collision-energy value is asserted without a column. The unreported mini-pool membership and the one dead mouse are not encoded as fake per-mouse data."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "cd sdrf-skills; timeout 900 .venv/bin/parse_sdrf validate-sdrf -s <abs SDRF> -t ms-proteomics --use_ols_cache_only -> exit 0, 'only warnings' (WARNING: MS:1003586 not in pride for comment[fractionation method]); timeout 900 .venv/bin/parse_sdrf validate-sdrf -s <abs SDRF> -t vertebrates --use_ols_cache_only -> exit 0, 'only warnings' (WARNING: C57BL/6 not in ncbitaxon). .venv/bin/python -m tools check -> exit 0, 15/15 verified, Status CLEAN. .venv/bin/python -m tools score -> exit 0, 100/100. .venv/bin/python -m tools structure -> exit 0, 'Structure OK'. Artifact SHA-256 re-checked after review: unchanged."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "comment[fractionation method], rows 1-1120",
+      "message": "MS:1003586 'mixed mode chromatography' lies outside the value domain declared in TERMS.tsv ('PRIDE (children of PRIDE:0000550)'), so parse_sdrf emits a warning.",
+      "evidence": "The ms-proteomics template sets error_level=warning for this validator. Live OLS lists no PRIDE:0000550 descendant for mixed-mode RP; the nearest options, PRIDE:0000563 RP and PRIDE:0000564 hpHRP, would be less faithful to 'mixed-mode reverse phase'. Keep MS:1003586 unless the spec adds a PRIDE term."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[strain or breed], rows 1-1120",
+      "message": "'C57BL/6' is not an NCBITaxon term, so the vertebrates validator emits a warning.",
+      "evidence": "TERMS.tsv defines strain or breed as free text; NCBITaxon has no mouse-strain node. Acceptable as is."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (absent optional column comment[collision energy])",
+      "message": "Optional collision energy could be added as '32 NCE'.",
+      "evidence": "Thesis Paper IV supplementary methods: 'fragmented with a normalized collision energy of 32 %'."
+    },
+    {
+      "severity": "minor",
+      "category": "clarity",
+      "location": "characteristics[sampling time] / factor value[sampling time]",
+      "message": "Sampling time '6/7/9 week' is counted from the start of cuprizone exposure (week 1 in Fig. S1), but the SDRF does not state this reference point.",
+      "evidence": "Thesis Fig. S1 timeline: DM at week 6, 1RM at week 7, 3RM at week 9. The values are correct, and the manifest limitations document the convention."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "comment[fraction identifier] for 20151105_R1-3.raw, 20151105_G1_3.raw (1) and 20151105_R58-60.raw, 20151105_G58-60.raw (58)",
+      "message": "These files combine pooled mixed-mode fractions, but each is given the first fraction number, so the identifiers are non-contiguous (1, 4..58).",
+      "evidence": "File names encode the pooled ranges, and the identifiers are unique within each plex. This is an acceptable convention but should be noted for downstream users."
+    }
+  ]
+}

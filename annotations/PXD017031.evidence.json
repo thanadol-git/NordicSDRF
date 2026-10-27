@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD017031.sdrf.tsv",
+  "dataset": "PXD017031",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD017031"},
+    {"id": "pride_files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD017031/files?pageSize=1000"},
+    {"id": "zip_dirs", "kind": "raw-file-listing", "location": "ZIP central directories of https://ftp.pride.ebi.ac.uk/pride/data/archive/2020/03/PXD017031/Experiment1rawfiles.zip, Experiment2rawfiles.zip, Experiment3rawfiles.zip (HTTP range reads)"},
+    {"id": "raw_headers", "kind": "raw-file-header", "location": "First ~1.5 MB of each of the 14 RAW members, decompressed from the ZIPs by HTTP range read; summary in sdrf-skills/scratchpad/PXD017031/raw_headers.tsv"},
+    {"id": "mq_exp1", "kind": "search-output", "location": "txtsearchfilesexp1.zip: txt (search files exp1)/parameters.txt and summary.txt (MaxQuant 1.6.2.6)"},
+    {"id": "mq_exp2", "kind": "search-output", "location": "txtsearchfilesexp2.zip: txt (search files exp2)/parameters.txt and summary.txt (MaxQuant 1.6.2.6)"},
+    {"id": "mq_exp3", "kind": "search-output", "location": "txtsearchfilesexp3.zip: txt (search files exp3)/parameters.txt and summary.txt (MaxQuant 1.6.2.6)"},
+    {"id": "paper", "kind": "publication", "location": "Deng S, McTiernan N, Wei X, Arnesen T, Marmorstein R. Nat Commun 2020;11:818. PMID 32042062, PMC7010799, doi:10.1038/s41467-020-14584-7 (Europe PMC full-text XML)"},
+    {"id": "supp_data1", "kind": "publication-supplement", "location": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-020-14584-7/MediaObjects/41467_2020_14584_MOESM4_ESM.xlsx (Supplementary Data 1)"},
+    {"id": "supp_info", "kind": "publication-supplement", "location": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-020-14584-7/MediaObjects/41467_2020_14584_MOESM1_ESM.pdf (Supplementary Figure 2 legend)"},
+    {"id": "source_data", "kind": "publication-supplement", "location": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-020-14584-7/MediaObjects/41467_2020_14584_MOESM6_ESM.xlsx (Source Data, sheet 'Fig. 3a')"},
+    {"id": "cellosaurus", "kind": "ontology", "location": "https://api.cellosaurus.org/cell-line/CVCL_0030?format=json"},
+    {"id": "ols", "kind": "ontology", "location": "https://www.ebi.ac.uk/ols4/api/"}
+  ],
+  "claims": [
+    {"location": "comment[data file] rows 1-14", "value": "14 RAW file names", "source_ids": ["zip_dirs", "pride_files"], "evidence": "PRIDE lists only three RAW ZIPs; their central directories contain exactly 14 .raw members (Exp1 5, Exp2 6, Exp3 3), each used once."},
+    {"location": "characteristics[genotype] / factor value[genotype] rows 1-14", "value": "NAA15-WT-V5, NAA15-T406Y-V5, NAA15-L814P-V5", "source_ids": ["paper", "supp_data1", "pride"], "evidence": "Methods: HeLa cells transfected with pcDNA3.1/NAA15-WT-V5, -T406Y-V5 or -L814P-V5 and V5-immunoprecipitated. Supplementary Data 1 column headers name the variant per MaxQuant raw file (e.g. 'iBAQ NAA15-T406Y-V5 Rep1 (Raw file: 6_NMC_1)')."},
+    {"location": "characteristics[biological replicate] rows 1-14", "value": "1 (Exp1 rows 1-5), 2 (Exp2 rows 6-11), 3 (Exp3 rows 12-14)", "source_ids": ["supp_info", "source_data", "zip_dirs"], "evidence": "Supplementary Fig. 2 legend: 'n = 3 biologically independent experiments'; Source Data 'Fig. 3a' sheet lists Experiment 1, 2 and 3; deposit splits RAW and search output into Experiment1/2/3."},
+    {"location": "comment[technical replicate] rows 1-14", "value": "1 or 2 (injection number)", "source_ids": ["raw_headers", "mq_exp1", "mq_exp2", "supp_data1"], "evidence": "Within Exp1/Exp2 each a/b (or _1/_2) pair was injected from the same autosampler vial (Exp1: GA2 for 6_NMC_1/6_NMC_2, GA3 for 7_NMC_1/7_NMC_2; Exp2: BB3 for 2_WT-a/b, BB4 for 3_T406Y-a/b, BB5 for 4_814P-a/b), so they are repeat injections of one IP digest. Supplementary Data 1 labels them Rep1/Rep2."},
+    {"location": "source name rows 1-14", "value": "HeLa_<variant>_IP_exp<n>", "source_ids": ["raw_headers", "supp_data1"], "evidence": "One source per IP sample (variant x experiment); same-vial injections share a source."},
+    {"location": "characteristics[cell line], [cellosaurus accession], [cellosaurus name], [biorepository] rows 1-14", "value": "HeLa; CVCL_0030; HeLa; ATCC CCL-2", "source_ids": ["paper", "cellosaurus"], "evidence": "Methods: 'HeLa cells (ATCC CCL-2)'. Cellosaurus CVCL_0030."},
+    {"location": "characteristics[organism], [organism part], [disease], [age], [sex] rows 1-14", "value": "Homo sapiens; uterine cervix; cervical adenocarcinoma; 30Y6M; female", "source_ids": ["cellosaurus", "ols", "pride"], "evidence": "Cellosaurus CVCL_0030: derived from uterine cervix (UBERON:0000002), NCIt C27677 HPV-related endocervical adenocarcinoma (mapped to MONDO:0005153 cervical adenocarcinoma), donor 30Y6M, female. PRIDE organism NEWT:9606."},
+    {"location": "characteristics[cell type] rows 1-14", "value": "epithelial cell", "source_ids": ["ols"], "evidence": "sdrf-tools cellline lookup HeLa reports cell type 'epithelial'; CL:0000066. Cellosaurus JSON carries no cell-type field; see limitations."},
+    {"location": "characteristics[genetic modification] rows 1-14", "value": "transfection", "source_ids": ["paper", "ols"], "evidence": "Methods: transient plasmid transfection with X-tremeGENE 9; EFO:0000726."},
+    {"location": "comment[instrument] rows 1-14", "value": "NT=Q Exactive HF;AC=MS:1002523", "source_ids": ["raw_headers", "paper"], "evidence": "All 14 RAW headers: 'Q Exactive HF - Orbitrap MS'; paper Methods: Q-Exactive HF. PRIDE field says generic 'Q Exactive' (MS:1001911) and is overridden."},
+    {"location": "comment[proteomics data acquisition method], comment[dissociation method] rows 1-14", "value": "DDA (PRIDE:0000627); beam-type CID/HCD (MS:1000422)", "source_ids": ["paper", "raw_headers"], "evidence": "Methods: data-dependent mode, top 12, NCE 28%. RAW instrument method names: 'TOP12HCD' (Exp1, Exp3) and 'TOP15HCD' (Exp2)."},
+    {"location": "comment[cleavage agent details] rows 1-14", "value": "NT=Trypsin;AC=MS:1001251", "source_ids": ["paper", "mq_exp1", "mq_exp2", "mq_exp3"], "evidence": "Methods: Sequencing Grade Modified Trypsin (Promega), FASP. summary.txt: Enzyme Trypsin, Specific for every raw file."},
+    {"location": "comment[modification parameters] rows 1-14", "value": "Carbamidomethyl C fixed; Oxidation M variable; Acetyl Protein N-term variable", "source_ids": ["mq_exp1", "mq_exp2", "mq_exp3", "paper"], "evidence": "summary.txt per raw file: Fixed modifications Carbamidomethyl (C); Variable modifications Oxidation (M);Acetyl (Protein N-term). Same in data processing protocol."},
+    {"location": "comment[fragment mass tolerance] rows 1-14", "value": "20 ppm", "source_ids": ["mq_exp1", "mq_exp2", "mq_exp3"], "evidence": "parameters.txt: MS/MS tol. (FTMS) 20 ppm in all three searches."},
+    {"location": "comment[reduction reagent], comment[alkylation reagent] rows 1-14", "value": "DTT (PRIDE:0000608); iodoacetamide (PRIDE:0000599)", "source_ids": ["paper", "pride"], "evidence": "Eluted in FASP buffer with 0.1 M DTT; Cys-alkylated with 50 mM iodoacetamide."}
+  ],
+  "limitations": [
+    "Two MaxQuant-searched control runs of Exp2 (1_Ctrl-a, 1_Ctrl-b) are not in the deposit and are not annotated; the deposited Exp1 WT run is the second injection 5_NMC_2 and no 5_NMC_1 run is deposited or searched.",
+    "Whether the a/b runs differ only by injection is inferred from identical vial positions in the RAW headers; Exp2 a and b runs used different instrument methods (07b ... 2mmSH vs 07a ... 1mmSH), not described in the paper.",
+    "The paper describes one MS method (TOP12, 120k MS1); Exp2 RAW method names say TOP15 60K-15K. Scan range, resolution and collision energy are therefore not written.",
+    "Precursor mass tolerance is not in the deposited parameters.txt and not stated in the paper ('All other parameters were set to default values'); written as not available.",
+    "Cell type 'epithelial cell' comes from the sdrf-tools curated cell-line table, not from the Cellosaurus record JSON.",
+    "Ancestry: Cellosaurus genome ancestry is admixed (African 64.7%, European ~32%); no single HANCESTRO category; not available.",
+    "Passage number and culture medium are not stated in the paper; not available.",
+    "No ontology term under EFO:0009090 fits co-immunoprecipitation, so characteristics[enrichment process] is omitted; the V5 IP is described in the report only."
+  ]
+}

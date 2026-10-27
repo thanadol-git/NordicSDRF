@@ -1,0 +1,44 @@
+{
+ "accession": "PXD043021",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD043021",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD043021/files/all (47 entries, all projectAccessions=PXD043021; 21 .wiff)",
+  "paper": "Europe PMC PMC10546733 (doi 10.1186/s13068-023-02401-4) Methods"
+ },
+ "claims": [
+  {
+   "column": "source name/treatment",
+   "value": "SWATH 07-09 control; 05,10,11 ethanol; 01,03,04 butanol; 02,06,12 hexanol; MRMHR C1-3 control, T1-3 butanol",
+   "basis": "PRIDE sampleProcessingProtocol (stated), matches file names",
+   "confidence": "high"
+  },
+  {
+   "column": "comment[cleavage agent details]",
+   "value": "Trypsin",
+   "basis": "ASSUMED: S-Trap digestion, enzyme not named in PRIDE or paper",
+   "confidence": "assumed"
+  },
+  {
+   "column": "comment[modification parameters]",
+   "value": "Methylthio (MMTS) C fixed",
+   "basis": "ProteinPilot/Paragon library search parameters (paper)"
+  },
+  {
+   "column": "comment[proteomics data acquisition method]",
+   "value": "SWATH=DIA; pool=DDA (IDA); MRM-HR=PRM (closest term)",
+   "basis": "paper Methods"
+  },
+  {
+   "column": "characteristics[sampling time]",
+   "value": "18 hour",
+   "basis": "paper: cultures grown 18 h at 37 C"
+  }
+ ],
+ "unavailable": [
+  "supplementary SWATH window table",
+  "alcohol MIC50 concentrations",
+  "strain of proteomics samples",
+  "digestion enzyme"
+ ]
+}

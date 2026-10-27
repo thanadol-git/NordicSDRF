@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD011399.sdrf.tsv",
+  "artifact_sha256": "91432f61f0f67497cd66c855bc158f6a4932cca0d05611a2474ce2a64125df8b",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. All 13 RAW files are mapped to the groups in the deposited readme.txt. The instrument (Q Exactive HF) and the acquisition settings were confirmed from all 13 RAW headers, overriding the wrong PRIDE Velos/Velos Pro metadata. Every ontology term resolves. Both declared templates validate. The remaining findings are minor caveats.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent context (bergen-reviewer-PXD011399); producer report.md and transcript not read; PRIDE project/files, readme.txt, PubMed efetch, Europe PMC and the RAW headers were all fetched fresh. Only the cached MaxQuant parameters.txt/summary.txt were reused, after checking that their raw-file names are the 13 PXD011399 runs and that the FASTA is UP000002494_10116"
+  },
+  "evidence_manifest": "annotations/PXD011399.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "The declared templates ms-proteomics v1.1.0 and vertebrates v1.1.0 are the correct technology/sample layers for a rat label-free DDA study. Oncology-metadata and clinical-metadata are not required. The file has 39 columns and 13 rows, with uniform row shape and no stray whitespace. Source and assay names are unique. All vertebrates-required columns (disease, developmental stage) and ms-proteomics-required columns are present. 'pooled' in biological replicate is allowed (TERMS.tsv allow_pooled=true, pattern ^\\d+$|^pooled$). Pooled sample values match the fixed vocabulary. Collision energy '28% NCE' matches the template pattern. The scan ranges follow {number}m/z-{number}m/z. sdrf-tools structure: OK."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools verify (label match True) passed for MS:1002523 Q Exactive HF, MS:1001251 Trypsin, MS:1000422 beam-type collision-induced dissociation, MS:1000484 orbitrap, PRIDE:0000627 Data-dependent acquisition, PRIDE:0000608 Dithiothreitol (DTT), PRIDE:0000599 Iodoacetamide (IAA), UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, UNIMOD:1 Acetyl and MS:1002038 label free sample. In live OLS4 exact search, each of the following is the top hit and not obsolete: NCBITaxon:10116 Rattus norvegicus, UBERON:0002391 lymph, UBERON:0001969 blood plasma, UBERON:0002106 spleen, UBERON:0002107 liver, UBERON:0000178 blood, MONDO:0018874 acute myeloid leukemia and PATO:0000461 normal. sdrf-tools check: 15/15 verified, 0 hallucinated, 0 label mismatches, 0 wrong ontology, 0 UNIMOD swaps."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Organism: PRIDE NEWT:10116, the rat UP000002494_10116 FASTA in MaxQuant parameters.txt, and the paper title and MeSH 'Rats'. Disease: the abstract says 'rat model known to mimic human AML' and MeSH has the major topic 'Leukemia, Myeloid, Acute'. Per-file group and sample type come from the fresh readme.txt ('1 lymph from healthy spleen' ... '49 - pooled plasma, healthy', '203 - pooled plasma, leukemic'). Instrument: the UTF-16 headers of all 13 RAW files contain 'Q Exactive HF - Orbitrap MS', the method Sensitive_TOP12HCD_120K-60K_2mmSH_IT5e4_90minRUN.meth and the acquisition path 2015-08-25_QE-HF_P. The PRIDE instrument (LTQ Orbitrap Velos) and the protocol (Velos Pro, CID, top 7, 300-2000 m/z) are contradicted by the raw data, so the reconcile MAJOR flag is rebutted. Method text: Full MS 375 to 1500 m/z at 120,000; dd-MS2 60,000, TopN 12, NCE 28, scan range 200 to 2000 m/z; charge exclusion 'unassigned, 1, 6 - 8, >8', which gives 2-5. MaxQuant parameters.txt has fixed Carbamidomethyl (C) and MS/MS tol. (FTMS) 20 ppm. summary.txt has Trypsin/P and variable Oxidation (M);Acetyl (Protein N-term) for all 13 runs. The PRIDE data processing protocol says '20 ppm in MaxQuant'. The PRIDE sample protocol gives DTT, IAA and trypsin. Sex, strain and developmental stage: PubMed efetch and Europe PMC MeSH list only Animals, Humans, Rats (no Male/Female, no Rats, Inbred strain heading). The abstract and PRIDE are silent. Full text was unreachable (Wiley 403 Cloudflare, not in PMC, the NVA/BORA record has no file), so 'not available' is the correct value."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "The 13 comment[data file] values are unique and equal the set of 13 RAW files in the fresh PRIDE /files list (all projectAccessions == PXD011399). The other deposited files are MQsearch_LeukemicLymph.zip (SEARCH) and readme.txt (OTHER), correctly not listed. The RAW-header acquisition path equals each deposited file name. MaxQuant summary.txt Experiment names (1,4,7,10,13,16,28,31,34,43,46,49,203) map one to one onto the file-name numbers. Each row's disease, organism part and sampling site matches its readme line."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed groups: control spleen lymph 4, control liver lymph 2, AML spleen lymph 4, AML liver lymph 1, control plasma pool 1, AML plasma pool 1 (13 runs total). Factor values (disease, sampling site) mirror the characteristics on every row. Biological replicate numbers are 1..n within each group, with 'pooled' plus pooled sample='pooled' for the two plasma pools. All rows have technical replicate 1 and fraction 1, consistent with one unfractionated label-free run per sample (all files are 10ug_4ul, all use the same method). No confounder between acquisition and group was detected: same day, same method, same instrument."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value was traced to the readme, the RAW header, the MaxQuant output, PRIDE or the abstract/MeSH. Sex, strain and developmental stage are correctly 'not available' rather than guessed. PRIDE's broader 'Acute leukemia' was refined to AML only on explicit abstract and MeSH support. No SN= pool members were invented. The four residual caveats are recorded as minor findings: plasma sampling site 'blood', the MS2 first mass, the precursor tolerance scope, and DTT/IAA resting on a partly wrong protocol. None asserts more than the evidence states."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf -t ms-proteomics --use_ols_cache_only: exit 0 'Everything seems to be fine. Well done.' timeout 900 parse_sdrf validate-sdrf -t vertebrates --use_ols_cache_only: exit 0, same message. sdrf-tools check: CLEAN (15/15), exit 0. sdrf-tools score: 100/100, exit 0. sdrf-tools structure: OK, exit 0. sdrf-tools reconcile --record PRIDE project.json: 1 MAJOR instrument_contradicted (protocol 'Orbitrap Velos Pro' vs 'Q Exactive HF'), rebutted by all 13 RAW headers."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "characteristics[sampling site] and factor value[sampling site], rows 12-13 (samples 49, 203)",
+      "message": "'blood' for the plasma pools is the parent material of blood plasma, not a stated draw site. It is coarser than the organism part, while the spec describes sampling site as equal to or finer than the organism part. It is true by definition and not an overclaim, and it serves as the third factor level that separates plasma from spleen and liver lymph.",
+      "evidence": "readme.txt says only 'pooled plasma, healthy/leukemic'. TERMS.tsv sampling site: 'May be equal to the organism part or provide finer context'. Optional alternative: 'blood plasma' (equal to the organism part)."
+    },
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "comment[ms2 scan range], all rows",
+      "message": "200m/z-2000m/z repeats the method's nominal dd-MS2 scan range. The same method also sets 'Fixed first mass 120.0 m/z', so the acquired MS2 low mass is probably 120 m/z. This could not be confirmed from scan filters with a partial RAW read.",
+      "evidence": "RAW method text (dd-MS2): 'Scan range 200 to 2000 m/z' and 'Fixed first mass 120.0 m/z'."
+    },
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "comment[precursor mass tolerance], all rows",
+      "message": "20 ppm reflects the author's '20 ppm in MaxQuant'. In MaxQuant 1.5 this most likely refers to the first-search tolerance; the main-search tolerance is not recorded in parameters.txt. The parallel Progenesis/SearchGUI analysis used 10 ppm / 0.5 Da. The SDRF describes only the deposited MaxQuant search.",
+      "evidence": "PRIDE dataProcessingProtocol: 'Precursor mass tolerance was 10 ppm (20 ppm in MaxQuant) and fragment mass tolerance 0.5 Da'. parameters.txt: 'MS/MS tol. (FTMS) 20 ppm'."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[reduction reagent] / comment[alkylation reagent], all rows",
+      "message": "DTT and IAA come from a PRIDE sample protocol whose LC-MS paragraph (Velos Pro, CID, top 7) is shown to be wrong by the RAW files. The digestion paragraph is an explicit author statement and is consistent with fixed Carbamidomethyl (C) and PRIDE 'iodoacetamide derivatized residue', so it is kept. Confidence is lower than for raw-derived values.",
+      "evidence": "PRIDE sampleProcessingProtocol and identifiedPTMStrings MOD:00397; MaxQuant parameters.txt fixed Carbamidomethyl (C)."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[strain or breed], characteristics[sex], characteristics[developmental stage], all rows",
+      "message": "'not available' is correct for the accessible evidence: MeSH has no sex or strain heading, and PRIDE and the abstract are silent. If the Wiley full text (CC BY-NC-ND) becomes retrievable, its Methods should be checked for strain (the rat AML model may be strain-specific), sex and age, and these columns updated.",
+      "evidence": "PubMed efetch PMID 36702790 and Europe PMC MeSH: Animals, Humans, Rats, Bone Marrow, Leukemia, Myeloid, Acute, Liver, Lymphatic Vessels, Spleen, STAT3, Tumor Microenvironment, CREB. Wiley full/pdfdirect return HTTP 403 Cloudflare. NVA record 0198cc5b4d73-... has no file."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "characteristics[biological replicate], rows 1-11",
+      "message": "Distinct replicate numbers assume each numbered lymph sample is a different animal. Whether spleen and liver lymph came from the same rats, or whether a rat contributed more than one sample, is not deposited. This is standard default numbering for distinct samples, not an invented mapping, and the manifest records it as a limitation.",
+      "evidence": "readme.txt lists only sample numbers and groups; no animal key in PRIDE or the abstract."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "file",
+      "message": "PRIDE project metadata (instrument LTQ Orbitrap Velos, protocol Velos Pro/CID) contradicts the deposited RAW files (Q Exactive HF, HCD). The SDRF correctly follows the raw data. Consider reporting the discrepancy to PRIDE.",
+      "evidence": "PRIDE instruments MS:1001742 vs. RAW header 'Q Exactive HF - Orbitrap MS' in all 13 files; sdrf-tools reconcile instrument_contradicted."
+    }
+  ]
+}

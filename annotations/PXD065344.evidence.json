@@ -1,0 +1,34 @@
+{
+ "accession": "PXD065344",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD065344",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD065344/files/all (35 entries, all projectAccessions=PXD065344; 31 RAW)",
+  "key": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/01/PXD065344/P0062_passive_thsd7a_ConditionSetup.tsv",
+  "paper": "Europe PMC PMC13135397 (PMID 41746732)"
+ },
+ "claims": [
+  {
+   "column": "source name/factor values",
+   "value": "wt|ko x ctrl|thsd7a IgG, replicates per ConditionSetup.tsv",
+   "basis": "deposited Spectronaut ConditionSetup (stated)",
+   "confidence": "high"
+  },
+  {
+   "column": "characteristics[disease]",
+   "value": "normal (control IgG); membranous glomerulonephritis (WT + anti-THSD7A); not available (KO + anti-THSD7A)",
+   "basis": "paper: KO protected from albuminuria",
+   "confidence": "judgement"
+  },
+  {
+   "column": "comment[isolation window width]",
+   "value": "40 (400-1000)",
+   "basis": "15 windows per PRIDE protocol, derived",
+   "confidence": "derived"
+  }
+ ],
+ "unavailable": [
+  "sex/age/strain/day",
+  "antibody dose"
+ ]
+}

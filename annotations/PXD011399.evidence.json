@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD011399.sdrf.tsv",
+  "dataset": "PXD011399",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD011399"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD011399/files?pageSize=1000"
+    },
+    {
+      "id": "readme",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/06/PXD011399/readme.txt"
+    },
+    {
+      "id": "mq-search",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/06/PXD011399/MQsearch_LeukemicLymph.zip (txt/summary.txt, txt/parameters.txt, txt/peptides.txt, first 400 kB of txt/msms.txt; read by HTTP range requests)"
+    },
+    {
+      "id": "raw-headers",
+      "kind": "raw-data",
+      "location": "First 1.5 MB of each of the 13 RAW files under https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/06/PXD011399/ (HTTP range read, UTF-16 header strings)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Steinskog ESS et al. Microcirculation 2023;30(2-3):e12800, PMID 36702790, doi:10.1111/micc.12800 (abstract and MeSH via Europe PMC and NCBI efetch; full text on Wiley is blocked by a Cloudflare challenge and is not in PMC)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] rows 1-13",
+      "value": "13 RAW files 20150825_Eli_10ug_<N>_4ul.raw, N in {1,4,7,10,13,16,28,31,34,43,46,49,203}",
+      "source_ids": ["pride-files", "raw-headers"],
+      "evidence": "PRIDE file list has exactly 13 RAW files, all with projectAccessions PXD011399. The original acquisition path in each RAW header (C:\\Xcalibur\\Data\\SERVICE\\Eli-Sihn_Steinskog\\2015-08-25_QE-HF_P\\Raw\\<name>.raw) equals the deposited file name, so no file was renamed."
+    },
+    {
+      "location": "source name, characteristics[disease], characteristics[organism part], characteristics[sampling site], factor values, all rows",
+      "value": "1,4,7,13 control spleen lymph; 10,16 control liver lymph; 28,34,43,46 leukemic spleen lymph; 31 leukemic liver lymph; 49 pooled control plasma; 203 pooled leukemic plasma",
+      "source_ids": ["readme", "mq-search"],
+      "evidence": "Deposited readme.txt: '1 lymph from healthy spleen' ... '10 lymph from healthy liver' ... '28 lymph from leukemic spleen', '31 lymph from leukemic liver' ... '49 - pooled plasma, healthy', '203 - pooled plasma, leukemic'. MaxQuant summary.txt experiment names (1, 4, ..., 203) match the number in each file name one to one."
+    },
+    {
+      "location": "characteristics[organism] all rows",
+      "value": "Rattus norvegicus",
+      "source_ids": ["pride", "paper"],
+      "evidence": "PRIDE organisms NEWT:10116; MaxQuant FASTA UP000002494_10116 (rat reference proteome); paper title 'in a rat model'; MeSH 'Rats'."
+    },
+    {
+      "location": "characteristics[disease] / factor value[disease]",
+      "value": "acute myeloid leukemia (MONDO:0018874) for leukemic rows; normal for healthy rows",
+      "source_ids": ["paper", "readme", "pride"],
+      "evidence": "Abstract: 'We used a rat model known to mimic human AML'; MeSH major topic 'Leukemia, Myeloid, Acute'. Readme labels samples 'healthy' vs 'leukemic'. PRIDE gives the broader 'acute leukemia' (DOID:12603); the paper's AML is more specific."
+    },
+    {
+      "location": "characteristics[organism part] / characteristics[sampling site] / factor value[sampling site]",
+      "value": "lymph (UBERON:0002391) with sampling site spleen (UBERON:0002106) or liver (UBERON:0002107); blood plasma (UBERON:0001969) with sampling site blood (UBERON:0000178)",
+      "source_ids": ["readme", "paper"],
+      "evidence": "Readme 'lymph from healthy spleen' / 'lymph from ... liver' / 'pooled plasma'. Abstract: 'By cannulating efferent lymphatic vessels from the spleen and liver'. Sampling site 'blood' for plasma is an inference (plasma is derived from blood); the draw site is not stated."
+    },
+    {
+      "location": "characteristics[biological replicate] / characteristics[pooled sample]",
+      "value": "1..n within each disease x sampling site group, in sample-number order; plasma samples 49 and 203 'pooled'",
+      "source_ids": ["readme"],
+      "evidence": "Readme lists each lymph sample by its own number and the two plasma samples as 'pooled plasma'. That each numbered lymph sample comes from a different rat is inferred from distinct sample numbers; no animal key is deposited."
+    },
+    {
+      "location": "characteristics[developmental stage] / characteristics[strain or breed] / characteristics[sex]",
+      "value": "not available",
+      "source_ids": ["paper", "pride"],
+      "evidence": "Neither the PRIDE record, the abstract, nor the PubMed MeSH headings (Animals, Humans, Rats, ...) state strain, sex or age. Full text not accessible."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive HF;AC=MS:1002523",
+      "source_ids": ["raw-headers"],
+      "evidence": "All 13 RAW headers contain 'Q Exactive HF - Orbitrap MS' and the method 'Sensitive_TOP12HCD_120K-60K_2mmSH_IT5e4_90minRUN.meth'; the data folder is '2015-08-25_QE-HF_P'. This contradicts PRIDE instruments (LTQ Orbitrap Velos, MS:1001742) and the PRIDE sample protocol (LTQ-Orbitrap Velos Pro, CID in ion trap); raw data takes precedence."
+    },
+    {
+      "location": "comment[dissociation method] / comment[collision energy] / comment[ms2 mass analyzer]",
+      "value": "beam-type collision-induced dissociation (MS:1000422) / 28% NCE / orbitrap (MS:1000484)",
+      "source_ids": ["raw-headers", "mq-search"],
+      "evidence": "RAW method: dd-MS2 'Resolution 60,000', 'NCE / stepped NCE 28'. MaxQuant msms.txt sample: all 839 PSMs read have Fragmentation 'HCD' and Mass analyzer 'FTMS'."
+    },
+    {
+      "location": "comment[ms1 scan range] / comment[ms2 scan range] / comment[ms min charge] / comment[ms max charge]",
+      "value": "375m/z-1500m/z / 200m/z-2000m/z / 2 / 5",
+      "source_ids": ["raw-headers"],
+      "evidence": "RAW method: Full MS scan range '375 to 1500 m/z'; dd-MS2 scan range '200 to 2000 m/z'; 'Charge exclusion unassigned, 1, 6 - 8, >8' (so charges 2-5 were selected)."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": ["raw-headers", "pride"],
+      "evidence": "RAW method 'TopN 12' dd-MS2; PRIDE protocol 'operated in the DDA-mode'."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": ["pride", "mq-search"],
+      "evidence": "Protocol 'digestion using porcine trypsin'; MaxQuant summary.txt Enzyme 'Trypsin/P' for all 13 runs; peptides.txt: 3790 of 3843 target, non-contaminant peptides end in K or R (rest are protein C-termini)."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M variable; Acetyl Protein N-term variable",
+      "source_ids": ["mq-search", "pride"],
+      "evidence": "parameters.txt 'Fixed modifications Carbamidomethyl (C)'; summary.txt 'Variable modifications Oxidation (M);Acetyl (Protein N-term)' for every run; data processing protocol agrees."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]",
+      "value": "20 ppm / 20 ppm",
+      "source_ids": ["pride", "mq-search"],
+      "evidence": "Data processing protocol 'Precursor mass tolerance was 10 ppm (20 ppm in MaxQuant)'; parameters.txt 'MS/MS tol. (FTMS) 20 ppm', which applies because MS2 was read in the Orbitrap (FTMS)."
+    },
+    {
+      "location": "comment[reduction reagent] / comment[alkylation reagent]",
+      "value": "Dithiothreitol (DTT) PRIDE:0000608 / Iodoacetamide (IAA) PRIDE:0000599",
+      "source_ids": ["pride", "mq-search"],
+      "evidence": "Sample processing protocol 'reduced using dithiothreitol (DTT ...) and alkylated ... using iodoacetamide (IAA ...)'; consistent with fixed Carbamidomethyl (C) in MaxQuant."
+    }
+  ],
+  "limitations": [
+    "Full text of the paper (Wiley, CC BY-NC-ND) could not be retrieved: Wiley returns a Cloudflare challenge and the article is not in PMC. Only the abstract and PubMed MeSH were read.",
+    "The PRIDE LC-MS protocol text (LTQ-Orbitrap Velos Pro, CID, ion-trap MS2, 300-2000 m/z, top 7) does not match the RAW files (Q Exactive HF, HCD, Orbitrap MS2, 375-1500 m/z, top 12). All acquisition values come from the RAW headers. The digestion part of the same protocol (DTT, IAA, trypsin) was kept; trypsin and carbamidomethylation are independently confirmed by the MaxQuant output, DTT and IAA are not.",
+    "Strain, sex and developmental stage are not stated in any accessible source; written as 'not available'.",
+    "No animal key is deposited. Biological replicate numbers assume each numbered lymph sample is a different rat; whether spleen and liver lymph came from the same animals is unknown.",
+    "The number of animals in each plasma pool is not stated; no SN= members are listed.",
+    "Sampling site 'blood' for the plasma pools is an inference from the material; the draw site is not stated.",
+    "Precursor tolerance 20 ppm is taken from the protocol sentence about MaxQuant; MaxQuant 1.5 parameters.txt does not record first/main search tolerances, so it may describe the first search only."
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD017031.sdrf.tsv",
+  "artifact_sha256": "f0f5e9ef094cf3c9c8f547d3b570fbc1f79c0046ce75ae02b9828d1429d287d5",
+  "verdict": "PASS",
+  "summary": "Independent review of PXD017031 (V5 co-IP of NAA15-WT/T406Y/L814P from transfected HeLa, 3 experiments, 14 RAW files inside 3 ZIPs) found no blocker or important issues. Every RAW file is mapped once; the per-run variant assignment matches Supplementary Data 1 headers, RAW acquisition names and MaxQuant summaries; same-vial a/b injections are technical replicates 1/2 of one source; biological replicate equals experiment number. Only minor improvements remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent without producer transcript; producer report.md not read; all evidence re-fetched into scratchpad/PXD017031/review-PXD017031/"
+  },
+  "evidence_manifest": "annotations/PXD017031.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates ms-proteomics v1.1.0, human v1.1.0, cell-lines v1.1.0 declared and appropriate (human HeLa cell line, MS proteomics; affinity-proteomics is Olink/SomaScan and does not apply). All required columns of base, sample-metadata, ms-proteomics, human and cell-lines present; 41 columns x 14 rows, uniform shape; age 30Y6M matches pattern; sex 'female' in allowed values; material type 'cell line' allowed; technology type allowed; extra columns genetic modification/genotype are defined in TERMS.tsv (EFO:0000510/EFO:0000513). No duplicate (source name, technical replicate, fraction) keys."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS: NCBITaxon:9606 Homo sapiens, UBERON:0000002 uterine cervix, CL:0000066 epithelial cell, MONDO:0005153 cervical adenocarcinoma, EFO:0000726 transfection, EFO:0001185 HeLa, PRIDE:0000627 Data-dependent acquisition, MS:1002523 Q Exactive HF, MS:1001251 Trypsin, MS:1002038 label free sample, MS:1000422 beam-type collision-induced dissociation, PRIDE:0000608 Dithiothreitol (DTT), PRIDE:0000599 Iodoacetamide (IAA) all resolve with matching labels and are not obsolete. UNIMOD:4/35/1 verified by sdrf-tools check (14/14 terms, 0 hallucinated, 0 label mismatch). Cellosaurus CVCL_0030 name HeLa, female, 30Y6M, uterine cervix."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project/files re-fetched (projectAccessions=PXD017031). Paper PMC7010799 Methods: HeLa (ATCC CCL-2) transfected with pcDNA3.1/NAA15-WT-V5, -T406Y-V5, -L814P-V5 (X-tremeGENE 9), V5-IP, FASP with 0.1 M DTT and 50 mM IAA, trypsin, Q-Exactive HF, data-dependent top-12, NCE 28%. All 14 RAW headers (decompressed via HTTP range reads; Exp3 Deflate64) report 'Q Exactive HF - Orbitrap MS' with HCD instrument methods, so the HF override of PRIDE's generic 'Q Exactive' is correct. MaxQuant 1.6.2.6 parameters.txt/summary.txt for all three searches: Trypsin Specific, fixed Carbamidomethyl (C), variable Oxidation (M);Acetyl (Protein N-term), MS/MS tol. (FTMS) 20 ppm; precursor tolerance not recorded, so 'not available' is correct. Supplementary Fig. 2 legend: 'n = 3 biologically independent experiments'."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "ZIP central directories re-read: Experiment1rawfiles.zip (5_NMC_2_WT, 6_NMC_1_T406Ya, 6_NMC_2_T406Yb, 7_NMC_1_L814Pa, 7_NMC_2L814Pb), Experiment2rawfiles.zip (2_WTa, 2_WTb, 3_T406Ya, 3_T406Yb, 4_814Pa, 4_814Pb), Experiment3rawfiles.zip (P19_45_133_{WT,T406Y,L814P}_1). Set of 14 comment[data file] values equals the 14 ZIP .raw members exactly; no duplicates, no non-raw files; assay name = file stem. Variant per run confirmed three ways: deposited member names; Supplementary Data 1 column headers ('NAA15-WT-V5 Rep1 (Raw file: 5_NMC_2)', 'NAA15-T406Y-V5 Rep1/Rep2 (6_NMC_1/6_NMC_2)', 'NAA15-L814P-V5 Rep1/Rep2 (7_NMC_1/7_NMC_2)', Exp2 '2_WT-a/b', '3_T406Y-a/b', '4_814P-a/b'); RAW acquisition names (Exp2 2_WT-a etc.; Exp3 P19_45_133_<variant>_1) and Exp3 MaxQuant Experiment column (WT/T406Y/L814P)."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 3 genotypes x 3 experiments = 9 sources; Exp1 WT has a single deposited run, Exp3 has one run per variant, all other sources have two injections. RAW headers show the a/b pairs share an autosampler vial (Exp1 GA2 for 6_NMC_1/2, GA3 for 7_NMC_1/2; Exp2 BB3, BB4, BB5), so technical replicate 1/2 on one source name is correct; single runs are technical replicate 1. characteristics[biological replicate] = experiment number (1/2/3) and factor value[genotype] = characteristics[genotype] for every row. Label free, fraction 1 throughout, consistent with MaxQuant LFQ/iBAQ."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every nontrivial value traced to PRIDE, paper, RAW headers, MaxQuant output, Supplementary Data 1 or Cellosaurus. No value is stated more specifically than evidence: disease is a broader parent of Cellosaurus NCIt C27677; scan settings that differ between Exp1/3 (TOP12 120K-30K) and Exp2 (TOP15 60K-15K) are not written; precursor tolerance, passage number, culture medium and ancestry are 'not available'. Undeposited control runs (Exp2 1_Ctrl-a/b, present only in the MaxQuant summary) are correctly not annotated. Remaining omissions are optional or recommended columns (see minor findings)."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf --use_ols_cache_only -t ms-proteomics: exit 0 'Everything seems to be fine'; -t human: exit 0 same; -t cell-lines: exit 0 same. sdrf-tools check: exit 0, 14/14 verified, CLEAN. sdrf-tools score: exit 0, 99/100 (only missing recommended characteristics[developmental stage])."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "ontology-specificity",
+      "location": "characteristics[disease] rows 1-14",
+      "message": "MONDO:0000554 'endocervical adenocarcinoma' exists and matches Cellosaurus CVCL_0030 disease NCIt C27677 'Human papillomavirus-related endocervical adenocarcinoma' more closely than the parent MONDO:0005153 'cervical adenocarcinoma'.",
+      "evidence": "OLS search returns MONDO:0000554 (mondo/efo/pride). Current value is correct but less specific than available evidence."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (absent recommended columns)",
+      "message": "Recommended columns characteristics[developmental stage] (human, cell-lines), characteristics[individual] (human) and characteristics[sample storage temperature] (cell-lines) are absent. Developmental stage 'adult' could be derived from the Cellosaurus donor age 30Y6M; the others could be 'not available'.",
+      "evidence": "Template YAMLs mark these recommended; sdrf-tools score flags developmental stage."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "file (sample preparation)",
+      "message": "The V5 immunoprecipitation (the defining enrichment step of this AP-MS dataset) is not captured in any column. characteristics[enrichment process] is optional and its EFO:0009090 subtree has no IP term, but the IP could be recorded (for example with a free-text-tolerant optional comment) for reuse.",
+      "evidence": "Paper Methods and PRIDE sample protocol: V5-tag immunoprecipitation with Dynabeads Protein G; OLS EFO:0009090 descendants have no immunoprecipitation term."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "characteristics[cell type] rows 1-14; evidence.json cell type claim",
+      "message": "'epithelial cell' is sourced to the sdrf-tools curated cell-line table, not to a primary source; the Cellosaurus JSON has no cell-type field. The value is consistent with HeLa's well-known epithelial morphology (ATCC CCL-2), but the manifest should cite a primary source.",
+      "evidence": "Cellosaurus CVCL_0030 JSON cell-type field is empty; producer manifest limitation acknowledges this."
+    },
+    {
+      "severity": "minor",
+      "category": "design-metadata",
+      "location": "rows 6-11 (Exp2) vs rows 1-5, 12-14",
+      "message": "Exp2 runs used a different instrument method (TOP15, 60K MS1 / 15K MS2) from Exp1 and Exp3 (TOP12, 120K / 30K), and a/b injections within Exp2 used methods 07b (2mmSH) and 07a (1mmSH). This acquisition batch is confounded with biological replicate and is not recorded; an optional per-run comment (for example comment[lc batch] or MS2 resolution) would make it visible.",
+      "evidence": "RAW header instrument method paths for all 14 runs."
+    },
+    {
+      "severity": "minor",
+      "category": "design-note",
+      "location": "row 1 (5_NMC_2_WT.raw, technical replicate 1)",
+      "message": "The acquisition name 5_NMC_2 suggests it was the second injection of vial GA1; no 5_NMC_1 run is deposited or searched. Technical replicate 1 is acceptable as the only deposited injection and matches Supplementary Data 1 ('Rep1'), but a short limitation note in the SDRF provenance would help readers.",
+      "evidence": "RAW header acquisition path ...\\raw\\5_NMC_2.raw, vial GA1; Exp1 MaxQuant summary lists only 5_NMC_2 for WT."
+    }
+  ]
+}

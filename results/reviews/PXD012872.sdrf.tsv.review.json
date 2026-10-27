@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD012872.sdrf.tsv",
+  "artifact_sha256": "9d815a98e461b49f50262d6884a945c8c8ba6f5e69c8e98fd582f10fbed5a37e",
+  "verdict": "PASS",
+  "summary": "Independent review of the 6-row TMT6plex SDRF for PXD012872 (one human CSF pool split into six identically treated aliquots, one Q Exactive HF RAW file) found no blocking or important issues. Instrument, acquisition, charge, scan range and NCE were re-confirmed in a fresh RAW-header range read; the precursor tolerance and the modification list were re-derived from the authors' GitHub code; 'not applicable' cleavage agent matches the spec rule for undigested (endogenous peptidome) samples. Only minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh-context Bergen reviewer subagent; producer transcript and report.md not read; all sources re-fetched into scratchpad/PXD012872/review-PXD012872/"
+  },
+  "evidence_manifest": "annotations/PXD012872.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Declared templates ms-proteomics v1.1.0 + human v1.1.0 (correct technology + sample layer pair per templates.yaml; no experiment-layer template applies: not DIA/XL/immunopeptidomics/single-cell). 41 columns, 6 rows, LF, no BOM, no empty or whitespace-padded cells, unique assay names and unique (source name, label) pairs. sdrf-tools structure: 'Structure OK'. Reserved words used are allowed by TERMS.tsv/template YAMLs: biological replicate 'pooled' (TERMS: integer or pooled; README: 'For pooled samples, use pooled for biological replicate'), pooled sample 'pooled' (sources unknown), individual 'pooled'. README line 399: cleavage agent 'use \"not applicable\" for top-down/undigested samples'. No factor value column: README factor-value section is SHOULD-level and nothing varies across the six identical aliquots."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check: 15/15 terms verified, 0 hallucinated, 0 label mismatches, 0 UNIMOD swaps. Live re-verification (tools verify / OLS4): UNIMOD:737 TMT6plex, UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, UNIMOD:3 Biotin, UNIMOD:21 Phospho, UNIMOD:34 Methyl, UNIMOD:40 Sulfo, UNIMOD:425 Dioxidation, UNIMOD:1363 Crotonyl, MS:1002523 Q Exactive HF, MS:1000422 beam-type collision-induced dissociation, MS:1000484 orbitrap, PRIDE:0000627 Data-dependent acquisition, UBERON:0001359 cerebrospinal fluid, NCBITaxon:9606 Homo sapiens, PRIDE:0000516 TMT126 .. PRIDE:0000529 TMT131 - all labels match, none obsolete. TMT labels are 6plex names (126..131, no N/C), matching TMT6_126..TMT6_131 reporter masses in readMGFcpp.cpp."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project record (projectAccessions/accession PXD012872 asserted): organism NEWT:9606, organism part BTO:0000237 CSF, 'A test pool of human cerebrospinal fluid was then split into six aliquots ... TMTsixplex labelling ... six identical samples ... combined', 'endopeptidome' workflow of Hansson/Skillback (Europe PMC PMID 28044435 'Expanding the cerebrospinal fluid endopeptidome' - endogenous peptides, no digestion), 'fractions were pooled and injected', 'fragmentation of singly charged precursors only'. Fresh 3 MB HTTP range read of 20171024_EndoCSF_TMT_Rest_Charge1.raw (UTF-16LE): 'Q Exactive HF - Orbitrap MS', 'Method of Q Exactive HF', FULL MS / DD-MS2 (TOPN) TopN 10, Full MS 'Scan range 300 to 1500 m/z', MS2 resolution 30,000, '(N)CE / stepped (N)CE nce: 32', 'Charge exclusion unassigned, 2 - 8, >8' (=> only z=1 fragmented, supports min/max charge 1/1). PRIDE's 'Q Exactive' is correctly overridden by the RAW header. GitHub barsnes-group/isobaric-peptidomics (fresh fetch): getIdentifications.R matches abs(MZ - monomass) < singleTol/2 with singleTol = monomass*1e-5 (makeAAdb.R) => +/-5 ppm, and README states '10 ppm (+ and - 5ppm relative to the theoretical mass)'; README 'Only the precursor mass is used for identification' supports fragment tolerance 'not applicable'; makeAAdb.R adds one TMT6 delta to every molecule (fixed N-terminal tag), adds Met+O and Cys+CAM alongside unmodified M and C (=> variable), and the 11 common non-N-term Unimod PTMs Biotin K, Phospho S/T/Y, Methyl D/E, Sulfo S/T/Y, Dioxidation M, Crotonyl K - exactly the residues annotated. Donor disease/age/ancestry absent from PRIDE and the abstract (Europe PMC PMID 31189351, not OA) - 'not available' is honest."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE /files: 2 files, both projectAccessions ['PXD012872']: 20171024_EndoCSF_TMT_Rest_Charge1.raw (RAW, 1,440,221,696 B) and Identifications.tsv (SEARCH). All 6 rows reference the single RAW file, one row per TMT6plex channel; no missing, duplicate-channel, or non-raw data files. The channel-to-aliquot assignment carries no external identity because the six aliquots are identical by design (no hidden sample-to-channel mapping is asserted)."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 1 pool -> 6 aliquots -> 6 TMT channels -> 1 combined sample -> 1 injection (fractions recombined) -> 1 RAW. 6 rows = 6 channels x 1 file; fraction identifier 1 and technical replicate 1 throughout are consistent with a single injection. Six distinct source names for the six separately labelled aliquots, biological replicate 'pooled', pooled sample 'pooled', individual 'pooled' correctly express that they are not independent biological samples. No factor value is correct: no variable differs between channels, so none is fabricated. Identifications.tsv has tmt1..tmt6 reporter flags consistent with six channels."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every non-reserved value traced to PRIDE text, the RAW header, or the authors' code; no per-sample biological values were inferred from cohort summaries (disease/age/ancestry left 'not available'). Values not over-specified: cleavage agent not invented (no protease anywhere; endopeptidome), no reduction/alkylation reagent asserted although only PRIDE's submitter PTM list hints at iodoacetamide, no fractionation-method column although fractions were recombined. Modification parameters reflect the search space actually coded (cannot express the authors' max-one-PTM-per-molecule cap or the HMDB metabolite entries, which is a format limitation, not an overstatement). Optional omissions noted as minor findings."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics --use_ols_cache_only: exit 0, 'Everything seems to be fine. Well done.'; parse_sdrf validate-sdrf -t human --use_ols_cache_only: exit 0, same message (both run once, sequentially, with timeout 900). sdrf-tools check: CLEAN (15/15). sdrf-tools score: 94/100 (only missing recommended developmental stage and no factor value). sdrf-tools structure: OK. sdrf-tools reconcile --record (fresh PRIDE JSON): one 'cleavage_agent_unsupported' BLOCKER that is a tool false positive - it treats the reserved word 'not applicable' as an enzyme name; overridden by the spec rule for undigested samples (README line 399). Probe: a scratch copy with sex/age = 'pooled' fails the human validator ('must be one of the allowed values'), confirming the producer could not use 'pooled' there."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "sample_metadata",
+      "location": "characteristics[sex] rows 1-6",
+      "message": "'not applicable' asserts that sex does not apply to the source; for a human CSF pool of unknown donor composition 'not available' is the more accurate allowed reserved word.",
+      "evidence": "PRIDE gives no donor count or sexes. The spec TIP ('use pooled for individual-specific fields ... sex') and the human template (allow_pooled: true) intend 'pooled', but parse_sdrf rejects 'pooled' for sex (tested on a scratch copy), so a reserved word is needed; 'not available' passes and does not imply sex is meaningless for human donors."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[precursor mass tolerance] rows 1-6",
+      "message": "The SDRF value 5 ppm differs from the '10 ppm' stated in the PRIDE data processing protocol; 5 ppm is correct as a +/- half-window but the discrepancy is visible only in the evidence manifest.",
+      "evidence": "getIdentifications.R: abs(MZ - monomass) < singleTol/2, singleTol = monomass*1e-5; README: '10 ppm (+ and - 5ppm ...)'. Under the usual +/- search-engine convention 5 ppm reproduces the authors' window exactly; no change required."
+    },
+    {
+      "severity": "minor",
+      "category": "tooling",
+      "location": "comment[cleavage agent details] rows 1-6",
+      "message": "sdrf-tools reconcile reports cleavage_agent_unsupported BLOCKER for the reserved word 'not applicable'; this is a reconcile false positive, not an artifact defect.",
+      "evidence": "Spec README line 399: cleavage agent 'use \"not applicable\" for top-down/undigested samples'; PRIDE and Hansson/Skillback 2017 describe an endogenous (undigested) CSF peptidome; no protease named anywhere."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (optional columns)",
+      "message": "Optional, evidence-backed columns could be added: MS2 isolation window 1.6 m/z, MS1/MS2 resolution 60,000/30,000, and developmental stage ('not available').",
+      "evidence": "RAW header method block: 'Isolation window 1.6 m/z', Full MS 'Resolution 60,000', dd-MS2 'Resolution 30,000'; sdrf-tools score lists developmental stage as missing recommended column. None is required by ms-proteomics or human v1.1.0."
+    }
+  ]
+}

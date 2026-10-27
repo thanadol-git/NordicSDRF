@@ -215,7 +215,7 @@
   },
   {
    "location": "comment[dissociation method] / comment[collision energy] / comment[ms2 mass analyzer]",
-   "value": "HCD PRIDE:0000590 / 40% NCE / orbitrap MS:1000484",
+   "value": "HCD MS:1000422 / 40% NCE / orbitrap MS:1000484",
    "source_ids": [
     "pride",
     "raw-headers"

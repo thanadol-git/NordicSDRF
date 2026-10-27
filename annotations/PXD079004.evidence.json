@@ -1,0 +1,34 @@
+{
+ "accession": "PXD079004",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD079004",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD079004/files/all (52 entries, all projectAccessions=PXD079004; 48 RAW)",
+  "key": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/08/PXD079004/SampleKey_Tubules_ReplicateComparison.txt"
+ },
+ "claims": [
+  {
+   "column": "source name/treatment/sex/sample preparation batch",
+   "value": "run<k>_ch<n>; treatment code AAH2O2|ctrlH2O2|AA; sex male|female where in name",
+   "basis": "RAW file names and deposited SampleKey (stated)",
+   "confidence": "high"
+  },
+  {
+   "column": "characteristics[treatment]",
+   "value": "codes kept verbatim",
+   "basis": "not defined in PRIDE; no expansion",
+   "confidence": "as stated"
+  },
+  {
+   "column": "comment[modification parameters]",
+   "value": "CAM C fixed; Ox M, protein N-term acetyl variable",
+   "basis": "PRIDE dataProcessingProtocol (Spectronaut 19.1)"
+  }
+ ],
+ "unavailable": [
+  "definition of treatment codes",
+  "DIA window scheme",
+  "dissociation",
+  "strain/age"
+ ]
+}

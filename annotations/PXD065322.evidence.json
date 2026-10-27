@@ -1,0 +1,33 @@
+{
+ "accession": "PXD065322",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD065322",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD065322/files/all (16 entries, all projectAccessions=PXD065322; 12 RAW)",
+  "key": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/01/PXD065322/P0028_WT_vs_podoThsd7aKO_ConditionSetup.tsv",
+  "paper": "Europe PMC PMC13135397 (PMID 41746732)"
+ },
+ "claims": [
+  {
+   "column": "source name/factor value[genotype]",
+   "value": "wt 1-6 (files -1..-6); KOthsd7a 1-6 (files -7..-12)",
+   "basis": "deposited Spectronaut ConditionSetup.tsv",
+   "confidence": "high"
+  },
+  {
+   "column": "comment[isolation window width]",
+   "value": "40 (scan window 400-1000)",
+   "basis": "PRIDE protocol 15 windows 400-1000; width derived",
+   "confidence": "derived"
+  },
+  {
+   "column": "characteristics[disease]/[treatment]",
+   "value": "not available",
+   "basis": "no treatment info in names or ConditionSetup; PRIDE disease field refers to the whole study"
+  }
+ ],
+ "unavailable": [
+  "sex/age/strain of these samples",
+  "glomerulus isolation method"
+ ]
+}

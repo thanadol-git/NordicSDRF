@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD011681.sdrf.tsv",
+  "artifact_sha256": "7f57ad28eff0e8aaa566a0b6fe46982395385d9de0d8ceec10d3d067839a14a6",
+  "verdict": "PASS",
+  "summary": "Independent fresh-context review (r3) found no blocking or important issues. All 24 RAW files map 1:1 to rows; per-patient age, sex and tumour size for the 11 published patients match the group's cohort tables exactly; technical and search parameters match the RAW headers and the deposited mzIdentML; patient 48 (outside the published 11-patient analysis) is conservatively annotated as not available. Every validator passed, except that reconcile flagged a cleavage-agent issue, which the deposited mzid disproves.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent (bergen-reviewer-PXD011681-r3) without producer transcript; producer report.md, earlier review folders and scratchpad/_stale_2026-10-27 not read; PRIDE record, file list, cohort papers, RAW headers and mzid regions fetched fresh into scratchpad/PXD011681/review-PXD011681/r3/ with accession/title identity asserted"
+  },
+  "evidence_manifest": "annotations/PXD011681.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Declared templates ms-proteomics v1.1.0, human v1.1.0 and oncology-metadata v1.0.0 (extends clinical-metadata) were derived from the file and checked against templates.yaml and each template YAML. All required columns are present (disease, age, sex required by human; tumor size optional in oncology). sdrf-tools structure reports column order, acquisition and template declaration as consistent. No empty cells; reserved words are used only where the templates allow them; source name + assay name pairs are unique (24 rows). HCD is NT=beam-type collision-induced dissociation;AC=MS:1000422, per the spec README NOTE at line 457. factor value 'not available' is allowed (README example at line 85)."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4 lookups (2026-10-27): MONDO:0005005 clear cell renal carcinoma, PATO:0000461 normal, UBERON:0002113 kidney, EFO:0001272 adult, NCBITaxon:9606 Homo sapiens, MS:1002523 Q Exactive HF, MS:1001251 Trypsin, MS:1000422 beam-type collision-induced dissociation, MS:1000484 orbitrap, PRIDE:0000627 Data-dependent acquisition, PRIDE:0000608 Dithiothreitol (DTT), PRIDE:0000434 (label free sample). All labels match and none are obsolete. sdrf-tools check verified 17/17 terms with 0 hallucinations, label mismatches, wrong ontologies or UNIMOD swaps. UNIMOD 4/35/1/27/28/385 names and targets match the mzid SearchModification cvParams."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE record (projectAccessions/accession PXD011681) gives 11 patients, paired ccRCC/adjacent non-tumorous core biopsies, FFPE, DTT lysis, FASP, a Q-Exactive HF in DDA top-12 mode, scan range 375-1500 m/z, NCE 28% and MS1 label-free quantification. RAW headers (18T, 48T, 48N, 53N; HTTP range 0-65535) show 'Q Exactive HF - Orbitrap MS', method Sensitive_TOP12HCD_120K-30K_..._195minRUN.meth, scan range 375 to 1500 m/z, NCE 28, TopN 12, and the original acquisition path with an identical file name. mzid (range bytes 202,000,000-205,000,000) shows Enzyme Trypsin MS:1001251 (missedCleavages 2), the six SearchModifications as annotated, ParentTolerance 10 ppm and FragmentTolerance 0.5 Da. Its SpectraData are this project's progenesis-export MGFs, and its database is the 20,197-entry UniProt FASTA named in the PRIDE protocol. Landolt 2017 (PMC5471444) Table 1 'Sample usage' marks P (proteomics) for patients 18, 21, 22, 27, 29, 31, 33, 39, 44, 46 and 53, and its text says the proteomics subgroup has n = 11. Ages and sexes in the SDRF match that table for all 11 patients. Tumour sizes match Eikrem 2016 (PMC4764764) Table 1 'Size (mm)' for 18-33 and the miR-Seq 2018 paper (PMC5877664) Table 1 for 39-53."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "The fresh PRIDE /files list has 55 files: 24 RAW, 30 PEAK MGF and 1 SEARCH mzid. All 24 RAW names (20151130_KF_<18|21|22|27|29|31|33|39|44|46|48|53><T|N>.raw) appear exactly once in comment[data file], with no extras or duplicates. assay name equals the file stem. RAW headers confirm files were not renamed after acquisition. The MGF/mzid files are processed outputs and correctly not listed as data files."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "12 individuals x {tumour, adjacent normal} = 24 runs, label-free, one fraction and one technical replicate each (one RAW per biopsy). characteristics[individual] patient_<id> pairs T/N for paired analysis. biological replicate = patient index 1-12, shared by the T and N rows of each patient. factor value[disease] equals characteristics[disease] on every row: 11 ccRCC, 11 normal and 2 not available (patient 48). The 11 annotated patients equal the published proteomics subgroup."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every non-reserved value was traced to PRIDE, the RAW headers, the mzid or the cohort tables at per-patient granularity, with no cohort-summary broadcast. Values that sources do not support are left as 'not available': alkylation reagent, ancestry, cell type, and patient 48 demographics, disease and tumour size. Patient 48 is in no published table, and Landolt 2017 excludes two patients for mixed carcinoma/normal biopsies, so not asserting a diagnosis is appropriate. Tumour grade and stage are omitted because Fuhrman grade differs between papers (patient 44 is 2 in Landolt 2017 and 4 in the miR-Seq 2018 paper). No material evidence was found to be omitted: the cohort papers name no alkylation reagent or enzyme beyond what the mzid states."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf --use_ols_cache_only (timeout 900) gave exit 0 and 'Everything seems to be fine' for -t ms-proteomics, -t human, -t oncology-metadata, and for the union of all three. sdrf-tools check exit 0 (CLEAN, 17/17). sdrf-tools score 100/100. sdrf-tools structure exit 0 (OK). sdrf-tools reconcile --record pride.json exit 1 with one finding, cleavage_agent_unsupported for Trypsin. That finding is overridden because the PRIDE prose only says FASP, while the deposited mzid for this project explicitly declares Enzyme Trypsin MS:1001251 (missedCleavages 2, semiSpecific false)."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[cleavage agent details], all rows",
+      "message": "sdrf-tools reconcile reports cleavage_agent_unsupported because the PRIDE protocol names FASP but no enzyme. Trypsin is supported by the deposited mzid. A Lys-C pre-digestion, as in the cited Wisniewski 2013 FASP protocol, cannot be excluded.",
+      "evidence": "The mzid Enzymes block lists only Trypsin MS:1001251. The manifest records the Lys-C caveat as a limitation. No correction is required unless a source naming Lys-C is found."
+    },
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "comment[modification parameters], 6 columns, all rows",
+      "message": "The modifications follow the deposited PeptideShaker mzid (CAM fixed; Ox, protein N-term Acetyl, Glu->pyro-Glu, Gln->pyro-Glu and peptide N-term Ammonia-loss on C variable). The PRIDE data protocol (Proteome Discoverer 1.4) and Landolt 2017 (SearchGUI/PeptideShaker) both state only CAM fixed and Ox variable.",
+      "evidence": "mzid ModificationParams versus the PRIDE dataProcessingProtocol and the PMC5471444 Methods. This is defensible because the deposited search output is direct evidence; the manifest documents the choice."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "rows 11 and 23 (20151130_KF_48T.raw, 20151130_KF_48N.raw)",
+      "message": "For patient 48, the intended biopsy site (tumour vs adjacent normal) is machine-readable only through the source and assay names. Both rows share biological replicate 11 within the same factor value group ('not available'), so OpenMS/MSstats-style conversion would treat them as one biological replicate of one condition. This also leaves a gap at 11 in the ccRCC and normal groups.",
+      "evidence": "The spec README (line 330) says biological replicate numbering restarts per factor value group. Optional improvement: add characteristics[sampling site] (clinical-metadata, UBERON/BTO) to record the biopsy site without asserting a diagnosis. This does not affect the 22 published-cohort rows."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "file (evidence manifest)",
+      "message": "The primary paper's full text (Koch et al. 2019, PMID 30838877) could not be read. The journal's PDF returns HTTP 403 even though Unpaywall and Semantic Scholar list a bronze OA copy, so the patient numbering is confirmed through sibling cohort papers rather than the primary paper.",
+      "evidence": "Landolt 2017 Table 1 ties exactly the 11 file patient IDs other than 48 to proteomics ('P'), and its Results discuss proteomics for patients 27 and 29. This mitigates the risk."
+    }
+  ]
+}

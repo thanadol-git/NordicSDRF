@@ -27,7 +27,7 @@
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
 <text class="title" x="12" y="22">Denmark — in progress</text>
-<text class="sub" x="12" y="40">420 datasets listed · 141 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<text class="sub" x="12" y="40">420 datasets listed · 155 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
 <rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
@@ -52,15 +52,13 @@
 <text class="seg" x="255.0" y="118.0" text-anchor="middle">132</text>
 <text class="total" x="338.7" y="118.0">178 listed</text>
 <text class="city" x="12" y="148.0">Aarhus</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="134" width="59.8" height="20" rx="2"><title>Aarhus · Annotated: 52</title></rect>
-<text class="seg" x="139.9" y="148.0" text-anchor="middle">52</text>
-<rect class="c-blocked" fill="#d95926" x="170.8" y="134" width="25.0" height="20" rx="2"><title>Aarhus · Blocked: 10</title></rect>
-<text class="seg" x="183.3" y="148.0" text-anchor="middle">10</text>
-<rect class="c-in_corpus" fill="#199e70" x="196.8" y="134" width="35.3" height="20" rx="2"><title>Aarhus · In corpus: 31</title></rect>
-<text class="seg" x="214.5" y="148.0" text-anchor="middle">31</text>
-<rect class="c-todo" fill="#8a8983" x="233.1" y="134" width="25.0" height="20" rx="2"><title>Aarhus · To do: 20</title></rect>
-<text class="seg" x="245.6" y="148.0" text-anchor="middle">20</text>
-<text class="total" x="265.1" y="148.0">113 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="134" width="76.2" height="20" rx="2"><title>Aarhus · Annotated: 66</title></rect>
+<text class="seg" x="148.1" y="148.0" text-anchor="middle">66</text>
+<rect class="c-blocked" fill="#d95926" x="187.2" y="134" width="25.0" height="20" rx="2"><title>Aarhus · Blocked: 16</title></rect>
+<text class="seg" x="199.7" y="148.0" text-anchor="middle">16</text>
+<rect class="c-in_corpus" fill="#199e70" x="213.2" y="134" width="35.3" height="20" rx="2"><title>Aarhus · In corpus: 31</title></rect>
+<text class="seg" x="230.8" y="148.0" text-anchor="middle">31</text>
+<text class="total" x="255.5" y="148.0">113 listed</text>
 <text class="city" x="12" y="178.0">Aalborg</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="164" width="51.6" height="20" rx="2"><title>Aalborg · Annotated: 45</title></rect>
 <text class="seg" x="135.8" y="178.0" text-anchor="middle">45</text>

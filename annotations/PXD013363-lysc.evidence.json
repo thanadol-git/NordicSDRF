@@ -1,0 +1,45 @@
+{
+ "accession": "PXD013363",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD013363",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD013363/files/all (185 entries, all projectAccessions=PXD013363; 176 RAW)",
+  "readme": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2019/10/PXD013363/Readme.docx (file -> SUMO, replicate, fraction, sample type, enzyme)",
+  "paper": "PMID 31502464 (closed access, not read)"
+ },
+ "claims": [
+  {
+   "column": "comment[data file]/source name",
+   "value": "per Readme.docx: SUMO isoform, replicate A-D, fraction, KGG vs FT, enzyme",
+   "basis": "deposited Readme (stated)",
+   "confidence": "high"
+  },
+  {
+   "column": "comment[label]",
+   "value": "SILAC light = aldosterone, heavy = vehicle for all replicates",
+   "basis": "PRIDE sampleProcessingProtocol: aldosterone-treated cells + SILAC heavy cells as vehicles",
+   "confidence": "high; no swap stated"
+  },
+  {
+   "column": "comment[technical replicate]",
+   "value": "plain name = 1, timestamped name = 2",
+   "basis": "Readme lists both with identical annotation; inferred as repeat injections",
+   "confidence": "inferred"
+  },
+  {
+   "column": "comment[modification parameters]",
+   "value": "CAM C fixed; Acetyl N-term, Ox M, Phospho STY, GG K, Label:13C(6)+GG K variable",
+   "basis": "PRIDE dataProcessingProtocol (PD 2.1 Sequest+Mascot); .pdResult not opened"
+  },
+  {
+   "column": "characteristics[cell line]",
+   "value": "mpkCCD CVCL_R771",
+   "basis": "Cellosaurus API search; generic entry, clone unknown"
+  }
+ ],
+ "unavailable": [
+  "paper Methods (closed)",
+  "tolerances, dissociation, fractionation method",
+  "aldosterone dose/duration"
+ ]
+}

@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-10-01
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-26)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-27)
 
 countries:
   sweden:
@@ -137,8 +137,8 @@ countries:
         search_terms: [Aarhus, Århus]
         pride_hits: 117
         screened: 0
-        annotated: 52
-        blocked: 10
+        annotated: 66
+        blocked: 16
         pxd_list: lists/denmark/aarhus.txt
         pxd_count: 113
         in_corpus: 70
@@ -180,12 +180,12 @@ countries:
         search_terms: [Bergen, Haukeland]
         pride_hits: 227
         screened: 0
-        annotated: 20
-        blocked: 2
+        annotated: 26
+        blocked: 6
         notes: "'Bergen' also matches Bergen NJ (USA) and Bergen op Zoom (NL)"
         pxd_list: lists/norway/bergen.txt
         pxd_count: 99
-        in_corpus: 29
+        in_corpus: 51
       oslo:
         name: Oslo
         search_terms: [Oslo, Rikshospitalet, Radiumhospitalet]
