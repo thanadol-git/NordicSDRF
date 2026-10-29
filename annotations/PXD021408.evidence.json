@@ -1,0 +1,19 @@
+{
+ "accession": "PXD021408",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD021408",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD021408/files/all (41 entries, 36 RAW; checksums equal to PXD020188)"
+ },
+ "claims": [
+  {
+   "column": "source name/treatment/replicates",
+   "value": "identical to PXD020188 RAWfilelist.txt",
+   "basis": "RAW checksums identical across the two accessions",
+   "confidence": "high"
+  }
+ ],
+ "unavailable": [
+  "tolerances/dissociation"
+ ]
+}

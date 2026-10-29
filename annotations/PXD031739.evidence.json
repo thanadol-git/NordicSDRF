@@ -1,0 +1,35 @@
+{
+ "accession": "PXD031739",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD031739",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD031739/files/all (73 entries, 72 RAW)",
+  "pd_result": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2022/09/PXD031739/In_vivo_II_PROBE_allFDR.txt (header read by range)",
+  "paper": "Europe PMC PMC10073473"
+ },
+ "claims": [
+  {
+   "column": "comment[label]/source name/treatment",
+   "value": "per F1-F9 channel names in In_vivo_II_PROBE_allFDR.txt (126 reference; 127N-131 groups)",
+   "basis": "deposited PD result column headers (stated)",
+   "confidence": "high"
+  },
+  {
+   "column": "comment[data file]",
+   "value": "plex n = files n-1..n-8",
+   "basis": "inferred from F-index and file naming",
+   "confidence": "inferred"
+  },
+  {
+   "column": "characteristics[treatment]",
+   "value": "WY 4.0/40 mg/kg, GW 0.4/4.0 mg/kg; TTA dose not given",
+   "basis": "paper Methods 2.3 (WY, GW only)"
+  }
+ ],
+ "unavailable": [
+  "TTA doses",
+  "solvent 1/2 definitions",
+  "variable modifications",
+  "tolerances"
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "accession": "PXD023655",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD023655",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD023655/files/all (34 entries, 29 RAW)"
+ },
+ "claims": [
+  {
+   "column": "source name/treatment",
+   "value": "parsed from RAW file names",
+   "basis": "file names only",
+   "confidence": "high-inferred"
+  },
+  {
+   "column": "comment[instrument]",
+   "value": "Q Exactive HF-X",
+   "basis": "RAW header; PRIDE lists HF-X and HF"
+  }
+ ],
+ "unavailable": [
+  "sample sheet",
+  "paper"
+ ]
+}

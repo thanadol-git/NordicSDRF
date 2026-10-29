@@ -1,0 +1,31 @@
+{
+ "accession": "PXD029634",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD029634",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD029634/files/all (39 entries, 38 RAW)",
+  "paper": "Europe PMC PMC9928017"
+ },
+ "claims": [
+  {
+   "column": "characteristics[individual]",
+   "value": "patient_<code> as in file names",
+   "basis": "file names; 13 codes vs 8 patients in paper",
+   "confidence": "as stated"
+  },
+  {
+   "column": "characteristics[sampling time]",
+   "value": "not available",
+   "basis": "no mapping of codes/dates to 0M/2M/6M"
+  },
+  {
+   "column": "comment[modification parameters]",
+   "value": "CAM C fixed; Ox M, protein N-term acetyl",
+   "basis": "deposited mqpar.xml"
+  }
+ ],
+ "unavailable": [
+  "code to patient mapping",
+  "time points"
+ ]
+}

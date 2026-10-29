@@ -1,0 +1,19 @@
+{
+ "accession": "PXD033068",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD033068",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD033068/files/all (12 entries, 10 RAW)"
+ },
+ "claims": [
+  {
+   "column": "source name/treatment",
+   "value": "Control_1-3 vs GFP_1-3",
+   "basis": "file names",
+   "confidence": "high-inferred"
+  }
+ ],
+ "unavailable": [
+  "definition of control IP"
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "accession": "PXD040532",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD040532",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD040532/files/all (53 entries, 48 RAW)",
+  "groups": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2023/06/PXD040532/groups.txt"
+ },
+ "claims": [
+  {
+   "column": "source name/treatment",
+   "value": "<line>_<H|N><rep>",
+   "basis": "file names + deposited groups.txt (Normox/Hypox)",
+   "confidence": "high"
+  },
+  {
+   "column": "characteristics[cell line]",
+   "value": "Cellosaurus names/accessions via sdrf-tools cellline lookup",
+   "basis": "abbreviation reading of file names",
+   "confidence": "high-inferred"
+  },
+  {
+   "column": "comment[precursor/fragment mass tolerance]",
+   "value": "20 ppm / 20 ppm",
+   "basis": "PRIDE dataProcessingProtocol (MSFragger)"
+  }
+ ],
+ "unavailable": [
+  "modifications",
+  "paper not read"
+ ]
+}

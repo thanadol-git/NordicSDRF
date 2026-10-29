@@ -1,0 +1,32 @@
+{
+ "accession": "PXD027012",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD027012",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD027012/files/all (50 entries, 48 RAW)"
+ },
+ "claims": [
+  {
+   "column": "source name/cell type",
+   "value": "KF_T<n> tumor epithelium; KF_S<n> tumor stroma",
+   "basis": "PRIDE title/protocol; zr of Stroma zip summary.txt lists KF_S* runs",
+   "confidence": "high"
+  },
+  {
+   "column": "characteristics[individual]",
+   "value": "same n = same patient in S and T",
+   "basis": "inferred from paired names",
+   "confidence": "inferred"
+  },
+  {
+   "column": "comment[modification parameters]",
+   "value": "CAM C fixed; Ox M, protein N-term acetyl",
+   "basis": "deposited parameters.txt (MaxQuant 1.6.0.16)"
+  }
+ ],
+ "unavailable": [
+  "paper",
+  "per-patient clinical data",
+  "tolerances/dissociation"
+ ]
+}

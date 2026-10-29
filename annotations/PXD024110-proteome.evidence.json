@@ -1,0 +1,27 @@
+{
+ "accession": "PXD024110",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD024110",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD024110/files/all (116 entries, 112 RAW)",
+  "paper": "Europe PMC PMC8125016"
+ },
+ "claims": [
+  {
+   "column": "comment[label]",
+   "value": "SILAC light = patient, heavy = super-SILAC mix",
+   "basis": "paper: patient lysate mixed with AML super-SILAC mix; mqpar multiplicity 2",
+   "confidence": "judgement"
+  },
+  {
+   "column": "characteristics[sex]/age/response",
+   "value": "not available",
+   "basis": "file codes not mapped to Table 1 IDs"
+  }
+ ],
+ "unavailable": [
+  "patient code mapping",
+  "response group",
+  "paper Table 1 not linked to files"
+ ]
+}

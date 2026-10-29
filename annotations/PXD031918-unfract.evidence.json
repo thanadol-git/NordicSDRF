@@ -1,0 +1,28 @@
+{
+ "accession": "PXD031918",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD031918",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD031918/files/all (78 entries, 51 RAW)",
+  "paper": "Europe PMC PMC9181984"
+ },
+ "claims": [
+  {
+   "column": "source name/treatment",
+   "value": "workflow parsed from file names",
+   "basis": "file names + paper workflow descriptions",
+   "confidence": "high-inferred"
+  },
+  {
+   "column": "comment[sample preparation batch]",
+   "value": "date in file name",
+   "basis": "file names; meaning assumed",
+   "confidence": "assumed"
+  }
+ ],
+ "unavailable": [
+  "sample sheet",
+  "modifications",
+  "tolerances"
+ ]
+}

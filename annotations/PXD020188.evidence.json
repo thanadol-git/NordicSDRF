@@ -1,0 +1,31 @@
+{
+ "accession": "PXD020188",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD020188",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD020188/files/all (all projectAccessions=PXD020188)"
+ },
+ "claims": [
+  {
+   "column": "source name/treatment/replicates",
+   "value": "per RAWfilelist.txt (cell, construct, replicate, run)",
+   "basis": "deposited file list (stated)",
+   "confidence": "high"
+  },
+  {
+   "column": "characteristics[cell line]",
+   "value": "HeLa CVCL_0030; HAP1 CVCL_Y019",
+   "basis": "Cellosaurus via sdrf-tools cellline; HeLa variant not stated"
+  },
+  {
+   "column": "comment[modification parameters]",
+   "value": "CAM C fixed; protein N-term acetyl, Ox M variable",
+   "basis": "PRIDE dataProcessingProtocol (MaxQuant 1.6.1.0)"
+  }
+ ],
+ "unavailable": [
+  "paper",
+  "HeLa variant",
+  "tolerances/dissociation"
+ ]
+}

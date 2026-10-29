@@ -1,0 +1,29 @@
+{
+ "accession": "PXD023147",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD023147",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD023147/files/all (2 entries, 1 RAW)"
+ },
+ "claims": [
+  {
+   "column": "comment[cleavage agent details]",
+   "value": "not applicable",
+   "basis": "PRIDE dataProcessingProtocol: No enzyme specificity was defined (neuropeptidome)"
+  },
+  {
+   "column": "characteristics[developmental stage]",
+   "value": "larva",
+   "basis": "PRIDE title/protocol: mixed larval stages"
+  },
+  {
+   "column": "comment[modification parameters]",
+   "value": "CAM C fixed; pyro-Glu, Ox M, N-acetyl, C-amide, sulfo-Tyr variable",
+   "basis": "PRIDE dataProcessingProtocol"
+  }
+ ],
+ "unavailable": [
+  "reduction/alkylation reagents",
+  "paper not read"
+ ]
+}

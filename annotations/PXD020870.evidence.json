@@ -1,0 +1,31 @@
+{
+ "accession": "PXD020870",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD020870",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD020870/files/all (6 entries, 4 RAW)",
+  "paper": "Europe PMC PMC8255942 Methods"
+ },
+ "claims": [
+  {
+   "column": "comment[label]/source name",
+   "value": "heavy = PtdIns(3,4,5)P3 beads, light = control beads",
+   "basis": "paper Methods (PtdIns(3,4,5)P3 Pulldown for MS), stated",
+   "confidence": "high"
+  },
+  {
+   "column": "comment[technical replicate]",
+   "value": "Inj01-03 = 1-3; 3Xinjection = 4",
+   "basis": "paper Experimental Design",
+   "confidence": "high"
+  },
+  {
+   "column": "comment[modification parameters]",
+   "value": "CAM C fixed; Ox M, deamidation N/Q, heavy K/R variable",
+   "basis": "paper Methods"
+  }
+ ],
+ "unavailable": [
+  "precursor details of beads"
+ ]
+}

@@ -46,25 +46,29 @@
 <text class="city" x="12" y="118.0">Odense</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="17.0" height="20" rx="2"><title>Odense · Annotated: 3</title></rect>
 <text class="seg" x="118.5" y="118.0" text-anchor="middle">3</text>
-<rect class="c-in_corpus" fill="#199e70" x="128.0" y="104" width="49.3" height="20" rx="2"><title>Odense · In corpus: 43</title></rect>
-<text class="seg" x="152.6" y="118.0" text-anchor="middle">43</text>
-<rect class="c-todo" fill="#8a8983" x="178.3" y="104" width="153.4" height="20" rx="2"><title>Odense · To do: 132</title></rect>
-<text class="seg" x="255.0" y="118.0" text-anchor="middle">132</text>
+<rect class="c-in_corpus" fill="#199e70" x="128.0" y="104" width="45.8" height="20" rx="2"><title>Odense · In corpus: 40</title></rect>
+<text class="seg" x="150.9" y="118.0" text-anchor="middle">40</text>
+<rect class="c-todo" fill="#8a8983" x="174.8" y="104" width="156.9" height="20" rx="2"><title>Odense · To do: 135</title></rect>
+<text class="seg" x="253.2" y="118.0" text-anchor="middle">135</text>
 <text class="total" x="338.7" y="118.0">178 listed</text>
 <text class="city" x="12" y="148.0">Aarhus</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="134" width="76.2" height="20" rx="2"><title>Aarhus · Annotated: 66</title></rect>
 <text class="seg" x="148.1" y="148.0" text-anchor="middle">66</text>
 <rect class="c-blocked" fill="#d95926" x="187.2" y="134" width="25.0" height="20" rx="2"><title>Aarhus · Blocked: 16</title></rect>
 <text class="seg" x="199.7" y="148.0" text-anchor="middle">16</text>
-<rect class="c-in_corpus" fill="#199e70" x="213.2" y="134" width="35.3" height="20" rx="2"><title>Aarhus · In corpus: 31</title></rect>
-<text class="seg" x="230.8" y="148.0" text-anchor="middle">31</text>
-<text class="total" x="255.5" y="148.0">113 listed</text>
+<rect class="c-in_corpus" fill="#199e70" x="213.2" y="134" width="32.9" height="20" rx="2"><title>Aarhus · In corpus: 29</title></rect>
+<text class="seg" x="229.7" y="148.0" text-anchor="middle">29</text>
+<rect class="c-todo" fill="#8a8983" x="247.1" y="134" width="17.0" height="20" rx="2"><title>Aarhus · To do: 2</title></rect>
+<text class="seg" x="255.6" y="148.0" text-anchor="middle">2</text>
+<text class="total" x="271.1" y="148.0">113 listed</text>
 <text class="city" x="12" y="178.0">Aalborg</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="164" width="51.6" height="20" rx="2"><title>Aalborg · Annotated: 45</title></rect>
 <text class="seg" x="135.8" y="178.0" text-anchor="middle">45</text>
-<rect class="c-in_corpus" fill="#199e70" x="162.6" y="164" width="25.0" height="20" rx="2"><title>Aalborg · In corpus: 20</title></rect>
-<text class="seg" x="175.1" y="178.0" text-anchor="middle">20</text>
-<text class="total" x="194.6" y="178.0">65 listed</text>
+<rect class="c-in_corpus" fill="#199e70" x="162.6" y="164" width="25.0" height="20" rx="2"><title>Aalborg · In corpus: 19</title></rect>
+<text class="seg" x="175.1" y="178.0" text-anchor="middle">19</text>
+<rect class="c-todo" fill="#8a8983" x="188.6" y="164" width="17.0" height="20" rx="2"><title>Aalborg · To do: 1</title></rect>
+<text class="seg" x="197.1" y="178.0" text-anchor="middle">1</text>
+<text class="total" x="212.6" y="178.0">65 listed</text>
 <text class="city" x="12" y="208.0">Lyngby</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="194" width="38.8" height="20" rx="2"><title>Lyngby · Annotated: 34</title></rect>
 <text class="seg" x="129.4" y="208.0" text-anchor="middle">34</text>

@@ -1,0 +1,40 @@
+{
+ "accession": "PXD018034",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD018034",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD018034/files/all (209 entries, all projectAccessions=PXD018034; 190 RAW)",
+  "sample_sheet": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/10/PXD018034/SampleAnnotation.xlsx"
+ },
+ "claims": [
+  {
+   "column": "source name/time/replicate/bait",
+   "value": "per SampleAnnotation.xlsx",
+   "basis": "deposited sample sheet (stated)",
+   "confidence": "high"
+  },
+  {
+   "column": "comment[label]",
+   "value": "SILAC light and heavy channels of pulsed SILAC",
+   "basis": "PRIDE protocol; channel split inferred from design",
+   "confidence": "judgement"
+  },
+  {
+   "column": "comment[modification parameters]",
+   "value": "not available",
+   "basis": "not stated; search parameter files not read"
+  },
+  {
+   "column": "NSP1 t60/t90 file assignment",
+   "value": "sheet followed over file names",
+   "basis": "sheet contradicts names for two files"
+  }
+ ],
+ "unavailable": [
+  "modifications",
+  "dissociation",
+  "tolerances",
+  "DIA windows",
+  "paper (closed)"
+ ]
+}

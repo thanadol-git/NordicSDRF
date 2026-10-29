@@ -1,0 +1,32 @@
+{
+ "accession": "PXD024197",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD024197",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD024197/files/all (124 entries, 120 RAW)",
+  "paper": "Europe PMC PMC8125016"
+ },
+ "claims": [
+  {
+   "column": "characteristics[sampling time]",
+   "value": "pre=0 day; T1=3 day; T2=8 day",
+   "basis": "paper (day 3 / day 8 sampling in ATRA-VP-TP study) + file codes",
+   "confidence": "inferred"
+  },
+  {
+   "column": "comment[label]",
+   "value": "light = patient, heavy = super-SILAC mix",
+   "basis": "paper Methods",
+   "confidence": "judgement"
+  },
+  {
+   "column": "response/sex/age",
+   "value": "not available",
+   "basis": "file codes not mapped to Table 1"
+  }
+ ],
+ "unavailable": [
+  "patient code mapping",
+  "response group"
+ ]
+}

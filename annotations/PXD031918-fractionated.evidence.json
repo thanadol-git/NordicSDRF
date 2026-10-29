@@ -1,0 +1,21 @@
+{
+ "accession": "PXD031918",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD031918",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD031918/files/all (78 entries, 51 RAW)",
+  "paper": "Europe PMC PMC9181984"
+ },
+ "claims": [
+  {
+   "column": "comment[fraction identifier]",
+   "value": "order of well-position suffix 1-5",
+   "basis": "inferred from file names",
+   "confidence": "inferred"
+  }
+ ],
+ "unavailable": [
+  "sample sheet",
+  "fraction numbering"
+ ]
+}

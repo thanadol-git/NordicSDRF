@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-10-01
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-27)
+corpus_source: local checkout (2026-10-29)
 
 countries:
   sweden:
@@ -52,7 +52,7 @@ countries:
         annotated: 68
         blocked: 93
         notes: "line 1 is PRD000423, a legacy ProteomeXchange id — resolve to a PXD before screening"
-        in_corpus: 84
+        in_corpus: 76
       lund:
         name: Lund
         search_terms: [Lund, Malmö, Skåne]
@@ -131,7 +131,7 @@ countries:
         blocked: 0
         pxd_list: lists/denmark/odense.txt
         pxd_count: 178
-        in_corpus: 45
+        in_corpus: 40
       aarhus:
         name: Aarhus
         search_terms: [Aarhus, Århus]
@@ -141,7 +141,7 @@ countries:
         blocked: 16
         pxd_list: lists/denmark/aarhus.txt
         pxd_count: 113
-        in_corpus: 70
+        in_corpus: 29
       aalborg:
         name: Aalborg
         search_terms: [Aalborg]
@@ -151,7 +151,7 @@ countries:
         blocked: 0
         pxd_list: lists/denmark/aalborg.txt
         pxd_count: 65
-        in_corpus: 57
+        in_corpus: 19
       lyngby:
         name: Lyngby
         search_terms: [Lyngby, "Technical University of Denmark"]
@@ -161,7 +161,7 @@ countries:
         blocked: 7
         pxd_list: lists/denmark/lyngby.txt
         pxd_count: 57
-        in_corpus: 32
+        in_corpus: 19
       roskilde:
         name: Roskilde
         search_terms: [Roskilde]
@@ -180,12 +180,12 @@ countries:
         search_terms: [Bergen, Haukeland]
         pride_hits: 227
         screened: 0
-        annotated: 26
-        blocked: 6
-        notes: "'Bergen' also matches Bergen NJ (USA) and Bergen op Zoom (NL)"
+        annotated: 40
+        blocked: 12
+        notes: "'Bergen' also matches Bergen NJ (USA) and Bergen op Zoom (NL). PXD005126, PXD005447, and PXD009056 are UFZ Leipzig datasets (PI 'Martin von Bergen') — affiliation-name false positives removed from the manifest; re-check after rebuilding"
         pxd_list: lists/norway/bergen.txt
-        pxd_count: 99
-        in_corpus: 51
+        pxd_count: 96
+        in_corpus: 25
       oslo:
         name: Oslo
         search_terms: [Oslo, Rikshospitalet, Radiumhospitalet]
@@ -195,7 +195,7 @@ countries:
         blocked: 3
         pxd_list: lists/norway/oslo.txt
         pxd_count: 120
-        in_corpus: 89
+        in_corpus: 25
       trondheim:
         name: Trondheim
         search_terms: [Trondheim, NTNU]
@@ -246,7 +246,7 @@ countries:
         blocked: 27
         pxd_list: lists/finland/helsinki.txt
         pxd_count: 66
-        in_corpus: 40
+        in_corpus: 17
       turku:
         name: Turku
         search_terms: [Turku, Åbo]
@@ -256,7 +256,7 @@ countries:
         blocked: 8
         pxd_list: lists/finland/turku.txt
         pxd_count: 102
-        in_corpus: 93
+        in_corpus: 66
       oulu:
         name: Oulu
         search_terms: [Oulu]
@@ -311,7 +311,7 @@ countries:
         screened: 0
         annotated: 4
         blocked: 2
-        in_corpus: 4
+        in_corpus: 3
 
   olink_pad:
     name: Olink PAD
