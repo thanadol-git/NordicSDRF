@@ -1,0 +1,21 @@
+{
+ "accession": "PXD054665",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD054665",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD054665/files/all (7 entries, 6 RAW)",
+  "paper": "Europe PMC PMC11508515"
+ },
+ "claims": [
+  {
+   "column": "characteristics[enrichment process]",
+   "value": "EN = ENRICH-iST; RG = conventional",
+   "basis": "paper Methods 2.2; RG inferred",
+   "confidence": "EN stated, RG inferred"
+  }
+ ],
+ "unavailable": [
+  "meaning of RG",
+  "modifications"
+ ]
+}

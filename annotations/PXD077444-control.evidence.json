@@ -1,0 +1,19 @@
+{
+ "accession": "PXD077444",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD077444",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD077444/files/all (18 entries, 13 RAW)"
+ },
+ "claims": [
+  {
+   "column": "source name",
+   "value": "Opti-MEM media-only control",
+   "basis": "PRIDE protocol; file name Bead_CTRL",
+   "confidence": "high-inferred"
+  }
+ ],
+ "unavailable": [
+  "Readme.rtf"
+ ]
+}

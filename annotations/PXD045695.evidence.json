@@ -1,0 +1,26 @@
+{
+ "accession": "PXD045695",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD045695",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD045695/files/all (18 entries, 6 RAW)"
+ },
+ "claims": [
+  {
+   "column": "source name/treatment",
+   "value": "siCtrl / siNAA10 / siNAA20, replicates 1-2",
+   "basis": "file names + PRIDE protocol",
+   "confidence": "high"
+  },
+  {
+   "column": "comment[cleavage agent details]",
+   "value": "Arg-C",
+   "basis": "PRIDE protocol: digested overnight using Arg-C"
+  }
+ ],
+ "unavailable": [
+  "modifications",
+  "tolerances",
+  "paper not read"
+ ]
+}

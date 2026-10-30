@@ -1,0 +1,34 @@
+{
+ "accession": "PXD040662",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD040662",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD040662/files/all (54 entries, 26 RAW)",
+  "tables": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2025/05/PXD040662/HV_SetA.xlsx, HV_SetB.xlsx"
+ },
+ "claims": [
+  {
+   "column": "comment[label]/source name/treatment",
+   "value": "per channel group row in HV_SetA.xlsx / HV_SetB.xlsx",
+   "basis": "deposited result tables (stated)",
+   "confidence": "high"
+  },
+  {
+   "column": "comment[data file]",
+   "value": "a* = Set A, ea* = Set B",
+   "basis": "RAW header sample names hv_A_*/HV_B_*",
+   "confidence": "high-inferred"
+  },
+  {
+   "column": "comment[fraction identifier]",
+   "value": "file order within set",
+   "basis": "header labels repeat",
+   "confidence": "inferred"
+  }
+ ],
+ "unavailable": [
+  "fraction numbering",
+  "paper not read",
+  "fragment tolerance"
+ ]
+}

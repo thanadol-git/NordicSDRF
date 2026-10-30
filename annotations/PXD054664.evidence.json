@@ -1,0 +1,24 @@
+{
+ "accession": "PXD054664",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD054664",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD054664/files/all (13 entries, 12 RAW)",
+  "paper": "Europe PMC PMC11847645"
+ },
+ "claims": [
+  {
+   "column": "characteristics[disease]",
+   "value": "not available",
+   "basis": "D-file to healthy/periodontitis mapping not stated"
+  },
+  {
+   "column": "source name",
+   "value": "D<n> from file names",
+   "basis": "file names"
+  }
+ ],
+ "unavailable": [
+  "file-to-group mapping"
+ ]
+}

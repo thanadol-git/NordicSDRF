@@ -27,7 +27,7 @@
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
 <text class="title" x="12" y="22">Norway — in progress</text>
-<text class="sub" x="12" y="40">348 datasets listed · 218 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<text class="sub" x="12" y="40">348 datasets listed · 231 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
 <rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
@@ -41,14 +41,12 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="453" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="470" y="62">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="88.0">Bergen</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="74" width="210.8" height="20" rx="2"><title>Bergen · Annotated: 40</title></rect>
-<text class="seg" x="215.4" y="88.0" text-anchor="middle">40</text>
-<rect class="c-blocked" fill="#d95926" x="321.8" y="74" width="62.5" height="20" rx="2"><title>Bergen · Blocked: 12</title></rect>
-<text class="seg" x="353.0" y="88.0" text-anchor="middle">12</text>
-<rect class="c-in_corpus" fill="#199e70" x="385.3" y="74" width="141.9" height="20" rx="2"><title>Bergen · In corpus: 27</title></rect>
-<text class="seg" x="456.3" y="88.0" text-anchor="middle">27</text>
-<rect class="c-todo" fill="#8a8983" x="528.2" y="74" width="89.0" height="20" rx="2"><title>Bergen · To do: 17</title></rect>
-<text class="seg" x="572.7" y="88.0" text-anchor="middle">17</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="74" width="279.6" height="20" rx="2"><title>Bergen · Annotated: 53</title></rect>
+<text class="seg" x="249.8" y="88.0" text-anchor="middle">53</text>
+<rect class="c-blocked" fill="#d95926" x="390.6" y="74" width="83.7" height="20" rx="2"><title>Bergen · Blocked: 16</title></rect>
+<text class="seg" x="432.4" y="88.0" text-anchor="middle">16</text>
+<rect class="c-in_corpus" fill="#199e70" x="475.3" y="74" width="141.9" height="20" rx="2"><title>Bergen · In corpus: 27</title></rect>
+<text class="seg" x="546.3" y="88.0" text-anchor="middle">27</text>
 <text class="total" x="624.2" y="88.0">96 listed</text>
 <text class="city" x="12" y="118.0">Oslo</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="581.4" height="20" rx="2"><title>Oslo · Annotated: 110</title></rect>

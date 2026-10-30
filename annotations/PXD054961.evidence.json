@@ -1,0 +1,27 @@
+{
+ "accession": "PXD054961",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD054961",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD054961/files/all (25 entries, 23 RAW)",
+  "paper": "Europe PMC PMC12069002"
+ },
+ "claims": [
+  {
+   "column": "characteristics[disease]",
+   "value": "N=NG, P=PTDM, T=T2DM",
+   "basis": "file-name letters vs paper groups (inferred)",
+   "confidence": "high-inferred"
+  },
+  {
+   "column": "comment[isolation window width]",
+   "value": "12",
+   "basis": "paper Methods"
+  }
+ ],
+ "unavailable": [
+  "letter mapping",
+  "meaning of x suffix",
+  "modifications"
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "accession": "PXD041617",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD041617",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD041617/files/all (11 entries, 8 RAW)",
+  "paper": "Europe PMC PMC10487446"
+ },
+ "claims": [
+  {
+   "column": "source name/treatment",
+   "value": "BM-* BMSC-CM donors, PR-* L-PRF-CM donors, *-P pooled",
+   "basis": "file names + paper design (3 donors each); -P assumed pool",
+   "confidence": "high-inferred"
+  },
+  {
+   "column": "comment[instrument]",
+   "value": "Orbitrap Exploris 480",
+   "basis": "paper Methods; PRIDE field overridden"
+  }
+ ],
+ "unavailable": [
+  "meaning of -P files",
+  "modifications",
+  "tolerances"
+ ]
+}

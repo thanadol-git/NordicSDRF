@@ -1,0 +1,25 @@
+{
+ "accession": "PXD077444",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD077444",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD077444/files/all (18 entries, 13 RAW)"
+ },
+ "claims": [
+  {
+   "column": "source name/treatment",
+   "value": "<HMG|Flag>-<PBS|LPS> replicate 1-3",
+   "basis": "file names + PRIDE protocol",
+   "confidence": "high-inferred"
+  },
+  {
+   "column": "characteristics[cellosaurus accession]",
+   "value": "CVCL_5I31 (SIM-A9)",
+   "basis": "Cellosaurus API"
+  }
+ ],
+ "unavailable": [
+  "Readme.rtf",
+  "DIA windows"
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "accession": "PXD065216",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD065216",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD065216/files/all (53 entries, 50 RAW)",
+  "key": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/02/PXD065216/samples.csv"
+ },
+ "claims": [
+  {
+   "column": "comment[label]/source name/factor",
+   "value": "per samples.csv rows (Sample, TMT, Batch, Group)",
+   "basis": "deposited key (stated)",
+   "confidence": "high"
+  },
+  {
+   "column": "comment[instrument]",
+   "value": "Orbitrap Eclipse",
+   "basis": "RAW header method name; PRIDE field overridden"
+  },
+  {
+   "column": "comment[cleavage agent details]",
+   "value": "Trypsin",
+   "basis": "assumed from SP3 digestion",
+   "confidence": "assumed"
+  }
+ ],
+ "unavailable": [
+  "enzyme name",
+  "alkylation",
+  "fractionation method",
+  "paper not read"
+ ]
+}

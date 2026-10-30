@@ -1,0 +1,28 @@
+{
+ "accession": "PXD055241",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD055241",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD055241/files/all (67 entries, 64 RAW)",
+  "key": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2025/11/PXD055241/HN_serum_proteomics_Key_QuanSpectra.csv"
+ },
+ "claims": [
+  {
+   "column": "comment[label]/source name/factor",
+   "value": "per tag rows of HN_serum_proteomics_Key_QuanSpectra.csv",
+   "basis": "deposited key table (stated)",
+   "confidence": "high"
+  },
+  {
+   "column": "comment[data file]",
+   "value": "plex F<n> = OP_n-1..8.raw",
+   "basis": "inferred from F-index and file naming",
+   "confidence": "inferred"
+  }
+ ],
+ "unavailable": [
+  "patient identifiers across visits",
+  "precursor/fragment tolerances",
+  "fractionation method"
+ ]
+}

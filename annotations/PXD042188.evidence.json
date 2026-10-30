@@ -1,0 +1,28 @@
+{
+ "accession": "PXD042188",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD042188",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD042188/files/all (26 entries, 24 RAW)",
+  "sheet": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2023/10/PXD042188/Samples_information.txt",
+  "paper": "Europe PMC PMC10464146"
+ },
+ "claims": [
+  {
+   "column": "source name/disease",
+   "value": "files 1-8 NG, 10-17 PTDM, 18-24 T2DM",
+   "basis": "deposited Samples_information.txt (stated)",
+   "confidence": "high"
+  },
+  {
+   "column": "characteristics[disease] for 25.raw",
+   "value": "not available",
+   "basis": "absent from sample sheet"
+  }
+ ],
+ "unavailable": [
+  "patient-to-file mapping",
+  "25.raw",
+  "modifications"
+ ]
+}

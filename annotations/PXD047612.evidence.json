@@ -1,0 +1,26 @@
+{
+ "accession": "PXD047612",
+ "status": "validated annotation; independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD047612",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD047612/files/all (27 entries, 9 RAW)"
+ },
+ "claims": [
+  {
+   "column": "source name/treatment",
+   "value": "WT / 10 (NAA10 deletion) / 20 (NAA20 deletion), replicates 1-3",
+   "basis": "file names + PRIDE title and protocol",
+   "confidence": "high-inferred"
+  },
+  {
+   "column": "comment[cleavage agent details]",
+   "value": "Arg-C",
+   "basis": "PRIDE protocol"
+  }
+ ],
+ "unavailable": [
+  "strain",
+  "modifications",
+  "tolerances"
+ ]
+}

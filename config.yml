@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-10-01
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-29)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-10-30)
 
 countries:
   sweden:
@@ -62,7 +62,7 @@ countries:
         screened: 0
         annotated: 75
         blocked: 82
-        in_corpus: 91
+        in_corpus: 92
       gothenburg:
         name: Gothenburg
         search_terms: [Gothenburg, Göteborg, Sahlgrenska, Chalmers]
@@ -131,7 +131,7 @@ countries:
         blocked: 0
         pxd_list: lists/denmark/odense.txt
         pxd_count: 178
-        in_corpus: 46
+        in_corpus: 47
       aarhus:
         name: Aarhus
         search_terms: [Aarhus, Århus]
@@ -180,12 +180,12 @@ countries:
         search_terms: [Bergen, Haukeland]
         pride_hits: 227
         screened: 0
-        annotated: 40
-        blocked: 12
+        annotated: 53
+        blocked: 16
         notes: "'Bergen' also matches Bergen NJ (USA) and Bergen op Zoom (NL). PXD005126, PXD005447, and PXD009056 are UFZ Leipzig datasets (PI 'Martin von Bergen') — affiliation-name false positives removed from the manifest; re-check after rebuilding"
         pxd_list: lists/norway/bergen.txt
         pxd_count: 96
-        in_corpus: 54
+        in_corpus: 68
       oslo:
         name: Oslo
         search_terms: [Oslo, Rikshospitalet, Radiumhospitalet]
