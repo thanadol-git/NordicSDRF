@@ -3,4 +3,5 @@
 .venv
 results/logs/
 results/.status.lock
+results/authorship/cache/
 scratchpad
