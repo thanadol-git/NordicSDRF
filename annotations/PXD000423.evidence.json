@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD000423.sdrf.tsv",
+  "dataset": "PXD000423",
+  "artifact_sha256": "fc3adec14e889e2a31f1eaa467e8062c0b9bf78e2687d9a50748e4faf945bbf7",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD000423"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD000423/files/all (9 files, all projectAccessions=PXD000423; 3 RAW)"},
+    {"id": "paper", "kind": "publication", "location": "doi:10.1111/zoj.12084 (Zool. J. Linn. Soc. 2014), full text PDF via https://figshare.com/articles/journal_contribution/24408355 (Unpaywall OA location); states data set identifier PXD000423"},
+    {"id": "mq-results", "kind": "deposited search output", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2013/11/PXD000423/Seba12againstAsianEleUniprotMQresults.zip (mqpar.xml, txt/summary.txt, txt/parameters.txt read by HTTP range)"},
+    {"id": "ols", "kind": "ontology", "location": "https://www.ebi.ac.uk/ols4/api/ (UBERON:0001043 esophagus, UBERON:0006288 rib cartilage element; fetal stage: no EFO term found)"},
+    {"id": "raw-headers", "kind": "raw file header", "location": "not checked; instrument taken from PRIDE and paper (Q Exactive)"}
+  ],
+  "claims": [
+    {"claim": "Seba1 raw = oesophagus, Seba2 raw = rib (cartilaginous rib terminal portion)", "columns": ["source name","characteristics[organism part]"], "rows": ["20120224_QE2_ChKe_COLLAB_ANCIENT_125Seba1.raw","20120224_QE2_ChKe_COLLAB_ANCIENT_126Seba2.raw"], "sources": ["paper","mq-results"], "note": "Paper: 31561 and 32962 MS/MS spectra submitted from oesophagus and rib; deposited summary.txt gives 31561 for Seba1 and 32962 for Seba2. Mapping is inferred from this count match, not stated by filename."},
+    {"claim": "Organism Loxodonta africana, foetus (fetal) specimen NRM 532062", "columns": ["characteristics[organism]","characteristics[developmental stage]"], "sources": ["paper","pride"]},
+    {"claim": "SebaNeg is a negative control with no sample", "columns": ["characteristics[organism]"], "rows": ["20120224_QE2_ChKe_COLLAB_ANCIENT_126SebaNeg.raw"], "sources": ["paper"]},
+    {"claim": "Trypsin digestion (FASP), Q Exactive, nanoLC", "columns": ["comment[cleavage agent details]","comment[instrument]"], "sources": ["paper","pride"]},
+    {"claim": "Search modifications, tolerances (5 ppm main, 20 ppm FTMS fragment), Trypsin/P in search", "columns": ["comment[modification parameters]","comment[precursor mass tolerance]","comment[fragment mass tolerance]"], "sources": ["mq-results"]},
+    {"claim": "Unavailable: sex, strain, cell type, dissociation method, alkylation reagent", "sources": [], "note": "not stated in any source examined"}
+  ]
+}

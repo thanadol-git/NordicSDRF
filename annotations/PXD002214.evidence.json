@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002214.sdrf.tsv",
+  "dataset": "PXD002214",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD002214"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD002214/files/all (214 RAW + 10 .msf; all projectAccessions verified)"},
+    {"id": "raw-header", "kind": "raw file", "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2017/02/PXD002214/Mix1_A4.raw (first 256 KB, instrument model strings)"},
+    {"id": "paper", "kind": "publication", "location": "Preil et al. 2015 Circ Cardiovasc Genet PMID 26371159 (not open access; full text and supplement NOT read)"}
+  ],
+  "claims": [
+    {"location": "comment[label] / source name", "value": "113 pool nonDM, 114 pool DM, 115 nonDM1, 116 DM1, 117 nonDM2, 118 DM2, 119 nonDM3, 121 DM3", "source_ids": ["pride"], "evidence": "PRIDE sampleProcessingProtocol; applied identically to all 10 mixes (assumption: stated once, not per mix)"},
+    {"location": "comment[data file] / fractions", "value": "Mix<n>_<plate well> = one mix, fractions ordered A4..A12 then B1..B12; Mix5 numeric 2..24", "source_ids": ["pride-files"], "evidence": "Run names; mix membership by filename prefix; fraction order inferred"},
+    {"location": "comment[instrument]", "value": "Q Exactive MS:1001911", "source_ids": ["pride", "raw-header"], "evidence": "RAW header model string 'Q Exactive'"},
+    {"location": "comment[modification parameters]", "value": "Carbamidomethyl C fixed; iTRAQ8plex K and N-term fixed; Oxidation M variable", "source_ids": ["pride"], "evidence": "PRIDE dataProcessingProtocol; deposited .msf files NOT inspected (too large)"},
+    {"location": "comment[precursor/fragment mass tolerance]", "value": "10 ppm / 0.1 Da", "source_ids": ["pride"], "evidence": "PRIDE dataProcessingProtocol"},
+    {"location": "characteristics[disease]", "value": "type 2 diabetes mellitus / normal", "source_ids": ["pride"], "evidence": "Description: 30 T2DM vs 30 age/sex matched non-diabetic; 'DM= type 2 diabetes, non-DM=control'"},
+    {"location": "characteristics[organism part]", "value": "artery", "source_ids": ["pride"], "evidence": "Non-atherosclerotic repair arteries from CABG; specific artery not stated"},
+    {"location": "characteristics[age], [sex], [ancestry category], [cell type], [individual]", "value": "not available", "source_ids": [], "evidence": "Per-patient data not in deposit; paper/supplement unavailable"},
+    {"location": "comment[dissociation method]", "value": "not available", "source_ids": [], "evidence": "Not stated in PRIDE text; raw scan filter not checked"}
+  ]
+}

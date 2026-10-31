@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002560.sdrf.tsv",
+  "dataset": "PXD002560",
+  "sha256": "d7beebd251698b4008da68127d045c499556b16c718aa1feade4f36f5395d0ad",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD002560"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD002560/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4974346/"
+    },
+    {
+      "id": "mztab",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/06/PXD002560/generated/Wild type - 1.dat-pride.pride.mztab.gz"
+    },
+    {
+      "id": "rawhdr",
+      "kind": "raw-file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/06/PXD002560/Wildtype-1.raw (first 256 KB)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://api.cellosaurus.org/search/cell-line?q=E14"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Mus musculus",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organisms NEWT:10090; paper: mouse ESCs"
+    },
+    {
+      "location": "characteristics[cell type]",
+      "value": "embryonic stem cell",
+      "source_ids": [
+        "paper",
+        "mztab"
+      ],
+      "evidence": "mESCs; mzTab CL:0002322"
+    },
+    {
+      "location": "characteristics[cell line]/[cellosaurus accession]",
+      "value": "ES-E14 / CVCL_C320 (wild type rows only)",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Paper: 'strain E14'; Cellosaurus ES-E14 synonym E14. Knockout lines have no Cellosaurus entry located: not available"
+    },
+    {
+      "location": "characteristics[genotype]/factor value[genotype]",
+      "value": "wild type; Suz12-/-; Ring1A-/-;Ring1B-/-; Dnmt1-/-;Dnmt3a-/-;Dnmt3b-/-",
+      "source_ids": [
+        "paper",
+        "pride-files"
+      ],
+      "evidence": "Paper Experimental Procedures + file names"
+    },
+    {
+      "location": "characteristics[biological replicate]/comment[technical replicate]",
+      "value": "1 / run index",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper: technical replicates of histone samples from four cell lines; one source per line (inferred)"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "LTQ Orbitrap Velos (MS:1001742)",
+      "source_ids": [
+        "paper",
+        "mztab",
+        "rawhdr"
+      ],
+      "evidence": "Raw header 'LTQ OT Velos'; paper; mzTab"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "glutamyl endopeptidase (MS:1001917)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "GluC 1:50 overnight; Mascot enzyme GluC"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "electron transfer dissociation (MS:1000598)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "ETD with supplemental activation"
+    },
+    {
+      "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+      "value": "2.2 Da / 0.01 Da",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Mascot search parameters"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Acetyl K; Methyl K,R; Dimethyl K,R; Trimethyl K (all Variable)",
+      "source_ids": [
+        "pride",
+        "paper",
+        "mztab"
+      ],
+      "evidence": "Mascot variable mods; mzTab fixed_mod: none searched"
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "No labelling described"
+    }
+  ]
+}

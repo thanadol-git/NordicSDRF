@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD003312.sdrf.tsv",
+  "dataset": "PXD003312",
+  "artifact_sha256": "00685df44a959f6b1dd366dd19a88293c372dd964ba8b88cc1996cbb12597296",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003312"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003312/files/all (114 files, all projectAccessions=PXD003312; 105 RAW, 9 .msf SEARCH)"},
+    {"id": "paper", "kind": "publication", "location": "doi:10.18632/oncotarget.9092, PMID 27144524, PMC5085108 via Europe PMC fullTextXML (Methods: tissue, iTRAQ channel map, TiSH enrichment, HILIC, Q Exactive HF, PD 1.4.1.14)"},
+    {"id": "msf", "kind": "deposited search output", "location": "ftp.pride.ebi.ac.uk/pride/data/archive/2016/05/PXD003312/{Phospho1,2,3,Glyco1,2,3,Unmodified1,2,3}*.msf, read by HTTP-range SQLite (FileInfos, ProcessingNodeParameters, AminoAcidModifications)"},
+    {"id": "raw-headers", "kind": "raw file header", "location": "first 300 KB of all 105 .raw files (instrument model, LC method, sample label e.g. 'Mono P A2 D9')"},
+    {"id": "ols", "kind": "ontology", "location": "https://www.ebi.ac.uk/ols4/api/ (PRIDE:0000531-538 ITRAQ113-121, PRIDE:0000554 HILIC, UBERON:0002421, UBERON:0002298, UBERON:0001950, UBERON:0002264, MS:1002523)"}
+  ],
+  "claims": [
+    {"claim": "iTRAQ-8plex channel map: 113 hippocampus WT, 114 hippocampus APP/PS1, 115 neocortex WT, 116 neocortex APP/PS1, 117 olfactory bulb WT, 118 olfactory bulb APP/PS1, 119 brainstem WT, 121 brainstem APP/PS1", "columns": ["comment[label]","characteristics[organism part]","characteristics[disease]","characteristics[genotype]"], "sources": ["paper"], "note": "stated verbatim in Methods, ITRAQ labelling"},
+    {"claim": "3 biological replicates; replicate N = A1/A2/A3 (raw sample labels) = Phospho/Glyco/Unmod 1/2/3 msf", "columns": ["characteristics[biological replicate]","source name"], "sources": ["raw-headers","msf","paper"], "note": "file to replicate mapping from msf FileInfos plus raw sample labels; mouse identity per replicate not stated"},
+    {"claim": "Enrichment class per file: Multi P, Mono P, Neutral, Glyco, Unmod", "columns": ["source name","characteristics[enrichment process]","comment[fractionation method]"], "sources": ["raw-headers","paper"], "note": "'Neutral' fraction (QHF0272-0274) is not described in the paper; enrichment and fractionation left not available"},
+    {"claim": "Male APP/PS1 B6.Cg-Tg(APPswe, PSEN1dE9)85Dbo/Mmjax and littermate WT, 12 months", "columns": ["characteristics[sex]","characteristics[strain or breed]","characteristics[genotype]","characteristics[developmental stage]"], "sources": ["paper"], "note": "developmental stage 'adult' is inferred from 12 months of age"},
+    {"claim": "Instrument Q Exactive HF (PRIDE says Q Exactive)", "columns": ["comment[instrument]"], "sources": ["raw-headers","paper"], "note": "raw header 'Q Exactive HF - Orbitrap MS' overrides PRIDE field"},
+    {"claim": "Modifications: CAM C fixed; iTRAQ8plex K and N-term fixed, Y variable; Phospho STY and Deamidated N variable; 10 ppm / 0.02 Da; Trypsin 1 missed cleavage", "columns": ["comment[modification parameters]","comment[precursor mass tolerance]","comment[fragment mass tolerance]"], "sources": ["msf","paper"], "note": "identical in all 9 msf Mascot and Sequest HT nodes"},
+    {"claim": "Reduction DTT, alkylation IAA, Lys-C plus trypsin digestion, HCD", "columns": ["comment[reduction reagent]","comment[alkylation reagent]","comment[cleavage agent details]","comment[dissociation method]"], "sources": ["paper"]}
+  ]
+}

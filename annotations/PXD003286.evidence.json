@@ -1,0 +1,16 @@
+{"schema_version":1,"artifact":"annotations/PXD003286.sdrf.tsv","dataset":"PXD003286","sources":[
+{"id":"pride","kind":"repository","location":"https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003286"},
+{"id":"pride-files","kind":"repository","location":"https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003286/files/all"},
+{"id":"paper","kind":"publication","location":"https://europepmc.org/article/PMC/PMC4812247 (Osinalde 2016 Sci Rep, PMID 27025927)"},
+{"id":"mqpar","kind":"deposited-file","location":"IPGAB2searchfiles.zip::IP GAB2 search files/mqpar.xml"},
+{"id":"expdesign","kind":"deposited-file","location":"IPGAB2searchfiles.zip::IP GAB2 search files/combined/experimentalDesignTemplate.txt"},
+{"id":"rawheaders","kind":"deposited-file","location":"IPGAB2_rawfiles.zip, Thermo .raw headers (HTTP range)"},
+{"id":"cellosaurus","kind":"database","location":"https://api.cellosaurus.org/search/cell-line?q=Kit225 (CVCL_5443)"}],
+"claims":[
+{"location":"comment[label] / factor value[treatment]","value":"light=unstimulated; Arg6/Lys4=IL-2 5 min","source_ids":["paper","pride","mqpar"],"evidence":"Paper Methods; PRIDE protocol; mqpar labels"},
+{"location":"characteristics[biological replicate]","value":"1/2","source_ids":["expdesign","pride"],"evidence":"SILAC_1/SILAC_2 groups; two biological replicates"},
+{"location":"comment[modification parameters]","value":"CAM fixed; Ox, Ac, Deamid, Phospho variable","source_ids":["mqpar","paper"],"evidence":"mqpar fixedModifications/variableModifications"},
+{"location":"comment[instrument]","value":"Q Exactive (IP files); Q Exactive Plus (Qex files)","source_ids":["rawheaders"],"evidence":"raw header strings for all 40 files"},
+{"location":"comment[precursor/fragment mass tolerance]","value":"6 ppm / 20 ppm","source_ids":["mqpar"],"evidence":"mainSearchTol 6; FTMS fragment 20 ppm"},
+{"location":"characteristics[cell line]","value":"Kit225 / CVCL_5443","source_ids":["paper","cellosaurus"],"evidence":"Paper: Kit225 cells; Cellosaurus: male, 62Y, T-cell prolymphocytic leukemia"},
+{"location":"characteristics[enrichment process] / source name lane","value":"IP27/IP28 files = Gab2 IP only; Qex files = IP + TiO2","source_ids":["paper"],"evidence":"INFERRED from file naming/instrument; not stated in deposit"}]}

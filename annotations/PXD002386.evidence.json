@@ -1,0 +1,53 @@
+{
+ "accession": "PXD002386",
+ "status": "validated annotation (IP arm only); independent review pending",
+ "sources": {
+  "pride": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD002386",
+  "files": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD002386/files/all (12 ZIP bundles, all projectAccessions=PXD002386); member lists via HTTP-range of ftp.pride.ebi.ac.uk ZIP central directories",
+  "search": "IPIL2RB_searchfiles.zip, IPIL2RG_searchfiles.zip (mqpar.xml, parameters.txt, summary.txt, experimentalDesignTemplate.txt); pull-down SearchFiles zips",
+  "cellosaurus": "https://api.cellosaurus.org/cell-line/CVCL_5443",
+  "paper": "PMID 27463037 (paywalled, not read)"
+ },
+ "claims": [
+  {
+   "column": "comment[label]/characteristics[treatment]",
+   "value": "light=control, medium=IL-2, heavy=IL-15",
+   "basis": "PRIDE sampleProcessingProtocol (Arg0/Lys0, Arg6/Lys4, Arg10/Lys8) + mqpar labels",
+   "confidence": "stated"
+  },
+  {
+   "column": "characteristics[biological replicate]",
+   "value": "IL2RG: IP8=1 (silac_1), IP10=2 (silac_2); IL2RB: IP11=1, IP26=2",
+   "basis": "deposited experimentalDesignTemplate.txt, folder/file names, RAW header titles",
+   "confidence": "high; IL2RB rep numbering is a choice"
+  },
+  {
+   "column": "comment[instrument]",
+   "value": "Q Exactive / Q Exactive Plus (Qex03022-32) / LTQ Orbitrap Velos (TiO2 runs of IP8, IP10, IP11)",
+   "basis": "RAW headers read by HTTP-range, one per group",
+   "confidence": "verified per group sample"
+  },
+  {
+   "column": "comment[modification parameters]/cleavage/tolerances",
+   "value": "CAM fixed; Ox, Ac-Nterm, Deamidation, Phospho, SILAC labels variable; Trypsin/P; 6 ppm precursor",
+   "basis": "deposited MaxQuant mqpar.xml/parameters.txt",
+   "confidence": "stated in search files"
+  },
+  {
+   "column": "characteristics[cell line] etc.",
+   "value": "Kit225, CVCL_5443, male, 62Y, T-cell prolymphocytic leukemia",
+   "basis": "PRIDE title/protocol 'Kit225 T-cells'; Cellosaurus entry",
+   "confidence": "cell line stated; donor facts from Cellosaurus"
+  }
+ ],
+ "unavailable": [
+  "pull-down arm label-to-bait map (41 RAW excluded)",
+  "dissociation method",
+  "ms2 analyzer",
+  "reduction/alkylation reagent",
+  "culture medium",
+  "passage",
+  "stimulation time/dose",
+  "paper full text"
+ ]
+}

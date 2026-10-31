@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002704.sdrf.tsv",
+  "dataset": "PXD002704",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD002704"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD002704/files/all (58 files; all projectAccessions == PXD002704)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Huang et al. 2016 Mol Cell Proteomics PMID 27281782, PMC5054350 (full text via Europe PMC)"
+    },
+    {
+      "id": "raw-headers",
+      "kind": "raw-data",
+      "location": "first 256 KB of each of the 54 .raw files via ftp.pride.ebi.ac.uk HTTPS range (local copy scratchpad/PXD002704/hdr/): instrument model, method name, sample label 'SILAC HELA EGF CP4/5/6'"
+    },
+    {
+      "id": "msf",
+      "kind": "deposited-search",
+      "location": "Proteome Discoverer .msf (SQLite via HTTP range): HelaSIA270114.msf, CP4/CP5/CP6HelaEGFSILAC.msf - FileInfos, Mascot node parameters, SILAC quan method"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4 (UNIMOD, MS, PRIDE, MONDO, UBERON, CL, NCIT)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "sdrf-tools cellline lookup HeLa (CVCL_0030): age 30Y6M, female"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organisms NEWT:9606; paper HeLa cells"
+    },
+    {
+      "location": "characteristics[cell line]/cellosaurus/age/sex/organism part/cell type",
+      "value": "HeLa / CVCL_0030 / 30Y6M / female / uterine cervix / epithelial cell",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Paper: human cervix epithelial adenocarcinoma HeLa; demographics and tissue from Cellosaurus, not stated in deposit"
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "cervical adenocarcinoma",
+      "source_ids": [
+        "paper",
+        "ols"
+      ],
+      "evidence": "Paper: 'Human cervix epithelial adenocarcinoma (HeLa)'; MONDO:0005153"
+    },
+    {
+      "location": "rows 1-10 (Obvb06086-95)",
+      "value": "label free; Orbitrap Velos Pro; 10 HILIC fractions of one HeLa total-Cys sample",
+      "source_ids": [
+        "raw-headers",
+        "msf",
+        "paper"
+      ],
+      "evidence": "Raw headers 'Orbitrap Velos Pro MS' (Obvb06091 header truncated, assumed same); HelaSIA270114.msf lists exactly these 10 files; paper: HeLa total Cys residuals analysed on LTQ Orbitrap Velos, HILIC fractions, TCEP, no alkylation"
+    },
+    {
+      "location": "rows 11-98 (QHF2050-2091)",
+      "value": "Q Exactive HF; SILAC light/heavy; 3 biological replicates x 14 HILIC fractions",
+      "source_ids": [
+        "raw-headers",
+        "msf",
+        "paper"
+      ],
+      "evidence": "Raw headers 'Q Exactive HF - Orbitrap MS' and sample label 'SILAC HELA EGF CP4/CP5/CP6'; CP4/5/6 msf FileInfos list QHF2050-63 / 2064-77 / 2078-91; paper: 14 HILIC fractions, triplicate. PAPER SAYS Orbitrap Fusion: contradicts raw files; raw wins"
+    },
+    {
+      "location": "comment[label] / characteristics[treatment]",
+      "value": "SILAC light/heavy; treatment not available (EGF channel unverified)",
+      "source_ids": [
+        "paper",
+        "msf"
+      ],
+      "evidence": "INFERRED: paper 'light or heavy SILAC (EGF stimulated)' and log2(H/L) regulation analysis; msf quan method Heavy=Lys8/Arg10, ratio Heavy/Light. Paper never states in one sentence which channel was stimulated"
+    },
+    {
+      "location": "comment[technical replicate]/fraction identifier of QHF2085_151123100122 and QHF2086_151123115803",
+      "value": "technical replicate 2; fraction 8 and 9",
+      "source_ids": [
+        "pride-files",
+        "raw-headers",
+        "msf"
+      ],
+      "evidence": "INFERRED: re-acquisitions (Nov 2015 timestamp suffix, same 103 min method, header 'SILAC HELA EGF CP6') listed after QHF2085/QHF2086 in CP6 msf; original QHF2085 is small (289 MB)"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "SIA arm: SIA C, Oxidation M, Acetyl K, Acetyl any N-term, Deamidated N/Q; SILAC arm: SIA C, NEM C, Oxidation M, Deamidated N, Phospho S/T/Y, Acetyl any N-term, Label:13C(6)15N(2) K, Label:13C(6)15N(4) R",
+      "source_ids": [
+        "msf"
+      ],
+      "evidence": "Read from Mascot node DynModification parameters in each msf; SIA (+165.019 C4H8NO4P) is a custom Mascot modification with no UNIMOD entry (UNIMOD:2057 6C-CysPAT is a different 13C6 reagent) -> AC=not available"
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "10 ppm / 0.05 Da",
+      "source_ids": [
+        "msf",
+        "pride"
+      ],
+      "evidence": "Mascot node PeptideTolerance/FragmentTolerance; PRIDE dataProcessingProtocol"
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "TCEP; SIA arm alkylation not applicable (paper: 'No alkylation step was performed'); SILAC arm NEM",
+      "source_ids": [
+        "paper",
+        "msf"
+      ],
+      "evidence": "Paper Methods: TCEP reduction; 40 mM NEM in SILAC lysis buffer"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "paper",
+        "msf"
+      ],
+      "evidence": "Mascot Enzyme=Trypsin; paper: Lys-C then trypsin digestion (single column permitted)"
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "HILIC",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper: HILIC fractionation (14 fractions for SILAC arm)"
+    },
+    {
+      "location": "comment[collision energy]",
+      "value": "SIA arm 34 NCE; SILAC arm not available",
+      "source_ids": [
+        "paper",
+        "raw-headers"
+      ],
+      "evidence": "Paper gives NCE 34 for Velos; paper's Fusion NCE 38 contradicts QE HF method name HCD29 so left not available"
+    }
+  ],
+  "limitations": [
+    "Which SILAC channel received EGF is not stated explicitly; treatment left not available",
+    "Paper names Orbitrap Fusion for the SILAC arm; raw headers show Q Exactive HF",
+    "SIA/CysPAT modification has no UNIMOD accession",
+    "Obvb06091 raw header lacks the instrument string",
+    "No DOI in PRIDE record",
+    "Lys-C co-digestion cannot be represented (single cleavage agent column)",
+    "Per-file sample sheet absent; mapping derived from raw header labels and msf file lists",
+    "Enrichment (CysPAT/TiO2) not encoded: no suitable ontology term for combined Cys peptide and phosphopeptide enrichment"
+  ]
+}
