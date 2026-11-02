@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD005675.sdrf.tsv",
+  "dataset": "PXD005675",
+  "artifact_sha256": "4f31b6892fe7adec20edd3b735a6818327645bcd2330fcd159e334d619556956",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD005675"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD005675/files/all (94 RAW + 10 MSF; all projectAccessions asserted = PXD005675)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC5601134 (Europe PMC fullTextXML); doi:10.18632/oncotarget.19428; PMID 28947966 (PRIDE lists 28753583)"
+    },
+    {
+      "id": "supp",
+      "kind": "publication supplementary",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5601134/supplementaryFiles -> oncotarget-08-60223-s002.xlsx (SI Tables S1-S12; column headers A_1..A_10, X113..X121, Control_1.. etc.) and -s001.pdf"
+    },
+    {
+      "id": "msf",
+      "kind": "deposited search result (SQLite read by HTTP range)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/08/PXD005675/<10 .msf files>: FileInfos (raw->msf), QuantificationMethod (TMT 10plex / iTRAQ 8plex), Mascot/Sequest params (modifications, tolerances, enzyme)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "raw file header",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/08/PXD005675/QHF2153.raw bytes 0-400000 (utf-16-le): Q Exactive HF"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "ontology",
+      "location": "https://api.cellosaurus.org/search/cell-line?q=id:HT22 -> CVCL_0321, Mus musculus, hippocampus UBERON_0002421"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/ (CL:0000540, UBERON:0002421, PRIDE:0000554)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[instrument] all rows",
+      "value": "Q Exactive HF",
+      "source_ids": [
+        "raw-header",
+        "paper"
+      ],
+      "evidence": "RAW header and Methods say Q Exactive HF; PRIDE field says Q Exactive (overridden)"
+    },
+    {
+      "location": "comment[modification parameters] all rows",
+      "value": "Carbamidomethyl C fixed; label K/N-term; Phospho STY only in phospho fractions",
+      "source_ids": [
+        "msf"
+      ],
+      "evidence": "Mascot/Sequest node parameters: StaticModification Carbamidomethyl, DynamicModification label (K, N-term), Phospho_STY only in *phospho*.msf. Label recorded Variable as the search declares it (paper says fixed)"
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "10 ppm / 0.02 Da",
+      "source_ids": [
+        "msf",
+        "paper"
+      ],
+      "evidence": "PeptideTolerance/FragmentTolerance"
+    },
+    {
+      "location": "comment[data file], comment[fraction identifier] all rows",
+      "value": "raw files grouped per MSF",
+      "source_ids": [
+        "msf"
+      ],
+      "evidence": "FileInfos of each msf lists the RAW files (fractions) of one TMT/iTRAQ pool; fraction number = order of QHF run number (assumption)"
+    },
+    {
+      "location": "characteristics[cell line]/[cellosaurus accession] all rows",
+      "value": "HT22 / CVCL_0321",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "HT22 immortalised mouse hippocampal neurons"
+    },
+    {
+      "location": "comment[label] and factor values (10 channels per rep)",
+      "value": "TMT126..TMT131 -> T1..T10 = 0,0.1,1,10,100 ng/ml TNF-alpha at 30 min then at 24 h",
+      "source_ids": [
+        "supp",
+        "msf",
+        "paper"
+      ],
+      "evidence": "Methods: 5 doses x 2 time points, TMT10plex (msf quant method channel list); SI S5 'T3vsT1' = 1 ng/ml 30 min vs control; SI S3/S4 columns A_1..A_10 show effect only in columns 6-10 rising with dose. Channel order = PD/SI column order is INFERRED, not stated"
+    }
+  ],
+  "limitations": [
+    "Channel-to-condition map inferred from SI table column order, not stated explicitly",
+    "Fraction order inferred from run numbers",
+    "QHF2132.raw not in any msf -> excluded",
+    "Human neuron arm in separate file",
+    "Sex, passage, developmental stage not available",
+    "Replicate numbering follows msf rep.1-3"
+  ]
+}

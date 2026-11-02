@@ -1,0 +1,11 @@
+# daily queue 2026-10-31 odense batch 2 (10 PXDs, accession order)
+PXD003423	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD003587	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD003883	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD003932	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD003969	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD005245	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD005544	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD005558	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD005675	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD005785	denmark/odense	pending	odense: no screen yet; queued as a candidate

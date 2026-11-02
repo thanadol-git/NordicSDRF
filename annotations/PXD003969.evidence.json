@@ -1,0 +1,152 @@
+{
+ "schema_version": 1,
+ "artifact": "annotations/PXD003969.sdrf.tsv",
+ "dataset": "PXD003969",
+ "artifact_sha256": "b7e118297b3c3050e125311474294f66ab23dcb97cd5ca74839fc2fb725dbff3",
+ "sources": [
+  {
+   "id": "pride",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003969"
+  },
+  {
+   "id": "pride-files",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003969/files/all (76 entries: 70 RAW + 6 .msf; all projectAccessions == PXD003969)"
+  },
+  {
+   "id": "paper",
+   "kind": "publication",
+   "location": "PMC5342125 (https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5342125/fullTextXML); doi:10.18632/oncotarget.12376; PMID 27708245"
+  },
+  {
+   "id": "msf-fileinfos",
+   "kind": "deposited search result (HTTP-range SQLite read, table FileInfos)",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/07/PXD003969/{apoe_phospho_glyco_A,apoe_phospho_glyco_B,apoe_unmodified_A,apoe_unmodified_B,ApoE_unmodified_pH_A,ApoE_unmodified_pH_B}.msf"
+  },
+  {
+   "id": "msf-params",
+   "kind": "deposited search result (ProcessingNodes/ProcessingNodeParameters)",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/07/PXD003969/apoe_phospho_glyco_A.msf, apoe_unmodified_A.msf, ApoE_unmodified_pH_A.msf (set B .msf files not parameter-read)"
+  },
+  {
+   "id": "raw-headers",
+   "kind": "raw file header (HTTP range 0-300000, utf-16-le)",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/07/PXD003969/QHF2595_SK.raw, QHF2588.raw, QHF2621_SK.raw (Q Exactive HF), https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/07/PXD003969/FUS05250_SK.raw (Orbitrap Fusion)"
+  },
+  {
+   "id": "ols",
+   "kind": "ontology",
+   "location": "https://www.ebi.ac.uk/ols4/api/ (BTO:0000601, EFO:0001272, NCBITaxon:10090, PRIDE:0000554, PRIDE:0000564); remaining accessions from PRIDE record and parse_sdrf validation"
+  },
+  {
+   "id": "existing",
+   "kind": "repository",
+   "location": "sdrf-annotated-datasets/datasets/PXD003969 does not exist (new dataset)"
+  }
+ ],
+ "claims": [
+  {
+   "location": "comment[label] and factor value[treatment], all rows",
+   "value": "TMT126/127N/127C sham; 128N/128C/129N 1 mGy/day (0.3 Gy); 129C/130N/130C 20 mGy/day (6.0 Gy)",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Methods: 'TMT-126/-127N/127C sham-irradiated, TMT-128N/-128C/-129N 0.3 Gy, TMT-129C/-130N/-130C 6 Gy; six biological replicates per condition'. Dose-rate mapping 1 mGy/day=0.3 Gy, 20 mGy/day=6.0 Gy from Results."
+  },
+  {
+   "location": "characteristics[biological replicate]",
+   "value": "1-3 for set A, 4-6 for set B",
+   "source_ids": [
+    "paper",
+    "msf-fileinfos"
+   ],
+   "evidence": "Six replicates per condition and 3 channels per condition per 9-plex => two sets (A,B, matching msf names). Numbering of which animal is which number is INFERRED labelling; the paper gives no per-animal table."
+  },
+  {
+   "location": "comment[data file], comment[fraction identifier], all rows",
+   "value": "file-to-set/pool mapping",
+   "source_ids": [
+    "msf-fileinfos",
+    "pride-files"
+   ],
+   "evidence": "FileInfos of each .msf lists the raw files searched together; the 6 msf cover all 70 RAW exactly once. Fraction identifier = order in FileInfos (acquisition order); exact HILIC/mono/multi/deglyco sub-pool of each file in the phospho_glyco msf is not recorded."
+  },
+  {
+   "location": "comment[instrument]",
+   "value": "Q Exactive HF (QHF* files), Orbitrap Fusion (FUS* files)",
+   "source_ids": [
+    "paper",
+    "raw-headers"
+   ],
+   "evidence": "Raw headers confirm; paper: Fusion only for high-pH fractionated unmodified peptides (= ApoE_unmodified_pH msf files, FUS*)."
+  },
+  {
+   "location": "comment[modification parameters]",
+   "value": "CAM C fixed; TMT6plex K and any N-term fixed; Phospho STY, Deamidated N variable (phospho_glyco pool only)",
+   "source_ids": [
+    "msf-params",
+    "paper"
+   ],
+   "evidence": "Mascot/Sequest nodes of the msf files: StaticMod Carbamidomethyl(C), TMT6plex K and Any N-terminus; DynMod Phospho STY and Deamidated N only in apoe_phospho_glyco_A; unmodified/pH searches have no dynamic mods (written not applicable). Set B msf not read; assumed same as A."
+  },
+  {
+   "location": "comment[precursor mass tolerance], comment[fragment mass tolerance], comment[cleavage agent details]",
+   "value": "10 ppm, 0.02 Da, Trypsin",
+   "source_ids": [
+    "msf-params",
+    "paper"
+   ],
+   "evidence": "Mascot and Sequest HT nodes; paper Data analysis."
+  },
+  {
+   "location": "comment[fractionation method]",
+   "value": "HILIC (phospho_glyco pool), hpHRP (pH pool), not available (unmodified QHF pool)",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Methods: HILIC fractionation of modified peptides; high-pH fractionation of unmodified peptides (7 ACN steps). Unmodified QHF msf pool: fractionation not stated."
+  },
+  {
+   "location": "characteristics[organism], [sex], [strain or breed], [developmental stage], [organism part], [material type]",
+   "value": "Mus musculus; female; B6.129P2-Apoe tm1Unc/J; adult; hippocampus; tissue",
+   "source_ids": [
+    "pride",
+    "paper"
+   ],
+   "evidence": "Methods: female C57Bl/6 ApoE-/- mice (B6.129P2-ApoE tm1Unc/J), 8 weeks at start, sacrificed after 300 days; complete hippocampus. 'adult' follows from age ~1 year at sacrifice."
+  },
+  {
+   "location": "characteristics[disease]",
+   "value": "not available",
+   "source_ids": [
+    "pride",
+    "paper"
+   ],
+   "evidence": "PRIDE lists Alzheimer's disease but all arms (incl. sham) are ApoE-/- model mice; disease status of individual animals not reported, so sentinel."
+  },
+  {
+   "location": "characteristics[treatment]",
+   "value": "sham irradiation; chronic 137Cs gamma irradiation 1 or 20 mGy/day for 300 days",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Methods 'Ethics statement, irradiation of animals'; free text (no ontology term fits)."
+  },
+  {
+   "location": "source name",
+   "value": "<condition>_rep<N>_<PG|UN|PH>",
+   "source_ids": [
+    "msf-fileinfos"
+   ],
+   "evidence": "Pool suffix distinguishes the three separately enriched/fractionated peptide pools of the same TMT-labelled set so row coordinates stay unique; same animals underlie PG/UN/PH sources."
+  }
+ ],
+ "limitations": [
+  "Set B .msf parameters not read (assumed identical to set A).",
+  "Per-animal identity within a 3-channel triplet and replicate numbering are labelling, not stated.",
+  "Sub-pool (mono-phospho/multi-phospho/deglyco) of each file in the phospho_glyco msf not determinable.",
+  "Unmodified QHF pool (apoe_unmodified_*) sample prep not described distinctly in the paper.",
+  "Collision energy not annotated (paper states 34 V; unit ambiguity)."
+ ]
+}

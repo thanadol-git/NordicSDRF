@@ -1,0 +1,168 @@
+{
+ "schema_version": 1,
+ "artifact": "annotations/PXD005245.sdrf.tsv",
+ "dataset": "PXD005245",
+ "sha256": "599e76e993ebfe96997577333283f07a8f3c677326c3671937a52baaf814bc2d",
+ "sources": [
+  {
+   "id": "pride",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD005245"
+  },
+  {
+   "id": "pride-files",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD005245/files/all (16 files, 3 RAW)"
+  },
+  {
+   "id": "paper",
+   "kind": "publication",
+   "location": "PMC5823648 / PMID 29507698 / doi 10.18632/oncotarget.24321 (Europe PMC fullTextXML)"
+  },
+  {
+   "id": "pdexport",
+   "kind": "repository",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/03/PXD005245/GBM-2Da{1,2,3}.export.7z (PD PSM tables: Modifications, Spectrum File)"
+  },
+  {
+   "id": "rawhdr",
+   "kind": "raw-file",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/03/PXD005245/GBM-2Da1.raw (first 256 KB, model string)"
+  },
+  {
+   "id": "ols",
+   "kind": "database",
+   "location": "https://www.ebi.ac.uk/ols4 (UNIMOD, PRIDE, MS, MONDO, UBERON, NCIT)"
+  }
+ ],
+ "claims": [
+  {
+   "location": "characteristics[organism]/[organism part]/[disease]",
+   "value": "Homo sapiens / brain / glioblastoma",
+   "source_ids": [
+    "pride",
+    "paper"
+   ],
+   "evidence": "PRIDE organism NEWT:9606, organism part brain, disease DOID glioblastoma; paper: WHO grade IV GBM patient T78 tumour spheroids"
+  },
+  {
+   "location": "characteristics[individual]/[tumor grading]/[genotype]",
+   "value": "T78 / Grade 4 / IDH1 wild-type; MGMT promoter hypermethylated",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Paper Patient tissue and cell culture section"
+  },
+  {
+   "location": "characteristics[age]/[sex]/[ancestry category]/[cell type]",
+   "value": "not available",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "No donor demographics given; no suitable CL term for CSC spheroid / migrating CSC / differentiated cell"
+  },
+  {
+   "location": "characteristics[phenotype]/factor value[phenotype]",
+   "value": "cancer stem-like cell spheroid (serum-free); migrating cancer stem-like cell; differentiated cell (serum-containing medium)",
+   "source_ids": [
+    "paper",
+    "pride"
+   ],
+   "evidence": "Paper: three GBM subpopulations; migrating cells isolated after migration assay; differentiated by 10% FCS culture; free text, wording is the annotator's"
+  },
+  {
+   "location": "comment[label] / source name mapping rows 1-9",
+   "value": "Rep1 L=Differentiated M=Migrating H=Spheroid; Rep2 L=Migrating M=Spheroid H=Differentiated; Rep3 L=Spheroid M=Differentiated H=Migrating",
+   "source_ids": [
+    "paper",
+    "pdexport"
+   ],
+   "evidence": "Paper Table 3 labeling scheme; replicate N -> GBM-2DaN.raw is inferred from PD export Spectrum File names Rep1_2Da.raw/Rep2_2Da.raw/Rep3_2Da.raw and raw file names (no explicit statement)"
+  },
+  {
+   "location": "comment[label]",
+   "value": "DIMETHYL0 (light +28) / DIMETHYL4 (medium +32) / DIMETHYL8 (heavy +36)",
+   "source_ids": [
+    "paper",
+    "ols"
+   ],
+   "evidence": "Paper Table 3 mass shifts; PRIDE:0000848/0000850/0000852 channel terms; nominal-mass naming is annotator's choice"
+  },
+  {
+   "location": "comment[modification parameters]",
+   "value": "Carbamidomethyl C fixed; Oxidation M variable; Dimethyl 36 / 199 / 330 on K and any N-term variable",
+   "source_ids": [
+    "pdexport",
+    "paper",
+    "ols"
+   ],
+   "evidence": "PD PSM Modifications column lists exactly C(Carbamidomethyl), M(Oxidation), K and N-Term of Dimethyl, Dimethyl:2H(4), Dimethyl:2H(6)13C(2); paper says labeled N-term/K variable. Fixed/variable status of labels from paper text, not from the .pdResult workflow node"
+  },
+  {
+   "location": "comment[instrument]",
+   "value": "Orbitrap Fusion MS:1002416",
+   "source_ids": [
+    "rawhdr",
+    "paper",
+    "pride"
+   ],
+   "evidence": "Raw header model string 'Orbitrap Fusion'; PRIDE lists Orbitrap Fusion ETD (differs, raw header and paper win)"
+  },
+  {
+   "location": "comment[cleavage agent details]",
+   "value": "Trypsin MS:1001251",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Paper: digested overnight with trypsin 1:50 (Promega); PRIDE text silent (reconcile blocker answered with the paper)"
+  },
+  {
+   "location": "comment[reduction reagent]/[alkylation reagent]",
+   "value": "DTT / iodoacetamide",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Paper: 0.1 mol/L DTT; alkylation with 50 mmol/L iodoacetamide"
+  },
+  {
+   "location": "comment[precursor/fragment mass tolerance]",
+   "value": "5 ppm / 0.02 Da",
+   "source_ids": [
+    "pride",
+    "paper"
+   ],
+   "evidence": "Search parameters in data processing protocol"
+  },
+  {
+   "location": "comment[dissociation method]/[ms2 mass analyzer]",
+   "value": "CID / orbitrap",
+   "source_ids": [
+    "pride",
+    "paper"
+   ],
+   "evidence": "CID in ion trap, spectra acquired in Orbitrap at 15000 resolution; PD export Activation Type CID"
+  },
+  {
+   "location": "comment[proteomics data acquisition method]",
+   "value": "Data-dependent acquisition",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Top-speed 3 s cycle; DDA implied by top-speed MS2 selection (inferred)"
+  },
+  {
+   "location": "comment[data file]",
+   "value": "GBM-2Da1.raw, GBM-2Da2.raw, GBM-2Da3.raw",
+   "source_ids": [
+    "pride-files"
+   ],
+   "evidence": "All 3 RAW files in v3 files/all; pdResult/export.7z files are search results and are not SDRF rows"
+  }
+ ],
+ "limitations": [
+  "Replicate-number to raw-file mapping inferred from file naming",
+  "No per-sample demographics (age, sex, ancestry) available",
+  "Modification fixed/variable status for labels not read from the .pdResult workflow node (multi-hundred-MB SQLite not parsed)",
+  "Channel (dimethyl) labels written as PRIDE DIMETHYL0/4/8 terms by post-processing the build output, since sdrf-tools build only recognises TMT/iTRAQ/SILAC channels"
+ ]
+}

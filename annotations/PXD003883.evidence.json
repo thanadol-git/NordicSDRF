@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD003883.sdrf.tsv",
+  "dataset": "PXD003883",
+  "artifact_sha256": "28b800ed1da1523c4fcb73360e950c1d1b4f5ed4327e0084f6aa975cd336cec1",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003883"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003883/files/all (286 entries, 280 RAW)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC5141270 (https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5141270/fullTextXML); PMID 27784728"
+    },
+    {
+      "id": "mq-design",
+      "kind": "deposited search output",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2017/01/PXD003883/MaxQuantOutput.tar.gz :: MaxQuantOutput/experimentalDesign.txt (raw file -> fraction -> experiment)"
+    },
+    {
+      "id": "mq-params",
+      "kind": "deposited search output",
+      "location": "same archive :: MaxQuantOutput/parameters.txt, summary.txt, proteinGroups.txt"
+    },
+    {
+      "id": "readme",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2017/01/PXD003883/Readme.txt"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]/source name/characteristics[biological replicate]/comment[technical replicate]/comment[fraction identifier], all 280 rows",
+      "value": "28 experiments x 10 gel bands",
+      "source_ids": [
+        "mq-design",
+        "pride-files"
+      ],
+      "evidence": "experimentalDesign.txt maps each of the 280 RAW files to experiment <group>_<form>_<biorep>_<techrep> and fraction 1-10; the 280 names equal the PRIDE RAW list exactly. Paper: 3 biological replicates, technical duplicates, 10 bands per lane."
+    },
+    {
+      "location": "characteristics[cell type]/factor value[cell type] rows RB_*, ARB_*, EB_*, EB-HeLa_*",
+      "value": "reticulate body / aberrant reticulate body / elementary body",
+      "source_ids": [
+        "paper",
+        "mq-design",
+        "readme"
+      ],
+      "evidence": "Paper: RB, ARB, EB before spiking (EB pre) and EB spiked with HeLa (EB). Readme: design EB-HeLa = manuscript EB; design EB = EB-pre."
+    },
+    {
+      "location": "characteristics[treatment] ARB rows",
+      "value": "interferon gamma",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "ARB induced by IFN-gamma 2 ng/ml; RB/EB without."
+    },
+    {
+      "location": "characteristics[organism]/strain rows of Chlamydia groups",
+      "value": "Chlamydia trachomatis / D/UW-3/CX",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Serovar D/UW-3/CX; NEWT:272561."
+    },
+    {
+      "location": "characteristics[organism] HeLa_1 rows (5_HeLa_01_*)",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "mq-design",
+        "pride"
+      ],
+      "evidence": "INFERRED from experiment label 5_HeLa and human UniProt FASTA in search; paper does not describe this sample."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "LTQ Orbitrap XL MS:1000556",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Methods and PRIDE agree; raw headers not read."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M and Acetyl Protein N-term variable",
+      "source_ids": [
+        "mq-params",
+        "pride"
+      ],
+      "evidence": "parameters.txt/summary.txt: fixed Carbamidomethyl (C); variable Oxidation (M);Acetyl (Protein N-term)."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "paper",
+        "mq-params"
+      ],
+      "evidence": "Paper: Enzyme Trypsin, maximum 1 missed cleavage (MaxQuant parameters.txt column Trypsin/P). No SDRF column for missed cleavages."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "0.5 Da",
+      "source_ids": [
+        "mq-params"
+      ],
+      "evidence": "MS/MS tol. (ITMS) 0.5 Da; CID in ion trap."
+    },
+    {
+      "location": "comment[dissociation method]/[proteomics data acquisition method]/[fractionation method]",
+      "value": "CID; DDA; gel electrophoresis",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Top5 DDA, CID at 35% in LTQ; SDS-PAGE lanes cut into 10 bands."
+    },
+    {
+      "location": "characteristics[spiked compound] EB-HeLa_* rows",
+      "value": "CT=protein;CN=HeLa protein lysate",
+      "source_ids": [
+        "paper",
+        "readme",
+        "mq-design"
+      ],
+      "evidence": "Paper: EB samples were spiked with HeLa protein lysate to equalise host protein; design EB-HeLa = manuscript EB. EB_* (design) = EB pre, unspiked: not applicable."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "6 ppm",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper MaxQuant settings: Precursor mass tolerance was 6 ppm, and fragment mass tolerance 0.5 Da."
+    }
+  ],
+  "limitations": [
+    "Raw file headers not inspected; instrument from paper and PRIDE.",
+    "characteristics[cell type] holds Chlamydia developmental forms; ARB is not in CL/BTO/CLO (validator warning).",
+    "No project-level disease asserted; host HeLa 229 cell line not captured as a column (cell-lines template not applied).",
+    "5_HeLa experiment not described in the paper (probably the HeLa lysate used for spiking); organism inferred.",
+    "Reduction and alkylation reagents for the in-gel workflow not stated; written as not available."
+  ]
+}

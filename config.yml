@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-10-01
 
-corpus_source: local checkout (2026-10-31)
+corpus_source: local checkout (2026-11-01)
 
 countries:
   sweden:
@@ -127,8 +127,8 @@ countries:
         search_terms: [Odense, "University of Southern Denmark"]
         pride_hits: 604
         screened: 0
-        annotated: 12
-        blocked: 1
+        annotated: 18
+        blocked: 5
         pxd_list: lists/denmark/odense.txt
         pxd_count: 178
         in_corpus: 40

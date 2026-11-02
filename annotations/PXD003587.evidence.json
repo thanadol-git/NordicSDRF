@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "artifact": "/home/thanadol/Documents/GitHub/NordicSDRF/annotations/PXD003587.sdrf.tsv",
+  "dataset": "PXD003587",
+  "artifact_sha256": "3ba842e36851036c3d80a34cf5043b11dbe41eb59b9429b9f7478a12c688a71e",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003587"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003587/files/all (24 files: 12 RAW, 12 SEARCH .msf; all projectAccessions checked)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC6072433 (https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6072433/fullTextXML); doi:10.1039/c5tx00469a; PMID 30090399"
+    },
+    {
+      "id": "msf-itmt",
+      "kind": "deposited search",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD003587/FUS02205_iTMT_1_R1.msf (PD 1.4 + Mascot; SQLite tables ProcessingNodeParameters, AminoAcidModifications)"
+    },
+    {
+      "id": "msf-lf",
+      "kind": "deposited search",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD003587/FUS02231_C_1.msf"
+    },
+    {
+      "id": "raw-headers",
+      "kind": "raw file header (FTP range 0-262143, utf-16-le)",
+      "location": "FUS02205_iTMT_1_R1.raw and FUS02231_C_1.raw under ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD003587/ (only these two headers read; other raw files not read)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "repository",
+      "location": "https://api.cellosaurus.org/cell-line/CVCL_1098?format=json (Hep-G2/C3A, hepatoblastoma, male, 15Y, liver); sdrf-tools cellline lookup C3A"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/search (NCIT:C185409 DMEM, EFO:0002121 C3A); parse_sdrf validate-sdrf passes"
+    },
+    {
+      "id": "upstream",
+      "kind": "repository",
+      "location": "/home/thanadol/Documents/GitHub/sdrf-annotated-datasets/datasets/PXD003587/ does not exist"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism]/[organism part]/[cell type] all rows",
+      "value": "Homo sapiens / liver / hepatocyte",
+      "source_ids": [
+        "pride",
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "PRIDE organism NEWT:9606; organismParts CL:0000182 hepatocyte; Cellosaurus site Liver. organism part=liver is derived from the cell line origin, not a tissue sample."
+    },
+    {
+      "location": "characteristics[cell line]/cellosaurus accession/name all rows",
+      "value": "C3A / CVCL_1098 / Hep-G2/C3A",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Paper Methods: HepG2/C3A from ATCC CRL-10741; Cellosaurus CVCL_1098."
+    },
+    {
+      "location": "characteristics[disease] all rows",
+      "value": "hepatoblastoma",
+      "source_ids": [
+        "cellosaurus",
+        "paper"
+      ],
+      "evidence": "Cellosaurus disease for CVCL_1098 is hepatoblastoma; paper/PRIDE say hepatocellular carcinoma-derived. Disease describes the cell line, applied to control rows too (untreated cells of same line)."
+    },
+    {
+      "location": "characteristics[age]/[sex] all rows",
+      "value": "15Y / male",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Cellosaurus donor annotation for HepG2 lineage; not stated in paper."
+    },
+    {
+      "location": "characteristics[treatment], factor value[treatment]",
+      "value": "acetaminophen (APAP rows) / not applicable (control rows)",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Paper: 3 bioreactors treated with 5 mg APAP per mg cellular protein for 48 h, 3 control bioreactors."
+    },
+    {
+      "location": "characteristics[sampling time] all rows",
+      "value": "48 hour",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Treatment/harvest at 48 h for both arms (iodoTMT-6plex and label-free derive from these bioreactors)."
+    },
+    {
+      "location": "label-free rows 1-6 (FUS02231_C_1, 02232_C_2, 02233_C_3 control; FUS02234_APAP_1, 02235_APAP_2, 02236_APAP_3)",
+      "value": "label free sample",
+      "source_ids": [
+        "pride-files",
+        "paper"
+      ],
+      "evidence": "File names encode condition and replicate; paper: control and APAP samples analysed by label-free. Bio replicate number = number in the file name."
+    },
+    {
+      "location": "TMT rows 7-42: file->biological replicate and technical replicate",
+      "value": "iTMT_k_R1/R2 -> bio rep k, tech rep 1/2",
+      "source_ids": [
+        "pride-files",
+        "paper",
+        "msf-itmt"
+      ],
+      "evidence": "Paper: each biological replicate analysed with duplicate injections (technical replicates), search results of the 2 technical replicates merged per biological replicate; 3 bio reps x 2 injections = 6 iTMT raw files."
+    },
+    {
+      "location": "comment[label] TMT126-TMT131 in rows 7-42",
+      "value": "126 control total Cys; 127 APAP total Cys; 128 control SNO; 129 APAP SNO; 130 control SOH; 131 APAP SOH",
+      "source_ids": [
+        "paper",
+        "msf-itmt"
+      ],
+      "evidence": "Paper: ratios 127/126 (total cysteines), 129/128 (SNO), 131/130 (SOH); peptides with only APAP-treated reporter ions are '129 for SNO and 131 for SOH'. 129 and 131 explicitly APAP; 127 APAP and 126/128/130 control are inferred by parallel numerator/denominator ratio structure (no per-channel table found). PD quant method iodoTMT6_KW defines tags 126-131."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Fusion MS:1002416",
+      "source_ids": [
+        "paper",
+        "raw-headers",
+        "pride"
+      ],
+      "evidence": "Paper Methods, PRIDE instruments, and both inspected raw headers (BMB-FUSION, Thermo Orbitrap Fusion)."
+    },
+    {
+      "location": "comment[dissociation method], comment[collision energy], comment[ms2 mass analyzer]",
+      "value": "HCD; TMT 38% NCE, Orbitrap; LF 32% NCE, ion trap",
+      "source_ids": [
+        "raw-headers",
+        "paper",
+        "msf-itmt"
+      ],
+      "evidence": "Raw method summary ActivationType=HCD in both; TMT: NCE 38, Orbitrap 30K MS2; LF: NCE 32, ion trap rapid (paper and header). PD TMT quantifier ActivationType filter HCD."
+    },
+    {
+      "location": "comment[modification parameters] TMT rows",
+      "value": "iodoTMT6plex UNIMOD:1342 C Variable; Carbamidomethyl C Variable; Oxidation M Variable",
+      "source_ids": [
+        "msf-itmt",
+        "paper"
+      ],
+      "evidence": "Mascot node DynMod_1..3 (Oxidation M, TMT6-Cys C, Carbamidomethyl C), no static mods. TMT6-Cys custom mod mass 329.226595 = iodoTMT6plex (UNIMOD:1342, formula H28 C12 13C4 N3 15N O3 in the msf)."
+    },
+    {
+      "location": "comment[modification parameters] LF rows",
+      "value": "Carbamidomethyl C Fixed; Oxidation M Variable; third column 'not applicable'",
+      "source_ids": [
+        "msf-lf",
+        "paper"
+      ],
+      "evidence": "Mascot node of FUS02231_C_1.msf: StaticMod_1 Carbamidomethyl (C), DynMod_1 Oxidation (M). Third repeated column is padding so the file has one fixed header; no further modification was searched."
+    },
+    {
+      "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+      "value": "10 ppm; TMT 0.05 Da; LF 0.6 Da",
+      "source_ids": [
+        "msf-itmt",
+        "msf-lf",
+        "paper"
+      ],
+      "evidence": "Mascot node parameters. Paper text says 20 mmu (0.02 Da) for the TMT search; deposited msf says 0.05 Da; deposited search used."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin MS:1001251",
+      "source_ids": [
+        "msf-itmt",
+        "msf-lf",
+        "pride"
+      ],
+      "evidence": "Mascot Enzyme=Trypsin, 2 missed cleavages; PRIDE dataProcessingProtocol states trypsin."
+    },
+    {
+      "location": "characteristics[culture medium]",
+      "value": "Dulbecco's Modified Eagle Medium",
+      "source_ids": [
+        "paper",
+        "ols"
+      ],
+      "evidence": "Paper: cultivated in DMEM (1 g glucose per L). Term NCIT:C185409."
+    },
+    {
+      "location": "characteristics[biorepository]",
+      "value": "ATCC",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "HepG2/C3A obtained from ATCC cat. CRL10741."
+    }
+  ],
+  "limitations": [
+    "No per-channel table for iodoTMT-6plex exists in any deposited file or the paper; 126/128/130=control and 127=APAP are inferred from ratio notation (129/131=APAP stated). Reduction chemistry per channel pair (SNO vs SOH) is from the earlier method paper (ref 13), not read.",
+    "Only 2 of 12 raw headers and 2 of 12 .msf files were read (1 iTMT, 1 label-free); other files assumed to share settings.",
+    "Whether label-free replicate k derives from the same bioreactor as iTMT experiment k is not stated, so sources are kept distinct.",
+    "Cellosaurus age/sex/disease are donor/cell-line properties, not stated in the paper. Ancestry, individual, passage, storage temperature = not available. 3D spheroid culture format is not representable in the licensed columns.",
+    "Full-text of method paper ref 13 and the paper's supplementary tables were not read."
+  ]
+}

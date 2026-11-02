@@ -1,0 +1,10 @@
+{
+  "accession": "PXD005544",
+  "outcome": "BLOCKED",
+  "claims": [
+    {"claim": "238 RAW + 13 msf files; project accession matches on every entry", "source": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD005544/files/all", "maps_to": "file inventory"},
+    {"claim": "TMT 6plex, 126 = internal standard, Q Exactive, trypsin, 7 HILIC fractions", "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5468003/ (Methods)", "maps_to": "technical.tsv (not built)"},
+    {"claim": "Search: fixed TMT6plex K/N-term, variable Oxidation M and Deamidated NQ, 0.05 Da fragment tol", "source": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD005544/MHP_050716_Plex1.msf (ProcessingNodeParameters, HTTP range)", "maps_to": "comment[modification parameters] (not built)"},
+    {"claim": "No channel-to-patient map available", "source": "unavailable: Supplementary_materials.zip (PMC proof-of-work, Europe PMC not OA, T&F 403); msf quan method generic", "maps_to": "source name / characteristics (blocked)"}
+  ]
+}

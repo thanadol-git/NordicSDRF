@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD003423.sdrf.tsv",
+  "dataset": "PXD003423",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003423"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD003423/files/all (105 entries: 101 RAW, 3 SEARCH zips, 1 MaxQuant program zip; all list PXD003423)"
+    },
+    {
+      "id": "pride-companion",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD006390 (companion record; SILAC media composition and Velos/Q Exactive statement) "
+    },
+    {
+      "id": "search-ip",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/06/PXD003423/Immunoprecipitation_CYLD_Sanchez-Quiles_Search.zip (mqpar.xml, combined/txt/parameters.txt, summary.txt, ExpDesign_IPCYLD_2replicas_Dec13.txt; read by HTTP range)"
+    },
+    {
+      "id": "search-pd",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/06/PXD003423/Pull-Down_CYLD_Sanchez-Quiles_Search.zip (mqpar.xml, parameters.txt, summary.txt, ExpDesign_PullDown_hMSCs.txt)"
+    },
+    {
+      "id": "search-st",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/06/PXD003423/StUbEx_CYLD_Sanchez-Quiles_Search.zip (mqpar.xml, parameters.txt, summary.txt, H17 & H17C2_Ubi_March14_ExpDesign.txt, Mod/Ubi_SILAC_HeLa_w-woEGF_PGs.xlsx headers)"
+    },
+    {
+      "id": "raw-headers",
+      "kind": "raw files",
+      "location": "HTTP-range first 256 KB of one RAW per sub-experiment (Q Exactive; Orbitrap Velos Pro MS)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "doi:10.1074/mcp.M116.066423 / PMC5546196 (abstract only; full text NOT retrievable: Europe PMC fullTextXML 500 / not OA, PMC and mcponline behind bot checks)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file]",
+      "value": "100 of 101 RAW files",
+      "source_ids": [
+        "pride-files",
+        "search-ip",
+        "search-pd",
+        "search-st"
+      ],
+      "evidence": "Each of 100 RAW claimed 3 times (light/medium/heavy). Excluded: 20131201_VSQ_q9_35_112817r_BSA50fmol_IPCYLD_4.raw (BSA 50 fmol QC injection, not a cell sample, though MaxQuant processed it in SILAC2)."
+    },
+    {
+      "location": "comment[label]",
+      "value": "SILAC light/medium/heavy",
+      "source_ids": [
+        "search-ip",
+        "search-pd",
+        "search-st",
+        "pride-companion"
+      ],
+      "evidence": "summary.txt/mqpar: multiplicity 3, Labels0 empty, Labels1 Arg6;Lys4, Labels2 Arg10;Lys8 in every sub-experiment; companion record describes Arg0/Lys0, Arg6/Lys4, Arg10/Lys8 media."
+    },
+    {
+      "location": "source name",
+      "value": "<IP|PD|ST>_SILAC<n>_<channel>",
+      "source_ids": [
+        "search-ip",
+        "search-pd",
+        "search-st"
+      ],
+      "evidence": "Identifier invented by annotator from the MaxQuant Experiment column (SILAC1-4) of the ExpDesign files and the channel. It carries no biological meaning."
+    },
+    {
+      "location": "characteristics[organism], [cell line], [cellosaurus accession], [age], [sex]",
+      "value": "Homo sapiens; HeLa; CVCL_0030; 30Y6M; female",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Title and PRIDE protocol: HeLa cells; PRIDE organism NEWT:9606. Age/sex are Cellosaurus HeLa values (sdrf-tools cellline lookup), not per-deposit. HeLa clone/subline not stated."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "uterine cervix",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Tissue of origin of HeLa (Cellosaurus); PRIDE organismPart is only 'HeLa cell'."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive (IP, StUbEx); Orbitrap Velos Pro (pull-down)",
+      "source_ids": [
+        "raw-headers",
+        "search-ip",
+        "search-st",
+        "pride"
+      ],
+      "evidence": "RAW header strings 'Q Exactive' and 'Orbitrap Velos Pro MS'; PRIDE lists 'LTQ Orbitrap Velos' (raw wins). summary.txt Instrument=Q Exactive for IP and StUbEx."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "per sub-experiment",
+      "source_ids": [
+        "search-ip",
+        "search-pd",
+        "search-st"
+      ],
+      "evidence": "mqpar.xml fixed Carbamidomethyl (C); variable Oxidation (M), Acetyl (Protein N-term), Deamidation (NQ); + Phospho (STY) for IP and StUbEx; + GlyGly (K) for StUbEx. Pull-down has no Phospho/GlyGly search; padded with 'not applicable' to keep column counts equal."
+    },
+    {
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance]",
+      "value": "6 ppm; 20 ppm (FTMS) / 0.5 Da (ITMS)",
+      "source_ids": [
+        "search-ip",
+        "search-pd",
+        "search-st"
+      ],
+      "evidence": "mqpar mainSearchTol 6; parameters.txt MS/MS tol FTMS 20 ppm, ITMS 0.5 Da; combined/allSpectra files are HCD.FTMS (IP, StUbEx) and CID.ITMS (pull-down)."
+    },
+    {
+      "location": "comment[dissociation method], comment[ms2 mass analyzer]",
+      "value": "HCD + orbitrap (IP, StUbEx); CID + ion trap (pull-down)",
+      "source_ids": [
+        "search-ip",
+        "search-pd",
+        "search-st"
+      ],
+      "evidence": "allSpectra.<fragmentation>.<analyzer> file names in each search zip."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin (all); Lys-C second column for StUbEx",
+      "source_ids": [
+        "pride",
+        "search-st"
+      ],
+      "evidence": "PRIDE protocol: ubiquitinome digested with LysC and Trypsin; IP and pull-down in-gel trypsin. MaxQuant searched Trypsin/P."
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "SDS PAGE (IP, pull-down); not available (StUbEx)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: bead-bound proteins resolved on SDS-PAGE and in-gel digested (IP, pull-down); StUbEx peptides 'fractionated through a pH gradient' (method not specific enough)."
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "position in files list",
+      "source_ids": [
+        "search-ip",
+        "search-pd",
+        "search-st"
+      ],
+      "evidence": "IP 1-12 and pull-down 1-16 are the numeric suffixes; StUbEx suffix order 10,20,25,30,35,40,55,70,80,B,FT follows the deposited ExpDesign listing, not a verified elution order."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride-companion",
+        "search-ip"
+      ],
+      "evidence": "Companion protocol: top 12 data-dependent; MaxQuant DDA search."
+    },
+    {
+      "location": "characteristics[genotype], [treatment], factor value[genotype], factor value[treatment] (ST_SILAC2 and ST_SILAC4, 44 rows)",
+      "value": "light = CYLD-deficient untreated; medium = wild type + epidermal growth factor; heavy = wild type untreated",
+      "source_ids": [
+        "search-st"
+      ],
+      "evidence": "StUbEx zip combined/txt/Mod/Ubi_SILAC_HeLa_w-woEGF_PGs.xlsx, sheets PGs_woCont-woRev / Only Qfied in all SILAC: analyst-renamed ratio columns for SILAC2 and SILAC4: 'WT 0 / KO 0 normalized SILAC2' (replaces Ratio H/L), 'KO 0/WT 0' (L/H), 'WT6/0' (M/H). Read as H = WT 0 min, L = KO 0 min, M = WT 6 min EGF. INFERENCE from column headers: the '6' is read as minutes of EGF (protocol says 5 min); CYLD-deficient used neutrally (protocol: silenced; header: KO). All other experiments: not available."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "IP 1-2, PD 1-2 (MaxQuant experiment number); StUbEx SILAC1/2 = 1, SILAC3/4 = 2",
+      "source_ids": [
+        "search-st",
+        "pride-files"
+      ],
+      "evidence": "StUbEx file names: UBI_1/UBI_2 (20131214) vs Rep2-Ubi / Rep2-Ubi_S2 (20140304); interpretation, not stated explicitly."
+    },
+    {
+      "location": "characteristics[disease], [cell type]",
+      "value": "cervical adenocarcinoma; epithelial cell",
+      "source_ids": [
+        "pride",
+        "pride-companion"
+      ],
+      "evidence": "Disease of the tissue the HeLa line derives from (Cellosaurus: HPV-related endocervical adenocarcinoma; PRIDE disease: cervix carcinoma); companion protocol: 'cervix epithelial adenocarcinoma HeLa cells'."
+    }
+  ],
+  "limitations": [
+    "Paper full text was not retrievable; the only channel-to-condition evidence is the renamed ratio columns in the StUbEx xlsx, covering SILAC2 and SILAC4 only. SILAC1, SILAC3 and all IP/pull-down experiments have genotype/treatment/factor values 'not available'.",
+    "Pull-down cell source unconfirmed: deposited design file is named ExpDesign_PullDown_hMSCs.txt (hMSC?) and companion record mentions Skov3/Hep2; HeLa assumed from project title/PRIDE sample attributes. characteristics[cell line] cannot take a reserved word under cell-lines, so the rows are kept as HeLa with this caveat.",
+    "Reduction/alkylation reagents not stated; Carbamidomethyl is Fixed in the deposited search.",
+    "BSA50fmol QC raw file excluded.",
+    "StUbEx fraction order (10..80,B,FT) follows the deposited ExpDesign listing, not a verified elution order.",
+    "HeLa subline/passage/culture medium not stated for this deposit."
+  ]
+}
