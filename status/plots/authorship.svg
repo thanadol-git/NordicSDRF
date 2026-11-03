@@ -1,0 +1,1068 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="860" viewBox="0 0 960 860" role="img" aria-label="Authorship network of curated PRIDE datasets">
+<style>
+  .bg { fill: #fcfcfb; }
+  .title { fill: #0b0b0b; font-size: 17px; font-weight: 600; }
+  .sub, .legend { fill: #52514e; font-size: 11.5px; }
+  .edge { stroke: #b9b8b1; stroke-opacity: 0.45; fill: none; }
+  .edge.cross { stroke: #3d3c38; stroke-opacity: 0.55; }
+  .node { stroke: #fcfcfb; stroke-width: 1; }
+  .node.pi { stroke: #0b0b0b; stroke-width: 1.6; }
+  .label { fill: #0b0b0b; font-size: 10.5px; font-weight: 600; paint-order: stroke;
+           stroke: #fcfcfb; stroke-width: 3px; stroke-linejoin: round; }
+  .ring { fill: none; stroke: #0b0b0b; stroke-width: 1.6; }
+  text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #1a1a19; }
+    .title { fill: #ffffff; }
+    .sub, .legend { fill: #c3c2b7; }
+    .edge { stroke: #5a5953; }
+    .edge.cross { stroke: #d8d7cf; }
+    .node { stroke: #1a1a19; }
+    .node.pi, .ring { stroke: #ffffff; }
+    .label { fill: #ffffff; stroke: #1a1a19; }
+  }
+</style>
+<rect class="bg" width="960" height="860" rx="6"/>
+<text class="title" x="12" y="22">Who publishes Nordic proteomics — PRIDE authorship network</text>
+<text class="sub" x="12" y="40">234 people on ≥ 7 curated datasets · 756 links = sharing ≥ 2 datasets (24 cross a country, drawn dark) · node area ~ datasets · ring = lab PI</text>
+<text class="sub" x="12" y="56">People = PRIDE submitters, lab PIs and publication authors, matched on surname + initials. Colour = country holding most of their datasets.</text>
+<circle cx="18" cy="74" r="6" fill="#2a78d6"/>
+<text class="legend" x="29" y="78">Sweden</text>
+<circle cx="95" cy="74" r="6" fill="#d6453a"/>
+<text class="legend" x="106" y="78">Denmark</text>
+<circle cx="179" cy="74" r="6" fill="#199e70"/>
+<text class="legend" x="190" y="78">Norway</text>
+<circle cx="256" cy="74" r="6" fill="#7b55d6"/>
+<text class="legend" x="267" y="78">Finland</text>
+<circle class="ring" cx="340" cy="74" r="5.5" fill="none"/>
+<text class="legend" x="351" y="78">lab PI on ≥ 1 dataset</text>
+<line class="edge" x1="673.1" y1="497.8" x2="678.9" y2="510.8" stroke-width="1.10"/>
+<line class="edge" x1="673.1" y1="497.8" x2="648.9" y2="515.2" stroke-width="1.10"/>
+<line class="edge" x1="724.3" y1="676.1" x2="694.4" y2="679.1" stroke-width="1.10"/>
+<line class="edge" x1="558.2" y1="331.0" x2="538.0" y2="310.8" stroke-width="1.10"/>
+<line class="edge" x1="558.2" y1="331.0" x2="528.0" y2="342.5" stroke-width="1.10"/>
+<line class="edge" x1="493.0" y1="389.6" x2="509.8" y2="329.9" stroke-width="1.10"/>
+<line class="edge" x1="493.0" y1="389.6" x2="504.9" y2="403.6" stroke-width="1.10"/>
+<line class="edge" x1="310.0" y1="294.0" x2="336.2" y2="304.6" stroke-width="1.10"/>
+<line class="edge" x1="448.9" y1="283.3" x2="435.2" y2="284.2" stroke-width="1.10"/>
+<line class="edge" x1="448.9" y1="283.3" x2="434.0" y2="268.7" stroke-width="1.10"/>
+<line class="edge" x1="448.9" y1="283.3" x2="421.6" y2="280.8" stroke-width="1.10"/>
+<line class="edge" x1="448.9" y1="283.3" x2="464.3" y2="290.1" stroke-width="1.10"/>
+<line class="edge" x1="448.9" y1="283.3" x2="402.7" y2="297.4" stroke-width="1.10"/>
+<line class="edge" x1="410.0" y1="526.9" x2="396.4" y2="509.3" stroke-width="1.10"/>
+<line class="edge" x1="410.0" y1="526.9" x2="379.1" y2="552.9" stroke-width="1.10"/>
+<line class="edge" x1="410.0" y1="526.9" x2="428.5" y2="551.5" stroke-width="1.10"/>
+<line class="edge" x1="410.0" y1="526.9" x2="389.6" y2="521.3" stroke-width="1.10"/>
+<line class="edge" x1="410.0" y1="526.9" x2="368.9" y2="539.0" stroke-width="1.10"/>
+<line class="edge" x1="507.0" y1="280.3" x2="464.3" y2="290.1" stroke-width="1.10"/>
+<line class="edge" x1="747.8" y1="294.7" x2="755.7" y2="308.8" stroke-width="1.10"/>
+<line class="edge" x1="747.8" y1="294.7" x2="786.8" y2="312.7" stroke-width="1.10"/>
+<line class="edge" x1="538.0" y1="310.8" x2="559.6" y2="317.1" stroke-width="1.10"/>
+<line class="edge" x1="538.0" y1="310.8" x2="503.0" y2="306.4" stroke-width="1.10"/>
+<line class="edge" x1="538.0" y1="310.8" x2="494.7" y2="319.7" stroke-width="1.10"/>
+<line class="edge" x1="426.4" y1="297.2" x2="449.8" y2="269.4" stroke-width="1.10"/>
+<line class="edge" x1="426.4" y1="297.2" x2="464.3" y2="290.1" stroke-width="1.10"/>
+<line class="edge" x1="639.9" y1="527.1" x2="624.3" y2="467.5" stroke-width="1.10"/>
+<line class="edge" x1="356.7" y1="557.3" x2="324.8" y2="559.2" stroke-width="1.10"/>
+<line class="edge" x1="509.3" y1="187.6" x2="509.0" y2="216.3" stroke-width="1.10"/>
+<line class="edge" x1="496.3" y1="208.1" x2="501.8" y2="251.1" stroke-width="1.10"/>
+<line class="edge" x1="620.8" y1="722.8" x2="638.4" y2="696.4" stroke-width="1.10"/>
+<line class="edge" x1="620.8" y1="722.8" x2="607.4" y2="736.4" stroke-width="1.10"/>
+<line class="edge" x1="771.4" y1="307.5" x2="762.1" y2="292.3" stroke-width="1.10"/>
+<line class="edge" x1="435.2" y1="284.2" x2="449.8" y2="269.4" stroke-width="1.10"/>
+<line class="edge" x1="435.2" y1="284.2" x2="421.6" y2="280.8" stroke-width="1.10"/>
+<line class="edge" x1="435.2" y1="284.2" x2="464.3" y2="290.1" stroke-width="1.10"/>
+<line class="edge" x1="642.2" y1="486.5" x2="623.1" y2="499.7" stroke-width="1.10"/>
+<line class="edge" x1="642.2" y1="486.5" x2="631.8" y2="514.9" stroke-width="1.10"/>
+<line class="edge" x1="642.2" y1="486.5" x2="624.3" y2="467.5" stroke-width="1.10"/>
+<line class="edge" x1="298.9" y1="321.4" x2="286.1" y2="340.0" stroke-width="1.10"/>
+<line class="edge" x1="298.9" y1="321.4" x2="269.0" y2="322.9" stroke-width="1.10"/>
+<line class="edge" x1="428.8" y1="533.5" x2="428.5" y2="551.5" stroke-width="1.10"/>
+<line class="edge" x1="623.1" y1="499.7" x2="624.3" y2="467.5" stroke-width="1.10"/>
+<line class="edge" x1="560.1" y1="455.4" x2="607.9" y2="435.2" stroke-width="1.10"/>
+<line class="edge" x1="286.1" y1="340.0" x2="285.4" y2="325.2" stroke-width="1.10"/>
+<line class="edge" x1="286.1" y1="340.0" x2="260.4" y2="360.4" stroke-width="1.10"/>
+<line class="edge" x1="286.1" y1="340.0" x2="270.3" y2="305.5" stroke-width="1.10"/>
+<line class="edge" x1="286.1" y1="340.0" x2="319.7" y2="305.3" stroke-width="1.10"/>
+<line class="edge" x1="795.1" y1="330.9" x2="780.0" y2="327.7" stroke-width="1.10"/>
+<line class="edge" x1="509.8" y1="329.9" x2="516.2" y2="299.1" stroke-width="1.10"/>
+<line class="edge" x1="509.8" y1="329.9" x2="501.8" y2="251.1" stroke-width="1.10"/>
+<line class="edge" x1="509.8" y1="329.9" x2="561.3" y2="376.1" stroke-width="1.10"/>
+<line class="edge" x1="434.0" y1="268.7" x2="464.3" y2="290.1" stroke-width="1.10"/>
+<line class="edge" x1="449.8" y1="269.4" x2="419.8" y2="314.0" stroke-width="1.10"/>
+<line class="edge" x1="449.8" y1="269.4" x2="464.3" y2="290.1" stroke-width="1.10"/>
+<line class="edge" x1="449.8" y1="269.4" x2="402.7" y2="297.4" stroke-width="1.10"/>
+<line class="edge" x1="744.8" y1="321.2" x2="762.1" y2="292.3" stroke-width="1.10"/>
+<line class="edge" x1="305.8" y1="351.2" x2="336.2" y2="304.6" stroke-width="1.10"/>
+<line class="edge" x1="647.0" y1="420.7" x2="607.9" y2="435.2" stroke-width="1.10"/>
+<line class="edge" x1="516.2" y1="299.1" x2="535.0" y2="276.5" stroke-width="1.10"/>
+<line class="edge" x1="516.2" y1="299.1" x2="526.7" y2="322.4" stroke-width="1.10"/>
+<line class="edge" x1="516.2" y1="299.1" x2="464.3" y2="290.1" stroke-width="1.10"/>
+<line class="edge" x1="516.2" y1="299.1" x2="548.9" y2="344.6" stroke-width="1.10"/>
+<line class="edge" x1="127.9" y1="467.7" x2="140.7" y2="473.2" stroke-width="1.10"/>
+<line class="edge" x1="127.9" y1="467.7" x2="156.8" y2="465.6" stroke-width="1.10"/>
+<line class="edge" x1="127.8" y1="327.6" x2="118.5" y2="337.8" stroke-width="1.10"/>
+<line class="edge" x1="127.8" y1="327.6" x2="132.6" y2="342.3" stroke-width="1.10"/>
+<line class="edge" x1="694.4" y1="679.1" x2="670.9" y2="676.7" stroke-width="1.10"/>
+<line class="edge" x1="694.4" y1="679.1" x2="656.9" y2="664.8" stroke-width="1.10"/>
+<line class="edge" x1="748.2" y1="255.8" x2="762.1" y2="292.3" stroke-width="1.10"/>
+<line class="edge" x1="322.2" y1="125.3" x2="305.7" y2="132.7" stroke-width="1.10"/>
+<line class="edge" x1="670.9" y1="676.7" x2="638.4" y2="696.4" stroke-width="1.10"/>
+<line class="edge" x1="656.2" y1="611.6" x2="659.8" y2="637.6" stroke-width="1.10"/>
+<line class="edge" x1="509.0" y1="216.3" x2="501.8" y2="251.1" stroke-width="1.10"/>
+<line class="edge" x1="509.0" y1="216.3" x2="497.7" y2="224.2" stroke-width="1.10"/>
+<line class="edge" x1="612.7" y1="124.7" x2="594.6" y2="114.4" stroke-width="1.10"/>
+<line class="edge" x1="501.8" y1="251.1" x2="522.9" y2="201.7" stroke-width="1.10"/>
+<line class="edge" x1="501.8" y1="251.1" x2="511.0" y2="233.5" stroke-width="1.10"/>
+<line class="edge" x1="501.8" y1="251.1" x2="523.0" y2="221.4" stroke-width="1.10"/>
+<line class="edge" x1="501.8" y1="251.1" x2="464.3" y2="290.1" stroke-width="1.10"/>
+<line class="edge" x1="501.8" y1="251.1" x2="497.7" y2="224.2" stroke-width="1.10"/>
+<line class="edge" x1="118.5" y1="337.8" x2="132.6" y2="342.3" stroke-width="1.10"/>
+<line class="edge" x1="491.6" y1="284.5" x2="464.3" y2="290.1" stroke-width="1.10"/>
+<line class="edge" x1="285.4" y1="325.2" x2="270.3" y2="305.5" stroke-width="1.10"/>
+<line class="edge" x1="285.4" y1="325.2" x2="269.0" y2="322.9" stroke-width="1.10"/>
+<line class="edge" x1="580.6" y1="432.4" x2="591.7" y2="453.3" stroke-width="1.10"/>
+<line class="edge" x1="379.1" y1="552.9" x2="347.5" y2="546.4" stroke-width="1.10"/>
+<line class="edge" x1="656.2" y1="691.9" x2="638.4" y2="696.4" stroke-width="1.10"/>
+<line class="edge" x1="656.9" y1="498.2" x2="631.8" y2="514.9" stroke-width="1.10"/>
+<line class="edge" x1="656.9" y1="498.2" x2="624.3" y2="467.5" stroke-width="1.10"/>
+<line class="edge" x1="503.0" y1="306.4" x2="528.0" y2="342.5" stroke-width="1.10"/>
+<line class="edge" x1="503.0" y1="306.4" x2="464.3" y2="290.1" stroke-width="1.10"/>
+<line class="edge" x1="423.4" y1="564.8" x2="444.1" y2="542.3" stroke-width="1.10"/>
+<line class="edge" x1="731.3" y1="284.9" x2="762.1" y2="292.3" stroke-width="1.10"/>
+<line class="edge" x1="158.4" y1="305.3" x2="144.0" y2="322.0" stroke-width="1.10"/>
+<line class="edge" x1="678.9" y1="510.8" x2="639.6" y2="501.7" stroke-width="1.10"/>
+<line class="edge" x1="324.8" y1="559.2" x2="347.5" y2="546.4" stroke-width="1.10"/>
+<line class="edge" x1="494.7" y1="319.7" x2="528.0" y2="342.5" stroke-width="1.10"/>
+<line class="edge" x1="494.7" y1="319.7" x2="464.3" y2="290.1" stroke-width="1.10"/>
+<line class="edge" x1="611.3" y1="712.2" x2="638.4" y2="696.4" stroke-width="1.10"/>
+<line class="edge" x1="611.3" y1="712.2" x2="607.4" y2="736.4" stroke-width="1.10"/>
+<line class="edge" x1="295.9" y1="281.6" x2="336.2" y2="304.6" stroke-width="1.10"/>
+<line class="edge" x1="801.0" y1="344.6" x2="786.8" y2="312.7" stroke-width="1.10"/>
+<line class="edge" x1="421.6" y1="280.8" x2="464.3" y2="290.1" stroke-width="1.10"/>
+<line class="edge" x1="421.6" y1="280.8" x2="402.7" y2="297.4" stroke-width="1.10"/>
+<line class="edge" x1="639.6" y1="501.7" x2="631.8" y2="514.9" stroke-width="1.10"/>
+<line class="edge" x1="639.6" y1="501.7" x2="624.3" y2="467.5" stroke-width="1.10"/>
+<line class="edge" x1="591.7" y1="453.3" x2="607.9" y2="435.2" stroke-width="1.10"/>
+<line class="edge" x1="274.9" y1="557.0" x2="296.3" y2="559.9" stroke-width="1.10"/>
+<line class="edge" x1="523.0" y1="221.4" x2="497.7" y2="224.2" stroke-width="1.10"/>
+<line class="edge" x1="495.9" y1="541.4" x2="470.3" y2="529.3" stroke-width="1.10"/>
+<line class="edge" x1="780.0" y1="327.7" x2="762.1" y2="292.3" stroke-width="1.10"/>
+<line class="edge" x1="295.6" y1="298.1" x2="315.6" y2="319.4" stroke-width="1.10"/>
+<line class="edge" x1="282.3" y1="293.1" x2="316.3" y2="334.4" stroke-width="1.10"/>
+<line class="edge" x1="270.3" y1="305.5" x2="319.7" y2="305.3" stroke-width="1.10"/>
+<line class="edge" x1="270.3" y1="305.5" x2="269.0" y2="322.9" stroke-width="1.10"/>
+<line class="edge" x1="336.2" y1="304.6" x2="285.6" y2="309.9" stroke-width="1.10"/>
+<line class="edge" x1="336.2" y1="304.6" x2="316.3" y2="334.4" stroke-width="1.10"/>
+<line class="edge" x1="336.2" y1="304.6" x2="319.7" y2="305.3" stroke-width="1.10"/>
+<line class="edge" x1="656.9" y1="664.8" x2="659.8" y2="637.6" stroke-width="1.10"/>
+<line class="edge" x1="656.9" y1="664.8" x2="638.4" y2="696.4" stroke-width="1.10"/>
+<line class="edge" x1="419.8" y1="314.0" x2="464.3" y2="290.1" stroke-width="1.10"/>
+<line class="edge" x1="432.9" y1="250.7" x2="464.3" y2="290.1" stroke-width="1.10"/>
+<line class="edge" x1="470.3" y1="529.3" x2="486.7" y2="556.3" stroke-width="1.10"/>
+<line class="edge" x1="319.7" y1="305.3" x2="269.0" y2="322.9" stroke-width="1.10"/>
+<line class="edge" x1="464.3" y1="290.1" x2="402.7" y2="297.4" stroke-width="1.10"/>
+<line class="edge" x1="464.3" y1="290.1" x2="397.6" y2="276.4" stroke-width="1.10"/>
+<line class="edge" x1="786.8" y1="312.7" x2="809.4" y2="331.1" stroke-width="1.10"/>
+<line class="edge" x1="763.1" y1="255.0" x2="762.1" y2="292.3" stroke-width="1.45"/>
+<line class="edge" x1="767.0" y1="335.2" x2="786.8" y2="312.7" stroke-width="1.45"/>
+<line class="edge" x1="673.1" y1="497.8" x2="624.3" y2="467.5" stroke-width="1.45"/>
+<line class="edge" x1="592.7" y1="438.9" x2="591.7" y2="453.3" stroke-width="1.45"/>
+<line class="edge" x1="558.2" y1="331.0" x2="548.9" y2="344.6" stroke-width="1.45"/>
+<line class="edge" x1="310.0" y1="294.0" x2="298.9" y2="321.4" stroke-width="1.45"/>
+<line class="edge" x1="310.0" y1="294.0" x2="286.1" y2="340.0" stroke-width="1.45"/>
+<line class="edge" x1="310.0" y1="294.0" x2="305.6" y2="308.8" stroke-width="1.45"/>
+<line class="edge" x1="310.0" y1="294.0" x2="333.5" y2="335.7" stroke-width="1.45"/>
+<line class="edge" x1="310.0" y1="294.0" x2="319.7" y2="305.3" stroke-width="1.45"/>
+<line class="edge" x1="310.0" y1="294.0" x2="269.0" y2="322.9" stroke-width="1.45"/>
+<line class="edge" x1="448.9" y1="283.3" x2="449.8" y2="269.4" stroke-width="1.45"/>
+<line class="edge" x1="448.9" y1="283.3" x2="414.3" y2="268.3" stroke-width="1.45"/>
+<line class="edge" x1="330.0" y1="318.1" x2="286.1" y2="340.0" stroke-width="1.45"/>
+<line class="edge" x1="330.0" y1="318.1" x2="269.0" y2="322.9" stroke-width="1.45"/>
+<line class="edge" x1="330.0" y1="318.1" x2="315.6" y2="319.4" stroke-width="1.45"/>
+<line class="edge" x1="426.4" y1="297.2" x2="421.6" y2="280.8" stroke-width="1.45"/>
+<line class="edge" x1="717.3" y1="692.7" x2="694.4" y2="679.1" stroke-width="1.45"/>
+<line class="edge" x1="509.3" y1="187.6" x2="523.0" y2="221.4" stroke-width="1.45"/>
+<line class="edge" x1="496.3" y1="208.1" x2="511.0" y2="233.5" stroke-width="1.45"/>
+<line class="edge" x1="496.3" y1="208.1" x2="497.7" y2="224.2" stroke-width="1.45"/>
+<line class="edge" x1="770.9" y1="267.3" x2="762.1" y2="292.3" stroke-width="1.45"/>
+<line class="edge" x1="642.2" y1="486.5" x2="648.9" y2="515.2" stroke-width="1.45"/>
+<line class="edge" x1="484.6" y1="308.4" x2="464.3" y2="290.1" stroke-width="1.45"/>
+<line class="edge" x1="157.9" y1="348.4" x2="132.6" y2="342.3" stroke-width="1.45"/>
+<line class="edge" x1="396.4" y1="509.3" x2="389.6" y2="521.3" stroke-width="1.45"/>
+<line class="edge" x1="298.9" y1="321.4" x2="295.6" y2="298.1" stroke-width="1.45"/>
+<line class="edge" x1="298.9" y1="321.4" x2="270.3" y2="305.5" stroke-width="1.45"/>
+<line class="edge" x1="298.9" y1="321.4" x2="285.6" y2="309.9" stroke-width="1.45"/>
+<line class="edge" x1="298.9" y1="321.4" x2="315.6" y2="319.4" stroke-width="1.45"/>
+<line class="edge" x1="286.1" y1="340.0" x2="305.8" y2="351.2" stroke-width="1.45"/>
+<line class="edge" x1="286.1" y1="340.0" x2="305.6" y2="308.8" stroke-width="1.45"/>
+<line class="edge" x1="286.1" y1="340.0" x2="295.9" y2="281.6" stroke-width="1.45"/>
+<line class="edge" x1="286.1" y1="340.0" x2="295.6" y2="298.1" stroke-width="1.45"/>
+<line class="edge" x1="286.1" y1="340.0" x2="285.6" y2="309.9" stroke-width="1.45"/>
+<line class="edge" x1="286.1" y1="340.0" x2="316.3" y2="334.4" stroke-width="1.45"/>
+<line class="edge" x1="286.1" y1="340.0" x2="269.0" y2="322.9" stroke-width="1.45"/>
+<line class="edge" x1="479.9" y1="543.3" x2="495.9" y2="541.4" stroke-width="1.45"/>
+<line class="edge" x1="479.9" y1="543.3" x2="486.7" y2="556.3" stroke-width="1.45"/>
+<line class="edge" x1="509.8" y1="329.9" x2="491.6" y2="284.5" stroke-width="1.45"/>
+<line class="edge" x1="509.8" y1="329.9" x2="503.0" y2="306.4" stroke-width="1.45"/>
+<line class="edge" x1="509.8" y1="329.9" x2="494.7" y2="319.7" stroke-width="1.45"/>
+<line class="edge" x1="509.8" y1="329.9" x2="526.7" y2="322.4" stroke-width="1.45"/>
+<line class="edge" x1="509.8" y1="329.9" x2="528.0" y2="342.5" stroke-width="1.45"/>
+<line class="edge" x1="509.8" y1="329.9" x2="548.9" y2="344.6" stroke-width="1.45"/>
+<line class="edge" x1="305.8" y1="351.2" x2="270.3" y2="305.5" stroke-width="1.45"/>
+<line class="edge" x1="305.8" y1="351.2" x2="269.0" y2="322.9" stroke-width="1.45"/>
+<line class="edge" x1="516.2" y1="299.1" x2="521.0" y2="272.6" stroke-width="1.45"/>
+<line class="edge" x1="127.9" y1="467.7" x2="153.4" y2="448.0" stroke-width="1.45"/>
+<line class="edge" x1="559.6" y1="317.1" x2="528.0" y2="342.5" stroke-width="1.45"/>
+<line class="edge" x1="222.0" y1="653.1" x2="208.7" y2="666.0" stroke-width="1.45"/>
+<line class="edge" x1="300.9" y1="335.7" x2="270.3" y2="305.5" stroke-width="1.45"/>
+<line class="edge" x1="300.9" y1="335.7" x2="269.0" y2="322.9" stroke-width="1.45"/>
+<line class="edge" x1="285.4" y1="325.2" x2="295.6" y2="298.1" stroke-width="1.45"/>
+<line class="edge" x1="285.4" y1="325.2" x2="319.7" y2="305.3" stroke-width="1.45"/>
+<line class="edge" x1="305.6" y1="308.8" x2="295.6" y2="298.1" stroke-width="1.45"/>
+<line class="edge" x1="305.6" y1="308.8" x2="336.2" y2="304.6" stroke-width="1.45"/>
+<line class="edge" x1="305.6" y1="308.8" x2="319.7" y2="305.3" stroke-width="1.45"/>
+<line class="edge" x1="305.6" y1="308.8" x2="269.0" y2="322.9" stroke-width="1.45"/>
+<line class="edge" x1="305.6" y1="308.8" x2="315.6" y2="319.4" stroke-width="1.45"/>
+<line class="edge" x1="656.0" y1="589.6" x2="659.8" y2="637.6" stroke-width="1.45"/>
+<line class="edge" x1="521.0" y1="272.6" x2="535.0" y2="276.5" stroke-width="1.45"/>
+<line class="edge" x1="423.4" y1="564.8" x2="411.9" y2="549.3" stroke-width="1.45"/>
+<line class="edge" x1="731.3" y1="284.9" x2="726.0" y2="263.9" stroke-width="1.45"/>
+<line class="edge" x1="678.9" y1="510.8" x2="693.3" y2="507.2" stroke-width="1.45"/>
+<line class="edge" x1="678.9" y1="510.8" x2="703.2" y2="518.0" stroke-width="1.45"/>
+<line class="edge" x1="140.7" y1="473.2" x2="136.5" y2="454.3" stroke-width="1.45"/>
+<line class="edge" x1="132.6" y1="342.3" x2="144.0" y2="351.6" stroke-width="1.45"/>
+<line class="edge" x1="421.6" y1="280.8" x2="419.8" y2="314.0" stroke-width="1.45"/>
+<line class="edge" x1="600.2" y1="723.4" x2="607.4" y2="736.4" stroke-width="1.45"/>
+<line class="edge" x1="495.9" y1="541.4" x2="486.7" y2="556.3" stroke-width="1.45"/>
+<line class="edge" x1="295.6" y1="298.1" x2="319.7" y2="305.3" stroke-width="1.45"/>
+<line class="edge" x1="285.6" y1="309.9" x2="319.7" y2="305.3" stroke-width="1.45"/>
+<line class="edge" x1="285.6" y1="309.9" x2="269.0" y2="322.9" stroke-width="1.45"/>
+<line class="edge" x1="285.6" y1="309.9" x2="315.6" y2="319.4" stroke-width="1.45"/>
+<line class="edge" x1="759.1" y1="276.9" x2="762.1" y2="292.3" stroke-width="1.45"/>
+<line class="edge" x1="684.6" y1="582.5" x2="697.2" y2="558.8" stroke-width="1.45"/>
+<line class="edge" x1="316.3" y1="334.4" x2="269.0" y2="322.9" stroke-width="1.45"/>
+<line class="edge" x1="673.1" y1="497.8" x2="642.2" y2="486.5" stroke-width="1.70"/>
+<line class="edge" x1="673.1" y1="497.8" x2="693.3" y2="507.2" stroke-width="1.70"/>
+<line class="edge" x1="673.1" y1="497.8" x2="703.2" y2="518.0" stroke-width="1.70"/>
+<line class="edge" x1="310.0" y1="294.0" x2="300.9" y2="335.7" stroke-width="1.70"/>
+<line class="edge" x1="310.0" y1="294.0" x2="285.4" y2="325.2" stroke-width="1.70"/>
+<line class="edge" x1="310.0" y1="294.0" x2="315.6" y2="319.4" stroke-width="1.70"/>
+<line class="edge" x1="448.9" y1="283.3" x2="432.9" y2="250.7" stroke-width="1.70"/>
+<line class="edge" x1="747.8" y1="294.7" x2="762.1" y2="292.3" stroke-width="1.70"/>
+<line class="edge" x1="330.0" y1="318.1" x2="298.9" y2="321.4" stroke-width="1.70"/>
+<line class="edge" x1="330.0" y1="318.1" x2="285.4" y2="325.2" stroke-width="1.70"/>
+<line class="edge" x1="330.0" y1="318.1" x2="295.6" y2="298.1" stroke-width="1.70"/>
+<line class="edge" x1="330.0" y1="318.1" x2="270.3" y2="305.5" stroke-width="1.70"/>
+<line class="edge" x1="330.0" y1="318.1" x2="336.2" y2="304.6" stroke-width="1.70"/>
+<line class="edge" x1="330.0" y1="318.1" x2="319.7" y2="305.3" stroke-width="1.70"/>
+<line class="edge" x1="426.4" y1="297.2" x2="435.2" y2="284.2" stroke-width="1.70"/>
+<line class="edge" x1="426.4" y1="297.2" x2="402.7" y2="297.4" stroke-width="1.70"/>
+<line class="edge" x1="639.9" y1="527.1" x2="623.1" y2="499.7" stroke-width="1.70"/>
+<line class="edge" x1="496.3" y1="208.1" x2="509.0" y2="216.3" stroke-width="1.70"/>
+<line class="edge" x1="620.8" y1="722.8" x2="600.2" y2="723.4" stroke-width="1.70"/>
+<line class="edge" x1="435.2" y1="284.2" x2="434.0" y2="268.7" stroke-width="1.70"/>
+<line class="edge" x1="435.2" y1="284.2" x2="402.7" y2="297.4" stroke-width="1.70"/>
+<line class="edge" x1="484.6" y1="308.4" x2="509.8" y2="329.9" stroke-width="1.70"/>
+<line class="edge" x1="157.9" y1="348.4" x2="158.0" y2="333.5" stroke-width="1.70"/>
+<line class="edge" x1="298.9" y1="321.4" x2="285.4" y2="325.2" stroke-width="1.70"/>
+<line class="edge" x1="298.9" y1="321.4" x2="305.6" y2="308.8" stroke-width="1.70"/>
+<line class="edge" x1="560.1" y1="455.4" x2="569.2" y2="424.7" stroke-width="1.70"/>
+<line class="edge" x1="286.1" y1="340.0" x2="300.9" y2="335.7" stroke-width="1.70"/>
+<line class="edge" x1="286.1" y1="340.0" x2="327.3" y2="288.3" stroke-width="1.70"/>
+<line class="edge" x1="286.1" y1="340.0" x2="333.5" y2="335.7" stroke-width="1.70"/>
+<line class="edge" x1="795.1" y1="330.9" x2="801.0" y2="344.6" stroke-width="1.70"/>
+<line class="edge" x1="795.1" y1="330.9" x2="786.8" y2="312.7" stroke-width="1.70"/>
+<line class="edge" x1="795.1" y1="330.9" x2="809.4" y2="331.1" stroke-width="1.70"/>
+<line class="edge" x1="479.9" y1="543.3" x2="470.3" y2="529.3" stroke-width="1.70"/>
+<line class="edge" x1="509.8" y1="329.9" x2="464.3" y2="290.1" stroke-width="1.70"/>
+<line class="edge" x1="434.0" y1="268.7" x2="414.3" y2="268.3" stroke-width="1.70"/>
+<line class="edge" x1="305.8" y1="351.2" x2="295.6" y2="298.1" stroke-width="1.70"/>
+<line class="edge" x1="305.8" y1="351.2" x2="285.6" y2="309.9" stroke-width="1.70"/>
+<line class="edge" x1="454.0" y1="516.6" x2="436.2" y2="519.8" stroke-width="1.70"/>
+<line class="edge" x1="127.8" y1="327.6" x2="158.0" y2="333.5" stroke-width="1.70"/>
+<line class="edge" x1="300.9" y1="335.7" x2="285.4" y2="325.2" stroke-width="1.70"/>
+<line class="edge" x1="300.9" y1="335.7" x2="305.6" y2="308.8" stroke-width="1.70"/>
+<line class="edge" x1="300.9" y1="335.7" x2="295.6" y2="298.1" stroke-width="1.70"/>
+<line class="edge" x1="300.9" y1="335.7" x2="285.6" y2="309.9" stroke-width="1.70"/>
+<line class="edge" x1="670.9" y1="676.7" x2="659.8" y2="637.6" stroke-width="1.70"/>
+<line class="edge" x1="509.0" y1="216.3" x2="511.0" y2="233.5" stroke-width="1.70"/>
+<line class="edge" x1="612.7" y1="124.7" x2="627.1" y2="123.0" stroke-width="1.70"/>
+<line class="edge" x1="501.8" y1="251.1" x2="491.6" y2="284.5" stroke-width="1.70"/>
+<line class="edge" x1="285.4" y1="325.2" x2="305.6" y2="308.8" stroke-width="1.70"/>
+<line class="edge" x1="285.4" y1="325.2" x2="285.6" y2="309.9" stroke-width="1.70"/>
+<line class="edge" x1="158.0" y1="333.5" x2="144.0" y2="351.6" stroke-width="1.70"/>
+<line class="edge" x1="656.2" y1="691.9" x2="656.9" y2="664.8" stroke-width="1.70"/>
+<line class="edge" x1="305.6" y1="308.8" x2="270.3" y2="305.5" stroke-width="1.70"/>
+<line class="edge" x1="305.6" y1="308.8" x2="285.6" y2="309.9" stroke-width="1.70"/>
+<line class="edge" x1="305.6" y1="308.8" x2="316.3" y2="334.4" stroke-width="1.70"/>
+<line class="edge" x1="656.9" y1="498.2" x2="678.9" y2="510.8" stroke-width="1.70"/>
+<line class="edge" x1="428.5" y1="551.5" x2="444.1" y2="542.3" stroke-width="1.70"/>
+<line class="edge" x1="428.5" y1="551.5" x2="411.9" y2="549.3" stroke-width="1.70"/>
+<line class="edge" x1="759.8" y1="323.1" x2="755.7" y2="308.8" stroke-width="1.70"/>
+<line class="edge" x1="759.8" y1="323.1" x2="786.8" y2="312.7" stroke-width="1.70"/>
+<line class="edge" x1="417.0" y1="254.3" x2="432.9" y2="250.7" stroke-width="1.70"/>
+<line class="edge" x1="611.3" y1="712.2" x2="600.2" y2="723.4" stroke-width="1.70"/>
+<line class="edge" x1="295.9" y1="281.6" x2="269.0" y2="322.9" stroke-width="1.70"/>
+<line class="edge" x1="327.3" y1="288.3" x2="269.0" y2="322.9" stroke-width="1.70"/>
+<line class="edge" x1="421.6" y1="280.8" x2="432.9" y2="250.7" stroke-width="1.70"/>
+<line class="edge" x1="511.0" y1="233.5" x2="497.7" y2="224.2" stroke-width="1.70"/>
+<line class="edge" x1="370.5" y1="294.3" x2="336.2" y2="304.6" stroke-width="1.70"/>
+<line class="edge" x1="526.7" y1="322.4" x2="528.0" y2="342.5" stroke-width="1.70"/>
+<line class="edge" x1="591.7" y1="453.3" x2="569.2" y2="440.8" stroke-width="1.70"/>
+<line class="edge" x1="291.6" y1="139.2" x2="305.7" y2="132.7" stroke-width="1.70"/>
+<line class="edge" x1="295.6" y1="298.1" x2="282.3" y2="293.1" stroke-width="1.70"/>
+<line class="edge" x1="295.6" y1="298.1" x2="333.5" y2="335.7" stroke-width="1.70"/>
+<line class="edge" x1="295.6" y1="298.1" x2="316.3" y2="334.4" stroke-width="1.70"/>
+<line class="edge" x1="295.6" y1="298.1" x2="269.0" y2="322.9" stroke-width="1.70"/>
+<line class="edge" x1="270.3" y1="305.5" x2="333.5" y2="335.7" stroke-width="1.70"/>
+<line class="edge" x1="270.3" y1="305.5" x2="316.3" y2="334.4" stroke-width="1.70"/>
+<line class="edge" x1="755.7" y1="308.8" x2="762.1" y2="292.3" stroke-width="1.70"/>
+<line class="edge" x1="496.0" y1="824.8" x2="478.0" y2="826.4" stroke-width="1.70"/>
+<line class="edge" x1="333.5" y1="335.7" x2="336.2" y2="304.6" stroke-width="1.70"/>
+<line class="edge" x1="333.5" y1="335.7" x2="285.6" y2="309.9" stroke-width="1.70"/>
+<line class="edge" x1="333.5" y1="335.7" x2="269.0" y2="322.9" stroke-width="1.70"/>
+<line class="edge" x1="336.2" y1="304.6" x2="402.7" y2="297.4" stroke-width="1.70"/>
+<line class="edge" x1="648.9" y1="515.2" x2="631.8" y2="514.9" stroke-width="1.70"/>
+<line class="edge" x1="419.8" y1="314.0" x2="402.7" y2="297.4" stroke-width="1.70"/>
+<line class="edge" x1="757.7" y1="346.0" x2="786.8" y2="312.7" stroke-width="1.70"/>
+<line class="edge" x1="368.9" y1="539.0" x2="347.5" y2="546.4" stroke-width="1.70"/>
+<line class="edge" x1="762.1" y1="292.3" x2="786.8" y2="312.7" stroke-width="1.70"/>
+<line class="edge" x1="767.0" y1="335.2" x2="755.7" y2="308.8" stroke-width="1.89"/>
+<line class="edge" x1="592.7" y1="438.9" x2="580.6" y2="432.4" stroke-width="1.89"/>
+<line class="edge" x1="310.0" y1="294.0" x2="330.0" y2="318.1" stroke-width="1.89"/>
+<line class="edge" x1="310.0" y1="294.0" x2="305.8" y2="351.2" stroke-width="1.89"/>
+<line class="edge" x1="310.0" y1="294.0" x2="282.3" y2="293.1" stroke-width="1.89"/>
+<line class="edge" x1="324.1" y1="791.0" x2="302.6" y2="786.1" stroke-width="1.89"/>
+<line class="edge" x1="410.0" y1="526.9" x2="436.2" y2="519.8" stroke-width="1.89"/>
+<line class="edge" x1="507.0" y1="280.3" x2="516.2" y2="299.1" stroke-width="1.89"/>
+<line class="edge" x1="507.0" y1="280.3" x2="535.0" y2="276.5" stroke-width="1.89"/>
+<line class="edge" x1="633.7" y1="137.1" x2="612.7" y2="124.7" stroke-width="1.89"/>
+<line class="edge" x1="747.8" y1="294.7" x2="741.8" y2="271.9" stroke-width="1.89"/>
+<line class="edge" x1="747.8" y1="294.7" x2="731.3" y2="284.9" stroke-width="1.89"/>
+<line class="edge" x1="741.8" y1="271.9" x2="762.1" y2="292.3" stroke-width="1.89"/>
+<line class="edge" x1="330.0" y1="318.1" x2="305.8" y2="351.2" stroke-width="1.89"/>
+<line class="edge" x1="330.0" y1="318.1" x2="300.9" y2="335.7" stroke-width="1.89"/>
+<line class="edge" x1="330.0" y1="318.1" x2="333.5" y2="335.7" stroke-width="1.89"/>
+<line class="edge" x1="310.4" y1="798.0" x2="314.6" y2="776.9" stroke-width="1.89"/>
+<line class="edge" x1="310.4" y1="798.0" x2="302.6" y2="786.1" stroke-width="1.89"/>
+<line class="edge" x1="356.7" y1="557.3" x2="379.1" y2="552.9" stroke-width="1.89"/>
+<line class="edge" x1="356.7" y1="557.3" x2="347.5" y2="546.4" stroke-width="1.89"/>
+<line class="edge" x1="496.3" y1="208.1" x2="523.0" y2="221.4" stroke-width="1.89"/>
+<line class="edge" x1="620.8" y1="722.8" x2="611.3" y2="712.2" stroke-width="1.89"/>
+<line class="edge" x1="669.4" y1="483.2" x2="663.0" y2="467.0" stroke-width="1.89"/>
+<line class="edge" x1="435.2" y1="284.2" x2="419.8" y2="314.0" stroke-width="1.89"/>
+<line class="edge" x1="435.2" y1="284.2" x2="432.9" y2="250.7" stroke-width="1.89"/>
+<line class="edge" x1="157.9" y1="348.4" x2="144.0" y2="322.0" stroke-width="1.89"/>
+<line class="edge" x1="298.9" y1="321.4" x2="300.9" y2="335.7" stroke-width="1.89"/>
+<line class="edge" x1="298.9" y1="321.4" x2="295.9" y2="281.6" stroke-width="1.89"/>
+<line class="edge" x1="298.9" y1="321.4" x2="333.5" y2="335.7" stroke-width="1.89"/>
+<line class="edge" x1="298.9" y1="321.4" x2="316.3" y2="334.4" stroke-width="1.89"/>
+<line class="edge" x1="298.9" y1="321.4" x2="319.7" y2="305.3" stroke-width="1.89"/>
+<line class="edge" x1="428.8" y1="533.5" x2="454.0" y2="516.6" stroke-width="1.89"/>
+<line class="edge" x1="623.1" y1="499.7" x2="648.9" y2="515.2" stroke-width="1.89"/>
+<line class="edge" x1="616.8" y1="139.4" x2="612.7" y2="124.7" stroke-width="1.89"/>
+<line class="edge" x1="434.0" y1="268.7" x2="449.8" y2="269.4" stroke-width="1.89"/>
+<line class="edge" x1="434.0" y1="268.7" x2="417.0" y2="254.3" stroke-width="1.89"/>
+<line class="edge" x1="434.0" y1="268.7" x2="421.6" y2="280.8" stroke-width="1.89"/>
+<line class="edge" x1="449.8" y1="269.4" x2="417.0" y2="254.3" stroke-width="1.89"/>
+<line class="edge" x1="449.8" y1="269.4" x2="432.9" y2="250.7" stroke-width="1.89"/>
+<line class="edge" x1="305.8" y1="351.2" x2="305.6" y2="308.8" stroke-width="1.89"/>
+<line class="edge" x1="305.8" y1="351.2" x2="315.6" y2="319.4" stroke-width="1.89"/>
+<line class="edge" x1="192.8" y1="558.5" x2="180.7" y2="575.7" stroke-width="1.89"/>
+<line class="edge" x1="192.8" y1="558.5" x2="165.4" y2="569.0" stroke-width="1.89"/>
+<line class="edge" x1="454.0" y1="516.6" x2="501.7" y2="485.2" stroke-width="1.89"/>
+<line class="edge" x1="127.9" y1="467.7" x2="152.4" y2="485.9" stroke-width="1.89"/>
+<line class="edge" x1="127.9" y1="467.7" x2="136.5" y2="454.3" stroke-width="1.89"/>
+<line class="edge" x1="127.8" y1="327.6" x2="144.0" y2="322.0" stroke-width="1.89"/>
+<line class="edge" x1="577.0" y1="453.9" x2="580.6" y2="432.4" stroke-width="1.89"/>
+<line class="edge" x1="577.0" y1="453.9" x2="591.7" y2="453.3" stroke-width="1.89"/>
+<line class="edge" x1="414.3" y1="268.3" x2="432.9" y2="250.7" stroke-width="1.89"/>
+<line class="edge" x1="300.9" y1="335.7" x2="315.6" y2="319.4" stroke-width="1.89"/>
+<line class="edge" x1="436.2" y1="519.8" x2="444.1" y2="542.3" stroke-width="1.89"/>
+<line class="edge" x1="285.4" y1="325.2" x2="333.5" y2="335.7" stroke-width="1.89"/>
+<line class="edge" x1="285.4" y1="325.2" x2="316.3" y2="334.4" stroke-width="1.89"/>
+<line class="edge" x1="285.4" y1="325.2" x2="315.6" y2="319.4" stroke-width="1.89"/>
+<line class="edge" x1="305.6" y1="308.8" x2="295.9" y2="281.6" stroke-width="1.89"/>
+<line class="edge" x1="428.5" y1="551.5" x2="423.4" y2="564.8" stroke-width="1.89"/>
+<line class="edge" x1="556.4" y1="360.2" x2="528.0" y2="342.5" stroke-width="1.89"/>
+<line class="edge" x1="417.0" y1="254.3" x2="421.6" y2="280.8" stroke-width="1.89"/>
+<line class="edge" x1="140.7" y1="473.2" x2="156.8" y2="465.6" stroke-width="1.89"/>
+<line class="edge" x1="144.0" y1="322.0" x2="144.0" y2="351.6" stroke-width="1.89"/>
+<line class="edge" x1="144.0" y1="322.0" x2="137.5" y2="305.8" stroke-width="1.89"/>
+<line class="edge" x1="295.9" y1="281.6" x2="319.7" y2="305.3" stroke-width="1.89"/>
+<line class="edge" x1="327.3" y1="288.3" x2="336.2" y2="304.6" stroke-width="1.89"/>
+<line class="edge" x1="526.7" y1="322.4" x2="548.9" y2="344.6" stroke-width="1.89"/>
+<line class="edge" x1="693.3" y1="507.2" x2="703.2" y2="518.0" stroke-width="1.89"/>
+<line class="edge" x1="282.3" y1="293.1" x2="270.3" y2="305.5" stroke-width="1.89"/>
+<line class="edge" x1="333.5" y1="335.7" x2="315.6" y2="319.4" stroke-width="1.89"/>
+<line class="edge" x1="490.6" y1="520.9" x2="501.7" y2="485.2" stroke-width="1.89"/>
+<line class="edge" x1="319.7" y1="305.3" x2="315.6" y2="319.4" stroke-width="1.89"/>
+<line class="edge" x1="763.1" y1="255.0" x2="741.8" y2="271.9" stroke-width="2.05"/>
+<line class="edge" x1="767.0" y1="335.2" x2="759.8" y2="323.1" stroke-width="2.05"/>
+<line class="edge" x1="592.7" y1="438.9" x2="560.1" y2="455.4" stroke-width="2.05"/>
+<line class="edge" x1="592.7" y1="438.9" x2="577.0" y2="453.9" stroke-width="2.05"/>
+<line class="edge" x1="493.0" y1="389.6" x2="490.5" y2="428.0" stroke-width="2.05"/>
+<line class="edge" x1="310.0" y1="294.0" x2="270.3" y2="305.5" stroke-width="2.05"/>
+<line class="edge" x1="310.0" y1="294.0" x2="316.3" y2="334.4" stroke-width="2.05"/>
+<line class="edge" x1="448.9" y1="283.3" x2="426.4" y2="297.2" stroke-width="2.05"/>
+<line class="edge" x1="448.9" y1="283.3" x2="419.8" y2="314.0" stroke-width="2.05"/>
+<line class="edge" x1="191.6" y1="659.7" x2="191.7" y2="674.4" stroke-width="2.05"/>
+<line class="edge" x1="741.8" y1="271.9" x2="770.9" y2="267.3" stroke-width="2.05"/>
+<line class="edge" x1="330.0" y1="318.1" x2="305.6" y2="308.8" stroke-width="2.05"/>
+<line class="edge" x1="330.0" y1="318.1" x2="295.9" y2="281.6" stroke-width="2.05"/>
+<line class="edge" x1="330.0" y1="318.1" x2="285.6" y2="309.9" stroke-width="2.05"/>
+<line class="edge" x1="330.0" y1="318.1" x2="316.3" y2="334.4" stroke-width="2.05"/>
+<line class="edge" x1="426.4" y1="297.2" x2="414.3" y2="268.3" stroke-width="2.05"/>
+<line class="edge" x1="507.5" y1="531.0" x2="490.6" y2="520.9" stroke-width="2.05"/>
+<line class="edge" x1="507.5" y1="531.0" x2="505.7" y2="553.2" stroke-width="2.05"/>
+<line class="edge" x1="484.6" y1="308.4" x2="494.7" y2="319.7" stroke-width="2.05"/>
+<line class="edge" x1="298.9" y1="321.4" x2="305.8" y2="351.2" stroke-width="2.05"/>
+<line class="edge" x1="428.8" y1="533.5" x2="444.1" y2="542.3" stroke-width="2.05"/>
+<line class="edge" x1="428.8" y1="533.5" x2="411.9" y2="549.3" stroke-width="2.05"/>
+<line class="edge" x1="623.1" y1="499.7" x2="656.9" y2="498.2" stroke-width="2.05"/>
+<line class="edge" x1="623.1" y1="499.7" x2="639.6" y2="501.7" stroke-width="2.05"/>
+<line class="edge" x1="560.1" y1="455.4" x2="580.6" y2="432.4" stroke-width="2.05"/>
+<line class="edge" x1="616.8" y1="139.4" x2="627.1" y2="123.0" stroke-width="2.05"/>
+<line class="edge" x1="434.0" y1="268.7" x2="402.7" y2="297.4" stroke-width="2.05"/>
+<line class="edge" x1="449.8" y1="269.4" x2="421.6" y2="280.8" stroke-width="2.05"/>
+<line class="edge" x1="305.8" y1="351.2" x2="285.4" y2="325.2" stroke-width="2.05"/>
+<line class="edge" x1="305.8" y1="351.2" x2="319.7" y2="305.3" stroke-width="2.05"/>
+<line class="edge" x1="666.4" y1="708.3" x2="670.9" y2="676.7" stroke-width="2.05"/>
+<line class="edge" x1="666.4" y1="708.3" x2="656.2" y2="691.9" stroke-width="2.05"/>
+<line class="edge" x1="666.4" y1="708.3" x2="673.4" y2="694.0" stroke-width="2.05"/>
+<line class="edge" x1="414.3" y1="268.3" x2="419.8" y2="314.0" stroke-width="2.05"/>
+<line class="edge" x1="509.0" y1="216.3" x2="523.0" y2="221.4" stroke-width="2.05"/>
+<line class="edge" x1="118.5" y1="337.8" x2="144.0" y2="322.0" stroke-width="2.05"/>
+<line class="edge" x1="158.0" y1="333.5" x2="144.0" y2="322.0" stroke-width="2.05"/>
+<line class="edge" x1="656.2" y1="691.9" x2="673.4" y2="694.0" stroke-width="2.05"/>
+<line class="edge" x1="476.6" y1="407.3" x2="490.5" y2="428.0" stroke-width="2.05"/>
+<line class="edge" x1="759.8" y1="323.1" x2="757.7" y2="346.0" stroke-width="2.05"/>
+<line class="edge" x1="578.9" y1="811.7" x2="563.8" y2="802.5" stroke-width="2.05"/>
+<line class="edge" x1="295.9" y1="281.6" x2="315.6" y2="319.4" stroke-width="2.05"/>
+<line class="edge" x1="295.6" y1="298.1" x2="270.3" y2="305.5" stroke-width="2.05"/>
+<line class="edge" x1="490.9" y1="413.0" x2="490.5" y2="428.0" stroke-width="2.05"/>
+<line class="edge" x1="755.7" y1="308.8" x2="757.7" y2="346.0" stroke-width="2.05"/>
+<line class="edge" x1="333.5" y1="335.7" x2="319.7" y2="305.3" stroke-width="2.05"/>
+<line class="edge" x1="514.9" y1="542.9" x2="490.6" y2="520.9" stroke-width="2.05"/>
+<line class="edge" x1="514.9" y1="542.9" x2="505.7" y2="553.2" stroke-width="2.05"/>
+<line class="edge" x1="432.9" y1="250.7" x2="402.7" y2="297.4" stroke-width="2.05"/>
+<line class="edge" x1="285.6" y1="309.9" x2="316.3" y2="334.4" stroke-width="2.05"/>
+<line class="edge" x1="490.6" y1="520.9" x2="505.7" y2="553.2" stroke-width="2.05"/>
+<line class="edge" x1="763.1" y1="255.0" x2="748.2" y2="255.8" stroke-width="2.18"/>
+<line class="edge" x1="767.0" y1="335.2" x2="771.4" y2="307.5" stroke-width="2.18"/>
+<line class="edge" x1="767.0" y1="335.2" x2="744.8" y2="321.2" stroke-width="2.18"/>
+<line class="edge" x1="767.0" y1="335.2" x2="780.0" y2="327.7" stroke-width="2.18"/>
+<line class="edge" x1="767.0" y1="335.2" x2="757.7" y2="346.0" stroke-width="2.18"/>
+<line class="edge" x1="219.5" y1="680.5" x2="208.7" y2="666.0" stroke-width="2.18"/>
+<line class="edge" x1="724.3" y1="676.1" x2="734.5" y2="688.6" stroke-width="2.18"/>
+<line class="edge" x1="249.5" y1="738.2" x2="235.1" y2="739.3" stroke-width="2.18"/>
+<line class="edge" x1="493.0" y1="389.6" x2="490.9" y2="413.0" stroke-width="2.18"/>
+<line class="edge" x1="421.4" y1="99.6" x2="407.3" y2="99.9" stroke-width="2.18"/>
+<line class="edge" x1="324.1" y1="791.0" x2="310.4" y2="798.0" stroke-width="2.18"/>
+<line class="edge" x1="324.1" y1="791.0" x2="314.6" y2="776.9" stroke-width="2.18"/>
+<line class="edge" x1="448.9" y1="283.3" x2="397.6" y2="276.4" stroke-width="2.18"/>
+<line class="edge" x1="817.4" y1="602.9" x2="822.2" y2="589.0" stroke-width="2.18"/>
+<line class="edge" x1="507.0" y1="280.3" x2="521.0" y2="272.6" stroke-width="2.18"/>
+<line class="edge" x1="191.6" y1="659.7" x2="208.7" y2="666.0" stroke-width="2.18"/>
+<line class="edge" x1="741.8" y1="271.9" x2="748.2" y2="255.8" stroke-width="2.18"/>
+<line class="edge" x1="741.8" y1="271.9" x2="731.3" y2="284.9" stroke-width="2.18"/>
+<line class="edge" x1="741.8" y1="271.9" x2="759.1" y2="276.9" stroke-width="2.18"/>
+<line class="edge" x1="178.0" y1="561.0" x2="180.7" y2="575.7" stroke-width="2.18"/>
+<line class="edge" x1="178.0" y1="561.0" x2="165.4" y2="569.0" stroke-width="2.18"/>
+<line class="edge" x1="356.7" y1="557.3" x2="368.9" y2="539.0" stroke-width="2.18"/>
+<line class="edge" x1="507.5" y1="531.0" x2="495.9" y2="541.4" stroke-width="2.18"/>
+<line class="edge" x1="507.5" y1="531.0" x2="514.9" y2="542.9" stroke-width="2.18"/>
+<line class="edge" x1="770.9" y1="267.3" x2="748.2" y2="255.8" stroke-width="2.18"/>
+<line class="edge" x1="669.4" y1="483.2" x2="679.9" y2="466.9" stroke-width="2.18"/>
+<line class="edge" x1="771.4" y1="307.5" x2="755.7" y2="308.8" stroke-width="2.18"/>
+<line class="edge" x1="771.4" y1="307.5" x2="786.8" y2="312.7" stroke-width="2.18"/>
+<line class="edge" x1="435.2" y1="284.2" x2="397.6" y2="276.4" stroke-width="2.18"/>
+<line class="edge" x1="181.4" y1="544.3" x2="180.7" y2="575.7" stroke-width="2.18"/>
+<line class="edge" x1="181.4" y1="544.3" x2="165.4" y2="569.0" stroke-width="2.18"/>
+<line class="edge" x1="298.9" y1="321.4" x2="327.3" y2="288.3" stroke-width="2.18"/>
+<line class="edge" x1="623.1" y1="499.7" x2="631.8" y2="514.9" stroke-width="2.18"/>
+<line class="edge" x1="744.8" y1="321.2" x2="755.7" y2="308.8" stroke-width="2.18"/>
+<line class="edge" x1="744.8" y1="321.2" x2="786.8" y2="312.7" stroke-width="2.18"/>
+<line class="edge" x1="305.8" y1="351.2" x2="300.9" y2="335.7" stroke-width="2.18"/>
+<line class="edge" x1="314.6" y1="776.9" x2="302.6" y2="786.1" stroke-width="2.18"/>
+<line class="edge" x1="482.1" y1="811.4" x2="478.0" y2="826.4" stroke-width="2.18"/>
+<line class="edge" x1="748.2" y1="255.8" x2="759.1" y2="276.9" stroke-width="2.18"/>
+<line class="edge" x1="300.9" y1="335.7" x2="295.9" y2="281.6" stroke-width="2.18"/>
+<line class="edge" x1="300.9" y1="335.7" x2="333.5" y2="335.7" stroke-width="2.18"/>
+<line class="edge" x1="300.9" y1="335.7" x2="319.7" y2="305.3" stroke-width="2.18"/>
+<line class="edge" x1="180.7" y1="575.7" x2="167.6" y2="583.6" stroke-width="2.18"/>
+<line class="edge" x1="180.7" y1="575.7" x2="165.4" y2="569.0" stroke-width="2.18"/>
+<line class="edge" x1="180.7" y1="575.7" x2="163.9" y2="554.5" stroke-width="2.18"/>
+<line class="edge" x1="180.7" y1="575.7" x2="196.7" y2="575.6" stroke-width="2.18"/>
+<line class="edge" x1="167.6" y1="583.6" x2="165.4" y2="569.0" stroke-width="2.18"/>
+<line class="edge" x1="165.4" y1="569.0" x2="163.9" y2="554.5" stroke-width="2.18"/>
+<line class="edge" x1="165.4" y1="569.0" x2="196.7" y2="575.6" stroke-width="2.18"/>
+<line class="edge" x1="152.4" y1="485.9" x2="140.7" y2="473.2" stroke-width="2.18"/>
+<line class="edge" x1="509.0" y1="216.3" x2="522.9" y2="201.7" stroke-width="2.18"/>
+<line class="edge" x1="285.4" y1="325.2" x2="295.9" y2="281.6" stroke-width="2.18"/>
+<line class="edge" x1="285.4" y1="325.2" x2="327.3" y2="288.3" stroke-width="2.18"/>
+<line class="edge" x1="556.4" y1="360.2" x2="548.9" y2="344.6" stroke-width="2.18"/>
+<line class="edge" x1="522.9" y1="201.7" x2="497.7" y2="224.2" stroke-width="2.18"/>
+<line class="edge" x1="417.0" y1="254.3" x2="397.6" y2="276.4" stroke-width="2.18"/>
+<line class="edge" x1="295.9" y1="281.6" x2="282.3" y2="293.1" stroke-width="2.18"/>
+<line class="edge" x1="327.3" y1="288.3" x2="282.3" y2="293.1" stroke-width="2.18"/>
+<line class="edge" x1="801.0" y1="344.6" x2="809.4" y2="331.1" stroke-width="2.18"/>
+<line class="edge" x1="511.0" y1="233.5" x2="523.0" y2="221.4" stroke-width="2.18"/>
+<line class="edge" x1="370.5" y1="294.3" x2="402.7" y2="297.4" stroke-width="2.18"/>
+<line class="edge" x1="561.3" y1="376.1" x2="548.9" y2="344.6" stroke-width="2.18"/>
+<line class="edge" x1="698.0" y1="537.5" x2="697.2" y2="558.8" stroke-width="2.18"/>
+<line class="edge" x1="495.9" y1="541.4" x2="514.9" y2="542.9" stroke-width="2.18"/>
+<line class="edge" x1="495.9" y1="541.4" x2="505.7" y2="553.2" stroke-width="2.18"/>
+<line class="edge" x1="780.0" y1="327.7" x2="755.7" y2="308.8" stroke-width="2.18"/>
+<line class="edge" x1="282.3" y1="293.1" x2="285.6" y2="309.9" stroke-width="2.18"/>
+<line class="edge" x1="755.7" y1="308.8" x2="786.8" y2="312.7" stroke-width="2.18"/>
+<line class="edge" x1="333.5" y1="335.7" x2="316.3" y2="334.4" stroke-width="2.18"/>
+<line class="edge" x1="136.5" y1="454.3" x2="156.8" y2="465.6" stroke-width="2.18"/>
+<line class="edge" x1="316.3" y1="334.4" x2="319.7" y2="305.3" stroke-width="2.18"/>
+<line class="edge" x1="316.3" y1="334.4" x2="315.6" y2="319.4" stroke-width="2.18"/>
+<line class="edge" x1="763.1" y1="255.0" x2="770.9" y2="267.3" stroke-width="2.30"/>
+<line class="edge" x1="310.0" y1="294.0" x2="295.6" y2="298.1" stroke-width="2.30"/>
+<line class="edge" x1="633.7" y1="137.1" x2="627.1" y2="123.0" stroke-width="2.30"/>
+<line class="edge" x1="837.2" y1="512.2" x2="837.6" y2="496.3" stroke-width="2.30"/>
+<line class="edge" x1="741.8" y1="271.9" x2="726.0" y2="263.9" stroke-width="2.30"/>
+<line class="edge" x1="426.4" y1="297.2" x2="434.0" y2="268.7" stroke-width="2.30"/>
+<line class="edge" x1="639.9" y1="527.1" x2="656.9" y2="498.2" stroke-width="2.30"/>
+<line class="edge" x1="178.0" y1="561.0" x2="192.8" y2="558.5" stroke-width="2.30"/>
+<line class="edge" x1="770.9" y1="267.3" x2="759.1" y2="276.9" stroke-width="2.30"/>
+<line class="edge" x1="771.4" y1="307.5" x2="759.8" y2="323.1" stroke-width="2.30"/>
+<line class="edge" x1="771.4" y1="307.5" x2="757.7" y2="346.0" stroke-width="2.30"/>
+<line class="edge" x1="484.6" y1="308.4" x2="503.0" y2="306.4" stroke-width="2.30"/>
+<line class="edge" x1="157.9" y1="348.4" x2="144.0" y2="351.6" stroke-width="2.30"/>
+<line class="edge" x1="181.4" y1="544.3" x2="192.8" y2="558.5" stroke-width="2.30"/>
+<line class="edge" x1="716.8" y1="530.1" x2="698.0" y2="537.5" stroke-width="2.30"/>
+<line class="edge" x1="560.1" y1="455.4" x2="577.0" y2="453.9" stroke-width="2.30"/>
+<line class="edge" x1="434.0" y1="268.7" x2="419.8" y2="314.0" stroke-width="2.30"/>
+<line class="edge" x1="449.8" y1="269.4" x2="397.6" y2="276.4" stroke-width="2.30"/>
+<line class="edge" x1="744.8" y1="321.2" x2="759.8" y2="323.1" stroke-width="2.30"/>
+<line class="edge" x1="744.8" y1="321.2" x2="757.7" y2="346.0" stroke-width="2.30"/>
+<line class="edge" x1="305.8" y1="351.2" x2="316.3" y2="334.4" stroke-width="2.30"/>
+<line class="edge" x1="192.8" y1="558.5" x2="167.6" y2="583.6" stroke-width="2.30"/>
+<line class="edge" x1="192.8" y1="558.5" x2="163.9" y2="554.5" stroke-width="2.30"/>
+<line class="edge" x1="192.8" y1="558.5" x2="196.7" y2="575.6" stroke-width="2.30"/>
+<line class="edge" x1="670.9" y1="676.7" x2="656.9" y2="664.8" stroke-width="2.30"/>
+<line class="edge" x1="305.6" y1="308.8" x2="333.5" y2="335.7" stroke-width="2.30"/>
+<line class="edge" x1="476.6" y1="407.3" x2="490.9" y2="413.0" stroke-width="2.30"/>
+<line class="edge" x1="759.8" y1="323.1" x2="780.0" y2="327.7" stroke-width="2.30"/>
+<line class="edge" x1="144.0" y1="322.0" x2="132.6" y2="342.3" stroke-width="2.30"/>
+<line class="edge" x1="295.9" y1="281.6" x2="270.3" y2="305.5" stroke-width="2.30"/>
+<line class="edge" x1="295.9" y1="281.6" x2="333.5" y2="335.7" stroke-width="2.30"/>
+<line class="edge" x1="327.3" y1="288.3" x2="319.7" y2="305.3" stroke-width="2.30"/>
+<line class="edge" x1="327.3" y1="288.3" x2="315.6" y2="319.4" stroke-width="2.30"/>
+<line class="edge" x1="421.6" y1="280.8" x2="397.6" y2="276.4" stroke-width="2.30"/>
+<line class="edge" x1="561.3" y1="376.1" x2="528.0" y2="342.5" stroke-width="2.30"/>
+<line class="edge" x1="780.0" y1="327.7" x2="757.7" y2="346.0" stroke-width="2.30"/>
+<line class="edge" x1="780.0" y1="327.7" x2="786.8" y2="312.7" stroke-width="2.30"/>
+<line class="edge" x1="295.6" y1="298.1" x2="285.6" y2="309.9" stroke-width="2.30"/>
+<line class="edge" x1="490.6" y1="520.9" x2="486.7" y2="556.3" stroke-width="2.30"/>
+<line class="edge" x1="763.1" y1="255.0" x2="759.1" y2="276.9" stroke-width="2.40"/>
+<line class="edge" x1="310.0" y1="294.0" x2="285.6" y2="309.9" stroke-width="2.40"/>
+<line class="edge" x1="633.7" y1="137.1" x2="616.8" y2="139.4" stroke-width="2.40"/>
+<line class="edge" x1="383.9" y1="718.1" x2="413.7" y2="745.2" stroke-width="2.40"/>
+<line class="edge" x1="383.9" y1="718.1" x2="441.9" y2="737.0" stroke-width="2.40"/>
+<line class="edge" x1="383.9" y1="718.1" x2="416.6" y2="687.9" stroke-width="2.40"/>
+<line class="edge" x1="383.9" y1="718.1" x2="447.9" y2="709.6" stroke-width="2.40"/>
+<line class="edge" x1="383.9" y1="718.1" x2="431.2" y2="691.4" stroke-width="2.40"/>
+<line class="edge" x1="383.9" y1="718.1" x2="397.5" y2="712.5" stroke-width="2.40"/>
+<line class="edge" x1="383.9" y1="718.1" x2="432.3" y2="706.3" stroke-width="2.40"/>
+<line class="edge" x1="383.9" y1="718.1" x2="427.3" y2="734.8" stroke-width="2.40"/>
+<line class="edge" x1="383.9" y1="718.1" x2="398.7" y2="732.5" stroke-width="2.40"/>
+<line class="edge" x1="383.9" y1="718.1" x2="411.8" y2="715.8" stroke-width="2.40"/>
+<line class="edge" x1="383.9" y1="718.1" x2="440.5" y2="722.3" stroke-width="2.40"/>
+<line class="edge" x1="383.9" y1="718.1" x2="403.3" y2="699.0" stroke-width="2.40"/>
+<line class="edge" x1="383.9" y1="718.1" x2="413.3" y2="730.5" stroke-width="2.40"/>
+<line class="edge" x1="383.9" y1="718.1" x2="418.1" y2="702.5" stroke-width="2.40"/>
+<line class="edge" x1="383.9" y1="718.1" x2="426.0" y2="719.7" stroke-width="2.40"/>
+<line class="edge" x1="413.7" y1="745.2" x2="441.9" y2="737.0" stroke-width="2.40"/>
+<line class="edge" x1="413.7" y1="745.2" x2="416.6" y2="687.9" stroke-width="2.40"/>
+<line class="edge" x1="413.7" y1="745.2" x2="447.9" y2="709.6" stroke-width="2.40"/>
+<line class="edge" x1="413.7" y1="745.2" x2="431.2" y2="691.4" stroke-width="2.40"/>
+<line class="edge" x1="413.7" y1="745.2" x2="397.5" y2="712.5" stroke-width="2.40"/>
+<line class="edge" x1="413.7" y1="745.2" x2="432.3" y2="706.3" stroke-width="2.40"/>
+<line class="edge" x1="413.7" y1="745.2" x2="427.3" y2="734.8" stroke-width="2.40"/>
+<line class="edge" x1="413.7" y1="745.2" x2="398.7" y2="732.5" stroke-width="2.40"/>
+<line class="edge" x1="413.7" y1="745.2" x2="411.8" y2="715.8" stroke-width="2.40"/>
+<line class="edge" x1="413.7" y1="745.2" x2="440.5" y2="722.3" stroke-width="2.40"/>
+<line class="edge" x1="413.7" y1="745.2" x2="403.3" y2="699.0" stroke-width="2.40"/>
+<line class="edge" x1="413.7" y1="745.2" x2="413.3" y2="730.5" stroke-width="2.40"/>
+<line class="edge" x1="413.7" y1="745.2" x2="418.1" y2="702.5" stroke-width="2.40"/>
+<line class="edge" x1="413.7" y1="745.2" x2="426.0" y2="719.7" stroke-width="2.40"/>
+<line class="edge" x1="330.0" y1="318.1" x2="327.3" y2="288.3" stroke-width="2.40"/>
+<line class="edge" x1="426.4" y1="297.2" x2="432.9" y2="250.7" stroke-width="2.40"/>
+<line class="edge" x1="639.9" y1="527.1" x2="639.6" y2="501.7" stroke-width="2.40"/>
+<line class="edge" x1="191.7" y1="674.4" x2="208.7" y2="666.0" stroke-width="2.40"/>
+<line class="edge" x1="717.3" y1="692.7" x2="734.5" y2="688.6" stroke-width="2.40"/>
+<line class="edge" x1="509.3" y1="187.6" x2="496.3" y2="208.1" stroke-width="2.40"/>
+<line class="edge" x1="441.9" y1="737.0" x2="416.6" y2="687.9" stroke-width="2.40"/>
+<line class="edge" x1="441.9" y1="737.0" x2="447.9" y2="709.6" stroke-width="2.40"/>
+<line class="edge" x1="441.9" y1="737.0" x2="431.2" y2="691.4" stroke-width="2.40"/>
+<line class="edge" x1="441.9" y1="737.0" x2="397.5" y2="712.5" stroke-width="2.40"/>
+<line class="edge" x1="441.9" y1="737.0" x2="432.3" y2="706.3" stroke-width="2.40"/>
+<line class="edge" x1="441.9" y1="737.0" x2="427.3" y2="734.8" stroke-width="2.40"/>
+<line class="edge" x1="441.9" y1="737.0" x2="398.7" y2="732.5" stroke-width="2.40"/>
+<line class="edge" x1="441.9" y1="737.0" x2="411.8" y2="715.8" stroke-width="2.40"/>
+<line class="edge" x1="441.9" y1="737.0" x2="440.5" y2="722.3" stroke-width="2.40"/>
+<line class="edge" x1="441.9" y1="737.0" x2="403.3" y2="699.0" stroke-width="2.40"/>
+<line class="edge" x1="441.9" y1="737.0" x2="413.3" y2="730.5" stroke-width="2.40"/>
+<line class="edge" x1="441.9" y1="737.0" x2="418.1" y2="702.5" stroke-width="2.40"/>
+<line class="edge" x1="441.9" y1="737.0" x2="426.0" y2="719.7" stroke-width="2.40"/>
+<line class="edge" x1="549.7" y1="791.0" x2="563.8" y2="802.5" stroke-width="2.40"/>
+<line class="edge" x1="560.1" y1="455.4" x2="569.2" y2="440.8" stroke-width="2.40"/>
+<line class="edge" x1="479.9" y1="543.3" x2="490.6" y2="520.9" stroke-width="2.40"/>
+<line class="edge" x1="416.6" y1="687.9" x2="447.9" y2="709.6" stroke-width="2.40"/>
+<line class="edge" x1="416.6" y1="687.9" x2="431.2" y2="691.4" stroke-width="2.40"/>
+<line class="edge" x1="416.6" y1="687.9" x2="397.5" y2="712.5" stroke-width="2.40"/>
+<line class="edge" x1="416.6" y1="687.9" x2="432.3" y2="706.3" stroke-width="2.40"/>
+<line class="edge" x1="416.6" y1="687.9" x2="427.3" y2="734.8" stroke-width="2.40"/>
+<line class="edge" x1="416.6" y1="687.9" x2="398.7" y2="732.5" stroke-width="2.40"/>
+<line class="edge" x1="416.6" y1="687.9" x2="411.8" y2="715.8" stroke-width="2.40"/>
+<line class="edge" x1="416.6" y1="687.9" x2="440.5" y2="722.3" stroke-width="2.40"/>
+<line class="edge" x1="416.6" y1="687.9" x2="403.3" y2="699.0" stroke-width="2.40"/>
+<line class="edge" x1="416.6" y1="687.9" x2="413.3" y2="730.5" stroke-width="2.40"/>
+<line class="edge" x1="416.6" y1="687.9" x2="418.1" y2="702.5" stroke-width="2.40"/>
+<line class="edge" x1="416.6" y1="687.9" x2="426.0" y2="719.7" stroke-width="2.40"/>
+<line class="edge" x1="454.0" y1="516.6" x2="444.1" y2="542.3" stroke-width="2.40"/>
+<line class="edge" x1="414.3" y1="268.3" x2="397.6" y2="276.4" stroke-width="2.40"/>
+<line class="edge" x1="300.9" y1="335.7" x2="316.3" y2="334.4" stroke-width="2.40"/>
+<line class="edge" x1="670.9" y1="676.7" x2="673.4" y2="694.0" stroke-width="2.40"/>
+<line class="edge" x1="305.6" y1="308.8" x2="327.3" y2="288.3" stroke-width="2.40"/>
+<line class="edge" x1="447.9" y1="709.6" x2="431.2" y2="691.4" stroke-width="2.40"/>
+<line class="edge" x1="447.9" y1="709.6" x2="397.5" y2="712.5" stroke-width="2.40"/>
+<line class="edge" x1="447.9" y1="709.6" x2="432.3" y2="706.3" stroke-width="2.40"/>
+<line class="edge" x1="447.9" y1="709.6" x2="427.3" y2="734.8" stroke-width="2.40"/>
+<line class="edge" x1="447.9" y1="709.6" x2="398.7" y2="732.5" stroke-width="2.40"/>
+<line class="edge" x1="447.9" y1="709.6" x2="411.8" y2="715.8" stroke-width="2.40"/>
+<line class="edge" x1="447.9" y1="709.6" x2="440.5" y2="722.3" stroke-width="2.40"/>
+<line class="edge" x1="447.9" y1="709.6" x2="403.3" y2="699.0" stroke-width="2.40"/>
+<line class="edge" x1="447.9" y1="709.6" x2="413.3" y2="730.5" stroke-width="2.40"/>
+<line class="edge" x1="447.9" y1="709.6" x2="418.1" y2="702.5" stroke-width="2.40"/>
+<line class="edge" x1="447.9" y1="709.6" x2="426.0" y2="719.7" stroke-width="2.40"/>
+<line class="edge" x1="503.0" y1="306.4" x2="494.7" y2="319.7" stroke-width="2.40"/>
+<line class="edge" x1="431.2" y1="691.4" x2="397.5" y2="712.5" stroke-width="2.40"/>
+<line class="edge" x1="431.2" y1="691.4" x2="432.3" y2="706.3" stroke-width="2.40"/>
+<line class="edge" x1="431.2" y1="691.4" x2="427.3" y2="734.8" stroke-width="2.40"/>
+<line class="edge" x1="431.2" y1="691.4" x2="398.7" y2="732.5" stroke-width="2.40"/>
+<line class="edge" x1="431.2" y1="691.4" x2="411.8" y2="715.8" stroke-width="2.40"/>
+<line class="edge" x1="431.2" y1="691.4" x2="440.5" y2="722.3" stroke-width="2.40"/>
+<line class="edge" x1="431.2" y1="691.4" x2="403.3" y2="699.0" stroke-width="2.40"/>
+<line class="edge" x1="431.2" y1="691.4" x2="413.3" y2="730.5" stroke-width="2.40"/>
+<line class="edge" x1="431.2" y1="691.4" x2="418.1" y2="702.5" stroke-width="2.40"/>
+<line class="edge" x1="431.2" y1="691.4" x2="426.0" y2="719.7" stroke-width="2.40"/>
+<line class="edge" x1="397.5" y1="712.5" x2="432.3" y2="706.3" stroke-width="2.40"/>
+<line class="edge" x1="397.5" y1="712.5" x2="427.3" y2="734.8" stroke-width="2.40"/>
+<line class="edge" x1="397.5" y1="712.5" x2="398.7" y2="732.5" stroke-width="2.40"/>
+<line class="edge" x1="397.5" y1="712.5" x2="411.8" y2="715.8" stroke-width="2.40"/>
+<line class="edge" x1="397.5" y1="712.5" x2="440.5" y2="722.3" stroke-width="2.40"/>
+<line class="edge" x1="397.5" y1="712.5" x2="403.3" y2="699.0" stroke-width="2.40"/>
+<line class="edge" x1="397.5" y1="712.5" x2="413.3" y2="730.5" stroke-width="2.40"/>
+<line class="edge" x1="397.5" y1="712.5" x2="418.1" y2="702.5" stroke-width="2.40"/>
+<line class="edge" x1="397.5" y1="712.5" x2="426.0" y2="719.7" stroke-width="2.40"/>
+<line class="edge" x1="432.3" y1="706.3" x2="427.3" y2="734.8" stroke-width="2.40"/>
+<line class="edge" x1="432.3" y1="706.3" x2="398.7" y2="732.5" stroke-width="2.40"/>
+<line class="edge" x1="432.3" y1="706.3" x2="411.8" y2="715.8" stroke-width="2.40"/>
+<line class="edge" x1="432.3" y1="706.3" x2="440.5" y2="722.3" stroke-width="2.40"/>
+<line class="edge" x1="432.3" y1="706.3" x2="403.3" y2="699.0" stroke-width="2.40"/>
+<line class="edge" x1="432.3" y1="706.3" x2="413.3" y2="730.5" stroke-width="2.40"/>
+<line class="edge" x1="432.3" y1="706.3" x2="418.1" y2="702.5" stroke-width="2.40"/>
+<line class="edge" x1="432.3" y1="706.3" x2="426.0" y2="719.7" stroke-width="2.40"/>
+<line class="edge" x1="295.9" y1="281.6" x2="295.6" y2="298.1" stroke-width="2.40"/>
+<line class="edge" x1="427.3" y1="734.8" x2="398.7" y2="732.5" stroke-width="2.40"/>
+<line class="edge" x1="427.3" y1="734.8" x2="411.8" y2="715.8" stroke-width="2.40"/>
+<line class="edge" x1="427.3" y1="734.8" x2="440.5" y2="722.3" stroke-width="2.40"/>
+<line class="edge" x1="427.3" y1="734.8" x2="403.3" y2="699.0" stroke-width="2.40"/>
+<line class="edge" x1="427.3" y1="734.8" x2="413.3" y2="730.5" stroke-width="2.40"/>
+<line class="edge" x1="427.3" y1="734.8" x2="418.1" y2="702.5" stroke-width="2.40"/>
+<line class="edge" x1="427.3" y1="734.8" x2="426.0" y2="719.7" stroke-width="2.40"/>
+<line class="edge" x1="327.3" y1="288.3" x2="295.6" y2="298.1" stroke-width="2.40"/>
+<line class="edge" x1="260.4" y1="360.4" x2="246.8" y2="377.7" stroke-width="2.40"/>
+<line class="edge" x1="686.2" y1="523.3" x2="698.0" y2="537.5" stroke-width="2.40"/>
+<line class="edge" x1="398.7" y1="732.5" x2="411.8" y2="715.8" stroke-width="2.40"/>
+<line class="edge" x1="398.7" y1="732.5" x2="440.5" y2="722.3" stroke-width="2.40"/>
+<line class="edge" x1="398.7" y1="732.5" x2="403.3" y2="699.0" stroke-width="2.40"/>
+<line class="edge" x1="398.7" y1="732.5" x2="413.3" y2="730.5" stroke-width="2.40"/>
+<line class="edge" x1="398.7" y1="732.5" x2="418.1" y2="702.5" stroke-width="2.40"/>
+<line class="edge" x1="398.7" y1="732.5" x2="426.0" y2="719.7" stroke-width="2.40"/>
+<line class="edge" x1="411.8" y1="715.8" x2="440.5" y2="722.3" stroke-width="2.40"/>
+<line class="edge" x1="411.8" y1="715.8" x2="403.3" y2="699.0" stroke-width="2.40"/>
+<line class="edge" x1="411.8" y1="715.8" x2="413.3" y2="730.5" stroke-width="2.40"/>
+<line class="edge" x1="411.8" y1="715.8" x2="418.1" y2="702.5" stroke-width="2.40"/>
+<line class="edge" x1="411.8" y1="715.8" x2="426.0" y2="719.7" stroke-width="2.40"/>
+<line class="edge" x1="440.5" y1="722.3" x2="403.3" y2="699.0" stroke-width="2.40"/>
+<line class="edge" x1="440.5" y1="722.3" x2="413.3" y2="730.5" stroke-width="2.40"/>
+<line class="edge" x1="440.5" y1="722.3" x2="418.1" y2="702.5" stroke-width="2.40"/>
+<line class="edge" x1="440.5" y1="722.3" x2="426.0" y2="719.7" stroke-width="2.40"/>
+<line class="edge" x1="403.3" y1="699.0" x2="413.3" y2="730.5" stroke-width="2.40"/>
+<line class="edge" x1="403.3" y1="699.0" x2="418.1" y2="702.5" stroke-width="2.40"/>
+<line class="edge" x1="403.3" y1="699.0" x2="426.0" y2="719.7" stroke-width="2.40"/>
+<line class="edge" x1="528.0" y1="342.5" x2="548.9" y2="344.6" stroke-width="2.40"/>
+<line class="edge" x1="413.3" y1="730.5" x2="418.1" y2="702.5" stroke-width="2.40"/>
+<line class="edge" x1="413.3" y1="730.5" x2="426.0" y2="719.7" stroke-width="2.40"/>
+<line class="edge" x1="402.7" y1="297.4" x2="397.6" y2="276.4" stroke-width="2.40"/>
+<line class="edge" x1="418.1" y1="702.5" x2="426.0" y2="719.7" stroke-width="2.40"/>
+<line class="edge" x1="310.0" y1="294.0" x2="295.9" y2="281.6" stroke-width="2.49"/>
+<line class="edge" x1="310.0" y1="294.0" x2="327.3" y2="288.3" stroke-width="2.49"/>
+<line class="edge" x1="410.0" y1="526.9" x2="411.9" y2="549.3" stroke-width="2.49"/>
+<line class="edge" x1="538.0" y1="310.8" x2="528.0" y2="342.5" stroke-width="2.49"/>
+<line class="edge" x1="178.0" y1="561.0" x2="167.6" y2="583.6" stroke-width="2.49"/>
+<line class="edge" x1="178.0" y1="561.0" x2="163.9" y2="554.5" stroke-width="2.49"/>
+<line class="edge" x1="771.4" y1="307.5" x2="780.0" y2="327.7" stroke-width="2.49"/>
+<line class="edge" x1="181.4" y1="544.3" x2="163.9" y2="554.5" stroke-width="2.49"/>
+<line class="edge" x1="560.1" y1="455.4" x2="591.7" y2="453.3" stroke-width="2.49"/>
+<line class="edge" x1="744.8" y1="321.2" x2="780.0" y2="327.7" stroke-width="2.49"/>
+<line class="edge" x1="666.4" y1="708.3" x2="673.7" y2="723.8" stroke-width="2.49"/>
+<line class="edge" x1="300.9" y1="335.7" x2="327.3" y2="288.3" stroke-width="2.49"/>
+<line class="edge" x1="167.6" y1="583.6" x2="163.9" y2="554.5" stroke-width="2.49"/>
+<line class="edge" x1="670.9" y1="676.7" x2="656.2" y2="691.9" stroke-width="2.49"/>
+<line class="edge" x1="656.2" y1="611.6" x2="656.0" y2="589.6" stroke-width="2.49"/>
+<line class="edge" x1="379.1" y1="552.9" x2="368.9" y2="539.0" stroke-width="2.49"/>
+<line class="edge" x1="163.9" y1="554.5" x2="196.7" y2="575.6" stroke-width="2.49"/>
+<line class="edge" x1="295.9" y1="281.6" x2="316.3" y2="334.4" stroke-width="2.49"/>
+<line class="edge" x1="285.9" y1="683.8" x2="285.7" y2="667.9" stroke-width="2.49"/>
+<line class="edge" x1="270.3" y1="305.5" x2="285.6" y2="309.9" stroke-width="2.49"/>
+<line class="edge" x1="153.4" y1="448.0" x2="156.8" y2="465.6" stroke-width="2.49"/>
+<line class="edge" x1="419.8" y1="314.0" x2="432.9" y2="250.7" stroke-width="2.49"/>
+<line class="edge" x1="493.0" y1="389.6" x2="476.6" y2="407.3" stroke-width="2.58"/>
+<line class="edge" x1="410.0" y1="526.9" x2="454.0" y2="516.6" stroke-width="2.58"/>
+<line class="edge" x1="178.0" y1="561.0" x2="181.4" y2="544.3" stroke-width="2.58"/>
+<line class="edge" x1="178.0" y1="561.0" x2="196.7" y2="575.6" stroke-width="2.58"/>
+<line class="edge" x1="509.3" y1="187.6" x2="522.9" y2="201.7" stroke-width="2.58"/>
+<line class="edge" x1="181.4" y1="544.3" x2="167.6" y2="583.6" stroke-width="2.58"/>
+<line class="edge" x1="305.8" y1="351.2" x2="295.9" y2="281.6" stroke-width="2.58"/>
+<line class="edge" x1="305.8" y1="351.2" x2="333.5" y2="335.7" stroke-width="2.58"/>
+<line class="edge" x1="167.6" y1="583.6" x2="196.7" y2="575.6" stroke-width="2.58"/>
+<line class="edge" x1="556.4" y1="360.2" x2="561.3" y2="376.1" stroke-width="2.58"/>
+<line class="edge" x1="522.9" y1="201.7" x2="523.0" y2="221.4" stroke-width="2.58"/>
+<line class="edge" x1="295.9" y1="281.6" x2="285.6" y2="309.9" stroke-width="2.58"/>
+<line class="edge" x1="327.3" y1="288.3" x2="270.3" y2="305.5" stroke-width="2.58"/>
+<line class="edge" x1="410.0" y1="526.9" x2="444.1" y2="542.3" stroke-width="2.65"/>
+<line class="edge" x1="496.3" y1="208.1" x2="522.9" y2="201.7" stroke-width="2.65"/>
+<line class="edge" x1="771.4" y1="307.5" x2="744.8" y2="321.2" stroke-width="2.65"/>
+<line class="edge" x1="679.9" y1="466.9" x2="663.0" y2="467.0" stroke-width="2.65"/>
+<line class="edge" x1="434.0" y1="268.7" x2="432.9" y2="250.7" stroke-width="2.65"/>
+<line class="edge" x1="454.0" y1="516.6" x2="470.3" y2="529.3" stroke-width="2.65"/>
+<line class="edge" x1="327.3" y1="288.3" x2="316.3" y2="334.4" stroke-width="2.65"/>
+<line class="edge" x1="495.9" y1="541.4" x2="490.6" y2="520.9" stroke-width="2.65"/>
+<line class="edge" x1="724.3" y1="676.1" x2="717.3" y2="692.7" stroke-width="2.72"/>
+<line class="edge" x1="410.0" y1="526.9" x2="428.8" y2="533.5" stroke-width="2.72"/>
+<line class="edge" x1="434.0" y1="268.7" x2="397.6" y2="276.4" stroke-width="2.72"/>
+<line class="edge" x1="482.1" y1="811.4" x2="496.0" y2="824.8" stroke-width="2.72"/>
+<line class="edge" x1="327.3" y1="288.3" x2="285.6" y2="309.9" stroke-width="2.72"/>
+<line class="edge" x1="656.9" y1="498.2" x2="639.6" y2="501.7" stroke-width="2.78"/>
+<line class="edge" x1="153.4" y1="448.0" x2="136.5" y2="454.3" stroke-width="2.78"/>
+<line class="edge" x1="305.8" y1="351.2" x2="327.3" y2="288.3" stroke-width="2.84"/>
+<line class="edge" x1="152.4" y1="485.9" x2="156.8" y2="465.6" stroke-width="2.84"/>
+<line class="edge" x1="522.9" y1="201.7" x2="511.0" y2="233.5" stroke-width="2.90"/>
+<line class="edge" x1="432.9" y1="250.7" x2="397.6" y2="276.4" stroke-width="2.90"/>
+<line class="edge" x1="426.4" y1="297.2" x2="419.8" y2="314.0" stroke-width="2.95"/>
+<line class="edge" x1="426.4" y1="297.2" x2="397.6" y2="276.4" stroke-width="2.95"/>
+<line class="edge" x1="152.4" y1="485.9" x2="136.5" y2="454.3" stroke-width="2.95"/>
+<line class="edge" x1="327.3" y1="288.3" x2="333.5" y2="335.7" stroke-width="3.00"/>
+<line class="edge" x1="181.4" y1="544.3" x2="196.7" y2="575.6" stroke-width="3.05"/>
+<line class="edge" x1="295.9" y1="281.6" x2="327.3" y2="288.3" stroke-width="3.05"/>
+<line class="edge" x1="419.8" y1="314.0" x2="397.6" y2="276.4" stroke-width="3.05"/>
+<line class="edge" x1="152.4" y1="485.9" x2="153.4" y2="448.0" stroke-width="3.09"/>
+<line class="edge" x1="490.6" y1="520.9" x2="470.3" y2="529.3" stroke-width="3.09"/>
+<line class="edge" x1="454.0" y1="516.6" x2="490.6" y2="520.9" stroke-width="3.14"/>
+<line class="edge cross" x1="639.9" y1="527.1" x2="656.0" y2="589.6" stroke-width="1.10"/>
+<line class="edge cross" x1="669.4" y1="483.2" x2="656.9" y2="498.2" stroke-width="1.10"/>
+<line class="edge cross" x1="669.4" y1="483.2" x2="678.9" y2="510.8" stroke-width="1.10"/>
+<line class="edge cross" x1="669.4" y1="483.2" x2="639.6" y2="501.7" stroke-width="1.10"/>
+<line class="edge cross" x1="509.8" y1="329.9" x2="540.5" y2="327.1" stroke-width="1.10"/>
+<line class="edge cross" x1="656.0" y1="589.6" x2="684.6" y2="582.5" stroke-width="1.10"/>
+<line class="edge cross" x1="324.8" y1="559.2" x2="296.3" y2="559.9" stroke-width="1.10"/>
+<line class="edge cross" x1="324.8" y1="559.2" x2="305.5" y2="572.5" stroke-width="1.10"/>
+<line class="edge cross" x1="561.3" y1="376.1" x2="624.3" y2="467.5" stroke-width="1.10"/>
+<line class="edge cross" x1="501.7" y1="485.2" x2="490.5" y2="428.0" stroke-width="1.10"/>
+<line class="edge cross" x1="296.3" y1="559.9" x2="305.5" y2="572.5" stroke-width="1.10"/>
+<line class="edge cross" x1="673.1" y1="497.8" x2="686.2" y2="523.3" stroke-width="1.45"/>
+<line class="edge cross" x1="560.1" y1="455.4" x2="501.7" y2="485.2" stroke-width="1.45"/>
+<line class="edge cross" x1="678.9" y1="510.8" x2="686.2" y2="523.3" stroke-width="1.45"/>
+<line class="edge cross" x1="729.6" y1="537.0" x2="703.2" y2="518.0" stroke-width="1.45"/>
+<line class="edge cross" x1="673.1" y1="497.8" x2="698.0" y2="537.5" stroke-width="1.70"/>
+<line class="edge cross" x1="678.9" y1="510.8" x2="698.0" y2="537.5" stroke-width="1.70"/>
+<line class="edge cross" x1="686.2" y1="523.3" x2="703.2" y2="518.0" stroke-width="1.70"/>
+<line class="edge cross" x1="528.0" y1="342.5" x2="540.5" y2="327.1" stroke-width="1.70"/>
+<line class="edge cross" x1="548.9" y1="344.6" x2="540.5" y2="327.1" stroke-width="1.70"/>
+<line class="edge cross" x1="698.0" y1="537.5" x2="703.2" y2="518.0" stroke-width="1.89"/>
+<line class="edge cross" x1="686.2" y1="523.3" x2="693.3" y2="507.2" stroke-width="2.05"/>
+<line class="edge cross" x1="526.7" y1="322.4" x2="540.5" y2="327.1" stroke-width="2.18"/>
+<line class="edge cross" x1="698.0" y1="537.5" x2="693.3" y2="507.2" stroke-width="2.40"/>
+<circle class="node" cx="767.0" cy="335.2" r="5.6" fill="#199e70"><title>Abadpour S — 7 datasets (0 as lab PI) · Bergen, Norway</title></circle>
+<circle class="node" cx="219.5" cy="680.5" r="5.6" fill="#d6453a"><title>Aboo C — 7 datasets (0 as lab PI) · Aalborg, Denmark</title></circle>
+<circle class="node" cx="592.7" cy="438.9" r="5.6" fill="#d6453a"><title>Andersen GR — 7 datasets (0 as lab PI) · Aarhus, Denmark</title></circle>
+<circle class="node pi" cx="558.2" cy="331.0" r="5.6" fill="#2a78d6"><title>Andersson DI — 7 datasets (2 as lab PI) · Gothenburg, Sweden · Department of Medical Biochemistry and Microbiology, Uppsala University, Box 582, 75123, U</title></circle>
+<circle class="node" cx="421.4" cy="99.6" r="5.6" fill="#2a78d6"><title>Andrén PE — 7 datasets (0 as lab PI) · Uppsala, Sweden</title></circle>
+<circle class="node" cx="448.9" cy="283.3" r="5.6" fill="#2a78d6"><title>Arnér ESJ — 7 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node pi" cx="747.8" cy="294.7" r="5.6" fill="#199e70"><title>Barsnes H — 7 datasets (1 as lab PI) · Bergen, Norway · Computational Biology Unit (CBU), Department of Informatics, University of Bergen, Bergen,</title></circle>
+<circle class="node" cx="310.4" cy="798.0" r="5.6" fill="#2a78d6"><title>Birchenough GMH — 7 datasets (0 as lab PI) · Gothenburg, Sweden</title></circle>
+<circle class="node" cx="435.2" cy="284.2" r="5.6" fill="#2a78d6"><title>Chernobrovkin A — 7 datasets (0 as lab PI) · Stockholm, Sweden · Karolinska Institutet, Sweden</title></circle>
+<circle class="node pi" cx="642.2" cy="486.5" r="5.6" fill="#7b55d6"><title>Corthals GL — 7 datasets (3 as lab PI) · Turku, Finland · Current: Van &#x27;t Hoff Institute for Molecular Sciences, University of Amsterdam, The Nether</title></circle>
+<circle class="node" cx="298.9" cy="321.4" r="5.6" fill="#2a78d6"><title>Domont GB — 7 datasets (0 as lab PI) · Lund, Sweden</title></circle>
+<circle class="node" cx="647.0" cy="420.7" r="5.6" fill="#d6453a"><title>Gregersen Echers S — 7 datasets (0 as lab PI) · Aalborg, Denmark · Department of Chemistry &amp; Bioscience Aalborg University</title></circle>
+<circle class="node" cx="127.8" cy="327.6" r="5.6" fill="#2a78d6"><title>Hartman E — 7 datasets (0 as lab PI) · Lund, Sweden · Lund University</title></circle>
+<circle class="node" cx="694.4" cy="679.1" r="5.6" fill="#d6453a"><title>Havelund JF — 7 datasets (0 as lab PI) · Odense, Denmark</title></circle>
+<circle class="node" cx="180.7" cy="575.7" r="5.6" fill="#d6453a"><title>Hoxha E — 7 datasets (0 as lab PI) · Aarhus, Denmark</title></circle>
+<circle class="node" cx="165.4" cy="569.0" r="5.6" fill="#d6453a"><title>Hutzfeldt A — 7 datasets (0 as lab PI) · Aarhus, Denmark</title></circle>
+<circle class="node" cx="436.2" cy="519.8" r="5.6" fill="#199e70"><title>Hvidsten TR — 7 datasets (0 as lab PI) · Aas, Norway</title></circle>
+<circle class="node pi" cx="322.2" cy="125.3" r="5.6" fill="#7b55d6"><title>Ivaska J — 7 datasets (5 as lab PI) · Turku, Finland · University of Turku, Turku Bioscience</title></circle>
+<circle class="node" cx="509.0" cy="216.3" r="5.6" fill="#2a78d6"><title>Johansson HJ — 7 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node" cx="501.8" cy="251.1" r="5.6" fill="#2a78d6"><title>Karlsson A — 7 datasets (0 as lab PI) · Gothenburg, Sweden</title></circle>
+<circle class="node" cx="118.5" cy="337.8" r="5.6" fill="#2a78d6"><title>Karlsson CAQ — 7 datasets (0 as lab PI) · Lund, Sweden · Lund University</title></circle>
+<circle class="node" cx="580.6" cy="432.4" r="5.6" fill="#d6453a"><title>Kjøge K — 7 datasets (0 as lab PI) · Aarhus, Denmark · Aarhus University</title></circle>
+<circle class="node" cx="423.4" cy="564.8" r="5.6" fill="#199e70"><title>Leanti La Rosa S — 7 datasets (0 as lab PI) · Aas, Norway · Faculty of Chemistry, Biotechnology and Food Science, Norwegian University of Life Science</title></circle>
+<circle class="node" cx="731.3" cy="284.9" r="5.6" fill="#199e70"><title>Lereim RR — 7 datasets (0 as lab PI) · Bergen, Norway · Proteomics unit at the University of Bergen (PROBE)</title></circle>
+<circle class="node" cx="324.8" cy="559.2" r="5.6" fill="#199e70"><title>Li Y — 7 datasets (0 as lab PI) · Oslo, Norway</title></circle>
+<circle class="node" cx="578.9" cy="811.7" r="5.6" fill="#d6453a"><title>Luo Y — 7 datasets (0 as lab PI) · Aarhus, Denmark</title></circle>
+<circle class="node" cx="417.0" cy="254.3" r="5.6" fill="#2a78d6"><title>Lyu H — 7 datasets (0 as lab PI) · Stockholm, Sweden · Karolinska Institutet</title></circle>
+<circle class="node" cx="729.6" cy="537.0" r="5.6" fill="#2a78d6"><title>Moparthi L — 7 datasets (0 as lab PI) · Linkoping, Sweden · LINKÖPING UNIVERSITY</title></circle>
+<circle class="node" cx="140.7" cy="473.2" r="5.6" fill="#7b55d6"><title>Mäkitie A — 7 datasets (0 as lab PI) · Helsinki, Finland</title></circle>
+<circle class="node" cx="370.5" cy="294.3" r="5.6" fill="#2a78d6"><title>Neogi U — 7 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node" cx="282.3" cy="293.1" r="5.6" fill="#2a78d6"><title>Pla Parada I — 7 datasets (0 as lab PI) · Lund, Sweden · Lund university</title></circle>
+<circle class="node" cx="607.9" cy="435.2" r="5.6" fill="#d6453a"><title>Rusbjerg-Weberskov CE — 7 datasets (0 as lab PI) · Aarhus, Denmark · Aarhus University</title></circle>
+<circle class="node" cx="514.9" cy="542.9" r="5.6" fill="#199e70"><title>Røst LM — 7 datasets (0 as lab PI) · Trondheim, Norway</title></circle>
+<circle class="node pi" cx="569.2" cy="424.7" r="5.6" fill="#d6453a"><title>Scavenius C — 7 datasets (3 as lab PI) · Aarhus, Denmark · Molecular Biology and Genetics, Aarhus University</title></circle>
+<circle class="node" cx="659.8" cy="637.6" r="5.6" fill="#d6453a"><title>Schwämmle V — 7 datasets (0 as lab PI) · Odense, Denmark · University of Southern Denmark</title></circle>
+<circle class="node pi" cx="684.6" cy="582.5" r="5.6" fill="#199e70"><title>Simonsen AH — 7 datasets (2 as lab PI) · Oslo, Norway · Department of Molecular Medicine, Institute of Basic Medical Sciences, University of Oslo,</title></circle>
+<circle class="node pi" cx="389.6" cy="521.3" r="5.6" fill="#199e70"><title>Sollid LM — 7 datasets (2 as lab PI) · Oslo, Norway · KG Jebsen Coeliac Disease Research Centre, University of Oslo, NO-0372 Oslo, Norway</title></circle>
+<circle class="node" cx="631.8" cy="514.9" r="5.6" fill="#7b55d6"><title>Suomi T — 7 datasets (0 as lab PI) · Turku, Finland</title></circle>
+<circle class="node" cx="478.0" cy="826.4" r="5.6" fill="#7b55d6"><title>Suwal U — 7 datasets (0 as lab PI) · Turku, Finland · University of Turku</title></circle>
+<circle class="node" cx="505.7" cy="553.2" r="5.6" fill="#199e70"><title>Søgaard CK — 7 datasets (0 as lab PI) · Trondheim, Norway</title></circle>
+<circle class="node" cx="347.5" cy="546.4" r="5.6" fill="#199e70"><title>Tran TT — 7 datasets (0 as lab PI) · Oslo, Norway · University of Oslo</title></circle>
+<circle class="node" cx="497.7" cy="224.2" r="5.6" fill="#2a78d6"><title>Umer HM — 7 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node" cx="809.4" cy="331.1" r="5.6" fill="#199e70"><title>Vikse BE — 7 datasets (0 as lab PI) · Bergen, Norway</title></circle>
+<circle class="node" cx="638.4" cy="696.4" r="5.6" fill="#d6453a"><title>Wang WQ — 7 datasets (0 as lab PI) · Odense, Denmark</title></circle>
+<circle class="node pi" cx="624.3" cy="467.5" r="5.6" fill="#7b55d6"><title>Westermarck J — 7 datasets (3 as lab PI) · Turku, Finland · University of Turku, Turku Bioscience Centre, Cell Signaling Lab, Finland</title></circle>
+<circle class="node" cx="540.5" cy="327.1" r="5.6" fill="#d6453a"><title>Yu R — 7 datasets (0 as lab PI) · Lyngby, Denmark</title></circle>
+<circle class="node" cx="396.4" cy="509.3" r="5.6" fill="#199e70"><title>de Souza GA — 7 datasets (0 as lab PI) · Oslo, Norway · Dept. of Immunology</title></circle>
+<circle class="node" cx="673.1" cy="497.8" r="5.9" fill="#7b55d6"><title>Aittokallio T — 8 datasets (0 as lab PI) · Turku, Finland</title></circle>
+<circle class="node pi" cx="249.5" cy="738.2" r="5.9" fill="#d6453a"><title>Andersen J — 8 datasets (2 as lab PI) · Odense, Denmark · Department of Biochemistry and Molecular Biology, University of Southern Denmark, Campusve</title></circle>
+<circle class="node pi" cx="191.6" cy="659.7" r="5.9" fill="#d6453a"><title>Bennike TB — 8 datasets (1 as lab PI) · Aalborg, Denmark · Department of Health Science and Technology, The Faculty of Medicine, Aalborg University, </title></circle>
+<circle class="node" cx="507.5" cy="531.0" r="5.9" fill="#199e70"><title>Bruheim P — 8 datasets (0 as lab PI) · Trondheim, Norway</title></circle>
+<circle class="node" cx="770.9" cy="267.3" r="5.9" fill="#199e70"><title>Bruserud O — 8 datasets (0 as lab PI) · Bergen, Norway</title></circle>
+<circle class="node pi" cx="620.8" cy="722.8" r="5.9" fill="#d6453a"><title>Cappellini E — 8 datasets (8 as lab PI) · Odense, Denmark · Globe Institute, University of Copenhagen</title></circle>
+<circle class="node" cx="157.9" cy="348.4" r="5.9" fill="#2a78d6"><title>De Marchi T — 8 datasets (0 as lab PI) · Lund, Sweden · Lund University</title></circle>
+<circle class="node" cx="449.8" cy="269.4" r="5.9" fill="#2a78d6"><title>Gharibi H — 8 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node" cx="192.8" cy="558.5" r="5.9" fill="#d6453a"><title>Grahammer F — 8 datasets (0 as lab PI) · Aarhus, Denmark</title></circle>
+<circle class="node pi" cx="516.2" cy="299.1" r="5.9" fill="#2a78d6"><title>Gustafsson CM — 8 datasets (2 as lab PI) · Gothenburg, Sweden · Department of Medical Biochemistry and Cell Biology, University of Gothenburg, SE-405 30 G</title></circle>
+<circle class="node" cx="127.9" cy="467.7" r="5.9" fill="#7b55d6"><title>Haglund C — 8 datasets (0 as lab PI) · Helsinki, Finland</title></circle>
+<circle class="node pi" cx="577.0" cy="453.9" r="5.9" fill="#d6453a"><title>Harwood SL — 8 datasets (1 as lab PI) · Aarhus, Denmark · Jan J. Enghild, MBG, Aarhus University</title></circle>
+<circle class="node pi" cx="559.6" cy="317.1" r="5.9" fill="#2a78d6"><title>Hällberg BM — 8 datasets (1 as lab PI) · Gothenburg, Sweden · Department of Medical Biochemistry and Cell Biology, Institute of Biomedicine, Sahlgrenska</title></circle>
+<circle class="node pi" cx="407.3" cy="99.9" r="5.9" fill="#2a78d6"><title>Jansson ET — 8 datasets (8 as lab PI) · Uppsala, Sweden · Department of Pharmaceutical Biosciences, Uppsala University, Uppsala, Sweden.</title></circle>
+<circle class="node" cx="285.4" cy="325.2" r="5.9" fill="#2a78d6"><title>Kim YC — 8 datasets (0 as lab PI) · Lund, Sweden · Lund University, Faculty of Medicine</title></circle>
+<circle class="node" cx="759.8" cy="323.1" r="5.9" fill="#199e70"><title>Legøy TA — 8 datasets (0 as lab PI) · Bergen, Norway · University of Bergen</title></circle>
+<circle class="node" cx="535.0" cy="276.5" r="5.9" fill="#2a78d6"><title>Li X — 8 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node" cx="678.9" cy="510.8" r="5.9" fill="#7b55d6"><title>Lietzèn N — 8 datasets (0 as lab PI) · Turku, Finland · University of Turku</title></circle>
+<circle class="node" cx="611.3" cy="712.2" r="5.9" fill="#d6453a"><title>Mackie M — 8 datasets (0 as lab PI) · Odense, Denmark · University College Dublin</title></circle>
+<circle class="node" cx="627.1" cy="123.0" r="5.9" fill="#d6453a"><title>Madzharova E — 8 datasets (0 as lab PI) · Lyngby, Denmark · Technical University of Denmark</title></circle>
+<circle class="node" cx="421.6" cy="280.8" r="5.9" fill="#2a78d6"><title>Meng Z — 8 datasets (0 as lab PI) · Stockholm, Sweden · Department of Medical Biophysics and Biochemistry, Karolinska Institutet</title></circle>
+<circle class="node pi" cx="144.0" cy="351.6" r="5.9" fill="#2a78d6"><title>Nimeus E — 8 datasets (7 as lab PI) · Lund, Sweden · Lund University</title></circle>
+<circle class="node pi" cx="291.6" cy="139.2" r="5.9" fill="#7b55d6"><title>Palvimo JJ — 8 datasets (8 as lab PI) · Kuopio, Finland · Institute of Biomedicine, University of Eastern Finland, Finland</title></circle>
+<circle class="node pi" cx="490.9" cy="413.0" r="5.9" fill="#2a78d6"><title>Punga T — 8 datasets (2 as lab PI) · Uppsala, Sweden · Uppsala University</title></circle>
+<circle class="node" cx="648.9" cy="515.2" r="5.9" fill="#7b55d6"><title>Rokka A — 8 datasets (0 as lab PI) · Turku, Finland · University of Turku</title></circle>
+<circle class="node pi" cx="486.7" cy="556.3" r="5.9" fill="#199e70"><title>Sousa MMLD — 8 datasets (2 as lab PI) · Trondheim, Norway · Senior Forsker Institutt for klinisk og molekylær medisin Laboratoriesenteret, 231.05.032,</title></circle>
+<circle class="node" cx="319.7" cy="305.3" r="5.9" fill="#2a78d6"><title>Szeitz B — 8 datasets (0 as lab PI) · Lund, Sweden</title></circle>
+<circle class="node" cx="822.2" cy="589.0" r="5.9" fill="#7b55d6"><title>Trotta A — 8 datasets (0 as lab PI) · Turku, Finland · Institute of Biosciences and Bioresources, National Research Council of Italy, Sesto Fiore</title></circle>
+<circle class="node pi" cx="305.7" cy="132.7" r="5.9" fill="#7b55d6"><title>Varjosalo M — 8 datasets (1 as lab PI) · Kuopio, Finland · Institute of Biotechnology, Helsinki Institute of Life Science, Systems Biology/Pathology </title></circle>
+<circle class="node" cx="296.3" cy="559.9" r="5.9" fill="#2a78d6"><title>Wang Y — 8 datasets (0 as lab PI) · Lund, Sweden</title></circle>
+<circle class="node pi" cx="607.4" cy="736.4" r="5.9" fill="#d6453a"><title>Welker F — 8 datasets (6 as lab PI) · Odense, Denmark · Globe Institute, University of Copenhagen, Denmark</title></circle>
+<circle class="node pi" cx="137.5" cy="305.8" r="5.9" fill="#2a78d6"><title>Westergren-Thorsson G — 8 datasets (5 as lab PI) · Lund, Sweden · Lung Biology, Department of Experimental Medical Science, Lund University, Lund, Sweden.</title></circle>
+<circle class="node" cx="315.6" cy="319.4" r="5.9" fill="#2a78d6"><title>Woldmar N — 8 datasets (0 as lab PI) · Lund, Sweden · Federal University of Rio de Janeiro (UFRJ)</title></circle>
+<circle class="node" cx="490.5" cy="428.0" r="5.9" fill="#2a78d6"><title>Zhang H — 8 datasets (0 as lab PI) · Uppsala, Sweden</title></circle>
+<circle class="node" cx="305.5" cy="572.5" r="5.9" fill="#d6453a"><title>Zhang J — 8 datasets (0 as lab PI) · Aarhus, Denmark</title></circle>
+<circle class="node" cx="763.1" cy="255.0" r="6.1" fill="#199e70"><title>Aasebo E — 9 datasets (0 as lab PI) · Bergen, Norway · PROBE</title></circle>
+<circle class="node pi" cx="235.1" cy="739.3" r="6.1" fill="#d6453a"><title>Andersen JS — 9 datasets (4 as lab PI) · Odense, Denmark · University of Southern Denmark, Department of Biochemistry and Molecular Biology, Campusve</title></circle>
+<circle class="node" cx="383.9" cy="718.1" r="6.1" fill="#2a78d6"><title>Bacanu S — 9 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node" cx="413.7" cy="745.2" r="6.1" fill="#2a78d6"><title>Bergh J — 9 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node" cx="330.0" cy="318.1" r="6.1" fill="#2a78d6"><title>Betancourt LH — 9 datasets (0 as lab PI) · Lund, Sweden</title></circle>
+<circle class="node pi" cx="191.7" cy="674.4" r="6.1" fill="#d6453a"><title>Birkelund S — 9 datasets (1 as lab PI) · Aalborg, Denmark · Head of Medical Microbiology and Immunology, Department of Health Science and Technology, </title></circle>
+<circle class="node" cx="356.7" cy="557.3" r="6.1" fill="#199e70"><title>Bollineni RC — 9 datasets (0 as lab PI) · Oslo, Norway · University of Oslo</title></circle>
+<circle class="node" cx="441.9" cy="737.0" r="6.1" fill="#2a78d6"><title>Ceder S — 9 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node" cx="549.7" cy="791.0" r="6.1" fill="#d6453a"><title>Edhager AV — 9 datasets (0 as lab PI) · Aarhus, Denmark · Aarhus University</title></circle>
+<circle class="node pi" cx="795.1" cy="330.9" r="6.1" fill="#199e70"><title>Finne K — 9 datasets (1 as lab PI) · Bergen, Norway · Renal Research Group Department of Clinical Medicine University of Bergen Norway</title></circle>
+<circle class="node" cx="416.6" cy="687.9" r="6.1" fill="#2a78d6"><title>Gerault MA — 9 datasets (0 as lab PI) · Stockholm, Sweden · Department of Oncology-Pathology, Karolinska Institutet, 171 77 Stockholm, Sweden</title></circle>
+<circle class="node pi" cx="414.3" cy="268.3" r="6.1" fill="#2a78d6"><title>Holmdahl R — 9 datasets (3 as lab PI) · Stockholm, Sweden · Division of Medical Inflammation Research, Department of Medical Biochemistry and Biophysi</title></circle>
+<circle class="node pi" cx="222.0" cy="653.1" r="6.1" fill="#d6453a"><title>Honoré B — 9 datasets (6 as lab PI) · Aarhus, Denmark · Aarhus University</title></circle>
+<circle class="node pi" cx="302.6" cy="786.1" r="6.1" fill="#2a78d6"><title>Johansson MEV — 9 datasets (2 as lab PI) · Gothenburg, Sweden · Instution of Biomecine, Department of Medical Biochemistry, University of Gothenburg</title></circle>
+<circle class="node pi" cx="612.7" cy="124.7" r="6.1" fill="#d6453a"><title>Kalogeropoulos K — 9 datasets (3 as lab PI) · Lyngby, Denmark · Technical University of Denmark</title></circle>
+<circle class="node pi" cx="491.6" cy="284.5" r="6.1" fill="#2a78d6"><title>Karlsson R — 9 datasets (5 as lab PI) · Gothenburg, Sweden · Department of Infectious Diseases, Institute for Biomedicine, Sahlgrenska Academy of the U</title></circle>
+<circle class="node pi" cx="734.5" cy="688.6" r="6.1" fill="#d6453a"><title>Kratchmarova I — 9 datasets (4 as lab PI) · Odense, Denmark · Department of Biochemistry and Molecular Biology Campusvej 55 5230 Odense M Denmark ihk@bm</title></circle>
+<circle class="node" cx="305.6" cy="308.8" r="6.1" fill="#2a78d6"><title>Kuras M — 9 datasets (0 as lab PI) · Lund, Sweden · Lund University</title></circle>
+<circle class="node" cx="428.5" cy="551.5" r="6.1" fill="#199e70"><title>La Rosa SL — 9 datasets (0 as lab PI) · Aas, Norway</title></circle>
+<circle class="node" cx="447.9" cy="709.6" r="6.1" fill="#2a78d6"><title>Langebäck A — 9 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node pi" cx="521.0" cy="272.6" r="6.1" fill="#2a78d6"><title>Larsson NG — 9 datasets (9 as lab PI) · Stockholm, Sweden · Division of Molecular Metabolism, Department of Medical Biochemistry and Biophysics, Karol</title></circle>
+<circle class="node" cx="397.5" cy="712.5" r="6.1" fill="#2a78d6"><title>Liang YY — 9 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node" cx="432.3" cy="706.3" r="6.1" fill="#2a78d6"><title>Lööf S — 9 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node" cx="427.3" cy="734.8" r="6.1" fill="#2a78d6"><title>Mandal T — 9 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node" cx="686.2" cy="523.3" r="6.1" fill="#199e70"><title>Matikainen S — 9 datasets (0 as lab PI) · Oslo, Norway</title></circle>
+<circle class="node pi" cx="398.7" cy="732.5" r="6.1" fill="#2a78d6"><title>Nordlund P — 9 datasets (9 as lab PI) · Stockholm, Sweden · Department of Oncology-Pathology, Karolinska Institutet, 171 77 Stockholm, Sweden Institut</title></circle>
+<circle class="node" cx="693.3" cy="507.2" r="6.1" fill="#7b55d6"><title>Ohman T — 9 datasets (0 as lab PI) · Helsinki, Finland</title></circle>
+<circle class="node" cx="726.0" cy="263.9" r="6.1" fill="#199e70"><title>Oveland E — 9 datasets (0 as lab PI) · Bergen, Norway · Institute of Marine Research</title></circle>
+<circle class="node" cx="295.6" cy="298.1" r="6.1" fill="#2a78d6"><title>Pawlowski K — 9 datasets (0 as lab PI) · Lund, Sweden · Lund University and Warsaw University of Life Sciences</title></circle>
+<circle class="node" cx="569.2" cy="440.8" r="6.1" fill="#d6453a"><title>Poulsen ET — 9 datasets (0 as lab PI) · Aarhus, Denmark · Department of Molecular Biology and Genetics</title></circle>
+<circle class="node" cx="440.5" cy="722.3" r="6.1" fill="#2a78d6"><title>Prabhu N — 9 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node" cx="403.3" cy="699.0" r="6.1" fill="#2a78d6"><title>Ramos AD — 9 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node" cx="837.6" cy="496.3" r="6.1" fill="#d6453a"><title>Rasmussen LM — 9 datasets (0 as lab PI) · Odense, Denmark</title></circle>
+<circle class="node" cx="757.7" cy="346.0" r="6.1" fill="#199e70"><title>Scholz H — 9 datasets (0 as lab PI) · Bergen, Norway</title></circle>
+<circle class="node pi" cx="594.6" cy="114.4" r="6.1" fill="#d6453a"><title>Schoof EM — 9 datasets (2 as lab PI) · Lyngby, Denmark · Technical University of Denmark, Department of Biotechnology and Biomedicine, Section for </title></circle>
+<circle class="node" cx="673.4" cy="694.0" r="6.1" fill="#d6453a"><title>Shliaha P — 9 datasets (0 as lab PI) · Odense, Denmark · Syddansk University</title></circle>
+<circle class="node" cx="413.3" cy="730.5" r="6.1" fill="#2a78d6"><title>Surova O — 9 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node" cx="703.2" cy="518.0" r="6.1" fill="#7b55d6"><title>Söderholm S — 9 datasets (0 as lab PI) · Helsinki, Finland · Wallenberg Centre for Molecular Medicine, Linköping University, Linköping, Sweden Departme</title></circle>
+<circle class="node" cx="418.1" cy="702.5" r="6.1" fill="#2a78d6"><title>Ward GA — 9 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node" cx="426.0" cy="719.7" r="6.1" fill="#2a78d6"><title>Wiman KG — 9 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node" cx="411.8" cy="715.8" r="6.1" fill="#2a78d6"><title>Österroos A — 9 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node" cx="310.0" cy="294.0" r="6.3" fill="#2a78d6"><title>Appelqvist R — 10 datasets (0 as lab PI) · Lund, Sweden</title></circle>
+<circle class="node pi" cx="817.4" cy="602.9" r="6.3" fill="#7b55d6"><title>Aro EM — 10 datasets (9 as lab PI) · Turku, Finland · Molecular Plant Biology Department of Technology University of Turku Finland</title></circle>
+<circle class="node pi" cx="484.6" cy="308.4" r="6.3" fill="#2a78d6"><title>Crescitelli R — 10 datasets (2 as lab PI) · Gothenburg, Sweden · Sahlgrenska Center for Cancer Research, Department of Surgery, Institute of Clinical Scien</title></circle>
+<circle class="node" cx="716.8" cy="530.1" r="6.3" fill="#199e70"><title>Ekman Stensland IME — 10 datasets (0 as lab PI) · Oslo, Norway · Oslo University hospital</title></circle>
+<circle class="node" cx="479.9" cy="543.3" r="6.3" fill="#199e70"><title>Fonseca DM — 10 datasets (0 as lab PI) · Trondheim, Norway · Norwegian University of Science and Technology</title></circle>
+<circle class="node pi" cx="748.2" cy="255.8" r="6.3" fill="#199e70"><title>Hernandez-Valladares M — 10 datasets (1 as lab PI) · Bergen, Norway · University of Bergen</title></circle>
+<circle class="node pi" cx="300.9" cy="335.7" r="6.3" fill="#2a78d6"><title>Horvatovich P — 10 datasets (1 as lab PI) · Lund, Sweden · University of Groningen, Department of Analytical Biochemistry, Groningen Research Institu</title></circle>
+<circle class="node" cx="379.1" cy="552.9" r="6.3" fill="#199e70"><title>Koehler CJ — 10 datasets (0 as lab PI) · Oslo, Norway · UiO</title></circle>
+<circle class="node pi" cx="656.2" cy="691.9" r="6.3" fill="#d6453a"><title>Kovalchuk SI — 10 datasets (1 as lab PI) · Odense, Denmark · Syddansk University, Odense, Denmark Shemyakin-Ovchinnikov Institute of Bioorganic Chemist</title></circle>
+<circle class="node" cx="163.9" cy="554.5" r="6.3" fill="#d6453a"><title>Lassé M — 10 datasets (0 as lab PI) · Aarhus, Denmark · Zentrum für Innere Medizin, III. Medizinische Klinik und Poliklinik (Nephrologie/Rheumatol</title></circle>
+<circle class="node" cx="431.2" cy="691.4" r="6.3" fill="#2a78d6"><title>Lehmann S — 10 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node pi" cx="494.7" cy="319.7" r="6.3" fill="#2a78d6"><title>Lötvall J — 10 datasets (3 as lab PI) · Gothenburg, Sweden · Krefting Research Centre, Institute of Medicine, Sahlgrenska Academy, University of Gothen</title></circle>
+<circle class="node pi" cx="132.6" cy="342.3" r="6.3" fill="#2a78d6"><title>Malmström L — 10 datasets (3 as lab PI) · Lund, Sweden · Lund University, Faculty of Medicine, Department of Clinical Sciences Lund, Division of In</title></circle>
+<circle class="node pi" cx="801.0" cy="344.6" r="6.3" fill="#199e70"><title>Marti HP — 10 datasets (4 as lab PI) · Bergen, Norway · Departemnt of Clinical Medicien, University of bergen, 5021, Bergen, Norway</title></circle>
+<circle class="node" cx="591.7" cy="453.3" r="6.3" fill="#d6453a"><title>Nielsen NS — 10 datasets (0 as lab PI) · Aarhus, Denmark · Aarhus University</title></circle>
+<circle class="node" cx="285.7" cy="667.9" r="6.3" fill="#d6453a"><title>Poulsen JS — 10 datasets (0 as lab PI) · Aalborg, Denmark · Aalborg University</title></circle>
+<circle class="node" cx="336.2" cy="304.6" r="6.3" fill="#2a78d6"><title>Rodriguez J — 10 datasets (0 as lab PI) · Lund, Sweden · Division of Chemistry I, Department of Medical Biochemistry and Biophysics, Karolinska Ins</title></circle>
+<circle class="node" cx="464.3" cy="290.1" r="6.3" fill="#2a78d6"><title>Thorsell AG — 10 datasets (0 as lab PI) · Gothenburg, Sweden</title></circle>
+<circle class="node" cx="762.1" cy="292.3" r="6.3" fill="#199e70"><title>Vaudel M — 10 datasets (0 as lab PI) · Bergen, Norway</title></circle>
+<circle class="node pi" cx="274.9" cy="557.0" r="6.3" fill="#2a78d6"><title>Önnerfjord P — 10 datasets (6 as lab PI) · Lund, Sweden · Clinical Sciences Lund, Lund University</title></circle>
+<circle class="node" cx="639.9" cy="527.1" r="6.5" fill="#7b55d6"><title>Bhosale SD — 11 datasets (0 as lab PI) · Turku, Finland · Turku Centre for Biotechnology, Turku, Finland</title></circle>
+<circle class="node" cx="509.3" cy="187.6" r="6.5" fill="#2a78d6"><title>Branca R — 11 datasets (0 as lab PI) · Stockholm, Sweden · Clinical Proteomics Unit, Dep. of Oncology-Pathology</title></circle>
+<circle class="node pi" cx="286.1" cy="340.0" r="6.5" fill="#2a78d6"><title>Eriksson J — 11 datasets (3 as lab PI) · Lund, Sweden · Åbo Akademi University, Faculty of Science and Engineering, Finland</title></circle>
+<circle class="node pi" cx="616.8" cy="139.4" r="6.5" fill="#d6453a"><title>Francavilla C — 11 datasets (10 as lab PI) · Lyngby, Denmark · Department for Bioengineering and Biomedicine, Technical University of Denmark, 2800, Cope</title></circle>
+<circle class="node pi" cx="314.6" cy="776.9" r="6.5" fill="#2a78d6"><title>Hansson GC — 11 datasets (4 as lab PI) · Gothenburg, Sweden · University of Gothenburg Institute of Biomedicine Department of Medical Biochemistry Mucin</title></circle>
+<circle class="node" cx="656.2" cy="611.6" r="6.5" fill="#d6453a"><title>Jensen P — 11 datasets (0 as lab PI) · Odense, Denmark · University of Southern Denmark</title></circle>
+<circle class="node pi" cx="673.7" cy="723.8" r="6.5" fill="#d6453a"><title>Kjeldsen F — 11 datasets (11 as lab PI) · Odense, Denmark · Department of Biochemistry and Molecular Biology, University of Southern Denmark, Odense, </title></circle>
+<circle class="node pi" cx="158.0" cy="333.5" r="6.5" fill="#2a78d6"><title>Kjellström S — 11 datasets (2 as lab PI) · Lund, Sweden · Division of Mass Spectrometry, Department of Clinical Sciences, Lund University, Lund.</title></circle>
+<circle class="node pi" cx="556.4" cy="360.2" r="6.5" fill="#2a78d6"><title>Larson G — 11 datasets (5 as lab PI) · Gothenburg, Sweden · Department of Laboratory Medicine, Institute of Biomedicine, University of Gothenburg, Swe</title></circle>
+<circle class="node pi" cx="526.7" cy="322.4" r="6.5" fill="#2a78d6"><title>Nielsen J — 11 datasets (8 as lab PI) · Gothenburg, Sweden · Professor, Department of Biology and Biological Engineering, Chalmers University of Techno</title></circle>
+<circle class="node pi" cx="600.2" cy="723.4" r="6.5" fill="#d6453a"><title>Olsen JV — 11 datasets (2 as lab PI) · Odense, Denmark · Vice Director, Professor Novo Nordisk Foundation Center for Protein Research Proteomics Pr</title></circle>
+<circle class="node pi" cx="523.0" cy="221.4" r="6.5" fill="#2a78d6"><title>Orre LM — 11 datasets (3 as lab PI) · Stockholm, Sweden · Department of oncology and pathology Karolinska Institutet, Stockholm, Sweden</title></circle>
+<circle class="node" cx="270.3" cy="305.5" r="6.5" fill="#2a78d6"><title>Pla I — 11 datasets (0 as lab PI) · Lund, Sweden</title></circle>
+<circle class="node pi" cx="755.7" cy="308.8" r="6.5" fill="#199e70"><title>Raeder H — 11 datasets (6 as lab PI) · Bergen, Norway · University of Bergen, Department of Clinical Medicine, Norway</title></circle>
+<circle class="node pi" cx="501.7" cy="485.2" r="6.5" fill="#199e70"><title>Wang TC — 11 datasets (1 as lab PI) · Trondheim, Norway · Professor, Department of Bioscience, Aarhus University, Denmark</title></circle>
+<circle class="node" cx="246.8" cy="377.7" r="6.5" fill="#2a78d6"><title>Zhu S — 11 datasets (0 as lab PI) · Umea, Sweden · Umea University</title></circle>
+<circle class="node" cx="178.0" cy="561.0" r="6.7" fill="#d6453a"><title>Billing AM — 12 datasets (0 as lab PI) · Aarhus, Denmark · University of Southern Denmark</title></circle>
+<circle class="node" cx="496.3" cy="208.1" r="6.7" fill="#2a78d6"><title>Branca RMM — 12 datasets (0 as lab PI) · Stockholm, Sweden</title></circle>
+<circle class="node pi" cx="669.4" cy="483.2" r="6.7" fill="#d6453a"><title>Cheng L — 12 datasets (1 as lab PI) · Aarhus, Denmark · Institute of Biomedicine, Aarhus University</title></circle>
+<circle class="node pi" cx="771.4" cy="307.5" r="6.7" fill="#199e70"><title>Chera S — 12 datasets (8 as lab PI) · Bergen, Norway · Department of Clinical Science, Faculty of Medicine, University of Bergen, Norway</title></circle>
+<circle class="node" cx="744.8" cy="321.2" r="6.7" fill="#199e70"><title>Ghila LM — 12 datasets (0 as lab PI) · Bergen, Norway</title></circle>
+<circle class="node" cx="167.6" cy="583.6" r="6.7" fill="#d6453a"><title>Huber TB — 12 datasets (0 as lab PI) · Aarhus, Denmark</title></circle>
+<circle class="node pi" cx="503.0" cy="306.4" r="6.7" fill="#2a78d6"><title>Lässer C — 12 datasets (5 as lab PI) · Gothenburg, Sweden · Krefting Research Centre, Department of Internal Medicine and Clinical Nutrition, Institut</title></circle>
+<circle class="node" cx="316.3" cy="334.4" r="6.7" fill="#2a78d6"><title>Szasz AM — 12 datasets (0 as lab PI) · Lund, Sweden</title></circle>
+<circle class="node pi" cx="623.1" cy="499.7" r="6.9" fill="#7b55d6"><title>Elo LL — 13 datasets (2 as lab PI) · Turku, Finland · Turku Centre for Biotechnology</title></circle>
+<circle class="node" cx="780.0" cy="327.7" r="6.9" fill="#199e70"><title>Paulo JA — 13 datasets (0 as lab PI) · Bergen, Norway</title></circle>
+<circle class="node" cx="285.6" cy="309.9" r="6.9" fill="#2a78d6"><title>Sanchez A — 13 datasets (0 as lab PI) · Lund, Sweden · Lund University</title></circle>
+<circle class="node pi" cx="759.1" cy="276.9" r="6.9" fill="#199e70"><title>Selheim F — 13 datasets (2 as lab PI) · Bergen, Norway · Department of Biomedicine (PROBE, University of Bergen.</title></circle>
+<circle class="node" cx="724.3" cy="676.1" r="7.1" fill="#d6453a"><title>Akimov V — 14 datasets (0 as lab PI) · Odense, Denmark · Center for Experimental BioInformatics, Department of Biochemistry and Molecular Biology, </title></circle>
+<circle class="node" cx="476.6" cy="407.3" r="7.1" fill="#2a78d6"><title>Larsson M — 14 datasets (0 as lab PI) · Uppsala, Sweden · Uppsala University</title></circle>
+<circle class="node pi" cx="285.9" cy="683.8" r="7.1" fill="#d6453a"><title>Nielsen JL — 14 datasets (14 as lab PI) · Aalborg, Denmark · Department of Chemistry and Bioscience, Aalborg University, Fredrik Bajers Vej 7H, 9220 Aa</title></circle>
+<circle class="node pi" cx="656.9" cy="664.8" r="7.1" fill="#d6453a"><title>Rogowska-Wrzesinska A — 14 datasets (10 as lab PI) · Odense, Denmark · Protein Research Group, Institute for Biochemistry and Molecular Biology, University of So</title></circle>
+<circle class="node" cx="786.8" cy="312.7" r="7.1" fill="#199e70"><title>Vethe H — 14 datasets (0 as lab PI) · Bergen, Norway · Universitetet i Bergen</title></circle>
+<circle class="node pi" cx="324.1" cy="791.0" r="7.2" fill="#2a78d6"><title>Arike L — 15 datasets (9 as lab PI) · Gothenburg, Sweden · Proteomics laboratory, Mucin Biology Groups, Department of Medical Biochemistry and Cell B</title></circle>
+<circle class="node pi" cx="837.2" cy="512.2" r="7.2" fill="#d6453a"><title>Beck HC — 15 datasets (14 as lab PI) · Odense, Denmark · Proteomics Lab, Odense University Hospital, Odense, Denmark</title></circle>
+<circle class="node" cx="538.0" cy="310.8" r="7.2" fill="#2a78d6"><title>Berger E — 15 datasets (0 as lab PI) · Gothenburg, Sweden · Proteomics Core Facility, University of Gothenburg</title></circle>
+<circle class="node pi" cx="679.9" cy="466.9" r="7.2" fill="#d6453a"><title>Fenton RA — 15 datasets (11 as lab PI) · Aarhus, Denmark · Department of Biomedicine Aarhus University</title></circle>
+<circle class="node" cx="639.6" cy="501.7" r="7.2" fill="#7b55d6"><title>Moulder R — 15 datasets (0 as lab PI) · Turku, Finland · Turku Biosciences</title></circle>
+<circle class="node pi" cx="495.9" cy="541.4" r="7.2" fill="#199e70"><title>Otterlei M — 15 datasets (13 as lab PI) · Trondheim, Norway · Department of Clinical and Molecular Medicine, Norwegian University of Science and Technol</title></circle>
+<circle class="node" cx="496.0" cy="824.8" r="7.2" fill="#7b55d6"><title>Rappu P — 15 datasets (0 as lab PI) · Turku, Finland · University of Turku</title></circle>
+<circle class="node" cx="697.2" cy="558.8" r="7.2" fill="#199e70"><title>Singh SK — 15 datasets (0 as lab PI) · Oslo, Norway · Proteomics core facility, Olso University hospital, Norway</title></circle>
+<circle class="node" cx="156.8" cy="465.6" r="7.2" fill="#7b55d6"><title>Tohmola T — 15 datasets (0 as lab PI) · Helsinki, Finland</title></circle>
+<circle class="node pi" cx="663.0" cy="467.0" r="7.2" fill="#d6453a"><title>Wu Q — 15 datasets (2 as lab PI) · Aarhus, Denmark · Department of Biomedicine, Aarhus University</title></circle>
+<circle class="node pi" cx="633.7" cy="137.1" r="7.2" fill="#d6453a"><title>auf dem Keller U — 15 datasets (1 as lab PI) · Lyngby, Denmark · Technical University of Denmark</title></circle>
+<circle class="node pi" cx="493.0" cy="389.6" r="7.4" fill="#2a78d6"><title>Andersson L — 16 datasets (10 as lab PI) · Uppsala, Sweden · Department of Medical Biochemistry and Microbiology, Uppsala University, Uppsala, Sweden.</title></circle>
+<circle class="node" cx="507.0" cy="280.3" r="7.4" fill="#2a78d6"><title>Atanassov I — 16 datasets (0 as lab PI) · Stockholm, Sweden · Max Planck Institute for Biology of Aging</title></circle>
+<circle class="node pi" cx="428.8" cy="533.5" r="7.4" fill="#199e70"><title>Eijsink VGH — 16 datasets (5 as lab PI) · Aas, Norway · Faculty of Chemistry, Biotechnology and Food Science, NMBU - Norwegian University of Life </title></circle>
+<circle class="node pi" cx="434.0" cy="268.7" r="7.4" fill="#2a78d6"><title>Gaetani M — 16 datasets (5 as lab PI) · Stockholm, Sweden · 1 Division of Chemistry I, Department of Medical Biochemistry and Biophysics, Karolinska I</title></circle>
+<circle class="node pi" cx="305.8" cy="351.2" r="7.4" fill="#2a78d6"><title>Gil J — 16 datasets (3 as lab PI) · Lund, Sweden · Department of Translational Medicine, Lund University, Lund Sweden</title></circle>
+<circle class="node" cx="666.4" cy="708.3" r="7.4" fill="#d6453a"><title>Gorshkov V — 16 datasets (0 as lab PI) · Odense, Denmark · University of Southern Denmark</title></circle>
+<circle class="node pi" cx="482.1" cy="811.4" r="7.4" fill="#7b55d6"><title>Heino J — 16 datasets (16 as lab PI) · Turku, Finland · Department of Life Technologies and InFLAMES Research Flagship, University of Turku, FI-20</title></circle>
+<circle class="node" cx="426.4" cy="297.2" r="7.6" fill="#2a78d6"><title>Beusch CM — 17 datasets (0 as lab PI) · Stockholm, Sweden · Division of Chemistry I Department of Medical Biochemistry &amp; Biophysics Karolinska Institu</title></circle>
+<circle class="node pi" cx="561.3" cy="376.1" r="7.6" fill="#2a78d6"><title>Nilsson JA — 17 datasets (1 as lab PI) · Gothenburg, Sweden · Department of Clinical Chemistry and Transfusion Medicine, Institute of Biomedicine, Unive</title></circle>
+<circle class="node" cx="136.5" cy="454.3" r="7.6" fill="#7b55d6"><title>Saraswat M — 17 datasets (0 as lab PI) · Helsinki, Finland</title></circle>
+<circle class="node pi" cx="444.1" cy="542.3" r="7.7" fill="#199e70"><title>Pope PB — 18 datasets (7 as lab PI) · Aas, Norway · Norwegian University of Life Sciences</title></circle>
+<circle class="node" cx="181.4" cy="544.3" r="7.9" fill="#d6453a"><title>Demir F — 19 datasets (0 as lab PI) · Aarhus, Denmark · Aarhus University Department of Biomedicine Markus Rinschen Lab</title></circle>
+<circle class="node pi" cx="656.9" cy="498.2" r="7.9" fill="#7b55d6"><title>Lahesmaa R — 19 datasets (13 as lab PI) · Turku, Finland · Molecular Systems Immunology Group Turku Bioscience University of Turku P.O. Box 123, BioC</title></circle>
+<circle class="node pi" cx="295.9" cy="281.6" r="7.9" fill="#2a78d6"><title>Malm J — 19 datasets (5 as lab PI) · Lund, Sweden · Clinical Chemistry, Department of Translational Medicine, Lund University, Skane Universit</title></circle>
+<circle class="node pi" cx="196.7" cy="575.6" r="7.9" fill="#d6453a"><title>Rinschen MM — 19 datasets (18 as lab PI) · Aarhus, Denmark · Aarhus University Department of Biomedicine Høegh-Guldbergsgade 10 DK-8000 Aarhus C</title></circle>
+<circle class="node pi" cx="260.4" cy="360.4" r="8.0" fill="#2a78d6"><title>Mateus A — 20 datasets (10 as lab PI) · Umea, Sweden · Umea University</title></circle>
+<circle class="node" cx="511.0" cy="233.5" r="8.0" fill="#2a78d6"><title>Mermelekas G — 20 datasets (0 as lab PI) · Stockholm, Sweden · Karolinska Institutet</title></circle>
+<circle class="node pi" cx="153.4" cy="448.0" r="8.0" fill="#7b55d6"><title>Renkonen R — 20 datasets (17 as lab PI) · Helsinki, Finland · Professor of Glycobiology, University of Helsinki Helsinki University Hospital</title></circle>
+<circle class="node pi" cx="333.5" cy="335.7" r="8.0" fill="#2a78d6"><title>Rezeli M — 20 datasets (3 as lab PI) · Lund, Sweden · Lund University BME</title></circle>
+<circle class="node" cx="419.8" cy="314.0" r="8.0" fill="#2a78d6"><title>Sabatier P — 20 datasets (0 as lab PI) · Stockholm, Sweden · Department of Medical Biochemistry and Biophysics, Karolinska Institutet, Stockholm, Swede</title></circle>
+<circle class="node pi" cx="411.9" cy="549.3" r="8.0" fill="#199e70"><title>Vaaje-Kolstad G — 20 datasets (11 as lab PI) · Aas, Norway · Faculty of Chemistry, Biotechnology and Food Science Norwegian University of Life Sciences</title></circle>
+<circle class="node" cx="432.9" cy="250.7" r="8.2" fill="#2a78d6"><title>Saei AA — 21 datasets (0 as lab PI) · Stockholm, Sweden · Department of Medical Biochemistry and Biophysics, Karolinska Institutet, Stockholm, Swede</title></circle>
+<circle class="node pi" cx="470.3" cy="529.3" r="8.2" fill="#199e70"><title>Slupphaug G — 21 datasets (13 as lab PI) · Trondheim, Norway · Professor in molecular biology and scientific leader of PROMEC Department of Clinical and </title></circle>
+<circle class="node pi" cx="269.0" cy="322.9" r="8.2" fill="#2a78d6"><title>Welinder C — 21 datasets (1 as lab PI) · Lund, Sweden · Division of Oncology and Pathology, Dept. of Clinical Sciences Lund, Lund University, Lund</title></circle>
+<circle class="node" cx="548.9" cy="344.6" r="8.3" fill="#2a78d6"><title>Vorontsov E — 22 datasets (0 as lab PI) · Gothenburg, Sweden · Proteomics Core Facility, Sahlgrenska Academy, University of Gothenburg, Gothenburg, Swede</title></circle>
+<circle class="node pi" cx="717.3" cy="692.7" r="8.4" fill="#d6453a"><title>Blagoev B — 23 datasets (16 as lab PI) · Odense, Denmark · Department of Biochemistry and Molecular Biology, University of Southern Denmark</title></circle>
+<circle class="node pi" cx="504.9" cy="403.6" r="8.4" fill="#2a78d6"><title>James PP — 23 datasets (16 as lab PI) · Lund, Sweden · Turku Proteomics Facility, Turku Bioscience</title></circle>
+<circle class="node pi" cx="368.9" cy="539.0" r="8.4" fill="#199e70"><title>Thiede B — 23 datasets (13 as lab PI) · Oslo, Norway · Department of Biosciences, University of Oslo, Norway</title></circle>
+<circle class="node pi" cx="741.8" cy="271.9" r="8.6" fill="#199e70"><title>Berven FS — 24 datasets (13 as lab PI) · Bergen, Norway · Institute of biomedicine, University of Bergen</title></circle>
+<circle class="node pi" cx="560.1" cy="455.4" r="8.6" fill="#d6453a"><title>Enghild JJ — 24 datasets (20 as lab PI) · Aarhus, Denmark · Department of Molecular Biology and Genetics, Aarhus University, Denmark</title></circle>
+<circle class="node pi" cx="158.4" cy="305.3" r="8.7" fill="#2a78d6"><title>Levander F — 25 datasets (21 as lab PI) · Lund, Sweden · Department of Immunotechnology, Lund University, Lund, Sweden</title></circle>
+<circle class="node pi" cx="670.9" cy="676.7" r="8.8" fill="#d6453a"><title>Jensen ON — 26 datasets (16 as lab PI) · Odense, Denmark · University of Southern Denmark, Department of Biochemistryand Molecular Biology, Protein R</title></circle>
+<circle class="node" cx="152.4" cy="485.9" r="9.1" fill="#7b55d6"><title>Joenväärä S — 28 datasets (0 as lab PI) · Helsinki, Finland · Helsinki University</title></circle>
+<circle class="node pi" cx="144.0" cy="322.0" r="9.1" fill="#2a78d6"><title>Malmström J — 28 datasets (11 as lab PI) · Lund, Sweden · Division of Infection Medicine, Department of Clinical Sciences, Faculty of Medicine, Lund</title></circle>
+<circle class="node pi" cx="402.7" cy="297.4" r="9.1" fill="#2a78d6"><title>Végvári Á — 28 datasets (19 as lab PI) · Stockholm, Sweden · Karolinska Institutet, Stockholm, Sweden</title></circle>
+<circle class="node" cx="509.8" cy="329.9" r="9.4" fill="#2a78d6"><title>Fuchs J — 31 datasets (0 as lab PI) · Gothenburg, Sweden · Gothenburg University</title></circle>
+<circle class="node pi" cx="656.0" cy="589.6" r="9.4" fill="#d6453a"><title>Larsen MR — 31 datasets (26 as lab PI) · Odense, Denmark · Department of Biochemistry and Molecular Biology, University of Southern Denmark, Denmark</title></circle>
+<circle class="node pi" cx="327.3" cy="288.3" r="9.4" fill="#2a78d6"><title>Marko-Varga G — 31 datasets (15 as lab PI) · Lund, Sweden · 8Clinical Protein Science &amp; Imaging, Biomedical Centre, Department of Biomedical Engineeri</title></circle>
+<circle class="node pi" cx="563.8" cy="802.5" r="9.6" fill="#d6453a"><title>Palmfeldt J — 32 datasets (31 as lab PI) · Aarhus, Denmark · Aarhus University, Denmark</title></circle>
+<circle class="node pi" cx="698.0" cy="537.5" r="9.9" fill="#199e70"><title>Nyman TA — 35 datasets (29 as lab PI) · Oslo, Norway · Proteomics core facility, Oslo University Hospital</title></circle>
+<circle class="node pi" cx="208.7" cy="666.0" r="9.9" fill="#d6453a"><title>Stensballe A — 35 datasets (30 as lab PI) · Aalborg, Denmark · Aalborg University</title></circle>
+<circle class="node pi" cx="410.0" cy="526.9" r="10.0" fill="#199e70"><title>Arntzen MØ — 36 datasets (3 as lab PI) · Aas, Norway · Norwegian University of Life Sciences</title></circle>
+<circle class="node pi" cx="454.0" cy="516.6" r="10.0" fill="#199e70"><title>Hagen LH — 36 datasets (12 as lab PI) · Trondheim, Norway · Daglig leder, PROMEC Institutt for klinisk og molekylær medisin lars.hagen@ntnu.no 7359850</title></circle>
+<circle class="node pi" cx="397.6" cy="276.4" r="10.0" fill="#2a78d6"><title>Zubarev RA — 36 datasets (22 as lab PI) · Stockholm, Sweden · Division of Physiological Chemistry I, Department of Medical Biochemistry and Biophysics, </title></circle>
+<circle class="node pi" cx="528.0" cy="342.5" r="10.2" fill="#2a78d6"><title>Sihlbom C — 38 datasets (26 as lab PI) · Gothenburg, Sweden · Proteomics Core Facility, Sahlgrenska Academy, University of Gothenburg, Sweden</title></circle>
+<circle class="node pi" cx="522.9" cy="201.7" r="10.6" fill="#2a78d6"><title>Lehtiö J — 42 datasets (38 as lab PI) · Stockholm, Sweden · Department of oncology and pathology, Karolinska Institute, Stockholm, Sweden</title></circle>
+<circle class="node" cx="490.6" cy="520.9" r="11.3" fill="#199e70"><title>Sharma A — 49 datasets (0 as lab PI) · Trondheim, Norway · Engineer at NTNU, Norway</title></circle>
+<text class="label" x="504.9" y="524.9" text-anchor="start">Sharma A</text>
+<text class="label" x="221.6" y="670.0" text-anchor="start">Stensballe A</text>
+<text class="label" x="576.3" y="806.5" text-anchor="start">Palmfeldt J</text>
+<text class="label" x="164.5" y="489.9" text-anchor="start">Joenväärä S</text>
+<text class="label" x="156.1" y="326.0" text-anchor="start">Malmström J</text>
+<text class="label" x="753.4" y="275.9" text-anchor="start">Berven FS</text>
+<text class="label" x="192.3" y="548.3" text-anchor="start">Demir F</text>
+<text class="label" x="492.5" y="815.4" text-anchor="start">Heino J</text>
+<text class="label" x="334.3" y="795.0" text-anchor="start">Arike L</text>
+<text class="label" x="644.0" y="141.1" text-anchor="start">auf dem Keller U</text>
+<text class="label" x="440.5" y="695.4" text-anchor="start">Lehmann S</text>
+<text class="label" x="300.5" y="143.2" text-anchor="start">Palvimo JJ</text>
+<text class="label" x="536.5" y="205.7" text-anchor="start">Lehtiö J</text>
+<text class="label" x="528.0" y="364.7" text-anchor="middle">Sihlbom C</text>
+<text class="label" x="410.0" y="512.9" text-anchor="middle">Arntzen MØ</text>
+<text class="label" x="710.9" y="541.5" text-anchor="start">Nyman TA</text>
+<text class="label" x="497.3" y="333.9" text-anchor="end">Fuchs J</text>
+<text class="label" x="668.4" y="593.6" text-anchor="start">Larsen MR</text>
+<text class="label" x="327.3" y="309.8" text-anchor="middle">Marko-Varga G</text>
+<text class="label" x="670.9" y="697.6" text-anchor="middle">Jensen ON</text>
+<text class="label" x="170.1" y="309.3" text-anchor="start">Levander F</text>
+<text class="label" x="571.7" y="459.4" text-anchor="start">Enghild JJ</text>
+<text class="label" x="728.7" y="696.7" text-anchor="start">Blagoev B</text>
+<text class="label" x="516.3" y="407.6" text-anchor="start">James PP</text>
+<text class="label" x="357.5" y="543.0" text-anchor="end">Thiede B</text>
+<text class="label" x="560.2" y="348.6" text-anchor="start">Vorontsov E</text>
+<text class="label" x="444.1" y="254.7" text-anchor="start">Saei AA</text>
+<text class="label" x="249.4" y="364.4" text-anchor="end">Mateus A</text>
+<text class="label" x="522.1" y="237.5" text-anchor="start">Mermelekas G</text>
+<text class="label" x="164.4" y="452.0" text-anchor="start">Renkonen R</text>
+<text class="label" x="344.5" y="339.7" text-anchor="start">Rezeli M</text>
+<text class="label" x="430.8" y="318.0" text-anchor="start">Sabatier P</text>
+<text class="label" x="411.9" y="569.3" text-anchor="middle">Vaaje-Kolstad G</text>
+<text class="label" x="667.7" y="502.2" text-anchor="start">Lahesmaa R</text>
+<text class="label" x="285.1" y="285.6" text-anchor="end">Malm J</text>
+<text class="label" x="207.5" y="579.6" text-anchor="start">Rinschen MM</text>
+<text class="label" x="437.0" y="301.2" text-anchor="start">Beusch CM</text>
+<text class="label" x="571.8" y="380.1" text-anchor="start">Nilsson JA</text>
+<text class="label" x="126.0" y="458.3" text-anchor="end">Saraswat M</text>
+</svg>
