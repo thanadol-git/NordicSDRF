@@ -122,6 +122,8 @@ countries:
         screened: 0
         annotated: 0
         blocked: 0
+        notes: "Manifest from build_manifest.py (2026-11-03): 543 confirmed Danish; PXD006201, PXD006679, PXD027901, PXD043505 removed (SDU Odense affiliations only). 32 Odense-list, 1 Aarhus-list and 2 Roskilde-list PXDs have Copenhagen-only affiliations and are still listed under those cities"
+        pxd_list: lists/denmark/copenhagen.txt
       odense:
         name: Odense
         search_terms: [Odense, "University of Southern Denmark"]
