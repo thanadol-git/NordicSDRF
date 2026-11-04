@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD006299.sdrf.tsv",
+  "dataset": "PXD006299",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006299"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006299/files (pages 0-2, 281 entries)"
+    },
+    {
+      "id": "mq-summary",
+      "kind": "search-output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/07/PXD006299/txtproteome.zip :: txt proteome/summary.txt (HTTP range read)"
+    },
+    {
+      "id": "mq-parameters",
+      "kind": "search-output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/07/PXD006299/txtproteome.zip :: txt proteome/parameters.txt (HTTP range read)"
+    },
+    {
+      "id": "mq-peptides",
+      "kind": "search-output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/07/PXD006299/txtproteome.zip :: txt proteome/peptides.txt (first ~1.5 MB compressed, 7206 peptides)"
+    },
+    {
+      "id": "raw-headers",
+      "kind": "raw-data",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/07/PXD006299/{20160107_QE5_UPLC1_AKP_Hep2_R1_Pro46F_1, 20160107_QE5_UPLC1_AKP_Jurkat_R1_Prot46F_1, 20160113_QE5_UPLC1_AKP_Jurkat_R2_Prot46F_20, 20160211_QE3_UPLC8_AKP_Hep2_R3_Prot46F_10, 20160211_QE3_UPLC8_AKP_Hep2_R3_Prot46F_41, 20160215_QE3_UPLC8_AKP_Hep2_R3_Prot46F_41, 20160215_QE3_UPLC8_AKP_Hep2_R3_Prot46F_42, 20160213_QE3_UPLC8_AKP_Jur_R3_Prot46F_01}.raw (first 256 KB-1 MB)"
+    },
+    {
+      "id": "paper-abstract",
+      "kind": "publication",
+      "location": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=29967540 (abstract + MeSH only; doi 10.1038/s41594-018-0084-y, not open access)"
+    },
+    {
+      "id": "cellosaurus-hep2",
+      "kind": "database",
+      "location": "https://api.cellosaurus.org/cell-line/CVCL_1906?format=json"
+    },
+    {
+      "id": "cellosaurus-jurkat",
+      "kind": "database",
+      "location": "https://api.cellosaurus.org/cell-line/CVCL_0065?format=json"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/search (MONDO:0000554, MONDO:0000871, HANCESTRO:0568, PRIDE:0000564, PRIDE:0000608, PRIDE:0000600, MS:1000484)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] rows 1-280",
+      "value": "280 RAW files",
+      "source_ids": [
+        "pride-files",
+        "mq-summary"
+      ],
+      "evidence": "All 280 .raw files in the PRIDE list are claimed once; MaxQuant summary.txt lists exactly the same 280 raw-file names. txtproteome.zip (SEARCH) not a data file."
+    },
+    {
+      "location": "source name / characteristics[biological replicate] / factor value[cell line]",
+      "value": "Hep2_R1-R3, Jurkat_R1-R3; replicate 1-3; HEp-2 / Jurkat",
+      "source_ids": [
+        "mq-summary",
+        "pride-files"
+      ],
+      "evidence": "MaxQuant Experiment column assigns every raw file to Hep2_R1..R3 or Jurkat_R1..R3, consistent with file-name tokens. Replicates treated as biological replicates by inference (paper not readable)."
+    },
+    {
+      "location": "comment[fraction identifier] rows 1-280",
+      "value": "1-46",
+      "source_ids": [
+        "mq-summary"
+      ],
+      "evidence": "MaxQuant Fraction column; equals file-name suffix for every file."
+    },
+    {
+      "location": "comment[technical replicate] rows of 20160215_QE3_UPLC8_AKP_Hep2_R3_Prot46F_41-44",
+      "value": "2 (fractions 41-44)",
+      "source_ids": [
+        "mq-summary",
+        "raw-headers"
+      ],
+      "evidence": "MaxQuant assigns these 4 files to experiment Hep2_R3 fractions 41-44, duplicating 20160211 Hep2_R3 F41-44; RAW headers confirm original names and later acquisition. Fraction set by documented post-processing."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "cellosaurus-hep2",
+        "cellosaurus-jurkat",
+        "paper-abstract"
+      ],
+      "evidence": "PRIDE organism NEWT:9606; both Cellosaurus records NCBI_TaxID 9606; MeSH Humans."
+    },
+    {
+      "location": "characteristics[cell line] / cellosaurus accession / cellosaurus name",
+      "value": "HEp-2 CVCL_1906; Jurkat CVCL_0065",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "cellosaurus-hep2",
+        "cellosaurus-jurkat",
+        "paper-abstract"
+      ],
+      "evidence": "PRIDE organismParts BTO Hep-2 cell / Jurkat cell; run names Hep2/Jurkat; MeSH Jurkat Cells. Jurkat clone not documented (parental record used)."
+    },
+    {
+      "location": "characteristics[sampling site], [disease], [sex], [age], [cell type], [ancestry category]",
+      "value": "HEp-2: uterine cervix, endocervical adenocarcinoma, female, 30Y6M, not available, African American; Jurkat: blood, T-cell childhood acute lymphocytic leukemia, male, 14Y, T cell, not available",
+      "source_ids": [
+        "cellosaurus-hep2",
+        "cellosaurus-jurkat",
+        "ols"
+      ],
+      "evidence": "Cellosaurus derived-from-site, disease (NCIt C27677 / C7953 mapped to MONDO via OLS), sex, age, cell-type, population comments. Jurkat 'Caucasian' not mapped to HANCESTRO."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "not applicable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Cultured cell lines; tissue of origin recorded in sampling site instead."
+    },
+    {
+      "location": "characteristics[passage number], [culture medium]",
+      "value": "not available",
+      "source_ids": [],
+      "evidence": "Not stated in PRIDE record; paper full text unavailable."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive HF;AC=MS:1002523",
+      "source_ids": [
+        "pride",
+        "raw-headers"
+      ],
+      "evidence": "PRIDE instruments field; RAW headers of QE5 and QE3 runs read 'Q Exactive HF - Orbitrap MS'."
+    },
+    {
+      "location": "comment[proteomics data acquisition method], [dissociation method], [collision energy], [ms2 mass analyzer]",
+      "value": "DDA PRIDE:0000627; HCD MS:1000422; 28 NCE; orbitrap MS:1000484",
+      "source_ids": [
+        "raw-headers"
+      ],
+      "evidence": "Method sections of 4 RAW files: TopN 20, HCD NCE 28, MS2 resolution 15,000 (Orbitrap)."
+    },
+    {
+      "location": "comment[cleavage agent details] (two columns)",
+      "value": "Lys-C MS:1001309; Trypsin MS:1001251",
+      "source_ids": [
+        "pride",
+        "mq-summary",
+        "mq-peptides"
+      ],
+      "evidence": "PRIDE sample protocol: lysate digested with Lys-C, subsequent trypsin digestion; MaxQuant proteome search Trypsin/P; peptide C-termini 3637 K / 3490 R in first 7206 peptides. Lys-C for the proteome is inferred from the shared lysate protocol."
+    },
+    {
+      "location": "comment[modification parameters] (six columns)",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl Protein N-term, Gln->pyro-Glu, Deamidated N/Q, Phospho S/T variable",
+      "source_ids": [
+        "mq-summary"
+      ],
+      "evidence": "summary.txt Fixed/Variable modifications and Multi modifications columns, identical for all 280 files."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "mq-parameters"
+      ],
+      "evidence": "MS/MS tol. (FTMS) 20 ppm; MS2 in Orbitrap."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "not available",
+      "source_ids": [],
+      "evidence": "Not recorded in deposited MaxQuant 1.5.3 parameters.txt/summary.txt; no mqpar.xml."
+    },
+    {
+      "location": "comment[reduction reagent], [alkylation reagent]",
+      "value": "reduction not available; chloroacetamide PRIDE:0000600",
+      "source_ids": [
+        "pride",
+        "mq-summary"
+      ],
+      "evidence": "PRIDE sample protocol (CAA) and the cited Bekker-Jensen 2017 workflow both use chloroacetamide, consistent with fixed Carbamidomethyl (C). Reduction set to not available after independent review: the PRIDE protocol (DTT) is shared with the UbiSite deposit, while the cited deep-proteome workflow uses TCEP."
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "High-pH reversed-phase chromatography (hpHRP) PRIDE:0000564",
+      "source_ids": [
+        "pride",
+        "mq-summary"
+      ],
+      "evidence": "PRIDE protocol: proteome peptides fractionated by offline high-pH RP; 46 fractions per sample."
+    }
+  ],
+  "limitations": [
+    "Paper (Nat Struct Mol Biol 2018, PMID 29967540) not open access; only abstract and MeSH used.",
+    "R1-R3 interpreted as biological replicates from file/experiment names only.",
+    "No treatment documented for the proteome runs; no treatment column written.",
+    "Jurkat clone (parental vs E6-1) not documented.",
+    "Lys-C pre-digestion and CAA alkylation for the proteome are supported by both the PRIDE UbiSite protocol and the cited Bekker-Jensen 2017 workflow; the reduction reagent conflicts (DTT vs TCEP) and is recorded as not available.",
+    "Instrument method checked on 4 of 280 RAW files.",
+    "Precursor mass tolerance not recoverable from deposited files.",
+    "sdrf-tools reconcile reports cleavage_agent_incomplete because it reads only the first repeated cleavage column; Trypsin is present in the second."
+  ]
+}

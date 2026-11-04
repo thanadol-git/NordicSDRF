@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD009383.sdrf.tsv",
+  "dataset": "PXD009383",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD009383"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD009383/files/all (124 entries: 62 RAW + 62 Mascot .dat SEARCH; all projectAccessions = PXD009383)"},
+    {"id": "paper", "kind": "publication", "location": "PMC8393456 (https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8393456/fullTextXML); doi:10.1186/s12943-021-01403-w; PMID 34446021"},
+    {"id": "fig1", "kind": "publication figure", "location": "https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12943-021-01403-w/MediaObjects/12943_2021_1403_Fig1_HTML.png (panel A: iTRAQ labelling scheme, forward 114/115/116/117 vs reverse 117/116/115/114)"},
+    {"id": "supp1", "kind": "publication supplementary", "location": "https://static-content.springer.com/esm/art%3A10.1186%2Fs12943-021-01403-w/MediaObjects/12943_2021_1403_MOESM1_ESM.pdf (Supplementary Methods; Table S1 clinical info of 20 paired patients: all Male)"},
+    {"id": "supp3", "kind": "publication supplementary", "location": "https://static-content.springer.com/esm/art%3A10.1186%2Fs12943-021-01403-w/MediaObjects/12943_2021_1403_MOESM3_ESM.xlsx (Table S4: ratios ER1/LR1 ... ER10/LR10; no channel or group mapping)"},
+    {"id": "mascot-dat", "kind": "deposited search output (HTTP range 0-12000)", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/09/PXD009383/1F_3.dat and 1R_3.dat (MODS=Carbamidomethyl (C); IT_MODS=iTRAQ4plex (K),iTRAQ4plex (N-term),Oxidation (M); CLE=Trypsin/P; TOL=500 ppm; ITOL=0.5 Da)"},
+    {"id": "raw-header", "kind": "raw file header (HTTP range 0-300000, utf-16-le)", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/09/PXD009383/Lung_Cancer_iTRAQ_G1F_SCX_F01.raw (LTQ Orbitrap Velos MS / LTQ VELOS)"},
+    {"id": "raw-header-ce", "kind": "raw file header", "location": "Lung_Cancer_iTRAQ_G1F_SCX_F01.raw header: Activation Type HCD; Normalized Coll. Energy 42.0; FTMS survey scan; MS2 analyzer orbitrap (resolution 7500 per Methods)"},
+    {"id": "ols", "kind": "ontology", "location": "https://www.ebi.ac.uk/ols4/api/ (live: MONDO:0005097, MS:1001313, MS:1000422, MS:1000484, PRIDE:0000561, PRIDE:0000608, PRIDE:0000532, UNIMOD:214)"}
+  ],
+  "claims": [
+    {"location": "characteristics[organism]/[organism part]/[disease]/[material type] all rows", "value": "Homo sapiens / lung / squamous cell lung carcinoma / tissue", "source_ids": ["pride", "paper"], "evidence": "Primary SqCLC tumor tissue (title, description, Methods)."},
+    {"location": "characteristics[sex] all rows", "value": "male", "source_ids": ["supp1"], "evidence": "Table S1: all 20 paired patients (ER1-10, LR1-10) Male, so valid under any patient-to-group mapping."},
+    {"location": "characteristics[phenotype] / factor value[phenotype]", "value": "early recurrence (ER, <10 months) vs late recurrence (LR, >30 months)", "source_ids": ["paper", "fig1", "supp1"], "evidence": "ER/LR definition in Results; channel-to-ER/LR assignment is read from Fig 1A (inferred as applying to G<n>F/G<n>R plexes, see limitations)."},
+    {"location": "comment[label] and source name, all rows", "value": "Forward: 114 ER_A, 115 LR_A, 116 ER_B, 117 LR_B; Reverse: 117 ER_A, 116 LR_A, 115 ER_B, 114 LR_B", "source_ids": ["fig1", "paper", "pride"], "evidence": "Fig 1A schematic of two matched pairs labelled in forward and reverse order into a 4-plex; Methods: each two pairs of samples labelled with 4-plex iTRAQ in both orders; files G1..G5 x F/R = 10 plexes."},
+    {"location": "comment[technical replicate]", "value": "1 = F plex, 2 = R plex", "source_ids": ["fig1", "pride-files"], "evidence": "Same four samples measured in two labelling orders."},
+    {"location": "comment[data file]/comment[fraction identifier]", "value": "62 RAW files; SCX fraction F01..F06 (G1: F01..F07)", "source_ids": ["pride-files"], "evidence": "Every RAW claimed once; 62 Mascot .dat files are search outputs and are not data files."},
+    {"location": "comment[instrument]", "value": "LTQ Orbitrap Velos", "source_ids": ["pride", "paper", "raw-header"], "evidence": "Raw header and Methods agree."},
+    {"location": "comment[modification parameters]", "value": "Carbamidomethyl C fixed; iTRAQ4plex K and N-term variable; Oxidation M variable", "source_ids": ["mascot-dat"], "evidence": "Read from deposited Mascot parameters."},
+    {"location": "comment[cleavage agent details]", "value": "Trypsin/P", "source_ids": ["mascot-dat", "paper"], "evidence": "CLE=Trypsin/P; legend says tryptic digestion. reconcile flagged it only because the PRIDE record text does not name trypsin."},
+    {"location": "comment[precursor/fragment mass tolerance]", "value": "500 ppm / 0.5 Da", "source_ids": ["mascot-dat"], "evidence": "Mascot TOL/ITOL as deposited; unusually wide precursor tolerance reported as-is."},
+    {"location": "comment[collision energy]", "value": "42 NCE", "source_ids": ["raw-header-ce"], "evidence": "Normalized Coll. Energy 42.0 in raw header (one file checked)."},
+    {"location": "comment[fractionation method], comment[dissociation method], comment[reduction reagent]", "value": "SCX; HCD; DTT", "source_ids": ["pride", "supp1"], "evidence": "SCX pH-gradient fractionation, HCD MS/MS, 0.1 M DTT in SDT lysis buffer."}
+  ],
+  "limitations": [
+    "The mapping of the 10 matched patient pairs (ER1/LR1..ER10/LR10) to groups G1..G5 is not published; sources are named G<n>_ER_A/LR_A/ER_B/LR_B and individual, age, disease stage, smoking are not available.",
+    "The channel layout comes from the generic Fig 1A scheme (ER_A=114/LR_A=115/ER_B=116/LR_B=117 forward, reversed for R); no deposited file states it per plex.",
+    "Alkylation reagent not stated in the record (Carbamidomethyl is Fixed in the deposited search). Collision energy 42 NCE read from the raw header of one file (G1F_F01) only; assumed constant across all 62 files.","Supplementary Table S1 lists age, smoking, TNM and stage per ER/LR patient, but the patient-to-plex mapping is unpublished, so these stay not available.",
+    "Differential labelling by F/R: it is assumed G<n>F and G<n>R contain the same four samples (Methods: both orders)."
+  ]
+}

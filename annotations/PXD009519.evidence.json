@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD009519.sdrf.tsv",
+  "dataset": "PXD009519",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD009519"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD009519/files/all (21 entries, all projectAccessions contain PXD009519: 17 RAW, 4 SEARCH 7z)"},
+    {"id": "paper", "kind": "publication", "location": "PMC6356079 (https://pmc.ncbi.nlm.nih.gov/articles/PMC6356079/); PMID 30373789; doi:10.1074/mcp.TIR118.000953"},
+    {"id": "raw-header", "kind": "raw file", "location": "HTTP range first 256 KB of Fig2_LUM_02447_KS_HeLa_FASP_3ug_col3_200nlMin_2hG.raw and FigS1_LUM_02375_KS__X116_M56_col3_200nlMin_1.raw: 'Orbitrap Fusion Lumos'"},
+    {"id": "archives", "kind": "search output listing", "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2019/01/PXD009519/{Fig2,FigS1,FigS2}_MaxQuant.7z and FigS1_PEAKS.7z (7z headers listed by HTTP range; no mqpar/parameters/summary or sample sheet present)"},
+    {"id": "cellosaurus", "kind": "ontology", "location": "https://api.cellosaurus.org/cell-line/CVCL_0030?format=json (sex Female, age 30Y6M, disease NCIt C27677, site UBERON_0000002)"}
+  ],
+  "claims": [
+    {"location": "characteristics[organism] rows 1-11", "value": "Homo sapiens", "source_ids": ["pride", "paper"], "evidence": "PRIDE organism NEWT:9606; Swiss-Prot Homo sapiens search"},
+    {"location": "characteristics[cell line]/[cellosaurus accession]/[cellosaurus name] rows 1-11", "value": "HeLa / CVCL_0030", "source_ids": ["paper", "pride-files", "cellosaurus"], "evidence": "Methods: 'HeLa cell pellet'; run names contain HeLa. Supplier/subclone not stated, so parental HeLa used (not S3)."},
+    {"location": "characteristics[age], [sex] rows 1-11", "value": "30Y6M / female", "source_ids": ["cellosaurus"], "evidence": "Donor values from Cellosaurus for the cell line, not from the paper"},
+    {"location": "characteristics[disease] rows 1-11", "value": "cervical adenocarcinoma", "source_ids": ["cellosaurus"], "evidence": "Cellosaurus disease for HeLa (HPV-related endocervical adenocarcinoma)"},
+    {"location": "characteristics[organism part] rows 1-11", "value": "not applicable", "source_ids": ["pride-files"], "evidence": "Cell line runs; reconcile flagged tissue value against HeLa run names"},
+    {"location": "characteristics[sample storage temperature] rows 1-11", "value": "-80°C", "source_ids": ["paper"], "evidence": "Methods: HeLa cell pellet (-80 C) thawed"},
+    {"location": "comment[instrument] rows 1-11", "value": "Orbitrap Fusion Lumos MS:1002732", "source_ids": ["paper", "raw-header"], "evidence": "Methods and raw header; PRIDE field 'LTQ Orbitrap' is less specific and overridden"},
+    {"location": "comment[cleavage agent details]", "value": "Trypsin", "source_ids": ["paper"], "evidence": "Trypsin digestion; MaxQuant trypsin/P specificity"},
+    {"location": "comment[dissociation method], [collision energy], [ms2 mass analyzer]", "value": "CID; 35% NCE; linear ion trap", "source_ids": ["paper"], "evidence": "Methods: MS2 in linear ion trap, CID 35% collision energy (NCE unit inferred as Thermo normalized)"},
+    {"location": "comment[precursor mass tolerance], [fragment mass tolerance]", "value": "4.5 ppm / 20 ppm", "source_ids": ["paper"], "evidence": "Methods, MaxQuant settings as stated in prose; mqpar not deposited so not verified"},
+    {"location": "comment[reduction reagent], [alkylation reagent]", "value": "TCEP / chloroacetamide", "source_ids": ["paper", "pride"], "evidence": "10 mM TCEP, 40 mM CAA in solubilization buffer"},
+    {"location": "comment[modification parameters]", "value": "Carbamidomethyl fixed; Oxidation M and Acetyl protein N-term variable", "source_ids": ["paper"], "evidence": "Oxidation and N-term acetyl stated for MaxQuant; Carbamidomethyl stated fixed for PEAKS and implied by CAA plus MaxQuant defaults; deposited MaxQuant parameters not readable"},
+    {"location": "comment[label], acquisition", "value": "label free sample; DDA", "source_ids": ["pride", "paper"], "evidence": "PRIDE label-free quantification; DDA 2 s cycle"},
+    {"location": "source name / technical replicate rows 1-11", "value": "HeLa_FASP (2 files), HeLa_Vlad (9 files)", "source_ids": ["pride-files"], "evidence": "Grouping taken from run-name tokens 'HeLa_FASP' and 'HeLa_Vlad'/'HeLaVlad'; technical replicate numbering is per-source file order and does not imply identical injections (different columns/gradients)"}
+  ],
+  "limitations": [
+    "PEAKS (FigS1 archive only, whose runs are excluded) used 5 ppm / 0.2 Da; the SDRF tolerances are the MaxQuant values.",
+    "Round 1 review (PASS, 4 minor findings) concerned: Cellosaurus-derived demographics/disease label granularity, inferred MaxQuant Carbamidomethyl, NCE unit, FASP/Vlad grouping; all disclosed here and in the report.",
+    "6 raw files (FigS1_LUM_02369/02370/02371 X105_M45 and 02375/02376/02377 X116_M56) are excluded: names do not state the sample; paper only says a myoblast differentiation study exists (supplemental Fig S6). Cell line cannot take a reserved word under cell-lines.",
+    "Supplementary PDFs of the paper could not be retrieved (blocked).",
+    "Deposited MaxQuant 7z archives hold only per-run intermediate files; no mqpar.xml/parameters.txt, so modifications and tolerances come from Methods prose.",
+    "Paper full text via Europe PMC returned HTTP 500; read from PMC HTML.",
+    "Culture medium, passage number, ancestry, cell type not stated."
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD008292.sdrf.tsv",
+  "dataset": "PXD008292",
+  "artifact_sha256": "0912c84831da77ef64428627ec39a2ba70004236cd12f932fd001c0c4602a106",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD008292"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD008292/files?pageSize=1000 (87 entries, all projectAccessions contain PXD008292: 81 RAW + 6 PD .msf)"},
+    {"id": "raw-headers", "kind": "raw data", "location": "HTTP range reads (bytes 0-65535, three files 0-4095) of https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/06/PXD008292/<file>.raw for all 81 RAW files; UTF-16 strings: run comment, method path, original file path, vial position, instrument model"},
+    {"id": "msf", "kind": "search output", "location": "HTTP range reads of https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/06/PXD008292/{PhosphoA-RLA15-28,PhosphoB-RLA29-42,PhosphoCRLA43-55,FTARLA56-68,FTBRLA69-81}.msf (first 0.46-2 MB); Mascot and Sequest HT processing-node parameters and SpectrumFileNames. FTCRLA82-94.msf not readable (server error page)"},
+    {"id": "pubmed", "kind": "publication", "location": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=29916714 (title and abstract match; MeSH headings)"},
+    {"id": "paper", "kind": "publication", "location": "doi:10.1021/acs.jproteome.8b00294 - full text and supporting information NOT available (closed access; pubs.acs.org HTTP 403; no PMC copy; Unpaywall no OA location)"},
+    {"id": "upstream", "kind": "repository", "location": "gh api repos/bigbio/sdrf-annotated-datasets/contents/datasets/PXD008292 and .../sandbox/PXD008292 (both HTTP 404)"},
+    {"id": "ols", "kind": "ontology", "location": "https://www.ebi.ac.uk/ols4/api/ live lookups: MS:1002634, MS:1000484, MS:1000422, MS:1001251, PRIDE:0000627, UBERON:0001134, NCBITaxon:9825, EFO:0010806 (descendant of EFO:0009090)"}
+  ],
+  "claims": [
+    {"location": "characteristics[organism] all rows", "value": "Sus scrofa domesticus", "source_ids": ["pride", "pubmed"], "evidence": "PRIDE organism NEWT:9825 Sus scrofa domesticus; MeSH Swine"},
+    {"location": "characteristics[organism part] all rows", "value": "skeletal muscle tissue", "source_ids": ["pride", "pubmed"], "evidence": "Protocol: porcine muscle samples; MeSH Muscle, Skeletal; specific muscle not stated in available record"},
+    {"location": "characteristics[material type] all rows", "value": "tissue", "source_ids": ["pride"], "evidence": "Muscle tissue samples collected post mortem"},
+    {"location": "characteristics[sampling time] all rows", "value": "45 minute", "source_ids": ["pride"], "evidence": "Protocol: muscle samples collected at 45 min PM (post mortem)"},
+    {"location": "characteristics[genotype] / factor value[genotype]", "value": "wild type | RN mutant | HAL mutant | RN/HAL double mutant", "source_ids": ["pride", "pubmed"], "evidence": "Protocol: normal/control, iTRAQ-114; RN mutant, iTRAQ-115; HAL mutant, iTRAQ-116; RN/HAL double mutant, iTRAQ-117"},
+    {"location": "comment[label] per channel", "value": "iTRAQ114=wild type, iTRAQ115=RN mutant, iTRAQ116=HAL mutant, iTRAQ117=RN/HAL double mutant", "source_ids": ["pride", "msf"], "evidence": "Protocol channel map; PD quantification method iTRAQ 4plex in every readable .msf. Map assumed identical in all three plexes (stated once for the design)"},
+    {"location": "characteristics[biological replicate] and source name", "value": "plex A/B/C = replicate 1/2/3, one source per genotype per plex", "source_ids": ["pride", "raw-headers", "msf"], "evidence": "Protocol: three pigs per genotype, three biological replicates; RAW header comments 'pigs-A/-B/-C'; .msf names PhosphoA/B/C, FTA/B/C. One pig per channel per plex is an inference"},
+    {"location": "comment[data file] / comment[fraction identifier] 1-14", "value": "phospho runs: A Qex02115-02128, B Qex02129-02142, C Qex02143-1 + Qex02143-02155", "source_ids": ["raw-headers", "msf"], "evidence": "RAW header comment 'Phosphopeptides with iTRAQ from HAL/RN pigs-X'; PhosphoC .msf SpectrumFileNames lists Qex02143, Qex02143-1, Qex02144..Qex02155; Qex02143-1 header original name Qex02142_140807175417.raw, vial RE5 (first-vial position). Fraction numbers follow acquisition order"},
+    {"location": "comment[data file] / comment[fraction identifier] 15-27", "value": "flow-through runs: A Qex02156-02168, B Qex02169-02181, C Qex02182-02194", "source_ids": ["raw-headers", "msf"], "evidence": "RAW header comment 'FTfrom Phosphopeptides with iTRAQ from HAL/RN pigs-X'; FTA/FTB .msf file lists; FTC by name only"},
+    {"location": "characteristics[enrichment process]", "value": "enrichment of phosphorylated protein (phospho rows) / not applicable (flow-through rows)", "source_ids": ["pride", "raw-headers", "ols"], "evidence": "Protocol: TiO2 enrichment of phosphopeptides; both phosphopeptides and non-modified peptides analysed; EFO:0010806 under EFO:0009090; post-processed per file (156 cells)"},
+    {"location": "comment[instrument]", "value": "NT=Q Exactive Plus;AC=MS:1002634", "source_ids": ["raw-headers", "pride", "ols"], "evidence": "All RAW headers 'Q Exactive Plus - Orbitrap MS'; protocol 'Q Exactive Plus'; PRIDE structured field says Q Exactive (overridden)"},
+    {"location": "comment[dissociation method]", "value": "NT=beam-type collision-induced dissociation;AC=MS:1000422", "source_ids": ["raw-headers", "msf"], "evidence": "Method 90mingradient_HCD31.meth in every RAW header; PD Instrument setting HCD"},
+    {"location": "comment[ms2 mass analyzer]", "value": "NT=orbitrap;AC=MS:1000484", "source_ids": ["raw-headers"], "evidence": "Q Exactive Plus MS2 is Orbitrap-only"},
+    {"location": "comment[proteomics data acquisition method]", "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627", "source_ids": ["pride", "msf"], "evidence": "Mascot/Sequest HT PD 1.4 DDA database search of all runs"},
+    {"location": "comment[cleavage agent details]", "value": "NT=Trypsin;AC=MS:1001251", "source_ids": ["pride", "msf"], "evidence": "PRIDE data processing: enzyme, trypsin, max missed cleavages 2; .msf Mascot Enzyme Trypsin, Sequest HT Trypsin (Full). Sample-prep prose says only 'in-solution digestion' (reconcile flags cleavage_agent_unsupported)"},
+    {"location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]", "value": "10 ppm / 0.05 Da", "source_ids": ["pride", "msf"], "evidence": "PRIDE data processing and .msf PeptideTolerance 10 ppm, FragmentTolerance 0.05 Da (Mascot and Sequest HT)"},
+    {"location": "comment[modification parameters] (8 columns)", "value": "iTRAQ4plex K and Any N-term, Phospho STY, Oxidation M, Deamidated NQ, Acetyl K, Acetyl Any N-term, Carbamidomethyl C - all Variable", "source_ids": ["msf", "pride"], "evidence": "Mascot DynMod_1-8 and Sequest HT DynamicModification1-6/NPeptide in PhosphoA/B/C and FTA .msf; all dynamic"},
+    {"location": "comment[fractionation method]", "value": "not available", "source_ids": ["raw-headers"], "evidence": "14 phospho + 13 flow-through runs per plex show offline fractionation; method not stated in available record"},
+    {"location": "characteristics[sex], characteristics[developmental stage], characteristics[strain or breed], characteristics[disease]", "value": "not available", "source_ids": ["pride", "pubmed"], "evidence": "Per-animal gender/weight only in unavailable Supplemental Table 1; no sex/breed MeSH; disease status not stated"}
+  ],
+  "limitations": [
+    "Paper full text and Supplemental Table 1 (per-animal genotype, weight, gender) unavailable (closed access, ACS 403).",
+    "Channel map stated once in the PRIDE protocol; assumed identical for all three plexes.",
+    "One pig per genotype per plex and the pig-to-plex assignment are inferred; animal IDs unknown, source names synthetic.",
+    "Fraction identifiers follow acquisition order, not a documented elution order; flow-through numbered 15-27 to keep row coordinates unique.",
+    "Fractionation method, sex, developmental stage, breed and disease not available.",
+    "FTB parameter values and FTC .msf unreadable via range requests; settings assumed identical to the other searches.",
+    "Independent adversarial review not yet performed."
+  ]
+}

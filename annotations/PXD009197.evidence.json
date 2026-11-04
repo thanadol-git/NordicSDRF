@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD009197.sdrf.tsv",
+  "dataset": "PXD009197",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD009197"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD009197/files/all (44 files, all projectAccessions=PXD009197)"
+    },
+    {
+      "id": "pdresult-studydef",
+      "kind": "deposited search result",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/11/PXD009197/{Astro24,Astro48,Endo24,Endo48}.pdResult, SQLite table AnalysisDefinition (StudyDefinition: FileSets, QuanChannels, Samples SampleType) read by HTTP range"
+    },
+    {
+      "id": "pepxml",
+      "kind": "deposited search result",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/11/PXD009197/*.pep.xml / *.prot.xml headers: PD 2.1.1.21 workflow, Mascot node parameters, file-to-set membership"
+    },
+    {
+      "id": "raw-header",
+      "kind": "raw file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/11/PXD009197/QEHF1_06848_VG.raw first 256 KB, instrument string 'Q Exactive HF - Orbitrap MS'"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "doi:10.1080/17435390.2018.1540728 PMID 30623748 (full text NOT accessible: publisher Cloudflare-blocked, not in PMC)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "ontology",
+      "location": "https://api.cellosaurus.org/cell-line/CVCL_U985 (hCMEC/D3; BTO:0003339)"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/search (MS:1002523, MS:1001251, MS:1000422, MS:1000484, PRIDE:0000565, PRIDE:0000609, PRIDE:0000599, PRIDE:0000627, PRIDE:0000516, NCIT:C84590, BTO:0003339)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[label]/source name, all 256 rows",
+      "value": "TMT126-128N = AgNP; TMT128C-130N = control; 130C/131 unused",
+      "source_ids": [
+        "pdresult-studydef",
+        "pride"
+      ],
+      "evidence": "PD StudyDefinition SampleType Sample for 126,127N,127C,128N; Control for 128C,129N,129C,130N; Blank for 130C,131, identical in all 4 sets. Mapping Sample=AgNP-exposed and Control=unexposed is INFERRED from PD terminology + PRIDE protocol ('four biological replicates per condition, controls with no AgNP exposure') and PD ratio '(Sample)/(Control)'; paper unavailable."
+    },
+    {
+      "location": "comment[data file] / fraction identifier",
+      "value": "Astro24=06848-55, Astro48=06856-63, Endo24=06864-71, Endo48=06872-79; fractions in file order",
+      "source_ids": [
+        "pepxml",
+        "pdresult-studydef",
+        "pride-files"
+      ],
+      "evidence": "Each set lists 8 raw files; protocol: pooled into 8 fractions. Fraction number = order of file in set (assumed acquisition order)."
+    },
+    {
+      "location": "characteristics[cell type], material type",
+      "value": "astrocyte (primary) / HCMEC/D3 cell (cell line)",
+      "source_ids": [
+        "pride",
+        "cellosaurus"
+      ],
+      "evidence": "Protocol: hCMEC/D3 and human primary astrocytes; file sets named Endo/Astro."
+    },
+    {
+      "location": "characteristics[treatment], factor value",
+      "value": "silver nanoparticle / not applicable; 24 hour / 48 hour",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: PVP 50 nm AgNP, 24 h and 48 h, controls without AgNP"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF MS:1002523",
+      "source_ids": [
+        "raw-header",
+        "pride"
+      ],
+      "evidence": "Raw header and PRIDE agree"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl Protein N-term, TMT6plex K and Any N-term variable",
+      "source_ids": [
+        "pepxml"
+      ],
+      "evidence": "Mascot node parameters in Astro24.pep.xml/prot.xml (UnimodAccession 4,35,1,737)"
+    },
+    {
+      "location": "tolerances, cleavage, dissociation, collision energy, reduction/alkylation, fractionation",
+      "value": "10 ppm; 0.02 Da; Trypsin; HCD; 34 NCE; TCEP; IAA; high pH RP (HPLC)",
+      "source_ids": [
+        "pride",
+        "pepxml"
+      ],
+      "evidence": "PRIDE sample/data processing protocols and Mascot node"
+    }
+  ],
+  "limitations": [
+    "Full text of the paper unavailable; Sample/Control to AgNP/untreated mapping not stated explicitly in any retrieved source",
+    "Age, sex, ancestry, individual, disease, astrocyte organ origin, culture medium written not available / omitted: no source",
+    "cell-lines template not declared (primary astrocytes cannot satisfy characteristics[cell line]); hCMEC/D3 identity carried via BTO cell type HCMEC/D3 cell (BTO:0003339, Cellosaurus CVCL_U985)",
+    "treatment 'silver nanoparticle' has no NCIT/EFO term (validator warning)",
+    "Fractionation method uses the generic PRIDE:0000565 HPLC; no high-pH child term exists under PRIDE:0000550"
+  ]
+}

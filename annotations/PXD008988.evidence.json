@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "artifact": "/home/thanadol/Documents/GitHub/NordicSDRF/annotations/PXD008988.sdrf.tsv",
+  "dataset": "PXD008988",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD008988"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD008988/files/all (53 files: 52 RAW + 1 .msf; all projectAccessions = PXD008988)"
+    },
+    {
+      "id": "msf",
+      "kind": "deposited-search",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/03/PXD008988/SILAC3plex_Nuclear_Unmod.msf (Proteome Discoverer 2.1 SQLite; read by FTP range requests: Workflows.WorkflowXML and WorkflowInputFiles tables)"
+    },
+    {
+      "id": "rawhdr",
+      "kind": "raw-file-header",
+      "location": "first 200 KB of each of the 52 .raw files via FTP range, UTF-16 instrument strings"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://api.cellosaurus.org/cell-line/CVCL_0351?format=json"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "doi:10.1021/acs.jproteome.7b00930 / PMID 29518335 (abstract only via Europe PMC; full text not accessible: not in PMC, ACS paywalled)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] rows 1-156",
+      "value": "Rattus norvegicus",
+      "source_ids": [
+        "pride",
+        "cellosaurus"
+      ],
+      "evidence": "INS-1E is a rat insulinoma line (Cellosaurus CVCL_0351, NCBITaxon 10116). PRIDE organisms list both rat and mouse; the PD search database contains MOUSE_2013-06-30.fasta plus uniprot-rat.fasta, so the mouse entry is treated as a search database artefact, not a sample organism."
+    },
+    {
+      "location": "characteristics[cell line]/[cellosaurus accession]/[cellosaurus name]/[sex]/[strain or breed]/[disease]",
+      "value": "INS-1E / CVCL_0351 / INS-1E / male / NEDH / insulinoma",
+      "source_ids": [
+        "cellosaurus",
+        "pride"
+      ],
+      "evidence": "Cellosaurus record (sex Male, breed NEDH, disease Rat insulinoma); PRIDE title/description name INS-1E cells in the sample processing protocol."
+    },
+    {
+      "location": "characteristics[cell type] rows 1-156",
+      "value": "type B pancreatic cell",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organismParts CL:0000169."
+    },
+    {
+      "location": "comment[label] and characteristics[sampling time]/[treatment]/factor value[sampling time]",
+      "value": "SILAC light=0 min, SILAC medium=2 min, SILAC heavy=5 min after 17 mM glucose",
+      "source_ids": [
+        "pride",
+        "msf"
+      ],
+      "evidence": "PRIDE dataProcessingProtocol: '0 minute (light), 2 minutes (medium), 5 minutes (heavy)'; PD quantification method 'SILAC 3plex (Arg6, Lys4 | Arg10, Lys8)'. Applied identically to all three replicates; replicate-specific label swaps could not be excluded (paper full text unavailable)."
+    },
+    {
+      "location": "characteristics[biological replicate] and file assignment",
+      "value": "replicate 1/2/3",
+      "source_ids": [
+        "msf"
+      ],
+      "evidence": "WorkflowInputFiles paths S:\\PRpublic\\TK\\Nuclear\\Replicate1|2|3\\<file>.raw; rep1=18 files, rep2=18 deposited (QHF_003943 and QHF_003943_CORRUPTED listed in the msf but not deposited in PRIDE), rep3=16."
+    },
+    {
+      "location": "comment[instrument] per row",
+      "value": "FUS* files: Orbitrap Fusion (MS:1002416); QHF_* files: Q Exactive HF (MS:1002523)",
+      "source_ids": [
+        "rawhdr"
+      ],
+      "evidence": "All 52 raw headers decoded: 28 FUS files contain 'Orbitrap Fusion', 24 QHF files contain 'Q Exactive HF'. PRIDE lists only 'Q Exactive', which is incomplete/wrong."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, protein N-term Acetyl, SILAC Lys/Arg labels variable",
+      "source_ids": [
+        "msf"
+      ],
+      "evidence": "Sequest HT node: StaticModification1 Carbamidomethyl (UNIMOD 4), DynamicModification1-5 Oxidation(35), Label:13C(2)15N(2) K (1787), Label:13C(6)15N(2) K (259), Label:13C(6) R (188), Label:13C(6)15N(4) R (267), DynamicModificationNProtein Acetyl (1)."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "msf"
+      ],
+      "evidence": "Sequest HT Enzyme: Trypsin, KR, inhibitor P, MaxMissedCleavages 2. PRIDE prose does not name the enzyme."
+    },
+    {
+      "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+      "value": "10 ppm / 0.5 Da",
+      "source_ids": [
+        "msf"
+      ],
+      "evidence": "Sequest HT PeptideTolerance 10 ppm, FragmentTolerance 0.5 Da. PRIDE prose states 2 ppm / 0.05 Da (2 ppm is the Event Detector mass precision); the deposited search wins."
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "HILIC",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sampleProcessingProtocol: peptide separation by hydrophilic interaction chromatography."
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "1..N per replicate",
+      "source_ids": [
+        "msf",
+        "files"
+      ],
+      "evidence": "INFERRED, NOT a verified HILIC fraction rank: a run-order index (1..18 rep1/rep2, 1..16 rep3). Files are numbered in the msf WorkflowInputFiles order: within a replicate FUS files first, then QHF files, each in numeric order. The deposit states no fraction rank. Rep2: QHF_003943 (91 KB) and QHF_003943_CORRUPTED are listed in the msf but not deposited, so QHF_003944 is indexed directly after QHF_003942 (17 of 18 deposited QHF/FUS files in sequence); if 003943 held a real fraction, indices after it would shift by one. Consumers should treat the value only as a unique per-file index within a replicate."
+    },
+    {
+      "location": "characteristics[treatment] rows with 2 and 5 minute",
+      "value": "Glucose",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE: stimulated with 17 mM glucose; the concentration is recorded here and in the report because the NCIT/EFO-backed column takes only a term."
+    }
+  ],
+  "limitations": [
+    "Full text of the paper was not accessible; culture medium, passage number, storage temperature, dissociation method, reduction/alkylation reagents and developmental stage are not available.",
+    "Fraction identifiers are a run-order index, not a verified HILIC fraction rank.",
+    "SILAC channel to time-point mapping comes from PRIDE prose and is assumed identical across replicates.",
+    "FUS05832_TK.raw is 45 KB and QHF_003943 is absent from PRIDE; the 45 KB file is annotated as deposited but probably holds no usable spectra.",
+    "PRIDE's instrument field (Q Exactive) disagrees with the raw headers; the raw headers were used.",
+    "Fraction identifier is a run-order index (see claim); this is a documented limitation, not verified fractionation order.",
+    "Glucose concentration (17 mM) is not encoded in the SDRF cell, only in this manifest and the report.",
+    "The PD Precursor Ions Quantifier defines medium as Lys4 (Label:2H(4), UNIMOD:481)+Arg6 and heavy as Lys8+Arg10, whereas the Sequest search lists Label:13C(2)15N(2) K (UNIMOD:1787); the SDRF follows the Sequest search verbatim, so UNIMOD:481 is absent."
+  ]
+}

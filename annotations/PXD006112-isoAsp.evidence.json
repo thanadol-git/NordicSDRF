@@ -1,0 +1,222 @@
+{
+ "schema_version": 1,
+ "artifact": "annotations/PXD006112-isoAsp.sdrf.tsv",
+ "dataset": "PXD006112",
+ "sources": [
+  {
+   "id": "pride",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006112"
+  },
+  {
+   "id": "pride_files",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006112/files (93 RAW, 2 MaxQuant zips, 2 FASTA, Readme.pdf)"
+  },
+  {
+   "id": "readme",
+   "kind": "deposited file",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/04/PXD006112/Readme.pdf (run -> temperature-method pictogram table, 3 pages)"
+  },
+  {
+   "id": "rawheaders",
+   "kind": "raw file headers",
+   "location": "HTTP range reads (first 16 KB) of all 93 deposited RAW files under https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/04/PXD006112/; extracted to /home/thanadol/Documents/GitHub/sdrf-skills/scratchpad/PXD006112/rawheaders.json"
+  },
+  {
+   "id": "mq_bsa",
+   "kind": "search output",
+   "location": "MaxQuantoutputBSA.zip: parameters.txt, summary.txt, evidence.txt head (range read)"
+  },
+  {
+   "id": "mq_hela",
+   "kind": "search output",
+   "location": "MaxQuantoutputHeLa.zip: parameters.txt, summary.txt, evidence.txt head (range read)"
+  },
+  {
+   "id": "paper",
+   "kind": "publication",
+   "location": "PMID 28387123, doi:10.1021/acs.jproteome.6b01055 (J Proteome Res 2017;16(6):2307-2317) - full text not accessible (ACS paywall, no PMC copy); abstract via Europe PMC only"
+  },
+  {
+   "id": "ols",
+   "kind": "ontology",
+   "location": "https://www.ebi.ac.uk/ols4/api/"
+  },
+  {
+   "id": "cellosaurus",
+   "kind": "ontology",
+   "location": "https://api.cellosaurus.org/cell-line/CVCL_0030"
+  }
+ ],
+ "claims": [
+  {
+   "location": "characteristics[organism], organism part, cell type, disease all rows",
+   "value": "not applicable",
+   "source_ids": [
+    "pride"
+   ],
+   "evidence": "Twelve synthetic peptides purchased from Thermo Scientific (purity >97%)"
+  },
+  {
+   "location": "characteristics[material type] / characteristics[synthetic peptide] all rows",
+   "value": "synthetic / synthetic",
+   "source_ids": [
+    "pride",
+    "rawheaders"
+   ],
+   "evidence": "Protocol; RAW header '2.5 ng Thermo IsoAsp 12mix' / '0.83 ng Thermo IsoAsp Peptide 11|12'"
+  },
+  {
+   "location": "comment[cleavage agent details], modification parameters, tolerances all rows",
+   "value": "not applicable",
+   "source_ids": [
+    "pride"
+   ],
+   "evidence": "Synthetic peptides were not digested; no database search - retention time and peak areas from Xcalibur 3.0.63 Genesis"
+  },
+  {
+   "location": "characteristics[biological replicate] / comment[technical replicate]",
+   "value": "1 / 1-3 within each source",
+   "source_ids": [
+    "pride",
+    "readme"
+   ],
+   "evidence": "'The chromatographic analysis was conducted with triplicate runs'; triplets identical in Readme and RAW headers"
+  },
+  {
+   "location": "comment[elution conditions] / factor value[elution conditions] rows 4-15,22-27",
+   "value": "not available",
+   "source_ids": [
+    "readme",
+    "rawheaders"
+   ],
+   "evidence": "For 12mix triplets 08-10, 11-14, 16-20, 21-24, 36-39 and 41-45 the Readme pictogram and RAW header method strings assign the same set of methods in a different order; unresolvable without the paper"
+  },
+  {
+   "location": "comment[instrument] all rows",
+   "value": "NT=Q Exactive Plus;AC=MS:1002634",
+   "source_ids": [
+    "rawheaders",
+    "pride",
+    "ols"
+   ],
+   "evidence": "All 93 RAW headers read 'Q Exactive Plus - Orbitrap MS'; sample processing protocol says Q Exactive Plus; PRIDE instrument field (Q Exactive) is less specific"
+  },
+  {
+   "location": "comment[proteomics data acquisition method] all rows",
+   "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+   "source_ids": [
+    "pride"
+   ],
+   "evidence": "Protocol: top-5 (BSA/IsoAsp) / top-12 (HeLa) precursor selection above 1e5 intensity threshold"
+  },
+  {
+   "location": "comment[dissociation method], comment[collision energy] all rows",
+   "value": "NT=beam-type collision-induced dissociation;AC=MS:1000422 / 25 NCE",
+   "source_ids": [
+    "pride"
+   ],
+   "evidence": "Protocol: higher energy collisional dissociation, normalized collision energy of 25"
+  },
+  {
+   "location": "comment[ms2 mass analyzer] all rows",
+   "value": "NT=orbitrap;AC=MS:1000484",
+   "source_ids": [
+    "pride"
+   ],
+   "evidence": "Protocol: MS/MS scans acquired at 35000 (BSA) / 17500 (HeLa) resolution on Q Exactive Plus"
+  },
+  {
+   "location": "comment[label] all rows",
+   "value": "NT=label free sample;AC=MS:1002038",
+   "source_ids": [
+    "pride",
+    "mq_bsa",
+    "mq_hela"
+   ],
+   "evidence": "No labelling in protocol; MaxQuant multiplicity 1"
+  },
+  {
+   "location": "source name / comment[elution conditions] / factor value[elution conditions] rows 1-3",
+   "value": "IsoAsp 12-peptide mix, runs 01-05 :: column temperature method DTF 25 25 25: zone 1 (precolumn) 25 °C, zone 2 25 °C, zone 3 25 °C",
+   "source_ids": [
+    "rawheaders",
+    "readme"
+   ],
+   "evidence": "files 20140919_QE6_LC5_CY_SA_IsoAsp_40min_12mix_01.raw, 20140919_QE6_LC5_CY_SA_IsoAsp_40min_12mix_02.raw, 20140919_QE6_LC5_CY_SA_IsoAsp_40min_12mix_05.raw (Readme pictogram and RAW header agree)"
+  },
+  {
+   "location": "source name / comment[elution conditions] / factor value[elution conditions] rows 16-18",
+   "value": "IsoAsp 12-peptide mix, runs 27-30 :: column temperature method DTF 25 25 5C: zone 1 (precolumn) 25 °C, zone 2 25 °C, zone 3 5 °C (RAW-header code suffix 'C', meaning not documented)",
+   "source_ids": [
+    "rawheaders",
+    "readme"
+   ],
+   "evidence": "files 20140919_QE6_LC5_CY_SA_IsoAsp_40min_12mix_27.raw, 20140919_QE6_LC5_CY_SA_IsoAsp_40min_12mix_29.raw, 20140919_QE6_LC5_CY_SA_IsoAsp_40min_12mix_30.raw (Readme pictogram and RAW header agree)"
+  },
+  {
+   "location": "source name / comment[elution conditions] / factor value[elution conditions] rows 19-21",
+   "value": "IsoAsp 12-peptide mix, runs 31-34 :: column temperature method DTF 25 25 50: zone 1 (precolumn) 25 °C, zone 2 25 °C, zone 3 50 °C",
+   "source_ids": [
+    "rawheaders",
+    "readme"
+   ],
+   "evidence": "files 20140919_QE6_LC5_CY_SA_IsoAsp_40min_12mix_31.raw, 20140919_QE6_LC5_CY_SA_IsoAsp_40min_12mix_33.raw, 20140919_QE6_LC5_CY_SA_IsoAsp_40min_12mix_34.raw (Readme pictogram and RAW header agree)"
+  },
+  {
+   "location": "source name / comment[elution conditions] / factor value[elution conditions] rows 28-30",
+   "value": "IsoAsp 12-peptide mix, runs 46-50 :: column temperature method DTF 25 5 5D: zone 1 (precolumn) 25 °C, zone 2 5 °C, zone 3 5 °C (RAW-header code suffix 'D', meaning not documented)",
+   "source_ids": [
+    "rawheaders",
+    "readme"
+   ],
+   "evidence": "files 20140919_QE6_LC5_CY_SA_IsoAsp_40min_12mix_46.raw, 20140919_QE6_LC5_CY_SA_IsoAsp_40min_12mix_47.raw, 20140919_QE6_LC5_CY_SA_IsoAsp_40min_12mix_50.raw (Readme pictogram and RAW header agree)"
+  },
+  {
+   "location": "source name / comment[elution conditions] / factor value[elution conditions] rows 31-33",
+   "value": "synthetic peptide 11 (aspartic acid form), temperature method 25 5 5D :: column temperature method DTF 25 5 5D: zone 1 (precolumn) 25 °C, zone 2 5 °C, zone 3 5 °C (RAW-header code suffix 'D', meaning not documented)",
+   "source_ids": [
+    "rawheaders",
+    "readme"
+   ],
+   "evidence": "files 20140919_QE6_LC5_CY_SA_IsoAsp_40min_D_Peptide11_01.raw, 20140919_QE6_LC5_CY_SA_IsoAsp_40min_D_Peptide11_02.raw, 20140919_QE6_LC5_CY_SA_IsoAsp_40min_D_Peptide11_05.raw (Readme pictogram and RAW header agree)"
+  },
+  {
+   "location": "source name / comment[elution conditions] / factor value[elution conditions] rows 34-36",
+   "value": "synthetic peptide 11 (aspartic acid form), temperature method 25 25 5C :: column temperature method DTF 25 25 5C: zone 1 (precolumn) 25 °C, zone 2 25 °C, zone 3 5 °C (RAW-header code suffix 'C', meaning not documented)",
+   "source_ids": [
+    "rawheaders",
+    "readme"
+   ],
+   "evidence": "files 20140919_QE6_LC5_CY_SA_IsoAsp_40min_D_Peptide11_06.raw, 20140919_QE6_LC5_CY_SA_IsoAsp_40min_D_Peptide11_07.raw, 20140919_QE6_LC5_CY_SA_IsoAsp_40min_D_Peptide11_08.raw (Readme pictogram and RAW header agree)"
+  },
+  {
+   "location": "source name / comment[elution conditions] / factor value[elution conditions] rows 37-39",
+   "value": "synthetic peptide 12 (isoaspartic acid form), temperature method 25 5 5D :: column temperature method DTF 25 5 5D: zone 1 (precolumn) 25 °C, zone 2 5 °C, zone 3 5 °C (RAW-header code suffix 'D', meaning not documented)",
+   "source_ids": [
+    "rawheaders",
+    "readme"
+   ],
+   "evidence": "files 20140919_QE6_LC5_CY_SA_IsoAsp_40min_IsoD_Peptide12_01.raw, 20140919_QE6_LC5_CY_SA_IsoAsp_40min_IsoD_Peptide12_03.raw, 20140919_QE6_LC5_CY_SA_IsoAsp_40min_IsoD_Peptide12_04.raw (Readme pictogram and RAW header agree)"
+  },
+  {
+   "location": "source name / comment[elution conditions] / factor value[elution conditions] rows 40-42",
+   "value": "synthetic peptide 12 (isoaspartic acid form), temperature method 25 25 5C :: column temperature method DTF 25 25 5C: zone 1 (precolumn) 25 °C, zone 2 25 °C, zone 3 5 °C (RAW-header code suffix 'C', meaning not documented)",
+   "source_ids": [
+    "rawheaders",
+    "readme"
+   ],
+   "evidence": "files 20140919_QE6_LC5_CY_SA_IsoAsp_40min_IsoD_Peptide12_06.raw, 20140919_QE6_LC5_CY_SA_IsoAsp_40min_IsoD_Peptide12_09.raw, 20140919_QE6_LC5_CY_SA_IsoAsp_40min_IsoD_Peptide12_10.raw (Readme pictogram and RAW header agree)"
+  }
+ ],
+ "limitations": [
+  "Paper full text (J Proteome Res 2017) not accessible; Methods taken from the PRIDE protocol fields, which reproduce the paper's Methods",
+  "Temperature zone 1 identified as the precolumn from the abstract/protocol (0 °C loading, precolumn 50 °C after loading); the physical position of zones 2 and 3 is not documented in accessible evidence and is written as 'zone 2'/'zone 3'",
+  "Cold temperature of 'DTF' (temporal change) zones is not stated in the headers; written as 'cold then 50 °C'",
+  "Letter suffixes in RAW-header method codes (5A, 0-50B, 0-50C, 5C, 5D) are recorded verbatim; their meaning is not documented",
+  "Temperature method not established for 18 of 42 runs (Readme vs RAW header conflict); both candidates listed in the report",
+  "Peptide sequences of the 12 synthetic peptides and of peptides 11/12 are not available (paper paywalled)",
+  "Every RAW header also carries a '50 fmol BSA' string in a separate field; not described in the protocol for IsoAsp runs and not annotated"
+ ]
+}

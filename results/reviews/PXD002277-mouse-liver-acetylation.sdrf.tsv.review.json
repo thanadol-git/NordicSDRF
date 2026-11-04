@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002277-mouse-liver-acetylation.sdrf.tsv",
+  "artifact_sha256": "d099c92c1c0cd76aa1fca2f66c19442ccd4d4ab573af79e98474c778122a5805",
+  "verdict": "PASS",
+  "summary": "Independent review of the 4-row mouse-liver acetyl-lysine SDRF (one PXD002277 MaxQuant search, 4 SCX fractions, label-free) found no blocker or important issues. Both declared templates validate, sdrf-tools check is CLEAN, and every non-trivial value traces to the PRIDE record, the deposited MaxQuant summary/parameters/List_of_RAW_files, or fresh RAW-header range reads. Only minor improvements remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent (bergen-reviewer-PXD002277-mouse-liver-acetylation); producer report.md, transcript and scratchpad/_stale_2026-10-27/ not read; PRIDE record, file list, MaxQuant zip members, RAW headers and PubMed re-fetched independently"
+  },
+  "evidence_manifest": "annotations/PXD002277-mouse-liver-acetylation.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates derived independently: organism Mus musculus -> vertebrates v1.1.0 (sample layer) + ms-proteomics v1.1.0 (technology), both latest per templates.yaml and both declared in comment[sdrf template]. All required columns of base/sample-metadata/vertebrates/ms-proteomics present (source name, assay name, technology type, technical replicate, data file, organism, organism part, biological replicate, disease, developmental stage, acquisition method, instrument, cleavage agent, label, fraction identifier). Reserved words only where allowed (not available for disease/developmental stage/strain/sex/reduction/alkylation, all allow_not_available=true). comment[sdrf annotation tool]='manual curation' matches the base.yaml pattern. Modification strings well-formed. 4 rows x 32 columns, unique assay names and source+assay+label combinations. sdrf-tools structure: 'Structure OK'. No factor value column, which no active template requires."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check: 12/12 terms verified, 0 hallucinated, 0 label mismatches, 0 wrong ontology, 0 UNIMOD swaps. sdrf-tools verify label-matched MS:1001313 Trypsin/P, MS:1001911 Q Exactive, MS:1000422 beam-type collision-induced dissociation (the spec-mandated HCD term), MS:1000484 orbitrap, PRIDE:0000627 Data-dependent acquisition, PRIDE:0000561 Strong cation-exchange chromatography (SCX), UNIMOD:1 Acetyl, UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation. Live OLS confirmed plain-text values: liver = UBERON:0002107, Mus musculus = NCBITaxon:10090, label free sample = MS:1002038; none obsolete. parse_sdrf ontology validation (OLS cache) passed for both templates, so no live-only fallback was needed."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE record (accession PXD002277 asserted): organisms incl. NEWT:10090, organismParts BTO:0000759 Liver, instrument MS:1001911, sample protocol 'enriched using polyclonal antibody beads (immunechem) ... immediately separated by micro-scale SCX', Q Exactive 'data-dependent mode', 'HCD'; data protocol '6 ppm for parent ions and 20 ppm (HCD) for fragment ions, with strict trypsin specificity, up to 2 missed cleavage sites', fixed Cys carbamidomethylation, variable N-acetyl protein and oxidized Met, 'orbitrap analyzer used for fragment scans'. MaxQuant zip (HTTP range reads of small members only): mouse_liver_acetylation/summary.txt lists exactly the 4 acK raw files, Protease=Trypsin/P, Max. missed cleavages=2, Multiplicity=1, Variable modifications=Oxidation (M);Acetyl (Protein N-term);Acetyl (K), Instrument=Q Exactive; parameters.txt: MaxQuant 1.2.7.1, Fixed modifications=Carbamidomethyl (C), MS/MS tol. (FTMS)=20 ppm, Fasta MOUSE.fasta, LFQ False; List_of_RAW_files.xlsx assigns all 4 files to Table S7 with empty Notes (no SILAC). Fresh first-64 KB RAW headers of all 4 files: 'Q Exactive - Orbitrap MS', EASY-nLC, same method 1-9um_BTW_141min_120MS2_IW2.meth, Full MS/dd-MS2 Top10, NCE 27.5. PubMed 23954790 (efetch title asserted): MeSH only 'Mice'/'Animals' (no strain, sex or age headings); abstract says only 'mouse liver tissue'. Full text not reachable (ScienceDirect and cell.com return 403 bot pages; not in PMC; producer's cached sd.html/paper.pdf are bot pages without the DOI), so strain/sex/age/disease = 'not available' is the correct non-assertion."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE /files (58 entries, projectAccessions={PXD002277}): all 4 comment[data file] values (20130412_QE4_LC6_BTW_mm_liver_acK_F01..F04.raw) exist as RAW files, no duplicates; they are exactly the raw files of the mouse_liver_acetylation MaxQuant search (summary.txt) and the Table S7 rows of List_of_RAW_files.xlsx. The other 8 mouse-liver raw files are succK runs (Table S5) that belong to the separate succinylation search and are correctly excluded. assay name equals the file stem for each row."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 1 source, biological replicate 1, technical replicate 1, fraction identifiers 1-4 matching F01-F04, label free, 4 rows = 4 runs. Fraction design is supported by the protocol (enriched peptides separated by micro-scale SCX), consecutive F01-F04 names acquired the same day with identical instrument method, a single MaxQuant search, a single supplementary table (S7), and the deposited peptides.txt/proteinGroups.txt headers (partial inflate) containing only one aggregate 'Intensity' column, i.e. one MaxQuant experiment. No condition varies within this search, so the absence of a factor value column reflects the design rather than an omission. The number of animals pooled into the lysate is unknown and is not asserted."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Searched for values stated more specifically than evidence: none of strain, sex, age, disease, reduction or alkylation reagent is asserted (all 'not available'); disease is not guessed as 'normal'; organism part is 'liver' (abstract, PRIDE BTO) not a sub-region; instrument and HCD are confirmed by RAW headers; Trypsin/P is the deposited MaxQuant protease, not an upgrade of the prose. Material evidence not encoded is limited to optional columns (antibody enrichment, NCE 27.5 from RAW headers), recorded as minor findings."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf -t ms-proteomics --use_ols_cache_only: exit 0 'Everything seems to be fine. Well done.'; timeout 900 parse_sdrf validate-sdrf -t vertebrates --use_ols_cache_only: exit 0, same message; python -m tools check: exit 0, Status CLEAN; python -m tools score: exit 0, 95/100 (only design note: no factor value columns); python -m tools structure: exit 0, 'Structure OK'; python -m tools reconcile --record <fresh PRIDE json>: exit 1, one heuristic BLOCKER cleavage_agent_unsupported, adjudicated as a false positive in the findings (the record's only protease statement is 'strict trypsin specificity', which lacks the tool's digest-cue keywords; the deposited summary.txt states Protease=Trypsin/P, and the repository's own tools/search_params.py maps MaxQuant 'Trypsin/P' and 'stricttrypsin' to MS:1001313). SHA-256 re-checked unchanged before writing this report."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "deterministic_validation",
+      "location": "comment[cleavage agent details] rows 1-4",
+      "message": "sdrf-tools reconcile reports cleavage_agent_unsupported for Trypsin/P. Adjudicated as a heuristic false positive: the sample-prep prose never names the digest enzyme, but the record states 'strict trypsin specificity' and the deposited MaxQuant summary.txt gives Protease=Trypsin/P for all 4 files. Trypsin/P (MS:1001313) is kept over plain Trypsin (MS:1001251) because it is the exact deposited cleavage rule; 'strict' refers to specific (non-semi) digestion, which MaxQuant Trypsin/P is.",
+      "evidence": "reconcile output; summary.txt Protease column; PRIDE dataProcessingProtocol; tools/search_params.py lines 67-68. Correction criterion: none required; optionally keep the existing manifest limitation."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "file (no characteristics[enrichment process] column)",
+      "message": "The anti-acetyl-lysine antibody (Immunechem polyclonal beads) enrichment is only implicit via source name and the Acetyl (K) variable modification.",
+      "evidence": "PRIDE sampleProcessingProtocol. The optional sample-metadata column requires a child of EFO:0009090; live OLS shows no acetyl-peptide-specific child (only e.g. EFO:0009106 sample enrichment, EFO:0010806 enrichment of phosphorylated protein), so omission is acceptable. Correction criterion: optional; add characteristics[enrichment process] only with a valid EFO:0009090 descendant."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "file (no comment[collision energy] column)",
+      "message": "RAW method headers state NCE 27.5 for all 4 files; the optional collision energy column is not used.",
+      "evidence": "First 64 KB of each RAW file: 'NCE 27.5', NormalizedCollisionEnergy 27.5. Correction criterion: optional; could add comment[collision energy] = 27.5 NCE."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "file (no factor value column)",
+      "message": "No factor value column. Acceptable: this SDRF covers one MaxQuant search of a single condition (one mouse-liver acK enrichment, 4 SCX fractions), and no active template requires a factor; sdrf-tools score lowers only the design sub-score.",
+      "evidence": "README Factor Values section ('variables under study'); no factor requirement in base/sample-metadata/vertebrates/ms-proteomics YAML; score 95/100. Correction criterion: none required."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "evidence manifest",
+      "message": "The single-source/fraction grouping is an inference; the manifest discloses it. It is additionally supported by the deposited peptides.txt/proteinGroups.txt having one aggregate Intensity column (one MaxQuant experiment), which the manifest could cite.",
+      "evidence": "Partial inflate of peptides.txt and proteinGroups.txt headers from the MaxQuant zip. Correction criterion: optional manifest enrichment."
+    }
+  ]
+}

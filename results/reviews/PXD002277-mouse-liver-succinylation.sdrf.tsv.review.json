@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002277-mouse-liver-succinylation.sdrf.tsv",
+  "artifact_sha256": "b8b7212c16baf925b1cbd2fe02cbd0bcd578ae1fbf4bd6082b6a8055957bf62c",
+  "verdict": "FAIL",
+  "summary": "Structurally valid SDRF (parse_sdrf ms-proteomics + vertebrates exit 0, sdrf-tools check exit 0, all 13 controlled terms resolve live in OLS) with a correct 8-file mapping. It fails on one important design finding: the two SCX series (2013-03-22 and 2013-04-06) are encoded as technical replicates 1 and 2 of a single source / biological replicate 1. No accessible source documents that relationship, and the accessible evidence points to two separately prepared enrichment/SCX series rather than repeated measurements of the same samples. The primary source that would settle it (Weinert et al. 2013 Cell Rep full text, gold OA) was not consulted. Remaining findings are minor.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent without producer transcript; producer report.md and scratchpad/_stale_2026-10-27 not read; PRIDE project/files, PubMed efetch, MaxQuant zip members and RAW headers re-fetched into scratchpad/PXD002277/review-PXD002277-mouse-liver-succinylation/ with accession/PMID asserted"
+  },
+  "evidence_manifest": "annotations/PXD002277-mouse-liver-succinylation.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates derived independently: mouse liver tissue -> ms-proteomics v1.1.0 + vertebrates v1.1.0 (both declared via comment[sdrf template]). All required columns of base/sample-metadata/ms-proteomics/vertebrates are present; no reserved-word or structured-value errors; 8 rows, 32 columns, no duplicate rows. parse_sdrf validate-sdrf --use_ols_cache_only: -t ms-proteomics exit 0, -t vertebrates exit 0, union exit 0 ('Everything seems to be fine'). sdrf-tools structure exit 0. HCD encoded as MS:1000422 as the spec requires. No factor value column: acceptable for this single-condition site catalogue (README 'Factor Values' section: factors mark variables under study; none exists in this search)."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS via sdrf-tools verify/OLS4: MS:1001911 Q Exactive, MS:1001313 Trypsin/P (parent MS:1001045 cleavage agent name, not obsolete), PRIDE:0000627 Data-dependent acquisition, MS:1000422 beam-type collision-induced dissociation, PRIDE:0000561 Strong cation-exchange chromatography (SCX), UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, UNIMOD:1 Acetyl, UNIMOD:64 Succinyl, MS:1000484 orbitrap, NCBITaxon:10090 Mus musculus, UBERON:0002107 liver, MS:1002038 label free sample - all exist, labels match, none obsolete. sdrf-tools check: 12/12 verified, 0 hallucinated, CLEAN."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Re-checked against fresh PRIDE record (PXD002277 asserted), MaxQuant_output_files.zip members read via HTTP range (mouse_liver_succinylation/summary.txt, parameters.txt, peptides.txt header; List_of_RAW_files.xlsx) and fresh 64 KB RAW headers of all 8 files. Organism/organism part (PRIDE NEWT:10090, BTO Liver, MOUSE.fasta, 'mm_liver'), instrument (headers 'Q Exactive - Orbitrap MS', summary Instrument), DDA/HCD (sample protocol), SCX (sample protocol + names), label free (Multiplicity 1, Labels0 empty), mods (parameters.txt Fixed Carbamidomethyl (C); summary Variable Oxidation (M);Acetyl (Protein N-term);succinyl-K; PRIDE 100.0160 Da shift = UNIMOD:64), 20 ppm fragment (parameters.txt FTMS) and 6 ppm precursor (PRIDE data protocol main-search statement; MQ 1.2.7.1 parameters.txt does not list it) are supported. Disease/strain/sex/developmental stage 'not available' supported by accessible evidence: PRIDE silent, abstract says only 'mouse liver tissue', PubMed MeSH only 'Mice'/'Animals' with no Male/Female check tag or inbred-strain heading. Paper full text could not be retrieved here (not in PMC; cell.com/ScienceDirect 403 bot challenge; Unpaywall lists gold OA publisher PDF only)."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "All 8 comment[data file] values match PRIDE RAW files exactly (20130322_..._SCX_01, _SCX_02_130323222057, _SCX_03, _SCX_04; 20130406_..._scx_1.._scx_4); no duplicates, no non-raw files; the same 8 are the only rows of mouse_liver_succinylation/summary.txt and are assigned to Table S5 in List_of_RAW_files.xlsx. The 4 mm_liver_acK files belong to the separate acetylation search. assay name = file stem. Fraction identifiers 1-4 per series follow the file-name suffixes; _130323222057 is an acquisition timestamp (header shows same method)."
+    },
+    "design_consistency": {
+      "status": "fail",
+      "evidence": "Recomputed: 8 runs = 2 series x 4 SCX fractions, label-free, single MaxQuant experiment (peptides.txt has only one aggregate 'Intensity' column, no per-experiment columns; summary.txt has no Experiment column). The SDRF encodes one source name, biological replicate 1, technical replicate 1 (0322 series) and 2 (0406 series). No source documents whether the second series is a re-injection, a separate enrichment of the same lysate, or a different animal. See important finding on the replicate structure."
+    },
+    "omission_safety": {
+      "status": "fail",
+      "evidence": "Pass performed. Most values are traced to a source or are 'not available'. However, the single source name plus technical replicate 2 asserts that the 2013-04-06 series is a repeated measurement of the same sample as the 2013-03-22 series. That is more specific than any accessible evidence supports (the manifest itself labels it an inference). Omitted material evidence: the anti-succinyllysine antibody enrichment (optional characteristics[enrichment process]) and the differing autosampler volumes between series (manifest says 'identical LC-MS method' only)."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -s <artifact> -t ms-proteomics --use_ols_cache_only: exit 0; -t vertebrates: exit 0; -t ms-proteomics -t vertebrates: exit 0. sdrf-tools check: exit 0 (CLEAN). sdrf-tools score: 95/100 (design 67: no factor value columns; advisory). sdrf-tools structure: exit 0. sdrf-tools reconcile --record pride.json: exit 1, BLOCKER cleavage_agent_unsupported - adjudicated as a heuristic finding that cannot be satisfied by any value here: the PRIDE record contains no digestion sentence at all (the only trypsin mention is 'with strict trypsin specificity' in the search description), the column disallows 'not available' (ms-proteomics.yaml allow_not_available: false), and the value matches the deposited search enzyme (summary.txt Protease 'Trypsin/P'). See minor finding on the cleavage agent."
+    }
+  },
+  "findings": [
+    {
+      "severity": "important",
+      "category": "design",
+      "location": "source name, characteristics[biological replicate], comment[technical replicate] rows 1-8 (rows 1-4 = 20130322 SCX_01..04 TR1; rows 5-8 = 20130406 scx_1..4 TR2)",
+      "message": "The two SCX series are asserted to be technical replicates (repeated measurements) of a single biological sample, but no evidence establishes that relationship. Accessible evidence suggests separately prepared series, and whether they come from the same liver lysate or from different animals (biological replicates) is unknown.",
+      "evidence": "Spec README: 'comment[technical replicate]: Repeated measurements of the same sample (e.g., multiple injections)'; 'characteristics[biological replicate]: Independent biological samples'. PRIDE sample protocol: enriched peptides 'were eluted ... and immediately seperated by micro-scale SCX chromatography', so each SCX series most plausibly follows its own enrichment. The series were acquired 15 days apart with a different naming scheme (SCX_0n vs scx_n) and different autosampler volumes (RAW headers: sample pickup 5.00 / loading 9.00 ul for 0322 vs 6.00 / 12.00 ul for 0406), with the same method 1-9um_BTW_141min_120MS2_IW2.meth. No sample names in headers. List_of_RAW_files.xlsx Notes are empty for all 8 files. MaxQuant pooled all 8 into one experiment (single Intensity column). PRIDE, the abstract and MeSH say nothing about the number of mice or enrichments. The manifest labels the encoding an inference.",
+      "correction": "Settle the relationship from the primary source: Weinert et al. 2013 Cell Rep 4:842-851, doi:10.1016/j.celrep.2013.07.024 (gold OA, CC BY-NC-ND; Experimental Procedures and Table S5 legend), retrieved via a browser or library copy, or by contacting the submitters. Re-injection of the same fractions or re-enrichment of the same lysate: the current encoding may stay, citing the source. Different animals: give the series distinct source names with biological replicate 1 and 2 and technical replicate 1. If the full text is consulted and is silent, keep the current encoding only with that negative result recorded in the manifest. Optionally add comment[sample preparation batch] to mark the two preparations."
+    },
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "comment[cleavage agent details] rows 1-8 (NT=Trypsin/P;AC=MS:1001313)",
+      "message": "Trypsin/P comes from the MaxQuant search settings, not from a stated digestion protocol. The spec defines this column as the enzyme used for protein digestion. The PRIDE wording 'strict trypsin specificity' does not contradict Trypsin/P ('strict' = specific rather than semi-specific search), and it does not name a digest reagent.",
+      "evidence": "summary.txt Protease 'Trypsin/P', Max. missed cleavages 2; PRIDE data protocol '...with strict trypsin specificity, and allowing up to 2 missed cleavage sites'; sample protocol says only 'Peptides were prepared from the indicated samples'. Spec: 'Enzyme or chemical used for protein digestion', examples NT=Trypsin;AC=MS:1001251. sdrf-tools reconcile BLOCKER cleavage_agent_unsupported (would fire for any enzyme because the record has no digest sentence).",
+      "correction": "Prefer NT=Trypsin;AC=MS:1001251 for the digest reagent (trypsin is implied by 'trypsin specificity'). Keep Trypsin/P as the search rule in the manifest. Or keep Trypsin/P and record why in the manifest. Either way, document the reconcile adjudication."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "file (characteristics[enrichment process] absent)",
+      "message": "The defining sample-processing step, anti-succinyllysine antibody enrichment of peptides, is not encoded.",
+      "evidence": "PRIDE sample protocol: 'succinylated (or acetylated) peptides were enriched using polyclonal antibody beads (immunechem)'. ms-proteomics/sample-metadata templates offer optional characteristics[enrichment process] (EFO:0009090 children).",
+      "correction": "Optionally add characteristics[enrichment process] with the most specific valid EFO/PRIDE term for antibody-based PTM-peptide enrichment, or a documented 'not available' if none fits."
+    },
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "characteristics[strain or breed], characteristics[sex], characteristics[developmental stage], characteristics[disease] rows 1-8",
+      "message": "'not available' is correct for the evidence that could be retrieved, but the full text was not consulted and may state strain, sex or age.",
+      "evidence": "PubMed efetch (PMID 23954790 asserted): abstract 'mouse liver tissue' only; MeSH 'Mice', 'Animals', with no Male/Female check tag and no inbred-strain descriptor; PRIDE silent; Europe PMC fullText 'Subscription required' / no PMCID.",
+      "correction": "When the full text is obtained for the important finding, fill these fields only from explicit statements. Otherwise leave 'not available'."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "evidence.json claim for characteristics[biological replicate]/comment[technical replicate]",
+      "message": "The manifest says the two series used an 'identical LC-MS method' but omits that their autosampler pickup/loading volumes differ, which bears on whether they are the same samples.",
+      "evidence": "RAW headers: 0322 series 5.00/9.00 ul; 0406 series 6.00/12.00 ul; method file identical.",
+      "correction": "Record the volume difference in the manifest claim or its limitations."
+    }
+  ]
+}

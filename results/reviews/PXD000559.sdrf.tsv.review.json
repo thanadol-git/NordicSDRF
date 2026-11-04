@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD000559.sdrf.tsv",
+  "artifact_sha256": "e83e0423b9875b5fdb38a68cf1c0ce9eebb956286509293e76968cda3bdd02e7",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. All 44 RAW files map exactly once (12 label-free HEK293T runs, 32 SILAC runs x heavy/light). SILAC channel-to-condition assignments were re-derived from the deposited MaxQuant output: PADI4 forward heavy = induced and reverse light = induced (PADI4 protein intensity H/L ~6x vs L/H ~11x); ActD 3 h 'rev-pull' (MaxQuant experiment ActD2hr, mapping re-confirmed by streaming evidence.txt) is label-swapped (methyl-site log-ratios anti-correlated with all forward ActD experiments, r -0.32 to -0.44; hnRNPDL R408 log2 H/L +1.74 vs -1.38/-1.77 in forward 3 h). Remaining items are documented inferences (ActDON = 16 h heavy ActD; _4-12/_4+12 = fraction 1) and optional enrichments, classified minor.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent (bergen-reviewer-PXD000559) without producer transcript; producer report.md not read; scratchpad/_stale_2026-10-27/ not read"
+  },
+  "evidence_manifest": "annotations/PXD000559.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates read from the file (ms-proteomics v1.1.0, human v1.1.0, cell-lines v1.1.0) and checked against templates.yaml layering (technology + sample + experiment). parse_sdrf validate-sdrf --use_ols_cache_only run once per template: all three exit 0, 'Everything seems to be fine'. 76 rows x 44 columns, uniform row length, no empty cells or trailing whitespace, no duplicate source+assay+label, required columns present (age/sex/disease/cell line/cellosaurus accession/label/fraction identifier/technical replicate/cleavage agent/instrument/acquisition method). HCD encoded as MS:1000422 per README.adoc NOTE line 457."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools verify (live) confirmed label+accession for MS:1001911 Q Exactive, MS:1001251 Trypsin, MS:1001309 Lys-C, MS:1000422 beam-type CID, PRIDE:0000627 DDA, PRIDE:0000561 SCX, PRIDE:0000608 DTT, PRIDE:0000600 ClAA, UNIMOD:4/35/1/34/267/259. OLS4 exact search (non-obsolete): UBERON:0002113 kidney, UBERON:0000979 tibia, MONDO:0009807 osteosarcoma, PATO:0000461 normal, PATO:0000383 female, NCIT:C412 dactinomycin, NCIT:C437 dimethyl sulfoxide, NCIT:C457 doxycycline, HANCESTRO:0005 European ancestry, CLO:0037372/BTO:0002181 HEK293T, EFO:0002869 U2OS, PRIDE:0000325/0000326 SILAC heavy/light, MS:1002038 label free sample, NCBITaxon:9606. Cellosaurus CVCL_0063 (HEK293T, female, fetus, fetal kidney UBERON_0002113) and CVCL_0042 (U2OS, female, 15Y, osteosarcoma, Caucasian, tibia UBERON_0000979) fetched live. sdrf-tools check: 21/21 verified, CLEAN."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project/files fetched fresh (accession PXD000559 asserted; 45 files, projectAccessions={PXD000559}). Paper PMC4125738 text (title asserted) Methods/Results: SCX pH 4.5/6.5/8.0/11; DTT 1 mM, chloroacetamide 5.5 mM; Lys-C and trypsin; 7 ppm/20 ppm HCD; heavy U2OS ActD 1/3/8/16 h vs light DMSO; HEK 293T triplicate (three technical replicates, 12 runs); PADI4 heavy induced vs light non-induced plus reversed experiment. MaxQuant summary.txt/parameters.txt read directly (multiplicity 1 for trip runs, 2 with Arg10;Lys8 otherwise; Q Exactive; variable Oxidation/Acetyl/Methyl(KR); fixed Carbamidomethyl). RAW header range reads (4 files incl. _412, _4-12, ActDON_40, trip_02_65) show 'Q Exactive - Orbitrap MS', NCE 25.0 and original name _4+12 for deposited _412. Label direction re-derived from proteinGroups.txt and Methyl (KR)Sites.txt."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Set comparison: 44 PRIDE RAW files == 44 distinct comment[data file] values, none missing/extra; MaxQuantOutput.tar.gz (SEARCH) correctly excluded. 32 files carry exactly one SILAC heavy and one SILAC light row, 12 files one label free sample row. evidence.txt streamed independently from the PRIDE tar.gz: unique (Raw file, Experiment) pairs = PADI4f/PADIr/ActD3hrs1(0621)/Trip1-3/ActdD1h/ActD3h2(forward)/ActD2hr(rev)/ActD8h, matching the SDRF grouping; ActDON files absent from the search as the manifest states."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 23 sources; HEK293T lysate 1 biological replicate x 3 technical replicates x 4 fractions; PADI4 2 SILAC experiments (forward/reverse) as bio reps 1/2; U2OS ActD/DMSO at 1 h, 8 h, 16 h (1 replicate each) and 3 h (3 replicates: 0621, 0703 forward, 0703 rev). Fraction identifiers 1-4 unique per source/technical replicate. Characteristics constant within each source; factor values equal characteristics in all 76 rows. Swap directions consistent with data: PADI4 protein intensity L/H PADI4f 21.5M/130.8M, PADIr 445.5M/39.4M; ActD2hr site log-ratios anti-correlated with ActdD1h (-0.32), ActD3hrs1 (-0.43), ActD3h2 (-0.41), ActD8h (-0.44) while forward experiments correlate positively (0.16-0.53)."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Each nontrivial value traced to paper, MaxQuant output, RAW header, or Cellosaurus. Uncertain values left as not available (HEK293T age/ancestry, doxycycline duration, cell type). Unsupported specificity searched for: 16 h for ActDON and fraction 1 for _4-12/_4+12 are inferences disclosed in the manifest limitations and supported by indirect evidence (see minor findings); 3 h for the rev experiment rests on the file name and the mirror-image hnRNPDL ratio despite the MaxQuant experiment label 'ActD2hr'. Enrichment process omitted because OLS has no methylated-peptide enrichment term under EFO/PRIDE (searched). Supplementary Fig. S1C/S4C not open access (Europe PMC supplementaryFiles: 'not open access')."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics/-t human/-t cell-lines --use_ols_cache_only: exit 0 each, no errors or warnings. sdrf-tools check: exit 0, CLEAN (21/21). sdrf-tools score: 99/100 (only missing developmental stage). sdrf-tools reconcile --record pride.json: exit 1 with 2 BLOCKER flags judged false positives: (a) cleavage_agent_unsupported - the PRIDE sampleProcessingProtocol (876 chars) only describes cell culture and names no digestion at all, while paper Methods state Lys-C and trypsin and MaxQuant summary.txt lists Trypsin; (b) labelled_annotated_as_label_free - the 12 HEK293T triplicate runs were searched with multiplicity 1 (summary.txt) and the paper describes them as an unlabeled technical triplicate; SILAC rows are labelled. reconcile is not a template validator."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "rows U2OS_ActD_16h / U2OS_DMSO_16h (8 rows, files 20130703_..._ActDON_pull_{40,65,80,11}.raw), characteristics[sampling time], factor value[sampling time], comment[label]",
+      "message": "16 hour and heavy = dactinomycin are inferences: the ActDON files are not in the deposited MaxQuant search and the supplementary SILAC set-up (Fig. S1C) is not accessible. Accepted because the paper lists exactly four time points (1, 3, 8, 16 h) with ActD in heavy cells, ON ('overnight') is the only file set left for 16 h, the file name follows the forward naming pattern (ActD1hrs_pull, ActD8hrs_pull) with no 'rev' marker, and Fig. 5D reports 16 h data. The one deviation from the paper's blanket heavy=ActD statement (3 h rev) is explicitly marked in its file name.",
+      "evidence": "Paper Results/Methods; PRIDE file list; evidence.txt raw-file set; manifest limitations already disclose the inference. Correction criterion: none required; if the producer can obtain Fig. S1C or the MS-level ratio of a known regulated site (e.g., hnRNPDL R408) in ActDON, record it."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "comment[fraction identifier] = 1 for *_412.raw (PADI4 forward/reverse) and *_r-methyl-pull_4-12.raw",
+      "message": "These sets have no _40 file; the _4+12/_4-12 run is assigned fraction 1. Its composition (possibly pooled eluates) is not described, but its PSM count profile matches the _40 fractions (3,548-4,703 evidence rows vs 4,478-9,162 for _40, and 10,000+ for _65/_80/_11), and the fraction identifier remains a valid unique per-sample index.",
+      "evidence": "RAW header original name C:\\Xcalibur\\Data\\..._4+12.raw; evidence.txt per-raw counts. Optionally note the pooled/undefined composition in the manifest; no SDRF change needed."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "rows U2OS_ActD_3h_exp3 / U2OS_DMSO_3h_exp3, characteristics[sampling time] = 3 hour",
+      "message": "The deposited MaxQuant experiment name for the rev-pull files is 'ActD2hr', which conflicts with the file name ActD3hrs_rev-pull. 3 hour is supported by the file name, the absence of a 2 h time point in the paper, and the mirror-image hnRNPDL R408 ratio (log2 H/L +1.74 vs -1.38 in the 3 h forward), but the conflict is not listed in the manifest limitations.",
+      "evidence": "summary.txt experiment list; evidence.txt pairs; Methyl (KR)Sites.txt. Correction criterion: add the naming conflict to the manifest limitations."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "HEK293T-PADI4_* rows (16), characteristics[cell line]/[cellosaurus accession]",
+      "message": "The doxycycline-inducible PADI4 HEK 293T derivative (gift from M. Christophorou, blasticidin/hygromycin selected) is annotated as parental HEK293T CVCL_0063; the transgene is visible only in the source name. Acceptable because no Cellosaurus entry for the derivative was confirmed and both channels of each PADI4 experiment share the line, so the factor (doxycycline) is not confounded; consider recording the inducible transgene in a comment or the manifest.",
+      "evidence": "PRIDE sampleProcessingProtocol; Cellosaurus search API unavailable (503) during review."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "HEK293T-PADI4_doxycycline_exp1/exp2 rows, characteristics[sampling time] = not available",
+      "message": "Doxycycline duration left as not available. Conservative and acceptable; Results state 'a temporal analysis of the inducible cell system revealed that 24-hour DOX treatment ensured abundant expression of PADI4 (Fig. 5E)', which suggests but does not explicitly state 24 h for the MS samples.",
+      "evidence": "Paper Results paragraph on PADI4; PRIDE protocol 'added for the given time points'."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "HEK293T_lysate and *_uninduced_* rows, characteristics[treatment] = not applicable; HEK293T rows, developmental stage absent",
+      "message": "Spec treatment guidance suggests 'untreated' for controls; HEK293T developmental stage (Cellosaurus AG Fetus) could be added in the optional characteristics[developmental stage] column (sdrf-tools score's only completeness deduction).",
+      "evidence": "sample-metadata.yaml treatment description; Cellosaurus CVCL_0063; sdrf-tools score 99/100."
+    }
+  ]
+}

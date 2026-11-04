@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD006112-isoAsp.sdrf.tsv",
+  "artifact_sha256": "eb3c56aaa694df994ddcfd734af0530df908785d3a98b0f570086072d02e1ef3",
+  "verdict": "PASS",
+  "summary": "Independent review of the isoAsp sub-experiment SDRF (42 runs) found no blocking or important issues. The 18 runs written as 'not available' for elution conditions are a genuine, unresolvable conflict: the RAW sample comments and the Readme.pdf pictogram table assign the same six temperature methods to six 12-peptide-mix triplets in a different order, and the paper is paywalled. Writing 'not available' is the honest choice; picking either source would be a guessed run-to-condition mapping. Only minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh subagent context without the producer transcript; producer report.md and scratchpad/_stale_2026-10-27/ not read. All evidence re-fetched into scratchpad/PXD006112/review-PXD006112-isoAsp/."
+  },
+  "evidence_manifest": "annotations/PXD006112-isoAsp.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "28 columns x 42 rows; the only declared template is NT=ms-proteomics;VV=v1.1.0 (usable_alone: true in templates.yaml). All required columns from base 1.1.0, sample-metadata 1.0.0 and ms-proteomics 1.1.0 are present. Reserved words are lowercase and used only where the column permits them: organism allow_not_applicable=true; cleavage agent allow_not_applicable=true, and README.adoc line 399 says to use 'not applicable' for undigested samples; elution conditions allow_not_available=true. comment[elution conditions] is a template-defined free-text column in ms-proteomics 1.1.0 (OBI:0302905, pattern ^.+$; examples include gradient descriptions). Column temperature is an RP elution condition, so the column is used within its stated scope. The factor value column is last, as README 'Factor Values' rules require; the rule that factor values 'typically mirror a characteristics column' is not mandatory, and parse_sdrf factor validation passed. Material type and synthetic peptide both use allowed fixed values ('synthetic'). Assay names (42) and data files (42) are unique, and each source name + assay name combination is unique."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4: MS:1002634 'Q Exactive Plus', MS:1000422 'beam-type collision-induced dissociation' (the HCD term required by the README NOTE), MS:1002038 'label free sample', MS:1000484 'orbitrap', PRIDE:0000627 'Data-dependent acquisition'. All labels match exactly and none are obsolete. sdrf-tools check: 5 terms checked, 5 verified, 0 hallucinated, 0 label mismatches, 0 wrong ontology. No organism, tissue, disease or modification terms are asserted (all 'not applicable', which fits synthetic undigested peptides with no database search)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Re-fetched the PRIDE project (accession PXD006112, title matches), Readme.pdf (3 pages; IsoAsp page rendered and read visually, including a 300 dpi zoom on the temporal-change pictograms), and 64 KB HTTP range-read headers of all 42 IsoAsp RAW files. All 42 headers: 'Q Exactive Plus - Orbitrap MS', one MS method (DTF_40min_sensitive_isolation1.3_threshold1e5_DE0sec_20140919.meth), TopN 5, NCE 25, dynamic exclusion 0 s. These match the protocol and the SDRF (DDA, HCD 25 NCE, orbitrap MS2). Sample comments: '2.5 ng Thermo IsoAsp 12mix DTF <code> 40min' and '0.83 ng Thermo IsoAsp Peptide 11|12 DTF <code> 40min'. RAW codes and Readme pictograms agree for 12mix 01-05 (25 25 25), 27-30 (25 25 5C), 31-34 (25 25 50), 46-50 (25 5 5D) and all peptide 11/12 triplets; the SDRF values for these 24 runs match both sources. They disagree for 12mix 08-10, 11-14, 16-20, 21-24, 36-39 and 41-45. RAW codes in that order: 'DTF DTF', '0 25 25', '0-50 25 25', '25 5 25', '25 50 25', '50 25 25'. Pictograms in that order: cold/25/25, hot/25/25, 25/cold/25, 25/hot/25, cold-to-hot/25/25, temporal changes in all three zones. This is the same set of six methods in a different order. No tie-breaker exists in the accessible evidence: the embedded LC-method fragment in each header is identical across runs; the deeper RAW byte ranges hold spectra (files are about 540 MB); the paper (PMID 28387123) is not open access (Europe PMC isOpenAccess=N, inPMC=N, hasSuppl=N; Unpaywall is_oa none); and the ACS supporting-information page returns 403. Neither source is clearly authoritative. The RAW comments are contemporaneous but free text and malformed for 08-10 ('DTF DTF' carries no temperatures). The Readme is the depositor's curated mapping but was compiled in March 2017, 2.5 years after acquisition. 'not available' is therefore the evidence-faithful value. Zone 1 = precolumn is well supported: the abstract describes the precolumn at 50 degrees C after low-temperature loading, which matches the '0-50 x x' code pattern, and the protocol mentions 'cooling the middle of the analytical column'. Zones 2/3 are left unlocated, and the unexplained C/D suffixes are flagged rather than interpreted."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE /files (all entries projectAccessions=PXD006112): 93 RAW, 2 SEARCH zips, 2 FASTA, 1 Readme.pdf. The 42 SDRF data files exactly equal the 42 deposited RAW files containing 'IsoAsp': no missing, extra or duplicate files and no non-raw entries. They do not overlap with the sibling BSA (39) or HeLa (12) SDRFs, and the three SDRFs together cover all 93 RAW files. Readme file names use the original 'QE6+' acquisition names; the deposited names drop the '+' (the RAW-internal path also shows 'QE6+'). The mapping by run number is unambiguous."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "14 source names, each with exactly 3 runs (technical replicate 1-3 within each source; biological replicate 1 throughout, since every run uses the same purchased synthetic material): 10 12-peptide-mix triplets, plus 2 temperature methods x 2 single peptides (peptide 11 Asp form, peptide 12 isoAsp form). The design matches the protocol ('triplicate runs') and the Readme grouping. Fraction 1, label-free, and a single instrument and MS method throughout, so there are no confounders. Elution conditions are constant within every source, and comment and factor value are identical on every row. Contested 12mix sources are named by run range only and do not embed a temperature method, so the source names do not leak a guessed assignment."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No value is stated more specifically than the evidence supports. Organism, organism part, cell type and disease are 'not applicable' for commercial synthetic peptides, which is correct because a synthetic peptide has no source organism. PRIDE lists Homo sapiens and Bos taurus, but those belong to the HeLa and BSA sub-experiments. Cleavage agent, tolerances and modification parameters are 'not applicable' because the peptides were not digested and no database search was done (Xcalibur Genesis peak detection only, per the data processing protocol). The 18 contested runs are 'not available', not guessed. Peptide sequences are unknown (paywalled), so they are not asserted. The '50 fmol BSA' string in a separate RAW header field is not mentioned in the IsoAsp protocol and is correctly left unannotated. Omitted optional material is limited to the machine-readable sample identity and load amounts (minor finding below)."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf -s annotations/PXD006112-isoAsp.sdrf.tsv -t ms-proteomics --use_ols_cache_only -> exit 0, 'Everything seems to be fine. Well done.' (the only declared template). sdrf-tools check -> exit 0, CLEAN (5/5 verified). sdrf-tools score -> exit 0, 92/100. Its only deduction is a consistency heuristic, \"Organism 'not applicable' should follow binomial nomenclature\", which conflicts with the spec: sample-metadata 1.0.0 sets allow_not_applicable=true for characteristics[organism], and README reserved-words table uses 'Synthetic peptide library' as the canonical not-applicable case. SHA-256 eb3c56aa...e1ef3 was unchanged at the start and end of the review."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "all rows; characteristics columns",
+      "message": "Sample identity (12-peptide mix vs single Asp peptide 11 vs single isoAsp peptide 12) and on-column load are encoded only in free-text source names, so every characteristics column is identical across all 42 rows and the Asp/isoAsp contrast is not machine-readable.",
+      "evidence": "RAW sample comments give '2.5 ng Thermo IsoAsp 12mix' and '0.83 ng Thermo IsoAsp Peptide 11|12'; the protocol says 'twelve synthetic peptides ... purchased from Thermo Scientific'. Optional correction: add characteristics[spiked compound] (sample-metadata 1.0.0), e.g. 'CT=mixture;CN=IsoAsp 12-peptide mix;CV=Thermo Scientific;QY=2.5 ng' and 'CT=peptide;CN=peptide 11 (aspartic acid form);CV=Thermo Scientific;QY=0.83 ng'."
+    },
+    {
+      "severity": "minor",
+      "category": "value-format",
+      "location": "comment[elution conditions] / factor value[elution conditions], rows 16-18, 28-42",
+      "message": "Curator notes (\"(RAW-header code suffix 'C', meaning not documented)\") are embedded inside the factor-value level strings. Grouping is unaffected, but the factor level labels carry provenance commentary that belongs in the report or manifest.",
+      "evidence": "Five distinct factor levels; three of them contain parenthetical notes. Optional correction: keep the verbatim code (e.g. 'DTF 25 25 5C') and the zone temperatures, and move the suffix caveat to the evidence manifest limitations, where it already appears."
+    },
+    {
+      "severity": "minor",
+      "category": "spec-ambiguity",
+      "location": "comment[elution conditions] column header",
+      "message": "TERMS.tsv describes elution conditions as 'Conditions used for peptide elution from MHC complexes' (immunopeptidomics heritage), while the governing ms-proteomics 1.1.0 template defines it generically as 'Conditions used for peptide/protein elution' with LC-gradient examples. The artifact follows the template, which governs the column.",
+      "evidence": "spec TERMS.tsv line 150 vs sdrf-templates/ms-proteomics/1.1.0/ms-proteomics.yaml comment[elution conditions]. This is not a defect in the artifact; it is recorded so the producer is aware if the spec narrows the term later."
+    }
+  ]
+}

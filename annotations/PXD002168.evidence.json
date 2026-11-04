@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002168.sdrf.tsv",
+  "dataset": "PXD002168",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002168"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002168/files"
+    },
+    {
+      "id": "mq_summary",
+      "kind": "search_output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/12/PXD002168/MaxQuantOutput.tar.gz :: MaxQuantOutput/summary.txt"
+    },
+    {
+      "id": "mq_parameters",
+      "kind": "search_output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/12/PXD002168/MaxQuantOutput.tar.gz :: MaxQuantOutput/parameters.txt"
+    },
+    {
+      "id": "mq_proteingroups",
+      "kind": "search_output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/12/PXD002168/MaxQuantOutput.tar.gz :: MaxQuantOutput/proteinGroups.txt"
+    },
+    {
+      "id": "raw_headers",
+      "kind": "raw_data",
+      "location": "HTTP range read (first 64-128 KB) of all 47 RAW files under https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/12/PXD002168/"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC4510963 (Madsen CT et al., Nat Commun 2015;6:7726, PMID 26158509, doi:10.1038/ncomms8726)"
+    },
+    {
+      "id": "supp_data2",
+      "kind": "supplementary",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4510963/supplementaryFiles :: ncomms8726-s3.xls (Supplementary Data 2)"
+    },
+    {
+      "id": "supp_data3_4",
+      "kind": "supplementary",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4510963/supplementaryFiles :: ncomms8726-s4.xls, ncomms8726-s5.xls (Supplementary Data 3, 4)"
+    },
+    {
+      "id": "supp_figs",
+      "kind": "supplementary",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4510963/supplementaryFiles :: ncomms8726-s1.pdf (Supplementary Figures)"
+    },
+    {
+      "id": "pubmed_mesh",
+      "kind": "publication",
+      "location": "Europe PMC core record for PMID 26158509 (MeSH headings)"
+    },
+    {
+      "id": "upstream",
+      "kind": "repository",
+      "location": "gh api repos/bigbio/sdrf-annotated-datasets/contents/datasets/PXD002168 and .../sandbox/PXD002168 (both HTTP 404)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] rows 1-24",
+      "value": "12 RAW files: 20121012_QE6_LC4_CTM_SA_Yeast_Proteome_NormExcess_{5,10,20,40,50,100}.raw and 20120918_QE6_LC4_CTM_SA_proteome_bio_SCX_NormMinus_{5,10,20,40,50,100}.raw",
+      "source_ids": [
+        "pride_files",
+        "mq_summary"
+      ],
+      "evidence": "Exactly these 12 raw files are in the deposited MaxQuant summary.txt (experiments NormExcess, NormMinus); all present in the PRIDE file list with projectAccessions PXD002168"
+    },
+    {
+      "location": "comment[data file] (provenance)",
+      "value": "NormMinus files renamed at deposit only by inserting 'NormMinus'; fraction suffix preserved; no swaps",
+      "source_ids": [
+        "raw_headers"
+      ],
+      "evidence": "RAW header acquisition path is C:\\Xcalibur\\Data\\20120918_QE6_LC4_CTM_SA_proteome_bio_SCX_<n>.raw with the same <n>; other 41 files match their deposited names"
+    },
+    {
+      "location": "comment[label] rows 1-24",
+      "value": "SILAC light / SILAC heavy (Lys8)",
+      "source_ids": [
+        "mq_summary",
+        "paper"
+      ],
+      "evidence": "summary.txt Multiplicity=2, Labels0='' (light), Labels1='Lys8'; Methods: regular lysine (light) or 13C6-15N2 lysine (heavy)"
+    },
+    {
+      "location": "source name / factor value[dose] - EXP1 rows (NormExcess files)",
+      "value": "light = normal biotin 0.002 ug/mL; heavy = excess biotin 0.2 ug/mL",
+      "source_ids": [
+        "supp_data2",
+        "paper",
+        "mq_summary"
+      ],
+      "evidence": "Supplementary Data 2 column 'Ratio H/L normalized Excess biotin Exp.1' (heavy = excess); Methods: 2 ug/l normal, 200 ug/l excess; MaxQuant experiment name NormExcess"
+    },
+    {
+      "location": "source name / factor value[dose] - EXP2 rows (NormMinus files)",
+      "value": "light = normal biotin 0.002 ug/mL; heavy = biotin depleted 0 ug/mL",
+      "source_ids": [
+        "supp_data2",
+        "mq_proteingroups",
+        "paper"
+      ],
+      "evidence": "Supplementary Data 2 column 'Ratio H/L normalized depletion biotin Exp.2'; deposited proteinGroups Ratio H/L NormMinus: Bio2 9.93, Bio3 9.33, Bio4 8.56, Bio5 4.29, Vht1 11.6 - paper reports these upregulated on biotin depletion"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1 for each condition; normal biotin control of EXP2 = 2",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Each SILAC channel of each experiment is one culture; two separate normal-biotin control cultures (EXP.1 and EXP.2)"
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "1-6 by numeric suffix 5,10,20,40,50,100",
+      "source_ids": [
+        "pride_files",
+        "mq_summary"
+      ],
+      "evidence": "Same six suffixes in both experiments; all files of one experiment in one MaxQuant experiment"
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Saccharomyces cerevisiae",
+      "source_ids": [
+        "pride",
+        "paper",
+        "pubmed_mesh"
+      ],
+      "evidence": "PRIDE organism; Methods; MeSH heading Saccharomyces cerevisiae"
+    },
+    {
+      "location": "characteristics[strain or breed]",
+      "value": "BY4742",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: parental WT genetic background is BY4742 (MATalpha his3D1 leu2D0 lys2D0 ura3D0); inferred for the WT SILAC proteome experiments (lys2D0 consistent with Lys8 SILAC)"
+    },
+    {
+      "location": "characteristics[compound], characteristics[dose]",
+      "value": "biotin; 0.002 / 0.2 / 0 ug/mL",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: YNB devoid of biotin supplemented to 2 ug/l (normal) or 200 ug/l (excess); depletion by two sequential overnight dilutions without biotin"
+    },
+    {
+      "location": "characteristics[organism part], characteristics[disease]",
+      "value": "not applicable",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Unicellular yeast culture; PRIDE 'disease free' / 'diploid cell' not carried over (BY4742 is haploid)"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive;AC=MS:1001911",
+      "source_ids": [
+        "raw_headers",
+        "pride",
+        "paper",
+        "mq_summary"
+      ],
+      "evidence": "RAW header 'Q Exactive - Orbitrap MS' in every file group; PRIDE instrument; Methods; summary.txt Instrument"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Lys-C;AC=MS:1001309",
+      "source_ids": [
+        "mq_summary",
+        "paper"
+      ],
+      "evidence": "summary.txt Protease = Lys-C, max 2 missed cleavages; Methods 'strict Lys-C specificity'"
+    },
+    {
+      "location": "comment[modification parameters] (4 columns)",
+      "value": "Carbamidomethyl C Fixed; Oxidation M Variable; Acetyl Protein N-term Variable; Label:13C(6)15N(2) K Variable",
+      "source_ids": [
+        "mq_parameters",
+        "mq_summary"
+      ],
+      "evidence": "parameters.txt Fixed modifications Carbamidomethyl (C); summary.txt Variable modifications Oxidation (M);Acetyl (Protein N-term); Labels1 Lys8"
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "mq_parameters",
+        "paper"
+      ],
+      "evidence": "parameters.txt MS/MS tol. (FTMS) 20 ppm; Methods 20 ppm HCD fragment"
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "7 ppm",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: maximum 7 ppm for peptide masses (paper search MaxQuant 1.2.6.20; deposited parameters.txt does not record it)"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: Q-Exactive operated in data-dependent acquisition mode"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "NT=beam-type collision-induced dissociation;AC=MS:1000422",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: HCD fragment ion masses"
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "NT=Strong cation-exchange chromatography (SCX);AC=PRIDE:0000561",
+      "source_ids": [
+        "pride_files",
+        "raw_headers"
+      ],
+      "evidence": "NormMinus file names contain 'SCX'; NormExcess inferred from identical fraction suffix scheme, LC and instrument Independent support (review): in both experiments mean peptide charge rises with fraction number and first/last fractions share few peptides, the expected SCX pattern; NormMinus files were originally named ..._SCX_<n>.raw."
+    }
+  ],
+  "limitations": [
+    "PARTIAL: 35 of 47 RAW files (acetylome runs: BioAcetyl_SILAC_NormNothing, Acetylome_H4, silac_ac_b, silac_ac_h4, acetyl_WT, acetyl_Hst4) not annotated - no deposited search output, no file-to-experiment or channel map in paper/supplementary; RAW headers carry no sample IDs",
+    "Fractionation method for NormExcess files inferred (no 'SCX' in names; same suffix scheme)",
+    "Strain BY4742 inferred from the stated parental WT background",
+    "Precursor tolerance from the paper's search (MaxQuant 1.2.6.20); the deposited search is MaxQuant 1.3.0.5 and does not record it",
+    "Enzyme specificity not independently verified from peptide C-termini (search was Lys-C specific)",
+    "reconcile flags Lys-C as unsupported by the PRIDE record text (one-line protocol); supported by deposited summary.txt and paper",
+    "Experiment numbering: the paper's Supplementary Data legends call biotin starvation Experiment 1, the reverse of Fig. 1a and the Supplementary Data 2 column headers (Exp.1 = excess, Exp.2 = depletion). The SDRF follows Fig. 1a and the column headers, which the deposited ratios confirm (NormExcess vs Exp.1 r = 0.94; NormMinus vs Exp.2 r = 0.93).",
+    "Scope: this SDRF covers the 12 SILAC proteome RAW files only (one deposited MaxQuant search); the 35 acetylome RAW files are excluded because no deposited file maps them to the paper's experiments."
+  ]
+}

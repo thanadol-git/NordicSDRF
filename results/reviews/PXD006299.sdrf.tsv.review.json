@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD006299.sdrf.tsv",
+  "artifact_sha256": "3c7ba0590df1ee6f0c32d83fffab985afbfc3a3e75421bfb9c28f1e918fcbd7d",
+  "verdict": "PASS",
+  "summary": "Independent re-review after the reduction-reagent correction found no blocker or important issues. comment[reduction reagent]=not available resolves the DTT/TCEP conflict; CAA alkylation and Lys-C+Trypsin remain supported by both the PRIDE UbiSite protocol and the cited Bekker-Jensen 2017 46-fraction workflow. Jurkat clone, organism part and ancestry do not rise above minor.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh reviewer subagent. Did not read the producer transcript, annotations/PXD006299.report.md, or scratchpad/_stale_2026-10-27/. Key evidence was fetched fresh into scratchpad/PXD006299/review-PXD006299/; producer caches were used only after projectAccessions/title/accession checks."
+  },
+  "evidence_manifest": "annotations/PXD006299.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "46 columns x 280 data rows, uniform width, unique comment[data file]/assay name. Declared templates NT=ms-proteomics|human|cell-lines;VV=v1.1.0 match templates.yaml (cell-lines requires technology+sample). Required columns present; reserved words only where YAML allows (reduction/alkylation/organism part NA allowed). sdrf-tools structure: Structure OK. parse_sdrf validate-sdrf --use_ols_cache_only exit 0 for ms-proteomics, human and cell-lines separately."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check: 23/23 controlled terms verified, 0 hallucinated/label-mismatch/wrong-ontology/UNIMOD-swap (CLEAN). Live OLS confirmed MS:1000422 (HCD/beam-type CID), MS:1002523, MS:1000484, MS:1001309, MS:1001251, PRIDE:0000600, PRIDE:0000564, PRIDE:0000627, HANCESTRO:0568, MONDO:0000554/0000871 labels. Disease/sampling-site/cell-type free-text labels match MONDO/UBERON/CL preferred labels; parse_sdrf accepted them."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE project PXD006299 (title Characterisation of protein ubiquitination using UbiSite technology; organism NEWT:9606; instruments Q Exactive HF; sampleAttributes BTO Jurkat/HEp-2). MaxQuant summary/parameters from txtproteome.zip: 280 proteome raws, Enzyme Trypsin/P, fixed Carbamidomethyl (C), mods match SDRF, fragment tol 20 ppm. RAW method snippets: TopN20 HCD NCE28 Orbitrap MS2. Cellosaurus CVCL_1906/CVCL_0065 match sex/age/disease/site/population used. Paper PMID 29967540 cites Bekker-Jensen 2017 (PMC5493283), which reduces with TCEP+CAA and digests Lys-C then trypsin \u2014 supports reduction=NA, keeps CAA and Lys-C. File/Experiment tokens Hep2_R*/Jurkat_R* and 46 fractions match design."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE files pages 0-2: 281 entries, all projectAccessions=PXD006299; 280 RAW + 1 SEARCH (txtproteome.zip). SDRF comment[data file] set equals the 280 RAW names exactly (0 missing/extra/duplicates). Non-raw SEARCH correctly omitted."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: HEp-2 R1/R2/R3 = 46/46/50 rows; Jurkat R1-R3 = 46 each; total 280. Hep2_R3 has tech replicate 2 on fractions 41-44 (20160215_* vs 20160211_*), matching MaxQuant duplicate Experiment+Fraction pairs. factor value[cell line] splits 142/138. label-free; fraction identifiers 1-46."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Reduction no longer over-claims DTT (now not available) given DTT in series UbiSite PRIDE protocol vs TCEP in cited Bekker-Jensen 2017 proteome workflow. Alkylation CAA and Lys-C are in both candidate protocols and are not over-specific. Parental Jurkat CVCL_0065 used without inventing a clone. Organism part not applicable with tissue in sampling site is template-allowed, not fabricated anatomy. Ancestry African American for HEp-2 traces to Cellosaurus Population; Jurkat Caucasian left not available rather than forced into HANCESTRO. No invented sample/channel mapping."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf --template ms-proteomics|human|cell-lines --use_ols_cache_only: each exit 0 ('Everything seems to be fine'). sdrf-tools check: CLEAN exit 0. sdrf-tools score: 99/100 (only missing recommended developmental stage). sdrf-tools structure: Structure OK. Artifact SHA-256 frozen and rechecked: 3c7ba0590df1ee6f0c32d83fffab985afbfc3a3e75421bfb9c28f1e918fcbd7d."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "characteristics[cellosaurus accession] Jurkat rows (CVCL_0065)",
+      "message": "Jurkat clone (e.g. E6-1 vs parental) is not stated in PRIDE or the readable abstract; parental CVCL_0065 is used.",
+      "evidence": "MeSH Jurkat Cells; run names Jurkat/Jur; Cellosaurus CVCL_0065 has many child clones. No clone token in file names or MaxQuant Experiment labels.",
+      "correction": "Optional: leave as-is, or add a comment/limitation if a clone is later identified in the full text."
+    },
+    {
+      "severity": "minor",
+      "category": "spec_compliance",
+      "location": "characteristics[organism part] rows 1-280",
+      "message": "Organism part is not applicable while sampling site carries uterine cervix / blood.",
+      "evidence": "sample-metadata allows not applicable for organism part; cell-lines sampling site is the intended place for tissue-of-origin context. PRIDE sampleAttributes instead list BTO cell-line terms as organism part.",
+      "correction": "Optional: set organism part to the UBERON sampling-site terms for tighter anatomy indexing; not required for approval."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "characteristics[ancestry category] Jurkat rows",
+      "message": "Jurkat ancestry is not available even though Cellosaurus records Population Caucasian and European-majority genome ancestry.",
+      "evidence": "CVCL_0065 comment Population=Caucasian; genome-ancestry ~97% European. HEp-2 African American was mapped; Jurkat left NA (no forced HANCESTRO mapping).",
+      "correction": "Optional: map to an appropriate HANCESTRO European ancestry term if desired; current NA is conservative and acceptable."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file",
+      "message": "Recommended characteristics[developmental stage] is absent.",
+      "evidence": "sdrf-tools score Completeness 97/100 flags missing recommended developmental stage (human/cell-lines templates mark it optional).",
+      "correction": "Optional: add developmental stage from Cellosaurus/donor age context or not available."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD006299.evidence.json claim comment[reduction reagent]",
+      "message": "Evidence manifest still states DTT for reduction while the SDRF now has not available on all rows.",
+      "evidence": "Manifest claims value 'DTT PRIDE:0000608' with pride/mq-summary sources; SDRF unique value for comment[reduction reagent] is not available (280/280).",
+      "correction": "Update the manifest claim and limitations to match the corrected SDRF."
+    }
+  ]
+}

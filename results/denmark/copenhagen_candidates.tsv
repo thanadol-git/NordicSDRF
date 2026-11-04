@@ -1,0 +1,591 @@
+accession	verdict	evidence	in_corpus	title
+PXD000397	confirmed	affiliation~'denmark': Biotech Research and Innovation Centre (BRIC) University of Copenhagen Ole Maaløes Vej 5 2	yes	MDA-MB-231 Breast Cancer Bone Tropic vs Parental Hypoxic Secretome Analysis
+PXD000412	rejected	countries=['Switzerland'] | Centre for Evolutionary Medicine (ZEM) ; Department of Anthropology, University of Oklahoma, USA	yes	Human dental calculus LC-MS/MS
+PXD000554	confirmed	countries=['Denmark']		Convergence of Ubiquitylation and Phosphorylation Signaling in Rapamycin-Treated Yeast Cells
+PXD000559	confirmed	countries=['Denmark']		Arginine methylation during transcriptional arrest
+PXD000885	confirmed	countries=['Denmark']		Analysis of acetylation stoichiometry suggests that SIRT3 repairs nonenzymatic acetylation lesions
+PXD001029	confirmed	countries=['Denmark']		Species identification of archaeological skin objects from Danish bogs
+PXD001063	confirmed	countries=['Denmark']		Proteomic analysis of cAMP-mediated signaling during differentiation of 3T3-L1 preadipocytes
+PXD001115	confirmed	countries=['Denmark']	yes	Proteomics of NGF-TrkA signaling dynamics in neuroblastoma cells
+PXD001305	confirmed	countries=['Denmark']	yes	Rapid and Deep Proteomes by Faster Sequencing on a Benchtop Quadrupole Ultra-High-Field Orbitrap Mas
+PXD001359	rejected	countries=['United Kingdom'] | University of York ; BioArCh, University of York, UK	yes	Direct evidence of milk consumption from ancient human dental calculus, northern southwest Asia
+PXD001360	rejected	countries=['United Kingdom'] | University of York ; BioArCh, University of York, UK	yes	Direct evidence of milk consumption from ancient human dental calculus, central Europe
+PXD001377	confirmed	countries=['Denmark']	yes	Unraveling Lysine Deacetylase Inhibitor Specificities for Endogenous Acetylation Sites
+PXD001404	confirmed	countries=['Denmark']	yes	Off-line high pH reversed-phase fractionation for in-depth phosphoproteomics
+PXD001440	confirmed	countries=['Denmark']	yes	Systems-wide analysis of BCR signalosomes and downstream phosphorylation and ubiquitylation
+PXD001449	rejected	countries=['Australia'] | School of Biotechnology and Biomolecular Sciences ; School of Biotechnology and Biomolecular Sciences, Universit		Validation of alternatively spliced protein isoforms in human mesenchymal stem cells
+PXD001478	confirmed	countries=['Denmark']		Proteome analysis of NGF stimulated PC12 cells
+PXD001727	confirmed	countries=['Denmark']		Use of hide glue in 4th millennium BC Europe
+PXD001996	confirmed	countries=['Denmark']		Multi-layered proteomics of EGFR signaling _Rab7 data
+PXD002147	confirmed	countries=['Denmark']		Proteomic analysis of the wheat pathogenic fungus Zymoseptoria tritici
+PXD002168	confirmed	countries=['Denmark']		Biotin starvation in yeast -  Biotin starvation causes mitochondrial protein hyperacetylation and pa
+PXD002172	confirmed	countries=['Denmark']	yes	miR-625-3p regulates oxaliplatin resistance by targeting MAP2K6-p38 signaling in human colorectal ad
+PXD002277	confirmed	countries=['Denmark']		Lysine succinylation is a frequently occurring modification in prokaryotes and eukaryotes and extens
+PXD002287	confirmed	countries=['Denmark']	yes	Proteome-wide analysis of lysine acetylation suggests its broad regulatory scope in Saccharomyces ce
+PXD002431	confirmed	countries=['Denmark']		Analytical framework for peptidomics applied to large scale neuropeptide identification
+PXD002765	confirmed	countries=['Denmark']	yes	Proteomics analysis of synergistic drug combination of midostaurin and BMS-754807 in Ewing sarcoma A
+PXD002770	confirmed	countries=['Denmark']	yes	Deconstruction of protein O-glycosylation
+PXD002800	confirmed	countries=['Denmark']		Improved functional annotation of posttranslationally modified proteins
+PXD002924	confirmed	countries=['Denmark']	yes	Nucleocytoplasmic O-Man glycoproteome
+PXD002972	confirmed	affiliation~'copenhagen': University of Copenhagen	yes	Targeting of SUMO substrates to a Cdc48-Ufd1-Npl4 segregase and STUbL pathway in fission yeast
+PXD003013	rejected	countries=['Germany'] | Proteomics and Spectroscopy (ZBS6), Robert Koch-Institute ; Robert Koch Institute, Centre for Biological Threats and Spe		Comparison of the Cowpox Virus and Vaccinia Virus Mature Virion Proteome:  Analysis of the species- 
+PXD003238	confirmed	countries=['Denmark']	yes	Mapping the O-mannose glycoproteome in Saccharomyces cerevisiae
+PXD003430	confirmed	countries=['Denmark']	yes	The proteome of localized prostate cancer, part 1
+PXD003443	confirmed	countries=['Denmark']		Changes in proteome upon deletion of UBE2S/UBE2C in HCT116 cells
+PXD003452	confirmed	countries=['Denmark']	yes	The proteome of localized prostate cancer, part 2
+PXD003515	confirmed	countries=['Denmark']	yes	The proteome of localized prostate cancer, part 3
+PXD003523	confirmed	countries=['Denmark']		Multi-layered proteomics of EGFR signaling
+PXD003531	confirmed	countries=['Denmark']	yes	Proteomics of Primary cells derived from Ovarian Cancer
+PXD003615	confirmed	countries=['Denmark']	yes	The proteome of localized prostate cancer, part 5
+PXD003636	confirmed	countries=['Denmark']	yes	The proteome of localized prostate cancer, part 6
+PXD003786	rejected	countries=['Italy'] | University of Turin ; BioArCh, Department of Archaeology, University of York		Mineral-bound ostrich eggshell peptides survive for up to 3.8 Ma in equatorial Africa
+PXD004055	confirmed	countries=['Denmark']		Large-scale phosphorylation site interaction proteomics
+PXD004132	confirmed	countries=['Denmark']	yes	The proteome of localized prostate cancer, part 4
+PXD004159	confirmed	countries=['Denmark']	yes	The proteome of localized prostate cancer, part 7
+PXD004245	confirmed	countries=['Denmark']		ADP-ribosylation site analysis
+PXD004319	confirmed	countries=['Denmark']	yes	Metaproteomic profiling of saliva in subjects with periodontitis, dental caries and orally healthy c
+PXD004341	confirmed	countries=['Denmark']		CHO O-Mannosylation independent of POMT1/2
+PXD004358	confirmed	countries=['Denmark']		Human O-Mannosylation independent of POMT1/2
+PXD004452	confirmed	countries=['Denmark']	yes	HeLa proteome of 12,250 protein-coding genes
+PXD004590	confirmed	countries=['Denmark']	yes	Characterisation of the human hemostatic O-glycoproteome
+PXD004927	confirmed	countries=['Denmark']		Site-specific mapping of the human SUMO proteome reveals co-modification with phosphorylation (part 
+PXD005252	confirmed	countries=['Denmark']		Time-resolved analysis reveals rapid dynamics and broad scope of the CBP/p300 acetylome
+PXD005296	confirmed	countries=['Denmark']		Site-specific mapping of the human SUMO proteome reveals co-modification with phosphorylation (part 
+PXD005559	confirmed	countries=['Denmark']	yes	Proteome profiling of human neutrophil granule subsets, secretory vesicles, and cell membrane
+PXD005757	confirmed	countries=['Denmark']	yes	Accurate quantification of site-specific acetylation stoichiometry reveals the impact of sirtuin dea
+PXD005803	confirmed	countries=['Denmark']		Large-scale phosphoproteomics reveals Shp-2 phosphatase-dependent regulators of Pdgf-receptor signal
+PXD006112	confirmed	countries=['Denmark']		Improved reversed phase chromatography of hydrophilic peptides from spatial and temporal changes in 
+PXD006201	confirmed	countries=['Denmark']		Characterisation of protein ubiquitination using UbiSite technology
+PXD006361	confirmed	countries=['Denmark']		Proteomics Reveal Global Regulation of Protein SUMOylation by ATM and ATR Kinases during Replication
+PXD006404	confirmed	countries=['Denmark']		Proteomics analysis of ALK signaling in neuroblastoma cells
+PXD006579	confirmed	affiliation~'denmark': Biotech Research and Innovation Centre (BRIC) University of Copenhagen, Copenhagen, Denmar		ISDoT: In Situ Decellularization of Tissues for proteomic analysis of native extracellular matrix
+PXD006676	confirmed	affiliation~'denmark': Biotech Research and Innovation Centre (BRIC), University of Copenhagen (UCPH), Ole Maaløe		Proteomic characterisation of Caenorhabditis elegans larval development
+PXD006679	confirmed	countries=['Denmark']	yes	Treatment with Cefotaxime Affects Expression of Conjugation Associated Proteins and Conjugation Tran
+PXD006932	confirmed	countries=['Denmark']		Performance evaluation of the Q Exactive HF-X for shotgun proteomics
+PXD006995	rejected	"countries=['Luxembourg'] | Luxembourg Institute of Science and Technology (LIST)
+Envir ; Luxembourg institute of Science and Technology Environmental"		Pathogenic leptospires modulate protein expression and post-translational modifications in response 
+PXD007145	confirmed	affiliation~'denmark': Novo Nordisk Foundation Center for Protein Research, Proteomics Program, University of Cop	yes	Benchmarking LFQ, SILAC and MS2/MS3-based TMT quantification strategies for large-scale phosphoprote
+PXD007547	rejected	countries=['Germany'] | Institute for Biochemistry and Molecular Biology, University ; University Hospital Hamburg Eppendorf		LC-MS/MS analysis of soluble lysosomal enzymes
+PXD007675	confirmed	countries=['Denmark']	yes	Molecular basis of Tousled-Like-Kinase 2 (TLK2) activation – LC-MS/MS-based analysis of TLK2 phospho
+PXD007693	confirmed	affiliation~'denmark': NNF Center for Protein Research, Copenhagen, Denmark		EuPA YPIC challenge entry - proteome data analysis 
+PXD007697	confirmed	countries=['Denmark']	yes	Proteomics analysis of skeletal muscle from leptin-deficient ob/ob mice reveals adaptive remodeling 
+PXD007963	confirmed	affiliation~'copenhagen': Department of Plant and Environmental Sciences, University of Copenhagen		Synechococcus sp. (PCC 7002) analysis by LC-MS/MS
+PXD007991	confirmed	countries=['Denmark']		Molecular Basis of the mechanisms controlling MASTL - Proteomics analysis of MASTL substrate proteom
+PXD008003	confirmed	countries=['Denmark']	yes	Endogenous, in vivo, and site-specific characterization of the SUMO architecture across species and 
+PXD008099	confirmed	countries=['Denmark']		Integrative Characterization of the R6/2 Mouse Brain Model of Huntington Disease Reveals Dysfunction
+PXD008115	confirmed	countries=['Denmark']		eEF1A peptide pull-down LC-MS/MS
+PXD008131	confirmed	countries=['Denmark']		SILAC proteome of MTase deficient cells
+PXD008292	confirmed	countries=['Denmark']		Quantitative proteomics and phosphoproteomics analysis revealed different regulatory mechanisms of H
+PXD008486	confirmed	affiliation~'denmark': Natural History Museum of Denmark University of Copenhagen, Øster Voldgade 5–7, 1350 Copen	yes	Palaeoproteomic Profiling of Conservation Layers on a 14th Century Italian Wall Painting
+PXD008504	confirmed	countries=['Denmark']	yes	Arginine methylation, Cob1 -  Arginine Methylation by PRMT2 Controls the Functions of the Actin Nucl
+PXD008541	confirmed	countries=['Denmark']	yes	Human primary brown and white fat cell secretome
+PXD008601	confirmed	countries=['Denmark']	yes	Quantitative metaproteomics of medieval dental calculus reveals individual oral health status
+PXD008647	rejected	countries=['Germany'] | Max Planck Institute for the Science of Human History  ; Department of Archaeology, Max Planck Institute for the Scie		Ancient proteins extracted from ceramic residues
+PXD008722	confirmed	countries=['Denmark']	yes	Quantitative proteomics of human heart samples collected in vivo reveal the remodeled protein landsc
+PXD008736	confirmed	countries=['Denmark']	yes	Quantitative proteomics profiling determines the uniqueness of the sinus node
+PXD008874	confirmed	countries=['Denmark']		Eukaryotic translation initiation factor 5A regulates autophagy via translation of ATG3
+PXD008964	confirmed	countries=['Denmark']		Mouse embryonic stem cell phosphoproteome
+PXD009040	confirmed	countries=['Denmark']		A SUMO-mediated protective response to DNA-protein crosslinks
+PXD009050	rejected	countries=['India'] | Indian Council of Medical Research, Regional Medical Researc ; Regional Medical Research Centre, Indian Council of Medical 		Proteomic approach and expression analysis revealed the differential expression of leptospiral prote
+PXD009095	confirmed	countries=['Denmark']		Molecular basis of Tousled-Like-Kinase 2 (TLK2) activation – LC-MS/MS-based analysis of HEK293-expre
+PXD009208	confirmed	countries=['Denmark']		Systems-wide analysis of serine-ADP-ribosylation reveals widespread occurrence and site-specific ove
+PXD009284	confirmed	countries=['Denmark']	yes	DNA repair proximity landscape analysis reveals shieldin as a key regulator of NHEJ-dependent proces
+PXD009298	confirmed	affiliation~'denmark': Natural History Museum of Denmark University of Copenhagen, Øster Voldgade 5–7, 1350 Copen		Modern Paint Binder Controls for Palaeoproteomic Profiling of Conservation Layers on a 14th Century 
+PXD009453	confirmed	countries=['Denmark']	yes	TAILS N-Terminomics and Proteomics Show Complex Regulation of Proteolytic Processing by O-glycosylat
+PXD009477	confirmed	countries=['Denmark']	yes	Phosphoroteomics analysis of ALK signaling in neuroblastoma cells
+PXD009636	confirmed	countries=['Denmark']		Proteomics of prostate cancer patient derived xenografts
+PXD009868	confirmed	countries=['Denmark']		Prostate cancer progression: From non-malignant to bone metastasisProstate cancer progression: From 
+PXD009895	confirmed	countries=['Denmark']	yes	METTL13 modulates mRNA translation through methylation of eEF1A at Lys55 and the N-terminus
+PXD009914	confirmed	countries=['Denmark']		METTL13 modulates mRNA translation through methylation of eEF1A at Lys55 and the N-terminus, part 2
+PXD009931	confirmed	countries=['Denmark']		Systems-wide analysis of serine-ADP-ribosylation reveals widespread occurrence and site-specific ove
+PXD009955	confirmed	countries=['Denmark']		Deconstruction of the GalNAc-Type O-Glycosylation Capacity of Human HEK293 Cells
+PXD009994	confirmed	countries=['Denmark']	yes	Analysis of human acetylation stoichiometry defines mechanistic constraints on protein regulation
+PXD010155	confirmed	countries=['Denmark']		Probing the contribution of individual polypeptide GalNAc-transferase isoforms to the O-glycoproteom
+PXD010197	confirmed	affiliation~'denmark': Peter Brodersen, Department of Biology, University of Copenhagen, Ole Maaløes Vej 5, DK-22	yes	Farnesylated Heat Shock Protein 40 is a component of membrane-bound RISC in Arabidopsis
+PXD010467	confirmed	countries=['Denmark']	yes	Integrative analysis of mesenchymal stromal cell conversion by breast cancer secretomes in blank sla
+PXD010516	confirmed	affiliation~'denmark': Section of Molecular Physiology, Department of Nutrition, Exercise and Sports, Faculty of 		Mechanisms preserving insulin action during high dietary fat intake in healthy men
+PXD010527	confirmed	countries=['Denmark']		SPOP promotes transcriptional expression of DNA repair and replication factors to prevent replicatio
+PXD011008	confirmed	affiliation~'denmark': Lundbeck Foundation GeoGenetics Centre, Natural History Museum of Denmark, University of C		Early Pleistocene enamel proteome sequences from Dmanisi resolve Stephanorhinus phylogeny
+PXD011009	confirmed	countries=['Denmark']		Limits for resolving isobaric tandem mass tag reporter ions using phase constrained spectrum deconvo
+PXD011063	confirmed	countries=['Denmark']		Glyco-DIA: a method for quantitative O-glycoproteomics with in silico-boosted glycopeptide libraries
+PXD011359	confirmed	countries=['Denmark']		The p30 isoform of CEBPA uncovers a silent enhancer to drive the expression of the tumor promoting f
+PXD011677	confirmed	countries=['Denmark']		Protein aggregation capture on microparticles enables multi-purpose proteomics sample preparation
+PXD011811	confirmed	affiliation~'denmark': Section for Evolutionary Genomics, University of Copenhagen, Øster Voldgade 5-7, 1350 Cope		The biomolecular characterisation of an Early Neolithic finger ring from Syltholm, Denmark
+PXD011937	confirmed	countries=['Denmark']		Proteomics characterization of Chromosomal Common Fragile Site (CFS) - associated proteins uncovers 
+PXD012015	confirmed	countries=['Denmark']	yes	Quick and clean: Cracking E.coli’s code by LC-MS/MS, de novo sequencing, and dictionary search
+PXD012056	confirmed	countries=['Denmark']	yes	Plasma proteome profiling discovers novel proteins associated with non-alcoholic fatty liver disease
+PXD012235	confirmed	affiliation~'denmark': Novo Nordisk Foundation Center for Protein Research, Faculty of Health and Medical Science		Efficient checkpoint signaling depends on the integrated activities of Bub1 and the RZZ complex
+PXD012243	confirmed	countries=['Denmark']	yes	An advanced strategy for comprehensive profiling of ADP-ribosylation sites using mass spectrometry-b
+PXD012346	confirmed	countries=['Denmark']	yes	Interactome of human ZCCHC4 - Exploration of the ZCCHC4 interactome through affinity proteomics.
+PXD012573	confirmed	countries=['Denmark']		Phosphoproteomics analysis of Erk signaling in embryonic stem cell differentiation
+PXD012636	confirmed	countries=['Denmark']	yes	The protein expression landscape of the heart across humans and model organisms
+PXD012824	confirmed	countries=['Denmark']	yes	Proteomics of slow and fast human muscle fibers reveals extensive fiber type-specific adaptations in
+PXD013140	confirmed	countries=['Denmark']		The Glycosylation Design Space for Recombinant Lysosomal Replacement Enzymes Produced in CHO Cells
+PXD013676	confirmed	countries=['Denmark']		An Atlas of Human Glycosylation Pathways Enables Display of the Human Glycome by Gene Engineered Cel
+PXD013725	confirmed	countries=['Denmark']		Mechanism of antimicrobial synergy between doxycycline and carprofen against methicillin-resistant S
+PXD013749	confirmed	countries=['Denmark']		E. coli Affinity purification MS/MS
+PXD013750	confirmed	countries=['Denmark']		Conformational dynamics of the human serotonin transporter during substrate and drug binding
+PXD013838	confirmed	countries=['Denmark']		Enamel proteome shows that Gigantopithecus was an early diverging pongine
+PXD013841	confirmed	countries=['Denmark']		Substrate-induced conformational dynamics of the dopamine transporter
+PXD014342	confirmed	countries=['Denmark']		A Pleistocene hominin enamel proteome from Homo antecessor
+PXD014508	rejected	countries=['Ireland'] | Biology ; Department of Biology, Maynooth University	yes	The liver proteome in a mouse model for Ascaris suum resistance and susceptibility – evidence for an
+PXD014525	confirmed	countries=['Denmark']	yes	Rapid and site-specific deep phosphoproteome profiling by data-independent acquisition (DIA) without
+PXD014657	confirmed	affiliation~'denmark': Section for Evolutionary Genomics, The GLOBE Institute, University of Copenhagen, Denmark	yes	Palaeoproteomic identification of breast milk protein residues from the archaeological skeletal rema
+PXD014712	rejected	countries=['Italy'] | University of Turin ; University of Turin		Palaeoproteomics of non-avian dinosaur eggshell calcite
+PXD014829	confirmed	countries=['Denmark']	yes	Selective autophagy maintains centrosome integrity and accurate mitosis by turnover of centriolar sa
+PXD014877	confirmed	affiliation~'denmark': Department of Proteomics and Signal Transduction, Max Planck Institute of Biochemistry, Ma	yes	The Proteome Landscape of the Kingdoms of Life
+PXD015084	confirmed	countries=['Denmark']		Proteomics characterization of polysomes from HAP-1 WT and ZCCHC4 KO cells
+PXD015138	confirmed	countries=['Denmark']		Treacle controls the nucleolar response to rDNA breaks via TOPBP1 recruitment and ATR activation
+PXD015429	confirmed	countries=['Denmark']	yes	Galnt11 differential tissue glycoproteomics
+PXD016055	confirmed	countries=['Denmark']	yes	Proteomics exploration of the human RPL3 interactome
+PXD016204	rejected	countries=['India'] | Indian Council of Medical Research, Regional Medical Researc ; Scientist E Regional Medical Research Centre, Indian Council	yes	Outer membrane proteome of Leptospira; revealing the bottom of iceberg
+PXD016231	confirmed	countries=['Denmark']		Proteomics of saliva, plasma, and salivary gland tissue in Sjögren’s syndrome and non-Sjögren patien
+PXD016278	confirmed	affiliation~'denmark': Department of Proteomics and Signal Transduction, Max Planck Institute of Biochemistry, Ma	yes	Proteome Profiling in Cerebrospinal Fluid Reveals Novel Biomarkers of Alzheimerâ€™s Disease
+PXD016289	confirmed	countries=['Denmark']		Unraveling the complexities of mitochondrial supercomplexes by mass spectrometry-based proteomics
+PXD016395	confirmed	countries=['Denmark']		Leaf-cutting ant feces LC-MS/MS
+PXD016408	confirmed	countries=['Denmark']	yes	Exploring the interactome of human METTL9
+PXD016519	confirmed	affiliation~'denmark': Jens Nielsen, PhD, Dr. Tech. Professor, CEO of BII  Systems and Synthetic Biology Chalmers	yes	Yeast cell cycle proteome and phosphoproteome (LC-MSMS)
+PXD016522	confirmed	affiliation~'denmark': Center for Macroecology, Evolution and Climate, Natural History Museum of Denmark, Univers		A draft genome sequence of the elusive giant squid, Architeuthis dux
+PXD016618	confirmed	countries=['Denmark']		O-glycan initiation directs distinct biological pathways and controls epithelial differentiation
+PXD016662	confirmed	countries=['Denmark']	yes	A Compact Quadrupole-Orbitrap Mass Spectrometer with FAIMS Interface Improves Proteome Coverage in S
+PXD016745	confirmed	countries=['Denmark']		Community-intrinsic properties enhance keratin degradation from bacterial consortia
+PXD017170	confirmed	countries=['Denmark']	yes	Hepatocyte-specific knockout of Nicotinamide phosphoribosyltransferase increases susceptibility for 
+PXD017417	confirmed	countries=['Denmark']		Mapping physiological ADP-ribosylation using Activated Ion Electron Transfer Dissociation (AI-ETD)
+PXD017475	confirmed	countries=['Denmark']		The lncRNA MIR31HG regulates the senescence associated secretory phenotype
+PXD017510	confirmed	countries=['Denmark']		Probing the ovarian cancer O-glycoproteome by the Macrophage Galactose like C-type Lectin (MGL): dis
+PXD017660	confirmed	countries=['Denmark']		Phosphoproteomics analysis of Selinexor response in AML ex vivo patient samples and cell lines
+PXD017697	confirmed	countries=['Denmark']	yes	Extensive protein group SUMO modification of repressive chromatin factors distinguishes pluripotent 
+PXD017836	confirmed	countries=['Denmark']	yes	Multi-omic detection of Mycobacterium leprae in archaeological human dental calculus
+PXD017978	confirmed	affiliation~'denmark': University of Copenhagen Novo Nordisk Foundation Center for Protein Research Blegdamsvej 3		Gain-of-function mutations amplify cytotoxic FAM111 protease activity in poikiloderma, gracile bone 
+PXD018048	rejected	countries=['United Kingdom'] | Imperial College London, The Francis Crick Institute ; Department of Chemistry, Imperial College London, UK; Chemic		HepG2 GalNAc-T1/2 Bump-and-hole secretome glycopeptide data
+PXD018050	confirmed	affiliation~'denmark': Section for Evolutionary Genomics, GLOBE Institute, University of Copenhagen, Copenhagen, 		Barbed bone point chronology reveals an unexpected hiatus in the archaeology of Southern Scandinavia
+PXD018051	confirmed	affiliation~'denmark': Section for Evolutionary Genomics, GLOBE Institute,  University of Copenhagen, Copenhagen,		Comparing Biological and Pathological Factors Affecting Osteocalcin Concentrations in Archaeological
+PXD018217	confirmed	countries=['Denmark']		The E3 ubiquitin ligase RFWD3 is required for translesion DNA synthesis
+PXD018218	confirmed	countries=['Denmark']		Causal integration of multi-omics data with prior knowledge to generate mechanistic hypotheses
+PXD018220	confirmed	affiliation~'denmark': The Novo Nordisk Center for Protein Research (CPR), University of Copenhagen, Faculty of H	yes	Analysis of histone PTMs in nascent chromatin in new and old histones upon DNA damage (CAL353, CAL35
+PXD018233	confirmed	countries=['Denmark']		Proteomics Identifies Differences in Fibrotic Potential of Exosomes from Human Tendon and Muscle Fib
+PXD018264	confirmed	countries=['Denmark']		Multi-protease analysis of Pleistocene bone proteomes
+PXD018418	confirmed	countries=['Denmark']	yes	Essential functions of glycans in human epithelia dissected by a CRISPR/Cas9-engineered human  organ
+PXD018721	confirmed	countries=['Denmark']		The TNH2 hominin enamel proteome
+PXD018744	confirmed	countries=['Denmark']		Multilayered proteomics uncovers Notch/PKC targeting to overcome resistance to Notch inhibition in a
+PXD019039	confirmed	countries=['Denmark']		ProAlanase is an effective alternative to trypsin for proteomics applications and disulfide bond map
+PXD019345	confirmed	countries=['Denmark']		MPP8 is essential for sustaining self-renewal of ground-state pluripotent stem cells
+PXD019679	confirmed	countries=['Denmark']		GHB analogs confer neuroprotection through specific interaction with the CaMKII  hub domain
+PXD019974	confirmed	countries=['Denmark']		A Comparison of Tenocyte Populations from the Core and Periphery of Equine Tendons
+PXD020268	confirmed	countries=['Denmark']		DNAJC9 integrates heat shock molecular chaperones into the histone chaperone network
+PXD020287	confirmed	countries=['Denmark']		Extensive protein group SUMO modification of repressive chromatin factors distinguishes pluripotent 
+PXD020326	confirmed	affiliation~'denmark': Novo Nordisk Foundation Center for Protein Research (CPR), University of Copenhagen, Copen		Quantification of histone H3 and H4 modifications by mass spectrometry in wildtype and MCM2-2A mutan
+PXD020340	confirmed	countries=['Denmark']	yes	Chemical genetics and proteome-wide site mapping reveal cysteine MARylation by PARP-7 on immune-rele
+PXD020389	confirmed	countries=['Denmark']		Proteomics of late signaling responses decipher the roles of Cbl and Cbl-b in neuroblastoma cell dif
+PXD020586	confirmed	countries=['Denmark']	yes	Quantitative Single-Cell Proteomics as a Tool to Characterize Cellular Hierarchies
+PXD021098	confirmed	affiliation~'denmark': Section for Evolutionary Genomics, The Globe Institute, University of Copenhagen, Denmark	yes	Fecal proteomics as a novel method to study mammalian behavior and physiology
+PXD021445	confirmed	countries=['Denmark']		The E3 ubiquitin ligase RFWD3 is required for translesion DNA synthesis (total proteome)
+PXD021658	confirmed	countries=['Denmark']		Thiol-ene microfluidic chip for fast on-chip sample clean-up, separation and ESI mass analysis of pe
+PXD021703	confirmed	countries=['Denmark']	yes	ProAlanase is an effective alternative to trypsin for proteomics applications and disulfide bond map
+PXD021947	confirmed	countries=['Denmark']		Mechanism and function of DNA replication-independent DNA-protein crosslink repair via the SUMO path
+PXD021949	confirmed	affiliation~'denmark': Section for Evolutionary Genomics, GLOBE Institute, University of Copenhagen, Copenhagen, 		Palaeoproteomics confirm earliest domesticated sheep in southern Africa ca. 2000 BP
+PXD022054	rejected	countries=['United Kingdom'] | University of Cambridge ; McDonald Professor of Palaeoproteomics, McDonald Institute f		Medieval birth girdle stains LC-MSMS
+PXD022367	confirmed	countries=['Denmark']	yes	MaxQuant.Live enables enhanced selectivity and identification of peptides modified by endogenous SUM
+PXD022368	confirmed	countries=['Denmark']		Milking it? Assessing the degradation of ancient milk proteomes
+PXD022393	confirmed	countries=['Denmark']		Circadian Regulation of Protein Cargo in Exosomes
+PXD023084	confirmed	countries=['Denmark']	yes	High intensity interval training remodels the proteome and acetylome in human skeletal muscle
+PXD023579	confirmed	affiliation~'denmark': Protein Signaling Program, Novo Nordisk Foundation Center for Protein Research, University		K27-linked ubiquitylation promotes p97 substrate processing and is essential for cell proliferation
+PXD023690	confirmed	countries=['Denmark']	yes	Spatial-proteomics reveals phospho-signaling dynamics at subcellular resolution
+PXD023835	confirmed	countries=['Denmark']	yes	The regulatory landscape of the human HPF1- and ARH3-dependent ADP-ribosylome (part 1)
+PXD023879	confirmed	countries=['Denmark']		Proteome changes in PTBP1 deficient hematopoietic cells
+PXD024143	confirmed	affiliation~'copenhagen': The Globe Institute, University of Copenhagen		A Mid-Holocene reindeer antler from Regstrup, Sjælland, Denmark
+PXD024144	confirmed	countries=['Denmark']		Waves of sumoylation support transcription dynamics during adipocyte differentiation
+PXD024280	confirmed	countries=['Denmark']		SCAI orchestrates DNA interstrand crosslink repair downstream of FANCI-FANCD2 ubiquitylation
+PXD024346	confirmed	affiliation~'copenhagen': The Globe Institue, University of Copenhagen		Genomic ancestry, diet and microbiomes of Upper Palaeolithic hunter-gatherers from San Teodoro cave 
+PXD024358	confirmed	affiliation~'denmark': Department of Proteomics and Signal Transduction, Max Planck Institute of Biochemistry, Ma	yes	Gel-like inclusions of C-terminal fragments of TDP-43 sequester and inhibit proteasomes
+PXD024397	confirmed	affiliation~'denmark': Section for EvoGenomics, GLOBE Institute, University of Copenhagen, Denmark		Palaeoproteomics guidelines to identify proteinaceous binders in artworks following the study of a 1
+PXD024427	confirmed	affiliation~'denmark': Department of Proteomics and Signal Transduction, Max Planck Institute of Biochemistry, Ma	yes	Proteomic analysis of IDHmut gliomas suggests novel classification with greater separation than 1p/1
+PXD024487	confirmed	countries=['Denmark']		SPIN - Species by Proteome INvestigation
+PXD024525	confirmed	countries=['Denmark']	yes	Beta-blocker/ACE inhibitor therapy differentially impacts the steady state signaling landscape of fa
+PXD024607	confirmed	countries=['Denmark']		Discovery of Thymosin beta-4 as a human exerkine and growth factor
+PXD024767	confirmed	countries=['Denmark']	yes	1. Site-specific O-glycosylation analysis of SARS-CoV-2 spike protein produced in insect and human c
+PXD024851	confirmed	countries=['Denmark']		Display of the Human Mucinome with Defined O-Glycans by Gene Engineered Cells
+PXD024935	confirmed	countries=['Denmark']		Dissecting the functional selectivity of TGFβ signaling pathway components using genome engineered h
+PXD025300	confirmed	affiliation~'denmark': Protein Analysis Group, Department of Pharmacy, University of Copenhagen, 2100 Copenhagen 		Revealing the dynamic allosteric changes required for formation of the cysteine synthase complex by 
+PXD025344	confirmed	countries=['Denmark']		Fruit fly O-GlcNAc glycoproteomics
+PXD025407	confirmed	countries=['Denmark']		A systematic evaluation of fragmentation methods for unlabeled and isobaric mass tag-labeled O-glyco
+PXD025410	confirmed	affiliation~'denmark': The Novo Nordisk Foundation Center for Protein Research University of Copenhagen Blegdamsv		Large scale discovery of coronavirus-host factor protein interaction motifs reveals SARS-CoV-2 disea
+PXD025468	confirmed	countries=['Denmark']		Altering metabolism programs cell identity via NAD+ dependent deacetylation
+PXD025523	confirmed	countries=['Denmark']		arrythmogenic right ventricular acrdiomayopathy (PKP2-cko in mice and Human biopsies)
+PXD025687	confirmed	countries=['Denmark']		Insulin and 5-aminoimidazole-4-carboxamide Ribonucleotide (AICAR) Differentially Regulate the Skelet
+PXD025786	confirmed	countries=['Denmark']	yes	Organ specific fibroblast-derived matrix as a tool for understanding breast cancer metastasis
+PXD025882	confirmed	countries=['Denmark']		A COMPREHENSIVE AND QUANTIFIABLE INSIGHT INTO THE PROTEOMES OF ARTICULAR CARTILAGE AND SUBCHONDRAL B
+PXD025956	confirmed	countries=['Denmark']		investigation of changes in the proteome and the phosphoproteome of the heart induced by exercise, e
+PXD026044	rejected	countries=['India'] | Indian Council of Medical Research, Regional Medical Researc ; Scientist E, Indian Council of Medical Research, Regional Me		Proteomic analysis of extracellular proteins of Leptospira interrogans
+PXD026051	confirmed	countries=['Denmark']		Deep proteomic analysis of small arteries unravels critical changes associated with early-onset high
+PXD026225	confirmed	countries=['Denmark']		Mass spectrometry-based analysis of the TBC1D4 interactome in human skeletal muscle
+PXD026370	confirmed	countries=['Denmark']		Proteome profiling of brain tissue from multiple system atrophy patients and from controls
+PXD026802	confirmed	countries=['Denmark']		Deep proteome profiling of human cerebrospinal fluid from patients diagnosed with Multiple System At
+PXD026821	confirmed	countries=['Denmark']	yes	Integrated liver and plasma proteomics in obese mice reveals complex metabolic and immune regulation
+PXD027426	confirmed	countries=['Denmark']		Nam Lot enamel proteome: part of a multi-proxy approach to exploring Homo sapiens arrival, environme
+PXD027504	confirmed	countries=['Denmark']		The regulatory landscape of the human HPF1- and ARH3-dependent ADP-ribosylome (part 2)
+PXD027597	confirmed	countries=['Denmark']	yes	Organ-specific metabolic pathways distinguish prediabetes, type 2 diabetes and normal tissues
+PXD027722	confirmed	countries=['Denmark']	yes	Dynamic human liver proteome atlas reveals functional insights into disease pathways
+PXD027742	confirmed	countries=['Denmark']		A deeper look at carrier proteome effects for single-cell proteomics
+PXD027901	confirmed	countries=['Denmark']		Pharmacological inhibition of mitochondrial soluble adenylyl cyclase in astrocytes causes activation
+PXD028021	confirmed	"affiliation~'denmark': University of Copenhagen, Denmark
+University of California, San Diego"		Identification of cardiac ion channel protein networks and their signature in the human electrocardi
+PXD028151	confirmed	countries=['Denmark']		Regulation of the Golgi apparatus by p38 and JNK kinases during cellular stress responses
+PXD028548	confirmed	countries=['Denmark']		ZAKb is a cellular compression sensor that mediates hypertrophic signaling in skeletal muscle
+PXD028902	confirmed	countries=['Denmark']	yes	Temporal and site-specific ADP-ribosylation dynamics upon different genotoxic stresses
+PXD028982	confirmed	countries=['Denmark']		Installation of O-glycan sulfation capacities in human HEK293 cells
+PXD029227	confirmed	countries=['Denmark']		Characterising the RNA-binding protein atlas of the mammalian brain uncovers RBM5 misregulation in m
+PXD029307	confirmed	countries=['Denmark']		Novel tissue-specific markers revealed by in-depth proteome analysis of human myotendinous junction
+PXD029409	confirmed	countries=['Denmark']		SCAI orchestrates DNA interstrand crosslink repair downstream of FANCI-FANCD2 ubiquitylation (total 
+PXD029623	confirmed	countries=['Denmark']		Identification of global inhibitors of cellular glycosylation
+PXD029644	confirmed	countries=['Denmark']		C18  nanoLC-MS and Glycogenomics to Facilitate O-Glycan profiling in Human Cells
+PXD029885	confirmed	countries=['Denmark']		Exploring glycosylation of mucins with O-glycodomain reporters expressed in glycoengineered HEK293 c
+PXD030049	confirmed	affiliation~'copenhagen': University of Copenhagen		Proteomic analysis on the protective effect of eriodictyol on benzo(a)pyrene-induced Caco-2 cytotoxi
+PXD030338	confirmed	countries=['Denmark']	yes	Tyr62 phosphorylation of the phosphatase SHP2 enables acquired resistance to SHP2 allosteric inhibit
+PXD030364	confirmed	affiliation~'denmark': Novo Nordisk Foundation Center for Protein Research (CPR), University of Copenhagen, Copen		Quantification of parental and new histones H3, H4 and H2A by mass spectrometry: analysis of their d
+PXD030370	rejected	countries=['India'] | Indian Council of Medical Research, Regional Medical Researc ; Dr Madathiparambil G. Madanan,  Scientist E,  Indian Council		Dissecting post-translational modifications in Leptospira proteome to elucidate novel insights into 
+PXD030529	confirmed	affiliation~'copenhagen': The GLOBE Institute, University of Copenhagen		Palaeoproteomics identifies beaver fur and fur trade in Danish high-status Viking Age burials
+PXD030740	confirmed	countries=['Denmark']	yes	Epidermal growth factor shedding directs macrophage education in cancer
+PXD030998	confirmed	countries=['Denmark']		Metabolic profiling of interspecies interactions during sessile bacterial cultivation reveals growth
+PXD031026	confirmed	countries=['Denmark']	yes	Metabolic profiling of interspecies interactions during sessile bacterial cultivation reveals growth
+PXD031056	confirmed	countries=['Denmark']		Inflammatory Activation Drives Re-Sculpting and Shear-Thinning of the Dendritic Cell Nucleus
+PXD031084	confirmed	countries=['Denmark']		Proteomics Couples Electrical Remodeling to Inflammation in a Murine Model of Heart Failure with Sin
+PXD031272	confirmed	countries=['Denmark']		Label free proteomics analysis of osteosarcoma cells differing with respect to expression of endocyt
+PXD031277	confirmed	countries=['Denmark']		Optimal analytical strategies for sensitive and quantitative phosphoproteomics using TMT-based multi
+PXD031280	confirmed	affiliation~'copenhagen': GLOBE Institute, University of Copenhagen		Palmyrene Polychromy: Investigations of funerary portraits from Palmyra in the collections of the Ny
+PXD031355	confirmed	countries=['Denmark']	yes	A Bacterial Mannose Binding Lectin as a Tool for the Enrichment of C-and O- Mannosylated Peptides
+PXD031408	rejected	countries=['Sweden'] | SAMBIO Core Facilities, Sahgrenska Academy, University of Go ; Univ. Grenoble Alpes, CNRS, CEA, IBS, Grenoble, France	yes	Extracellular endosulfatase Sulf-2 harbors a chondroitin/dermatan sulfate chain that modulates its e
+PXD031548	confirmed	countries=['Denmark']		Brief suppression of SUMOylation in embryonic stem cells generates embryo-like structures
+PXD032328	confirmed	countries=['Denmark']		TMEM260  is a protein-specific O-mannosyltransferase
+PXD032663	confirmed	countries=['Denmark']		The dopamine transporter antiports potassium to increase the uptake of dopamine
+PXD032956	confirmed	countries=['Denmark']		SUMOylation controls the rapid transcriptional reprogramming induced by chemotherapies in Acute Myel
+PXD033515	confirmed	countries=['Denmark']		Single-shot proteome of AML cell lines and AML ex vivo cells upon selinexor treatment
+PXD033527	confirmed	countries=['Denmark']	yes	Spatial proteomics of selinexor, MK-2206 and combination response in AML cells
+PXD033732	confirmed	countries=['Denmark']		Anastellin impacts on the processing of extracellular matrix and stimulates the release of cytokines
+PXD033739	confirmed	countries=['Denmark']		The SUMO-NIP45 pathway guards against accumulation of toxic DNA catenanes
+PXD034106	confirmed	affiliation~'denmark': The Globe Institute, University of Copenhagen, Denmark		Assessing the hidden potential of beeswax specimens in Natural History Museum collections
+PXD034128	confirmed	affiliation~'denmark': Department Proteomics and Signal Transduction, Max Planck Institute of Biochemistry, Marti	yes	Rapid and in-depth coverage of the (phospho-)proteome with deep libraries and optimal window design 
+PXD034223	confirmed	affiliation~'denmark': Department of Proteomics and Signal Transduction, Max Planck Institute of Biochemistry, Ma	yes	AlphaViz: Visualization and validation of critical proteomics data directly at the raw data level
+PXD034623	confirmed	countries=['Denmark']	yes	Galectin-1 upregulates IDO1 and PD-L1 and induces a tolerogenic tumor-associated M2 macrophage pheno
+PXD034888	confirmed	countries=['Denmark']	yes	DAXX adds a de novo H3.3K9me3 deposition pathway to the histone chaperone network (part 1)
+PXD034924	confirmed	affiliation~'denmark': Novo Nordisk Center for Protein Research (CPR), Faculty of Health Sciences, University of 		Histone modifications associated with the histone chaperone DAXX
+PXD035230	confirmed	countries=['Denmark']		Repurposing of a known antipsychotic drug to target arthritogenic synovial fibroblasts
+PXD035353	confirmed	affiliation~'denmark': Center for Chromosome Stability, Institute for Cellular and Molecular Medicine, Faculty of		The TRESLIN-MTBP complex couples completion of DNA replication with S/G2 transition
+PXD035661	confirmed	countries=['Denmark']		Regulation of Rad52-dependent replication fork recovery through serine ADP-ribosylation of PolD3
+PXD035725	rejected	countries=['Italy'] | University of Turin ; Department of Life Sciences and Systems Biology University o		Characterisation of eggshell proteomes from the extinct Madagascar elephant bird
+PXD035782	rejected	countries=['India'] | Indian Council of Medical Research, Regional Medical Researc ; Scientist E, Indian Council of Medical Research, Regional Me		Changes in OMPs of Leptospira under simulated physiological conditions of infection
+PXD035846	confirmed	countries=['Denmark']		Role of N-glycosylation in FcRIIIa interaction with IgG
+PXD035872	rejected	countries=['Italy'] | University of Turin ; Department of Life Sciences and Systems Biology, University 		Ostrich eggshell peptides survival into the Miocene (6-9 Ma)
+PXD035899	confirmed	affiliation~'denmark': Globe Institute, University of Copenhagen, Øster Farimagsgade 5, 1353 Copenhagen, Denmark		Proteomic  identification of beer brewing products in the ground layer of Danish Golden Age painting
+PXD036213	confirmed	countries=['Denmark']	yes	Targeting host O-linked glycan biosynthesis affects Ebola virus replication efficiency and reveals d
+PXD036512	confirmed	countries=['Denmark']		Serine ADP-ribosylation in Drosophila provides insights into the evolution of reversible ADP-ribosyl
+PXD036579	confirmed	countries=['Denmark']		Evolutionarily-conserved FOXO-regulated OSER1 extends lifespan and healthspan
+PXD036592	confirmed	affiliation~'copenhagen': Globe Institute, University of Copenhagen		Palaeoproteomics (COL1) of Chelonia mydas and Caretta caretta
+PXD036655	confirmed	countries=['Denmark']	yes	Beta cell dysfunction and dedifferentiation induced by Bone Morphogenetic Protein (BMP)-2 is associa
+PXD036791	confirmed	countries=['Denmark']		Global mapping of GalNAc-T isoform-specificities and O-glycosylation site-occupancy in a tissue-form
+PXD037009	confirmed	countries=['Denmark']		Global, site-resolved analysis of ubiquitylation occupancy and turnover rate reveals systems propert
+PXD037047	confirmed	countries=['Denmark']	yes	Peptidomic analysis of bacterial protease activity in acute wound fluids
+PXD037113	confirmed	countries=['Denmark']		Distinct Impact of Neuronal and Astrocytic IFNAR1 Loss in Parkinson-like Dementia
+PXD037245	confirmed	countries=['Denmark']		Peptidomic analysis of endogenous and bacterial protease activity in human plasma
+PXD037269	confirmed	affiliation~'denmark': Globe Institute, University of Copenhagen, Denmark		‘A lost chapter of ancient art’: archaeometric examinations of panel paintings from Roman Egypt
+PXD037340	confirmed	countries=['Denmark']	yes	Deep plasma proteome profiling by enrichment of extracellular vesicles
+PXD037425	confirmed	countries=['Denmark']		Enhanced Proteomic Mapping of Arginine Methylation Using Electron Transfer Dissociation Reveals Nove
+PXD037510	confirmed	countries=['Denmark']	yes	Loss of N-terminal acetyltransferase A activity induces thermally unstable ribosomal proteins and in
+PXD037543	confirmed	countries=['Denmark']		Matrix Gla Protein acts as a driver of stemness and tumor initiation in ovarian cancer
+PXD037702	rejected	countries=['India'] | Indian Council of Medical Research, Regional Medical Researc ; Indian Council of Medical Research, Regional Medical Researc		Differentially expressed extracellular proteins of Leptospira under the physiological conditions of 
+PXD037734	confirmed	countries=['Denmark']		A seven-transmembrane methyltransferase catalysing N-terminal histidine methylation of lytic polysac
+PXD037817	confirmed	countries=['Denmark']	yes	Comprehensive protein-expression map of ILC2 and ILC3 subsets in healthy human skin
+PXD038263	confirmed	countries=['Denmark']		DAXX adds a de novo H3.3K9me3 deposition pathway to the histone chaperone network (part 2)
+PXD038362	confirmed	countries=['Denmark']		The role of damaged mitochondrial DNA in Parkinson Disease
+PXD038702	confirmed	countries=['Denmark']	yes	A quantitative and site-specific atlas of the PADI4-induced citrullinome reveals widespread existenc
+PXD038783	confirmed	countries=['Denmark']	yes	A Universal GlycoDesign for Lysosomal Replacement Enzymes to Improve Circulation Time and Biodistrib
+PXD038947	confirmed	countries=['Denmark']		Hybrid-DIA: Intelligent Data Acquisition for Simultaneous Targeted and Discovery Phosphoproteomics i
+PXD039077	confirmed	countries=['Denmark']		Proteomic analysis of the extracellular matrix of human atherosclerotic plaques shows marked changes
+PXD039178	confirmed	countries=['Denmark']		Identification of myosin heavy chain post-translational modifications in patients with MHY mutations
+PXD039334	confirmed	countries=['Denmark']	yes	Identification of global inhibitors of cellular glycosylation
+PXD039510	confirmed	affiliation~'denmark': Novo Nordisk Foundation Center for Stem Cell Medicine – reNEW, University of Copenhagen, C	yes	Identifying secreted biomarkers of dopaminergic ventral midbrain progenitor cells
+PXD039654	rejected	countries=['Italy'] | University of Turin ; Department of Life Sciences and Systems Biology University o	yes	Human Dental Calculus_Neolithic_Southern Italy
+PXD039665	confirmed	countries=['Denmark']	yes	The proteome of hand eczema assessed by tape stripping
+PXD039824	confirmed	countries=['Denmark']		New insight into the composition of extracellular traps released by macrophages exposed to different
+PXD040038	confirmed	countries=['Denmark']	yes	High throughput plasma proteomics profiling reveals metabolic and immunologic differences between an
+PXD040213	confirmed	affiliation~'denmark': Section for Evolutionary Genomics, GLOBE Institute, University of Copenhagen, Copenhagen, 		Geometric morphometrics and paleoproteomics enlighten the paleodiversity of Pongo
+PXD040221	confirmed	countries=['Denmark']		Enamel proteins reveal biological sex and intrataxon variability within Paranthropus robustus
+PXD040434	confirmed	countries=['Denmark']		Human adipose tissue proteomics reveal adaptations to exercise and type 2 diabetes
+PXD040818	confirmed	countries=['Denmark']		Proteomic mapping reveals dysregulated angiogenesis in the cerebral arteries of rats with early-onse
+PXD041082	confirmed	affiliation~'copenhagen': Section of Geobiology, The Globe Institute, Faculty of Health and Medical Sciences, Univer		Palaeoproteomics of archaeological shell beads
+PXD041164	confirmed	countries=['Denmark']		Cancer cell-derived ADAM15 dictates macrophage infiltration in colorectal tumors
+PXD041313	confirmed	countries=['Denmark']		In depth profiling of the cancer proteome from the flowthrough of standard RNA-preparation kits for 
+PXD041717	confirmed	countries=['Denmark']		Concerted SUMO-targeted ubiquitin ligase activities of TOPORS and RNF4 are essential for stress mana
+PXD041874	confirmed	countries=['Denmark']	yes	Middle and Late Pleistocene Denisovan subsistence at Baishiya Karst Cave on the Tibetan Plateau
+PXD042086	confirmed	countries=['Denmark']		Profiling ubiquitin signaling with UBIMAX reveals DNA damage- and SCFβTRCP-dependent ubiquitylation 
+PXD042172	confirmed	countries=['Denmark']		Cell surface-specific N-glycoproteomics
+PXD042321	confirmed	affiliation~'copenhagen': Section for Molecular Ecology and Evolution, Biomolecular Palaeoanthropology Lab, Globe In		Comparing extraction method efficiency for high-throughput palaeoproteomic bone species identificati
+PXD042342	confirmed	countries=['Denmark']		Fibroblast-derived matrix models desmoplastic properties and forms a prognostic signature in cancer 
+PXD042430	confirmed	affiliation~'denmark': Section for Geobiology, Globe Institute, University of Copenhagen, Denmark		Collagen sequencing and ZooMS biomarkers of Mediterranean groupers (Epinephelus spp.)
+PXD042583	confirmed	countries=['Denmark']		Phosphoproteomics evaluation of the effect of GLP-1 on the porcine pacemaker
+PXD042648	rejected	countries=['Thailand'] | Center of Excellence in Systems Biology, Faculty of Medicine ; Department of Microbiology, Faculty of Medicine, Chulalongko		Deciphering the proteome of naturally released extracellular vesicles from Leptospira interrogans se
+PXD042834	confirmed	countries=['Denmark']		Autophagy role during auxin-induced rapid proteome remodelling
+PXD043071	confirmed	countries=['Denmark']		ROS-induced ribosome stalling and collision underlies ZAKalpha-mediated metabolic decline in obesity
+PXD043107	confirmed	countries=['Denmark']		PARP1-dependent DNA-protein crosslink repair
+PXD043272	confirmed	affiliation~'denmark': Globe Institute, University of Copenhagen, Denmark	yes	Homo sapiens expanded into the Northern European Plains by 45,000 years ago
+PXD043273	confirmed	countries=['Denmark']		Exploring the structural landscape of DNA maintenance proteins
+PXD043452	confirmed	countries=['Denmark']		PARP14 is a PARP with both ADP-ribosyl transferase 1 and hydrolase activities
+PXD043505	confirmed	countries=['Denmark']		Analyses of the brown stain on the Parthenon Centaur head
+PXD043533	confirmed	affiliation~'copenhagen': The Globe Institute, University of Copenhagen		Human and animal skin identified by palaeoproteomics in Scythian leather objects from Ukraine
+PXD043563	confirmed	countries=['Denmark']		VCF1 is a p97/VCP cofactor promoting recognition of ubiquitylated p97-UFD1-NPL4 substrates
+PXD043606	confirmed	affiliation~'copenhagen': Globe Institute, University of Copenhagen		Identification of the original binder and modern contaminants in distemper paints from Uvdal stave c
+PXD043961	confirmed	countries=['Denmark']		DNAJC9 prevents CENP-A mislocalization and chromosomal instability by maintaining the fidelity of hi
+PXD044009	confirmed	countries=['Denmark']		Histones and non-histone proteins are acetylated without ongoing transcription
+PXD044107	confirmed	countries=['Denmark']	yes	Comparative quantitative proteomic analysis of melanoma subtypes, nevus-associated melanoma, and cor
+PXD044246	confirmed	countries=['Denmark']	yes	Dissection of prognostic traits in colorectal cancer using multi-dimensional proteomics
+PXD044258	confirmed	countries=['Denmark']		Catalytic and non-catalytic functions of DNA polymerase kappa in translesion DNA synthesis
+PXD044285	confirmed	countries=['Denmark']	yes	Investigation of the FcRn:IgG interaction by HDX-MS
+PXD044292	confirmed	affiliation~'denmark': Department Proteomics and Signal Transduction, Max Planck Institute of Biochemistry, Marti	yes	Full Mass Range PhiSDM Orbitrap Mass Spectrometry for DIA Proteome Analysis
+PXD044455	confirmed	countries=['Denmark']		AP-MS with VAR2CSA and oncofetal chondroitin sulfate antibodies
+PXD044505	confirmed	countries=['Denmark']		Proteomic analysis of skeletal muscle fibre samples from hibernating and awake bears
+PXD044685	confirmed	countries=['Denmark']		Myosin PTM peptide mapping from hibernating and active bears and squirrels
+PXD044728	confirmed	countries=['Denmark']		Proteomic analysis of skeletal muscle fibre samples from hibernating and awake squirrels
+PXD044743	confirmed	countries=['Denmark']		Vittrup Man – the life-history of a genetic foreigner in Neolithic Denmark
+PXD044835	confirmed	countries=['Denmark']		Retron-Eco1 assembles NAD+-hydrolyzing filaments that provide immunity against bacteriophages
+PXD044991	confirmed	countries=['Denmark']		One-Tip enables comprehensive proteome coverage in minimal cells and single zygotes
+PXD045027	confirmed	countries=['Denmark']		Increasing sustainability in palaeoproteomics by optimizing digestion times for large-scale archaeol
+PXD045032	confirmed	countries=['Denmark']		Loss of the NK Motif And AnKyrin Repeat Domain 1 (KANK1) leads to lymphoid compartment dysregulation
+PXD045058	confirmed	affiliation~'denmark': Max Planck Institute of Biochemistry, Martinsried, Munich, Germany; NNF Center for Protein	yes	Large scale cerebrospinal fluid proteomics reveals biomarkers of Multiple Sclerosis
+PXD045412	confirmed	countries=['Denmark']		Tryps-IN: A streamlined palaeoproteomics workflow enables ZooMS analysis of 10,000-year-old petrous 
+PXD045597	confirmed	countries=['Denmark']		Global view of domain-specific O-linked mannose glycosylation in glycoengineered cells
+PXD045601	confirmed	countries=['Denmark']	yes	Systematic evaluation of experimental parameters for sensitive phosphoproteomics analysis
+PXD045602	confirmed	countries=['Denmark']		Mesenteric artery smooth muscle cells from hypertensive rats have increased microtubule acetylation
+PXD045661	confirmed	countries=['Denmark']	yes	Multisystem Inflammatory Syndrome in Children Disease characterization and diagnostics using mass-sp
+PXD045721	confirmed	countries=['Denmark']		Single blood donor causing multiple allergic and anaphylactic transfusion reactions
+PXD045801	confirmed	countries=['Denmark']		A YTHDF-PABP axis is required for m6A-mediated organogenesis in plants
+PXD046156	confirmed	countries=['Denmark']	yes	Evolution of genotypic and phenotypic diversity in multispecies biofilms
+PXD046283	confirmed	countries=['Denmark']		Narrow-window DIA: Ultra-fast quantitative analysis of comprehensive proteomes with high sequencing 
+PXD046285	confirmed	countries=['Denmark']		Narrow-window DIA: Ultra-fast quantitative analysis of comprehensive proteomes with high sequencing 
+PXD046357	confirmed	countries=['Denmark']	yes	"Ultra-fast label-free quantification and
+comprehensive proteome coverage
+with narrow-window data-ind"
+PXD046372	confirmed	countries=['Denmark']	yes	"Ultra-fast label-free quantification and
+comprehensive proteome coverage
+with narrow-window data-ind"
+PXD046386	confirmed	countries=['Denmark']	yes	"Ultra-fast label-free quantification and
+comprehensive proteome coverage
+with narrow-window data-ind"
+PXD046417	confirmed	countries=['Denmark']	yes	"Ultra-fast label-free quantification and
+comprehensive proteome coverage
+with narrow-window data-ind"
+PXD046444	confirmed	countries=['Denmark']	yes	"Ultra-fast label-free quantification and
+comprehensive proteome coverage
+with narrow-window data-ind"
+PXD046453	confirmed	countries=['Denmark']		"Ultra-fast label-free quantification and
+comprehensive proteome coverage
+with narrow-window data-ind"
+PXD046572	confirmed	countries=['Denmark']		Epitope Mapping of Human Polyclonal Antibodies to the fHbp Antigen of a Neisseria Meningitidis Vacci
+PXD046755	confirmed	countries=['Denmark']		Insulin and Exercise-induced Phosphoproteomics of Human Skeletal Muscle Identify REPS1 as a New Regu
+PXD046843	confirmed	countries=['Denmark']		Unraveling the differential mechanisms of revascularization promoted by MSCs & ECFCs from adipose ti
+PXD046999	confirmed	affiliation~'denmark': Department of Proteomics and Signal Transduction, Max Planck Institute of Biochemistry, Ma	yes	Spatial characterization and stratification of colorectal adenomas by Deep Visual Proteomics
+PXD047011	confirmed	countries=['Denmark']		Multilayered-proteomics analysis of insulin signaling in insulin sensitive and resistant HepG2 IGF1R
+PXD047019	confirmed	countries=['Denmark']		RNF212B E3 ligase is essential for crossing over maturation and mouse fertility
+PXD047069	confirmed	countries=['Denmark']		Consecutive digestion of archaeological skeletal proteomes with multiple proteases
+PXD047108	confirmed	countries=['Denmark']		Quantitative chromatin protein dynamics during replication origin firing in human cells (part 1)
+PXD047126	confirmed	countries=['Denmark']		Palaeoproteomic variation between cortical and trabecular bone
+PXD047177	confirmed	affiliation~'denmark': Section of Molecular Physiology, Department of Nutrition, Exercise and Sports, Faculty of 		Protein-restricted diet increases circulating FGF21 levels and necessitating an increase in energy i
+PXD047218	confirmed	countries=['Denmark']		Uncovering the mechanisms responsible for intravenous paracetamol-induced hypotension
+PXD047450	confirmed	countries=['Denmark']	yes	Structure and mechanism of the Zorya anti-phage defense system
+PXD047515	confirmed	countries=['Denmark']	yes	Targeting postsynaptic glutamate receptor scaffolding proteins PSD-95 and PICK1 for obesity treatmen
+PXD047613	confirmed	countries=['Denmark']	yes	A site-specific analysis of the ADP-Ribosylome unveils Homogeneous Serine ADP-Ribosylation across wi
+PXD047667	confirmed	countries=['Denmark']		Identification of potential interactors of COMPANION OF CELLULOSE SYNTHASE (CC) 1
+PXD047712	confirmed	countries=['Denmark']		Epitope Mapping of Human Polyclonal Antibodies to the fHbp Antigen of a Neisseria Meningitidis Vacci
+PXD047727	confirmed	countries=['Denmark']		Identification of potential interactors of NKS1 and QUA1
+PXD047932	confirmed	countries=['Denmark']		Palaeoproteomic analysis of a second hominin specimen from Baishiya Karst Cave, China
+PXD047957	confirmed	affiliation~'denmark': Novo Nordisk Foundation Center for Basic Metabolic Research, University of Copenhagen, Cop		Lanifibranor reduces inflammation and improves dyslipidemia in lysosomal acid lipase-deficient mice
+PXD048024	confirmed	countries=['Denmark']	yes	Molecular-Level Architecture of Chlamydomonas reinhardtii’s Glycoprotein-Rich Cell Wall
+PXD048325	confirmed	countries=['Denmark']		Fully automated workflow for integrated sample digestion and Evotip loading enabling high-throughput
+PXD048346	confirmed	countries=['Denmark']		Pupylation-based proximity labelling reveals regulatory factors in cellulose biosynthesis in Arabido
+PXD048461	confirmed	countries=['Denmark']		Enamel sexing of mammoth from Kostenki
+PXD049123	confirmed	countries=['Denmark']	yes	Phosphoproteomics of Hela cells stimulated with EGF in the presence of protein phosphatase inhibitor
+PXD049181	confirmed	"affiliation~'copenhagen': Department of Surgical Sciences, Uppsala University. 
+Novo Nordisk Foundation Center for P"	yes	Deep single-cell proteomics quantifies low-abundant embryonic transcription factors and lineage mark
+PXD049201	confirmed	countries=['Denmark']		Murine bronco alveolar lavage fluid from wild type and mannose receptor knock out mice, unchallenged
+PXD049211	confirmed	"affiliation~'copenhagen': Department of Surgical Sciences, Uppsala University. 
+Novo Nordisk Foundation Center for P"	yes	Deep single-cell proteomics quantifies low-abundant embryonic transcription factors and lineage mark
+PXD049326	confirmed	countries=['Denmark']		Automated high-throughput biological sex identification from archaeological human dental enamel usin
+PXD049351	confirmed	countries=['Denmark']	yes	Combined clinical and proteomic data accurately discriminate atherosclerotic versus dyslipidemic pat
+PXD050370	confirmed	countries=['Denmark']		Decontamination enhances palaeoproteomic analysis of a Pleistocene hominin tooth from Khudji, Tajiki
+PXD050393	confirmed	countries=['Denmark']		Evaluation of decontamination methods for palaeoproteomic analysis of Pleistocene skeletal proteomes
+PXD050545	confirmed	countries=['Denmark']		In-depth phosphoproteomic profiling of the insulin signaling response in heart tissue and cardiomyoc
+PXD050661	confirmed	affiliation~'denmark': University of York, UK, University of Copenhagen, Denmark	yes	Assessment of seven minimally sampling protocols of archaeological skeletal proteomes
+PXD050784	confirmed	countries=['Denmark']		Streamlined analysis of drug targets by proteome integral solubility alteration indicates organ-spec
+PXD051032	confirmed	countries=['Denmark']		Deficient brain GABA metabolism leads to widespread impairments of astrocyte and oligodendrocyte fun
+PXD051333	confirmed	countries=['Denmark']		Peptidomic and proteomic analysis of precision-cut lung slice supernatants
+PXD051408	confirmed	affiliation~'denmark': University of York, UK, University of Copenhagen, Denmark	yes	Palaeoproteomic identification of a whale bone tool from Bronze Age Heiloo, the Netherlands
+PXD051453	confirmed	countries=['Denmark']	yes	Salivary Proteomics and Metaproteomics Identifies Distinct Molecular and Taxonomic Signatures Of Typ
+PXD051795	confirmed	affiliation~'denmark': 1. Novo Nordisk Foundation Center for Protein Research, University of Copenhagen, Copenhag	yes	Single-cell-type Spatial Proteomics Unveils Precision Medicine Insights in Composite Small Lymphocyt
+PXD051852	confirmed	countries=['Denmark']		Global proteomics reveals distinct muscle adaptations to menstrual cycle phase-based sprint interval
+PXD051942	confirmed	"affiliation~'copenhagen': Department of Surgical Sciences, Uppsala University. 
+Novo Nordisk Foundation Center for P"	yes	Global analysis of protein turnover dynamics in single cells
+PXD051963	confirmed	countries=['Denmark']		Effect of Mavacamten on skeletal muscle fibre proteome in nemaline myopathy
+PXD052074	confirmed	countries=['Denmark']		RyR2 phosphorylation profile in PKP2cKO mice
+PXD052078	confirmed	countries=['Denmark']		Hypoxia promotes the generation of a versican-rich extracellular matrix by human coronary artery end
+PXD052191	confirmed	affiliation~'denmark': Proteomics program, Novo Nordisk Foundation Center for Protein Research, Faculty of Health		PARP1 auto-modification promotes faithful Okazaki fragment processing and limits replication fork sp
+PXD052232	confirmed	countries=['Denmark']		ALBA proteins facilitate cytoplasmic YTHDF-mediated reading of m6A in plants
+PXD052635	confirmed	countries=['Denmark']		An early Miocene enamel proteome from an early diverging rhinocerotid
+PXD052666	confirmed	countries=['Denmark']	yes	Optimization of the workflow for deep CSF proteome analysis by enrichment of extracellular vesicles
+PXD052818	confirmed	countries=['Denmark']		A Cross-Species Proteomic Investigation of Atrial Fibrillation: Insights from Equine and Human Heart
+PXD052956	confirmed	"affiliation~'copenhagen': Department of Surgical Sciences, Uppsala University. 
+Novo Nordisk Foundation Center for P"		Chemogenomic screening in a patient-derived 3D model of metabolic dysfunction-associated steatohepat
+PXD053022	confirmed	countries=['Denmark']		Dysregulated Skeletal Muscle Myosin Super-relaxation in Type II, but Not Type I, Diabetes Mellitus
+PXD053061	confirmed	countries=['Denmark']	yes	LGR signaling mediates muscle-adipose tissue crosstalk and protects against diet-induced insulin res
+PXD053079	confirmed	affiliation~'denmark': Department of Proteomics and Signal Transduction, Max Planck Institute of Biochemistry, Ma	yes	Deep Visual Proteomics reveals DNA replication stress as a hallmark of Signet Ring Cell Carcinoma
+PXD053086	confirmed	countries=['Denmark']		CRAMP1-dependent histone H1 biogenesis is essential for topoisomerase II inhibitor tolerance
+PXD053300	confirmed	affiliation~'denmark': Novo Nordisk Foundation Center for Protein Research, University of Copenhagen, Copenhagen 		Histone dynamics at replication forks in embryonic stem cells
+PXD053346	confirmed	countries=['Denmark']		RNAPII interactome in INTS6 KO and WT cells
+PXD053351	confirmed	countries=['Denmark']		RNAPII interactome in INTS6 degron cells
+PXD053387	confirmed	affiliation~'denmark': Department of Proteomics and Signal Transduction, Max Planck Institute of Biochemistry, Ma	yes	Axonal tau reduction ameliorates tau and amyloid pathology in a mouse model of Alzheimer’s disease
+PXD054066	confirmed	"affiliation~'copenhagen': Department of Surgical Sciences, Uppsala University. 
+Novo Nordisk Foundation Center for P"	yes	Deep single-cell proteomics quantifies low-abundant embryonic transcription factors and lineage mark
+PXD054083	confirmed	"affiliation~'copenhagen': Department of Surgical Sciences, Uppsala University. 
+Novo Nordisk Foundation Center for P"	yes	Global analysis of protein turnover dynamics in single cells
+PXD054412	confirmed	affiliation~'copenhagen': Globe Institute, University of Copenhagen	yes	A male Denisovan mandible from Pleistocene Taiwan
+PXD054431	confirmed	countries=['Denmark']		Results from an Australopithecus africanus dental enamel fragment confirm the potential of palaeopro
+PXD054445	confirmed	"affiliation~'copenhagen': Department of Surgical Sciences, Uppsala University. 
+Novo Nordisk Foundation Center for P"	yes	Formaldehyde fixation helps preserving proteome state during single-cell proteomics sample processin
+PXD054499	confirmed	countries=['Denmark']		Identification of cardiac myosin heavy chain post-translational modifications in hibernating grizzly
+PXD054504	confirmed	countries=['Denmark']		Aberrant troponin post-translational modifications with TNNT1 mutations
+PXD054549	confirmed	countries=['Denmark']		Micro-destructive palaeoproteomic analysis of dental enamel from 23 Homo naledi specimens shows no e
+PXD054763	confirmed	countries=['Denmark']		Sleep deprivation leads to non-adaptive alterations in sleep microarchitecture and amyloid-β accumul
+PXD055524	confirmed	countries=['Denmark']		Quantitative proteomics and phosphoproteomics analysis of patient-derived ovarian cancer stem cells
+PXD055964	confirmed	countries=['Denmark']		Declining activity of serum response factor in aging arteries in relation to aortic aneurysm initiat
+PXD055973	confirmed	countries=['Denmark']		Human plasma proteome immune response to COVID-19
+PXD056094	confirmed	affiliation~'denmark': Globe Institute, Faculty of Health and Medical Science, University of Copenhagen, Øster Fa		Animal glue and beyond: palaeoproteomic analysis of paint binders and adhesives in ancient Egypt
+PXD056163	confirmed	countries=['Denmark']	yes	The structure and function of P5A-ATPases
+PXD056295	confirmed	affiliation~'copenhagen': Research Director, Professor Protein Signaling Program Novo Nordisk Foundation Center for 		Profiling linkage-specific ubiquitin chain functions reveals a key role of K29-linked ubiquitylation
+PXD056331	confirmed	countries=['Denmark']		Proteomics of colorectal tumors identifies the role of CAVIN1 in tumor relapse
+PXD056337	confirmed	countries=['Denmark']		In depth profiling of the cancer proteome from the flowthrough of standard RNA-preparation kits for 
+PXD056564	confirmed	affiliation~'denmark': 1 Department of Proteomics and Signal Transduction, Max Planck Institute of Biochemistry,G	yes	Functional landscape of ubiquitin linkages couples K29-linked ubiquitylation to epigenome integrity
+PXD056651	confirmed	countries=['Denmark']		A human tri-partite cell-free translation system
+PXD056664	confirmed	countries=['Denmark']		Muscle fiber proteomics reveals sex- and fiber type-specific adaptations to resistance training
+PXD056690	confirmed	countries=['Denmark']	yes	Mammalian Cell-Based Production of Glycans, Glycopeptides and Glycomodules
+PXD056756	confirmed	affiliation~'denmark': Protein Analysis Group, Department of Pharmacy, University of Copenhagen, Copehagen, Denma		Structure and dynamics of GAD65 and its interaction with the autoimmune polyendocrine syndrome type 
+PXD056929	confirmed	countries=['Denmark']		Quantitative analysis of the proteome, and protein oxidative modifications, of primary human coronar
+PXD057069	confirmed	countries=['Denmark']		Muscle Cathepsin B benefits Alzheimer's Disease mice
+PXD057146	confirmed	countries=['Denmark']		Targeteted quantification of RORDEPs in fasting plasma of healthy adult men
+PXD057298	confirmed	countries=['Denmark']		Shared proteomic signature between a rat model of hypertension and Alzheimer’s disease point to cere
+PXD057401	confirmed	countries=['Denmark']		Fresh insights into sex-specific mobility in Copper Age Perdigões (Reguengos de Monsaraz, Portugal) 
+PXD057669	confirmed	countries=['Denmark']	yes	Decoding the impact of interspecies interactions on biofilm matrix components
+PXD057944	confirmed	countries=['Denmark']	yes	Interferon-Induced PARP14-Mediated ADP-Ribosylation in p62 Bodies Requires an Active Ubiquitin-Prote
+PXD057988	confirmed	countries=['Denmark']		Inactivation of mitochondrial pyruvate dehydrogenase by singlet oxygen involves lipoic acid oxidatio
+PXD057996	confirmed	countries=['Denmark']		Map of the Neuronal Tissue O-glycoproteome Reveal Specific Traits in the Secretogranin Family
+PXD058040	confirmed	affiliation~'denmark': Copenhagen Center for Glycomics, Department of Cellular and Molecular Medicine, University		Map of the Neuronal Tissue O-glycoproteome Reveal Specific Traits in the Secretogranin Family
+PXD058085	confirmed	countries=['Denmark']		Paracetamol metabolism by endothelial cells – potential mechanism underlying intravenous paracetamol
+PXD058287	confirmed	countries=['Denmark']		Anubis: a multi-level authentication scale for degraded milk whey using random forest classification
+PXD058340	confirmed	countries=['Denmark']	yes	Quantitative chromatin protein dynamics during replication origin firing in human cells (part 2)
+PXD058370	confirmed	countries=['Denmark']	yes	GALNT11 Controlled O-glycans Modulate Ligand Interactions of the Endocytic Receptor LRP1
+PXD058625	confirmed	countries=['Denmark']		Impact of Culture Platform Transition on Adipose-derived Mesenchymal Stromal Cells Molecular Signatu
+PXD058818	confirmed	countries=['Denmark']		Temporal dynamics of the interstitial fluid proteome in human skeletal muscle following exhaustive e
+PXD059930	confirmed	affiliation~'denmark': University of York, UK, University of Copenhagen, Denmark	yes	Proteomic analysis of experimental foodcrusts reveals discrepancies between food input and recovered
+PXD059963	confirmed	countries=['Denmark']		Metformin Protects Against Persistent Atrial Fibrillation in an Equine Model
+PXD060046	confirmed	countries=['Denmark']	yes	Multi-omics characterization of acquired Olaparib resistance in BRCA1 and BRCA2 mutant breast cancer
+PXD060216	confirmed	countries=['Denmark']		Quantitative proteomics of FFPE-preserved cardiac specimens
+PXD060336	confirmed	countries=['Denmark']		Structural characterization of an extracellular contractile injection system from Photorhabdus lumin
+PXD060348	confirmed	countries=['Denmark']		Histones in neutrophil extracellular traps (NETs) contain oxidative post-translational modifications
+PXD060376	confirmed	countries=['Denmark']		Rise in KRT17 sensitizes platinum-resistant ovarian cancer organoids to targeted therapies
+PXD060649	confirmed	countries=['Denmark']		HCT-116 cells treated with tumor necrosis factor (TNF)
+PXD060950	confirmed	countries=['Denmark']	yes	Multi-omics characterization of acquired Olaparib resistance in BRCA1 and BRCA2 mutant breast cancer
+PXD061015	confirmed	countries=['Denmark']		Quantitative proteomics and phosphoproteomics analysis of patient-derived ovarian cancer stem cells
+PXD061135	confirmed	countries=['Denmark']		Enhancing tandem MS sensitivity and peptide identification via ion pre-accumulation in an Orbitrap m
+PXD061221	confirmed	countries=['Denmark']	yes	NAD Depletion in Skeletal Muscle does not Compromise Muscle Function or Accelerate Aging
+PXD061276	confirmed	countries=['Denmark']		SUMO operates from a unique long tandem repeat to keep innate immunity in check
+PXD061287	confirmed	countries=['Denmark']		Integrated single cell functional-proteomic profiling of human skeletal muscle reveals a shift in ce
+PXD061361	confirmed	countries=['Denmark']		Arachidonoyl-taurine protects from diet-induced hepatic steatosis and inflammation
+PXD061447	confirmed	countries=['Denmark']		Taxonomic identification of bone fragments in resin-embedded sediment blocks through palaeoproteomic
+PXD061570	confirmed	countries=['Denmark']	yes	Multi-omics analysis of thermogenic lipolysis in brown adipocytes
+PXD061985	confirmed	countries=['Denmark']		An unbiased molecular characterisation of peripartum cardiomyopathy identfies mast cell chymase as a
+PXD062030	confirmed	countries=['Denmark']	yes	KIAA1549-BRAF O-mannosylation in mNSC cells
+PXD062200	confirmed	countries=['Denmark']		LC-MS/MS analysis of murine endothelial cell lines: normal brain microvascular cell line vs tumor en
+PXD062259	confirmed	affiliation~'copenhagen': University of Copenhagen	yes	ZooMS and Shotgun Proteomics for Species Identification of the Nile Softshell Turtle (Trionyx triung
+PXD062414	confirmed	countries=['Denmark']		Characteristics of tendinopathy development in humans
+PXD063178	confirmed	countries=['Denmark']		Parthenolide disrupts mitosis by inhibiting ZNF207/BUGZ-promoted kinetochore microtubule attachment
+PXD063196	confirmed	countries=['Denmark']		Proximity labeling of active and inactive neuronal Rab2 in flies
+PXD063200	confirmed	countries=['Denmark']		Proximity labeling of dense core vesicle protein VMAT
+PXD063506	confirmed	countries=['Denmark']	yes	Structure of a contractile injection system in Salmonella enterica subsp. salamae
+PXD063721	confirmed	countries=['Denmark']	yes	Mechanistic Divergence Between SOS Response Activation and Antibiotic-Induced Plasmid Conjugation in
+PXD063931	confirmed	"affiliation~'copenhagen': Department of Surgical Sciences, Uppsala University. 
+Novo Nordisk Foundation Center for P"	yes	GLP-1R and GIPR heterodimerization and expression determine downstream signaling and metabolic pheno
+PXD063954	confirmed	countries=['Denmark']		BODY FLUID PROTEOMIC LANDSCAPE OF ACUTE EXERCISE
+PXD064301	confirmed	countries=['Denmark']		Molecular Regulation and Physiological Role of GOLPH3-mediated Golgi retention
+PXD064322	confirmed	countries=['Denmark']	yes	Human HL-60 cell differentiated neutrophil-like cells treated with glucocorticoid LC-MS/MS
+PXD064353	confirmed	countries=['Denmark']		Histamine mediates food intake, but not muscle adaptations, following 10 weeks of resistance trainin
+PXD064417	confirmed	countries=['Denmark']		Decontamination of archaeological dental enamel for palaeoproteomics
+PXD064567	confirmed	"affiliation~'copenhagen': Department of Surgical Sciences, Uppsala University. 
+Novo Nordisk Foundation Center for P"		GMP-compatible extracellular vesicles prevent heart failure after a myocardial infarction through re
+PXD064619	confirmed	affiliation~'copenhagen': University of Copenhagen, Novo Nordisk Center for Protein Research, Proteomics Department,		Individual acute and rapid depletion of 55LCC-complex members
+PXD064627	confirmed	countries=['Denmark']		Human neutrophils treated with glucocorticoids LC-MS/MS
+PXD064721	confirmed	affiliation~'copenhagen': university of copenhagen, medical faculty, novo nordisk center for protein research, prote		pulsed-SILAC after 55LCC depletion
+PXD064789	confirmed	countries=['Denmark']		Fibre Type–Specific Proteomics Reveals Shared and Distinct Skeletal Muscle Adaptations to Resistance
+PXD064896	confirmed	affiliation~'copenhagen': University of Copenhagen, Novo Nordisk Center for Protein Research, Proteomics Department,		Individual acute depletion of 55LCC-complex members (SILAC-DDA)
+PXD065027	confirmed	affiliation~'copenhagen': University of Copenhagen, Novo Nordisk Center for Protein Research, Proteomics Department,		AP-MS Screening for novel Ribosome Biogenesis factors revealing 55LCC
+PXD065297	confirmed	affiliation~'copenhagen': Globe Institute, University of Copenhagen	yes	Proteomic data: The Japanese Archipelago sheltered cave lions, not tigers, during the Late Pleistoce
+PXD065407	confirmed	affiliation~'denmark': Novo Nordisk Foundation Center for Protein Research, Department of Cellular and Molecular 		PARG regulates the proteosomal degradation of TARG1
+PXD065526	confirmed	affiliation~'copenhagen': University of Copenhagen, Novo Nordisk Center for Protein Research, Proteomics Department,		AP-MS Screening for novel Ribosome Biogenesis factors revealing 55LCC
+PXD065658	confirmed	countries=['Denmark']		Temporal Proteomic Remodeling of Cerebral Arteries in Hypertensive Rats Reveals Progressive Vascular
+PXD065892	confirmed	countries=['Denmark']		Diagnostics of autoimmune hepatitis enabled by non-invasive clinical proteomics
+PXD066029	confirmed	countries=['Denmark']		Scalable Acid-Aided Lysis of Skin Samples Improves Proteome Coverage
+PXD066033	confirmed	affiliation~'denmark': Novo Nordisk Foundation Center for Protein Research, Proteomics program, Department of Cel		PARP1 auto-modification promotes faithful Okazaki fragment processing and limits replication fork sp
+PXD066265	confirmed	countries=['Denmark']	yes	Extracellular Exosomes Link Hypertension and Alzheimer’s Disease
+PXD066718	confirmed	countries=['Denmark']	yes	Higher-Throughput Proteome Profiling Enabled by Parallelized Pre-Accumulation and Optimized Ion Proc
+PXD066727	confirmed	countries=['Denmark']		Diurnal Rhythm of the Human Plasma Proteome
+PXD066924	confirmed	countries=['Denmark']	yes	Higher-Throughput Proteome Profiling Enabled by Parallelized Pre-Accumulation and Optimized Ion Proc
+PXD066932	confirmed	countries=['Denmark']		Microbial binding module employs sophisticated  clustered saccharide patches to selectively adhere t
+PXD067474	confirmed	countries=['Denmark']		Human Lyme Neuroborreliosis LC-MS (CSF)
+PXD067583	confirmed	countries=['Denmark']		Human Lyme Neuroborreliosis LC-MS (plasma)
+PXD067831	confirmed	countries=['Denmark']		RNAPII interactome via RPB3-FLAG IP
+PXD067969	confirmed	countries=['Denmark']		Phosphorylated RNAPII interactome via 4H8 antibody IP
+PXD068323	confirmed	countries=['Denmark']		Chromatin-IP of FLAGHA-SCAF1 in HEK293
+PXD068367	confirmed	countries=['Denmark']		Nitrated products formed on α-synuclein are preferentially incorporated into oligomers but excluded 
+PXD068380	confirmed	countries=['Denmark']		Phospho-RPB1 interactome in presence or absence of SCAF1
+PXD068387	confirmed	countries=['Denmark']		Dysregulation of muscle myosin biochemical states in X-linked myotubular myopathy
+PXD068583	confirmed	countries=['Denmark']	yes	The Human Cell Line Phosphoproteome Atlas: A Deep Empirical Resource Revealing Kinase Activity Lands
+PXD068671	confirmed	countries=['Denmark']	yes	Defining the cardiac acetylome in type 2 diabetes
+PXD068827	confirmed	countries=['Denmark']	yes	Comparative Analysis of Lysine-Specific Peptidases for Optimizing Proteomics Workflows
+PXD069155	confirmed	countries=['Denmark']		Alexander disease mutations differentially sensitize GFAP to oxidative damage and network disruption
+PXD069234	confirmed	countries=['Denmark']		Human neutrophil phosphoproteome after glucocorticoid treatment
+PXD069507	confirmed	affiliation~'copenhagen': University of Copenhagen	yes	Palaeoproteomic investigation of archaeological sediments associated with ochre use in the Middle St
+PXD070086	confirmed	countries=['Denmark']		Phosphorylated RNAPII interactome via 4H8 antibody IP with OGG1 inhibitor
+PXD070197	confirmed	countries=['Denmark']		Proteomic changes upon disruption of the OTULIN–LUBAC complex
+PXD070306	confirmed	countries=['Denmark']	yes	The bile acid-CoA ligase, FATP5, is necessary for synthesis of N-acyl taurines in the liver
+PXD070310	confirmed	countries=['Denmark']		Deciphering cytokine-driven ADP-ribosylation signaling networks via Af1521-based mass spectrometry a
+PXD070324	confirmed	countries=['Denmark']	yes	Benchmarking workflows for plasma proteomics
+PXD070540	confirmed	countries=['Denmark']		Plasma Proteomics Identifies Insulin Resistance Signatures Predictive of Cardiometabolic Disease Ris
+PXD070599	confirmed	countries=['Denmark']	yes	Extending single-cell proteomics from HeLa to small primary human immune cells
+PXD070680	confirmed	countries=['Denmark']		Skeletal Muscle Proteomics Reveals Metabolic Phenotype-Specific Adaptations to Exercise Training in 
+PXD070780	confirmed	countries=['Denmark']	yes	Comparative proteomics and phosphoproteomics analyses of glucocorticoid responses in breast cancer c
+PXD071573	confirmed	countries=['Denmark']		RAK1GFP, MPK4bGFP nt vs wounded. 35sGFP nt wounded controls. Interactors IP-MS
+PXD071605	confirmed	affiliation~'copenhagen': University of Copenhagen, Department of Plant and Environmental Sciences		An N-Acetyltransferase-MAPK fusion protein modulates developmental reprogramming in Physcomitrium pa
+PXD071972	confirmed	countries=['Denmark']		Higher-Throughput Proteome Profiling Enabled by Parallelized Pre-Accumulation and Optimized Ion Proc
+PXD072200	confirmed	countries=['Denmark']		Spatial proteomics of the human atherosclerotic microenvironment reveals heterogeneity in intra-plaq
+PXD072522	confirmed	countries=['Denmark']		Palaeoproteomic evidence for late Middle Pleistocene Homo erectus in mainland East Asia
+PXD072962	confirmed	countries=['Denmark']		Quantitative Proteomics Resolves Spatio-Temporal Remodeling in a Cardiomyocyte-Specific PKP2 Knockou
+PXD073925	confirmed	countries=['Denmark']		Recombinant dimeric PICK1 protein inhibitors for long-term relief of chronic pain by AAV therapeutic
+PXD073937	confirmed	countries=['Denmark']		Truncated N-glycans destabilize POMT1 and POMT2 but do not limit cellular O-mannosylation in HEK293 
+PXD073993	confirmed	countries=['Denmark']		Integrated Single-Fiber Multi-Omics in ICU-acquired weakness
+PXD074014	confirmed	countries=['Denmark']		HR3/RORα-mediated cholesterol sensing regulates TOR signaling
+PXD074049	confirmed	countries=['Denmark']		Recombinant dimeric PICK1 protein inhibitors for long-term relief of chronic pain by AAV therapeutic
+PXD074572	confirmed	countries=['Denmark']		Ligand‑Resolved In Vivo Phosphoproteomics of the Adult Heart Maps ErbB Signaling by EGF and NRG1β
+PXD074599	confirmed	countries=['Denmark']		TMT-based Proteomic and Phosphoproteomic Profiling of Csnk1a1 Wild-type, Haploinsufficient, and E98V
+PXD074943	confirmed	countries=['Denmark']		Mulit-omics analysis of keratinocytes reveals dermokine as regulator keratinocyte differentiation an
+PXD075440	confirmed	countries=['Denmark']		Arachidonoyl-taurine protects from diet-induced hepatic steatosis and inflammation - Time course exp
+PXD075443	confirmed	countries=['Denmark']		Heparan sulfate Sulfatases are essential for the patterning of human stem cell-derived midbrain dopa
+PXD075502	confirmed	countries=['Denmark']		Comparison of the reactivity of hypochlorous acid (HOCl) and hyposelenocyanous acid (HOSeCN) with el
+PXD075585	confirmed	countries=['Denmark']	yes	Arachidonoyl-taurine protects from diet-induced hepatic steatosis and inflammation -
+PXD075810	confirmed	countries=['Denmark']		Deciphering cytokine-driven ADP-ribosylation signaling networks via Af1521-based mass spectrometry a
+PXD076153	confirmed	countries=['Denmark']		Proteome analyses reveal ER stress-induced changes in protein abundance associated with Ube2j2 defic
+PXD076695	confirmed	countries=['Denmark']		Unusual cardiac myosin heavy chain post-translational modifications with systolic heart failure
+PXD077710	confirmed	countries=['Denmark']		Omega-3 fatty acid supplementation improves skeletal muscle mitochondrial function in a model of Bar
+PXD078037	confirmed	countries=['Denmark']		High-Throughput Spatial Proteomics from Cellular to Subcellular Scales via a Hanging Droplet Workflo
+PXD078059	confirmed	countries=['Denmark']	yes	O-mannosylation and protein maturation checkpoints represent therapeutic opportunities in BRAF fusio
+PXD078497	confirmed	countries=['Denmark']	yes	Extending single-cell proteomics from HeLa to small primary human immune cells – REVISION
+PXD080728	confirmed	countries=['Denmark']	yes	Extending single-cell proteomics from HeLa to small primary human immune cells – REVISION 2
+PXD081397	confirmed	countries=['Denmark']		Huntington’s disease vasculopathy is barrier-type-selective and arteriolar-dominant with spatially-c
+PXD083139	confirmed	countries=['Denmark']		Investigating N-terminal shedding of GPR125 in GPR125 overexpressing HEK293T cells using N- and C-te
+PXD083842	confirmed	countries=['Denmark']		Proteomic Profiling of Liver and Plasma Uncovers Biomarkers and Mechanisms in Patients with Primary 
+PXD085158	confirmed	countries=['Denmark']		Systirin (CCDC201) immunoprecipitation from differentiated human induced pluripotent stem cells: wil

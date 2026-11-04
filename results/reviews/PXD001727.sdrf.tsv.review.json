@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD001727.sdrf.tsv",
+  "artifact_sha256": "dab26c9c7cd6bc71a49ec197fe00e1e234c9c2aa9652a79dad207474c3448cf4",
+  "verdict": "PASS",
+  "summary": "Fresh independent re-review of the corrected PXD001727 SDRF (3 rows: two Zurich bow wood-flake samples plus one extraction blank, 32 columns, template ms-proteomics v1.1.0). The prior important finding (sample-vs-blank contrast encoded as factor value[organism]) is resolved: the false organism factor is gone. The spec-preferred alternative, characteristics[sample type] = study sample / negative control, was independently confirmed to fail the offline PRIDE cache used by upstream CI (error, exit 1, both bare and NT=study sample;AC=PRIDE:0001013), although PRIDE:0001013 'study sample' is valid in live OLS (child of PRIDE:0000895). The only CI-passing sample-type variant would require 'not applicable' on the study rows, which would be false. The spec does not require a factor value column, the study is descriptive (identify glue species, not a comparison), and the blank is a contamination control, so a no-factor SDRF is the most honest CI-passing encoding. Every technical value was re-verified against fresh RAW header range reads and the submitter's MaxQuant outputs; Bovidae is supported per sample by Bos taurus-specific and Ovis aries-specific collagen groups in both bow runs. No blocker or important finding remains; five minor findings are listed.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent without producer transcript; producer report.md, the earlier review folder and scratchpad/_stale_2026-10-27/ were not read; all sources re-fetched into scratchpad/PXD001727/review-PXD001727/r2/"
+  },
+  "evidence_manifest": "annotations/PXD001727.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Declared template NT=ms-proteomics;VV=v1.1.0 (usable_alone per templates.yaml). All required base/sample-metadata/ms-proteomics columns present: source name, characteristics[organism], [organism part], [biological replicate], assay name, technology type, comment[technical replicate], [data file], [proteomics data acquisition method], [instrument], [cleavage agent details], [label], [fraction identifier]. Recommended [disease], [dissociation method], tolerances and modification parameters present. 3 data rows x 32 columns, uniform row width, no empty cells, unique source names, assay names and data files. Reserved words used only where the template allows them (organism allows not applicable; organism part allows not applicable/not available; disease allows both). Structured NT=/AC=/TA=/PP=/MT= syntax valid; collision energy matches the NCE pattern; HCD is MS:1000422 per README NOTE. Factor value columns are not required by any active template and README 'Factor Values' rules use SHOULD/typically only. vertebrates was not declared, which is defensible because the specimens are archaeological wood flakes with adhesive residue, not vertebrate specimens."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4: NCBITaxon:9895 Bovidae (rank family, not obsolete); MS:1001742 LTQ Orbitrap Velos; MS:1001251 Trypsin; MS:1000422 beam-type collision-induced dissociation; MS:1000484 orbitrap; PRIDE:0000627 Data-dependent acquisition; PRIDE:0000608 Dithiothreitol (DTT); PRIDE:0000600 Chloroacetamide (ClAA); PRIDE:0000434 (label free sample, the template's prescribed value); UNIMOD:4 Carbamidomethyl, 1 Acetyl, 7 Deamidated, 28 Gln->pyro-Glu, 27 Glu->pyro-Glu, 35 Oxidation. None obsolete; labels match. sdrf-tools check: 16 terms verified, 0 hallucinated, 0 label mismatches, 0 wrong ontology, 0 UNIMOD swaps. Specificity: Bovidae is the lowest common taxon of the PRIDE-declared Bos taurus and Ovis aries and of species-specific collagen hits in each bow run, so it is not overstated."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE v2 project (accession PXD001727, title 'Use of hide glue in 4th millennium BC Europe'): two wood-flake samples from two areas under two bark strips plus one negative control processed identically without ancient material; 5 mM DTT, 15 mM chloroacetamide, Promega trypsin; MaxQuant 1.4.1.2; precursor 6 ppm, fragment 20 ppm; organisms Bos taurus, Ovis aries. RAW headers (HTTP range bytes 0-524287 of all three RAW files): 'LTQ Orbitrap Velos MS', VELOS3; scan 1 FTMS full scan; scan 2 'FTMS + p norm Dep MS/MS', 'Activation Type: HCD', 'Normalized Coll. Energy: 40.0', 'Scan Event 2 repeated for top 10 peaks', which directly supports DDA, HCD, 40 NCE and the orbitrap MS2 analyzer. PRIDE's 'Q Exactive' instrument field is contradicted by every RAW header, and the SDRF correctly follows the RAW files. MaxQuant parameters.txt/summary.txt (collagens and ExtSearch archives, bow and blank) give fixed Carbamidomethyl (C); variable Acetyl (K), Deamidation (NQ), Gln->pyro-Glu, Glu->pyro-Glu, Oxidation (M), Pro->Hyp (UNIMOD:35 on P); Trypsin/P; MS/MS tol. (FTMS) 20 ppm; multiplicity 1. ExtSearch evidence.txt plus proteinGroups.txt: S40 and S47 each have Bos taurus-specific (2) and Ovis aries-specific (1) collagen groups with at least 2 sequences, so Bovidae holds per sample. The publication (doi:10.1016/j.jas.2015.08.012, Bleicher, Kelstrup, Olsen, Cappellini, JAS 63:65-71) has no abstract in Crossref and no Europe PMC record; organism part 'not available' is appropriately conservative."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE /files (all projectAccessions = PXD001727) lists exactly 3 RAW files: Zurich_bowS40.raw, Zurich_bowS47.raw and NegControl.raw. All three are mapped once; the four txt.zip archives are search output and correctly excluded. The mapping is corroborated independently: the collagen-search summary lists Zurich_bowS40/Zurich_bowS47 with 16507/9101 MS/MS, and the ExtSearch summary lists the original acquisition names ...Enrico-Parchments_S40 and ...Eske_Ancient_Skin_Sample_47 with the same 16507/9101 MS/MS. The blank RAW header name ...Enrico-NegControl_S73 matches the NegContr search. The mapping follows the submitter's deposit and is not invented."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 2 independent bow samples (biological replicate 1, 2) plus 1 extraction blank (biological replicate 1, distinct source name); label free; 1 fraction; 1 technical replicate; 1 RAW file per sample. No factor column is present. That is consistent with a descriptive species-identification study: the study variable is the unknown glue source, not a contrast between samples, and the blank is a contamination control. The removed factor value[organism] encoded a contrast the study did not investigate. characteristics[sample type] = study sample fails the CI cache (independently tested), and the CI-passing variant (not applicable / negative control) would misstate the study rows. The blank stays identifiable by source name 'extraction_negative_control' and organism/organism part/disease 'not applicable'. Known confounder (not encoded; optional columns only): the blank was acquired 2011-08-10 with a 90-min method, while the bow samples were acquired 2010-10-15 and 2010-12-15 with 150-min methods. This is disclosed in the manifest limitations."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No value asserts more than its evidence. Organism uses the family-level common taxon rather than a guessed species; organism part is 'not available' rather than an unverified 'skin' derived from the title; disease is 'not applicable' for an archaeological artifact residue and a blank; precursor tolerance is the protocol-stated 6 ppm; ms2 analyzer is directly evidenced by FTMS MS/MS scan events. No fabricated sample attributes (sex, age, developmental stage, breed) were added. Material omissions checked: acquisition-date/method differences between blank and samples are not encoded (optional, disclosed); per-sample species are not encoded beyond Bovidae (both bow runs show mixed bovid signal, so this is correct); the blank's role has no controlled-term column (see minor finding)."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "cd sdrf-skills: timeout 900 .venv/bin/parse_sdrf validate-sdrf --sdrf_file <abs artifact> --use_ols_cache_only --template ms-proteomics returned exit 0, 'Everything seems to be fine. Well done.' The same command without --template (default ms-proteomics) also returned exit 0 with no errors. .venv/bin/python -m tools check returned exit 0, CLEAN (16/16 verified). .venv/bin/python -m tools score returned exit 0, 88/100 (advisories only: organism 'not applicable' not binomial on the blank; no factor value columns). Counter-tests on scratch copies only: adding characteristics[sample type] + factor value[sample type] with 'study sample'/'negative control' gave exit 1, ERROR 'study sample ... is not found in the given ontology list pride'; with 'NT=study sample;AC=PRIDE:0001013' / 'NT=negative control;AC=PRIDE:0000905' gave exit 1, same error; with 'not applicable'/'negative control' gave exit 0. Artifact SHA-256 was unchanged at start and end of review."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "file (no characteristics[sample type] / factor value column); row 3 extraction_negative_control",
+      "message": "The blank's role is conveyed only by its source name and 'not applicable' organism, not by a controlled term. Once the offline PRIDE cache used by sdrf-pipelines CI contains PRIDE:0001013 'study sample' (valid in live OLS, child of PRIDE:0000895 'sample type'), add characteristics[sample type] = study sample / negative control (PRIDE:0000905), optionally also as factor value[sample type]. Do not use 'not applicable' on the study rows to work around the cache.",
+      "evidence": "Live OLS4: PRIDE:0001013 = 'study sample', not obsolete, parent PRIDE:0000895. Offline cache rejects it (exit 1). The spec's TERMS.tsv line 137 and ms-proteomics.yaml line 532 also assign PRIDE:0001013 to 'ms3 min mz', an upstream accession collision worth reporting with the cache gap."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD001727.evidence.json claims[2] and claims[3]",
+      "message": "Two manifest claim locations still reference 'factor value[organism] rows 1-2' and 'row 3', a column that no longer exists in the corrected SDRF. No claim covers the newly added characteristics[disease] = not applicable. Update the manifest to match the artifact.",
+      "evidence": "SDRF header has no factor value column; characteristics[disease] is column 4 in all rows."
+    },
+    {
+      "severity": "minor",
+      "category": "formatting",
+      "location": "characteristics[organism] rows 1-2",
+      "message": "'Bovidae' is capitalized; the spec recommends lowercase organism names ('bovidae').",
+      "evidence": "SAMPLE-GUIDELINES.adoc 'Capitalization Rules': organism names recommended lowercase; validators normalize capitalization, and parse_sdrf and sdrf-tools both pass."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "rows 1-3 (optional comment[acquisition date] / comment[lc batch] absent)",
+      "message": "The blank was run on a different date and LC method from the bow samples. Optional acquisition-date or LC-batch columns would make this confounder machine-readable.",
+      "evidence": "RAW headers: NegControl 20110810, JVO_90min_Top10HCD_.meth; S40 20101015, 150min_Top10HCD_JESPER_Special-mz210-1750.meth; S47 20101215, 150min_Top10HCD_JESPER_Special.meth."
+    },
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "comment[data file] rows 1-2",
+      "message": "The RAW-internal acquisition names (Enrico-Parchments_S40, Eske_Ancient_Skin_Sample_47) carry other batch labels. The mapping correctly follows the submitter's deposited filenames and searches, but it cannot be confirmed against the paper.",
+      "evidence": "RAW header strings and ExtSearch summary.txt; MS/MS counts link renamed and original names (16507, 9101). Disclosed in manifest limitations."
+    }
+  ]
+}

@@ -172,14 +172,6 @@
       "evidence": "Companion protocol: top 12 data-dependent; MaxQuant DDA search."
     },
     {
-      "location": "characteristics[genotype], [treatment], factor value[genotype], factor value[treatment] (ST_SILAC2 and ST_SILAC4, 44 rows)",
-      "value": "light = CYLD-deficient untreated; medium = wild type + epidermal growth factor; heavy = wild type untreated",
-      "source_ids": [
-        "search-st"
-      ],
-      "evidence": "StUbEx zip combined/txt/Mod/Ubi_SILAC_HeLa_w-woEGF_PGs.xlsx, sheets PGs_woCont-woRev / Only Qfied in all SILAC: analyst-renamed ratio columns for SILAC2 and SILAC4: 'WT 0 / KO 0 normalized SILAC2' (replaces Ratio H/L), 'KO 0/WT 0' (L/H), 'WT6/0' (M/H). Read as H = WT 0 min, L = KO 0 min, M = WT 6 min EGF. INFERENCE from column headers: the '6' is read as minutes of EGF (protocol says 5 min); CYLD-deficient used neutrally (protocol: silenced; header: KO). All other experiments: not available."
-    },
-    {
       "location": "characteristics[biological replicate]",
       "value": "IP 1-2, PD 1-2 (MaxQuant experiment number); StUbEx SILAC1/2 = 1, SILAC3/4 = 2",
       "source_ids": [
@@ -196,14 +188,26 @@
         "pride-companion"
       ],
       "evidence": "Disease of the tissue the HeLa line derives from (Cellosaurus: HPV-related endocervical adenocarcinoma; PRIDE disease: cervix carcinoma); companion protocol: 'cervix epithelial adenocarcinoma HeLa cells'."
+    },
+    {
+      "location": "characteristics[genotype]/[treatment]/[bait], factor value[genotype]/[treatment]/[bait]",
+      "value": "IP: L = CYLD-deficient (treatment not available), M = wild type untreated, H = wild type + EGF. StUbEx SILAC2/4: L = CYLD-deficient untreated, M = control shRNA + EGF, H = control shRNA untreated. StUbEx SILAC1/3: L = CYLD-deficient untreated, M = control shRNA + EGF, H = CYLD-deficient + EGF. Pull-down: L = beads only; M/H = unphosphorylated vs Tyr15-phosphorylated CYLD peptide, swapped between replicates (rep1 M=unphos, H=pY15; rep2 M=pY15, H=unphos).",
+      "source_ids": [
+        "paper",
+        "search-ip",
+        "search-pd",
+        "search-st"
+      ],
+      "evidence": "Paper design (Fig. 3A, Fig. 2A, pull-down Methods) as reported by independent reviewer round 2; NOT re-read by the producer (PMC blocked for the producer). Producer re-verified from deposited proteinGroups.txt: IP CYLD M/L 28.6 and 16.3, H/L 30.2 and 16.4, H/M ~1.0 (light = CYLD-deficient); pull-down CBLB/UBASH3B/CHST3 H/M 6.6/7.1/8.4 in SILAC1 vs 0.16/0.13/0.12 in SILAC2 (bait swap); StUbEx xlsx renamed ratio columns for SILAC2/4. Medium/heavy untreated-vs-EGF assignments in IP and SILAC1/3 rest on the paper text. 'EGF' = 150 ng/ml, 6 min after 16 h starvation per reviewer (not encoded)."
     }
   ],
   "limitations": [
-    "Paper full text was not retrievable; the only channel-to-condition evidence is the renamed ratio columns in the StUbEx xlsx, covering SILAC2 and SILAC4 only. SILAC1, SILAC3 and all IP/pull-down experiments have genotype/treatment/factor values 'not available'.",
-    "Pull-down cell source unconfirmed: deposited design file is named ExpDesign_PullDown_hMSCs.txt (hMSC?) and companion record mentions Skov3/Hep2; HeLa assumed from project title/PRIDE sample attributes. characteristics[cell line] cannot take a reserved word under cell-lines, so the rows are kept as HeLa with this caveat.",
+    "Paper full text was not retrievable by the producer (PMC bot check); design assignments for IP, StUbEx SILAC1/3 and pull-down come from the round-2 reviewer's reading of PMC5546196 plus deposited proteinGroups cross-checks, and should be spot-checked by a human.",
+    "Pull-down cell source unconfirmed: design file is named ExpDesign_PullDown_hMSCs.txt, companion record mentions Skov3/Hep2; HeLa assumed (cell line cannot be a reserved word under cell-lines).",
+    "Deposited mqpar differs from paper text (precursor 6 vs 7 ppm; Phospho searched in IP and StUbEx per mqpar vs IP and pull-down per paper); deposited files followed.",
     "Reduction/alkylation reagents not stated; Carbamidomethyl is Fixed in the deposited search.",
-    "BSA50fmol QC raw file excluded.",
-    "StUbEx fraction order (10..80,B,FT) follows the deposited ExpDesign listing, not a verified elution order.",
-    "HeLa subline/passage/culture medium not stated for this deposit."
+    "BSA50fmol QC raw file excluded (processed in IP MaxQuant SILAC2).",
+    "StUbEx fraction order (10..80,B,FT) follows the deposited ExpDesign listing.",
+    "EGF dose/time and starvation not encoded; HeLa subline/passage/medium not stated."
   ]
 }

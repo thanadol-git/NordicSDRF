@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD008894.sdrf.tsv",
+  "artifact_sha256": "0b95fe6a16201d423fbff9d5cee9bb54f76da824e79855be700afaf0f23b8a8d",
+  "verdict": "FAIL",
+  "summary": "Spec, ontology, file mapping and channel->genotype map verified independently, but comment[fraction identifier] for the 15 non-modified files (and, weakly, the phospho files) is an invented ordering, not evidence-supported.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer agent without producer transcript or report.md"
+  },
+  "evidence_manifest": "annotations/PXD008894.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf passed (exit 0) for ms-proteomics, human, clinical-metadata; 37 columns, 132 rows, no duplicate source/file/label rows; HCD=MS:1000422."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check: 14 terms checked, 14 verified, 0 hallucinated/mismatched (exit 0)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Re-read HBTmitophospho.msf and HBTmitononmodified.msf AnalysisDefinition via HTTP-range: Control option 58a53613 on [126],[127],[128], PARK2 option 4d193881 on [129],[130],[131] in both. Paper PMC6624735 confirms isogenic PARK2 KO/control, HCD, Q Exactive HF, 3 independent differentiations."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE files/all (24 files, all PXD008894): the 22 RAW files equal the 22 distinct comment[data file] values; WorkflowInputFiles: phospho=QHF05025-31 (7), non-modified=QHF05032-36 + QHF2_02250-02260 minus 02253 (15). 6 channels per file, no duplicates."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "66 control + 66 KO rows, 3+3 channels per file; replicate pairing across groups inferred but disclosed as a limitation. Source names split phospho vs non-modified though same labeled mix (minor)."
+    },
+    "omission_safety": {
+      "status": "fail",
+      "evidence": "comment[fraction identifier] values 1-15 for the non-modified files are not supported by any source."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "sdrf-tools check exit 0; score 97/100; parse_sdrf validate-sdrf x3 exit 0."
+    }
+  },
+  "findings": [
+    {
+      "severity": "important",
+      "category": "omission_safety",
+      "location": "comment[fraction identifier], rows for QHF05032-36 (11-15) and QHF2_02250-02260 (1-10)",
+      "message": "Fraction identifiers are acquisition-order guesses. The ordering between the two file-name series (QHF05xxx vs QHF2_xxxxx) is arbitrary, and the paper says non-modified peptides were fractionated by HILIC plus high-pH, so a single 1-15 sequence is not supported. Phospho files 1-7 are similarly based only on filename order.",
+      "evidence": "WorkflowInputFiles lists files only; paper Methods give no per-file fraction assignment; manifest limitation admits 'true HILIC/high-pH fraction order ... not stated'.",
+      "correction": "Use a value the evidence supports (e.g. mark not available/derive only what is documented, or provide a source mapping file->fraction), and state the basis; do not present invented ordering as fact."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "source name / characteristics[biological replicate]",
+      "message": "Phospho and non-modified sets are the same 6 TMT channels from one mix (paper: samples labeled, pooled 1:1, then enriched), yet get separate source names (12 sources).",
+      "evidence": "Paper Methods; msf both define [126]-[131] with same factor mapping.",
+      "correction": "Consider sharing source names across enrichment fractions."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "comment[fractionation method] non-modified rows",
+      "message": "'not available' although paper says non-modified peptides were HILIC fractionated (and high-pH).",
+      "evidence": "Paper Methods 'HILIC and High pH Fractionation'.",
+      "correction": "Could record HILIC/high-pH with a note."
+    }
+  ]
+}

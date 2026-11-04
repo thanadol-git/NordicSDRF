@@ -1,0 +1,214 @@
+{
+ "schema_version": 1,
+ "artifact": "annotations/PXD006112-HeLa.sdrf.tsv",
+ "dataset": "PXD006112",
+ "sources": [
+  {
+   "id": "pride",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006112"
+  },
+  {
+   "id": "pride_files",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD006112/files (93 RAW, 2 MaxQuant zips, 2 FASTA, Readme.pdf)"
+  },
+  {
+   "id": "readme",
+   "kind": "deposited file",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/04/PXD006112/Readme.pdf (run -> temperature-method pictogram table, 3 pages)"
+  },
+  {
+   "id": "rawheaders",
+   "kind": "raw file headers",
+   "location": "HTTP range reads (first 16 KB) of all 93 deposited RAW files under https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/04/PXD006112/; extracted to /home/thanadol/Documents/GitHub/sdrf-skills/scratchpad/PXD006112/rawheaders.json"
+  },
+  {
+   "id": "mq_bsa",
+   "kind": "search output",
+   "location": "MaxQuantoutputBSA.zip: parameters.txt, summary.txt, evidence.txt head (range read)"
+  },
+  {
+   "id": "mq_hela",
+   "kind": "search output",
+   "location": "MaxQuantoutputHeLa.zip: parameters.txt, summary.txt, evidence.txt head (range read)"
+  },
+  {
+   "id": "paper",
+   "kind": "publication",
+   "location": "PMID 28387123, doi:10.1021/acs.jproteome.6b01055 (J Proteome Res 2017;16(6):2307-2317) - full text not accessible (ACS paywall, no PMC copy); abstract via Europe PMC only"
+  },
+  {
+   "id": "ols",
+   "kind": "ontology",
+   "location": "https://www.ebi.ac.uk/ols4/api/"
+  },
+  {
+   "id": "cellosaurus",
+   "kind": "ontology",
+   "location": "https://api.cellosaurus.org/cell-line/CVCL_0030"
+  }
+ ],
+ "claims": [
+  {
+   "location": "characteristics[cell line], cellosaurus accession/name all rows",
+   "value": "HeLa / CVCL_0030",
+   "source_ids": [
+    "pride",
+    "rawheaders",
+    "cellosaurus"
+   ],
+   "evidence": "Thermo Pierce HeLa protein digest standard (protocol; RAW header '500 ng Pierce HeLa')"
+  },
+  {
+   "location": "characteristics[organism], organism part, cell type, disease, sex, age, ancestry category",
+   "value": "Homo sapiens; uterine cervix; epithelial cell; cervical adenocarcinoma; female; 30Y6M; African American",
+   "source_ids": [
+    "cellosaurus",
+    "ols"
+   ],
+   "evidence": "Cellosaurus CVCL_0030: OX 9606, derived from Uterus, cervix (UBERON:0000002), DI NCIt C27677 -> MONDO:0005153 cervical adenocarcinoma, SX Female, AG 30Y6M, Population African American (HANCESTRO:0568)"
+  },
+  {
+   "location": "characteristics[biological replicate] / comment[technical replicate]",
+   "value": "1 / 1-2 within each method",
+   "source_ids": [
+    "pride",
+    "mq_hela"
+   ],
+   "evidence": "One commercial digest; 'All temperature methods were conducted in duplicate'; MaxQuant experiments PierceHeLa_01+02 ... 11+12 pair the same runs"
+  },
+  {
+   "location": "comment[instrument] all rows",
+   "value": "NT=Q Exactive Plus;AC=MS:1002634",
+   "source_ids": [
+    "rawheaders",
+    "pride",
+    "ols"
+   ],
+   "evidence": "All 93 RAW headers read 'Q Exactive Plus - Orbitrap MS'; sample processing protocol says Q Exactive Plus; PRIDE instrument field (Q Exactive) is less specific"
+  },
+  {
+   "location": "comment[proteomics data acquisition method] all rows",
+   "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+   "source_ids": [
+    "pride"
+   ],
+   "evidence": "Protocol: top-5 (BSA/IsoAsp) / top-12 (HeLa) precursor selection above 1e5 intensity threshold"
+  },
+  {
+   "location": "comment[dissociation method], comment[collision energy] all rows",
+   "value": "NT=beam-type collision-induced dissociation;AC=MS:1000422 / 25 NCE",
+   "source_ids": [
+    "pride"
+   ],
+   "evidence": "Protocol: higher energy collisional dissociation, normalized collision energy of 25"
+  },
+  {
+   "location": "comment[ms2 mass analyzer] all rows",
+   "value": "NT=orbitrap;AC=MS:1000484",
+   "source_ids": [
+    "pride"
+   ],
+   "evidence": "Protocol: MS/MS scans acquired at 35000 (BSA) / 17500 (HeLa) resolution on Q Exactive Plus"
+  },
+  {
+   "location": "comment[label] all rows",
+   "value": "NT=label free sample;AC=MS:1002038",
+   "source_ids": [
+    "pride",
+    "mq_bsa",
+    "mq_hela"
+   ],
+   "evidence": "No labelling in protocol; MaxQuant multiplicity 1"
+  },
+  {
+   "location": "comment[cleavage agent details] all rows",
+   "value": "NT=Trypsin;AC=MS:1001251",
+   "source_ids": [
+    "pride",
+    "mq_hela"
+   ],
+   "evidence": "Tryptic digests (protocol); MaxQuant Trypsin/P specific; evidence.txt head peptide C-termini ~99% K/R"
+  },
+  {
+   "location": "comment[modification parameters] all rows",
+   "value": "Carbamidomethyl C fixed; Acetyl Protein N-term variable; Oxidation M variable",
+   "source_ids": [
+    "mq_hela",
+    "pride"
+   ],
+   "evidence": "MaxQuant summary.txt fixed/variable modifications; data processing protocol"
+  },
+  {
+   "location": "comment[precursor mass tolerance] / comment[fragment mass tolerance] all rows",
+   "value": "4.5 ppm / 20 ppm",
+   "source_ids": [
+    "pride"
+   ],
+   "evidence": "Protocol: first search 20 ppm, main search 4.5 ppm, MS/MS 20 ppm (FTMS)"
+  },
+  {
+   "location": "source name / comment[elution conditions] / factor value[elution conditions] rows 1-2",
+   "value": "HeLa digest, temperature method 25 25 25 :: column temperature method DTF 25 25 25: zone 1 (precolumn) 25 °C, zone 2 25 °C, zone 3 25 °C",
+   "source_ids": [
+    "rawheaders",
+    "readme"
+   ],
+   "evidence": "files 20141012_QE6_LC5_CY_SA_PierceHeLa_01.raw, 20141012_QE6_LC5_CY_SA_PierceHeLa_02.raw (RAW header sample comment, Readme pictogram and MaxQuant experiment pairing agree)"
+  },
+  {
+   "location": "source name / comment[elution conditions] / factor value[elution conditions] rows 3-4",
+   "value": "HeLa digest, temperature method DTF DTF :: column temperature method DTF DTF DTF: zone 1 (precolumn) cold then 50 °C, zone 2 cold then 50 °C, zone 3 50 °C",
+   "source_ids": [
+    "rawheaders",
+    "readme"
+   ],
+   "evidence": "files 20141012_QE6_LC5_CY_SA_PierceHeLa_03.raw, 20141012_QE6_LC5_CY_SA_PierceHeLa_04.raw (RAW header sample comment, Readme pictogram and MaxQuant experiment pairing agree)"
+  },
+  {
+   "location": "source name / comment[elution conditions] / factor value[elution conditions] rows 5-6",
+   "value": "HeLa digest, temperature method 0-50 25 25 :: column temperature method DTF 0-50 25 25: zone 1 (precolumn) 0 °C during loading then 50 °C, zone 2 25 °C, zone 3 25 °C",
+   "source_ids": [
+    "rawheaders",
+    "readme"
+   ],
+   "evidence": "files 20141012_QE6_LC5_CY_SA_PierceHeLa_05.raw, 20141012_QE6_LC5_CY_SA_PierceHeLa_06.raw (RAW header sample comment, Readme pictogram and MaxQuant experiment pairing agree)"
+  },
+  {
+   "location": "source name / comment[elution conditions] / factor value[elution conditions] rows 7-8",
+   "value": "HeLa digest, temperature method 0 25 25 :: column temperature method DTF 0 25 25: zone 1 (precolumn) 0 °C, zone 2 25 °C, zone 3 25 °C",
+   "source_ids": [
+    "rawheaders",
+    "readme"
+   ],
+   "evidence": "files 20141012_QE6_LC5_CY_SA_PierceHeLa_07.raw, 20141012_QE6_LC5_CY_SA_PierceHeLa_08.raw (RAW header sample comment, Readme pictogram and MaxQuant experiment pairing agree)"
+  },
+  {
+   "location": "source name / comment[elution conditions] / factor value[elution conditions] rows 9-10",
+   "value": "HeLa digest, temperature method 25 DTF DTF :: column temperature method DTF 25 DTF DTF: zone 1 (precolumn) 25 °C, zone 2 cold then 50 °C, zone 3 50 °C",
+   "source_ids": [
+    "rawheaders",
+    "readme"
+   ],
+   "evidence": "files 20141012_QE6_LC5_CY_SA_PierceHeLa_09.raw, 20141012_QE6_LC5_CY_SA_PierceHeLa_10.raw (RAW header sample comment, Readme pictogram and MaxQuant experiment pairing agree)"
+  },
+  {
+   "location": "source name / comment[elution conditions] / factor value[elution conditions] rows 11-12",
+   "value": "HeLa digest, temperature method 25 25 50 :: column temperature method DTF 25 25 50: zone 1 (precolumn) 25 °C, zone 2 25 °C, zone 3 50 °C",
+   "source_ids": [
+    "rawheaders",
+    "readme"
+   ],
+   "evidence": "files 20141012_QE6_LC5_CY_SA_PierceHeLa_11.raw, 20141012_QE6_LC5_CY_SA_PierceHeLa_12.raw (RAW header sample comment, Readme pictogram and MaxQuant experiment pairing agree)"
+  }
+ ],
+ "limitations": [
+  "Paper full text (J Proteome Res 2017) not accessible; Methods taken from the PRIDE protocol fields, which reproduce the paper's Methods",
+  "Temperature zone 1 identified as the precolumn from the abstract/protocol (0 °C loading, precolumn 50 °C after loading); the physical position of zones 2 and 3 is not documented in accessible evidence and is written as 'zone 2'/'zone 3'",
+  "Cold temperature of 'DTF' (temporal change) zones is not stated in the headers; written as 'cold then 50 °C'",
+  "Letter suffixes in RAW-header method codes (5A, 0-50B, 0-50C, 5C, 5D) are recorded verbatim; their meaning is not documented",
+  "passage number, culture medium, sample storage temperature, individual: not available (commercial digest standard, lot not stated)",
+  "Donor characteristics (age, sex, ancestry, disease) are Cellosaurus facts about the HeLa line, not measured for this lot"
+ ]
+}

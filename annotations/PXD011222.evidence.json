@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD011222.sdrf.tsv",
+  "dataset": "PXD011222",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD011222"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD011222/files/all (92 entries, all projectAccessions=PXD011222)"
+    },
+    {
+      "id": "key",
+      "kind": "repository file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/07/PXD011222/DitzelBreastCancerSampleFileNameKey.xlsx (raw file stem -> manuscript sample ID)"
+    },
+    {
+      "id": "mascot-dat",
+      "kind": "repository file",
+      "location": "HTTP range read of first 12 KB of https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/07/PXD011222/MHP_030416_Tissue_P02Primary_01.dat (Mascot parameters block: MODS, IT_MODS, TOL, ITOL, CLE)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository file",
+      "location": "HTTP range read of first 256 KB of MHP_030416_Tissue_P02Primary_01.raw (instrument model string Q Exactive)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "doi:10.1016/j.celrep.2019.05.104; PMID 31242424 (Cell Rep 2019;27:3927). Full text NOT accessible: not in PMC/EuropePMC, publisher returned HTTP 403."
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/ live: MONDO:0007254 breast cancer, UBERON:0000310 breast, UNIMOD:5 Carbamyl"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] rows 1-45",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organisms NEWT:9606; human breast cancer patient tissue, human-derived PDX and mammospheres. Mouse (NOG host) stroma is present in PDX but the sample under study is the human tumor; reconcile organism_contradicted BLOCKER is a prose-heuristic false positive (only 'mouse' appears in the protocol text as the host)."
+    },
+    {
+      "location": "characteristics[disease] all rows",
+      "value": "breast cancer",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Title, description, PRIDE disease DOID:1612; protocol says ER-negative breast cancer patients. Applied to every row because every sample is tumor-derived (no control arm)."
+    },
+    {
+      "location": "characteristics[organism part] all rows",
+      "value": "breast",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Breast cancer tumor tissue; PDX grown in mammary fat pad; mammospheres derived from PDX. Inferred as tissue of origin."
+    },
+    {
+      "location": "source name / files / characteristics[phenotype] / factor value[phenotype]",
+      "value": "Pri*/PDX*/Mam* mapped from raw stems",
+      "source_ids": [
+        "key",
+        "pride-files"
+      ],
+      "evidence": "Key xlsx maps 15 raw-file stems to manuscript IDs; raw stems name Primary / PDX / Mammosphere. Mammosphere M01->Mam12, M03->Mam03, M07->Mam18, M11->Mam11 exactly as in key."
+    },
+    {
+      "location": "characteristics[individual]",
+      "value": "P02,P03,P05,P06,P08,P11,P12,P18 for Pri/PDX; not available for Mam",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "P-number is part of the raw file stem for Primary and PDX. Mammosphere stems (M01..) carry no patient number; patient link not stated in accessible evidence. Reviewer suggested P03/P11/P12/P18 for Mam rows from key naming; refused: Mam12 comes from raw stem M01 (numbering does not follow stems) and the abstract states only that mammospheres derive from PDX tumors, not which patient."
+    },
+    {
+      "location": "characteristics[material type]",
+      "value": "tissue (Pri, PDX) / cell (Mam)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Tumor tissue homogenised in urea buffer; mammospheres are enriched cell spheroids (single cell suspension, spin-filter prep)."
+    },
+    {
+      "location": "characteristics[age], [sex], [ancestry category], [cell type]",
+      "value": "not available",
+      "source_ids": [],
+      "evidence": "No per-patient demographic in accessible PRIDE record; paper full text inaccessible. Sex deliberately not inferred from 'breast cancer'."
+    },
+    {
+      "location": "comment[technical replicate] / comment[data file]",
+      "value": "45 raw files, 15 sources x 3 injections",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Protocol: 'analyzed in triplicate'. Mam12 (M01) raw files are _02,_03,_04 (no _01 deposited) and are numbered technical replicate 1-3 in deposit order. 45 .dat Mascot search files and the FASTA/key are not SDRF rows."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "pride",
+        "raw-header"
+      ],
+      "evidence": "PRIDE instruments and decoded RAW header both Q Exactive; protocol says Easy-nLC 1000 + Q Exactive."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "mascot-dat"
+      ],
+      "evidence": "Protocol 'digested overnight with trypsin'; Mascot CLE=Trypsin."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Carbamyl K, Carbamyl N-term variable",
+      "source_ids": [
+        "mascot-dat"
+      ],
+      "evidence": "Mascot parameters: MODS=Carbamidomethyl (C); IT_MODS=Carbamyl (K),Carbamyl (N-term),Oxidation (M). Read from one sample's .dat only (P02Primary_01); assumed identical for all runs (same searching group/DB)."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / [fragment mass tolerance]",
+      "value": "10 ppm / 0.6 Da",
+      "source_ids": [
+        "mascot-dat"
+      ],
+      "evidence": "Mascot TOL=10 TOLU=ppm; ITOL=0.6 ITOLU=Da."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Shotgun label-free with Mascot MS/MS ion search (MIS) of peak lists; DDA is the standard mode but not literally stated in accessible text (inferred)."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Description: 'label-free mass spectrometry'; PRIDE quantification spectrum counting."
+    },
+    {
+      "location": "comment[dissociation method], [reduction reagent]",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol says reduced and alkylated without naming the reduction reagent; dissociation not stated in accessible evidence."
+    },
+    {
+      "location": "comment[alkylation reagent]",
+      "value": "Iodoacetamide (IAA) PRIDE:0000599",
+      "source_ids": [
+        "pride",
+        "mascot-dat"
+      ],
+      "evidence": "Protocol: reduced and alkylated; Mascot fixed Carbamidomethyl (C); PRIDE PTM MOD:00397 iodoacetamide derivatized residue. Reagent inferred from these, not literally named in protocol text."
+    }
+  ],
+  "limitations": [
+    "Publication full text (Cell Reports) could not be retrieved; sample-level clinical data (age, sex, grade, subtype beyond ER-negative) absent.",
+    "Mascot parameters read from a single .dat; the other 44 not individually inspected.",
+    "characteristics[phenotype] is used as a free-text carrier for sample class (primary tumor / PDX / mammosphere) because no licensed column fits; validator warns the terms are not in PATO/EFO.",
+    "Mammosphere-to-patient linkage not stated; individual left not available for Mam rows.",
+    "Data acquisition method DDA is inferred from the search setup, not stated."
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD001996.sdrf.tsv",
+  "artifact_sha256": "ee755060bad4a7495c9f286cfb1060029822401b916f9068eff6bc939b7e8d83",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. The triple-SILAC channel map (light = GFP-RAB7A wild type unstimulated, medium = wild type + EGF 8 min, heavy = Y183F + EGF 8 min) is confirmed by Supplementary Fig. 6a and, independently, by the deposited MaxQuant data in both biological replicates (no label swap). File mapping, fractions, re-injection technical replicates, instrument and search parameters were all re-derived from fresh PRIDE, RAW-header, MaxQuant and publication evidence. Only minor improvements remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent context (bergen-reviewer-PXD001996) without producer transcript; producer report.md and scratchpad/_stale_2026-10-27/ not read; all sources re-fetched into scratchpad/PXD001996/review-PXD001996/ with accession/title asserted"
+  },
+  "evidence_manifest": "annotations/PXD001996.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "57 rows x 51 columns, uniform row width, 57 unique assay names, no duplicate (data file, label) pairs. Declared templates ms-proteomics v1.1.0 (technology) + human v1.1.0 (sample) + cell-lines v1.1.0 (experiment) is a valid layered combination per templates.yaml; all inherit sample-metadata, which licenses characteristics[treatment] and characteristics[sampling time]. All required columns of base, sample-metadata, ms-proteomics, human and cell-lines are present. characteristics[genotype] is not in these YAMLs but is a TERMS.tsv term (EFO:0000513, free text); TEMPLATES.adoc line 13 and SAMPLE-GUIDELINES.adoc line 28 state any TERMS.tsv term may be added to any SDRF, so it is licensed. comment[ms1 scan range] matches the TERMS.tsv pattern {number}m/z-{number}m/z. HCD is MS:1000422 as required. sdrf-tools structure: 'Structure OK'."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4: MS:1002634 Q Exactive Plus, MS:1001313 Trypsin/P, MS:1000422 beam-type collision-induced dissociation, MS:1000484 orbitrap, PRIDE:0000627 Data-dependent acquisition, PRIDE:0000568 SDS PAGE (ancestors PRIDE:0000567 Gel electrophoresis -> PRIDE:0000550 Fractionation method); UNIMOD:4 Carbamidomethyl, 35 Oxidation, 1 Acetyl, 28 Gln->pyro-Glu, 21 Phospho, 121 GG, 678 Tyr->Phe, 481 Label:2H(4), 188 Label:13C(6), 259 Label:13C(6)15N(2), 267 Label:13C(6)15N(4) - all labels match, none obsolete. Sample terms: NCBITaxon:9606 Homo sapiens, UBERON:0000002 uterine cervix, CL:0000066 epithelial cell, MONDO:0000554 endocervical adenocarcinoma (Cellosaurus gives the more specific NCIt C27677 HPV-related endocervical adenocarcinoma, so the MONDO parent is correct, not over-specific), PATO:0000383 female, NCIT:C185409 Dulbecco's Modified Eagle Medium, EFO:0003298 epidermal growth factor, PRIDE:0000326/0000327/0000325 SILAC light/medium/heavy. 'untreated' is not an ontology term but is the sample-metadata template's own documented control value (warning level only). sdrf-tools check: 22/22 terms verified, CLEAN. Cellosaurus CVCL_0030: ID HeLa, SX Female, AG 30Y6M, OX NCBI_TaxID=9606."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project PXD001996 (title 'Multi-layered proteomics of EGFR signaling _Rab7 data'; SILAC; protocol 'Analysis on QExactive Plus'). Supplementary Figures PDF (MOESM22) page 10, Supp. Fig. 6a rendered and read: GFP-RAB7 Lys0/Arg0 (no EGF); '+ EGF 8 min.': GFP-RAB7 Lys4/Arg6 and GFP-RAB7 Y183F Lys8/Arg10; SILAC mix 1:1:1; SDS-PAGE; in-gel trypsin digestion. Paper (PMC7618131, title matched, cites PXD001996): HeLa from ATCC, SILAC DMEM, Lipofectamine transfection with GFP-tagged human RAB7 (GFPRAB7a) or Y183F, 100 ng/mL EGF, 8 min stimulation, GFP-trap IP, SDS-PAGE in-gel trypsin, Q-Exactive Plus for RAB7 interactome, MaxQuant 1.4.1.4, 'two biological replicates', 'SILAC experiments have been performed in duplicates'. Channel map verified in the data for both replicates: RAB7A peptides spanning Y183 (QETEVELYNEFPEPIK and extensions, Tyr->Phe site ID 15) have Ratio H/L 0.002-0.07 in rab7mu1 and 0.002-0.075 in rab7mu2 while every other RAB7A peptide has H/L 0.5-0.7, i.e. heavy carries Y183F in both replicates; M/L of those peptides is normal (0.35-0.65), so light and medium are both wild type. log2 normalized M/L of 2566 protein groups correlates between rab7mu1 and rab7mu2 (Pearson r = 0.70; a light/medium swap would give a negative correlation); EGF-recruited GRB2 (M/L 1.35 / 1.83; H/L 4.66 / 4.56) and EGFR (M/L 1.37 / 1.14; H/L 1.65 / 1.52) are enriched over light in both replicates, consistent with light = unstimulated in both. RAW headers (HTTP range reads, first 128 KB of all 19 files): all 'Q Exactive Plus - Orbitrap MS'; Top10 DDA, MS1 scan range 300 to 1750 m/z, NCE 25 identical in all 19. MaxQuant Rab7_parameters.txt: version 1.4.1.4, Carbamidomethyl (C) fixed, Acetyl (Protein N-term)/Gln->pyro-Glu/Oxidation (M) in protein quantification, site tables GlyGly (K), Oxidation (M), Phospho (STY), Tyr->Phe; MS/MS tol. (FTMS) 20 ppm; no precursor tolerance recorded (so 'not available' is honest). Trypsin/P reproduced from Rab7_peptides.txt: 2084 peptides whose only internal K/R precedes P are counted as 1 missed cleavage, which MaxQuant does only with Trypsin/P."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE /files list (projectAccessions == ['PXD001996'] asserted for all 20 entries): 19 RAW + MaxQuantOutput.tar.gz. The set of comment[data file] values equals the 19 RAW names exactly; each file appears exactly 3 times, once per SILAC label. Every RAW appears in Rab7_ExpDesign.txt: 8 Exp1_* files -> rab7mu1, 11 Exp2_* files -> rab7mu2. RAW headers record the 11 deposited Exp2_* files as Exp3_* with identical date, fraction and injection suffix (consistent 1:1 rename, no cross-assignment); the SDRF correctly uses deposited names."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 2 biological replicates x 3 SILAC conditions = 6 source names; 19 runs x 3 channels = 57 rows. Biological replicate 1 = Exp1/rab7mu1, 2 = Exp2/rab7mu2, matching the paper's duplicate SILAC experiments. Fraction identifiers 1-7 match the ExpDesign Fraction column for all 19 files (7 gel slices), including re-injections F1b->1 (rep1), F2b->2, F4b->4, F7b->7, F4c->4 (rep2). Technical replicate 1 for F1-F7, 2 for F1b/F2b/F4b/F7b, 3 for F4c - consistent with README 'repeated measurements of the same sample (e.g., multiple injections)' and with MaxQuant pooling them into the same fraction. Factors: factor value[genotype] (wild type vs Y183F) and factor value[treatment] (untreated vs EGF) each vary and match characteristics; light vs medium isolates EGF, medium vs heavy isolates the Y183F mutation; same label-to-condition map in both replicates (verified above). characteristics[sampling time] 8 minute for both EGF channels and 'not applicable' for unstimulated, matching Supp. Fig. 6a '+ EGF 8 min'."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value was traced to PRIDE, the paper, Supp. Fig. 6a, Cellosaurus, RAW headers or deposited MaxQuant files; no value is stated more specifically than its source (disease uses the MONDO parent of Cellosaurus's HPV-related subtype; precursor tolerance is 'not available' because parameters.txt omits it; ancestry and passage are 'not available'). Optional reduction/alkylation reagent columns are omitted because the paper does not name them (only Carbamidomethyl (C) as a search modification). The GFP-trap IP is not encoded because EFO:0009090 has no fitting descendant (checked live: only cell-sorting terms, 'sample enrichment' and 'enrichment of phosphorylated protein'). Material omissions are limited to the minor findings below (recommended characteristics[individual] and characteristics[sample storage temperature] columns, EGF dose and serum starvation, transient-transfection context)."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf --use_ols_cache_only (timeout 900), one run per declared template: -t ms-proteomics exit 0, -t human exit 0, -t cell-lines exit 0; each with the single warning \"Term: untreated in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo\" and 'Most seems to be fine. There were only warnings.' No cache-only term failures. sdrf-tools check: exit 0, 22/22 verified, CLEAN. sdrf-tools score: exit 0, 99/100 (completeness note: characteristics[developmental stage], optional in human/cell-lines). sdrf-tools structure: exit 0, 'Structure OK'. sdrf-tools reconcile --record (fresh PRIDE project JSON): exit 1, cleavage_agent_unsupported for Trypsin/P because the PRIDE prose never names an enzyme; overridden with evidence - paper Methods 'in-gel digested with trypsin' and the Trypsin/P missed-cleavage behaviour reproduced in Rab7_peptides.txt."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "semantics",
+      "location": "characteristics[genotype] and factor value[genotype], all 57 rows",
+      "message": "The genotype values describe a transiently transfected GFP-RAB7A construct (Lipofectamine, assays 36 h after transfection), not the HeLa cells' own genotype. The column is licensed via TERMS.tsv and the 'GFP-' prefix makes the meaning clear, but readers may misread 'wild type' as a cell-line genotype.",
+      "evidence": "Paper Methods: 'HeLa cells were transfected using Lipofectamine ... assays were performed 36 hours after transfection'; 'GFP-tagged human RAB7 (GFPRAB7a) and its mutant ... (RAB7-Y183F) ... cloned into the pCEP4 vector'. TERMS.tsv also lists characteristics[genetic modification] (EFO:0000510). Correction criterion: optionally add characteristics[genetic modification] (e.g. transient transfection/overexpression) alongside the genotype column."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (absent columns)",
+      "message": "Recommended columns characteristics[individual] (human template) and characteristics[sample storage temperature] (cell-lines template) are absent.",
+      "evidence": "human/1.1.0/human.yaml and cell-lines/1.1.0/cell-lines.yaml mark both 'recommended' with allow_not_available/allow_not_applicable true. Correction criterion: add them with 'not available' or 'not applicable' if no value is known."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[treatment] rows with 'epidermal growth factor'; all rows",
+      "message": "EGF concentration (100 ng/mL) and the overnight serum starvation preceding stimulation are not captured anywhere in the SDRF.",
+      "evidence": "Paper Methods: 'serum-starved overnight in serum-free medium. Cells were stimulated for the indicated time points with 100 ng/mL of EGF'. Correction criterion: optionally add a dose column (TERMS.tsv 'dose', NCIT:C25488) or equivalent."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (characteristics[enrichment process] absent)",
+      "message": "The GFP-trap affinity enrichment of the bait is not represented in the SDRF; acceptable because the column is optional and no fitting EFO:0009090 descendant exists.",
+      "evidence": "Paper: 'Cleared samples were then incubated with GFP-trap beads ... Eluates were then combined and resolved on SDS-PAGE'. OLS EFO:0009090 descendants contain no immunoprecipitation/affinity-purification term."
+    }
+  ]
+}

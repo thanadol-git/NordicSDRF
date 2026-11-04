@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD006112-BSA.sdrf.tsv",
+  "artifact_sha256": "804df722b8e01ac6204263c787218022f319d5c5f4806a72d7ab483b5c50a152",
+  "verdict": "PASS",
+  "summary": "Independent re-review of the corrected BSA SDRF (39 runs, 13 column-temperature methods x 3 technical replicates) found no blocker or important issue. All 13 method codes match the RAW-header sample comments verbatim (including 'DTF DTF' for runs 06-08 and TFA_47-49) and the deposited Readme pictograms; organism part 'blood' is no more specific than the evidence; all controlled terms resolve; parse_sdrf, sdrf-tools check/score/structure/reconcile pass. Three minor findings remain (stale evidence manifest, undifferentiated 0-50B/0-50C descriptions, optional sample-layer template not declared).",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent (bergen-reviewer-PXD006112-BSA) without producer transcript or report.md; prior review report not read; all evidence re-fetched into scratchpad/PXD006112/review-PXD006112-BSA/"
+  },
+  "evidence_manifest": "annotations/PXD006112-BSA.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active template derived independently: ms-proteomics v1.1.0 (technology layer, required); TEMPLATES.adoc makes the sample/organism layer 'recommended' and lists technology-only combinations for purified-protein studies, so a commercial BSA digest without a vertebrates template is permitted. 29 columns x 39 rows, uniform row width; all required base/sample-metadata/ms-proteomics columns present; factor value[elution conditions] is last and mirrors comment[elution conditions] in every row; formats conform (collision energy '25 NCE' matches pattern, ms1 scan range '300m/z-1750m/z' matches TERMS.tsv, tolerances number+unit, modification key=value syntax); HCD uses MS:1000422 as required by the spec NOTE; no source name/assay name/label duplicate combinations. parse_sdrf validate-sdrf -t ms-proteomics: 'Everything seems to be fine. Well done.' (exit 0); sdrf-tools structure: 'Structure OK'."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "All 11 unique controlled terms resolved in live OLS4 with exact labels and is_obsolete=false: NCBITaxon:9913 Bos taurus, UBERON:0000178 blood, PRIDE:0000627 Data-dependent acquisition, MS:1002634 Q Exactive Plus, MS:1001251 Trypsin, MS:1002038 label free sample, MS:1000422 beam-type collision-induced dissociation, MS:1000484 orbitrap, UNIMOD:4 Carbamidomethyl, UNIMOD:1 Acetyl, UNIMOD:35 Oxidation. sdrf-tools check: 11 checked, 11 verified, 0 hallucinated/label mismatch/wrong ontology/UNIMOD swap (exit 0). Specificity: Q Exactive Plus is more specific than PRIDE's 'Q Exactive' but is attested by 'Q Exactive Plus - Orbitrap MS' in all 39 RAW headers and the protocol; 'blood' is the broad UBERON term appropriate for serum albumin of undocumented serum/plasma origin."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE project record (accession PXD006112, title matches) protocol: Bruker tryptic BSA digest; EASY-nLC II two-column setup ('LC setup for DTF analyses'); Q Exactive Plus, full scan m/z 300-1750, top-5 DDA, HCD NCE 25, MS/MS at 35000 resolution (Orbitrap); 'Triplicate runs were performed for each BSA temperature method'; TFA experiments loaded in 0.1% TFA; MaxQuant Trypsin/P, fixed carbamidomethyl C, variable protein N-term acetyl and M oxidation, main search 4.5 ppm, MS/MS 20 ppm. HTTP range reads (32 KB) of all 39 BSA RAW files: sample comments '50 fmol Proxeon Orange BSA DTF <code> 30min [TFA]' give exactly the 13 codes used in the SDRF, per file. The Readme.pdf pictogram table (white=25 C, blue=cold, red=50 C, green=TFA loading) agrees with every row's zone temperatures, including DTF DTF (zone 1 cold->50, zone 2 cold->50, zone 3 50). Zone 1 = precolumn supported by the abstract (precolumn raised to 50 C after low-temperature loading) together with the HeLa headers of the same deposit, which carry 'DTF 0-50 25 25' (cold->50 change in position 1). Zone 3 = 5 C for code '5A' agrees with the blue pictogram. sdrf-tools reconcile against the fresh PRIDE record: 'every annotated value agrees with the deposit record' (exit 0). Full paper text and ACS supporting information were inaccessible (Europe PMC: not OA, no PMC copy; pubs.acs.org returned 403)."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE /files (98 files, projectAccessions = {PXD006112}): 93 RAW, of which 39 contain 'BSA'. SDRF comment[data file] has 39 unique values; set difference with the PRIDE BSA RAW set is empty in both directions; no non-RAW files; assay name equals file stem in every row. The 54 HeLa/IsoAsp RAW files belong to the sibling SDRFs and are correctly excluded. File-to-method assignments match both RAW headers and the Readme table for every file."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "13 factor levels x 3 runs = 39 rows; comment[technical replicate] is 1,2,3 within each method; characteristics[biological replicate] = 1 throughout (one commercial digest); fraction identifier 1 (no fractionation); label free. Non-consecutive file numbers (e.g. 09,10,12) match the Readme triplicates; undeposited runs (01,05,11,13,...) are correctly not annotated. TFA loading is encoded as a distinct factor level for the two methods where it was applied (25 25 25 and DTF DTF), mirroring the Readme. No confounders beyond the method factor are evident (single date, single instrument, same MS method file in all 39 headers)."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every non-constant value traced to PRIDE protocol, RAW headers or the Readme. Checked for unsupported specificity: 'blood' (not serum/plasma) is supported; DTF DTF cold phases are written as 'cold' rather than an invented temperature; zones 2/3 are not assigned physical positions; RAW-header codes are quoted verbatim (previous 'DTF DTF DTF' misquote is gone); cell type/disease 'not applicable' fits a purified commercial protein. No material evidence omitted that a required/recommended column needs. Residual minor point: 0-50B/0-50C share the 0-50 description although the Readme pictograms differ (see findings); the verbatim codes keep the factor levels distinct and no stated value is contradicted."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf -s annotations/PXD006112-BSA.sdrf.tsv -t ms-proteomics --use_ols_cache_only -> 'Everything seems to be fine. Well done.' exit 0 (only declared template). python -m tools check -> CLEAN, exit 0. python -m tools score -> 100/100, exit 0. python -m tools structure -> 'Structure OK', exit 0. python -m tools reconcile --record <fresh PRIDE project.json> --accession PXD006112 -> all values agree, exit 0."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD006112-BSA.evidence.json: claims for rows 28-30, 34-36, 37-39; limitations[4]",
+      "message": "Evidence manifest was not fully updated after the correction: three claim values still contain the removed curator notes ('(RAW-header code suffix 'A'/'B'/'C', meaning not documented)') that no longer appear in the SDRF, and a limitation still states organism part 'blood serum' is inferred, contradicting the artifact's 'blood' (only the final limitation mentions the revision).",
+      "evidence": "SDRF comment/factor value[elution conditions] for these rows carry no suffix notes; characteristics[organism part] = 'blood' in all rows. Correction: make the manifest claim values match the artifact and drop or rewrite the 'blood serum' limitation."
+    },
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "rows 13-15 vs 34-36 vs 37-39, comment[elution conditions] and factor value[elution conditions]",
+      "message": "Methods 0-50, 0-50B and 0-50C have identical temperature descriptions ('zone 1 (precolumn) 0 °C during loading then 50 °C, zone 2 25 °C, zone 3 25 °C'); only the verbatim method code tells them apart. The deposited Readme pictograms show they are different programs (zone-1 cold segment plain, split into two, and split into three horizontal bands respectively), with no documented meaning.",
+      "evidence": "Readme.pdf page 1 rendered at 600 dpi; RAW headers 'DTF 0-50 25 25', 'DTF 0-50B 25 25', 'DTF 0-50C 25 25'. Factor levels remain distinct and no stated temperature is contradicted, so this does not block. Optional improvement: add a neutral qualifier such as 'variant B of 0-50 (Readme pictogram differs; difference not documented)'."
+    },
+    {
+      "severity": "minor",
+      "category": "spec_compliance",
+      "location": "comment[sdrf template] (all rows)",
+      "message": "Only ms-proteomics is declared; no organism-layer template (vertebrates) for Bos taurus.",
+      "evidence": "TEMPLATES.adoc Combination Rule: the sample template is 'recommended', not required, and technology-only combinations are listed for purified-protein studies. For a commercial BSA digest the vertebrates-specific fields would all be 'not applicable', so omission is acceptable; it is recorded for awareness only."
+    }
+  ]
+}

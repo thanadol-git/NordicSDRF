@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD008292.sdrf.tsv",
+  "artifact_sha256": "0912c84831da77ef64428627ec39a2ba70004236cd12f932fd001c0c4602a106",
+  "verdict": "PASS",
+  "summary": "Independent review of PXD008292 found no blocker or important issues. All 81 RAW files map to plex A/B/C from header comments; iTRAQ 114/115/116/117 = WT/RN/HAL/RN-HAL holds for the three-replicate design; Qex02143-1 is plex-C phospho fraction 1; carbamidomethyl is correctly Variable; instrument is Q Exactive Plus; deterministic validators passed.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent context, reviewer bergen-reviewer-PXD008292; did not read the producer report.md or scratchpad/_stale_2026-10-27/; PRIDE, PubMed, RAW headers and .msf range evidence re-checked under scratchpad/PXD008292/review-PXD008292/ with accession/title identity asserted"
+  },
+  "evidence_manifest": "annotations/PXD008292.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Declared templates NT=ms-proteomics;VV=v1.1.0 and NT=vertebrates;VV=v1.1.0. parse_sdrf validate-sdrf --template ms-proteomics and --template vertebrates both exit 0 with 'Everything seems to be fine.' sdrf-tools structure OK. 324 rows x 39 columns; unique (data file, label); HCD encoded as NT=beam-type collision-induced dissociation;AC=MS:1000422 per README NOTE."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check: 15 terms verified, 0 hallucinated, CLEAN, exit 0. Live OLS confirmed MS:1002634 Q Exactive Plus, MS:1000484 orbitrap, MS:1000422 beam-type CID, MS:1001251 Trypsin, PRIDE:0000627 DDA, UBERON:0001134 skeletal muscle tissue, NCBITaxon:9825 Sus scrofa domesticus, EFO:0010806 enrichment of phosphorylated protein, UNIMOD:4/21/214. iTRAQ114-117 accepted by validators."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE PXD008292 protocol: 45 min PM porcine muscle; iTRAQ-114 WT, 115 RN, 116 HAL, 117 RN/HAL; three pigs/genotype and three biological replicates; TiO2 phospho + non-modified; Q Exactive Plus; trypsin and mods including variable carbamidomethyl in dataProcessingProtocol. PubMed 29916714 MeSH Swine/Muscle Skeletal. All 81 RAW headers: Q Exactive Plus - Orbitrap MS; comments pigs-A/B/C and Phosphopeptides vs FTfrom. Readable .msf: iTRAQ 4plex method, DynMod_1-8 include Carbamidomethyl (C) as dynamic, Trypsin, 10 ppm / 0.05 Da."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE files list 81 RAW + 6 .msf, all projectAccessions={PXD008292}. SDRF comment[data file] set equals the 81 RAW names exactly (including Qex02143-1.raw). No duplicates of (file,label). PhosphoA/B/C and FTA/FTB .msf SpectrumFileNames match the plex file groups; FTCRLA82-94.msf range-unreadable (server error) but C FT files confirmed by RAW headers."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 12 sources (4 genotypes x 3 plexes), 81 files x 4 channels = 324 rows. Plex A/B/C = bio rep 1/2/3 with 0 header mismatches. Phospho fractions 1-14 and flow-through 15-27 per source; enrichment process distinguishes them. Qex02143-1 is plex C phospho frac 1 (header pigs-C; acquisition before Qex02143; vial RE5; original name Qex02142_*.raw). Channel map applied uniformly across plexes matches the single protocol statement for the three-replicate design."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Sex, developmental stage, strain/breed, disease, fractionation method left not available (Suppl. Table 1 and ACS full text unavailable). Instrument overridden from PRIDE Q Exactive to Q Exactive Plus using RAW headers. Carbamidomethyl MT=Variable matches MSF/PRIDE (not guessed Fixed). No unsupported per-animal demographics. Synthetic source names encode genotype+replicate only."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "sdrf-tools check exit 0 CLEAN; score 100/100; structure OK; parse_sdrf validate-sdrf --template ms-proteomics exit 0; parse_sdrf validate-sdrf --template vertebrates exit 0 (both --use_ols_cache_only). reconcile --record pride.json flags cleavage_agent_unsupported (false positive: trypsin is in dataProcessingProtocol and .msf)."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "source name / characteristics[biological replicate]",
+      "message": "Source names (PXD008292_*_pig1/2/3) are synthetic labels for the three biological-replicate plexes; true animal IDs remain in unavailable Supplemental Table 1.",
+      "evidence": "PRIDE protocol cites Supplemental table 1 for genotype/weight/gender; ACS full text and SI returned HTTP 403 / no OA copy."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "comment[fraction identifier] flow-through rows",
+      "message": "Flow-through fractions are numbered 15-27 (after phospho 1-14) within each source to keep fraction identifiers unique; elution chemistry is not documented.",
+      "evidence": "14 phospho + 13 FT runs per plex from RAW comments and .msf file lists; fractionation method column correctly not available."
+    },
+    {
+      "severity": "minor",
+      "category": "tooling",
+      "location": "comment[cleavage agent details]",
+      "message": "sdrf-tools reconcile reports cleavage_agent_unsupported against sampleProcessingProtocol alone; trypsin is supported by dataProcessingProtocol and Proteome Discoverer .msf Enzyme=Trypsin.",
+      "evidence": "PRIDE dataProcessingProtocol: enzyme, trypsin; PhosphoA/FTA .msf: Enzyme Trypsin / Trypsin (Full)."
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD007689.sdrf.tsv",
+  "artifact_sha256": "4d3383a2a226480521c306ee3f1463d53869bef3b30f734dfc306720646fc3aa",
+  "verdict": "PASS",
+  "summary": "Independent re-review of the corrected file found no blocker or important issues. The fraction identifiers (restarting at 1 per biological replicate and peptide group) are directly confirmed by the RAW acquisition sample names (ISL02/ISL03_Phospho_Pia_1..13, ISL02/ISL03_Deglyco_Pia_1..7/1..6) and by monotonically increasing autosampler well positions for the nonmodified HILIC series. QHF0903/QHF0904 are confirmed as the unfractionated 'Pia ISL02/ISL03 multiphospho' runs. The 32-source split is required for characteristics consistency, because characteristics[enrichment process] differs between peptide groups of the same biological sample. Four minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh reviewer subagent (bergen-reviewer-PXD007689) without the producer transcript or report.md and without scratchpad/_stale_2026-10-27/. PRIDE project and file lists, PMC full text, RAW headers (HTTP range reads of the first 64 KB of all 63 RAW files) and mzid AnalysisProtocolCollection blocks were fetched fresh into scratchpad/PXD007689/review-PXD007689/r2/."
+  },
+  "evidence_manifest": "annotations/PXD007689.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates were derived independently from templates.yaml: ms-proteomics v1.1.0 (technology layer) + vertebrates v1.1.0 (sample layer, Rattus norvegicus); sample-metadata is inherited and clinical-metadata does not apply. Both are declared. Every required column of base, sample-metadata, ms-proteomics and vertebrates is present (source name, assay name, technology type, technical replicate, data file, organism, organism part, biological replicate, disease, developmental stage, acquisition method, instrument, cleavage agent, label, fraction identifier). The file has 41 columns and 252 rows, all of width 41, with no CRLF, BOM, stray whitespace, empty cells or reserved-word casing errors. source name+assay name+label is unique (README row-uniqueness MUST rule). Labels use the template form iTRAQ114..117. Age '4D-5D' matches SAMPLE-GUIDELINES '{Lower}{Unit}-{Upper}{Unit}', so the sdrf-tools score consistency remark on age is a false positive. HCD is MS:1000422, as required by the README NOTE. Assay names are per channel rather than per run (minor finding)."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4 resolution, all labels matching and none obsolete: NCBITaxon:10116 Rattus norvegicus; UBERON:0000006 islet of Langerhans; PATO:0000461 normal; EFO:0001372 neonate; EFO:0010806 enrichment of phosphorylated protein (the only phospho child of EFO:0009090; the descendants list has no glyco child and searches found no glycopeptide-enrichment term in PRIDE/EFO/MS, so the free-text 'enrichment of glycopeptides' is justified); CHEBI:17234 glucose; MS:1002523 Q Exactive HF; MS:1002416 Orbitrap Fusion; MS:1000422 beam-type collision-induced dissociation; MS:1000484 orbitrap; PRIDE:0000627 Data-dependent acquisition; MS:1001251 Trypsin; MS:1001309 Lys-C; PRIDE:0000554 HILIC; PRIDE:0000608 DTT; PRIDE:0000599 IAA. UNIMOD 4/214/35/21/7 were confirmed by sdrf-tools check (19/19 verified, 0 label mismatches, 0 UNIMOD swaps). Wistar is absent from NCBITaxon (validator warning), but the vertebrates template lists Wistar as an example value and EFO:0001342 'Wistar' exists."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PMC5750853 (title, PMID 29113996 and PXD007689 verified in fetched HTML). Methods: '4 to 5-days-old Wistar rat pups' (strain, age, neonate); 'Two biological replicates ... control 114, 5 min glucose 115, 10 min glucose 116, and 15 min glucose 117' (channel map, sampling time, replicate); 20 mM glucose; Lys-C predigestion then trypsin; 10 mM DTT; 20 mM iodoacetamide; HILIC for mono-phosphorylated, deglycosylated and nonmodified peptides; multi-phosphopeptides analysed directly; HCD; Q-Exactive HF. RAW headers of all 63 files show instrument 'Q Exactive HF - Orbitrap MS' for QHF* and 'Orbitrap Fusion' for FUS* files (PRIDE's generic 'Q Exactive' is less specific), DDA TopN methods, HCD30/HCD40 and OT-OT methods (orbitrap MS2), and ISL02 for R1 and ISL03 for R2 in every acquisition sample name. mzid AnalysisProtocolCollection blocks were read for Phosphorylation_R2_QHF0904 (multiphospho), Sialylation_R1_FUS04122 and Nonmodification_R1_QHF0913. All give Carbamidomethyl C fixed; iTRAQ4plex K and N-term variable; Oxidation M and Phospho S/T/Y variable; Deamidated N/Q only in the sialylation search; Trypsin; parent tolerance +/-20 ppm; no FragmentTolerance element; FragmentMethod HCD. These match the SDRF (paper text says 10 ppm; the deposited-search value was used, which is correct)."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE /files pages 0-3 list 252 entries, all with projectAccessions containing PXD007689: 63 raw, 63 mzML, 63 mzid and 63 tsv. The 63 SDRF comment[data file] values equal the 63 PRIDE RAW names exactly (no SDRF-only or PRIDE-only files, no duplicates, no non-raw files). Each RAW has exactly 4 rows (iTRAQ114-117), and the original acquisition file names in the headers equal the deposited names."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed design: 2 biological replicates x 4 sampling times (0/5/10/15 min) x 4 peptide groups gives 32 sources. Rows per group: nonmodified 88 (2x11 files), monophospho 104 (2x13), multiphospho 8 (2x1), glyco 52 (7+6 files). The label-to-sampling-time map holds on every row. The compound/dose pattern is consistent (glucose 20 mM on 5/10/15 min rows). Every one of the 32 sources has a single consistent set of characteristics/factor values; collapsing to 8 sources would make all 8 inconsistent because characteristics[enrichment process] differs, so the peptide-group split is appropriate. source+replicate+fraction+label coordinates are unique. Fraction order is evidenced, not guessed: the Fusion acquisition sample names carry the fraction number (ISL02_Phospho_Pia_1..13, ISL03_Phospho_Pia_1..13, ISL02_Deglyco_Pia_1..7, ISL03_Deglyco_Pia_1..6), which equals the SDRF fraction identifier for all 39 files. The nonmodified QE HF sample names carry autosampler wells that increase monotonically with run number and SDRF fraction (R1 A4..A12,B1,B5 = 1..11; R2 C3..C12,D5 = 1..11), and gradient lengths follow the same early/middle/late pattern as the labelled Fusion series. QHF0903/QHF0904 headers read 'Pia ISL02 multiphospho' / 'Pia ISL03 multiphospho' with no fraction suffix, which supports fraction 1 and fractionation method 'not applicable'. Technical replicate is 1 for every file (one injection each)."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every populated value was traced to the paper, RAW headers, mzid or PRIDE (see source_evidence). Values are no more specific than the evidence: sex 'not available' (not reported); age is a range at isolation; instrument models are header-confirmed; fragment tolerance 'not available' (absent from the MS-GF+ mzid); collision energy omitted (methods HCD30/HCD40 conflict with the paper's 32V); the glycopeptide enrichment is free text because no ontology term exists. No material evidence is contradicted. Optional context not encoded (in vitro culture 9-10 DIV, islet pooling, low-glucose control buffer) is listed as minor."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "cd sdrf-skills && .venv/bin/python -m tools check annotations/PXD007689.sdrf.tsv: exit 0, 19 terms checked, 19 verified, Status CLEAN. tools score: exit 0, 98/100 (only remark is the age-format false positive). timeout 900 .venv/bin/parse_sdrf validate-sdrf --template ms-proteomics --use_ols_cache_only: exit 0, warnings only ('enrichment of glycopeptides' not in pride;efo). Same with --template vertebrates: exit 0, warnings only (glycopeptide free text; 'Wistar' not in ncbitaxon). Both warnings are explained under ontology_integrity. SHA-256 re-verified unchanged at the end of the review."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "spec_compliance",
+      "location": "assay name, all 252 rows",
+      "message": "Assay names are per channel (e.g. 'Nonmodification_R1_QHF0913-iTRAQ114'), so each MS run has four assay names. The spec defines assay name as the identifier of an MS run/data file and notes that multiplexed rows share one assay name, with comment[label] distinguishing channels.",
+      "evidence": "spec README.adoc line 394 ('Unique identifier for an MS run/data file') and line 535 NOTE ('For multiplexed experiments (TMT, iTRAQ), multiple rows share the same assay name'). No MUST rule is broken: source+assay+label is unique and no assay name spans two files. Validators pass. Correction: use one assay name per data file (e.g. 'Nonmodification_R1_QHF0913') on all four label rows."
+    },
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "characteristics[compound] / characteristics[dose], the 63 rows with sampling time 0 minute",
+      "message": "Control rows say compound/dose 'not applicable', but the Methods say all islets were pre-incubated 90 min in KRHB with 0.5 mM glucose and that 'islets incubated for 5 min in KRHB containing 0.5 mM glucose served as controls'.",
+      "evidence": "PMC5750853 Methods, 'Glucose-stimulated Insulin Secretion, Islet Collection'; the same paragraph covers the proteomics Petri-dish islets. The Fig. 1 legend and Results call the controls 'nontreated' / 'no glucose stimulation', and factor value[sampling time] already separates the conditions, so this is not important. Optional improvement: glucose / 0.5 mM on 0-minute rows, or a note on the low-glucose baseline."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD007689.evidence.json limitations and the comment[fraction identifier] claim",
+      "message": "The manifest calls the HILIC fraction order and the QHF0903/0904 identity 'inferences' from run order, but the RAW headers state them directly. The nonmodified fraction numbers are ordinal over deposited runs: the wells skip B2-B4 and D1-D4, and the paper reports 12-15 final HILIC fractions versus 11 nonmodified and 6-7 glyco files.",
+      "evidence": "RAW acquisition sample names: ISL0x_Phospho_Pia_N, ISL0x_Deglyco_Pia_N, 'Pia ISL0x multiphospho', 'Pia ISL0x non modified HILIC <well>'. Correction: cite the header sample names and wells as the fraction evidence and note that nonmodified identifiers are ordinal positions, not lab fraction labels."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "file (optional columns)",
+      "message": "Optional sample context is not encoded: islets were cultured 9-10 days in vitro before stimulation, and about 1500 islets from multiple pups were pooled per condition. characteristics[pooled sample] and a culture/material-type note could record this. The recommended characteristics[cell type] is also absent (mixed islet cell population; 'not applicable' or omission is acceptable).",
+      "evidence": "PMC5750853 Methods: 'The isolated islets were cultured for 9-10 days in vitro (DIV)'; 'Approximately 1500 islets were pooled per condition'. All of these columns are optional or recommended in the active templates."
+    }
+  ]
+}

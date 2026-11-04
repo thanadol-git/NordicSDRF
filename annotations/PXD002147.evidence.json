@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002147.sdrf.tsv",
+  "dataset": "PXD002147",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002147"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002147/files"
+    },
+    {
+      "id": "zip_dirs",
+      "kind": "deposited_file",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/07/PXD002147/*.zip (central directories via HTTP range read; scratchpad/PXD002147/zip_members.json)"
+    },
+    {
+      "id": "raw_headers",
+      "kind": "deposited_file",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/07/PXD002147/<archive>.zip first .raw member, first 64 KB via range read (scratchpad/PXD002147/rawhead.py, rawhead_rest.txt)"
+    },
+    {
+      "id": "mztab",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/07/PXD002147/generated/<result>.dat-pride.pride.mztab.gz (first 64 KB of all 10; 200 KB of PDB_SDS)"
+    },
+    {
+      "id": "pridexml",
+      "kind": "deposited_file",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/07/PXD002147/PDB_SDS.dat-pride.xml.gz and In_Planta_SCX.dat-pride.xml.gz (first 200-300 KB)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMID:26435044 (Europe PMC abstract + MeSH; full text closed)"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] rows 1-10",
+      "value": "10 PRIDE RAW ZIP archives",
+      "source_ids": [
+        "pride_files",
+        "zip_dirs"
+      ],
+      "evidence": "Exactly the 10 RAW-category PRIDE entries, one row each; each archive holds ten .raw fraction runs"
+    },
+    {
+      "location": "characteristics[organism] rows 1-10",
+      "value": "Zymoseptoria tritici",
+      "source_ids": [
+        "pride",
+        "paper",
+        "mztab"
+      ],
+      "evidence": "Project title, abstract, NEWT 336722 in record and all mzTab sample species"
+    },
+    {
+      "location": "characteristics[strain or breed] rows 1-10",
+      "value": "IPO323",
+      "source_ids": [
+        "pride",
+        "mztab"
+      ],
+      "evidence": "Submitter organism NEWT 336722 'strain CBS 115943 / IPO323' in record and all 10 results"
+    },
+    {
+      "location": "characteristics[organism part] / factor value[organism part]",
+      "value": "cell culture (CDB/PDB cell culture (submitter mzTab/PRIDE term; PRIDE free text says 'fungal tissue')), culture fluid (supernatant), leaf (in planta)",
+      "source_ids": [
+        "pride",
+        "mztab",
+        "ols"
+      ],
+      "evidence": "Protocol: protein from culture supernatant, cell culture (submitter mzTab/PRIDE term; PRIDE free text says 'fungal tissue') and infected leaves; mzTab titles 'X cell culture (submitter mzTab/PRIDE term; PRIDE free text says 'fungal tissue')_*', 'X supernatant_*', 'In planta_*'; BTO:0000214, BTO:0002233, BTO:0000713"
+    },
+    {
+      "location": "characteristics[growth condition] / factor value[growth condition]",
+      "value": "Czapek-Dox broth / potato dextrose broth / in planta",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Protocol: nutrient-limiting CDB, nutrient-rich PDB, 25-d infected wheat leaves; abstract confirms three conditions"
+    },
+    {
+      "location": "characteristics[sampling time] rows 9-10",
+      "value": "25 day",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "'25-d-Z. tritici-infected wheat leaves'; culture rows not available"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1 = SDS-PAGE archive, 2 = SCX archive",
+      "source_ids": [
+        "pride",
+        "raw_headers"
+      ],
+      "evidence": "Protocol: one biological replicate SDS-PAGE, the other SCX; RAW acquisition paths contain \\SDS\\ or \\SCX\\ matching each archive"
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "SDS PAGE (PRIDE:0000568) rows with *SDS.zip; SCX (PRIDE:0000561) rows with *SCX.zip",
+      "source_ids": [
+        "pride",
+        "raw_headers",
+        "mztab"
+      ],
+      "evidence": "Archive names, RAW paths, mzTab titles *_gel/*_SCX; post-processed 5 cells, diff-verified"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Q Exactive;AC=MS:1001911",
+      "source_ids": [
+        "pride",
+        "raw_headers"
+      ],
+      "evidence": "PRIDE instrument; 'Q Exactive - Orbitrap MS' in first RAW header of all 10 archives"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD MS:1000422",
+      "source_ids": [
+        "raw_headers"
+      ],
+      "evidence": "Q Exactive fragments by HCD only"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "raw_headers",
+        "pride"
+      ],
+      "evidence": "Xcalibur method IDanalysis_1h; Mascot identification workflow"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin MS:1001251",
+      "source_ids": [
+        "pride",
+        "mztab"
+      ],
+      "evidence": "Protocol in-gel/in-solution tryptic digestion; sample_processing enzyme digestion=Trypsin; K/R C-termini in PSMs"
+    },
+    {
+      "location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]",
+      "value": "20 ppm / 0.6 Da",
+      "source_ids": [
+        "pridexml"
+      ],
+      "evidence": "Peptide/Fragment mass tolerance setting in PDB_SDS and In_Planta_SCX PRIDE XML"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C, Oxidation M, Deamidated N,Q, Gln->pyro-Glu N-term Q; all Variable",
+      "source_ids": [
+        "mztab"
+      ],
+      "evidence": "fixed_mod 'No fixed modifications searched'; variable MOD:00397/00425/00400/01160 in all 10 mzTab; residues from 4900 PSMs"
+    },
+    {
+      "location": "characteristics[host organism] rows 9-10",
+      "value": "Triticum",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "In planta samples are extracts of infected wheat leaves (PRIDE protocol, abstract: 'wheat'); species/cultivar not stated, so genus level (NCBITaxon:4564). Culture rows: not applicable."
+    }
+  ],
+  "limitations": [
+    "Paper (PMID 26435044) closed: abstract and MeSH only",
+    "One row per ZIP archive; inner .raw names collide between SDS and SCX archives; fraction identifier 1 per archive",
+    "SDS=rep1/SCX=rep2 from PRIDE protocol; shared facility IDs (P140590, P140574) and 'CDB1-2' tokens leave open a shared extract",
+    "In planta samples include wheat host protein; host species/cultivar not annotated (abstract says only 'wheat')",
+    "Strain IPO323 from submitter PRIDE organism field only",
+    "Culture duration, reduction/alkylation reagents not available",
+    "Tolerances read from 2 of 10 result files",
+    "Organism part for cultured cells is 'cell culture' (BTO:0000214) rather than mycelium: growth morphology in Czapek-Dox and potato dextrose broth is not stated and Z. tritici can grow yeast-like in rich media."
+  ]
+}

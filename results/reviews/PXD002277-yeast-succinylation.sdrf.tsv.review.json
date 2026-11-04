@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002277-yeast-succinylation.sdrf.tsv",
+  "artifact_sha256": "65586832081ecdbb4e200ec80b2335e781b6e395cb8ed8a46a3fc54ee5bed392",
+  "verdict": "FAIL",
+  "summary": "Independent review of the yeast succinylation SDRF (30 rows, 14 RAW files). Validators pass, all 14 controlled terms resolve live in OLS, the file mapping is complete, and the SILAC channel-to-condition map is adequately supported by the deposit. Two important findings block approval: (1) each SILAC raw file carries three different assay names, one per channel, contrary to the spec's definition of assay name as the identifier of the data acquisition run; (2) the wild-type channels of the lsc mix are encoded as separate biological replicate 2 sources, which asserts independently grown wild-type cultures without any evidence. Neither the paper full text nor the supplementary tables could be retrieved, by the producer or by this reviewer.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh reviewer subagent without the producer transcript; producer report.md and scratchpad/_stale_2026-10-27/ not read; all sources re-fetched into scratchpad/PXD002277/review-PXD002277-yeast-succinylation/ (PRIDE project/files with projectAccessions asserted = PXD002277; MaxQuant zip members fetched by HTTP range reads; RAW headers first 64 KB only)."
+  },
+  "evidence_manifest": "annotations/PXD002277-yeast-succinylation.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "fail",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics passes and sdrf-tools structure reports OK. However, rows 7-30 give each of the 8 SILAC raw files three distinct assay names (e.g. '..._kgdGAL8_succK_SCX_01-SILAC light', '-SILAC medium', '-SILAC heavy' all pointing to ..._SCX_01.raw). base.yaml defines assay name as 'Unique identifier for the data acquisition run' and states 'assay name must be unique per data acquisition run'; README.adoc lines 533-535: 'Each data file MUST have a unique assay name' and 'For multiplexed experiments ... multiple rows share the same assay name since samples are in one MS run. The comment[label] distinguishes samples within the run.' The validator does not test the file-to-assay-name cardinality, so its pass does not cover this. Template choice is correct: ms-proteomics v1.1.0 is the only template declared, and no sample-layer template in templates.yaml covers fungi."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check: 13/13 verified, 0 hallucinated, status CLEAN (exit 0). Live OLS4 lookups: MS:1001911 Q Exactive, MS:1001313 Trypsin/P, MS:1000422 beam-type collision-induced dissociation (HCD, as the spec requires), MS:1000484 orbitrap, PRIDE:0000627 Data-dependent acquisition, PRIDE:0000561 Strong cation-exchange chromatography (SCX), UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, UNIMOD:1 Acetyl, UNIMOD:64 Succinyl, UNIMOD:481 Label:2H(4), UNIMOD:259 Label:13C(6)15N(2), NCBITaxon:4932 Saccharomyces cerevisiae; all labels match and none are obsolete. SILAC light/medium/heavy (PRIDE:0000326/0000327/0000325) and 'label free sample' (MS:1002038) exist as exact terms. MaxQuant Lys4 (4,4,5,5-D4-lysine) corresponds to UNIMOD:481 and Lys8 to UNIMOD:259."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Re-fetched PRIDE project (title/accession PXD002277): organism, instrument Q Exactive, DDA, HCD, orbitrap fragment scans, micro-scale SCX, MaxQuant 1.2.7.1, 6 ppm parent / 20 ppm HCD fragment tolerance, fixed carbamidomethyl-C, variable protein N-acetyl and oxidised Met. From the MaxQuant zip by range reads: yeast_succinylation/parameters.txt (Carbamidomethyl (C) fixed, MS/MS tol. (FTMS) 20 ppm, yeast fasta) and summary.txt (14 raw files, Protease Trypsin/P for all 14, variable Oxidation (M);Acetyl (Protein N-term);succinyl-K, Yeast40 files Multiplicity 1 with no labels, 8 SCX files Multiplicity 3 with Labels1 = Lys4 and Labels2 = Lys8, experiments EXP0/EXP1/EXP2). List_of_RAW_files.xlsx assigns the 14 yeast files to Tables S3 and S8 and annotates only the 8 SCX files with 'SILAC, as indicated in file name'. The channel map (wtDEX0 = light WT glucose, wtGAL4 = medium WT galactose, kgdGAL8/lscGAL8 = heavy mutant galactose) is adequately supported: each condition token carries the lysine label mass (0/4/8), which matches MaxQuant Lys0/Lys4/Lys8; the depositor states the design is as indicated in the file name; and the same lab's E. coli file '..._wt-K8_cobB-K0_...' is annotated 'SILAC wt(H) cobb (L)' in the same sheet, confirming that the digit denotes the lysine label. DEX = dextrose (glucose) and GAL = galactose, and the abstract says growth conditions and succinyl-CoA-metabolism mutations were compared. The paper full text is inaccessible (doi, cell.com, ScienceDirect and the Unpaywall PDF all returned 403; the paper is not in PMC). Biological-replicate independence is assessed under design_consistency."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE /files (projectAccessions = {PXD002277}) lists 14 yeast RAW files: 6 20120620_QE3_..._Yeast40_succK_pH{45,5,11}{,b}.raw and 8 20130322_QE4_..._sc_wtDEX0_wtGAL4_{kgd,lsc}GAL8_succK_SCX_0[1-4].raw. The SDRF's 14 unique comment[data file] values match these exactly, which is also the exact raw-file set in yeast_succinylation/summary.txt. There are no extra, missing, duplicate or non-raw files. The first 64 KB of the pH5, pH5b, pH45b, kgd SCX_01 and lsc SCX_01 headers all read 'Q Exactive - Orbitrap MS'."
+    },
+    "design_consistency": {
+      "status": "fail",
+      "evidence": "Recomputed: 6 label-free rows (one source, fractions 1-3 for pH45/pH5/pH11 in elution order, technical replicate 2 for the b-files) plus 24 SILAC rows (8 runs x 3 channels, fractions 1-4 = SCX_01..04, technical replicate 1). The b-files are a supported technical-replicate call: they were acquired with BTW_120m_60ms_250ms2_.meth (105 min) instead of the original 150min_..._IT120.meth, and the lab uses the same 'b' suffix for re-runs elsewhere in the deposit (HeLa_acK_F01b). 'pH5' vs 'pH55': the yeast files say pH5 while the E. coli and HeLa files from the same day say pH55. No SDRF cell encodes the pH value and the fraction order (4.5 < 5 or 5.5 < 11) is the same either way, so there is nothing to correct. Including the label-free Yeast40 rows is correct: they belong to the same deposited MaxQuant search (EXP0) and the same supplementary tables, omitting them would orphan 6 deposited files, and 'not available' is permitted for genotype and growth condition. Failing item: rows 19-26 give the wild-type glucose and galactose channels of the lsc mix distinct source names with biological replicate 2, which asserts that they came from wild-type cultures grown independently of the kgd mix. No source supports that. Both mixes were acquired on the same day (20130322), and a shared wild-type reference lysate split between the two mutant mixes is an equally plausible design. The manifest itself calls this 'an inference'. The current encoding makes each wild-type condition appear to have n = 2."
+    },
+    "omission_safety": {
+      "status": "fail",
+      "evidence": "Every value was traced to a source. Most are stated at or below the evidence's granularity: 'kgd mutant' and 'lsc mutant' do not invent gene or allele identity, genotype and growth condition of the label-free sample are 'not available', and reduction and alkylation reagents are 'not available'. The exception is the biological replicate 2 / separate source identity for the lsc-mix wild-type channels (rows 19-26). That is a replicate structure stated more specifically than the evidence supports. Material evidence not encoded: the anti-succinyllysine antibody enrichment could go in the optional characteristics[enrichment process] column (sample-metadata.yaml), contrary to the manifest's limitation that it is 'not encoded as an SDRF column'."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -s <artifact> -t ms-proteomics --use_ols_cache_only: exit 0, 'Everything seems to be fine. Well done.' (single declared template NT=ms-proteomics;VV=v1.1.0). sdrf-tools check: exit 0, CLEAN 13/13. sdrf-tools score: 100/100. sdrf-tools structure: exit 0, 'Structure OK'. sdrf-tools reconcile --record pride.json: exit 1, 1 finding 'cleavage_agent_unsupported' for Trypsin/P. That finding is overridden by primary evidence: the deposited MaxQuant summary.txt Protease column reads Trypsin/P for all 14 files, and the PRIDE phrase 'strict trypsin specificity' refers to specific (not semi-specific) cleavage rather than the proline rule. See the minor finding."
+    }
+  },
+  "findings": [
+    {
+      "severity": "important",
+      "category": "spec_compliance",
+      "location": "assay name, rows 7-30 (all 8 SILAC raw files)",
+      "message": "Each SILAC raw file has three assay names (suffixes '-SILAC light', '-SILAC medium', '-SILAC heavy'), so one acquisition run is split into three assays.",
+      "evidence": "base.yaml: assay name = 'Unique identifier for the data acquisition run'; 'assay name must be unique per data acquisition run'. README.adoc 533-535: 'Each data file MUST have a unique assay name'; for multiplexed runs 'multiple rows share the same assay name since samples are in one MS run. The comment[label] distinguishes samples within the run.' Example: rows 7, 11 and 15 all reference 20130322_QE4_LC6_BTW_SA_sc_wtDEX0_wtGAL4_kgdGAL8_succK_SCX_01.raw with three different assay names.",
+      "correction": "Use one assay name per raw file (e.g. the file stem) on the light, medium and heavy rows of that file. source name + assay name + comment[label] stay unique because the source names already differ per channel."
+    },
+    {
+      "severity": "important",
+      "category": "design_consistency",
+      "location": "source name and characteristics[biological replicate], rows 19-26 (PXD002277_Scer_wild_type_glucose_lscSILAC and PXD002277_Scer_wild_type_galactose_lscSILAC, biological replicate 2)",
+      "message": "The wild-type light and medium channels of the lsc mix are encoded as independent biological replicates of the kgd-mix wild-type channels, but no evidence shows that separate wild-type cultures were grown for each mix.",
+      "evidence": "File names, summary.txt and List_of_RAW_files.xlsx only establish channel-to-condition identity. Both mixes were run on 20130322, and a single wild-type reference split across both mutant mixes is equally plausible. The evidence manifest lists this as 'an inference' and 'assumes independent cultures'. The README defines biological replicate as 'Independent biological samples'.",
+      "correction": "Find the culture design in the paper Methods, the Figure legend or Table S8 (not retrievable from this environment because the publisher returns 403) and encode accordingly. If it cannot be established, do not assert replication: record a single wild-type glucose and a single wild-type galactose source (biological replicate 1) shared by both mixes, or otherwise remove the n = 2 claim, and document the ambiguity."
+    },
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "comment[cleavage agent details], rows 1-30",
+      "message": "NT=Trypsin/P;AC=MS:1001313 is supported by the deposited search (summary.txt Protease = Trypsin/P for all 14 files), but sdrf-tools reconcile flags it because the PRIDE prose says 'strict trypsin specificity'.",
+      "evidence": "summary.txt Protease column; PRIDE dataProcessingProtocol. The physical digestion enzyme is trypsin; Trypsin/P is the search rule.",
+      "correction": "Keep, or switch to NT=Trypsin;AC=MS:1001251 if the campaign convention records the wet-lab enzyme rather than the search rule. Either way, state the choice in the manifest."
+    },
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "characteristics[genotype] / factor value[genotype], rows 15-18 and 27-30",
+      "message": "'kgd mutant' and 'lsc mutant' do not identify the gene (KGD1 or KGD2; LSC1 or LSC2) or the allele type. This is acceptable as conservative free text, but it is imprecise.",
+      "evidence": "Only the file-name tokens 'kgd' and 'lsc' are available; the paper full text and supplementary tables were unreachable.",
+      "correction": "If the paper becomes accessible, replace these with the systematic gene deletion or allele (e.g. 'kgd1 deletion') and add strain background (characteristics[strain or breed] or a comment) if stated."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "file (missing optional column)",
+      "message": "The anti-succinyllysine antibody enrichment, central to the experiment, is not recorded, although the optional characteristics[enrichment process] column exists in sample-metadata.yaml.",
+      "evidence": "PRIDE sampleProcessingProtocol: 'succinylated ... peptides were enriched using polyclonal antibody beads (immunechem)'. The manifest wrongly states that no SDRF column covers it.",
+      "correction": "Optionally add characteristics[enrichment process] with a supported value, and correct the manifest limitation."
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD001029.sdrf.tsv",
+  "dataset": "PXD001029",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD001029"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD001029/files?pageSize=500"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC4178020 (PMID 25260035, doi:10.1371/journal.pone.0106875) - Brandt LO et al. PLoS One 2014;9(9):e106875; Tables 1 and 2"
+    },
+    {
+      "id": "paper_s1",
+      "kind": "publication",
+      "location": "PMC4178020 File S1 (pone.0106875.s001.pdf): Text S1 procedures A and B, protein identification section, Table S2"
+    },
+    {
+      "id": "pubmed",
+      "kind": "publication",
+      "location": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=25260035 (MeSH: Archaeology, Denmark, Geography, Mass Spectrometry, Microscopy, Peptides, Skin)"
+    },
+    {
+      "id": "raw_headers",
+      "kind": "raw_data",
+      "location": "HTTP range read (first 128 KB) of all 23 RAW files under https://ftp.pride.ebi.ac.uk/pride/data/archive/2014/07/PXD001029/"
+    },
+    {
+      "id": "mq_search",
+      "kind": "search_output",
+      "location": "summary.txt and parameters.txt from all 17 *_main_search.zip files under https://ftp.pride.ebi.ac.uk/pride/data/archive/2014/07/PXD001029/ (MaxQuant 1.2.2.5); msms.txt Fragmentation/Mass analyzer columns of Baunso_NM_D11103a, Karlby_NM_D4854b and blank searches"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/search (NCBITaxon: Capra hircus 9925, Ovis aries 9940, Bos taurus 9913, Caprinae 9963; UBERON skin of body 0002097)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] rows 1-23",
+      "value": "23 RAW files",
+      "source_ids": [
+        "pride_files"
+      ],
+      "evidence": "All 23 RAW-category files of the PRIDE file list, each used exactly once; every file entry carries projectAccessions PXD001029. The 17 SEARCH zips are not data files."
+    },
+    {
+      "location": "source name / file mapping rows 1-12",
+      "value": "6 procedure-A objects x 2 Velos runs",
+      "source_ids": [
+        "mq_search",
+        "raw_headers",
+        "paper"
+      ],
+      "evidence": "Each sample-named MaxQuant search (e.g. Baunso_NM_D11103a_main_search) contains exactly two raw files, 20101015_..._COLLAB_Enrico-Parchments_S3x and 20101215_..._Eske_Ancient_Skin_Sample_4x; RAW headers give the same original names for the deposited files mapped to that sample. Table 1 marks samples 1,4,5,6,10,12 with * (procedure A)."
+    },
+    {
+      "location": "comment[technical replicate] rows 1-12",
+      "value": "1 (Oct 2010 run), 2 (Dec 2010 run)",
+      "source_ids": [
+        "paper_s1",
+        "mq_search"
+      ],
+      "evidence": "Text S1 procedure A: 'For each ancient skin sample, two subsamples ... Each of the two subsamples was processed independently'; Table S2 reports procedure-A spectra as sums of two runs (e.g. 16513+15217). Assignment of subsample 1/2 to the earlier/later run is by acquisition date only."
+    },
+    {
+      "location": "source name / file mapping rows 13-23",
+      "value": "one QE run per source",
+      "source_ids": [
+        "mq_search",
+        "raw_headers",
+        "pride_files"
+      ],
+      "evidence": "Each QE search zip contains one raw file whose original name (ANCIENT131-148 with sample name, or B01/B02 for blanks) matches the deposited file name."
+    },
+    {
+      "location": "characteristics[organism] / characteristics[organism]",
+      "value": "Capra hircus, Ovis aries, Bos taurus, Caprinae, not applicable (blanks)",
+      "source_ids": [
+        "paper",
+        "ols"
+      ],
+      "evidence": "Paper Table 2 'MS' column: goat (samples 1,8,12), cattle (2,10), sheep (3-7,9), sheep/goat (11, Roum -> Caprinae, the narrowest NCBI taxon containing both Ovis and Capra). Modern references: Table 1 domestic sheep CN3213, goat CN3196, cattle. Blanks have no organism."
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1-17, one per source (both procedure-A runs of an object share one number)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Independent skin objects numbered within each species in paper sample-number order, modern reference last; blanks B01=1, B02=2."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "skin of body (not applicable for blanks)",
+      "source_ids": [
+        "paper",
+        "pride",
+        "ols"
+      ],
+      "evidence": "Archaeological skin objects (title, Table 1); PRIDE organismParts BTO Skin. For modern references the paper says 'modern comparable material from known species with the same procedure' - skin inferred, see limitations."
+    },
+    {
+      "location": "characteristics[disease], characteristics[developmental stage], characteristics[sex]",
+      "value": "not available (not applicable for blanks)",
+      "source_ids": [
+        "paper",
+        "pubmed"
+      ],
+      "evidence": "No per-sample disease, stage or sex information in paper, supplement or MeSH."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "LTQ Orbitrap Velos (rows 1-12), Q Exactive (rows 13-23)",
+      "source_ids": [
+        "raw_headers",
+        "pride",
+        "paper_s1"
+      ],
+      "evidence": "RAW headers: 'LTQ Orbitrap Velos MS' for all 20101015/20101215 files, 'Q Exactive - Orbitrap MS' for all 20120717 files; PRIDE lists both; Text S1 procedure B names the Q Exactive."
+    },
+    {
+      "location": "comment[dissociation method], comment[ms2 mass analyzer]",
+      "value": "HCD (MS:1000422), orbitrap (MS:1000484)",
+      "source_ids": [
+        "raw_headers",
+        "mq_search"
+      ],
+      "evidence": "Velos method files '150min_Top10HCD_JESPER_Special*.meth'; msms.txt shows Fragmentation=HCD, Mass analyzer=FTMS for Velos (Baunso a) and QE (Karlby b, blank) runs."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "paper_s1",
+        "raw_headers"
+      ],
+      "evidence": "Text S1: 'Q Exactive was operated in data-dependent mode ... up to 10 MS/MS'; Velos method name Top10HCD."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin (MS:1001251)",
+      "source_ids": [
+        "pride",
+        "paper_s1",
+        "mq_search"
+      ],
+      "evidence": "Sequencing-grade trypsin (Promega) in both procedures; MaxQuant protease Trypsin/P for every run."
+    },
+    {
+      "location": "comment[modification parameters] x7",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Oxidation P, Acetyl K, Deamidated N/Q, Gln->pyro-Glu, Glu->pyro-Glu variable",
+      "source_ids": [
+        "mq_search",
+        "paper_s1"
+      ],
+      "evidence": "parameters.txt 'Fixed modifications Carbamidomethyl (C)'; summary.txt variable 'Oxidation (M);Acetyl (K);Deamidation (NQ);Gln->pyro-Glu;Glu->pyro-Glu;Pro->Hyp' (Pro->Hyp = Oxidation on P), identical in all 17 searches; Text S1 agrees."
+    },
+    {
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance]",
+      "value": "6 ppm, 20 ppm",
+      "source_ids": [
+        "paper_s1",
+        "mq_search"
+      ],
+      "evidence": "Text S1: 'Default values were used for precursor (6 ppm) and fragment (20 ppm) ions mass tolerance'; parameters.txt MS/MS tol. (FTMS) 20 ppm."
+    },
+    {
+      "location": "comment[reduction reagent], comment[alkylation reagent]",
+      "value": "procedure B rows: DTT, chloroacetamide; procedure A rows: not applicable; modern/blank rows: not available",
+      "source_ids": [
+        "paper_s1"
+      ],
+      "evidence": "Text S1 procedure B: lysis buffer with 0.1M DTT, alkylation with 50mM 2-chloroacetamide; procedure A (HCl extraction, trypsin) describes no reduction or alkylation."
+    },
+    {
+      "location": "comment[sample preparation batch]",
+      "value": "procedure A / procedure B / not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Table 1 footnote: '* Samples prepared following procedure A'; all other archaeological samples procedure B. The procedure used for modern references and blanks is not stated explicitly."
+    },
+    {
+      "location": "comment[acquisition date]",
+      "value": "2010-10-15, 2010-12-15, 2012-07-17",
+      "source_ids": [
+        "raw_headers"
+      ],
+      "evidence": "Date prefix of the original acquisition file names recorded in the RAW headers."
+    }
+  ],
+  "limitations": [
+    "Organism for archaeological samples is the authors' MS-based species assignment (paper Table 2), not an independent a-priori identity; for sample 11 (Roum) the paper could only assign sheep/goat, written as Caprinae.",
+    "Organism part 'skin of body' for the three modern reference samples is inferred from 'modern comparable material' and the PRIDE organism part; the tissue is not named explicitly.",
+    "Which preparation procedure was used for the modern references and the two blanks is not stated; sample preparation batch, reduction and alkylation reagent are 'not available' on those rows.",
+    "Procedure-A subsample identity (subsample 1 vs 2) is not given; technical replicate 1/2 follows acquisition order (Oct 2010 vs Dec 2010).",
+    "No per-sample sex, developmental stage or disease information exists; sample 10 (Mogelmose) is reported in the paper as calfskin from foetal haemoglobin peptides, but this was not encoded as a developmental stage.",
+    "Archaeological dating, museum numbers and bog locality are carried only in the source names; no ontology-backed SDRF column exists for them.",
+    "MaxQuant searched with Trypsin/P; the SDRF records the digestion enzyme as Trypsin.",
+    "No factor value column (removed after independent review): species is the result of the study, not a condition; see report."
+  ]
+}

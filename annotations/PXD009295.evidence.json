@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD009295.sdrf.tsv",
+  "dataset": "PXD009295",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD009295"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD009295/files/all (61 entries, all projectAccessions PXD009295; 41 RAW)"
+    },
+    {
+      "id": "raw-headers",
+      "kind": "raw file header (HTTP range 0-262143, utf-16-le), sample-name string, all 41 files",
+      "location": "https://ftp.pride.ebi.ac.uk/pride-archive/2018/07/PXD009295/LUM_02287_SMT.raw ... LUM_02327_SMT.raw; also Orbitrap Fusion Lumos model string"
+    },
+    {
+      "id": "mgf-titles",
+      "kind": "deposited peak lists (TITLE=LUM_xxxxx scan titles, streamed)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride-archive/2018/07/PXD009295/{SiLu_DimL,SiLu_DimM,Trastuzumab_DimL,Trastuzumab_DimM}_merged.mgf"
+    },
+    {
+      "id": "mzid",
+      "kind": "deposited search result (Mascot SearchModification/Enzymes blocks)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride-archive/2018/07/PXD009295/{Silu_DimL_F058896,Silu_DimM_F058899,Trastuzumab_DimL_F058897,Trastuzumab_DimM_F058898}.mzid.gz"
+    },
+    {
+      "id": "ms3-csv",
+      "kind": "deposited result table (scan filter text)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride-archive/2018/07/PXD009295/SiLu_DimL_MS3_merged.csv (ScanTitle: FTMS + c NSI d Full ms3 437.7717@hcd30.00 114.1278@hcd30.00 [50.0000-125.0000])"
+    },
+    {
+      "id": "paper",
+      "kind": "publication (abstract only; full text not retrievable)",
+      "location": "Maibom-Thomsen et al., Anal Chem 2018, PMID 30015478, doi:10.1021/acs.analchem.8b01375 (Europe PMC abstract)"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/ (MS:1002732, MS:1001251, MS:1001306, MS:1003979, MS:1001311, PRIDE:0000848, PRIDE:0000850, PRIDE:0000627, PRIDE:0000590, PRIDE:0000608, PRIDE:0000599, UNIMOD:4/7/27/28/35/36/199/425)"
+    },
+    {
+      "id": "upstream",
+      "kind": "repository",
+      "location": "/home/thanadol/Documents/GitHub/sdrf-annotated-datasets/datasets/PXD009295/ (directory absent: new)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] all rows",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organisms NEWT:9606; antibodies are SiluLite SigmaMAb human IgG standard and trastuzumab (humanized IgG1) per PRIDE protocol. Antibody identity itself is encoded only in source name."
+    },
+    {
+      "location": "source name / comment[data file] (41 rows)",
+      "value": "SiluLite|Trastuzumab _ protease _ light|medium _ repN",
+      "source_ids": [
+        "raw-headers",
+        "mgf-titles"
+      ],
+      "evidence": "Raw-header sample string e.g. 'SiluLite L-Dimethyl Trypsin 2' gives antibody, label, protease, suffix; cross-validated: merged mgf TITLEs for SiLu_DimL list LUM_02287-90,303-305,312-314, SiLu_DimM 295-98,309,310,318,323,325,326, Trastuzumab_DimL 291-94,306-08,315-17,322, Trastuzumab_DimM 299-302,311,319,320,324,327 (0 conflicts)."
+    },
+    {
+      "location": "comment[cleavage agent details], factor value[cleavage agent details]",
+      "value": "Trypsin/Chymotrypsin/Thermolysin/PepsinA",
+      "source_ids": [
+        "raw-headers",
+        "pride"
+      ],
+      "evidence": "Protease in raw sample string; PRIDE protocol lists the same four enzymes. The Mascot search used Enzyme=None (see limitations)."
+    },
+    {
+      "location": "comment[label]",
+      "value": "NT=DIMETHYL0;AC=PRIDE:0000848 (L rows); NT=DIMETHYL4;AC=PRIDE:0000850 (M rows)",
+      "source_ids": [
+        "raw-headers",
+        "pride",
+        "mzid"
+      ],
+      "evidence": "PRIDE protocol: light = formaldehyde, intermediate = formaldehyde-d2 with NaBH3CN; Mascot fixed mod Dimethyl (+28.0313) for Dim L and Dimethyl:2H(4) (+32.0564) for Dim M. Each run contains a single label (not multiplexed)."
+    },
+    {
+      "location": "comment[modification parameters] x8",
+      "value": "Carbamidomethyl C fixed; Dimethyl (or Dimethyl:2H(4)) K and Any N-term fixed; Oxidation M, Deamidated N,Q, Dioxidation W, Gln->pyro-Glu, Glu->pyro-Glu variable",
+      "source_ids": [
+        "mzid"
+      ],
+      "evidence": "Mascot SearchModification blocks of the four .mzid files. Dimethyl N-term has residues='' + N-term specificity -> PP=Any N-term. Pyro-Glu N-term -> PP=Peptide N-term (mzid gives N-term specificity only)."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Orbitrap Fusion Lumos;AC=MS:1002732",
+      "source_ids": [
+        "raw-headers",
+        "pride"
+      ],
+      "evidence": "Raw header strings 'Orbitrap Fusion Lumos' and 'Orbitrap_Lumos'; PRIDE instruments agrees."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "raw-headers",
+        "pride"
+      ],
+      "evidence": "Method name 'HCD_Top10_...' (Top10 DDA with targeted MS3 of a1 ion)."
+    },
+    {
+      "location": "comment[dissociation method], comment[collision energy], comment[ms3 scan range]",
+      "value": "HCD; 30 NCE; 50m/z-125m/z",
+      "source_ids": [
+        "ms3-csv"
+      ],
+      "evidence": "Scan filter 'ms3 437.77@hcd30.00 114.13@hcd30.00 [50.0000-125.0000]'. PRIDE text says CID; raw scan filter says HCD, raw taken as authoritative. 30 NCE is the stated @hcd30.00 value for both MS2 and MS3 steps."
+    },
+    {
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance]",
+      "value": "10 ppm; 0.05 Da",
+      "source_ids": [
+        "pride",
+        "mzid"
+      ],
+      "evidence": "PRIDE dataProcessingProtocol and mzid search tolerance 10 / 0.05."
+    },
+    {
+      "location": "comment[reduction reagent], comment[alkylation reagent]",
+      "value": "DTT; iodoacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sampleProcessingProtocol: 10 mM DTT 56C; 20 mM IAA; consistent with fixed Carbamidomethyl in search."
+    },
+    {
+      "location": "characteristics[biological replicate], comment[technical replicate]",
+      "value": "suffix-derived",
+      "source_ids": [
+        "raw-headers"
+      ],
+      "evidence": "Name suffix none/2/3 -> biological replicate 1/2/3; a second run with the same group and suffix 'none' or '1' (re-acquisition) -> technical replicate 2. Whether suffixes denote independent digests or repeat injections is NOT stated: inference."
+    },
+    {
+      "location": "characteristics[age], [sex], [ancestry category], [individual], [organism part], [cell type], [disease]",
+      "value": "not available / not applicable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Purified commercial/therapeutic antibody standards; no donor. age not available (not applicable not permitted by template); the rest not applicable."
+    }
+  ],
+  "limitations": [
+    "Paper full text not retrievable (closed access); only abstract used. Sample prep from PRIDE protocol text.",
+    "Per-run protease taken from the raw-file sample-name string (not described in a deposited sample sheet). Mascot search used Enzyme=None, so it does not corroborate it; PRIDE reconcile flags Thermolysin and Pepsin against 'Trypsin, Chymotrypsin' but the PRIDE protocol text names all four enzymes (false positive).",
+    "Replicate semantics (biological vs technical) of name suffixes are inferred and unconfirmed.",
+    "Antibody identity (SiluLite vs trastuzumab) has no template column; encoded in source name only.",
+    "Light and medium labels are separate runs (separate builds of the same tables merged because comment[modification parameters] differs by label); not a multiplexed design.",
+    "Deposited peak lists, mzid, mztab and csv files are not SDRF rows (41 RAW only).",
+    "Carbamidomethyl, reagents and tolerances are shared across runs from PRIDE/mzid, not per-run verified; cysteine-bearing peptide search params only available for the four merged searches."
+  ]
+}

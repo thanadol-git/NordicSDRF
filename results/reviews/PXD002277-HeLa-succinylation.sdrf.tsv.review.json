@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002277-HeLa-succinylation.sdrf.tsv",
+  "artifact_sha256": "1cdae6e22ce1339adb9dd8ec92966efc27132a51b1aa3080c481c8ce328e04d6",
+  "verdict": "PASS",
+  "summary": "Fresh re-review of the corrected file (SILAC rows now share one assay name per MS run). Spec compliance, ontology integrity, file mapping, channel-to-sample mapping and design were independently re-derived from PRIDE, the deposited MaxQuant output (summary.txt, parameters.txt, List_of_RAW_files.xlsx), RAW headers, Cellosaurus and live OLS. No blocker or important issue found; five minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent (bergen-reviewer-PXD002277-HeLa-succinylation); no producer transcript, report.md, stale scratch or earlier review folders read; all sources fetched fresh into scratchpad/PXD002277/review-PXD002277-HeLa-succinylation/r2-2026-11-04/"
+  },
+  "evidence_manifest": "annotations/PXD002277-HeLa-succinylation.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Declared templates ms-proteomics v1.1.0 + human v1.1.0 + cell-lines v1.1.0 are the combination the cell-lines template prescribes for HeLa (cell-lines.yaml documentation; requires technology + sample layers). 14 rows x 44 columns, uniform width, no empty or whitespace-padded cells, LF line endings. All required columns present (source name, organism, organism part, disease, biological replicate, age, sex, cell line, cellosaurus accession, assay name, technology type, technical replicate, data file, acquisition method, instrument, cleavage agent, label, fraction identifier). Multiplexed SILAC rows share one assay name per run with comment[label] distinguishing channels, as README.adoc 'Row Uniqueness Requirements' (L531-535) requires; source name+assay name+label and source name+assay name are both unique. HCD encoded as NT=beam-type collision-induced dissociation;AC=MS:1000422 per README NOTE L457. Age 30Y6M matches the human.yaml age pattern. Structured values use NT first, then AC. parse_sdrf validate-sdrf passed for all three templates; sdrf-tools structure reports column order consistent."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check: 17/17 terms verified, 0 hallucinated, 0 label mismatches, 0 wrong ontology, 0 UNIMOD swaps. sdrf-tools verify (label match True): UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, UNIMOD:1 Acetyl, UNIMOD:64 Succinyl, UNIMOD:259 Label:13C(6)15N(2), UNIMOD:267 Label:13C(6)15N(4), MS:1001313 Trypsin/P, MS:1000422 beam-type collision-induced dissociation, PRIDE:0000561 Strong cation-exchange chromatography (SCX), PRIDE:0000627 Data-dependent acquisition, MS:1001911 Q Exactive, MS:1000484 orbitrap. Live OLS exact-label search (none obsolete): Homo sapiens NCBITaxon:9606; uterine cervix UBERON:0000002/BTO:0001421; epithelial cell CL:0000066; cervical adenocarcinoma MONDO:0005153 (also NCIT:C4029, DOID:3702); HeLa EFO:0001185; nicotinamide CHEBI:17154 (in EFO); control EFO:0001461; female PATO:0000383; SILAC heavy PRIDE:0000325; SILAC light PRIDE:0000326; label free sample MS:1002038. CVCL_0030 resolves to Cellosaurus ID HeLa. Specificity: the disease term is a parent of Cellosaurus' NCIt C27677 'Human papillomavirus-related endocervical adenocarcinoma', so it is less specific than the evidence, not more."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project (projectAccessions/accession = PXD002277) gives Q Exactive, DDA, HCD, micro-scale SCX, MaxQuant 1.2.7.1, 6 ppm parent / 20 ppm (HCD) fragment, strict trypsin specificity, Cys carbamidomethyl fixed, protein N-acetyl and Met oxidation variable. hela_succinylation/summary.txt (HTTP range read of MaxQuant_output_files.zip): the 10 SDRF runs exactly; Instrument Q Exactive; Protease Trypsin/P; variable Oxidation (M);Acetyl (Protein N-term);succinyl-K; HeLa40 runs Multiplicity 1 with no labels; NAM runs Multiplicity 2 with Labels1 Arg10;Lys8. parameters.txt: Fixed Carbamidomethyl (C), MS/MS tol. (FTMS) 20 ppm, Fasta HUMAN.fasta. List_of_RAW_files.xlsx rows 35-38: 'SILAC, nicotinamide (H), control (L) *SILAC data not used for this study'; rows 29-34 HeLa40 runs carry no label note. RAW headers (first 64 KB) of pH45, pH45b, NAM_01 and NAM_04: 'Q Exactive - Orbitrap MS'; original acquisition paths equal the deposited names; base runs used 150min_3tunes...meth, 'b' runs used BTW_120m_60ms_250ms2_.meth, NAM runs used 1-9um_CHS_141min_120MS2_IW2.meth. Cellosaurus CVCL_0030: SX Female, AG 30Y6M, derived from site uterus, cervix UBERON_0000002, DI NCIt C27677."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE /files (58 entries, all projectAccessions PXD002277; 57 RAW + MaxQuant_output_files.zip). All 10 comment[data file] values exist in PRIDE and equal the hela_succinylation summary.txt raw-file set. Each assay name is the file stem; assay name to file is 1:1 (10 assays). The 8 other HeLa RAW files are 20120903 ..._HeLa_acK_F0x(b) acetylation runs (List_of_RAW_files Table S6), which belong to the sibling HeLa-acetylation SDRF. No non-RAW files referenced."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Three source names: label-free survey sample (6 runs = 3 SCX pH-step fractions x 2 injections), nicotinamide (SILAC heavy) and control (SILAC light), each on 4 fraction runs. Each NAM run has exactly one heavy row and one light row sharing the run's assay name; the channel-to-condition map is taken directly from the submitter's List_of_RAW_files.xlsx and the heavy labels (Arg10/Lys8) match UNIMOD:267/259 on SILAC rows only. Label-free rows carry 'not applicable' in the two label modification columns. No duplicate source+fraction+technical replicate. Factor value[treatment] mirrors characteristics[treatment] on every row. Technical replicate 2 for 'b' runs and fraction order (pH4.5 < pH5.5 < pH11; _01-_04) are inferences, but they are consistent with the run names and RAW method files, and the manifest discloses them as inferences. Biological replicate 1 per condition matches the single SILAC pair."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every nontrivial value traces to PRIDE, the MaxQuant output, the RAW list, RAW headers or Cellosaurus. Unknowns are 'not available' (reduction/alkylation reagent, passage number, culture medium, storage temperature, label-free treatment) and are not guessed; nicotinamide dose and duration are not invented. No value found stated more specifically than its source supports. Under-reporting noted as minor: Cellosaurus states population African American but ancestry is 'not available'; the antibody enrichment step is not captured because no specific EFO:0009090 descendant exists (only generic 'sample enrichment' EFO:0009106). Optional developmental stage absent (score completeness note)."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "sdrf-tools check -> exit 0, CLEAN (17/17). sdrf-tools score -> exit 0, 99/100 (only note: missing characteristics[developmental stage]). sdrf-tools structure -> exit 0, 'Structure OK'. parse_sdrf validate-sdrf --use_ols_cache_only (timeout 900, run sequentially): --template ms-proteomics exit 0, --template human exit 0, --template cell-lines exit 0, each 'Everything seems to be fine. Well done.' sdrf-tools reconcile --record <fresh PRIDE json> -> exit 1 with two heuristic flags, adjudicated: (1) run_names_name_a_cell_line is a false positive; the rule fires on any 'HeLa' run token, while SAMPLE-GUIDELINES.adoc L76 ('specify the tissue of origin (e.g., cervix for HeLa)'), L311 (HeLa example: organism part cervix) and L319 ('The tissue of origin can be specified in characteristics[organism part]') explicitly sanction organism part = tissue of origin when characteristics[cell line] is filled, as here; (2) cleavage_agent_unsupported fires because no PRIDE sentence matches its digest-reagent cue, but the record states 'strict trypsin specificity' and the deposited summary.txt Protease is Trypsin/P; recorded as a minor finding below."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "characteristics[ancestry category], rows 1-14",
+      "message": "Value is 'not available', but the Cellosaurus record the annotation relies on for age, sex and disease states 'CC   Population: African American.'",
+      "evidence": "https://www.cellosaurus.org/CVCL_0030.txt; OLS HANCESTRO:0568 'African American' (not obsolete). Correction criterion: use 'African American' (HANCESTRO:0568), or keep 'not available' with a manifest note explaining why a donor-level cell-line fact is not applied."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[treatment] and factor value[treatment], rows 11-14 (SILAC light)",
+      "message": "The value 'control' is an experimental-design label. The sample-metadata template's treatment validator says 'Use untreated for controls'.",
+      "evidence": "sample-metadata.yaml characteristics[treatment] validator description. 'control' does resolve (EFO:0001461) and is the submitter's own wording ('control (L)'), and 'untreated' has no exact OLS term, so this is not a correctness error. Correction criterion: consider 'untreated' if the light cells received no vehicle, or leave as is."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[cleavage agent details], rows 1-14",
+      "message": "NT=Trypsin/P;AC=MS:1001313 reflects the deposited MaxQuant search rule. No available source names the digestion reagent explicitly, and sdrf-tools reconcile flags cleavage_agent_unsupported.",
+      "evidence": "summary.txt Protease = Trypsin/P; PRIDE dataProcessingProtocol 'strict trypsin specificity'; the paper full text is unavailable. No spec text prefers Trypsin over Trypsin/P, and the value equals the deposited search setting, so it is not over-specific. Correction criterion: none required; optionally note in the manifest that the reagent is inferred from search settings."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "file (characteristics[enrichment process] absent)",
+      "message": "The PRIDE protocol states anti-succinyl-lysine antibody enrichment, but the SDRF does not capture it.",
+      "evidence": "OLS descendants of EFO:0009090 include no succinyl/acyl-lysine enrichment term; only the generic 'sample enrichment' (EFO:0009106) or 'enrichment of phosphorylated protein' exist. The column is optional, and the manifest discloses the omission. Correction criterion: optional; add 'sample enrichment' if a generic value is preferred."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "comment[technical replicate] and comment[fraction identifier], rows 1-14",
+      "message": "Two values are inferred rather than documented: 'b' runs as technical replicate 2 (re-injection), and fraction order (pH4.5=1, pH5.5=2, pH11=3; NAM _01-_04 = 1-4).",
+      "evidence": "Run names and the RAW header method files support the inferences (base 150 min method vs 'b' 120 min method on the following day; ascending SCX elution pH). The manifest limitations disclose both. No document contradicts them."
+    }
+  ]
+}

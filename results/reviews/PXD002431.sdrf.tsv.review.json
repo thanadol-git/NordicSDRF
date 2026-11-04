@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002431.sdrf.tsv",
+  "artifact_sha256": "710eb1924f9a5be8b13e1e2e2b562fb99e54a5ab53a8712095d8466b83d53173",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. The 32 deposited RAW files are the paper's main study (32 identically perfused + heat-stabilised male Sprague-Dawley rats, 220-min runs); the 12-file tissue-stabilisation comparison (3 protocols x N=4, 2 h runs) is not in this deposit, so the absence of a factor value is correct. Organism, tissue, peptidomics-specific 'not applicable' values, modifications, tolerances and collision energy are all supported by the paper, PubMed MeSH, RAW headers and the deposited MaxQuant evidence.txt.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent (bergen-reviewer-PXD002431) without producer transcript; producer report.md not read; PRIDE project/files, Europe PMC full text, PubMed efetch, RAW header range reads and evidence.zip all fetched fresh into scratchpad/PXD002431/review-PXD002431/"
+  },
+  "evidence_manifest": "annotations/PXD002431.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "37 columns x 32 rows, uniform row length, no duplicate rows/files. Declared templates ms-proteomics v1.1.0 + vertebrates v1.1.0 independently confirmed as the correct set (rat tissue, LC-MS/MS DDA; immunopeptidomics not applicable to neuropeptide peptidomics; no DIA/single-cell). All required base, sample-metadata, ms-proteomics and vertebrates columns present (developmental stage and disease required by vertebrates are present). parse_sdrf validate-sdrf passed for both templates; sdrf-tools structure OK. 'not applicable' for cleavage agent is explicitly allowed by README.adoc line 399 ('use \"not applicable\" for top-down/undigested samples') and allow_not_applicable in ms-proteomics.yaml. HCD encoded as MS:1000422 as required."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check: 11/11 terms verified, 0 hallucinated/mismatched/UNIMOD swaps. sdrf-tools verify (live OLS) label-matched NCBITaxon:10116 Rattus norvegicus, UBERON:0001898 hypothalamus, PATO:0000461 normal, MS:1001742 LTQ Orbitrap Velos, MS:1000422 beam-type collision-induced dissociation, PRIDE:0000627 Data-dependent acquisition, MS:1000484 orbitrap, MS:1002038 label free sample, UNIMOD:1 Acetyl, UNIMOD:35 Oxidation, UNIMOD:2 Amidated, UNIMOD:21 Phospho, UNIMOD:28 Gln->pyro-Glu. Only validator warning: 'Sprague-Dawley' not in NCBITaxon (warning-level; the vertebrates template itself lists Sprague-Dawley as the example value)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Paper PMC4857386 (title verified: 'Analytic framework for peptidomics applied to large-scale neuropeptide identification', states deposit PXD002431). Methods: 'Sprague-Dawley rats (Crl:SD, male, 200 g...)'; 'hypothalami from all groups were sub-dissected'; 'In the main study, 32 rats were perfused with protease inhibitors and the brains heat inactivated'; 8 M urea extraction + YM-30 cutoff, no digestion, no reduction/alkylation step; LTQ-Orbitrap Velos, top10 HCD, full scan 350-1,750 m/z, MS/MS at resolution 7,500, NCE 40%; 220 min gradient; variable mods oxidation (M), acetylation (prot. N-term), Gln->pyro-Glu, amidation (C-term), phospho (STY), 'no enzyme specificity'; precursor 7 ppm, MS/MS 0.02 Da; label-free. PubMed 27142507 MeSH: Rats, Sprague-Dawley; Male; Hypothalamus. PRIDE organism 'Rattus rattus (NEWT:10117)' is a deposit error (NEWT/NCBI 10117 vs Sprague-Dawley = R. norvegicus 10116) and is correctly overridden; PRIDE organism part 'Brain' is less specific than the paper's hypothalamus. RAW headers (fresh 256 KB range reads of S1, S5, S12, S24, S30): instrument 'LTQ Orbitrap Velos MS', method '220min_Top10HCD_JESPER_Special.meth'. evidence.txt: 375,878 rows, modifications observed are exactly the five annotated, Gel Slice = 1 throughout, peptide C-termini dominated by L/A/F/V/Y (non-tryptic). Tolerances and collision energy come from the paper (no mqpar/parameters file deposited)."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE /files (projectAccessions = {PXD002431}): 33 files = 32 RAW + evidence.zip (SEARCH). SDRF comment[data file] lists exactly the 32 RAW names, each once (set equality true). assay name = file stem on every row; source name S<nn>, biological replicate and file suffix S<n> agree on all 32 rows. evidence.txt maps each of the 32 Raw File values to its own Experiment S01-S32 with no mismatches."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Paper describes two experiments: (a) tissue-stabilisation comparison, 3 protocols x N=4, '2 h LC-MS/MS runs', 'complete data set of 12 raw files'; (b) main study, 32 identically perfused + heat-inactivated rats, 220 min gradient, '32 biological replicates'. The deposit holds 32 RAW files, all with the 220-min method in the 5 headers I read (and the same 20100805 prefix, 2.26-3.07 GB sizes), and the MaxQuant output contains only S01-S32 — the comparison is not deposited. So the deposit is single-condition and no factor value is correct (sdrf-tools score's 'No factor value columns' design note is not a spec error). 32 rats = 32 runs = 32 MaxQuant experiments = 32 biological replicates gives a 1:1 rat-to-run mapping; rats are exchangeable with no per-animal covariates, so numbering 1-32 by file suffix introduces no confounding. technical replicate 1, fraction 1, label free on all rows are consistent."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No value is more specific than the evidence: developmental stage is 'not available' (only 200 g body weight reported; age/stage not inferred); cell type 'not applicable' for whole tissue; no batch, age, treatment or acquisition date invented. Cleavage agent, reduction and alkylation 'not applicable' are backed by the endogenous-peptide protocol, 'no enzyme specificity' search and the absence of Carbamidomethyl in evidence.txt. Organism-part specificity (hypothalamus over PRIDE's Brain) is backed by Methods and MeSH. Material omissions checked: the comparison groups (absent from deposit), the tryptic spin-filter proteome used for GO comparison (no such files deposited; all runs searched without enzyme), and a 'Glutathione (C) Site IDs' header in evidence.txt (no glutathione-modified evidence rows; not in the paper's list) — none require additional annotation; see minor findings."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf -t ms-proteomics --use_ols_cache_only: exit 0 ('Everything seems to be fine'). timeout 900 parse_sdrf validate-sdrf -t vertebrates --use_ols_cache_only: exit 0 (one warning: Sprague-Dawley not in ncbitaxon). sdrf-tools check: exit 0, CLEAN. sdrf-tools score: exit 0, 95/100. sdrf-tools structure: exit 0, OK. sdrf-tools reconcile --record pride.json: exit 1 with one 'cleavage_agent_unsupported' for 'not applicable' — a false positive (the tool reads the reserved word as an enzyme name; README.adoc line 399 prescribes 'not applicable' for undigested samples and the paper states no enzyme specificity)."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "source name / characteristics[biological replicate] rows 1-32",
+      "message": "The paper never states explicitly that run S<n> is rat n; the 1:1 mapping rests on 32 rats = 32 runs = 32 MaxQuant experiments and the paper calling them 32 biological replicates.",
+      "evidence": "Methods 'In the main study, 32 rats...'; Results '32 biological replicates'; evidence.txt Raw File S<n> -> Experiment S<nn>. Animals are exchangeable (no per-animal covariates), so the numbering cannot confound analysis. Already disclosed in the manifest limitations."
+    },
+    {
+      "severity": "minor",
+      "category": "search-parameters",
+      "location": "comment[modification parameters] (file-level)",
+      "message": "evidence.txt has a 'Glutathione (C) Site IDs' column, hinting that Glutathione (C) may have been configured in the MaxQuant search, but there are no rows or count column for it and the paper does not list it; leaving it out is defensible.",
+      "evidence": "evidence.txt header column 7 'Glutathione (C) Site IDs'; Modifications values contain only Acetyl (Protein N-term), Oxidation (M), Amidated (C-term), Phospho (STY), Gln->pyro-Glu (N-term Q)."
+    },
+    {
+      "severity": "minor",
+      "category": "source-evidence",
+      "location": "comment[precursor mass tolerance] rows 1-32",
+      "message": "7 ppm is the paper's 'initial precursor ion tolerance'; MaxQuant later applied individual post-recalibration mass errors. The value is faithful to the paper but represents the initial search tolerance.",
+      "evidence": "Methods: 'initial precursor ion tolerance of 7 p.p.m.'; '...filtered on individual peptide mass errors after nonlinear post-acquisition recalibration'."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "comment[data file] rows 1-32 (file-name token 'Batch12faste')",
+      "message": "The run-name token 'Batch12faste' is unexplained (perhaps sample-preparation batches 1-2). No source defines it, so leaving comment[sample preparation batch] out is correct; no action needed unless the authors confirm it.",
+      "evidence": "Every RAW name contains '_AnSe_Batch12faste_hypot_'; the paper has no mention of batches or fasting."
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD000559.sdrf.tsv",
+  "dataset": "PXD000559",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000559"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD000559/files?pageSize=500 (45 entries: 44 RAW + MaxQuantOutput.tar.gz; all projectAccessions=PXD000559)"
+    },
+    {
+      "id": "mq-summary",
+      "kind": "repository file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/11/PXD000559/MaxQuantOutput.tar.gz -> MaxQuantOutPut/summary.txt and parameters.txt (MaxQuant 1.2.6.20; per-run multiplicity, Labels1=Arg10;Lys8, modifications, protease)"
+    },
+    {
+      "id": "mq-evidence",
+      "kind": "repository file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/11/PXD000559/MaxQuantOutput.tar.gz -> MaxQuantOutPut/evidence.txt streamed; unique (Raw file, Experiment) pairs and peptide C-terminal residues"
+    },
+    {
+      "id": "mq-quant",
+      "kind": "repository file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/11/PXD000559/MaxQuantOutput.tar.gz -> MaxQuantOutPut/modificationSpecificPeptides.txt and proteinGroups.txt (Ratio H/L normalized per experiment)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "repository file",
+      "location": "HTTP range read bytes 0-65535 of each of the 44 RAW files under https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/11/PXD000559/ (instrument string, original acquisition path, instrument method name); 41/44 returned data"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC4125738 (https://pmc.ncbi.nlm.nih.gov/articles/PMC4125738/), Sylvestersen et al. Mol Cell Proteomics 2014;13:2072-2088, PMID 24563534, doi:10.1074/mcp.O113.032748; Experimental Procedures and Results read; supplementary files not accessible"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://api.cellosaurus.org/cell-line/CVCL_0063 and /CVCL_0042"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/search (NCIT:C412, NCIT:C437, NCIT:C457, MONDO:0009807, UBERON:0002113, UBERON:0000979, HANCESTRO:0005, PRIDE:0000561, PRIDE:0000608, PRIDE:0000600, MS:1001911, MS:1001251, MS:1001309, MS:1000422)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] all rows",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism NEWT:9606; human HEK293T and U2OS cells in Methods"
+    },
+    {
+      "location": "source HEK293T_lysate rows (12)",
+      "value": "HEK293T, label free sample, technical replicate 1-3, biological replicate 1",
+      "source_ids": [
+        "paper",
+        "mq-summary",
+        "mq-evidence"
+      ],
+      "evidence": "Results: triplicate enrichment from one HEK 293T lysate (24 mg divided into three 8 mg samples), four fractions each = 12 runs; summary.txt multiplicity 1 for r-methyl-trip_01-03 files; evidence.txt experiments Trip1/Trip2/Trip3"
+    },
+    {
+      "location": "HEK293T-PADI4_* rows (16)",
+      "value": "PADI4f: heavy=doxycycline-induced, light=uninduced; PADIr: light=induced, heavy=uninduced",
+      "source_ids": [
+        "paper",
+        "mq-evidence",
+        "mq-quant"
+      ],
+      "evidence": "Results: DOX-inducible PADI4 cells heavy vs noninduced light plus a reversed SILAC experiment; evidence.txt maps Padi4_dox_forward files to PADI4f and reverse to PADIr; proteinGroups PADI4 Ratio H/L normalized PADIr = 0.04676 (PADI4 expressed in light)"
+    },
+    {
+      "location": "U2OS_* rows (48)",
+      "value": "heavy = dactinomycin, light = dimethyl sulfoxide, except U2OS_*_3h_exp3 (rev-pull) where light = dactinomycin",
+      "source_ids": [
+        "paper",
+        "mq-evidence",
+        "mq-quant"
+      ],
+      "evidence": "Methods: heavy U2OS SILAC cells treated with ActD 5 ug/ml 1/3/8/16 h, light with DMSO. evidence.txt: ActD3hrs_rev-pull -> ActD2hr; MMA peptide log H/L of ActD2hr anti-correlated with ActdD1h/ActD3hrs1/ActD3h2/ActD8h (r -0.31 to -0.46); hnRNPDL ASRGGGNHQNNYQPY H/L 0.63/0.29/0.38/0.10 forward vs 3.34 in ActD2hr"
+    },
+    {
+      "location": "U2OS_ActD_3h_exp1/exp2/exp3 biological replicate 1/2/3",
+      "value": "0621 r-methyl-pull = ActD3hrs1, 0703 forward-pull = ActD3h2, 0703 rev-pull = ActD2hr",
+      "source_ids": [
+        "mq-evidence"
+      ],
+      "evidence": "Unique (Raw file, Experiment) pairs from evidence.txt"
+    },
+    {
+      "location": "U2OS_ActD_16h / U2OS_DMSO_16h rows (8)",
+      "value": "16 hour, heavy=dactinomycin",
+      "source_ids": [
+        "paper",
+        "pride-files"
+      ],
+      "evidence": "File names ActDON_pull ('overnight'); paper lists 16 h as the fourth ActD time point with heavy=ActD. Not in deposited MaxQuant search (inference)"
+    },
+    {
+      "location": "comment[fraction identifier] all rows",
+      "value": "1=pH 4.5 (_40/_4-12/_412), 2=pH 6.5 (_65), 3=pH 8.0 (_80), 4=pH 11 (_11)",
+      "source_ids": [
+        "paper",
+        "raw-header"
+      ],
+      "evidence": "Methods: microcolumn SCX at pH 4.5, 6.5, 8.0 and 11; file-name tokens; RAW header original name _4+12 for deposited _412 (fraction-1 assignment of 4-12/4+12 is inferred)"
+    },
+    {
+      "location": "comment[fractionation method] all rows",
+      "value": "NT=Strong cation-exchange chromatography (SCX);AC=PRIDE:0000561",
+      "source_ids": [
+        "paper",
+        "ols"
+      ],
+      "evidence": "Methods: microcolumn-based strong cation exchange chromatography"
+    },
+    {
+      "location": "comment[instrument] all rows",
+      "value": "NT=Q Exactive;AC=MS:1001911",
+      "source_ids": [
+        "pride",
+        "paper",
+        "raw-header",
+        "mq-summary"
+      ],
+      "evidence": "PRIDE instrument; Methods Orbitrap Q-Exactive; RAW header 'Q Exactive - Orbitrap MS' in 41/44 files; summary.txt Instrument Q Exactive"
+    },
+    {
+      "location": "comment[cleavage agent details] (two columns) all rows",
+      "value": "NT=Trypsin;AC=MS:1001251 and NT=Lys-C;AC=MS:1001309",
+      "source_ids": [
+        "paper",
+        "mq-summary",
+        "mq-evidence"
+      ],
+      "evidence": "Methods: digested using endoproteinase Lys-C and sequencing grade trypsin; summary.txt Protease Trypsin; 99.3% K/R peptide C-termini"
+    },
+    {
+      "location": "comment[modification parameters] all rows",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl Protein N-term, Methyl K,R variable; Label:13C(6)15N(4) R and Label:13C(6)15N(2) K on SILAC rows, not applicable on label-free rows",
+      "source_ids": [
+        "mq-summary",
+        "paper"
+      ],
+      "evidence": "summary.txt Fixed modifications/Variable modifications columns, Labels1 Arg10;Lys8 only for multiplicity-2 runs"
+    },
+    {
+      "location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]",
+      "value": "7 ppm / 20 ppm",
+      "source_ids": [
+        "paper",
+        "pride",
+        "mq-summary"
+      ],
+      "evidence": "Methods: maximum 7 ppm peptide masses, 20 ppm HCD fragment ion masses; parameters.txt MS/MS tol. (FTMS) 20 ppm"
+    },
+    {
+      "location": "comment[dissociation method] / comment[collision energy]",
+      "value": "HCD MS:1000422 / 25 NCE",
+      "source_ids": [
+        "paper",
+        "raw-header"
+      ],
+      "evidence": "Methods: HCD fragment ion masses; RAW instrument method names contain CE25"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: operated in data-dependent acquisition mode"
+    },
+    {
+      "location": "comment[reduction reagent] / comment[alkylation reagent]",
+      "value": "DTT PRIDE:0000608 / chloroacetamide PRIDE:0000600",
+      "source_ids": [
+        "paper",
+        "ols"
+      ],
+      "evidence": "Methods: reduced with 1 mM dithiothreitol, alkylated with 5.5 mM chloroacetamide"
+    },
+    {
+      "location": "HEK293T rows cell line columns",
+      "value": "HEK293T, CVCL_0063, kidney, normal, female, age not available",
+      "source_ids": [
+        "cellosaurus",
+        "paper"
+      ],
+      "evidence": "Cellosaurus CVCL_0063: SX Female, AG Fetus, derived from fetal kidney (UBERON_0002113), no disease"
+    },
+    {
+      "location": "U2OS rows cell line columns",
+      "value": "U2OS, CVCL_0042, tibia, osteosarcoma, female, 15Y, European ancestry",
+      "source_ids": [
+        "cellosaurus",
+        "paper",
+        "ols"
+      ],
+      "evidence": "Cellosaurus CVCL_0042: SX Female, AG 15Y, DI Osteosarcoma, Population Caucasian, derived from bone, tibia (UBERON_0000979); Methods U2OS for SILAC ActD"
+    },
+    {
+      "location": "characteristics[treatment] / factor value[treatment]",
+      "value": "dactinomycin, dimethyl sulfoxide, doxycycline, not applicable",
+      "source_ids": [
+        "paper",
+        "ols"
+      ],
+      "evidence": "Methods: ActD 5 ug/ml vs DMSO; 2 ug/ml doxycycline induction of PADI4; uninduced and HEK293T triplicate untreated"
+    },
+    {
+      "location": "characteristics[sampling time] / factor value[sampling time]",
+      "value": "1/3/8/16 hour for U2OS; not available for PADI4 induced; not applicable otherwise",
+      "source_ids": [
+        "paper",
+        "mq-evidence"
+      ],
+      "evidence": "Methods time points 1, 3, 8, 16 h; DOX duration for MS not explicitly stated"
+    }
+  ],
+  "limitations": [
+    "Fraction token 4-12 / 4+12 (deposited 412) assigned to fraction 1 (lowest pH) by position; its composition is not described in the paper",
+    "ActDON (16 h) files are absent from the deposited MaxQuant search; label direction rests on the paper Methods only, and ON=16 h is inferred from the file name",
+    "PADI4 doxycycline duration for the MS samples not stated (sampling time not available)",
+    "PADI4-inducible HEK293T annotated as parental HEK293T (CVCL_0063); no Cellosaurus entry confirmed for the derivative",
+    "Supplementary files (Fig. S1C, S4C SILAC set-ups) were not accessible (PMC proof-of-work gate); SILAC directions verified from deposited quantification instead",
+    "Collision energy 25 NCE from instrument method file names, not scan headers",
+    "3 of 44 RAW header range reads returned no data (instrument verified on 41)",
+    "No ontology term for anti-MMA peptide immunoenrichment; characteristics[enrichment process] omitted",
+    "sdrf-tools reconcile reported 2 BLOCKERs (Trypsin not in PRIDE protocol; label-free vs SILAC) judged false positives against paper Methods and MaxQuant summary.txt",
+    "The label-swapped 3 h experiment (files ..._ActD3hrs_rev...) is named `ActD2hr` in the deposited MaxQuant experiment design. The SDRF uses 3 hour: the paper has no 2 h time point and the file names say 3 hrs; its methyl-site ratios are anti-correlated with the forward ActD experiments, confirming light = ActD."
+  ]
+}

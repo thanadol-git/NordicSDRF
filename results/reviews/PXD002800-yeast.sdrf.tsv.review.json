@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002800-yeast.sdrf.tsv",
+  "artifact_sha256": "2ba5a6716e819f45fd41b4194d1c26afd5e81de4c1dbac46b4f2a9246d39661b",
+  "verdict": "PASS",
+  "summary": "Fresh independent re-review of the corrected yeast half of PXD002800 (46 rows, 35 columns, ms-proteomics v1.1.0). The prior important finding is resolved: acetyl-lysine, succinyl-lysine and diGly-lysine enrichments now carry distinct values in characteristics[enrichment process] and factor value[enrichment process], giving 5 factor levels that match the 5 MaxQuant searches. All 46 data files match the 46 PRIDE '_sc_' RAW files and the MaxQuant Yeast search folders one-to-one; instrument, NCE, DDA, tolerances, enzymes, reagents, fractionation and per-search modifications (including Propionyl K = +56.0262 Da) were independently confirmed. Only minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent reviewer (bergen-reviewer-PXD002800-yeast) without producer transcript; producer report.md, earlier review folders and scratchpad/_stale_2026-10-27/ not read; all sources re-fetched into scratchpad/PXD002800/review-PXD002800-yeast/rereview-2026-11-03/"
+  },
+  "evidence_manifest": "annotations/PXD002800-yeast.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Single declared template NT=ms-proteomics;VV=v1.1.0. Independently derived: organism is S. cerevisiae (fungus); templates.yaml offers human/vertebrates/invertebrates/plants only, cell-lines needs a Cellosaurus line, no DIA/single-cell/crosslinking/immunopeptidomics -> ms-proteomics alone is correct. 46 rows x 35 columns, uniform row width, no duplicate assay names or data files, factor value column last, factor mirrors characteristics[enrichment process]. sdrf-tools structure: 'Structure OK'. parse_sdrf validate-sdrf -t ms-proteomics exit 0 with 3 warnings (free-text enrichment values; column validator error_level: warning in sample-metadata.yaml). HCD encoded as MS:1000422 as required."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "All 19 accessions resolved in live OLS with exact labels and none obsolete: MS:1001911 Q Exactive, MS:1001251 Trypsin, MS:1001309 Lys-C, MS:1002038 label free sample, MS:1000422 beam-type collision-induced dissociation, MS:1000484 orbitrap, PRIDE:0000561 SCX, PRIDE:0000608 DTT, PRIDE:0000600 Chloroacetamide (ClAA), PRIDE:0000627 Data-dependent acquisition, UNIMOD:4/35/1/121/21/64/58, NCBITaxon:4932, EFO:0010806 enrichment of phosphorylated protein. sdrf-tools check: 19/19 verified, 0 hallucinated, CLEAN. Live OLS hierarchicalDescendants of EFO:0009090 (efo and pride) list 16 terms; the only PTM-specific one is EFO:0010806, and exact searches for 'enrichment of ubiquitinated proteins' (a template example) and 'enrichment of acetylated' return 0 hits, so no ontology term exists for the three lysine-PTM enrichments; the free-text values carry no accession and do not misrepresent any term."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project (accession/title asserted PXD002800, 'Improved functional annotation of posttranslationally modified proteins'): organisms NEWT:4932 + 9606, instrument MS:1001911, protocols state DTT/chloracetamide, Lys C then trypsin, micro-SCX stage-tip fractionation, DDA, 6 ppm / 20 ppm (HCD). Freshly downloaded Supplementary Methods (doi 10.1038/nmeth.3621): 'Wild type Saccharomyces cerevisiae cells (BY4742 ...)', same reagents/enzymes/SCX/tolerances, peptide-level enrichment of acetyl-, succinyl-, ubiquitin-lysine and phospho-peptides. MaxQuant_output.zip (range reads): Yeast/{Acetylation,Phosphorylation,Proteome,Succinylation,Ubiquitylation} summary.txt variable mods exactly match per-row SDRF modification columns; parameters.txt MS/MS tol FTMS 20 ppm, fixed Carbamidomethyl (C), YEAST.fasta; '_prop (K)' delta recomputed from yeast acetylation evidence.txt = 56.0262 Da (10 peptides) = Propionyl UNIMOD:58. RAW header range reads of one file per group (acK_s, acK_vs, suK, gg_s, proteome, phos_ip1_s, phos_ip1_vs, phos_ip2_s): 'Q Exactive - Orbitrap MS', TopN 10, NCE 27.5 with empty Stepped NCE, MS2 resolution 35k (SENSITIVE) / 70k (VERY-SENSITIVE)."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE /files (pageSize 200): 87 entries, all projectAccessions contain PXD002800; 86 RAW + MaxQuant_output.zip. The 46 '_sc_' RAW files equal the 46 SDRF comment[data file] values (no missing, extra or duplicate); remaining 40 RAW are HeLa. assay name = file stem on every row. Same 46 raw files appear in the five MaxQuant Yeast summary.txt files, each in the search matching its row's enrichment."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: acetyl-lysine 8 runs (4 fractions x 2 injections), succinyl-lysine 4 (1 injection), diGly 8 (4 x 2), proteome 8 fractions, phospho ip1 12 (6 x 2), phospho ip2 6. RAW sequence rows show _s_/_vs_ pairs re-injected from the same vial (acK B01/B01, phos_ip1 F01/F01) with SENSITIVE vs VERY-SENSITIVE methods, consistent with comment[technical replicate] 1/2 ('repeated measurements of the same sample', README.adoc). phos_ip2_s_F01 is in vial F07, distinct from ip1 vials F01-F06, supporting a separate source name. Ubiquitylation summary.txt experiments 'sens'/'verysens' corroborate the replicate split. Fraction identifiers follow the F-number. factor value[enrichment process] now has 5 levels (acetyl-lysine, succinyl-lysine, diglycine-lysine, phosphorylated protein, not applicable) that align with the 5 MaxQuant searches; the prior merged-level defect is resolved. Single culture, biological replicate 1 throughout, label free (MaxQuant multiplicity 1)."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every non-trivial value traced to PRIDE, Supplementary Methods, MaxQuant output or RAW headers (above). No value is more specific than the evidence: strain BY4742 is stated verbatim; Propionyl is asserted only as a search parameter on the acetyl rows, where MaxQuant searched it; phospho ip1/ip2 meaning is not invented (both keep biological replicate 1 under distinct source names); free-text enrichment labels describe peptide-level immunoaffinity enrichment as stated in Methods without claiming an ontology term. Omitted documented facts (synthetic complete medium, mid-exponential phase, MS2 resolution/IT per method) have no column in ms-proteomics and are not misrepresented."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics --use_ols_cache_only: exit 0, warnings only (3 free-text enrichment values, confirmed absent from live OLS). sdrf-tools check: exit 0, CLEAN 19/19. sdrf-tools score: exit 0, 100/100. sdrf-tools structure: exit 0, Structure OK. sdrf-tools reconcile --record pride.json: exit 0 with one MAJOR 'cleavage_agent_incomplete [missing: Lys-C]', which is a tool false positive: the file has a second comment[cleavage agent details] column with NT=Lys-C;AC=MS:1001309 on all 46 rows and the tool reads only the first repeated column."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[enrichment process] and factor value[enrichment process], rows 1-20 (acetyl-lysine rows 1-8, succinyl-lysine rows 9-12, diGly rows 13-20)",
+      "message": "The three lysine-PTM enrichment values are free text, not ontology labels. README.adoc line 250 recommends free text only when it is an exact ontology label, so this departs from a recommendation, though no MUST is broken.",
+      "evidence": "Live OLS: no EFO/PRIDE descendant of EFO:0009090 for acetyl-, succinyl- or ubiquitin-remnant enrichment; parse_sdrf reports warnings only (validator error_level: warning). Correction criterion: request EFO/PRIDE terms and replace the free text once they exist."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD002800-yeast.evidence.json limitations[2]",
+      "message": "The manifest still says the lysine-PTM enrichments use 'sample enrichment' (EFO:0009106), which contradicts the corrected SDRF's distinct free-text values.",
+      "evidence": "The SDRF's unique values in characteristics[enrichment process] / factor value[enrichment process] do not include 'sample enrichment'; the claims[] entry for enrichment process already describes the corrected values. Correction criterion: update that limitation sentence."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "comment[technical replicate], all rows",
+      "message": "Technical replicate 1/2 also hides a change in MS method: 1 = SENSITIVE (MS2 R35k, max IT 125 ms) and 2 = VERY-SENSITIVE (R70k, 250 ms) for acK, gg and phos_ip1. However, succinyl rows (VERY-SENSITIVE only) are also replicate 1, so the index does not consistently identify the method.",
+      "evidence": "RAW header method names per file (e.g. acK_s_F01 SENSITIVE_180min_125MS2_R35k vs acK_vs_F01 VERY-SENSITIVE_180min_250MS2_R70k; suK_F01 VERY-SENSITIVE). This is acceptable under the spec definition of technical replicate. Correction criterion (optional): document the method per run if a suitable comment column is adopted."
+    }
+  ]
+}

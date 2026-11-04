@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002147.sdrf.tsv",
+  "artifact_sha256": "6eb08ec7cd8f8bde3fa7676a8d4053ee1ab4c524f0e2c1992cef56dc13d4889a",
+  "verdict": "PASS",
+  "summary": "Independent re-review of the corrected PXD002147 SDRF (10 rows x 31 columns). Both previously important findings are resolved: CDB/PDB cell rows now use BTO:0000214 cell culture (the submitter's own mzTab tissue term), and in planta rows carry characteristics[host organism]=Triticum (MeSH Triticum, 'wheat' in record/abstract; species not stated). All values re-traced to fresh PRIDE record/file list, ZIP central directories, RAW headers, mzTab and PRIDE XML heads, Europe PMC and live OLS. Deterministic validation clean. Only minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent; did not read producer report.md, transcript, stale scratch or earlier review folders; all sources fetched fresh into scratchpad/PXD002147/review-PXD002147/rereview-2026-11-04/"
+  },
+  "evidence_manifest": "annotations/PXD002147.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Declared template ms-proteomics v1.1.0 (usable_alone, layer technology); no organism-layer template fits a fungus (plants/vertebrates/invertebrates/human inapplicable), so single template is correct. All ms-proteomics/sample-metadata/base required columns present; extra columns (strain or breed, growth condition, host organism) are TERMS.tsv terms, allowed as custom columns per README 'Extending Templates' (L656-660). Column order, factor values last, no trailing whitespace, uniform row width, unique source name/assay name/data file. HCD = MS:1000422 per README NOTE L457. parse_sdrf and sdrf-tools structure pass."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check: 18/18 terms verified, 0 hallucinated/mismatched. Live OLS: NCBITaxon:1047171 Zymoseptoria tritici; NCBITaxon:4564 Triticum; BTO:0000214 cell culture; BTO:0002233 culture fluid (synonym 'culture supernatant'); BTO:0000713 leaf; PRIDE:0000627 Data-dependent acquisition; PRIDE:0000568 SDS PAGE; PRIDE:0000561 Strong cation-exchange chromatography (SCX); MS:1002038 label free sample; sdrf-tools verify label-match True for MS:1000422, MS:1001911, MS:1001251, MS:1000484, UNIMOD:4/35/7/28. None obsolete."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project (accession/title asserted PXD002147): protocol CDB nutrient-limiting / PDB nutrient-rich cultures and 25-d infected wheat leaves; protein from culture supernatant, fungal tissue, infected leaves; one biological replicate SDS-PAGE in-gel, the other in-solution SCX; organism NEWT 336722 (= NCBITaxon 'Zymoseptoria tritici IPO323'); organismParts Leaf + Cell culture; instrument Q Exactive. mzTab MTD (CDB_SDS, CDB_supernatant_SCX, In_Planta_SCX, PDB_SCX): tissue BTO:0000214 for culture samples, BTO:0000713 for in planta; no fixed mods; variable MOD:00397/00425/00400/01160. In_Planta_SCX mzTab (400 KB gz head, 14061 PSMs): C-term K/R (trypsin), MOD:00397@C, 00425@M, 00400@N/Q, 01160@N-term Q only -> Carbamidomethyl C var, Oxidation M, Deamidated N,Q, Gln->pyro-Glu N-term Q. PRIDE XML heads In_Planta_SDS and CDB_SCX: peptide 20.0 ppm, fragment 0.6 Da, Trypsin. RAW headers (64 KB range of first member; CDBSDS, CDB_SCX, InPlantaSDS, InPlanta_SCX, PDBSCX): 'Q Exactive - Orbitrap MS', Full MS / dd-MS2 TopN 20 (DDA, HCD NCE 27), acquisition paths ...\\SDS\\... vs ...\\SCX\\... matching archive names. Europe PMC PMID 26435044 abstract: nutrient-limiting, rich media and in planta late wheat infection; 1D gel or SCX; MeSH Triticum. sdrf-tools reconcile: every annotated value agrees with deposit record."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh /files (40 entries, projectAccessions={PXD002147}): exactly 10 RAW-category files, all ZIPs, matched 1:1 to the 10 comment[data file] values with no missing, duplicate or non-raw entries. HTTP range reads of every ZIP central directory: each archive holds exactly 10 .raw fraction runs (CDB1-2_N, CDBS1-S2_N, In_Planta_N, PDB_N, PDB_supernatant_N); inner names collide between SDS and SCX archives. Assay names equal archive stems."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "3 growth conditions (CDB, PDB, in planta) x compartments (cells, culture fluid for CDB/PDB; leaf for in planta) x 2 biological replicates = 10 samples. Biological replicate 1 = SDS-PAGE archive and 2 = SCX archive, directly supported by the PRIDE protocol sentence splitting replicates by method and by RAW paths. Fractionation method per row matches archive name, mzTab titles (_gel/_SCX) and RAW paths. Technical replicate 1 and label free throughout. Factors growth condition and organism part vary as designed; leaf is intrinsically confounded with in planta. Sampling time 25 day only on in planta rows (culture rows not available). Host organism Triticum only on leaf rows, not applicable on culture rows."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No value exceeds evidence granularity: organism part cell culture equals submitter's BTO term (mycelium no longer asserted); culture fluid is the exact BTO term for the protocol's 'culture supernatant'; host kept at genus Triticum because no wheat species/cultivar is stated; strain IPO323 from submitter NEWT 336722; tolerances, mods, enzyme, instrument, acquisition and dissociation confirmed from deposited files. Omitted-but-available items are optional only (collision energy, reduction/alkylation not stated) and reported as minor."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf -t ms-proteomics --use_ols_cache_only: exit 0, 'Everything seems to be fine. Well done.' (one declared template). sdrf-tools check: exit 0, CLEAN 18/18. sdrf-tools score: 100/100. sdrf-tools structure: exit 0, 'Structure OK'. sdrf-tools reconcile --record (fresh PRIDE project JSON): exit 0, all values agree."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "file_mapping",
+      "location": "comment[data file] and comment[fraction identifier], rows 1-10",
+      "message": "Each row references a ZIP archive containing 10 .raw fraction runs, while comment[fraction identifier] is 1; spec README (L444) endorses archives as data files when they are a single canonical archive for one acquisition.",
+      "evidence": "ZIP central directories: 10 .raw members per archive. Non-blocking because only the ZIPs are repository files and inner .raw names collide between SDS and SCX archives. Correction criterion (optional): expand to one row per inner .raw with fraction identifier 1-10 and comment[file uri] if consumers need fraction-level runs."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "characteristics[biological replicate], rows 1-10",
+      "message": "Replicate numbering SDS=1 / SCX=2 rests on the PRIDE protocol sentence; RAW names 'CDB1-2'/'CDBS1-S2' in both archives and a shared facility batch (P140648) leave open that both derive from one pooled extract.",
+      "evidence": "PRIDE sampleProcessingProtocol; RAW header paths. The producer manifest records this limitation; protocol text supports the annotation as written."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "file (absent optional comment[collision energy])",
+      "message": "Collision energy is available but not annotated.",
+      "evidence": "RAW method text (PDBSCX.zip PDB_1.raw header): NCE 27.0, TopN 20. Optional column; could add '27 NCE'."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD002147.evidence.json, claim 'characteristics[organism part] / factor value[organism part]'",
+      "message": "Manifest claim still cites BTO:0001436 (mycelium) and 'fungal tissue' wording although the SDRF now uses BTO:0000214 cell culture.",
+      "evidence": "Live OLS: BTO:0001436 = mycelium. The limitations entry is updated; the claim's evidence string is stale. Update it to BTO:0000214 for provenance consistency."
+    }
+  ]
+}

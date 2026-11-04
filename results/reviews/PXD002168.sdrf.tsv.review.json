@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002168.sdrf.tsv",
+  "artifact_sha256": "97c2855d60df9e90a85c55a09f4ce98bf77bd87a3c459270643d1c3dcc3a4e0f",
+  "verdict": "PASS",
+  "summary": "Independent review of the partial PXD002168 SDRF (12 SILAC proteome RAW files, NormExcess + NormMinus; 35 acetylome RAW files deliberately excluded). The channel map, file-to-experiment mapping, biotin doses, strain, enzyme, instrument and fractionation were re-derived from fresh PRIDE, Europe PMC full text and supplementary files, the deposited MaxQuantOutput (summary.txt, parameters.txt, proteinGroups.txt, evidence.txt aggregated by script) and RAW header range reads. No blocker or important finding; the acetylome exclusion is honest (no deposited search output, no file map in paper or supplements, blank RAW sample fields, file groups that do not line up one-to-one with the five acetylome ratio columns) and a partial SDRF covering one self-contained, cross-validated sub-experiment is acceptable. Minor findings only.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent context; producer report.md and transcript not read; scratchpad/_stale_2026-10-27 not read; all sources re-fetched into scratchpad/PXD002168/review-PXD002168 with accession/title asserted"
+  },
+  "evidence_manifest": "annotations/PXD002168.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Only declared template is NT=ms-proteomics;VV=v1.1.0; templates.yaml has no fungal/microbial sample-layer template that would apply to S. cerevisiae, so ms-proteomics alone is correct. parse_sdrf validate-sdrf --use_ols_cache_only (template ms-proteomics) exit 0, 'Everything seems to be fine'. sdrf-tools structure: 'Structure OK'. 29 columns, 24 rows, no duplicate assay names, factor value[dose] last and backed by characteristics[dose]; dose values follow the TERMS.tsv 'number + unit (ug/mL)' pattern."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4: MS:1001911 Q Exactive, MS:1001309 Lys-C, MS:1000422 beam-type collision-induced dissociation (HCD as required by spec NOTE; not PRIDE:0000590/MS:1002481), PRIDE:0000627 Data-dependent acquisition, PRIDE:0000561 Strong cation-exchange chromatography (SCX), NCBITaxon:4932 Saccharomyces cerevisiae, UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, UNIMOD:1 Acetyl, UNIMOD:259 Label:13C(6)15N(2), CHEBI:15956 biotin - all labels match, none obsolete. sdrf-tools check: 10/10 verified, 0 hallucinated, 0 label mismatches, CLEAN."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Channel map: Fig. 1a legend (PMC4510963) 'Experiment 1: WT yeast grown with 2 ug/l biotin (normal) in light-SILAC media and compared with ... 200 ug/l biotin (excess) in heavy SILAC. Experiment 2: ... biotin depletion in the heavy-SILAC state'; Supplementary Data 2 (ncomms8726-s3.xls) columns 'Ratio H/L normalized Excess biotin Exp.1' / 'depletion biotin Exp.2'. Deposited proteinGroups log2 normalized ratios correlate with Supp Data 2 by gene name: NormExcess vs Exp.1 r=0.94 (n=1837), NormMinus vs Exp.2 r=0.93 (n=2657), cross pairs r~0. Bio2/Bio3/Bio4/Bio5/Vht1 H/L normalized NormMinus 10.6/9.85/8.94/4.59/12.5 (non-normalized 9.93/9.33/8.56/4.29/11.6, as cited in the manifest) vs Supp Data 2 Exp.2 10.3/9.9/19.5/4.58/13.7 - heavy = depleted, matching the paper's upregulation of biotin-metabolism proteins on depletion. Doses: Methods 2 ug/l normal = 0.002 ug/mL, 200 ug/l excess = 0.2 ug/mL, YNB devoid of biotin for depletion = 0 ug/mL. Strain: Methods 'parental WT genetic background is BY4742 (MATalpha his3D1 leu2D0 lys2D0 ura3D0)', Fig. 1a 'WT yeast'; lys2D0 is consistent with Lys8 SILAC (the GFP strains are met15D, LYS2+). Enzyme: summary.txt Protease = Lys-C for all 12 files; Methods Lys-C digestion and 'strict Lys-C specificity'; evidence.txt aggregated: 97.8-98.8% of identified peptides end in K in every file. Instrument: RAW headers 'Q Exactive - Orbitrap MS', summary.txt Instrument, PRIDE. Fractionation: NormMinus acquisition path in RAW header is 20120918_QE6_LC4_CTM_SA_proteome_bio_SCX_5.raw (direct); NormExcess inferred but data-consistent: evidence.txt shows mean precursor charge rising with fraction suffix (2.40->2.60 NormExcess, 2.56->3.00 NormMinus) and first-vs-last fraction peptide Jaccard 0.28 / 0.20 (distinct populations, not replicate injections) - the SCX salt-step signature. Mods: parameters.txt Fixed Carbamidomethyl (C), MS/MS tol FTMS 20 ppm; summary.txt Variable Oxidation (M);Acetyl (Protein N-term), Labels1 Lys8; precursor 7 ppm from Methods."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE /files (projectAccessions = {PXD002168}, 48 files: 47 RAW + MaxQuantOutput.tar.gz). All 12 SDRF data files exist in PRIDE, each appears exactly twice (light + heavy), fraction 1-6 = suffix 5,10,20,40,50,100. Deposited summary.txt lists exactly these 12 raw files in experiments NormExcess and NormMinus. The 35 unannotated RAW files are the acetylome groups BioAcetyl_SILAC_NormNothing (5), Acetylome_H4 (6), silac_ac_b (6), silac_ac_h4 (6), acetyl_Hst4 (6), acetyl_WT (6); their omission is documented in the evidence manifest limitations."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 2 SILAC-duplex experiments x 6 SCX fractions = 12 files, 24 rows; 4 sources (EXP1 normal light, EXP1 excess heavy, EXP2 normal light, EXP2 depleted heavy). Normal-biotin control cultures are distinct per experiment (biological replicate 1 and 2), consistent with Fig. 1a two independent SILAC mixes. factor value[dose] has 3 levels and is not confounded with label beyond the inherent duplex design (light always normal, as stated in the paper). Technical replicate 1 throughout; no duplicated (file, label) pairs."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value traced to PRIDE, paper Methods/Fig. 1a, Supplementary Data 2, deposited MaxQuant output or RAW headers. Inferred values (BY4742, SCX for NormExcess) are supported by direct or data-level evidence and declared as inferences in the manifest. Acetylome exclusion audited: deposited MaxQuantOutput covers only the 12 proteome files; Supplementary Data 3 (NormHigh/NormLow) and 4 (Hst2/Hst4/Sir2) are site tables with no raw-file or experiment-to-file column (all five supplementary workbooks and the Supplementary Figures text searched for raw-file names: none); RAW headers of NormNothing_40 and silac_ac_b_02 have blank Study/Client/sample fields; six acetylome file groups do not map one-to-one onto the five ratio columns (no file named for sir2D or hst2D, no file group named for the excess-biotin acetylome, acetyl_WT/acetyl_Hst4 split with unknown labelling). Only BioAcetyl_SILAC_NormNothing has a plausible name-level link (depletion acetylome, heavy = no biotin by analogy with Fig. 1a), but nothing deposited allows cross-checking it, so including it would be a hypothesis rather than a map. No unsupported addition found; PRIDE 'Diploid cell'/'Disease free' correctly not carried over for haploid BY4742."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf --sdrf_file annotations/PXD002168.sdrf.tsv --use_ols_cache_only -> exit 0. sdrf-tools check -> exit 0 (CLEAN, 10/10). sdrf-tools score -> 100/100. sdrf-tools structure -> exit 0. sdrf-tools reconcile --record project.json -> exit 1 with 'cleavage_agent_unsupported' only, a false positive: the PRIDE record's protocol is a single sentence that names no enzyme, while the deposited summary.txt Protease column is Lys-C for all 12 files, Methods state Lys-C digestion with strict Lys-C specificity, and 98% of identified peptides end in K."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "file_mapping",
+      "location": "file (artifact stem annotations/PXD002168.sdrf.tsv)",
+      "message": "The SDRF covers 12 of 47 RAW files but carries the bare accession stem, so a consumer cannot tell from the file itself that the 35 acetylome runs are absent. The exclusion is honest and acceptable; consider a sub-experiment stem (campaign precedent: PXD006112-BSA / -HeLa / -isoAsp) or recording the partial scope where downstream tooling will see it.",
+      "evidence": "PRIDE /files lists 47 RAW; SDRF comment[data file] has 12 unique values; the exclusion is recorded only in the evidence manifest limitations."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "evidence manifest, comment[fractionation method] claim",
+      "message": "The SCX inference for the six NormExcess files is justified only by 'identical fraction suffix scheme'. Stronger data-level support exists and should be cited: in evidence.txt mean precursor charge rises with fraction suffix (2.40 -> 2.60) and first-vs-last fraction peptide overlap is low (Jaccard 0.28), mirroring the NormMinus files whose original acquisition name contains 'SCX'. The NormExcess RAW header and instrument method name carry no fractionation information.",
+      "evidence": "RAW header of 20121012_..._NormExcess_5.raw: acquisition path without 'SCX', method CE25_153min_SENSITIVE_...; evidence.txt aggregation per raw file."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[precursor mass tolerance] rows 1-24",
+      "message": "7 ppm comes from the paper's search (MaxQuant 1.2.6.20), while the deposited search output is MaxQuant 1.3.0.5 against yeast_orf_mitotrans_20150220.fasta and does not record a precursor tolerance; the fragment tolerance (20 ppm) is confirmed by both. Mixed provenance is declared in the manifest; acceptable but worth keeping visible.",
+      "evidence": "parameters.txt Version 1.3.0.5, Fasta file F:\\MaxQuant\\Fasta\\yeast_orf_mitotrans_20150220.fasta; Methods 'maximum 7 p.p.m. for peptide masses'."
+    },
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "source name / factor value[dose] (EXP1 vs EXP2 naming)",
+      "message": "The paper's Supplementary Data legends describe 'biotin starvation (Experiment 1) and biotin supplement (Experiment 2)', the reverse of Fig. 1a and of the Supplementary Data 2 column headers. The SDRF correctly follows Fig. 1a and the column headers (EXP1 = excess, EXP2 = depletion), as confirmed by ratio correlation; the manifest could note the legend inconsistency so a later curator does not 'fix' it.",
+      "evidence": "Paper Supplementary Material list vs Fig. 1a legend; NormExcess vs Supp 'Excess biotin Exp.1' r=0.94, NormMinus vs 'depletion biotin Exp.2' r=0.93."
+    },
+    {
+      "severity": "minor",
+      "category": "deterministic_validation",
+      "location": "comment[cleavage agent details]",
+      "message": "sdrf-tools reconcile reports cleavage_agent_unsupported for Lys-C. This is a false positive caused by the one-sentence PRIDE protocol; Lys-C is directly supported by the deposited search and by peptide C-termini. No change needed; recorded so the gate history is auditable.",
+      "evidence": "summary.txt Protease = Lys-C (12/12 files); evidence.txt 97.8-98.8% K-terminal peptides per file; Methods 'strict Lys-C specificity'."
+    }
+  ]
+}

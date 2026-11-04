@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002800-HeLa.sdrf.tsv",
+  "artifact_sha256": "6642fa9ddb71ea89fd32a97297b6f6ccddc1d78a7b7ad347d53b9a9027998fd2",
+  "verdict": "PASS",
+  "summary": "Independent from-scratch re-review of the corrected HeLa half of PXD002800 (40 rows, 6 sources). The previous important finding is resolved: acetyl-lysine, succinyl-lysine and diGly-lysine enrichments now carry distinct characteristics[enrichment process] / factor value[enrichment process] values (5 factor levels), and live OLS confirms no specific EFO/PRIDE child of EFO:0009090 exists for them. File mapping, instruments, search modifications, fractions and technical replicates were independently re-derived from PRIDE, RAW headers, MaxQuant output and the Supplementary Methods. Only minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent reviewer without producer transcript or report.md; did not read earlier review outputs or scratchpad/_stale_2026-10-27; all evidence fetched fresh into scratchpad/PXD002800/review-PXD002800-HeLa/r2/"
+  },
+  "evidence_manifest": "annotations/PXD002800-HeLa.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Declared templates ms-proteomics v1.1.0 (technology) + human v1.1.0 (sample) + cell-lines v1.1.0 (experiment) form the valid combination named in cell-lines.yaml ('HeLa study = cell-lines + human + ms-proteomics'). All required columns of base, sample-metadata, ms-proteomics, human and cell-lines are present; 48 columns x 40 rows, uniform row width; (source name, fraction identifier, technical replicate) unique; assay name equals data-file stem in every row; every source has consistent characteristics; material type 'cell line' is in the fixed value list; age 30Y6M matches the human age pattern; HCD encoded as MS:1000422 per README NOTE."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check: 24 terms checked, 24 verified, 0 hallucinated/label mismatch/wrong ontology/UNIMOD swaps. Live OLS confirmed HANCESTRO:0568 African American, MONDO:0005153 cervical adenocarcinoma, CL:0000066 epithelial cell, UBERON:0000002 uterine cervix, NCIT:C185409 Dulbecco's Modified Eagle Medium, MS:1001911 Q Exactive, MS:1002634 Q Exactive Plus, MS:1000422, MS:1001309 Lys-C, MS:1002038, MS:1000484, PRIDE:0000561/0000608/0000600/0000627, UNIMOD:58 Propionyl, UNIMOD:64 Succinyl, UNIMOD:121 GG (none obsolete). Live OLS hierarchicalDescendants of EFO:0009090 (efo and pride) list 16 terms; only EFO:0010806 'enrichment of phosphorylated protein' is PTM-specific; PRIDE:0000585/0000586 children are only IMAC/TIO2; PRIDE:0000954 'antibody enrichment' is not under EFO:0009090; the spec example 'enrichment of ubiquitinated proteins' does not resolve in OLS. Free-text acetyl/succinyl/diGly values are therefore justified; parse_sdrf reports them as warnings only."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project/files fetched fresh (accession PXD002800 asserted on all 87 entries). Supplementary Methods PDF fetched fresh (states deposit PXD002800): HeLa ATCC CCL-2 in DMEM, DTT 1 mM, chloroacetamide 5.5 mM, Lys-C then trypsin, micro-SCX fractionation of proteome and enriched peptides, 6 ppm / 20 ppm tolerances, Cys carbamidomethyl fixed, Met oxidation and protein N-term acetyl variable. Cellosaurus CVCL_0030: female, 30Y6M, Population African American, derived from uterine cervix (UBERON:0000002), NCIt C27677 HPV-related endocervical adenocarcinoma. RAW header range reads (first 256 KB, all 40 files): 28 QE4 files 'Q Exactive - Orbitrap MS', 12 QE2 phospho files 'Q Exactive Plus - Orbitrap MS'; NCE 27.5 with no stepped NCE; TopN 10; SENSITIVE (125 ms, R35k MS2) vs VERY-SENSITIVE (250 ms, R70k MS2) methods. MaxQuant_output.zip range reads of HeLa parameters.txt/summary.txt for all five searches: Acetylation = Acetyl (K) + _prop (K); Succinylation = Succinyl (K); Ubiquitylation = GlyGly (K); Phosphorylation = Phospho (STY); Proteome = only Oxidation (M) + Acetyl (Protein N-term); fixed Carbamidomethyl (C); MS/MS FTMS tol 20 ppm; HUMAN20140123.fasta. Partial decompression of HeLa/Acetylation/evidence.txt: 78 '_prop (K)'-only evidences give delta +56.0262/56.0263 Da = Propionyl (UNIMOD:58, 56.0262)."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE lists 86 RAW + MaxQuant_output.zip; all 40 'hela' RAW files appear exactly once in comment[data file], no SDRF file is absent from PRIDE, the remaining 46 RAWs are yeast (sc_*) and belong to the yeast split. Each MaxQuant HeLa search lists exactly the SDRF rows assigned to that enrichment (acK 8, suK 4, gg 8, phospho 12, proteome 8). diGly fraction identifiers verified from RAW sequence vials: s and vs series F01=H05 (1), then timestamped files at H06/H07/H08 (2/3/4) in the order given in the SDRF."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "6 sources / 5 factor levels: acetyl-lysine (8 runs), succinyl-lysine (4), diGly-lysine (8), phosphopeptide sets 1 and 2 (6+6, same level 'enrichment of phosphorylated protein'), proteome (8, 'not applicable'); characteristics[enrichment process] equals factor value[enrichment process] in all 40 rows, so the three lysine-PTM groups are no longer merged. Technical replicate 1/2 = SENSITIVE/VERY-SENSITIVE re-injections of the same vials (acK_s/vs F01-F04 both B05-B08; gg_s/vs both H05-H08), confirmed in RAW headers; suK only VERY-SENSITIVE (rep 1), proteome and phospho only SENSITIVE (rep 1). Fractions: acK/suK/gg 1-4, proteome 1-8, phospho set 1 11-16 (vials A02-A07, file numbering), set 2 1-6 (D02-D07). Instrument split (QE vs QE Plus) matches RAW headers. Biological replicate 1 throughout is consistent with one HeLa digest per organism described in the Supplementary Methods."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value traced to PRIDE, Supplementary Methods, Cellosaurus, RAW headers or MaxQuant output; no per-sample values invented; passage number, storage temperature and individual correctly 'not available'; disease is less specific than Cellosaurus (cervical adenocarcinoma vs HPV-related endocervical adenocarcinoma), which is safe; Propionyl (K) is a real search parameter of the HeLa acetyl search, not an invented sample treatment; the enrichment free-text values restate the Supplementary Methods ('acetyl-lysine-, succinyl-lysine-, ubiquitin-lysine-') and MaxQuant GlyGly (K) without adding unsupported detail. Material omissions are limited to the minor items listed in findings."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf --use_ols_cache_only (timeout 900, one at a time): -t ms-proteomics exit 0, -t human exit 0, -t cell-lines exit 0, union of all three exit 0; each reports only 3 WARNINGs (the free-text acetyl/succinyl/diGly enrichment values not found in pride;efo, confirmed absent in live OLS) and 'There were only warnings'. sdrf-tools check exit 0 (CLEAN, 24/24 verified); sdrf-tools score exit 0 (99/100; only completeness issue: missing characteristics[developmental stage]); sdrf-tools structure exit 0 ('Structure OK'). SHA-256 re-verified unchanged at end of review."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD002800-HeLa.evidence.json limitations[2]",
+      "message": "Stale manifest limitation still says characteristics[enrichment process] = 'sample enrichment' (EFO:0009106) for the acetyl/succinyl/diGly enrichments and that only source name and modification parameters distinguish them; this contradicts the corrected SDRF, which uses three distinct free-text values. Update the limitation to describe the current free-text values.",
+      "evidence": "SDRF column 8 and 48 contain 'enrichment of acetyl-lysine peptides', 'enrichment of succinyl-lysine peptides', 'enrichment of diglycine-lysine (ubiquitin remnant) peptides'; no row contains 'sample enrichment'."
+    },
+    {
+      "severity": "minor",
+      "category": "specification",
+      "location": "characteristics[organism part], all 40 rows",
+      "message": "Organism part is 'not applicable' while the tissue of origin is only in characteristics[sampling site]. Allowed (allow_not_applicable: true), but the spec's own HeLa example uses organism part 'cervix' and cell-lines.yaml says sampling site can equal organism part. Consider 'uterine cervix' (UBERON:0000002).",
+      "evidence": "SAMPLE-GUIDELINES.adoc material-type table row 'HeLa cells | cell line | cervix | HeLa' and NOTE 'The tissue of origin can be specified in characteristics[organism part]'; Cellosaurus 'Derived from site: In situ; Uterus, cervix; UBERON_0000002'."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file (characteristics[developmental stage] absent)",
+      "message": "Optional/recommended developmental stage column is absent; Cellosaurus donor age 30Y6M supports 'adult'.",
+      "evidence": "sdrf-tools score completeness issue 'Missing recommended column: characteristics[developmental stage]'; human.yaml marks it optional."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "characteristics[cell type] all rows; evidence.json claim for [cell type]",
+      "message": "'epithelial cell' is attributed to Cellosaurus donor/derivation fields, but the Cellosaurus CVCL_0030 record has no cell-type field. The value is safe (adenocarcinoma = glandular epithelial origin; ATCC CCL-2 lists epithelial), but the manifest should cite the actual basis.",
+      "evidence": "Cellosaurus text record fields: SX Female, AG 30Y6M, Population African American, Derived from site uterine cervix, DI NCIt C27677; no 'Cell type' line."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "comment[technical replicate] rows with *_s_* vs *_vs_* files",
+      "message": "Technical replicates 1 and 2 are re-injections of the same vials with different MS methods (MS2 resolution 35k vs 70k, max IT 125 vs 250 ms); the method difference is not captured in any SDRF column, so downstream users may treat them as identical-condition replicates. Documented in the manifest; acceptable.",
+      "evidence": "RAW headers: SENSITIVE_180min_125MS2_R35k vs VERY-SENSITIVE_180min_250MS2_R70k (GG_ prefixed for diGly), same vials B05-B08 / H05-H08."
+    }
+  ]
+}

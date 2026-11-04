@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002800-yeast.sdrf.tsv",
+  "dataset": "PXD002800",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002800"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002800/files (86 RAW + MaxQuant_output.zip); every entry's projectAccessions contains PXD002800"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Scholz C, Lyon D, Refsgaard JC, Jensen LJ, Choudhary C, Weinert BT. Avoiding abundance bias in the functional annotation of post-translationally modified proteins. Nat Methods 2015;12(11):1003-1004. PMID 26513550, doi:10.1038/nmeth.3621 (paywalled, no PMC copy, no abstract in PubMed; linked via Europe PMC author/title search, PRIDE lists no reference)"
+    },
+    {
+      "id": "pubmed",
+      "kind": "publication metadata",
+      "location": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=26513550 (MeSH: HeLa Cells; Humans; Saccharomyces cerevisiae; Phosphorylation; Ubiquitin)"
+    },
+    {
+      "id": "supp_methods",
+      "kind": "publication supplement",
+      "location": "https://static-content.springer.com/esm/art%3A10.1038%2Fnmeth.3621/MediaObjects/41592_2015_BFnmeth3621_MOESM229_ESM.pdf (Supplementary Methods; text extracted to /home/thanadol/Documents/GitHub/sdrf-skills/scratchpad/PXD002800/supp.txt)"
+    },
+    {
+      "id": "mq",
+      "kind": "search output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2020/07/PXD002800/MaxQuant_output.zip: central directory + range-read summary.txt and parameters.txt of all 10 searches (HeLa|Yeast x Acetylation|Phosphorylation|Proteome|Succinylation|Ubiquitylation); HeLa/Acetylation/evidence.txt streamed for _prop (K) mass and peptide C-termini"
+    },
+    {
+      "id": "rawheaders",
+      "kind": "raw file headers",
+      "location": "HTTP range reads (first 64 KB) of all 86 RAW files under https://ftp.pride.ebi.ac.uk/pride/data/archive/2020/07/PXD002800/; Xcalibur sequence row (vial, instrument method), instrument model, NCE; cached in /home/thanadol/Documents/GitHub/sdrf-skills/scratchpad/PXD002800/rawhdr/"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/ (EFO:0009090 descendants, PRIDE:0000550 descendants, PRIDE/MS/UNIMOD exact searches)"
+    },
+    {
+      "id": "upstream",
+      "kind": "repository",
+      "location": "gh api repos/bigbio/sdrf-annotated-datasets/contents/datasets/PXD002800 and .../sandbox/PXD002800 -> 404 (not previously annotated)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] all 46 rows",
+      "value": "Saccharomyces cerevisiae",
+      "source_ids": [
+        "pride",
+        "supp_methods",
+        "pubmed"
+      ],
+      "evidence": "PRIDE organisms NEWT:4932; 'Wild type Saccharomyces cerevisiae cells (BY4742...)'; YEAST.fasta in parameters.txt"
+    },
+    {
+      "location": "characteristics[strain or breed]",
+      "value": "BY4742",
+      "source_ids": [
+        "supp_methods"
+      ],
+      "evidence": "'Wild type Saccharomyces cerevisiae cells (BY4742; ThermoFisher Scientific)'"
+    },
+    {
+      "location": "characteristics[organism part]/[cell type]/[disease]",
+      "value": "not applicable",
+      "source_ids": [
+        "supp_methods"
+      ],
+      "evidence": "unicellular wild-type yeast culture in synthetic complete medium, harvested at mid-exponential phase"
+    },
+    {
+      "location": "comment[instrument] all rows",
+      "value": "NT=Q Exactive;AC=MS:1001911",
+      "source_ids": [
+        "rawheaders",
+        "pride",
+        "mq"
+      ],
+      "evidence": "RAW headers 'Q Exactive - Orbitrap MS' (QE4) for all 46 yeast files"
+    },
+    {
+      "location": "source name / comment[data file] / characteristics[enrichment process] / factor value[enrichment process]",
+      "value": "acetyl-lysine (sc_acK, 8 runs), succinyl-lysine (sc_suK, 4), diGly-lysine (sc_gg, 8) -> distinct free-text values per PTM enrichment (acetyl-lysine, succinyl-lysine, diglycine-lysine); no specific EFO/PRIDE terms exist; phosphopeptide ip1 (12 runs) and ip2 (6 runs) -> enrichment of phosphorylated protein; proteome (8) -> not applicable",
+      "source_ids": [
+        "mq",
+        "pride_files",
+        "supp_methods"
+      ],
+      "evidence": "MaxQuant search folders Yeast/Acetylation|Succinylation|Ubiquitylation|Phosphorylation|Proteome list exactly these raw files in summary.txt"
+    },
+    {
+      "location": "source name yeast phosphopeptide enrichment ip1 vs ip2",
+      "value": "two sources",
+      "source_ids": [
+        "rawheaders"
+      ],
+      "evidence": "ip1_s and ip1_vs share vials F01-F06 (re-injection); ip2_s F01-F06 sit in vials F07-F12 (a distinct sample)"
+    },
+    {
+      "location": "comment[fraction identifier] yeast rows",
+      "value": "file-name F-number (1-4, 1-6, 1-8)",
+      "source_ids": [
+        "rawheaders",
+        "pride_files"
+      ],
+      "evidence": "file names and sequential autosampler vials"
+    },
+    {
+      "location": "comment[proteomics data acquisition method] all rows",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "pride",
+        "supp_methods",
+        "rawheaders"
+      ],
+      "evidence": "'operated ... in the data dependent mode'; RAW method TopN 10"
+    },
+    {
+      "location": "comment[cleavage agent details] (two columns) all rows",
+      "value": "NT=Trypsin;AC=MS:1001251 + NT=Lys-C;AC=MS:1001309",
+      "source_ids": [
+        "pride",
+        "supp_methods",
+        "mq"
+      ],
+      "evidence": "'digested by endoproteinase Lys C (1:200) and ... by modified sequencing grade trypsin'; MaxQuant protease Trypsin/P, 2 missed cleavages; HeLa acetyl evidence: 98.7% of unique target peptides end in K/R"
+    },
+    {
+      "location": "comment[modification parameters] columns 1-3 all rows",
+      "value": "Carbamidomethyl (C) fixed; Oxidation (M), Acetyl (Protein N-term) variable",
+      "source_ids": [
+        "mq",
+        "supp_methods"
+      ],
+      "evidence": "parameters.txt 'Fixed modifications Carbamidomethyl (C)'; summary.txt 'Variable modifications' of every search"
+    },
+    {
+      "location": "comment[modification parameters] columns 4-5 per search",
+      "value": "acetyl searches: Acetyl (K) UNIMOD:1 + Propionyl (K) UNIMOD:58; succinyl: Succinyl (K) UNIMOD:64; di-Gly: GG (K) UNIMOD:121; phospho: Phospho (STY) UNIMOD:21; proteome: not applicable",
+      "source_ids": [
+        "mq"
+      ],
+      "evidence": "summary.txt variable modifications per search folder; MaxQuant custom '_prop (K)' = +56.0262 Da on K computed from evidence.txt masses (ADKLAEEHSS 1141.5251) = Propionyl UNIMOD:58"
+    },
+    {
+      "location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]",
+      "value": "6 ppm / 20 ppm",
+      "source_ids": [
+        "pride",
+        "supp_methods",
+        "mq"
+      ],
+      "evidence": "'mass tolerance of 6 ppm for parent ions and 20 ppm (HCD) for fragment ions'; parameters.txt MS/MS tol. (FTMS) 20 ppm"
+    },
+    {
+      "location": "comment[dissociation method] / comment[collision energy] / comment[ms2 mass analyzer]",
+      "value": "HCD MS:1000422 / 27.5 NCE / orbitrap",
+      "source_ids": [
+        "rawheaders",
+        "supp_methods"
+      ],
+      "evidence": "RAW method block 'NCE 27.5' in all 86 files; Q Exactive HCD with Orbitrap MS2 (method names R35k/R70k MS2 resolution)"
+    },
+    {
+      "location": "comment[fractionation method] all rows",
+      "value": "NT=Strong cation-exchange chromatography (SCX);AC=PRIDE:0000561",
+      "source_ids": [
+        "supp_methods"
+      ],
+      "evidence": "'fractionated using micro-SCX columns in a stage-tip format'; enriched peptides 'loaded onto a microtip SCX column and fractionated'"
+    },
+    {
+      "location": "comment[reduction reagent] / comment[alkylation reagent]",
+      "value": "DTT PRIDE:0000608 / Chloroacetamide PRIDE:0000600",
+      "source_ids": [
+        "supp_methods",
+        "pride"
+      ],
+      "evidence": "'reduced with 1 mM DTT ... alkylated by 5.5 mM chloracetamide'"
+    },
+    {
+      "location": "comment[technical replicate] 1 vs 2",
+      "value": "1 = SENSITIVE method (_s_ files), 2 = VERY-SENSITIVE method (_vs_ files) re-injection of the same vials",
+      "source_ids": [
+        "rawheaders",
+        "mq"
+      ],
+      "evidence": "RAW sequence rows: _s_ and _vs_ files of one set share autosampler vials (e.g. hela_acK_s/vs_F01 both B05) with methods SENSITIVE_..._125MS2_R35k vs VERY-SENSITIVE_..._250MS2_R70k; Yeast/Ubiquitylation summary.txt experiments 'sens' and 'verysens'"
+    }
+  ],
+  "limitations": [
+    "Paper full text is paywalled; Supplementary Methods PDF and PRIDE protocols were used; no per-sample metadata table exists.",
+    "Biological independence between enrichments is not documented: each enrichment is its own source with biological replicate 1; Supplementary Methods describe one digest (~100 mg) per organism from which all enrichments and the proteome aliquot appear to derive.",
+    "The acetyl-lysine, succinyl-lysine and diGly-lysine enrichments have no specific EFO/PRIDE term under EFO:0009090 (live OLS checked; only 'enrichment of phosphorylated protein' is PTM-specific), so they carry distinct free-text values in characteristics[enrichment process] and the factor value; parse_sdrf reports these as warnings.",
+    "SENSITIVE vs VERY-SENSITIVE MS methods (MS2 resolution 35k vs 70k, max IT 125 vs 250 ms) are encoded only as technical replicate 1/2; there is no SDRF column for the instrument method.",
+    "sdrf-tools reconcile reports 'cleavage_agent_incomplete (missing Lys-C)' because it reads one value of a repeated column; the file declares both Trypsin and Lys-C.",
+    "Two columns were added by a documented post-processing script (PTM-specific modification parameters, second cleavage agent) after sdrf-tools build; diff-verified that only those cells changed.",
+    "Yeast phospho 'ip1' and 'ip2' are two separate phospho enrichments (distinct vials); the meaning of 'ip1/ip2' (e.g. which IP flow-through they derive from) is not documented, so both carry biological replicate 1 under distinct source names.",
+    "Yeast succinyl runs exist only with the VERY-SENSITIVE method; yeast phospho ip2 only with the SENSITIVE method.",
+    "Culture medium (synthetic complete medium) and growth phase (OD600 ~0.5) are documented but not encoded (no column in ms-proteomics alone); no organism template exists for fungi, so only ms-proteomics is applied."
+  ]
+}

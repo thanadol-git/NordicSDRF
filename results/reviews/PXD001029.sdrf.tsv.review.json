@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD001029.sdrf.tsv",
+  "artifact_sha256": "04b2eeb51b156a290ffbf63a4af447f93d1bf7b1398b96f616caddf9b3695e66",
+  "verdict": "FAIL",
+  "summary": "Values, ontology terms, file mapping, replicate structure and instruments are all independently verified and every validator passes. One important design defect remains: factor value[organism] encodes the study's species-identification result as an experimental condition, uses a 'Caprinae' level that overlaps the 'Ovis aries' and 'Capra hircus' levels, and gives the two blanks no level. The factor column should be removed and characteristics[biological replicate] renumbered once per source.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh reviewer context without the producer transcript. The producer's report.md, scratchpad/_stale_2026-10-27/ and files left in the review folder by an earlier stalled review attempt were not read. PRIDE, the paper, File S1, MaxQuant summary.txt files and RAW headers were all fetched fresh into scratchpad/PXD001029/review-PXD001029/fresh/."
+  },
+  "evidence_manifest": "annotations/PXD001029.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "The declared templates are ms-proteomics v1.1.0 and vertebrates v1.1.0. These are independently appropriate: there is no palaeoproteomics template, and all source organisms are vertebrates. All required columns from base, sample-metadata, vertebrates and ms-proteomics are present. The 36 columns are in the correct order, with the factor column last. The 23 rows have unique assay names. parse_sdrf validate-sdrf -t ms-proteomics and -t vertebrates (--use_ols_cache_only) both exit 0 and report 'Everything seems to be fine'. sdrf-tools structure reports OK. HCD is MS:1000422, as the spec README NOTE requires."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4 resolves all 19 controlled terms with exact labels and no obsolete terms: NCBITaxon 9925, 9940, 9913 and 9963; UBERON:0002097; MS:1001742, MS:1001911, MS:1001251, MS:1000422 and MS:1000484; PRIDE:0000627, PRIDE:0000608 and PRIDE:0000600; UNIMOD 4, 35, 1, 7, 28 and 27. NCBI taxonomy efetch shows the lineages ...Bovidae; Caprinae; Ovis and ...Bovidae; Caprinae; Capra, so Caprinae (9963) is the narrowest NCBI taxon containing both. sdrf-tools check finds 24/24 terms verified with status CLEAN."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Organisms match the MS column of paper Table 2 for all 12 archaeological samples. Goat: samples 1, 8 and 12. Cattle: samples 2 and 10. Sheep: samples 3-7 and 9; sample 9 is backed by a sheep-diagnostic peptide in Fig. 2. Sample 11 (Roum) is 'Sheep/goat' and maps to Caprinae. The modern references are domestic sheep CN3213, domestic goat CN3196 and domestic cattle (Table 1). The paper states 'The references were sampled from two historic skin samples ... and from a cattle skin', so 'skin of body' is supported for the modern rows. Procedure A rows (Table 1 asterisks: samples 1, 4, 5, 6, 10 and 12) are correct. File S1 Text S1 describes procedure B as FASP with 0.1 M DTT and 50 mM 2-chloroacetamide. Procedure A has no reduction or alkylation step, so 'not applicable' is correct there. The procedure for the modern references and blanks is not stated: Table S2 gives no recovery for the moderns, and recoveries were measured only for procedure B. 'not available' is therefore correct for those rows. Tolerances of 6 and 20 ppm are confirmed by Text S1 and by MaxQuant parameters.txt (MS/MS tol. (FTMS) 20 ppm). All 17 summary.txt files list protease Trypsin/P and the identical variable modifications 'Oxidation (M);Acetyl (K);Deamidation (NQ);Gln->pyro-Glu;Glu->pyro-Glu;Pro->Hyp', with fixed Carbamidomethyl (C) in parameters.txt. The SDRF modification set matches, with Pro->Hyp recorded as Oxidation on P. The Carbamidomethyl fixed modification on procedure-A rows reflects the actual search settings, not an alkylation step. Instruments come from the RAW headers (first 64 KB): 'LTQ Orbitrap Velos' with method 150min_Top10HCD_JESPER_Special* for the 2010 files, and 'Q Exactive - Orbitrap MS' with 120minTop10Sensitive for the 2012 files. This supports DDA, HCD and orbitrap MS2."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "The 23 comment[data file] values exactly equal the 23 RAW files in the PRIDE file list, with no duplicates, missing or extra files; every file entry has projectAccessions PXD001029. The mapping was verified independently twice. First, each RAW header's original name (e.g. 20101015_..._COLLAB_Enrico-Parchments_S34, 20101215_..._Eske_Ancient_Skin_Sample_41, 20120717_..._COLLAB_ANCIENT136_B02) matches the raw file listed in the summary.txt of the sample-named MaxQuant search zip; these were read by HTTP range reads of the central directory only. Second, per-run peptide counts in summary.txt reproduce Table S2 (e.g. Baunso a 367|521, Borremose 400|605, Huldremose dark 477|662, Haraldskaer 321|583, Mogelmose 373|559). Blank zips: blank = ANCIENT136_B02 and blank2 = ANCIENT148_B01, consistent with SDRF blank_B02 and blank_B01. Table S2 spectrum totals differ from summary.txt for Huldremose dark, Haraldskaer and the three moderns, but the peptide counts and file names agree, so this does not affect the mapping."
+    },
+    "design_consistency": {
+      "status": "fail",
+      "evidence": "There are 17 sources: 12 archaeological, 3 modern and 2 blanks. The six procedure-A objects each have two Velos runs. According to Text S1 and PRIDE, these are two subsamples of the same object processed independently; they are encoded as one source with comment[technical replicate] 1 (2010-10-15) and 2 (2010-12-15). That is acceptable: same biological source, process replicate, and subsample identity is arbitrary. Instrument and procedure are fully confounded (A = Velos 2010, B/moderns/blanks = QE 2012), and this is visible through comment[instrument], sample preparation batch and acquisition date. However, factor value[organism] is not a valid study factor for this dataset (see important finding). characteristics[biological replicate] is numbered within those pseudo-factor groups."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No value is more specific than its evidence. Roum is Caprinae rather than a guessed species. Reduction, alkylation and sample preparation batch are 'not available' where the procedure is not stated. Disease, sex and developmental stage are 'not available' because no per-sample data exist. Breed is not asserted. One piece of material evidence is conservatively omitted: the paper's calf inference for Mogelmose (see minor finding). No unsupported additions were found."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "Run from the sdrf-skills root. 'timeout 900 .venv/bin/parse_sdrf validate-sdrf -s <abs artifact> -t ms-proteomics --use_ols_cache_only' exits 0 ('Everything seems to be fine. Well done.'). The same with -t vertebrates exits 0 with the same message. '.venv/bin/python -m tools check <artifact>' exits 0 (24/24 verified, CLEAN). 'tools score' exits 0 with 95/100; its consistency notes are the 'not applicable' organism on the two blanks. 'tools structure' exits 0 (OK). 'tools reconcile --record project.json --accession PXD001029' exits 0 ('every annotated value agrees with the deposit record')."
+    }
+  },
+  "findings": [
+    {
+      "severity": "important",
+      "category": "design",
+      "location": "factor value[organism] (column 36, rows 1-23); characteristics[biological replicate] (column 4, rows 1-23)",
+      "message": "factor value[organism] should be removed. In this study, species is the result of the analysis, not an experimental condition. The factor's levels also overlap ('Caprinae' contains both 'Ovis aries' and 'Capra hircus'), and the blanks get 'not applicable' instead of a level. Biological replicate numbers are assigned within these pseudo-factor groups, so the same object number (e.g. 1) is reused by Baunso_NM_D11103a, Baunso_NM_D11103b, Baunso_NM_D11103c, Roum_NM_C37412 and blank_B01.",
+      "evidence": "The spec README (Factor Values) defines factor values as 'the conditions you want to compare' and 'variables that define experimental groups'. The paper and PRIDE describe a species-identification study comparing MS with two microscopy methods, and Table 2 shows the methods disagree for 6 of 12 objects. The organism of the archaeological objects was unknown at design time and is what the MS analysis infers; nothing is compared between organism groups. Sample 11's 'Sheep/goat' result means the 'Caprinae' level is not mutually exclusive with the sheep and goat levels. The blank rows (22-23) carry 'not applicable', so the controls fall outside the factor. The spec says biological replicate 'Numbering restarts per experimental condition (factor value group)'. Once the factor is removed, numbering per organism has no basis and makes unrelated objects look like the same replicate. The same conclusion was reached for the comparable dataset PXD001727.",
+      "correction": "Delete the factor value[organism] column; with no factor, the CI emits only an advisory. Keep characteristics[organism] unchanged. Renumber characteristics[biological replicate] so each of the 17 source names has its own integer (both Velos runs of a procedure-A object share one number). Do not add characteristics[sample type] = 'study sample', which the CI validator rejects. Re-run both parse_sdrf template validations and sdrf-tools check."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "characteristics[developmental stage], rows 9-10 (Mogelmose_NM_16316)",
+      "message": "The paper explicitly infers that the Mogelmose cape was made from a calf slaughtered within a few months of birth (bovine foetal haemoglobin, Fig. 3). The SDRF records 'not available'.",
+      "evidence": "Paper Results and Discussion: 'two peptides uniquely assigned to bovine foetal haemoglobin, indicating the production of skin from a calf slaughtered within the first months of its life'. The producer's manifest acknowledges this and chose not to encode it.",
+      "correction": "Optional. Either keep 'not available' (conservative, acceptable) or encode a supported juvenile stage term (e.g. a verified UBERON juvenile/neonate stage) citing Fig. 3."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "annotations/PXD001029.evidence.json limitations[1] and claim for characteristics[organism part]",
+      "message": "The manifest says the modern-reference tissue is 'not named explicitly' and that 'skin of body' was inferred. The paper does name it.",
+      "evidence": "Paper Materials: 'The references were sampled from two historic skin samples from the Natural History Museum of Denmark, known to derive from domestic sheep and goats, and from a cattle skin provided by a local slaughterhouse.'",
+      "correction": "Cite this sentence for rows 19-21 and drop the limitation. No SDRF change is needed."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[strain or breed] (absent)",
+      "message": "The vertebrates template recommends characteristics[strain or breed]. Breeds are unknown for all objects and references.",
+      "evidence": "vertebrates/1.1.0/vertebrates.yaml marks the column 'recommended'. The paper gives only 'domestic sheep/goat/cattle'.",
+      "correction": "Optional: add characteristics[strain or breed] = 'not available' (blanks 'not applicable')."
+    }
+  ]
+}

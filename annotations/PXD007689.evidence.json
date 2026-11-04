@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD007689.sdrf.tsv",
+  "dataset": "PXD007689",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD007689"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD007689/files (pages 0-2, 252 entries, 63 RAW; every entry's projectAccessions contains PXD007689)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5750853/ (full-text HTML; PMID 29113996; doi 10.1074/mcp.RA117.000217; title verified)"
+    },
+    {
+      "id": "pubmed-mesh",
+      "kind": "publication",
+      "location": "Europe PMC core record for PMID 29113996 (MeSH: Animals, Newborn; Rats, Wistar; Insulin-Secreting Cells; Glucose)"
+    },
+    {
+      "id": "raw-headers",
+      "kind": "raw-data",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/11/PXD007689/<all 63 *.raw> (HTTP range read, first 64 KB each; instrument model, original file name, method name)"
+    },
+    {
+      "id": "mzid-nonmod",
+      "kind": "search-output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/11/PXD007689/Nonmodification_R2_QHF0966.mzid :: AnalysisProtocolCollection (HTTP range read)"
+    },
+    {
+      "id": "mzid-phospho",
+      "kind": "search-output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/11/PXD007689/Phosphorylation_R2_FUS04121.mzid :: AnalysisProtocolCollection (HTTP range read)"
+    },
+    {
+      "id": "mzid-sialyl",
+      "kind": "search-output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/11/PXD007689/Sialylation_R2_FUS04130.mzid :: AnalysisProtocolCollection (HTTP range read)"
+    },
+    {
+      "id": "merged-tsv",
+      "kind": "search-output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/11/PXD007689/Nonmodification_R1_QHF0913Merged.tsv, Phosphorylation_R1_QHF0903Merged.tsv, Sialylation_R2_FUS04134Merged.tsv (heads; reporter columns Ion_114..Ion_117)"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/ (live term checks)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[label] / factor value[sampling time] / characteristics[sampling time], all rows",
+      "value": "iTRAQ114=0 minute, iTRAQ115=5 minute, iTRAQ116=10 minute, iTRAQ117=15 minute",
+      "source_ids": [
+        "paper",
+        "merged-tsv"
+      ],
+      "evidence": "Methods: 'Two biological replicates were made and labeling was performed as follows: control 114, 5 min glucose 115, 10 min glucose 116, and 15 min glucose 117.' Merged.tsv reporter columns are Ion_114-Ion_117 (4-plex)."
+    },
+    {
+      "location": "characteristics[biological replicate], all rows",
+      "value": "1 for *_R1_* files (128 rows), 2 for *_R2_* files (124 rows)",
+      "source_ids": [
+        "paper",
+        "pride-files"
+      ],
+      "evidence": "Methods state two biological replicates; file names carry R1/R2."
+    },
+    {
+      "location": "characteristics[organism] all rows",
+      "value": "Rattus norvegicus",
+      "source_ids": [
+        "pride",
+        "paper",
+        "pubmed-mesh"
+      ],
+      "evidence": "Methods: islets isolated from Wistar rat pups; mouse in PRIDE organisms is only the search database."
+    },
+    {
+      "location": "characteristics[organism part] all rows",
+      "value": "islet of Langerhans",
+      "source_ids": [
+        "paper",
+        "pride",
+        "ols"
+      ],
+      "evidence": "Neonatal rat pancreatic islets; UBERON:0000006."
+    },
+    {
+      "location": "characteristics[strain or breed] all rows",
+      "value": "Wistar",
+      "source_ids": [
+        "paper",
+        "pubmed-mesh"
+      ],
+      "evidence": "'4 to 5-days-old Wistar rat pups (Taconic, NY)'; MeSH Rats, Wistar."
+    },
+    {
+      "location": "characteristics[developmental stage] / characteristics[age] all rows",
+      "value": "neonate / 4D-5D",
+      "source_ids": [
+        "paper",
+        "pubmed-mesh",
+        "ols"
+      ],
+      "evidence": "Pups 4-5 days old at isolation; MeSH Animals, Newborn; EFO:0001372."
+    },
+    {
+      "location": "characteristics[sex] all rows",
+      "value": "not available",
+      "source_ids": [
+        "paper",
+        "pubmed-mesh"
+      ],
+      "evidence": "Sex not reported in Methods or MeSH."
+    },
+    {
+      "location": "characteristics[disease] all rows",
+      "value": "normal",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Islets from healthy pups; PRIDE diseases empty."
+    },
+    {
+      "location": "characteristics[compound] / characteristics[dose]",
+      "value": "glucose / 20 mM on 5,10,15 min rows; not applicable on 0 min rows",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Stimulated with 20 mM glucose; Fig. 1 legend: 'nontreated islets served as control'."
+    },
+    {
+      "location": "characteristics[enrichment process] per row",
+      "value": "not applicable (Nonmodification_*), enrichment of phosphorylated protein (Phosphoryation_*), enrichment of glycopeptides (Sialylation_*)",
+      "source_ids": [
+        "paper",
+        "pride-files",
+        "ols"
+      ],
+      "evidence": "Modified TiSH protocol: TiO2 flow-through = nonmodified; TiO2/SIMAC phosphopeptides; formerly sialylated N-glycopeptides. Glycopeptide value is free text (no EFO/PRIDE term)."
+    },
+    {
+      "location": "comment[instrument] per row",
+      "value": "Q Exactive HF (MS:1002523) for QHF* files; Orbitrap Fusion (MS:1002416) for FUS* files",
+      "source_ids": [
+        "raw-headers",
+        "paper",
+        "pride"
+      ],
+      "evidence": "All 63 RAW headers: 'Q Exactive HF - Orbitrap MS' or 'Orbitrap Fusion'; original acquisition names equal deposited names."
+    },
+    {
+      "location": "comment[fractionation method] / comment[fraction identifier]",
+      "value": "HILIC (PRIDE:0000554) except Phosphoryation_R1_QHF0903 and Phosphoryation_R2_QHF0904 (not applicable); fractions restart at 1 within each replicate and peptide group in run order (nonmodified 1-11, monophospho 1-13, glyco 1-7/1-6; QHF0903/0904 = 1); peptide group appended to source name",
+      "source_ids": [
+        "paper",
+        "raw-headers"
+      ],
+      "evidence": "Methods: mono-phospho, deglycosylated and nonmodified peptides HILIC-fractionated; multi-phosphopeptides analysed directly. RAW header sample names and autosampler wells confirm fraction order and the QHF0903/0904 multi-phospho runs."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C Fixed; iTRAQ4plex K Variable; iTRAQ4plex Any N-term Variable; Oxidation M Variable; Phospho S,T,Y Variable; Deamidated N,Q Variable on Sialylation rows only",
+      "source_ids": [
+        "mzid-nonmod",
+        "mzid-phospho",
+        "mzid-sialyl",
+        "merged-tsv"
+      ],
+      "evidence": "SearchModification elements; iTRAQ fixedMod=false in all three mzids; Deamidated only in the sialylation search; +0.984 in 536/993 sampled sialylation PSMs."
+    },
+    {
+      "location": "comment[cleavage agent details] (two columns)",
+      "value": "Trypsin (MS:1001251) and Lys-C (MS:1001309)",
+      "source_ids": [
+        "paper",
+        "mzid-nonmod"
+      ],
+      "evidence": "Methods: Lys-C predigestion 2 h then trypsin (Promega) overnight; Fig. 1 legend 'digested using Lys-C and trypsin'; mzid enzyme Trypsin."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]",
+      "value": "20 ppm / not available",
+      "source_ids": [
+        "mzid-nonmod",
+        "mzid-phospho",
+        "mzid-sialyl",
+        "pride"
+      ],
+      "evidence": "mzid ParentTolerance +/-20 ppm (paper text says 10 ppm; deposited search used). No explicit fragment tolerance in MS-GF+ (HighRes instrument model)."
+    },
+    {
+      "location": "comment[dissociation method] / comment[ms2 mass analyzer] / comment[proteomics data acquisition method]",
+      "value": "HCD (MS:1000422) / orbitrap (MS:1000484) / DDA (PRIDE:0000627)",
+      "source_ids": [
+        "raw-headers",
+        "paper",
+        "mzid-nonmod"
+      ],
+      "evidence": "Method names *_HCD30 / *_HCD40, Top-N DDA; Fusion method summary MS2 detector Orbitrap; paper MS2 at 30,000 FWHM; mzid FragmentMethod HCD."
+    },
+    {
+      "location": "comment[reduction reagent] / comment[alkylation reagent]",
+      "value": "DTT (PRIDE:0000608) / IAA (PRIDE:0000599)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Lysis buffer with 10 mM DTT; alkylated by 20 mM iodoacetamide."
+    }
+  ],
+  "limitations": [
+    "Channel map comes from one sentence of the paper Methods; no deposited file names samples per channel.",
+    "HILIC fraction order confirmed by RAW headers: Fusion phospho/glyco sample names carry the fraction number (ISL02/ISL03 = replicate 1/2); nonmodified QHF runs follow rising autosampler wells. Nonmodified fraction numbers are ordinal positions (wells skip some positions).",
+    "QHF0903/QHF0904 confirmed by RAW header sample names ('Pia ISL02/ISL03 multiphospho', no fraction suffix) as the unfractionated multi-phosphopeptide runs.",
+    "Search modifications read from one mzid per peptide class, not all 63.",
+    "Pup sex and number of pups per pool not reported.",
+    "Supplementary tables and the paper PDF were not opened; Europe PMC full text and publisher site were inaccessible.",
+    "Collision energy not encoded (method names HCD30/HCD40 vs paper 32V).",
+    "PRM validation data are in Panorama Public, not this deposit, and were not annotated."
+  ]
+}
