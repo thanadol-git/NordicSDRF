@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD005296.sdrf.tsv",
+  "artifact_sha256": "acb86d7f32f0d30f0569be96902c3d05b3555332b01a9b68f6ef8868a07c9e0e",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review of the PXD005296 SDRF (HeLa and U2OS K0-SUMO, control vs CDK inhibition, n=4 culture replicates, 7 high-pH fractions plus one single-shot run per sample, 128 RAW files) found no blocker or important issues. All 128 data files match PRIDE exactly and were cross-checked against original acquisition names in 34 RAW headers. All three template validations, sdrf-tools check and the OpenMS conversion pass with no coordinate collisions. Only minor improvements remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh reviewer context (bergen-reviewer-PXD005296). No producer transcript or report.md was read, and neither was scratchpad/_stale_2026-10-27. Producer claims in the evidence manifest were re-checked against freshly fetched sources (PRIDE project and files, nature.com public pages and supplementary PDFs, Cellosaurus, live OLS, 64 KB RAW header range reads) stored in scratchpad/PXD005296/review-PXD005296/."
+  },
+  "evidence_manifest": "annotations/PXD005296.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Has 41 columns with templates ms-proteomics, human and cell-lines (all v1.1.0), declared in three comment[sdrf template] columns, plus comment[sdrf version] v1.1.0. All required columns are present. 128 rows, 128 unique assay names and data files, and no duplicate (source name, fraction identifier, technical replicate, label) coordinate. HCD is encoded as NT=beam-type collision-induced dissociation;AC=MS:1000422, as the README NOTE near line 457 requires. Ages use the Y/M format (30Y6M, 15Y). For a cell line, organism part = not applicable is explicitly allowed by SAMPLE-GUIDELINES.adoc line 75 ('For cell line samples, use not applicable or specify the tissue of origin'). Repeated cleavage-agent and modification columns use the CV structured format. fraction identifier = 1 for the unfractionated runs follows README lines 400 and 1110 ('1 if not fractionated'). sdrf-tools structure reports OK."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check verified 21 of 21 terms with 0 hallucinated, 0 label mismatches, 0 wrong ontology and 0 UNIMOD swaps. Live OLS confirmed MS:1001309 Lys-C, MS:1001251 Trypsin, MS:1002523 Q Exactive HF, MS:1000422 beam-type CID, PRIDE:0000627 Data-dependent acquisition and PRIDE:0000564 High-pH reversed-phase chromatography (hpHRP), all non-obsolete. It also confirmed UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation, UNIMOD:1 Acetyl, UNIMOD:21 Phospho, UNIMOD:2082 QQTGG ('SUMOylation leaving QQTGG') and UNIMOD:2083 Pyro-QQTGG. Sample-term labels exist: cervical adenocarcinoma (MONDO:0005153), osteosarcoma (MONDO:0009807), epithelial cell (CL:0000066), uterine cervix (UBERON:0000002), bone (an exact synonym of UBERON:0001474), African American (HANCESTRO:0568), Cyclin-Dependent Kinase Inhibitor (NCIT:C2185), control (EFO:0001461) and female (PATO:0000383). The cellosaurus accessions CVCL_0030 and CVCL_0042 resolve to HeLa and U2OS."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "The PRIDE PXD005296 record, fetched fresh with its accession asserted, gives the K0-SUMO design in HeLa and U2OS, 'standard growth conditions, and CDKi treatment' and 'biological quadruplicate'. It states that proteins were LysC-digested, SUMO peptides were repurified, trypsin-digested, then fractionated at high pH or analysed single-shot, on a Q Exactive HF. The search used MaxQuant 1.5.3.30 with defaults except as listed: 4.5 ppm (default) and the listed variable mods. The public nature.com Supplementary Figure 6D legend gives 'CDK1- and CDK2 inhibition (CDKi)', 'n=4 cell culture replicates' and 'single-shots as well as fractions'. The paper is subscription-only with no PMC copy, and neither the supplementary PDFs (MOESM29 and MOESM41) nor PRIDE name the compound or dose. Fresh Cellosaurus records support HeLa (female, 30Y6M, African American, uterus cervix, cervical adenocarcinoma) and U2OS (female, 15Y, osteosarcoma, bone). The 20 ppm fragment tolerance is an inference from the MaxQuant 1.5.3.30 FTMS MS/MS default under the stated 'Default MaxQuant settings'. The search.tar.gz members start with a 3.07 GB allPeptides.txt (checked with a 4 MB range read), so parameters.txt cannot be reached without streaming the archive. That provenance limitation is disclosed in the manifest."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE /files (3 pages, all projectAccessions = PXD005296) lists 128 RAW files plus HUMAN.fasta and search.tar.gz. The sorted SDRF comment[data file] list is identical to the PRIDE RAW list (no missing, extra or duplicate files, and no non-raw files). assay name equals the file stem on all 128 rows. 64 KB header range reads of 34 RAW files (one fraction and the _All run for each of the 16 samples, plus 2 more) show original names of the form 20161012_QE6_LC12_IAH_SUMO_QQ_<line>[_CI][_F<n>]_R<rep>_TR1.raw. These agree with the deposited names on cell line, CDKi, replicate and fraction for every checked file. _All files have no fraction tag and use the 160-min method, while fractions use fraction-specific 50 to 80 min methods. All headers show Q Exactive HF."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed design: 2 cell lines x 2 treatments x 4 biological replicates gives 16 source names. Each has 8 runs: F0-F6 as fraction identifiers 1-7 with technical replicate 1 and hpHRP, plus the _All single-shot as fraction 1 with technical replicate 2 and fractionation method not applicable. Biological replicate numbering restarts per factor group, as README line 330 requires. The factor values (cell line and treatment) vary as designed with 32 files per group. The single-shot encoding fits the spec: technical replicate means 'repeated measurements of the same sample' (README line 331) and fraction 1 means unfractionated. Upstream collision check with parse_sdrf convert-openms (exit 0): 32 fraction groups (one fractionated and one single-shot per sample) and 0 duplicate (Fraction_Group, Fraction, Label) keys. The alternative of fraction 1 with technical replicate 1 would collide with the F0 row. Fraction 8 with technical replicate 1, MaxQuant's internal numbering, would merge the single-shot into the fractionated group as a fake eighth hpHRP fraction. No pairing between control and CDKi replicate numbers is asserted."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value was traced to PRIDE, the public figure legend, RAW headers, Cellosaurus or a documented MaxQuant default. Nothing is stated more specifically than its evidence. The treatment is the generic NCIT class with no invented compound or dose. The sampling site and disease are as specific as or less specific than Cellosaurus. Unknown U2OS cell type is not available. The fragment tolerance is disclosed as a default inference. Under-specifications and optional omissions are recorded as minor findings: U2OS ancestry, U2OS tibia, and the K0-SUMO engineered lines and SUMO-peptide enrichment."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "From the sdrf-skills checkout: '.venv/bin/python -m tools check' exit 0, CLEAN, 21/21 verified. 'tools score' exit 0, 99/100, with only the recommended developmental stage missing. 'tools structure' exit 0, OK. 'timeout 900 .venv/bin/parse_sdrf validate-sdrf --use_ols_cache_only' was run with -t ms-proteomics (exit 0), -t human (exit 0) and -t cell-lines (exit 0), each reporting 'Everything seems to be fine. Well done.' 'parse_sdrf convert-openms' exit 0, 128 design rows, no collisions. 'parse_sdrf convert-maxquant' raises KeyError in file2label because the converter does not handle a plain 'label free sample' value (maxquant.py ~line 899). The spec README example uses the plain value, so this is a converter limitation, not an artifact defect. Logs are in scratchpad/PXD005296/review-PXD005296/."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "characteristics[ancestry category], U2OS data rows 65-128 (file lines 66-129)",
+      "message": "U2OS ancestry is 'not available', but Cellosaurus CVCL_0042 states 'Population: Caucasian'. The manifest's reason ('Caucasian has no exact HANCESTRO term') is inaccurate: live OLS shows 'Caucasian' is an exact synonym of HANCESTRO:0005 'European ancestry'.",
+      "evidence": "Cellosaurus CVCL_0042 CC Population line. OLS HANCESTRO:0005 synonyms are Caucasian, European and white. The column is recommended (human) or optional (cell-lines). Correction criterion: use 'European ancestry' (HANCESTRO:0005), as was done for HeLa with Cellosaurus 'African American', or keep 'not available' with an accurate justification."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "characteristics[sampling site], U2OS data rows 65-128 (file lines 66-129)",
+      "message": "The sampling site is 'bone', while Cellosaurus gives 'Derived from site: In situ; Bone, tibia; UBERON=UBERON_0000979'. The cell-lines template asks sampling site to 'Preserve the original Cellosaurus source term'.",
+      "evidence": "cell-lines.yaml lines 20-22. Cellosaurus CVCL_0042. OLS UBERON:0000979 'tibia'. Correction criterion: use 'tibia'. The current value is less specific but not wrong."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[fragment mass tolerance], all rows",
+      "message": "20 ppm is the MaxQuant 1.5.3.30 FTMS MS/MS default, inferred from 'Default MaxQuant settings were used', where MS/MS tolerance is not among the listed exceptions. It was not read from deposited parameters.",
+      "evidence": "PRIDE data processing protocol. In search.tar.gz, parameters.txt follows a 3.07 GB allPeptides.txt, so it is unreachable by range read. The manifest discloses this as a limitation. The inference is acceptable. Re-verify if parameters.txt or mqpar.xml becomes available."
+    },
+    {
+      "severity": "minor",
+      "category": "interoperability",
+      "location": "comment[cleavage agent details], columns 26-27",
+      "message": "Lys-C then Trypsin in two columns correctly reflects the protocol (LysC digestion, repurification, then trypsin), and the DIA-NN and MaxQuant converters combine repeated columns. The OpenMS converter reads only the first column, so openms.tsv gets Enzyme = Lys-C (K-only specificity) for peptides that are tryptic.",
+      "evidence": "parse_sdrf convert-openms openms.tsv Enzyme column = 'Lys-C'. Optional: put Trypsin first so single-enzyme consumers use the effective final specificity. No spec change is required."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[treatment] / factor value[treatment], CDKi data rows 33-64 and 97-128",
+      "message": "The 'Cyclin-Dependent Kinase Inhibitor' value (NCIT:C2185) is supported and appropriately generic. The compound, dose and duration are not publicly available because the Online Methods are paywalled, and the public legend says only 'CDK1- and CDK2 inhibition'.",
+      "evidence": "Supplementary Figure 6D legend (nature.com, public). Supplementary PDFs MOESM29 and MOESM41 and PRIDE do not name the compound. Acceptable as is. If the Methods become accessible, add the compound, dose and duration (for example in a comment or a compound/dose column)."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file",
+      "message": "Optional context is absent: the cells are engineered HeLa and U2OS stably expressing K0-SUMO (lysine-deficient SUMO2), and SUMO peptides were enriched. Developmental stage (recommended per score) is also absent.",
+      "evidence": "PRIDE sample protocol 'K0-SUMO was stably expressed in HeLa and U2OS cells'. characteristics[enrichment process] is available through sample-metadata but optional. The manifest acknowledges that construct details are not captured."
+    }
+  ]
+}

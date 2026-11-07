@@ -44,6 +44,8 @@ The `E_coli_succinylation` `summary.txt` lists 13 raw files in two MaxQuant expe
 - Independent adversarial review: not run (out of scope for this producer run).
 
 ## Limitations
+- **Post-processing (consistency with sibling files):** `assay name` set to one value per RAW file (per-channel `-SILAC light/heavy` suffixes removed), as the spec requires for multiplexed runs.
+
 
 - **Paper full text unavailable; PubMed abstract only.** The paper is not in PMC/Europe PMC full text; cell.com and ScienceDirect returned HTTP 403, and no repository copy was found. The Methods and Supplementary Tables S1-S10 were not read. Every sample fact comes from the PRIDE record, the deposited MaxQuant output (`summary.txt`, `parameters.txt`), `List_of_RAW_files.xlsx`, the RAW file names and the RAW headers.
 - **Label-free runs: strain, genotype and growth condition not stated.** The 9 `NON-SILAC` runs carry `strain or breed`, `genotype` and `factor value[genotype]` = `not available`. The search FASTA is "Escherichia coli (strain K12)", but that only says what was searched, not which strain was grown.

@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD004245-HeLa.sdrf.tsv",
+  "dataset": "PXD004245",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD004245"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD004245/files"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC5056437 (https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5056437/fullTextXML); doi:10.1038/ncomms12917; PMID 27686526"
+    },
+    {
+      "id": "supp_info",
+      "kind": "publication",
+      "location": "https://static-content.springer.com/esm/art%3A10.1038%2Fncomms12917/MediaObjects/41467_2016_BFncomms12917_MOESM44_ESM.pdf"
+    },
+    {
+      "id": "raw_headers",
+      "kind": "raw-file-header",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/10/PXD004245/<file>.raw (HTTP range read bytes 0-65535 of each deposited RAW)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "ontology",
+      "location": "https://www.cellosaurus.org/CVCL_0030"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/"
+    },
+    {
+      "id": "mq_design",
+      "kind": "search-output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/10/PXD004245/experimentalDesignTemplate.txt"
+    },
+    {
+      "id": "mq_params",
+      "kind": "search-output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/10/PXD004245/parameters.txt"
+    },
+    {
+      "id": "mq_peptides",
+      "kind": "search-output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/10/PXD004245/peptides.txt (header line only, range read)"
+    },
+    {
+      "id": "mq_msms",
+      "kind": "search-output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/10/PXD004245/msms.txt (range reads: first 64 KB and 400 KB at offsets 50,120,200,280,360,440 MB)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] rows 1-21",
+      "value": "12 deposited HeLa RAW files",
+      "source_ids": [
+        "pride_files"
+      ],
+      "evidence": "All 12 non-liver RAW files of the PRIDE file list; every entry's projectAccessions contains PXD004245"
+    },
+    {
+      "location": "characteristics[cell line]/cellosaurus/organism/age/sex/ancestry/disease/organism part rows 1-21",
+      "value": "HeLa, CVCL_0030, Homo sapiens, 30Y6M, female, African American, cervical adenocarcinoma, uterine cervix",
+      "source_ids": [
+        "paper",
+        "cellosaurus",
+        "pride"
+      ],
+      "evidence": "Paper Methods: HeLa cells / SILAC HeLa cells; donor attributes from Cellosaurus CVCL_0030"
+    },
+    {
+      "location": "comment[label] rows 4-21",
+      "value": "SILAC light / SILAC heavy (duplex)",
+      "source_ids": [
+        "mq_peptides",
+        "mq_msms",
+        "supp_info"
+      ],
+      "evidence": "peptides.txt has only Intensity L/H and Ratio H/L for SILAC experiments; msms heavy deltas +8.014/K +10.008/R; Supp Fig 4a 'Heavy (K8, R10)'"
+    },
+    {
+      "location": "comment[label] rows 1-3",
+      "value": "label free sample",
+      "source_ids": [
+        "mq_peptides",
+        "mq_msms"
+      ],
+      "evidence": "Experiments Rep1-3 have no L/H intensity columns; msms Labeling State 0 only"
+    },
+    {
+      "location": "characteristics[biological replicate] rows 1-3 (deposited Rep1/Rep3/Rep2 -> 1/2/3)",
+      "value": "MaxQuant Rep1=2xSep-pak, Rep2=Filter, Rep3=normal",
+      "source_ids": [
+        "raw_headers",
+        "mq_design"
+      ],
+      "evidence": "RAW header original path: deposited Rep1=..._2xSep-pak.raw, Rep2=..._normal.raw, Rep3=..._Filter.raw; experimentalDesignTemplate maps 2xSep-pak->Rep1, Filter->Rep2, normal->Rep3"
+    },
+    {
+      "location": "characteristics[treatment]/[sampling time] time-course rows 4-15",
+      "value": "heavy: hydrogen peroxide 0/5/10/30/60/120 minute; light: hydrogen peroxide 0 minute",
+      "source_ids": [
+        "paper",
+        "supp_info",
+        "pride_files"
+      ],
+      "evidence": "Main text: light SILAC cells stimulated a few seconds with 500 uM H2O2 (~0 min), heavy for 0,5,10,30,60,120 min; Supp Fig 4a; file names"
+    },
+    {
+      "location": "characteristics[compound]/[dose] olaparib rows 16-19",
+      "value": "light: olaparib 1 uM or 10 uM + H2O2; heavy: H2O2 only",
+      "source_ids": [
+        "paper",
+        "pride_files"
+      ],
+      "evidence": "Main text: both light and heavy treated with H2O2, only light treated with olaparib (1 or 10 uM); file names Ola_1uM / Ola_10uM"
+    },
+    {
+      "location": "characteristics[treatment] occupancy rows 20-21",
+      "value": "light untreated; heavy hydrogen peroxide 10 minute",
+      "source_ids": [
+        "supp_info"
+      ],
+      "evidence": "Supp Fig 4d/e legend: cells exposed to H2O2 for 10 minutes; heavy and light correspond to treated and untreated"
+    },
+    {
+      "location": "characteristics[sampling time] rows 1-3,16-19",
+      "value": "10 minute",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "INFERRED from general Methods 'Cells were stimulated with H2O2 for 10 min in PBS'"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive Plus (rows 1-19); Q Exactive HF (rows 20-21)",
+      "source_ids": [
+        "raw_headers",
+        "paper"
+      ],
+      "evidence": "RAW header instrument strings 'Q Exactive Plus - Orbitrap MS' / 'Q Exactive HF - Orbitrap MS'; PRIDE lists Q Exactive"
+    },
+    {
+      "location": "comment[collision energy]",
+      "value": "30 NCE (rows 1-19); 28 NCE (rows 20-21)",
+      "source_ids": [
+        "raw_headers"
+      ],
+      "evidence": "'NCE / stepped NCE' in RAW method header The occupancy file's NCE (28) is not in the first 64 KB of its RAW header; it rests on the paper's statement for the sensitive method."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl Protein N-term, ADP-Ribosyl KRDE variable; Label:13C(6)15N(2) K and Label:13C(6)15N(4) R on SILAC rows",
+      "source_ids": [
+        "mq_params",
+        "paper",
+        "mq_msms"
+      ],
+      "evidence": "parameters.txt fixed mod and site tables 'ADP ribose (KRDE)Sites;Oxidation (M)Sites'; Methods variable mods; label masses from msms"
+    },
+    {
+      "location": "comment[cleavage agent details] (2 columns)",
+      "value": "Trypsin + Lys-C",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: endoproteinase Lys-C and modified sequencing grade trypsin"
+    },
+    {
+      "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+      "value": "7 ppm / 20 ppm",
+      "source_ids": [
+        "paper",
+        "mq_params"
+      ],
+      "evidence": "Methods 7 ppm peptide, 20 ppm HCD fragments; parameters.txt MS/MS tol (FTMS) 20 ppm"
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "DTT / chloroacetamide",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods sample preparation"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]/[dissociation method]",
+      "value": "DDA / HCD",
+      "source_ids": [
+        "paper",
+        "raw_headers",
+        "mq_msms"
+      ],
+      "evidence": "Methods data-dependent acquisition, HCD; TopN method header; msms Fragmentation HCD FTMS"
+    },
+    {
+      "location": "characteristics[compound]/characteristics[dose] rows 1-15",
+      "value": "hydrogen peroxide / 500 uM",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper: 'we treated HeLa cells with 500 μM H2O2' (label-free triplicate); time course: light cells 500 μM H2O2, heavy cells 'the same concentration'; RAW file names contain 500uMH2O2."
+    },
+    {
+      "location": "characteristics[dose] rows 17, 19, 21",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "H2O2 concentration for the olaparib and occupancy experiments is not stated."
+    }
+  ],
+  "limitations": [
+    "Independence of light reference cultures and of the three label-free replicate enrichments not stated in the paper",
+    "Cell-line donor attributes from Cellosaurus, not the paper",
+    "No ontology term for ADP-ribose (Af1521) enrichment; characteristics[enrichment process] omitted",
+    "PRIDE disease 'brain cancer' unsupported and not used",
+    "Post-processing inserted a Lys-C cleavage column and set SILAC label mods to not applicable on 3 label-free rows (diff-verified)"
+  ]
+}

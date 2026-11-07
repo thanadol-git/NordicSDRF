@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD005296.sdrf.tsv",
+  "dataset": "PXD005296",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD005296"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD005296/files"
+    },
+    {
+      "id": "raw_headers",
+      "kind": "raw-data",
+      "location": "/home/thanadol/Documents/GitHub/sdrf-skills/scratchpad/PXD005296/raw_headers.tsv (first 64 KB HTTP range read of each of the 128 RAW files from ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2017/01/PXD005296/; original acquisition file name, instrument method, instrument model)"
+    },
+    {
+      "id": "search",
+      "kind": "search-output",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2017/01/PXD005296/search.tar.gz (head range read of allPeptides.txt only)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1038/nsmb.3366 (PMID 28112733; public nature.com HTML incl. Supplementary Figure 6 legend; Online Methods paywalled)"
+    },
+    {
+      "id": "cellosaurus_hela",
+      "kind": "database",
+      "location": "https://www.cellosaurus.org/CVCL_0030"
+    },
+    {
+      "id": "cellosaurus_u2os",
+      "kind": "database",
+      "location": "https://www.cellosaurus.org/CVCL_0042"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/ (UNIMOD:2082 QQTGG, UNIMOD:2083 Pyro-QQTGG, NCIT:C2185, EFO:0001461, PRIDE:0000564, MS:1002523, MS:1001309, MS:1001251, HANCESTRO:0568)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] all 128 rows",
+      "value": "128 deposited RAW files, each claimed once",
+      "source_ids": [
+        "pride_files",
+        "raw_headers"
+      ],
+      "evidence": "PRIDE file list has 128 RAW (+FASTA, search.tar.gz), all projectAccessions=PXD005296; every deposited name matches its original acquisition name in the RAW header (20161012_QE6_LC12_IAH_SUMO_QQ_<line>[_CI][_F<n>]_R<rep>_TR1.raw) for line, condition, replicate and fraction"
+    },
+    {
+      "location": "characteristics[cell line] rows 1-64",
+      "value": "HeLa (CVCL_0030)",
+      "source_ids": [
+        "pride",
+        "raw_headers",
+        "paper",
+        "cellosaurus_hela"
+      ],
+      "evidence": "Run names and sample protocol: K0-SUMO stably expressed in HeLa and U2OS"
+    },
+    {
+      "location": "characteristics[cell line] rows 65-128",
+      "value": "U2OS (CVCL_0042)",
+      "source_ids": [
+        "pride",
+        "raw_headers",
+        "paper",
+        "cellosaurus_u2os"
+      ],
+      "evidence": "Run names and sample protocol"
+    },
+    {
+      "location": "factor value[treatment] / characteristics[treatment] rows 33-64,97-128",
+      "value": "Cyclin-Dependent Kinase Inhibitor",
+      "source_ids": [
+        "pride",
+        "paper",
+        "raw_headers"
+      ],
+      "evidence": "'_CI_' runs; protocol 'CDKi treatment'; Supp. Fig. 6D 'in response to CDK1- and CDK2 inhibition (CDKi)'. Compound not named in accessible text"
+    },
+    {
+      "location": "factor value[treatment] / characteristics[treatment] rows 1-32,65-96",
+      "value": "control",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Supp. Fig. 6D 'standard growth (Control) conditions'; runs without '_CI_'"
+    },
+    {
+      "location": "characteristics[biological replicate] all rows",
+      "value": "1-4 within each cell line x treatment",
+      "source_ids": [
+        "pride",
+        "paper",
+        "raw_headers"
+      ],
+      "evidence": "'biological quadruplicate'; Supp. Fig. 6D 'n=4 cell culture replicates'; replicate digit in run names and R1-R4 in original names"
+    },
+    {
+      "location": "comment[technical replicate]=1, comment[fraction identifier] 1-7 (all rows except 8,16,...,128)",
+      "value": "F0-F6 -> fractions 1-7, high-pH RP fractionation",
+      "source_ids": [
+        "pride",
+        "raw_headers"
+      ],
+      "evidence": "Protocol: trypsin-digested SUMO peptides 'fractionated at high-pH, or otherwise analyzed as single-shot'; MaxQuant fractions 0-6 per experiment; per-fraction gradient methods in RAW headers"
+    },
+    {
+      "location": "comment[technical replicate]=2, comment[fraction identifier]=1, comment[fractionation method]=not applicable (rows 8,16,24,...,128; *_All.raw)",
+      "value": "single-shot measurement of the same source",
+      "source_ids": [
+        "pride",
+        "paper",
+        "raw_headers"
+      ],
+      "evidence": "Supp. Fig. 6D 'all replicates were analyzed ... as single-shots as well as fractions'; MaxQuant groups single-shot (fraction 8) with fractions 0-6 as one of 16 experiments; 160 min method vs 50/80 min fraction methods"
+    },
+    {
+      "location": "comment[instrument] all rows",
+      "value": "NT=Q Exactive HF;AC=MS:1002523",
+      "source_ids": [
+        "pride",
+        "raw_headers"
+      ],
+      "evidence": "Instrument model string 'Q Exactive HF' in all 128 RAW headers; agrees with PRIDE"
+    },
+    {
+      "location": "comment[cleavage agent details] (two columns) all rows",
+      "value": "Lys-C (MS:1001309) and Trypsin (MS:1001251)",
+      "source_ids": [
+        "pride",
+        "search"
+      ],
+      "evidence": "Protocol: proteins digested with LysC, SUMO peptides repurified then trypsin digested; allPeptides C-termini K/R"
+    },
+    {
+      "location": "comment[modification parameters] all rows",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term, Phospho STY, QQTGG K (UNIMOD:2082), Pyro-QQTGG K (UNIMOD:2083) variable",
+      "source_ids": [
+        "pride",
+        "search",
+        "ols"
+      ],
+      "evidence": "Data processing protocol lists the variable mods; allPeptides.txt head shows +57.02 on C and the listed mod names"
+    },
+    {
+      "location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]",
+      "value": "4.5 ppm / 20 ppm",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "4.5 ppm stated in data processing protocol; 20 ppm is the MaxQuant 1.5.3.30 FTMS MS/MS default ('Default MaxQuant settings were used') - inferred, not read from parameters.txt"
+    },
+    {
+      "location": "comment[proteomics data acquisition method], comment[dissociation method], comment[label]",
+      "value": "DDA; HCD (MS:1000422); label free sample",
+      "source_ids": [
+        "pride",
+        "search"
+      ],
+      "evidence": "MaxQuant LFQ DDA search (PRIDE quantification: Label free); Q Exactive HF HCD"
+    },
+    {
+      "location": "characteristics[age]/[sex]/[disease]/[sampling site]/[ancestry category]/[cell type] rows 1-64",
+      "value": "30Y6M; female; cervical adenocarcinoma; uterine cervix; African American; epithelial cell",
+      "source_ids": [
+        "cellosaurus_hela"
+      ],
+      "evidence": "Cellosaurus CVCL_0030 donor and origin fields"
+    },
+    {
+      "location": "characteristics[age]/[sex]/[disease]/[sampling site]/[ancestry category]/[cell type] rows 65-128",
+      "value": "15Y; female; osteosarcoma; bone; not available; not available",
+      "source_ids": [
+        "cellosaurus_u2os"
+      ],
+      "evidence": "Cellosaurus CVCL_0042 (population 'Caucasian' has no exact HANCESTRO term, so not available)"
+    },
+    {
+      "location": "characteristics[organism part] all rows",
+      "value": "not applicable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Cultured cell lines; tissue of origin recorded in characteristics[sampling site] per cell-line guidance"
+    },
+    {
+      "location": "U2OS rows: characteristics[ancestry category], characteristics[sampling site]",
+      "value": "European ancestry (HANCESTRO:0005); tibia (UBERON:0000979)",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Cellosaurus CVCL_0042: Population Caucasian (exact synonym of HANCESTRO:0005); derived from Bone, tibia."
+    }
+  ],
+  "limitations": [
+    "Online Methods of the paper are paywalled and not in Europe PMC; the CDK inhibitor compound, dose and duration are not named in accessible text",
+    "Fragment mass tolerance is the MaxQuant default, not read from deposited parameters (search.tar.gz is 1.9 GB)",
+    "Assignment of single-shot runs as technical replicate 2 is an encoding choice for 'same sample measured single-shot and fractionated'",
+    "Passage number, culture medium and K0-SUMO construct details not captured",
+    "Pairing of control and CDKi replicate numbers (whether replicate n of each condition came from the same culture batch) is not documented"
+  ]
+}

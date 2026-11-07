@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD008894.sdrf.tsv",
+  "artifact_sha256": "0b95fe6a16201d423fbff9d5cee9bb54f76da824e79855be700afaf0f23b8a8d",
+  "verdict": "PASS",
+  "summary": "Independent review: channel map independently re-derived from both deposited .msf StudyDefinitions; all 22 RAW files matched; validators pass. Only minor disclosed limitations remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer (reviewer-PXD008894-r2) without producer transcript/report/earlier reviews"
+  },
+  "evidence_manifest": "annotations/PXD008894.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "37 columns, all 132 rows width 37; parse_sdrf validate-sdrf passed (exit 0) for ms-proteomics, human, clinical-metadata (--use_ols_cache_only); HCD is MS:1000422."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check: 14 terms verified, 0 hallucinated, 0 label mismatches, 0 wrong ontology, 0 UNIMOD swaps (exit 0)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Re-read HBTmitophospho.msf and HBTmitononmodified.msf AnalysisDefinition via HTTP-range SQLite: Factor 'HBT mito' Control/PARK2; samples [126-128]=Control, [129-131]=PARK2 in both. Paper PMC6624735: iPSC-derived neurons, Q Exactive HF, trypsin, HCD, 3 independent differentiations, HILIC for phospho and non-modified, additional high-pH for non-modified."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE files/all: 24 files all PXD008894 (22 RAW + 2 MSF); SDRF has exactly the 22 RAW names, 6 rows each (TMT126-131), no duplicates; phospho = QHF05025-31 and non-modified = QHF05032-36 + QHF2_02250-60 (no 02253) match WorkflowInputFiles ('Set of 15 files')."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "6 sources x 2 fractions sets; 3 control(wild type)/3 PARK2 KO; factor value[genotype] equals characteristics[genotype]; replicate index by channel order disclosed as inferred."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Unsupported attributes (age, sex, organism part, non-modified fractionation method, KO-row disease) set to 'not available'; non-phospho rows use 'not applicable' for Phospho. Tolerance 0.03 Da from Mascot node vs paper 0.02 Da disclosed. N-terminal acetylation in paper but absent from deposited workflows, disclosed."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "sdrf-tools check exit 0 (CLEAN); sdrf-tools score exit 0 (97/100); parse_sdrf x3 templates exit 0."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "comment[fraction identifier] rows of non-modified files; comment[fractionation method]='not available'",
+      "message": "Fraction identifier is a run-order index (1-10 QHF2_02250-60, 11-15 QHF05032-36), not a verified fraction number, and its method is unstated. Acceptable: msf confirms a single 'Set of 15 files', the limitation is disclosed in the manifest, and no better evidence is available.",
+      "evidence": "WorkflowInputFiles/Sample name 'Set of 15 files'; paper gives no per-file fraction table."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "characteristics[biological replicate]",
+      "message": "Replicate indices 1-3 are by channel order within group; pairing across groups is not stated. Disclosed.",
+      "evidence": "Paper: three independent differentiations; no channel-to-differentiation table."
+    },
+    {
+      "severity": "minor",
+      "category": "consistency",
+      "location": "characteristics[disease]",
+      "message": "Control rows 'normal' vs KO rows 'not available'; KO disease status not stated so conservative.",
+      "evidence": "Paper describes PARK2 KO model of Parkinson's disease but no donor disease label."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "source name",
+      "message": "Phospho and non-modified rows are distinct source names although they derive from the same TMT-pooled lysates; defensible as different enriched materials.",
+      "evidence": "Paper: labeled, mixed 1:1:1:1:1:1, then phospho-enriched / HILIC."
+    }
+  ]
+}

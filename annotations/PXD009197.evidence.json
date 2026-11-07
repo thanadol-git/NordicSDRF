@@ -106,13 +106,48 @@
         "pepxml"
       ],
       "evidence": "PRIDE sample/data processing protocols and Mascot node"
+    },
+    {
+      "location": "characteristics[sex] Endo rows",
+      "value": "female",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Cellosaurus CVCL_U985 SX Female (donor sex); Astro rows not available: supplier/donor not stated"
+    },
+    {
+      "location": "characteristics[organism part] Endo rows",
+      "value": "brain",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Cellosaurus 'Derived from site: Brain, temporal lobe, blood microvessel'"
+    },
+    {
+      "location": "characteristics[treatment] control rows",
+      "value": "untreated",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: controls included with no exposure to AgNPs; sample-metadata template says use 'untreated' for controls"
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "not available",
+      "source_ids": [
+        "pride",
+        "cellosaurus"
+      ],
+      "evidence": "PRIDE lists DOID:0000018 disease free (submitter dropdown); hCMEC/D3 is derived from patient tissue and astrocyte donor health is unstated, so not asserted"
     }
   ],
   "limitations": [
     "Full text of the paper unavailable; Sample/Control to AgNP/untreated mapping not stated explicitly in any retrieved source",
-    "Age, sex, ancestry, individual, disease, astrocyte organ origin, culture medium written not available / omitted: no source",
     "cell-lines template not declared (primary astrocytes cannot satisfy characteristics[cell line]); hCMEC/D3 identity carried via BTO cell type HCMEC/D3 cell (BTO:0003339, Cellosaurus CVCL_U985)",
     "treatment 'silver nanoparticle' has no NCIT/EFO term (validator warning)",
-    "Fractionation method uses the generic PRIDE:0000565 HPLC; no high-pH child term exists under PRIDE:0000550"
+    "Fractionation method uses the generic PRIDE:0000565 HPLC; no high-pH child term exists under PRIDE:0000550",
+    "Age (Cellosaurus 'Adult' is not a Y/M/W/D value), ancestry, individual, disease, astrocyte sex and organ origin: not available (no source)",
+    "characteristics[cell line] column not written: it is licensed only by the cell-lines template, which cannot be declared for primary astrocytes; hCMEC/D3 identity is in cell type (BTO:0003339) and report",
+    "Astro48 file QEHF1_06861 is 785 MB with an off-cadence FileTime (possible partial run); kept as fraction 6 of Astro48"
   ]
 }

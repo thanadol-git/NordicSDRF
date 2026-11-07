@@ -232,6 +232,14 @@
         "pride"
       ],
       "evidence": "Fixed Carbamidomethyl in search implies alkylation; reagents not stated in any available source"
+    },
+    {
+      "location": "characteristics[ancestry category]",
+      "value": "African American (HANCESTRO:0568)",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Cellosaurus CVCL_0030: 'Population: African American'."
     }
   ],
   "limitations": [

@@ -1,0 +1,11 @@
+# daily queue 2026-11-04 copenhagen batch 2 (10 PXDs, accession order)
+PXD003443	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD003523	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD004055	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD004245	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD004341	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD004358	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD004927	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD005252	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD005296	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD006361	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate

@@ -68,6 +68,8 @@ Run on 2026-11-04 against the SDRF with the SHA-256 above (unchanged since it wa
 - Independent adversarial review: not run (out of scope for this producer run).
 
 ## Limitations
+- **Revised for consistency with the sibling HeLa-acetylation file:** `characteristics[ancestry category]` set to `African American` (HANCESTRO:0568) from Cellosaurus CVCL_0030.
+
 - **Revised for consistency after review of the sibling yeast file:** `assay name` is now one per RAW file (the per-channel `-SILAC light/heavy` suffixes were removed), as the spec requires for multiplexed runs; channels are distinguished by `comment[label]` and source name.
 
 

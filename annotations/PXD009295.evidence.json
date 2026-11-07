@@ -60,12 +60,12 @@
     },
     {
       "location": "source name / comment[data file] (41 rows)",
-      "value": "SiluLite|Trastuzumab _ protease _ light|medium _ repN",
+      "value": "SiluLite|Trastuzumab _ protease (one source per antibody x protease digest)",
       "source_ids": [
         "raw-headers",
         "mgf-titles"
       ],
-      "evidence": "Raw-header sample string e.g. 'SiluLite L-Dimethyl Trypsin 2' gives antibody, label, protease, suffix; cross-validated: merged mgf TITLEs for SiLu_DimL list LUM_02287-90,303-305,312-314, SiLu_DimM 295-98,309,310,318,323,325,326, Trastuzumab_DimL 291-94,306-08,315-17,322, Trastuzumab_DimM 299-302,311,319,320,324,327 (0 conflicts)."
+      "evidence": "Raw-header sample string e.g. 'SiluLite L-Dimethyl Trypsin 2' gives antibody, label, protease, suffix; cross-validated: merged mgf TITLEs for SiLu_DimL list LUM_02287-90,303-305,312-314, SiLu_DimM 295-98,309,310,318,323,325,326, Trastuzumab_DimL 291-94,306-08,315-17,322, Trastuzumab_DimM 299-302,311,319,320,324,327 (0 conflicts). Round-2 redesign: PRIDE protocol says each digest was split in two for light/medium labelling, so light and medium runs share one source and are distinguished by comment[label]."
     },
     {
       "location": "comment[cleavage agent details], factor value[cleavage agent details]",
@@ -139,11 +139,11 @@
     },
     {
       "location": "characteristics[biological replicate], comment[technical replicate]",
-      "value": "suffix-derived",
+      "value": "bio replicate 1; technical replicate = acquisition-ordered run counter per source (1..N across both labels)",
       "source_ids": [
         "raw-headers"
       ],
-      "evidence": "Name suffix none/2/3 -> biological replicate 1/2/3; a second run with the same group and suffix 'none' or '1' (re-acquisition) -> technical replicate 2. Whether suffixes denote independent digests or repeat injections is NOT stated: inference."
+      "evidence": "PRIDE protocol describes one digest per antibody/protease (no replicate digests), so biological replicate = 1. Raw-header suffixes (none/1/2/3) are NOT interpreted as biological replicates; each additional run of the same digest gets the next technical replicate number (counter spans both labels because the community row coordinate omits label). Whether suffix runs are repeat injections or repeat preparations is unknown."
     },
     {
       "location": "characteristics[age], [sex], [ancestry category], [individual], [organism part], [cell type], [disease]",
@@ -157,10 +157,12 @@
   "limitations": [
     "Paper full text not retrievable (closed access); only abstract used. Sample prep from PRIDE protocol text.",
     "Per-run protease taken from the raw-file sample-name string (not described in a deposited sample sheet). Mascot search used Enzyme=None, so it does not corroborate it; PRIDE reconcile flags Thermolysin and Pepsin against 'Trypsin, Chymotrypsin' but the PRIDE protocol text names all four enzymes (false positive).",
-    "Replicate semantics (biological vs technical) of name suffixes are inferred and unconfirmed.",
     "Antibody identity (SiluLite vs trastuzumab) has no template column; encoded in source name only.",
-    "Light and medium labels are separate runs (separate builds of the same tables merged because comment[modification parameters] differs by label); not a multiplexed design.",
     "Deposited peak lists, mzid, mztab and csv files are not SDRF rows (41 RAW only).",
-    "Carbamidomethyl, reagents and tolerances are shared across runs from PRIDE/mzid, not per-run verified; cysteine-bearing peptide search params only available for the four merged searches."
+    "Carbamidomethyl, reagents and tolerances are shared across runs from PRIDE/mzid, not per-run verified; cysteine-bearing peptide search params only available for the four merged searches.",
+    "Technical replicate numbers are a per-source run counter, not an observed replicate structure; raw-name suffixes (none/1/2/3) might denote independent preparations, but the PRIDE protocol describes one digest per antibody/protease.",
+    "Light and medium runs of one digest share a source; the two label tables were built separately (comment[modification parameters] differs by label) and merged.",
+    "Acquisition method string in raw headers is 'Gradient_90min_2column_ETD+HCD_Top10_JABdelight_v5_1micro.meth'; HCD annotation rests on MS3/MS2 scan filters (@hcd30.00); PRIDE text says CID; ETD scans cannot be excluded though Mascot searched a/b/y ions only.",
+    "PP=Any N-term (dimethyl) and PP=Peptide N-term (pyro-Glu) are inferred from Mascot N-term specificity with empty residues."
   ]
 }

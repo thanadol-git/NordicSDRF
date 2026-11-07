@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD004358.sdrf.tsv",
+  "dataset": "PXD004358",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD004358"},
+    {"id": "pride_files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD004358/files"},
+    {"id": "paper", "kind": "publication", "location": "https://www.osti.gov/servlets/purl/1406611 (author copy of Larsen et al. J Biol Chem 2017;292:11586-11598, doi:10.1074/jbc.M117.794487, PMID 28512129, PMC5500819)"},
+    {"id": "pubmed", "kind": "publication", "location": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=28512129"},
+    {"id": "raw_headers", "kind": "raw_file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/05/PXD004358/*.raw (HTTP range read bytes 0-131071 of all 28 RAW files)"},
+    {"id": "msf", "kind": "search_output", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/05/PXD004358/*.msf (full 150602_Velos_LC1_Ida_HEK293_Cosmc_POMGnT1_POMT1_KO_ConAMay2015_ETD.msf; first 6 MB of the other 9 .msf files)"},
+    {"id": "cellosaurus_hek293", "kind": "ontology", "location": "https://www.cellosaurus.org/CVCL_0045"},
+    {"id": "cellosaurus_gm23363", "kind": "ontology", "location": "https://api.cellosaurus.org/cell-line/CVCL_JF24?format=json"},
+    {"id": "ols", "kind": "ontology", "location": "https://www.ebi.ac.uk/ols4/api/"},
+    {"id": "upstream_check", "kind": "repository", "location": "gh api repos/bigbio/sdrf-annotated-datasets/contents/datasets/PXD004358 and .../sandbox/PXD004358 (both 404)"}
+  ],
+  "claims": [
+    {"location": "comment[data file] rows 1-38", "value": "28 RAW files", "source_ids": ["pride_files"], "evidence": "All 28 .raw entries of the PRIDE file list (projectAccessions contains PXD004358); 10 .msf search files not listed as data files"},
+    {"location": "characteristics[organism] rows 1-38", "value": "Homo sapiens", "source_ids": ["pride", "paper"], "evidence": "PRIDE organism NEWT:9606; paper: HEK293 and human skin fibroblast"},
+    {"location": "characteristics[cell line]/cellosaurus accession/name rows 1-34", "value": "HEK293 / CVCL_0045", "source_ids": ["paper", "cellosaurus_hek293"], "evidence": "Run names and paper Methods: HEK293 (ATCC); sdrf-tools cellline lookup exact match"},
+    {"location": "characteristics[cell line]/cellosaurus accession/name rows 35-38", "value": "skin fibroblast cell line / CVCL_JF24 / GM23363", "source_ids": ["paper", "cellosaurus_gm23363", "pride_files", "ols"], "evidence": "Run names 'Fibroblast_GM3363_POMT1KO'; paper: primary skin fibroblast from compound heterozygote (S29R and R622X) POMT1-deficient patient; Cellosaurus GM23363 carries POMT1 p.Ser29Arg and p.Arg622Ter heterozygous. GM23363 has no CLO/BTO/EFO term in live OLS, so cell line uses BTO:0001619"},
+    {"location": "characteristics[organism part] rows 1-38; characteristics[sampling site]", "value": "not applicable; kidney (HEK293), skin of body (GM23363)", "source_ids": ["cellosaurus_hek293", "cellosaurus_gm23363"], "evidence": "Cultured cell lines; tissue of origin from Cellosaurus derived-from-site, per cellline.md"},
+    {"location": "characteristics[cell type]", "value": "not available (HEK293), skin fibroblast (GM23363)", "source_ids": ["cellosaurus_hek293", "cellosaurus_gm23363"], "evidence": "Cellosaurus cell type CL_0002620 for GM23363; none given for HEK293"},
+    {"location": "characteristics[sex]", "value": "female", "source_ids": ["cellosaurus_hek293", "cellosaurus_gm23363"], "evidence": "Cellosaurus sex: Female for both lines"},
+    {"location": "characteristics[age]; ancestry category; passage number", "value": "not available", "source_ids": ["cellosaurus_gm23363", "paper"], "evidence": "GM23363 'Age unspecified'; no age, ancestry or passage given in paper or PRIDE"},
+    {"location": "characteristics[developmental stage]", "value": "embryo stage (HEK293), not available (GM23363)", "source_ids": ["cellosaurus_hek293"], "evidence": "HEK293 = human embryonic kidney; cellline.md 4.4 guidance"},
+    {"location": "characteristics[disease]", "value": "normal (HEK293); autosomal recessive limb-girdle muscular dystrophy type 2K (GM23363)", "source_ids": ["cellosaurus_gm23363", "paper", "ols"], "evidence": "Cellosaurus GM23363 disease NCIt C133730 / ORDO 86812 (POMT1-related LGMD R11) = MONDO:0012248; HEK293 has no disease in Cellosaurus"},
+    {"location": "characteristics[culture medium]", "value": "Dulbecco's Modified Eagle Medium (HEK293); not available (GM23363)", "source_ids": ["paper"], "evidence": "Methods: HEK293 cells maintained in DMEM + 10% FBS; fibroblast medium not stated"},
+    {"location": "characteristics[genotype] and factor value[genotype]", "value": "COSMC/POMGNT1 KO; +POMT1 KO; POMT1/POMT2 KO; COSMC/POMGNT1/POMT1/POMT2 KO; POMT1 S29R/R622X compound het", "source_ids": ["paper", "pride_files", "raw_headers", "msf"], "evidence": "Paper Results/Table 1/Table 3 genotypes; file names (SC/SCSC = COSMC/POMGNT1 SimpleCell). 150828 'WT_POMT1_POMT2_KOKO' header reads 'SC_POMT1_POMT2_KOKO' but deposited and .msf search-time names say WT; mapped to paper's HEK293POMT1/POMT2 (WT background) group - inferred"},
+    {"location": "comment[label] rows 15-34; assay name", "value": "DIMETHYL0 (light) = COSMC/POMGNT1 KO; DIMETHYL4 (medium) = COSMC/POMGNT1/POMT1/POMT2 KO", "source_ids": ["paper", "pride_files", "msf"], "evidence": "Paper Methods: light COH2 for HEK293SC/PGNT1, medium COD2 for HEK293SC/PGNT1/POMT1/POMT2; file name 'SCSC(L)vsSCSCPOMT1T2(M)'; .msf Dimethyl +28.031 and +32.056"},
+    {"location": "comment[fraction identifier], comment[technical replicate], comment[sample preparation batch] rows 15-34", "value": "ConA elution fractions 1-6; VVA elution fraction 7 (tech reps 1-3 = Methods 1-3); VVA flow-through fraction 8", "source_ids": ["paper", "pride_files", "msf"], "evidence": "Paper: 1:1 mix enriched by ConA LWAC, ConA flow-through on VVA LWAC, VVA flow-through total digest (Fig. 2A); file names ConA(151125) LWAC25-30, ConA(FT)VVA(151215) Method1-3, ConA(FT)VVA(FT); 160104 search contains dimethyl - inferred assignment"},
+    {"location": "characteristics[biological replicate]", "value": "1/2 for separately prepared samples of the same genotype", "source_ids": ["pride_files", "raw_headers"], "evidence": "Different preparation/acquisition dates and instruments in file names; paper does not call them replicates - inferred"},
+    {"location": "comment[instrument]", "value": "Orbitrap Velos Pro (MS:1003096) for 141010/150602; Orbitrap Fusion ETD (MS:1002417) for others", "source_ids": ["raw_headers", "pride", "paper"], "evidence": "RAW header model strings 'Velos Pro' / 'Orbitrap Fusion'; ETD spectra acquired; PRIDE lists MS:1002417"},
+    {"location": "comment[dissociation method] (2 columns)", "value": "HCD+ETD, ETD only (151218 Method2/3), HCD only (160104)", "source_ids": ["raw_headers", "paper"], "evidence": "Instrument method names in RAW headers: 5HCD_5ETD, top5ETD_top5HCD, top7ETD, top10HCD_27%"},
+    {"location": "comment[cleavage agent details], tolerances", "value": "Trypsin; 10 ppm; 0.02 Da", "source_ids": ["msf", "pride"], "evidence": "150602 ETD .msf Sequest params: Trypsin (Full)/(Semi), 10 ppm, 0.02 Da; PRIDE protocol 'In all cases'"},
+    {"location": "comment[modification parameters] (7 columns)", "value": "Carbamidomethyl C fixed; Oxidation M; Hex S,T (ConA); HexNAc S,T,Y (VVA); Dimethyl / Dimethyl:2H(4) K and N-term (dimethyl runs)", "source_ids": ["msf"], "evidence": "Modification strings in deposited PD 1.4 .msf workflows per file set"},
+    {"location": "comment[ms2 mass analyzer]; comment[ms1 scan range]", "value": "orbitrap; 355m/z-1700m/z", "source_ids": ["paper", "pride"], "evidence": "nLC-MS/MS Methods: MS1 m/z 355-1700 in Orbitrap; Orbitrap HCD/ETD MS2"},
+    {"location": "comment[proteomics data acquisition method]", "value": "Data-dependent acquisition", "source_ids": ["paper", "raw_headers"], "evidence": "Top-N data-dependent methods (top5/top7/top10)"}
+  ],
+  "limitations": [
+    "No deposited sample-to-file table; genotype mapping from file names, RAW headers, .msf search-time names and the paper.",
+    "150828 26-30 genotype background (WT vs SimpleCell) conflicts between RAW header and deposited/search-time names; deposited name and paper followed.",
+    "'GM3363' in file names interpreted as Coriell GM23363 by exact POMT1 variant match.",
+    "Only the first 6 MB of 9 .msf files were read; deamidation listed in PRIDE protocol not found in searches and omitted.",
+    "Age, ancestry, passage number and fibroblast culture medium not reported.",
+    "Supplementary tables of the paper were not accessed."
+  ]
+}

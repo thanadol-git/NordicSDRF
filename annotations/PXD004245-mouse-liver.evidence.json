@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD004245-mouse-liver.sdrf.tsv",
+  "dataset": "PXD004245",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD004245"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD004245/files"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC5056437 (https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5056437/fullTextXML); doi:10.1038/ncomms12917; PMID 27686526"
+    },
+    {
+      "id": "supp_info",
+      "kind": "publication",
+      "location": "https://static-content.springer.com/esm/art%3A10.1038%2Fncomms12917/MediaObjects/41467_2016_BFncomms12917_MOESM44_ESM.pdf"
+    },
+    {
+      "id": "raw_headers",
+      "kind": "raw-file-header",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/10/PXD004245/<file>.raw (HTTP range read bytes 0-65535 of each deposited RAW)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "ontology",
+      "location": "https://www.cellosaurus.org/CVCL_0030"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] rows 1-3",
+      "value": "20150916_002/003/004_Liver_Rep1/2/3.raw",
+      "source_ids": [
+        "pride_files",
+        "raw_headers"
+      ],
+      "evidence": "PRIDE file list; RAW header original names 20150916_00N_LiverN_unt.raw"
+    },
+    {
+      "location": "characteristics[organism]/[organism part] rows 1-3",
+      "value": "Mus musculus / liver",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organisms include NEWT:10090; paper: endogenous ADP-ribosylome of mouse liver"
+    },
+    {
+      "location": "characteristics[biological replicate]/[individual] rows 1-3",
+      "value": "1-3 / mouse 1-3",
+      "source_ids": [
+        "paper",
+        "raw_headers"
+      ],
+      "evidence": "Paper: three mice, triplicate analyses; file names Liver1/2/3"
+    },
+    {
+      "location": "characteristics[strain or breed]/[sex]/[age]/[developmental stage]",
+      "value": "C57BL/6J / male / 9W / adult",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: Male 9-week-old C57BL/6 mice; animal-study note: C57BL/6J; adult inferred from 9 weeks"
+    },
+    {
+      "location": "characteristics[treatment]/[disease]",
+      "value": "untreated / normal",
+      "source_ids": [
+        "raw_headers",
+        "paper"
+      ],
+      "evidence": "Original names '_unt'; paper 'normal mouse liver samples'"
+    },
+    {
+      "location": "comment[instrument]/[collision energy]",
+      "value": "Q Exactive HF / 28 NCE",
+      "source_ids": [
+        "raw_headers"
+      ],
+      "evidence": "RAW header 'Q Exactive HF - Orbitrap MS', method NCE 28"
+    },
+    {
+      "location": "comment[modification parameters]/tolerances/cleavage/reagents",
+      "value": "as HeLa search, without SILAC labels",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Liver 'processed as described for the HeLa cells'; general MaxQuant Methods. No liver search output deposited"
+    }
+  ],
+  "limitations": [
+    "No deposited search output for liver runs; search settings taken from paper's general Methods",
+    "Sex/age/strain are cohort-level statements applied to all three animals",
+    "No factor value column: single-condition study",
+    "No ontology term for ADP-ribose (Af1521) enrichment"
+  ]
+}

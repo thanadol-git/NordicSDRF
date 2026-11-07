@@ -80,6 +80,8 @@ Earlier runs on 2026-11-03 (logs in `scratchpad/PXD002277/validation/`) gave the
 No independent adversarial review has been run.
 
 ## Limitations
+- **Revised after independent review:** `characteristics[ancestry category]` set to `African American` (HANCESTRO:0568) from Cellosaurus CVCL_0030 ('Population: African American'), the same source as the donor age and sex.
+
 
 - **Paper full text unavailable.** The publisher (Cell Press/ScienceDirect) returned HTTP 403. The paper is not in PMC and no repository copy was found. Only the PubMed abstract (PMID 23954790) was read. Methods and Table S6 were not seen. Every sample fact comes from the PRIDE record, the deposited MaxQuant output (`parameters.txt`, `summary.txt`), the submitter's `List_of_RAW_files.xlsx`, the RAW file names and the RAW headers (range-read).
 - **Single biological sample (inference).** One HeLa acetylome preparation is assumed, because all 8 runs share one name stem, one acquisition date and one MaxQuant experiment. Whether F01-F04 came from one enrichment or from pooled enrichments is not documented.

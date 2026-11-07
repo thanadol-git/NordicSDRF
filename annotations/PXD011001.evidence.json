@@ -3,31 +3,158 @@
   "artifact": "annotations/PXD011001.sdrf.tsv",
   "dataset": "PXD011001",
   "sources": [
-    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD011001"},
-    {"id": "files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD011001/files/all (281 entries: 280 RAW + txt_osteo.zip)"},
-    {"id": "paper", "kind": "publication", "location": "PMC6961576 / PMID 31831592 / doi:10.1101/gr.248286.119 (Methods read via Europe PMC fullTextXML)"},
-    {"id": "mq", "kind": "search-output", "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2021/09/PXD011001/txt_osteo.zip : txt osteo/parameters.txt, summary.txt, evidence.txt (Raw file -> Experiment map), range-read"},
-    {"id": "rawhdr", "kind": "raw-file", "location": "first 256 KB of each of the 280 RAW files, instrument model string decoded (XL 208, Velos 32, Q Exactive 40)"},
-    {"id": "cellosaurus", "kind": "ontology", "location": "https://api.cellosaurus.org/cell-line/CVCL_Z015 (hMSC-TERT, Simonsen 2002 PMID 12042863, male, 33Y, bone marrow stroma)"}
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD011001"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD011001/files/all (281 entries: 280 RAW + txt_osteo.zip)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC6961576 / PMID 31831592 / doi:10.1101/gr.248286.119 (Methods read via Europe PMC fullTextXML)"
+    },
+    {
+      "id": "mq",
+      "kind": "search-output",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2021/09/PXD011001/txt_osteo.zip : txt osteo/parameters.txt, summary.txt, evidence.txt (Raw file -> Experiment map), range-read"
+    },
+    {
+      "id": "rawhdr",
+      "kind": "raw-file",
+      "location": "first 256 KB of each of the 280 RAW files, instrument model string decoded (XL 208, Velos 32, Q Exactive 40)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "ontology",
+      "location": "https://api.cellosaurus.org/cell-line/CVCL_Z015 (hMSC-TERT, Simonsen 2002 PMID 12042863, male, 33Y, bone marrow stroma)"
+    },
+    {
+      "id": "mqfrac",
+      "kind": "search-output",
+      "location": "txt_osteo.zip evidence.txt columns Raw file + Fraction (streamed in full); one Fraction value per raw file"
+    }
   ],
   "claims": [
-    {"location": "comment[label] all rows", "value": "SILAC light/medium/heavy", "source_ids": ["paper", "mq"], "evidence": "Triple-encoding SILAC; light Arg0/Lys0 unstimulated, medium Arg6/Lys4 (30 min, 1 h), heavy Arg10/Lys8 (6 h, 24 h); summary.txt Multiplicity 3 Labels1 Arg6;Lys4 Labels2 Arg10;Lys8"},
-    {"location": "source name / factor value[treatment]", "value": "time points per experiment", "source_ids": ["paper", "mq"], "evidence": "evidence.txt Experiment names KR/IB/IB2 x 30_6 / 1_24 cover all 280 RAW files; 30_6 = 30 min + 6 h, 1_24 = 1 h + 24 h"},
-    {"location": "characteristics[biological replicate]", "value": "KR=1, IB=2, IB2=3", "source_ids": ["mq", "paper"], "evidence": "Three MaxQuant experiment prefixes; paper states three biological replicates. Prefix-to-number order is an assignment, not stated."},
-    {"location": "characteristics[cell line], cellosaurus *", "value": "hMSC-TERT / CVCL_Z015", "source_ids": ["paper", "cellosaurus"], "evidence": "Paper: hMSC-TERT immortalised per Simonsen 2002"},
-    {"location": "characteristics[age], [sex]", "value": "33Y, male", "source_ids": ["cellosaurus"], "evidence": "Donor data from Cellosaurus entry, not from the paper"},
-    {"location": "comment[instrument], dissociation, fragment tolerance", "value": "XL CID 0.5 Da; Velos/QE HCD 20 ppm", "source_ids": ["rawhdr", "paper", "mq"], "evidence": "Instrument per file from raw header; dissociation from Methods (XL CID, Velos/QE HCD); tolerances from parameters.txt (FTMS 20 ppm, ITMS 0.5 Da). Velos HCD read as Orbitrap (FTMS) is assumed."},
-    {"location": "characteristics[enrichment process]", "value": "phospho for Velos/QE files, not applicable for XL files", "source_ids": ["paper", "rawhdr"], "evidence": "Methods: XL for total protein, Velos and Q-Exactive for phospho-enriched samples"},
-    {"location": "comment[modification parameters]", "value": "Carbamidomethyl fixed; Oxidation, N-term acetyl, Deamidated, Phospho, SILAC labels variable", "source_ids": ["mq"], "evidence": "parameters.txt and summary.txt"},
-    {"location": "comment[cleavage agent details]", "value": "Trypsin", "source_ids": ["paper", "mq"], "evidence": "Methods trypsin (LysC then trypsin for in-solution); summary.txt Protease Trypsin/P. PRIDE record does not name it (reconcile BLOCKER cleavage_agent_unsupported, overridden)."},
-    {"location": "comment[fractionation method], comment[fraction identifier]", "value": "SDS PAGE for gel series; not available otherwise", "source_ids": ["paper", "files"], "evidence": "Gel digestion stated for proteome; fraction numbers taken from the trailing index of file names"}
+    {
+      "location": "comment[label] all rows",
+      "value": "SILAC light/medium/heavy",
+      "source_ids": [
+        "paper",
+        "mq"
+      ],
+      "evidence": "Triple-encoding SILAC; light Arg0/Lys0 unstimulated, medium Arg6/Lys4 (30 min, 1 h), heavy Arg10/Lys8 (6 h, 24 h); summary.txt Multiplicity 3 Labels1 Arg6;Lys4 Labels2 Arg10;Lys8"
+    },
+    {
+      "location": "source name / factor value[treatment]",
+      "value": "time points per experiment",
+      "source_ids": [
+        "paper",
+        "mq"
+      ],
+      "evidence": "evidence.txt Experiment names KR/IB/IB2 x 30_6 / 1_24 cover all 280 RAW files; 30_6 = 30 min + 6 h, 1_24 = 1 h + 24 h"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "KR=1, IB=2, IB2=3",
+      "source_ids": [
+        "mq",
+        "paper"
+      ],
+      "evidence": "Three MaxQuant experiment prefixes; paper states three biological replicates. Prefix-to-number order is an assignment, not stated."
+    },
+    {
+      "location": "characteristics[cell line], cellosaurus *",
+      "value": "hMSC-TERT / CVCL_Z015",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Paper: hMSC-TERT immortalised per Simonsen 2002"
+    },
+    {
+      "location": "characteristics[age], [sex]",
+      "value": "33Y, male",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Donor data from Cellosaurus entry, not from the paper"
+    },
+    {
+      "location": "comment[instrument], dissociation, fragment tolerance",
+      "value": "XL CID 0.5 Da; Velos/QE HCD 20 ppm",
+      "source_ids": [
+        "rawhdr",
+        "paper",
+        "mq"
+      ],
+      "evidence": "Instrument per file from raw header; dissociation from Methods (XL CID, Velos/QE HCD); tolerances from parameters.txt (FTMS 20 ppm, ITMS 0.5 Da). Velos HCD read as Orbitrap (FTMS) is assumed."
+    },
+    {
+      "location": "characteristics[enrichment process]",
+      "value": "phospho for Velos/QE files, not applicable for XL files",
+      "source_ids": [
+        "paper",
+        "rawhdr"
+      ],
+      "evidence": "Methods: XL for total protein, Velos and Q-Exactive for phospho-enriched samples"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl fixed; Oxidation, N-term acetyl, Deamidated, Phospho, SILAC labels variable",
+      "source_ids": [
+        "mq"
+      ],
+      "evidence": "parameters.txt and summary.txt"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "paper",
+        "mq"
+      ],
+      "evidence": "Methods trypsin (LysC then trypsin for in-solution); summary.txt Protease Trypsin/P. PRIDE record does not name it (reconcile BLOCKER cleavage_agent_unsupported, overridden)."
+    },
+    {
+      "location": "comment[fraction identifier] all rows",
+      "value": "authors' MaxQuant Fraction",
+      "source_ids": [
+        "mqfrac"
+      ],
+      "evidence": "Fraction identifier equals evidence.txt Fraction for all 280 files; technical replicate is 1 everywhere"
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "SDS PAGE for gel series; not available for others",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods state gel separation for protein ID and TiO2 enrichment/fractionation for phospho; OffGel is not mentioned"
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Immortalised line; paper states no disease status"
+    }
   ],
   "limitations": [
     "No per-file sample sheet exists; file-to-sample mapping is derived from MaxQuant evidence.txt Experiment plus file-name tokens (CE, NP, NF1, OffGel, TiO2_Digest, Ti, Phospho, PIPE) whose meaning is not defined in the paper.",
     "CE/NP are likely cytoplasmic/nuclear fractions but this is not stated; they appear only as literal tokens in source names.",
-    "Fraction numbering for TiO2_Digest, Ti, PIPE and Phospho series, and technical replicate numbers for Digest1_2, PIPE and 20120817 series, are conventions, not stated facts.",
     "Precursor tolerance, passage number, culture medium, storage temperature, ancestry and developmental stage are not available.",
     "Induction medium composition is not stated in the paper text; treatment is described generically.",
-    "Fragment tolerance for Velos HCD files assumes Orbitrap detection."
+    "Fragment tolerance for Velos HCD files assumes Orbitrap detection.",
+    "Tokens CE, NP, NF1 and 'untagged' (20100723 OffGel files without a compartment token) are kept literally in source names; the paper says lysates were split into nuclear and cytoplasmic fractions but never defines the tokens. NF1 occurs only in replicate 2 (1_24) where no NP gel series exists and is probably nuclear; not merged.",
+    "Lys-C was used before trypsin for in-solution (phospho) digests per Methods, but comment[cleavage agent details] is single-valued; Trypsin (matching MaxQuant Trypsin/P) is recorded for all rows.",
+    "reconcile BLOCKER cleavage_agent_unsupported refers only to the PRIDE record; trypsin is named in the paper Methods and the MaxQuant summary.txt.",
+    "Round-2 fix: fraction identifiers use the authors' MaxQuant evidence.txt Fraction; all technical replicate = 1. Phospho series of rep3 acquired on 20120812 (CE/NP x_1-4 + PIPE) and 20120817 (Phospho*) are separate sources ('phospho0812'/'phospho0817') because both reuse fractions 1-5; nothing states whether they are repeats or separate preparations.",
+    "Phospho/TiO2 files have comment[fractionation method] not available: Methods say 'enriched and fractionated using TiO2' without naming a separate fractionation technique. OffGel series (rep1) likewise not available; OffGel is not mentioned in the paper (name suggests isoelectric focusing)."
   ]
 }

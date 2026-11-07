@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD002277-HeLa-acetylation.sdrf.tsv",
+  "artifact_sha256": "7d7b25c10937ba5fb582c1b8158252f4cdd4fcf8bfc6cdaa8e2d484ca64d4af7",
+  "verdict": "FAIL",
+  "summary": "Structure, ontology terms, file mapping and the 4-fraction x 2-injection design are sound; the 'b' files are supported as re-injections from the same autosampler vials. One important omission remains: characteristics[ancestry category] is 'not available' although the cited Cellosaurus entry (already used for age and sex) states 'Population: African American', which maps exactly to HANCESTRO:0568.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent; producer report.md, transcript, stale scratch and earlier review folders not read; all evidence re-fetched into scratchpad/PXD002277/review-PXD002277-HeLa-acetylation/fresh-2026-11-04T0619/"
+  },
+  "evidence_manifest": "annotations/PXD002277-HeLa-acetylation.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates derived independently from templates.yaml: ms-proteomics 1.1.0 (technology) + human 1.1.0 (sample) + cell-lines 1.1.0 (experiment, requires technology+sample), all extending sample-metadata/base; declared comment[sdrf template] columns match. Every required column of base, sample-metadata, ms-proteomics, human and cell-lines is present (40 columns, 8 rows, no empty cells). parse_sdrf validate-sdrf passed for each template; sdrf-tools structure: 'Structure OK'. No factor value column: spec README 'Factor Values' section says factor values indicate conditions being compared; this is a single-condition catalogue (one HeLa acK sample, one MaxQuant search, Multiplicity 1), so omission is consistent with the spec and no validator requires one."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Live OLS4 exact searches/term lookups: MONDO:0005153 cervical adenocarcinoma; UBERON:0000002 uterine cervix; CL:0000066 epithelial cell; PATO:0000383 female; MS:1001313 Trypsin/P; MS:1001911 Q Exactive; MS:1000422 beam-type collision-induced dissociation (required HCD term, not PRIDE:0000590/MS:1002481); MS:1000484 orbitrap; PRIDE:0000627 Data-dependent acquisition; MS:1002038 label free sample; PRIDE:0000561 Strong cation-exchange chromatography (SCX) (child of PRIDE:0000550 per validator); UNIMOD:1 Acetyl, UNIMOD:4 Carbamidomethyl, UNIMOD:35 Oxidation via sdrf-tools verify (label match). sdrf-tools check: 15/15 terms verified, 0 hallucinated/mismatched/wrong-ontology/UNIMOD swaps. CVCL_0030 / HeLa confirmed in fresh Cellosaurus fetch. Specificity justified: cervical adenocarcinoma is a correct generalisation of Cellosaurus DI NCIt C27677 'Human papillomavirus-related endocervical adenocarcinoma'."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE project record (accession PXD002277, title matches): Q Exactive, DDA, HCD, antibody enrichment then micro-scale SCX, 6 ppm parent / 20 ppm HCD fragment, strict trypsin, Cys carbamidomethyl fixed, protein N-acetyl and Met oxidation variable. MaxQuant zip read via HTTP range requests (only parameters.txt 1.7 KB, summary.txt 4.3 KB, List_of_RAW_files.xlsx 14.6 KB): hela_acetylation summary.txt lists exactly the 8 HeLa_acK runs, Instrument Q Exactive, Protease Trypsin/P, Variable modifications Oxidation (M);Acetyl (Protein N-term);Acetyl (K), Multiplicity 1, Labels0 empty; parameters.txt Fixed Carbamidomethyl (C), MS/MS tol. (FTMS) 20 ppm, Fasta HUMAN.fasta; RAW list assigns all 8 to Table S6 with no SILAC note. Cellosaurus CVCL_0030: SX Female, AG 30Y6M, derived from Uterus, cervix (UBERON_0000002), Population African American. EFO:0001185 HeLa definition 'derived from epithelial cells of human cervical carcinoma' supports cell type. Trypsin/P accepted as settled for this project (MaxQuant Protease + 'strict trypsin specificity')."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Fresh PRIDE /files (58 files, projectAccessions = {PXD002277}) contains exactly 8 files matching HeLa_acK: F01-F04 and F01b-F04b .raw; all 8 appear once each in comment[data file], no duplicates, no non-raw files, assay names equal file stems. Same 8 runs are the complete run set of MaxQuant hela_acetylation/summary.txt."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "RAW headers (first 64 KB of each file): F0n and F0nb share the same autosampler position (F01/F01b E01, F02/F02b E02, F03/F03b E03, F04/F04b E04), same 5 ul sample pickup; F01-F04 acquired consecutively 2012-09-04 10:04-21:32, then F01b-F04b consecutively 2012-09-05 10:27-19:57 with methods BTW_180/150min -> BTW_150/120min (method durations 164->135 and 135->105 min). This supports the 'b' runs as second injections of the same four SCX fraction vials, i.e. comment[technical replicate] 2 per spec ('Repeated measurements of the same sample (e.g., multiple injections)'). Fraction identifiers 1-4 follow the F0n tokens, vial order E01-E04 and acquisition order, and pair consistently with replicates (4 fractions x 2 injections = 8 rows). One source name / biological replicate 1 consistent with one enrichment and one search; label free matches Multiplicity 1; no varying variable, so no factor column."
+    },
+    "omission_safety": {
+      "status": "fail",
+      "evidence": "No value found that is stated more specifically than its evidence (age/sex/organism part/disease are Cellosaurus donor values; cell type supported by EFO:0001185; reagents, medium, passage and storage correctly 'not available'; enrichment column omitted because EFO:0009090 has no acetyl-lysine enrichment child, verified in live OLS). However material evidence was omitted: characteristics[ancestry category] = 'not available' contradicts Cellosaurus 'CC Population: African American' from the same cited source used for age and sex (see important finding)."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf --use_ols_cache_only, one run per declared template: -t ms-proteomics exit 0, -t human exit 0, -t cell-lines exit 0 (each 'Everything seems to be fine. Well done.'). sdrf-tools check exit 0 (CLEAN, 15/15 verified). sdrf-tools score exit 0: 94/100 (design 67: no factor columns; completeness: developmental stage, optional in human and cell-lines templates). sdrf-tools structure exit 0. sdrf-tools reconcile exit 1 with two heuristic flags, both rebutted: run_names_name_a_cell_line on organism part (cell-lines template documentation treats organism part/tissue supergroup/sampling site as tissue-of-origin fields and the cell line is annotated in characteristics[cell line]/[cellosaurus accession]); cleavage_agent_unsupported (Trypsin/P settled for this project; MaxQuant Protease = Trypsin/P and protocol 'strict trypsin specificity')."
+    }
+  },
+  "findings": [
+    {
+      "severity": "important",
+      "category": "omission",
+      "location": "characteristics[ancestry category], rows 1-8 (value 'not available')",
+      "message": "Ancestry is recorded as not available although the cited Cellosaurus entry states the donor population, and the SDRF already takes age (30Y6M) and sex (female) from that same entry. 'not available' is therefore an incorrect assertion and an inconsistent use of the source.",
+      "evidence": "Fresh https://www.cellosaurus.org/CVCL_0030.txt: 'CC   Population: African American.' Live OLS4: HANCESTRO:0568 label 'African American', is_obsolete false, ancestors include HANCESTRO:0016 and HANCESTRO:0004 'ancestry category', definition 'Individuals who self-identify or are reported by authors as African American'. human template marks ancestry category recommended with HANCESTRO validator; spec README cell-lines table: 'Ancestry category of the cell line donor (if known)'. Manifest claim cites only PRIDE/abstract for this column.",
+      "correction": "Set characteristics[ancestry category] to 'African American' (HANCESTRO:0568) for rows 1-8 and update the manifest claim to cite Cellosaurus CVCL_0030 Population; or record a specific, documented reason for withholding it."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "evidence.json claim for comment[technical replicate]; limitations entry on 'b' files",
+      "message": "The manifest calls the re-injection interpretation purely inferred, but the RAW headers contain direct support that should be cited.",
+      "evidence": "Same vial positions E01-E04 for F0n and F0nb; F01-F04 run 2012-09-04, F01b-F04b run 2012-09-05 in the same order; identical 5 ul pickup.",
+      "correction": "Add vial position and acquisition timestamps to the technical replicate claim."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "evidence.json claim for characteristics[cell type]",
+      "message": "Cell type is described as an unsupported conventional inference, but an ontology source supports it.",
+      "evidence": "EFO:0001185 (HeLa, cross-referenced by Cellosaurus and CLO:0003684) definition: 'A cell line derived from epithelial cells of human cervical carcinoma.'",
+      "correction": "Cite EFO:0001185 in the cell type claim."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "rows 5-8 (F01b-F04b)",
+      "message": "Technical replicate 2 runs used LC-MS methods about 30 min shorter than replicate 1 (method durations 164/135 vs 135/105 min); this difference is not recorded anywhere in the SDRF, so downstream users will treat the two injections as acquisition-equivalent.",
+      "evidence": "RAW header method paths BTW_180min/150min/120min_acK_IW2_MS-20ms_MS2-120ms_.meth and 'Method duration' lines.",
+      "correction": "Optionally record the gradient/method difference (e.g. an optional LC/elution column) or note it in the manifest limitations."
+    }
+  ]
+}

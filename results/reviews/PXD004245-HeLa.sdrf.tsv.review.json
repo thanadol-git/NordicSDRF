@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD004245-HeLa.sdrf.tsv",
+  "artifact_sha256": "ee3c0242949f7582bdf7499d7dcd862eabbd335b5677bb21eed8584ff9d6cb4b",
+  "verdict": "PASS",
+  "summary": "Fresh independent re-review of the corrected HeLa SDRF (21 rows, 12 RAW files). The previously missing 500 uM H2O2 concentration is now recorded on rows 1-15 with direct support (main text, Supp. Fig. 4c, file names); rows 17/19/21 use 'not available' where the paper gives no dose; olaparib rows 16/18 carry olaparib with its dose while H2O2 is kept in characteristics[treatment], which is coherent because characteristics[compound] is single-cardinality and treatment is defined as 'drug, stimulus, environmental stress'. All deterministic validators pass; sdrf-tools reconcile heuristics were adjudicated against spec text and raw/search evidence. Only minor findings remain.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent; no producer transcript, report.md, stale folder or earlier review folders read; PRIDE, Europe PMC full text and supplementary zip, RAW headers (first 64 KB) and MaxQuant files fetched fresh"
+  },
+  "evidence_manifest": "annotations/PXD004245-HeLa.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates derived independently from templates.yaml and cell-lines.yaml doc ('HeLa study = cell-lines + human + ms-proteomics') match the three declared comment[sdrf template] columns. All required columns of base, sample-metadata, ms-proteomics, human and cell-lines present; 51 columns x 21 rows, no empty cells or trailing whitespace, unique source names, source+assay+label unique; sdrf-tools structure OK (column order). Reserved words valid: compound/dose/sampling time allow not applicable/not available; 'untreated' is a spec special value for characteristics[treatment] (sample-metadata.yaml line 297, TEMPLATES.adoc line 271). Dose format 'number + uM' and sampling time 'number + minute' follow TERMS.tsv patterns. HCD is MS:1000422 as required."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check: 22/22 accession terms verified, 0 hallucinated/label mismatch/wrong ontology/UNIMOD swaps. Live OLS confirmed plain-text values: CHEBI:16240 hydrogen peroxide, CHEBI:83766 olaparib, NCIT:C28156 Hydrogen Peroxide (treatment), MONDO:0005153 cervical adenocarcinoma, HANCESTRO:0568 African American, UBERON:0000002 uterine cervix, CL:0000066 epithelial cell, NCIT:C185409 Dulbecco's Modified Eagle Medium, EFO:0001272 adult, PATO:0000383 female; none obsolete. Cellosaurus CVCL_0030 confirms HeLa name/accession, Female, 30Y6M, Population African American, derived from UBERON:0000002. Only parse_sdrf warning ('untreated' not in ncit;efo cache) is a spec-sanctioned sentinel, not an ontology term."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project/files (projectAccessions PXD004245 asserted), Europe PMC PMC5056437 full text (title asserted), supplementary zip ncomms12917-s1.pdf, RAW headers and MaxQuant parameters/experimentalDesign/msms range reads. 500 uM H2O2: main text 'we treated HeLa cells with 500 uM H2O2' (label-free benchmark, 'From three replicates ... after H2O2 treatment'), time course 'Light SILAC cells were stimulated for only a few seconds with 500 uM H2O2 (~0 min), heavy ... same concentration ... 0, 5, 10, 30, 60 and 120 min', Supp. Fig. 4a/4c, file names 500uMH2O2. Olaparib: 'both light and heavy SILAC cells were treated with H2O2, while only light SILAC cells were treated with olaparib (1 uM or 10 uM)', no H2O2 dose stated -> 'not available' justified. Occupancy: Supp. Fig. 4d/e 'cells exposed to H2O2 for 10 minutes ... heavy and light ... treated and untreated', no dose -> 'not available' justified. 10 min exposure from Methods 'Cells were stimulated with H2O2 for 10 min'. Instruments from RAW headers ('Q Exactive Plus - Orbitrap MS' for 2014 files, 'Q Exactive HF - Orbitrap MS' for occupancy). NCE 30 from RAW method text 'NCE / stepped NCE ... 30' (2014 files); NCE 28 for occupancy from paper 'sensitive acquisition method ... normalized collision energy of 28' and method name 15cm_160min_sensitive. 7 ppm / 20 ppm, fixed carbamidomethyl, variable Ox M / protein N-term acetyl / ADP-ribosyl KRDE, Lys-C + trypsin, DTT, chloroacetamide, DMEM, DDA, HCD from Methods and parameters.txt. Labels: precursor mass deltas in msms.txt first 3 MB show Rep files light-only and every SILAC file only light + K8R10 (Supp. Fig. 4a 'Heavy (K8, R10)'). PRIDE disease 'Brain cancer' correctly not used."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE lists 15 RAW files: 12 HeLa + 3 mouse liver (other SDRF). All 12 HeLa RAW files appear exactly once as comment[data file], each with one assay name equal to the file stem; label-free files have 1 row, SILAC files 2 rows with distinct labels; no non-raw or missing files. Deposited Rep1/Rep2/Rep3 originals from RAW headers are 2xSep-pak/normal/Filter; MaxQuant experimentalDesign names 2xSep-pak=Rep1, Filter=Rep2, normal=Rep3, so SDRF 'replicate 2' -> deposited Rep3 (Filter) and 'replicate 3' -> deposited Rep2 (normal) follows evidence, not a guess. SILAC channel-to-condition mapping follows the paper/Supp. Fig. 4 (light reference/olaparib/untreated, heavy treated)."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed 10 conditions over (compound, dose, sampling time, treatment); no duplicate biological replicate number within any condition. Time course: heavy 0/5/10/30/60/120 min vs light 0 min references (Supp. Fig. 4a Exp 1-6). Olaparib files: light olaparib 1 or 10 uM + H2O2 vs heavy H2O2 only, matching H/L ratio axes in Supp. Fig. 4g. Occupancy: light untreated vs heavy H2O2 10 min. Factor values compound/dose/sampling time/treatment exactly mirror their characteristics on every row. Compound/dose encoding is coherent: characteristics[compound] has no multiple cardinality, so on rows 16/18 the varied agent (olaparib) occupies compound/dose and the constant H2O2 co-treatment is retained in characteristics[treatment] (spec: 'drug, stimulus, environmental stress'); H2O2 rows use compound=treatment=hydrogen peroxide consistently; untreated row 20 uses not applicable throughout. Instrument/NCE split (QE Plus 30 NCE vs QE HF 28 NCE) aligns with acquisition dates, not with a biological factor of interest beyond the occupancy experiment itself."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every changed value traced: 500 uM only where the paper states it (label-free benchmark and time course), 'not available' where it does not (olaparib heavy controls, occupancy heavy); no dose inferred for H2O2 on olaparib rows. Sampling time 10 minute is the general Methods statement, disclosed as inferred in the manifest. Donor attributes come from Cellosaurus, not invented. No overly specific values found; disease 'cervical adenocarcinoma' is less specific than Cellosaurus, not more. Remaining omissions (sample cleanup variants of Rep1-3, Af1521/PARG enrichment) are optional metadata and listed as minor findings."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "timeout 900 parse_sdrf validate-sdrf --use_ols_cache_only -t ms-proteomics / -t human / -t cell-lines (one at a time): each exit 0, only warning 'Term: untreated in column characteristics[treatment] is not found in the given ontology list ncit;efo' (spec special value; live OLS confirms no such NCIT/EFO term exists, as expected). sdrf-tools check exit 0 (CLEAN, 22/22); sdrf-tools score exit 0 (100/100); sdrf-tools structure exit 0. sdrf-tools reconcile exit 1 with three heuristic BLOCKERs, all refuted: (1) organism part vs cell-line run names - SAMPLE-GUIDELINES.adoc 'For cell line samples, use not applicable or specify the tissue of origin (e.g., cervix for HeLa)'; (2) trypsin absent from PRIDE record - paper Methods 'modified sequencing grade trypsin'; (3) label free vs project-level SILAC - msms.txt precursor mass deltas show deposited Rep files are light-only while all SILAC files are L + K8R10."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "rows 1-3 (20140515_QE6_UPLC5_SCL_SA_Hela_PAR_PD_Rep1/Rep2/Rep3.raw)",
+      "message": "The three label-free replicates differ in peptide cleanup (original RAW names ..._2xSep-pak, ..._normal, ..._Filter) and this processing difference is not recorded; independence of the three as biological replicates is not stated in the paper (Fig. 1e mentions 'two biological replicate analyses').",
+      "evidence": "RAW header original paths; experimentalDesignTemplate.txt; paper Results/Fig. 1e legend. Correction: optionally record the variant in a comment column (e.g. comment[sample preparation batch]) and keep the replicate-independence limitation."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "file (all rows)",
+      "message": "Af1521 macrodomain ADP-ribose peptide enrichment and in-vitro PARG digestion are not captured; characteristics[enrichment process] is optional and EFO:0009090 has no ADP-ribose-specific child (only generic 'sample enrichment' EFO:0009106).",
+      "evidence": "Paper Methods 'Enrichment of ADP-ribosylated peptides'; OLS descendants of EFO:0009090."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "evidence manifest limitations[0]; claims for comment[collision energy]",
+      "message": "Manifest limitation still says 'H2O2 concentration not recorded in a column', which no longer matches the corrected SDRF; the collision-energy claim cites the RAW method header for all rows, but the occupancy file's NCE is not within the first 64 KB and 28 NCE rests on the paper's 'sensitive' method statement.",
+      "evidence": "Manifest text vs SDRF columns 17/18/47/48; RAW header search of 20150119_..._occupancy.raw first 64 KB shows no NCE value."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "characteristics[disease] rows 1-21",
+      "message": "'cervical adenocarcinoma' (MONDO:0005153) is valid but less specific than Cellosaurus CVCL_0030 'Human papillomavirus-related endocervical adenocarcinoma' (NCIt C27677).",
+      "evidence": "Cellosaurus CVCL_0030 DI line; OLS MONDO search."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "characteristics[biological replicate] rows 17, 19, 21",
+      "message": "The heavy H2O2-only controls with dose 'not available' form their own condition but are numbered 5, 6, 7 (continuing the 10-minute H2O2 series) rather than from 1; no duplicates result, but numbering may confuse condition-wise consumers.",
+      "evidence": "Recomputed condition x biological replicate table."
+    }
+  ]
+}
