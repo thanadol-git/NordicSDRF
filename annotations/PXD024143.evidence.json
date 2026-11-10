@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD024143.sdrf.tsv",
+  "dataset": "PXD024143",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD024143"},
+    {"id": "files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD024143/files/all"}
+  ],
+  "claims": [
+    {"location": "characteristics[organism] row 1", "value": "Rangifer tarandus", "source_ids": ["pride"], "evidence": "PRIDE organism and antler study title"},
+    {"location": "characteristics[organism part] row 1", "value": "antler", "source_ids": ["pride"], "evidence": "PRIDE organism part and sample processing protocol"},
+    {"location": "source name and comment[data file] rows 1-2", "value": "antler digest and extraction blank", "source_ids": ["pride", "files"], "evidence": "sample protocol explicitly states a parallel extraction control; RAW names X200 and BK"},
+    {"location": "comment[instrument] rows 1-2", "value": "Q Exactive HF-X", "source_ids": ["pride"], "evidence": "PRIDE instrument field"},
+    {"location": "comment[cleavage agent details] and comment[modification parameters] rows 1-2", "value": "trypsin and stated MaxQuant modifications", "source_ids": ["pride"], "evidence": "PRIDE dataProcessingProtocol lists enzyme and fixed/variable modifications"}
+  ],
+  "limitations": ["No donor age, sex or developmental stage is stated", "No mqpar.xml was inspected; search modifications are from the PRIDE protocol", "X200 sample code is not expanded in the PRIDE record"]
+}

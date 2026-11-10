@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD008874.sdrf.tsv",
+  "dataset": "PXD008874",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD008874"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD008874/files/all"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "cell line registry",
+      "location": "https://www.cellosaurus.org/CVCL_0031"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics and factor value columns",
+      "value": "MCF-7 GFP-LC3 control/EIF5A/mock pull-downs and 3 replicates",
+      "source_ids": [
+        "pride",
+        "files"
+      ],
+      "evidence": "PRIDE study description/protocol and deposited RAW names; publication where listed"
+    },
+    {
+      "location": "comment[data file] all rows",
+      "value": "one row for each deposited RAW acquisition",
+      "source_ids": [
+        "files"
+      ],
+      "evidence": "PXD-linked file list; accession verified for every file"
+    },
+    {
+      "location": "comment[instrument] and acquisition method all rows",
+      "value": "run-level instrument and method",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE structured instrument and sample protocol; publication methods where listed"
+    },
+    {
+      "location": "comment[cleavage agent details] and modification parameters all rows",
+      "value": "reported digestion and search parameters",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample/data processing protocols"
+    },
+    {
+      "location": "characteristics[cell line], characteristics[cellosaurus accession], characteristics[cellosaurus name], characteristics[disease], characteristics[age], characteristics[sex] all rows",
+      "value": "MCF-7 CVCL_0031; female, 69Y, invasive breast carcinoma",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Cellosaurus cell line identity and original donor metadata"
+    }
+  ],
+  "limitations": [
+    "No donor-specific age/sex was asserted without source evidence",
+    "No search parameter archive was inspected except PXD015138 mqpar.xml"
+  ]
+}
