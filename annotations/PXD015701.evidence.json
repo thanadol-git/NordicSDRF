@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD015701.sdrf.tsv",
+  "dataset": "PXD015701",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD015701"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD015701/files/all (539 entries; 256 .raw annotated)"
+    },
+    {
+      "id": "overview",
+      "kind": "deposited-file",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2019/11/PXD015701/Data_Overview.docx"
+    },
+    {
+      "id": "rawhdr",
+      "kind": "raw-file-header",
+      "location": "First 300 KB of each of the 256 deposited .raw files under ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2019/11/PXD015701/ (UTF-16 strings: instrument method name, sample ID such as WT_T2_Frac_16)"
+    },
+    {
+      "id": "xtandem",
+      "kind": "deposited-search-output",
+      "location": "X!Tandem result XMLs QEHF1_10098_DNL.xml, QEHF1_10300_DNL.xml, QEHF2_06550_DNL.xml, QEHF3_06430_DNL.xml, QEHF3_06505_DNL.xml in the same FTP directory (input parameter notes)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMID 31754044, doi:10.1074/mcp.ra119.001700 (Mol Cell Proteomics 2019); full text NOT retrievable (EPMC fullTextXML HTTP 500, PMC reCAPTCHA, publisher 403); only PRIDE protocol text and PubMed abstract-level metadata used"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] rows all",
+      "value": "Porphyromonas gingivalis",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Title, description and NEWT:242619 organism; search DB is P. gingivalis W83 + ATCC 33277"
+    },
+    {
+      "location": "characteristics[genotype] and factor value[genotype]: WT/C351A/dPPAD sources",
+      "value": "wild type / PPAD C351A / PPAD knockout",
+      "source_ids": [
+        "pride",
+        "overview",
+        "rawhdr"
+      ],
+      "evidence": "Description: WT, C351A active-site Cys->Ala mutant, PPAD knock-out; Data_Overview folder names and raw sample IDs (WT_, C351A_, dPPAD_) map runs to strain"
+    },
+    {
+      "location": "source name / biological replicate / file assignment",
+      "value": "10 source-runs (WT_T2, WT_T3, C351A_T2, C351A_T3, dPPAD_T1, dPPAD_T2, WT_T1_Rep2, WT_T2_Rep2, WT_T3_Rep2 x2 techreps)",
+      "source_ids": [
+        "overview",
+        "rawhdr"
+      ],
+      "evidence": "Run grouping: Data_Overview folder names and raw-header sample IDs. Biological replicate indices are exactly those stated in Data_Overview (duplicate experiment: WT_T2=1, WT_T3=2, C351A_T2=1, C351A_T3=2, dPPAD_T1=1, dPPAD_T2=2; 2D series WT_T1/T2/T3_Rep2 = 1,2,3). Indices are per series as Data_Overview gives them; sharing of cultures between the duplicate and 2D WT series is NOT asserted or denied (sources named distinctly)"
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "raw-header Frac_NN where reliable; otherwise run order",
+      "source_ids": [
+        "rawhdr"
+      ],
+      "evidence": "Header Frac_NN gives fractions 1-30/26 for all series; WT_T3_Rep2 06465/66 = 25/26 (explicit ids; fractions 13-24 not deposited). dPPAD_T2 headers cycle Frac_01-03 (sample-list artefact, same method, sequential acquisition) so positional 1-30 in run order is used, technical replicate 1, consistent with dPPAD_T1 and every other series having 30 fractions. These dPPAD_T2 numbers are INFERRED; 11 files 10341-10351 not deposited"
+    },
+    {
+      "location": "WT_T3_Rep2 technical replicate 2",
+      "value": "QEHF3_06504-06513",
+      "source_ids": [
+        "rawhdr",
+        "overview"
+      ],
+      "evidence": "Headers WT_T3_Frac01-10 (different spelling) repeat fractions 1-10 of WT_T3; Data_Overview lists 06504-06515 under WT_T3_Rep2. Interpreted as re-acquisition (inferred)"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF",
+      "source_ids": [
+        "rawhdr",
+        "pride"
+      ],
+      "evidence": "Raw headers: 'Method of Q Exactive HF' / 'Q Exactive HF - Orbitrap MS' in all sampled files and protocol text; PRIDE instruments field says Q Exactive (overridden)"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "xtandem"
+      ],
+      "evidence": "Methylated trypsin digestion; X!Tandem cleavage site [KR]|{P}, max 2 missed cleavages"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Deamidated N/Q/R variable",
+      "source_ids": [
+        "xtandem",
+        "pride"
+      ],
+      "evidence": "X!Tandem input: 57.0215@C fixed; potential 15.9949@M,0.984@Q,0.984@N,0.984@R in sampled XMLs. Protocol text lists deamidation [N,Q] only; R deamidation (citrullination) comes from the XMLs and the study aim"
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "10 ppm",
+      "source_ids": [
+        "xtandem",
+        "pride"
+      ],
+      "evidence": "X!Tandem parent error 10 ppm in all sampled XMLs; protocol text 10 ppm"
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "xtandem",
+        "pride"
+      ],
+      "evidence": "Conflict: protocol text 0.02 Da; deposited X!Tandem XMLs 0.10 Da (4 files) and 0.20 Da (QEHF2_06550); not constant across deposit"
+    },
+    {
+      "location": "comment[reduction reagent] / comment[alkylation reagent]",
+      "value": "DTT / IAA",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "sampleProcessingProtocol: DTT 10 mM then iodoacetamide 24 mM"
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "High-performance liquid chromatography",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: off-line HPLC fractionation in HFBA (2D HFBA separation); Frac_NN sample IDs in raw headers. Selected term is generic HPLC (PRIDE:0000565)"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "rawhdr"
+      ],
+      "evidence": "Top5/Top10 methods in raw headers (30min_TwoColumnSetup_Charg1_Top5/Top10, Top5_30minGradient)"
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD (beam-type collision-induced dissociation, MS:1000422)",
+      "source_ids": [
+        "rawhdr"
+      ],
+      "evidence": "All 256 raw headers: Fragmentation_HCD, normalized energy 30, method names *_HCD30_*"
+    },
+    {
+      "location": "characteristics[organism part], [cell type], [disease]",
+      "value": "not applicable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Outer membrane vesicles of a bacterial culture; no host tissue, cell type or disease"
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "No labelling in protocol"
+    }
+  ],
+  "limitations": [
+    "Full text of the MCP paper was not retrievable; paper Methods not independently read.",
+    "Run-to-sample map is from raw-file header sample IDs plus Data_Overview.docx; Data_Overview ranges are internally inconsistent for the QEHF3 series.",
+    "26 QEHF3_*.mzXML.MGX peak-list files, 225+ X!Tandem XMLs and Data_Overview.docx are not annotated.",
+    "Strain (W83 vs ATCC 33277) of the experimental cultures is not stated in the available record.",
+    "WT_T2_Rep2 vs WT_T3_Rep2 vs Data_Overview ranges overlap; raw headers were followed, so biological replicates 4/5 could be swapped.",
+    "Fragment mass tolerance left not available (protocol 0.02 Da vs XMLs 0.10/0.20 Da).",
+    "dPPAD_T2 fraction numbers are inferred from run order; real numbers unrecoverable.",
+    "Biological replicate indices restart for the 2D WT series (as in Data_Overview); whether those cultures are independent of WT_T2/WT_T3 is unknown."
+  ]
+}

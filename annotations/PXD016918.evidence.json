@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD016918.sdrf.tsv",
+  "dataset": "PXD016918",
+  "artifact_sha256": "c6cad5c7c89930fc6d25ddcc6bab0217539a1488e0c5de8f24a62a58bcd9f3c4",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD016918"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD016918/files/all (27 files: 9 RAW, 9 Mascot SEARCH csv, 9 proteoformquant csv)"
+    },
+    {
+      "id": "raw-headers",
+      "kind": "raw file header (HTTP range 0-262143, utf-16-le)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/ PXD016918 all 9 RAW files; model string 'Orbitrap Fusion Lumos'"
+    },
+    {
+      "id": "mascot",
+      "kind": "deposited search output",
+      "location": "PXD016918 FAIMS_1..9.csv (HTTP range 0-3500 of each; header of Mascot 2.6.0 report)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "doi:10.1021/acs.analchem.9b05011, PMID 31935065 (closed access; Methods not read; only PRIDE abstract/protocols used)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] rows 1-9",
+      "value": "Mus musculus",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "organisms NEWT:10090; protocol: mouse embryonic stem cells"
+    },
+    {
+      "location": "characteristics[cell type] rows 1-9",
+      "value": "embryonic stem cell",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "sampleProcessingProtocol: 'mouse embryonic stem cells (~500 M) grown under 2i-LIF'; no named cell line"
+    },
+    {
+      "location": "comment[instrument] rows 1-9",
+      "value": "Orbitrap Fusion Lumos",
+      "source_ids": [
+        "raw-headers",
+        "pride"
+      ],
+      "evidence": "RAW header model string in all 9 files; PRIDE instruments agrees"
+    },
+    {
+      "location": "comment[cleavage agent details] rows 1-9",
+      "value": "glutamyl endopeptidase (Glu-C)",
+      "source_ids": [
+        "pride",
+        "mascot"
+      ],
+      "evidence": "protocol: GluC 1:10, 8h; Mascot Enzyme Glu_C"
+    },
+    {
+      "location": "comment[modification parameters] rows 1-9",
+      "value": "7 variable mods, no fixed",
+      "source_ids": [
+        "mascot"
+      ],
+      "evidence": "Mascot header: Variable = Acetyl(K), Methyl(K), Dimethyl(K), Trimethyl(K), Acetyl(N-term), Methyl(R), Dimethyl(R); Fixed empty; identical in all 9 files"
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance] rows 1-9",
+      "value": "2.05 Da / 0.02 Da",
+      "source_ids": [
+        "mascot"
+      ],
+      "evidence": "Mascot header Peptide Mass Tolerance 2.05 Da, Fragment 0.02 Da"
+    },
+    {
+      "location": "comment[dissociation method] rows 1-9",
+      "value": "electron transfer dissociation",
+      "source_ids": [
+        "pride",
+        "mascot"
+      ],
+      "evidence": "protocol 'All ETD spectra'; Mascot instrument type ETD_deconvoluted; keyword Etd"
+    },
+    {
+      "location": "comment[proteomics data acquisition method] rows 1-9",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "INFERRED: shotgun experiment type, Mascot identification of MS2 spectra; DIA not mentioned; no explicit statement"
+    },
+    {
+      "location": "comment[label] rows 1-9",
+      "value": "label free sample",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "no labelling described"
+    },
+    {
+      "location": "comment[data file]/technical replicate rows 1-9",
+      "value": "one RAW per row",
+      "source_ids": [
+        "pride-files",
+        "mascot"
+      ],
+      "evidence": "9 RAW files map 1:1 to FAIMS_1..9.csv (Peak list data path); technical replicate = injection index, runs differ by FAIMS CV pair in filename"
+    }
+  ],
+  "limitations": [
+    "Paper is closed access; Methods not read",
+    "No stated cell line, strain, sex, developmental stage, so not available",
+    "FAIMS CV per run not captured in a template column",
+    "Acquisition method DDA is inferred",
+    "Database HumanHistoneDB used for mouse H3 (Mascot header)"
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD040388.sdrf.tsv",
+  "dataset": "PXD040388",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD040388 (local copy scratchpad/PXD040388/evidence/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD040388/files/all (local: evidence/filesraw.json; 9 files: 8 RAW + 1 .pdResult; every entry's projectAccessions contains PXD040388)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC10474028 https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10474028/fullTextXML ; doi:10.1038/s41598-023-41535-1; PMID 37658225 (local: evidence/manuscript.txt)"
+    },
+    {
+      "id": "supp-table1",
+      "kind": "publication supplementary",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10474028/supplementaryFiles -> 41598_2023_41535_MOESM2_ESM.xlsx, sheet 'Supplementary Table 1' (TMT channel scheme: Patient 1-3 x ADRC/CD31+/CD31-, plus pool=126). Title/legend checked as belonging to this paper."
+    },
+    {
+      "id": "pdresult",
+      "kind": "deposited search result",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/10/PXD040388/Medieforsoeg_25062020_Pepsearch.pdResult (SQLite truncated by the deposit - header declares ~6GB, file 1.09GB, DB not openable; Workflow XML read directly from the first 700 KB: SequestHT, Trypsin (Full), 2 missed cleavages, 8 ppm / 0.05 Da, static Carbamidomethyl C, static TMT6plex K + Any N-terminus, dynamic Oxidation M and Deamidated N,Q, QuantificationMethod 'TMT 10plex', HCD, FTMS, SpectrumFileNames = the same 8 RAW files)"
+    },
+    {
+      "id": "raw-headers",
+      "kind": "raw file header (HTTP range 0-300000, utf-16-le)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/10/PXD040388/<file>.raw for A5_2, A6, A6_2, A7, A7_2, A9 (instrument model 'Orbitrap Lumos'; embedded method SII config string 'Orbitrap Eclipse'; FAIMS method names)"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/ live lookups: UBERON:0001013, EFO:0009109 (ancestor EFO:0009090), MS:1001251, MS:1002732, MS:1000484, PRIDE:0000590/0000608/0000599/0000627/0000565/0000516-0000580"
+    },
+    {
+      "id": "upstream",
+      "kind": "repository",
+      "location": "/home/thanadol/Documents/GitHub/sdrf-annotated-datasets/datasets/PXD040388/ does not exist (new dataset)"
+    }
+  ],
+  "claims": [
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "characteristics[organism] all rows",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organisms NEWT:9606; lipoaspirates are human"
+    },
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "characteristics[organism part] all rows",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Analysed material is cell conditioned medium (secretome) from cultured ADRC fractions (Methods); adipose tissue is only the cell source (lipoaspirates) and is stated in the report, not asserted as the organism part. PRIDE organismPart CL:0000034 is a cell type."
+    },
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "characteristics[cell type] and factor value[cell type] all rows",
+      "value": "adipose-derived regenerative cell / CD31-positive ... / CD31-negative ... ; pool not applicable",
+      "source_ids": [
+        "supp-table1",
+        "paper"
+      ],
+      "evidence": "Supp Table 1 defines ADRC, CD31+, CD31- per channel. No ontology term exists for these sorted populations; free-text labels give parse_sdrf WARNINGS (not in cl/bto/clo), accepted deliberately."
+    },
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "characteristics[enrichment process] rows CD31+/CD31-",
+      "value": "magnetic affinity cell sorting",
+      "source_ids": [
+        "paper",
+        "ols"
+      ],
+      "evidence": "Methods: MACS with CD31 microbeads (Miltenyi); EFO:0009109 is a child of EFO:0009090"
+    },
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "characteristics[enrichment process] ADRC + pool rows",
+      "value": "not applicable",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Parent ADRC not sorted; pool is a mixture"
+    },
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "factor value[cell type] (mirrors characteristics[cell type])",
+      "value": "ADRC / CD31+ ADRC / CD31- ADRC",
+      "source_ids": [
+        "supp-table1",
+        "paper"
+      ],
+      "evidence": "Supplementary Table 1 and Results: CM from ADRC, CD31- and CD31+ ADRCs compared"
+    },
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "source name / characteristics[individual] / biological replicate",
+      "value": "patient_1..3 / 1..3",
+      "source_ids": [
+        "supp-table1"
+      ],
+      "evidence": "Supp Table 1 donor labels 'Patient 1-3'"
+    },
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "label column all 80 rows (TMT126..TMT131N, TMT131C unused)",
+      "value": "channel map",
+      "source_ids": [
+        "supp-table1",
+        "pdresult"
+      ],
+      "evidence": "126=pool; P1: 127N ADRC,128N CD31-,129N CD31+; P2: 128C ADRC,129C CD31-,130C CD31+; P3: 130N ADRC,131N CD31-,127C CD31+. PD QuantificationMethod 'TMT 10plex' agrees with 10 channels; PRIDE says 11-plex but only 10 channels are mapped, 131C is not in the scheme"
+    },
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "characteristics[pooled sample]/[individual]/[biological replicate] pool rows",
+      "value": "pooled",
+      "source_ids": [
+        "supp-table1",
+        "pride"
+      ],
+      "evidence": "126 = pool of all protein samples (paper) / 'pool of all AAA samples' (PRIDE)"
+    },
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "characteristics[age], [sex], [disease], [ancestry category] all rows",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Only cohort summary (3 donors: one male, two females for the secretome experiment); per-donor sex/age not stated; donors' disease status not stated; pool rows age/sex stay not available (validator rejects pooled)"
+    },
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "comment[instrument] all rows",
+      "value": "NT=Orbitrap Eclipse;AC=MS:1003029",
+      "source_ids": [
+        "paper",
+        "raw-headers",
+        "pdresult",
+        "pride"
+      ],
+      "evidence": "Paper Methods (Orbitrap Eclipse), the RAW embedded Xcalibur method SII config string, and the PD input-file table (Orbitrap Eclipse) agree; PRIDE metadata and a RAW audit-tag string say Orbitrap Fusion Lumos. Changed to Eclipse after review round 2; conflict disclosed in report."
+    },
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "comment[cleavage agent details] all rows",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": [
+        "pride",
+        "paper",
+        "pdresult"
+      ],
+      "evidence": "PRIDE protocol 'trypsinized over night'; Methods trypsin 50:1; PD CleavageReagent Trypsin (Full)"
+    },
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "comment[modification parameters] all rows",
+      "value": "Carbamidomethyl C fixed; TMT6plex K fixed; TMT6plex Any N-term fixed; Oxidation M variable; Deamidated N,Q variable",
+      "source_ids": [
+        "pdresult"
+      ],
+      "evidence": "PD SequestHT node XML parameters StaticModification/StaticTerminalModification/DynamicModification"
+    },
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "comment[precursor mass tolerance]/[fragment mass tolerance]",
+      "value": "8 ppm / 0.05 Da",
+      "source_ids": [
+        "pdresult"
+      ],
+      "evidence": "SequestHT node PeptideTolerance/FragmentTolerance"
+    },
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "comment[reduction reagent]/[alkylation reagent]",
+      "value": "DTT / Iodoacetamide",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: 5 mM DTT, 15 mM iodoacetamide"
+    },
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "comment[dissociation method]",
+      "value": "NT=HCD;AC=MS:1000422",
+      "source_ids": [
+        "pdresult"
+      ],
+      "evidence": "PD ActivationTypeFilter HCD"
+    },
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "comment[ms2 mass analyzer]",
+      "value": "orbitrap",
+      "source_ids": [
+        "pdresult"
+      ],
+      "evidence": "PD MassAnalyzerFilter FTMS, MS2"
+    },
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "INFERRED: PRIDE experiment type 'Shotgun proteomics' + TMT MS2 reporter quantification + PD precursor-based workflow; not explicitly stated"
+    },
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "comment[fractionation method]",
+      "value": "High-performance liquid chromatography (PRIDE:0000565)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: high pH liquid chromatography fractionation; no more specific PRIDE child exists"
+    },
+    {
+      "artifact": "annotations/PXD040388.sdrf.tsv",
+      "location": "comment[fraction identifier] / comment[technical replicate] / comment[data file] 80 rows (10 channels x 8 files)",
+      "value": "fraction = vial position A5..A9 -> 1..5; technical replicate 1 = plain names, 2 = _2 names",
+      "source_ids": [
+        "pride-files",
+        "pdresult",
+        "raw-headers"
+      ],
+      "evidence": "RAW headers: A6/A6_2, A7/A7_2, A8/A8_2 carry the same internal sample name (Medieforoeg_1_A6 etc.; _2 files re-acquired 2020-06-20/22), so they are two acquisitions of one position. A5_2 is internally A5 (A5 itself not deposited) and is given technical replicate 2 by its suffix. Which acquisition was first, and whether position order equals HpH elution order, is NOT documented."
+    }
+  ],
+  "limitations": [
+    "Fraction numbering = vial-position ordinal A5..A9 (1..5); technical replicate from _2 suffix; true HpH fraction order and which acquisition came first undocumented",
+    "Instrument conflict: paper/RAW method SII config/PD input table = Orbitrap Eclipse vs PRIDE metadata + RAW audit tag = Orbitrap Fusion Lumos; Eclipse used",
+    "Deposited .pdResult SQLite is truncated; modifications/tolerances read from the Workflow XML text in the first 700 KB",
+    "Per-donor sex, age, disease status not available",
+    "Acquisition method DDA is inferred",
+    "The deposit is PARTIAL (submissionType) - only this one TMT10 set (8 files) is deposited; the paper's other MS experiments are not in PRIDE"
+  ]
+}

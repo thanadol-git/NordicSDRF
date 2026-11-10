@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD047126.sdrf.tsv",
+  "dataset": "PXD047126",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD047126"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD047126/files/all (15 entries: 13 RAW, MQOutput.zip, Raw_file_key.txt; all projectAccessions contain PXD047126)"},
+    {"id": "file-key", "kind": "deposited sample sheet", "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2024/07/PXD047126/Raw_file_key.txt (raw file -> specimen 1-6, Cortical/Trabecular; P0439 = Blank)"},
+    {"id": "mq-output", "kind": "deposited search result", "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2024/07/PXD047126/MQOutput.zip member 'Second search (Bos, sus, capra, ovis)/parameters.txt' and summary.txt (MaxQuant 2.1.3.0; enzyme Trypsin/P semispecific; variable mods Oxidation (M), Deamidation (NQ), Hydroxyproline, Gln->pyro-Glu, Glu->pyro-Glu; no fixed mods; MS/MS tol FTMS 20 ppm)"},
+    {"id": "raw-headers", "kind": "raw file header (HTTP range 0-262143, utf-16-le)", "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2024/07/PXD047126/20230607_EXPL8_EVO7_GT_collab_DDA_60SPD_P0427.raw and ..._P0439.raw (Orbitrap Exploris 480)"},
+    {"id": "ols", "kind": "ontology", "location": "https://www.ebi.ac.uk/ols4/api/search (UBERON:0001439 compact bone tissue, UBERON:0002483 trabecular bone tissue, MS:1001251 Trypsin)"},
+    {"id": "paper", "kind": "publication", "location": "doi:10.1016/j.jasrep.2024.104643 (Early Holocene preservation differences between cortical and trabecular bone proteomes); full text NOT retrieved (publisher page blocked; not in Europe PMC)"}
+  ],
+  "claims": [
+    {"location": "characteristics[organism] rows 1-12", "value": "Caprinae", "source_ids": ["pride"], "evidence": "PRIDE description: Early Holocene Caprinae rib fragments; sampleAttributes organism NEWT:9963 Caprinae. Goat vs sheep not resolved (search used Capra+Ovis+Bos+Sus fasta)."},
+    {"location": "characteristics[organism part] / factor value[organism part] rows 1-12", "value": "compact bone tissue (cortical) / trabecular bone tissue", "source_ids": ["file-key", "ols"], "evidence": "Raw_file_key.txt Bone type column; terms verified in OLS"},
+    {"location": "characteristics[biological replicate] rows 1-12", "value": "specimen number 1-6", "source_ids": ["file-key"], "evidence": "Cortical/trabecular pair per specimen; each of the 12 is a distinct sample, replicate index = specimen"},
+    {"location": "row 13 (P0439)", "value": "Laboratory blank, sample type negative control, other characteristics not applicable", "source_ids": ["file-key", "pride"], "evidence": "Key lists Blank/NA; PRIDE protocol: 'A laboratory blank was added to measure laboratory and cross-sample contamination'"},
+    {"location": "characteristics[developmental stage], [sex], [strain or breed], [disease], [cell type] rows 1-12", "value": "not available", "source_ids": [], "evidence": "No per-specimen evidence in the record; paper full text not retrieved"},
+    {"location": "comment[instrument] all rows", "value": "Orbitrap Exploris 480", "source_ids": ["pride", "raw-headers"], "evidence": "PRIDE instruments, protocol, and RAW header agree"},
+    {"location": "comment[proteomics data acquisition method]", "value": "Data-dependent acquisition", "source_ids": ["pride"], "evidence": "Protocol text and experimentTypes PRIDE:0000627"},
+    {"location": "comment[cleavage agent details]", "value": "Trypsin", "source_ids": ["pride", "mq-output"], "evidence": "Wet-lab digestion with sequencing-grade trypsin; MaxQuant search used Trypsin/P semispecific"},
+    {"location": "comment[modification parameters] all rows", "value": "5 variable mods (Oxidation M, Oxidation P [hydroxyproline], Deamidated N,Q, Gln->pyro-Glu, Glu->pyro-Glu); no fixed", "source_ids": ["mq-output"], "evidence": "parameters/summary of deposited search. PRIDE prose says 'oxidation (PM)', which already covers Oxidation on P; the deposited search lists Hydroxyproline explicitly (MaxQuant Hydroxyproline = Oxidation on P). Search is semi-specific Trypsin/P; SDRF records the wet-lab enzyme Trypsin."},
+    {"location": "comment[fragment mass tolerance]", "value": "20 ppm", "source_ids": ["mq-output"], "evidence": "MS/MS tol. (FTMS) 20 ppm"},
+    {"location": "comment[precursor mass tolerance], [dissociation method], [reduction reagent], [alkylation reagent]", "value": "not available", "source_ids": [], "evidence": "mqpar.xml not deposited; paper text not retrieved; PRIDE protocol silent"}
+  ],
+  "limitations": [
+    "Publication full text could not be retrieved; sample-level demographics, species (goat/sheep) and reduction/alkylation unknown.",
+    "The deposited MaxQuant output is the 'Second search (Bos, sus, capra, ovis)', whose fasta and variable mods (adds hydroxyproline) differ from PRIDE's dataProcessingProtocol prose (organisms Capra hircus + Ovis aries only)."
+  ]
+}

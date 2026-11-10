@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD045027.sdrf.tsv",
+  "dataset": "PXD045027",
+  "artifact_sha256": "c384987fe9eff0f4c6320c336e66808afedb1c5ffeee0e4e0dcd75fbbc40f2c7",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD045027"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD045027/files/all (44 entries, all projectAccessions=PXD045027; 42 RAW + 2 SEARCH zips)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC10972796, doi:10.1016/j.isci.2024.109432 (https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10972796/fullTextXML)"
+    },
+    {
+      "id": "supp-mmc3",
+      "kind": "publication supplementary",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10972796/supplementaryFiles -> mmc3.xlsx (columns Lab code, Set, Raw file; 36 raw files mapped to LD_01..BKC_12 x 3h/6h/18h)"
+    },
+    {
+      "id": "supp-mmc1",
+      "kind": "publication supplementary",
+      "location": "same zip -> mmc1.pdf, SI Table 2 (specimen, site, per-extract weights 18;6;3 h, ZooMS ID)"
+    },
+    {
+      "id": "mqspin",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/03/PXD045027/MQ_SPIN_output.zip -> summary.txt, parameters.txt, mqpar.xml (HTTP range read)"
+    },
+    {
+      "id": "mqfull",
+      "kind": "deposited search",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/03/PXD045027/MQ_full_proteome_output.zip -> summary.txt, mqpar.xml"
+    },
+    {
+      "id": "raw",
+      "kind": "raw file header",
+      "location": "HTTP range first 300 KB of ...P0244/P0247/P0282/Blank_004.raw: Orbitrap Exploris 480, Evosep 100 SPD DDA method, scan range 350-1400"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/ (UBERON:0002481, NCBITaxon:27592, NCBITaxon:9850, MS:1003028, UNIMOD:7/27/28/35, MS:1001251, MS:1000484)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] all 42 rows",
+      "value": "42 .raw files",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Every RAW entry of files/all is claimed by exactly one row; the 2 SEARCH zips are not runs"
+    },
+    {
+      "location": "source name / factor value[digestion duration] rows 1-36",
+      "value": "specimen_duration",
+      "source_ids": [
+        "supp-mmc3",
+        "mqspin"
+      ],
+      "evidence": "mmc3 Raw file -> Lab code + Set; MaxQuant summary.txt Experiment column (18h/6h/3h) agrees for all 36"
+    },
+    {
+      "location": "extraction_blank_3h/6h/18h",
+      "value": "P0246/P0245/P0244",
+      "source_ids": [
+        "mqspin",
+        "paper"
+      ],
+      "evidence": "summary.txt Experiment Blank_3h/6h/18h; paper: laboratory blanks extracted alongside samples for each digestion condition"
+    },
+    {
+      "location": "Blank_004..006 rows",
+      "value": "negative control",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Only the file name says Blank; not mentioned in the paper or searched; nature (solvent/injection blank) not documented"
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Bovinae / Cervidae",
+      "source_ids": [
+        "paper",
+        "supp-mmc1",
+        "pride"
+      ],
+      "evidence": "ZooMS Bos/Bison for 11 specimens (SPIN also allows Bubalus); LD_02 Cervidae by ZooMS and SPIN. PRIDE organism Bovinae"
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "bone tissue",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "cortical bone powder of each specimen"
+    },
+    {
+      "location": "characteristics[tissue mass]",
+      "value": "per-extract mg",
+      "source_ids": [
+        "supp-mmc1"
+      ],
+      "evidence": "SI Table 2 weights ordered 18; 6; 3 hours"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Exploris 480",
+      "source_ids": [
+        "raw",
+        "paper",
+        "pride"
+      ],
+      "evidence": "raw headers and Methods"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "6 variable, no fixed",
+      "source_ids": [
+        "mqspin"
+      ],
+      "evidence": "summary.txt: Variable modifications Oxidation (M);Gln->pyro-Glu;Glu->pyro-Glu;Hydroxyproline;Deamidation (NQ); Fixed modifications empty for all 39 files"
+    },
+    {
+      "location": "comment[precursor mass tolerance] / [fragment mass tolerance]",
+      "value": "4.5 ppm / 20 ppm",
+      "source_ids": [
+        "mqspin"
+      ],
+      "evidence": "mqpar.xml mainSearchTol=4.5; parameters.txt MS/MS tol. (FTMS) 20 ppm"
+    },
+    {
+      "location": "comment[collision energy] / [dissociation method] / [ms1 scan range]",
+      "value": "30% NCE, HCD, 350-1400",
+      "source_ids": [
+        "paper",
+        "raw"
+      ],
+      "evidence": "Methods: HCD NCE 30%, MS1 350-1400 m/z; raw method header scan range"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "0.8 ug trypsin (Promega V115A); search semi-specific Trypsin/P"
+    },
+    {
+      "location": "comment[reduction reagent] / [alkylation reagent]",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "ZooMS protocol lists no reduction/alkylation; not documented as omitted either"
+    }
+  ],
+  "limitations": [
+    "No sample-level age, sex, or developmental stage (archaeological bones).",
+    "SPIN mqpar.xml in MQ_SPIN_output.zip lists Carbamidomethyl (C) as fixed but only 3 raw files; summary.txt covering all 39 files shows no fixed modification, which was followed.",
+    "Two MaxQuant searches differ in variable modifications; the SDRF records the first (palaeoproteomic) search.",
+    "Blank_004-006 are undocumented in the paper."
+  ]
+}

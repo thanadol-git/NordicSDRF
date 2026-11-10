@@ -1,0 +1,223 @@
+{
+ "schema_version": 1,
+ "artifact": "annotations/PXD016568.sdrf.tsv",
+ "dataset": "PXD016568",
+ "artifact_sha256": "1ca1f481bed3f2b61877284e7b6995b8adcf92579b9b581814ae5ef84e107435",
+ "sources": [
+  {
+   "id": "pride",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD016568"
+  },
+  {
+   "id": "pride-files",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD016568/files/all (9 files, all projectAccessions contain PXD016568: mette1-8.raw + epiProfilePIC.zip)"
+  },
+  {
+   "id": "paper",
+   "kind": "publication",
+   "location": "PMC9991918; doi:10.1038/s41375-023-01810-6; PMID 36631623 (fullTextXML via Europe PMC)"
+  },
+  {
+   "id": "supp-methods",
+   "kind": "publication supplementary",
+   "location": "Europe PMC supplementaryFiles of PMC9991918: 41375_2023_1810_MOESM1_ESM.pdf (section 'Histone mass spectrometry preparation and analysis')"
+  },
+  {
+   "id": "supp-table8",
+   "kind": "publication supplementary",
+   "location": "41375_2023_1810_MOESM3_ESM.xlsx sheet 'Velos run' (columns shControl_rep1-4, shKdm5c_I_rep1-4)"
+  },
+  {
+   "id": "epiprofile-zip",
+   "kind": "deposited result file (HTTP-range of zip central directory + members)",
+   "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2023/03/PXD016568/epiProfilePIC.zip members histone_layouts/histone_ratios_single_PTMs.xls and histone_ratios_individual_proteoforms.xls (columns 1,mette1 ... 8,mette8)"
+  },
+  {
+   "id": "raw-header",
+   "kind": "raw file header (HTTP range 0-300000, utf-16-le)",
+   "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2023/03/PXD016568/mette1.raw: 'Orbitrap Velos Pro MS'; mette1, mette5, mette8 read (reviewer also read mette5/8): all Orbitrap Velos Pro"
+  },
+  {
+   "id": "ols",
+   "kind": "ontology",
+   "location": "https://www.ebi.ac.uk/ols4/api/ (live: MS:1003096, MS:1001251, MS:1000133, MS:1000264, PRIDE:0000450, UNIMOD:1/21/34/36/37/411, MONDO:0018874, UBERON:0002371, NCBITaxon:10090); sdrf-tools verify"
+  },
+  {
+   "id": "raw-method",
+   "kind": "raw file header",
+   "location": "mette2.raw (reviewer: also 3,4,6,7): method 80min_CID_DIA_11windows.meth; MS1 FTMS res=15000 o(300.0-1100.0); ten ITMS CID windows IsoW 80.0, centres 340-1060, CE 35.0%"
+  }
+ ],
+ "claims": [
+  {
+   "artifact": "annotations/PXD016568.sdrf.tsv",
+   "location": "characteristics[organism] all rows",
+   "value": "Mus musculus",
+   "source_ids": [
+    "pride",
+    "paper"
+   ],
+   "evidence": "PRIDE organisms NEWT:10090; Lp30 murine AML cells."
+  },
+  {
+   "artifact": "annotations/PXD016568.sdrf.tsv",
+   "location": "characteristics[organism part] all rows",
+   "value": "bone marrow",
+   "source_ids": [
+    "supp-methods",
+    "pride"
+   ],
+   "evidence": "Supp methods: 'Kdm5c knockdown or shRNA control Lp30 cells from mouse bone marrow were sorted ... GFP'; PRIDE organismParts Bone marrow."
+  },
+  {
+   "artifact": "annotations/PXD016568.sdrf.tsv",
+   "location": "characteristics[disease] all rows",
+   "value": "acute myeloid leukemia",
+   "source_ids": [
+    "paper",
+    "pride"
+   ],
+   "evidence": "Lp30 (Cebpa) AML model; controls are also Lp30 AML cells (shControl), so disease applies to all rows."
+  },
+  {
+   "artifact": "annotations/PXD016568.sdrf.tsv",
+   "location": "characteristics[treatment], factor value[treatment] rows 1-4 / 5-8",
+   "value": "non-targeting shRNA control (shControl) / Kdm5c shRNA (shKdm5c-I)",
+   "source_ids": [
+    "supp-table8",
+    "paper",
+    "epiprofile-zip"
+   ],
+   "evidence": "Table 8 columns shControl_rep1-4 and shKdm5c_I_rep1-4 are value-identical, in order, to epiProfile columns 1,mette1..8,mette8 (e.g. H3K14ac 0.001624..0.002254, H3K9me3 row, H3K4me3 row), establishing mette1-4=shControl and mette5-8=shKdm5c-I. Paper Fig 2D-F: 'Kdm5c-KD (shKdm5c-I) vs control Lp30'."
+  },
+  {
+   "artifact": "annotations/PXD016568.sdrf.tsv",
+   "location": "characteristics[biological replicate] all rows",
+   "value": "1-4 per group",
+   "source_ids": [
+    "supp-table8",
+    "supp-methods"
+   ],
+   "evidence": "Table 8 rep1-rep4 per group; 'Histones were extracted from 4 million cells per replicate sample'."
+  },
+  {
+   "artifact": "annotations/PXD016568.sdrf.tsv",
+   "location": "characteristics[cell type], [developmental stage], [strain or breed], [sample type]",
+   "value": "not available",
+   "source_ids": [
+    "paper",
+    "supp-methods"
+   ],
+   "evidence": "Not stated for the sorted donor-derived Lp30 cells. Recipient mice (C57BL6/6 J.SJL congenic, female, 10-15 weeks old, Methods Animal experiments) are the host, not the sample donor; recipient strain/age therefore not transferred. Cell type has no stated CL term."
+  },
+  {
+   "artifact": "annotations/PXD016568.sdrf.tsv",
+   "location": "characteristics[material type] all rows",
+   "value": "cell",
+   "source_ids": [
+    "supp-methods"
+   ],
+   "evidence": "FACS-sorted GFP+ cells snap-frozen as cell pellets; histones extracted from 4 million cells."
+  },
+  {
+   "artifact": "annotations/PXD016568.sdrf.tsv",
+   "location": "comment[data file], comment[label] rows 1-8",
+   "value": "mette1.raw..mette8.raw; label free sample",
+   "source_ids": [
+    "pride-files",
+    "supp-methods"
+   ],
+   "evidence": "One RAW per replicate, 8 RAW files in PRIDE; no isotopic/isobaric labelling described (underivatised other than PIC at peptide N-termini, which is not a quantitative label)."
+  },
+  {
+   "artifact": "annotations/PXD016568.sdrf.tsv",
+   "location": "comment[instrument] all rows",
+   "value": "Orbitrap Velos Pro (MS:1003096)",
+   "source_ids": [
+    "raw-header",
+    "pride",
+    "paper"
+   ],
+   "evidence": "mette1.raw header 'Orbitrap Velos Pro MS'; PRIDE says LTQ Orbitrap Velos (MS:1001742), paper says Orbitrap Velos. Raw header takes precedence; only mette1.raw checked."
+  },
+  {
+   "artifact": "annotations/PXD016568.sdrf.tsv",
+   "location": "comment[proteomics data acquisition method], comment[isolation window width]",
+   "value": "Data-independent acquisition (plain text); 80",
+   "source_ids": [
+    "pride",
+    "supp-methods"
+   ],
+   "evidence": "'analysed using DIA strategy ... isolated in ten 80Da windows'. Plain text used because parse_sdrf with dia-acquisition rejects the NT=;AC=PRIDE:0000450 form (template YAML allows plain text)."
+  },
+  {
+   "artifact": "annotations/PXD016568.sdrf.tsv",
+   "location": "comment[dissociation method], comment[collision energy], comment[ms2 mass analyzer]",
+   "value": "CID MS:1000133; 35 NCE; ion trap MS:1000264",
+   "source_ids": [
+    "pride",
+    "supp-methods"
+   ],
+   "evidence": "'low resolution ion trap MS2 scans'; 'fragmented using CID with 35NCE'."
+  },
+  {
+   "artifact": "annotations/PXD016568.sdrf.tsv",
+   "location": "comment[cleavage agent details] all rows",
+   "value": "Trypsin (MS:1001251)",
+   "source_ids": [
+    "supp-methods"
+   ],
+   "evidence": "'10ug were digested with Trypsin and derivatized with phenyl isocyanate'. PRIDE protocol says only 'digested'. sdrf-tools reconcile BLOCKER cleavage_agent_unsupported is acknowledged: the PRIDE text says only digested, the Supplementary Methods PDF says Trypsin."
+  },
+  {
+   "artifact": "annotations/PXD016568.sdrf.tsv",
+   "location": "comment[modification parameters] all rows",
+   "value": "Phenylisocyanate (UNIMOD:411) Any N-term, Fixed",
+   "source_ids": [
+    "pride",
+    "supp-table8",
+    "epiprofile-zip"
+   ],
+   "evidence": "PRIDE data processing: epiProfile code modified to specify phenyl isocyanate (119.037114) as N-terminal modification. Histone PTMs (K acetyl/methyl, S phospho) quantified by epiProfile are deliberately NOT listed: no search config is deposited and epiProfile reporting scope is not a search setting. Whether lysines are also PIC-derivatised is not stated."
+  },
+  {
+   "artifact": "annotations/PXD016568.sdrf.tsv",
+   "location": "comment[precursor mass tolerance], comment[fragment mass tolerance], comment[reduction reagent], comment[alkylation reagent], comment[dia method]",
+   "value": "not available",
+   "source_ids": [
+    "pride",
+    "supp-methods"
+   ],
+   "evidence": "Not stated in protocols or deposited files (raw headers checked)."
+  },
+  {
+   "artifact": "annotations/PXD016568.sdrf.tsv",
+   "location": "characteristics[sex] all rows",
+   "value": "female",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Paper: 'we chose to exclusively focus on female cell lines and animal models (including Lp30 cells) for functional experiments'. Recipients also female."
+  },
+  {
+   "artifact": "annotations/PXD016568.sdrf.tsv",
+   "location": "comment[scan window lower limit], [upper limit] all rows",
+   "value": "300; 1100",
+   "source_ids": [
+    "raw-method"
+   ],
+   "evidence": "Raw header MS1 range 300-1100 m/z and ten 80 m/z windows centred 340-1060 (coverage 300-1100)."
+  }
+ ],
+ "limitations": [
+  "Raw headers: mette1 (producer) plus mette5 and mette8 (reviewer) read; others assumed same.",
+  "No deposited search config; only the stated PIC N-term modification annotated.",
+  "Donor Lp30 strain background and age not stated; recipient strain/age not transferred.",
+  "Cell type not stated.",
+  "characteristics[sex]=female is inferred from the cohort-level statement that functional experiments exclusively used female cell lines and animal models (including Lp30 cells); donor sex of the sorted cells not stated per sample.",
+  "sdrf-tools check may flag UNIMOD:411 Phenylisocyanate as hallucinated (local cache gap); live OLS confirms label and accession.",
+  "comment[sdrf annotation tool]=manual curation."
+ ]
+}

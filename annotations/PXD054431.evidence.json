@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD054431.sdrf.tsv",
+  "dataset": "PXD054431",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD054431"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD054431/files/all (7 files, all projectAccessions=PXD054431; 2 RAW)"},
+    {"id": "paper", "kind": "publication", "location": "doi:10.17159/sajs.2025/18571, PDF https://sajs.co.za/article/view/18571/23541 (states PXD054431)"},
+    {"id": "mqpar", "kind": "deposited search output", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/02/PXD054431/mqpar.xml and parameters.txt"},
+    {"id": "raw-header", "kind": "raw file header", "location": "HTTP range 0-262143 of ..._Enamel_PPM_Sample_2512.raw: Orbitrap Exploris 480, HCD"},
+    {"id": "ols", "kind": "ontology", "location": "https://www.ebi.ac.uk/ols4/api/ (UBERON:0001752, MS:1003028, UNIMOD:372, PRIDE:0001013, PRIDE:0000627); NCBI taxonomy esearch: no Australopithecus entry"}
+  ],
+  "claims": [
+    {"location": "characteristics[organism] row 1", "value": "Homininae", "source_ids": ["pride", "paper", "ols"], "evidence": "Specimen is A. africanus (paper); no NCBITaxon entry for the species, genus Homininae NCBITaxon:207598 is PRIDE's organism and the closest valid NCBITaxon ancestor. Species kept in source name."},
+    {"location": "characteristics[organism part] row 1", "value": "enamel", "source_ids": ["paper", "pride"], "evidence": "Acid-etched dental enamel; PRIDE organismParts UBERON:0001752"},
+    {"location": "characteristics[sex] row 1", "value": "male", "source_ids": ["paper", "pride"], "evidence": "AMELY-specific peptides identify Sts 63 as male (paper); PRIDE projectDescription also states male individual"},
+    {"location": "row 2 (extraction blank)", "value": "negative control; organism/organ part/sex not applicable", "source_ids": ["paper", "pride-files"], "evidence": "Methods: extraction blank prepared with sample; RAW named Blank_2511; paper says blank proteins excluded"},
+    {"location": "comment[instrument]", "value": "Orbitrap Exploris 480", "source_ids": ["paper", "raw-header"], "evidence": "Methods and raw header; PRIDE LTQ FT overridden"},
+    {"location": "comment[dissociation method]", "value": "beam-type collision-induced dissociation", "source_ids": ["raw-header"], "evidence": "HCD string in raw header; paper silent"},
+    {"location": "comment[cleavage agent details]", "value": "not applicable", "source_ids": ["paper", "pride", "mqpar"], "evidence": "Non-digestive acid etch, no protease; search was unspecific (enzymeMode 4, enzymes empty)"},
+    {"location": "comment[modification parameters] x6", "value": "Arg->Orn, Deamidated, Gln->pyro-Glu, Glu->pyro-Glu, Oxidation(M,P,W), Phospho(S,T,Y) all Variable", "source_ids": ["mqpar"], "evidence": "mqpar.xml variableModifications; fixedModifications empty"},
+    {"location": "comment[precursor mass tolerance]/comment[fragment mass tolerance]", "value": "4.5 ppm / 20 ppm", "source_ids": ["mqpar", "paper"], "evidence": "mainSearchTol 4.5; FTMS MS/MS tol 20 ppm"},
+    {"location": "comment[data file] rows 1-2", "value": "two RAW files", "source_ids": ["pride-files"], "evidence": "Both deposited RAW files annotated"}
+  ],
+  "limitations": [
+    "No NCBITaxon term for Australopithecus africanus; organism is genus-level-or-higher Homininae",
+    "mqpar.xml references 2512_etch1/2512_etch2.raw not deposited under those names; mapping to Sample_2512.raw is by ID only",
+    "Age at death, disease status not stated",
+    "Paper and deposit disagree on MaxQuant version, min peptide length, oxidation targets"
+  ]
+}
