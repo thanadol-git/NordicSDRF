@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD021949.sdrf.tsv",
+  "dataset": "PXD021949",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD021949 (local copy /home/thanadol/Documents/GitHub/sdrf-skills/scratchpad/PXD021949/pride.json)"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD021949/files/all (10 entries, all carry projectAccessions PXD021949; local /home/thanadol/Documents/GitHub/sdrf-skills/scratchpad/PXD021949/files.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC7988125 / PMID 33758223 / doi:10.1038/s41598-021-85756-8 (Europe PMC fullTextXML; text /home/thanadol/Documents/GitHub/sdrf-skills/scratchpad/PXD021949/paper.txt)"
+    },
+    {
+      "id": "raw-header",
+      "kind": "raw file",
+      "location": "HTTP range 0-262143 of ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2021/03/PXD021949/20191122_QE5_nLC5_MEM_COLLAB_EvoGen_AT_A.raw, UTF-16 decode: 'Q Exactive HF-X - Orbitrap MS'"
+    },
+    {
+      "id": "mq-allsamples",
+      "kind": "deposited search",
+      "location": "Allsamplestxt.zip members 'All samples txt/All samples trypsin txt/summary.txt' and parameters.txt, read by HTTP range (local /home/thanadol/Documents/GitHub/sdrf-skills/scratchpad/PXD021949/allsummary.txt, allparams.txt)"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "sdrf-tools verify: MS:1002877, MS:1001251, MS:1001915, MS:1000422, PRIDE:0000627, UBERON:0002481, NCBITaxon:59523/9940/59552/119562; UNIMOD ids not resolvable offline, taken from knowledge (4, 35, 7, 28, 27)"
+    },
+    {
+      "id": "corpus",
+      "kind": "repository",
+      "location": "/home/thanadol/Documents/GitHub/sdrf-annotated-datasets/datasets/PXD021949/ does not exist (new dataset)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] rows A,D,G,M,P4859C",
+      "value": "Antidorcas marsupialis / Pelea capreolus / Ovis aries / Sylvicapra grimmia / Ovis aries",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Paper Table 1 gives species for modern references A,D,G,M; paper states the Spoegrivier OxA-3862 specimen (sample C / raw 4895C) is confirmed sheep"
+    },
+    {
+      "location": "characteristics[organism] row SpringbokBK",
+      "value": "Antidorcas marsupialis (organism part, sample type: not available)",
+      "source_ids": [
+        "pride-files"
+      ],
+      "evidence": "Only evidence is the run name \"Springbok\"; the BK suffix is undocumented (possibly a blank; 2.5% MS/MS ID rate, P4859C zip has \"Blank\" searches). Not asserted as blank. Weakest claim."
+    },
+    {
+      "location": "characteristics[organism part] rows A,D,G,M,P4859C",
+      "value": "bone tissue",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Table 1: sample type B = bone, C = collagen extracted from bone; PRIDE organismParts BTO bone"
+    },
+    {
+      "location": "characteristics[strain or breed] row G",
+      "value": "Namaqua Afrikaner",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Table 1: G Upington Ovis aries Namaqua Afrikaner sheep"
+    },
+    {
+      "location": "characteristics[sex], [developmental stage] all rows",
+      "value": "not available",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Table 1 lists no sex or age"
+    },
+    {
+      "location": "characteristics[disease] all rows",
+      "value": "not applicable",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Faunal bone, no disease context"
+    },
+    {
+      "location": "source name P4859C / data file ..._4895C.raw",
+      "value": "P4859C",
+      "source_ids": [
+        "paper",
+        "mq-allsamples"
+      ],
+      "evidence": "Raw file and MaxQuant experiment are named 4895C, paper and MaxQuant folders name P4859C ('P4859C Sheep'); paper text says 'P4895C' in methods. Treated as the same specimen (typo); source name follows Table 1"
+    },
+    {
+      "location": "comment[instrument] all rows",
+      "value": "Q Exactive HF-X",
+      "source_ids": [
+        "raw-header",
+        "paper",
+        "pride"
+      ],
+      "evidence": "Raw header and Methods agree"
+    },
+    {
+      "location": "comment[cleavage agent details] all rows",
+      "value": "Trypsin",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: parallel trypsin and elastase digests combined before LC-MS/MS. Only trypsin is encoded because the template column is not multiple; elastase is documented in the report only."
+    },
+    {
+      "location": "comment[modification parameters] all rows",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Oxidation P (MaxQuant Hydroxyproline), Deamidated N,Q, Gln->pyro-Glu, Glu->pyro-Glu variable",
+      "source_ids": [
+        "mq-allsamples"
+      ],
+      "evidence": "summary.txt Variable/Fixed modifications columns. Acetyl (Protein N-term) in paper prose is NOT in the deposited search and is omitted. Hydroxyproline mapped to UNIMOD:35 at P is inferred from MaxQuant's definition"
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "mq-allsamples"
+      ],
+      "evidence": "parameters.txt MS/MS tol. (FTMS) 20 ppm"
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "mq-allsamples"
+      ],
+      "evidence": "parameters.txt does not record the main-search precursor tolerance"
+    },
+    {
+      "location": "comment[collision energy], comment[dissociation method]",
+      "value": "28 NCE; beam-type CID (HCD)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: normalised collision energy 28; HCD inferred from NCE on a Q Exactive HF-X"
+    },
+    {
+      "location": "comment[reduction reagent], [alkylation reagent]",
+      "value": "not available",
+      "source_ids": [
+        "paper",
+        "mq-allsamples"
+      ],
+      "evidence": "Methods give no reagents; search declares Carbamidomethyl fixed so not 'not applicable'"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Top 10 dynamic exclusion Methods"
+    },
+    {
+      "location": "factor value[organism]",
+      "value": "species",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Study compares species (ZooMS marker discrimination)"
+    }
+  ],
+  "limitations": [
+    "Excluded from annotation: MALDI-TOF ZooMS spectra (ZooMSspectratxt.zip, mMass TXT peak lists, not raw MS runs, per-sample map not deposited) and MaxQuant result bundles (SpringbokAMQtxt.zip, P4859CMQtxt.zip, Allsamplestxt.zip) which are search outputs.",
+    "Only 6 of the dozens of ZooMS specimens in the paper were LC-MS/MS analysed and deposited as raw.",
+    "Identity/role of SpringbokBK is not documented anywhere in the record.",
+    "No per-sample sex/age; precursor tolerance not recorded.",
+    "Deposited PRIDE submissionType is PARTIAL."
+  ],
+  "artifact_sha256": "de1cb84e429bbb10d216d28001c864c2ea18aa68d0f0848f1724a52cd2ba1354"
+}

@@ -1,0 +1,174 @@
+{
+ "schema_version": 1,
+ "artifact": "/home/thanadol/Documents/GitHub/NordicSDRF/annotations/PXD014155.sdrf.tsv (HeLa rows, 30) and PXD014155-proteinmix.sdrf.tsv (16 rows); both covered by this manifest",
+ "dataset": "PXD014155",
+ "sources": [
+  {
+   "id": "pride",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD014155"
+  },
+  {
+   "id": "files",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD014155/files/all (49 files: 46 RAW + 3 search zips; all projectAccessions = PXD014155)"
+  },
+  {
+   "id": "paper",
+   "kind": "publication",
+   "location": "PMC6597055 / PMID 31246970 / doi:10.1371/journal.pone.0218374 (Heissel et al. 2019, PLoS One; fetched via Europe PMC fullTextXML)"
+  },
+  {
+   "id": "tc_zip",
+   "kind": "deposited-search",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/06/PXD014155/Timecourse_Specific.zip : experimentalDesignTemplate.txt, txt - Copy/summary.txt, parameters.txt, evidence.txt (HTTP-range members)"
+  },
+  {
+   "id": "vs_zip",
+   "kind": "deposited-search",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/06/PXD014155/VaryingConditions_Specific.zip : txt/summary.txt, parameters.txt, evidence.txt, proteinGroups.txt"
+  },
+  {
+   "id": "vu_zip",
+   "kind": "deposited-search",
+   "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/06/PXD014155/VaryingConditions_Unspecific.zip : txt/summary.txt, parameters.txt"
+  },
+  {
+   "id": "rawhdr",
+   "kind": "raw-file-header",
+   "location": "HTTP range of QHF1_07010_SOH.raw and QEHF106774_SOH.raw first 300 KB: 'Q Exactive HF' strings"
+  }
+ ],
+ "claims": [
+  {
+   "location": "rows 1-30 (QHF1_*): source name, factor value[trypsin preparation], factor value[digestion time], biological replicate",
+   "value": "HeLa_lysate_<prep>_<time>_rep<n>",
+   "source_ids": [
+    "tc_zip",
+    "paper"
+   ],
+   "evidence": "experimentalDesignTemplate.txt/summary.txt map each QHF1 raw file to Experiment <BP|Met|Promega>_<1|5|10|30|60>min_<01|02>; paper: HeLa lysate digested at 58C, aliquots at 1,5,10,30,60 min, all digestions in duplicates"
+  },
+  {
+   "location": "factor value[trypsin preparation] = Promega sequencing grade trypsin",
+   "value": "Promega",
+   "source_ids": [
+    "tc_zip",
+    "paper"
+   ],
+   "evidence": "Deposit label Promega; paper benchmarks against Promega sequencing grade trypsin (PSG)"
+  },
+  {
+   "location": "factor value[trypsin preparation] = Met (deposit label; identity not stated in record)",
+   "value": "Met",
+   "source_ids": [
+    "tc_zip",
+    "paper"
+   ],
+   "evidence": "Deposit label only. Paper has crude, enhanced and PSG preparations in the 58C experiment; which of BP/Met is crude or enhanced is not stated, so no expansion is written."
+  },
+  {
+   "location": "factor value[trypsin preparation] = BP (...)",
+   "value": "BP",
+   "source_ids": [
+    "tc_zip"
+   ],
+   "evidence": "Deposit label only; expansion of 'BP' not stated anywhere in record; left as deposit label"
+  },
+  {
+   "location": "characteristics[cell line]=HeLa, cellosaurus accession CVCL_0030, age 30Y6M, sex female (rows 1-30)",
+   "value": "HeLa / CVCL_0030",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Paper: HeLa lysate. Cellosaurus identity/age/sex via sdrf-tools cellline lookup HeLa (exact match); parental HeLa assumed, variant not stated"
+  },
+  {
+   "location": "rows 31-46 (QEHF*): sample",
+   "value": "simple protein mix, sample type standard, material type synthetic, organism not applicable",
+   "source_ids": [
+    "paper",
+    "vs_zip"
+   ],
+   "evidence": "Paper: simple protein mix of BSA, horse myoglobin, horse ADH, bovine carbonic anhydrase; VaryingConditions_Specific evidence.txt identifies ALBU_BOVIN, MYG_HORSE, ADH1E_HORSE, CAH2_BOVIN as the proteins in the 16 QEHF runs"
+  },
+  {
+   "location": "rows 31-46: source name / biological replicate",
+   "value": "Protein_mix_digest_01..16, bio rep 1",
+   "source_ids": [
+    "vs_zip"
+   ],
+   "evidence": "summary.txt gives only Experiment 1-16 per raw file; paper does not map experiments to trypsin type/dose/duration; no per-run condition recoverable"
+  },
+  {
+   "location": "comment[instrument]",
+   "value": "Q Exactive HF",
+   "source_ids": [
+    "paper",
+    "rawhdr"
+   ],
+   "evidence": "Paper Methods: Q-Exactive HF; raw headers read 'Q Exactive HF' (PRIDE field says Q Exactive; overridden)"
+  },
+  {
+   "location": "comment[cleavage agent details]",
+   "value": "Trypsin",
+   "source_ids": [
+    "paper",
+    "tc_zip",
+    "vs_zip"
+   ],
+   "evidence": "Paper digestion section; summary.txt enzyme Trypsin/P in the specific searches"
+  },
+  {
+   "location": "comment[reduction reagent]/[alkylation reagent]",
+   "value": "DTT / IAA",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Methods: protein mix and HeLa lysate reduced with DTT and alkylated with IAA"
+  },
+  {
+   "location": "comment[modification parameters] rows 1-30",
+   "value": "Carbamidomethyl C Fixed; Oxidation M Variable; Acetyl Protein N-term Variable",
+   "source_ids": [
+    "tc_zip"
+   ],
+   "evidence": "parameters.txt (MaxQuant 1.6.2.3) lists no fixed mods and evidence.txt Modifications omit fixed mods, but the first review measured +57.0215 per Cys on unmodified-labelled peptides (3,001 peptides) => Carbamidomethyl (C) was fixed; paper: lysate reduced/alkylated with DTT/IAA. Variable: Oxidation (M), Acetyl (Protein N-term) from evidence.txt"
+  },
+  {
+   "location": "comment[modification parameters] rows 31-46",
+   "value": "Carbamidomethyl C Fixed; Oxidation M, Acetyl Protein N-term, Carbamyl K, Carbamyl N-term Variable",
+   "source_ids": [
+    "vs_zip"
+   ],
+   "evidence": "parameters.txt (MaxQuant 1.5.3.30): Fixed modifications Carbamidomethyl (C); evidence.txt Modifications show Carbamyl (N-term), carbamylation (K), Oxidation (M), Acetyl (Protein N-term); carbamylation (K)Sites table"
+  },
+  {
+   "location": "comment[fragment mass tolerance]",
+   "value": "20 ppm",
+   "source_ids": [
+    "tc_zip",
+    "vs_zip"
+   ],
+   "evidence": "parameters.txt MS/MS tol. (FTMS) 20 ppm"
+  },
+  {
+   "location": "comment[proteomics data acquisition method]",
+   "value": "Data-dependent acquisition",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Top 10 DDA"
+  }
+ ],
+ "limitations": [
+  "No SDRF consulted. Paper S1 Text protocol not read (DOCX supplement).",
+  "10 deposit-design runs QHF1_07020-07029 (Experiment DISCARD_*) are NOT deposited in PRIDE; no rows.",
+  "QEHF runs: no per-run mapping to trypsin preparation/dose/time/temperature in the record; factor columns not available for those rows.",
+  "Precursor tolerance, dissociation method not stated in record: not available.",
+  "MaxQuant parameters.txt variable-modification lists are absent (version 1.5.3/1.6.2); variable mods read from evidence.txt Modifications, so unobserved variable mods cannot be excluded.",
+  "HeLa age/sex come from Cellosaurus CVCL_0030 (donor), not from the paper; HeLa variant (parental vs S3) not stated in paper.",
+  "Deposit labels BP and Met are not defined in the record; no chemical identity asserted.",
+  "Protein-mix rows are in a separate SDRF (cell-lines template requires cell line with no reserved word)."
+ ]
+}

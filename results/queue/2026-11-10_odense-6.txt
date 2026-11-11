@@ -1,0 +1,11 @@
+# daily queue denmark/odense batch 6 (10 smallest pending PXDs by total deposited RAW size)
+PXD035178	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD013838	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD021943	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD018051	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD014155	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD024346	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD048461	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD045412	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD021949	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD052635	denmark/odense	pending	odense: no screen yet; queued as a candidate

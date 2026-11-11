@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD045412.sdrf.tsv",
+  "dataset": "PXD045412",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD045412"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD045412/files/all (24 entries, all projectAccessions contain PXD045412)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "doi:10.1016/j.jasrep.2023.104238 (J Archaeol Sci Rep 52:104238); full text read from Cambridge repository copy https://www.repository.cam.ac.uk/bitstreams/5c49faba-3144-41fb-91f6-68ca910d4c21/download"
+    },
+    {
+      "id": "mq",
+      "kind": "search output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/10/PXD045412/{mqpar.xml,summary.txt,parameters.txt,evidence.txt}"
+    },
+    {
+      "id": "raw-headers",
+      "kind": "raw file header (range 0-400000, utf-16-le)",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/10/PXD045412/<each .raw>"
+    },
+    {
+      "id": "zenodo",
+      "kind": "repository",
+      "location": "https://zenodo.org/api/records/7858995 and /7861359 (Experimental_annotation.csv lists only JORD8; P0578 absent)"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/ (NCBITaxon:9922, 9895, 9948; UBERON:0001694)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] SM4,SM5,SM10,SM26,SM23",
+      "value": "Capra",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "LC-MS/MS SAP analysis assigned SM4,5,10,23,26 to genus Capra (Results, LC-MS/MS sequencing). Genus level only."
+    },
+    {
+      "location": "characteristics[organism] SM18",
+      "value": "Bovidae",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "SM18 'either Capra sp. or Antilopinae' - family Bovidae is the lowest common taxon."
+    },
+    {
+      "location": "characteristics[organism] SM12",
+      "value": "Antilopinae",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "SM12 placed in subfamily Antilopinae (tentatively Nanger/Gazella)."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "petrous part of temporal bone",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Twenty-eight petrous bones sampled."
+    },
+    {
+      "location": "comment[instrument] SM4,5,10,18,26",
+      "value": "Orbitrap Exploris 480",
+      "source_ids": [
+        "raw-headers"
+      ],
+      "evidence": "Raw header 'Orbitrap Exploris 480' for EXPL2 files; consistent with paper (Tryps-IN on Exploris 480)."
+    },
+    {
+      "location": "comment[instrument] SM12,SM23",
+      "value": "Q Exactive HF-X",
+      "source_ids": [
+        "raw-headers"
+      ],
+      "evidence": "Raw header 'Q Exactive HF-X - Orbitrap MS' for JORD12/JORD23. Paper text would imply Exploris for Tryps-IN; raw data prevails."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "6 variable mods, none fixed",
+      "source_ids": [
+        "mq"
+      ],
+      "evidence": "summary.txt/mqpar.xml: Oxidation (M); Gln->pyro-Glu; Glu->pyro-Glu; Hydroxyproline; Deamidation (NQ); Acetyl (Protein N-term). Hydroxyproline written as Oxidation UNIMOD:35 TA=P (MaxQuant Hydroxyproline = Oxidation (P))."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "paper",
+        "mq"
+      ],
+      "evidence": "Wet-lab digest with Promega trypsin; MaxQuant enzyme Trypsin/P semispecific (search setting only)."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / [fragment mass tolerance]",
+      "value": "4.5 ppm / 20 ppm",
+      "source_ids": [
+        "mq"
+      ],
+      "evidence": "mqpar.xml mainSearchTol=4.5; FTMS MatchTolerance=20 ppm."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "raw-headers",
+        "pride"
+      ],
+      "evidence": "File names contain DDA; shotgun proteomics experiment type."
+    },
+    {
+      "location": "comment[data file] row 8 (P0578)",
+      "value": "20230807_EXPL5_nLC11_GT_collab_77min_DDA_P0578.raw",
+      "source_ids": [
+        "pride-files",
+        "pride",
+        "raw-headers"
+      ],
+      "evidence": "Deposited RAW with no sample identity (not in MaxQuant run, paper, Zenodo). Row kept with source name 'P0578 (sample unidentified)'; organism Capra is the PRIDE project-level field only; organism part/stage/sex/strain not available. Could be SM8 (paper: carnivore) - unverified, so not asserted."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "HCD",
+      "source_ids": [
+        "raw-headers"
+      ],
+      "evidence": "Raw headers: Exploris 'HCD Collision Energy (%) = 30'; HF-X 'Fragmentation_HCD 28 eV' (reported by independent reviewer round 1)."
+    }
+  ],
+  "limitations": [
+    "Species ID is for tentative palaeoproteomic taxa; sex, age, developmental stage, strain not available.",
+    "Reduction/alkylation not stated for bone samples and no fixed modification in search: not available.",
+    "Project-level PRIDE protocol says ABC extractions on QE HF-X and Tryps-IN on Exploris 480; raw headers put JORD12/JORD23 on HF-X although paper Table 1 treats all eight as Tryps-IN.",
+    "PRIDE structured instrument field lists only Q Exactive; organism field lists Capra sp.",
+    "Row 8 (P0578): sample identity unknown; organism Capra is a project-level fallback and may be wrong (possibly SM8, carnivore).",
+    "Extraction method (ABC vs Tryps-IN) is not annotated; JORD12/JORD23 on HF-X may be ABC extracts per paper Methods.",
+    "No factor value: no designed comparison; biological replicate = 1 for each distinct bone."
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD052635.sdrf.tsv",
+  "dataset": "PXD052635",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD052635"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD052635/files/all (28 entries, all with projectAccessions containing PXD052635; 8 RAW, 19 SEARCH zips, ReadMe.txt)"
+    },
+    {
+      "id": "readme",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2025/07/PXD052635/ReadMe.txt (key to raw file suffixes: blanks _1316/_1606/_1962; Fontana Ranuccio HCl _1313, TFA _1314/_1315; Haughton tusk _1608, molar _1963)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC12267063 (https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12267063/fullTextXML); doi:10.1038/S41586-025-09231-4; Nature 2025 'Phylogenetically informative proteins from an Early Miocene rhinocerotid'"
+    },
+    {
+      "id": "raw-headers",
+      "kind": "raw files",
+      "location": "HTTP range read of first 300000 bytes of each of the 8 .raw files at https://ftp.ebi.ac.uk/pride/data/archive/2025/07/PXD052635/ (utf-16-le instrument strings)"
+    },
+    {
+      "id": "mq-zips",
+      "kind": "deposited search output",
+      "location": "StandardRun_ArcticRhino.zip and StandardRun_FontanaRanuccio.zip: txt/parameters.txt and txt/summary.txt (MaxQuant 1.6.3.4)"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/search live lookups: NCBITaxon:9803, NCBITaxon:2003758, UBERON:0001752, MS:1002877, MS:1003028, MS:1000422, PRIDE:0001016, UNIMOD:7/21/27/28/35/372, NCIT:C76716, NCIT:C84228"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] rows 1-3",
+      "value": "Stephanorhinus",
+      "source_ids": [
+        "readme",
+        "paper",
+        "pride"
+      ],
+      "evidence": "Fontana Ranuccio (FR sd-295) is a Middle Pleistocene Stephanorhinus (paper); ReadMe maps _1313-_1315 to Fontana Ranuccio. Species not stated, so genus NCBITaxon:2003758."
+    },
+    {
+      "location": "characteristics[organism] rows 4-5",
+      "value": "Rhinocerotidae",
+      "source_ids": [
+        "readme",
+        "paper",
+        "pride"
+      ],
+      "evidence": "Haughton specimen CMNFV59632 is Epiaceratherium sp. (paper) but Epiaceratherium has no NCBITaxon entry; family Rhinocerotidae (NCBITaxon:9803, also PRIDE organism) used."
+    },
+    {
+      "location": "characteristics[organism part] rows 1-5",
+      "value": "enamel",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Tooth enamel flakes drilled avoiding dentine; UBERON:0001752 enamel. Tusk enamel (i2) and molar enamel from same specimen."
+    },
+    {
+      "location": "source name / comment[data file] all rows",
+      "value": "sample to file mapping",
+      "source_ids": [
+        "readme"
+      ],
+      "evidence": "ReadMe.txt key; names FR2/FR3/FR4 from paper (FR2 HCl, FR3/FR4 TFA) matched to _1313/_1314/_1315 by ReadMe order (one HCl, two TFA) - FR2 is the only HCl subsample."
+    },
+    {
+      "location": "characteristics[sample type]/organism rows 6-8",
+      "value": "negative control; organism not applicable",
+      "source_ids": [
+        "readme",
+        "paper"
+      ],
+      "evidence": "ReadMe lists _1316/_1606/_1962 as laboratory extraction blanks; paper: extraction blank per sample set."
+    },
+    {
+      "location": "comment[instrument] rows 1-4,6,7",
+      "value": "Q Exactive HF-X",
+      "source_ids": [
+        "raw-headers",
+        "paper"
+      ],
+      "evidence": "Raw headers of _1313,_1314,_1315,_1316,_1606,_1608 report 'Q Exactive HF-X'. Paper says Exploris 480 was used for CMNFV59632, but the tusk file _1608 (2019, QE7) header says HF-X; raw data wins."
+    },
+    {
+      "location": "comment[instrument] rows 5,8",
+      "value": "Orbitrap Exploris 480",
+      "source_ids": [
+        "raw-headers",
+        "paper"
+      ],
+      "evidence": "Raw headers of _1963 and _1962 report Orbitrap Exploris 480."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "variable only: Oxidation M/P/W, Deamidated N/Q, Arg->Orn, Gln->pyro-Glu, Glu->pyro-Glu, Phospho S/T",
+      "source_ids": [
+        "mq-zips",
+        "paper"
+      ],
+      "evidence": "summary.txt Variable modifications list 'Oxidation (MPW);Arg->Orn;Deamidation (NQ);Gln->pyro-Glu;Glu->pyro-Glu;Phospho (ST)', Fixed empty; paper: 'No fixed modifications were set'. Standard run only; Aromatic/His/TryptOx runs use additional modifications and are separate searches."
+    },
+    {
+      "location": "comment[cleavage agent details] all rows",
+      "value": "not applicable",
+      "source_ids": [
+        "paper",
+        "pride",
+        "mq-zips"
+      ],
+      "evidence": "No enzymatic digestion performed (enamel peptides hydrolysed in vivo); MaxQuant search used Unspecific enzyme mode."
+    },
+    {
+      "location": "comment[precursor mass tolerance]",
+      "value": "10 ppm",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "dataProcessingProtocol: precursor mass tolerance 10 ppm (not in parameters.txt)."
+    },
+    {
+      "location": "comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "mq-zips",
+        "pride"
+      ],
+      "evidence": "parameters.txt MS/MS tol. (FTMS) 20 ppm; PRIDE protocol prose says 0.05 Da. Deposited search output preferred; conflict documented."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Data-dependent top-10 mode; PRIDE experiment type PRIDE:0000627."
+    },
+    {
+      "location": "characteristics[treatment]/factor value[treatment] rows 1-5",
+      "value": "Hydrochloric Acid / Trifluoroacetic Acid",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "FR2 demineralized in 10% HCl, FR3/FR4 and Haughton samples in 10% TFA. Concentration (10%) not carried in the value."
+    }
+  ],
+  "limitations": [
+    "Age, sex, developmental stage of the fossil individuals are not given per sample: not available.",
+    "Blanks 1316/1606/1962 cannot be assigned to a specific specimen set from the ReadMe; each is its own negative-control source.",
+    "No raw files are deposited for Dmanisi Stephanorhinus or medieval goat (only MaxQuant output zips); these are not annotated because the SDRF is per raw file.",
+    "Search-parameter zips for Aromatic/His/TryptOx runs were not opened beyond zip listings; modifications derive from Standard run summaries only.",
+    "Epiaceratherium sp. has no NCBITaxon entry; family level used.",
+    "Precursor tolerance: PRIDE protocol says 10 ppm; the paper (per round-1 reviewer) says 20 ppm first search and 4.5 ppm for the final search; parameters.txt has no precursor tolerance. 10 ppm (PRIDE) retained.",
+    "Phospho: PRIDE/paper say S,T,Y but deposited MaxQuant summary says Phospho (ST); deposit used (S,T).",
+    "Paper says tusk sample (_1608) excluded from analysis (few peptides) but its raw file is deposited, so it is annotated.",
+    "FR3/FR4 are two same-specimen same-acid subsamples; recorded as biological replicate 1 and 2 (FR2 HCl is replicate 1 of its own treatment)."
+  ]
+}

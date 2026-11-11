@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD024346.sdrf.tsv",
+  "dataset": "PXD024346",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD024346"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD024346/files/all (17 files, all projectAccessions contain PXD024346; 6 RAW)"},
+    {"id": "sample-key", "kind": "deposited file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/10/PXD024346/READ_ME-_Sample_Key.txt"},
+    {"id": "paper", "kind": "publication", "location": "doi:10.1038/s42003-022-04190-2 (Commun Biol 2022), PMC9674856, Europe PMC fullTextXML"},
+    {"id": "ols", "kind": "ontology", "location": "https://www.ebi.ac.uk/ols4/api/ (UBERON:0001694, BTO:0000338, PRIDE:0000609, PRIDE:0000600, PRIDE:0000905)"}
+  ],
+  "claims": [
+    {"location": "files / source name rows 1-6", "value": "6 RAW files mapped to 3 samples + 2 blanks per matrix", "source_ids": ["sample-key","pride-files"], "evidence": "Sample key maps each RAW basename to calculus/bone ST3, ST5 and blank"},
+    {"location": "characteristics[sex] rows 1,2,4,5", "value": "ST3 male, ST5 female", "source_ids": ["paper"], "evidence": "Methods: San Teodoro 3 (male) and 5 (female)"},
+    {"location": "characteristics[organism part] rows 1,2", "value": "dental plaque", "source_ids": ["pride","paper"], "evidence": "PRIDE organismParts BTO:0000338; paper material is dental calculus (mineralised plaque); no calculus term in UBERON/BTO"},
+    {"location": "characteristics[organism part] rows 4,5", "value": "petrous part of temporal bone", "source_ids": ["paper","pride"], "evidence": "Protocol: bone fragments; paper: collagen from petrous bones of the two individuals. Inferred that proteomic bone = petrous bone"},
+    {"location": "comment[instrument], dissociation, ms2 analyzer", "value": "Q Exactive HF, HCD, Orbitrap", "source_ids": ["pride"], "evidence": "Sample processing protocol: Q-Exactive HF, HCD-generated product ions; RAW header not checked"},
+    {"location": "comment[modification parameters]", "value": "Carbamidomethyl C fixed; Oxidation M, Oxidation P (hydroxyproline), Deamidated N/Q, Acetyl protein N-term variable", "source_ids": ["pride"], "evidence": "dataProcessingProtocol text; deposited MQ output is RAR5 and could not be opened (no unrar)"},
+    {"location": "comment[reduction reagent]/[alkylation reagent]", "value": "TCEP / chloroacetamide", "source_ids": ["pride"], "evidence": "Lysis buffer: 10mM chloroacetamide, 20mM TCEP"},
+    {"location": "blank rows 3,6", "value": "negative control; organism/part/sex/disease not applicable", "source_ids": ["sample-key","pride"], "evidence": "Sample key and protocol: blank extraction control"}
+  ],
+  "limitations": [
+    "Deposited MaxQuant outputs (RAR5) not opened; mods and tolerances not read from mqpar. Tolerances not available.",
+    "Raw file headers not inspected; instrument from PRIDE and paper.",
+    "No age: paper gives only Late Upper Palaeolithic period.",
+    "Dental calculus contains microbial/dietary proteins; organism recorded as host Homo sapiens."
+  ]
+}

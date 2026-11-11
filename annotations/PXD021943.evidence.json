@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "artifact": "/home/thanadol/Documents/GitHub/NordicSDRF/annotations/PXD021943.sdrf.tsv",
+  "dataset": "PXD021943",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD021943"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD021943/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMID 33657400; PMC8056186 (NCBI efetch db=pmc id=8056186); doi 10.1016/j.molcel.2021.02.012"
+    },
+    {
+      "id": "rawhdr",
+      "kind": "raw-file",
+      "location": "HTTP range of first 300 KB of ftp.pride.ebi.ac.uk/pride/data/archive/2021/06/PXD021943/Obvb10478_PVS_KANSL238_01_sgNegCtrl_1.raw (utf-16 strings: 'Orbitrap Velos Pro MS')"
+    },
+    {
+      "id": "analysis_zip",
+      "kind": "repository",
+      "location": "analysis.zip central directory in PXD021943 (EpiProfile output only: histone_logs.txt, ratios csv; no search-parameter file)"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "sdrf-tools cellline lookup THP-1 (CVCL_0006: male, 1Y)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] rows 1-16",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism NEWT:9606; human cell line THP-1"
+    },
+    {
+      "location": "characteristics[cell line], cellosaurus accession/name rows 1-16",
+      "value": "THP-1 / CVCL_0006",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "INFERRED: histone MS Methods do not name the cell line. Paper states the NSL-KD proteomics/RNA-seq series (sgNegCtrl/KANSL2/KANSL3/KAT8, 3 days post-transduction, 4 sgRNA groups) were done in THP-1/cdCas9-KRAB, which matches the run names exactly; PRIDE disease 'acute leukemia' and organism part blood are consistent with THP-1 (RRID CVCL_0006 in paper key resources)."
+    },
+    {
+      "location": "characteristics[disease] rows 1-16",
+      "value": "acute myeloid leukemia",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper: 'human acute myeloid leukemia cell line THP-1'"
+    },
+    {
+      "location": "characteristics[age]/[sex] rows 1-16",
+      "value": "1Y / male",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Paper lists THP-1 as male; Cellosaurus donor age 1Y"
+    },
+    {
+      "location": "characteristics[treatment] and factor value[treatment]",
+      "value": "sgRNA CRISPRi knockdown group per run",
+      "source_ids": [
+        "files",
+        "paper"
+      ],
+      "evidence": "Group (sgNegCtrl, sgKANSL2, sgKANSL3, sgKAT8) and replicate number are parsed from the raw file name; paper describes CRISPRi KD of these genes with a non-targeting control"
+    },
+    {
+      "location": "characteristics[biological replicate] rows 1-16",
+      "value": "1-4",
+      "source_ids": [
+        "files"
+      ],
+      "evidence": "Trailing _1.._4 in the raw file name; independent transductions are assumed from the naming, not stated"
+    },
+    {
+      "location": "comment[instrument] rows 1-16",
+      "value": "Orbitrap Velos Pro MS:1003096",
+      "source_ids": [
+        "rawhdr",
+        "pride",
+        "paper"
+      ],
+      "evidence": "Raw header says Orbitrap Velos Pro; PRIDE and paper say Orbitrap Velos. Raw data wins."
+    },
+    {
+      "location": "comment[proteomics data acquisition method], isolation window width, dissociation method, collision energy, ms2 mass analyzer",
+      "value": "DIA; 80; CID; 35 NCE; ion trap",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Protocol: DIA, ten 80 Da windows, CID 35 NCE, low-resolution ion trap MS2, MS1 15K Orbitrap"
+    },
+    {
+      "location": "comment[cleavage agent details] rows 1-16",
+      "value": "Trypsin",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "INFERRED: the histone digest enzyme is not named in this record; trypsin is the enzyme of the cited Sidoli 2016 / Maile 2015 derivatization workflow. sdrf-tools reconcile flags this as cleavage_agent_unsupported."
+    },
+    {
+      "location": "comment[modification parameters] rows 1-16",
+      "value": "Phenylisocyanate UNIMOD:411 PP=Any N-term Fixed; Acetyl UNIMOD:1 K Variable; Methyl UNIMOD:34 K Variable",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "dataProcessingProtocol: EpiProfile modified to specify phenyl isocyanate (119.037114) as N-terminal modification; PRIDE PTMs: acetylated residue, monomethylated residue. No deposited search-parameter file exists, so the list is partial (propionylation and di/tri-methylation not stated and not asserted)."
+    },
+    {
+      "location": "technical columns precursor/fragment mass tolerance, scan window limits, dia method",
+      "value": "not available",
+      "source_ids": [],
+      "evidence": "Not stated anywhere in the record or deposit"
+    },
+    {
+      "location": "all rows file mapping",
+      "value": "16 .raw files",
+      "source_ids": [
+        "files"
+      ],
+      "evidence": "16 RAW files, each claimed once; analysis.zip (SEARCH category) is not a run"
+    },
+    {
+      "location": "characteristics[culture medium] rows 1-16",
+      "value": "Roswell Park Memorial Institute 1640 Medium (NCIT:C178973)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper Experimental Model section: THP-1 cultured in RPMI 1640 GlutaMAX, 10% FBS; general to the line, not specific to the histone prep"
+    }
+  ],
+  "limitations": [
+    "Cell line identity inferred (see claim); the histone MS Methods text does not name it.",
+    "Digest enzyme inferred from cited protocols.",
+    "No deposited search parameters; modification list partial.",
+    "Passage and storage temperature not stated (not available). Culture medium is the line-level statement from the paper.",
+    "Paper full text only via NCBI efetch; supplementary tables (Table S4) not consulted."
+  ]
+}

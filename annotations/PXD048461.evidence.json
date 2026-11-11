@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "artifact": "/home/thanadol/Documents/GitHub/NordicSDRF/annotations/PXD048461.sdrf.tsv",
+  "dataset": "PXD048461",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD048461"},
+    {"id": "files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD048461/files/all (25 files: 22 raw, mqpar.xml, MQtxt.zip, Sample_to_data_Kostenki.txt)"},
+    {"id": "s2d", "kind": "deposited-file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/03/PXD048461/Sample_to_data_Kostenki.txt"},
+    {"id": "mqpar", "kind": "deposited-file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/03/PXD048461/mqpar.xml"},
+    {"id": "preprint", "kind": "publication", "location": "https://www.biorxiv.org/content/biorxiv/early/2024/06/17/2024.06.14.598638.full.pdf (bioRxiv 10.1101/2024.06.14.598638; preprint of the paper cited by PRIDE, doi 10.1016/j.qeh.2024.100049, same title/authors/methods)"},
+    {"id": "tableS3", "kind": "supplementary", "location": "https://www.biorxiv.org/content/biorxiv/early/2024/06/17/2024.06.14.598638/DC5/embed/media-5.xlsx?download=true (sheet TableS3, column 'Biomolecular sex')"}
+  ],
+  "claims": [
+    {"location": "source name / comment[data file] rows 1-22", "value": "CGG_1_0182xx <-> P04xx/P05xx raw", "source_ids": ["s2d", "files"], "evidence": "Sample_to_data_Kostenki.txt maps P0491-P0532 to CGG numbers; P0533 = Extraction blank"},
+    {"location": "characteristics[organism] rows 1-21", "value": "Mammuthus primigenius", "source_ids": ["preprint"], "evidence": "Woolly mammoths from Kostenki 11-Ia; Methods: 'Dental powders of 21 mammoths'"},
+    {"location": "characteristics[organism part] rows 1-21", "value": "enamel (UBERON:0001752)", "source_ids": ["pride", "preprint"], "evidence": "Enamel powders; PRIDE organismParts BTO tooth enamel; UBERON:0001752 chosen"},
+    {"location": "characteristics[sex], factor value[sex] rows 1-21", "value": "female/male/not available", "source_ids": ["tableS3", "mqpar"], "evidence": "Table S3 'Biomolecular sex' (F/M/N-A) for the 21 specimens with Proteomic analysis = Y; experiment names in mqpar carry _F/_M for P0491,P0492,P0517 (F) and P0514,P0525,P0529 (M), consistent. N/A = no sex assignment possible. Preprint text: of 11 proteomically assigned unknowns, 5 male and 2 female are confident (reported M/F in Table S3); the 4 'possible' calls and 4 no-amelogenin specimens are N/A in Table S3 and recorded as not available. Totals: 5 female, 8 male, 8 not available"},
+    {"location": "characteristics[developmental stage] rows 1-21", "value": "not available", "source_ids": ["preprint"], "evidence": "Paper states no data on relative size/age of sampled individuals; adults and juveniles possible"},
+    {"location": "row 22 (Extraction blank)", "value": "negative control, organism etc. not applicable", "source_ids": ["preprint", "s2d"], "evidence": "'An extraction blank was performed alongside the samples'; P0533 = Extraction blank"},
+    {"location": "comment[instrument], comment[dissociation method], comment[collision energy], comment[ms2 mass analyzer], comment[ms1 scan range], comment[ms2 min mz]", "value": "Orbitrap Exploris 480; HCD 30%; Orbitrap 15000 res; 350-1400 m/z; first m/z 120", "source_ids": ["pride", "preprint"], "evidence": "PRIDE sampleProcessingProtocol and Methods; PRIDE instruments MS:1003028 concordant. Raw header not read (not verified from raw files)"},
+    {"location": "comment[cleavage agent details]", "value": "unspecific cleavage (MS:1001956)", "source_ids": ["mqpar", "pride"], "evidence": "dataProcessingProtocol 'unspecific digestion'; mqpar enzymeMode 4 with empty enzymes list; no protease digestion in sample prep (acid-demineralised enamel, loaded directly on Evotip)"},
+    {"location": "comment[modification parameters]", "value": "Deamidated NQ, Phospho STY, Oxidation MP, all Variable", "source_ids": ["mqpar"], "evidence": "mqpar.xml variableModifications; fixedModifications empty"},
+    {"location": "comment[precursor mass tolerance], comment[fragment mass tolerance]", "value": "4.5 ppm; 20 ppm", "source_ids": ["mqpar"], "evidence": "mainSearchTol 4.5 ppm; mqpar msmsParams FTMS MatchTolerance 20 ppm (MS2 analyzer is Orbitrap)"},
+    {"location": "comment[reduction reagent], comment[alkylation reagent]", "value": "not available", "source_ids": ["preprint"], "evidence": "Methods describe no reduction/alkylation; not asserted as omitted"}
+  ],
+  "limitations": [
+    "Published QEH paper not read (preprint used); preprint Table S3 is the sex source",
+    "Raw-file headers not read to verify instrument",
+    "MQtxt.zip (MaxQuant results) not inspected",
+    "MS2 fragment tolerance taken from the mqpar FTMS block"
+  ]
+}
