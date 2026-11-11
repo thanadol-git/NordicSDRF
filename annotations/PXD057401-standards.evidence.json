@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD057401-standards.sdrf.tsv",
+  "dataset": "PXD057401",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD057401"},
+    {"id": "files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD057401/files/all"},
+    {"id": "outputs", "kind": "deposited_file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/04/PXD057401/Outputs.zip"},
+    {"id": "paper", "kind": "publication", "location": "https://doi.org/10.1007/s12520-025-02205-7"}
+  ],
+  "claims": [
+    {"location": "source name, characteristics[synthetic peptide], characteristics[calibration level] rows 1-24", "value": "six calibration levels A-F of synthetic amelogenin peptides", "source_ids": ["paper", "files", "outputs"], "evidence": "Paper specifies purchased synthetic amelogenin peptide targets and six-point calibration; all 24 RAW names encode STD_A through STD_F, with four runs each; Skyline output calls these files Standard and records their analyte concentration by level."},
+    {"location": "comment[technical replicate] rows 1-24", "value": "four instrument repeat numbers per standard level", "source_ids": ["files", "outputs"], "evidence": "PRIDE RAW filenames end _1 through _4 for each STD level. The deposited Skyline output corroborates 23 standard runs but omits STD_F_1; PRIDE explicitly contains that RAW file. The paper's prose says three repeats, but the deposit contains four runs for each level."},
+    {"location": "comment[data file] rows 1-24", "value": "24 exact standard-curve RAW filenames", "source_ids": ["files", "outputs"], "evidence": "All 24 PRIDE RAW files with STDcurve in the name are claimed once; the other 35 archaeological runs are in a separate SDRF."},
+    {"location": "comment[instrument], comment[proteomics data acquisition method], comment[cleavage agent details] rows 1-24", "value": "Orbitrap Exploris 480 PRM of synthetic peptides without enzyme digestion", "source_ids": ["pride", "paper"], "evidence": "PRIDE protocol and paper describe Exploris 480 PRM method for five synthetic peptide targets; no protein digestion applies to pre-made peptides."}
+  ],
+  "limitations": [
+    "The Skyline output's Analyte Concentration values are 10, 7.5, 5, 2.5, 1 and 0.1 for levels A-F, but no unit was found in the deposited output, so only level letters are encoded.",
+    "The paper says each calibration standard was run three times, while the deposit contains four RAW runs per level; the SDRF follows the exact deposited files. Skyline's processed output omits STD_F_1 although PRIDE lists it.",
+    "The reconcile helper flags not applicable cleavage as unsupported because it seeks a named reagent; these synthetic peptides were not enzyme-digested."
+  ]
+}

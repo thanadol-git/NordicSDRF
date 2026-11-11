@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD075502.sdrf.tsv",
+  "dataset": "PXD075502",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD075502"},
+    {"id": "files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD075502/files/all"},
+    {"id": "description", "kind": "deposited_file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/06/PXD075502/Description_of_uploaded_files.pdf"}
+  ],
+  "claims": [
+    {"location": "source name, comment[technical replicate], characteristics[oxidant treatment], factor value[oxidant treatment] rows 1-31", "value": "31 porcine elastase aliquots assigned to eight oxidant-treatment conditions with deposited replicate numbers", "source_ids": ["description", "pride"], "evidence": "The deposited PDF enumerates all 31 exact .d run stems, sample IDs, replicate indices, and oxidant treatment names; PRIDE protocol describes aliquots of a purified protein preparation. The numbered repeats are represented as technical replicates because independent biological specimens are not evidenced."},
+    {"location": "comment[data file] rows 1-31", "value": "31 exact PRIDE .d.zip RAW transfer objects", "source_ids": ["files", "description"], "evidence": "Each PDF .d run stem exactly matches one archive filename after appending .zip; all 31 RAW objects are claimed once."},
+    {"location": "characteristics[organism] rows 1-31", "value": "Sus scrofa", "source_ids": ["pride", "description"], "evidence": "Protocol states porcine elastase and project species is domestic pig; no pig tissue sample was analyzed."},
+    {"location": "comment[instrument], comment[proteomics data acquisition method], comment[cleavage agent details], comment[precursor mass tolerance], comment[fragment mass tolerance] rows 1-31", "value": "impact II, DDA, trypsin, 30 ppm precursor and fragment", "source_ids": ["pride"], "evidence": "PRIDE sample protocol states impact II and data-dependent MS/MS with SP3 trypsin digest; search protocol gives both tolerances as 30 ppm."},
+    {"location": "characteristics[biological replicate] rows 1-31", "value": "1 for the single evidenced purified-protein source", "source_ids": ["pride"], "evidence": "The protocol describes aliquots of purified porcine elastase, without distinct biological specimens."}
+  ],
+  "limitations": [
+    "The deposited PDF labels replicates 1-4 without classifying them as biological or technical. They are recorded as technical/reaction repeats of one evidenced purified-protein source; independent biological specimens are not claimed.",
+    "No comment[modification parameters] column is emitted because the PRIDE processing protocol lists a complex variable modification search that has not been fully reconciled to controlled-vocabulary terms. The protocol is the source of record for these settings.",
+    "Dissociation method is not stated. Each comment[data file] names the PRIDE .d.zip transfer object, while the PDF lists the internal .d folder stem."
+  ]
+}

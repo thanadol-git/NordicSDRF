@@ -2,33 +2,25 @@
   "schema_version": 1,
   "artifact": "annotations/PXD018051.sdrf.tsv",
   "dataset": "PXD018051",
-  "artifact_sha256": "527c1c3a4741dd58a848d2b1c8e483e556e8b26c2a3fd385b8d8d951dc530df9",
+  "artifact_sha256": "222f0f78370d54044bbd898da265ded7deeb0e2b58bb9e34dca2381eded904eb",
   "sources": [
     {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD018051"},
-    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD018051/files/all (6 entries, all projectAccessions contain PXD018051)"},
-    {"id": "maxquant", "kind": "deposited search output", "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/10/PXD018051/MaxQuantOutput.zip (HTTP-range read of MaxQuant Output/parameters.txt and summary.txt)"},
-    {"id": "paper", "kind": "publication", "location": "none: PRIDE references empty, Europe PMC search for PXD018051 returns no matching paper (only an unrelated ESHG abstract and a different Louisbourg preprint)"}
+    {"id": "files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD018051/files/all"},
+    {"id": "paper", "kind": "publication", "location": "https://doi.org/10.1016/j.jasrep.2020.102573"}
   ],
   "claims": [
-    {"location": "characteristics[organism] rows 1-4", "value": "Homo sapiens", "source_ids": ["pride"], "evidence": "organisms NEWT:9606; abstract: 46 individuals from Sct. Albert's cemetery"},
-    {"location": "characteristics[organism part] rows 1-4", "value": "femur", "source_ids": ["pride"], "evidence": "sampleProcessingProtocol: cortical bone from proximal posterior femur shaft"},
-    {"location": "characteristics[individual] rows 1-4", "value": "ar, ay, n, oo", "source_ids": ["pride", "pride-files", "maxquant"], "evidence": "protocol names the four LC-MS samples ay, oo/ø, ar, n; MaxQuant experiment names ar_01, ay_01, n_01-005, oo_01"},
-    {"location": "row bk (all sample columns)", "value": "not applicable / negative control", "source_ids": ["pride", "maxquant"], "evidence": "protocol: a (digestion) blank sample was prepared; run name ATbk, MaxQuant experiment bk_01; identification of bk as the digestion blank is inferred from the code"},
-    {"location": "characteristics[age], [sex], [disease] rows 1-4", "value": "not available", "source_ids": ["pride"], "evidence": "no per-individual age/sex/pathology for the four LC-MS samples in the deposit; paper not accessible"},
-    {"location": "comment[instrument]", "value": "Q Exactive HF-X", "source_ids": ["pride"], "evidence": "protocol: EASY-nLC 1200 coupled to Q Exactive HF-X; PRIDE instruments MS:1002877. Raw header not read."},
-    {"location": "comment[cleavage agent details]", "value": "Trypsin", "source_ids": ["pride"], "evidence": "protocol: trypsin 1:50 overnight digestion (MaxQuant searched Trypsin/P semispecific, 0 missed cleavages)"},
-    {"location": "comment[modification parameters]", "value": "8 variable mods, no fixed", "source_ids": ["maxquant"], "evidence": "summary.txt Variable modifications: Oxidation (M);Acetyl (Protein N-term);Carboxyglutamic acid;Deamidation (NQ);Gln->pyro-Glu;Glu->pyro-Glu;Hydroxyproline;Carbamidomethyl (C); Fixed modifications empty"},
-    {"location": "comment[fragment mass tolerance]", "value": "20 ppm", "source_ids": ["maxquant"], "evidence": "parameters.txt MS/MS tol. (FTMS) 20 ppm"},
-    {"location": "comment[precursor mass tolerance]", "value": "not available", "source_ids": ["maxquant"], "evidence": "main-search precursor tolerance not in parameters.txt/summary.txt (no mqpar.xml)"},
-    {"location": "comment[dissociation method]", "value": "HCD", "source_ids": ["pride"], "evidence": "protocol: normalised collision energy 28 on a Q Exactive HF-X (HCD is the instrument's fragmentation); not literally named"},
-    {"location": "comment[proteomics data acquisition method]", "value": "DDA", "source_ids": ["pride"], "evidence": "protocol: top 12 mode, dynamic exclusion 20 s"},
-    {"location": "comment[label]", "value": "label free sample", "source_ids": ["pride"], "evidence": "quantificationMethods: Label free; MaxQuant multiplicity 1"},
-    {"location": "comment[reduction reagent], [alkylation reagent]", "value": "not available", "source_ids": ["pride"], "evidence": "no reduction/alkylation reagent stated; Carbamidomethyl only a variable search mod"}
+    {"location": "source name, characteristics[organism], characteristics[organism part], characteristics[material type], characteristics[individual] rows 1-5", "value": "four archaeological human femoral cortical-bone samples plus a digestion blank", "source_ids": ["pride", "files", "paper"], "evidence": "The PRIDE protocol specifies human femoral cortical bone, four individual codes ar, ay, n, oo, and a digestion blank. Each exact RAW filename contains the matching AT code. The paper identifies the cemetery cohort and bone material."},
+    {"location": "characteristics[osteocalcin concentration group], factor value[osteocalcin concentration group] rows 1-5", "value": "ar and n high; ay and oo low; blank not applicable", "source_ids": ["pride"], "evidence": "The PRIDE sample protocol explicitly identifies ar and n as the highest osteocalcin samples and ay and oo as the lowest."},
+    {"location": "comment[data file] rows 1-5", "value": "all five deposited RAW runs once each", "source_ids": ["files", "pride"], "evidence": "PRIDE lists five RAW files, each bearing an AT code that matches the protocol's four sample codes or the stated blank."},
+    {"location": "comment[instrument], comment[proteomics data acquisition method], comment[cleavage agent details], comment[collision energy], comment[ms2 mass analyzer] rows 1-5", "value": "Q Exactive HF-X, Top12 DDA, overnight trypsin digestion, normalized collision energy 28, Orbitrap MS2", "source_ids": ["pride"], "evidence": "The PRIDE protocol states the instrument, Top12 method, trypsin digestion, normalized collision energy, and MS2 resolution. HCD and Orbitrap MS2 analyzer are inferred from the HF-X instrument and protocol details."},
+    {"location": "comment[modification parameters], comment[fragment mass tolerance] rows 1-5", "value": "six stated variable search modifications; fragment tolerance not available", "source_ids": ["pride"], "evidence": "PRIDE dataProcessingProtocol explicitly lists oxidation M, deamidation N/Q, Gln->pyro-Glu, Glu->pyro-Glu, carbamidomethylation C, and gamma carboxylation E as variable modifications. It does not state a fragment mass tolerance."}
   ],
   "limitations": [
-    "comment[collision energy] 28 NCE comes from the PRIDE protocol (normalised collision energy of 28).",
-    "No publication available; sample age, sex, pathology and which individual each code refers to are unknown beyond the codes.",
-    "Raw file headers not read to verify the instrument model.",
-    "bk interpreted as the digestion blank from the code and protocol text."
+    "Age, sex, and pathology are not mapped to the four run codes; those cells remain not available.",
+    "The ATbk code is interpreted as the stated digestion blank; the deposit does not explicitly expand that code.",
+    "HCD and Orbitrap MS2 analyzer are instrument-based inferences, not literal protocol labels.",
+    "The wet-lab enzyme is trypsin; MaxQuant's semi-specific Trypsin/P search setting is not used as the cleavage-agent value.",
+    "The full instrument RAW headers were not read.",
+    "The deposited MaxQuant output archive could not be independently inspected in this review environment, so the SDRF uses only the six modifications stated in PRIDE and leaves fragment tolerance not available."
   ]
 }

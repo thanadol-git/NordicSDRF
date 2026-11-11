@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD075443-dia.sdrf.tsv",
+  "dataset": "PXD075443",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD075443"},
+    {"id": "files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD075443/files/all"},
+    {"id": "dia_stats", "kind": "deposited_file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/07/PXD075443/report.stats.tsv"},
+    {"id": "raw_wt", "kind": "deposited_file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/07/PXD075443/D11_Lysate_WT_RD12_1_42372.d.zip"},
+    {"id": "raw_ko", "kind": "deposited_file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/07/PXD075443/D11_Lysate_KO_G1_1_42373.d.zip"}
+  ],
+  "claims": [
+    {"location": "source name, characteristics[organism], characteristics[organism part], characteristics[biological replicate], characteristics[disease], characteristics[age], characteristics[sex], characteristics[genotype], characteristics[differentiation day], factor value[genotype] rows 1-2", "value": "day-11 human stem cell-derived midbrain differentiation, WT versus SULF1/2 double knockout", "source_ids": ["pride", "files"], "evidence": "PRIDE sample protocol describes day-11 WT and SULF1/2 DKO lysates; exact RAW names distinguish WT_RD12 and KO_G1. Donor age, sex, and additional biological replicates are not asserted."},
+    {"location": "comment[data file], comment[proteomics data acquisition method] rows 1-2", "value": "the 42372 and 42373 acquisitions are DIA", "source_ids": ["files", "dia_stats", "raw_wt", "raw_ko"], "evidence": "Deposited DIA-NN report.stats.tsv lists both exact .d run stems as DIA processed runs. The two other PRIDE RAWs were DDA and have a separate approved SDRF."},
+    {"location": "comment[instrument], comment[cleavage agent details], comment[modification parameters], comment[ms1 scan range] rows 1-2", "value": "timsTOF Pro, final trypsin cleavage, fixed carbamidomethyl C, variable oxidation M and protein N-terminal acetylation, 100-1700 m/z", "source_ids": ["pride"], "evidence": "PRIDE sample and data-processing protocols state these method settings. The protocol also states a preceding one-hour Lys-C incubation, which the DIA template's single-valued cleavage column cannot represent alongside trypsin."}
+  ],
+  "limitations": [
+    "The installed sdrf-pipelines DIA template accepts the plain label Data-independent acquisition, while the local specification also lists ontology-encoded equivalents. The SDRF uses the installed-template value; the deposited method is DIA-PASEF.",
+    "Exact DIA isolation-window bounds are not deposited, so scan-window fields are not available.",
+    "The source protocol used Lys-C for one hour before overnight trypsin digestion. The DIA template permits only one cleavage-agent value, so the SDRF records the final trypsin step; the preceding Lys-C step is retained in this manifest and the annotation report."
+  ]
+}

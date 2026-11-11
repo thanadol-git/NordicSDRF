@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD033732.sdrf.tsv",
+  "dataset": "PXD033732",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD033732"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD033732/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9772232/"
+    },
+    {
+      "id": "raw1",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2023/02/PXD033732/AN_1_BA5_1_6983.d.zip"
+    },
+    {
+      "id": "raw2",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2023/02/PXD033732/AN_2_BA6_1_6984.d.zip"
+    },
+    {
+      "id": "raw3",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2023/02/PXD033732/AN_BA4_1_6982.d.zip"
+    },
+    {
+      "id": "raw4",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2023/02/PXD033732/Ctrl_1_BA2_1_6979.d.zip"
+    },
+    {
+      "id": "raw5",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2023/02/PXD033732/Ctrl_2_BA3_1_6980.d.zip"
+    },
+    {
+      "id": "raw6",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/02/PXD033732/Ctrl_BA1_1_6978.d.zip"
+    },
+    {
+      "id": "raw7",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2023/02/PXD033732/Mut_1_BA8_1_6987.d.zip"
+    },
+    {
+      "id": "raw8",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/02/PXD033732/Mut_2_BB1_1_6988.d.zip"
+    },
+    {
+      "id": "raw9",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2023/02/PXD033732/Mut_BA7_1_6986.d.zip"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[organism], characteristics[cell type], characteristics[anastellin exposure], factor value[anastellin exposure] rows 1-9",
+      "value": "Human coronary artery smooth muscle cell conditioned media, control or 30 \u03bcM wild-type/mutant anastellin for 24 h",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE and paper Methods identify HCASMC culture supernatants and the three exposure groups."
+    },
+    {
+      "location": "characteristics[biological replicate], comment[data file] rows 1-9",
+      "value": "Three separately named runs per control, AN and mutant group",
+      "source_ids": [
+        "pride",
+        "paper",
+        "files",
+        "raw1",
+        "raw2",
+        "raw3",
+        "raw4",
+        "raw5",
+        "raw6",
+        "raw7",
+        "raw8",
+        "raw9"
+      ],
+      "evidence": "Paper states triplicate culture supernatants; PRIDE has exactly three .d.zip runs per condition, with condition and replicate suffixes."
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method], comment[ms1 scan range] rows 1-9",
+      "value": "Bruker timsTOF Pro, diaPASEF, 100-1700 m/z",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE and paper Methods describe timsTOF Pro in DIA PASEF mode and 100-1700 m/z scans; the installed parser accepts the plain DIA class label."
+    },
+    {
+      "location": "comment[cleavage agent details], comment[precursor mass tolerance], comment[modification parameters] rows 1-9",
+      "value": "Trypsin, 10 ppm precursor accuracy, fixed carbamidomethylation and variable oxidation and N-terminal acetylation",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE sample protocol specifies trypsin digestion and data-processing protocol specifies the search settings."
+    }
+  ],
+  "limitations": [
+    "No donor age or sex is reported for the HCASMC cultures; both fields are not available.",
+    "Exact DIA isolation windows and dissociation method are not deposited.",
+    "The installed sdrf-pipelines DIA template accepts only plain Data-independent acquisition, while the local template additionally permits ontology encoded DIA descendants."
+  ]
+}

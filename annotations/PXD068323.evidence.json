@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD068323.sdrf.tsv",
+  "dataset": "PXD068323",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD068323"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD068323/files/all"
+    },
+    {
+      "id": "design",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/10/PXD068323/experimental_design.txt"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/10/PXD068323/mqpar.xml"
+    },
+    {
+      "id": "archive",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/10/PXD068323/raw.zip"
+    },
+    {
+      "id": "zip_index",
+      "kind": "local_file",
+      "location": "scratchpad/PXD068323/raw_tail.bin"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "ontology",
+      "location": "https://www.cellosaurus.org/CVCL_0045"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[organism], characteristics[cell line], characteristics[cellosaurus accession], characteristics[subcellular fraction] rows 1-6",
+      "value": "Human HEK293 chromatin FLAG IP samples",
+      "source_ids": [
+        "pride",
+        "cellosaurus"
+      ],
+      "evidence": "PRIDE description identifies FLAGHA-SCAF1 chromatin IP in HEK293; Cellosaurus maps HEK293 to CVCL_0045."
+    },
+    {
+      "location": "characteristics[experimental group], factor value[experimental group], characteristics[biological replicate] rows 1-6",
+      "value": "S1-S3 control, S4-S6 bait, three replicates per group",
+      "source_ids": [
+        "design"
+      ],
+      "evidence": "Deposited experimental_design.txt maps all six exact run stems to control or bait groups and sample IDs S1-S6."
+    },
+    {
+      "location": "comment[data file] rows 1-6",
+      "value": "Six exact .d acquisition folder names inside raw.zip",
+      "source_ids": [
+        "design",
+        "mqpar",
+        "archive",
+        "zip_index"
+      ],
+      "evidence": "Each design stem is listed as a .d run in deposited mqpar.xml and as raw/<stem>.d/ in the ZIP64 central directory. The physical PRIDE transfer object is raw.zip."
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method], comment[cleavage agent details] rows 1-6",
+      "value": "timsTOF Pro, DDA-PASEF, trypsin",
+      "source_ids": [
+        "pride",
+        "design",
+        "mqpar"
+      ],
+      "evidence": "PRIDE sample protocol specifies timsTOF Pro, PASEF mode and overnight trypsin digestion; each run name includes DDA."
+    },
+    {
+      "location": "comment[modification parameters], comment[precursor mass tolerance], comment[fragment mass tolerance] rows 1-6",
+      "value": "MaxQuant fixed carbamidomethyl C, variable oxidation M and protein N-terminal acetylation; 10 ppm precursor and 40 ppm TOF fragment tolerance",
+      "source_ids": [
+        "mqpar"
+      ],
+      "evidence": "Deposited mqpar.xml was read by sdrf-tools search-params; instrument is TOF for fragment tolerance."
+    }
+  ],
+  "limitations": [
+    "The control construct identity is not specified; rows retain only the deposited group label control.",
+    "The six comment[data file] values are internal .d directory names inside PRIDE raw.zip, not standalone downloadable PRIDE files.",
+    "PRIDE structured instrument dropdown says timsTOF Pro 2, while sample protocol says timsTOF Pro; protocol is used.",
+    "PRIDE data-processing prose mentions swine/bovine databases inconsistent with human HEK293; sample description and Cellosaurus determine organism."
+  ]
+}

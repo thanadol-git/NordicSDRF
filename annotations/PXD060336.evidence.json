@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD060336.sdrf.tsv",
+  "dataset": "PXD060336",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD060336"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD060336/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12546770/"
+    },
+    {
+      "id": "raw1",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/10/PXD060336/20221004_EXPL0_LC12_IAH_collab_LMA_PVC_04_TR1.raw"
+    },
+    {
+      "id": "raw2",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/10/PXD060336/20221004_EXPL0_LC12_IAH_collab_LMA_PVC_04_TR2.raw"
+    },
+    {
+      "id": "raw3",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/10/PXD060336/20221004_EXPL0_LC12_IAH_collab_LMA_PVC_04_TR3.raw"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[organism], characteristics[organism part], characteristics[biological replicate], characteristics[protein preparation] rows 1-3",
+      "value": "one purified Photorhabdus luminescens PlPVC1 preparation expressed in E. coli BL21Star(DE3)",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE protocol describes expression of the PlPVC1 operon in E. coli BL21Star(DE3), purification of PlPVC1 particles, and a single purified PlPVC1 sample."
+    },
+    {
+      "location": "comment[data file], comment[technical replicate] rows 1-3",
+      "value": "the three exact TR1, TR2, TR3 RAW files are three technical injections",
+      "source_ids": [
+        "pride",
+        "files",
+        "raw1",
+        "raw2",
+        "raw3"
+      ],
+      "evidence": "PRIDE protocol explicitly states three technical replicates (n=3); accession-scoped file list gives exactly three TR1-TR3 RAW files."
+    },
+    {
+      "location": "comment[proteomics data acquisition method], comment[instrument], comment[dissociation method], comment[ms1 scan range] rows 1-3",
+      "value": "TopN 13 DDA on Orbitrap Exploris 480, HCD, 300-1300 m/z",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE MS acquisition protocol specifies Exploris 480, precursor selection, TopN 13 dependent scans, HCD and full-scan 300-1300 m/z."
+    },
+    {
+      "location": "comment[cleavage agent details], comment[precursor mass tolerance], comment[fragment mass tolerance], comment[modification parameters] rows 1-3",
+      "value": "trypsin digestion; final search 4.5 ppm precursor and 20 ppm fragment; fixed carbamidomethylation and variable oxidation, protein N-terminal acetylation, N/Q deamidation and peptide N-terminal Q pyroglutamate",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample and data-processing protocols specify trypsin, MaxQuant final search tolerances and modifications."
+    }
+  ],
+  "limitations": [
+    "The source protein species is Photorhabdus luminescens; recombinant expression host E. coli is recorded separately in characteristics[protein preparation].",
+    "Only three technical injections are deposited; the study does not describe biological replicates for this purified preparation."
+  ]
+}

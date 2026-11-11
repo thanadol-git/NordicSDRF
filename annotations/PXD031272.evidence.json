@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD031272.sdrf.tsv",
+  "dataset": "PXD031272",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD031272"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD031272/files/all"
+    },
+    {
+      "id": "map",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/06/PXD031272/Sample-Description.txt"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "ontology",
+      "location": "https://www.cellosaurus.org/CVCL_0548"
+    },
+    {
+      "id": "raw1",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/06/PXD031272/QHF1_07201_AL.raw"
+    },
+    {
+      "id": "raw2",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/06/PXD031272/QHF1_07202_AL.raw"
+    },
+    {
+      "id": "raw3",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/06/PXD031272/QHF1_07203_AL.raw"
+    },
+    {
+      "id": "raw4",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/06/PXD031272/QHF1_07204_AL.raw"
+    },
+    {
+      "id": "raw5",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2022/06/PXD031272/QHF1_07205_AL.raw"
+    },
+    {
+      "id": "raw6",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2022/06/PXD031272/QHF1_07206_AL.raw"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[genotype], characteristics[biological replicate], factor value[genotype], comment[data file] rows 1-6",
+      "value": "QHF1_07201-203 uPARAP KO, QHF1_07204-206 WT; three biological replicates each",
+      "source_ids": [
+        "pride",
+        "files",
+        "map",
+        "raw1",
+        "raw2",
+        "raw3",
+        "raw4",
+        "raw5",
+        "raw6"
+      ],
+      "evidence": "Deposited Sample-Description.txt maps every RAW stem to SaOS-2 uPARAP KO or WT; PRIDE protocol states three biological replicates per genotype."
+    },
+    {
+      "location": "characteristics[organism], characteristics[disease], characteristics[material type], characteristics[cell line], characteristics[cellosaurus accession], characteristics[cellosaurus name] rows 1-6",
+      "value": "Human SaOS-2 osteosarcoma-derived cell line CVCL_0548",
+      "source_ids": [
+        "map",
+        "pride",
+        "cellosaurus"
+      ],
+      "evidence": "The deposited map names SaOS-2; Cellosaurus confirms human osteosarcoma origin and accession."
+    },
+    {
+      "location": "characteristics[subcellular fraction] rows 1-6",
+      "value": "endosome enriched",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample protocol states endosome-enriched fractions were isolated by ultracentrifugation."
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method], comment[cleavage agent details], comment[ms1 scan range] rows 1-6",
+      "value": "Q Exactive HF, Top20 DDA, trypsin, 400-1600 m/z",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample protocol explicitly gives dd-MS2 Top20, Q Exactive HF, overnight trypsin digest, and MS1 range."
+    },
+    {
+      "location": "comment[modification parameters] rows 1-6",
+      "value": "fixed carbamidomethyl C and variable oxidation M, protein N-terminal acetylation, deamidation N",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE data-processing protocol lists MaxQuant search modifications and residue specificity."
+    }
+  ],
+  "limitations": [
+    "The record does not supply donor age or sex at study-sample level.",
+    "The official offline validator warns Saos-2 is absent from its CLO/BTO/EFO cache, while Cellosaurus resolves CVCL_0548.",
+    "The reconcile helper treats the WT genotype as a non-osteosarcoma control, although osteosarcoma describes the origin of both SaOS-2-derived cell lines."
+  ]
+}

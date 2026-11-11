@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD075443-dda.sdrf.tsv",
+  "dataset": "PXD075443",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD075443"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD075443/files/all"
+    },
+    {
+      "id": "fragpipe_manifest",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/07/PXD075443/fragpipe-files.fp-manifest"
+    },
+    {
+      "id": "raw1",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/07/PXD075443/D11_Lysate_KO_G1_1_42205.d.zip"
+    },
+    {
+      "id": "raw2",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/07/PXD075443/D11_Lysate_WT_RD12_1_42204.d.zip"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[organism], characteristics[organism part], characteristics[biological replicate], characteristics[disease], characteristics[age], characteristics[sex], characteristics[genotype], characteristics[differentiation day], factor value[genotype] rows 1-2",
+      "value": "human stem cell-derived midbrain differentiation at day 11, WT versus SULF1/2 double knockout; donor age and sex not supplied",
+      "source_ids": [
+        "pride",
+        "files"
+      ],
+      "evidence": "PRIDE protocol states WT and SULF1/2 DKO D11 lysates; RAW names explicitly distinguish KO_G1 and WT_RD12. No donor age or sex is assigned."
+    },
+    {
+      "location": "comment[data file], comment[proteomics data acquisition method] rows 1-2",
+      "value": "the two exact 42204/42205 RAWs are DDA",
+      "source_ids": [
+        "files",
+        "fragpipe_manifest",
+        "raw1",
+        "raw2"
+      ],
+      "evidence": "Deposited fragpipe-files.fp-manifest lists these two exact .d run names with DDA and no other DDA RAWs."
+    },
+    {
+      "location": "comment[instrument], comment[cleavage agent details], comment[modification parameters], comment[ms1 scan range] rows 1-2",
+      "value": "timsTOF Pro; sequential Lys-C and trypsin; fixed CAM, variable N-terminal acetylation and methionine oxidation; 100-1700 m/z",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample and data processing protocols state all these settings."
+    }
+  ],
+  "limitations": [
+    "This is the DDA subset; the two DIA RAWs are in a separate draft because their template and acquisition requirements differ.",
+    "PRIDE does not provide donor age, sex, or multiple biological replicate identities for these two line-labelled samples.",
+    "The deterministic reconcile helper only reads the first of two repeated cleavage-agent columns and incorrectly reports trypsin missing; the official parser accepts both columns."
+  ]
+}

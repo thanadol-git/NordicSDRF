@@ -1,0 +1,21 @@
+batch_order	accession	pride_raw_bytes	pride_raw_count	annotation_status	title
+1	PXD045032	5102221864	12	blocked: mouse ID-to-genotype map missing	Loss of the NK Motif And AnKyrin Repeat Domain 1 (KANK1) leads to lymphoid compartment dysregulation
+2	PXD075443	5519897983	4	approved: DDA and DIA subsets	Heparan sulfate Sulfatases are essential for the patterning of human stem cell-derived midbrain dopa
+3	PXD037269	5536582330	4	blocked: painting sample organism assignment unresolved	‘A lost chapter of ancient art’: archaeometric examinations of panel paintings from Roman Egypt
+4	PXD044835	5981231124	12	approved: QL and QN subsets	Retron-Eco1 assembles NAD+-hydrolyzing filaments that provide immunity against bacteriophages
+5	PXD029885	6241064495	34	blocked: heterogeneous run-to-sample design map missing	Exploring glycosylation of mucins with O-glycodomain reporters expressed in glycoengineered HEK293 c
+6	PXD054499	6426551717	1	blocked: S1-S22 hibernation-state map missing	Identification of cardiac myosin heavy chain post-translational modifications in hibernating grizzly
+7	PXD060336	6586838707	3	approved	Structural characterization of an extracellular contractile injection system from Photorhabdus lumin
+8	PXD028151	6825285117	5	blocked: TMT channel-to-condition map missing	Regulation of the Golgi apparatus by p38 and JNK kinases during cellular stress responses
+9	PXD047667	6935975770	6	blocked: acquisition method not documented	Identification of potential interactors of COMPANION OF CELLULOSE SYNTHASE (CC) 1
+10	PXD057401	6958430155	59	approved: archaeological and standards subsets	Fresh insights into sex-specific mobility in Copper Age Perdigões (Reguengos de Monsaraz, Portugal)
+11	PXD075502	6976675891	31	approved	Comparison of the reactivity of hypochlorous acid (HOCl) and hyposelenocyanous acid (HOSeCN) with el
+12	PXD031272	7448894467	6	approved	Label free proteomics analysis of osteosarcoma cells differing with respect to expression of endocyt
+13	PXD016395	7931256608	4	blocked: colony and acquisition maps missing	Leaf-cutting ant feces LC-MS/MS
+14	PXD068323	8218501458	1	approved	Chromatin-IP of FLAGHA-SCAF1 in HEK293
+15	PXD056295	8813592464	16	approved	Profiling linkage-specific ubiquitin chain functions reveals a key role of K29-linked ubiquitylation
+16	PXD019679	8822833724	14	blocked: digestion and replicate structure unresolved	GHB analogs confer neuroprotection through specific interaction with the CaMKII  hub domain
+17	PXD018051	8927003430	5	approved	Comparing Biological and Pathological Factors Affecting Osteocalcin Concentrations in Archaeological
+18	PXD009298	9113510466	5	blocked: numbered run-to-mock-up map missing	Modern Paint Binder Controls for Palaeoproteomic Profiling of Conservation Layers on a 14th Century
+19	PXD033732	9234558566	9	approved	Anastellin impacts on the processing of extracellular matrix and stimulates the release of cytokines
+20	PXD038362	9574712579	6	blocked: S1-S6 genotype map missing	The role of damaged mitochondrial DNA in Parkinson Disease

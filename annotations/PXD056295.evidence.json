@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD056295.sdrf.tsv",
+  "dataset": "PXD056295",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD056295"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD056295/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12669653/"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "ontology",
+      "location": "https://www.cellosaurus.org/CVCL_0042"
+    },
+    {
+      "id": "raw1",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/09/PXD056295/Copenhagen_220310_MG_R1_c93_negative.raw"
+    },
+    {
+      "id": "raw2",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/09/PXD056295/Copenhagen_220310_MG_R1_c93_positive.raw"
+    },
+    {
+      "id": "raw3",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2025/09/PXD056295/Copenhagen_220310_MG_R1_wt_negative.raw"
+    },
+    {
+      "id": "raw4",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/09/PXD056295/Copenhagen_220310_MG_R1_wt_positive.raw"
+    },
+    {
+      "id": "raw5",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/09/PXD056295/Copenhagen_220310_MG_R2_c93_negative.raw"
+    },
+    {
+      "id": "raw6",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2025/09/PXD056295/Copenhagen_220310_MG_R2_c93_positive.raw"
+    },
+    {
+      "id": "raw7",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2025/09/PXD056295/Copenhagen_220310_MG_R2_wt_negative.raw"
+    },
+    {
+      "id": "raw8",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2025/09/PXD056295/Copenhagen_220310_MG_R2_wt_positive.raw"
+    },
+    {
+      "id": "raw9",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/09/PXD056295/Copenhagen_220310_MG_R3_c93_negative.raw"
+    },
+    {
+      "id": "raw10",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2025/09/PXD056295/Copenhagen_220310_MG_R3_c93_positive.raw"
+    },
+    {
+      "id": "raw11",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2025/09/PXD056295/Copenhagen_220310_MG_R3_wt_negative.raw"
+    },
+    {
+      "id": "raw12",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/09/PXD056295/Copenhagen_220310_MG_R3_wt_positive.raw"
+    },
+    {
+      "id": "raw13",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2025/09/PXD056295/Copenhagen_220310_MG_R4_c93_negative.raw"
+    },
+    {
+      "id": "raw14",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/09/PXD056295/Copenhagen_220310_MG_R4_c93_positive.raw"
+    },
+    {
+      "id": "raw15",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2025/09/PXD056295/Copenhagen_220310_MG_R4_wt_negative.raw"
+    },
+    {
+      "id": "raw16",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2025/09/PXD056295/Copenhagen_220310_MG_R4_wt_positive.raw"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism], characteristics[disease], characteristics[material type], characteristics[cell line], characteristics[cellosaurus accession], characteristics[cellosaurus name] rows 1-16",
+      "value": "Human U-2-OS osteosarcoma cell line, CVCL_0042",
+      "source_ids": [
+        "pride",
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Paper describes U2OS/shUb derivative lines. Cellosaurus identifies U2OS as a human osteosarcoma cell line CVCL_0042."
+    },
+    {
+      "location": "characteristics[genotype], characteristics[doxycycline exposure], factor value[genotype], factor value[doxycycline exposure] rows 1-16",
+      "value": "HA-Ub WT or K29R clone c93, with or without 0.5 \u00b5g/mL doxycycline for 72 h",
+      "source_ids": [
+        "paper",
+        "pride",
+        "files"
+      ],
+      "evidence": "Paper Methods specify the WT and K29R-c93 lines and plus/minus DOX design; file names encode wt/c93 and positive/negative. Positive/negative is mapped to DOX status from the complete 2x2 design."
+    },
+    {
+      "location": "characteristics[biological replicate], comment[data file] rows 1-16",
+      "value": "Four independently seeded dishes per group, exact R1-R4 RAW filenames",
+      "source_ids": [
+        "paper",
+        "files",
+        "raw1",
+        "raw2",
+        "raw3",
+        "raw4",
+        "raw5",
+        "raw6",
+        "raw7",
+        "raw8",
+        "raw9",
+        "raw10",
+        "raw11",
+        "raw12",
+        "raw13",
+        "raw14",
+        "raw15",
+        "raw16"
+      ],
+      "evidence": "Paper says cells were seeded in quadruplicate 15-cm dishes; deposited names encode R1-R4 in each of four groups."
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method], comment[cleavage agent details], comment[ms1 scan range] rows 1-16",
+      "value": "Orbitrap Exploris 240, top-10 DDA, trypsin, 375-1600 m/z",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE sample protocol explicitly describes Exploris 240, data-dependent acquisition, top 10, trypsin digest, and MS1 range. Structured instrument dropdown conflicts and is not used."
+    },
+    {
+      "location": "comment[precursor mass tolerance] rows 1-16",
+      "value": "5 ppm",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE data-processing protocol states Skyline precursor mass tolerance of 5 ppm."
+    }
+  ],
+  "limitations": [
+    "The deposit does not enumerate the targeted histone PTM search parameters or all Skyline settings, so modification columns were omitted.",
+    "The file-name words positive/negative are interpreted as the plus/minus doxycycline treatments based on the paper design; no separate run manifest spells out the polarity.",
+    "The official offline validator warns U-2-OS is absent from its CLO/BTO/EFO cache, while Cellosaurus resolves CVCL_0042.",
+    "Donor age and sex were not asserted from the historic cell-line origin; they are not available at study sample level."
+  ]
+}

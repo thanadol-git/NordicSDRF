@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD044835-ql.sdrf.tsv",
+  "dataset": "PXD044835",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD044835"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD044835/files/all"
+    },
+    {
+      "id": "raw1",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2024/05/PXD044835/20221024_LUMOS1_LC4_IAH_collab_ACR_AR_QL_W90_00.raw"
+    },
+    {
+      "id": "raw2",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/05/PXD044835/20221024_LUMOS1_LC4_IAH_collab_ACR_AR_QL_Mt00_00.raw"
+    },
+    {
+      "id": "raw3",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/05/PXD044835/20221024_LUMOS1_LC4_IAH_collab_ACR_AR_QL_Mt90_00.raw"
+    },
+    {
+      "id": "raw4",
+      "kind": "deposited_file",
+      "location": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2024/05/PXD044835/20221024_LUMOS1_LC4_IAH_collab_ACR_AR_QL_W00_00.raw"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[organism], characteristics[organism part], characteristics[biological replicate], characteristics[disease], characteristics[genotype], characteristics[NAD+ exposure], factor value[genotype], factor value[NAD+ exposure] rows 1-4",
+      "value": "Purified E. coli Retron-Eco1 QL complexes, WT or E106A, incubated with or without 1 mM NAD+ for 90 min",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample-processing protocol explicitly names the purified WT and E106A complexes, QL/QN experiment split, 1 mM NAD+ incubation, and the no-NAD+ controls."
+    },
+    {
+      "location": "comment[data file], comment[technical replicate] rows 1-4",
+      "value": "Exact 4 QL RAW filenames and condition/replicate suffixes",
+      "source_ids": [
+        "pride",
+        "files",
+        "raw1",
+        "raw2",
+        "raw3",
+        "raw4"
+      ],
+      "evidence": "PRIDE file list gives accession-scoped RAW files. QL names encode W/Mt and 00/90; QN names encode W00/W90 and numbered replicate suffixes."
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method], comment[dissociation method], comment[ms1 scan range] rows 1-4",
+      "value": "Orbitrap Fusion Lumos TopN 3 DDA with EThcD; 350-1350 m/z full scan",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample-processing protocol describes instrument, selected precursors, TopN loop count, EThcD, and separate QL/QN MS1 windows."
+    },
+    {
+      "location": "comment[cleavage agent details], comment[modification parameters] rows 1-4",
+      "value": "trypsin digestion; six MaxQuant variable modification classes",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample-processing protocol specifies separate QL and QN digests; data-processing protocol lists the searched variable modifications."
+    }
+  ],
+  "limitations": [
+    "PRIDE describes one purified preparation per condition but does not specify independent biological batches; biological replicate is recorded as 1.",
+    "The MaxQuant search for QN additionally enabled GluN to accommodate off-target Asp-N activity; the physical QN digest used Asp-N followed by Lys-C.",
+    "Offline ontology cache warns that EThcD MS:1002631 is absent, although the accession and label are established by PSI-MS."
+  ]
+}
