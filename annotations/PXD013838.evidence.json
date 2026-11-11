@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD013838.sdrf.tsv",
+  "dataset": "PXD013838",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD013838"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD013838/files/all (9 files, all projectAccessions contain PXD013838; 4 RAW)"},
+    {"id": "readme", "kind": "deposited file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/11/PXD013838/README.txt (MaxQuant_txt.zip maps to raw 1332,1333; PEAKS_Enamel to 1332,1333; PEAKS_Dentine to 1334; PEAKS_Blank to 1335)"},
+    {"id": "paper", "kind": "publication", "location": "PMC6908745 (https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6908745/fullTextXML); doi:10.1038/s41586-019-1728-8; PMID 31723270"},
+    {"id": "mq-params", "kind": "deposited result file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/11/PXD013838/MaxQuant_txt.zip member txt/parameters.txt, txt/summary.txt, txt/msms.txt (HTTP range read)"},
+    {"id": "peaks", "kind": "deposited result file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/11/PXD013838/PEAKS_{Enamel,Dentine,Blank}_peptides.pep.xml (header search_summary)"},
+    {"id": "raw-headers", "kind": "raw file header (HTTP range 0-262143, utf-16-le)", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/11/PXD013838/20180329_QE5_nLC5_MEM_COLLAB_GeoG_{1332_Enamel_HCL,1334_Dentine_HCL4,1335_Blank}.raw; the 1333_Enamel_TFA.raw range request returned only 4096 bytes (no model string)"},
+    {"id": "ols", "kind": "ontology", "location": "https://www.ebi.ac.uk/ols4/api/ (UBERON:0001752, UBERON:0001751, MS:1002877, MS:1001956, MS:1000422, MS:1000484, PRIDE:0000627, PRIDE:0001016, NCIT:C76716, NCIT:C84228, NCBITaxon:9604, UNIMOD:7/21/27/28/35); NCBI taxonomy esearch for Gigantopithecus returned 0 hits"},
+    {"id": "upstream", "kind": "repository", "location": "/home/thanadol/Documents/GitHub/sdrf-annotated-datasets/datasets/PXD013838/ (directory absent: new dataset)"}
+  ],
+  "claims": [
+    {"location": "characteristics[organism] all non-blank rows", "value": "Hominidae", "source_ids": ["pride", "paper", "ols"], "evidence": "Species is Gigantopithecus blacki (paper) but NCBITaxon has no entry for it (esearch 0 hits; parse_sdrf rejects the species name); PRIDE organism is NEWT:9604 Hominidae. Family-level term used; species recorded in report."},
+    {"location": "characteristics[organism part] rows 1-3", "value": "enamel / enamel / dentine", "source_ids": ["paper", "readme"], "evidence": "Methods: two enamel and one dentine sample from molar CF-B-16; file names Enamel_HCL, Enamel_TFA, Dentine_HCL4."},
+    {"location": "characteristics[treatment] / factor value[treatment] rows 1-3", "value": "Hydrochloric Acid / Trifluoroacetic Acid / Hydrochloric Acid", "source_ids": ["paper"], "evidence": "One enamel and the dentine sample demineralized in 1.2 M HCl, other enamel in 10% TFA, 3 C, 24 h."},
+    {"location": "row 4 (Blank)", "value": "sample type blank; organism/part/disease/stage/strain/sex/treatment not applicable", "source_ids": ["paper", "readme", "pride-files"], "evidence": "File 1335_Blank.raw has no sample; paper mentions both negative extraction blank and injection/system wash blanks, file does not say which."},
+    {"location": "comment[instrument] all rows", "value": "Q Exactive HF-X (MS:1002877)", "source_ids": ["raw-headers", "paper", "pride"], "evidence": "Raw headers of 1332, 1334, 1335 read Q Exactive HF-X; 1333 header unreadable (truncated response), instrument taken from paper and run series."},
+    {"location": "comment[cleavage agent details] all rows", "value": "unspecific cleavage (MS:1001956)", "source_ids": ["paper", "mq-params", "peaks"], "evidence": "Digestion-free protocol, no protease; MaxQuant Enzyme mode Unspecific; PEAKS enzyme None."},
+    {"location": "comment[modification parameters] all rows", "value": "Variable: Oxidation M, Oxidation P, Deamidated N, Deamidated Q, Gln->pyro-Glu, Glu->pyro-Glu, Phospho STY; no fixed", "source_ids": ["mq-params", "peaks", "paper"], "evidence": "MaxQuant summary.txt variable list: Oxidation (M);Hydroxyproline;Gln->pyro-Glu;Glu->pyro-Glu;Deamidation (NQ);Phospho (STY), no fixed; PEAKS pep.xml lists the same masses (+15.99 on M and others, +0.98 N/Q, +79.97 STY, -18.01 E, -17.03 Q). Hydroxyproline written as UNIMOD:35 on P."},
+    {"location": "comment[precursor mass tolerance] / comment[fragment mass tolerance] all rows", "value": "10 ppm / 0.05 Da", "source_ids": ["paper", "peaks"], "evidence": "Paper and PEAKS parameters (parent_error 10, delta 0.05). MaxQuant parameters.txt lists MS/MS tol FTMS 20 ppm (not used; conflict recorded in report)."},
+    {"location": "comment[dissociation method] all rows", "value": "HCD (MS:1000422)", "source_ids": ["mq-params"], "evidence": "msms.txt Fragmentation = HCD for all 1403 MSMS rows (raw 1332, 1333 only); extended to 1334, 1335 as same method series."},
+    {"location": "comment[proteomics data acquisition method] all rows", "value": "Data-dependent acquisition (PRIDE:0000627)", "source_ids": ["mq-params", "paper"], "evidence": "Shotgun proteomics, top-N MS/MS with MSMS scan events; paper states published QE HF-X DDA method."},
+    {"location": "comment[reduction reagent], comment[alkylation reagent]", "value": "not available", "source_ids": ["paper"], "evidence": "Methods do not mention reduction/alkylation; no fixed Carbamidomethyl in either search."}
+  ],
+  "limitations": [
+    "No SDRF-level sex/age/developmental stage: single molar, sex only inferred by authors from absence of AMELY peptides (not stated), so left not available.",
+    "Raw header of 1333_Enamel_TFA.raw could not be read; instrument for that file rests on paper and run series.",
+    "Blank (1335) identity (extraction vs injection blank) is not stated for that file.",
+    "HCD, 10 ppm/0.05 Da are verified from MaxQuant/PEAKS outputs for searched files; dentine and blank only have PEAKS parameters."
+  ]
+}

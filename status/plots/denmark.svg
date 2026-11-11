@@ -27,7 +27,7 @@
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
 <text class="title" x="12" y="22">Denmark — in progress</text>
-<text class="sub" x="12" y="40">959 datasets listed · 215 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
+<text class="sub" x="12" y="40">959 datasets listed · 231 annotated · PRIDE queried 2026-10-01 · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Annotated</text>
 <rect class="c-blocked" fill="#d95926" x="110" y="52" width="12" height="12" rx="2"/>
@@ -41,25 +41,25 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="453" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="470" y="62">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="88.0">Copenhagen</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="74" width="27.1" height="20" rx="2"><title>Copenhagen · Annotated: 24</title></rect>
-<text class="seg" x="123.6" y="88.0" text-anchor="middle">24</text>
-<rect class="c-blocked" fill="#d95926" x="138.1" y="74" width="17.0" height="20" rx="2"><title>Copenhagen · Blocked: 1</title></rect>
-<text class="seg" x="146.6" y="88.0" text-anchor="middle">1</text>
-<rect class="c-in_corpus" fill="#199e70" x="156.1" y="74" width="237.9" height="20" rx="2"><title>Copenhagen · In corpus: 204</title></rect>
-<text class="seg" x="275.0" y="88.0" text-anchor="middle">204</text>
-<rect class="c-todo" fill="#8a8983" x="395.0" y="74" width="362.0" height="20" rx="2"><title>Copenhagen · To do: 310</title></rect>
-<text class="seg" x="576.0" y="88.0" text-anchor="middle">310</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="74" width="35.3" height="20" rx="2"><title>Copenhagen · Annotated: 31</title></rect>
+<text class="seg" x="127.7" y="88.0" text-anchor="middle">31</text>
+<rect class="c-blocked" fill="#d95926" x="146.3" y="74" width="17.0" height="20" rx="2"><title>Copenhagen · Blocked: 1</title></rect>
+<text class="seg" x="154.8" y="88.0" text-anchor="middle">1</text>
+<rect class="c-in_corpus" fill="#199e70" x="164.3" y="74" width="237.9" height="20" rx="2"><title>Copenhagen · In corpus: 204</title></rect>
+<text class="seg" x="283.2" y="88.0" text-anchor="middle">204</text>
+<rect class="c-todo" fill="#8a8983" x="403.2" y="74" width="353.8" height="20" rx="2"><title>Copenhagen · To do: 303</title></rect>
+<text class="seg" x="580.1" y="88.0" text-anchor="middle">303</text>
 <text class="total" x="764.0" y="88.0">539 listed</text>
 <text class="city" x="12" y="118.0">Odense</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="44.7" height="20" rx="2"><title>Odense · Annotated: 39</title></rect>
-<text class="seg" x="132.3" y="118.0" text-anchor="middle">39</text>
-<rect class="c-blocked" fill="#d95926" x="155.7" y="104" width="25.0" height="20" rx="2"><title>Odense · Blocked: 14</title></rect>
-<text class="seg" x="168.2" y="118.0" text-anchor="middle">14</text>
-<rect class="c-in_corpus" fill="#199e70" x="181.7" y="104" width="52.9" height="20" rx="2"><title>Odense · In corpus: 46</title></rect>
-<text class="seg" x="208.1" y="118.0" text-anchor="middle">46</text>
-<rect class="c-todo" fill="#8a8983" x="235.5" y="104" width="91.5" height="20" rx="2"><title>Odense · To do: 79</title></rect>
-<text class="seg" x="281.3" y="118.0" text-anchor="middle">79</text>
-<text class="total" x="334.0" y="118.0">178 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="55.2" height="20" rx="2"><title>Odense · Annotated: 48</title></rect>
+<text class="seg" x="137.6" y="118.0" text-anchor="middle">48</text>
+<rect class="c-blocked" fill="#d95926" x="166.2" y="104" width="25.0" height="20" rx="2"><title>Odense · Blocked: 15</title></rect>
+<text class="seg" x="178.7" y="118.0" text-anchor="middle">15</text>
+<rect class="c-in_corpus" fill="#199e70" x="192.2" y="104" width="52.9" height="20" rx="2"><title>Odense · In corpus: 46</title></rect>
+<text class="seg" x="218.6" y="118.0" text-anchor="middle">46</text>
+<rect class="c-todo" fill="#8a8983" x="246.1" y="104" width="79.8" height="20" rx="2"><title>Odense · To do: 69</title></rect>
+<text class="seg" x="286.0" y="118.0" text-anchor="middle">69</text>
+<text class="total" x="332.9" y="118.0">178 listed</text>
 <text class="city" x="12" y="148.0">Aarhus</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="134" width="76.3" height="20" rx="2"><title>Aarhus · Annotated: 66</title></rect>
 <text class="seg" x="148.1" y="148.0" text-anchor="middle">66</text>
