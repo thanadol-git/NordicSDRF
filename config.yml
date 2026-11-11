@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-10-01
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-11-10)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-11-11)
 
 countries:
   sweden:
@@ -80,7 +80,7 @@ countries:
         pxd_count: 69
         pride_hits: 196
         screened: 0
-        annotated: 46
+        annotated: 44
         blocked: 23
         notes: "PXD001817, PXD004529, and PXD007189 are Utrecht datasets (PI address 'Uppsalalaan 8', countries=[Netherlands]) — keyword false positives; filter on PRIDE `countries` in tier 1"
         in_corpus: 52
@@ -120,8 +120,8 @@ countries:
         search_terms: [Copenhagen, København, Rigshospitalet, Frederiksberg]
         pride_hits: 554
         screened: 0
-        annotated: 24
-        blocked: 1
+        annotated: 64
+        blocked: 18
         notes: "Manifest from build_manifest.py (2026-11-03): 543 confirmed Danish; PXD006201, PXD006679, PXD027901, PXD043505 removed (SDU Odense affiliations only). 32 Odense-list, 1 Aarhus-list and 2 Roskilde-list PXDs have Copenhagen-only affiliations and are still listed under those cities"
         pxd_list: lists/denmark/copenhagen.txt
         pxd_count: 539
@@ -131,8 +131,8 @@ countries:
         search_terms: [Odense, "University of Southern Denmark"]
         pride_hits: 604
         screened: 0
-        annotated: 39
-        blocked: 14
+        annotated: 55
+        blocked: 17
         pxd_list: lists/denmark/odense.txt
         pxd_count: 178
         in_corpus: 65
@@ -195,7 +195,7 @@ countries:
         search_terms: [Oslo, Rikshospitalet, Radiumhospitalet]
         pride_hits: 124
         screened: 0
-        annotated: 110
+        annotated: 108
         blocked: 3
         pxd_list: lists/norway/oslo.txt
         pxd_count: 120
@@ -215,7 +215,7 @@ countries:
         search_terms: [NMBU, "Norwegian University of Life Sciences"]   # never the bare token "Ås"
         pride_hits: 56
         screened: 0
-        annotated: 23
+        annotated: 21
         blocked: 12
         pxd_list: lists/norway/aas.txt
         pxd_count: 56

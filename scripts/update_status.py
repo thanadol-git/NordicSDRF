@@ -12,10 +12,10 @@ Reads config.yml, then for every city:
                   or the live GitHub tree with --corpus github); the PXDs are written
                   to results/<country>/<city>_in_corpus.txt so tier 1 can drop them
   * screened    - data rows in results/<country>/<city>_screen.tsv, if present
-  * annotated   - manifest PXDs with annotations/<PXD>.sdrf.tsv or split
-                  annotations/<PXD>-*.sdrf.tsv artifacts
-  * blocked     - manifest PXDs with annotations/<PXD>.BLOCKED.md or listed in
-                  annotations/BLOCKED.md
+  * annotated   - non-blocked manifest PXDs with annotations/<PXD>.sdrf.tsv
+                  or split annotations/<PXD>-*.sdrf.tsv artifacts
+  * blocked     - manifest PXDs with annotations/<PXD>.BLOCKED.md, listed in
+                  annotations/BLOCKED.md, or marked blocked in a batch tracker
 
 and writes the numbers back to config.yml (values only; comments and layout are
 preserved), to the README block between <!-- status:begin --> / <!-- status:end -->,
@@ -31,6 +31,7 @@ the per-city bar charts in status/plots/<country>.svg from those tables
 from __future__ import annotations
 
 import argparse
+import csv
 import datetime as dt
 import json
 import re
@@ -173,6 +174,13 @@ def blocked_ids() -> set[str]:
     summary = ann / "BLOCKED.md"
     if summary.exists():
         ids |= set(re.findall(r"\b(?:PXD|PAD)\d{6}\b", summary.read_text()))
+    for tracker in (ROOT / "results").glob("**/*_batch.tsv"):
+        with tracker.open(newline="") as fh:
+            rows = csv.DictReader(fh, delimiter="\t")
+            if not {"accession", "annotation_status"}.issubset(rows.fieldnames or []):
+                continue
+            ids.update(row["accession"] for row in rows
+                       if row["annotation_status"].strip().lower().startswith("blocked"))
     return ids
 
 
@@ -193,7 +201,7 @@ def local_counts(country: str, slug: str, city: dict, blocked: set[str], corpus:
         "pxd_count": len(ids),
         "in_corpus": len(in_corpus),
         "screened": screened_count(country, slug),
-        "annotated": sum(has_local_annotation(pxd) for pxd in ids),
+        "annotated": sum(pxd not in blocked and has_local_annotation(pxd) for pxd in ids),
         "blocked": sum(pxd in blocked for pxd in ids),
     }
 
@@ -209,14 +217,14 @@ def city_categories(country: str, slug: str, city: dict, blocked: set[str], corp
     """Manifest PXDs split into CATEGORIES (plot_status.py), each PXD counted once.
 
     A PXD that fits several categories goes to the first one in CATEGORIES order
-    (annotated > blocked > in corpus > screened > to do), so the counts add up to
+    (blocked > annotated > in corpus > screened > to do), so the counts add up to
     the manifest length. None for a city without a curated manifest.
     """
     if not manifest_relpath(country, slug, city):
         return None
     screened = screened_ids(country, slug)
     tests = {
-        "annotated": has_local_annotation,
+        "annotated": lambda p: p not in blocked and has_local_annotation(p),
         "blocked": lambda p: p in blocked,
         "in_corpus": lambda p: p in corpus,
         "screened": lambda p: p in screened,
@@ -315,13 +323,15 @@ def render_status_block(cfg: dict) -> str:
     queried = cfg.get("pride_hits_queried", "unknown date")
     intro = (f"One chart per country, one bar per city (shared x scale within a country). A\n"
              f"curated city's bar is its manifest (`lists/<country>/<city>.txt`), split so every PXD\n"
-             f"sits in exactly one block, first match wins: *Annotated* (SDRF in `annotations/`),\n"
-             f"*Blocked*, *In corpus* (already has an SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/{CORPUS_REPO}),\n"
+             f"sits in exactly one block: *Blocked* (including batch-tracker blockers),\n"
+             f"*Local SDRF* (a local file without a blocker, including files awaiting review),\n"
+             f"*In corpus* (already has an SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/{CORPUS_REPO}),\n"
              f"checked against {cfg.get('corpus_source', 'the local checkout')}), *Screened*, *To do*.\n"
              f"A city without a manifest shows a dashed outline sized by its raw PRIDE full-text\n"
              f"hit count (unioned over `search_terms` in `config.yml`, queried {queried}). *Olink PAD*\n"
              f"is every public Olink dataset in PRIDE's affinity archive, one row per platform\n"
              f"(`olink_pad/<platform>.txt`, rebuilt by `python scripts/build_pad_manifest.py`).\n"
+             f"*To do* is ready for annotation; blocked PXDs also need annotation after their missing metadata is resolved.\n"
              f"The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with\n"
              f"`python scripts/update_status.py`; redraw the charts alone from `tables/` with\n"
              f"`python scripts/plot_status.py`.")

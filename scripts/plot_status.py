@@ -34,10 +34,10 @@ TABLE_DIR = ROOT / "tables"
 PLOT_DIR = ROOT / "status" / "plots"
 
 # (table column, legend label, light colour, dark colour) — left to right in the
-# bar. The order is also the priority update_status.py uses when a PXD fits more
-# than one category (e.g. annotated here *and* already in the community corpus).
+# bar. update_status.py resolves blocked PXDs before assigning the remaining
+# categories in this display order.
 CATEGORIES = [
-    ("annotated", "Annotated", "#2a78d6", "#3987e5"),
+    ("annotated", "Local SDRF", "#2a78d6", "#3987e5"),
     ("blocked", "Blocked", "#d95926", "#d95926"),
     ("in_corpus", "In corpus", "#199e70", "#199e70"),
     ("screened", "Screened", "#c98500", "#c98500"),
@@ -165,8 +165,8 @@ def country_svg(country: dict, cities: list[dict]) -> str:
         f"<style>{STYLE}</style>",
         f'<rect class="bg" width="{WIDTH}" height="{height}" rx="6"/>',
         f'<text class="title" x="12" y="22">{escape(name)} — {escape(human_status(country.get("status")))}</text>',
-        f'<text class="sub" x="12" y="40">{sum(totals.values())} datasets listed · {totals["annotated"]} annotated · '
-        f"PRIDE queried {escape(queried)} · bar length = accessions in the row's manifest (dashed: raw PRIDE hits)</text>",
+        f'<text class="sub" x="12" y="40">{sum(totals.values())} listed · {totals["annotated"]} local SDRFs · '
+        f'{totals["todo"]} to do · {totals["blocked"]} blocked · PRIDE queried {escape(queried)}</text>',
     ]
 
     # legend
