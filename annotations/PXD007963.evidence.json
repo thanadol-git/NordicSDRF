@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD007963.sdrf.tsv",
+  "dataset": "PXD007963",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD007963"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD007963/files/all"
+    },
+    {
+      "id": "taxonomy",
+      "kind": "database",
+      "location": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=32049&mode=info"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[biological replicate], characteristics[genotype], factor value[genotype], comment[data file] rows 1-9",
+      "value": "WT, trcRBC, trcBiBP, three runs each",
+      "source_ids": [
+        "pride",
+        "files"
+      ],
+      "evidence": "Nine accession-verified RAW filenames encode all three groups and replicate 1-3."
+    },
+    {
+      "location": "characteristics[organism] rows 1-9",
+      "value": "Picosynechococcus sp. PCC 7002",
+      "source_ids": [
+        "pride",
+        "taxonomy"
+      ],
+      "evidence": "PRIDE taxon NEWT:32049 is presently named Picosynechococcus sp. PCC 7002 in NCBI Taxonomy."
+    },
+    {
+      "location": "comment[instrument], comment[cleavage agent details], tolerances, modification parameters rows 1-9",
+      "value": "Q Exactive, trypsin, Mascot search settings",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE instrument and sample/data-processing protocols explicitly state the listed instrument, digest and search settings; acquisition method is not established."
+    }
+  ],
+  "limitations": [
+    "PRIDE uses historical name for NCBI taxon 32049; SDRF uses the current NCBI name.",
+    "DDA field is unverified by the accession-specific record and failed independent review."
+  ]
+}

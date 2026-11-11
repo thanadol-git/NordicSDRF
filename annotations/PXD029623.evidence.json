@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029623.sdrf.tsv",
+  "dataset": "PXD029623",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD029623"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD029623/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9941569/"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://www.cellosaurus.org/CVCL_0045"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file], comment[label], source name rows 1-6",
+      "value": "126(C1), 127(N1), 128(C2), 129(N2), 130(C3), 131(N3)",
+      "source_ids": [
+        "files"
+      ],
+      "evidence": "Single exact RAW name explicitly encodes six TMT reporter masses and C/N replicate labels"
+    },
+    {
+      "location": "factor value[treatment] rows 1-6",
+      "value": "DMSO control versus 10 uM NSC80997 for 24 h",
+      "source_ids": [
+        "pride",
+        "paper",
+        "files"
+      ],
+      "evidence": "PRIDE sample protocol names the two HEK293WT conditions; study paper describes DMSO/NSC80997 comparison; C and N filename codes interpreted as control and NSC respectively"
+    },
+    {
+      "location": "characteristics[cell line], characteristics[cellosaurus accession] rows 1-6",
+      "value": "HEK293 CVCL_0045",
+      "source_ids": [
+        "pride",
+        "cellosaurus"
+      ],
+      "evidence": "PRIDE sample protocol names HEK293WT; Cellosaurus identifies HEK293 lineage"
+    },
+    {
+      "location": "comment[modification parameters], comment[precursor mass tolerance], comment[fragment mass tolerance] rows 1-6",
+      "value": "Carbamidomethyl C, TMT6plex K and peptide N-term, Oxidation M; 10 ppm and 0.02 Da",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Publication Data analysis section explicitly lists fixed and variable modifications and mass tolerances"
+    },
+    {
+      "location": "comment[instrument], comment[cleavage agent details] rows 1-6",
+      "value": "Orbitrap Fusion Lumos and trypsin",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE instrument field and sample protocol specify these values"
+    }
+  ],
+  "limitations": [
+    "The C/N channel-to-treatment expansion follows filename coding and study condition names; no separate deposited channel map was available",
+    "Search modification and tolerance settings come from the linked publication rather than the abbreviated PRIDE processing protocol; 2.4 GB raw file and PD search result were not downloaded"
+  ]
+}

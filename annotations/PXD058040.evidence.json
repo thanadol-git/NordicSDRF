@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD058040.sdrf.tsv",
+  "dataset": "PXD058040",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD058040"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD058040/files/all"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://www.cellosaurus.org/CVCL_0019"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, comment[data file] rows 1-4",
+      "value": "Four RAW-derived sample identifiers",
+      "source_ids": [
+        "files"
+      ],
+      "evidence": "Exact four RAW filenames; source names derive from stems and do not assert treatment or replicate equivalence."
+    },
+    {
+      "location": "characteristics[organism], cell line, cellosaurus accession, age, sex, disease rows 1-4",
+      "value": "SH-SY5Y human neuroblastoma line, CVCL_0019; donor age 4Y, sex female",
+      "source_ids": [
+        "pride",
+        "cellosaurus"
+      ],
+      "evidence": "PRIDE sample protocol names SHSY5YWT medium; Cellosaurus record identifies the line, origin, age and sex."
+    },
+    {
+      "location": "comment[instrument], acquisition, cleavage, dissociation, tolerances and modifications rows 1-4",
+      "value": "Orbitrap Fusion DDA, trypsin HCD, 10ppm/20ppm search, CAM and oxidation",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample protocol gives instrument, DDA, trypsin and HCD; data processing protocol gives search tolerances and modifications."
+    }
+  ],
+  "limitations": [
+    "The source does not map the four generic RAW identifiers to chondroitinase and/or heparinase treatments; no treatment or factor value is asserted.",
+    "Biological replicate 1 is assigned separately to each RAW-derived source identifier solely as a required coordinate; it does not assert the four injections are biological replicates of one condition.",
+    "Cellosaurus describes donor age and sex for the line; these are provenance attributes, not measured properties of the culture-medium samples.",
+    "The PRIDE protocol specifies serum-free RPMI but no formulation number or resolvable NCIT term; the annotation uses the template-permitted not available value for culture medium. The processing protocol also specifies three variable GAG-glycopeptide Ser hexasaccharide modifications (993.2809, 1073.2377, 1153.1945 Da); no verified Unimod/PSI-MOD accession is available for those exact structures, so they are recorded in the report rather than assigned a fabricated CV term."
+  ]
+}

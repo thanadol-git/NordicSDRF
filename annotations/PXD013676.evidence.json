@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD013676.sdrf.tsv",
+  "dataset": "PXD013676",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD013676"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD013676/files/all"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name and comment[data file] rows 1-5",
+      "value": "Three Fcgamma reporter variants and two engineered HEK293 N-glycan preparations",
+      "source_ids": [
+        "pride",
+        "files"
+      ],
+      "evidence": "Exact RAW names identify WT/GD44/GD48 Fcgamma and two B4GALNT/MGAT engineered HEK states; PRIDE protocol describes reporter and total-cell N-glycan methods."
+    },
+    {
+      "location": "comment[cleavage agent details] rows 1-5",
+      "value": "Chymotrypsin for FcgRIIa reporter, trypsin for total-cell N-glycan preparations",
+      "source_ids": [
+        "pride",
+        "files"
+      ],
+      "evidence": "PRIDE sample protocol explicitly describes chymotrypsin digestion of FcgRIIa and trypsin digestion before N-glycan release for total-cell samples."
+    },
+    {
+      "location": "comment[instrument] and comment[proteomics data acquisition method] rows 1-5",
+      "value": "Orbitrap Fusion Lumos DDA",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE instrument field and method describe Lumos data-dependent MS2."
+    }
+  ],
+  "limitations": [
+    "PRIDE describes Asp-N digestion for a MUC1 O-glycopeptide workflow, but no MUC1 RAW is in this five-file accession; generic reconciliation heuristic flags missing Asp-N.",
+    "The deposit provides no per-file acquisition settings or search modification list; optional settings omitted.",
+    "No biological replicate or factor comparison is asserted across the mixed reporter and released-glycan workflows.",
+    "Reviewer rejected label-free assertion for Rapifluor-derivatized glycan runs and DDA assertion for targeted reporter files; draft unapproved."
+  ]
+}

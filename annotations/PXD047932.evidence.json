@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD047932.sdrf.tsv",
+  "dataset": "PXD047932",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD047932"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD047932/files/all"
+    },
+    {
+      "id": "metadata",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/05/PXD047932/metadata.txt"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[organism], characteristics[organism part] rows 1-4",
+      "value": "same Homo B896-1 bone specimen",
+      "source_ids": [
+        "pride",
+        "metadata"
+      ],
+      "evidence": "PRIDE title and protocol specify four extracts from one hominin bone individual; deposited metadata maps each RAW to specimen B896-1"
+    },
+    {
+      "location": "comment[data file], source name rows 1-4",
+      "value": "P0006 AmBic-soluble; P0007/8 acid-soluble; P0009 acid-insoluble",
+      "source_ids": [
+        "files",
+        "metadata"
+      ],
+      "evidence": "Deposited metadata provides exact raw-file-to-fraction mapping; four physical extracts are named distinctly while each retains biological replicate 1 for the same specimen"
+    },
+    {
+      "location": "comment[instrument], comment[cleavage agent details], comment[dissociation method] rows 1-4",
+      "value": "Exploris 480 DDA, trypsin, HCD",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample protocol specifies instrument, shotgun HCD and overnight trypsin digestion"
+    },
+    {
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance], comment[modification parameters] rows 1-4",
+      "value": "10 ppm, 0.07 Da and stated PEAKS variable modifications",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE data processing protocol lists search tolerances, deamidation, hydroxylation, oxidation and pyro-Glu"
+    }
+  ],
+  "limitations": [
+    "Organism is annotated only to genus Homo because the deposit does not establish a species",
+    "Extraction-fraction values are preparation differences among four extracts of one biological source",
+    "No fixed PEAKS modifications were specified in the PRIDE record"
+  ]
+}

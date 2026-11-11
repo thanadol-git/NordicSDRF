@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD041164.sdrf.tsv",
+  "dataset": "PXD041164",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD041164"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD041164/files/all"
+    },
+    {
+      "id": "channel_map",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/07/PXD041164/CT26_WTA15_Analysis_SampleMapping.xlsx",
+      "checksum_sha1": "0c82656567beeb49d09c09dd228840da3fb48e1b"
+    },
+    {
+      "id": "workflow",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/07/PXD041164/TMT_Processing.pdProcessingWF",
+      "checksum_sha1": "1d18c82eddab8bee1211c1de3096d1ba08727816"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://www.cellosaurus.org/CVCL_7254"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, comment[label], factor value[genotype] rows 1-16",
+      "value": "16 TMTpro channels: WT, Adam10 KO, Adam15 KO, reference mix",
+      "source_ids": [
+        "channel_map",
+        "pride"
+      ],
+      "evidence": "Deposited workbook header explicitly maps 126 through 134N channels to three WT, six Adam10 KO, six Adam15 KO, and one RefMix; sample protocol describes TMTpro 16plex and equal-protein reference pool"
+    },
+    {
+      "location": "comment[data file] rows 1-16",
+      "value": "20210106_KMJ_SS_Kris_2.raw",
+      "source_ids": [
+        "files"
+      ],
+      "evidence": "Only PRIDE file labelled RAW; exact name confirmed against project accession"
+    },
+    {
+      "location": "characteristics[organism], characteristics[organism part], characteristics[cell line], characteristics[cellosaurus accession], characteristics[disease] rows 1-16",
+      "value": "Mus musculus CT26, colon origin, CVCL_7254, colon adenocarcinoma",
+      "source_ids": [
+        "pride",
+        "cellosaurus"
+      ],
+      "evidence": "PRIDE protocol identifies CT26 cells and mouse search database; Cellosaurus identifies CT26 lineage and mouse colon adenocarcinoma and colon tissue of origin"
+    },
+    {
+      "location": "comment[instrument], comment[cleavage agent details] rows 1-16",
+      "value": "Q Exactive, trypsin",
+      "source_ids": [
+        "pride",
+        "workflow"
+      ],
+      "evidence": "PRIDE instrument field and sample protocol; deposited PD workflow has Trypsin (Full) search enzyme"
+    },
+    {
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance], comment[modification parameters] rows 1-16",
+      "value": "10 ppm, 0.02 Da, deposited workflow modifications",
+      "source_ids": [
+        "workflow"
+      ],
+      "evidence": "Deposited XML workflow specifies exact tolerances and UNIMOD accessions for Carbamidomethyl, TMTpro, Oxidation and Acetyl"
+    }
+  ],
+  "limitations": [
+    "The pooled reference column lists all 15 input sources; the parser accepts the SDRF but warns that the long SN= value is outside its allowed values",
+    "The local ontology cache does not recognize CT26 and BALB/c labels; Cellosaurus confirms both",
+    "The WT rows are unedited CT26 genotype controls, not healthy colon tissue; all channels retain CT26 colon adenocarcinoma cell-line provenance",
+    "Proteome Discoverer search workflow XML is used for modification parameters; the 679 MB .msf search database was not downloaded"
+  ]
+}

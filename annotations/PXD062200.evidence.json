@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD062200.sdrf.tsv",
+  "dataset": "PXD062200",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD062200"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD062200/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://link.springer.com/article/10.1186/s12964-025-02441-3"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://www.cellosaurus.org/CVCL_2252"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, factor value[endothelial cell condition], characteristics[biological replicate], comment[data file] rows 1-6",
+      "value": "Three tumor and three normal endothelial cell secretome replicates",
+      "source_ids": [
+        "pride",
+        "files"
+      ],
+      "evidence": "Study description and exact RAW filenames encode TECs/NECs and replicate 1-3"
+    },
+    {
+      "location": "source name, characteristics[organism], characteristics[organism part], characteristics[cell type], characteristics[strain or breed] rows 1-6",
+      "value": "bEnd.5 and BALB-5023 BALB/c mouse brain endothelial cultures",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Paper Methods identifies bEnd.5 tumor endothelial line and BALB-5023 primary normal brain microvascular endothelial culture; both derived from BALB/c brain"
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method], comment[dissociation method] rows 1-6",
+      "value": "Q Exactive DDA with HCD",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Sample processing protocol explicitly specifies Q Exactive Classic, top-10 DDA and HCD"
+    },
+    {
+      "location": "comment[cleavage agent details], comment[modification parameters] rows 1-6",
+      "value": "Trypsin after Lys-C; Carbamidomethyl C, Oxidation M, N-terminal Acetyl, Met-loss",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Sample and data processing protocols specify sequential Lys-C then trypsin digestion and deposited search modifications; both cleavage agents are represented in repeated columns."
+    }
+  ],
+  "limitations": [
+    "Cellosaurus identifies bEnd.5 as CVCL_2252, but the shared two-template SDRF does not include cell-lines fields because BALB-5023 is primary cultured cells without a Cellosaurus accession; identities remain in source names",
+    "The PRIDE paper calls bEnd.5 a tumor endothelial model, but Cellosaurus describes it as polyomavirus-transformed rather than donor-derived endothelioma; disease is not applicable rather than inferred neoplasm",
+    "Sequential Lys-C and trypsin are encoded as repeated cleavage-agent columns by the local builder extension; the current reconciliation command inspects only the first repeated column and gives a false incomplete warning."
+  ]
+}

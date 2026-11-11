@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD041082.sdrf.tsv",
+  "dataset": "PXD041082",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD041082"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD041082/files/all"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[organism], characteristics[organism part], comment[data file] rows 1-4",
+      "value": "three Mollusca archaeological shell beads and one lab blank",
+      "source_ids": [
+        "pride",
+        "files"
+      ],
+      "evidence": "PRIDE title, organism field and sample protocol identify three archaeological mollusc shells plus blank; exact RAW filenames encode Palto499/500/501 and labblank"
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method] rows 1-4",
+      "value": "Orbitrap Exploris 480 DDA",
+      "source_ids": [
+        "pride",
+        "files"
+      ],
+      "evidence": "PRIDE instrument and sample protocol; RAW filenames encode DDA"
+    },
+    {
+      "location": "comment[cleavage agent details] rows 1-4",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample protocol describes trypsin digestion of insoluble fractions followed by combination with undigested soluble fractions"
+    },
+    {
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance] rows 1-4",
+      "value": "20 ppm and 0.05 Da",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE data processing protocol specifies PEAKS SPIDER search tolerances"
+    }
+  ],
+  "limitations": [
+    "Species is unresolved beyond phylum Mollusca in the deposit",
+    "The injected sample combines trypsin-digested insoluble and undigested soluble material; the cleavage field records the digested component",
+    "Search uses open SPIDER modifications without a finite deposited modification list; none are asserted"
+  ]
+}

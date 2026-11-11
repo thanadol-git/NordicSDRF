@@ -1,0 +1,21 @@
+batch_order	accession	pride_raw_bytes	pride_raw_count	annotation_status
+1	PXD007693	973716438	2	approved
+2	PXD041164	1235100529	1	approved
+3	PXD028982	1606368308	8	blocked: mixed intact and glycopeptide acquisition
+4	PXD013676	2344294895	5	blocked: review rejected glycan label/acquisition claims
+5	PXD063178	2367310337	7	approved
+6	PXD029623	2418884300	1	approved
+7	PXD073937	2459428946	6	approved
+8	PXD062200	2724031448	6	approved
+9	PXD024851	2831585832	17	blocked: mixed assay methods; per-run design missing
+10	PXD058040	2926943827	4	approved (treatment not available per run)
+11	PXD007963	2952970307	9	blocked: review rejected unsupported DDA claim
+12	PXD064301	3240536014	3	approved
+13	PXD043273	3338010720	4	approved
+14	PXD071573	3369901432	15	blocked: RAW-to-bait and wound-state map missing
+15	PXD054504	3416039735	1	approved
+16	PXD083842	3741375678	1	blocked: single RAW has no liver/plasma or cohort map
+17	PXD050370	4020441441	4	blocked: deposited metadata, MaxQuant and PEAKS disagree on bleach sample/blank identity
+18	PXD041082	4245304703	4	approved
+19	PXD047932	4416917134	4	approved
+20	PXD042583	4784551667	8	approved

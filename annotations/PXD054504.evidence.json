@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD054504.sdrf.tsv",
+  "dataset": "PXD054504",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD054504"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD054504/files/all"
+    },
+    {
+      "id": "design",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/01/PXD054504/experimental_design.csv"
+    },
+    {
+      "id": "mqpar",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/01/PXD054504/mqpar.xml"
+    },
+    {
+      "id": "rawzip",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/01/PXD054504/raw.zip"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[group], factor value[group], comment[data file] rows 1-15",
+      "value": "Eight WT and seven NM skeletal-muscle biopsies",
+      "source_ids": [
+        "design",
+        "rawzip",
+        "mqpar"
+      ],
+      "evidence": "Deposited design maps S1-S8 to C1-C8 WT and S9-S15 to NM1-NM7 NM; deposited MaxQuant file map confirms exact S1-S15 raw names; HTTP range ZIP central directory independently confirms all 15 contained RAW filenames."
+    },
+    {
+      "location": "characteristics[organism], characteristics[organism part] rows 1-15",
+      "value": "Homo sapiens skeletal muscle",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE title, description, organism and organism-part fields specify patient/control muscle biopsies."
+    },
+    {
+      "location": "comment[instrument], acquisition, cleavage, dissociation, tolerances, modifications rows 1-15",
+      "value": "Exploris 480 DDA, trypsin HCD, MaxQuant search settings",
+      "source_ids": [
+        "pride",
+        "mqpar",
+        "rawzip"
+      ],
+      "evidence": "PRIDE protocol describes Orbitrap Exploris 480, eight data-dependent MS/MS scans, trypsin digest and NCE 25; mqpar.xml specifies 4.5ppm precursor tolerance, FTMS 20ppm fragment tolerance and modifications; each inner raw filename includes DDA."
+    }
+  ],
+  "limitations": [
+    "The design uses WT/NM groups but does not map individual TNNT1 variants, patient demographics or exact diagnoses; disease is not available.",
+    "MaxQuant search enzyme is Trypsin/P, whereas the physical digest specified in PRIDE is trypsin; cleavage-agent field records the physical reagent.",
+    "PRIDE declares raw.zip as one RAW file; SDRF maps its 15 individually named contained .raw files verified in its ZIP central directory."
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD043273.sdrf.tsv",
+  "dataset": "PXD043273",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD043273"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD043273/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.nature.com/articles/s41467-024-49983-7"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "database",
+      "location": "https://www.cellosaurus.org/CVCL_0063"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, factor value[bait], characteristics[biological replicate], comment[data file] rows 1-4",
+      "value": "two control FLAG and two FLAG-FAM72B IP runs",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper"
+      ],
+      "evidence": "Paper Methods identifies FLAG-FAM72B bait and two replicate experiments; RAW names distinguish Ctrl_FLAG, FLAG-FAM72 and replicate 1/2"
+    },
+    {
+      "location": "characteristics[cell line], characteristics[cellosaurus accession], characteristics[sex] rows 1-4",
+      "value": "HEK293T, CVCL_0063, female",
+      "source_ids": [
+        "pride",
+        "cellosaurus"
+      ],
+      "evidence": "PRIDE sample protocol names HEK293T; Cellosaurus identifies HEK293T as CVCL_0063 and female"
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method], comment[dissociation method] rows 1-4",
+      "value": "Exploris 480 top-12 DDA HCD",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Detailed PRIDE sample protocol specifies Exploris 480, top-12 precursor selection and HCD; structured instrument dropdown conflicts"
+    },
+    {
+      "location": "comment[cleavage agent details], comment[modification parameters], comment[precursor mass tolerance] rows 1-4",
+      "value": "trypsin, fixed Carbamidomethyl C, variable Oxidation M and protein N-terminal Acetyl, 10 ppm",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE data processing protocol specifies search enzyme and settings; sample processing used Lys-C as well"
+    }
+  ],
+  "limitations": [
+    "PRIDE structured instrument dropdown says LTQ Orbitrap but its detailed sample protocol says Exploris 480; the latter is used",
+    "The single-valued cleavage field records the trypsin search enzyme; sample preparation also used Lys-C",
+    "The control bait identity is not further specified in the deposit"
+  ]
+}

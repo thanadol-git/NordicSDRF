@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD050370.sdrf.tsv",
+  "dataset": "PXD050370",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD050370"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD050370/files/all"
+    },
+    {
+      "id": "metadata",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/04/PXD050370/metadata_hominin.txt"
+    },
+    {
+      "id": "maxquant_bleach",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/04/PXD050370/khudji_bleach.zip"
+    },
+    {
+      "id": "peaks_bleach",
+      "kind": "deposited_file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/04/PXD050370/bleach_PEAKS.zip"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[organism], characteristics[organism part], comment[data file] rows 1-4",
+      "value": "two Khudji tooth dentine subsamples and two extraction blanks in the project; the October RAW-to-identity assignment is disputed",
+      "source_ids": [
+        "pride",
+        "files",
+        "metadata",
+        "maxquant_bleach",
+        "peaks_bleach"
+      ],
+      "evidence": "PRIDE protocol says two tooth subsamples and two extraction blanks. The June pair is clear. For the October pair, metadata_hominin.txt calls P0581 the tooth and P0582 the blank, while MaxQuant summary calls P0581 Blank and P0582 Khudji1. PEAKS reconstruction identifies P0581 as its source file and reports collagen peptides. The artifact's October identity assignments are therefore not established; independent review failed."
+    },
+    {
+      "location": "characteristics[processing condition], factor value[processing condition], comment[technical replicate] rows 1-4",
+      "value": "no cleaning for P0441/P0442; bleach for P0581/P0582",
+      "source_ids": [
+        "metadata",
+        "pride"
+      ],
+      "evidence": "Deposited metadata explicitly records method no_cleaning for June pair and bleach for October pair; PRIDE protocol describes bleach-treated subsample"
+    },
+    {
+      "location": "comment[instrument], comment[cleavage agent details] rows 1-4",
+      "value": "Exploris 480, trypsin",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample protocol specifies instrument and overnight trypsin digestion"
+    },
+    {
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance], comment[modification parameters] rows 1-4",
+      "value": "PEAKS search 10 ppm, 0.07 Da, deamidation, hydroxylation and oxidation",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE data processing protocol states these PEAKS settings"
+    }
+  ],
+  "limitations": [
+    "Deposited metadata_hominin.txt and the PEAKS bleach reconstruction conflict with the MaxQuant summary and RAW filename for the bleach pair. The artifact's October sample/blank assignments are unapproved.",
+    "The tooth is identified only as genus Homo in PRIDE; no species is asserted",
+    "Processing condition records bleach versus no cleaning for samples and paired extraction blanks; the blank rows remain identified as blanks",
+    "Search settings reflect the PEAKS reconstruction analysis; PRIDE also reports a MaxQuant analysis with additional variable modifications"
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD063178.sdrf.tsv",
+  "dataset": "PXD063178",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD063178"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD063178/files/all"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://link.springer.com/article/10.1038/s44318-025-00469-2"
+    },
+    {
+      "id": "raw1",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/05/PXD063178/GST-BugZ_DMSO_ACN-DDM_BD3_01_23436.d.zip"
+    },
+    {
+      "id": "raw2",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/05/PXD063178/GST-BugZ_DMSO_ACN_BD2_01_23435.d.zip"
+    },
+    {
+      "id": "raw3",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/05/PXD063178/GST-BugZ_DMSO_BD1_01_23434.d.zip"
+    },
+    {
+      "id": "raw4",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/05/PXD063178/GST-BugZ_PTL_ACN-DDM_BD6_01_23439.d.zip"
+    },
+    {
+      "id": "raw5",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/05/PXD063178/GST-BugZ_PTL_ACN_BD5_01_23438.d.zip"
+    },
+    {
+      "id": "raw6",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/05/PXD063178/GST-BugZ_PTL_BD4_01_23437.d.zip"
+    },
+    {
+      "id": "raw7",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/05/PXD063178/WT1_SDS_undil_longDDA_GF9_1_35985.d.zip"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[treatment], characteristics[expression system], characteristics[protein preparation], comment[data file] rows 1-7",
+      "value": "Six purified GST-BUGZ runs (three DMSO, three PTL) and one HeLa GFP-BUGZ run",
+      "source_ids": [
+        "paper",
+        "pride",
+        "files"
+      ],
+      "evidence": "Exact RAW filenames identify GST-BugZ and DMSO/PTL, or WT1_SDS; paper Methods describes recombinant GST-BUGZ from E. coli Rosetta2 and GFP-BUGZ HeLa pulldown. WT1 treatment is not available."
+    },
+    {
+      "location": "characteristics[organism] rows 1-7",
+      "value": "E. coli expression host for purified GST-BUGZ; human HeLa for GFP-BUGZ pulldown",
+      "source_ids": [
+        "paper",
+        "files"
+      ],
+      "evidence": "Paper Methods explicitly states GST-BUGZ purification from Rosetta2 bacteria and GFP-BUGZ from HeLa cells. The human BUGZ protein sequence origin is distinct from bacterial expression host."
+    },
+    {
+      "location": "comment[instrument] rows 1-7",
+      "value": "impact II for six GST runs; timsTOF Pro for WT1",
+      "source_ids": [
+        "pride",
+        "raw1",
+        "raw2",
+        "raw3",
+        "raw4",
+        "raw5",
+        "raw6",
+        "raw7"
+      ],
+      "evidence": "PRIDE lists impact II and timsTOF Pro. HTTP-range central directories of all seven accession-specific RAW ZIPs show analysis.baf plus microTOFQImpactAcquisition.method for every GST run, and analysis.tdf plus ddaPASEF method for WT1."
+    },
+    {
+      "location": "comment[proteomics data acquisition method], comment[cleavage agent details] rows 1-7",
+      "value": "DDA, trypsin",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Paper and PRIDE sample protocol state DDA operation and overnight trypsin digestion of BUGZ preparations."
+    }
+  ],
+  "limitations": [
+    "The seven archive indexes establish instrument format but do not expose full scan settings; dissociation and mass tolerances are omitted.",
+    "The publication describes GFP-BUGZ pulldown from PTL-treated HeLa cells, but the WT1_SDS RAW filename does not encode whether that run received PTL; treatment is not available for that row.",
+    "GST-BUGZ is a recombinant human protein expressed in E. coli; organism records expression host for the purified sample, while protein sequence origin is human.",
+    "Biological replicate 1 is a required coordinate for each uniquely named purified preparation, not an assertion that the six preparations are independent biological replicates.",
+    "Generic PRIDE reconciliation inspects only one instrument and flags Impact II against timsTOF Pro despite both being listed in the record and mapped to separate RAW archives."
+  ]
+}

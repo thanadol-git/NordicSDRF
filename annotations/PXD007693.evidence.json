@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD007693.sdrf.tsv",
+  "dataset": "PXD007693",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD007693"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD007693/files/all"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism], characteristics[material type], characteristics[synthetic peptide] rows 1-2",
+      "value": "Artificial sequences; synthetic peptide mixture",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE title, organism field, sample protocol and keywords identify synthetic challenge peptides"
+    },
+    {
+      "location": "comment[data file], factor value[acquisition method] rows 1-2",
+      "value": "12-scans versus 6-scans methods",
+      "source_ids": [
+        "files",
+        "pride"
+      ],
+      "evidence": "The two exact RAW names encode 12scans and 6scans, while the sample protocol states two distinct instrument methods"
+    },
+    {
+      "location": "comment[instrument], comment[cleavage agent details], comment[modification parameters] rows 1-2",
+      "value": "Orbitrap Fusion Lumos; no enzymatic digest; deposited MaxQuant search modifications",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "The PRIDE sample and data processing protocols state the instrument, unspecific digestion, and search modifications"
+    }
+  ],
+  "limitations": [
+    "The custom protected-serine modification in PRIDE lacks a verified ontology accession and is omitted",
+    "The record describes HCD and CID MS2, while the single-valued dissociation field gives HCD",
+    "Reconcile flags not applicable cleavage because it looks for a named reagent; PRIDE explicitly says digestion was unspecific"
+  ]
+}

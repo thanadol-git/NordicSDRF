@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD042583.sdrf.tsv",
+  "dataset": "PXD042583",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD042583"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD042583/files/all"
+    },
+    {
+      "id": "design",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/06/PXD042583/experiment_annotation.tsv"
+    },
+    {
+      "id": "cv",
+      "kind": "ontology",
+      "location": "https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[heart region], characteristics[infusion], factor values, comment[label] rows 1-128",
+      "value": "16 TMTpro channels, four SAN GLP1/four SAN vehicle/four LV GLP1/four LV vehicle sources, repeated across eight fractions",
+      "source_ids": [
+        "pride",
+        "design",
+        "files"
+      ],
+      "evidence": "Deposited experiment_annotation.tsv maps all 16 channels to SAN/LV and GLP1/Veh conditions; project description confirms four animals per group; RAW names encode Fr1-Fr8."
+    },
+    {
+      "location": "characteristics[organism], characteristics[organism part] rows 1-128",
+      "value": "Sus scrofa domesticus heart",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE project description and protocol specify porcine sinus node and left ventricle heart tissue."
+    },
+    {
+      "location": "comment[instrument], acquisition, cleavage, dissociation, tolerances, modifications rows 1-128",
+      "value": "Orbitrap Ascend DDA with sequential Lys-C and trypsin digestion; 20ppm search tolerances and TMTpro/phospho modifications",
+      "source_ids": [
+        "pride",
+        "cv"
+      ],
+      "evidence": "PRIDE protocol and processing text identify model, digestion, search settings and TMT labeling. PSI-MS CV names Orbitrap Ascend as MS:1003356."
+    }
+  ],
+  "limitations": [
+    "The study reports eight animals, four per condition, but the deposited channel map provides conditions only; individual animal IDs and pairing are unavailable.",
+    "Sequential Lys-C and trypsin are encoded as repeated cleavage-agent columns by a local builder extension; reconciliation checks only the first and reports a false incomplete warning.",
+    "The PRIDE file record does not provide a finer mapping of fractionation order than Fr1-Fr8 in RAW filenames."
+  ]
+}
