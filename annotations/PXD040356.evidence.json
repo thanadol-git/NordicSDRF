@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD040356.sdrf.tsv",
+  "dataset": "PXD040356",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD040356"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD040356/files?pageSize=500"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC13173289 (doi:10.1093/nar/gkag481)"
+    },
+    {
+      "id": "msf",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/05/PXD040356/TMT_result_all_files.msf (first ~75 MB: StudyDefinition XML with factors, samples, quan channels, fractions)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name / comment[label] / characteristics[biological replicate]",
+      "value": "9 samples in TMT126-TMT130C; replicate 1-3 x condition A/B/C; TMT131N unused",
+      "source_ids": [
+        "msf",
+        "paper"
+      ],
+      "evidence": "msf StudyDefinition: 9 QuanChannels 126..130C, Sample FactorValues Replicate 1-3 and Condition A/B/C; paper: three biological replicates, nine-way 1:1 mix"
+    },
+    {
+      "location": "characteristics[genotype], factor value[genotype]",
+      "value": "A=wild type, B=\u03943UTR, C=\u03943UTR CEP:3UTR",
+      "source_ids": [
+        "msf",
+        "paper"
+      ],
+      "evidence": "INFERRED: msf marks channel 126 (condition A) as Control; paper lists strains in this order; the msf only names conditions A/B/C"
+    },
+    {
+      "location": "comment[data file] / comment[fraction identifier]",
+      "value": "20 RAW files = fractions 1-20 of one TMT10 set (07784 = fraction 11, 08337_AL = fraction 20)",
+      "source_ids": [
+        "files",
+        "msf",
+        "paper"
+      ],
+      "evidence": "msf FileSet FractionNumber; paper: 20 HPLC fractions"
+    },
+    {
+      "location": "characteristics[organism]/[strain]",
+      "value": "Streptococcus pneumoniae, D39",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism NEWT:373153 (D39); paper: D39 wild type"
+    },
+    {
+      "location": "comment[instrument]/[dissociation method]/[collision energy]",
+      "value": "Q Exactive HF; HCD; 34% NCE; DDA",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Protocol: Q Exactive HF, HCD collision energy 34%, data-dependent"
+    },
+    {
+      "location": "cleavage, tolerances, modification parameters",
+      "value": "Trypsin; 10 ppm; 0.05 Da; Carbamidomethyl C fixed, Oxidation M variable, TMT6plex N-term and K variable",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE data processing protocol (Mascot / PD 2.4); msf search parameters not read"
+    },
+    {
+      "location": "comment[reduction reagent]/[alkylation reagent]/[fractionation method]",
+      "value": "DTT; iodoacetamide; high-pH reversed phase",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Sample processing protocol"
+    }
+  ],
+  "limitations": [
+    "UNVERIFIED: the mapping of PD study-definition Conditions A/B/C to strains (A = D39 wild type [flagged Control in the .msf], B = Delta3UTR, C = Delta3UTR CEP:3UTR) is inferred from the strain order in the paper's Methods; the deposit, the paper text and its supplement (Supplementary_file docx, Tables S1/S2) contain no channel table. A B/C swap would invert genotype for 6 of 9 samples (factor value[genotype]).",
+    "Only the first ~75 MB of the 11 GB .msf was read; Mascot node parameters not verified.",
+    "Condition letter to strain mapping is inferred, not stated.",
+    "Lys-C predigest not representable (single-valued cleavage column).",
+    "RAW headers not inspected; instrument from PRIDE/paper."
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD011811.sdrf.tsv",
+  "dataset": "PXD011811",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD011811"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD011811/files"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC7029941 (doi:10.1098/rsos.191172)"
+    },
+    {
+      "id": "mq",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/01/PXD011811/MQ-output-RingandModernReference.zip (txt/summary.txt, txt/parameters.txt)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "rows 1-3 source name / organism / organism part",
+      "value": "ring X2784 (Cervus elaphus, part not stated: long bone or antler); modern reference antler P29 and bone P55 (Cervus)",
+      "source_ids": [
+        "pride",
+        "paper",
+        "mq"
+      ],
+      "evidence": "MQ summary maps X2784/P29/P55 to the 3 RAW files; paper supplement titles 'Modern Antler (P29) and Modern Bone (P55)'; paper: ring red deer, references 'Cervus antler and bone'"
+    },
+    {
+      "location": "comment[data file]",
+      "value": "3 RAW files, one row each",
+      "source_ids": [
+        "files"
+      ],
+      "evidence": "PRIDE file list"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF-X",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE protocol: EASY-nLC 1200 + Q Exactive HF-X; RAW headers not checked"
+    },
+    {
+      "location": "cleavage agent, modification parameters, fragment tolerance",
+      "value": "Trypsin (semispecific); Ox M/P, Acetyl N-term, Deamidated NQ, pyro-Glu x2; 20 ppm",
+      "source_ids": [
+        "pride",
+        "paper",
+        "mq"
+      ],
+      "evidence": "MQ summary/parameters (MS/MS tol FTMS 20 ppm); Hydroxyproline mapped to Oxidation P"
+    }
+  ],
+  "limitations": [
+    "Paper/PRIDE state Carbamidomethyl (C) fixed but deposited summary.txt lists no fixed modification; deposited search used",
+    "Precursor tolerance, alkylation and reduction reagents not found",
+    "Ring organ part (long bone or antler) not asserted",
+    "Reference species given only as Cervus",
+    "ZooMSrawdata.zip (MALDI) not annotated",
+    "Sex/age/developmental stage not stated",
+    "RAW headers not inspected"
+  ]
+}

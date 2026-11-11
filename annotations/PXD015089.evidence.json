@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD015089.sdrf.tsv",
+  "dataset": "PXD015089",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD015089"},
+    {"id": "files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD015089/files"},
+    {"id": "paper", "kind": "publication", "location": "https://europepmc.org/article/PMC/PMC7280273 (doi:10.1038/s41598-020-65907-z)"},
+    {"id": "msf", "kind": "repository", "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/08/PXD015089/20181106_BarleyInf_M1_Fungi1.msf and 20181106_BarleyInf_M2_Fungi1.msf (first 3 MB, StudyDefinition XML)"}
+  ],
+  "claims": [
+    {"location": "label / genotype / treatment per channel", "value": "126 WT mock, 127N HO mock, 128N WT inoc, 129N HO inoc, 127C WT mock, 129C HO mock, 130C WT inoc, 130N HO inoc (both sets)", "source_ids": ["paper", "msf"], "evidence": "msf StudyDefinition samples per QuanChannel with genotype/treatment factors; paper tag series per replicate"},
+    {"location": "characteristics[biological replicate], comment[technical replicate]", "value": "set M1 = rep1 + rep2; set M2 = rep3 + rep2 (rep2 technical replicate 1 and 2)", "source_ids": ["paper"], "evidence": "paper: replicates one and two and replicates two and three mixed into two sets; inferred"},
+    {"location": "comment[data file], fraction identifier", "value": "10 RAW files, M1/M2 x fr1-5, each 8 channel rows", "source_ids": ["files"], "evidence": "PRIDE file list; paper: 10 subfractions combined into 5"},
+    {"location": "characteristics[organism], strain or breed, genotype, treatment, sampling time", "value": "Hordeum vulgare; Golden Promise; WT/HvHb1 overexpression; mock/B. graminis f. sp. tritici; 72 h", "source_ids": ["pride", "paper"], "evidence": "PRIDE sample protocol and paper Materials and methods"},
+    {"location": "comment[instrument]", "value": "Q Exactive HF", "source_ids": ["paper", "files"], "evidence": "paper: QExactive HF MS system; RAW prefix QHF; PRIDE lists Q Exactive; RAW headers not checked"},
+    {"location": "modification parameters, tolerances, cleavage agent", "value": "Carbamidomethyl C, TMT6plex K/N-term fixed, Oxidation M variable; 20 ppm / 0.05 Da; trypsin", "source_ids": ["pride", "paper"], "evidence": "PRIDE data processing protocol (Mascot in Proteome Discoverer 2.1); deposited msf not parsed"},
+    {"location": "reduction/alkylation, dissociation, fractionation, collision energy", "value": "DTT; iodoacetamide; HCD; high-pH RP; NCE 30", "source_ids": ["paper"], "evidence": "paper protein extraction, 2D-LC-MS methods; HCD inferred from NCE"}
+  ],
+  "limitations": [
+    "Replicate 2 shared between the two TMT sets is inferred from paper wording",
+    "developmental stage not available (no EFO term); disease set to not applicable",
+    "Deposited .msf search parameters not parsed; modifications from PRIDE/paper text",
+    "RAW file headers not checked",
+    "Validation warnings: sampling time pattern; treatment free-text not in NCIT/EFO"
+  ]
+}

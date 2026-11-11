@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD027901.sdrf.tsv",
+  "dataset": "PXD027901",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD027901"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD027901/files"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "doi:10.1002/glia.24072 (PMID 34378239); full text not available in Europe PMC, PRIDE protocol text used"
+    },
+    {
+      "id": "mzid",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2021/08/PXD027901/Lasse_Bak_phospho.mzid.gz (modification mass deltas, Trypsin, 2 missed cleavages)"
+    },
+    {
+      "id": "mgf",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2021/08/PXD027901/Lasse_Bak_phospho_.mgf (spectrum titles reference QEHFX_00334_MRL.raw)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name / characteristics[organism, strain or breed, cell type, organism part]",
+      "value": "Mus musculus, NMRI, astrocyte, cerebral cortex",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: NMRI mice, primary cultures of cortical astrocytes from 7 day old pups, DIV 21; organism part inferred from 'cortical'"
+    },
+    {
+      "location": "label / factor value[treatment] / characteristics[treatment]",
+      "value": "controls (DMSO) TMT126-128, 2-OHE 50 uM 6 min TMT129-131",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: three controls labelled TMT 126, 127, 128; three stimulated 129, 130, 131"
+    },
+    {
+      "location": "comment[data file], comment[fraction identifier]",
+      "value": "14 RAW files x 6 channels = 84 rows; fractions numbered by file order",
+      "source_ids": [
+        "files",
+        "mgf"
+      ],
+      "evidence": "PRIDE file list; fraction order is an assumption (protocol says 12 fractions)"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF-X",
+      "source_ids": [
+        "pride",
+        "files"
+      ],
+      "evidence": "Protocol: Q-Exactive HFX; file prefix QEHFX; PRIDE structured field says Q Exactive HF"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "TMT6plex K/N-term, Carbamidomethyl C fixed; Deamidated N, Phospho STY variable",
+      "source_ids": [
+        "pride",
+        "mzid"
+      ],
+      "evidence": "Protocol search parameters; mzid mass deltas 229.1629, 57.0215, 0.9840, 79.9663"
+    },
+    {
+      "location": "tolerances, collision energy, dissociation, ms2 analyzer, fractionation, enrichment",
+      "value": "10 ppm, 0.05 Da, NCE 32, HCD, Orbitrap, high-pH RP, TiO2 phosphopeptide enrichment",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample/data processing protocol"
+    }
+  ],
+  "limitations": [
+    "comment[fraction identifier] 1-14 is a FILE-ORDER PLACEHOLDER, not an established run-to-fraction map: the protocol states 12 concatenated high-pH fractions but 14 RAW files are deposited and no deposited file (PRIDE, mzid, mgf) links runs to fractions. Use the fraction column for ordering only.",
+    "Paper full text not accessible; PRIDE protocol used",
+    "12 stated fractions vs 14 RAW files; run-to-fraction mapping not deposited, order assumed",
+    "Developmental stage, sex, reduction and alkylation reagents not available",
+    "Treatment, enrichment process and strain values produce ontology warnings (free text)",
+    "RAW headers not inspected; .msf (4.5 GB) not read",
+    "2-OHE not expanded to a compound name"
+  ]
+}
