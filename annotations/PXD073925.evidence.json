@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD073925.sdrf.tsv",
+  "dataset": "PXD073925",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD073925"},
+    {"id": "files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD073925/files?pageSize=500"},
+    {"id": "paper", "kind": "publication", "location": "https://europepmc.org/article/PMC/PMC13293952 (doi:10.1016/j.xcrm.2026.102800)"},
+    {"id": "design", "kind": "repository", "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/04/PXD073925/experimental_design.tsv"},
+    {"id": "pdstudy", "kind": "repository", "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/04/PXD073925/PD_Output_Phospho.zip (New Folder With Items/P59_R1634_TMT32Plex_Ph_Global_fractions.pdStudy, read by HTTP range)"}
+  ],
+  "claims": [
+    {"location": "comment[label], source name, characteristics[biological replicate]", "value": "32 channels mapped to 4 groups x 4 replicates (16 samples) plus 16 deuterated duplicates", "source_ids": ["design", "pdstudy", "paper"], "evidence": "experimental_design.tsv lists channel, group and replicate index; pdStudy quan method TMTpro 32plex with 32 channels; paper: two technical replicates using deuterated or non-deuterated labels"},
+    {"location": "comment[technical replicate]", "value": "1 non-deuterated, 2 deuterated (D_ prefix) with matching index", "source_ids": ["design", "paper"], "evidence": "paper Data availability sentence; index pairing inferred from names"},
+    {"location": "comment[fraction identifier], comment[data file]", "value": "Fr1-Fr16 from file names; 16 RAW", "source_ids": ["files", "paper"], "evidence": "RAW names end _FrN; paper: 16 high-pH fractions"},
+    {"location": "characteristics[organism], [organism part], [sex], [strain or breed], [disease]", "value": "Mus musculus; dorsal root ganglion; male; C57BL/6J; neuropathic pain", "source_ids": ["pride", "paper"], "evidence": "paper TMT MS methods: male SNI C57BL6/J WT mice, ipsilateral/contralateral L3-L5 DRGs"},
+    {"location": "characteristics[treatment], factor value[treatment], factor value[laterality]", "value": "AAV8-Di-C5 (GCN4-HWLKV) vs AAV8-tdTomato; ipsi vs contra", "source_ids": ["paper", "design"], "evidence": "paper Fig 6 legend and MS methods; GCN4/tdT group names from deposit"},
+    {"location": "comment[instrument], acquisition, ms2 analyzer, dissociation", "value": "Orbitrap Ascend; DDA; ion trap; CID", "source_ids": ["pride", "paper"], "evidence": "PRIDE instruments field and paper (ion trap MS2, CID activation, HCD MS3); RAW headers not read"},
+    {"location": "comment[cleavage agent details], modification parameters, tolerances", "value": "Trypsin; CAM fixed; Ox M, Phospho STY, TMTpro K/N-term variable; 10 ppm; 0.6 Da", "source_ids": ["pdstudy", "paper"], "evidence": "Sequest HT node parameters in pdStudy"},
+    {"location": "comment[fractionation method], reduction, alkylation", "value": "hpHRP; TCEP; chloroacetamide", "source_ids": ["pride", "paper"], "evidence": "sample processing protocol"}
+  ],
+  "limitations": [
+    "Deuterated channel D_<group> n assumed to be the same sample as <group> n (paper says technical replicates; pairing by index not explicitly stated).",
+    "Biological replicate index is the deposit's per-group index; ipsi n and contra n not stated to be the same mouse.",
+    "GCN4 group assumed to be AAV8-Di-C5 and tdT AAV8-tdTomato (paper Fig 6 text).",
+    "Labels for 16 deuterated channels were produced via placeholder labels in sdrf-tools build and mapped back by script (build regex does not accept D channels).",
+    "Cleavage agent Trypsin chosen though the paper also names Lys-C; reconcile flags it as not in the PRIDE record text.",
+    "Dissociation CID only; HCD MS3 quantification not encoded. RAW headers were not read; instrument from PRIDE and paper.",
+    "Developmental stage not available (7-12 weeks stated generically); sampling time range, sample type and enrichment process omitted; PRIDE field says non- and deuterated labels while methods say non-deuterated only."
+  ]
+}

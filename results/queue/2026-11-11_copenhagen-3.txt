@@ -1,0 +1,11 @@
+# daily queue denmark/copenhagen batch 3 (10 smallest pending PXDs by total deposited RAW size, excluding accessions that already have annotation files)
+PXD066932	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD027742	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD030529	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD004341	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD074049	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD058287	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD013725	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD031280	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD061135	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD073925	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate

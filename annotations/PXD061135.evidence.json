@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD061135-dda.sdrf.tsv; annotations/PXD061135-dia.sdrf.tsv",
+  "dataset": "PXD061135",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD061135"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD061135/files?pageSize=100&page=0 and page=1 (124 files: 121 RAW, Annotation-extended.xlsx, .sne, MQ_search.zip; the API caps pageSize at 100)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC12914409 (doi:10.1016/j.mcpro.2025.101504); does not cite PXD061135; weak context only"
+    },
+    {
+      "id": "xlsx",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/02/PXD061135/Annotation-extended.xlsx"
+    },
+    {
+      "id": "sne",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/02/PXD061135/20240211_220652_fsdm.sne (first 20 MB, Spectronaut 18.5 settings)"
+    },
+    {
+      "id": "mq",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/02/PXD061135/MQ_search.zip (HTTP range reads of central directory, MQ_search/{BL8,PPT8,PT8}/parameters.txt and summary.txt)"
+    },
+    {
+      "id": "raw",
+      "kind": "repository",
+      "location": "RAW headers via range read of 221019_MAEP9_Vneo2_uPAC50cm_FHH_8min_PT_15k_50ng-01.raw, 20240130_EXPL5_EVO7_FH_SA_HeLa_500ng_sRNG_Pton_fdsm2_01.raw, 20240130_EXPL5_EVO7_FH_SA_HeLa_50ng_sRNG_Pton_fdsm0_01.raw"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "72 DDA (2210* RAW) + 49 DIA (2024* RAW) = all 121 deposited RAW files, each claimed once",
+      "source_ids": [
+        "files"
+      ],
+      "evidence": "all pages of the files API fetched"
+    },
+    {
+      "location": "comment[instrument] both files",
+      "value": "Orbitrap Exploris 480 (MS:1003028)",
+      "source_ids": [
+        "raw"
+      ],
+      "evidence": "RAW method summaries read 'Orbitrap Exploris 480 Method Summary'; PRIDE says Orbitrap Astral"
+    },
+    {
+      "location": "characteristics[cell line], cellosaurus accession",
+      "value": "HeLa S3 / CVCL_0058",
+      "source_ids": [
+        "pride",
+        "files"
+      ],
+      "evidence": "PRIDE protocol 'HeLa S3 cervical carcinoma cells'; file names HeLa"
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "cervical carcinoma",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE protocol"
+    },
+    {
+      "location": "factor value[acquisition mode], amount, MS2 resolution, technical replicate",
+      "value": "per-run values",
+      "source_ids": [
+        "xlsx",
+        "files"
+      ],
+      "evidence": "Annotation-extended.xlsx columns EXP, Amount, Replicate, MS/MS_Resolution joined on file stem"
+    },
+    {
+      "location": "DIA row 50ng_Pton_fdsm0_01",
+      "value": "Preaccumulation, 50 ng, replicate 1",
+      "source_ids": [
+        "raw",
+        "files"
+      ],
+      "evidence": "Absent from xlsx; RAW header shows 120000/15000, NCE 27; name tokens Pton fdsm0"
+    },
+    {
+      "location": "DIA blank row 0ng_sRNG_Ptoff_fdsm2_01",
+      "value": "source blank_0ng; sample type negative control; organism/organism part/cell type/disease/sex not applicable; amount 0 ng; cell line 'blank injection (no cell line)' (the cell-lines template forbids reserved words there)",
+      "source_ids": [
+        "xlsx",
+        "files"
+      ],
+      "evidence": "xlsx Amount 0ng; deposited injection with no peptide"
+    },
+    {
+      "location": "comment[collision energy] DDA / DIA",
+      "value": "28 NCE / 27 NCE",
+      "source_ids": [
+        "raw",
+        "xlsx"
+      ],
+      "evidence": "RAW method summary HCD collision energy; xlsx HCD column"
+    },
+    {
+      "location": "DIA isolation window width, scan window limits",
+      "value": "32; 361; 1033",
+      "source_ids": [
+        "raw"
+      ],
+      "evidence": "DIA isolation window 32 m/z; precursor mass range 361-1033"
+    },
+    {
+      "location": "comment[dia method]",
+      "value": "directDIA",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE dataProcessingProtocol: 'directDIA mode' in Spectronaut"
+    },
+    {
+      "location": "comment[cleavage agent details] both files",
+      "value": "Trypsin/P (MS:1001313)",
+      "source_ids": [
+        "mq",
+        "sne"
+      ],
+      "evidence": "MaxQuant 2.0.3.0 summary.txt Enzyme column 'Trypsin/P', Enzyme mode Specific, max missed cleavages 2; Spectronaut .sne settings text: 'Digest Rule ... VALUES{Trypsin/P}', 'Missed Cleavages 2'. reconcile flags cleavage_agent_unsupported because the PRIDE prose names no enzyme; kept because the value is the enzyme rule of the deposited searches, not a digest-reagent claim from prose, and the linked paper states trypsin+LysC digestion consistent with it"
+    },
+    {
+      "location": "comment[modification parameters] both files",
+      "value": "Carbamidomethyl (C) fixed; Acetyl (Protein N-term), Oxidation (M) variable",
+      "source_ids": [
+        "mq",
+        "sne"
+      ],
+      "evidence": "MaxQuant summary.txt Fixed 'Carbamidomethyl (C)', Variable 'Oxidation (M);Acetyl (Protein N-term)'; Spectronaut .sne: Fixed '$Carbamidomethyl (C)$', Variable '$Acetyl (Protein N-term)$Oxidation (M)$'"
+    },
+    {
+      "location": "DDA comment[fragment mass tolerance]",
+      "value": "20 ppm",
+      "source_ids": [
+        "mq"
+      ],
+      "evidence": "parameters.txt 'MS/MS tol. (FTMS) 20 ppm'; MaxQuant version 2.0.3.0 (PRIDE prose says v3.6.13, conflict, deposit used)"
+    },
+    {
+      "location": "biological replicate",
+      "value": "1 for all rows",
+      "source_ids": [
+        "pride",
+        "xlsx"
+      ],
+      "evidence": "All runs appear to be technical injections of one HeLa S3 lysate/digest; replicate suffix is comment[technical replicate]"
+    }
+  ],
+  "limitations": [
+    "Precursor mass tolerance not in the MaxQuant parameters file; DIA fragment tolerance is Spectronaut-dynamic: both not available",
+    "Reduction/alkylation reagents not stated in PRIDE for this deposit: not available (paper does not cite this accession)",
+    "Paper does not cite PXD061135 and describes a different instrument; weak context only",
+    "PRIDE prose says MaxQuant v3.6.13; deposited parameters.txt says 2.0.3.0",
+    "PRIDE instrument (Astral) conflicts with RAW headers (Exploris 480); raw used",
+    "Blank row: cell line column holds free text because the cell-lines template permits no reserved word there",
+    "One DIA file (50ng_Pton_fdsm0_01) is missing from the xlsx and was assigned from its RAW header and file name",
+    "Peptide amount loaded and MS2 resolution only as factors; storage temperature, passage, medium, demographics not available",
+    "The .sne also references undeposited runs (100/250 ng, nRNG), not annotated",
+    "reconcile still flags cleavage_agent_unsupported on both files (justified in claims)"
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD074049.sdrf.tsv",
+  "dataset": "PXD074049",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD074049"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD074049/files?pageSize=500"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC13293952 (doi:10.1016/j.xcrm.2026.102800)"
+    },
+    {
+      "id": "design",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/04/PXD074049/experimental_design_Global.tsv"
+    },
+    {
+      "id": "pdanalysis",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/04/PXD074049/PD_output.zip member PD_output/P59_R1634_Final_analysis.pdAnalysis (HTTP range read)"
+    },
+    {
+      "id": "psms",
+      "kind": "repository",
+      "location": "PD_output.zip member PD_output/..._PSMs.txt (first 3 MB compressed, HTTP range read)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[label], source name, factor value[treatment], factor value[laterality]",
+      "value": "32 channels TMT126..TMT135ND; 16 sources (GCN4/tdT x ipsi/contra, replicates 1-4); non-D = technical replicate 1, D_ = technical replicate 2 of the index-matched source",
+      "source_ids": [
+        "design",
+        "paper"
+      ],
+      "evidence": "experimental_design_Global.tsv rows 0-31; paper data availability: two technical replicates, deuterated or non-deuterated labels"
+    },
+    {
+      "location": "comment[fraction identifier], comment[data file]",
+      "value": "16 RAW, Fr1-Fr16 from file name",
+      "source_ids": [
+        "files",
+        "paper"
+      ],
+      "evidence": "_FrN token; paper: 16 HpH fractions"
+    },
+    {
+      "location": "characteristics[organism], organism part, sex, strain, treatment",
+      "value": "Mus musculus; dorsal root ganglion (L3-L5); male; strain not available; AAV8-Di-C5 vs AAV8-tdTomato",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "paper TMT MS methods; PRIDE organism"
+    },
+    {
+      "location": "comment[instrument], acquisition, dissociation, collision energy, ms2 mass analyzer",
+      "value": "Orbitrap Ascend; DDA; CID; 34 NCE; ion trap",
+      "source_ids": [
+        "paper",
+        "pride",
+        "psms"
+      ],
+      "evidence": "paper LC-MS methods; PSM Activation Type CID"
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance], modification parameters, cleavage agent",
+      "value": "10 ppm; 0.6 Da; Carbamidomethyl C fixed; Oxidation M, Phospho STY, TMTpro K and peptide N-terminus (PP=Any N-term) variable; Trypsin",
+      "source_ids": [
+        "pdanalysis",
+        "paper"
+      ],
+      "evidence": "Sequest HT node parameters in pdAnalysis (DynamicModificationNPeptide, Any_N_Terminus)"
+    },
+    {
+      "location": "comment[reduction reagent], alkylation reagent, fractionation method",
+      "value": "TCEP; chloroacetamide; high-pH RP",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "sample preparation protocol"
+    }
+  ],
+  "limitations": [
+    "GCN4 group = AAV8-Di-C5 is inferred; deposit only names GCN4",
+    "Deuterated TMTpro labels produced by two-pass build plus scripted relabel because sdrf-tools build regex lacks D suffix",
+    "Dissociation CID for MS2; HCD MS3 quant not encoded",
+    "reconcile flags cleavage agent and organism part are false positives; PRIDE disease (leukemia) ignored",
+    "Validation: only the known 'study sample not in pride' cache error; free-text treatment/strain warnings",
+    "RAW headers not checked; PD_output.zip msf not fully read",
+    "D_ channels annotated as technical replicate 2 of the index-matched non-D source (D_<group> n with <group> n); paper states two technical replicates with deuterated or non-deuterated labels; pairing by index not traced per channel; PRIDE protocol text says instead that one sample carried both label types (unresolved, paper followed)",
+    "developmental stage not available; sampling time omitted: paper gives 73-74 days after injection (methods) and 84-85 days post-SNI (results), both ranges",
+    "strain or breed not available: paper lists C57BL/6NRj, C57BL/6JRj, C57BL/6JBomTac and writes c57BL6/J for this cohort",
+    "Cleavage: paper digests with Trypsin and Lys-C; comment[cleavage agent details] is single-valued so only Trypsin is recorded",
+    "PRIDE structured disease (leukemia) overridden by neuropathic pain; contralateral DRGs also labelled neuropathic pain (all mice SNI)",
+    "comment[label] accessions taken from the vocabulary used in sibling annotation PXD073925",
+    "Laterality only as factor value[laterality]; no characteristics column in the templates",
+    "Strain left not available although the paper's TMT methods write 'c57BL6/J' for these mice; Methods list several WT substrains"
+  ]
+}

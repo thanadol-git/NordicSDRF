@@ -1,0 +1,122 @@
+{
+ "schema_version": 1,
+ "artifact": "annotations/PXD027742.sdrf.tsv",
+ "dataset": "PXD027742",
+ "sources": [
+  {
+   "id": "pride",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD027742"
+  },
+  {
+   "id": "files",
+   "kind": "repository",
+   "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD027742/files (1201 entries over 13 pages of 100: 240 raw, 960 pdResult, 1 txt)"
+  },
+  {
+   "id": "paper",
+   "kind": "publication",
+   "location": "https://europepmc.org/article/PMC/PMC8863851 (doi:10.1038/s42003-022-03095-4), Methods and Fig. 1a (channel composition panel)"
+  },
+  {
+   "id": "suppt1",
+   "kind": "supplement",
+   "location": "https://static-content.springer.com/esm/art%3A10.1038%2Fs42003-022-03095-4/MediaObjects/42003_2022_3095_MOESM5_ESM.xlsx (Supplementary Data 2, sheet RawFiles: carrier, level, amount, AGC, replicate, resolution, NCE per raw file)"
+  },
+  {
+   "id": "pdresult",
+   "kind": "repository",
+   "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2022/02/PXD027742/20200820_EXPL8_EVO1_ZY_SA_44min_TMT_HEY14_50pg_AGC50__1-_2_.pdResult (first 8 MB, Proteome Discoverer workflow parameters)"
+  }
+ ],
+ "claims": [
+  {
+   "location": "comment[label] / rows",
+   "value": "TMTpro 16-plex: 126 = carrier (absent in No-carrier runs), 127C empty (no row), 127N..134N = 14 single-cell channels",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Results: channel 126 served as the CPC, 127C left empty, last 14 channels single-cell channels; No-carrier runs have no CPC"
+  },
+  {
+   "location": "characteristics[species composition] (single-cell channels)",
+   "value": "E. coli/Human/yeast relative amounts per channel, e.g. 127N 50/100/50 ... 134N 1/100/99",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Read from the bar labels of Fig. 1a (image); no text/table equivalent located"
+  },
+  {
+   "location": "factor values and comment[collision energy]",
+   "value": "carrier proteome H/EY/HEY/none, carrier level 14-434x, 50/100/200 pg, AGC 50/300 %, MS2 resolution 30K-120K, NCE 26-38 %",
+   "source_ids": [
+    "suppt1",
+    "files"
+   ],
+   "evidence": "All 240 deposited RAW names matched one-to-one to Supplementary Data 2 RawFiles rows"
+  },
+  {
+   "location": "biological replicate",
+   "value": "Replicates column of Supplementary Data 2 (1/2; 1 where blank for 20200827 files)",
+   "source_ids": [
+    "suppt1"
+   ],
+   "evidence": "Table labels it 'Replicates'; biological vs technical not stated"
+  },
+  {
+   "location": "comment[instrument], reduction/alkylation, tolerances",
+   "value": "Orbitrap Exploris 480; TCEP/CAA; 10 ppm / 0.02 Da; Trypsin",
+   "source_ids": [
+    "pride",
+    "paper",
+    "pdresult"
+   ],
+   "evidence": "PRIDE protocol, paper Methods, PD workflow (Precursor 10 ppm, Fragment 0.02 Da, Trypsin (Full), 1 missed cleavage)"
+  },
+  {
+   "location": "comment[modification parameters]",
+   "value": "Carbamidomethyl C fixed; TMTpro K and N-term fixed; Oxidation M variable",
+   "source_ids": [
+    "pdresult",
+    "paper"
+   ],
+   "evidence": "PD workflow Static 1/2 and Peptide N-Terminus, Dynamic 2"
+  },
+  {
+   "location": "comment[dissociation method]",
+   "value": "HCD",
+   "source_ids": [
+    "pdresult"
+   ],
+   "evidence": "PD scan-event filter Activation Type HCD"
+  },
+  {
+   "location": "comment[data file]",
+   "value": "240 RAW files; .pdResult/.txt not annotated",
+   "source_ids": [
+    "files"
+   ],
+   "evidence": "PRIDE file list"
+  },
+  {
+   "location": "declared templates",
+   "value": "ms-proteomics only",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "single-cell template requires single cell isolation protocol and cell identifier, which do not apply to diluted bulk peptide mixtures; comment[carrier channel] optional"
+  }
+ ],
+ "limitations": [
+  "Carrier channel species proportions (H/EY/HEY) and absolute carrier amounts not stated; carrier level (x) given only as factor",
+  "Channel composition amounts read from the Fig. 1a image, units relative (axis 0-200)",
+  "Collision energy NCE is given as % NCE per Supplementary Data 2; MS2 analyzer Orbitrap from instrument/PD filter FTMS, RAW headers not checked",
+  "pdResult parameters read from one file; assumed identical for all runs",
+  "Organism: three repeated columns; carrier rows with fewer species have empty trailing cells; produced by post-processing build output (build cannot emit per-row repeated columns)",
+  "Biological replicate for the 48 20200827 files is placeholder 1 (Replicates blank in Supplementary Data 2); sources are separated by date and condition; technical replicate 1 everywhere, reinjection not stated",
+  "No-carrier runs: 14 rows 127N-134N with the same composition as carrier runs is inferred",
+  "Lys-C and Trypsin both encoded; sdrf-tools reconcile reads only the first cleavage column and still flags Trypsin missing",
+  "Cell type/organ/disease not available for mixed lysate",
+  "Carrier-channel sample type left not available; only one pdResult workflow inspected (paper Methods give PD 2.4 settings for the whole study); all 1201 PRIDE files counted over 13 pages (240 RAW)"
+ ]
+}
