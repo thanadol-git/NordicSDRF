@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD025407-ethcd.sdrf.tsv",
+  "dataset": "PXD025407",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD025407"},
+    {"id": "files", "kind": "repository_file", "location": "scratchpad/PXD025407/files.json"},
+    {"id": "paper", "kind": "publication", "location": "https://glycoimaging.mau.se/files/2021/09/Konstantinidi-2021-acs.analchem.1c01696.pdf"},
+    {"id": "unimod43", "kind": "ontology", "location": "https://www.unimod.org/modifications_view.php?editid1=43"},
+    {"id": "unimod793", "kind": "ontology", "location": "https://www.unimod.org/modifications_view.php?editid1=793"},
+    {"id": "cellosaurus", "kind": "ontology", "location": "https://www.cellosaurus.org/CVCL_0045"},
+    {"id": "psims", "kind": "ontology", "location": "https://github.com/HUPO-PSI/psi-ms-CV/blob/master/psi-ms.obo"}
+  ],
+  "claims": [
+    {"location": "comment[data file], rows 1-7", "value": "seven HEK WT EThcD-only raw files at supplemental activation NCE 10, 15, 20, 25, 30, 35, and 40", "source_ids": ["files", "paper"], "evidence": "Every filename has HEK_WT, an EThcD-only method token, its NCE setting, and a matching accession-scoped PRIDE raw-file record. Paper Figure 1 and Methods describe the aliquoted enriched HEK293 sample and EThcD-only energy series."},
+    {"location": "source name, characteristics[organism], characteristics[cell line], characteristics[cellosaurus accession], rows 1-7", "value": "one HEK293 wild-type Jacalin-enriched glycopeptide preparation; CVCL_0045", "source_ids": ["paper", "pride", "cellosaurus"], "evidence": "Paper Methods identify HEK293 wild-type cells, trypsin digest, neuraminidase treatment and Jacalin enrichment. Figure 1 caption says enriched glycopeptides were aliquoted before the method comparison. Cellosaurus CVCL_0045 identifies HEK293. Biological replicate 1 identifies that one described preparation; additional independent biological sources are not claimed."},
+    {"location": "comment[technical replicate], rows 1-7", "value": "distinct aliquot injections numbered 1-7", "source_ids": ["paper", "files"], "evidence": "Figure 1 describes aliquoted samples; the seven deposited raw filenames are distinct injections with distinct NCE settings. The ordinal is assigned from NCE order for SDRF coordinate uniqueness, not a laboratory-provided replicate number."},
+    {"location": "comment[instrument] and comment[cleavage agent details], rows 1-7", "value": "Orbitrap Fusion Lumos and Trypsin", "source_ids": ["paper", "pride"], "evidence": "Paper Experimental Section and matching PRIDE protocols name both."},
+    {"location": "comment[proteomics data acquisition method], rows 1-7", "value": "Data-dependent acquisition", "source_ids": ["paper"], "evidence": "Paper Methods specify full-scan MS, precursor-selected MS/MS, dynamic exclusion for 30 seconds, a 10-ppm exclusion window and 3-second duty cycle for all methods. This is a DDA acquisition scheme, although the text does not use the DDA acronym."},
+    {"location": "comment[dissociation method], comment[collision energy], factor value[supplemental activation energy], rows 1-7", "value": "EThcD at 10-40 NCE", "source_ids": ["paper", "files", "psims"], "evidence": "Paper Methods and Figure 1 define an EThcD-only series with varied supplemental activation energies. Each exact NCE value is in its deposited filename. PSI-MS accession MS:1002631 denotes electron transfer and higher-energy collision dissociation."},
+    {"location": "comment[modification parameters], rows 1-7", "value": "fixed C carbamidomethyl; variable M oxidation, HexNAc and Hex(1)HexNAc(1) on S/T/Y", "source_ids": ["paper", "pride", "unimod43", "unimod793"], "evidence": "Paper Data Analysis explicitly lists these search modifications. UNIMOD:43 and UNIMOD:793 identify the two glycan compositions. Y is retained because it is explicitly included in the paper's search sites, even though the UNIMOD record lists narrower experimentally curated site specificity."}
+  ],
+  "limitations": [
+    "Only seven EThcD-only HEK293 RAW acquisitions are annotated. The 16 sequential HCD/ETciD or HCD/EThcD HEK acquisitions and the two TMT-labeled HepG2 RAW files require separate method and channel mapping.",
+    "PRIDE marks the project-level quantification method TMT, but the paper explicitly identifies the HEK293 comparison as unlabeled and reserves TMT for the HepG2 comparison. The seven selected files have HEK_WT and no TMT token.",
+    "The official offline validator emits one warning for the PSI-MS EThcD term MS:1002631, which is supported by the PSI-MS CV but absent from the validator's local ontology cache.",
+    "The publication does not provide a biological replicate count beyond the aliquoted HEK293 preparation. The SDRF's biological replicate 1 designates the described preparation, without claiming an independent replicate series."
+  ]
+}

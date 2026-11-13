@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD053300.sdrf.tsv",
+  "dataset": "PXD053300",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD053300"},
+    {"id": "files", "kind": "repository_file", "location": "scratchpad/PXD053300/files.json"}
+  ],
+  "claims": [
+    {"location": "source name, comment[data file], factor value[cell clone], factor value[treatment], characteristics[biological replicate], rows 1-16", "value": "Two cell clone labels, 555_H11 and 557_C7; each has DMSO and dTAG treatments with four biological replicate runs", "source_ids": ["pride", "files"], "evidence": "All 16 accession-matched RAW names encode clone, treatment, and MS1-MS4. PRIDE's processing protocol states four biological replicates in two independent cell lines, untreated versus dTAG-treated, totaling 16 samples."},
+    {"location": "characteristics[organism], characteristics[cell type], characteristics[material type], characteristics[strain or breed], rows 1-16", "value": "Mus musculus embryonic stem cell lines derived from E14JU with 129/Ola background", "source_ids": ["pride"], "evidence": "PRIDE's preparation protocol explicitly describes these mouse ESC lines and background."},
+    {"location": "comment[instrument], comment[cleavage agent details], comment[proteomics data acquisition method], comment[precursor mass tolerance], rows 1-16", "value": "Q Exactive HF, Trypsin, PRM, 5 ppm precursor tolerance", "source_ids": ["pride"], "evidence": "PRIDE preparation and processing protocols explicitly specify Q Exactive HF targeted PRM, trypsin digestion, and Skyline search with 5 ppm precursor tolerance."}
+  ],
+  "limitations": [
+    "The deposit does not state which clone code is POLE4-dTAG only versus MCM2-2A/POLE4-dTAG; genotype was deliberately not assigned to clone codes.",
+    "129/Ola is given in the submitter's prose but is not resolved by the validator's offline NCBITaxon lookup, so validation reports an ontology warning.",
+    "The deposit describes propionylation of histone lysines during preparation but does not provide an explicit per-search modification parameter list for the Skyline quantification; modification parameters were not inferred.",
+    "DMSO is retained as the run-label treatment/control term; the deposit calls it the untreated comparison and does not quantify the vehicle dose."
+  ]
+}

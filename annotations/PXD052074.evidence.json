@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD052074.sdrf.tsv",
+  "dataset": "PXD052074",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD052074"},
+    {"id": "overview", "kind": "repository_file", "location": "scratchpad/PXD052074/Samples_overview.xlsx"},
+    {"id": "archive_index", "kind": "repository_file", "location": "scratchpad/PXD052074/archive_roots.json"},
+    {"id": "files", "kind": "repository_file", "location": "scratchpad/PXD052074/files.json"},
+    {"id": "paper", "kind": "publication", "location": "https://stacks.cdc.gov/view/cdc/261956/cdc_261956_DS1.pdf"}
+  ],
+  "claims": [
+    {"location": "source name, comment[data file], characteristics[biological replicate], genotype, factor value[genotype], rows 1-12", "value": "Six wild-type controls and six cardiac PKP2 knockouts", "source_ids": ["overview", "archive_index", "files", "pride"], "evidence": "Deposited Samples_overview.xlsx gives twelve rows: six Control followed by six PKP2cKO. Its filenames repeat S01/S2-A1 but retain unique terminal run IDs 7172-7183. Those IDs map one-to-one to twelve actual .d roots verified from the raw_files.7z file index and to twelve matching pepXML names in the accession-matched PRIDE file list. PRIDE project description equates controls with wild-type mice."},
+    {"location": "characteristics[organism] and characteristics[organism part], rows 1-12", "value": "Mus musculus, left atrium", "source_ids": ["pride", "overview"], "evidence": "PRIDE project and preparation protocol describe left atria from mice; overview tissue column says Atria for all twelve runs."},
+    {"location": "comment[instrument], acquisition and cleavage agent, rows 1-12", "value": "timsTOF Pro, DDA, Trypsin", "source_ids": ["pride", "archive_index", "files", "paper"], "evidence": "The linked publication's Methods identify the timsTOF Pro and on-bead trypsin digestion. PRIDE records DDA, and vendor raw directory names contain DDA. The PRIDE structured Agilent 6220 instrument dropdown conflicts with the protocol and publication."},
+    {"location": "comment[modification parameters] and comment[fragment mass tolerance], rows 1-12", "value": "Fixed carbamidomethylated cysteine; variable oxidized methionine, N-terminal acetylation and STY phosphorylation; 20 ppm maximal MS/MS search tolerance", "source_ids": ["paper"], "evidence": "The linked publication's Methods (page 8) explicitly describe the search settings for this dataset's phosphoproteomic analysis."}
+  ],
+  "limitations": [
+    "The deposited overview has a copy/paste filename error: all rows show S01_S2-A1. Actual vendor directory names were recovered from the 7z index and matched by unique trailing run IDs to the overview and the twelve deposited pepXML names.",
+    "The full 17 GB archive was not downloaded. Its 7z signature header and final 1 MB index region were read through HTTP byte ranges and listed with bsdtar; the twelve vendor roots are saved in archive_roots.json.",
+    "Sample age, sex, and mouse strain are not mapped to individual runs in the available record; no values were inferred from the study topic.",
+    "PRIDE names immunoprecipitation of RyR2 but does not give an ontology-backed enrichment field in this annotation."
+  ]
+}

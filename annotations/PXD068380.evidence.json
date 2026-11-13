@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD068380.sdrf.tsv",
+  "dataset": "PXD068380",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD068380"},
+    {"id": "design", "kind": "repository_file", "location": "scratchpad/PXD068380/experimental_design.txt"},
+    {"id": "zip_index", "kind": "repository_file", "location": "scratchpad/PXD068380/zip_contents.json"},
+    {"id": "mqpar", "kind": "repository_file", "location": "scratchpad/PXD068380/mqpar.xml"}
+  ],
+  "claims": [
+    {"location": "source name, comment[data file], characteristics[biological replicate], characteristics[genotype], factor value[genotype], rows 1-6", "value": "Three rS1 KO4+ and three rS1 KO4- samples", "source_ids": ["design", "zip_index", "mqpar"], "evidence": "The deposited design table maps S1-S6 to exact run stems and verbatim group labels. All six .d vendor directories occur in the ZIP central directory and MaxQuant mqpar.xml."},
+    {"location": "characteristics[organism], characteristics[organism part], characteristics[material type], rows 1-6", "value": "Human cell culture and cell line material", "source_ids": ["pride"], "evidence": "PRIDE describes SCAF1 KO and rescue cell lines, chromatin fraction isolation, and RPB1 immunoprecipitation; its structured organism is Homo sapiens."},
+    {"location": "comment[instrument], comment[proteomics data acquisition method], rows 1-6", "value": "timsTOF Pro, DDA", "source_ids": ["pride", "design"], "evidence": "PRIDE sample protocol names timsTOF pro PASEF; all deposited raw run names contain DDA. The structured instrument dropdown instead says Pro 2, so the prose-supported Pro term is used."},
+    {"location": "comment[cleavage agent details], comment[modification parameters], rows 1-6", "value": "Trypsin/P search specificity and three MaxQuant modifications", "source_ids": ["pride", "mqpar"], "evidence": "PRIDE protocol names trypsin digestion. MaxQuant mqpar.xml specifies Trypsin/P, fixed carbamidomethyl C, variable oxidation M and protein N-terminal acetylation."}
+  ],
+  "limitations": [
+    "The deposited group labels rS1 KO4+ and rS1 KO4- are preserved verbatim because the design table does not define their exact molecular interpretation or map them explicitly to KO versus rescue.",
+    "The cell line's exact name, donor age, sex and disease state are unavailable and not inferred.",
+    "PRIDE structured instrument says timsTOF Pro 2 but the sample protocol explicitly says timsTOF pro; the latter is used.",
+    "PRIDE data-processing prose says swine or bovine FASTA, apparently copied from another study; organism is taken from the sample record and project description.",
+    "The raw archive is deposited as raw.zip; each comment[data file] names a .d vendor directory confirmed in its central directory."
+  ]
+}

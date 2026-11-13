@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD009914-chymo.sdrf.tsv",
+  "dataset": "PXD009914",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD009914"},
+    {"id": "files", "kind": "repository_file", "location": "scratchpad/PXD009914/files.json"},
+    {"id": "search", "kind": "repository_file", "location": "scratchpad/PXD009914/SEARCH.zip"},
+    {"id": "unimod_methyl", "kind": "ontology", "location": "https://www.unimod.org/modifications_view.php?editid1=34"},
+    {"id": "unimod_dimethyl", "kind": "ontology", "location": "https://www.unimod.org/modifications_view.php?editid1=36"},
+    {"id": "unimod_trimethyl", "kind": "ontology", "location": "https://www.unimod.org/modifications_view.php?editid1=37"},
+    {"id": "paper", "kind": "publication", "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6109062/"}
+  ],
+  "claims": [
+    {"location": "source name, comment[data file], factor value[treatment], characteristics[biological replicate], rows 1-8", "value": "Four AdOx 48 h and four untreated HeLa runs with replicate labels 1-4", "source_ids": ["files", "search", "paper"], "evidence": "Eight exact RAW basenames occur in the accession file list and in SEARCH.zip/SEARCH/summary.txt. The names encode AdOx_48h or NoTreat and Rep1-4. The linked paper reports HeLa AdOx treatment at 10 μM for 48 h and n=4 for the AdOx comparison."},
+    {"location": "characteristics[organism], characteristics[cell line], characteristics[cellosaurus accession], characteristics[disease], rows 1-8", "value": "Homo sapiens HeLa (CVCL_0030), cervix carcinoma", "source_ids": ["pride", "files", "paper"], "evidence": "PRIDE describes HeLa cells and includes structured origin disease DOID:2893 cervix carcinoma. The eight RAW names contain HeLa, and the linked paper names HeLa ATCC CCL-2. The local sdrf-tools cellline lookup resolves HeLa exactly to CVCL_0030."},
+    {"location": "comment[cleavage agent details], rows 1-8", "value": "Chymotrypsin", "source_ids": ["search", "files"], "evidence": "Each of the eight exact RAW names contains Chymo; each matching row of SEARCH.zip/SEARCH/summary.txt explicitly lists Enzyme = Chymotrypsin. PRIDE's project-level sampleProcessingProtocol says Trypsin, which conflicts with this accession's run-level filenames and deposited search evidence. The run-level evidence is used for this subset."},
+    {"location": "comment[modification parameters] and comment[fragment mass tolerance], rows 1-8", "value": "Fixed carbamidomethyl C; variable oxidation M, protein N-terminal acetylation, mono-, di-, and tri-methylation; 20 ppm MS/MS tolerance", "source_ids": ["search", "unimod_methyl", "unimod_dimethyl", "unimod_trimethyl"], "evidence": "SEARCH.zip/SEARCH/parameters.txt gives fixed Carbamidomethyl (C) and MS/MS tol. (FTMS) 20 ppm; its eight matching summary rows list oxidation (M), protein N-terminal acetylation, and MethylMono/Di/Tri (Protein N-term). UNIMOD:34/36/37 are the matching mass-shift records."},
+    {"location": "comment[instrument] and comment[proteomics data acquisition method], rows 1-8", "value": "Q Exactive HF, data-dependent acquisition", "source_ids": ["pride", "search", "paper"], "evidence": "The linked paper's Methods identify Q Exactive HF for these HeLa samples. PRIDE's structured instrument field says HF-X, conflicting with the paper's explicit description. The deposited SEARCH.zip/SEARCH/msmsScans.txt has about 15,500 MS/MS scans and 4,900-5,200 distinct precursor m/z values (rounded to 0.1) in each of the eight exact RAW matches; the paper's targeted analysis isolated only specific methylation states of a single N-terminal peptide. These thousands of distinct precursor selections support DDA for this eight-run subset, while the paper states that both DDA and targeted methods were used across the broader study."}
+  ],
+  "limitations": [
+    "The deposited SEARCH.zip contains MaxQuant evidence for only eight of the 22 RAW files. This SDRF deliberately covers those eight exact matched Chymotrypsin AdOx and untreated runs; the other 14 remain for separate assessment.",
+    "The PRIDE project-level sample protocol says Trypsin but the eight run names and matching MaxQuant Enzyme column explicitly say Chymotrypsin. The reconciler flags this broad-protocol conflict; the run-level deposited evidence supports Chymotrypsin.",
+    "The paper reports n=4 for the AdOx comparison; the RAW names encode Rep1-4. The record does not separately identify independent cultures versus independent preparations for these labels.",
+    "The deposited MaxQuant parameters give a 20 ppm FTMS MS/MS tolerance but do not give a run-specific precursor tolerance value for this subset, so none was inferred."
+  ]
+}

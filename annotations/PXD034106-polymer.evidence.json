@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD034106-polymer.sdrf.tsv",
+  "dataset": "PXD034106",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD034106"},
+    {"id": "key", "kind": "repository_file", "location": "scratchpad/PXD034106/Raw_File_Sample_Key.txt"},
+    {"id": "files", "kind": "repository_file", "location": "scratchpad/PXD034106/files.json"}
+  ],
+  "claims": [
+    {"location": "source name, comment[data file], factor value[container], factor value[tip], rows 1-4", "value": "Four blank polymer tests: LoBind/Pyrex crossed with plastic/Pasteur glass tips", "source_ids": ["key", "files", "pride"], "evidence": "Deposited Raw_File_Sample_Key.txt explicitly names PolyTest1-4 and gives the four container/tip combinations. Each exact run stem occurs as a RAW file in accession-matched PRIDE files.json."},
+    {"location": "characteristics[organism] and organism part, rows 1-4", "value": "not applicable", "source_ids": ["key", "pride"], "evidence": "The four runs are reagent and material blanks prepared without a biological specimen to test polymer leaching."},
+    {"location": "comment[cleavage agent details], instrument and acquisition, rows 1-4", "value": "Trypsin, Orbitrap Exploris 480, DDA", "source_ids": ["pride", "key"], "evidence": "PRIDE states that the four polymer blanks were prepared using the same beeswax extraction protocol, which includes trypsin digestion, and were measured by the same LC-MS/MS method. Their filenames explicitly contain DDA. The separate queen-cell workflow uses sequential Lys-C and Trypsin; it does not apply here."}
+  ],
+  "limitations": [
+    "These are process blanks, not biological samples. The species and organism-part fields are not applicable.",
+    "PRIDE states that no database search was performed on these four runs, so no search modifications or mass tolerances are asserted.",
+    "This file covers only PolyTest1-4; the beeswax and queen-cell experiments are separate workflows.",
+    "Project-wide reconcile sees the separate queen-cell Lys-C step and flags all Trypsin-only files; the local polymer workflow uses the wax protocol, so that warning does not apply to these rows."
+  ]
+}

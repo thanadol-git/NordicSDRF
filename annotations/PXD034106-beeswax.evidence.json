@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD034106-beeswax.sdrf.tsv",
+  "dataset": "PXD034106",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD034106"},
+    {"id": "key", "kind": "repository_file", "location": "scratchpad/PXD034106/Raw_File_Sample_Key.txt"},
+    {"id": "files", "kind": "repository_file", "location": "scratchpad/PXD034106/files.json"},
+    {"id": "paper", "kind": "publication", "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12344410/"}
+  ],
+  "claims": [
+    {"location": "source name, comment[data file], factor value[sample class], rows 1-11", "value": "Ten historical beeswax subsamples B1-B11 except B4 and one extraction blank", "source_ids": ["key", "files", "pride"], "evidence": "Deposited Raw_File_Sample_Key.txt explicitly maps these eleven run stems to the Beeswax Feasibility Test, ten wax subsamples and one lab blank; all eleven stems match the accession-matched PRIDE RAW file list."},
+    {"location": "characteristics[organism], rows 1-11", "value": "Apis mellifera source material for beeswax; not applicable for blank", "source_ids": ["pride", "paper"], "evidence": "The project describes historical honeycomb specimens of honeybees and its structured organism is Apis mellifera; the extraction blank has no organism. The recovered peptide mixture can include proteins from other organisms, but the sampled source material is honeybee wax."},
+    {"location": "comment[cleavage agent details], rows 1-11", "value": "Trypsin", "source_ids": ["pride", "key"], "evidence": "The PRIDE sample-processing paragraph for historical beeswax states that beeswax samples and the procedural extraction blank were digested overnight with trypsin. Its separate queen-cell paragraph describes sequential Lys-C and Trypsin, which does not apply to these eleven rows."},
+    {"location": "comment[instrument], acquisition, mass tolerances, rows 1-11", "value": "Orbitrap Exploris 480, DDA, 5 ppm precursor and 20 ppm fragment", "source_ids": ["pride", "files"], "evidence": "PRIDE describes Exploris 480 Top 10 DDA acquisition for the wax experiments and gives 5 ppm/20 ppm tolerances for the final wax database search. Every included RAW file stem contains DDA."},
+    {"location": "comment[modification parameters], rows 1-11", "value": "Fixed carbamidomethyl C and variable oxidation M, deamidation N/Q, pyroglutamate Q/E", "source_ids": ["pride"], "evidence": "The PRIDE data-processing paragraph specific to wax explicitly lists these modifications for the final MaxQuant search. Unimod 7, 27, and 28 identify deamidation and the two pyroglutamate forms."}
+  ],
+  "limitations": [
+    "This is only the historical beeswax experiment within PXD034106. The queen-cell sample and blank, and four polymer contamination blanks, are not represented here because they use different biological material or preparation workflows.",
+    "The paper says ten wax subsamples came from six original specimens, but the deposited key does not map B1-B11 to those six specimens. Each B# is kept as its own source with biological replicate 1; no specimen-level grouping is inferred.",
+    "The wax specimens may contain plant, fungal, and human proteins; Apis mellifera denotes the honeybee-derived source material, not the full peptide taxonomic mixture.",
+    "The record's queen-cell Trypsin/Lys-C protocol does not apply to wax rows; the accession-level reconcile warning is therefore a mixed-experiment false positive.",
+    "Modification identities and 5 ppm/20 ppm tolerances are from the wax-specific PRIDE protocol; the search-parameter archive was not inspected."
+  ]
+}

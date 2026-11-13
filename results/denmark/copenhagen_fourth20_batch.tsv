@@ -1,21 +1,21 @@
 batch_order	accession	pride_raw_bytes	pride_raw_count	annotation_status	title
-1	PXD004341	9830389512	42	in progress: evidence review	CHO O-Mannosylation independent of POMT1/2
-2	PXD072200	11424969449	45	in progress: evidence review	Spatial proteomics of the human atherosclerotic microenvironment reveals heterogeneity in intra-plaq
-3	PXD068380	11533647524	1	in progress: evidence review	Phospho-RPB1 interactome in presence or absence of SCAF1
-4	PXD018050	11564724647	8	in progress: evidence review	Barbed bone point chronology reveals an unexpected hiatus in the archaeology of Southern Scandinavia
-5	PXD019345	11582938099	16	in progress: evidence review	MPP8 is essential for sustaining self-renewal of ground-state pluripotent stem cells
-6	PXD049201	11663127628	12	in progress: evidence review	Murine bronco alveolar lavage fluid from wild type and mannose receptor knock out mice, unchallenged
-7	PXD047218	11945920328	1	in progress: evidence review	Uncovering the mechanisms responsible for intravenous paracetamol-induced hypotension
-8	PXD025407	12248322687	26	in progress: evidence review	A systematic evaluation of fragmentation methods for unlabeled and isobaric mass tag-labeled O-glyco
-9	PXD045721	12751738794	1	in progress: evidence review	Single blood donor causing multiple allergic and anaphylactic transfusion reactions
-10	PXD044505	13070275822	16	in progress: evidence review	Proteomic analysis of skeletal muscle fibre samples from hibernating and awake bears
-11	PXD044728	13658373558	16	in progress: evidence review	Proteomic analysis of skeletal muscle fibre samples from hibernating and awake squirrels
-12	PXD009914	13983473334	22	in progress: evidence review	METTL13 modulates mRNA translation through methylation of eEF1A at Lys55 and the N-terminus, part 2
-13	PXD053300	14065310399	16	in progress: evidence review	Histone dynamics at replication forks in embryonic stem cells
+1	PXD004341	9830389512	42	blocked: 42-run fraction and acquisition map unresolved	CHO O-Mannosylation independent of POMT1/2
+2	PXD072200	11424969449	45	blocked: DDA/DIA and tissue-area map unresolved	Spatial proteomics of the human atherosclerotic microenvironment reveals heterogeneity in intra-plaq
+3	PXD068380	11533647524	1	approved: 6 SCAF1 interactome runs; independent review passed	Phospho-RPB1 interactome in presence or absence of SCAF1
+4	PXD018050	11564724647	8	partial: 4 HF-X runs approved; 4 HF reference runs blocked on digest map	Barbed bone point chronology reveals an unexpected hiatus in the archaeology of Southern Scandinavia
+5	PXD019345	11582938099	16	blocked: 16-run condition map and sequential LysC/Trypsin representation unresolved	MPP8 is essential for sustaining self-renewal of ground-state pluripotent stem cells
+6	PXD049201	11663127628	12	blocked: 40-channel map recovered; two-enzyme builder and fraction order unresolved	Murine bronco alveolar lavage fluid from wild type and mannose receptor knock out mice, unchallenged
+7	PXD047218	11945920328	1	blocked: independent review failed on Trypsin/Lys-C mix; draft in scratchpad	Uncovering the mechanisms responsible for intravenous paracetamol-induced hypotension
+8	PXD025407	12248322687	26	partial: 7 HEK293 EThcD-only runs approved; 18 other RAW runs and 1 mzML unresolved	A systematic evaluation of fragmentation methods for unlabeled and isobaric mass tag-labeled O-glyco
+9	PXD045721	12751738794	1	blocked: repeated BR1 replicate mapping unresolved; independent review failed	Single blood donor causing multiple allergic and anaphylactic transfusion reactions
+10	PXD044505	13070275822	16	blocked: TMTpro channel-to-animal map and dual-enzyme representation needed	Proteomic analysis of skeletal muscle fibre samples from hibernating and awake bears
+11	PXD044728	13658373558	16	blocked: TMTpro channel-to-animal map and dual-enzyme representation needed	Proteomic analysis of skeletal muscle fibre samples from hibernating and awake squirrels
+12	PXD009914	13983473334	22	partial: 8 Chymotrypsin runs approved; 14 other runs unresolved	METTL13 modulates mRNA translation through methylation of eEF1A at Lys55 and the N-terminus, part 2
+13	PXD053300	14065310399	16	approved: 16 histone PRM runs; independent review passed	Histone dynamics at replication forks in embryonic stem cells
 14	PXD035661	14869396350	28	blocked: acquisition and replicate evidence; independent review failed	Regulation of Rad52-dependent replication fork recovery through serine ADP-ribosylation of PolD3
-15	PXD022368	15638979994	13	in progress: evidence review	Milking it? Assessing the degradation of ancient milk proteomes
-16	PXD063196	15669021357	1	in progress: evidence review	Proximity labeling of active and inactive neuronal Rab2 in flies
-17	PXD052232	16184139087	18	in progress: evidence review	ALBA proteins facilitate cytoplasmic YTHDF-mediated reading of m6A in plants
-18	PXD068367	16629294140	6	in progress: evidence review	Nitrated products formed on α-synuclein are preferentially incorporated into oligomers but excluded 
-19	PXD034106	16841245468	17	in progress: evidence review	Assessing the hidden potential of beeswax specimens in Natural History Museum collections
-20	PXD052074	17368244462	1	in progress: evidence review	RyR2 phosphorylation profile in PKP2cKO mice
+15	PXD022368	15638979994	13	blocked: 2 GASP dental runs lack explicit acquisition mode; independent review failed	Milking it? Assessing the degradation of ancient milk proteomes
+16	PXD063196	15669021357	1	approved: 8 Drosophila Rab2 runs; independent review passed	Proximity labeling of active and inactive neuronal Rab2 in flies
+17	PXD052232	16184139087	18	blocked: mixed-arm sample and TMT channel maps unresolved	ALBA proteins facilitate cytoplasmic YTHDF-mediated reading of m6A in plants
+18	PXD068367	16629294140	6	blocked: six-run TNM and optional dimethyl map unresolved	Nitrated products formed on α-synuclein are preferentially incorporated into oligomers but excluded
+19	PXD034106	16841245468	17	partial: 15 beeswax and polymer runs approved; 2 queen-cell runs unresolved	Assessing the hidden potential of beeswax specimens in Natural History Museum collections
+20	PXD052074	17368244462	1	approved: 12 left-atrium runs; independent review passed	RyR2 phosphorylation profile in PKP2cKO mice

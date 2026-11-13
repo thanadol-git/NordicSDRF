@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "dataset": "PXD018050",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD018050"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "scratchpad/PXD018050/files.json"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7560828/"
+    },
+    {
+      "id": "unimod",
+      "kind": "ontology",
+      "location": "https://www.unimod.org/modifications_list.php"
+    }
+  ],
+  "limitations": [
+    "PRIDE project record covers both Q Exactive HF reference runs and Q Exactive HF-X archaeological runs; each SDRF describes one instrument subgroup.",
+    "Exact per-specimen developmental stage, sex and disease status are not supplied.",
+    "The manuscript maps specimen IDs to species and archaeological period; the PRIDE filenames map specimen IDs to runs."
+  ],
+  "artifact": "annotations/PXD018050-hfx.sdrf.tsv",
+  "claims": [
+    {
+      "location": "comment[data file], source name, rows 1-4",
+      "value": "four deposited RAW files linked by specimen ID",
+      "source_ids": [
+        "files",
+        "pride"
+      ],
+      "evidence": "Each filename carries the specimen ID used as source name; only RAW files included."
+    },
+    {
+      "location": "characteristics[organism] and factor value[specimen group], rows 1-4",
+      "value": "Alces alces or Cervus elaphus; reference/Preboreal/Boreal",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE names P220/P221 elk and X4787/X4997 red deer; the manuscript names archaeological IDs and confirms VHM13821/A37811 elk (Preboreal), A40894/A42422 red deer (Boreal)."
+    },
+    {
+      "location": "comment[instrument], rows 1-4",
+      "value": "Q Exactive HF-X",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample protocol explicitly assigns reference samples to Q Exactive HF and bone-point samples to Q Exactive HF-X."
+    },
+    {
+      "location": "comment[proteomics data acquisition method], rows 1-4",
+      "value": "Data-dependent acquisition",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample protocol states top 10 MS2 mode and dynamic exclusion, a data-dependent method."
+    },
+    {
+      "location": "comment[cleavage agent details] and modification parameters, rows 1-4",
+      "value": "Trypsin; PRIDE search modifications",
+      "source_ids": [
+        "pride",
+        "unimod"
+      ],
+      "evidence": "PRIDE processing protocol lists semi-specific trypsin search and fixed C carbamidomethylation plus variable M oxidation, N-terminal acetylation, N/Q deamidation, Q/E pyro-Glu, and hydroxyproline. UniMod accessions mapped to each modification."
+    }
+  ]
+}
