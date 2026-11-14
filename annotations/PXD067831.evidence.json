@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD067831.sdrf.tsv",
+  "dataset": "PXD067831",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD067831; cached scratchpad/PXD067831/pride.json"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD067831/files; cached scratchpad/PXD067831/files.json"},
+    {"id": "design", "kind": "deposited experimental design", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/06/PXD067831/experimental_design.txt; cached scratchpad/PXD067831/experimental_design.txt"},
+    {"id": "mqpar", "kind": "deposited search parameters", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/06/PXD067831/mqpar.xml; cached scratchpad/PXD067831/mqpar.xml"},
+    {"id": "raw-zip", "kind": "deposited RAW archive", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/06/PXD067831/raw.zip; last 2000000 bytes cached scratchpad/PXD067831/raw_tail.bin for ZIP directory verification"},
+    {"id": "paper", "kind": "publication", "location": "https://www.nature.com/articles/s41467-026-76443-1; Thomas et al., Nature Communications 2026, DOI 10.1038/s41467-026-76443-1; full text XML cached scratchpad/PXD067831/paper.xml"},
+    {"id": "cellosaurus", "kind": "ontology", "location": "https://www.cellosaurus.org/CVCL_0045; HEK293 parent line"}
+  ],
+  "claims": [
+    {"location": "comment[data file] rows 1-18", "value": "18 Bruker .d directories", "source_ids": ["design", "raw-zip", "mqpar"], "evidence": "The experimental design has 18 distinct File Name stems. ZIP central directory contains exactly those 18 .d directory names. MaxQuant mqpar.xml lists the same 18 names."},
+    {"location": "source name and factor value[stress state] rows 1-18", "value": "untreated, 15 min 1 mM H2O2, 60 min recovery", "source_ids": ["design", "pride", "paper"], "evidence": "The deposited design assigns six groups named unt/no_rec/60min crossed with control/flag; PRIDE description defines untreated, 15-minute 1 mM H2O2, and 1-hour recovery conditions."},
+    {"location": "factor value[FLAG bait] rows 1-18", "value": "RPB3-3xFLAG or control", "source_ids": ["design", "pride", "paper"], "evidence": "Design suffixes flag/control; PRIDE and paper describe FLAG immunoprecipitation of RPB3-3xFLAG and control samples."},
+    {"location": "characteristics[organism], characteristics[cell line], characteristics[cellosaurus accession]", "value": "Homo sapiens; HEK293; CVCL_0045", "source_ids": ["pride", "paper", "cellosaurus"], "evidence": "PRIDE lists human; paper describes HEK293 Flp-In T-REx RPB3-3xFLAG cells. HEK293 is the parent cell line, Cellosaurus CVCL_0045."},
+    {"location": "comment[technical replicate] and characteristics[biological replicate]", "value": "three independent biological preparations per six conditions; technical replicate 1", "source_ids": ["design", "paper"], "evidence": "Each design group has three distinct run stems. Paper Mass spectrometry Methods states all proteomics samples were carried out in triplicate and prepared in parallel from cell seeding. Each preparation is therefore a biological replicate; one run is mapped per preparation."},
+    {"location": "comment[instrument], comment[proteomics data acquisition method]", "value": "timsTOF Pro, DDA", "source_ids": ["pride", "design"], "evidence": "PRIDE instrument CV MS:1003005 and DDA/PASEF in protocol; run names include DDA."},
+    {"location": "comment[cleavage agent details], modification parameters, precursor and fragment mass tolerance", "value": "Trypsin/P search specificity; carbamidomethyl C fixed, oxidation M and protein N-terminal acetyl variable; 10 ppm precursor, 40 ppm TOF fragment", "source_ids": ["mqpar", "pride"], "evidence": "Deposited MaxQuant mqpar.xml is parsed by sdrf-tools search-params and lists Trypsin/P, modifications and 10 ppm precursor; it gives 40 ppm TOF fragments. PRIDE sample-processing protocol independently names trypsin digestion."}
+  ],
+  "limitations": [
+    "The PRIDE reconciler flags Trypsin/P because its prose matcher does not equate the deposited MaxQuant search specificity with the protocol's trypsin reagent; both primary sources are cited above.",
+    "The deposited design does not explain whether control means an untagged parental line or a separate control immunoprecipitation; the SDRF retains its literal control label.",
+    "Cellosaurus accession CVCL_0045 identifies the HEK293 parent line, not the engineered RPB3-3xFLAG clone.",
+    "The paper Figure 4 legend calls these triplicate injections, but its Mass spectrometry Methods states separate parallel preparations from cell seeding; biological replicate numbering follows the latter."
+  ]
+}

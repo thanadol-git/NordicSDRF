@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD056651-ribo.sdrf.tsv",
+  "dataset": "PXD056651",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD056651; cached scratchpad/PXD056651/pride.json"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD056651/files; cached scratchpad/PXD056651/files.json"
+    },
+    {
+      "id": "zip-directories",
+      "kind": "raw-file",
+      "location": "HTTP Range captures of the six ZIP central directories in scratchpad/PXD056651/*.d.zip.tail"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "ontology",
+      "location": "https://www.cellosaurus.org/CVCL_0045; HEK293 identity confirmed by local sdrf-tools cellline lookup"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] rows 1-3",
+      "value": "three Bruker .d vendor directories from ribo ZIP archives",
+      "source_ids": [
+        "pride-files",
+        "zip-directories"
+      ],
+      "evidence": "PRIDE lists six .d.zip raw archives; each ZIP central directory contains a .d directory identical to its archive stem. MQ_output.zip is search output and excluded."
+    },
+    {
+      "location": "source name and characteristics[biological replicate] rows 1-3",
+      "value": "three distinct run-level source IDs; biological replicate 1 within each source",
+      "source_ids": [
+        "pride-files",
+        "pride"
+      ],
+      "evidence": "The cyto1-3 and ribo1-3 suffixes identify six runs. The deposit does not resolve whether within-group runs are independent biological preparations or technical injections, so their source IDs remain distinct and no cross-run replicate relationship is asserted."
+    },
+    {
+      "location": "characteristics[organism] rows 1-3",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE organism CV lists human; protocol describes HEK293 ribosomes and HeLa or HEK293 cytoplasm."
+    },
+    {
+      "location": "characteristics[cell line], characteristics[cellosaurus accession], characteristics[cellosaurus name] rows 1-3",
+      "value": "HEK293, CVCL_0045",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "cellosaurus"
+      ],
+      "evidence": "The ribosome isolation paragraph explicitly names HEK293; cytoplasm isolation says 'HeLa or HEK293' without assigning either to cyto1-3. The raw names provide no line identity."
+    },
+    {
+      "location": "factor value[subcellular fraction] rows 1-3",
+      "value": "ribosome",
+      "source_ids": [
+        "pride",
+        "pride-files"
+      ],
+      "evidence": "The protocol separately describes purified ribosomes and ribosome-depleted cytoplasmic lysate; the filenames explicitly end cyto1-3 or ribo1-3."
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method], comment[ms1 scan range], comment[ms2 scan range]",
+      "value": "timsTOF Pro 2; DDA-PASEF; 100-1700 m/z for both MS and MS/MS",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE instrument CV gives timsTOF Pro 2 MS:1003230. Protocol specifies DDA-PASEF and both MS and MS/MS scan range 100-1700 m/z. The SDRF acquisition term is the generic DDA controlled term."
+    },
+    {
+      "location": "comment[cleavage agent details] rows 1-3",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "In the protocol's Sample prep paragraph: 'For purified ribosomes and cytoplasmic lysates, 1 ug Trypsin was added, and samples incubated over night at 37 °C.' This is digestion, distinct from trypsinization of cells in the cytoplasm isolation paragraph."
+    },
+    {
+      "location": "characteristics[organism part] rows 1-3",
+      "value": "kidney",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Cellosaurus CVCL_0045 identifies HEK293 as a human embryonic kidney-derived cell line; this records the line origin, not a tissue biopsy."
+    }
+  ],
+  "limitations": [
+    "The ribosome preparation is explicitly HEK293; the related cytosol runs are in a separate SDRF because their cell line is unresolved.",
+    "Run suffixes do not establish biological versus technical replication; no relationship among the three runs per fraction is asserted.",
+    "The organ part, disease, donor age, sex, individual, dissociation method, mass tolerances, and modification parameters are not assigned from this record.",
+    "The automated PRIDE reconciler flags trypsin as unsupported, but the protocol's Sample prep paragraph explicitly identifies it as the digest enzyme."
+  ]
+}

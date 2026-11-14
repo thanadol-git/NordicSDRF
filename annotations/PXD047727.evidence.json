@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD047727.sdrf.tsv",
+  "dataset": "PXD047727",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD047727; cached scratchpad/PXD047727/pride.json"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD047727/files; cached scratchpad/PXD047727/files.json; all entries accession-checked"},
+    {"id": "archive-tails", "kind": "raw-file directory", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/03/PXD047727/; ZIP central-directory byte ranges saved in scratchpad/PXD047727/*.tail.bin and nks1_raw_tail.bin"},
+    {"id": "paper", "kind": "publication", "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11009649/; DOI 10.1073/pnas.2321759121; cached scratchpad/PXD047727/paper.xml"},
+    {"id": "search-config", "kind": "deposited search configuration", "location": "NKS1_RFP_MQ.zip and QUA1_GFP_MQ.zip in the PRIDE archive; extracted scratchpad/PXD047727/nks1_mqpar.xml and qua1_mqpar.xml"}
+  ],
+  "claims": [
+    {"location": "comment[data file] rows 1-15", "value": "15 vendor .d directories, one per deposited ZIP archive", "source_ids": ["pride-files", "archive-tails"], "evidence": "The PRIDE list has five groups of three RAW ZIP archives. Each ZIP central directory identifies exactly one .d root; public archive names use underscores while internal vendor directories use spaces and hyphens."},
+    {"location": "source name, characteristics[biological replicate], comment[technical replicate]", "value": "three individual plants per group; one run per plant", "source_ids": ["pride", "pride-files"], "evidence": "Sample processing protocol says samples in triplicates from three individual plants; deposited names carry Rep1 to Rep3 for each bait/control group."},
+    {"location": "characteristics[organism], characteristics[organism part], characteristics[strain or breed]", "value": "Arabidopsis thaliana, leaf, Col-0", "source_ids": ["pride", "paper"], "evidence": "Project protocol specifies whole leaves from three-week-old NKS1-mRFP, QUA1-GFP, and Col-0 plants; paper identifies Col-0 background."},
+    {"location": "factor value[bait], factor value[affinity reagent]", "value": "NKS1-mRFP, ST-mRFP Golgi-marker control, QUA1-GFP, or untagged Col-0 with corresponding RFP-Trap or GFP-Trap", "source_ids": ["pride", "pride-files", "paper"], "evidence": "Archive group names encode NKS1, ST, QUA1 and Col-0 controls. Paper identifies ST-mRFP as a Golgi marker; protocol identifies RFP-Trap and GFP-Trap agarose."},
+    {"location": "comment[instrument], comment[proteomics data acquisition method]", "value": "timsTOF Pro, PASEF data-dependent acquisition", "source_ids": ["pride"], "evidence": "Data processing protocol names timsTOF pro and PASEF mode."},
+    {"location": "comment[cleavage agent details], comment[reduction reagent], comment[alkylation reagent]", "value": "trypsin, DTT, chloroacetamide", "source_ids": ["pride"], "evidence": "Data processing protocol names 20 ug/ml trypsin and DTT in elution buffer 1, chloroacetamide in elution buffer 2, followed by overnight incubation and 'tryptic peptide mixtures'."},
+    {"location": "comment[precursor mass tolerance], comment[fragment mass tolerance], comment[modification parameters]", "value": "10 ppm precursor; 40 ppm TOF fragment; carbamidomethyl C fixed, oxidation M and protein N-terminal acetylation variable", "source_ids": ["search-config"], "evidence": "Both deposited mqpar.xml search configurations encode these settings."}
+  ],
+  "limitations": [
+    "The public ZIP archive names differ from the internal vendor .d directory names. SDRF comment[data file] uses the verified inner directory names.",
+    "The MaxQuant configuration's internal acquisition names differ from the public archive names; shared search settings are supported by both deposited NKS1 and QUA1 configurations, but individual internal search names are not mapped to public runs.",
+    "The automated reconciler checks the sample processing protocol and flags cleavage_agent_unsupported; the PRIDE data processing protocol explicitly documents trypsin digestion.",
+    "The PRIDE record says plants were three weeks old, but no controlled developmental stage term was established; the SDRF uses not available."
+  ]
+}

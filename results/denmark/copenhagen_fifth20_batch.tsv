@@ -1,0 +1,21 @@
+batch_order	accession	pride_raw_bytes	pride_raw_count	annotation_status	title
+1	PXD030529	9646260050	8	approved: 8/8 RAW in two SDRFs	Palaeoproteomics identifies beaver fur and fur trade in Danish high-status Viking Age burials
+2	PXD074049	9832938847	16	blocked: 32-channel deuterated TMT labels unsupported by current SDRF builder	Recombinant dimeric PICK1 protein inhibitors for long-term relief of chronic pain by AAV therapeutic
+3	PXD058287	10181563254	63	approved: 63/63 RAW in one SDRF	Anubis: a multi-level authentication scale for degraded milk whey using random forest classification
+4	PXD031280	10501703190	6	approved: 6/6 RAW in two SDRFs	Palmyrene Polychromy: Investigations of funerary portraits from Palmyra in the collections of the Ny
+5	PXD073925	11052644130	16	blocked: 32-channel deuterated TMT labels unsupported by current SDRF builder	Recombinant dimeric PICK1 protein inhibitors for long-term relief of chronic pain by AAV therapeutic
+6	PXD061135	13714558169	120	approved: 121/121 RAW in three SDRFs	Enhancing tandem MS sensitivity and peptide identification via ion pre-accumulation in an Orbitrap m
+7	PXD067831	17603818260	1	approved: 18/18 vendor .d runs inside RAW ZIP	RNAPII interactome via RPB3-FLAG IP
+8	PXD030049	17656295507	15	approved: 15/15 RAW mapped	Proteomic analysis on the protective effect of eriodictyol on benzo(a)pyrene-induced Caco-2 cytotoxi
+9	PXD025344	17798549808	21	blocked: dimethyl light/medium channels unsupported by builder	Fruit fly O-GlcNAc glycoproteomics
+10	PXD056651	18300724059	6	approved: 6/6 vendor .d runs in two SDRFs	A human tri-partite cell-free translation system
+11	PXD047727	18500238777	15	approved: 15/15 vendor .d runs mapped	Identification of potential interactors of NKS1 and QUA1
+12	PXD053346	18535347199	1	approved: 12/12 vendor .d runs mapped inside RAW ZIP	RNAPII interactome in INTS6 KO and WT cells
+13	PXD039178	18689898206	20	blocked: patient and myosin-band mapping to S1-S20 unavailable	Identification of myosin heavy chain post-translational modifications in patients with MHY mutations
+14	PXD047957	19566224608	10	blocked: Trypsin plus Lys-C digest cannot be represented by current builder	Lanifibranor reduces inflammation and improves dyslipidemia in lysosomal acid lipase-deficient mice
+15	PXD040213	20114687559	17	approved: 17/17 RAW (15 specimens, 2 blanks)	Geometric morphometrics and paleoproteomics enlighten the paleodiversity of Pongo
+16	PXD035846	20576479484	32	blocked: Chymotrypsin plus Glu-C digest unsupported by current builder	Role of N-glycosylation in FcRIIIa interaction with IgG
+17	PXD069155	20583199082	60	blocked: sequential Lys-C and Trypsin digest unsupported by current builder	Alexander disease mutations differentially sensitize GFAP to oxidative damage and network disruption
+18	PXD018721	20966281790	14	approved: 14/14 RAW mapped	The TNH2 hominin enamel proteome
+19	PXD044685	21529263728	42	approved: 42/42 RAW mapped as gel-band fractions	Myosin PTM peptide mapping from hibernating and active bears and squirrels
+20	PXD013725	21570525854	60	blocked: gel-spot to treatment and replicate map unavailable	Mechanism of antimicrobial synergy between doxycycline and carprofen against methicillin-resistant S

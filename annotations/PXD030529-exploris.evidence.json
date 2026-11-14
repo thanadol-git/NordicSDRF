@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD030529-exploris.sdrf.tsv",
+  "dataset": "PXD030529",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD030529; cached scratchpad/PXD030529/pride.json"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD030529/files; cached scratchpad/PXD030529/files.json (8 accession-checked RAW entries)"
+    },
+    {
+      "id": "supplement",
+      "kind": "publication supplement",
+      "location": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0270040.s001&type=supplementary; cached scratchpad/PXD030529/supporting_information.docx, Table S6 and LC-MS methods"
+    }
+  ],
+  "claims": [
+    {
+      "location": "row 1: source name, characteristics[organism], comment[data file]",
+      "value": "Hvileh\u00f8j C4273-97 fragment 19 | Castor | 20201117_EXPL2_nLC7_MEM_collab_77min_DDA_Ancient_textile_F1.raw",
+      "source_ids": [
+        "supplement",
+        "pride-files"
+      ],
+      "evidence": "Supplement Table S6 maps F1/F2/F3/F8 and Fyrkat extraction IDs to archaeological specimens and taxonomic resolution; deposited filename carries the corresponding ID. BK denotes preparation blank, described in supplement deamidation controls."
+    },
+    {
+      "location": "row 2: source name, characteristics[organism], comment[data file]",
+      "value": "Hvileh\u00f8j C4273-97 fragment 1 | Ovis aries | 20201117_EXPL2_nLC7_MEM_collab_77min_DDA_Ancient_textile_F2.raw",
+      "source_ids": [
+        "supplement",
+        "pride-files"
+      ],
+      "evidence": "Supplement Table S6 maps F1/F2/F3/F8 and Fyrkat extraction IDs to archaeological specimens and taxonomic resolution; deposited filename carries the corresponding ID. BK denotes preparation blank, described in supplement deamidation controls."
+    },
+    {
+      "location": "row 3: source name, characteristics[organism], comment[data file]",
+      "value": "Hvileh\u00f8j C4273-97 fragment 60 | Sciuridae | 20201117_EXPL2_nLC7_MEM_collab_77min_DDA_Ancient_textile_F3.raw",
+      "source_ids": [
+        "supplement",
+        "pride-files"
+      ],
+      "evidence": "Supplement Table S6 maps F1/F2/F3/F8 and Fyrkat extraction IDs to archaeological specimens and taxonomic resolution; deposited filename carries the corresponding ID. BK denotes preparation blank, described in supplement deamidation controls."
+    },
+    {
+      "location": "row 4: source name, characteristics[organism], comment[data file]",
+      "value": "Bjerringh\u00f8j AdC143 | Castor | 20201117_EXPL2_nLC7_MEM_collab_77min_DDA_Ancient_textile_F8.raw",
+      "source_ids": [
+        "supplement",
+        "pride-files"
+      ],
+      "evidence": "Supplement Table S6 maps F1/F2/F3/F8 and Fyrkat extraction IDs to archaeological specimens and taxonomic resolution; deposited filename carries the corresponding ID. BK denotes preparation blank, described in supplement deamidation controls."
+    },
+    {
+      "location": "comment[instrument] all rows",
+      "value": "Orbitrap Exploris 480",
+      "source_ids": [
+        "supplement",
+        "pride"
+      ],
+      "evidence": "Supplement LC-MS methods assign Exploris to F1-3/F8 and Q Exactive HF-X to Fyrkat."
+    },
+    {
+      "location": "comment[cleavage agent details], comment[modification parameters] all rows",
+      "value": "Trypsin; final semi-tryptic MaxQuant settings",
+      "source_ids": [
+        "pride",
+        "supplement"
+      ],
+      "evidence": "PRIDE sample processing specifies trypsin; PRIDE data processing and supplement LC-MS analysis specify final search modifications."
+    },
+    {
+      "location": "comment[proteomics data acquisition method], comment[dissociation method] all rows",
+      "value": "DDA, HCD",
+      "source_ids": [
+        "pride-files",
+        "supplement"
+      ],
+      "evidence": "Exploris filenames say DDA; supplement methods specify Top 10 MS/MS and HCD collision energy."
+    },
+    {
+      "location": "characteristics[organism part] and controls",
+      "value": "hair for archaeological samples, not applicable for blanks",
+      "source_ids": [
+        "supplement",
+        "pride-files"
+      ],
+      "evidence": "Supplement describes the material as fur/hair strands and identifies two Fyrkat reagent blanks."
+    }
+  ],
+  "limitations": [
+    "Species identifications are results with variable taxonomic resolution; Castor canadensis is a database surrogate for archaeological Castor, so genus is used.",
+    "Age and sex of the source animals are not reported.",
+    "Mass tolerances are omitted because the exact final search settings were not independently verified from deposited search files."
+  ]
+}

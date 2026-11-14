@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD018721.sdrf.tsv",
+  "dataset": "PXD018721",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD018721; cached scratchpad/PXD018721/pride.json"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD018721/files; cached scratchpad/PXD018721/files.json; all entries accession-checked"},
+    {"id": "filename-key", "kind": "deposited file", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/04/PXD018721/Rawfilenamekey.txt; cached scratchpad/PXD018721/Rawfilenamekey.txt"},
+    {"id": "paper", "kind": "publication", "location": "https://www.nature.com/articles/s41467-022-29923-z; DOI 10.1038/s41467-022-29923-z"}
+  ],
+  "claims": [
+    {"location": "source name, comment[data file], comment[technical replicate] rows 1-14", "value": "four TNH2 runs, two medieval reference runs, four extraction blanks, four MS blanks", "source_ids": ["pride-files", "filename-key"], "evidence": "The deposited key groups unique run suffixes: TNH2 HCl 1686_01/02; TNH2 TFA 1687_01/02; extraction blank HCl 1688_01/02 and TFA 1689_01/02; reference 1692/1693; MS blanks 01/03/04/06. PRIDE lists exactly the corresponding 14 RAW files. TNH2 and the medieval reference each retain one biological source across HCl and TFA preparations. The TNH2 acquisition indices are 1-4 across the two preparations, and the reference acquisition indices are 1-2; paired _01/_02 acquisitions of a single extraction retain their relative order."},
+    {"location": "characteristics[extraction method], factor value[extraction method]", "value": "HCl or TFA enamel extraction; not applicable for MS blanks", "source_ids": ["filename-key", "pride"], "evidence": "The deposited filename key explicitly labels TNH2 and extraction blank HCl/TFA groups and reference 1692/1693 as HCl/TFA. PRIDE sample protocol gives 1.5 M HCl and 0.88 M TFA demineralization. MS blanks have no extraction."},
+    {"location": "characteristics[organism], characteristics[organism part], characteristics[sex]", "value": "TNH2 Homo fossil enamel; male Homo sapiens medieval reference; blanks not applicable", "source_ids": ["pride", "filename-key", "paper"], "evidence": "PRIDE identifies taxon Homo and tooth enamel for the deposit; filename key identifies TNH2 and medieval reference runs. The article identifies reference Ø1952 as male Homo sapiens. TNH2 sex and species remain unassigned in the SDRF."},
+    {"location": "comment[instrument], comment[proteomics data acquisition method], comment[dissociation method]", "value": "Q Exactive HF-X, top-10 DDA, HCD", "source_ids": ["pride", "paper"], "evidence": "PRIDE instrument field is MS:1002877; sample protocol details top-10 DDA and HCD at NCE 28, matching the article."},
+    {"location": "comment[cleavage agent details]", "value": "not applicable", "source_ids": ["pride", "paper"], "evidence": "PRIDE processing protocol describes direct enamel demineralization, peptide desalting and an unspecific database search; no proteolytic digestion reagent is used."},
+    {"location": "comment[precursor mass tolerance], comment[fragment mass tolerance]", "value": "not available", "source_ids": ["pride"], "evidence": "The accession processing protocol describes MaxQuant search strategy but does not give numerical precursor or fragment search tolerances."}
+  ],
+  "limitations": [
+    "The older medieval reference RAW files are included in this accession's file list and current MaxQuant search, but PRIDE notes they were first analysed in PXD014342.",
+    "TNH2 is annotated at the PRIDE taxon Homo level; the article's Denisovan interpretation is not treated as a species assignment for these runs.",
+    "The deposited filename key does not state whether the paired _01/_02 acquisitions are reinjections; they are recorded as technical replicates of each named extraction based on the common sample ID and distinct acquisition suffixes.",
+    "No numerical mass tolerances are supplied in the accession protocol; these remain not available."
+  ]
+}

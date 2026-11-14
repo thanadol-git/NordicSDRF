@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD031280-2021.sdrf.tsv",
+  "dataset": "PXD031280",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD031280; cached scratchpad/PXD031280/pride.json"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD031280/files; cached scratchpad/PXD031280/files.json (all 13 entries accession-checked)"
+    },
+    {
+      "id": "readme",
+      "kind": "deposited metadata",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/06/PXD031280/README-FileDescription.txt; cached scratchpad/PXD031280/README-FileDescription.txt"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.mdpi.com/2571-9408/5/2/63 ; Appendix A LC-MS/MS methods and section 3.7"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source names, factor value[paint color], comment[data file] all rows",
+      "value": "red and yellow paint samples from IN 2795 plus protocol blank",
+      "source_ids": [
+        "pride",
+        "readme",
+        "paper",
+        "pride-files"
+      ],
+      "evidence": "README maps each RAW name to red, yellow, or blank; paper states two headdress paint samples and separate protocol blanks."
+    },
+    {
+      "location": "comment[instrument] all rows",
+      "value": "Orbitrap Exploris 480",
+      "source_ids": [
+        "pride",
+        "paper",
+        "readme"
+      ],
+      "evidence": "Paper Appendix A explicitly assigns 2016 aliquots to Q Exactive HF and 2021 aliquots to Exploris 480; deposited file identifiers give analytical set. Reconcile script matches first instrument in mixed project protocol and incorrectly flags the 2021 instrument."
+    },
+    {
+      "location": "comment[proteomics data acquisition method], comment[dissociation method]",
+      "value": "DDA and HCD",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Appendix A specifies data-dependent top-10 mode and HCD-generated product ions."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Appendix A describes sequential rLysC followed by overnight trypsin; final enzyme is represented in one-column SDRF."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "seven MaxQuant search modifications",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE processing protocol and paper Appendix A explicitly specify fixed C carbamidomethyl and variable M oxidation, N-terminal acetyl, N/Q deamidation, pyro-Glu Q/E, and hydroxyproline (oxidation P)."
+    },
+    {
+      "location": "comment[technical replicate] paint rows",
+      "value": "1",
+      "source_ids": [
+        "pride",
+        "paper",
+        "readme"
+      ],
+      "evidence": "Each instrument-specific SDRF contains one run per source; the 2021 aliquot is the first and only technical replicate in this file. The paper describes two analytical sets, not two repeat injections within the 2021 set."
+    }
+  ],
+  "limitations": [
+    "Archaeological paint contains possible protein binders from multiple animals; organism is not applicable at source level rather than broadcasting project-level pig/sheep identifications.",
+    "PRIDE README maps Blank_930 to the earlier set and Blank_1943 to the later set by sequential run IDs; no explicit year is given for each blank.",
+    "A single cleavage-agent column represents final trypsin digest; earlier Lys-C is documented in the paper.",
+    "The yellow early aliquot was analysed in 2017 per README, despite its 2016files filename and grouping in early set."
+  ]
+}

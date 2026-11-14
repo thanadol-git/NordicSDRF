@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD058287.sdrf.tsv",
+  "dataset": "PXD058287",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD058287; cached scratchpad/PXD058287/pride.json"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD058287/files; cached scratchpad/PXD058287/files.json; all 68 entries accession-checked"
+    },
+    {
+      "id": "preprint",
+      "kind": "preprint",
+      "location": "https://www.biorxiv.org/content/10.1101/2024.11.15.623824v1.full.pdf; cached scratchpad/PXD058287/preprint.pdf"
+    },
+    {
+      "id": "psm-output",
+      "kind": "deposited search output",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/09/PXD058287/BLG_only_mokapot.psms.txt; first 200001 bytes cached scratchpad/PXD058287/BLG_only_psms_head.txt"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, factor value[additive], factor value[sampling time] rows 1-60",
+      "value": "BLG only, glucose, octanoic acid, or both at 0, 3, 6, 9, 12 hours",
+      "source_ids": [
+        "pride",
+        "pride-files",
+        "preprint"
+      ],
+      "evidence": "Methods describe four BLG formulations and five sampling hours; RAW suffixes encode T<time> and S/L/LS; deposited search output names independently identify BLG_sugar, BLG_C8, BLG_sugar_C8, BLG_only."
+    },
+    {
+      "location": "comment[technical replicate], characteristics[biological replicate] rows 1-63",
+      "value": "triplicate aliquots numbered 1\u20133; biological replicate 1",
+      "source_ids": [
+        "pride-files",
+        "preprint"
+      ],
+      "evidence": "Methods: 100 uL from each condition sampled in triplicate; RAW suffixes _1/_2/_3. All aliquots come from one described stock per formulation, so triplicate aliquots are technical replicates."
+    },
+    {
+      "location": "blank rows",
+      "value": "method blank; organism and additive not applicable",
+      "source_ids": [
+        "preprint",
+        "pride-files"
+      ],
+      "evidence": "Methods specify molecular-biology-grade water method blanks; three BLG_BLANK RAW files."
+    },
+    {
+      "location": "characteristics[organism] study rows",
+      "value": "Bos taurus",
+      "source_ids": [
+        "pride",
+        "preprint"
+      ],
+      "evidence": "PRIDE lists Bos taurus; paper uses purified bovine BLG."
+    },
+    {
+      "location": "comment[instrument], comment[cleavage agent details], comment[proteomics data acquisition method]",
+      "value": "Q Exactive HF, Trypsin, DDA",
+      "source_ids": [
+        "pride",
+        "preprint"
+      ],
+      "evidence": "PRIDE instrument/experiment type and Methods specify trypsin digestion and top-12 precursor data-dependent MS/MS."
+    },
+    {
+      "location": "characteristics[organism part] study rows",
+      "value": "not available",
+      "source_ids": [
+        "preprint"
+      ],
+      "evidence": "The input is purified BLG powder; no anatomical collection site for the protein source is given."
+    },
+    {
+      "location": "comment[modification parameters], comment[precursor mass tolerance], comment[fragment mass tolerance] all rows",
+      "value": "Carbamidomethyl C fixed; Deamidated N/Q and Oxidation M variable; 7 ppm MS1, 20 ppm MS2",
+      "source_ids": [
+        "preprint",
+        "psm-output"
+      ],
+      "evidence": "Preprint Orthrus MS2 data analysis Methods explicitly states search settings. Deposited PSM output independently shows +15.9994 and +0.984 mass shifts in peptide strings; fixed C cannot be inferred from PSM output alone."
+    }
+  ],
+  "limitations": [
+    "The blank incubation time is not identified by the three RAW filenames, so not available is used.",
+    "The preprint is not peer reviewed; its Methods are used for experimental design, cross-checked against PRIDE file names.",
+    "Search parameters are reported in the linked preprint Methods; no standalone parameter file is deposited. PSM output corroborates variable mass shifts but not fixed carbamidomethyl C or tolerances."
+  ]
+}

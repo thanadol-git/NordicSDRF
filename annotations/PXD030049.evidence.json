@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD030049.sdrf.tsv",
+  "dataset": "PXD030049",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD030049; cached scratchpad/PXD030049/pride.json"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD030049/files; cached scratchpad/PXD030049/files.json, all 16 entries accession-checked"},
+    {"id": "paper", "kind": "publication", "location": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2022.839364/full; Wang et al., Frontiers in Nutrition 2022, DOI 10.3389/fnut.2022.839364"},
+    {"id": "cellosaurus", "kind": "ontology", "location": "https://www.cellosaurus.org/CVCL_0025; Caco-2 entry, matched by sdrf-tools cellline lookup"}
+  ],
+  "claims": [
+    {"location": "comment[data file] rows 1-15", "value": "15 RAW files in three five-run groups", "source_ids": ["pride-files"], "evidence": "Exactly five Control_[1-5].raw, five BaP_[1-5].raw, and five Eriodictyol_BaP_[1-5].raw are categorized as associated RAW files; proteinGroups.txt is search output and excluded."},
+    {"location": "factor value[treatment] rows 1-15", "value": "DMSO vehicle, 50 uM BaP, or 20 uM eriodictyol plus 50 uM BaP for 24 h", "source_ids": ["pride-files", "paper"], "evidence": "RAW prefixes identify the three proteomic groups. Paper Cell Culture and Treatments and Comparative Proteomic Analysis describe the exact doses and 24-hour co-treatment."},
+    {"location": "source name, characteristics[biological replicate], comment[technical replicate]", "value": "15 distinct run-level sample IDs; replicate fields 1 within each source", "source_ids": ["pride-files", "paper"], "evidence": "The deposit names five runs per treatment, but the paper does not map those runs to separate cultures or injections. Source names preserve each deposited run stem without asserting a replicate relationship across runs; replicate fields are 1 within each source."},
+    {"location": "characteristics[organism], characteristics[organism part], characteristics[cell line], characteristics[cellosaurus accession], characteristics[disease], characteristics[age], characteristics[sex]", "value": "Homo sapiens; colon; Caco-2 CVCL_0025; colon adenocarcinoma; 72Y; male", "source_ids": ["pride", "paper", "cellosaurus"], "evidence": "PRIDE specifies human and paper specifies a colon carcinoma Caco-2 line. Cellosaurus identifies Caco-2 as CVCL_0025 derived from colon of a 72-year-old male with colon adenocarcinoma. Disease describes the line's origin for every arm; Control is a DMSO exposure control, not a healthy-cell arm."},
+    {"location": "comment[instrument], comment[proteomics data acquisition method], comment[dissociation method]", "value": "Q Exactive HF; DDA; HCD", "source_ids": ["pride", "paper"], "evidence": "PRIDE instrument CV is Q Exactive HF MS:1002523. Paper and PRIDE protocol say top-10 data-dependent acquisition with HCD."},
+    {"location": "comment[cleavage agent details], comment[reduction reagent], comment[alkylation reagent]", "value": "Trypsin; DTT; IAA", "source_ids": ["paper"], "evidence": "Paper Protein Digestion Methods specify 10 mM DTT reduction, 55 mM IAA alkylation, and 4 ug sequencing-grade trypsin overnight at 37 C."},
+    {"location": "comment[precursor mass tolerance], comment[fragment mass tolerance], comment[modification parameters], comment[ms1 scan range]", "value": "6 ppm precursor, 20 ppm fragment, carbamidomethyl C fixed, oxidation M variable, 300-1800 m/z", "source_ids": ["paper", "pride"], "evidence": "Paper Proteomics Analysis by LC-MS and PRIDE processing protocol state these search and survey-scan parameters; paper's phrase 'protein N-terminal oxidation of methionine' was normalized to oxidation M."}
+  ],
+  "limitations": [
+    "The five run suffixes per treatment may represent biological preparations or repeated injections; the paper does not explicitly resolve the five proteomic run identities. No cross-run biological or technical replicate relationship is asserted.",
+    "The PRIDE reconciler flags disease on control runs, but the control is DMSO-treated Caco-2, still derived from colon adenocarcinoma; the factor value records the treatment contrast.",
+    "The PRIDE reconciler flags trypsin because the project protocol omits the enzyme, while the linked paper explicitly specifies it in Protein Digestion Methods.",
+    "The exact model Q Exactive HF is from the PRIDE instrument CV; the paper gives only a broad mass-spectrometer description."
+  ]
+}

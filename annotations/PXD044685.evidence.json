@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD044685.sdrf.tsv",
+  "dataset": "PXD044685",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD044685; cached scratchpad/PXD044685/pride.json"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD044685/files; cached scratchpad/PXD044685/files.json; all entries accession-checked"},
+    {"id": "design", "kind": "deposited experimental design", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2024/04/PXD044685/experimental_design.txt; cached scratchpad/PXD044685/experimental_design.txt"},
+    {"id": "paper", "kind": "publication", "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11098559/; DOI 10.7554/eLife.94616; XML cached scratchpad/PXD044685/paper.xml"}
+  ],
+  "claims": [
+    {"location": "source name, comment[fraction identifier], comment[technical replicate], comment[data file] rows 1-42", "value": "42 RAW files map to 21 unique biological sample IDs, each with two gel-band fractions", "source_ids": ["pride-files", "design", "paper"], "evidence": "All 42 design rows' raw file stems match the 42 accession-scoped PRIDE RAW names exactly. The design repeats each Biological Sample ID twice: bear C1-C5 and H1-H5 in runs S1-S20; squirrel TA1-TA4, IBA1-IBA3 and Top1-Top4 in runs S21-S42. The paper's PTM mapping Methods specify separate Myh7 and Myh2 gel bands per squirrel source (and brown bear source), rather than replicate LC-MS injections. Each pair is represented as gel-band fractions 1 and 2 under one source and technical replicate 1; the specific myosin isoform per run is not assigned."},
+    {"location": "characteristics[organism], characteristics[organism part]", "value": "Ursus americanus or Ictidomys tridecemlineatus skeletal muscle fiber", "source_ids": ["design", "pride", "paper"], "evidence": "Deposited experimental_design.txt assigns bear samples to Ursus americanus and squirrel samples to Ictidomys tridecemlineatus. The sample protocol describes skeletal muscle fiber preparation. PRIDE's structured organisms list includes Ursus arctos instead of Ursus americanus, but the accession-specific design and data processing protocol name U. americanus for the bear runs."},
+    {"location": "characteristics[sample group], factor value[sample group]", "value": "deposited group codes C, H, TA, IBA and Top", "source_ids": ["design", "paper"], "evidence": "The design's Biological Sample IDs explicitly prefix each bear ID with C or H and each squirrel ID with TA, IBA or Top. The article compares active and hibernating bear/squirrel states, but the deposited design does not define every code, so the SDRF preserves the exact group code rather than expanding ambiguous abbreviations."},
+    {"location": "comment[instrument], comment[proteomics data acquisition method], comment[dissociation method]", "value": "Orbitrap Ascend, top-10 DDA, HCD", "source_ids": ["pride", "pride-files"], "evidence": "The accession-specific sample processing protocol specifies a Tribrid Ascend instrument, ten data-dependent MS/MS scans and HCD. Every RAW filename begins ASC1. PRIDE's structured instrument field instead lists Orbitrap Eclipse; the detailed protocol and filenames take precedence."},
+    {"location": "comment[cleavage agent details]", "value": "Trypsin", "source_ids": ["pride"], "evidence": "The deposited sample processing protocol specifies 500 ng Trypsin in an overnight in-gel digest."},
+    {"location": "comment[modification parameters]", "value": "variable phosphorylation on STY and acetylation on K", "source_ids": ["pride"], "evidence": "The accession data processing protocol explicitly lists Phospho(STY) and Acetyl(K) as variable modifications. SDRF encodes UNIMOD:21 with TA=S,T,Y and UNIMOD:1 with TA=K."},
+    {"location": "comment[precursor mass tolerance], comment[fragment mass tolerance]", "value": "not available", "source_ids": ["pride"], "evidence": "The accession's data processing protocol does not report numerical mass tolerances."}
+  ],
+  "limitations": [
+    "PRIDE's structured organism field lists Ursus arctos, but the deposited experimental design explicitly assigns these runs to Ursus americanus. The SDRF follows the run-level design.",
+    "PRIDE's structured instrument field lists Orbitrap Eclipse, while the detailed sample protocol names Tribrid Ascend and the RAW filename prefix is ASC1. The SDRF follows the detailed protocol.",
+    "C, H, TA, IBA and Top are preserved as deposited sample-group codes. Their full physiological meanings are not asserted without an accession-specific key.",
+    "The design does not give individual sex or age for each sample; these remain not available.",
+    "The paper says separate Myh7/Myh2 bands were excised for squirrel and U. arctos samples. The accession's bear design lists U. americanus, so the two bear run blocks are represented as separate gel-band fractions without asserting exact isoform identity or matching the paper's U. arctos cohort.",
+    "The study includes bear and squirrel samples; biological replicate numbers restart within each species and sample-group code."
+  ]
+}

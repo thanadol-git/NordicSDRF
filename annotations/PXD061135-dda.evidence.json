@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD061135-dda.sdrf.tsv",
+  "dataset": "PXD061135",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD061135; cached scratchpad/PXD061135/pride.json"
+    },
+    {
+      "id": "pride-files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD061135/files; cached scratchpad/PXD061135/files.json"
+    },
+    {
+      "id": "design",
+      "kind": "deposited-file",
+      "location": "scratchpad/PXD061135/Annotation-extended.xlsx; deposited accession run annotation workbook"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12322952/; Harking et al., J Proteome Res 2025, DOI 10.1021/acs.jproteome.5c00186"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "ontology",
+      "location": "https://www.cellosaurus.org/CVCL_0058; HeLa S3 entry, matched by sdrf-tools cellline lookup"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] rows 1-72",
+      "value": "72 deposited Thermo RAW acquisitions in the dda subset",
+      "source_ids": [
+        "pride-files",
+        "design"
+      ],
+      "evidence": "The deposited workbook maps run names and conditions; 120 PRIDE files are classified RAW, and one genuine .raw (20240130_EXPL5_EVO7_FH_SA_HeLa_5ng_sRNG_Pton_fdsm2_03.raw) is misclassified as search output. This subset claims each of its raw files once."
+    },
+    {
+      "location": "source name, comment[technical replicate], factor value[acquisition setting] rows 1-72",
+      "value": "HeLa S3 amount and preaccumulation/PhiSDM setting from workbook",
+      "source_ids": [
+        "design",
+        "paper"
+      ],
+      "evidence": "The workbook columns R.FileName, Gradient, Amount, EXP, MS/MS_Resolution and Replicate map each accession run. Its 50-ng DIA fdsm0 replicate-1 row incorrectly repeats _02; it is mapped to the deposited _01 file, leaving a one-to-one map. The paper describes this acquisition design."
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method], comment[dissociation method]",
+      "value": "Orbitrap Exploris 480; DDA or DIA as indicated; HCD",
+      "source_ids": [
+        "paper",
+        "design"
+      ],
+      "evidence": "The matching paper Methods Mass Spectrometry Analysis names Exploris 480 and the DDA/DIA methods; Table 1 gives HCD energy. PRIDE structured instrument links to an unrelated Astral Zoom study and conflicts with this accession title, file names and matching paper."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin",
+      "source_ids": [
+        "paper",
+        "design"
+      ],
+      "evidence": "The matching paper describes the DDA samples as a HeLa tryptic digest (Results) and the DIA injections as HeLa tryptic peptides (Methods and Results). The PRIDE sample protocol does not explicitly name the enzyme, but tryptic denotes trypsin-derived peptides."
+    },
+    {
+      "location": "characteristics[organism], characteristics[organism part], characteristics[cell line], characteristics[cellosaurus accession], characteristics[disease] rows 1-72",
+      "value": "Homo sapiens; cervix; HeLa S3 CVCL_0058; cervical adenocarcinoma",
+      "source_ids": [
+        "paper",
+        "cellosaurus",
+        "design"
+      ],
+      "evidence": "Paper Sample Preparation identifies HeLa S3 cervical carcinoma cells; Cellosaurus CVCL_0058 confirms line identity, cervix origin and cervical adenocarcinoma provenance."
+    }
+  ],
+  "limitations": [
+    "The deposit PRIDE sample protocol omits the enzyme, but the matching paper explicitly describes tryptic HeLa material for both DDA and DIA; the automated reconciler flags this as unsupported because it uses only the deposit protocol.",
+    "The accession PRIDE structured instrument and linked publication conflict with the deposited run names, experimental workbook and matching paper; the latter identifies Orbitrap Exploris 480.",
+    "The workbook contains one repeated _02 name in a DIA condition; its replicate-1 row is reconciled to the deposited _01 run by unique condition and suffix.",
+    "Offline parse_sdrf emits an ontology lookup warning for HeLa S3, though Cellosaurus CVCL_0058 confirms the line.",
+    "Offline parse_sdrf emits an ontology lookup warning for cervix (anatomical origin); the line is derived from cervical carcinoma."
+  ]
+}

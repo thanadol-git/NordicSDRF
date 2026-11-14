@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD053346.sdrf.tsv",
+  "dataset": "PXD053346",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD053346; cached scratchpad/PXD053346/pride.json"},
+    {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD053346/files; cached scratchpad/PXD053346/files.json"},
+    {"id": "design", "kind": "deposited experimental design", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/12/PXD053346/experimental_design.txt; cached scratchpad/PXD053346/experimental_design.txt"},
+    {"id": "raw-zip", "kind": "raw-file directory", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/12/PXD053346/raw.zip; central directory byte range cached scratchpad/PXD053346/raw_tail.bin"},
+    {"id": "paper", "kind": "publication", "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11663130/; DOI 10.1016/j.molcel.2024.10.012"},
+    {"id": "cellosaurus", "kind": "ontology", "location": "https://www.cellosaurus.org/CVCL_U427; Flp-In-T-REx-293"}
+  ],
+  "claims": [
+    {"location": "comment[data file] rows 1-12", "value": "12 Bruker .d vendor directories inside one raw.zip", "source_ids": ["design", "raw-zip"], "evidence": "The deposited design names 12 raw file stems. The RAW ZIP central directory contains exactly those 12 .d roots under raw/; __MACOSX metadata entries are excluded."},
+    {"location": "factor value[INTS6 status], factor value[treatment]", "value": "WT or INTS6 KO crossed with Control or DRB", "source_ids": ["design", "paper"], "evidence": "Design Grouping has WT_Control, WT_DRB, INTS6 KO_Control, INTS6 KO_DRB, each three times. Paper RNAPII interactome section describes the same two-by-two contrast."},
+    {"location": "characteristics[biological replicate], comment[technical replicate]", "value": "three biological preparations per condition, one run each", "source_ids": ["design", "paper"], "evidence": "The design has three consecutive rows per group. Paper Mass spectrometry section says IP samples were carried out in triplicate and prepared in parallel from cell seeding."},
+    {"location": "characteristics[organism], characteristics[organism part], characteristics[cell line], characteristics[cellosaurus accession], characteristics[cellosaurus name], characteristics[disease], characteristics[sex]", "value": "human HEK293 background from normal kidney, female-origin Flp-In-T-REx-293 (CVCL_U427)", "source_ids": ["pride", "paper", "cellosaurus"], "evidence": "Paper experimental models and methods name HEK293 Flp-In T-REx cells, including INTS6 KO derivatives. Cellosaurus CVCL_U427 gives this line and its HEK293 parent, kidney-derived origin, and female donor sex; the paper Cell lines and culture conditions also names female origin. The generic ontology-backed cell-line value is HEK293; derivative identity is preserved in Cellosaurus columns. The cell-lines template requires normal for a non-disease-derived line."},
+    {"location": "comment[instrument], comment[proteomics data acquisition method]", "value": "timsTOF Pro PASEF", "source_ids": ["pride", "paper"], "evidence": "PRIDE structured instrument is timsTOF Pro. Sample protocol and paper Mass spectrometry section describe PASEF acquisition."},
+    {"location": "comment[cleavage agent details], comment[reduction reagent], comment[alkylation reagent]", "value": "trypsin, DTT, chloroacetamide", "source_ids": ["pride", "paper"], "evidence": "Both PRIDE sample protocol and paper Mass spectrometry section specify elution buffer with 20 ug/ml trypsin and 2 mM DTT, followed by chloroacetamide and overnight incubation yielding tryptic peptides."}
+  ],
+  "limitations": [
+    "The deposited design labels INTS6 KO but does not identify which of the two KO clones listed in the paper was used for these RAW runs; no clone identity is asserted.",
+    "The base cell line's female origin is documented, but an age in years cannot be established for these engineered cells; age remains not available.",
+    "The PRIDE reconciler flags trypsin despite the sample protocol and linked paper explicitly identifying it as the digest enzyme.",
+    "The PRIDE RAW entry is one ZIP; the SDRF names the 12 internal vendor .d roots rather than the ZIP container."
+  ]
+}
