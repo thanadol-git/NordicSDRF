@@ -7,7 +7,7 @@ from pathlib import Path
 import openpyxl
 
 
-root = Path(__file__).resolve().parents[1]
+root = Path(__file__).resolve().parents[2]
 work = root / "scratchpad/PXD061135"
 entries = json.loads((work / "files.json").read_text())
 assert entries and all("PXD061135" in e.get("projectAccessions", []) for e in entries)

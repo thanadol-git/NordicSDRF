@@ -5,7 +5,7 @@ import json
 import struct
 from pathlib import Path
 
-root = Path(__file__).resolve().parents[1]
+root = Path(__file__).resolve().parents[2]
 work = root / "scratchpad/PXD053346"
 data = (work / "raw_tail.bin").read_bytes()
 pos = 0

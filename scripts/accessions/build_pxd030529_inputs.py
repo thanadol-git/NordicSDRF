@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 
-root = Path(__file__).resolve().parents[1]
+root = Path(__file__).resolve().parents[2]
 work = root / "scratchpad/PXD030529"
 files = json.loads((work / "files.json").read_text())
 raw = [x for x in files if x.get("fileCategory", {}).get("name") == "Associated raw file URI"]

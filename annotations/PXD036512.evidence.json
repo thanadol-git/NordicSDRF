@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD036512.sdrf.tsv",
+  "dataset": "PXD036512",
+  "sources": [
+    {"id": "files", "kind": "repository", "location": "scratchpad/PXD036512/files.json"},
+    {"id": "paper", "kind": "publication", "location": "https://www.nature.com/articles/s41467-023-38793-y.pdf"},
+    {"id": "cellosaurus", "kind": "ontology", "location": "https://www.cellosaurus.org/CVCL_Z831"}
+  ],
+  "claims": [
+    {"location": "source name, characteristics[biological replicate], comment[data file], comment[fraction identifier] rows 1-64", "value": "Four treatment groups, each with four culture replicates and four fractions", "source_ids": ["files", "paper"], "evidence": "All 64 RAW entries carry projectAccessions PXD036512. Filename tokens encode DMSO/PARGi, H2O2 present/absent, R1-R4 and F0-F3. Figure 3 and Methods report quadruplicate cultures and three high-pH fractions plus F0."},
+    {"location": "characteristics[organism], characteristics[organism part], characteristics[cell line], characteristics[cellosaurus accession], characteristics[strain or breed] rows 1-64", "value": "Drosophila melanogaster; embryo; S2R+; CVCL_Z831; Oregon-R", "source_ids": ["paper", "cellosaurus"], "evidence": "Paper names S2R+ cells; Cellosaurus identifies S2R+ as D. melanogaster from whole embryo, Oregon-R strain."},
+    {"location": "factor value[PARG inhibitor], factor value[oxidative stress] rows 1-64", "value": "DMSO vehicle or PDD00017273; hydrogen peroxide or untreated", "source_ids": ["paper", "files"], "evidence": "Figure 3 and Methods specify DMSO versus 2 μM PARGi PDD00017273, with or without H2O2. File names map each run to the condition."},
+    {"location": "characteristics[enrichment process], characteristics[enrichment method] rows 1-64", "value": "ADP-ribosylated peptide enrichment using Af1521 macrodomain affinity", "source_ids": ["paper"], "evidence": "Methods report Af1521 macrodomain purification of ADP-ribosylated peptides. No exact EFO/PRIDE child term for this method was found, so the precise phrase is retained with an ontology warning."},
+    {"location": "comment[instrument], comment[proteomics data acquisition method], comment[cleavage agent details] (two columns), comment[dissociation method] rows 1-64", "value": "Orbitrap Fusion Lumos; DDA with EThcD; sequential Lys-C then Trypsin", "source_ids": ["paper"], "evidence": "Mass spectrometry Methods give Fusion Lumos, DDA, EThcD fragmentation, Lys-C for 3 hours followed by overnight Trypsin digestion."},
+    {"location": "comment[modification parameters] rows 1-64", "value": "Variable carbamidomethyl C and ADP-ribosyl C,D,E,H,K,R,S,T,Y", "source_ids": ["paper"], "evidence": "Methods explicitly list cysteine carbamidomethylation and ADP-ribosylation on nine residues as variable search modifications."},
+    {"location": "comment[precursor mass tolerance], comment[fragment mass tolerance] rows 1-64", "value": "not available", "source_ids": ["paper", "files"], "evidence": "Exact search tolerances are not specified in the paper; deposited search archive was not accessible locally."}
+  ],
+  "limitations": [
+    "Oregon-R is supported by Cellosaurus but may produce an offline ontology warning because the local NCBITaxon cache does not resolve the strain.",
+    "Exact search mass tolerances were not available in the accessible evidence.",
+    "The exact Af1521 enrichment phrase is paper-supported but not resolved to an EFO/PRIDE ontology term; the parser emits a warning while keeping the precise method.",
+    "A deterministic post-processing script adds the second cleavage-agent column because the builder emits only one for this template."
+  ]
+}

@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 
 
-root = Path(__file__).resolve().parents[1]
+root = Path(__file__).resolve().parents[2]
 work = root / "scratchpad/PXD030049"
 items = json.loads((work / "files.json").read_text())
 assert items and all("PXD030049" in item.get("projectAccessions", []) for item in items)

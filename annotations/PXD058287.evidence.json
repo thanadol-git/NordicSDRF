@@ -72,14 +72,6 @@
       "evidence": "PRIDE instrument/experiment type and Methods specify trypsin digestion and top-12 precursor data-dependent MS/MS."
     },
     {
-      "location": "characteristics[organism part] study rows",
-      "value": "not available",
-      "source_ids": [
-        "preprint"
-      ],
-      "evidence": "The input is purified BLG powder; no anatomical collection site for the protein source is given."
-    },
-    {
       "location": "comment[modification parameters], comment[precursor mass tolerance], comment[fragment mass tolerance] all rows",
       "value": "Carbamidomethyl C fixed; Deamidated N/Q and Oxidation M variable; 7 ppm MS1, 20 ppm MS2",
       "source_ids": [
@@ -95,6 +87,41 @@
         "preprint"
       ],
       "evidence": "Preprint Methods: Q Exactive HF; \"Full scans (MS1) were acquired over a mass-to-charge (m/z) range of 350-1600 at a resolution of 120,000\"; precursors \"fragmented with a normalised collision energy (NCE) of 28\"; \"MS2 spectra were acquired at a resolution of 30,000\". NCE fragmentation on Q Exactive HF is HCD and resolution-specified MS2 is Orbitrap."
+    },
+    {
+      "location": "characteristics[organism part] BLG rows",
+      "value": "milk",
+      "source_ids": [
+        "pride",
+        "preprint"
+      ],
+      "evidence": "PRIDE title describes degraded milk whey; the preprint uses bovine beta-lactoglobulin (UniProt P02754), a milk whey protein. Blanks are not applicable."
+    },
+    {
+      "location": "characteristics[treatment] all rows",
+      "value": "heated at 70 degree celsius, pH 7",
+      "source_ids": [
+        "pride",
+        "preprint"
+      ],
+      "evidence": "PRIDE sampleProcessingProtocol: \"All fractions were heated (70C) at pH 7 for 12 hrs\". Methods: all solutions were pH 7 and samples and method blanks were incubated at 70 °C in a heating block for 12 hours."
+    },
+    {
+      "location": "characteristics[sample type] all rows",
+      "value": "negative control for the 3 method blanks; study sample for the 60 BLG rows",
+      "source_ids": [
+        "preprint",
+        "pride-files"
+      ],
+      "evidence": "Methods describe water method blanks processed alongside the BLG samples; the three blank RAW files are named as blanks."
+    },
+    {
+      "location": "characteristics[additive] all rows",
+      "value": "mirrors factor value[additive]",
+      "source_ids": [
+        "preprint"
+      ],
+      "evidence": "Characteristic column matching the additive factor (BLG only, glucose, octanoic acid, glucose and octanoic acid)."
     }
   ],
   "limitations": [

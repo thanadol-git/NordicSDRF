@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 
-root = Path(__file__).resolve().parents[1]
+root = Path(__file__).resolve().parents[2]
 work = root / "scratchpad/PXD031280"
 items = json.loads((work / "files.json").read_text())
 assert items and all("PXD031280" in item.get("projectAccessions", []) for item in items)

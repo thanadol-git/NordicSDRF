@@ -1,6 +1,6 @@
 # Copenhagen sixth batch: 25 PXDs
 
-Selected on 2026-11-16 from confirmed Copenhagen candidates, excluding the five earlier Copenhagen cohorts, local annotation or block records, the saved community-corpus list, and two previously identified processed-only RAW mislabels. The [tracker](copenhagen_sixth25_batch.tsv) orders 25 accessions by the sum of accession-scoped PRIDE file sizes for entries categorised as RAW. Every cached file-list entry was checked against its accession. `scripts/select_copenhagen_sixth25.py` reproduces the selection and preserves tracker statuses on rerun.
+Selected on 2026-11-16 from confirmed Copenhagen candidates, excluding the five earlier Copenhagen cohorts, local annotation or block records, the saved community-corpus list, and two previously identified processed-only RAW mislabels. The [tracker](copenhagen_sixth25_batch.tsv) orders 25 accessions by the sum of accession-scoped PRIDE file sizes for entries categorised as RAW. Every cached file-list entry was checked against its accession. `scripts/batches/select_copenhagen_sixth25.py` reproduces the selection and preserves tracker statuses on rerun.
 
 The cohort runs from PXD017475 (21.81 GB RAW-labelled files) through PXD066033 (34.01 GB). RAW-labelled ZIP files may contain multiple vendor acquisitions; archive interiors and sample assignments must be verified before SDRF construction.
 
@@ -29,3 +29,11 @@ The [paper](https://pure.au.dk/ws/files/462582763/sciadv.adi2687.pdf) describes 
 ### PXD035353
 
 The [paper](https://edoc.mdc-berlin.de/id/eprint/22057/1/22057oa.pdf) describes control-siRNA and TRESLIN-siRNA HeLa samples, each divided into eight high-pH reversed-phase fractions. The [SDRF](../../annotations/PXD035353.sdrf.tsv) covers all 16 accession-matched RAW files and records the Q Exactive HF-X, top-15 data-dependent acquisition, trypsin digestion, and the three stated MaxQuant modifications. Cellosaurus supports the HeLa cell-line metadata. Deterministic validation and independent review pass with a current hash-bound approval receipt. Review noted minor optional omissions for collision energy and culture medium. The repo-wide gate still has unrelated pending files.
+
+### PXD041717
+
+The 20 accession-scoped RAW filenames form five groups of four: siC untreated, and siC/siR/siT/siD with AZA. The [paper](https://www.nature.com/articles/s41594-024-01294-7.pdf) describes DNMT1 immunoprecipitation, four independent experiments, siRNAs targeting control, RNF4 and TOPORS, and 5-AzadC treatment. The [ProteomeXchange record](https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD041717) lists Orbitrap Exploris 480. The exact meaning of the `siD` filename code and the accession-specific acquisition/search protocol have not been verified. No SDRF has been written; these labels will stay literal until a run-level key is found.
+
+### PXD036512
+
+The [paper](https://www.nature.com/articles/s41467-023-38793-y.pdf) and 64 accession-scoped RAW filenames support a 2 × 2 design in S2R+ *Drosophila* cells: DMSO or PARG inhibitor PDD00017273, with or without hydrogen peroxide. Each condition has four culture replicates, each acquired in four fractions. The [SDRF](../../annotations/PXD036512.sdrf.tsv) records all 64 files, the sequential Lys-C then Trypsin digestion, Af1521 macrodomain enrichment, and EThcD fragmentation on Orbitrap Fusion Lumos. The parser and structural checks pass, and fresh independent review approved the exact file hash. The parser warns that the precise enrichment phrase and Oregon-R strain do not resolve in its offline ontology cache. Search mass tolerances remain `not available`. The reviewer noted minor optional omissions for the high-pH fractionation method and donor developmental stage.

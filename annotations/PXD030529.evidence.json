@@ -22,6 +22,16 @@
       "id": "pride-PXD030529",
       "kind": "repository",
       "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD030529 (sampleProcessingProtocol)"
+    },
+    {
+      "id": "s1-supplement",
+      "kind": "publication supplement",
+      "location": "PLoS One 10.1371/journal.pone.0270040, S1 File (LC-MS/MS methods)"
+    },
+    {
+      "id": "maxquant-params",
+      "kind": "deposited search output",
+      "location": "PRIDE PXD030529 F1_output_txt.rar -> parameters.txt (MaxQuant 1.6.3.4)"
     }
   ],
   "claims": [
@@ -185,12 +195,45 @@
         "pride-PXD030529"
       ],
       "evidence": "Urea arm: lysis buffer with 50 mM TCEP, alkylation with iodoacetamide (IAM) at 40 mM. GuHCl arm: extraction buffer 4M GuHCl, 25mM TRIS, 10mM TCEP, 20mM CAA."
+    },
+    {
+      "location": "comment[collision energy] all rows",
+      "value": "28 NCE (Q Exactive HF-X, Fyrkat rows); 30 NCE (Orbitrap Exploris 480, F1/F2/F3/F8)",
+      "source_ids": [
+        "s1-supplement"
+      ],
+      "evidence": "S1 methods: Q Exactive HF-X \"normalised collision energy of 28\"; \"For the Orbitrap Exploris 480, it was the same except ... HCD collision energy of 30\"."
+    },
+    {
+      "location": "comment[fragment mass tolerance] all rows",
+      "value": "20 ppm",
+      "source_ids": [
+        "maxquant-params",
+        "pride"
+      ],
+      "evidence": "Deposited parameters.txt: \"MS/MS tol. (FTMS) 20 ppm\"; PRIDE dataProcessingProtocol: \"All other settings were the software defaults\". Precursor tolerance is not in parameters.txt and is omitted."
+    },
+    {
+      "location": "characteristics[sample type] all rows",
+      "value": "negative control for the two Fyrkat blanks; study sample for the six specimens",
+      "source_ids": [
+        "s1-supplement"
+      ],
+      "evidence": "S1 describes \"the two Fyrkat blanks for control of laboratory-induced deamidation\"."
+    },
+    {
+      "location": "source name, characteristics[organism] Fyrkat rows",
+      "value": "one specimen \"Fyrkat Grave 4 D158-1966\", Mustela sp., extracted twice (urea, GuHCl); technical replicate 1 (GuHCl) and 2 (urea) keep the two analyses of the one specimen at distinct coordinates",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Paper: \"The fur sample from Fyrkat had two different extraction methods attempted\" and \"The two extractions of the fur from Fyrkat suggest that it derives from the genus Mustela\"; PRIDE organisms list Mustela sp."
     }
   ],
   "limitations": [
     "Species identifications are results with variable taxonomic resolution; Castor canadensis is a database surrogate for archaeological Castor, so genus is used.",
     "Age and sex of the source animals are not reported.",
-    "Mass tolerances are omitted because the exact final search settings were not independently verified from deposited search files.",
-    "Collision energy is not stated in PRIDE or the paper (PMC9328512), so no collision energy column is given; the 28/30 NCE in the previous community file had no source."
+    "Mass tolerances are omitted because the exact final search settings were not independently verified from deposited search files."
   ]
 }

@@ -7,7 +7,7 @@ import struct
 from pathlib import Path
 
 
-root = Path(__file__).resolve().parents[1]
+root = Path(__file__).resolve().parents[2]
 work = root / "scratchpad/PXD067831"
 entries = json.loads((work / "files.json").read_text())
 assert all("PXD067831" in e.get("projectAccessions", []) for e in entries)

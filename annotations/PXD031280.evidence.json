@@ -27,6 +27,11 @@
       "id": "pride-PXD031280",
       "kind": "repository",
       "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD031280 (sampleProcessingProtocol)"
+    },
+    {
+      "id": "maxquant-params",
+      "kind": "deposited search output",
+      "location": "PRIDE PXD031280 RedSample_2021files_ArtioKeratins.rar -> parameters.txt (MaxQuant 2.0.1.0)"
     }
   ],
   "claims": [
@@ -127,16 +132,6 @@
       "evidence": "PRIDE processing protocol and paper Appendix A explicitly specify fixed C carbamidomethyl and variable M oxidation, N-terminal acetyl, N/Q deamidation, pyro-Glu Q/E, and hydroxyproline (oxidation P)."
     },
     {
-      "location": "[2021 rows] comment[technical replicate] paint rows",
-      "value": "1",
-      "source_ids": [
-        "pride",
-        "paper",
-        "readme"
-      ],
-      "evidence": "Each instrument-specific SDRF contains one run per source; the 2021 aliquot is the first and only technical replicate in this file. The paper describes two analytical sets, not two repeat injections within the 2021 set."
-    },
-    {
       "location": "comment[collision energy] all rows",
       "value": "28 NCE (2016, Q Exactive HF); 30 NCE (2021, Orbitrap Exploris 480)",
       "source_ids": [
@@ -154,17 +149,51 @@
     },
     {
       "location": "comment[technical replicate] rows",
-      "value": "1 for 2016 runs, 2 for 2021 runs",
+      "value": "1 for 2016 runs and the 2021 blank, 2 for the 2021 red and yellow aliquots",
       "source_ids": [
         "pride-PXD031280"
       ],
       "evidence": "\"The original samples were divided into two aliquots. The first set was processed and analysed in 2016, the second set was processed in 2021.\" Same source samples, distinct aliquots and runs; replicate number keeps run coordinates unique in one file."
+    },
+    {
+      "location": "characteristics[sample type] all rows",
+      "value": "negative control for Blank_930 and Blank_1943; study sample for the four paint rows",
+      "source_ids": [
+        "pride-PXD031280"
+      ],
+      "evidence": "PRIDE: samples processed \"along with a protocol blank per experiment\"; README-FileDescription.txt describes both Blank files as blank controls."
+    },
+    {
+      "location": "characteristics[paint color] all rows",
+      "value": "mirrors factor value[paint color]",
+      "source_ids": [
+        "pride-PXD031280"
+      ],
+      "evidence": "Characteristic column matching the paint colour factor (red, yellow; not applicable for blanks)."
+    },
+    {
+      "location": "comment[cleavage agent details] (second column) all rows",
+      "value": "Lys-C",
+      "source_ids": [
+        "pride-PXD031280"
+      ],
+      "evidence": "\"The first protein digestion was performed in-solution with 0.2 μg rLysC ... A second enzymatic digestion was performed overnight with 0.8 μg Trypsin\"."
+    },
+    {
+      "location": "comment[fragment mass tolerance] all rows",
+      "value": "20 ppm",
+      "source_ids": [
+        "maxquant-params",
+        "pride-PXD031280"
+      ],
+      "evidence": "Deposited parameters.txt (MaxQuant 2.0.1.0, the version in the PRIDE dataProcessingProtocol): \"MS/MS tol. (FTMS) 20 ppm\"; PRIDE: \"All other parameters were the same in all searches.\" Precursor tolerance is not in parameters.txt and is omitted."
     }
   ],
   "limitations": [
     "Archaeological paint contains possible protein binders from multiple animals; organism is not applicable at source level rather than broadcasting project-level pig/sheep identifications.",
     "PRIDE README maps Blank_930 to the earlier set and Blank_1943 to the later set by sequential run IDs; no explicit year is given for each blank.",
     "A single cleavage-agent column represents final trypsin digest; earlier Lys-C is documented in the paper.",
-    "The yellow early aliquot was analysed in 2017 per README, despite its 2016files filename and grouping in early set."
+    "The yellow early aliquot was analysed in 2017 per README, despite its 2016files filename and grouping in early set.",
+    "Blank_930 is assigned to the 2016 set and Blank_1943 to the 2021 set from the run-ID sequence and the README grouping; RAW headers were not read."
   ]
 }

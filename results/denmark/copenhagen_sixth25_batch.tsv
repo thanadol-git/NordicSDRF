@@ -5,14 +5,14 @@ batch_order	accession	pride_raw_bytes	pride_raw_count	annotation_status	title
 4	PXD052956	22501199698	52	queued: evidence review	Chemogenomic screening in a patient-derived 3D model of metabolic dysfunction-associated steatohepat
 5	PXD063200	23520448633	1	queued: evidence review	Proximity labeling of dense core vesicle protein VMAT
 6	PXD017510	23602340090	39	queued: evidence review	Probing the ovarian cancer O-glycoproteome by the Macrophage Galactose like C-type Lectin (MGL): dis
-7	PXD041717	24151817824	20	queued: evidence review	Concerted SUMO-targeted ubiquitin ligase activities of TOPORS and RNF4 are essential for stress mana
+7	PXD041717	24151817824	20	in progress: five RAW-name groups of four; siD key and run-level protocol unresolved	Concerted SUMO-targeted ubiquitin ligase activities of TOPORS and RNF4 are essential for stress mana
 8	PXD053351	24385213014	1	queued: evidence review	RNAPII interactome in INTS6 degron cells
 9	PXD050545	24807412215	44	queued: evidence review	In-depth phosphoproteomic profiling of the insulin signaling response in heart tissue and cardiomyoc
 10	PXD067969	24864640999	1	queued: evidence review	Phosphorylated RNAPII interactome via 4H8 antibody IP
 11	PXD061985	25201759127	24	queued: evidence review	An unbiased molecular characterisation of peripartum cardiomyopathy identfies mast cell chymase as a
-12	PXD036512	25308134406	64	queued: evidence review	Serine ADP-ribosylation in Drosophila provides insights into the evolution of reversible ADP-ribosyl
+12	PXD036512	25308134406	64	approved: 64 RAW rows; sequential digestion, Af1521 enrichment and EThcD; offline ontology warnings	Serine ADP-ribosylation in Drosophila provides insights into the evolution of reversible ADP-ribosyl
 13	PXD065658	25572920213	1	queued: evidence review	Temporal Proteomic Remodeling of Cerebral Arteries in Hypertensive Rats Reveals Progressive Vascular
-14	PXD035899	26243139505	15	queued: evidence review	Proteomic  identification of beer brewing products in the ground layer of Danish Golden Age painting
+14	PXD035899	26243139505	15	in progress: 11 painting runs and four blanks; blank instrument mapping unresolved	Proteomic  identification of beer brewing products in the ground layer of Danish Golden Age painting
 15	PXD031084	26720451392	50	queued: evidence review	Proteomics Couples Electrical Remodeling to Inflammation in a Murine Model of Heart Failure with Sin
 16	PXD035353	27390004816	16	approved: two eight-fraction HeLa conditions; 16 RAW files; repo-wide gate has unrelated pending files	The TRESLIN-MTBP complex couples completion of DNA replication with S/G2 transition
 17	PXD026225	27844422858	26	approved: human and mouse SDRFs; 26 RAW files; repo-wide gate has unrelated pending files	Mass spectrometry-based analysis of the TBC1D4 interactome in human skeletal muscle

@@ -5,7 +5,7 @@ import json
 from collections import Counter
 from pathlib import Path
 
-root = Path(__file__).resolve().parents[1]
+root = Path(__file__).resolve().parents[2]
 work = root / "scratchpad/PXD044685"
 files = json.loads((work / "files.json").read_text())
 assert files and all("PXD044685" in item.get("projectAccessions", []) for item in files)

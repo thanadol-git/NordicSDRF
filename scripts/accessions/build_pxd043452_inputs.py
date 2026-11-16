@@ -7,7 +7,7 @@ from collections import Counter
 from pathlib import Path
 
 
-root = Path(__file__).resolve().parents[1]
+root = Path(__file__).resolve().parents[2]
 work = root / "scratchpad/PXD043452"
 accession = "PXD043452"
 entries = json.loads((work / "files.json").read_text())
