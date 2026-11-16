@@ -106,7 +106,7 @@
     "Mixed samples carry a single organism (SARS-CoV-2) although they also contain mouse antibody",
     "Modifications are the union over search rounds; the full msf workflow (all nodes) was not read, only the first 700 kB; msf tolerance 20 ppm / 0.5 Da conflicts with PRIDE 10 ppm / 0.1 Da",
     "PRIDE protocol says RBD Alpha while file names and paper title say wild type; written as wild type",
-    "Acquisition dates not annotated; LysC and PNGaseF not representable in the single cleavage column",
+    "Acquisition dates not annotated; Lys-C is encoded as a second cleavage agent column (PRIDE protocol: 2% LysC 1 h, then methylated trypsin 10 h); PNGaseF deglycosylation is not captured. RBD variant: file names and the PRIDE project description say wild type, while the PRIDE sample protocol, Experimental_setup.docx and the abstract say Alpha; annotated as `wild type` (no source cites a lineage such as B.1.1.7)",
     "Validator error 'study sample not found in pride' is a cache artifact (PRIDE:0001013 valid live); reconcile cleavage_agent_unsupported flags methylated trypsin wording (false positive)"
   ]
 }

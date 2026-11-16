@@ -106,7 +106,7 @@
  ],
  "limitations": [
   "Deposited .msf and .pdResult search files (SQLite, 1-9 GB) were not read; modifications and tolerances come from the paper and PRIDE protocol text, not from the deposited parameters",
-  "Biological replicate numbers are placeholders taken from the file-name suffix; the paper does not say whether the six replicates are independent plasma aliquots or process replicates; technical replicate set to 1",
+  "Biological replicate numbers are placeholders taken from the file-name suffix; the paper does not say whether the six replicates are independent plasma aliquots or process replicates; after review: biological replicate = 1 and technical replicate = file suffix 1-6 (assumes the paper's 'six replicate experiments' are technical replicates)",
   "Whether the plasma is a pool of the 100 donors or one donor is not stated in the paper text read (Methods 4.1, abstract); pooled sample, age, sex, individual not annotated or not available",
   "Acetyl and Carbamyl position given as Any N-term because the paper says only N-terminal; Protein N-term not confirmed",
   "Precursor/fragment tolerance is Sequest HT only; MSPepSearch used 15 ppm/15 ppm",
