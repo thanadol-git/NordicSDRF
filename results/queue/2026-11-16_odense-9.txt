@@ -1,0 +1,11 @@
+# daily queue denmark/odense batch 9 (10 smallest pending PXDs by total deposited RAW size, all files pages fetched, excluding accessions that already have annotation files or are in the live bigbio corpus)
+PXD053925	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD061650	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD017643	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD042321	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD019621	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD048559	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD013611	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD050046	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD025956	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD014792	denmark/odense	pending	odense: no screen yet; queued as a candidate
