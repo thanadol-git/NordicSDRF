@@ -120,22 +120,22 @@ countries:
         search_terms: [Copenhagen, København, Rigshospitalet, Frederiksberg]
         pride_hits: 554
         screened: 0
-        annotated: 87
-        blocked: 38
+        annotated: 94
+        blocked: 39
         notes: "Manifest from build_manifest.py (2026-11-03): 543 confirmed Danish; PXD006201, PXD006679, PXD027901, PXD043505 removed (SDU Odense affiliations only). 32 Odense-list, 1 Aarhus-list and 2 Roskilde-list PXDs have Copenhagen-only affiliations and are still listed under those cities"
         pxd_list: lists/denmark/copenhagen.txt
         pxd_count: 539
-        in_corpus: 247
+        in_corpus: 286
       odense:
         name: Odense
         search_terms: [Odense, "University of Southern Denmark"]
         pride_hits: 604
         screened: 0
-        annotated: 56
-        blocked: 18
+        annotated: 67
+        blocked: 25
         pxd_list: lists/denmark/odense.txt
         pxd_count: 178
-        in_corpus: 78
+        in_corpus: 79
       aarhus:
         name: Aarhus
         search_terms: [Aarhus, Århus]

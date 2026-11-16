@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD045842.sdrf.tsv",
+  "dataset": "PXD045842",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD045842"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD045842/files?pageSize=100&page=0 (50 files; page 1 empty)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC10720265 (doi:10.1016/j.celrep.2023.113325)"
+    },
+    {
+      "id": "raw",
+      "kind": "repository",
+      "location": "HTTP range reads (first 60 KB-1.5 MB) of all 48 RAW files at ftp.pride.ebi.ac.uk/pride/data/archive/2024/01/PXD045842/"
+    },
+    {
+      "id": "evidence",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2024/01/PXD045842/evidence.txt (first 30 MB), proteinGroups.txt header"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "repository",
+      "location": "https://api.cellosaurus.org/search/cell-line?q=HeLa%20Kyoto (CVCL_1922)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file], source name",
+      "value": "48 RAW, 16 groups x 3 replicates",
+      "source_ids": [
+        "files",
+        "raw"
+      ],
+      "evidence": "PRIDE file list; RAW header original paths map FL-WT--D to +D and FL-WT-D to -D"
+    },
+    {
+      "location": "characteristics[cell line], cellosaurus*, age, sex",
+      "value": "HeLa Kyoto CVCL_1922, 30Y6M, female",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Paper key resources: HeLa Kyoto; Cellosaurus record"
+    },
+    {
+      "location": "characteristics[treatment]",
+      "value": "doxycycline on FL-WT +D rows only",
+      "source_ids": [
+        "paper",
+        "raw"
+      ],
+      "evidence": "Paper: 1 ug/mL doxycycline induction; file name +D/-D; D=doxycycline is inferred"
+    },
+    {
+      "location": "comment[instrument], dissociation, collision energy, ms2 analyzer, ms1 scan range",
+      "value": "Orbitrap Exploris 480; HCD; 30% NCE; Orbitrap; 350m/z-1500m/z",
+      "source_ids": [
+        "raw",
+        "paper",
+        "pride"
+      ],
+      "evidence": "RAW method summary identical in all 48 files; paper names Exploris 480"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Trypsin + Lys-C",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper/PRIDE: digested with trypsin and Lys-C; second column added by add_lysc.py post-processing"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Oxidation (M), Acetyl (Protein N-term) variable",
+      "source_ids": [
+        "evidence"
+      ],
+      "evidence": "evidence.txt Modifications column values; no carbamidomethyl present"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "DDA",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Paper: data-dependent acquisition; Top12 method name in RAW"
+    }
+  ],
+  "limitations": [
+    "Meaning of Bz vs BSA and F1/F2/F7 not stated in paper, PRIDE text or RAW headers (searched paper full text, PRIDE record, RAW header strings); kept only in source names, no factor value",
+    "Bead type (MYC vs GFP) per group not traceable",
+    "Only one MS comparison (Z1 1-209 WT vs MUT) is described in the paper; 12 other groups undocumented",
+    "Doxycycline = D in file names is inferred; non +D rows treatment not available",
+    "HeLa Kyoto age/sex from Cellosaurus donor, epithelial cell type and uterine cervix inferred from cell line identity",
+    "Tolerances, reduction, alkylation, disease, culture medium, passage: not available (no mqpar/parameters deposited; paper silent)",
+    "Second cleavage-agent column inserted by post-processing script (build has single column); reconcile still flags Lys-C missing",
+    "Modifications read from the first 30 MB of evidence.txt (all 48 raw files represented); other search settings unverified",
+    "Validator warning: HeLa Kyoto not in clo/bto/efo; Cellosaurus accession given"
+  ]
+}

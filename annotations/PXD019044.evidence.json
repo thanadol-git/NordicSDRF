@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD019044.sdrf.tsv",
+  "dataset": "PXD019044",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD019044"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD019044/files?pageSize=100&page=0 (33 files; page=1 empty)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC7600648 (doi:10.3390/cells9102217)"
+    },
+    {
+      "id": "sampleexp",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/10/PXD019044/sample_explanation.csv"
+    },
+    {
+      "id": "pepxml",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/10/PXD019044/LUM02040_PVS.pep.xml (PD workflow header, first 20 MB)"
+    },
+    {
+      "id": "raw",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/10/PXD019044/LUM02040_PVS.raw and LUM02056_PVS.raw (first 3 MB, method header)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "rows 1-15 comment[data file], source name, biological replicate, treatment, sampling time",
+      "value": "15 RAW files mapped to 5 conditions x 3 replicates",
+      "source_ids": [
+        "files",
+        "sampleexp",
+        "paper"
+      ],
+      "evidence": "sample_explanation.csv lists raw_file, condition, replica; all 15 RAW from the complete PRIDE file list"
+    },
+    {
+      "location": "characteristics[cell line], cellosaurus accession/name, organism, disease, organism part",
+      "value": "U-251 MG, CVCL_0021, Homo sapiens, glioblastoma, brain",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Paper: SILAC experiments performed on U251MG glioblastoma cells; Cellosaurus lookup via sdrf-tools cellline"
+    },
+    {
+      "location": "comment[label]",
+      "value": "SILAC heavy for heavy Arg, no Arg and canavanine runs; SILAC light for light Arg runs",
+      "source_ids": [
+        "paper",
+        "sampleexp"
+      ],
+      "evidence": "Paper Table 1 (% identifications heavy/light/canavanine): ArgH 48h 97.2/2.8/0.06; ArgL 48h 33.9/65.9/0.2; CAV 24h 83.6/6.5/9.9; CAV 48h 76.9/6.3/16.8; cells pre-labelled heavy 7 passages then transferred. Per-run label is a curator judgement; Table 1 is aggregate, not per sample"
+    },
+    {
+      "location": "comment[instrument], dissociation method, collision energy, ms2 mass analyzer",
+      "value": "Orbitrap Fusion Lumos; CID; 35% NCE; ion trap",
+      "source_ids": [
+        "pride",
+        "paper",
+        "raw"
+      ],
+      "evidence": "RAW method header: Orbitrap Fusion Lumos, ActivationType = CID, Collision Energy (%) = 35, Detector Type = IonTrap, rapid"
+    },
+    {
+      "location": "comment[cleavage agent details], tolerances, modification parameters",
+      "value": "Lys-C; 3 ppm; 0.6 Da; Carbamidomethyl C fixed, Oxidation M, Label:13C(6)15N(4) R variable",
+      "source_ids": [
+        "paper",
+        "pride",
+        "pepxml"
+      ],
+      "evidence": "PD workflow in pep.xml header: Enzyme LysC (Full), 3 ppm / 0.6 Da, dynamic Oxidation M, Label:13C(6)15N(4) R, canavanine R, static Carbamidomethyl C"
+    },
+    {
+      "location": "characteristics[culture medium]",
+      "value": "DMEM with 5% dialyzed fetal bovine serum",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Paper: DMEM (Sigma D9443) with or without 0.4 mmol/L Arg, 5% dialyzed serum (Sigma F0392); Methods/PRIDE vs Results disagree on Arg level (0.4 vs 0.1 mM)"
+    },
+    {
+      "location": "characteristics[treatment], factor value[treatment], factor value[sampling time]",
+      "value": "treatment text states heavy prelabelling (7 passages) and target medium; sampling time factor 24/48 hour",
+      "source_ids": [
+        "paper",
+        "pepxml",
+        "sampleexp"
+      ],
+      "evidence": "Paper Table 1 and Methods; reviewer-parsed pep.xml Arg-peptide counts heavy/canavanine-like/light: LUM02040 9643/32/629, LUM02044 3973/58/7753, LUM02050 8768/851/459"
+    }
+  ],
+  "limitations": [
+    "Age 75Y and sex male come from Cellosaurus (CVCL_0021), not from the paper",
+    "User-defined canavanine (+1.979 Da on R) variable modification has no Unimod or PSI-MOD term and is omitted from modification parameters",
+    "sample_explanation.csv has a 'no Arg 48 hours' condition not named in the paper Methods",
+    "Acquisition method DDA inferred from the Universal Method and Sequest search, not read from a stated field",
+    "PD_results.zip (49.7 GB) was not opened; modifications taken from pep.xml workflow header",
+    "Validator error 'study sample not found in pride' is a cache-only artifact; PRIDE:0001013 is study sample in live OLS4",
+    "Per-run SILAC label is a mixed state: per paper Table 1 the light runs LUM02044-46 are ~33.9% heavy/65.9% light, heavy runs 97.2% heavy, canavanine 24h 83.6% heavy/6.5% light/9.9% canavanine, canavanine 48h 76.9/6.3/16.8; one row per run kept, label is the dominant/pre-labelled form",
+    "Heavy label for the no-Arg runs LUM02040-42 has no paper support (condition named only in sample_explanation.csv; Table 1 and PRIDE list 4 conditions)",
+    "The other SILAC channel of each run is marked unused and is not asserted absent from the spectra",
+    "Canavanine +1.97927 Da on R (UnimodAccession 0) omitted, so modification columns do not reflect the study's central search target",
+    "Reduction/alkylation reagents not stated in the paper text (supplement S1 and PD_results.zip not opened)",
+    "RAW headers of all 15 files read by the reviewer (Orbitrap Fusion Lumos, CID, 35%, ion trap); acquisition dates not recoverable (all carry method creation time 2/9/2017)",
+    "Culture medium is free text (NCIT warning); Arg level not encoded because paper Methods and Results disagree",
+    "Cell line disease glioblastoma from the paper; Cellosaurus says astrocytoma",
+    "One row per run, no extra SILAC channel rows: paper gives only aggregate incorporation; the 2-3 rows per raw file rule is for paired multiplexed channels, extra rows would assert an undescribed design",
+    "Heavy label of the no-Arg runs rests on pep.xml counts (9643 heavy of Arg peptides), not on the paper; that medium is a bare Arg-free medium and its prelabelling is unverified",
+    "characteristics[culture medium] is the shared base medium on all rows including Arg-free ones; per-condition Arg level only in the treatment column",
+    "Alkylation reagent kept not available: PRIDE MOD:00397 (iodoacetamide-derivatized residue) makes iodoacetamide plausible but neither protocol nor paper text states it"
+  ]
+}

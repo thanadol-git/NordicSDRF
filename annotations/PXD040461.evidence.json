@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD040461.sdrf.tsv",
+  "dataset": "PXD040461",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD040461"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD040461/files?pageSize=100&page=0 (13 files: 10 RAW, summary.txt, proteinGroups.txt; page 1 empty)"
+    },
+    {
+      "id": "summary",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2024/01/PXD040461/summary.txt"
+    },
+    {
+      "id": "proteingroups",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2024/01/PXD040461/proteinGroups.txt"
+    },
+    {
+      "id": "raw",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2024/01/PXD040461/*.raw (first 3 MB of all 10 files)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "doi:10.1128/aem.01510-23, PMID 38095456, PMC10807428 (abstract only; full text not open access, Europe PMC fullTextXML returns HTTP 500)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "organism, organism part",
+      "value": "Xanthomonas retroflexus; biofilm",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism NEWT:305959 and organism part BTO:0002690 biofilm; protocol: colonies grown on agar and scraped; paper abstract: biofilm-adapted wrinkly colony mutant of X. retroflexus"
+    },
+    {
+      "location": "source name / biological replicate / files",
+      "value": "A-D = experiment D3_A..D3_D (bio rep 1-4); E-I = D3w_A..D3w_E (bio rep 1-5); H_techrep and I_techrep = technical replicate 2 of D3w_D and D3w_E",
+      "source_ids": [
+        "summary",
+        "files"
+      ],
+      "evidence": "summary.txt Raw file -> Experiment table (H and H_techrep both D3w_D; I and I_techrep both D3w_E)"
+    },
+    {
+      "location": "characteristics[phenotype], factor value[phenotype]",
+      "value": "D3 = wild type; D3w = wrinkly colony variant",
+      "source_ids": [
+        "pride",
+        "paper",
+        "summary"
+      ],
+      "evidence": "PRIDE protocol compares sample groups 'wrinkled and wildtype'; paper abstract XRw vs wild type; experiment prefix D3 vs D3w from summary.txt. The w = wrinkly assignment is an inference from the prefix (see limitations)"
+    },
+    {
+      "location": "comment[instrument], ms2 mass analyzer, dissociation",
+      "value": "Q Exactive; orbitrap; HCD (MS:1000422)",
+      "source_ids": [
+        "raw",
+        "pride"
+      ],
+      "evidence": "RAW headers of all 10 files: Q Exactive - Orbitrap MS; HCD from PRIDE protocol and the RAW method (Fragmentation_HCD)"
+    },
+    {
+      "location": "cleavage agent",
+      "value": "Trypsin (MS:1001251)",
+      "source_ids": [
+        "pride",
+        "summary"
+      ],
+      "evidence": "PRIDE protocol 'trypsin (1:100)'; summary.txt Enzyme is Trypsin/P; the record's wording was used"
+    },
+    {
+      "location": "modification parameters, tolerances",
+      "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl protein N-term variable; precursor 4.5 ppm, fragment 20 ppm",
+      "source_ids": [
+        "pride",
+        "summary"
+      ],
+      "evidence": "summary.txt variable modifications; PRIDE data processing protocol (fixed carbamidomethyl, tolerances)"
+    },
+    {
+      "location": "reduction/alkylation reagent",
+      "value": "DTT; iodoacetamide",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE protocol: reduced with 5 mM DTT, alkylated with 20 mM iodoacetamide"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition (PRIDE:0000627)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "protocol: data recorded in a data dependent manner; term resolved against live OLS4"
+    },
+    {
+      "location": "comment[collision energy]",
+      "value": "25 NCE on all rows",
+      "source_ids": [
+        "raw",
+        "pride"
+      ],
+      "evidence": "RAW embedded instrument method (reviewer read first 8 MB of all 10 files): Fragmentation_HCD EnergyType=normalized 25 in the MS2 scan event; scan headers read nce: 25. PRIDE protocol text says 28%, which conflicts; raw takes precedence"
+    },
+    {
+      "location": "RAW method vs protocol",
+      "value": "Method matches protocol on Top10, isolation window 1.6, resolutions 70000/17500 and 130 min gradient; differs on scan ranges",
+      "source_ids": [
+        "raw",
+        "pride"
+      ],
+      "evidence": "RAW method MS1 300-1750 and MS2 200-2000 m/z; protocol says 350-1500. Scan ranges are not annotated"
+    }
+  ],
+  "limitations": [
+    "Paper full text not accessible (not open access; Europe PMC fullTextXML HTTP 500, PMC pages blocked); only the abstract and the PRIDE protocols were read, so the strain designation behind D3 / D3w is not documented in anything read",
+    "Phenotype wild type for D3 and wrinkly colony variant for D3w is inferred from the deposited experiment names plus the protocol's 'wrinkled and wildtype' groups; no deposited file states the mapping explicitly",
+    "Biological replicate numbers follow the letters A-E in summary.txt experiment names; no file describes them as independent cultures",
+    "Deposited summary.txt and proteinGroups.txt also list D3inter_A..E (RAW files J-N), which are not in the PRIDE deposit and are not annotated",
+    "Cleavage agent written as Trypsin (record wording); the deposited search used Trypsin/P; sdrf-tools reconcile still raises cleavage_agent_unsupported although the PRIDE protocol names trypsin (false positive)",
+    "Strain, genotype, disease and growth temperature columns omitted or not annotated: no strain name read; disease not applicable not asserted",
+    "Runs are unfractionated (fraction identifier 1 by default) per the protocol, which describes no fractionation",
+    "characteristics[phenotype] is not in the ms-proteomics contract but build accepted it",
+    "Validator reports clean with cache-only OLS; PRIDE and MS accessions were resolved live in OLS4",
+    "Collision energy 25 NCE is from the RAW embedded method and scan headers; PRIDE protocol says 28% (conflict, raw preferred)",
+    "Phenotype mapping D3 = wild type / D3w = wrinkly remains an inference: the 'w' could mean wildtype, D3inter is unexplained, and the paper full text is unreachable",
+    "Fixed carbamidomethyl, 4.5/20 ppm tolerances and 2 missed cleavages come only from the PRIDE protocol; mqpar.xml is not deposited (summary.txt confirms only variable modifications and Trypsin/P, 2 missed cleavages)",
+    "The only date in the RAW headers (2016-11-28, tune file 20161129) is not a per-run acquisition timestamp; acquisition date not annotated",
+    "Acquisition order is confounded with phenotype (A-D wild type run before E-I wrinkly)",
+    "RAW method scan ranges (MS1 300-1750, MS2 200-2000) differ from the protocol (350-1500); not annotated"
+  ]
+}

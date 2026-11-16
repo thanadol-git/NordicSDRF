@@ -1,0 +1,21 @@
+# daily queue denmark/odense batch 8 (20 smallest pending PXDs by total deposited RAW size, all files pages fetched, excluding accessions that already have annotation files)
+PXD023865	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD047957	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD040213	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD083486	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD022056	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD039586	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD035899	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD031084	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD045842	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD040461	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD046423	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD017469	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD019044	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD081715	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD020727	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD021658	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD030998	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD026774	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD018273	denmark/odense	pending	odense: no screen yet; queued as a candidate
+PXD028952	denmark/odense	pending	odense: no screen yet; queued as a candidate

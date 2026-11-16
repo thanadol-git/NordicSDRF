@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD083486.sdrf.tsv",
+  "dataset": "PXD083486",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD083486"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD083486/files?pageSize=100&page=0 (37 files; page 1 empty)"
+    },
+    {
+      "id": "mzml",
+      "kind": "raw header",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/10/PXD083486/<4 mzML files> first 3 MB read by HTTP range"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/ontologies/"
+    }
+  ],
+  "claims": [
+    {
+      "location": "rows 1-4 source name / organism part / factor value",
+      "value": "Brain01, Heart01, Liver01, Lung01; Mus musculus",
+      "source_ids": [
+        "pride",
+        "files"
+      ],
+      "evidence": "PRIDE description/keywords/organism; file names contain BRAIN/HEART/LIVER/LUNG"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Astral MS:1003378",
+      "source_ids": [
+        "pride",
+        "mzml"
+      ],
+      "evidence": "PRIDE protocol, instruments field and mzML instrument cvParam of all 4 files"
+    },
+    {
+      "location": "dissociation method / collision energy",
+      "value": "HCD; 30 NCE",
+      "source_ids": [
+        "pride",
+        "mzml"
+      ],
+      "evidence": "Protocol: NCE 30% (HCD); mzML collision energy 30"
+    },
+    {
+      "location": "DIA columns",
+      "value": "DIA; isolation 2 m/z; 400-1000 m/z",
+      "source_ids": [
+        "pride",
+        "mzml"
+      ],
+      "evidence": "Protocol text; mzML precursor target 401/403 +/-1"
+    },
+    {
+      "location": "cleavage agent, reduction, alkylation, modification",
+      "value": "Trypsin; TCEP; chloroacetamide; Carbamidomethyl C fixed",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "sampleProcessingProtocol and dataProcessingProtocol (DIA-NN, fixed carbamidomethyl C, no variable mods)"
+    },
+    {
+      "location": "comment[acquisition date]",
+      "value": "2025-02-25",
+      "source_ids": [
+        "mzml"
+      ],
+      "evidence": "startTimeStamp of all 4 mzML files"
+    },
+    {
+      "location": "ontology terms",
+      "value": "all NT/AC resolved",
+      "source_ids": [
+        "ols"
+      ],
+      "evidence": "live OLS4 lookups; PRIDE:0000450 is a descendant of PRIDE:0000659; PRIDE:0001013 exists"
+    }
+  ],
+  "limitations": [
+    "No publication or DOI in the PRIDE record; the paper was not available, so disease, strain, sex, age and developmental stage were not found in the PRIDE record or file headers and are not available",
+    "biological replicate = 1 is a placeholder (one run per tissue)",
+    "fraction identifier 1 / fractionation not applicable inferred from the absence of any fractionation in the protocol",
+    "precursor/fragment mass tolerance not stated in the PRIDE protocol; the DIA-NN report tables deposited were not mined for settings; written not available",
+    "dia method not available (no specific variant stated)",
+    "Carbamidomethyl fixed modification taken from the processing protocol text; no deposited DIA-NN log was available",
+    "Scan window lower/upper limit 400/1000 taken from the MS2 range in the protocol",
+    "Original .raw files are not deposited: only .mzML conversions (ThermoRawFileParser 1.4.4); header values read from the mzML",
+    "The 32 qef_* / astral_* DIA-NN report tables and the QE HF runs they reference (QExHF03753/55/57/61) are not annotated; no QE HF data files are deposited",
+    "metadata_sdrf.tsv deposited by the submitter was displayed while gathering but not used as a source",
+    "parse_sdrf cache-only errors: study sample (PRIDE:0001013) and DIA acquisition method (PRIDE:0000450) are cache artifacts, valid on live OLS4",
+    "sdrf-tools reconcile BLOCKER run_names_name_another_organ is a false positive for a multi-organ study (compares against the first row only)"
+  ]
+}
