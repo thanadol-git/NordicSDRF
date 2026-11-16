@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-10-01
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-11-11)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-11-16)
 
 countries:
   sweden:
@@ -52,7 +52,7 @@ countries:
         annotated: 68
         blocked: 93
         notes: "line 1 is PRD000423, a legacy ProteomeXchange id — resolve to a PXD before screening"
-        in_corpus: 85
+        in_corpus: 86
       lund:
         name: Lund
         search_terms: [Lund, Malmö, Skåne]
@@ -62,7 +62,7 @@ countries:
         screened: 0
         annotated: 75
         blocked: 82
-        in_corpus: 99
+        in_corpus: 100
       gothenburg:
         name: Gothenburg
         search_terms: [Gothenburg, Göteborg, Sahlgrenska, Chalmers]
@@ -120,22 +120,22 @@ countries:
         search_terms: [Copenhagen, København, Rigshospitalet, Frederiksberg]
         pride_hits: 554
         screened: 0
-        annotated: 64
-        blocked: 18
+        annotated: 87
+        blocked: 38
         notes: "Manifest from build_manifest.py (2026-11-03): 543 confirmed Danish; PXD006201, PXD006679, PXD027901, PXD043505 removed (SDU Odense affiliations only). 32 Odense-list, 1 Aarhus-list and 2 Roskilde-list PXDs have Copenhagen-only affiliations and are still listed under those cities"
         pxd_list: lists/denmark/copenhagen.txt
         pxd_count: 539
-        in_corpus: 219
+        in_corpus: 247
       odense:
         name: Odense
         search_terms: [Odense, "University of Southern Denmark"]
         pride_hits: 604
         screened: 0
-        annotated: 55
-        blocked: 17
+        annotated: 56
+        blocked: 18
         pxd_list: lists/denmark/odense.txt
         pxd_count: 178
-        in_corpus: 65
+        in_corpus: 78
       aarhus:
         name: Aarhus
         search_terms: [Aarhus, Århus]
@@ -199,7 +199,7 @@ countries:
         blocked: 3
         pxd_list: lists/norway/oslo.txt
         pxd_count: 120
-        in_corpus: 90
+        in_corpus: 91
       trondheim:
         name: Trondheim
         search_terms: [Trondheim, NTNU]
@@ -250,7 +250,7 @@ countries:
         blocked: 27
         pxd_list: lists/finland/helsinki.txt
         pxd_count: 66
-        in_corpus: 41
+        in_corpus: 43
       turku:
         name: Turku
         search_terms: [Turku, Åbo]
@@ -260,7 +260,7 @@ countries:
         blocked: 8
         pxd_list: lists/finland/turku.txt
         pxd_count: 102
-        in_corpus: 93
+        in_corpus: 94
       oulu:
         name: Oulu
         search_terms: [Oulu]

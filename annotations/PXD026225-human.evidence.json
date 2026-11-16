@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD026225-human.sdrf.tsv",
+  "dataset": "PXD026225",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "scratchpad/PXD026225/pride.json"},
+    {"id": "files", "kind": "repository", "location": "scratchpad/PXD026225/files.json"},
+    {"id": "paper", "kind": "publication", "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9074744/"}
+  ],
+  "claims": [
+    {"location": "characteristics[organism], characteristics[organism part], characteristics[sex], characteristics[disease] rows 1-16", "value": "Homo sapiens; skeletal muscle; male; normal", "source_ids": ["paper", "pride"], "evidence": "Subjects section identifies six healthy young male donors and vastus lateralis biopsies; the project record describes human skeletal muscle."},
+    {"location": "comment[data file], source name, factor value[insulin stimulation], factor value[immunoprecipitation] rows 1-16", "value": "Six basal TBC1D4 IP, six insulin TBC1D4 IP, two basal IgG and two insulin IgG files", "source_ids": ["files", "paper"], "evidence": "RAW names encode BASAL or INS and IgG_CTR; paper's proteomics analysis confirms 16 human runs: 6 basal, 6 insulin and 4 IgG controls. Biological replicate indices are ordinals within each group, not asserted donor-pair IDs."},
+    {"location": "comment[instrument], comment[proteomics data acquisition method], comment[cleavage agent details] rows 1-16", "value": "Q Exactive HF-X; data-dependent acquisition; Trypsin", "source_ids": ["paper", "pride"], "evidence": "Proteomics Sample Preparation and Liquid Chromatography–MS Analysis specifies the instrument, top-15 DDA and on-bead trypsin digestion."},
+    {"location": "comment[precursor mass tolerance], comment[fragment mass tolerance], comment[modification parameters] rows 1-16", "value": "not available", "source_ids": ["pride", "paper"], "evidence": "The locally cached record and paper do not give exact search settings; the deposited MaxQuant txtfiles archive was not locally available."}
+  ],
+  "limitations": ["Donor pairing across basal and insulin runs is not identified by a sample manifest.", "Search settings and per-donor ages are unavailable in the accessible evidence.", "Only human RAW files are represented in this artifact; the mouse RAW files are represented in the companion artifact."]
+}

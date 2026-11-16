@@ -27,6 +27,11 @@
       "id": "cellosaurus",
       "kind": "ontology",
       "location": "https://www.cellosaurus.org/CVCL_0058; HeLa S3 entry, matched by sdrf-tools cellline lookup"
+    },
+    {
+      "id": "paper-methods",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12322952/ (Methods; Table 1 acquisition settings)"
     }
   ],
   "claims": [
@@ -75,6 +80,14 @@
         "design"
       ],
       "evidence": "Paper Sample Preparation identifies HeLa S3 cervical carcinoma cells; Cellosaurus CVCL_0058 confirms line identity, cervix origin and cervical adenocarcinoma provenance."
+    },
+    {
+      "location": "comment[collision energy], comment[scan window lower limit], comment[scan window upper limit], comment[isolation window width] all rows",
+      "value": "27 NCE; 361; 1033; 13.7",
+      "source_ids": [
+        "paper-methods"
+      ],
+      "evidence": "Table 1 \"HCD energy MS2\" = 27 for all DIA settings; Methods: DIA MS2 \"covering a mass range of 361–1033 m/z and utilizing a window size of 13.7, resulting in 49 windows\" ((1033-361)/49 = 13.7). The previous community file gave isolation window width 32, which contradicts this."
     }
   ],
   "limitations": [

@@ -1,0 +1,11 @@
+# daily queue 2026-11-16 denmark  (10 PXDs, cap 10)
+PXD000554	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD001063	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD001478	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD003443	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD003523	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD004055	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD004590	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD004927	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD005252	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate
+PXD005803	denmark/copenhagen	pending	copenhagen: no screen yet; queued as a candidate

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD026225-mouse.sdrf.tsv",
+  "dataset": "PXD026225",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "scratchpad/PXD026225/pride.json"},
+    {"id": "files", "kind": "repository", "location": "scratchpad/PXD026225/files.json"},
+    {"id": "paper", "kind": "publication", "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9074744/"}
+  ],
+  "claims": [
+    {"location": "characteristics[organism], characteristics[organism part], characteristics[sex], characteristics[strain or breed] rows 1-10", "value": "Mus musculus; skeletal muscle; female; C57BL/6J", "source_ids": ["paper", "pride"], "evidence": "Animals section identifies female WT and TBC1D4-KO mice on a C57BL/6J background and tibialis anterior muscle; the organism part is recorded at the broader supported skeletal-muscle level."},
+    {"location": "comment[data file], source name, characteristics[genotype], factor value[genotype] rows 1-10", "value": "Five TBC1D4 knockout and five wild-type RAW files", "source_ids": ["files", "paper"], "evidence": "RAW names encode mouse_D4KO_S6-S10 or mouse_WT_S1-S5; paper's proteomics analysis confirms five TBC1D4 IP samples in each group. The factor value copies the genotype characteristic in each row."},
+    {"location": "comment[instrument], comment[proteomics data acquisition method], comment[cleavage agent details] rows 1-10", "value": "Q Exactive HF-X; data-dependent acquisition; Trypsin", "source_ids": ["paper", "pride"], "evidence": "Proteomics Sample Preparation and Liquid Chromatography–MS Analysis specifies instrument, top-15 DDA and on-bead trypsin digestion."},
+    {"location": "comment[precursor mass tolerance], comment[fragment mass tolerance], comment[modification parameters] rows 1-10", "value": "not available", "source_ids": ["pride", "paper"], "evidence": "The locally cached record and paper do not give exact search settings; the deposited MaxQuant txtfiles archive was not locally available."}
+  ],
+  "limitations": ["The validator's offline ontology list does not recognize C57BL/6J as a strain term, although the paper states it explicitly.", "One knockout sample was excluded from the authors' downstream analysis, but all five acquired RAW files are retained.", "Only mouse RAW files are represented in this artifact; the human RAW files are represented in the companion artifact."]
+}

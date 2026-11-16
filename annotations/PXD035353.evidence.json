@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD035353.sdrf.tsv",
+  "dataset": "PXD035353",
+  "sources": [
+    {"id": "files", "kind": "repository", "location": "scratchpad/PXD035353/files.json"},
+    {"id": "paper", "kind": "publication", "location": "https://edoc.mdc-berlin.de/id/eprint/22057/1/22057oa.pdf"},
+    {"id": "cellosaurus", "kind": "ontology", "location": "https://www.cellosaurus.org/CVCL_0030"}
+  ],
+  "claims": [
+    {"location": "comment[data file], comment[fraction identifier] rows 1-16", "value": "Eight numbered fractions per CTRL and 48h condition", "source_ids": ["files", "paper"], "evidence": "All 16 RAW category entries carry projectAccessions PXD035353. Filenames encode CTRL or 48h and F1-F8; Methods state siTreslin 48h and siCtrl HeLa samples were fractionated into eight high-pH reversed-phase fractions."},
+    {"location": "characteristics[cell line], characteristics[cellosaurus accession], characteristics[organism], characteristics[organism part], characteristics[sex], characteristics[age], characteristics[disease] rows 1-16", "value": "HeLa; CVCL_0030; Homo sapiens; uterine cervix; female; 30Y6M; human papillomavirus-related cervical adenocarcinoma", "source_ids": ["paper", "cellosaurus"], "evidence": "The paper explicitly identifies HeLa cells; Cellosaurus identifies their organism, donor sex, age at sampling, uterine cervix origin and disease."},
+    {"location": "factor value[siRNA treatment] rows 1-16", "value": "control siRNA or TRESLIN siRNA, 48 h", "source_ids": ["files", "paper"], "evidence": "Paper Methods describe siCtrl and siTreslin after 48 h; filenames identify the CTRL and 48h fraction groups."},
+    {"location": "comment[instrument], comment[proteomics data acquisition method], comment[cleavage agent details] rows 1-16", "value": "Q Exactive HF-X; data-dependent acquisition; Trypsin", "source_ids": ["paper"], "evidence": "MS Methods specify Q Exactive HF-X top-15 DDA acquisition and overnight trypsin digestion."},
+    {"location": "comment[modification parameters] rows 1-16", "value": "Carbamidomethyl C fixed; oxidation M variable; protein N-terminal acetyl variable", "source_ids": ["paper"], "evidence": "Mass Spectrometry data analysis specifies these three search modifications."},
+    {"location": "comment[precursor mass tolerance], comment[fragment mass tolerance] rows 1-16", "value": "not available", "source_ids": ["paper", "files"], "evidence": "The paper does not specify tolerances and the deposited MaxQuant results archive was not available locally."}
+  ],
+  "limitations": [
+    "The 16 RAW files are two eight-fraction samples, not 16 biological replicates; biological replicate 1 is a coordinate placeholder.",
+    "Exact precursor and fragment search tolerances were not available from the accessible paper or local deposit metadata."
+  ]
+}

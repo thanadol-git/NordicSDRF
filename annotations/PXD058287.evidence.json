@@ -37,7 +37,7 @@
     },
     {
       "location": "comment[technical replicate], characteristics[biological replicate] rows 1-63",
-      "value": "triplicate aliquots numbered 1\u20133; biological replicate 1",
+      "value": "triplicate aliquots numbered 1–3; biological replicate 1",
       "source_ids": [
         "pride-files",
         "preprint"
@@ -87,11 +87,20 @@
         "psm-output"
       ],
       "evidence": "Preprint Orthrus MS2 data analysis Methods explicitly states search settings. Deposited PSM output independently shows +15.9994 and +0.984 mass shifts in peptide strings; fixed C cannot be inferred from PSM output alone."
+    },
+    {
+      "location": "comment[dissociation method], comment[collision energy], comment[ms2 mass analyzer], comment[ms1 scan range] all rows",
+      "value": "HCD; 28 NCE; Orbitrap; 350m/z-1600m/z",
+      "source_ids": [
+        "preprint"
+      ],
+      "evidence": "Preprint Methods: Q Exactive HF; \"Full scans (MS1) were acquired over a mass-to-charge (m/z) range of 350-1600 at a resolution of 120,000\"; precursors \"fragmented with a normalised collision energy (NCE) of 28\"; \"MS2 spectra were acquired at a resolution of 30,000\". NCE fragmentation on Q Exactive HF is HCD and resolution-specified MS2 is Orbitrap."
     }
   ],
   "limitations": [
     "The blank incubation time is not identified by the three RAW filenames, so not available is used.",
     "The preprint is not peer reviewed; its Methods are used for experimental design, cross-checked against PRIDE file names.",
-    "Search parameters are reported in the linked preprint Methods; no standalone parameter file is deposited. PSM output corroborates variable mass shifts but not fixed carbamidomethyl C or tolerances."
+    "Search parameters are reported in the linked preprint Methods; no standalone parameter file is deposited. PSM output corroborates variable mass shifts but not fixed carbamidomethyl C or tolerances.",
+    "HCD and Orbitrap MS2 analyzer are inferred from the Q Exactive HF and the NCE/resolution wording, not literal labels."
   ]
 }

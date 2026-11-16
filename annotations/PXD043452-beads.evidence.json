@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD043452-beads.sdrf.tsv",
+  "dataset": "PXD043452",
+  "sources": [
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "scratchpad/PXD043452/files.json"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://bora.uib.no/bora-xmlui/bitstream/handle/11250/3095744/sciadv.adi2687.pdf?sequence=1"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "ontology",
+      "location": "https://www.cellosaurus.org/CVCL_0063"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] rows 1-10",
+      "value": "10 Thermo .raw files from the beads arm of PXD043452",
+      "source_ids": [
+        "files"
+      ],
+      "evidence": "All 10 beads RAW entries carry projectAccessions PXD043452; WT and MD1 each have suffixes 01-05."
+    },
+    {
+      "location": "characteristics[cell line], characteristics[cellosaurus accession], characteristics[organism] rows 1-10",
+      "value": "HEK293T; CVCL_0063; Homo sapiens",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Methods names 293T cells. Cell line lookup resolves the exact synonym 293T to HEK293T, CVCL_0063, Homo sapiens."
+    },
+    {
+      "location": "source name, comment[technical replicate], characteristics[biological replicate], factor value[PARP14 construct], factor value[affinity capture] rows 1-10",
+      "value": "WT or MD1 mutant PARP14; beads bead arm; technical culture replicates 1-5 per construct",
+      "source_ids": [
+        "paper",
+        "files"
+      ],
+      "evidence": "Methods state that each lysate was split between Af1521-linked and empty control beads. This companion SDRF contains one bead arm; the source names are identical across paired companion files and the technical replicate column preserves the five culture replicate indices encoded by filename suffixes 01-05. Biological replicate 1 is a coordinate placeholder, not an assertion of separately enumerated biological samples."
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method], comment[cleavage agent details] rows 1-10",
+      "value": "Orbitrap Exploris 480; data-dependent acquisition; trypsin",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods describe Orbitrap Exploris 480, top-13 precursor selection with HCD, and on-bead trypsin digestion."
+    },
+    {
+      "location": "comment[ms min charge], comment[ms max charge] rows 1-10",
+      "value": "2; 6",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "MS methods specify selection of precursor charge states 2 to 6."
+    },
+    {
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance], comment[modification parameters] rows 1-10",
+      "value": "not available",
+      "source_ids": [
+        "files",
+        "paper"
+      ],
+      "evidence": "The paper does not state exact search parameters; PRIDE lists a txt.7z search archive but its contents were not available locally."
+    }
+  ],
+  "limitations": [
+    "This artifact contains only one bead arm; its companion SDRF contains the paired arm. Together they cover all 20 RAW files.",
+    "The deposited txt.7z search archive could not be inspected; search tolerances and modification settings remain unavailable.",
+    "Pairing across arms by equal filename index is inferred from the stated lysate split and matched naming, not independently documented by a sample manifest."
+  ]
+}

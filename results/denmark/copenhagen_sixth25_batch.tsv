@@ -1,0 +1,26 @@
+batch_order	accession	pride_raw_bytes	pride_raw_count	annotation_status	title
+1	PXD017475	21810501688	19	in progress: mixed pull-down and secretome workflows; Lys-C plus Trypsin arm	The lncRNA MIR31HG regulates the senescence associated secretory phenotype
+2	PXD042430	22230354877	14	in progress: modern grouper specimens; specimen 1082 key unresolved	Collagen sequencing and ZooMS biomarkers of Mediterranean groupers (Epinephelus spp.)
+3	PXD012573	22413621528	24	in progress: both TMT11 channel maps verified; sequential Lys-C and trypsin digestion	Phosphoproteomics analysis of Erk signaling in embryonic stem cell differentiation
+4	PXD052956	22501199698	52	queued: evidence review	Chemogenomic screening in a patient-derived 3D model of metabolic dysfunction-associated steatohepat
+5	PXD063200	23520448633	1	queued: evidence review	Proximity labeling of dense core vesicle protein VMAT
+6	PXD017510	23602340090	39	queued: evidence review	Probing the ovarian cancer O-glycoproteome by the Macrophage Galactose like C-type Lectin (MGL): dis
+7	PXD041717	24151817824	20	queued: evidence review	Concerted SUMO-targeted ubiquitin ligase activities of TOPORS and RNF4 are essential for stress mana
+8	PXD053351	24385213014	1	queued: evidence review	RNAPII interactome in INTS6 degron cells
+9	PXD050545	24807412215	44	queued: evidence review	In-depth phosphoproteomic profiling of the insulin signaling response in heart tissue and cardiomyoc
+10	PXD067969	24864640999	1	queued: evidence review	Phosphorylated RNAPII interactome via 4H8 antibody IP
+11	PXD061985	25201759127	24	queued: evidence review	An unbiased molecular characterisation of peripartum cardiomyopathy identfies mast cell chymase as a
+12	PXD036512	25308134406	64	queued: evidence review	Serine ADP-ribosylation in Drosophila provides insights into the evolution of reversible ADP-ribosyl
+13	PXD065658	25572920213	1	queued: evidence review	Temporal Proteomic Remodeling of Cerebral Arteries in Hypertensive Rats Reveals Progressive Vascular
+14	PXD035899	26243139505	15	queued: evidence review	Proteomic  identification of beer brewing products in the ground layer of Danish Golden Age painting
+15	PXD031084	26720451392	50	queued: evidence review	Proteomics Couples Electrical Remodeling to Inflammation in a Murine Model of Heart Failure with Sin
+16	PXD035353	27390004816	16	approved: two eight-fraction HeLa conditions; 16 RAW files; repo-wide gate has unrelated pending files	The TRESLIN-MTBP complex couples completion of DNA replication with S/G2 transition
+17	PXD026225	27844422858	26	approved: human and mouse SDRFs; 26 RAW files; repo-wide gate has unrelated pending files	Mass spectrometry-based analysis of the TBC1D4 interactome in human skeletal muscle
+18	PXD047019	29265429125	90	queued: evidence review	RNF212B E3 ligase is essential for crossing over maturation and mouse fertility
+19	PXD076695	30353898666	60	queued: evidence review	Unusual cardiac myosin heavy chain post-translational modifications with systolic heart failure
+20	PXD035230	30633021386	36	queued: evidence review	Repurposing of a known antipsychotic drug to target arthritogenic synovial fibroblasts
+21	PXD043452	32271026920	20	approved: Af1521 and control-bead SDRFs; 20 RAW files; repo-wide gate has unrelated pending files	PARP14 is a PARP with both ADP-ribosyl transferase 1 and hydrolase activities
+22	PXD037425	33172687187	23	queued: evidence review	Enhanced Proteomic Mapping of Arginine Methylation Using Electron Transfer Dissociation Reveals Nove
+23	PXD042834	33260321432	12	queued: evidence review	Autophagy role during auxin-induced rapid proteome remodelling
+24	PXD052078	33396041506	1	queued: evidence review	Hypoxia promotes the generation of a versican-rich extracellular matrix by human coronary artery end
+25	PXD066033	34014163958	40	queued: evidence review	PARP1 auto-modification promotes faithful Okazaki fragment processing and limits replication fork sp
