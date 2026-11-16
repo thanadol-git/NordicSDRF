@@ -32,6 +32,16 @@
       "id": "paper-methods",
       "kind": "publication",
       "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12322952/ (Methods; Table 1 acquisition settings)"
+    },
+    {
+      "id": "design-workbook",
+      "kind": "deposited design",
+      "location": "PRIDE PXD061135 Annotation-extended.xlsx (Amount, MS/MS_Resolution per run)"
+    },
+    {
+      "id": "maxquant-output",
+      "kind": "deposited search output",
+      "location": "PRIDE PXD061135 MQ_search.zip: BL8/PT8/PPT8 summary.txt (72 DDA runs) and PPT8 parameters.txt (MaxQuant 2.0.3.0)"
     }
   ],
   "claims": [
@@ -88,13 +98,63 @@
         "paper-methods"
       ],
       "evidence": "Table 1 \"HCD energy MS2\" = 28 for all DDA settings; Methods: \"The DDA method operated at a resolution of 45,000 for MS1, covering a mass range of 375–1200 m/z\"."
+    },
+    {
+      "location": "characteristics[mass], factor value[mass] all rows",
+      "value": "50 ng, 200 ng, 500 ng",
+      "source_ids": [
+        "design-workbook"
+      ],
+      "evidence": "Workbook Amount column per run; all 72 DDA rows cross-checked by file name."
+    },
+    {
+      "location": "comment[ms2 resolution], factor value[ms2 resolution] all rows",
+      "value": "3750, 7500, 15000",
+      "source_ids": [
+        "design-workbook",
+        "paper-methods"
+      ],
+      "evidence": "Workbook MS/MS_Resolution per run; paper Table 1 MS2 resolution settings."
+    },
+    {
+      "location": "comment[modification parameters], comment[fragment mass tolerance] all rows",
+      "value": "Carbamidomethyl C fixed; Oxidation M and Acetyl protein N-term variable; 20 ppm",
+      "source_ids": [
+        "maxquant-output"
+      ],
+      "evidence": "summary.txt for BL8, PT8 and PPT8 (all 72 DDA runs): Fixed modifications Carbamidomethyl (C); Variable modifications Oxidation (M);Acetyl (Protein N-term). PPT8 parameters.txt: MS/MS tol. (FTMS) 20 ppm."
+    },
+    {
+      "location": "characteristics[organism part] all rows",
+      "value": "uterine cervix",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "UBERON:0000002 label; HeLa derives from cervical adenocarcinoma."
+    },
+    {
+      "location": "comment[cleavage agent details] all rows",
+      "value": "Trypsin/P (MS:1001313)",
+      "source_ids": [
+        "maxquant-output",
+        "paper-methods"
+      ],
+      "evidence": "MaxQuant summary.txt Enzyme = Trypsin/P (Specific) for all 72 DDA runs; the paper describes tryptic HeLa digests."
+    },
+    {
+      "location": "characteristics[material type] all rows",
+      "value": "cell line",
+      "source_ids": [
+        "paper-methods"
+      ],
+      "evidence": "HeLa S3 cells were cultured and harvested (paper Methods)."
     }
   ],
   "limitations": [
-    "The deposit PRIDE sample protocol omits the enzyme, but the matching paper explicitly describes tryptic HeLa material for both DDA and DIA; the automated reconciler flags this as unsupported because it uses only the deposit protocol.",
     "The accession PRIDE structured instrument and linked publication conflict with the deposited run names, experimental workbook and matching paper; the latter identifies Orbitrap Exploris 480.",
     "The workbook contains one repeated _02 name in a DIA condition; its replicate-1 row is reconciled to the deposited _01 run by unique condition and suffix.",
     "Offline parse_sdrf emits an ontology lookup warning for HeLa S3, though Cellosaurus CVCL_0058 confirms the line.",
-    "Offline parse_sdrf emits an ontology lookup warning for cervix (anatomical origin); the line is derived from cervical carcinoma."
+    "The RAW method headers of the 18 *_3p75k_* DDA runs print MS2 \"Orbitrap Resolution = 480000\"; 3750 follows the workbook, paper Table 1 and the method file name (..._3p75kms2.meth).",
+    "Deposited file 221020_MAEP9_Vneo2_uPAC50cm_FHH_8min_PPT_7p5k_500ng-03.raw is 4096 bytes on the PRIDE FTP/HTTPS mirrors (PRIDE metadata: 187,359,115 bytes). It is listed because MaxQuant searched it, but reprocessing from the archive will fail for this run."
   ]
 }

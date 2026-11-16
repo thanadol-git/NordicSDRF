@@ -6,12 +6,12 @@
     {
       "id": "pride",
       "kind": "repository",
-      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD030529; cached scratchpad/PXD030529/pride.json"
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD030529; cached scratchpad/PXD030529/pride.json"
     },
     {
       "id": "pride-files",
       "kind": "repository",
-      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD030529/files; cached scratchpad/PXD030529/files.json (8 accession-checked RAW entries)"
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD030529/files; cached scratchpad/PXD030529/files.json (8 accession-checked RAW entries)"
     },
     {
       "id": "supplement",
@@ -123,7 +123,8 @@
         "supplement",
         "pride-files"
       ],
-      "evidence": "Supplement Table S6 maps F1/F2/F3/F8 and Fyrkat extraction IDs to archaeological specimens and taxonomic resolution; deposited filename carries the corresponding ID. BK denotes preparation blank, described in supplement deamidation controls."
+      "evidence": "Supplement Table S6 maps F1/F2/F3/F8 and Fyrkat extraction IDs to archaeological specimens and taxonomic resolution; deposited filename carries the corresponding ID. BK denotes preparation blank, described in supplement deamidation controls.",
+      "note": "Superseded: both Fyrkat runs now share source \"Fyrkat Grave 4 D158-1966\" and organism Mustela sp. (see the later Fyrkat claim)."
     },
     {
       "location": "[fyrkat rows] row 3: source name, characteristics[organism], comment[data file]",
@@ -141,7 +142,8 @@
         "supplement",
         "pride-files"
       ],
-      "evidence": "Supplement Table S6 maps F1/F2/F3/F8 and Fyrkat extraction IDs to archaeological specimens and taxonomic resolution; deposited filename carries the corresponding ID. BK denotes preparation blank, described in supplement deamidation controls."
+      "evidence": "Supplement Table S6 maps F1/F2/F3/F8 and Fyrkat extraction IDs to archaeological specimens and taxonomic resolution; deposited filename carries the corresponding ID. BK denotes preparation blank, described in supplement deamidation controls.",
+      "note": "Superseded: both Fyrkat runs now share source \"Fyrkat Grave 4 D158-1966\" and organism Mustela sp. (see the later Fyrkat claim)."
     },
     {
       "location": "[fyrkat rows] comment[instrument] all rows",
@@ -233,7 +235,6 @@
   ],
   "limitations": [
     "Species identifications are results with variable taxonomic resolution; Castor canadensis is a database surrogate for archaeological Castor, so genus is used.",
-    "Age and sex of the source animals are not reported.",
-    "Mass tolerances are omitted because the exact final search settings were not independently verified from deposited search files."
+    "Age and sex of the source animals are not reported."
   ]
 }

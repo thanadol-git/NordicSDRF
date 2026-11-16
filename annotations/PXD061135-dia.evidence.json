@@ -32,6 +32,21 @@
       "id": "paper-methods",
       "kind": "publication",
       "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12322952/ (Methods; Table 1 acquisition settings)"
+    },
+    {
+      "id": "design-workbook",
+      "kind": "deposited design",
+      "location": "PRIDE PXD061135 Annotation-extended.xlsx (Amount, MS/MS_Resolution per run)"
+    },
+    {
+      "id": "raw-method-headers",
+      "kind": "deposited raw files",
+      "location": "Instrument method headers of all 49 DIA RAW files in PRIDE PXD061135 (Range-request reads)"
+    },
+    {
+      "id": "spectronaut-sne",
+      "kind": "deposited search output",
+      "location": "PRIDE PXD061135 20240211_220652_fsdm.sne (Spectronaut 18.5 settings)"
     }
   ],
   "claims": [
@@ -83,18 +98,68 @@
     },
     {
       "location": "comment[collision energy], comment[scan window lower limit], comment[scan window upper limit], comment[isolation window width] all rows",
-      "value": "27 NCE; 361; 1033; 13.7",
+      "value": "27 NCE; 361; 1033; 32",
+      "source_ids": [
+        "paper-methods",
+        "raw-method-headers"
+      ],
+      "evidence": "Paper Table 1: HCD energy MS2 27 for all DIA settings. RAW method headers of all 49 DIA runs: \"Precursor MassRange (m/z) = 361-1033\", \"Isolation Window (m/z) = 32\", \"Number Of Scan Events = 21\", \"Window Overlap (m/z) = 1\". The paper text describes 13.7 m/z x 49 windows, which does not match the deposited runs; the RAW headers are used."
+    },
+    {
+      "location": "characteristics[mass], factor value[mass] all rows",
+      "value": "5 ng, 25 ng, 50 ng, 500 ng",
+      "source_ids": [
+        "design-workbook"
+      ],
+      "evidence": "Workbook Amount column per run (DIA dilution series); 47 rows matched by file name, the remaining row is the workbook _02/_01 duplicate already reconciled."
+    },
+    {
+      "location": "characteristics[organism part] all rows",
+      "value": "uterine cervix",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "UBERON:0000002 label."
+    },
+    {
+      "location": "comment[modification parameters] all rows",
+      "value": "Carbamidomethyl C fixed; Acetyl protein N-term and Oxidation M variable",
+      "source_ids": [
+        "spectronaut-sne"
+      ],
+      "evidence": "Spectronaut settings in the deposited .sne: Fixed Modifications \"Carbamidomethyl (C)\"; Variable Modifications \"Acetyl (Protein N-term)\", \"Oxidation (M)\"."
+    },
+    {
+      "location": "comment[cleavage agent details] all rows",
+      "value": "Trypsin/P (MS:1001313)",
+      "source_ids": [
+        "spectronaut-sne",
+        "paper-methods"
+      ],
+      "evidence": "Spectronaut .sne Enzymes / Cleavage Rules = Trypsin/P, Digest Type Specific; the run list includes all DIA runs and the 0 ng control; the paper describes tryptic HeLa digests."
+    },
+    {
+      "location": "characteristics[material type] all rows",
+      "value": "cell line",
       "source_ids": [
         "paper-methods"
       ],
-      "evidence": "Table 1 \"HCD energy MS2\" = 27 for all DIA settings; Methods: DIA MS2 \"covering a mass range of 361–1033 m/z and utilizing a window size of 13.7, resulting in 49 windows\" ((1033-361)/49 = 13.7). The previous community file gave isolation window width 32, which contradicts this."
+      "evidence": "HeLa S3 cells were cultured and harvested (paper Methods)."
+    },
+    {
+      "location": "comment[ms2 resolution] all rows",
+      "value": "15000",
+      "source_ids": [
+        "raw-method-headers",
+        "design-workbook"
+      ],
+      "evidence": "RAW headers Orbitrap Resolution 120000;15000; workbook MS/MS_Resolution 15000 for all DIA runs."
     }
   ],
   "limitations": [
-    "The deposit PRIDE sample protocol omits the enzyme, but the matching paper explicitly describes tryptic HeLa material for both DDA and DIA; the automated reconciler flags this as unsupported because it uses only the deposit protocol.",
     "The accession PRIDE structured instrument and linked publication conflict with the deposited run names, experimental workbook and matching paper; the latter identifies Orbitrap Exploris 480.",
     "The workbook contains one repeated _02 name in a DIA condition; its replicate-1 row is reconciled to the deposited _01 run by unique condition and suffix.",
     "Offline parse_sdrf emits an ontology lookup warning for HeLa S3, though Cellosaurus CVCL_0058 confirms the line.",
-    "Offline parse_sdrf emits an ontology lookup warning for cervix (anatomical origin); the line is derived from cervical carcinoma."
+    "The paper Methods state 13.7 m/z windows (49 windows) for DIA, but the deposited RAW method headers show 32 m/z x 21 windows with 1 m/z overlap; the SDRF follows the RAW files."
   ]
 }

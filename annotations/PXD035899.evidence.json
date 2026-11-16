@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD035899.sdrf.tsv",
+  "dataset": "PXD035899",
+  "sources": [
+    {"id": "files", "kind": "repository", "location": "scratchpad/PXD035899/files.json"},
+    {"id": "paper", "kind": "publication", "location": "https://iris.unito.it/retrieve/handle/2318/1955674/1237502/1.pdf"},
+    {"id": "raw-headers", "kind": "deposited RAW header metadata", "location": "scratchpad/PXD035899/raw-header-instruments.json; scratchpad/PXD035899/raw-header-proof.tsv (1 MiB range hashes and UTF-16LE model-string offsets)"}
+  ],
+  "claims": [
+    {"location": "source name, comment[data file], characteristics[painting code] rows 1-15", "value": "11 painting acquisitions from ten named paintings A-J, plus four laboratory blanks", "source_ids": ["files", "paper"], "evidence": "Every RAW entry carries projectAccessions PXD035899. Filenames encode the painting letter and collection number, matching paper Table 1. J/KS114 occurs twice. Four files are named Blank_*.raw. The paper says laboratory blanks were processed alongside the canvas samples."},
+    {"location": "characteristics[organism], characteristics[organism part], characteristics[sampled material] rows 1-15", "value": "not applicable; painting ground layer and underlying canvas, or laboratory extraction blank", "source_ids": ["paper"], "evidence": "The investigated sources are artwork composites rather than single-organism samples. Methods say ground layer and canvas were processed together and blanks monitored contamination. Species identified downstream were not used as input-sample organisms."},
+    {"location": "comment[instrument] rows 1-15", "value": "Q Exactive HF for J_KS114_1226, J_KS114_1231, Blank_1227 and Blank_1232; Q Exactive HF-X for the remaining 11 runs", "source_ids": ["raw-headers", "paper"], "evidence": "Downloaded only bytes 0-1048575 of each accession-scoped public Thermo RAW file. The UTF-16LE instrument-model header explicitly says 'Q Exactive HF - Orbitrap MS' or 'Q Exactive HF-X - Orbitrap MS'. The paper's painting-level instrument prose differs for A,C,G,I; per-run RAW header is used for those files."},
+    {"location": "comment[cleavage agent details] (two columns), comment[dissociation method], comment[collision energy], comment[precursor mass tolerance], comment[fragment mass tolerance] rows 1-15", "value": "rLysC then Trypsin; HCD 28% NCE; 4.5 ppm precursor and 20 ppm fragment", "source_ids": ["paper"], "evidence": "Methods report two-hour rLysC and overnight Trypsin digestion, HCD at 28% NCE, and the stated MaxQuant search tolerances."},
+    {"location": "comment[modification parameters] rows 1-15", "value": "Fixed carbamidomethyl C; variable oxidation M and P, deamidation N/Q, Gln/Glu pyroglutamate, and protein N-terminal acetylation", "source_ids": ["paper"], "evidence": "Methods list fixed carbamidomethyl, first-search variable modifications including hydroxyproline (encoded as oxidation P), and third-search N-terminal acetylation. Other third-search-specific glycation adducts are described in limitations because the paper does not give exact controlled terms and target sites."}
+  ],
+  "limitations": [
+    "The paper's instrument grouping differs from the deposited RAW instrument-model headers for A,C,G,I. The run-specific RAW headers take precedence. The deposited headers also resolve all four blank-run instruments.",
+    "The paper describes a pilot measurement for A, I and J, but the deposited filenames do not identify pilot runs. They are annotated by painting and instrument without an unsupported pilot/main label.",
+    "Painting J has two acquisitions from aliquots of the same extract. They are represented as technical replicates 1 and 2, not two biological specimens.",
+    "The third cereal/yeast database search also considered 3-deoxyglucosone condensation product, hexose and double-hexose additions, and N-terminal glycation. Exact controlled modification terms and target residues are not stated, so these are not encoded as NT/AC modification parameters.",
+    "The SDRF has no factor value because the study compares ten distinct paintings without a manipulated experimental factor."
+  ]
+}

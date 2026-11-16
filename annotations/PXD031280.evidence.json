@@ -67,7 +67,7 @@
     },
     {
       "location": "[2016 rows] comment[cleavage agent details]",
-      "value": "Trypsin",
+      "value": "Trypsin (first cleavage column); Lys-C in the second column",
       "source_ids": [
         "pride",
         "paper"
@@ -115,7 +115,7 @@
     },
     {
       "location": "[2021 rows] comment[cleavage agent details]",
-      "value": "Trypsin",
+      "value": "Trypsin (first cleavage column); Lys-C in the second column",
       "source_ids": [
         "pride",
         "paper"
@@ -192,7 +192,6 @@
   "limitations": [
     "Archaeological paint contains possible protein binders from multiple animals; organism is not applicable at source level rather than broadcasting project-level pig/sheep identifications.",
     "PRIDE README maps Blank_930 to the earlier set and Blank_1943 to the later set by sequential run IDs; no explicit year is given for each blank.",
-    "A single cleavage-agent column represents final trypsin digest; earlier Lys-C is documented in the paper.",
     "The yellow early aliquot was analysed in 2017 per README, despite its 2016files filename and grouping in early set.",
     "Blank_930 is assigned to the 2016 set and Blank_1943 to the 2021 set from the run-ID sequence and the README grouping; RAW headers were not read."
   ]

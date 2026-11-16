@@ -32,6 +32,21 @@
       "id": "paper-methods",
       "kind": "publication",
       "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12322952/ (Methods; Table 1 acquisition settings)"
+    },
+    {
+      "id": "design-workbook",
+      "kind": "deposited design",
+      "location": "PRIDE PXD061135 Annotation-extended.xlsx (Amount, MS/MS_Resolution per run)"
+    },
+    {
+      "id": "raw-method-headers",
+      "kind": "deposited raw files",
+      "location": "Instrument method headers of all 49 DIA RAW files in PRIDE PXD061135 (Range-request reads)"
+    },
+    {
+      "id": "spectronaut-sne",
+      "kind": "deposited search output",
+      "location": "PRIDE PXD061135 20240211_220652_fsdm.sne (Spectronaut 18.5 settings and run list)"
     }
   ],
   "claims": [
@@ -63,26 +78,43 @@
       "evidence": "The matching paper Methods Mass Spectrometry Analysis names Exploris 480 and the DDA/DIA methods; Table 1 gives HCD energy. PRIDE structured instrument links to an unrelated Astral Zoom study and conflicts with this accession title, file names and matching paper."
     },
     {
-      "location": "comment[cleavage agent details]",
-      "value": "not applicable",
+      "location": "comment[collision energy], comment[scan window lower limit], comment[scan window upper limit], comment[isolation window width] all rows",
+      "value": "27 NCE; 361; 1033; 32",
       "source_ids": [
-        "paper",
-        "design"
+        "paper-methods",
+        "raw-method-headers"
       ],
-      "evidence": "Zero-load method-control injection contains no peptide material."
+      "evidence": "Paper Table 1: HCD energy MS2 27 for all DIA settings. RAW method headers of all 49 DIA runs: \"Precursor MassRange (m/z) = 361-1033\", \"Isolation Window (m/z) = 32\", \"Number Of Scan Events = 21\", \"Window Overlap (m/z) = 1\". The paper text describes 13.7 m/z x 49 windows, which does not match the deposited runs; the RAW headers are used."
     },
     {
-      "location": "comment[collision energy], comment[scan window lower limit], comment[scan window upper limit], comment[isolation window width] all rows",
-      "value": "27 NCE; 361; 1033; 13.7",
+      "location": "characteristics[mass], factor value[mass], characteristics[sample type]",
+      "value": "0 ng; negative control",
       "source_ids": [
+        "design-workbook"
+      ],
+      "evidence": "Workbook Amount = 0ng for this run: a zero-load method control."
+    },
+    {
+      "location": "comment[cleavage agent details] all rows",
+      "value": "Trypsin/P (MS:1001313)",
+      "source_ids": [
+        "spectronaut-sne",
         "paper-methods"
       ],
-      "evidence": "Table 1 \"HCD energy MS2\" = 27 for all DIA settings; Methods: DIA MS2 \"covering a mass range of 361–1033 m/z and utilizing a window size of 13.7, resulting in 49 windows\" ((1033-361)/49 = 13.7). The previous community file gave isolation window width 32, which contradicts this."
+      "evidence": "Spectronaut .sne Enzymes / Cleavage Rules = Trypsin/P, Digest Type Specific; the run list includes all DIA runs and the 0 ng control; the paper describes tryptic HeLa digests."
+    },
+    {
+      "location": "comment[modification parameters] row 1",
+      "value": "Carbamidomethyl C fixed; Acetyl protein N-term and Oxidation M variable",
+      "source_ids": [
+        "spectronaut-sne"
+      ],
+      "evidence": "The control is in the .sne run list and was searched with the same settings: Fixed Carbamidomethyl (C); Variable Acetyl (Protein N-term), Oxidation (M)."
     }
   ],
   "limitations": [
-    "The deposit PRIDE sample protocol omits the enzyme, but the matching paper explicitly describes tryptic HeLa material for both DDA and DIA; the automated reconciler flags this as unsupported because it uses only the deposit protocol.",
     "The accession PRIDE structured instrument and linked publication conflict with the deposited run names, experimental workbook and matching paper; the latter identifies Orbitrap Exploris 480.",
-    "The workbook contains one repeated _02 name in a DIA condition; its replicate-1 row is reconciled to the deposited _01 run by unique condition and suffix."
+    "The workbook contains one repeated _02 name in a DIA condition; its replicate-1 row is reconciled to the deposited _01 run by unique condition and suffix.",
+    "The paper Methods state 13.7 m/z windows (49 windows) for DIA, but the deposited RAW method headers show 32 m/z x 21 windows with 1 m/z overlap; the SDRF follows the RAW files."
   ]
 }

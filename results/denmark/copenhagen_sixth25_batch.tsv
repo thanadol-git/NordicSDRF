@@ -12,15 +12,15 @@ batch_order	accession	pride_raw_bytes	pride_raw_count	annotation_status	title
 11	PXD061985	25201759127	24	queued: evidence review	An unbiased molecular characterisation of peripartum cardiomyopathy identfies mast cell chymase as a
 12	PXD036512	25308134406	64	approved: 64 RAW rows; sequential digestion, Af1521 enrichment and EThcD; offline ontology warnings	Serine ADP-ribosylation in Drosophila provides insights into the evolution of reversible ADP-ribosyl
 13	PXD065658	25572920213	1	queued: evidence review	Temporal Proteomic Remodeling of Cerebral Arteries in Hypertensive Rats Reveals Progressive Vascular
-14	PXD035899	26243139505	15	in progress: 11 painting runs and four blanks; blank instrument mapping unresolved	Proteomic  identification of beer brewing products in the ground layer of Danish Golden Age painting
+14	PXD035899	26243139505	15	approved: 15 RAW rows; all instruments header-verified; paper grouping differs for four paintings	Proteomic  identification of beer brewing products in the ground layer of Danish Golden Age painting
 15	PXD031084	26720451392	50	queued: evidence review	Proteomics Couples Electrical Remodeling to Inflammation in a Murine Model of Heart Failure with Sin
 16	PXD035353	27390004816	16	approved: two eight-fraction HeLa conditions; 16 RAW files; repo-wide gate has unrelated pending files	The TRESLIN-MTBP complex couples completion of DNA replication with S/G2 transition
 17	PXD026225	27844422858	26	approved: human and mouse SDRFs; 26 RAW files; repo-wide gate has unrelated pending files	Mass spectrometry-based analysis of the TBC1D4 interactome in human skeletal muscle
-18	PXD047019	29265429125	90	queued: evidence review	RNF212B E3 ligase is essential for crossing over maturation and mouse fertility
+18	PXD047019	29265429125	90	in progress: 90 RAW mapped to C/RKO/HKO x five replicates x six fractions; accession-specific MS method unresolved	RNF212B E3 ligase is essential for crossing over maturation and mouse fertility
 19	PXD076695	30353898666	60	queued: evidence review	Unusual cardiac myosin heavy chain post-translational modifications with systolic heart failure
-20	PXD035230	30633021386	36	queued: evidence review	Repurposing of a known antipsychotic drug to target arthritogenic synovial fibroblasts
+20	PXD035230	30633021386	36	in progress: 24 WT DIA runs drafted and under independent review; 12 Tg runs mapped, GLK treatment key unresolved	Repurposing of a known antipsychotic drug to target arthritogenic synovial fibroblasts
 21	PXD043452	32271026920	20	approved: Af1521 and control-bead SDRFs; 20 RAW files; repo-wide gate has unrelated pending files	PARP14 is a PARP with both ADP-ribosyl transferase 1 and hydrolase activities
 22	PXD037425	33172687187	23	queued: evidence review	Enhanced Proteomic Mapping of Arginine Methylation Using Electron Transfer Dissociation Reveals Nove
-23	PXD042834	33260321432	12	queued: evidence review	Autophagy role during auxin-induced rapid proteome remodelling
+23	PXD042834	33260321432	12	in progress: 2x2 genotype-treatment design; S1-S12 run-condition key unresolved	Autophagy role during auxin-induced rapid proteome remodelling
 24	PXD052078	33396041506	1	queued: evidence review	Hypoxia promotes the generation of a versican-rich extracellular matrix by human coronary artery end
 25	PXD066033	34014163958	40	queued: evidence review	PARP1 auto-modification promotes faithful Okazaki fragment processing and limits replication fork sp
