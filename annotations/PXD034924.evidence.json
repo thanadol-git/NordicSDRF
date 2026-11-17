@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD034924.sdrf.tsv",
+  "dataset": "PXD034924",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository project",
+      "location": "scratchpad/PXD034924/project.json"
+    },
+    {
+      "id": "files",
+      "kind": "accession-scoped PRIDE file list",
+      "location": "scratchpad/PXD034924/files.json"
+    },
+    {
+      "id": "design",
+      "kind": "depositor experimental design",
+      "location": "scratchpad/PXD034924/Exp-design_PRIDE-Submission.txt"
+    },
+    {
+      "id": "results",
+      "kind": "deposited results workbook Table S2",
+      "location": "scratchpad/PXD034924/Results_Table_S2_v2.xlsx"
+    },
+    {
+      "id": "paper",
+      "kind": "open-access publication full text",
+      "location": "scratchpad/PXD034924/paper.xml"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "cell-line registry lookup",
+      "location": "sdrf-tools cellline lookup HeLa S3; Cellosaurus CVCL_0058"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] and source name rows 1-33",
+      "value": "33 distinct RAW files",
+      "source_ids": [
+        "design",
+        "files"
+      ],
+      "evidence": "Depositor experimental-design Raw File column exactly matches all 33 accession-scoped PRIDE RAW filenames."
+    },
+    {
+      "location": "characteristics[experimental group], characteristics[comparison], factor value[experimental group], characteristics[biological replicate]",
+      "value": "Four comparison blocks, 33 run-level replicates",
+      "source_ids": [
+        "design",
+        "results"
+      ],
+      "evidence": "Depositor design gives exact group/comparison per file. Workbook Table S2 index and four data sheets independently corroborate groups and replicate counts: DAXX WT versus sNASP WT (8); siRNA control/SETDB1/SUV39H1-H2 (11); DAXX WT versus SIMs deletion (8); DAXX WT versus ABM (6). Workbook resolves depositor\u2019s group label `DAXX_SIMs?` as `DAXX_SIMs\u0394`; the comparison text is retained verbatim from depositor design."
+    },
+    {
+      "location": "characteristics[organism], characteristics[cell line], characteristics[cellosaurus accession], characteristics[cell type], characteristics[sex], characteristics[material type], characteristics[disease], characteristics[organism part], characteristics[sampling site]",
+      "value": "Homo sapiens; HeLa-S3; CVCL_0058; epithelial cell; female; cell line; HPV-related cervical adenocarcinoma; uterine cervix",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Paper Methods identify HeLa S3 lines for chaperone pulldowns, state HeLa S3 female origin, and the registry lookup maps HeLa S3 to CVCL_0058. PRIDE structured organism says Mus musculus, inconsistent with this experiment-specific Methods; paper and cell-line evidence take precedence. Cellosaurus lookup supplies donor-tissue disease Human papillomavirus-related cervical adenocarcinoma and Tissue: Cervix. The tissue is encoded with Uberon preferred term uterine cervix (UBERON:0000002)."
+    },
+    {
+      "location": "comment[proteomics data acquisition method], comment[instrument], comment[cleavage agent details], comment[precursor mass tolerance]",
+      "value": "PRM; Q Exactive HF; Trypsin; 5 ppm",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Paper histone PTM LC-MS Methods explicitly state PRM positive mode, Q Exactive HF, trypsin digestion and Skyline precursor tolerance 5 ppm; PRIDE protocol and instrument agree."
+    },
+    {
+      "location": "comment[label]",
+      "value": "label free sample",
+      "source_ids": [
+        "results",
+        "paper"
+      ],
+      "evidence": "Results workbook index calls the four histone PTM experiments LFQ. Paper states heavy peptide standards were spiked at 166 fmol each, which serve as internal standards rather than multiplex labels for these samples."
+    }
+  ],
+  "limitations": [
+    "PRIDE structured organism is Mus musculus, whereas the experiment-specific Methods identify HeLa S3 human cells.",
+    "Heavy peptide standards are reported as 166 fmol each, but individual peptide identities are not available in the deposited sources reviewed; no spiked-compound components were invented.",
+    "The exact Skyline search modification list was not deposited; modification parameters are omitted rather than inferred from the measured histone PTMs.",
+    "Dissociation method and fragment tolerance are not explicitly named in the project record; both are not available.",
+    "Project-record reconciliation may flag donor-tissue disease on siRNA control rows by interpreting `NC` as a healthy control; these are negative-control siRNA runs in the same HeLa S3 line, and the Cellosaurus donor diagnosis applies to every row."
+  ]
+}
