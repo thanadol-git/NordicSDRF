@@ -5,7 +5,7 @@ batch_order	accession	pride_raw_bytes	pride_raw_count	annotation_status	title
 4	PXD024397	38107480053	26	blocked: second independent review found blank biological-replicate conflict	Palaeoproteomics guidelines to identify proteinaceous binders in artworks following the study of a 1
 5	PXD029644	38117284413	71	out of scope: released O-glycomics; no suitable proteomics SDRF template	C18  nanoLC-MS and Glycogenomics to Facilitate O-Glycan profiling in Human Cells
 6	PXD012235	38501177212	36	partial: BUB3 12 + BUB1B 21 approved; 3 bead-only blocked	Efficient checkpoint signaling depends on the integrated activities of Bub1 and the RZZ complex
-7	PXD074599	39428573185	116	queued: evidence review	TMT-based Proteomic and Phosphoproteomic Profiling of Csnk1a1 Wild-type, Haploinsufficient, and E98V
+7	PXD074599	39428573185	116	approved: 116 runs in 2 independently reviewed SDRFs	TMT-based Proteomic and Phosphoproteomic Profiling of Csnk1a1 Wild-type, Haploinsufficient, and E98V
 8	PXD032328	39896358913	57	queued: evidence review	TMEM260  is a protein-specific O-mannosyltransferase
 9	PXD058085	40720214549	2	queued: evidence review	Paracetamol metabolism by endothelial cells – potential mechanism underlying intravenous paracetamol
 10	PXD071605	40898376004	30	queued: evidence review	An N-Acetyltransferase-MAPK fusion protein modulates developmental reprogramming in Physcomitrium pa
