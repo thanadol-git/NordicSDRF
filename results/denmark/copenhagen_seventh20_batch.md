@@ -45,3 +45,7 @@ The deposited `MSfiles.xlsx` and both RAW ZIP indexes map 10 liver and 10 mesent
 ### PXD070197 — blocked after first independent review
 
 The depositor SDRF maps 24 mouse dermal-fibroblast runs across OTULIN genotype, TNF time, pull-down, and three biological replicates. The [block record](../../annotations/PXD070197.BLOCKED.md) documents correction of 12 deposit filename typos and the unresolved digestion reagent. Peptide termini suggest trypsin, but neither the project protocol nor the accessible publication source directly names it. Independent review rejected that inferred reagent. No SDRF was approved or committed.
+
+### PXD034924 — approved after independent review
+
+The [33-row histone PTM SDRF](../../annotations/PXD034924.sdrf.tsv) covers every accession-scoped RAW file. The depositor experimental design and Table S2 identify four comparison blocks and their replicates. The [paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC10114496/) identifies HeLa S3 cells, PRM on Q Exactive HF, trypsin digestion and 5 ppm precursor tolerance. Its human cell-line evidence resolves a conflicting mouse organism field in the PRIDE project record. The first independent review identified missing donor disease and cervix origin; these were corrected. The second review approved the final hash. Repository-wide gate output still includes unrelated pending artifacts, but the PXD034924 hash itself is approved. The SDRF and evidence were committed as `144ee53`.
