@@ -18,4 +18,4 @@ batch_order	accession	pride_raw_bytes	pride_raw_count	annotation_status	title
 17	PXD007991	44110936311	37	queued: evidence review	Molecular Basis of the mechanisms controlling MASTL - Proteomics analysis of MASTL substrate proteom
 18	PXD048346	44159604671	33	queued: evidence review	Pupylation-based proximity labelling reveals regulatory factors in cellulose biosynthesis in Arabido
 19	PXD045602	44195349232	28	queued: evidence review	Mesenteric artery smooth muscle cells from hypertensive rats have increased microtubule acetylation
-20	PXD042172	44681222707	23	queued: evidence review	Cell surface-specific N-glycoproteomics
+20	PXD042172	44681222707	23	partial: 8/23 glycopeptide RAW approved; 9 DIA proteomics and 6 glycan RAW remain	Cell surface-specific N-glycoproteomics
