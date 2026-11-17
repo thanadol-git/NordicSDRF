@@ -77,3 +77,7 @@ The accession has 30 RAW runs: 20 input fractions, five acetyl-enriched pools an
 ### PXD007991 — held for acquisition method and digest representation
 
 The [PRIDE record](https://www.ebi.ac.uk/pride/archive/projects/PXD007991) and [paper](https://doi.org/10.1074/mcp.RA119.001879) separate 18 recombinant-protein phosphorylation-map runs from 19 siKALIP kinase-assay runs. The former have in-gel trypsin digestion; the latter have sequential Lys-C and trypsin digestion. The Q Exactive RAW acquisition method is not stated, and the paper's separate Waters DIA method applies to hydrogen/deuterium exchange experiments rather than these files. The [hold record](../../annotations/PXD007991.BLOCKED.md) identifies the missing evidence and schema conflict. No SDRF has been produced.
+
+### PXD045602 — held for combined digest representation
+
+The [publication](https://portlandpress.com/biochemj/article/481/5/387/234077/Mesenteric-artery-smooth-muscle-cells-from) specifies both trypsin and Glu-C for the 28-run rat mesenteric-artery proteomics experiment. The active template accepts only one cleavage-agent value, so neither reagent can be omitted truthfully. The [hold record](../../annotations/PXD045602.BLOCKED.md) also flags the unverified `RA`–`RE` sample key. No SDRF has been produced.
