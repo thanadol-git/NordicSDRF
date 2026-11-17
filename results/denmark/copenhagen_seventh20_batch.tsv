@@ -9,7 +9,7 @@ batch_order	accession	pride_raw_bytes	pride_raw_count	annotation_status	title
 8	PXD032328	39896358913	57	partial: 8 mIMCD-3 runs in 2 independently reviewed SDRFs; 49 runs remain	TMEM260  is a protein-specific O-mannosyltransferase
 9	PXD058085	40720214549	2	blocked: 20 acquisitions mapped; two review rounds found mixed-digest schema conflict	Paracetamol metabolism by endothelial cells – potential mechanism underlying intravenous paracetamol
 10	PXD071605	40898376004	30	queued: evidence review	An N-Acetyltransferase-MAPK fusion protein modulates developmental reprogramming in Physcomitrium pa
-11	PXD070197	41472145840	24	queued: evidence review	Proteomic changes upon disruption of the OTULIN–LUBAC complex
+11	PXD070197	41472145840	24	blocked: 24 mapped; digest reagent undocumented; independent review failed	Proteomic changes upon disruption of the OTULIN–LUBAC complex
 12	PXD034924	41477897951	33	queued: evidence review	Histone modifications associated with the histone chaperone DAXX
 13	PXD013140	41735978878	71	queued: evidence review	The Glycosylation Design Space for Recombinant Lysosomal Replacement Enzymes Produced in CHO Cells
 14	PXD042321	43680729596	102	queued: evidence review	Comparing extraction method efficiency for high-throughput palaeoproteomic bone species identificati

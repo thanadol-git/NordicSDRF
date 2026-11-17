@@ -41,3 +41,7 @@ The [publication](https://pmc.ncbi.nlm.nih.gov/articles/PMC10214176/) gives the 
 ### PXD058085 — blocked after two independent review rounds
 
 The deposited `MSfiles.xlsx` and both RAW ZIP indexes map 10 liver and 10 mesenteric artery Bruker acquisitions. The [PRIDE protocol](https://www.ebi.ac.uk/pride/archive/projects/PXD058085) specifies a Trypsin/LysC digestion mix. The first independent reviews found that encoding only Lys-C omitted trypsin; the second reviews found that two repeated cleavage-agent columns violate the active template's single-value cardinality. Both drafts pass deterministic validation but have no approval receipt. The [block record](../../annotations/PXD058085.BLOCKED.md) preserves the conflict and draft locations. The artery workbook and Bruker metadata both label the last two treated runs `mA_P4`, so no fifth treated biological sample is inferred.
+
+### PXD070197 — blocked after first independent review
+
+The depositor SDRF maps 24 mouse dermal-fibroblast runs across OTULIN genotype, TNF time, pull-down, and three biological replicates. The [block record](../../annotations/PXD070197.BLOCKED.md) documents correction of 12 deposit filename typos and the unresolved digestion reagent. Peptide termini suggest trypsin, but neither the project protocol nor the accessible publication source directly names it. Independent review rejected that inferred reagent. No SDRF was approved or committed.
