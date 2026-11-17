@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD013140.sdrf.tsv",
+  "dataset": "PXD013140",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD013140"},
+    {"id": "pride_files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/files/byProject?accession=PXD013140"},
+    {"id": "paper", "kind": "publication", "location": "https://doi.org/10.1038/s41467-019-09809-3"},
+    {"id": "supplement", "kind": "publication-supplement", "location": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-019-09809-3/MediaObjects/41467_2019_9809_MOESM1_ESM.pdf"},
+    {"id": "figure2", "kind": "deposited-search-output", "location": "scratchpad/PXD013140/SupplementalFigure2.xlsx"},
+    {"id": "figure4", "kind": "deposited-search-output", "location": "scratchpad/PXD013140/SupplementalFigure4.xlsx"}
+  ],
+  "claims": [
+    {"location": "comment[data file] rows 1-71", "value": "one unique RAW file per row", "source_ids": ["pride_files", "figure2", "figure4"], "evidence": "The PRIDE file list has 71 RAW files. All 61 Figure 2 workbook sheet titles and all 10 Figure 4 workbook sheet titles uniquely match the clone token and figure number in those filenames; exact matches are recorded in scratchpad/PXD013140/run_map.tsv."},
+    {"location": "characteristics[organism] and characteristics[protein source organism] rows 1-71", "value": "Cricetulus griseus producing host; Homo sapiens recombinant protein sequence", "source_ids": ["paper", "pride"], "evidence": "Methods describe human GLA and GBA cDNA transfected into CHOZN GS-/- Chinese hamster ovary cells; Fabrazyme is a CHO-produced human GLA comparator. PRIDE lists both species."},
+    {"location": "characteristics[recombinant protein] rows 1-71", "value": "GLA in Figure 2, GBA in Figure 4", "source_ids": ["paper", "figure2", "figure4"], "evidence": "Paper and workbook figure titles identify purified alpha-galactosidase A and beta-glucocerebrosidase, respectively."},
+    {"location": "characteristics[producer clone], characteristics[genetic modification], characteristics[parental clone], factor value[genetic modification] rows 1-71", "value": "sheet clone and project-specific KO/KI target or wild type/comparator", "source_ids": ["figure2", "figure4", "supplement", "paper"], "evidence": "Workbook sheet titles give clone IDs; Supplementary Tables 2 and 3 give the targeted genes and parental lines by FAB/GBA project prefix. Unengineered WT clones and commercial Fabrazyme are identified in the paper and workbooks. The factor mirrors the genetic-modification characteristic."},
+    {"location": "comment[cleavage agent details], comment[instrument], comment[proteomics data acquisition method], comment[dissociation method], comment[ms1 scan range] rows 1-71", "value": "chymotrypsin; Orbitrap Fusion; DDA; HCD; 350-2000 m/z", "source_ids": ["paper", "pride"], "evidence": "The paper's LC-MS/MS methods specify chymotrypsin digest, Orbitrap Fusion, top-five data-dependent HCD MS2, and the MS1 scan range."},
+    {"location": "characteristics[biological replicate] and comment[technical replicate] rows 1-71", "value": "1", "source_ids": ["pride_files", "figure2", "figure4"], "evidence": "Each deposited workbook sheet represents one named clone/product and maps to one RAW injection. One is the sole observed replicate ordinal for each unique source; no replicate series is reported."}
+  ],
+  "limitations": [
+    "The depositor provides one RAW file per named clone/product; no independent biological replicate series is documented.",
+    "No modification search parameters or fragment mass tolerance were deposited in a supported format; these optional fields are omitted.",
+    "The 5 ppm figure in the paper is a glycopeptide composition assignment tolerance, not a demonstrated peptide search precursor tolerance; it is not annotated as such.",
+    "The commercial Fabrazyme comparator has no project-specific producer clone or gene edit."
+  ]
+}

@@ -11,7 +11,7 @@ batch_order	accession	pride_raw_bytes	pride_raw_count	annotation_status	title
 10	PXD071605	40898376004	30	queued: evidence review	An N-Acetyltransferase-MAPK fusion protein modulates developmental reprogramming in Physcomitrium pa
 11	PXD070197	41472145840	24	blocked: 24 mapped; digest reagent undocumented; independent review failed	Proteomic changes upon disruption of the OTULIN–LUBAC complex
 12	PXD034924	41477897951	33	approved: 33/33 RAW; SDRF committed	Histone modifications associated with the histone chaperone DAXX
-13	PXD013140	41735978878	71	queued: evidence review	The Glycosylation Design Space for Recombinant Lysosomal Replacement Enzymes Produced in CHO Cells
+13	PXD013140	41735978878	71	approved: 71/71 RAW; independent review passed	The Glycosylation Design Space for Recombinant Lysosomal Replacement Enzymes Produced in CHO Cells
 14	PXD042321	43680729596	102	queued: evidence review	Comparing extraction method efficiency for high-throughput palaeoproteomic bone species identificati
 15	PXD010527	43917001277	33	queued: evidence review	SPOP promotes transcriptional expression of DNA repair and replication factors to prevent replicatio
 16	PXD016522	43966521762	41	queued: evidence review	A draft genome sequence of the elusive giant squid, Architeuthis dux
