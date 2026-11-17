@@ -6,7 +6,7 @@
     {
       "id": "files",
       "kind": "repository",
-      "location": "scratchpad/PXD043452/files.json"
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD043452/files/all"
     },
     {
       "id": "paper",
@@ -17,6 +17,11 @@
       "id": "cellosaurus",
       "kind": "ontology",
       "location": "https://www.cellosaurus.org/CVCL_0063"
+    },
+    {
+      "id": "maxquant-output",
+      "kind": "deposited search output",
+      "location": "PRIDE PXD043452 txt.7z: txt/parameters.txt and txt/mqpar.xml (MaxQuant 1.5.3.30; run list = the 20 RAW files)"
     }
   ],
   "claims": [
@@ -39,7 +44,7 @@
     },
     {
       "location": "source name, comment[technical replicate], characteristics[biological replicate], factor value[PARP14 construct], factor value[affinity capture] rows 1-10",
-      "value": "WT or MD1 mutant PARP14; beads bead arm; technical culture replicates 1-5 per construct",
+      "value": "WT or MD1 mutant PARP14; control-bead arm; technical culture replicates 1-5 per construct | Source name is one per construct (293T-PARP14-MD1, 293T-PARP14-WT); the five culture replicates are technical replicates 1-5 of that source, as the paper calls them \"technical\" replicates.",
       "source_ids": [
         "paper",
         "files"
@@ -64,17 +69,24 @@
     },
     {
       "location": "comment[precursor mass tolerance], comment[fragment mass tolerance], comment[modification parameters] rows 1-10",
-      "value": "not available",
+      "value": "Carbamidomethyl C fixed; Oxidation M and Acetyl protein N-term variable; precursor 4.5 ppm; fragment 20 ppm",
       "source_ids": [
-        "files",
-        "paper"
+        "maxquant-output"
       ],
-      "evidence": "The paper does not state exact search parameters; PRIDE lists a txt.7z search archive but its contents were not available locally."
+      "evidence": "parameters.txt: Fixed modifications Carbamidomethyl (C); MS/MS tol. (FTMS) 20 ppm. mqpar.xml: variable modifications Oxidation (M), Acetyl (Protein N-term); mainSearchTol 4.5, searchTolInPpm true; enzyme Trypsin/P, maxMissedCleavages 2. PRIDE: default settings except LFQ."
+    },
+    {
+      "location": "characteristics[disease] all rows",
+      "value": "normal",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Cellosaurus CVCL_0063 (HEK293T) has no disease (DI) line; the cell-lines template says to use normal for non-disease-derived cell lines."
     }
   ],
   "limitations": [
     "This artifact contains only one bead arm; its companion SDRF contains the paired arm. Together they cover all 20 RAW files.",
-    "The deposited txt.7z search archive could not be inspected; search tolerances and modification settings remain unavailable.",
-    "Pairing across arms by equal filename index is inferred from the stated lysate split and matched naming, not independently documented by a sample manifest."
+    "Pairing across arms by equal filename index is inferred from the stated lysate split and matched naming, not independently documented by a sample manifest.",
+    "The search used the Trypsin/P rule with up to 2 missed cleavages; the cleavage agent column records the wet-lab enzyme, trypsin."
   ]
 }
