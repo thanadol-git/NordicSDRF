@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD035230-tg.sdrf.tsv",
+  "dataset": "PXD035230",
+  "sources": [
+    {"id": "files", "kind": "repository", "location": "scratchpad/PXD035230/files.json"},
+    {"id": "paper", "kind": "publication", "location": "https://df6sxcketz7bb.cloudfront.net/manuscripts/165000/165024/jci.insight.165024.v2.pdf"},
+    {"id": "supplement", "kind": "publication", "location": "https://df6sxcketz7bb.cloudfront.net/manuscripts/165000/165024/jci.insight.165024.sd.pdf"},
+    {"id": "record", "kind": "repository", "location": "https://www.omicsdi.org/dataset/pride/PXD035230"}
+  ],
+  "claims": [
+    {"location": "source name, characteristics[biological replicate], characteristics[genotype filename code], characteristics[GLK condition], factor value[GLK condition], comment[data file] rows 1-12", "value": "12 Tg-coded RAW files, three replicates each of baseline, GLK1h, GLK8h and GLK24h", "source_ids": ["files"], "evidence": "All 12 RAW entries are accession matched and follow the exact Tg1-3 plus optional GLK1h, GLK8h or GLK24h pattern. The SDRF preserves Tg and GLK as literal filename codes; neither code is decoded to a drug identity or disease state."},
+    {"location": "characteristics[organism], characteristics[organism part], characteristics[cell type], characteristics[material type] rows 1-12", "value": "Mus musculus synovial fibroblast cells", "source_ids": ["paper", "record", "files"], "evidence": "The associated paper studies mouse wild-type and hTNF-transgenic synovial fibroblasts. The record identifies Mus musculus; Tg filenames appear in its phosphoproteomics RAW set. The SDRF stops at the literal Tg genotype code because a run-level genotype key is unavailable."},
+    {"location": "comment[instrument], comment[proteomics data acquisition method], comment[cleavage agent details] (two columns), comment[reduction reagent], comment[alkylation reagent] rows 1-12", "value": "Orbitrap Exploris 480, DIA, Lys-C and Trypsin, TCEP, chloroacetamide", "source_ids": ["supplement", "files"], "evidence": "The phosphoproteomics section of the supplement describes the study's 500 ug phosphoproteomics workflow. The Tg RAW names share the same QE7_EVO4_AKP_EPIC_XS_Kollias_Greece and Phos500ug instrument/workflow tokens as the 24 WT RAW names in this accession. Applying the supplement's shared phosphoproteomics method to this separately coded Tg arm is an inference based on that exact naming continuity, not an independently stated Tg protocol."},
+    {"location": "characteristics[enrichment process], characteristics[enrichment method] rows 1-12", "value": "not available controlled process; TiIMAC-HP beads as method", "source_ids": ["supplement", "files"], "evidence": "The same phosphoproteomics section reports TiIMAC-HP phosphopeptide enrichment. Exact method retained in custom characteristic; controlled process set to the permitted reserved value."},
+    {"location": "comment[modification parameters] rows 1-12", "value": "Variable phosphorylation of S,T,Y", "source_ids": ["supplement", "files"], "evidence": "The study's 500 ug phosphoproteomics workflow lists variable phosphorylation on S,T,Y; these Tg files share the same Phos500ug tag as the WT files."},
+    {"location": "comment[precursor mass tolerance], comment[fragment mass tolerance] rows 1-12", "value": "not available", "source_ids": ["supplement"], "evidence": "Exact search tolerances are not provided in the accessible supplementary methods."}
+  ],
+  "limitations": [
+    "The paper's explicit phosphoproteomics comparison describes WT cells; the 12 Tg files are an additional deposited arm whose GLK treatment identity is not decoded by the accessible paper or record. GLK is retained literally.",
+    "The supplement's acquisition/preparation protocol is applied to Tg by shared accession and exact instrument/workflow filename tokens; it does not state a Tg-specific protocol.",
+    "The installed validator requires a bare Data-independent acquisition label under the dia-acquisition template rather than its ontology-encoded form.",
+    "The second cleavage agent is added by deterministic postprocessing of builder output."
+  ]
+}

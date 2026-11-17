@@ -41,7 +41,7 @@ for name in raw:
         "characteristics[developmental stage]": "not available",
         "characteristics[strain or breed]": "not available",
         "characteristics[sex]": "not available",
-        "characteristics[enrichment process]": "phosphopeptide enrichment",
+        "characteristics[enrichment process]": "not available",
         "characteristics[enrichment method]": "TiIMAC-HP beads",
         "characteristics[TNF stimulation]": tnf_value,
         "characteristics[GLK condition]": drug_value,

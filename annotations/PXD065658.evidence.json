@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD065658.sdrf.tsv",
+  "dataset": "PXD065658",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD065658"},
+    {"id": "overview", "kind": "deposited sample map", "location": "PXD065658/MSFilesOverview.xlsx, Sheet1"},
+    {"id": "rawzip", "kind": "deposited raw-file ZIP directory", "location": "PXD065658/AllRawFiles.zip central directory, 520 entries"},
+    {"id": "diann", "kind": "deposited analysis log", "location": "PXD065658/report.log.txt"},
+    {"id": "paper", "kind": "publication", "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12711280/"}
+  ],
+  "claims": [
+    {"location": "comment[data file] and source name", "value": "20 unique Bruker .d acquisitions, SHR1-SHR12 and WKY1-WKY8", "source_ids": ["overview", "rawzip", "diann"], "evidence": "All 20 workbook acquisition names exactly match the .d directories containing analysis.tdf in the ZIP index and the 20 --f paths in the DIA-NN log."},
+    {"location": "characteristics[strain or breed], characteristics[age], factor values", "value": "SHR or WKY at 30 or 40 weeks", "source_ids": ["overview", "pride", "paper"], "evidence": "Workbook groups are SHR 30w (5), SHR 40w (7), WKY 30w (4), WKY 40w (4); paper reports the same four groups and sample counts."},
+    {"location": "characteristics[biological replicate]", "value": "1-12 for SHR and 1-8 for WKY", "source_ids": ["overview", "paper"], "evidence": "Each filename has a unique SHR or WKY individual identifier; 20 unique identifiers match the paper's 20 rats."},
+    {"location": "characteristics[sex], characteristics[organism], characteristics[organism part]", "value": "male Rattus norvegicus cerebral artery tissue", "source_ids": ["pride", "paper"], "evidence": "The paper specifies male rats and cerebral arteries; PRIDE organism and organism-part fields agree."},
+    {"location": "characteristics[disease]", "value": "hypertension in SHR; normal in WKY", "source_ids": ["pride", "paper"], "evidence": "PRIDE description calls SHR spontaneously hypertensive and WKY normotensive controls; the disease value varies by row."},
+    {"location": "comment[proteomics data acquisition method], comment[instrument]", "value": "DIA on timsTOF Pro", "source_ids": ["pride", "paper"], "evidence": "PRIDE data protocol explicitly says DIA PASEF on a Bruker timsTOF Pro."},
+    {"location": "comment[cleavage agent details], reduction and alkylation", "value": "Trypsin plus Lys-C; TCEP and chloroacetamide", "source_ids": ["pride", "paper"], "evidence": "PRIDE sample protocol explicitly names overnight Trypsin/LysC mix and TCEP plus 2-chloroacetamide."},
+    {"location": "comment[modification parameters]", "value": "fixed C carbamidomethyl; variable M oxidation", "source_ids": ["diann"], "evidence": "DIA-NN command line has --unimod4 and --var-mod UniMod:35,15.994915,M."},
+    {"location": "comment[precursor mass tolerance], comment[fragment mass tolerance]", "value": "not available", "source_ids": ["diann"], "evidence": "Log reports DIA-NN automatic mass-accuracy optimization; no fixed search tolerance is deposited."}
+  ],
+  "limitations": [
+    "The ZIP central directory was read by HTTP range, not the 25 GB raw payload; analysis.tdf presence was verified for every acquisition directory but individual Bruker headers were not inspected.",
+    "DIA-NN --min-pr-mz/--max-pr-mz and --min-fr-mz/--max-fr-mz are search filters, not confirmed instrument acquisition ranges, so no SDRF scan-range columns were set.",
+    "The offline parser warns that the two strain names are absent from its ncbitaxon ontology list; both are the paper's explicit strain names.",
+    "The reconciliation helper flags a control-arm disease conflict and a missing Lys-C term. These are false positives for this file: disease is row-specific, and two repeated cleavage-agent columns hold Trypsin and Lys-C respectively."
+  ]
+}

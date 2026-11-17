@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD042430.sdrf.tsv",
+  "dataset": "PXD042430",
+  "sources": [
+    {"id": "pride", "kind": "repository project record", "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD042430"},
+    {"id": "files", "kind": "repository raw file list", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/files/byProject?accession=PXD042430"},
+    {"id": "paper", "kind": "publication", "location": "https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.10625"},
+    {"id": "supplement", "kind": "publication supplement Data S1, Table S2 and LC-MS/MS methods", "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10591212/supplementaryFiles"},
+    {"id": "aen1-search", "kind": "deposited MaxQuant search archive", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/10/PXD042430/AEN1_search.zip"},
+    {"id": "can2-search", "kind": "deposited MaxQuant search archive", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/10/PXD042430/CAN2_search.zip"},
+    {"id": "gua7-search", "kind": "deposited MaxQuant search archive", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/10/PXD042430/GUA7_search.zip"}
+  ],
+  "claims": [
+    {"location": "source name, comment[data file]", "value": "14 individual modern-grouper bone specimens, one RAW acquisition each", "source_ids": ["files", "supplement", "can2-search"], "evidence": "Thirteen specimen identifiers in supplementary Table S2 match accession RAW stems. The remaining CAN2-2 RAW is named in CAN2_search.zip summary.txt. All 14 accession-scoped RAW names are unique and assigned once."},
+    {"location": "characteristics[organism] and factor value[organism]", "value": "five Epinephelus marginatus, three E. aeneus, three E. costae, three E. caninus", "source_ids": ["paper", "supplement", "can2-search"], "evidence": "Paper Methods states 5/3/3/3 specimen counts. Table S2 explicitly identifies WLAp 1082 as E. aeneus and 12 other RAW-matched specimens. CAN2_search.zip parameters.txt points to a Caninus species-library FASTA, and its summary.txt names the accession CAN2-2 RAW stem."},
+    {"location": "characteristics[organism part], characteristics[material type], characteristics[pooled sample]", "value": "single-specimen bone tissue, not pooled", "source_ids": ["paper", "supplement"], "evidence": "Paper and supplement describe modern reference bone specimens sampled individually for collagen extraction. No pooling is described."},
+    {"location": "characteristics[biological replicate]", "value": "distinct specimen ordinal within species", "source_ids": ["supplement", "files"], "evidence": "Each source name is a distinct specimen identifier. The integer is an annotation ordinal for unique specimens within each species, not a source-provided biological replicate label."},
+    {"location": "comment[cleavage agent details]", "value": "Trypsin", "source_ids": ["supplement", "paper", "aen1-search", "can2-search", "gua7-search"], "evidence": "Supplemental protein extraction methods explicitly say specimens were digested with Trypsin. The three deposited MaxQuant summaries report Trypsin/P search specificity."},
+    {"location": "comment[instrument], acquisition, dissociation, collision energy, MS1 scan range", "value": "Orbitrap Exploris 480, top-10 DDA, HCD 30% NCE, 350-1400 m/z", "source_ids": ["pride", "supplement"], "evidence": "Supplemental LC-MS/MS methods give the exact instrument and acquisition settings; PRIDE protocol confirms Exploris 480 for reference LC-MS/MS."},
+    {"location": "comment[precursor mass tolerance], comment[fragment mass tolerance]", "value": "10 ppm and 0.05 Da for pFind reconstruction search", "source_ids": ["pride", "paper"], "evidence": "Paper and PRIDE processing protocol specify pFind precursor ±10 ppm and fragment ±0.05 Da; these differ from the separate MaxQuant validation search settings."},
+    {"location": "comment[modification parameters]", "value": "fixed C carbamidomethyl; variable M oxidation, P hydroxylation, protein N-terminal acetylation, N/Q deamidation, Q/E pyroglutamate", "source_ids": ["aen1-search", "can2-search", "gua7-search"], "evidence": "parameters.txt/summary.txt in 2020 AEN1 and 2022 CAN2/GUA7 MaxQuant archives agree on these search modifications. Hydroxyproline is represented by Unimod:35 Oxidation targeted to P; the same accession targeted to M represents methionine oxidation."}
+  ],
+  "limitations": [
+    "CAN-2 is absent from supplementary Table S2, but its deposited search archive explicitly uses a Caninus species library and names the CAN2-2 RAW stem. Its treatment/origin history is unavailable.",
+    "The AEN1 MaxQuant summary RAW stem says Ancient_bone whereas the accession RAW name says Modern_bone; the specimen code and date agree. The specimen's species also has independent support in Table S2.",
+    "The pFind mass tolerances and MaxQuant modification settings describe two documented analysis stages; the SDRF records the primary pFind tolerances and the deposited MaxQuant modification set.",
+    "Search modification agreement was checked in three representative archives, not all fourteen. Sex and developmental stage are not assigned to individual bone specimens in the sources.",
+    "The reconciliation helper reads only the PRIDE project JSON and flags Trypsin as unsupported; the publication supplement explicitly states Trypsin digestion."
+  ]
+}
