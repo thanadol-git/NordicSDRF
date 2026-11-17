@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD048346-arabidopsis-r1276.sdrf.tsv",
+  "dataset": "PXD048346",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD048346"},
+    {"id": "pride_files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD048346/files?page=0"},
+    {"id": "paper", "kind": "publication", "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11747095/"},
+    {"id": "plant_ontology", "kind": "ontology", "location": "https://www.ebi.ac.uk/ols4/ontologies/po/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FPO_0007131"},
+    {"id": "supplementary_data_4", "kind": "publication-supplement", "location": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-025-56192-3/MediaObjects/41467_2025_56192_MOESM6_ESM.xlsx"},
+    {"id": "search_r1276", "kind": "repository-search-output", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/01/PXD048346/search_R1276.zip"}
+  ],
+  "claims": [
+    {"location": "comment[data file] and assay name rows 1-6", "value": "six deposited R1276 .d.zip acquisitions, S01-S06", "source_ids": ["pride_files", "search_r1276"], "evidence": "The accession-scoped PRIDE list includes all six R1276 .d.zip files. search_R1276.zip/combined/txt/summary.txt maps each raw run name to MaxQuant experiments S01 through S06."},
+    {"location": "source name, characteristics[biological replicate], characteristics[genotype], factor value[genotype] rows 1-6", "value": "PafA-LTI6B control replicates 1-3 and cc1cc2 double-mutant PafA-CC1 replicates 1-3", "source_ids": ["paper", "supplementary_data_4", "search_r1276"], "evidence": "Supplementary Data 4 sheet 'CC1 and LTI6B LFQ (Ara)' labels six columns Lti6B_rep1-3 and CC1_rep1-3. Matching each protein ID and log2 LFQ intensity against search_R1276 proteinGroups.txt identifies S01-S06 in that order: 1239, 1243, 1205, 1396, 1368 and 1371 exact nonzero protein-intensity matches, respectively (absolute difference <0.0001). The paper identifies PafA-LTI6B as control and states PafA-CC1 was transformed into cc1cc2 double mutant plants. It does not explicitly identify the LTI6B background. The six-way mapping is recorded in results/denmark/PXD048346_R1276_run_map.tsv."},
+    {"location": "characteristics[organism], characteristics[organism part], characteristics[developmental stage], characteristics[growth condition] rows 1-6", "value": "Arabidopsis thaliana whole six-day-old seedlings grown in liquid half-strength MS medium; seedling development stage PO:0007131", "source_ids": ["paper", "plant_ontology"], "evidence": "The Arabidopsis transgenic methods state that seedlings were grown in liquid 1/2 MS medium for six days to generate tissue for IP-MS; the results identify six-day-old seedlings for FLAG-Pup(E) enrichment. Plant Ontology identifies seedling development stage as PO:0007131."},
+    {"location": "comment[proteomics data acquisition method], comment[instrument], comment[cleavage agent details] rows 1-6", "value": "DDA PASEF on timsTOF Pro with physical trypsin digestion", "source_ids": ["paper", "search_r1276"], "evidence": "The paper's enrichment LC-MS method reports digestion with 20 micrograms/ml trypsin and timsTOF Pro in PASEF mode. R1276 summary.txt lists all six runs as TIMS-DDA. Its Trypsin/P designation is a MaxQuant search setting, not the digestion reagent."},
+    {"location": "comment[precursor mass tolerance], comment[fragment mass tolerance], comment[modification parameters] rows 1-6", "value": "10 ppm, 40 ppm, fixed carbamidomethyl C, variable oxidation M and protein N-terminal acetylation", "source_ids": ["search_r1276"], "evidence": "The R1276 MaxQuant mqpar.xml and parameters.txt give the mass tolerances and modifications; summary.txt confirms the modifications for every run."}
+  ],
+  "limitations": [
+    "This SDRF covers only six R1276 Arabidopsis RAW archives out of 33 RAW archives in PXD048346. Other subexperiments require separate annotation.",
+    "The accession-wide PRIDE protocol combines different subexperiments and mentions Q Exactive HF and Trypsin/Lys-C. The R1276-specific MaxQuant search output and paper's timsTOF enrichment method are used for these six runs; an accession-level reconcile comparison reports apparent instrument and enzyme conflicts.",
+    "The installed plants template gives 'seedling stage' as an example, but the official validator's cached EFO lookup does not recognize that label. The valid PO:0007131 term 'seedling development stage' is used and passes official validation without warnings.",
+    "The paper does not explicitly establish the genetic background of PafA-LTI6B control plants. No cc1cc2 background is inferred for those rows.",
+    "The paper does not distinguish individual plant donors within each replicate. Biological replicate numbers follow the published replicate labels; technical replicate 1 identifies a single acquisition per replicate."
+  ]
+}
