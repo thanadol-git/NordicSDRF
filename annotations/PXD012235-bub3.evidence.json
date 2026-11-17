@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD012235-bub3.sdrf.tsv",
+  "dataset": "PXD012235",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository record",
+      "location": "scratchpad/PXD012235/pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "accession-scoped repository file list",
+      "location": "scratchpad/PXD012235/files.json"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6443202/"
+    },
+    {
+      "id": "summary",
+      "kind": "deposited MaxQuant run summary",
+      "location": "scratchpad/PXD012235/BUB3-IPs_summary.txt"
+    },
+    {
+      "id": "parameters",
+      "kind": "deposited MaxQuant search parameters",
+      "location": "scratchpad/PXD012235/BUB3-IPs_parameters.txt"
+    },
+    {
+      "id": "raw_header_aug",
+      "kind": "deposited RAW header range",
+      "location": "scratchpad/PXD012235/20180803_QE9_nLC02_FaCo_SA_BUB3-IPs_WT-Hela_Venus_1.raw.head"
+    },
+    {
+      "id": "raw_header_oct",
+      "kind": "deposited RAW header range",
+      "location": "scratchpad/PXD012235/20181023_QE10_nLC14_FaCo_SA_JakobN_BUB3-IPs_WT_Venus_3.raw.head"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "curated cell line lookup",
+      "location": "sdrf-tools cellline lookup HeLa (local Cellosaurus cache; CVCL_0030)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file], rows 1-12",
+      "value": "12 BUB3 IP RAW acquisitions, four conditions with three runs each",
+      "source_ids": [
+        "files",
+        "summary"
+      ],
+      "evidence": "The accession-scoped file list contains 12 BUB3-IPs RAW names. Deposited MaxQuant summary has one search row for each RAW stem and three numbered experiments for each of KO#4, KO#20, Venus and Venus-BUB3."
+    },
+    {
+      "location": "source name; factor value[Bub1 cell state]; factor value[purification bait], rows 1-12",
+      "value": "parental HeLa Venus control, parental HeLa Venus-Bub3, Bub1 C clone 04 Venus-Bub3, Bub1 C clone 20 Venus-Bub3",
+      "source_ids": [
+        "paper",
+        "summary",
+        "files"
+      ],
+      "evidence": "The paper Methods names parental HeLa and two Bub1 C clones transfected with Venus-Bub3 and a parental Venus-only control. Run names and MaxQuant Experiment values distinguish KO#04, KO#20, Venus, and Venus-BUB3. Exact linkage of numeric KO designations to paper clone numbers is not asserted."
+    },
+    {
+      "location": "characteristics[organism], characteristics[cell line], characteristics[cellosaurus accession], rows 1-12",
+      "value": "Homo sapiens; HeLa; CVCL_0030",
+      "source_ids": [
+        "paper",
+        "pride",
+        "cellosaurus"
+      ],
+      "evidence": "The publication Methods explicitly identifies parental HeLa and derived Bub1 C clones; the local Cellosaurus lookup maps HeLa to CVCL_0030 and Homo sapiens."
+    },
+    {
+      "location": "characteristics[organism part], characteristics[sampling site], characteristics[age], characteristics[sex], characteristics[disease], rows 1-12",
+      "value": "not applicable; uterine cervix; 30Y6M; female; Human papillomavirus-related cervical adenocarcinoma",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "The bundled curated HeLa Cellosaurus record CVCL_0030 lists cervix as tissue of origin, donor age 30Y6M, female sex, and Human papillomavirus-related cervical adenocarcinoma as the original donor-tissue disease. The paper confirms HeLa and derived clones. Per the cell-line annotation guidance, source anatomy is represented in characteristics[sampling site]; characteristics[organism part] is not applicable to the cultured cell-line material."
+    },
+    {
+      "location": "characteristics[biological replicate], comment[technical replicate], rows 1-12",
+      "value": "one biological source per condition; technical replicates 1-3",
+      "source_ids": [
+        "paper",
+        "summary"
+      ],
+      "evidence": "Figure EV2 says the Venus-Bub3 mass spectrometry was performed on three technical replicates of Venus purification. Deposited MaxQuant summary encodes four groups with run numbers 1, 2, and 3."
+    },
+    {
+      "location": "comment[instrument], rows 1-12",
+      "value": "Q Exactive HF-X",
+      "source_ids": [
+        "paper",
+        "raw_header_aug",
+        "raw_header_oct"
+      ],
+      "evidence": "The paper Methods specifies Q Exactive HF-X for AP-MS. The first 256 KiB of representative deposited August and October RAW acquisitions directly encode Q Exactive HF-X. The PRIDE project instrument CV lists the broader Q Exactive model."
+    },
+    {
+      "location": "comment[cleavage agent details], comment[modification parameters], comment[fragment mass tolerance], rows 1-12",
+      "value": "Trypsin; fixed carbamidomethyl C, variable oxidation M and protein N-terminal acetyl; 20 ppm fragment tolerance",
+      "source_ids": [
+        "pride",
+        "paper",
+        "parameters",
+        "summary"
+      ],
+      "evidence": "The paper and PRIDE sample protocol state trypsin digestion. The BUB3 MaxQuant archive summary specifies Trypsin/P, oxidation M and protein N-terminal acetyl; parameters.txt specifies fixed carbamidomethyl C and 20 ppm FTMS MS/MS tolerance."
+    },
+    {
+      "location": "comment[proteomics data acquisition method], comment[dissociation method], comment[collision energy], rows 1-12",
+      "value": "DDA; HCD; 27 NCE",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "The paper Methods describes top-15 data-dependent acquisition with HCD at NCE 27."
+    },
+    {
+      "location": "comment[reduction reagent], comment[alkylation reagent], rows 1-12",
+      "value": "DTT; chloroacetamide",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "The published AP-MS preparation and PRIDE sample protocol specify DTT reduction and CAA alkylation."
+    }
+  ],
+  "limitations": [
+    "The accession also contains 24 BUB1B-IPs RAW files in a separate MaxQuant archive; they are not covered by this BUB3 file and require a separate SDRF.",
+    "The BUB1B series includes three bead-only controls, which need spec-consistent blank handling before annotation.",
+    "The first 256 KiB of one August and one October RAW file were inspected, rather than all 12 RAW headers. The paper also explicitly names Q Exactive HF-X.",
+    "The numeric KO#04 and KO#20 run designations are preserved; they are not mapped to the paper clone 1/2 names without a direct key.",
+    "A biological replicate value of 1 denotes the single source group for each condition, while the three acquisitions are documented technical replicates. Donor demographics and disease status are not inferred.",
+    "The record reconciler treats the Venus-only experimental control as a healthy control, so it may flag the HeLa donor disease incorrectly. Venus-only controls remain HeLa cells derived from the same cancer donor."
+  ]
+}
