@@ -73,3 +73,7 @@ The [eight-row glycopeptide SDRF](../../annotations/PXD042172-glycopeptides.sdrf
 ### PXD071605 — held for TMT channel mapping
 
 The accession has 30 RAW runs: 20 input fractions, five acetyl-enriched pools and five phospho-enriched pools. The [paper](https://doi.org/10.1111/nph.71214) identifies three biological replicates of wild-type and `rak1-1` moss, but does not map those six samples to the six TMT reporter channels. The [hold record](../../annotations/PXD071605.BLOCKED.md) identifies the deposited result file that may contain the missing map. No SDRF has been produced.
+
+### PXD007991 — held for acquisition method and digest representation
+
+The [PRIDE record](https://www.ebi.ac.uk/pride/archive/projects/PXD007991) and [paper](https://doi.org/10.1074/mcp.RA119.001879) separate 18 recombinant-protein phosphorylation-map runs from 19 siKALIP kinase-assay runs. The former have in-gel trypsin digestion; the latter have sequential Lys-C and trypsin digestion. The Q Exactive RAW acquisition method is not stated, and the paper's separate Waters DIA method applies to hydrogen/deuterium exchange experiments rather than these files. The [hold record](../../annotations/PXD007991.BLOCKED.md) identifies the missing evidence and schema conflict. No SDRF has been produced.
