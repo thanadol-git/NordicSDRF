@@ -53,3 +53,15 @@ The [33-row histone PTM SDRF](../../annotations/PXD034924.sdrf.tsv) covers every
 ### PXD013140 — approved after independent review
 
 The [71-row recombinant-enzyme SDRF](../../annotations/PXD013140.sdrf.tsv) maps all accession-scoped RAW files to 61 GLA and 10 GBA sheets in the depositor's Figure 2 and Figure 4 workbooks. The [paper](https://doi.org/10.1038/s41467-019-09809-3) and Supplementary Tables 2–3 identify the human proteins produced in Chinese hamster ovary cells, clone gene edits and parental lines. Methods support chymotrypsin, Orbitrap Fusion, top-five data-dependent HCD and the MS1 scan range. The 5 ppm glycopeptide composition-assignment value was not treated as a peptide search tolerance. Official cached-ontology validation, structure, record reconciliation, and offline checks passed. A fresh independent review approved SHA-256 `8826827f71556b2e981517e6406029b1ca057baba0f5666e0e8a34e39d98ba49`. The repository-wide gate still reports unrelated pending artifacts; this SDRF's hash-bound approval is recorded.
+
+### PXD042321 — held for sample and method mapping
+
+The deposited file list has 102 RAW files; `SampletoData.csv` maps 94, including 16 acellular blanks. Eight 4EDTA files lack rows in that map. The [paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC10603084/) reports trypsin, Lys-C and mixed Lys-C/Trypsin methods, plus several uncertain specimen taxa. The [hold record](../../annotations/PXD042321.BLOCKED.md) documents the unresolved run, digest and blank mapping. No SDRF has been produced.
+
+### PXD010527 — held after first independent review
+
+The depositor's design table maps all 33 RAW files. A 20-run draft for four complete five-fraction WT and mutant SPOP pull-down groups passed official validation. Independent review rejected its DDA acquisition annotation because the [paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC6182143/) and PRIDE protocol do not state the mode. The [hold record](../../annotations/PXD010527.BLOCKED.md) identifies the evidence needed before further review. No SDRF was approved.
+
+### PXD016522 — held after first independent review
+
+The [paper](https://doi.org/10.1093/gigascience/giz152) and PRIDE protocol identify one giant-squid mantle sample, Q Exactive and top-12 DDA. A 41-run draft covered every RAW file and passed deterministic validation, but the A/B/E/Off-Gel filename series cannot be assigned to biological sources or fractions from the available documentation. Independent review also found that the protocol's “tryptic peptides” phrase does not directly identify the digest reagent. The [hold record](../../annotations/PXD016522.BLOCKED.md) preserves the review findings. No SDRF was approved.
