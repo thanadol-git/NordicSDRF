@@ -1,0 +1,31 @@
+# Copenhagen seventh batch: 20 PXDs
+
+Started on 2026-11-17 on branch `codex/copenhagen-seventh20`. The [tracker](copenhagen_seventh20_batch.tsv) selects the 20 smallest remaining RAW-labelled deposits among confirmed Copenhagen candidates. It excludes earlier Copenhagen batches, the saved community-corpus list, existing local annotation and block records, and two deposits previously identified as processed-only RAW mislabels. The selection uses accession-scoped PRIDE file lists and verifies every listed file belongs to its PXD. `scripts/batches/select_copenhagen_seventh20.py` reproduces the selection and keeps statuses on rerun.
+
+The cohort ranges from PXD011937 (34.36 GB, 32 RAW files) to PXD042172 (44.68 GB, 23 RAW files). ZIP-labelled entries need archive-interior checks before they can be counted as acquisitions.
+
+## Annotation progress
+
+### PXD011937 — blocked after two independent reviews
+
+The [PRIDE record](https://www.ebi.ac.uk/pride/archive/projects/PXD011937), [paper](https://doi.org/10.1093/nar/gkz510), deposited MaxQuant summary and inspected RAW headers support a 96-row draft across 32 files, four eight-fraction experiments and three SILAC channels. The pilot light-channel condition is explicitly `not available`. The initial review led to stronger disease and instrument evidence. The second review found that `HeLa S3` is not recognized in the required CLO/BTO/EFO cell-line ontology set. The draft is [blocked](../../annotations/PXD011937.BLOCKED.md) pending resolution; it is not approved.
+
+### PXD064417 — blocked after two independent reviews
+
+The [paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC12804880/), deposited sample key and MaxQuant summary support a 22-row draft covering 21 enamel samples and one laboratory blank. The second review objected to assigning a biological replicate number to the blank, while the current SDRF contract requires an integer there. The draft is [blocked](../../annotations/PXD064417.BLOCKED.md) pending a schema-compatible convention or a decision to omit the blank; it is not approved.
+
+### PXD051333 — approved after independent review
+
+The PRIDE archive lists one 37.72 GB `Raw_files.zip`, but its verified ZIP index contains 12 Bruker `.d` acquisitions. The [run inventory](PXD051333_run_inventory.tsv), derived from the ZIP directory and each Bruker `SampleInfo.xml`, identifies nine peptidome and three proteome acquisitions. The [paper](https://doi.org/10.1016/j.ab.2025.115837) and PRIDE record describe rat precision-cut lung-slice supernatants processed for both endpoints. Run-specific deposited pepXML search headers support a [three-run proteome SDRF](../../annotations/PXD051333-proteome.sdrf.tsv). They also show two peptidome search-setting groups: six BE/BA runs without fixed cysteine modification and three GA runs with fixed cysteine carbamidomethylation. Separate [BE/BA](../../annotations/PXD051333-peptidome-be-ba.sdrf.tsv) and [GA](../../annotations/PXD051333-peptidome-ga.sdrf.tsv) SDRFs cover them. All three files pass deterministic validation and hash-bound independent review. The processed-file list names `160101a_BE1_1_4205`, `160101b_BE2_1_4206`, `160101b_GE2_1_4197`, and `180101_GA1_1_5604`, whose acquisition directories are absent from `Raw_files.zip`; they are excluded. No solvent, condition, donor, or replicate relationship is asserted without run-level evidence.
+
+### PXD024397 — blocked after two independent reviews
+
+The accession-scoped PRIDE file list has 26 `.raw` acquisitions: 20 `A`–`J` reconstruction runs (`large` and `small`), three painting micro-samples (`1BP`, `1GL`, `2YP`), and three processing blanks. The deposited file-description key confirms each mapping. The [paper](https://doi.org/10.1038/s41598-022-14109-w) and its supplement describe the materials; deposited RAW headers support run-specific Q Exactive HF and HF-X instruments. The [26-row draft](../../scratchpad/PXD024397/draft.sdrf.tsv) passes official validation, structure and offline ontology checks. The first independent review identified composite painting samples incorrectly assigned a single organism, which was corrected. The second review found `characteristics[biological replicate]=0` on three blanks conflicts with the active template's integer-starting-at-1 semantics, despite passing the validator. The draft is [blocked](../../annotations/PXD024397.BLOCKED.md) pending a schema-compatible blank convention or a documented decision to exclude blanks; it has no approval receipt.
+
+### PXD029644 — outside current proteomics SDRF scope
+
+The [PRIDE record](https://www.ebi.ac.uk/pride/archive/projects/PXD029644) and [paper](https://doi.org/10.1021/acs.analchem.1c05068) identify a released O-glycan profiling experiment, not protein or peptide analysis. Its 71 `.raw` files are glycomics acquisitions; the installed template set has no glycomics SDRF template. The accession is [held](../../annotations/PXD029644.BLOCKED.md) without an SDRF rather than assigning false proteomics metadata.
+
+### PXD012235 — BUB3 and cell-derived BUB1B approved; bead-only controls blocked
+
+The [paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC6443202/) and deposited MaxQuant archives identify 12 Venus-Bub3 affinity-purification RAW files across four HeLa conditions and three technical repeats per condition. The first independent review of the [BUB3 SDRF](../../annotations/PXD012235-bub3.sdrf.tsv) found unsupported `nocodazole` treatment; that column was removed. The rebuilt file passes official validation and hash-bound independent review, and has been committed. The [BUB1B cell-derived SDRF](../../annotations/PXD012235-bub1b-cells.sdrf.tsv) covers 21 runs from HeLa, HAP1, and RPE1 groups. Its first review found a stale HAP1 donor age and missing disease, which were corrected from the current Cellosaurus record. The rebuilt file passes official validation and hash-bound independent review, and has been committed. Three bead-only BUB1B controls remain [blocked](../../annotations/PXD012235.BLOCKED.md) because the active human template has no truthful biological-replicate value for acellular controls. The accession is not fully covered.
