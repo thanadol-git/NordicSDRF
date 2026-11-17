@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD032328-mimcd3-fusion.sdrf.tsv",
+  "dataset": "PXD032328",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository project and accession-scoped file list",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD032328"
+    },
+    {
+      "id": "files",
+      "kind": "accession-scoped PRIDE file list",
+      "location": "scratchpad/PXD032328/files.json"
+    },
+    {
+      "id": "paper",
+      "kind": "publication full text, Methods",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10214176/"
+    },
+    {
+      "id": "search",
+      "kind": "deposited Proteome Discoverer HCD search result for high-pH fraction 3",
+      "location": "scratchpad/PXD032328/mIMCD3_Fusion_HCD.msf"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "cell-line registry",
+      "location": "https://www.cellosaurus.org/CVCL_0429"
+    },
+    {
+      "id": "unimod",
+      "kind": "modification registry for hexose",
+      "location": "https://www.unimod.org/modifications_view.php?editid1=41"
+    },
+    {
+      "id": "pride_ontology",
+      "kind": "official PRIDE ontology",
+      "location": "https://raw.githubusercontent.com/PRIDE-Utilities/pride-ontology/master/pride_cv.obo"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[genotype], factor value[genotype], characteristics[biological replicate], comment[label]",
+      "value": "Two wild-type mIMCD-3 clones at TMT126 and TMT127; TMEM260 knockout clone 1 at TMT128 and TMT129; knockout clone 2 at TMT130 and TMT131",
+      "source_ids": [
+        "paper",
+        "files"
+      ],
+      "evidence": "The publication's TMT Labeling of mIMCD-3 Total Cell Digests section gives the six-channel clone map verbatim. Each knockout clone occupies two channels. Biological replicate numbers identify clones within genotype; the two channels for each knockout clone are marked as technical channel replicates and do not imply independent cultures. All four RAW filenames repeat the same channel map."
+    },
+    {
+      "location": "characteristics[organism], characteristics[material type], characteristics[cell line], characteristics[cellosaurus accession], characteristics[sampling site], characteristics[developmental stage], characteristics[culture medium details]",
+      "value": "Mouse mIMCD-3 kidney collecting-duct cell line, CVCL_0429; adult origin; DMEM/F12 with 10% FBS and 1% GlutaMAX",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "The paper's Cell Culture and TMT Labeling sections identify mIMCD-3 cells and medium. Cellosaurus identifies mIMCD-3 as a mouse inner medullary collecting-duct line derived from an adult kidney. Kidney is the line's tissue of origin, not a directly sampled organ in these assays."
+    },
+    {
+      "location": "comment[data file], comment[fraction identifier], comment[instrument], comment[proteomics data acquisition method]",
+      "value": "Four high-pH fractions 1-4, each carrying the same TMT six-plex, acquired on Orbitrap Fusion using data-dependent acquisition",
+      "source_ids": [
+        "files",
+        "paper",
+        "search"
+      ],
+      "evidence": "The accession-scoped PRIDE list has the four 200319_Fusion mIMCD3 RAW files ending High_pH_1 through High_pH_4, plus associated fraction-3 search files. The paper describes the Fusion instrument and data-dependent precursor selection. The HCD .msf identifies fraction 3 as an input spectrum file."
+    },
+    {
+      "location": "comment[dissociation method], comment[ms2 mass analyzer]",
+      "value": "HCD and ETciD MS/MS, Orbitrap MS2 analysis",
+      "source_ids": [
+        "paper",
+        "files",
+        "pride_ontology"
+      ],
+      "evidence": "The paper's Mass Spectrometry section describes paired Orbitrap HCD and electron-transfer/collision-induced dissociation spectra at MS2 resolution 60,000. The RAW filenames include ETD_HCD. The controlled dissociation columns represent HCD and the exact PRIDE ontology term for ETciD."
+    },
+    {
+      "location": "comment[cleavage agent details], comment[reduction reagent], comment[alkylation reagent], comment[modification parameters]",
+      "value": "Trypsin; DTT and iodoacetamide; fixed carbamidomethyl C and TMT6plex K/peptide N-terminus; variable oxidation M and Hex S/T",
+      "source_ids": [
+        "paper",
+        "search",
+        "unimod"
+      ],
+      "evidence": "The paper's dimethyl protocol specifies DTT and iodoacetamide, and its TMT protocol states proteins were extracted and digested as described above. Both the paper and deposited HCD .msf identify trypsin and the listed search modifications. The .msf MaxNoDynModifs display value 7 is a count limit, not a modification, and is excluded."
+    }
+  ],
+  "limitations": [
+    "This artifact covers only the four 200319 Fusion mIMCD-3 RAW files; the remaining PXD032328 acquisitions require separate interpretation and annotation.",
+    "Only the fraction-3 HCD .msf was inspected for search parameters. Its 5 ppm precursor and 0.01 Da fragment tolerances are not assigned across the four fractions or to ETciD spectra; those SDRF columns are omitted.",
+    "The publication does not state whether duplicated knockout reporter channels were separate digestions or split aliquots; technical replicate numbers distinguish channels only.",
+    "No donor sex or exact mouse strain was reported for the cell line, so those values are not inferred."
+  ]
+}
