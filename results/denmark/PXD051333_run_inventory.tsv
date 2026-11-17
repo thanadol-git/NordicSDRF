@@ -1,0 +1,13 @@
+accession	run_directory	acquisition_type	method_set	archive_member	evidence
+PXD051333	160101c_BE3_1_4207.d	peptidome	Peptidome_DDA_PASEF_42min.m	Raw_files/160101c_BE3_1_4207.d/analysis.tdf	Raw_files.zip central directory; accession-matched Bruker SampleInfo.xml
+PXD051333	160102_BA1_1_4236.d	peptidome	Peptidome_DDA_PASEF_140min.m	Raw_files/160102_BA1_1_4236.d/analysis.tdf	Raw_files.zip central directory; accession-matched Bruker SampleInfo.xml
+PXD051333	160103_BA2_1_4237.d	peptidome	Peptidome_DDA_PASEF_140min.m	Raw_files/160103_BA2_1_4237.d/analysis.tdf	Raw_files.zip central directory; accession-matched Bruker SampleInfo.xml
+PXD051333	160104_BA3_1_4238.d	peptidome	Peptidome_DDA_PASEF_140min.m	Raw_files/160104_BA3_1_4238.d/analysis.tdf	Raw_files.zip central directory; accession-matched Bruker SampleInfo.xml
+PXD051333	160105_BA4_1_4239.d	peptidome	Peptidome_DDA_PASEF_140min.m	Raw_files/160105_BA4_1_4239.d/analysis.tdf	Raw_files.zip central directory; accession-matched Bruker SampleInfo.xml
+PXD051333	160106_BA5_1_4240.d	peptidome	Peptidome_DDA_PASEF_140min.m	Raw_files/160106_BA5_1_4240.d/analysis.tdf	Raw_files.zip central directory; accession-matched Bruker SampleInfo.xml
+PXD051333	180101_GA1_1_5605.d	peptidome	Peptidome_DDA_PASEF_140min_partialloop.m	Raw_files/180101_GA1_1_5605.d/analysis.tdf	Raw_files.zip central directory; accession-matched Bruker SampleInfo.xml
+PXD051333	180102_GA2_1_5608.d	peptidome	Peptidome_DDA_PASEF_140min_partialloop.m	Raw_files/180102_GA2_1_5608.d/analysis.tdf	Raw_files.zip central directory; accession-matched Bruker SampleInfo.xml
+PXD051333	180103_GA3_1_5611.d	peptidome	Peptidome_DDA_PASEF_140min_partialloop.m	Raw_files/180103_GA3_1_5611.d/analysis.tdf	Raw_files.zip central directory; accession-matched Bruker SampleInfo.xml
+PXD051333	180104_GA4_1_5614.d	proteome	Proteome_DDA_PASEF_140min_partialloop.m	Raw_files/180104_GA4_1_5614.d/analysis.tdf	Raw_files.zip central directory; accession-matched Bruker SampleInfo.xml
+PXD051333	180105_GA5_1_5617.d	proteome	Proteome_DDA_PASEF_140min_partialloop.m	Raw_files/180105_GA5_1_5617.d/analysis.tdf	Raw_files.zip central directory; accession-matched Bruker SampleInfo.xml
+PXD051333	180106_GA6_1_5620.d	proteome	Proteome_DDA_PASEF_140min_partialloop.m	Raw_files/180106_GA6_1_5620.d/analysis.tdf	Raw_files.zip central directory; accession-matched Bruker SampleInfo.xml
