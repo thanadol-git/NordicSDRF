@@ -1,0 +1,1218 @@
+[
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "a11b23863d27af7a96aeac7eb68d21ec6bedbf1cdb7bba5b2a9fc6c17f71afcc",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "0b1499a90856f193f6d671f3e3b833efbe731ea6",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_20161216_QE7_nLC3_MEM_COLLAB_GeoG_1138t_01.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_20161216_QE7_nLC3_MEM_COLLAB_GeoG_1138t_01.raw"
+      }
+    ],
+    "fileSizeBytes": 301986713,
+    "fileName": "Dmanisi_Enamel_20161216_QE7_nLC3_MEM_COLLAB_GeoG_1138t_01.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 99
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "f37759d78134a6633447126697e7fbedda2861ab2a3fbea61180777e80cb1b71",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "d7ff94f1196cf68cd55156fd8a18d8a466e1bb5f",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Atapuerca_Blank_161213_S_ASES_02_01_atapuerca_blank1070.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Atapuerca_Blank_161213_S_ASES_02_01_atapuerca_blank1070.raw"
+      }
+    ],
+    "fileSizeBytes": 1597964220,
+    "fileName": "Atapuerca_Blank_161213_S_ASES_02_01_atapuerca_blank1070.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 104
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "43f97bb7215d0ccff1a5746f61bfdb93c9dfba94e79c9903a7a02866b0c21903",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000408",
+      "name": "Search engine output file URI",
+      "value": "SEARCH"
+    },
+    "checksum": "8a411138ae1b41ab921ffcef41b85981c1c59a8f",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_MQ_txt.zip"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_MQ_txt.zip"
+      }
+    ],
+    "fileSizeBytes": 160276092,
+    "fileName": "Dmanisi_Enamel_MQ_txt.zip",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 161
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "e6bd00d3ec04d395a27dac685342984ccfaf07a9da195161d3d86ed2f5f99d55",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "3d20c7169f2ff8f1e4ea57be63c9acbbe23e31a2",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Blank_170302_S_CCES_06_01_DmnasiHomoErectus_sample1143_blank.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Blank_170302_S_CCES_06_01_DmnasiHomoErectus_sample1143_blank.raw"
+      }
+    ],
+    "fileSizeBytes": 1165353360,
+    "fileName": "Dmanisi_Blank_170302_S_CCES_06_01_DmnasiHomoErectus_sample1143_blank.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 74
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "c21451556dba5a037fb57edd43eaea365ce3a06f3309ffd990566b34dcd84ce1",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "88b50f1758e45417632ca890f765b98638447a90",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Dentine_20161216_QE7_nLC3_MEM_COLLAB_GeoG_1142t_01.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Dentine_20161216_QE7_nLC3_MEM_COLLAB_GeoG_1142t_01.raw"
+      }
+    ],
+    "fileSizeBytes": 291776943,
+    "fileName": "Dmanisi_Dentine_20161216_QE7_nLC3_MEM_COLLAB_GeoG_1142t_01.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 76
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "98feff5f458c260cbc5f7188796f42e7e956adc21695e9f247db021756b49555",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "3ac316ee5d1556af9a54ffbf485d37d1402b78ef",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Atapuerca_Enamel_20161004_QE5_nLC11_MEM_COLLAB_GeoG_1069_03.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Atapuerca_Enamel_20161004_QE5_nLC11_MEM_COLLAB_GeoG_1069_03.raw"
+      }
+    ],
+    "fileSizeBytes": 2002373550,
+    "fileName": "Atapuerca_Enamel_20161004_QE5_nLC11_MEM_COLLAB_GeoG_1069_03.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 91
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "27eee0e96d5b75740da7ec67358d0412b5163a295e25229fcacbc35aa5d3458b",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "3a0bbf1d800ed7fbe9cc28d7ec7f8fbae6965090",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_20161216_QE7_nLC3_MEM_COLLAB_GeoG_1141t_01.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_20161216_QE7_nLC3_MEM_COLLAB_GeoG_1141t_01.raw"
+      }
+    ],
+    "fileSizeBytes": 265661008,
+    "fileName": "Dmanisi_Enamel_20161216_QE7_nLC3_MEM_COLLAB_GeoG_1141t_01.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 109
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "1cd7175597c9a8c0ac10bac5369a88e32acb13310120f8959bc410bacb11fcc6",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "aee3097708a9b76281449916b8d6316f4ea88698",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Atapuerca_Enamel_161213_S_ASES_01_01_atapuerca_sample1069.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Atapuerca_Enamel_161213_S_ASES_01_01_atapuerca_sample1069.raw"
+      }
+    ],
+    "fileSizeBytes": 1296452562,
+    "fileName": "Atapuerca_Enamel_161213_S_ASES_01_01_atapuerca_sample1069.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 131
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "0cfe31a30b513b84a15763450e8717fe5016b50f7d0bc05b2b15c2d7f5dbb472",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "800aca5c3c47b9e6cf6c51f08b74641bd7931272",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Dentine_20161219_QE7_nLC3_MEM_COLLAB_GeoG_1139_02.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Dentine_20161219_QE7_nLC3_MEM_COLLAB_GeoG_1139_02.raw"
+      }
+    ],
+    "fileSizeBytes": 3425217145,
+    "fileName": "Dmanisi_Dentine_20161219_QE7_nLC3_MEM_COLLAB_GeoG_1139_02.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 87
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "658c89aea948b00827e6714400e31b70cc2c38f375f503f48c36b6b53363ab87",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "88e2f456bd305b44306767ccbbd6e7424a92b878",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Atapuerca_Blank_20161109_QE5_nLC5_MEM_COLLAB_GeoG_1070_02.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Atapuerca_Blank_20161109_QE5_nLC5_MEM_COLLAB_GeoG_1070_02.raw"
+      }
+    ],
+    "fileSizeBytes": 2361260195,
+    "fileName": "Atapuerca_Blank_20161109_QE5_nLC5_MEM_COLLAB_GeoG_1070_02.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 86
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "be6d1b01ddae594373478e4abaa822432ec3abce798dcea4c9fc5aad39833280",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "21063828d65e89de170d63852e558ea1ccc51534",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Blank_20161219_QE7_nLC3_MEM_COLLAB_GeoG_1143_01_Blank.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Blank_20161219_QE7_nLC3_MEM_COLLAB_GeoG_1143_01_Blank.raw"
+      }
+    ],
+    "fileSizeBytes": 1995089317,
+    "fileName": "Dmanisi_Blank_20161219_QE7_nLC3_MEM_COLLAB_GeoG_1143_01_Blank.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 108
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "ebf9e5af64397b35bbafb287c851135bcde39f4c6f25756d370bbbf69883e787",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "aa1cbf1835b6b9f098491c072acdb9829ca22764",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_20180525_QE7_nLC7_MEM_COLLAB_GeoG_1388_HCLprevious.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_20180525_QE7_nLC7_MEM_COLLAB_GeoG_1388_HCLprevious.raw"
+      }
+    ],
+    "fileSizeBytes": 1582596042,
+    "fileName": "Dmanisi_Enamel_20180525_QE7_nLC7_MEM_COLLAB_GeoG_1388_HCLprevious.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 144
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "d0d3980265148224dbce5a1f5b53dd90cc2496c521186a0c0b1589c7b02350c9",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "41368194ff36fd7f2e8e53c668df0692121b7566",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_170302_S_CCES_01_01_DmnasiHomoErectus_sample1138.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_170302_S_CCES_01_01_DmnasiHomoErectus_sample1138.raw"
+      }
+    ],
+    "fileSizeBytes": 1275721680,
+    "fileName": "Dmanisi_Enamel_170302_S_CCES_01_01_DmnasiHomoErectus_sample1138.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 92
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "a9dbd344923426213911432d13e99c4f8c5f615c9760a43fcbd194ab8a4fe213",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000408",
+      "name": "Search engine output file URI",
+      "value": "SEARCH"
+    },
+    "checksum": "b28a1fb17760fe07e46fe21fec9910168cf6350b",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Dentine_peptides.pep.xml"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Dentine_peptides.pep.xml"
+      }
+    ],
+    "fileSizeBytes": 708462,
+    "fileName": "Dmanisi_Dentine_peptides.pep.xml",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 152
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "3b3f8f22f3132da983ccca0c480274477a62865e85191d596a1b092d3eb17a36",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "32da2919cb932e4b2b440a11dac60a4e5fc5bc07",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Blank_170302_S_CCES_03_01_DmnasiHomoErectus_sample1140_blank.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Blank_170302_S_CCES_03_01_DmnasiHomoErectus_sample1140_blank.raw"
+      }
+    ],
+    "fileSizeBytes": 916909640,
+    "fileName": "Dmanisi_Blank_170302_S_CCES_03_01_DmnasiHomoErectus_sample1140_blank.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 85
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "9757f7ac5a266e2787d001d87d31051876490ac83d08d0c136c8dd7daf5dfc90",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "9a91877392a434c03d7f83bac7b5555da4379505",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Atapuerca_Enamel_20161109_QE5_nLC5_MEM_COLLAB_GeoG_1069_05.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Atapuerca_Enamel_20161109_QE5_nLC5_MEM_COLLAB_GeoG_1069_05.raw"
+      }
+    ],
+    "fileSizeBytes": 2319122481,
+    "fileName": "Atapuerca_Enamel_20161109_QE5_nLC5_MEM_COLLAB_GeoG_1069_05.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 119
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "670880d16c4e5b898380cd41488f564470b5f8f11af3f67d22a658f2f63beea6",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000408",
+      "name": "Search engine output file URI",
+      "value": "SEARCH"
+    },
+    "checksum": "794c9f716867b407add48540024e61328a4374a3",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Hominins_Blank_MQ_txt.zip"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Hominins_Blank_MQ_txt.zip"
+      }
+    ],
+    "fileSizeBytes": 422638,
+    "fileName": "Hominins_Blank_MQ_txt.zip",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 123
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "eedebf3bcc336c553274de9f82247c5eb7c41afad0c4364b1c677e0db0f8f588",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "efe69b6376b4a04936f2e2059979493f1251b87a",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Blank_20161219_QE7_nLC3_MEM_COLLAB_GeoG_1140_01_Blank.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Blank_20161219_QE7_nLC3_MEM_COLLAB_GeoG_1140_01_Blank.raw"
+      }
+    ],
+    "fileSizeBytes": 2177252542,
+    "fileName": "Dmanisi_Blank_20161219_QE7_nLC3_MEM_COLLAB_GeoG_1140_01_Blank.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 78
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "a6d544c754ecb2f78e936ea826bd6b77ac34bb7fab6377468485a246a0b41a28",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "e32f33753e0089316e446d47a43bcd9828167b1e",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Dentine_170302_S_CCES_02_01_DmnasiHomoErectus_sample1139.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Dentine_170302_S_CCES_02_01_DmnasiHomoErectus_sample1139.raw"
+      }
+    ],
+    "fileSizeBytes": 1490784560,
+    "fileName": "Dmanisi_Dentine_170302_S_CCES_02_01_DmnasiHomoErectus_sample1139.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 91
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "4165ae9b1cf18706e46053614bad3711ce790404d2809be4d541d5b59f78bbd3",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "8026370404bcf41494f9a3b695785cf88c4bc81b",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_170302_S_CCES_04_01_DmnasiHomoErectus_sample1141.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_170302_S_CCES_04_01_DmnasiHomoErectus_sample1141.raw"
+      }
+    ],
+    "fileSizeBytes": 1449394484,
+    "fileName": "Dmanisi_Enamel_170302_S_CCES_04_01_DmnasiHomoErectus_sample1141.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 91
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "aeb415fe10a204813b08d7e734af14c5c2838ef952435152ca82e98d051df9a1",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "cd1d64c72c1076cb5753c101b00f0f4c25e1a238",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_20161219_QE7_nLC3_MEM_COLLAB_GeoG_1141_02.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_20161219_QE7_nLC3_MEM_COLLAB_GeoG_1141_02.raw"
+      }
+    ],
+    "fileSizeBytes": 2032108513,
+    "fileName": "Dmanisi_Enamel_20161219_QE7_nLC3_MEM_COLLAB_GeoG_1141_02.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 88
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "68dc77a04f23f16f169150b556cd883d2037fdefb411a67559f904ed0ffb2d51",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "1cffab5af6af7e8b4d30bf9e7231a578fd019aa5",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_20161219_QE7_nLC3_MEM_COLLAB_GeoG_1138_02.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_20161219_QE7_nLC3_MEM_COLLAB_GeoG_1138_02.raw"
+      }
+    ],
+    "fileSizeBytes": 2963960282,
+    "fileName": "Dmanisi_Enamel_20161219_QE7_nLC3_MEM_COLLAB_GeoG_1138_02.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 104
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "d12a8523d9ba503ef6e690ee4de7d2775266138c8a421cf98af5e8058466b537",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "2507fd1e95c17a360a9417cb55b1bfb368a06661",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Dentine_20161219_QE7_nLC3_MEM_COLLAB_GeoG_1142_02.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Dentine_20161219_QE7_nLC3_MEM_COLLAB_GeoG_1142_02.raw"
+      }
+    ],
+    "fileSizeBytes": 2926645911,
+    "fileName": "Dmanisi_Dentine_20161219_QE7_nLC3_MEM_COLLAB_GeoG_1142_02.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 84
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "8b9e70d646cdd7ad14d749b9a7bbf4b395d13083e430b4c5371af5112f7c77f3",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "711620c0316da7665d3436b6d3446ffed42980a6",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Atapuerca_Enamel_20161004_QE5_nLC11_MEM_COLLAB_GeoG_1069_02.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Atapuerca_Enamel_20161004_QE5_nLC11_MEM_COLLAB_GeoG_1069_02.raw"
+      }
+    ],
+    "fileSizeBytes": 4161711293,
+    "fileName": "Atapuerca_Enamel_20161004_QE5_nLC11_MEM_COLLAB_GeoG_1069_02.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 104
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "659e1c5becfdf8e6fc823b096ef5c4793ba0f2a1456cf16af8bbcb9e98c03652",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "b55d4eace5f6b9733d392eb8fcaf55c6aa1d8004",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_20180525_QE7_nLC7_MEM_COLLAB_GeoG_1387_TFA.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_20180525_QE7_nLC7_MEM_COLLAB_GeoG_1387_TFA.raw"
+      }
+    ],
+    "fileSizeBytes": 1672796858,
+    "fileName": "Dmanisi_Enamel_20180525_QE7_nLC7_MEM_COLLAB_GeoG_1387_TFA.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 134
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "43ded0772babf1b4345a660a5fc687964fb5fc81f8bc977d22e5fc4ff0f384e7",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000408",
+      "name": "Search engine output file URI",
+      "value": "SEARCH"
+    },
+    "checksum": "e65e34da433e5f52d87be9da518881cb1662cb8b",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Atapuerca_Enamel_MQ_txt.zip"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Atapuerca_Enamel_MQ_txt.zip"
+      }
+    ],
+    "fileSizeBytes": 166667059,
+    "fileName": "Atapuerca_Enamel_MQ_txt.zip",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 180
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "c818bed127e30057ff6185c8c6c48641021ae26124cd59bb94a66adda14c2d81",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "8ac653f6e8e2613bf6b69838be9e8fba1e6b1252",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Atapuerca_Enamel_20161109_QE5_nLC5_MEM_COLLAB_GeoG_1069_04.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Atapuerca_Enamel_20161109_QE5_nLC5_MEM_COLLAB_GeoG_1069_04.raw"
+      }
+    ],
+    "fileSizeBytes": 2087056074,
+    "fileName": "Atapuerca_Enamel_20161109_QE5_nLC5_MEM_COLLAB_GeoG_1069_04.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 117
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "8084d6df89b29cbd4942e03b6c44d0758802d43008110a13b66be7f0e1619837",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "8b51b30d3b272204d5b655dd86ac1a4cc6e2c96d",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Dentine_20161216_QE7_nLC3_MEM_COLLAB_GeoG_1139t_01.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Dentine_20161216_QE7_nLC3_MEM_COLLAB_GeoG_1139t_01.raw"
+      }
+    ],
+    "fileSizeBytes": 308253698,
+    "fileName": "Dmanisi_Dentine_20161216_QE7_nLC3_MEM_COLLAB_GeoG_1139t_01.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 84
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "8d058f7bce76ff5ff0bc7dd1f488a24fe58a21ce06f331c3310c0bb87b5e3210",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000410",
+      "name": "Other type file URI",
+      "value": "OTHER"
+    },
+    "checksum": "ce31167817d883e472e3a6e1b4c14cf39723f0ab",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/README.txt"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/README.txt"
+      }
+    ],
+    "fileSizeBytes": 1657,
+    "fileName": "README.txt",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 333
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "f431fc31c5d8368bdd462e6e74a3717a61c244d6c95c16f02ffc6723ec01d529",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "414834a2eafe94bd1b70c95c513cc3482b53a48a",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_20180525_QE7_nLC7_MEM_COLLAB_GeoG_1386_HCl.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Enamel_20180525_QE7_nLC7_MEM_COLLAB_GeoG_1386_HCl.raw"
+      }
+    ],
+    "fileSizeBytes": 1719913362,
+    "fileName": "Dmanisi_Enamel_20180525_QE7_nLC7_MEM_COLLAB_GeoG_1386_HCl.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 118
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "155ab3be36e8088fc49b556bce0724d420346b4085d69d23f62b3d346e62e64d",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "b2e10adfa08d57244ab10ba477a6a579f09bef68",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Dmanisi_Dentine_170302_S_CCES_05_01_DmnasiHomoErectus_sample1142.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Dmanisi_Dentine_170302_S_CCES_05_01_DmnasiHomoErectus_sample1142.raw"
+      }
+    ],
+    "fileSizeBytes": 1932794324,
+    "fileName": "Dmanisi_Dentine_170302_S_CCES_05_01_DmnasiHomoErectus_sample1142.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 91
+  },
+  {
+    "projectAccessions": [
+      "PXD014342"
+    ],
+    "accession": "1b62603544a8e89f8da76dc69537509eb6eaac5a7440aa89a5d49a43877d3d51",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "e7be87e6da5d61ad42d3cb0644217eecdb514b27",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD014342/Atapuerca_Blank_20161004_QE5_nLC11_MEM_COLLAB_GeoG_1070_01.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/Atapuerca_Blank_20161004_QE5_nLC11_MEM_COLLAB_GeoG_1070_01.raw"
+      }
+    ],
+    "fileSizeBytes": 3210691196,
+    "fileName": "Atapuerca_Blank_20161004_QE5_nLC11_MEM_COLLAB_GeoG_1070_01.raw",
+    "compress": false,
+    "submissionDate": "2019-06-21T12:05:28.000+00:00",
+    "publicationDate": "2020-04-02T06:06:17.000+00:00",
+    "updatedDate": "2019-06-21T12:05:28.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 71
+  }
+]

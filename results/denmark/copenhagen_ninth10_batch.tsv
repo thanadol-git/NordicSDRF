@@ -3,7 +3,7 @@ batch_order	accession	pride_raw_bytes	pride_raw_count	annotation_status	title
 2	PXD010155	46921293622	32	queued: evidence review	Probing the contribution of individual polypeptide GalNAc-transferase isoforms to the O-glycoproteome by inducible expression in isogenic cell lines
 3	PXD031548	47273684256	96	committed: independently reviewed	Brief suppression of SUMOylation in embryonic stem cells generates embryo-like structures
 4	PXD056094	48665974421	28	committed: independently reviewed	Animal glue and beyond: palaeoproteomic analysis of paint binders and adhesives in ancient Egypt
-5	PXD014342	48930847953	27	queued: evidence review	A Pleistocene hominin enamel proteome from Homo antecessor
+5	PXD014342	48930847953	27	committed: independently reviewed	A Pleistocene hominin enamel proteome from Homo antecessor
 6	PXD025523	50322281082	58	partial: 46 human RAW reviewed and committed; 12 mouse RAW pending	arrythmogenic right ventricular acrdiomayopathy (PKP2-cko in mice and Human biopsies)
 7	PXD024280	50681318628	36	committed: independently reviewed	SCAI orchestrates DNA interstrand crosslink repair downstream of FANCI-FANCD2 ubiquitylation
 8	PXD074572	51979104726	40	committed: independently reviewed	Ligand‑Resolved In Vivo Phosphoproteomics of the Adult Heart Maps ErbB Signaling by EGF and NRG1β
