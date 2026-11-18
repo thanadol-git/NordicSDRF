@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD074572-egfr-ip.sdrf.tsv",
+  "artifact_sha256": "f40f565a9a7dc21b91e92976e5b88e609d69ca140c8abe1251761b2ead4b8678",
+  "dataset": "PXD074572",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository project",
+      "location": "results/denmark/PXD074572_source_pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository file list",
+      "location": "results/denmark/PXD074572_source_files.json"
+    },
+    {
+      "id": "readme",
+      "kind": "depositor documentation",
+      "location": "results/denmark/PXD074572_source_README.txt"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.sciencedirect.com/science/article/pii/S0022282826001021"
+    },
+    {
+      "id": "runmap",
+      "kind": "depositor run map",
+      "location": "results/denmark/PXD074572_source_IP_experiment_annotation.tsv"
+    },
+    {
+      "id": "params",
+      "kind": "depositor search parameters",
+      "location": "results/denmark/PXD074572_source_IP_fragger.params"
+    },
+    {
+      "id": "supplement",
+      "kind": "published supplementary methods",
+      "location": "https://ars.els-cdn.com/content/image/1-s2.0-S0022282826001021-mmc1.docx",
+      "local_excerpt": "results/denmark/PXD074572_source_IP_supplement_excerpt.txt"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] and condition for all rows",
+      "value": "8 EGFR-IP Bruker .d runs archived as .d.zip",
+      "source_ids": [
+        "files",
+        "readme",
+        "runmap"
+      ],
+      "evidence": "Depositor annotation table maps each acquisition to control or ligand-treated biological replicate; PRIDE file listing contains each RAW file or matching .d.zip stem."
+    },
+    {
+      "location": "organism, heart, age, stage, strain and sampling time",
+      "value": "12-week C57BL/6JRj mouse hearts collected 12 minutes after injection",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Published Methods 2.2: 12-week littermate mice, 10 minutes of ligand stimulation, 1.5 minutes perfusion, 12 minutes total injection to heart collection; PRIDE gives experimental conditions."
+    },
+    {
+      "location": "instrument and acquisition method",
+      "value": "timsTOF Pro DDA",
+      "source_ids": [
+        "pride",
+        "paper",
+        "params"
+      ],
+      "evidence": "PRIDE sample-processing protocol names instruments by subexperiment; paper supplies Exploris LC-MS method; IP FragPipe params specify DDA."
+    },
+    {
+      "location": "affinity enrichment, cleavage, modifications and tolerances",
+      "value": "EGFR immunoprecipitation; on-bead trypsin digestion; 20 ppm precursor/fragment",
+      "source_ids": [
+        "pride",
+        "paper",
+        "params",
+        "supplement"
+      ],
+      "evidence": "Published supplement section On beads digestion protocol specifies 20 µg/ml trypsin in elution buffer 1, then overnight digestion and tryptic peptide mixtures. IP FragPipe params specify matching stricttrypsin search, modifications and 20 ppm tolerances."
+    }
+  ],
+  "known_limitations": [
+    "PRIDE archives each Bruker .d acquisition as a matching .d.zip; ZIP members were not inspected because archive access was unavailable. The depositor-supplied .d names and one-to-one ZIP stems are used."
+  ]
+}
