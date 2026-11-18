@@ -1,0 +1,21 @@
+{
+  "accession": "PXD043606",
+  "artifact": "annotations/PXD043606-paint.sdrf.tsv",
+  "sha256": "ea2cdf3109a18e27987e5ec6e18ee5337cf44e671b3f0f7b3e12855bf2fde3e1",
+  "pride_record": "https://www.ebi.ac.uk/pride/archive/projects/PXD043606",
+  "publication": {
+    "doi": "10.1038/s41598-024-63455-4",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11150381/"
+  },
+  "local_evidence": {
+    "project": "scratchpad/PXD043606/pride.json",
+    "files": "scratchpad/PXD043606/files.json",
+    "raw_names": "scratchpad/PXD043606/raw_selected.json",
+    "samples": "scratchpad/PXD043606/samples.tsv",
+    "technical": "scratchpad/PXD043606/technical.tsv"
+  },
+  "file_list_assertion": "Two paint RAWs selected from three accession-scoped RAWs; procedural blank 2008 excluded. Both selected files appear exactly once.",
+  "biological_evidence": "Publication Table 1 directly maps museum sample UV1 to LC-MS ID 2009 and UV2 to ID 2010. Both contain bovine collagen attributed to original calfskin hide-glue binder. The organism and skin entries denote inferred binder origin, not a pure single-species sample. Both paint samples also contain modern human saliva proteins; UV1 includes trace plant proteins, so mixed-species nature must be considered when reusing this SDRF. Publication additionally detects bovine beta-casein in UV1 and Bovidae alpha-S1-casein in UV2; their origin cannot be assigned to saliva versus paint production.",
+  "technical_evidence": "Publication Methods document sequential rLysC and trypsin digestion and Exploris 480 top-10 DDA with 350-1400 m/z MS1, 30 NCE, 1.2 m/z isolation. Both proteases are represented.",
+  "limitations": "Procedural blank excluded. The SDRF identifies the paint as a mixed matrix. Bos taurus calfskin hide glue is an inferred original binder; human saliva and plant proteins are detected contributions, not asserted original binder ingredients. Animal age, sex and pathology unknown. Casein provenance is unresolved."
+}
