@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD056094_HF.sdrf.tsv",
+  "artifact_sha256": "dddc3f21468b01c6a05b8e9d40de547ab0ba000502841c93c4820c6e39f9ccdf",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues in the three-run Q Exactive HF subset.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh delegated reviewer; inspected only the target SDRF, specification, accession-scoped evidence and original PRIDE/publication sources."
+  },
+  "evidence_manifest": "results/denmark/PXD056094_HF_evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "ms-proteomics v1.1.0 is the declared and applicable template; inherited base and sample-metadata columns, order, row shape and repeated columns checked. Official validator and bundled structure check passed."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Nine controlled labels passed the bundled ontology checker. Its two apparent missing terms are valid: Unimod records 28 and 27 explicitly name Gln->pyro-Glu and Glu->pyro-Glu at peptide N-termini; all remaining accessions and values passed the official validator."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project PXD056094 and its 56-file inventory match the accession. Original paper PMC13510678 Methods confirm AE1045/AE1060 Q Exactive HF, data-dependent top-10 HCD, rLysC then trypsin, 4.5/20 ppm errors, and listed search modifications. Table 1 identifies three artifact samples and their animal protein results."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "All 56 file records have projectAccessions PXD056094. The three case-sensitive SDRF RAW names exactly match all deposited AE1045/AE1060 RAW files among 28 RAW files; no missing, duplicate or non-RAW file in this instrument subset."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Three rows, three unique assay/source names, and three distinct RAW files; AE1045 one spot and AE1060 two distinct paint layers. Biological replicate and technical replicate 1 for each distinct sample; label-free single-fraction DDA runs. No unsupported factor or multiplexing design asserted."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "The artifact material is paint/adhesive from ancient objects. The paper reports animal taxa as analytical identifications, so not applicable for a single source organism, organism part, cell type and disease avoids unsupported specimen biology. No sample-level age, treatment or species is fabricated; selected HF subset is complete."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -s <artifact> -t ms-proteomics --use_ols_cache_only exited 0 and printed Everything seems to be fine. python3 -m tools structure exited 0; python3 -m tools score exited 0 (88/100). python3 -m tools check exited 1 solely for Unimod 27/28 absent from its OLS lookup; both independently resolved against official Unimod records."
+    }
+  },
+  "findings": []
+}

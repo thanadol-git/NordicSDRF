@@ -1,0 +1,264 @@
+{
+  "accession": "PXD056094",
+  "title": "Animal glue and beyond: palaeoproteomic analysis of paint binders and adhesives in ancient Egypt",
+  "additionalAttributes": [],
+  "projectDescription": "Protein-based materials of animal origin, such as glue or egg, are known to have been used as binding media in paints and adhesives in ancient Egypt. Despite having a wealth of artworks from this period in collections worldwide, the number of analytical studies on the organic media of these pieces is limited, especially since micro-samples are often required. Over the past two decades, the introduction of high-resolution tandem mass spectrometry (MS)-based proteomics has allowed confident identification of ancient protein remains. In this study, we used MS-based proteomics to analyse micro-samples from multiple ancient Egyptian artefacts, such as painted wooden coffins, cartonnages, wall paintings, and limestone architectural elements, dating 1425 BCE \u2013 400 CE, from the collections of the Medelhavsmuseet in Stockholm (Sweden), the British Museum in London (UK) and the Ny Carlsberg Glyptotek in Copenhagen (Denmark). Our analytical approach allowed the identification of traditional proteinaceous binders and adhesives, such as egg and glue, as well as their species of origin. Interestingly, MS-based proteomics also revealed the unexpected presence of seed storage proteins from sesame and moringa and other plant proteins previously undocumented in artworks from ancient Egypt. Their identification might be the first taxonomical confirmation of the presence and use of sesame and moringa products in ancient Egypt. This prompts new ideas about the origin of the materials, their intentionality and connection with deities, and their interpretation within the artistic, cultural and economic contexts of ancient Egypt. The findings in this research demonstrate how proteomics can provide new evidence to advance the understanding of the biological origin and use of protein sources in art, along with identifying unconventional materials that could not have been detected with other analytical strategies. Our study demonstrates that combining scientific data with information from archeological evidence and textual sources, is necessary for understanding the nature of binding media and adhesives in ancient Egypt.",
+  "sampleProcessingProtocol": "100 \u03bcL of an aqueous buffer containing guanidinium chloride (GuHCl) 2M, tris(2-carboxyethyl)phosphine) (TCEP) 10 mM, chloroacetamide (CAA) 20 mM, and Tris 100 mM, were added to each sample and incubated for 3 hours at 80\u00b0C. After digestion for 2 hours at 37\u00b0C with 0.2 \u03bcg rLysC (Promega, Sweden), samples were diluted to a final concentration of 0.6 M GuHCl by adding a solution of 25 mM Tris in 10% acetonitrile (ACN) and finally digested overnight under agitation at 37\u00b0C with 0.8 \u03bcg Trypsin (Promega, Sweden). Digestion was quenched by acidifying the solution to pH 2 using 10% trifluoroacetic acid (TFA). After centrifugation, the supernatant was recovered and the peptides collected on in-house made C18 extraction stage tip. A blank control, containing only the reagents for proteomics sample preparation, was analysed together with each batch of samples.   Stage tips were eluted only with 30 \u03bcL 40% ACN, 0.1% TFA to better maintain the column and avoid higher weight contaminants. Peptides were separated with a 77 min gradient on a 15 cm column, also prepared in-house as above. LC buffers were the same, and peptides were separated with increasing buffer B (up to 80% at 62 min), with a flow rate of 250 nL/min. While the nLC system was the same, these samples were analysed by an Q-Exactive HF-X (Thermo Scientific, Bremen, Germany). Differences to the HF method are summarised here: MS1- m/z range 350\u20131400, max IT of 25 ms; MS2- NCE of 28, isolation window of 1.2 m/z, and dynamic exclusion of 20 s.  For both LC-MS/MS methods, a wash-blank method using 0.1% TFA and 5% ACN was run before and between samples to hinder cross-contamination.",
+  "dataProcessingProtocol": "Raw data were processed with the MaxQuant software version 1.6.1.0. The MS/MS spectra were searched against a in-house database containing publicly available sequences of the most common proteins found in artistic materials (collagens, egg and milk proteins). A follow-up search, using a recently published database that includes COL1\u03b11 and COL1\u03b12 sequences for several African Bovidae species, was performed for samples containing collagen proteins associated with Caprinae. All spectra were also searched against a wider database (SwissProt database from UniProt, January 2017) in order to search for proteins originating from other sources. Samples showing the presence of plant origin proteins when using the SwissProt database underwent a third search against a more restricted database including all land-green plants with seeds (Embryophyta). The following modifications were set for the database searching: carbamidomethylation (C) as fixed modification; methionine (M) oxidation, deamidation of glutamine (Q) and asparagine (N), conversion of N-terminal Q and glutamic acid (E) to pyroglutamic acid (pyro-E), and hydroxyproline as variable modifications. Trypsin was set as the digestion enzyme. Peptides were searched with maximum two missed cleavages and minimum peptide length was set at 7. The minimum score for both modified and unmodified peptides was set to 40 and protein false discovery rate (FDR) was set at 0.01. Contaminant proteins were assessed using the contamination.fasta provided by MaxQuant, which includes common laboratory contaminants, and omitted from further analysis. Proteins were confidently identified when at least two unique and non-overlapping peptides were observed, unless otherwise specified. Peptides were considered species-diagnostic when, after search against the entire NCBI protein database using the pBLAST alignment tool, they could be assigned to a single species, or to a limited number among which only one could be considered plausible according to the nature of the material analysed (its geographic origin and dating). Following the parsimony principle, when a protein could not be attributed to a specific species, it was assigned to the same species of proteins from the same sample, if the unspecific peptides were compatible with that species. The degree of deamidation was evaluated using a publicly available tool (https://github.com/dblyon/deamidation). The Dependent Peptides algorithm of MaxQuant (FDR 0.01) was used to investigate the presence of other post translational modifications (PTMs) and an additional search was performed adding some known variable modifications associated to photo-oxidation.",
+  "projectTags": [],
+  "keywords": [
+    "Paint binder",
+    "Palaeoproteomics",
+    "Ancient egypt",
+    "Adhesives",
+    "Animal glue",
+    "Plant proteins"
+  ],
+  "doi": "",
+  "submissionType": "PARTIAL",
+  "license": "Creative Commons Public Domain (CC0)",
+  "submissionDate": "2024-09-23",
+  "publicationDate": "2026-08-24",
+  "submitters": [
+    {
+      "title": "Miss",
+      "firstName": "Clara",
+      "lastName": "Granzotto",
+      "identifier": "2270705",
+      "affiliation": "The Art Institute of Chicago",
+      "email": "cgranz@artic.edu",
+      "country": "United States",
+      "orcid": "0000-0002-7839-4326",
+      "name": "Clara Granzotto",
+      "id": "2270705"
+    }
+  ],
+  "labPIs": [
+    {
+      "title": "Dr",
+      "firstName": "Enrico",
+      "lastName": "Cappellini",
+      "identifier": "3005166",
+      "affiliation": "Globe Institute, Faculty of Health and Medical Science, University of Copenhagen, \u00d8ster Farimagsgade 5, 1353, Copenhagen, Denmark",
+      "email": "ecappellini@sund.ku.dk",
+      "country": "",
+      "orcid": "",
+      "name": "Enrico Cappellini",
+      "id": "3005166"
+    }
+  ],
+  "instruments": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "MS",
+      "accession": "MS:1002523",
+      "name": "Q Exactive HF"
+    }
+  ],
+  "softwares": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "MS",
+      "accession": "MS:1001583",
+      "name": "MaxQuant"
+    }
+  ],
+  "experimentTypes": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000428",
+      "name": "Bottom-up proteomics"
+    }
+  ],
+  "quantificationMethods": [],
+  "countries": [
+    "United States"
+  ],
+  "sampleAttributes": [
+    {
+      "@type": "Tuple",
+      "key": {
+        "cvLabel": "EFO",
+        "accession": "EFO:0000635",
+        "name": "organism part"
+      },
+      "value": [
+        {
+          "cvLabel": "BTO",
+          "accession": "BTO:0001226",
+          "name": "seed"
+        },
+        {
+          "cvLabel": "BTO",
+          "accession": "BTO:0000369",
+          "name": "egg"
+        }
+      ]
+    },
+    {
+      "@type": "Tuple",
+      "key": {
+        "cvLabel": "EFO",
+        "accession": "OBI:0100026",
+        "name": "organism"
+      },
+      "value": [
+        {
+          "cvLabel": "NEWT",
+          "accession": "NEWT:9913",
+          "name": "Bos taurus (Bovine)"
+        },
+        {
+          "cvLabel": "NEWT",
+          "accession": "NEWT:4572",
+          "name": "Triticum urartu"
+        },
+        {
+          "cvLabel": "NEWT",
+          "accession": "NEWT:4182",
+          "name": "Sesamum indicum"
+        },
+        {
+          "cvLabel": "NEWT",
+          "accession": "NEWT:4565",
+          "name": "Triticum aestivum (Wheat)"
+        },
+        {
+          "cvLabel": "NEWT",
+          "accession": "NEWT:9793",
+          "name": "Equus asinus (Donkey)"
+        },
+        {
+          "cvLabel": "NEWT",
+          "accession": "NEWT:142809",
+          "name": "Secale cereale x Triticum turgidum subsp. durum"
+        },
+        {
+          "cvLabel": "NEWT",
+          "accession": "NEWT:9031",
+          "name": "Gallus gallus (Chicken)"
+        },
+        {
+          "cvLabel": "NEWT",
+          "accession": "NEWT:3735",
+          "name": "Moringa oleifera (Horseradish tree) (Moringa pterygosperma)"
+        },
+        {
+          "cvLabel": "NEWT",
+          "accession": "NEWT:59534",
+          "name": "Oryx dammah"
+        },
+        {
+          "cvLabel": "NEWT",
+          "accession": "NEWT:9796",
+          "name": "Equus caballus (Horse)"
+        }
+      ]
+    }
+  ],
+  "organisms": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "NEWT",
+      "accession": "NEWT:142809",
+      "name": "Secale cereale x triticum turgidum subsp. durum"
+    },
+    {
+      "@type": "CvParam",
+      "cvLabel": "NEWT",
+      "accession": "NEWT:4572",
+      "name": "Triticum urartu"
+    },
+    {
+      "@type": "CvParam",
+      "cvLabel": "NEWT",
+      "accession": "NEWT:4182",
+      "name": "Sesamum indicum"
+    },
+    {
+      "@type": "CvParam",
+      "cvLabel": "NEWT",
+      "accession": "NEWT:9793",
+      "name": "Equus asinus (donkey)"
+    },
+    {
+      "@type": "CvParam",
+      "cvLabel": "NEWT",
+      "accession": "NEWT:9796",
+      "name": "Equus caballus (horse)"
+    },
+    {
+      "@type": "CvParam",
+      "cvLabel": "NEWT",
+      "accession": "NEWT:9031",
+      "name": "Gallus gallus (chicken)"
+    },
+    {
+      "@type": "CvParam",
+      "cvLabel": "NEWT",
+      "accession": "NEWT:3735",
+      "name": "Moringa oleifera (horseradish tree) (moringa pterygosperma)"
+    },
+    {
+      "@type": "CvParam",
+      "cvLabel": "NEWT",
+      "accession": "NEWT:9913",
+      "name": "Bos taurus (bovine)"
+    },
+    {
+      "@type": "CvParam",
+      "cvLabel": "NEWT",
+      "accession": "NEWT:4565",
+      "name": "Triticum aestivum (wheat)"
+    },
+    {
+      "@type": "CvParam",
+      "cvLabel": "NEWT",
+      "accession": "NEWT:59534",
+      "name": "Oryx dammah"
+    }
+  ],
+  "organismParts": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "BTO",
+      "accession": "BTO:0001226",
+      "name": "Seed"
+    },
+    {
+      "@type": "CvParam",
+      "cvLabel": "BTO",
+      "accession": "BTO:0000369",
+      "name": "Egg"
+    }
+  ],
+  "diseases": [],
+  "references": [
+    {
+      "pubmedID": 0,
+      "doi": "10.1126/SCIADV.ADY3618"
+    }
+  ],
+  "identifiedPTMStrings": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "MOD",
+      "accession": "MOD:00425",
+      "name": "monohydroxylated residue"
+    },
+    {
+      "@type": "CvParam",
+      "cvLabel": "MOD",
+      "accession": "MOD:01160",
+      "name": "deaminated residue"
+    },
+    {
+      "@type": "CvParam",
+      "cvLabel": "MOD",
+      "accession": "MOD:00397",
+      "name": "iodoacetamide derivatized residue"
+    }
+  ],
+  "totalFileDownloads": 0
+}
