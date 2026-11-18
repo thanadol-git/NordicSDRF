@@ -16,6 +16,6 @@ batch_order	accession	pride_raw_bytes	pride_raw_count	annotation_status	title
 15	PXD010527	43917001277	33	held: 20-run draft failed independent review; DDA mode undocumented	SPOP promotes transcriptional expression of DNA repair and replication factors to prevent replicatio
 16	PXD016522	43966521762	41	held: 41-run draft failed independent review; file series and fractions unexplained	A draft genome sequence of the elusive giant squid, Architeuthis dux
 17	PXD007991	44110936311	37	held: acquisition mode undocumented; 19 runs have mixed Lys-C/Trypsin digest	Molecular Basis of the mechanisms controlling MASTL - Proteomics analysis of MASTL substrate proteom
-18	PXD048346	44159604671	33	partial: 12/33 RAW approved in R1276 and R0266; 9 R0406 in review; 12 culture held for mixed digest	Pupylation-based proximity labelling reveals regulatory factors in cellulose biosynthesis in Arabido
+18	PXD048346	44159604671	33	partial: 21/33 RAW approved in R1276, R0266 and R0406; 12 culture held for mixed digest	Pupylation-based proximity labelling reveals regulatory factors in cellulose biosynthesis in Arabido
 19	PXD045602	44195349232	28	held: combined trypsin/Glu-C digest conflicts with single-value cleavage field	Mesenteric artery smooth muscle cells from hypertensive rats have increased microtubule acetylation
 20	PXD042172	44681222707	23	partial: 8/23 glycopeptide RAW approved; 9 DIA proteomics and 6 glycan RAW remain	Cell surface-specific N-glycoproteomics
