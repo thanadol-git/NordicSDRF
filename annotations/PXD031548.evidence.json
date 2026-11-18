@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD031548.sdrf.tsv",
+  "dataset": "PXD031548",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "results/denmark/PXD031548_source_pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository file list",
+      "location": "results/denmark/PXD031548_source_files.json"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.cell.com/cell-reports/fulltext/S2211-1247(23)00391-1"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "cell-line registry",
+      "location": "https://www.cellosaurus.org/CVCL_2167"
+    },
+    {
+      "id": "inventory",
+      "kind": "derived run map",
+      "location": "results/denmark/PXD031548_run_inventory.tsv"
+    },
+    {
+      "id": "build",
+      "kind": "deterministic repeated-cleavage generator",
+      "location": "results/denmark/PXD031548_build_cleavage.py"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file], source name, technical replicate, fraction identifier, all 96 rows",
+      "value": "96 RAW acquisitions from 8 biological preparations, each analyzed in 6 fractions by Standard and Sensitive methods",
+      "source_ids": [
+        "files",
+        "pride",
+        "inventory"
+      ],
+      "evidence": "Every PRIDE RAW filename matches (1D or 8D) × replicate 01–04 × fraction F1–F6 × standard or x-suffixed Sensitive acquisition. PRIDE protocol explicitly says six StageTip fractions and two technical methods, with x indicating Sensitive."
+    },
+    {
+      "location": "characteristics[organism], cell type, cell line and Cellosaurus accession, all rows",
+      "value": "Mus musculus ES-R1 embryonic stem cells, CVCL_2167",
+      "source_ids": [
+        "pride",
+        "cellosaurus"
+      ],
+      "evidence": "PRIDE sample protocol names mouse ES-R1 cells; Cellosaurus CVCL_2167 identifies ES-R1 as a mouse embryonic stem cell line."
+    },
+    {
+      "location": "characteristics[sex], all rows",
+      "value": "male",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Cellosaurus CVCL_2167 records the sex of the source cell line as male."
+    },
+    {
+      "location": "characteristics[SUMOylation inhibition history] and factor value, all rows",
+      "value": "1D untreated control versus 8D ML-792 2.5 µM for 48 h followed by 5 d recovery",
+      "source_ids": [
+        "pride",
+        "files"
+      ],
+      "evidence": "PRIDE sample protocol identifies untreated D1 and recovered D8 conditions after 48 h ML-792 treatment and 5 d recovery; raw names encode 1D and 8D."
+    },
+    {
+      "location": "comment[instrument] and acquisition method, all rows",
+      "value": "Orbitrap Exploris 480 DDA HCD",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sample-processing protocol names Orbitrap Exploris 480, precursor selection and HCD fragmentation."
+    },
+    {
+      "location": "comment[cleavage agent details], two repeated columns, all rows",
+      "value": "Lys-C followed by Asp-N",
+      "source_ids": [
+        "pride",
+        "build"
+      ],
+      "evidence": "PRIDE protocol describes Lys-C digestion, SUMO2/3 peptide immunoprecipitation with 8A2, then Asp-N digestion. The source table has both enzymes, and the deterministic generator expands them into repeated SDRF cleavage columns."
+    },
+    {
+      "location": "characteristics[developmental stage] and characteristics[strain or breed], all rows",
+      "value": "blastula stage; 129X1/SvJ x 129S1/Sv-Oca2+Tyr+KitlSl-J",
+      "source_ids": [
+        "cellosaurus"
+      ],
+      "evidence": "Cellosaurus CVCL_2167 identifies the donor age at sampling as Blastocyst stage and the cell-line source breed/subspecies as 129X1/SvJ x 129S1/Sv-Oca2+Tyr+KitlSl-J. The ontology maps the documented mammalian blastocyst to blastula stage (UBERON:0000108)."
+    }
+  ],
+  "limitations": [
+    "The validator cannot resolve exact ES-R1 in its CLO/BTO/EFO ontology cache; Cellosaurus CVCL_2167 verifies the exact line and the SDRF preserves that accession.",
+    "The deposited search protocol mentions Lys-C, Asp-N and Glu-N in silico; Glu-N is not listed as a physical digestion reagent, so it is not declared.",
+    "Detailed SUMO remnant search modifications and mass tolerances were not encoded because the deposited prose is insufficient for reliable SDRF values.",
+    "The reconcile helper reads repeated cleavage headers as one field and can report an incomplete digest even when both physical enzymes are present."
+  ],
+  "artifact_sha256": "1af804d229eab39ed54d3e8a97f2d7d400ddc106e44ef66afb8fc2d8330c8fb4"
+}

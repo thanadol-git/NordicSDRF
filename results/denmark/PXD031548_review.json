@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD031548.sdrf.tsv",
+  "artifact_sha256": "1af804d229eab39ed54d3e8a97f2d7d400ddc106e44ef66afb8fc2d8330c8fb4",
+  "verdict": "PASS",
+  "summary": "Independent source, ontology, mapping, design, and template checks found no blocking or important issues.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh review agent; no producer transcript or prior reviews used"
+  },
+  "evidence_manifest": "annotations/PXD031548.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "30 columns and 96 uniform data rows; active ms-proteomics, vertebrates, cell-lines v1.1.0 independently derived from template declarations and validated together by parse_sdrf (exit 0). Repeated template and cleavage columns are intentional."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Cellosaurus CVCL_2167 confirms ES-R1, mouse, male, blastocyst donor age and exact hybrid strain. UBERON:0000358 blastocyst occurs during UBERON:0000108 blastula stage; bare label blastula stage is valid for developmental-stage column. Instrument MS:1003028 matches PRIDE. Physical Lys-C MS:1001309 and Asp-N MS:1001304, DDA PRIDE:0000627 and HCD MS:1000422 match records/protocol. No obsolete or wrong-family term found."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Re-read PXD031548 project record and accession-asserted 98-file list, primary Cellosaurus CVCL_2167 entry, and UBERON term relations. PRIDE protocol supports mouse ES-R1, ML-792 2.5 \u00b5M for 48h then 5d recovery, 6 StageTip fractions, paired Standard/Sensitive acquisitions, Exploris 480 DDA/HCD, Lys-C then Asp-N."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "All 96 PRIDE RAW names appear exactly once in 96 SDRF rows, with no extra or missing raw file; all 98 fetched file records assert projectAccessions PXD031548."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "8 biological preparations: 4 per condition; each has six fractions and two technical acquisitions. Independent filename-to-row comparison found zero mismatches in source, biological replicate, fraction, technical replicate or factor."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Cellosaurus supports donor blastocyst stage and hybrid strain, without asserting cultured cells remain an embryo. SDRF uses broader blastula stage, avoiding unsupported finer stage. No unsupported per-preparation age/strain differences. Search-only Glu-N is not represented as physical cleavage."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t vertebrates -t cell-lines --use_ols_cache_only exited 0 with warnings for exact line/strain lookup; python3 -m tools check --offline exited 0 CLEAN; python3 -m tools score exited 0, 94/100. Online check was unavailable due sandbox DNS; offline check completed."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file; comment[modification parameters], comment[precursor mass tolerance], comment[fragment mass tolerance]",
+      "message": "These recommended search-parameter fields are omitted. Add only where deposited search parameters support reliable values.",
+      "evidence": "ms-proteomics 1.1.0 YAML marks each recommended; score reports them absent, while parse_sdrf passes."
+    }
+  ]
+}

@@ -7,3 +7,5 @@ Before starting each PXD, rerun `python scripts/batches/check_pxd_absent.py PXDn
 PXD070086: 36 acquisitions in 12 condition/capture groups, all matched to the deposited design and ZIP archive. Official `parse_sdrf` validation, structural checks, and independent review passed. The first review found a control-label error; the corrected SDRF records non-antibody-conjugated control beads as stated in the paper and passed a fresh independent review.
 
 PXD018217: 32 RAW acquisitions in four CHROMASS groups, four biological preparations and two technical injections each. Lys-C and Trypsin are both recorded as repeated cleavage columns. Official validation and independent review passed; unspecified search tolerances and modifications were left out.
+
+PXD031548: 96 RAW acquisitions from eight ES-R1 biological preparations, six fractions, and two technical acquisition methods. Donor stage and hybrid strain trace to Cellosaurus CVCL_2167. Official validation, structural checks, and independent adversarial review passed; the sole ontology warnings concern the exact ES-R1 line and hybrid strain absent from the validator cache.

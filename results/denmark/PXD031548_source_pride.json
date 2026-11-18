@@ -1,0 +1,166 @@
+{
+  "accession": "PXD031548",
+  "title": "Brief suppression of SUMOylation in embryonic stem cells generates embryo-like structures",
+  "additionalAttributes": [],
+  "projectDescription": "Recent advances in synthetic mammalian embryo models have opened new avenues to understand the complex events controlling lineage specification and morphogenetic processes occurring during peri-implantation and early organogenesis. Two main strategies have been developed to build embryo-like structures (ELSs): by assembling extraembryonic and embryonic stem cells (ESCs) or by subjecting ESCs to various morphogens. Here, we show that mouse ESCs solely exposed to chemical inhibition of SUMOylation, a post-translational modification which acts as a general chromatin barrier to cell fate transitions, generates ELSs comprising both anterior neural and trunk-associated regions. HypoSUMOylation-instructed ESCs first give rise to adherent spheroids which, once in suspension, self-organize into gastrulating structures containing cell types spatially and functionally related to embryonic and extraembryonic compartments. Alternatively, spheroids cultured in an optimized droplet-microfluidic device form elongated structures that undergo axial organization reminiscent of natural embryo morphogenesis. Single-cell RNA-sequencing further revealed a variety of cellular lineages including properly positioned anterior neuronal cell types, Schwann cell precursors and paraxial mesoderm segmented into somite-like structures. Mechanistically, transient SUMOylation suppression gradually increases DNA methylation genome-wide and repressive marks deposition at Nanog, enhancing ESC plasticity. Our approach provides a proof of principle for a potential strategy to study early embryogenesis by targeting molecular roadblocks of cell fate change to shape multicellular architecture.",
+  "sampleProcessingProtocol": "Mouse ES-R1 cells were maintained in serum+Lif (SL) medium (KnockOut DMEM with 15% ES cell qualified FBS, 1% GlutaMAX, 1% MEM non-essential amino acids, 1% penicillin-streptomycin, 0.1 mM 2-mercaptoethanol, 10 ng/mL Lif) on gelatin-coated plates in a humidified incubator (37\u00b0C, 5% CO2). ES-R1 cells were plated at a density of 6 million cells per 150 mm dish in SL medium supplemented with 2.5 \u00b5M of the SUMO-activating enzyme inhibitor ML-792 (Takeda). Medium was replaced the next day to refresh ML-792 treatment. After 48 h of ML-792 treatment, plates were rinsed twice with PBS then cells were allowed to recover in SL for 5 days. Untreated control cells (\u201cD1\u201d condition) or cells having recovered from the treatment (\u201cD8\u201d condition) were amplified to reach approximately 200 million cells per replicate (7 dishes). Cells were washed twice with ice-cold PBS and collected on ice by scraping. Cells were centrifuged at 1,000g for 5 min at 4\u00b0C, after which the cells were vigorously lysed in 5 mL of guanidine lysis buffer (6 M guanidine hydrochloride, 50 mM Tris-HCl pH 8.5) and snap frozen in liquid nitrogen. Samples were stored at -80\u00b0C until processing.  Sample preparation and SUMO-IP for native and endogenous mass spectrometry (MS) analysis was performed as described previously (Hendriks et al., Nature Communications, 2018). Briefly, lysates were digested with Lys-C, peptides were purified on C8 SepPak and lyophilized, after which they were dissolved in IAP buffer and immunoprecipitated using (per sample) 12.5 \u03bcL of 8A2 anti-SUMO2/3 antibody coupled to (per sample) 35 \u03bcL Protein G Agarose beads. To shorten the SUMO C-terminus to DVFQQQTGG, and to shorten the target peptides to a length feasible for MS analysis, second-stage digestion of SUMOylated peptides was performed with Endoproteinase Asp-N. High-pH fractionation of SUMOylated peptides was performed on StageTip, with quad-layer StageTips were prepared using four punch-outs of C18 material (Sigma-Aldrich, Empore\u2122 SPE Disks, C18, 47 mm). StageTips were equilibrated using 100 \u03bcL of 100 \u03bcL of methanol, 100 \u03bcL of 80% acetonitrile (ACN) in 200 mM ammonium, and two times 75 \u03bcL 50 mM ammonium. Samples were thawed out, and supplemented with 1/10th volume of 200 mM ammonium, just prior to loading them on StageTip. The StageTips were subsequently washed twice with 150 \u03bcL 50 mM ammonium, and afterwards eluted as six fractions (F1-6) using 40 \u03bcL of 4, 7, 10, 13, 17, and 25% ACN in 50 mM ammonium. All fractions were dried to completion in LoBind tubes, using a SpeedVac for 3 h at 60\u00b0C, after which the dried peptides were dissolved using 11 \u03bcL of 0.1% formic acid.  All samples were analyzed using an EASY-nLC 1200 system (Thermo) coupled to an Orbitrap Exploris\u2122 480 mass spectrometer (Thermo). Samples were analyzed as two technical replicates, with 5 \u03bcL of sample injected per run. The two technical methods for analyzing the samples are from here on referred to as \u201cStandard\u201d and \u201cSensitive\u201d methods, with an \u201cx\u201d at the end of a RAW file name indicating the Sensitive method was used. Separation of peptides was performed using 15-cm columns (75 \u03bcm internal diameter) packed in-house with ReproSil-Pur 120 C18-AQ 1.9 \u00b5m beads (Dr. Maisch). Elution of peptides from the column was achieved using a gradient ranging from buffer A (0.1% formic acid) to buffer B (80% acetonitrile in 0.1% formic acid), at a flow of 250 nL/min. Gradient length was 65 or 50 min per sample, including ramp-up and wash-out, with an analytical gradient of 40 or 30 min, for the Standard and Sensitive methods, respectively. The buffer B ramp for the analytical gradient was as follows: F1: 13-24%, F2: 14-27%, F3-5: 15-30%, F6: 17-32%. The analytical column was heated to 40\u00b0C using a column oven, and ionization was achieved using a NanoSpray Flex\u2122 NG (Thermo) with the spray voltage set at 2 kV, an ion transfer tube temperature of 275\u00b0C, and an RF funnel level of 50%. Full scan range was set to 500-1,500 m/z with a precursor selection window of 550-1,500 m/z, MS1 resolution to 120,000, MS1 AGC target to \u201c200\u201d (=2,000,000 charges), and MS1 maximum injection time to \u201cAuto\u201d. Monoisotopic Precursor Selection (MIPS) was enabled in \u201cPeptide\u201d mode, without relaxation of restrictions in case insufficient precursors were observed. Precursor intensity threshold was set to 80,000 (Normal) or 40,000 (Sensitive). Precursors with charges 2-6 (Normal) or 3-6 (Sensitive) were selected for fragmentation using an isolation width of 1.3 m/z, and fragmented using higher-energy collision disassociation (HCD) with normalized collision energy of 25. Precursors were excluded from re-sequencing by setting a dynamic exclusion of 40 s (Normal) or 30 s (Sensitive), and with an exclusion mass tolerance of 15 ppm. MS2 resolution was set to 60,000, MS2 AGC target to \u201c200\u201d (=200,000 charges), and MS2 maximum injection time to 250 ms (Normal) or 500 ms (Sensitive). Data-dependent scans were limited to 3 (Normal) or 2 (Sensitive) per duty cycle.",
+  "dataProcessingProtocol": "All MS RAW data was analyzed using the freely available MaxQuant software, version 1.5.3.30 (Cox and Mann, 2008; Cox et al., 2011). All data was processed in a single computational run, with exceptions to default MaxQuant settings specified below. For generation of the theoretical spectral library, the mouse FASTA database was downloaded from Uniprot on the 14th of February, 2020. The mature sequence of SUMO2 was inserted in the database to allow for detection of free SUMO. In silico digestion of theoretical peptides was performed with Lys-C, Asp-N, and Glu-N, allowing up to 8 missed cleavages. Variable modifications used were protein N-terminal acetylation, methionine oxidation, peptide N-terminal pyroglutamate, and Lys SUMOylation, with a maximum of 3 modifications per peptide. The SUMO mass remnant was defined as described previously (Hendriks et al., 2018); DVFQQQTGG, H60C41N12O15, monoisotopic mass 960.4301, neutral loss b7-DVFQQQT, diagnostic mass remnants [b2-DV, b3-DVF, b4-DVFQ, b5-DVFQQ, b6-DVFQQQ, b7-DVFQQQT, b9-DVFQQQTGG, QQ, FQ, FQQ]. Label-free quantification was enabled, with \u201cFast LFQ\u201d disabled. Maximum peptide mass was set to 6,000 Da. Stringent MaxQuant 1% FDR filtering was applied (default), and additional automatic filtering was ensured by setting the minimum delta score for modified peptides to 20, with a site decoy fraction of 2%. Second peptide search was disabled. Matching between runs was enabled, with a match time window of 1 min and an alignment window of 20 min. For protein quantification, the same variable modifications were included as for the peptide search.",
+  "projectTags": [],
+  "keywords": [
+    "Embryo-like structures",
+    "Repression",
+    "Sumo",
+    "Endogenous",
+    "Stem cells",
+    "Spheroids",
+    "Chromatin"
+  ],
+  "doi": "",
+  "submissionType": "PARTIAL",
+  "license": "Creative Commons Public Domain (CC0)",
+  "submissionDate": "2022-02-09",
+  "publicationDate": "2023-04-13",
+  "submitters": [
+    {
+      "title": "Dr",
+      "firstName": "Ivo",
+      "lastName": "Hendriks",
+      "identifier": "6950105",
+      "affiliation": "Proteomics program, Novo Nordisk Foundation Center for Protein Research, Faculty of Health and Medical Sciences, University of Copenhagen, Blegdamsvej 3B, 2200 Copenhagen, Denmark",
+      "email": "ivo.a.hendriks@gmail.com",
+      "country": "Denmark",
+      "orcid": "0000-0002-1439-3701",
+      "name": "Ivo Hendriks",
+      "id": "6950105"
+    }
+  ],
+  "labPIs": [
+    {
+      "title": "Dr",
+      "firstName": "Michael Lund",
+      "lastName": "Nielsen",
+      "identifier": "2353944",
+      "affiliation": "Proteomics program, Novo Nordisk Foundation Center for Protein Research, Faculty of Health and Medical Sciences, University of Copenhagen, Blegdamsvej 3B, 2200 Copenhagen, Denmark",
+      "email": "michael.lund.nielsen@cpr.ku.dk",
+      "country": "",
+      "orcid": "",
+      "name": "Michael Lund Nielsen",
+      "id": "2353944"
+    }
+  ],
+  "instruments": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "MS",
+      "accession": "MS:1003028",
+      "name": "Orbitrap Exploris 480"
+    }
+  ],
+  "softwares": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "MS",
+      "accession": "MS:1001583",
+      "name": "MaxQuant"
+    }
+  ],
+  "experimentTypes": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000433",
+      "name": "Affinity purification coupled with mass spectrometry proteomics"
+    }
+  ],
+  "quantificationMethods": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000312",
+      "name": "Label free"
+    }
+  ],
+  "countries": [
+    "Denmark"
+  ],
+  "sampleAttributes": [
+    {
+      "@type": "Tuple",
+      "key": {
+        "cvLabel": "EFO",
+        "accession": "EFO:0000635",
+        "name": "organism part"
+      },
+      "value": [
+        {
+          "cvLabel": "BTO",
+          "accession": "BTO:0001086",
+          "name": "embryonic stem cell"
+        },
+        {
+          "cvLabel": "CL",
+          "accession": "CL:0002322",
+          "name": "embryonic stem cell"
+        }
+      ]
+    },
+    {
+      "@type": "Tuple",
+      "key": {
+        "cvLabel": "EFO",
+        "accession": "OBI:0100026",
+        "name": "organism"
+      },
+      "value": [
+        {
+          "cvLabel": "NEWT",
+          "accession": "NEWT:10090",
+          "name": "Mus musculus (Mouse)"
+        }
+      ]
+    }
+  ],
+  "organisms": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "NEWT",
+      "accession": "NEWT:10090",
+      "name": "Mus musculus (mouse)"
+    }
+  ],
+  "organismParts": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "CL",
+      "accession": "CL:0002322",
+      "name": "Embryonic stem cell"
+    },
+    {
+      "@type": "CvParam",
+      "cvLabel": "BTO",
+      "accession": "BTO:0001086",
+      "name": "Embryonic stem cell"
+    }
+  ],
+  "diseases": [],
+  "references": [
+    {
+      "referenceLine": "Cossec JC, Traboulsi T, Sart S, Loe-Mie Y, Guthmann M, Hendriks IA, Theurillat I, Nielsen ML, Torres-Padilla ME, Baroud CN, Dejean A. Transient suppression of SUMOylation in embryonic stem cells generates embryo-like structures. Cell Rep. 2023 42(4):112380",
+      "pubmedID": 0,
+      "doi": "10.1016/J.CELREP.2023.112380"
+    }
+  ],
+  "identifiedPTMStrings": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "MOD",
+      "accession": "MOD:01149",
+      "name": "sumoylated lysine"
+    }
+  ],
+  "totalFileDownloads": 3563,
+  "otherOmicsLinks": [
+    "geo:GSE180489",
+    "arrayexpress:E-MTAB-6967"
+  ]
+}
