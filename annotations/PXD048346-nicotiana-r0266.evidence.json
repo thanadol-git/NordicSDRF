@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD048346-nicotiana-r0266.sdrf.tsv",
+  "dataset": "PXD048346",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD048346"},
+    {"id": "pride_files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD048346/files?page=0"},
+    {"id": "paper", "kind": "publication", "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11747095/"},
+    {"id": "supplementary_data_3", "kind": "publication-supplement", "location": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-025-56192-3/MediaObjects/41467_2025_56192_MOESM5_ESM.xlsx"},
+    {"id": "search_r0266", "kind": "repository-search-output", "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/01/PXD048346/Search_R0266.zip"}
+  ],
+  "claims": [
+    {"location": "comment[data file] and assay name rows 1-6", "value": "six accession-scoped R0266 .d.zip runs", "source_ids": ["pride_files", "search_r0266"], "evidence": "The PRIDE file list has exactly six R0266 RAW archives. The deposited MaxQuant summary.txt links the full raw basename of each archive to experiments S1, S2, S4, S5, S7 and S8."},
+    {"location": "source name, characteristics[biological replicate], comment[technical replicate], characteristics[expression construct], factor value[expression construct] rows 1-6", "value": "one PafA-LTI6B source and one PafA-CC1 source, each split into three IP preparations", "source_ids": ["pride", "supplementary_data_3", "search_r0266", "paper"], "evidence": "PRIDE's sample processing protocol states that N. benthamiana extract supernatant was divided into three equal aliquots for independent immunoprecipitation triplicates. Accordingly each construct has one source name, biological replicate 1, and technical IP replicates 1-3. Supplementary Data 3 sheet 'CC1 and LTI6B LFQ' labels Lti6B_rep1, CC1_rep1, Lti6B_rep2, CC1_rep2, Lti6B_rep3, CC1_rep3. Exact Protein IDs and log2 LFQ intensities in deposited proteinGroups.txt match S1, S2, S4, S5, S7 and S8 respectively, with 1221, 1222, 1275, 1281, 1319 and 1304 matching nonzero proteins (absolute difference <0.0001). Off-diagonal matches never exceed one. The paper identifies PafA-LTI6B as a control and PafA-CC1 as the bait. The run map is in results/denmark/PXD048346_R0266_run_map.tsv."},
+    {"location": "characteristics[organism], characteristics[organism part], characteristics[growth condition] rows 1-6", "value": "Nicotiana benthamiana greenhouse-grown leaves collected two days after Agrobacterium infiltration", "source_ids": ["paper"], "evidence": "The protein-expression methods say Agrobacterium carrying PafA-LTI6B or PafA-CC1 constructs was infiltrated into N. benthamiana leaves, with tissues collected two days later from greenhouse-grown plants."},
+    {"location": "comment[proteomics data acquisition method], comment[instrument], comment[cleavage agent details] rows 1-6", "value": "timsTOF Pro PASEF DDA with physical trypsin digestion", "source_ids": ["paper", "search_r0266"], "evidence": "The paper's bead-elution LC-MS method specifies trypsin digestion and timsTOF Pro PASEF. All six R0266 runs are TIMS-DDA in MaxQuant summary.txt. Trypsin/P there is the search setting, not the physical reagent."},
+    {"location": "comment[precursor mass tolerance], comment[fragment mass tolerance], comment[modification parameters] rows 1-6", "value": "10 ppm, 40 ppm, fixed carbamidomethyl C, variable oxidation M and protein N-terminal acetylation", "source_ids": ["search_r0266"], "evidence": "R0266 mqpar.xml sets main search tolerance to 10 ppm and its TIMS TOF parameter group to 40 ppm MS/MS tolerance; summary.txt confirms all three modification settings for each run."}
+  ],
+  "limitations": [
+    "This SDRF covers six R0266 runs only. PXD048346 has 27 other RAW archives in four separate subexperiments.",
+    "The paper gives the Nicotiana plants' age as 3–4 weeks but no formal developmental stage; characteristics[developmental stage] is 'not available'.",
+    "The published rep1-rep3 labels correspond to independent immunoprecipitations of split extract, not independent plants; the SDRF records one biological source and three technical preparations per construct.",
+    "The accession-wide PRIDE protocol includes a separate Q Exactive HF workflow. This R0266 subset is assigned the paper's timsTOF PASEF enrichment workflow and run-specific TIMS-DDA search output."
+  ]
+}
