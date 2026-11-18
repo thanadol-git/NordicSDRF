@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD017475-pulldown.sdrf.tsv",
+  "dataset": "PXD017475",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD017475"
+    },
+    {
+      "id": "files",
+      "kind": "repository file listing",
+      "location": "scratchpad/PXD017475/files.json"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1038/s41467-021-22746-4"
+    },
+    {
+      "id": "supplement2",
+      "kind": "publication supplement",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8080841/supplementaryFiles (41467_2021_22746_MOESM6_ESM.xlsx; description in MOESM4_ESM.pdf)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism], characteristics[cell line], characteristics[material type]; all rows",
+      "value": "Homo sapiens; BJ ER:BRAF; cell line",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE human organism and paper Methods identify BJ ER:BRAF cells."
+    },
+    {
+      "location": "comment[data file]; all rows",
+      "value": "10 accession-matched RAW files",
+      "source_ids": [
+        "files",
+        "supplement2"
+      ],
+      "evidence": "Exact RAW basenames occur in accession-scoped PRIDE files.json. Their sample-code suffixes match MaxQuant Supplementary Table 2B or 2D."
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method], comment[ms1 scan range]; all rows",
+      "value": "Q Exactive HF; top-12 DDA; 300-1700 m/z",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Explicit LC-MS settings in PRIDE sample-processing protocol and paper Methods; structured PRIDE instrument gives generic Q Exactive."
+    },
+    {
+      "location": "characteristics[enrichment oligo target], factor value[enrichment oligo target]; rows 1-10",
+      "value": "luciferase control or MIR31HG oligonucleotide",
+      "source_ids": [
+        "files",
+        "supplement2",
+        "pride"
+      ],
+      "evidence": "RAW Ctrl/MIR31 and Cm/M codes; Supplementary Table 2C explicitly names CTRL and MIR31HG groups; PRIDE pull-down protocol describes antisense oligos for both targets."
+    },
+    {
+      "location": "characteristics[biological replicate]; rows 1-10",
+      "value": "five per target",
+      "source_ids": [
+        "supplement2",
+        "pride"
+      ],
+      "evidence": "Supplementary Table 2C lists CTRL1A, CTRL2A, CTRL1B-3B and MIR31HG_1A, _2A, _1B-3B; PRIDE data-processing protocol says five replicates."
+    },
+    {
+      "location": "comment[cleavage agent details], comment[modification parameters]; rows 1-10",
+      "value": "Trypsin; fixed C carbamidomethyl; variable M oxidation, protein N-term acetylation",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Pull-down sample and search protocols."
+    },
+    {
+      "location": "characteristics[senescence status], characteristics[senescence induction], characteristics[crosslinking]; rows 1-10",
+      "value": "senescent; 4-hydroxytamoxifen 1 uM for 72 h; UV 254 nm",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Paper Results describes UV-crosslinked senescent BJ ER:BRAF pull-down cells; Figure 4 caption specifies 1 uM 4-OHT for 72 h; PRIDE pull-down protocol specifies 254 nm UV irradiation."
+    },
+    {
+      "location": "characteristics[disease]; all rows",
+      "value": "normal",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "The study uses BJ fibroblast-derived ER:BRAF cells and senescence induction, with no disease-derived cell lineage stated."
+    }
+  ],
+  "limitations": [
+    "Engineered BJ ER:BRAF cell line is absent from offline CLO/BTO/EFO lookup, producing a validator warning.",
+    "PRIDE structured instrument field says generic Q Exactive; detailed protocol and paper explicitly say Q Exactive HF.",
+    "Reconcile helper treats the two experiment-specific protocols as one and inspects only the first of repeated cleavage columns; its cleavage warning is not a row-specific contradiction.",
+    "Pull-down MaxQuant 1.5.2.8 search tolerances are not specified; both are not available.",
+    "Dissociation method is not stated in accession-specific protocol; optional comment omitted."
+  ]
+}

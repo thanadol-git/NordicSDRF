@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD074599-phospho.sdrf.tsv",
+  "dataset": "PXD074599",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository project",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD074599"
+    },
+    {
+      "id": "files",
+      "kind": "accession-scoped PRIDE file list",
+      "location": "scratchpad/PXD074599/files.json"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.nature.com/articles/s41375-026-03122-x"
+    },
+    {
+      "id": "methods",
+      "kind": "publication supplementary methods",
+      "location": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41375-026-03122-x/MediaObjects/41375_2026_3122_MOESM2_ESM.docx"
+    },
+    {
+      "id": "table8",
+      "kind": "publication supplementary table 8, sheet TMT cell lines",
+      "location": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41375-026-03122-x/MediaObjects/41375_2026_3122_MOESM3_ESM.xlsx"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited phospho MaxQuant search settings",
+      "location": "scratchpad/PXD074599/phospho_mqpar.xml"
+    },
+    {
+      "id": "summary",
+      "kind": "deposited phospho MaxQuant run summary",
+      "location": "scratchpad/PXD074599/phospho_summary.txt"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name, characteristics[biological replicate], characteristics[genotype], factor value[genotype]",
+      "value": "14 independently labelled Hoxb8-immortalized mouse bone marrow clone samples and one pooled reference",
+      "source_ids": [
+        "methods",
+        "table8"
+      ],
+      "evidence": "Supplementary methods describe generation of Hoxb8-immortalized primary murine bone marrow cell lines and independent clones as biological replicates. Supplementary Table 8 names WT1/WT2/WT6, Ex38/Ex59/Ex61, A5/B8/C10/D2 and corresponding Ex clones, plus mix; it gives four genotype groups and the pooled reference. Matching A5/B8/C10/D2 clone IDs retain biological replicate numbers across fl/+ and -/+ states."
+    },
+    {
+      "location": "characteristics[organism], characteristics[organism part], characteristics[material type], characteristics[cell line], characteristics[cell line model], characteristics[sampling site], characteristics[culture medium details], characteristics[cellosaurus accession]",
+      "value": "Mus musculus; not applicable; cell line; generic cell line; Hoxb8-immortalized mouse bone marrow-derived cell line; bone marrow; Iscove's modified Dulbecco's medium (IMDM); not available",
+      "source_ids": [
+        "methods"
+      ],
+      "evidence": "Supplementary methods state primary murine bone marrow cells were immortalized with ERHBD-Hoxb8 and expanded as independent cell clones in IMDM. The measured material is cultured cell line, not an organ specimen; bone marrow is the sampling site of the original cells. No accession for these study-generated clones is given; the generic controlled cell-line ontology class is paired with a source-grounded free-text cell-line-model field rather than inventing a registered identity. Exact IMDM is recorded in a free-text culture-medium-details field because the NCIT-constrained culture-medium field has no matching term in the validator cache."
+    },
+    {
+      "location": "comment[label] and source-to-channel map",
+      "value": "15 used TMTpro channels from TMT126 through TMT133C; TMT134N unused",
+      "source_ids": [
+        "table8",
+        "mqpar"
+      ],
+      "evidence": "Supplementary Table 8 explicitly maps each clone and pooled mix to its reporter label. MaxQuant isobaricLabels include the same 15 channels and omit 134N. The unused channel has no SDRF rows."
+    },
+    {
+      "location": "comment[data file], comment[fraction identifier], comment[technical replicate]",
+      "value": "24 RAW files, two technical workflow replicates of 12 fractions each",
+      "source_ids": [
+        "files",
+        "methods",
+        "mqpar",
+        "summary"
+      ],
+      "evidence": "The accession-scoped PRIDE file list contains 24 phospho RAW files with complete R1 and R2 fraction series 1-12. Deposited MaxQuant experiment and file lists assign exactly these RAW files to the corresponding phospho search. Supplementary methods explicitly state two workflow replicates and 12 fractions."
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method], comment[dissociation method]",
+      "value": "Orbitrap Exploris 480; Top10 DDA; HCD",
+      "source_ids": [
+        "methods"
+      ],
+      "evidence": "Supplementary methods mass spectrometry section states Evosep One coupled to Orbitrap Exploris 480, Top10 data-dependent acquisition, and HCD fragmentation."
+    },
+    {
+      "location": "comment[cleavage agent details], comment[digestion enzymes], comment[modification parameters], comment[precursor mass tolerance], comment[fragment mass tolerance]",
+      "value": "Trypsin; Lys-C and trypsin co-digest; MaxQuant fixed and variable modifications; 4.5 ppm final precursor tolerance; 20 ppm FTMS fragment tolerance",
+      "source_ids": [
+        "mqpar",
+        "methods"
+      ],
+      "evidence": "Supplementary methods state both Lys-C and trypsin were used for digestion. The single controlled cleavage-agent field names trypsin, and a free-text assay comment preserves the two-enzyme co-digest. Deposited MaxQuant mqpar.xml lists the Trypsin/P search rule, carbamidomethyl C fixed, oxidation M, protein N-terminal acetyl, deamidation N/Q and TMTpro K and peptide N-terminal fixed. The phosphoproteome search additionally includes phosphorylation S/T/Y. Its final search tolerance is 4.5 ppm and FTMS MS/MS tolerance is 20 ppm. Supplementary methods describe initial 20 ppm precursor and 0.5 Da initial fragment tolerances; deposited final settings are used for the SDRF."
+    },
+    {
+      "location": "comment[reduction reagent], comment[alkylation reagent]",
+      "value": "TCEP; chloroacetamide",
+      "source_ids": [
+        "methods"
+      ],
+      "evidence": "Supplementary methods sample preparation section states lysis buffer with 5 mM TCEP and 10 mM chloroacetamide."
+    }
+  ],
+  "limitations": [
+    "These study-created Hoxb8 clones have no reported Cellosaurus accession, passage count, donor age/sex, or mouse strain; those details are not inferred.",
+    "The pooled reference is identified as mix from 14 individual samples; its genotype is not applicable.",
+    "The paper describes Lys-C plus trypsin digestion, while the deposited MaxQuant search enzyme rule is Trypsin/P; the wet-lab co-digest is recorded in a custom assay comment because the controlled cleavage-agent field is single-valued.",
+    "The deposited search config covers 15 used TMTpro reporter channels; no sample is assigned to TMT134N."
+  ]
+}

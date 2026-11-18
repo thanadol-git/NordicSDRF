@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD051333-peptidome-ga.sdrf.tsv",
+  "dataset": "PXD051333",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "scratchpad/PXD051333/pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository file list",
+      "location": "scratchpad/PXD051333/files.json"
+    },
+    {
+      "id": "zip_index",
+      "kind": "deposited RAW archive central directory",
+      "location": "scratchpad/PXD051333/zip_index.json"
+    },
+    {
+      "id": "sampleinfo",
+      "kind": "deposited Bruker SampleInfo XML",
+      "location": "scratchpad/PXD051333/sampleinfo/"
+    },
+    {
+      "id": "unimod",
+      "kind": "modification ontology",
+      "location": "https://www.unimod.org/modifications_view.php?editid1=2"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1016/j.ab.2025.115837"
+    },
+    {
+      "id": "run_pepxml",
+      "kind": "deposited run-specific pepXML search headers",
+      "location": [
+        "scratchpad/PXD051333/180101_GA1_1_5605.pepXML.head",
+        "scratchpad/PXD051333/180102_GA2_1_5608.pepXML.head",
+        "scratchpad/PXD051333/180103_GA3_1_5611.pepXML.head"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file], rows 1-3",
+      "value": "3 peptidome Bruker .d acquisitions",
+      "source_ids": [
+        "files",
+        "zip_index",
+        "sampleinfo"
+      ],
+      "evidence": "The accession-scoped Raw_files.zip directory contains 3 .d members with Bruker method names beginning Peptidome_DDA_PASEF; each has analysis.tdf and SampleInfo.xml."
+    },
+    {
+      "location": "source name, rows 1-3",
+      "value": "PCLS-supernatant plus Bruker SampleID",
+      "source_ids": [
+        "sampleinfo",
+        "pride"
+      ],
+      "evidence": "Each SampleInfo.xml contains the Bruker SampleID for its .d directory. PRIDE describes PCLS supernatant as the study material."
+    },
+    {
+      "location": "characteristics[organism], characteristics[organism part], rows 1-3",
+      "value": "Rattus norvegicus; lung",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE identifies rat organism and lung organ; paper describes rat precision-cut lung slices."
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method], rows 1-3",
+      "value": "timsTOF Pro; DDA",
+      "source_ids": [
+        "pride",
+        "sampleinfo",
+        "paper"
+      ],
+      "evidence": "PRIDE identifies timsTOF Pro and Bruker method names say Peptidome_DDA_PASEF."
+    },
+    {
+      "location": "comment[cleavage agent details], rows 1-3",
+      "value": "not applicable",
+      "source_ids": [
+        "pride",
+        "run_pepxml"
+      ],
+      "evidence": "PRIDE distinguishes unspecific peptidome search from Lys-C proteome digestion; run-specific pepXML headers declare nonspecific and zero enzyme termini."
+    },
+    {
+      "location": "comment[modification parameters], comment[precursor mass tolerance], comment[fragment mass tolerance], rows 1-3",
+      "value": "fixed C carbamidomethyl; variable M oxidation, protein N-terminal acetyl, Q/E pyroglutamate, C-terminal amidation; 20 ppm precursor and 25 ppm fragment tolerance",
+      "source_ids": [
+        "run_pepxml",
+        "unimod"
+      ],
+      "evidence": "All three GA run-specific pepXML headers show fixed C +57.0215, variable M +15.9949, protein N-terminal acetyl +42.0106, Q/E N-terminal pyroglutamate, C-terminal amidation -0.9840; no variable P oxidation; precursor \u00b120 ppm and fragment 25 ppm."
+    }
+  ],
+  "limitations": [
+    "No run-level table identifies solvent, condition, tissue donor, or whether run IDs are biological or technical replicates. Each Bruker SampleID is a distinct source name with biological replicate 1; no factor value is asserted.",
+    "This SDRF covers only the archived runs whose Bruker method explicitly says Peptidome_DDA_PASEF. The three proteome acquisitions use different technical settings and are annotated separately.",
+    "The record-level reconcile helper treats the project-level Lys-C mention as if it applies to every run. It flags not applicable for these nine rows, while the same PRIDE paragraph explicitly assigns unspecific cleavage to the peptidome endpoint and the deposited config confirms no enzymatic specificity.",
+    "The article full text was not accessible from available endpoints; PRIDE protocols, deposited Bruker XML and FragPipe config supply granular metadata.",
+    "Some processed search filenames name acquisitions absent from Raw_files.zip; they are excluded from this raw-acquisition SDRF.",
+    "This file is partitioned by deposited run-specific search modifications; the other peptidome search-setting subgroup is in the companion SDRF."
+  ]
+}

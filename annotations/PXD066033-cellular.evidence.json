@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD066033-cellular.sdrf.tsv",
+  "dataset": "PXD066033",
+  "sources": [
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "scratchpad/PXD066033/files.json"
+    },
+    {
+      "id": "record",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD066033"
+    },
+    {
+      "id": "record_excerpts",
+      "kind": "repository",
+      "location": "scratchpad/PXD066033/project-protocol-extract.json"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "ontology",
+      "location": "https://www.cellosaurus.org/CVCL_0042"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file], characteristics[biological replicate], characteristics[genotype code], characteristics[PARG processing], factor value columns, rows 1-24",
+      "value": "24 accession RAW files, WT/4SA/HPF1ko by ctrl/parg, four numbered runs each",
+      "source_ids": [
+        "files",
+        "record",
+        "record_excerpts"
+      ],
+      "evidence": "The exact RAW filenames contain genotype, processing, and 01-04 codes. PRIDE describes four U2OS replicates, and PARG or mock treatment of captured PARP1 before digestion."
+    },
+    {
+      "location": "characteristics[organism], characteristics[cell line], characteristics[cellosaurus accession], characteristics[disease], characteristics[organism part], characteristics[age], characteristics[sex] rows 1-24",
+      "value": "Human U2OS osteosarcoma cell line, CVCL_0042; original donor tibia, 15Y, female",
+      "source_ids": [
+        "record",
+        "cellosaurus",
+        "record_excerpts"
+      ],
+      "evidence": "PRIDE sample protocol names U2OS; Cellosaurus identifies the U2OS parent line as human osteosarcoma, CVCL_0042, from tibia of a female donor age 15Y at sampling. These describe cell-line origin, not the age of cultured cells in this experiment."
+    },
+    {
+      "location": "comment[filename date code] rows 1-24",
+      "value": "20250220 for all ctrl/mock rows; 20250303 for all PARG rows",
+      "source_ids": [
+        "files"
+      ],
+      "evidence": "The first eight digits of each accession RAW filename are preserved literally. Their interpretation as actual acquisition dates is unverified."
+    },
+    {
+      "location": "characteristics[DNA damage treatment] rows 1-24",
+      "value": "MMS for WT and 4SA; hydrogen peroxide for HPF1 KO",
+      "source_ids": [
+        "record",
+        "record_excerpts"
+      ],
+      "evidence": "PRIDE sample protocol states 0.02% MMS for WT/4SA and 2 mM H2O2 for HPF1 KO."
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method], comment[dissociation method], comment[cleavage agent details], comment[reduction reagent], comment[alkylation reagent] rows 1-24",
+      "value": "Orbitrap Fusion Lumos DDA/EThcD, Lys-C, TCEP, no alkylation",
+      "source_ids": [
+        "record",
+        "record_excerpts"
+      ],
+      "evidence": "PRIDE protocol details the Lumos topN DDA EThcD method, on-bead Lys-C digestion in TCEP, and deliberate omission of CAA alkylation."
+    },
+    {
+      "location": "comment[modification parameters] rows 1-24",
+      "value": "Variable N-terminal acetylation, M oxidation, C carbamidomethylation, and ADP-ribosylation at C,D,E,H,K,R,S,T,Y",
+      "source_ids": [
+        "record",
+        "record_excerpts"
+      ],
+      "evidence": "These are listed as MaxQuant search settings in PRIDE data processing protocol. Variable carbamidomethylation is a search parameter despite the reported absence of physical alkylation."
+    },
+    {
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance] rows 1-24",
+      "value": "not available",
+      "source_ids": [
+        "record",
+        "record_excerpts"
+      ],
+      "evidence": "The public protocol states default MaxQuant settings but does not give exact tolerance values."
+    }
+  ],
+  "limitations": [
+    "The 01-04 filename code is represented as biological replicate because the public record says four U2OS replicates, but individual culture identifiers are not supplied. Age, sex and tibia refer to the U2OS parent-line donor in Cellosaurus, not the cultures' current age or tissue.",
+    "The PARG factor is perfectly confounded with the two filename date-code groups (all ctrl/mock 20250220; all PARG 20250303). The codes may reflect acquisition dates or batches, but their meaning is unverified and they are retained literally.",
+    "The PARG versus mock factor is a post-lysis treatment of captured PARP1, not a cell treatment.",
+    "Four repeated modification columns are inserted deterministically after the builder, which otherwise retains only the last modification row from the technical table."
+  ]
+}

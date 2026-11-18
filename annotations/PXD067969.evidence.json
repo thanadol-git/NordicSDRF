@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD067969.sdrf.tsv",
+  "dataset": "PXD067969",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD067969"},
+    {"id": "design", "kind": "deposited experimental design", "location": "scratchpad/PXD067969/experimental_design.txt"},
+    {"id": "zip", "kind": "deposited RAW ZIP central directory", "location": "scratchpad/PXD067969/raw-tail-128k.bin"},
+    {"id": "mqpar", "kind": "deposited MaxQuant parameters", "location": "scratchpad/PXD067969/mqpar.xml"},
+    {"id": "paper", "kind": "publication", "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13550524/"},
+    {"id": "cellosaurus", "kind": "cell-line reference", "location": "https://www.cellosaurus.org/CVCL_U427"}
+  ],
+  "claims": [
+    {"location": "comment[data file] rows 1-18", "value": "18 Bruker .d acquisitions", "source_ids": ["design", "zip"], "evidence": "All 18 deposited design basenames exactly match the 18 distinct raw/*.d acquisition directory names in the ZIP index; __MACOSX entries were excluded."},
+    {"location": "characteristics[deposited group] and six condition groups", "value": "IP_untreated, IP_no, IP_60, ctrl_untreated, ctrl_no, ctrl_60; three runs each", "source_ids": ["design"], "evidence": "Grouping values are copied directly from the deposited design. Their six groups each contain three analytical samples."},
+    {"location": "characteristics[biological replicate] rows 1-18", "value": "1-3 within each deposited group", "source_ids": ["design", "paper"], "evidence": "The paper says all proteomics samples were triplicates prepared in parallel from cell seeding. Design order assigns a distinct run to each of the three positions per group; cross-condition pairing is not asserted."},
+    {"location": "characteristics[oxidative stress condition] and matching factor", "value": "untreated; H2O2, no recovery; H2O2, 60 min recovery", "source_ids": ["pride", "design", "paper"], "evidence": "PRIDE states the three conditions were untreated, 1 mM H2O2 for 15 minutes, and one-hour recovery. The suffixes untreated, no, and 60 are interpreted in that order; this run-level expansion is an inference from those sources, not an explicit deposited key."},
+    {"location": "characteristics[affinity capture] and matching factor", "value": "4H8 antibody; unconjugated beads", "source_ids": ["design", "paper"], "evidence": "The paper describes 4H8 antibody capture and non-antibody-conjugated beads as the MS negative control. Deposited group prefixes IP and ctrl map to these arms."},
+    {"location": "characteristics[organism], [organism part], [cell line], [cellosaurus accession], [sex], [disease]", "value": "Homo sapiens; cell culture; Flp-In-T-REx-293; CVCL_U427; female; normal", "source_ids": ["pride", "paper", "cellosaurus"], "evidence": "PRIDE and paper identify the human Flp-In T-REx HEK293 parental cell line; Cellosaurus lists the precise derivative and female sex. Cell culture, not anatomical kidney tissue, is the analyzed source. No disease is described for the fetal kidney-derived line, so the cell-lines template's normal term is used."},
+    {"location": "comment[proteomics data acquisition method], [instrument], [cleavage agent details]", "value": "DDA; timsTOF Pro; trypsin", "source_ids": ["design", "pride", "paper"], "evidence": "Every deposited run basename contains DDA. PRIDE prose and the paper's MS Methods state timsTOF pro PASEF and trypsin; PRIDE structured instrument field says Pro 2, an unresolved dropdown discrepancy, so the prose model is used."},
+    {"location": "comment[precursor mass tolerance], [fragment mass tolerance], [modification parameters]", "value": "10 ppm; 40 ppm; fixed Carbamidomethyl C, variable Oxidation M and protein N-terminal Acetyl", "source_ids": ["mqpar"], "evidence": "MaxQuant mqpar.xml has mainSearchTol=10 with searchTolInPpm=True, TOF MatchTolerance=40 with MatchToleranceInPpm=True, and the named fixed/variable modifications."}
+  ],
+  "limitations": [
+    "The deposited group code 'no' is interpreted as H2O2 treatment with no recovery, using the project-level three-condition description; it is not explicitly decoded in the design file.",
+    "The PRIDE instrument dropdown says timsTOF Pro 2, while its protocol prose and the paper state timsTOF pro; the annotation follows the two prose descriptions.",
+    "Cellosaurus gives fetal stage but no numeric age; age uses not available. The optional developmental-stage column is not populated. The offline ontology cache does not resolve the precise Cellosaurus cell-line name in the CLO/BTO/EFO cell-line field.",
+    "The reconcile heuristic flags Trypsin and cell culture despite explicit trypsin digestion in the PRIDE and paper protocols and the PRIDE cell-culture source field."
+  ]
+}

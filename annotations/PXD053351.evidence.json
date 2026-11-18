@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD053351.sdrf.tsv",
+  "dataset": "PXD053351",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD053351"},
+    {"id": "design", "kind": "deposited experimental design", "location": "scratchpad/PXD053351/experimental_design.txt"},
+    {"id": "zip", "kind": "deposited RAW ZIP central directory", "location": "scratchpad/PXD053351/raw-tail-128k.bin"},
+    {"id": "paper", "kind": "publication", "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11663130/"},
+    {"id": "cellosaurus", "kind": "cell-line reference", "location": "https://www.cellosaurus.org/CVCL_U427"}
+  ],
+  "claims": [
+    {"location": "comment[data file] rows 1-12", "value": "12 Bruker .d acquisitions", "source_ids": ["design", "zip"], "evidence": "Each of the 12 deposited design basenames matches one distinct acquisition directory in the RAW ZIP central directory."},
+    {"location": "characteristics[deposited cohort code] rows 1-12", "value": "literal 6 or 6A", "source_ids": ["design"], "evidence": "The design groups have 6_CTRL, 6_dTAG, 6A_CTRL and 6A_dTAG. The prefix is preserved without assigning genotype or interpreting A."},
+    {"location": "characteristics[treatment] and factor value[treatment]", "value": "DMSO or dTAG", "source_ids": ["design", "pride"], "evidence": "The design identifies CTRL and dTAG groups; PRIDE describes one-hour DMSO and dTAG treatment in the 12-sample experiment. CTRL to DMSO is a record-supported interpretation."},
+    {"location": "characteristics[biological replicate]", "value": "1-3 within each of four deposited groups", "source_ids": ["design", "paper"], "evidence": "The design has three distinct analytical samples per group and the paper states proteomics samples were triplicates prepared in parallel from cell seeding. Cross-condition pairing is not asserted."},
+    {"location": "characteristics[organism], [organism part], [cell line], [cellosaurus accession], [cellosaurus name]", "value": "Homo sapiens; cell culture; Flp-In-T-REx-293; CVCL_U427", "source_ids": ["pride", "paper", "cellosaurus"], "evidence": "PRIDE describes human INTS6 degron cells; the paper identifies the Flp-In T-REx HEK293 background; Cellosaurus verifies the base cell-line name and accession. The annotation does not assert a specific 6A derivative."},
+    {"location": "comment[proteomics data acquisition method], [instrument], [cleavage agent details]", "value": "DDA; timsTOF Pro; trypsin", "source_ids": ["design", "pride", "paper"], "evidence": "All 12 run names contain DDA; PRIDE and paper describe timsTOF Pro PASEF and trypsin digestion in the MS protocol."},
+    {"location": "comment[reduction reagent], [alkylation reagent]", "value": "DTT; chloroacetamide", "source_ids": ["pride", "paper"], "evidence": "The sample protocol elutes in DTT and then chloroacetamide before overnight trypsin digestion."}
+  ],
+  "limitations": [
+    "The biological meaning of deposited cohort code 6A is not established. It may represent a genetic derivative, but no genotype is asserted and no 6-versus-6A biological contrast is encoded.",
+    "The PRIDE description says only the six 6_CTRL/6_dTAG runs appear in the publication; the remaining six are retained because they are deposited RAW acquisitions with explicit design groups.",
+    "Age, sex, disease, search mass tolerances, and modifications are not asserted because this accession's available evidence does not establish them.",
+    "The offline ontology cache does not resolve DMSO, dTAG, or the precise Cellosaurus cell-line name. The reconcile helper flags trypsin, although both PRIDE sample protocol and paper MS methods explicitly describe trypsin digestion."
+  ]
+}

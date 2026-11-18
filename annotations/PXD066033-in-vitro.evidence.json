@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD066033-in-vitro.sdrf.tsv",
+  "dataset": "PXD066033",
+  "sources": [
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "scratchpad/PXD066033/files.json"
+    },
+    {
+      "id": "record",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD066033"
+    },
+    {
+      "id": "record_excerpts",
+      "kind": "repository",
+      "location": "scratchpad/PXD066033/project-protocol-extract.json"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file], characteristics[run suffix], characteristics[PARP1 variant], characteristics[HPF1 addition], characteristics[PARG processing], factor value columns, rows 1-16",
+      "value": "16 accession RAW files, WT/E988K by HPF1/mock by ctrl/parg, two numbered runs each",
+      "source_ids": [
+        "files",
+        "record",
+        "record_excerpts"
+      ],
+      "evidence": "The exact RAW filenames carry invitro-WT or invitro-E988K, HPF1 or mock, ctrl or parg, and 01-02. PRIDE confirms purified PARP1 WT/E988K, equimolar HPF1 or buffer control, then PARG or mock after capture."
+    },
+    {
+      "location": "comment[filename date code] rows 1-16",
+      "value": "20250220 for all ctrl/mock rows; 20250303 for all PARG rows",
+      "source_ids": [
+        "files"
+      ],
+      "evidence": "The first eight digits of each accession RAW filename are preserved literally. Their interpretation as actual acquisition dates is unverified."
+    },
+    {
+      "location": "characteristics[organism], characteristics[organism part], characteristics[disease] rows 1-16",
+      "value": "Homo sapiens, organism part and disease not applicable",
+      "source_ids": [
+        "record",
+        "record_excerpts"
+      ],
+      "evidence": "These are purified PARP1 in vitro reactions rather than cellular tissue or disease samples. Human origin is inferred from the human-protein search space and PARP1 mutant sequences in the accession processing protocol."
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method], comment[dissociation method], comment[cleavage agent details], comment[reduction reagent], comment[alkylation reagent] rows 1-16",
+      "value": "Orbitrap Fusion Lumos DDA/EThcD, Lys-C, TCEP, no alkylation",
+      "source_ids": [
+        "record",
+        "record_excerpts"
+      ],
+      "evidence": "PRIDE says the in vitro reactions were treated identically during capture and states the dataset's Lys-C and Lumos EThcD method. Its lysis and digestion buffers contain TCEP; CAA alkylation was omitted."
+    },
+    {
+      "location": "comment[modification parameters] rows 1-16",
+      "value": "Variable N-terminal acetylation, M oxidation, C carbamidomethylation, and ADP-ribosylation at C,D,E,H,K,R,S,T,Y",
+      "source_ids": [
+        "record",
+        "record_excerpts"
+      ],
+      "evidence": "These are the accession's MaxQuant search parameters. Carbamidomethylation is recorded as a search parameter despite no physical alkylation."
+    },
+    {
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance] rows 1-16",
+      "value": "not available",
+      "source_ids": [
+        "record",
+        "record_excerpts"
+      ],
+      "evidence": "The public protocol does not provide exact tolerance values."
+    }
+  ],
+  "limitations": [
+    "Human origin of purified PARP1 is inferred from the accession's human search database, not explicitly stated in its sample protocol.",
+    "The 01-02 filename suffix denotes distinct RAW runs, but the public record does not establish independent biological preparations. Both runs per condition therefore have biological replicate 1; the literal suffix is retained in characteristics[run suffix] without interpreting its replicate type.",
+    "The PARG factor is perfectly confounded with the two filename date-code groups (all ctrl/mock 20250220; all PARG 20250303). The codes may reflect acquisition dates or batches, but their meaning is unverified and they are retained literally.",
+    "PARG versus mock is a post-capture processing factor, not a treatment of living cells.",
+    "Four repeated modification columns are inserted deterministically after the builder, which otherwise retains only the last modification row from the technical table."
+  ]
+}

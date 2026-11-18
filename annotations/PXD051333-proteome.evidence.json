@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD051333-proteome.sdrf.tsv",
+  "dataset": "PXD051333",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "scratchpad/PXD051333/pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository file list",
+      "location": "scratchpad/PXD051333/files.json"
+    },
+    {
+      "id": "zip_index",
+      "kind": "deposited RAW archive central directory",
+      "location": "scratchpad/PXD051333/zip_index.json"
+    },
+    {
+      "id": "sampleinfo",
+      "kind": "deposited Bruker SampleInfo XML",
+      "location": "scratchpad/PXD051333/sampleinfo/"
+    },
+    {
+      "id": "config",
+      "kind": "deposited FragPipe search configuration",
+      "location": "scratchpad/PXD051333/fragpipe_2021-12-02_13-09-16.config"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1016/j.ab.2025.115837"
+    },
+    {
+      "id": "processing_log",
+      "kind": "deposited FragPipe processing log",
+      "location": "scratchpad/PXD051333/log_2021-12-02_14-43-16.txt"
+    },
+    {
+      "id": "pepxml_ga4",
+      "kind": "deposited run-specific MSFragger search output",
+      "location": "scratchpad/PXD051333/180104_GA4_1_5614.pepXML"
+    },
+    {
+      "id": "pepxml_ga5",
+      "kind": "deposited run-specific MSFragger search output header",
+      "location": "scratchpad/PXD051333/180105_GA5_1_5617.pepXML.head"
+    },
+    {
+      "id": "pepxml_ga6",
+      "kind": "deposited run-specific MSFragger search output header",
+      "location": "scratchpad/PXD051333/180106_GA6_1_5620.pepXML.head"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file], rows 1-3",
+      "value": "three proteome Bruker .d acquisitions",
+      "source_ids": [
+        "files",
+        "zip_index",
+        "sampleinfo"
+      ],
+      "evidence": "The accession-scoped Raw_files.zip directory contains GA4, GA5 and GA6 .d members, each with an analysis.tdf and SampleInfo.xml whose method name begins Proteome_DDA_PASEF."
+    },
+    {
+      "location": "source name, rows 1-3",
+      "value": "PCLS-supernatant-180104, -180105 and -180106",
+      "source_ids": [
+        "sampleinfo",
+        "pride"
+      ],
+      "evidence": "Each accession-matched SampleInfo.xml contains the exact Bruker SampleID and maps to the corresponding .d directory. PRIDE describes PCLS supernatant as the study material."
+    },
+    {
+      "location": "characteristics[organism], characteristics[organism part], rows 1-3",
+      "value": "Rattus norvegicus; lung",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE identifies rat organism and lung organ; paper describes rat precision-cut lung slices."
+    },
+    {
+      "location": "comment[instrument], comment[proteomics data acquisition method], rows 1-3",
+      "value": "timsTOF Pro; DDA",
+      "source_ids": [
+        "pride",
+        "sampleinfo",
+        "paper"
+      ],
+      "evidence": "PRIDE identifies timsTOF Pro and Bruker method names say Proteome_DDA_PASEF."
+    },
+    {
+      "location": "comment[cleavage agent details], comment[modification parameters], comment[precursor mass tolerance], comment[fragment mass tolerance], rows 1-3",
+      "value": "Lys-C; fixed carbamidomethyl C, variable oxidation M/P and protein N-terminal acetyl; 20 ppm precursor and 15 ppm fragment tolerance",
+      "source_ids": [
+        "processing_log",
+        "pepxml_ga4",
+        "pepxml_ga5",
+        "pepxml_ga6"
+      ],
+      "evidence": "The deposited 2021-12-02 processing log lists all three GA4/GA5/GA6 runs in one FragPipe group. Each run-specific pepXML search_summary independently reports LysC, fixed C +57.0215, variable M and P +15.9949, variable protein N-terminal +42.0106, \u00b120 ppm precursor and 15 ppm fragment tolerance. These run-specific outputs outrank the project-level PRIDE prose mentioning lysine acetylation and the archived GUI config, whose fragment tolerance differs from the actual search output."
+    }
+  ],
+  "limitations": [
+    "No run-level table identifies the solvent, experimental condition, tissue donor, or whether these three run IDs are biological or technical replicates. Each deposited Bruker SampleID is therefore a distinct source name with biological replicate 1, and no factor value is asserted.",
+    "PRIDE also describes peptidome runs; this SDRF covers only the three archived runs whose Bruker method explicitly says Proteome_DDA_PASEF. The nine peptidome acquisitions require separate technical settings.",
+    "The article full text was not accessible from the available endpoints; PRIDE protocols, deposited Bruker XML, and FragPipe configuration supply the granular metadata.",
+    "Some processed search filenames name acquisitions absent from Raw_files.zip; they are excluded from this raw-acquisition SDRF.",
+    "The deposited 2021-12-02 GUI config lists 20 ppm fragment tolerance, while all three run-specific pepXML files list 15 ppm; the latter is used. PRIDE prose says lysine acetylation, while the run-specific pepXML files list protein N-terminal acetylation; the run-specific search output is used."
+  ]
+}

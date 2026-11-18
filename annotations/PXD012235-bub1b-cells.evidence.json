@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD012235-bub1b-cells.sdrf.tsv",
+  "dataset": "PXD012235",
+  "sources": [
+    {"id": "pride", "kind": "repository record", "location": "scratchpad/PXD012235/pride.json"},
+    {"id": "files", "kind": "accession-scoped repository file list", "location": "scratchpad/PXD012235/files.json"},
+    {"id": "paper", "kind": "publication", "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6443202/"},
+    {"id": "summary", "kind": "deposited MaxQuant run summary", "location": "scratchpad/PXD012235/BUB1B-IPs_summary.txt"},
+    {"id": "parameters", "kind": "deposited MaxQuant search parameters", "location": "scratchpad/PXD012235/BUB1B-IPs_parameters.txt"},
+    {"id": "cellosaurus", "kind": "bundled cell-line lookup", "location": "../sdrf-skills/data/cl-annotations-db.tsv"},
+    {"id": "cellosaurus_hap1", "kind": "current curated cell-line record", "location": "https://www.cellosaurus.org/CVCL_Y019"},
+    {"id": "efo_hap1", "kind": "cell-line ontology", "location": "https://www.ebi.ac.uk/efo/EFO_0007598"}
+  ],
+  "claims": [
+    {"location": "comment[data file], rows 1-21", "value": "21 BUB1B cell-derived RAW acquisitions", "source_ids": ["files", "summary"], "evidence": "The accession contains 24 BUB1B RAW files, with 21 cell-derived runs and three HELA_beadsonly controls; all 21 cell-derived files map once."},
+    {"location": "characteristics[cell line] and Cellosaurus fields, rows 1-21", "value": "HeLa, HAP-1, hTERT-RPE1", "source_ids": ["paper", "summary", "cellosaurus", "cellosaurus_hap1", "efo_hap1"], "evidence": "The paper reports BubR1 IPs from HeLa, HAP1 and RPE1; MaxQuant groups identify each run; the curated lookup gives CVCL_0030, CVCL_Y019 and CVCL_4388. HAP-1 is the EFO label for HAP1. The current Cellosaurus HAP1 record gives original donor age 40Y and BCR-ABL1-positive chronic myelogenous leukemia; the bundled age cache is stale."},
+    {"location": "factor value[Bub1 status] and comment[technical replicate], rows 1-21", "value": "WT, KO, and KO plus siRNA groups; three technical repeats per group", "source_ids": ["paper", "summary"], "evidence": "MaxQuant Experiment codes distinguish groups; paper Figure 3C identifies three technical repeats of BubR1 purification. Specific siRNA target is not asserted."},
+    {"location": "comment[cleavage agent details], comment[modification parameters], comment[fragment mass tolerance], rows 1-21", "value": "Trypsin/P, fixed carbamidomethyl C, variable oxidation M and protein N-terminal acetyl, 20 ppm FTMS MS/MS tolerance", "source_ids": ["summary", "parameters"], "evidence": "These are directly specified in the deposited BUB1B MaxQuant summary and parameters."},
+    {"location": "comment[instrument], comment[proteomics data acquisition method], comment[dissociation method], comment[collision energy], rows 1-21", "value": "Q Exactive HF-X DDA HCD at 27 NCE", "source_ids": ["paper", "pride"], "evidence": "The paper AP-MS method specifies these settings; no BUB1B RAW header was locally inspected."},
+    {"location": "comment[reduction reagent], comment[alkylation reagent], rows 1-21", "value": "DTT and chloroacetamide", "source_ids": ["paper", "pride"], "evidence": "Paper AP-MS method and PRIDE sample protocol specify DTT and CAA."}
+  ],
+  "limitations": [
+    "The three bead-only BUB1B controls are excluded and documented in PXD012235.BLOCKED.md.",
+    "Cellosaurus-derived age, sex and sampling site describe original donor origin, not the current culture.",
+    "HAP1 original donor age and disease come from current Cellosaurus CVCL_Y019; RPE1 donor disease is not asserted.",
+    "The HELA_KOsiRNA label is preserved as KO plus siRNA, without asserting the specific siRNA target."
+  ]
+}
