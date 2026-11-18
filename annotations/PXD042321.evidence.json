@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD042321.sdrf.tsv",
+  "dataset": "PXD042321",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD042321"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD042321/files?pageSize=100&page=0 (100 files), page=1 (6 files), page=2 empty; 102 RAW + README.txt + SampletoData.csv + 2 MaxQuant zips"
+    },
+    {
+      "id": "s2d",
+      "kind": "deposited file",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2024/01/PXD042321/SampletoData.csv (raw file -> specimen -> method; 94 of 102 files)"
+    },
+    {
+      "id": "readme",
+      "kind": "deposited file",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2024/01/PXD042321/README.txt"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/MED/37884544 (PMC10603084; doi:10.1038/s41598-023-44885-y) Methods, Results, Table 1"
+    },
+    {
+      "id": "raw",
+      "kind": "raw header",
+      "location": "first 120 kB of all 102 RAW files by HTTP range read (instrument, method name, HCD collision energy 30 identical in all)"
+    },
+    {
+      "id": "mq",
+      "kind": "search output",
+      "location": "txt-Tryptic.zip: Tryptic/parameters.txt and Tryptic/summary.txt (read by HTTP range from the zip)"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/"
+    }
+  ],
+  "claims": [
+    {
+      "location": "source name / extraction method / factor value",
+      "value": "specimen_method[_ac|_nt]; 6 extraction methods; blanks Blank01/Blank02",
+      "source_ids": [
+        "s2d",
+        "readme",
+        "files",
+        "paper"
+      ],
+      "evidence": "SampletoData.csv maps raw file to SampleName (R10300..R10363 Ranis, GdC_1..GdC_193) and Method; blanks are negative controls (README, paper)"
+    },
+    {
+      "location": "8 files 4EDTA_ID01-ID06 (nt) and ID01/ID02 (ac)",
+      "value": "source name ..._unmapped; specimen not stated",
+      "source_ids": [
+        "s2d",
+        "paper"
+      ],
+      "evidence": "These 8 files are absent from SampletoData.csv; specimen-to-ID order differs between methods so it was not inferred"
+    },
+    {
+      "location": "organism / organism part / material type",
+      "value": "Mammalia; bone tissue; tissue",
+      "source_ids": [
+        "pride",
+        "paper",
+        "readme"
+      ],
+      "evidence": "Taxonomically unidentified Late Pleistocene bone (Table 1); README: reference database spans Mammalia; PRIDE organism part Bone"
+    },
+    {
+      "location": "blank rows",
+      "value": "sample type blank; other sample properties not applicable",
+      "source_ids": [
+        "readme",
+        "s2d"
+      ],
+      "evidence": "Negative controls extracted and run like samples"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Exploris 480 MS:1003028",
+      "source_ids": [
+        "pride",
+        "paper",
+        "raw"
+      ],
+      "evidence": "PRIDE instruments, paper Methods, RAW header of all 102 files"
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "Data-dependent acquisition PRIDE:0000627",
+      "source_ids": [
+        "paper",
+        "files",
+        "raw"
+      ],
+      "evidence": "DDA in file names, paper, PRIDE keywords; OLS4: descendant of PRIDE:0000659"
+    },
+    {
+      "location": "dissociation method / collision energy",
+      "value": "HCD; 30 NCE",
+      "source_ids": [
+        "paper",
+        "raw"
+      ],
+      "evidence": "Paper: HCD NCE 30; RAW method summary HCD Collision Energy (%) = 30"
+    },
+    {
+      "location": "comment[ms1 scan range]",
+      "value": "350m/z-1400m/z",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Full scans 350-1400 m/z"
+    },
+    {
+      "location": "comment[cleavage agent details] x2",
+      "value": "1AmBic, 2Acid: Trypsin; 4EDTA: Lys-C; 3EDTA, 5EDTA, 6SPIN: Lys-C + Trypsin",
+      "source_ids": [
+        "paper",
+        "s2d"
+      ],
+      "evidence": "Wet-lab digestion per extraction protocol in Methods; protease mix LysC/Trypsin; CSV method names. Single-enzyme rows carry not applicable in the second column. MaxQuant searched Trypsin/P (specific and semi-specific)"
+    },
+    {
+      "location": "reduction / alkylation reagent",
+      "value": "6SPIN: TCEP, NEM; other methods not applicable",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "SPIN methods text: TCEP and NEM; no reduction/alkylation described for the other methods"
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Oxidation M, Deamidated NQ, Gln->pyro-Glu, Glu->pyro-Glu, Oxidation P (hydroxyproline) variable; NEM C fixed for SPIN files only",
+      "source_ids": [
+        "mq",
+        "paper"
+      ],
+      "evidence": "summary.txt per raw file: Variable modifications list identical for 102 files; Fixed modifications nem(c) in the 14 6SPIN files only"
+    },
+    {
+      "location": "ontology terms",
+      "value": "all NT/AC resolved",
+      "source_ids": [
+        "ols"
+      ],
+      "evidence": "live OLS4: Mammalia NCBITaxon:40674, bone tissue UBERON:0002481, MS:1001251, MS:1001309, MS:1003028, PRIDE:0000627, PRIDE:0000609, PRIDE:0000606, MS:1000422, UNIMOD:7/27/28/35/108, blank PRIDE:0001016 (child of PRIDE:0000895)"
+    }
+  ],
+  "limitations": [
+    "Specimen identity for 8 files (4EDTA ID01-ID06 nt, ID01-ID02 ac) is not stated anywhere; they are labelled unmapped. They are Ranis-range IDs by position only.",
+    "organism is the class Mammalia: per-specimen taxon is the study's result, not stated per specimen in the record (Table 1 gives prior ZooMS/SPIN identities only)",
+    "disease, developmental stage, strain, sex not available (archaeological bone)",
+    "specimen identifiers, sites and ages (>50 kya GdC, 40-50 kya Ranis) are not carried by a template column",
+    "mass tolerances not stated in the deposit (MaxQuant parameters.txt tolerances at defaults, not read as explicit values)",
+    "paper numbering of methods (3 LysC, 4 protease mix) differs from file labels (3EDTA = protease mix, 4EDTA = LysC); the file names and SampletoData.csv were followed",
+    "paper states 3a, 5a and 3b-Ranis were excluded from analysis, but those RAW files are deposited and annotated",
+    "parse_sdrf cache-only errors: sample type values study sample and blank are not in the cache (both valid in live OLS4); tools check flags Gln->pyro-Glu, Glu->pyro-Glu, Nethylmaleimide as hallucinated although live OLS4 resolves UNIMOD:28/27/108 with these labels"
+  ]
+}

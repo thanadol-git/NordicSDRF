@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD050046.sdrf.tsv",
+  "dataset": "PXD050046",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD050046"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD050046/files?pageSize=100&page=0 (12 files; pages 1-3 empty)"
+    },
+    {
+      "id": "raw",
+      "kind": "raw header",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/09/PXD050046/24052023_SL_collab_UbSite_iRT_RPE_1.raw and _C16_1.raw first 300 KB read by HTTP range"
+    },
+    {
+      "id": "setup",
+      "kind": "search settings",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/09/PXD050046/C16KO_ref_20230720_124954_20052023_Report.setup.txt (Spectronaut 18.1 directDIA settings and per-run Condition)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://europepmc.org/article/PMC/PMC13674506 (Sci Adv 2026, doi 10.1126/sciadv.aea3388; found by Europe PMC search on the accession; PRIDE record lists no reference)"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/ontologies/"
+    }
+  ],
+  "claims": [
+    {
+      "location": "rows 1-10 source name / data file / biological replicate",
+      "value": "RPE1-p53-/-_control_rep1-5 = RPE_1..5.raw; HAPSTR1-KO.2_rep1-5 = C16_1..5.raw",
+      "source_ids": [
+        "files",
+        "setup",
+        "paper"
+      ],
+      "evidence": "setup.txt 'Condition: RPE' / 'Condition: C16' per run; paper and PRIDE protocol: RPE1-p53-/- (5 replicates) vs HAPSTR1-KO.2 (5 replicates); C16orf72 = HAPSTR1"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Orbitrap Exploris 480 MS:1003028",
+      "source_ids": [
+        "pride",
+        "raw",
+        "paper"
+      ],
+      "evidence": "RAW header of RPE_1 and C16_1 contains 'Orbitrap Exploris 480'; PRIDE field and protocol agree"
+    },
+    {
+      "location": "cell line columns",
+      "value": "hTERT-RPE1 CVCL_4388; female",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods: RPE1-hTERT (female origin, ATCC CRL-4000); RPE1-hTERT-p53-/--PAC-/--TetOnCas9 derivative; Cellosaurus accession from sdrf-tools cellline lookup (not stated in paper)"
+    },
+    {
+      "location": "characteristics[treatment]",
+      "value": "Proteasome Inhibitor MG-132",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Protocol: cells treated with MG132; MG132 treatment; the '10 uM for 6 h' dose is from the Fig. 5D legend (Ni-NTA experiment), the Fig. 6 text only says cells were treated with MG132"
+    },
+    {
+      "location": "comment[cleavage agent details] x2",
+      "value": "Lys-C MS:1001309; Trypsin MS:1001251",
+      "source_ids": [
+        "pride",
+        "paper",
+        "setup"
+      ],
+      "evidence": "LysC digestion of proteins, then trypsin after UbiSite IP; Spectronaut search Trypsin/P"
+    },
+    {
+      "location": "reduction/alkylation",
+      "value": "DTT PRIDE:0000608; chloroacetamide PRIDE:0000600",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "Protocol: DTT 2 mM, chloroacetamide 11 mM"
+    },
+    {
+      "location": "comment[modification parameters] x4",
+      "value": "Carbamidomethyl C fixed; Acetyl Protein N-term, Oxidation M, GG K variable",
+      "source_ids": [
+        "setup",
+        "pride"
+      ],
+      "evidence": "setup.txt Pulsar Search Modifications and dataProcessingProtocol"
+    },
+    {
+      "location": "DIA columns",
+      "value": "DIA; MS1 350-1400; precursor 361-1033; isolation 12; HCD 28 NCE",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Protocol: 56 windows of 12 Da, overlap 1 Da, precursor range 361-1033, collision energy 28%"
+    },
+    {
+      "location": "comment[precursor/fragment mass tolerance]",
+      "value": "not available",
+      "source_ids": [
+        "setup"
+      ],
+      "evidence": "Spectronaut used Dynamic tolerances; no ppm values stated"
+    },
+    {
+      "location": "ontology terms",
+      "value": "all NT/AC resolved",
+      "source_ids": [
+        "ols"
+      ],
+      "evidence": "live OLS4 via tools verify (UNIMOD:121 label GG found via OLS4 term lookup)"
+    }
+  ],
+  "limitations": [
+    "Age, passage number, culture medium (IMDM not found in NCIT), ancestry not available; hTERT-RPE1 donor age not in paper",
+    "comment[dia method] not available (no variant stated)",
+    "enrichment process 'immunoprecipitation' not resolved in the cache-only EFO/PRIDE lists (warning)",
+    "Acquisition dates not annotated (RAW header date is the method creation date, 2022)",
+    "Mass tolerances: Spectronaut dynamic, no numeric values"
+  ]
+}

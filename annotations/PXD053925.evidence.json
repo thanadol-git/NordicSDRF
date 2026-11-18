@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD053925.sdrf.tsv",
+  "dataset": "PXD053925",
+  "sources": [
+    {"id":"pride","kind":"repository","location":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD053925"},
+    {"id":"files","kind":"repository","location":"https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD053925/files?pageSize=100&page=0 (62 files; pages 1-5 empty)"},
+    {"id":"pg","kind":"repository","location":"ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/05/PXD053925/proteinGroups_IP_ZCCHC8_DGCR8.txt, proteinGroups_IP_Z8_Salt.txt, proteinGroups_IP_RBM7.txt, proteinGroups_mTurbo_ZCCHC8.txt (header rows, HTTP range read)"},
+    {"id":"raw","kind":"raw header","location":"ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2026/05/PXD053925/<58 RAW files> first 2 MB read by HTTP range (method summary text)"},
+    {"id":"pubmed","kind":"publication","location":"https://pubmed.ncbi.nlm.nih.gov/39515294/ (abstract only; full text unavailable)"},
+    {"id":"ols","kind":"ontology","location":"https://www.ebi.ac.uk/ols4/api/"}
+  ],
+  "claims": [
+    {"location":"organism / cell type","value":"Mus musculus; embryonic stem cell","source_ids":["pride","pubmed"],"evidence":"PRIDE organism NEWT:10090 and sample attribute CL:0002322; abstract: mouse embryonic stem cells"},
+    {"location":"rows 1-58 data file / source name / replicate","value":"58 RAW files mapped to groups and replicates","source_ids":["files","pg"],"evidence":"proteinGroups experiment names (e.g. 43_Z8-3F, 04_Z8_200mM, 10_RBM27_3F_wBenz_1, 20_Z8_mES_mTurbo_wBio_1h_01) correspond to RAW file names; triplicates per protocol"},
+    {"location":"characteristics[genotype] / factor value[genotype]","value":"wild type, Z8-3F, Dgcr8, Z8, RBM7_3F, HA-mTurbo-ZCCHC8","source_ids":["pg","files","pride"],"evidence":"Submitter experiment names; protocol states HA-mTurbo-ZCCHC8 knock-in and WT untagged controls"},
+    {"location":"characteristics[treatment] / factor value[treatment]","value":"benzonase/no benzonase; 200/250/400 mM salt; biotin 50 uM 1 h/no biotin","source_ids":["pride","pg"],"evidence":"Protocol: mock or benzonase treatment, 50 uM biotin 1 h; names woBenz/wBenz, 200mM etc.; _B = benzonase inferred"},
+    {"location":"comment[instrument]","value":"Orbitrap Exploris 480 MS:1003028","source_ids":["pride","raw"],"evidence":"Protocol text and RAW method summary of all 58 files; PRIDE structured instrument (Fusion) overridden"},
+    {"location":"dissociation / collision energy / scan range","value":"HCD; 30 NCE; 350m/z-1500m/z (test file 350-1200)","source_ids":["raw"],"evidence":"RAW method summary: HCD Collision Energy (%) = 30, Scan Range 350-1500"},
+    {"location":"acquisition method / label","value":"DDA PRIDE:0000627; label free","source_ids":["pride"],"evidence":"Protocol: DDA, label-free, MaxQuant LFQ"},
+    {"location":"comment[cleavage agent details]","value":"Trypsin MS:1001251 (inferred)","source_ids":["pride"],"evidence":"Enzyme not named in protocol (PAC digestion, MaxQuant); template forbids not available; inferred typical"},
+    {"location":"ontology terms","value":"all NT/AC resolved","source_ids":["ols"],"evidence":"live OLS4 lookups of MS:1003028, MS:1001251, MS:1000422, PRIDE:0000627, CL:0002322, NCBITaxon:10090"}
+  ],
+  "limitations": [
+    "Paper full text and supplements not accessible (Mol Cell, not open access; Cell Press 403); tags, cell line, strain, sex not available",
+    "Trypsin is inferred; modifications, reduction/alkylation reagents and tolerances not stated and written not available",
+    "_B suffix = benzonase and Ctrl_bio = untagged WT + biotin are inferences from naming and protocol",
+    "mTurbo_woBio_test is a test run with a different method; sample identity assumed",
+    "Acquisition date not annotated; sdrf-tools build not run, file written by script"
+  ]
+}

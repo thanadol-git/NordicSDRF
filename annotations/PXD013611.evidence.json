@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD013611.sdrf.tsv",
+  "dataset": "PXD013611",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD013611"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD013611/files?pageSize=100&page=0 and page=1 (100+51 files; page 2 empty)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "PMC6858565 / PMID 31611688 / doi:10.1038/s41594-019-0313-z (Europe PMC fullTextXML)"
+    },
+    {
+      "id": "fig2",
+      "kind": "publication",
+      "location": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41594-019-0313-z/MediaObjects/41594_2019_313_Fig2_HTML.png (Figure 2a TMT channel assignment)"
+    },
+    {
+      "id": "supp",
+      "kind": "publication",
+      "location": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41594-019-0313-z/MediaObjects/41594_2019_313_MOESM1_ESM.pdf (Supplementary methods) and ..._MOESM3_ESM.xlsx (Supplementary Table 1)"
+    },
+    {
+      "id": "rawhdr",
+      "kind": "raw header",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/11/PXD013611/<147 RAW files> first 256 KB by HTTP range; LUM_02527.raw is an empty FTP directory"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "https://www.ebi.ac.uk/ols4/api/search"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[label] / source name, all rows",
+      "value": "sgNegCtrl_1-4 = TMT126,127N,127C,128N; sgPRMT5-1_1-3 = TMT128C,129N,129C; sgPRMT5-2_1-3 = TMT130N,130C,131",
+      "source_ids": [
+        "fig2",
+        "paper",
+        "supp"
+      ],
+      "evidence": "Figure 2a tube labels grouped 4/3/3 under sgNegCtrl/sgPRMT5-1/sgPRMT5-2; text says 4+3+3 replicates in a TMT10plex; Suppl Table 1 columns sgNegCtrl_1-4, sgPRMT5-2_1-3, sgPRMT5-1_1-3. Replicate numbers within groups follow channel order (assumed)."
+    },
+    {
+      "location": "comment[fraction identifier], comment[technical replicate], comment[data file]",
+      "value": "4+ fractionation series across 148 RAW",
+      "source_ids": [
+        "rawhdr",
+        "fig2",
+        "supp",
+        "files"
+      ],
+      "evidence": "RAW header comments 'evosep PRMT5 fraction N' (2..96), 'PRMT5 fraction N' (1..30), original paths '..._fr1..fr15', ACN-step comments for LUM_02346-02351, PTMScan for LUM2_01418 and LUM_02873; Fig 2a lists 96/30/15 fractions; LUM_02527 fraction 77 inferred"
+    },
+    {
+      "location": "characteristics[cell line], [cellosaurus accession], [organism], [organism part], [age], [sex]",
+      "value": "THP-1, CVCL_0006, Homo sapiens, blood, 1Y, male",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Paper: THP-1-cdCas9-KRAB cells, THP-1 from ATCC; age/sex/tissue from Cellosaurus via tools cellline lookup"
+    },
+    {
+      "location": "characteristics[disease]",
+      "value": "acute myeloid leukemia",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "PRIDE disease DOID:12603 acute leukemia; paper: human AML cells (MLL-AF9 rearranged)"
+    },
+    {
+      "location": "comment[cleavage agent details] x2, reduction, alkylation",
+      "value": "Trypsin; Lys-C; TCEP; chloroacetamide",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Sample processing protocol: 10 mM TCEP, 40 mM chloroacetamide, LysC 1:50 then trypsin 1:25"
+    },
+    {
+      "location": "comment[modification parameters], tolerances",
+      "value": "Carbamidomethyl C, TMT6plex K/N-term fixed; Oxidation M, Deamidated NQ, Dimethyl R, Methyl R variable; 10 ppm / 0.6 Da",
+      "source_ids": [
+        "pride",
+        "supp"
+      ],
+      "evidence": "Data processing protocol (Proteome Discoverer 2.3 / Mascot 2.3.2)"
+    },
+    {
+      "location": "comment[instrument], dissociation, collision energy, ms2 mass analyzer, acquisition method",
+      "value": "Orbitrap Fusion Lumos; CID 35% NCE; ion trap; DDA",
+      "source_ids": [
+        "pride",
+        "supp",
+        "rawhdr"
+      ],
+      "evidence": "Supplementary methods and RAW method summaries: MS2 CID 35%, ion trap detector; MS3 HCD 65% multinotch"
+    },
+    {
+      "location": "comment[fractionation method], characteristics[enrichment process]",
+      "value": "hpHRP for three series; not available ACN steps; PTMScan antibody enrichment for 2 runs",
+      "source_ids": [
+        "supp",
+        "rawhdr",
+        "paper"
+      ],
+      "evidence": "Supplementary methods (high pH RP, 192/60/30 subfractions concatenated); paper methods PTMScan MMA/SDMA enrichment; RAW names"
+    },
+    {
+      "location": "ontology terms",
+      "value": "all NT/AC resolved",
+      "source_ids": [
+        "ols"
+      ],
+      "evidence": "Live OLS4 search for TMT labels, MS, PRIDE and UNIMOD terms; PRIDE:0001013 exists"
+    }
+  ],
+  "limitations": [
+    "Channel-to-sample map comes from the published Figure 2a image (read visually), not from a deposited file; replicate numbering within a group is by channel order and arbitrary",
+    "The PRIDE deposit has no sample/label description file; the 33 GB .pdResult was not read",
+    "LUM_02527.raw header unreadable (empty directory on FTP); fraction 77 inferred by elimination",
+    "The 6 ACN-step runs (LUM_02346-02351) and 2 PTMScan runs are not described in the paper beyond 'all acquisitions searched together'; which PTMScan kit (MMA or SDMA) was used for each is unknown; fractionation method for ACN-step runs not available",
+    "Technical replicate numbers 1-6 separate fractionation/LC series of one pooled sample (annotation convention, not stated by authors)",
+    "MS3 HCD quantification step is not representable in the single dissociation column; MS1 resolution/cycle time differ between EvoSep and other methods",
+    "Cleavage agent repeated column added by post-build duplication because the template contract does not mark it multiple",
+    "parse_sdrf cache-only error for study sample (PRIDE:0001013) is a known artifact",
+    "Cellosaurus CVCL_0006 age/sex/disease from local curated subset only; disease overridden by paper (AML), Cellosaurus accession not re-checked online",
+    "Acquisition dates not annotated"
+  ]
+}
