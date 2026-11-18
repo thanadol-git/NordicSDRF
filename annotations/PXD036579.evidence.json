@@ -1,0 +1,32 @@
+{
+  "accession": "PXD036579",
+  "artifact": "annotations/PXD036579.sdrf.tsv",
+  "sha256": "5f4bf6d6ad62c78bb4b754a3a2b06f82a66ca120275b92f0951a064722428cd9",
+  "pride_record": "https://www.ebi.ac.uk/pride/archive/projects/PXD036579",
+  "publication": {
+    "doi": "10.1038/s41467-024-51542-z",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11336091/"
+  },
+  "local_evidence": {
+    "project": "scratchpad/PXD036579/pride.json",
+    "files": "scratchpad/PXD036579/files.json",
+    "raw_names": "scratchpad/PXD036579/raw_selected.json",
+    "samples": "scratchpad/PXD036579/samples.tsv",
+    "technical": "scratchpad/PXD036579/technical.tsv"
+  },
+  "file_list_assertion": "24 accession-scoped RAW entries; all 24 map one-to-one to SDRF data files",
+  "group_mapping": {
+    "shA/shC/shD": "distinct OSER1 knockdown filename codes; code identity retained literally",
+    "shCT": "control shRNA code in filenames",
+    "oeOS1": "OSER1 overexpression code in filenames",
+    "GFP": "GFP control code in filenames",
+    "1..4": "four replicates per condition as paper Methods state"
+  },
+  "biological_evidence": "Paper Figure 7 states the proteomic comparisons used U2OS cells with OSER1 knockdown or overexpression. PRIDE raw names give six groups, four replicates each. Cellosaurus CVCL_0042 supports U2OS donor female, 15Y, tibia, osteosarcoma. Exact shA/shC/shD sequence identities are not stated, so the source codes are preserved.",
+  "technical_evidence": "Paper and PRIDE sample protocol state trypsin, Orbitrap Exploris 480, DIA, 350-1400 m/z MS1, 49 windows 13.7 Da with 1 Da overlap, and 27% NCE. PRIDE structured instrument dropdown says Q Exactive; the narrative Methods and EXPL raw filenames support Exploris 480 and are followed.",
+  "limitations": "No shRNA target sequences were mapped to shA/shC/shD. The structured PRIDE instrument dropdown conflicts with the narrative and raw filenames.",
+  "validation": {
+    "official_cached_ontology": "pass",
+    "pride_reconcile": "pass"
+  }
+}
