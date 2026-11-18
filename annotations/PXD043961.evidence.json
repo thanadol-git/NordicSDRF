@@ -1,0 +1,37 @@
+{
+  "accession": "PXD043961",
+  "artifact": "annotations/PXD043961.sdrf.tsv",
+  "sha256": "ae29c75fc49a3c393ac5a395c5b74707d3324c035ff4e552cb9458cd77f60559",
+  "publication": {
+    "doi": "10.1038/s44318-024-00093-6",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11148058/"
+  },
+  "pride_record": "https://www.ebi.ac.uk/pride/archive/projects/PXD043961",
+  "local_evidence": {
+    "project": "scratchpad/PXD043961/pride.json",
+    "files": "scratchpad/PXD043961/files.json",
+    "raw_names": "scratchpad/PXD043961/raw_selected.json",
+    "samples": "scratchpad/PXD043961/samples.tsv",
+    "technical": "scratchpad/PXD043961/technical.tsv"
+  },
+  "file_list_assertion": "40 Associated raw file URI entries, all projectAccessions contain PXD043961; each appears exactly once in SDRF",
+  "group_mapping": {
+    "Chr-IP": "chromatin extraction; PRIDE sample protocol separates chromatin pellets from soluble extracts",
+    "Sol-IP": "soluble extraction",
+    "C_CENPA": "siCTRL + doxycycline-induced CENPA-FlagHA",
+    "C_C": "siCTRL without doxycycline (siCTRL_X condition in PRIDE protocol)",
+    "siCHAF1B_CENPA": "siCHAF1B + doxycycline-induced CENPA-FlagHA",
+    "siDNAJC9_CENPA": "siDNAJC9 + doxycycline-induced CENPA-FlagHA",
+    "01..05": "five biological replicates for each condition, as stated in PRIDE sample protocol"
+  },
+  "biological_evidence": "PRIDE sampleProcessingProtocol names HeLa S3, four siRNA/induction conditions, five biological replicates, soluble and chromatin extracts, HA-bead IP and on-bead trypsin. Cellosaurus CVCL_0058 supplies HeLa S3 donor metadata; Cellosaurus CVCL_0058 records HeLa S3 donor age 30Y6M.",
+  "technical_evidence": "PRIDE sampleProcessingProtocol names Orbitrap Exploris 480, top-nine dependent HCD scans, precursor charge 2-6 and MS1 300-1300 m/z. PRIDE dataProcessingProtocol names MaxQuant LFQ; no run-invariant search tolerance or modification was directly documented, so neither is asserted. Published Methods specify 25 NCE collision energy.",
+  "limitations": "The depositor file list includes a 1.17 GB search.tar.gz archive not inspected; no search tolerances or modifications are asserted. Source-name group labels derive from exact RAW name tokens and PRIDE condition prose.",
+  "validation": {
+    "official_cached_ontology": "pass: parse_sdrf validate-sdrf with ms-proteomics, human, cell-lines",
+    "structure": "pass",
+    "offline_check": "pass",
+    "pride_reconcile": "pass"
+  },
+  "analysis_exclusion": "The publication Methods state that DNAJC9 knockdown biological replicate 2 was excluded from quantitative analysis after failed knockdown. Both Chr-IP and Sol-IP RAW files remain in SDRF as deposited and are mapped to their biological samples; downstream analysts should exclude them to reproduce the published analysis."
+}
