@@ -67,13 +67,13 @@
     },
     {
       "location": "organism / organism part / material type",
-      "value": "Mammalia; bone tissue; tissue",
+      "value": "Per-specimen taxon for the 8 specimens with a previously identified taxon (51 rows): Ursidae (GdC_1, R10340), Rangifer tarandus (GdC_9, R10329, R10363), Bovidae (GdC_26), Rhinocerotidae (R10300), Equidae (R10357); Mammalia for the other specimens (GdC_6 ambiguous, GdC_7 and GdC_193 not previously identified, R10359 Hyaenidae/Felinae ambiguous); bone tissue; tissue",
       "source_ids": [
         "pride",
         "paper",
         "readme"
       ],
-      "evidence": "Taxonomically unidentified Late Pleistocene bone (Table 1); README: reference database spans Mammalia; PRIDE organism part Bone"
+      "evidence": "Paper Table 1 (PMC10603084): 'Taxonomic identity' per specimen, 'based on prior analysis using ZooMS (for Ranis) or SPIN (for GdC)'; reindeer = Rangifer tarandus (NCBITaxon:9870); family-level terms NCBITaxon:9632 Ursidae, 9895 Bovidae, 9803 Rhinocerotidae, 9788 Equidae resolve live. Prior-analysis identity, not a result of this dataset (the study re-identifies species from the deposited runs). README: reference database spans Mammalia; PRIDE organism part Bone"
     },
     {
       "location": "blank rows",
@@ -158,12 +158,13 @@
   ],
   "limitations": [
     "Specimen identity for 8 files (4EDTA ID01-ID06 nt, ID01-ID02 ac) is not stated anywhere; they are labelled unmapped. They are Ranis-range IDs by position only.",
-    "organism is the class Mammalia: per-specimen taxon is the study's result, not stated per specimen in the record (Table 1 gives prior ZooMS/SPIN identities only)",
     "disease, developmental stage, strain, sex not available (archaeological bone)",
     "specimen identifiers, sites and ages (>50 kya GdC, 40-50 kya Ranis) are not carried by a template column",
     "mass tolerances not stated in the deposit (MaxQuant parameters.txt tolerances at defaults, not read as explicit values)",
     "paper numbering of methods (3 LysC, 4 protease mix) differs from file labels (3EDTA = protease mix, 4EDTA = LysC); the file names and SampletoData.csv were followed",
     "paper states 3a, 5a and 3b-Ranis were excluded from analysis, but those RAW files are deposited and annotated",
-    "parse_sdrf cache-only errors: sample type values study sample and blank are not in the cache (both valid in live OLS4); tools check flags Gln->pyro-Glu, Glu->pyro-Glu, Nethylmaleimide as hallucinated although live OLS4 resolves UNIMOD:28/27/108 with these labels"
+    "parse_sdrf cache-only errors: sample type values study sample and blank are not in the cache (both valid in live OLS4); tools check flags Gln->pyro-Glu, Glu->pyro-Glu, Nethylmaleimide as hallucinated although live OLS4 resolves UNIMOD:28/27/108 with these labels",
+    "Organism values for the 8 specimens are the previously published ZooMS/SPIN identities from Table 1, not results of this dataset; specimens whose Table 1 identity is ambiguous or absent stay Mammalia. Blank rows are not applicable.",
+    "characteristics[organism] mixes taxonomic ranks (species Rangifer tarandus, families Ursidae/Bovidae/Rhinocerotidae/Equidae, class Mammalia); all are NCBITaxon terms and validate, but consumers filtering by species should be aware."
   ]
 }
