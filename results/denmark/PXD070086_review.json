@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD070086.sdrf.tsv",
+  "artifact_sha256": "14d08ccdbc7e5e3a85f0c2819ba1670872972efc77ba5ac21085e711f64fddd8",
+  "verdict": "PASS",
+  "summary": "Independent falsification found no blocking or important issues in the 36-run PXD070086 SDRF.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh delegated reviewer context; producer transcript and verdict not consulted."
+  },
+  "evidence_manifest": "annotations/PXD070086.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "37 columns and 36 uniform rows; template declarations ms-proteomics, human, cell-lines v1.1.0 match current template manifest; official parse_sdrf validator and repository structure check pass."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "All six structured controlled terms checked by offline repository checker: no hallucinations, label mismatches, wrong ontology, or UNIMOD swaps. Official validator passes. Cellosaurus CVCL_U427 directly identifies Flp-In-T-REx-293 of human origin; HEK293 is an appropriate parent label."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Accession-scoped PRIDE project PXD070086 names parental Flp-In T-REx HEK293 and six treatment conditions. Depositor design labels each run. Publication PMC13550524 Methods supports 10 \u00b5M TH5487, 4H8 capture, antibody-free bead control, and parallel triplicate preparations. Cellosaurus CVCL_U427 supports exact derivative and female origin. HyStarMetadata.xml records timsTOF Pro 2; mqpar.xml confirms Trypsin/P search, modifications and 10 ppm precursor / 40 ppm TOF fragment settings."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Accession identity checked in all four files.json entries. SDRF 36 unique .d names exactly match 36 depositor design names, 36 ZIP-derived selected names, and all 36 mqpar.xml file paths; no extra or missing runs."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "36 runs form 3 peroxide states x 2 TH5487 states x 2 capture states, with exactly three biological replicate preparations per each of 12 groups and technical replicate 1 throughout. Each SDRF source/file assignment matches the depositor design; factor combinations and replicate indices recomputed."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Unsupported donor age, tissue, disease, and cell type remain not available. IgPIP depositor code is represented as antibody-free bead control per paper, not inferred to IgG. No pig/bovine organism was imported from erroneous PRIDE processing prose; human cell line is supported independently. Missing optional ancestry and developmental stage do not assert unverified values."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -s annotations/PXD070086.sdrf.tsv -t ms-proteomics -t human -t cell-lines --use_ols_cache_only: exit 0. python3 -m tools structure: Structure OK. python3 -m tools check --offline: CLEAN, 0 hallucinations/mismatches/swaps. python3 -m tools score: 98/100."
+    }
+  },
+  "findings": []
+}

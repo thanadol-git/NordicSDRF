@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD070086.sdrf.tsv",
+  "dataset": "PXD070086",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "scratchpad/PXD070086/pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository file list",
+      "location": "scratchpad/PXD070086/files.json"
+    },
+    {
+      "id": "design",
+      "kind": "depositor run design",
+      "location": "scratchpad/PXD070086/experimental_design.tsv"
+    },
+    {
+      "id": "zip",
+      "kind": "deposited raw.zip central directory",
+      "location": "scratchpad/PXD070086/raw_zip_tail.bin"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13550524/"
+    },
+    {
+      "id": "cellosaurus",
+      "kind": "cell-line registry",
+      "location": "https://www.cellosaurus.org/CVCL_U427"
+    },
+    {
+      "id": "sampleinfo",
+      "kind": "Bruker run metadata",
+      "location": "scratchpad/PXD070086/SampleInfo.xml"
+    },
+    {
+      "id": "hystar",
+      "kind": "Bruker run metadata",
+      "location": "scratchpad/PXD070086/HyStarMetadata.xml"
+    },
+    {
+      "id": "mqpar",
+      "kind": "deposited MaxQuant parameters",
+      "location": "scratchpad/PXD070086/mqpar.xml"
+    },
+    {
+      "id": "inventory",
+      "kind": "derived run map",
+      "location": "results/denmark/PXD070086_run_inventory.tsv"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file], all 36 rows",
+      "value": "36 Bruker .d acquisitions",
+      "source_ids": [
+        "design",
+        "zip",
+        "mqpar",
+        "inventory"
+      ],
+      "evidence": "The 36 design-table names plus .d match exactly the 36 raw.zip top-level .d directories; mqpar.xml lists the same 36 files."
+    },
+    {
+      "location": "source and factor values, all rows",
+      "value": "3 replicate preparations in each of 12 groups",
+      "source_ids": [
+        "design",
+        "paper",
+        "pride"
+      ],
+      "evidence": "Depositor grouping gives untreated, treated, recovery crossed with OGG1 inhibitor and 4H8 antibody-conjugated beads or non-antibody-conjugated control beads, three samples each. The paper says proteomic samples were prepared in parallel from cell seeding in triplicate. PRIDE gives 1 mM H2O2 for 15 min and two-hour recovery; paper Methods gives TH5487 OGG1i at 10 µM. The publication Methods explicitly state non-antibody-conjugated beads were the negative control for MS."
+    },
+    {
+      "location": "characteristics[cell line] and [cellosaurus accession], all rows",
+      "value": "Flp-In-T-REx-293 parent line",
+      "source_ids": [
+        "pride",
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "PRIDE and paper name the parental Flp-In T-REx HEK293 line, Cellosaurus CVCL_U427. HEK293 is used for the supported cell-line ontology parent; exact derivative is retained as Cellosaurus name/accession."
+    },
+    {
+      "location": "characteristics[sex], all rows",
+      "value": "female",
+      "source_ids": [
+        "paper",
+        "cellosaurus"
+      ],
+      "evidence": "Paper Methods and Cellosaurus identify female origin of the cell line."
+    },
+    {
+      "location": "comment[instrument], all rows",
+      "value": "timsTOF Pro 2",
+      "source_ids": [
+        "hystar",
+        "pride"
+      ],
+      "evidence": "Run-specific HyStarMetadata.xml Product Name is timsTOF Pro 2, agreeing with PRIDE structured instrument; publication narrative uses the less specific timsTOF pro wording."
+    },
+    {
+      "location": "comment[cleavage agent details], all rows",
+      "value": "Trypsin",
+      "source_ids": [
+        "pride",
+        "paper",
+        "mqpar"
+      ],
+      "evidence": "PRIDE and paper Methods describe trypsin digestion. mqpar.xml gives Trypsin/P search specificity; the SDRF describes the physical reagent as Trypsin."
+    },
+    {
+      "location": "acquisition, label, tolerances and modifications, all rows",
+      "value": "DDA PASEF, label-free, 10 ppm precursor, 40 ppm TOF fragment; C carbamidomethyl fixed, M oxidation and protein N-terminal acetyl variable",
+      "source_ids": [
+        "pride",
+        "paper",
+        "mqpar",
+        "design"
+      ],
+      "evidence": "Raw names include DDA, paper says PASEF, MaxQuant file map matches all 36, MaxQuant settings provide modification and analyzer-specific tolerance values."
+    },
+    {
+      "location": "characteristics[immunoprecipitation capture] and factor value[immunoprecipitation capture], all rows",
+      "value": "4H8 antibody-conjugated beads for baitIP; non-antibody-conjugated beads for IgPIP control",
+      "source_ids": [
+        "design",
+        "paper"
+      ],
+      "evidence": "Depositor design distinguishes baitIP and IgPIP runs; publication mass spectrometry Methods identifies 4H8-conjugated beads and non-antibody-conjugated beads as the control. The depositor IgPIP code alone does not establish an IgG antibody."
+    }
+  ],
+  "limitations": [
+    "PRIDE data-processing prose incorrectly names swine/bovine databases; deposited mqpar.xml uses human FASTA paths and paper Methods says human UniProt.",
+    "The paper uses the generic name timsTOF pro; run metadata and PRIDE structured instrument identify Pro 2.",
+    "Exact tissue origin of HEK293 is not asserted as the sampled organism part.",
+    "Archive members are .d acquisitions inside raw.zip, so the SDRF names the acquisition directories rather than the outer ZIP.",
+    "The deposited group label IgPIP is retained in the run inventory; it is not interpreted as IgG because publication Methods describes antibody-free control beads."
+  ],
+  "artifact_sha256": "14d08ccdbc7e5e3a85f0c2819ba1670872972efc77ba5ac21085e711f64fddd8"
+}
