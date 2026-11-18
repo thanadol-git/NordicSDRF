@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD024280-chromass.sdrf.tsv",
+  "artifact_sha256": "9bb66c45dfecc648d25a28b3cc67c0dff027854cd5c318a34cc771545576c335",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocker or important finding for the 24 CHROMASS RAW acquisitions. C/no-DNA assignment is disclosed as inference in the evidence manifest.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh isolated reviewer agent; no producer transcript or artifact edits."
+  },
+  "evidence_manifest": "annotations/PXD024280-chromass.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Read TERMS.tsv, templates.yaml and active base, sample-metadata, ms-proteomics 1.1.0 and vertebrates 1.1.0 YAML; 24 rows each have 31 cells. csv.reader preserves two cleavage columns, two template columns and three modification columns."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Official parse_sdrf union validation with OLS cache passed; offline ontology checker found 0 hallucinated, label mismatched, wrong-ontology or UNIMOD-swapped terms. PRIDE accession and organism/instrument checked against project JSON."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project JSON accession PXD024280 and PMC8982572 Methods confirm Xenopus laevis, CHROMASS quadruplicate sperm chromatin conditions, LysC then trypsin, Q Exactive HF-X, DDA/HCD, 300-1750 m/z, 25 NCE, duplicate injections, label-free analysis and variable oxidation/acetylation. C=no-DNA remains a disclosed inference from filename C plus paper no-DNA comparison."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Every entry of accession-scoped files.json has projectAccessions=[PXD024280]. All 24 unique SDRF RAW names equal accession-scoped chromass_raw_selected.json and occur in deposited file list; no duplicates or missing CHROMASS RAW."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Filename grammar independently parsed for every row; C, M and UV each have R1-R4 and TR1-TR2 (8 acquisitions each). Source names, biological and technical replicate fields and factor values agree with filenames and stated condition mapping."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Inspected all 31 columns and unique values. No unsupported sample-specific sex, stage, anatomical part or disease was asserted; not available used where appropriate. Paper supports modification, cleavage and MS settings, and the material C-control inference is explicitly identified."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "Exit 0: parse_sdrf validate-sdrf -t ms-proteomics -t vertebrates --use_ols_cache_only (Everything seems to be fine); python3 -m tools.cli structure (Structure OK); check --offline (CLEAN, 0 hallucinations); score (88/100; only optional precursor/fragment tolerance columns absent)."
+    }
+  },
+  "findings": []
+}

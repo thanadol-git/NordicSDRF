@@ -1,0 +1,25 @@
+source name	files	label	technical replicate	characteristics[organism]	characteristics[organism part]	characteristics[cell type]	characteristics[biological replicate]	characteristics[disease]	characteristics[sex]	characteristics[experimental condition]	factor value[experimental condition]
+C_R1	20180209_QE6_LC12_IAH_collab_LS_UVchrom_C_R1_TR1.raw	label free sample	1	Xenopus laevis	not available	not available	1	not available	not available	no DNA control	no DNA control
+C_R1	20180209_QE6_LC12_IAH_collab_LS_UVchrom_C_R1_TR2.raw	label free sample	2	Xenopus laevis	not available	not available	1	not available	not available	no DNA control	no DNA control
+C_R2	20180209_QE6_LC12_IAH_collab_LS_UVchrom_C_R2_TR1.raw	label free sample	1	Xenopus laevis	not available	not available	2	not available	not available	no DNA control	no DNA control
+C_R2	20180209_QE6_LC12_IAH_collab_LS_UVchrom_C_R2_TR2.raw	label free sample	2	Xenopus laevis	not available	not available	2	not available	not available	no DNA control	no DNA control
+C_R3	20180209_QE6_LC12_IAH_collab_LS_UVchrom_C_R3_TR1.raw	label free sample	1	Xenopus laevis	not available	not available	3	not available	not available	no DNA control	no DNA control
+C_R3	20180209_QE6_LC12_IAH_collab_LS_UVchrom_C_R3_TR2.raw	label free sample	2	Xenopus laevis	not available	not available	3	not available	not available	no DNA control	no DNA control
+C_R4	20180209_QE6_LC12_IAH_collab_LS_UVchrom_C_R4_TR1.raw	label free sample	1	Xenopus laevis	not available	not available	4	not available	not available	no DNA control	no DNA control
+C_R4	20180209_QE6_LC12_IAH_collab_LS_UVchrom_C_R4_TR2.raw	label free sample	2	Xenopus laevis	not available	not available	4	not available	not available	no DNA control	no DNA control
+M_R1	20180209_QE6_LC12_IAH_collab_LS_UVchrom_M_R1_TR1.raw	label free sample	1	Xenopus laevis	not available	not available	1	not available	not available	untreated sperm chromatin	untreated sperm chromatin
+M_R1	20180209_QE6_LC12_IAH_collab_LS_UVchrom_M_R1_TR2.raw	label free sample	2	Xenopus laevis	not available	not available	1	not available	not available	untreated sperm chromatin	untreated sperm chromatin
+M_R2	20180209_QE6_LC12_IAH_collab_LS_UVchrom_M_R2_TR1.raw	label free sample	1	Xenopus laevis	not available	not available	2	not available	not available	untreated sperm chromatin	untreated sperm chromatin
+M_R2	20180209_QE6_LC12_IAH_collab_LS_UVchrom_M_R2_TR2.raw	label free sample	2	Xenopus laevis	not available	not available	2	not available	not available	untreated sperm chromatin	untreated sperm chromatin
+M_R3	20180209_QE6_LC12_IAH_collab_LS_UVchrom_M_R3_TR1.raw	label free sample	1	Xenopus laevis	not available	not available	3	not available	not available	untreated sperm chromatin	untreated sperm chromatin
+M_R3	20180209_QE6_LC12_IAH_collab_LS_UVchrom_M_R3_TR2.raw	label free sample	2	Xenopus laevis	not available	not available	3	not available	not available	untreated sperm chromatin	untreated sperm chromatin
+M_R4	20180209_QE6_LC12_IAH_collab_LS_UVchrom_M_R4_TR1.raw	label free sample	1	Xenopus laevis	not available	not available	4	not available	not available	untreated sperm chromatin	untreated sperm chromatin
+M_R4	20180209_QE6_LC12_IAH_collab_LS_UVchrom_M_R4_TR2.raw	label free sample	2	Xenopus laevis	not available	not available	4	not available	not available	untreated sperm chromatin	untreated sperm chromatin
+UV_R1	20180209_QE6_LC12_IAH_collab_LS_UVchrom_UV_R1_TR1.raw	label free sample	1	Xenopus laevis	not available	not available	1	not available	not available	UV-C exposed sperm chromatin	UV-C exposed sperm chromatin
+UV_R1	20180209_QE6_LC12_IAH_collab_LS_UVchrom_UV_R1_TR2.raw	label free sample	2	Xenopus laevis	not available	not available	1	not available	not available	UV-C exposed sperm chromatin	UV-C exposed sperm chromatin
+UV_R2	20180209_QE6_LC12_IAH_collab_LS_UVchrom_UV_R2_TR1.raw	label free sample	1	Xenopus laevis	not available	not available	2	not available	not available	UV-C exposed sperm chromatin	UV-C exposed sperm chromatin
+UV_R2	20180209_QE6_LC12_IAH_collab_LS_UVchrom_UV_R2_TR2.raw	label free sample	2	Xenopus laevis	not available	not available	2	not available	not available	UV-C exposed sperm chromatin	UV-C exposed sperm chromatin
+UV_R3	20180209_QE6_LC12_IAH_collab_LS_UVchrom_UV_R3_TR1.raw	label free sample	1	Xenopus laevis	not available	not available	3	not available	not available	UV-C exposed sperm chromatin	UV-C exposed sperm chromatin
+UV_R3	20180209_QE6_LC12_IAH_collab_LS_UVchrom_UV_R3_TR2.raw	label free sample	2	Xenopus laevis	not available	not available	3	not available	not available	UV-C exposed sperm chromatin	UV-C exposed sperm chromatin
+UV_R4	20180209_QE6_LC12_IAH_collab_LS_UVchrom_UV_R4_TR1.raw	label free sample	1	Xenopus laevis	not available	not available	4	not available	not available	UV-C exposed sperm chromatin	UV-C exposed sperm chromatin
+UV_R4	20180209_QE6_LC12_IAH_collab_LS_UVchrom_UV_R4_TR2.raw	label free sample	2	Xenopus laevis	not available	not available	4	not available	not available	UV-C exposed sperm chromatin	UV-C exposed sperm chromatin

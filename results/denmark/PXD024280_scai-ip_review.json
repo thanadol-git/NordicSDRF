@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD024280-scai-ip.sdrf.tsv",
+  "artifact_sha256": "a1f116fd59853b5a80113c2381146e297ef5a02977c6d43b2e068ded652e872a",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review found no blocker or important finding for the 12 SCAI-IP acquisitions.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh isolated reviewer; producer transcript and assessment not read."
+  },
+  "evidence_manifest": "annotations/PXD024280-scai-ip.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "12 data rows, 30 cells each; active ms-proteomics@1.1.0 and vertebrates@1.1.0 declarations, column structure, and value syntax pass parse_sdrf and tools.cli structure."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "parse_sdrf union validation with local OLS cache passed; offline tools.cli check reported 7 terms checked, 0 hallucinations, 0 label mismatches, 0 wrong ontologies and 0 UNIMOD swaps. PRIDE organism NEWT:8355 and instrument MS:1002877 agree."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE accession PXD024280 identifies Xenopus laevis and Q Exactive HF-X. Schubert et al. PMC8982572 Methods lines 640-643, 649-653 and 659-661 support IgG/SCAI-N/SCAI-C IP, bead-bound trypsin digestion, 300-1750 m/z, HCD 25 NCE, and search modifications; Fig. 4 legend line 405 supports n=4 independent experiments."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "All 39 PRIDE file records identify PXD024280; 36 are RAW, of which exactly 12 are SCAI-IP. SDRF contains each of those 12 once and no other file; raw suffixes and antibody groups match each row."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Three antibody conditions (IgG, SCAI-N, SCAI-C), four biological replicate identifiers 1-4 in each, one RAW per row, technical replicate 1 and fraction 1; Fig. 4 legend specifies four independent experiments."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Unknown sex, stage, cell type, disease and organism part remain not available; no unsupported per-sample specificity was added. Fixed carbamidomethylation is consistent with CAA alkylation and MaxQuant default; oxidation and N-terminal acetylation are stated in Methods."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t vertebrates --use_ols_cache_only exited 0: Everything seems to be fine. tools.cli structure exited 0: Structure OK. tools.cli check --offline exited 0: CLEAN. tools.cli score exited 0: 88/100 (Good)."
+    }
+  },
+  "findings": []
+}

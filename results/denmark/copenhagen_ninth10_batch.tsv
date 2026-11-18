@@ -5,7 +5,7 @@ batch_order	accession	pride_raw_bytes	pride_raw_count	annotation_status	title
 4	PXD056094	48665974421	28	queued: evidence review	Animal glue and beyond: palaeoproteomic analysis of paint binders and adhesives in ancient Egypt
 5	PXD014342	48930847953	27	queued: evidence review	A Pleistocene hominin enamel proteome from Homo antecessor
 6	PXD025523	50322281082	58	queued: evidence review	arrythmogenic right ventricular acrdiomayopathy (PKP2-cko in mice and Human biopsies)
-7	PXD024280	50681318628	36	queued: evidence review	SCAI orchestrates DNA interstrand crosslink repair downstream of FANCI-FANCD2 ubiquitylation
+7	PXD024280	50681318628	36	committed: independently reviewed	SCAI orchestrates DNA interstrand crosslink repair downstream of FANCI-FANCD2 ubiquitylation
 8	PXD074572	51979104726	40	partial: phosphoproteome committed; EGFR-IP evidence gap	Ligand‑Resolved In Vivo Phosphoproteomics of the Adult Heart Maps ErbB Signaling by EGF and NRG1β
 9	PXD070086	53646785817	1	approved and committed: 36/36 acquisitions	Phosphorylated RNAPII interactome via 4H8 antibody IP with OGG1 inhibitor
 10	PXD018217	53806982325	32	approved and committed: 32/32 acquisitions	The E3 ubiquitin ligase RFWD3 is required for translesion DNA synthesis
