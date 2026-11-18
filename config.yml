@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-10-01
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-11-16)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-11-17)
 
 countries:
   sweden:
@@ -62,7 +62,7 @@ countries:
         screened: 0
         annotated: 75
         blocked: 82
-        in_corpus: 100
+        in_corpus: 101
       gothenburg:
         name: Gothenburg
         search_terms: [Gothenburg, Göteborg, Sahlgrenska, Chalmers]
@@ -72,7 +72,7 @@ countries:
         screened: 0
         annotated: 66
         blocked: 60
-        in_corpus: 73
+        in_corpus: 74
       uppsala:
         name: Uppsala
         search_terms: [Uppsala]
@@ -120,12 +120,12 @@ countries:
         search_terms: [Copenhagen, København, Rigshospitalet, Frederiksberg]
         pride_hits: 554
         screened: 0
-        annotated: 94
-        blocked: 39
+        annotated: 103
+        blocked: 48
         notes: "Manifest from build_manifest.py (2026-11-03): 543 confirmed Danish; PXD006201, PXD006679, PXD027901, PXD043505 removed (SDU Odense affiliations only). 32 Odense-list, 1 Aarhus-list and 2 Roskilde-list PXDs have Copenhagen-only affiliations and are still listed under those cities"
         pxd_list: lists/denmark/copenhagen.txt
         pxd_count: 539
-        in_corpus: 286
+        in_corpus: 290
       odense:
         name: Odense
         search_terms: [Odense, "University of Southern Denmark"]
@@ -135,7 +135,7 @@ countries:
         blocked: 25
         pxd_list: lists/denmark/odense.txt
         pxd_count: 178
-        in_corpus: 79
+        in_corpus: 87
       aarhus:
         name: Aarhus
         search_terms: [Aarhus, Århus]
