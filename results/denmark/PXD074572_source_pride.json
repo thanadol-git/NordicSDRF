@@ -1,0 +1,154 @@
+{
+  "accession": "PXD074572",
+  "title": "Ligand\u2011Resolved In Vivo Phosphoproteomics of the Adult Heart Maps ErbB Signaling by EGF and NRG1\u03b2",
+  "additionalAttributes": [],
+  "projectDescription": "ErbB receptor tyrosine kinases orchestrate phosphorylation\u2011based signaling in response to extracellular ligands and are key drivers in cancer biology, heart development and physiology. While extensively investigated in other tissues, the signaling response elicited in cardiac tissue, has not yet been investigated to the same extent.",
+  "sampleProcessingProtocol": "EGF (EGFR/ErbB1 ligand) or NRG1\u03b2 (ErbB3/ErbB4 ligand) was administered to C57Bl6JRj mice. After 10 min, heart tissue was collected and analyzed by quantitative phosphoproteomics to map acute cardiac phosphorylation responses. Phosphoproteomic studies involved dual enrichment using TiO\u2082 and anti phosphotyrosine antibodies and high-resolution mass spectrometry measurements (Orbitrap Exploris 480, Thermo Fisher Scientific). Immunoprecipitation of EGFR was performed to assess its activation state using on-beads digestion protocol followed by MS analysis in timsTOF pro mass spectrometer (Bruker).",
+  "dataProcessingProtocol": ".d or Raw MS data was processed using FragPipe (v. 22) using the built-in workflow \u201cLFQ-Phospho\u201d with MBR (minimum correlation 0.5, top 3 runs and FDR cutoff 5% for phosphoproteome and default parameters for IP study). 'combined_site_STY_79.9663.tsv' file was processed in RStudio using custom scripts. Initial processing was performed using DEP R package (v. 1.26.0). Data were filtered to retain features quantified in all samples of the treated condition group. Intensities were log2-transformed and median normalized. Missing values were imputed using a mixed imputation approach implemented in DEP were missing values in more than 50% of the samples were imputed using a left-censored (MinProb) approach from a distribution centered near the first percentile of observed intensities (q=0.01). Differential expression was assessed using an R package LIMMA (v. 3.60.6) based empirical Bayes moderated test statistics.",
+  "projectTags": [],
+  "keywords": [
+    "Heart",
+    "Phosphoproteome",
+    "Egf",
+    "Ip",
+    "Nrg1"
+  ],
+  "doi": "",
+  "submissionType": "PARTIAL",
+  "license": "Creative Commons Public Domain (CC0)",
+  "submissionDate": "2026-02-18",
+  "publicationDate": "2026-07-09",
+  "submitters": [
+    {
+      "title": "Dr",
+      "firstName": "Estefania",
+      "lastName": "Torres-Vega",
+      "identifier": "2430774",
+      "affiliation": "Cardiac Proteomics & Systems Biology group, Department of Biomedical Sciences, Copenhagen University",
+      "email": "estefania.torres.vega@sund.ku.dk",
+      "country": "Denmark",
+      "orcid": "0000-0001-8495-9902",
+      "name": "Estefania Torres-Vega",
+      "id": "2430774"
+    }
+  ],
+  "labPIs": [
+    {
+      "title": "Dr",
+      "firstName": "Alicia",
+      "lastName": "Lundby",
+      "identifier": "3389150",
+      "affiliation": "Department of Biomedical Sciences, Cardiac Proteomics & Systems Biology group, University of Copenhagen Denmark (lab head)",
+      "email": "alicia.lundby@sund.ku.dk",
+      "country": "",
+      "orcid": "",
+      "name": "Alicia Lundby",
+      "id": "3389150"
+    }
+  ],
+  "instruments": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "MS",
+      "accession": "MS:1003028",
+      "name": "Orbitrap Exploris 480"
+    },
+    {
+      "@type": "CvParam",
+      "cvLabel": "MS",
+      "accession": "MS:1003005",
+      "name": "timsTOF Pro"
+    }
+  ],
+  "softwares": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "MS",
+      "accession": "MS:1003429",
+      "name": "FragPipe"
+    }
+  ],
+  "experimentTypes": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000627",
+      "name": "Data-dependent acquisition"
+    }
+  ],
+  "quantificationMethods": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "OBI:0002584",
+      "name": "differential expression analysis data"
+    }
+  ],
+  "countries": [
+    "Denmark"
+  ],
+  "sampleAttributes": [
+    {
+      "@type": "Tuple",
+      "key": {
+        "cvLabel": "EFO",
+        "accession": "EFO:0000635",
+        "name": "organism part"
+      },
+      "value": [
+        {
+          "cvLabel": "BTO",
+          "accession": "BTO:0000562",
+          "name": "heart"
+        }
+      ]
+    },
+    {
+      "@type": "Tuple",
+      "key": {
+        "cvLabel": "EFO",
+        "accession": "OBI:0100026",
+        "name": "organism"
+      },
+      "value": [
+        {
+          "cvLabel": "NEWT",
+          "accession": "NEWT:10090",
+          "name": "Mus musculus (Mouse)"
+        }
+      ]
+    }
+  ],
+  "organisms": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "NEWT",
+      "accession": "NEWT:10090",
+      "name": "Mus musculus (mouse)"
+    }
+  ],
+  "organismParts": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "BTO",
+      "accession": "BTO:0000562",
+      "name": "Heart"
+    }
+  ],
+  "diseases": [],
+  "references": [
+    {
+      "pubmedID": 0,
+      "doi": "10.1016/j.yjmcc.2026.07.006"
+    }
+  ],
+  "identifiedPTMStrings": [
+    {
+      "@type": "CvParam",
+      "cvLabel": "MOD",
+      "accession": "MOD:00696",
+      "name": "phosphorylated residue"
+    }
+  ],
+  "totalFileDownloads": 0
+}

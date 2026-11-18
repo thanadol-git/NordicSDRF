@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD074572-phosphoproteome.sdrf.tsv",
+  "artifact_sha256": "d24ab856f969429e06d5c202b64abf1684c02f3b5549f903d69ede82b2a5d58a",
+  "dataset": "PXD074572",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository project",
+      "location": "results/denmark/PXD074572_source_pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository file list",
+      "location": "results/denmark/PXD074572_source_files.json"
+    },
+    {
+      "id": "readme",
+      "kind": "depositor documentation",
+      "location": "results/denmark/PXD074572_source_README.txt"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://www.sciencedirect.com/science/article/pii/S0022282826001021"
+    },
+    {
+      "id": "runmap",
+      "kind": "depositor run map",
+      "location": "results/denmark/PXD074572_source_experiment_annotation.tsv"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] and condition for all rows",
+      "value": "32 phosphoproteome RAW runs",
+      "source_ids": [
+        "files",
+        "readme",
+        "runmap"
+      ],
+      "evidence": "Depositor annotation table maps each acquisition to control or ligand-treated biological replicate; PRIDE file listing contains each RAW file or matching .d.zip stem. Paired pY/TiO2 enrichments retain one source name per biological heart. The sequential pY and TiO2 peptide fractions are identifiers 1 and 2."
+    },
+    {
+      "location": "organism, heart, age, stage, strain and sampling time",
+      "value": "12-week C57BL/6JRj mouse hearts collected 12 minutes after injection",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Published Methods 2.2: 12-week littermate mice, 10 minutes of ligand stimulation, 1.5 minutes perfusion, 12 minutes total injection to heart collection; PRIDE gives experimental conditions."
+    },
+    {
+      "location": "instrument and acquisition method",
+      "value": "Orbitrap Exploris 480 DDA",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE sample-processing protocol names instruments by subexperiment; paper supplies Exploris LC-MS method; IP FragPipe params specify DDA."
+    },
+    {
+      "location": "cleavage, enrichment, modifications and mass tolerances",
+      "value": "Lys-C then trypsin; anti-pY and TiO2 separately analyzed; 20 ppm precursor/fragment",
+      "source_ids": [
+        "paper",
+        "runmap"
+      ],
+      "evidence": "Published Methods 2.3-2.5 specify sequential digest/enrichments, search modifications and tolerances; run map maps enrichment-specific RAW files."
+    }
+  ],
+  "known_limitations": []
+}
