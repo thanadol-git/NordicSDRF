@@ -1,0 +1,5 @@
+# Copenhagen ninth batch: 10 PXDs
+
+Started 2026-11-18 on `codex/copenhagen-ninth10`, based on the latest NordicSDRF `origin/main` (`b82e0dd`). The [tracker](copenhagen_ninth10_batch.tsv) lists the ten smallest remaining confirmed Copenhagen deposits by accession-scoped PRIDE RAW-file size after prior batches and local annotations. PXD006579 was skipped because its PRIDE human organism conflicts with the mouse search database; it requires identity resolution before annotation. Current BigBio `upstream/main` (`97ab7fdd8`) and open PRs were checked for all ten accessions; none was present. PRIDE project and file records were refreshed on 2026-11-18, with accession ownership asserted for each file list. A PRIDE RAW-category ZIP may contain multiple acquisitions and will be inspected before annotation.
+
+Each PXD requires an evidence manifest, deterministic validation, and independent adversarial review before its own commit. The tracker is an inventory; `queued` does not imply an approved SDRF.
