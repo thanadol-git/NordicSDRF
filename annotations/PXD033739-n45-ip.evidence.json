@@ -1,0 +1,29 @@
+{
+  "accession": "PXD033739",
+  "scope": "N45-IP assay arm only: 16 of 36 deposited RAW files",
+  "artifact": "annotations/PXD033739-n45-ip.sdrf.tsv",
+  "sha256": "a54175ff419e453e91e0ef46a1323c2c29279ac59b7918baf43c3f7d61d54815",
+  "pride_record": "https://www.ebi.ac.uk/pride/archive/projects/PXD033739",
+  "publication": {
+    "doi": "10.1038/s41594-023-01045-0",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10497417/"
+  },
+  "local_evidence": {
+    "project": "scratchpad/PXD033739/pride.json",
+    "files": "scratchpad/PXD033739/files.json",
+    "raw_names": "scratchpad/PXD033739/raw_selected.json",
+    "samples": "scratchpad/PXD033739/samples.tsv",
+    "technical": "scratchpad/PXD033739/technical.tsv"
+  },
+  "file_list_assertion": "16 N45-IP RAW files selected from 36 accession-scoped RAW files; each of the 16 appears once in the subset SDRF",
+  "group_mapping": {
+    "N45-IP_C_C/N45-IP_C_I/N45-IP_M_C/N45-IP_M_I": "four literal filename condition codes, each with biological replicates 01-04; no unsupported assignment of C/M or C/I to treatment meanings",
+    "01..04": "PRIDE sample protocol explicitly states quadruplicates"
+  },
+  "biological_evidence": "PRIDE protocol states N45-IP samples are quadruplicates of U2OS Flp-In T-REx NIP45-KO/GFP-NIP45 WT and SLD2* cell lines, induced with doxycycline. Cellosaurus CVCL_0042 supports parental U2OS donor female 15Y, tibia, osteosarcoma. The exact construct/treatment mapping to C/M and C/I filename tokens is not documented, so codes are retained literally.",
+  "technical_evidence": "PRIDE N45-IP protocol explicitly states GFP-Trap IP, on-bead trypsin, Orbitrap Exploris 480, DDA top12, HCD 25 NCE, charges 2-6, MS1 300-1300 m/z.",
+  "limitations": "The 20 SUMO RAW files are excluded from this subset because the deposited protocol does not directly state the SUMO arm cleavage agent and its assay differs. The C/M and C/I code semantics remain unresolved; no biological meaning is inferred.",
+  "validation": {
+    "official_cached_ontology": "pass"
+  }
+}

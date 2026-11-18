@@ -1,0 +1,22 @@
+{
+  "accession": "PXD023579",
+  "artifact": "annotations/PXD023579-proteome.sdrf.tsv",
+  "sha256": "db2a00bd14736a07a1e24cffd59c39d1a8a900fe45abf46e36e4650e9a6ca458",
+  "pride_record": "https://www.ebi.ac.uk/pride/archive/projects/PXD023579",
+  "publication": {
+    "doi": "10.15252/embj.2021110145",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9058539/"
+  },
+  "local_evidence": {
+    "project": "scratchpad/PXD023579/pride.json",
+    "files": "scratchpad/PXD023579/files.json",
+    "raw_names": "scratchpad/PXD023579/raw_selected.json",
+    "samples": "scratchpad/PXD023579/samples.tsv",
+    "technical": "scratchpad/PXD023579/technical.tsv"
+  },
+  "file_list_assertion": "15 K27R time-course RAWs selected from 29 accession-scoped RAWs; seven Ub-Proteome and seven Ub-IP files excluded. Every selected RAW appears exactly once.",
+  "biological_evidence": "Publication Figure 1G and EV1G explicitly describes triplicate technical replicate samples across a 96-hour doxycycline induction time course of U2OS/shUb/HA-Ub(K27R)-c21 cells. Fifteen K27R file names map to 0,24,48,72,96-hour points, each with technical replicate 1-3. Biological replicate is set to 1 for this single documented cell-line experiment. U2OS provenance (osteosarcoma, tibia, female, 15Y) comes from Cellosaurus CVCL_0042, not experimental patient assignments. The three technical files per time point share one source name and carry technical replicate indices 1-3.",
+  "technical_evidence": "PRIDE sample protocol states whole-proteome trypsin digestion, Q Exactive HF-X top-15 DDA, 300-1650 m/z, 1.4 m/z isolation, HCD 27 NCE. PRIDE structured instrument dropdown reports Q Exactive HF, but detailed protocol states HF-X.",
+  "reconciliation_note": "Automated disease_on_control_runs flag is a false positive: WT means wild-type ubiquitin construct control, while osteosarcoma refers to the original U2OS cell-line origin, not an experimental disease-versus-healthy arm.",
+  "limitations": "Seven Ub-Proteome and seven Ub-IP RAWs excluded because they form different study arms and cannot be confidently mapped to these time-course sources. No independent biological replication of this time course is claimed."
+}

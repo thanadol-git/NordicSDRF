@@ -1,0 +1,21 @@
+{
+  "accession": "PXD027426",
+  "artifact": "annotations/PXD027426.sdrf.tsv",
+  "sha256": "2276aa3dd15edfed67a0a33d63a84821f7e090d1d3e8111243a79fcf98a5396b",
+  "pride_record": "https://www.ebi.ac.uk/pride/archive/projects/PXD027426",
+  "publication": {
+    "doi": "10.1038/s41598-021-99931-4",
+    "url": "https://doi.org/10.1038/s41598-021-99931-4"
+  },
+  "local_evidence": {
+    "project": "scratchpad/PXD027426/pride.json",
+    "files": "scratchpad/PXD027426/files.json",
+    "raw_names": "scratchpad/PXD027426/raw_selected.json",
+    "samples": "scratchpad/PXD027426/samples.tsv",
+    "technical": "scratchpad/PXD027426/technical.tsv"
+  },
+  "file_list_assertion": "Both accession-scoped RAW files appear exactly once; no blank RAW deposited.",
+  "biological_evidence": "PRIDE project description states two enamel protein extractions from a single Late Pleistocene tooth fragment from Nam Lot, Laos, identified as genus Pongo. PRIDE structured organism is Pongo sp. (NEWT:9603), organism part tooth enamel (BTO:0001844). Extraction identifiers 1307 and 1438 are taken literally from file names; biological replicate 1 marks the single specimen.",
+  "technical_evidence": "PRIDE sample protocol explicitly states no proteolysis with a protease, Q Exactive HF-X top-10 DDA, 350-1400 m/z, HCD 28 NCE, 1.2 m/z isolation width. Thus cleavage agent not applicable.",
+  "limitations": "Sex, age at death, and disease unknown. The two extraction codes are not asserted as independent biological samples."
+}

@@ -1,0 +1,30 @@
+{
+  "accession": "PXD037245",
+  "artifact": "annotations/PXD037245.sdrf.tsv",
+  "sha256": "1a079c1481f287a49a6edd0856edabfcc5f03c9454bae319291f5d844e18ebbc",
+  "pride_record": "https://www.ebi.ac.uk/pride/archive/projects/PXD037245",
+  "publication": {
+    "doi": "10.1016/j.isci.2024.109005",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10850760/"
+  },
+  "local_evidence": {
+    "project": "scratchpad/PXD037245/pride.json",
+    "files": "scratchpad/PXD037245/files.json",
+    "raw_names": "scratchpad/PXD037245/raw_selected.json",
+    "samples": "scratchpad/PXD037245/samples.tsv",
+    "technical": "scratchpad/PXD037245/technical.tsv"
+  },
+  "file_list_assertion": "30 accession-scoped RAWs; each appears exactly once in SDRF",
+  "group_mapping": {
+    "CP1/CP2/CP3": "three healthy female plasma donors stated in paper Methods",
+    "0/24": "untreated time-zero or 24-hour incubated control",
+    "H/L": "high or low ex vivo protease concentration; exact quantitative dose not encoded because filename and PRIDE record do not give it",
+    "V8/LasB/CG/NE": "Staphylococcus aureus V8, Pseudomonas aeruginosa LasB, human cathepsin G, human neutrophil elastase respectively"
+  },
+  "biological_evidence": "Paper Methods state citrated plasma from three healthy female donors, incubated at 37 C with or without specified ex vivo proteases for 24 h before peptide extraction. All CP1-CP3 files map to donor and treatment tokens. PRIDE structured disease dropdown wounds/injuries does not describe these healthy plasma samples and is not used.",
+  "technical_evidence": "Paper Methods state Orbitrap Eclipse Tribrid with DD-MS2 top-speed DDA, HCD 30 NCE, 400-1500 m/z MS1, charge 2-7; PRIDE data protocol states nonspecific cleavage search, 5 ppm precursor and 0.5 Da fragment tolerance. Cleavage agent is not applicable to this endogenous peptidomics preparation; ex vivo proteases are experimental treatments explicitly recorded in characteristics and factors.",
+  "limitations": "Exact high/low protease amounts were not depositor-mapped to individual filenames, so dose is categorical. Donor ages were not disclosed beyond adult. Ex vivo treatment enzymes are not modeled as proteomic sample-preparation cleavage agents.",
+  "validation": {
+    "official_cached_ontology": "pass"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "accession": "PXD043533",
+  "artifact": "annotations/PXD043533-mg21.sdrf.tsv",
+  "sha256": "e47aa9f011020375ebb3f6895f982e552c17eb69b37840658e2ca4ed3809d3cb",
+  "pride_record": "https://www.ebi.ac.uk/pride/archive/projects/PXD043533",
+  "publication": {
+    "doi": "10.1371/journal.pone.0294129",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10718408/"
+  },
+  "local_evidence": {
+    "project": "scratchpad/PXD043533/pride.json",
+    "files": "scratchpad/PXD043533/files.json",
+    "raw_names": "scratchpad/PXD043533/raw_selected.json",
+    "samples": "scratchpad/PXD043533/samples.tsv",
+    "technical": "scratchpad/PXD043533/technical.tsv"
+  },
+  "file_list_assertion": "Intentional MG21-only subset: the one MG21 RAW is mapped exactly once to published archaeological sample 21. Deposited LC-MSMS_Sample_Key.txt also resolves the other accession RAW files: F10 is sample 48 (Sciuridae fur) and F11 is sample 49 (Felidae fur); those are outside this human-skin subset.",
+  "biological_evidence": "Publication Table 3 identifies sample 21 from Bulhakovo kurgan 5 burial 2 as Homininae, probably Homo sapiens; PRIDE structured metadata lists Hominidae. Conservative family Hominidae is used for organism. The sample is archaeological leather made of skin; sex and age of the skin source are unknown.",
+  "technical_evidence": "PRIDE sample preparation specifies trypsin digestion. PRIDE structured instrument and publication Methods specify Orbitrap Exploris 480; RAW name encodes DDA. The LC-MS/MS analysis uses aliquots of earlier ZooMS eluates.",
+  "limitations": "This intentionally scoped human-origin skin subset covers one of three deposited RAW files. F10 and F11 are resolved by the deposited sample key but excluded because they are non-human fur specimens. The sample-21 taxon is Homininae (probably Homo sapiens) in the paper; family Hominidae is used conservatively, and species is not asserted.",
+  "deposited_sample_key": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/10/PXD043533/LC-MSMS_Sample_Key.txt"
+}
