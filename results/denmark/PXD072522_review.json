@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD072522.sdrf.tsv",
+  "artifact_sha256": "1ae045114d3b2eedb32a96da26d2f90d9ac51a01615eb2a261d2a324870dbfd3",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues in the 36-RAW PXD072522 annotation.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Separate subagent reviewed the final SDRF against accession-scoped PRIDE records and the depositor UTF-16 metadata; did not edit the SDRF."
+  },
+  "evidence_manifest": "results/denmark/PXD072522_evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "All 36 rows have the same 22 SDRF fields; official parse_sdrf validation against ms-proteomics with OLS cache returned exit 0 and Everything seems to be fine."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Official OLS-cache validator accepted structured acquisition, instrument, cleavage and label values. Stegodon is conservatively represented as Mammalia in organism and preserved verbatim in taxonomic identification."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PXD072522 PRIDE project gives extraction, digestion, instrument and blank protocols. UTF-16 depositor metadata provides 36 per-injection filenames, materials, specimen identifiers, archaeological sites, taxonomic identifications and demineralization buffers."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Compared every depositor metadata row with corresponding SDRF data-file row: 36 exact matches, all unique. These equal the 36 unique PXD072522 RAW filenames in PRIDE file inventory; no missing or extra RAW."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Naxian rows use Exploris 480, Baxian rows Fusion Lumos; fauna, hominin and blank material assignments align with depositor metadata. Enamel and enamel blanks use unspecific cleavage; dentine and dentine blanks use Trypsin, matching respective source workflows. S1/S2 pairs are technical replicate 1/2 within distinct preparation-specific source names. Distinct extraction blanks have distinct source names and nominal numeric biological replicate 1 required by template."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No species is inferred beyond depositor taxonomic identification. Homo sp. uses Homo; Stegodon uses Mammalia in ontology-constrained organism field with Stegodon retained separately. Extraction blanks are not assigned an organism or tissue."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -s annotations/PXD072522.sdrf.tsv -t ms-proteomics --use_ols_cache_only exited 0 with Everything seems to be fine. SHA-256 of reviewed artifact verified."
+    }
+  },
+  "findings": []
+}

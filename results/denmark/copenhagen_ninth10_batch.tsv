@@ -1,5 +1,5 @@
 batch_order	accession	pride_raw_bytes	pride_raw_count	annotation_status	title
-1	PXD072522	46341379789	36	queued: evidence review	Palaeoproteomic evidence for late Middle Pleistocene Homo erectus in mainland East Asia
+1	PXD072522	46341379789	36	committed: independently reviewed	Palaeoproteomic evidence for late Middle Pleistocene Homo erectus in mainland East Asia
 2	PXD010155	46921293622	32	queued: evidence review	Probing the contribution of individual polypeptide GalNAc-transferase isoforms to the O-glycoproteome by inducible expression in isogenic cell lines
 3	PXD031548	47273684256	96	committed: independently reviewed	Brief suppression of SUMOylation in embryonic stem cells generates embryo-like structures
 4	PXD056094	48665974421	28	committed: independently reviewed	Animal glue and beyond: palaeoproteomic analysis of paint binders and adhesives in ancient Egypt
