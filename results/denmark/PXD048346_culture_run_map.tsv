@@ -1,0 +1,13 @@
+MaxQuant experiment	RAW file	published sample label	exact LFQ log2 protein matches
+S1	B28618_Ap_IonOpt_PSB-766_GEJAE_AP-MS-1.raw	biotin_mock_rep1	344
+S2	B28620_Ap_IonOpt_PSB-766_GEJAE_AP-MS-2.raw	biotin_mock_rep2	320
+S3	B28622_Ap_IonOpt_PSB-766_GEJAE_AP-MS-3.raw	biotin_mock_rep3	375
+S4	B28624_Ap_IonOpt_PSB-766_GEJAE_AP-MS-4.raw	biotin_ind_rep1	381
+S5	B28626_Ap_IonOpt_PSB-766_GEJAE_AP-MS-5.raw	biotin_ind_rep2	391
+S6	B28628_Ap_IonOpt_PSB-766_GEJAE_AP-MS-6.raw	biotin_ind_rep3	374
+S7	B28630_Ap_IonOpt_PSB-766_GEJAE_AP-MS-7.raw	SDS_mock_rep1	869
+S8	B28632_Ap_IonOpt_PSB-766_GEJAE_AP-MS-8.raw	SDS_mock_rep2	475
+S9	B28634_Ap_IonOpt_PSB-766_GEJAE_AP-MS-9.raw	SDS_mock_rep3	782
+S10	B28636_Ap_IonOpt_PSB-766_GEJAE_AP-MS-10.raw	SDS_ind_rep1	839
+S11	B28638_Ap_IonOpt_PSB-766_GEJAE_AP-MS-11.raw	SDS_ind_rep2	855
+S12	B28640_Ap_IonOpt_PSB-766_GEJAE_AP-MS-12.raw	SDS_ind_rep3	838
