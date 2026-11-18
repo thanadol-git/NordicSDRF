@@ -12,7 +12,7 @@ batch_order	accession	pride_raw_bytes	pride_raw_count	annotation_status	title
 11	PXD070197	41472145840	24	blocked: 24 mapped; digest reagent undocumented; independent review failed	Proteomic changes upon disruption of the OTULIN–LUBAC complex
 12	PXD034924	41477897951	33	approved: 33/33 RAW; SDRF committed	Histone modifications associated with the histone chaperone DAXX
 13	PXD013140	41735978878	71	approved: 71/71 RAW; independent review passed	The Glycosylation Design Space for Recombinant Lysosomal Replacement Enzymes Produced in CHO Cells
-14	PXD042321	43680729596	102	held: run map lacks 8 RAW; mixed digests and acellular blanks need resolution	Comparing extraction method efficiency for high-throughput palaeoproteomic bone species identificati
+14	PXD042321	43680729596	102	partial: 6/102 reindeer AmBic/Acid RAW approved; 96 RAW remain with mapping, mixed digest or blank issues	Comparing extraction method efficiency for high-throughput palaeoproteomic bone species identificati
 15	PXD010527	43917001277	33	held: 20-run draft failed independent review; DDA mode undocumented	SPOP promotes transcriptional expression of DNA repair and replication factors to prevent replicatio
 16	PXD016522	43966521762	41	held: 41-run draft failed independent review; file series and fractions unexplained	A draft genome sequence of the elusive giant squid, Architeuthis dux
 17	PXD007991	44110936311	37	held: acquisition mode undocumented; 19 runs have mixed Lys-C/Trypsin digest	Molecular Basis of the mechanisms controlling MASTL - Proteomics analysis of MASTL substrate proteom

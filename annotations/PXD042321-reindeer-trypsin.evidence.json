@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD042321-reindeer-trypsin.sdrf.tsv",
+  "dataset": "PXD042321",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD042321"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository file list",
+      "location": "scratchpad/PXD042321/files_all.json"
+    },
+    {
+      "id": "deposited_map",
+      "kind": "repository experiment map",
+      "location": "scratchpad/PXD042321/SampletoData.csv"
+    },
+    {
+      "id": "deposited_readme",
+      "kind": "repository methods key",
+      "location": "scratchpad/PXD042321/README.txt"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1038/s41598-023-44885-y"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] and assay name, rows 1-6",
+      "value": "six accession-scoped RAW files, one per specimen and extraction method",
+      "source_ids": [
+        "pride_files",
+        "deposited_map"
+      ],
+      "evidence": "Each of R10329, R10363 and GdC_9 has one AmBic and one Acid entry in the deposited SampletoData.csv; the corresponding .raw filenames occur exactly in the complete accession-scoped PRIDE file list. The run map is results/denmark/PXD042321_reindeer_trypsin_run_map.tsv."
+    },
+    {
+      "location": "characteristics[organism], characteristics[organism part], characteristics[biological replicate], factor value[extraction method], rows 1-6",
+      "value": "three reindeer bone specimens, each split into AmBic and Acid extraction aliquots",
+      "source_ids": [
+        "paper",
+        "pride",
+        "deposited_map",
+        "deposited_readme"
+      ],
+      "evidence": "Paper Table 1 identifies R10329, R10363 and GdC-9 as reindeer; the PRIDE protocol describes homogenized powder from each specimen divided into aliquots. Deposited mapping assigns each RAW to its specimen and method. Biological replicate identifiers 1-3 index distinct specimens and repeat across the two extraction methods."
+    },
+    {
+      "location": "comment[proteomics data acquisition method], comment[instrument], comment[dissociation method], rows 1-6",
+      "value": "60 SPD DDA HCD on Orbitrap Exploris 480",
+      "source_ids": [
+        "paper",
+        "pride",
+        "deposited_readme"
+      ],
+      "evidence": "The paper Methods describe the Evosep One 60 samples/day DDA method, HCD fragmentation and Orbitrap Exploris 480. PRIDE structured instrument agrees and the raw basenames include DDA_60SPD."
+    },
+    {
+      "location": "comment[cleavage agent details], rows 1-6",
+      "value": "physical trypsin digestion for AmBic and Acid methods",
+      "source_ids": [
+        "paper",
+        "pride",
+        "deposited_map"
+      ],
+      "evidence": "The paper method paragraphs separately state that AmBic and Acid extracts were each digested overnight with trypsin. The record also discusses Lys-C and mixed digests for different extraction methods outside this subset."
+    },
+    {
+      "location": "comment[modification parameters], rows 1-6",
+      "value": "variable oxidation M and P, deamidation N/Q, N-terminal pyro-Glu from Q and E",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "The paper MaxQuant methods and PRIDE data-processing protocol list oxidation M, deamidation NQ, Gln to pyro-Glu, Glu to pyro-Glu and proline hydroxylation as variable search modifications. Oxidation P represents proline hydroxylation."
+    }
+  ],
+  "limitations": [
+    "This six-run SDRF covers only three taxonomically unambiguous reindeer specimens under two single-enzyme extraction methods. The other 96 accession RAW files remain outside this artifact.",
+    "The publication narrative numbers Acid as method 1 and AmBic as method 2, whereas deposited README, SampletoData.csv and RAW filenames number AmBic as 1 and Acid as 2. This SDRF uses the method names, which agree across all sources; the run map preserves deposited numeric prefixes.",
+    "Project-wide PRIDE protocol mentions Trypsin/Lys-C mix for other extraction methods. Reconcile flags a project-level mixed-digest conflict, but the paper explicitly documents trypsin alone for both methods represented here.",
+    "Sex and developmental stage of the individual reindeer are not reported. Precise precursor and fragment search tolerances are not stated for this subset and are omitted."
+  ]
+}
