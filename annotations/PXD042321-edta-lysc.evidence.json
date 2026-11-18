@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD042321-edta-lysc.sdrf.tsv",
+  "dataset": "PXD042321",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/archive/projects/PXD042321"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository file list",
+      "location": "scratchpad/PXD042321/files_all.json"
+    },
+    {
+      "id": "deposited_map",
+      "kind": "repository experiment map",
+      "location": "scratchpad/PXD042321/SampletoData.csv"
+    },
+    {
+      "id": "deposited_readme",
+      "kind": "repository methods key",
+      "location": "scratchpad/PXD042321/README.txt"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://doi.org/10.1038/s41598-023-44885-y"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] and assay name, rows 1-3",
+      "value": "three accession-scoped neutral EDTA Lys-C RAW files",
+      "source_ids": [
+        "pride_files",
+        "deposited_map"
+      ],
+      "evidence": "SampletoData.csv links GdC_1, GdC_9 and GdC_26 to three EDTA LysC Neutral raw basenames; all are present in the complete accession-scoped PRIDE file list. The run map is results/denmark/PXD042321_lysc_run_map.tsv."
+    },
+    {
+      "location": "characteristics[organism], characteristics[organism part], characteristics[biological replicate], factor value[extraction method], rows 1-3",
+      "value": "Ursidae, reindeer, and Bovidae bone specimens under the neutral EDTA Lys-C method",
+      "source_ids": [
+        "paper",
+        "pride",
+        "deposited_map"
+      ],
+      "evidence": "Paper Table 1 identifies GdC-1 as Ursidae, GdC-9 as reindeer and GdC-26 as Bovidae. The PRIDE protocol says each homogenized bone specimen was split into extraction aliquots; each row is a distinct specimen, indexed 1-3 for biological replicate. The deposited map assigns these three runs to EDTA LysC Neutral."
+    },
+    {
+      "location": "comment[proteomics data acquisition method], comment[instrument], comment[dissociation method], rows 1-3",
+      "value": "60 SPD DDA HCD on Orbitrap Exploris 480",
+      "source_ids": [
+        "paper",
+        "pride",
+        "deposited_readme"
+      ],
+      "evidence": "The paper Methods describe the Evosep One 60 samples/day DDA method, HCD fragmentation and Orbitrap Exploris 480. PRIDE structured instrument agrees and the raw basenames include DDA_60SPD."
+    },
+    {
+      "location": "comment[cleavage agent details], rows 1-3",
+      "value": "physical Lys-C digestion only for EDTA LysC Neutral",
+      "source_ids": [
+        "paper",
+        "deposited_map"
+      ],
+      "evidence": "The paper EDTA LysC in situ digestion paragraph explicitly states that LysC alone was added, then the neutral supernatant was transferred to Stagetips as method 3b. SampletoData.csv names these runs EDTA LysC Neutral. The accession-wide protocol also describes mixed digests for other methods, and MaxQuant Trypsin/P is a common search setting, not the physical digestion reagent for this subset."
+    },
+    {
+      "location": "comment[modification parameters], rows 1-3",
+      "value": "variable oxidation M and P, deamidation N/Q, N-terminal pyro-Glu from Q and E",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "The paper MaxQuant methods and PRIDE data-processing protocol list oxidation M, deamidation NQ, Gln to pyro-Glu, Glu to pyro-Glu and proline hydroxylation as variable search modifications. Oxidation P represents proline hydroxylation."
+    }
+  ],
+  "limitations": [
+    "This three-run SDRF covers only three taxonomically identifiable specimens in the neutral EDTA Lys-C method. Other accession RAW files remain outside this artifact.",
+    "The publication calls neutral EDTA Lys-C method 3b, while the deposited raw basenames use 4EDTA; SampletoData.csv supplies the semantic method name EDTA LysC Neutral. The SDRF uses that name and does not infer a numeric method identity.",
+    "Reconcile reports a project-level mixed Trypsin/Lys-C conflict, but the paper specifically documents Lys-C only for the represented EDTA method. The common MaxQuant Trypsin/P search setting is not treated as a physical reagent.",
+    "Sex and developmental stage of the individual animals are not reported. Precise precursor and fragment search tolerances are not stated for this subset and are omitted."
+  ]
+}
