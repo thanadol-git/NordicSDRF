@@ -59,7 +59,9 @@ NordicSDRF/
 ├── criteria/
 │   ├── nordic_cities.md        # cities × institutions × search terms × rough PRIDE hit counts, all 5 countries
 │   ├── nordic_screen.md        # inclusion rules + extract fields for sdrf-metascreen
-│   └── sea_cities.md           # SEA country/city inventory for a later campaign; not in config.yml
+│   ├── sea_cities.md           # SEA country/city inventory for a later campaign; not in config.yml
+│   ├── south_asia_cities.md    # South Asia inventory (PRIDE hit counts); not in config.yml
+│   └── middleeast_cities.md    # Middle East inventory (PRIDE hit counts); not in config.yml
 ├── docs/
 │   └── workflow.md             # local GPU, Codex, Claude, Slurm, how to watch a run
 └── scripts/
