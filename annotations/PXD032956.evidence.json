@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD032956.sdrf.tsv",
+  "dataset": "PXD032956",
+  "sources": [
+    {
+      "type": "search_output",
+      "ref": "txt.zip: summary.txt, parameters.txt, Sup Table 3.xlsx (range read)"
+    },
+    {
+      "type": "raw_headers",
+      "ref": "60/60: 40 Q Exactive, 20 Q Exactive Plus"
+    },
+    {
+      "type": "publication",
+      "ref": "PMC10484680"
+    }
+  ],
+  "decisions": [
+    {
+      "field": "comment[label]",
+      "basis": "Sup Table 3 ratio headers"
+    },
+    {
+      "field": "comment[fraction identifier]",
+      "basis": "summary.txt Fraction"
+    }
+  ]
+}
