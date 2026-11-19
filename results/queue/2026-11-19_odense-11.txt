@@ -1,0 +1,16 @@
+# daily queue denmark/odense batch 11 (the last 15 pending Odense PXDs; annotated where a sample/channel map could be recovered from deposited search files, sheets or papers; BLOCKED.md otherwise; deferred = annotatable in part but multi-experiment, needs a dedicated pass)
+PXD016230	denmark/odense	annotated	odense: batch 11, annotations/PXD016230.sdrf.tsv (review pending)
+PXD045496	denmark/odense	annotated	odense: batch 11, annotations/PXD045496.sdrf.tsv (review pending)
+PXD017216	denmark/odense	annotated	odense: batch 11, annotations/PXD017216.sdrf.tsv (review pending)
+PXD034803	denmark/odense	annotated	odense: batch 11, annotations/PXD034803.sdrf.tsv (review pending)
+PXD060125	denmark/odense	annotated	odense: batch 11, annotations/PXD060125.sdrf.tsv (review pending)
+PXD011803	denmark/odense	blocked	odense: batch 11, annotations/PXD011803.BLOCKED.md
+PXD017867	denmark/odense	blocked	odense: batch 11, annotations/PXD017867.BLOCKED.md
+PXD017681	denmark/odense	blocked	odense: batch 11, annotations/PXD017681.BLOCKED.md
+PXD076297	denmark/odense	blocked	odense: batch 11, annotations/PXD076297.BLOCKED.md
+PXD019098	denmark/odense	blocked	odense: batch 11, annotations/PXD019098.BLOCKED.md
+PXD014425	denmark/odense	blocked	odense: batch 11, annotations/PXD014425.BLOCKED.md
+PXD050921	denmark/odense	blocked	odense: batch 11, annotations/PXD050921.BLOCKED.md
+PXD020812	denmark/odense	deferred	odense: 191 RAW over several sub-experiments (SILAC IPs, WT vs Mdm2 Adi+/- fractions, MORC2 RIME); SILAC label->condition and the 20/80 fraction codes need the MaxQuant evidence/experiment tables
+PXD054682	denmark/odense	deferred	odense: methods paper with ~9 sub-experiments (label-free membrane/RAC/SDC treatments + TMTpro tissue and db/db brain sets); label-free parts annotatable from names, TMT channel maps to be read from the 8-31 GB .msf files
+PXD072589	denmark/odense	deferred	odense: 196 RAW mixing TMT phospho (.msf) and timsTOF DIA organoid/cortex series; needs per-series mapping
