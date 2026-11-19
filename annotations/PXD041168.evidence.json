@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD041168.sdrf.tsv",
+  "dataset": "PXD041168",
+  "sources": [
+    {
+      "type": "submitter_design",
+      "ref": "experimental_design_.txt"
+    },
+    {
+      "type": "raw_headers",
+      "ref": "36/36 Orbitrap Exploris 480"
+    },
+    {
+      "type": "publication",
+      "ref": "PMID 37610219",
+      "note": "abstract only"
+    }
+  ],
+  "decisions": []
+}
