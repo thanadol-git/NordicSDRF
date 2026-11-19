@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD072522.sdrf.tsv",
+  "dataset": "PXD072522",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD072522",
+      "local_path": "results/denmark/PXD072522_source_pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD072522/files",
+      "local_path": "results/denmark/PXD072522_source_files.json"
+    },
+    {
+      "id": "metadata",
+      "kind": "depositor file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/10/PXD072522/metadata.txt",
+      "local_path": "results/denmark/PXD072522_source_metadata.txt"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] all 36 rows",
+      "value": "all and only 36 deposited RAW acquisitions",
+      "source_ids": ["files", "metadata"],
+      "evidence": "The UTF-16 metadata table contains one exact filename match for each accession-scoped PRIDE RAW file."
+    },
+    {
+      "location": "source name; characteristics[specimen identifier]; characteristics[archaeological site]",
+      "value": "depositor specimen, site, and extraction batch",
+      "source_ids": ["metadata"],
+      "evidence": "Naxian and Baxian sample IDs and sites are per-injection metadata values. Repeated Baxian S1/S2 acquisitions share preparation identifiers."
+    },
+    {
+      "location": "characteristics[organism]; characteristics[taxonomic identification]",
+      "value": "depositor identified taxon with controlled broad organism where necessary",
+      "source_ids": ["metadata", "pride"],
+      "evidence": "The exact source identification is retained in taxonomic identification. Homo sp. is encoded as Homo. Stegodon lacks an accepted local NCBI taxonomy cache term, so Mammalia is used as a truthful broader controlled organism. Extraction blanks use not applicable."
+    },
+    {
+      "location": "characteristics[organism part]; characteristics[demineralization buffer]",
+      "value": "tooth enamel or dentin; per-run 10% TFA, 10% EDTA, 5% HCl, or 0.6 M HCl",
+      "source_ids": ["metadata", "pride"],
+      "evidence": "The metadata table supplies tissue and buffer for every run; the project protocol describes corresponding extraction workflows."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Exploris 480 for Naxian; Fusion Lumos for Baxian",
+      "source_ids": ["pride", "files"],
+      "evidence": "Project sample-processing protocol assigns the Naxian fauna and hominin to Exploris 480 and Baxian enamel/dentine to Fusion Lumos; filename prefixes identify these groups."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "unspecific cleavage for enamel and its blanks; Trypsin for dentine and its extraction blanks",
+      "source_ids": ["pride", "metadata"],
+      "evidence": "Project protocol describes acid-extracted enamel without enzymatic digestion and in-solution trypsin digestion for faunal and Baxian hominin dentine. Blank workflow follows its labeled material type."
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "S1 and S2 when explicitly named; otherwise 1",
+      "source_ids": ["metadata"],
+      "evidence": "The S1/S2 suffix distinguishes paired Baxian acquisitions of the same preparation."
+    }
+  ],
+  "limitations": [
+    "The validator requires a numeric biological replicate for extraction blank rows; 1 denotes the first blank preparation, not a biological organism.",
+    "Project processing describes multiple search engines and nonuniform PTM settings; precise modification lists and mass tolerances are omitted rather than projected onto every run.",
+    "Stegodon is recorded exactly in taxonomic identification while characteristics[organism] uses the accepted broader Mammalia term."
+  ]
+}

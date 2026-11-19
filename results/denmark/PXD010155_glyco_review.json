@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD010155-glyco.sdrf.tsv",
+  "artifact_sha256": "6333abc240ce9accfb814d01237d826a496ec97b86e210e0639016d5e498a2d1",
+  "verdict": "PASS",
+  "summary": "Independent re-review of the PNA LWAC O-glycopeptide subset found no blocker or important issues. Dissociation is repeated HCD (beam-type CID) + ETD; 16 RAW files match PRIDE glyco stems; TMT6plex channel-to-dose/genotype map matches DataS1 and SEARCH ratios.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh hook agent without producer transcript"
+  },
+  "evidence_manifest": "results/denmark/PXD010155_glyco_evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Active templates independently derived as ms-proteomics + human + cell-lines (v1.1.0). parse_sdrf validate-sdrf -t ms-proteomics -t human -t cell-lines --use_ols_cache_only exited 0 with only a warning on enrichment wording. 96 rows = 16 RAW × TMT6plex; duplicate comment[dissociation method] and modification-parameter columns are structurally accepted by the validator."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check --offline: CLEAN (0 hallucinated / label mismatch / wrong ontology / UNIMOD swaps). Controlled NT/AC values for instrument (MS:1002416 Orbitrap Fusion), dissociation (MS:1000422 + MS:1000598), DDA (PRIDE:0000627), trypsin (MS:1001251), hpHRP (PRIDE:0000564), UNIMOD 4/737/35/43, and Cellosaurus CVCL_0045 (HEK293; kidney; female in cl-annotations-db.tsv) resolve. Online OLS check blocked by network reset; offline + parse_sdrf cache used."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Asserted scratchpad/PXD010155/files.json and pride.json projectAccessions/accession = PXD010155. PRIDE sampleProcessingProtocol: dox dose series T2 0/4/8/12/16 and T11 0/2.5/5/7.5/10 ng/mL; HEK WT at 0; TMT6plex; PNA LWAC; high-pH RP; Orbitrap Fusion with sequential HCD-MS2 and ETD-MS2. dataProcessingProtocol: 6 ppm / 20 mmu; Carbamidomethyl fixed; Oxidation + HexNAc(S/T/Y) variable for ETD. Independent SEARCH↔DataS1 ratio match favors mono channel order (strict linear hits 1240/2000 T11, 1300/2000 T2; permutations far worse)."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "All 16 comment[data file] values are the PXD010155 PNA_2h_ETD_HCD High_pH RAW set (8 T2 + 8 T11); none of the 16 FT_Proteome RAW files appear. Fraction identifiers 1–8 match filename suffixes with 0 mismatches."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "12 sources (5 HEKindT2 doses + HEK WT in T2 plex; 5 HEKindT11 doses + HEK WT in T11 plex) × 8 fractions × matching TMT channel = 96 assays; unique assay names; labels TMT126–131. Channel map: 126=0 ng uninduced isoform line; 127–130 increasing dox; 131=HEK WT — consistent across all fractions and supported by DataS1 + SEARCH."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No fabricated RAW stems or proteome FT files. Instrument follows protocol/filenames (Orbitrap Fusion) rather than the incorrect PRIDE instruments CV (LTQ Orbitrap). Engineered HEKindT2/T11 absent from Cellosaurus; parental CVCL_0045 disclosed in evidence limitations. Values do not over-claim beyond PNA LWAC glyco subset. Evidence manifest claim text saying '32 RAW' is wrong for this subset but the SDRF itself correctly lists 16."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf exit 0 (enrichment warning only); sdrf-tools check --offline exit 0 CLEAN; sdrf-tools score exit 0 (93/100). Online sdrf-tools check could not complete (OLS ConnectionResetError)."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[enrichment process] all rows",
+      "message": "Value 'glycopeptide enrichment' triggers parse_sdrf ontology warning; template examples prefer 'enrichment of glycopeptides'.",
+      "evidence": "parse_sdrf: Term not found in pride;efo (warning only). TERMS.tsv prose also mentions 'glycopeptide enrichment'; PNA LWAC enrichment is otherwise supported by PRIDE protocol."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[developmental stage]",
+      "message": "Optional developmental stage omitted though Cellosaurus curated entry for CVCL_0045 records fetal/kidney donor context.",
+      "evidence": "sdrf-tools score notes missing recommended developmental stage; human/cell-lines templates mark the column optional."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "scratchpad/PXD010155/paper.txt and evidence claim '32 RAW'",
+      "message": "Local paper.txt is the wrong JBC letter; evidence claim text says 32 RAW for this glyco artifact. Neither affects the SDRF content under review.",
+      "evidence": "paper.txt title concerns prominins; glyco SDRF has 16 RAW. Methods used from pride.json protocols instead."
+    }
+  ]
+}

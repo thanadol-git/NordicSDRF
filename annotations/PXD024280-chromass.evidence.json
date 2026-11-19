@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD024280-chromass.sdrf.tsv",
+  "artifact_sha256": "9bb66c45dfecc648d25a28b3cc67c0dff027854cd5c318a34cc771545576c335",
+  "dataset": "PXD024280",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository project",
+      "location": "results/denmark/PXD024280_source_pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository file list",
+      "location": "results/denmark/PXD024280_source_files.json"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8982572/"
+    },
+    {
+      "id": "inventory",
+      "kind": "derived accession run map",
+      "location": "results/denmark/PXD024280_run_inventory.tsv"
+    },
+    {
+      "id": "samples",
+      "kind": "curated source table",
+      "location": "results/denmark/PXD024280_source_chromass_samples.tsv"
+    },
+    {
+      "id": "technical",
+      "kind": "curated technical table",
+      "location": "results/denmark/PXD024280_source_chromass_technical.tsv"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all comment[data file] values",
+      "value": "24 CHROMASS RAW acquisitions",
+      "source_ids": [
+        "files",
+        "inventory"
+      ],
+      "evidence": "Each deposited RAW filename parses uniquely to experiment, condition, biological replicate and technical injection; all files belong to PXD024280."
+    },
+    {
+      "location": "all organism, instrument and acquisition values",
+      "value": "Xenopus laevis samples on Q Exactive HF-X DDA HCD",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE gives organism and instrument; published Methods MS acquisition specify Q Exactive HF-X precursor selection and HCD at NCE25."
+    },
+    {
+      "location": "experimental condition, biological and technical replicate for all rows",
+      "value": "C no-DNA control, M mock undamaged chromatin, UV UV-C treated chromatin; 4 biological replicates and 2 technical runs each",
+      "source_ids": [
+        "inventory",
+        "paper",
+        "pride"
+      ],
+      "evidence": "Raw filename groups C/M/UV, R1–R4 and TR1/TR2; published CHROMASS analysis contrasts UV/mock and both against no-DNA, and Methods explicitly state duplicate injections and four experiments. C->no-DNA is inferred from the third group and comparison design."
+    },
+    {
+      "location": "cleavage, modifications, instrument range",
+      "value": "Lys-C then trypsin; 300–1750 m/z; 25 NCE",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Published CHROMASS and MS Methods identify sequential digestion, MS range, and fragmentation energy."
+    }
+  ]
+}

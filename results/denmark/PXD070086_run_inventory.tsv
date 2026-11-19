@@ -1,0 +1,37 @@
+source name	data file	depositor grouping	biological replicate	hydrogen peroxide exposure	OGG1 inhibitor	immunoprecipitation capture
+S1	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S01_S2-A1_1_12547.d	untreated_baitIP	1	untreated	none	4H8 antibody-conjugated beads
+S2	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S02_S2-B1_1_12548.d	untreated_baitIP	2	untreated	none	4H8 antibody-conjugated beads
+S3	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S03_S2-C1_1_12549.d	untreated_baitIP	3	untreated	none	4H8 antibody-conjugated beads
+S4	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S04_S2-D1_1_12550.d	untreatedOGG1_baitIP	1	untreated	TH5487 (10 µM)	4H8 antibody-conjugated beads
+S5	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S05_S2-E1_1_12551.d	untreatedOGG1_baitIP	2	untreated	TH5487 (10 µM)	4H8 antibody-conjugated beads
+S6	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S06_S2-F1_1_12552.d	untreatedOGG1_baitIP	3	untreated	TH5487 (10 µM)	4H8 antibody-conjugated beads
+S7	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S07_S2-G1_1_12553.d	treated_baitIP	1	1 mM H2O2 for 15 min	none	4H8 antibody-conjugated beads
+S8	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S08_S2-H1_1_12554.d	treated_baitIP	2	1 mM H2O2 for 15 min	none	4H8 antibody-conjugated beads
+S9	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S09_S2-A2_1_12555.d	treated_baitIP	3	1 mM H2O2 for 15 min	none	4H8 antibody-conjugated beads
+S10	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S10_S2-B2_1_12556.d	treatedOGG1_baitIP	1	1 mM H2O2 for 15 min	TH5487 (10 µM)	4H8 antibody-conjugated beads
+S11	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S11_S2-C2_1_12557.d	treatedOGG1_baitIP	2	1 mM H2O2 for 15 min	TH5487 (10 µM)	4H8 antibody-conjugated beads
+S12	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S12_S2-D2_1_12558.d	treatedOGG1_baitIP	3	1 mM H2O2 for 15 min	TH5487 (10 µM)	4H8 antibody-conjugated beads
+S13	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S13_S2-E2_1_12559.d	recovery_baitIP	1	2 h recovery after 1 mM H2O2 for 15 min	none	4H8 antibody-conjugated beads
+S14	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S14_S2-F2_1_12560.d	recovery_baitIP	2	2 h recovery after 1 mM H2O2 for 15 min	none	4H8 antibody-conjugated beads
+S15	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S15_S2-G2_1_12561.d	recovery_baitIP	3	2 h recovery after 1 mM H2O2 for 15 min	none	4H8 antibody-conjugated beads
+S16	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S16_S2-H2_1_12562.d	recoveryOGG1_baitIP	1	2 h recovery after 1 mM H2O2 for 15 min	TH5487 (10 µM)	4H8 antibody-conjugated beads
+S17	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S17_S2-A3_1_12563.d	recoveryOGG1_baitIP	2	2 h recovery after 1 mM H2O2 for 15 min	TH5487 (10 µM)	4H8 antibody-conjugated beads
+S18	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S18_S2-B3_1_12564.d	recoveryOGG1_baitIP	3	2 h recovery after 1 mM H2O2 for 15 min	TH5487 (10 µM)	4H8 antibody-conjugated beads
+S19	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S19_S2-C3_1_12565.d	untreated_IgPIP	1	untreated	none	non-antibody-conjugated beads
+S20	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S20_S2-D3_1_12566.d	untreated_IgPIP	2	untreated	none	non-antibody-conjugated beads
+S21	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S21_S2-E3_1_12567.d	untreated_IgPIP	3	untreated	none	non-antibody-conjugated beads
+S22	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S22_S2-F3_1_12568.d	untreatedOGG1_IgPIP	1	untreated	TH5487 (10 µM)	non-antibody-conjugated beads
+S23	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S23_S2-G3_1_12569.d	untreatedOGG1_IgPIP	2	untreated	TH5487 (10 µM)	non-antibody-conjugated beads
+S24	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S24_S2-H3_1_12570.d	untreatedOGG1_IgPIP	3	untreated	TH5487 (10 µM)	non-antibody-conjugated beads
+S25	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S25_S2-A4_1_12571.d	treated_IgPIP	1	1 mM H2O2 for 15 min	none	non-antibody-conjugated beads
+S26	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S26_S2-B4_1_12572.d	treated_IgPIP	2	1 mM H2O2 for 15 min	none	non-antibody-conjugated beads
+S27	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S27_S2-C4_1_12573.d	treated_IgPIP	3	1 mM H2O2 for 15 min	none	non-antibody-conjugated beads
+S28	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S28_S2-D4_1_12574.d	treatedOGG1_IgPIP	1	1 mM H2O2 for 15 min	TH5487 (10 µM)	non-antibody-conjugated beads
+S29	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S29_S2-E4_1_12575.d	treatedOGG1_IgPIP	2	1 mM H2O2 for 15 min	TH5487 (10 µM)	non-antibody-conjugated beads
+S30	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S30_S2-F4_1_12576.d	treatedOGG1_IgPIP	3	1 mM H2O2 for 15 min	TH5487 (10 µM)	non-antibody-conjugated beads
+S31	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S31_S2-G4_1_12577.d	recovery_IgPIP	1	2 h recovery after 1 mM H2O2 for 15 min	none	non-antibody-conjugated beads
+S32	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S32_S2-H4_1_12578.d	recovery_IgPIP	2	2 h recovery after 1 mM H2O2 for 15 min	none	non-antibody-conjugated beads
+S33	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S33_S2-A5_1_12579.d	recovery_IgPIP	3	2 h recovery after 1 mM H2O2 for 15 min	none	non-antibody-conjugated beads
+S34	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S34_S2-B5_1_12580.d	recoveryOGG1_IgPIP	1	2 h recovery after 1 mM H2O2 for 15 min	TH5487 (10 µM)	non-antibody-conjugated beads
+S35	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S35_S2-C5_1_12581.d	recoveryOGG1_IgPIP	2	2 h recovery after 1 mM H2O2 for 15 min	TH5487 (10 µM)	non-antibody-conjugated beads
+S36	20241101_TIMS6_EVO4_PRI_DDA_30SPD_X2208_P0140_R1481_S36_S2-D5_1_12582.d	recoveryOGG1_IgPIP	3	2 h recovery after 1 mM H2O2 for 15 min	TH5487 (10 µM)	non-antibody-conjugated beads

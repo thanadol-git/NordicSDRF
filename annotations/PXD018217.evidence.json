@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD018217.sdrf.tsv",
+  "dataset": "PXD018217",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "scratchpad/PXD018217/pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository file list",
+      "location": "scratchpad/PXD018217/files.json"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7864614/"
+    },
+    {
+      "id": "inventory",
+      "kind": "derived run map",
+      "location": "results/denmark/PXD018217_run_inventory.tsv"
+    },
+    {
+      "id": "build",
+      "kind": "deterministic repeated-cleavage generator",
+      "location": "results/denmark/PXD018217_build_cleavage.py"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] and source name, all 32 rows",
+      "value": "32 Thermo .raw acquisitions from 16 biological preparations, each measured by Normal and Fast technical methods",
+      "source_ids": [
+        "files",
+        "pride",
+        "inventory"
+      ],
+      "evidence": "Every PRIDE raw filename matches one of C-C, C-UV, RF-UV, RV-UV; R1–R4 mark four biological preparations per group, and b suffix marks the Fast second technical acquisition per PRIDE protocol."
+    },
+    {
+      "location": "characteristics[organism], all rows",
+      "value": "Xenopus laevis",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE organism and publication Methods state Xenopus laevis sperm chromatin incubated in egg extract."
+    },
+    {
+      "location": "characteristics[UV-C treatment] and factor value[UV-C treatment], all rows",
+      "value": "untreated or 2000 J/m2 UV-C",
+      "source_ids": [
+        "pride",
+        "paper",
+        "inventory"
+      ],
+      "evidence": "PRIDE sample-processing protocol states 2,000 J/m2 UV-C on sperm chromatin or untreated control; C-C files are untreated, all -UV files treated."
+    },
+    {
+      "location": "characteristics[egg extract depletion] and factor value[egg extract depletion], all rows",
+      "value": "mock-depleted, RFWD3-depleted or REV1-depleted non-licensing egg extract",
+      "source_ids": [
+        "pride",
+        "paper",
+        "inventory"
+      ],
+      "evidence": "PRIDE and publication describe mock, RFWD3 and REV1 depletion; deposited raw-file group codes C-C, C-UV, RF-UV and RV-UV distinguish the conditions."
+    },
+    {
+      "location": "comment[instrument] and acquisition, all rows",
+      "value": "Q Exactive HF-X, data-dependent HCD",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE sample-processing protocol names the instrument and HCD fragmentation with precursor selection; the publication describes label-free MS."
+    },
+    {
+      "location": "comment[cleavage agent details], two repeated columns, all rows",
+      "value": "Lys-C followed by Trypsin",
+      "source_ids": [
+        "pride",
+        "paper",
+        "build"
+      ],
+      "evidence": "PRIDE protocol explicitly states first LysC for 2.5 hours then trypsin overnight. The builder emitted one cleavage column, so the deterministic generator expands the source-table pipe-separated values to two repeated columns in physical order."
+    }
+  ],
+  "limitations": [
+    "PRIDE and publication do not provide the exact precursor and fragment search mass tolerances or explicit modification search settings, so these optional/recommended parameters are omitted.",
+    "The sample is a mixture of sperm chromatin and egg extract; organism part, cell type, developmental stage and sex are left not available rather than assigning a single component.",
+    "The reconcile helper reads duplicate cleavage headers as one field and reports an incomplete digest even though the validated SDRF contains both Lys-C and Trypsin columns."
+  ],
+  "artifact_sha256": "d68ee7f8ee5dff696d8647abe64d1995b56422db328b605e890ce14ac41affd0"
+}

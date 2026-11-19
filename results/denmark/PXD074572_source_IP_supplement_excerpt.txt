@@ -1,0 +1,39 @@
+analysis and visualization.
+
+Immunoprecipitation of EGFR and MS/MS analysis
+
+Immunoprecipitation of EGFR
+
+1mg of homogenized cardiac tissue was pre-cleared for 1h at 4◦C with
+100µL (3mg) of Protein A Dynabeads ® (Invitrogen, 100.02D). Protein A
+beads were pre-blocked with 1% BSA in PBS pH7.4 for 30 min at 4◦C prior
+use. Precleared lysate was incubated with 0.8µg anti-EGFR mouse
+preferred antibody (Cell Signaling Technology, CST 71655) overnight at
+4◦C. Next, the antibody-antigen complex was immunoprecipitated with 60µL
+of beads for 3h at 20 r.p.m. 4◦C. Beads were washed 4 times with 1mL of
+Tris Buffered Solution (TBS) at pH 7.4 and stored at -20◦C until mass
+spectrometry analysis.
+
+On beads digestion protocol
+
+Washed beads were incubated for 30 min with elution buffer 1 (2 M Urea,
+50 mM Tris-HCl pH 7.5, 2 mM DTT, 20 µg/ml trypsin) followed by a second
+elution for 5 min with elution buffer 2 (2 M Urea, 50 mM Tris-HCl pH
+7.5, 10 mM Chloroacetamide). Eluates were combined and further digested
+at room temperature overnight. Tryptic peptide mixtures were acidified
+to 1% TFA and loaded on Evotips (Evosep).
+
+LC-MS/MS
+
+Peptides were separated on 15 cm, 150 μM ID columns packed with C18
+beads (1.9 μm) (Pepsep) on an Evosep ONE HPLC applying the ‘30 samples
+per day’ method and injected via a CaptiveSpray source and 10 μm emitter
+into a timsTOF pro mass spectrometer (Bruker) operated in PASEF mode
+[7].
+
+Data search and analysis
+
+Raw MS data files were converted to mzML format using ProteoWizard
+MSConverter tool. Files search was performed with FragPipe (v. 22.0)
+using the “LFQ-Phospho” workflow for label-free quantification using
+IonQuant [8] (v. 1.10.27) and site localization with PTM-Prophet.

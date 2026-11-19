@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD014342.sdrf.tsv",
+  "dataset": "PXD014342",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD014342",
+      "local_path": "results/denmark/PXD014342_source_pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD014342/files",
+      "local_path": "results/denmark/PXD014342_source_files.json"
+    },
+    {
+      "id": "readme",
+      "kind": "depositor file",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD014342/README.txt",
+      "local_path": "results/denmark/PXD014342_source_README.txt"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://repositori.upf.edu/bitstream/handle/10230/52337/Welker_nat_dent.pdf",
+      "local_path": "scratchpad/PXD014342/paper.pdf"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] all rows",
+      "value": "27 unique deposited RAW files",
+      "source_ids": ["files", "readme"],
+      "evidence": "The accession-scoped PRIDE RAW inventory and depositor README list the same 27 acquisitions; each appears once."
+    },
+    {
+      "location": "characteristics[specimen identifier], characteristics[taxonomic identification], characteristics[archaeological site]",
+      "value": "ATD6-92 Homo antecessor Atapuerca; D4163 Homo erectus Dmanisi",
+      "source_ids": ["paper", "files"],
+      "evidence": "Paper Methods describe both fossils, and Extended Data Table 1 maps stage-tip numbers to the specimens. Blanks have no fossil specimen."
+    },
+    {
+      "location": "characteristics[organism part], characteristics[extraction method], comment[cleavage agent details]",
+      "value": "enamel or dentin; method 1/3 unspecific; method 2 Lys-C plus Trypsin",
+      "source_ids": ["paper", "files"],
+      "evidence": "Extended Data Table 1 assigns extraction method to stage tips 1069, 1138, 1139, 1141, 1142, and 1386-1388. Methods define method 1 as HCl without digestion, method 2 as HCl with Lys-C and Trypsin, and method 3 as TFA without digestion. Negative blanks are associated with their adjacent numbered stage-tip workflow."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive HF for Copenhagen QE files; Orbitrap Fusion Lumos for Barcelona S files",
+      "source_ids": ["paper", "files"],
+      "evidence": "Extended Data Table 1 gives QE-HF versus Fusion Lumos and facility for each fossil stage-tip; filename prefixes distinguish these acquisitions and blanks."
+    },
+    {
+      "location": "comment[proteomics data acquisition method], comment[dissociation method]",
+      "value": "DDA and HCD",
+      "source_ids": ["paper"],
+      "evidence": "Paper nanoLC-MS/MS Methods state all acquisitions were DDA and fragmentation used HCD."
+    }
+  ],
+  "limitations": [
+    "Stage tips 1070, 1140, and 1143 are extraction blanks, absent from the paper's fossil-only Extended Data Table 1. Their method assignments follow the paired sequential tip numbers and raw run groups and are explicitly inferred.",
+    "All blank rows use nominal biological replicate 1 to satisfy the validator; this is a run-group index, not a biological fossil replicate.",
+    "Search settings vary between PEAKS and MaxQuant; no single mass tolerance or modification list is imposed on all runs."
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD056094_HF.sdrf.tsv",
+  "dataset": "PXD056094",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD056094",
+      "local_path": "scratchpad/PXD056094/pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD056094/files",
+      "local_path": "scratchpad/PXD056094/files.json"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13510678/",
+      "local_path": "scratchpad/PXD056094/paper.xml"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] all rows",
+      "value": "3 deposited RAW files",
+      "source_ids": [
+        "files"
+      ],
+      "evidence": "Each fileName and projectAccessions checked against PXD056094; selected inventory is an exact disjoint instrument subset."
+    },
+    {
+      "location": "source name all rows",
+      "value": "deposited file stem",
+      "source_ids": [
+        "files",
+        "paper"
+      ],
+      "evidence": "RAW stems encode the object accession, sampling spot and material; paper Tables 1 and 2 identify museum accessions and sample descriptions."
+    },
+    {
+      "location": "characteristics[organism] all rows",
+      "value": "not applicable",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "The specimens are ancient paint/adhesive fragments from artifacts containing mixed or unidentified animal and plant protein sources. The proteome taxon is an analytical result, not a single known source organism."
+    },
+    {
+      "location": "characteristics[organism part], characteristics[cell type], characteristics[disease] all rows",
+      "value": "not applicable",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Ancient pigment/ground/adhesive material, not a biological tissue, cell population or diseased subject."
+    },
+    {
+      "location": "comment[cleavage agent details] two repeated columns",
+      "value": "Lys-C then Trypsin",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Protein extraction Methods specify 2 h rLysC and overnight Trypsin. PRIDE protocol prose summarizes Trypsin only; reconciler considers only first repeated column, so its warning is a false positive."
+    },
+    {
+      "location": "comment[instrument] all rows",
+      "value": "Q Exactive HF",
+      "source_ids": [
+        "paper",
+        "files"
+      ],
+      "evidence": "Methods nanoLC-MS/MS explicitly say AE1045 and AE1060 used Q Exactive HF; those are the three raw files here."
+    },
+    {
+      "location": "comment[proteomics data acquisition method] all rows",
+      "value": "DDA",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "Methods nanoLC-MS/MS specify data-dependent top 10 mode."
+    },
+    {
+      "location": "comment[precursor mass tolerance], comment[fragment mass tolerance]",
+      "value": "4.5 ppm; 20 ppm",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "MS/MS data analysis Methods specify MS1 and MS2 measurement errors."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "carbamidomethyl C fixed; oxidation M, deamidation N/Q and N-terminal pyroglutamate from Q/E variable; oxidation P variable (hydroxyproline)",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "These modifications are specified in MS/MS data analysis. Methods also list collagen-specific hydroxyproline; in this HF subset all rows have collagen and Oxidation P variable encodes it."
+    }
+  ],
+  "limitations": [
+    "The depositor run list does not include blank-control RAW files; all 28 deposited RAW files are mapped.",
+    "The paper reports taxonomic identifications per sample as analytical results, sometimes multiple taxa. A single source organism is not asserted for mixed paint/adhesive artifacts.",
+    "The primary paper assigns two instrument methods; PRIDE project-level instrument field lists HF-X and is not valid for the AE1045/AE1060 subset."
+  ]
+}

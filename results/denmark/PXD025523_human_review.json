@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD025523-human-biopsy.sdrf.tsv",
+  "artifact_sha256": "0728979acaf5e7f131683cab3ad7ae2b57252958c035dc063f8ef427247bdfa9",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues in the 46-RAW human biopsy subset. The 12 other RAW files are outside the stated partial artifact.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh isolated subagent; reviewed only the artifact, accession-scoped manifest and source files, specification, and deterministic checks; did not read producer reasoning."
+  },
+  "evidence_manifest": "results/denmark/PXD025523_human_evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Read TERMS.tsv, templates.yaml, and ms-proteomics 1.1.0, human 1.1.0, clinical-metadata 1.0.0 YAML at sdrf-skills revision f97622a. All 368 rows have 30 fields, no duplicate complete rows, correct three template declarations and structured values. Official combined-template validator passed. Modification parameters are recommended in YAML and unavailable from the deposit, so absence is permissible despite score wording."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Official OLS-cache-only validator accepted controlled values. Reviewed unique structured terms: PRIDE:0000627 data-dependent acquisition, MS:1003028 Orbitrap Exploris 480, MS:1001309 Lys-C, MS:1001251 Trypsin, MS:1000422 beam-type CID; disease name matches DOID:0050431 in PRIDE. No obsolete or mismatched terms reported."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Accession-scoped PRIDE project JSON is PXD025523 and directly supplies eight reporter-channel identities, Lys-C then trypsin, 46 fractions, Exploris 480 Top10 HCD with 30% NCE. Published article PMID 35959657 / PMCID PMC9474627 reports five ARVC and three healthy-relative right-ventricular biopsies. Accession-scoped ARVC-data-proteomics.xlsx Ttest(ARVC vs Ctrl) has Ctrl1-3 and ARVC1-5 columns. The conflicting HCM/MYBPC3 protocol sentence was rejected in favor of concordant article, project title, channel map and workbook."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Asserted projectAccessions=['PXD025523'] for every files.json entry. Deposited RAW list has 58 unique names: 46 ARCV_fr01-fr46 files and 12 distinct 20201211 PRI runs. SDRF has exactly the 46 ARCV files, each in eight rows, with no missing, unmatched, or duplicate deposited RAW name."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed 368=46 fractions x 8 TMT channels, three Ctrl and five ARVC donor identities. For every row, label matches the PRIDE channel map, assay name embeds the correct RAW stem and label, fraction ID matches the RAW suffix, biological replicate matches donor index, technical replicate is 1, and factor disease matches characteristic disease. Both repeated cleavage columns contain Lys-C and Trypsin respectively."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No donor-specific ages, sexes, ancestries or exact alleles were inferred from cohort data; unknowns use not available. Search modifications and tolerances are not asserted without source values. More specific right-ventricular sampling site is supported but optional and does not undermine the stated heart part. Mouse runs are clearly excluded from this partial human artifact."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t human -t clinical-metadata --use_ols_cache_only: exit 0, 'Everything seems to be fine.' python3 -m tools check --offline: exit 0 CLEAN, 0 hallucinations/mismatches; online check unavailable due DNS network restriction. python3 -m tools score: exit 0, 97/100."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[sampling site] (absent)",
+      "message": "The known right-ventricular biopsy site could be represented in the optional sampling-site column if desired.",
+      "evidence": "The published article identifies right ventricular biopsies, while the SDRF uses the valid broader organism part 'heart'. Correction criterion: add a supported right-ventricle sampling site only if higher anatomical specificity is desired."
+    }
+  ]
+}

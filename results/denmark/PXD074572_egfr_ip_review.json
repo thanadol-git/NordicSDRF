@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD074572-egfr-ip.sdrf.tsv",
+  "artifact_sha256": "f40f565a9a7dc21b91e92976e5b88e609d69ca140c8abe1251761b2ead4b8678",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. The published supplementary EGFR-IP protocol establishes physical on-bead trypsin digestion.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh isolated reviewer; no producer transcript, reasoning or verdict consulted; SDRF not edited."
+  },
+  "evidence_manifest": "annotations/PXD074572-egfr-ip.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Read TERMS.tsv and the ms-proteomics@1.1.0 and vertebrates@1.1.0 YAML templates. The file declares those two active templates; official union validator exits 0 and tools structure reports column order, template declaration and acquisition consistent. Eight rows share the 34-column header, with unique source, assay and data-file values."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Official parse_sdrf ontology-cache validation exits 0 with one warning for free-text C57BL/6JRj absent from NCBITaxon cache. Offline tools check examines seven controlled terms, reports zero hallucinations, label mismatches, wrong ontology families or UNIMOD swaps. MS:1003005 timsTOF Pro, MS:1001251 Trypsin, PRIDE:0000627 DDA, and UNIMOD:4/35/1/21 labels match their structured values and source settings."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Accession-scoped PRIDE record, depositor README, IP experiment annotation and IP FragPipe params inspected. The publisher paper Methods 2.2 states 12-week mouse hearts, n=4/group, 10-minute stimulation, 1.5-minute perfusion and 12 minutes total from injection to collection. The paper identifies accession PXD074572. Publisher supplementary Methods excerpt for its EGFR-IP experiment states 20 µg/ml trypsin during first bead elution and overnight digestion; it also specifies Evosep/timsTOF Pro PASEF. IP params specify DDA, stricttrypsin, ±20 ppm precursor and fragment tolerances, fixed C +57.02146, and variable M +15.9949, protein N-terminal +42.0106 and STY +79.96633."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "All 50 PRIDE file records assert projectAccessions=['PXD074572']. Depositor IP run map has eight rows, matching SDRF source, replicate, condition and .d acquisition in order. Exactly eight archived .d.zip stems in the project file list match all eight unique SDRF .d names; no missing, duplicate or extra IP acquisition. Archive members were not inspected."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed eight EGFR-IP assays from eight distinct biological replicates: four saline vehicle controls and four EGF-treated, one technical replicate and fraction per biological sample, all label free. EGF_8 is the first instrument acquisition, correctly mapped by depositor annotation rather than filename order."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Checked all nontrivial biological and technical values against accession-scoped sources. Unknown cell type, disease and sex remain not available; no sample-level demographics inferred from cohort summaries. EGFR affinity and trypsin are specific to the IP supplement; no phosphoproteome Lys-C step or Orbitrap instrument is imported into this IP SDRF."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t vertebrates --use_ols_cache_only: exit 0, warning only for strain; python3 -m tools check --offline: exit 0, CLEAN; python3 -m tools score: exit 0, 100/100; python3 -m tools structure: exit 0. Online tools check was attempted but DNS access to OLS is unavailable; supported offline mode completed the check."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "ontology_cache",
+      "location": "characteristics[strain or breed], rows 1-8",
+      "message": "The literal vendor substrain C57BL/6JRj triggers an NCBITaxon-cache warning.",
+      "evidence": "The field is free text in TERMS.tsv and the paper and PRIDE identify the strain; official validator returns only a warning."
+    }
+  ]
+}

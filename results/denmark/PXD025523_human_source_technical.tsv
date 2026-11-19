@@ -1,0 +1,10 @@
+column	value
+comment[sdrf version]	v1.1.0
+comment[sdrf annotation tool]	manual curation
+comment[proteomics data acquisition method]	NT=Data-dependent acquisition;AC=PRIDE:0000627
+comment[instrument]	NT=Orbitrap Exploris 480;AC=MS:1003028
+comment[cleavage agent details]	NT=Lys-C;AC=MS:1001309|NT=Trypsin;AC=MS:1001251
+comment[dissociation method]	NT=beam-type collision-induced dissociation;AC=MS:1000422
+comment[collision energy]	30 NCE
+comment[precursor mass tolerance]	not available
+comment[fragment mass tolerance]	not available

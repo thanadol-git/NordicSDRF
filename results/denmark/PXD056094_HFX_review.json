@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD056094_HFX.sdrf.tsv",
+  "artifact_sha256": "a8f5796c4409adf4835171e5b936f41e07c74c3bc261e7e41d38f9b2f6a67643",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocker or important issue in the 25-run HF-X subset.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh isolated subagent; reviewed only the assigned artifact, evidence manifest, accession-scoped source files, and current specification; did not read producer reasoning."
+  },
+  "evidence_manifest": "results/denmark/PXD056094_HFX_evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Read TERMS.tsv and the templates manifest plus active base 1.1.0, sample-metadata 1.0.0, ms-proteomics 1.1.0 YAML. The sole declared usable template is ms-proteomics v1.1.0. All 25 rows have 27 fields; required columns, ordering, reserved values, and duplicate-column cardinality pass official validator and bundled structure checker."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Unique controlled entries include PRIDE:0000627 DDA, MS:1002877 Q Exactive HF-X, MS:1001309 Lys-C, MS:1001251 Trypsin, MS:1000422 beam-type CID, UNIMOD:4/35/7/28/27 and label free sample. Official ontology validation using the OLS cache passed; bundled offline check found zero hallucinations, label mismatches, wrong ontologies, or UNIMOD swaps."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Re-opened accession-checked PRIDE project PXD056094 and article PMC13510678. Paper Protein extraction and nanoLC-MS/MS sections support Lys-C then Trypsin, 25 other samples on Q-Exactive HF-X with top-10 DDA/HCD. MS/MS data analysis supports 4.5/20 ppm and listed common modifications. Table 1 and 2 and RAW stems support artifact/sample identity. Organism, tissue, cell and disease are deliberately not applicable to mixed ancient paint/adhesive material."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Checked projectAccessions=PXD056094 on all 56 file-list records. Exactly 28 deposited RAW files exist. All 25 distinct SDRF data files match exactly; the three remaining AE1045/AE1060 RAW files are the HF subset explicitly separated by paper Methods. No duplicate or unmatched HFX file."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "25 unique source names, assay names and RAW runs; each has biological replicate 1, technical replicate 1, fraction 1, label free and identical HF-X/DDA method. No repeated run, fraction, or multiplexed channel. No factor comparison stated in the paper; score quality 88/100 flags absent factor column without a contradictory design claim."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Checked all 27 columns against the paper and deposit. No per-sample taxonomy is projected from proteomic identification into source-organism metadata. Collagen-specific hydroxyproline is intentionally omitted because it is sample dependent. No unlisted blank-control files or HF instrument runs are asserted in this subset. Optional method settings (e.g., NCE 28, MS1 m/z range) are omitted without altering a required claim."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -s artifact -t ms-proteomics --use_ols_cache_only: exit 0, Everything seems to be fine; python3 -m tools structure: exit 0 Structure OK; python3 -m tools check --offline: exit 0 CLEAN; python3 -m tools score: exit 0, 88/100."
+    }
+  },
+  "findings": []
+}

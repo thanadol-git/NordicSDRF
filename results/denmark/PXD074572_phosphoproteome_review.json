@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD074572-phosphoproteome.sdrf.tsv",
+  "artifact_sha256": "d24ab856f969429e06d5c202b64abf1684c02f3b5549f903d69ede82b2a5d58a",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocker or important issue in 32 phosphoproteome RAW rows representing 16 biological hearts and paired pY/TiO2 enriched peptide fractions.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh isolated reviewer context; SDRF and accession-scoped evidence inspected read-only; producer transcript and rationale not used."
+  },
+  "evidence_manifest": "annotations/PXD074572-phosphoproteome.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Parsed with csv.reader: 32 data rows, 38 columns, identical row widths; duplicate cleavage-agent and modification-parameter headers preserved. Active declarations ms-proteomics@1.1.0 and vertebrates@1.1.0 inherit sample-metadata@1.0.0/base@1.1.0. Official parse_sdrf union validation exited 0 (one nonfatal strain ontology warning); tools structure exited 0."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Official cached ontology validator found no errors, with one warning that exact vendor substrain C57BL/6JRj is absent from ncbitaxon cache. Template makes this recommended field a warning; paper/PRIDE support the literal strain. Offline tools check: 9 controlled terms checked, 0 hallucinations, 0 label mismatches, 0 wrong ontology, 0 UNIMOD swaps. Cleavage MS:1001309/MS:1001251 and UNIMOD:4/35/1/21 have matching labels and families in the active template and source search settings."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Accession-scoped PRIDE record, depositor README and experiment_annotation.tsv, phosphoproteome search parameters, and published Methods 2.2-2.5 were cross-checked. Search-indexed primary paper text confirms 12-week mice, 10-minute stimulation plus 1.5-minute perfusion and 12-minute injection-to-collection interval, sequential Lys-C/trypsin digestion, pY then TiO2 enrichment, Orbitrap Exploris 480, HCD 25 NCE and four search modifications (https://www.sciencedirect.com/science/article/pii/S0022282826001021)."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Asserted all 50 fetched PRIDE file entries have projectAccessions=[PXD074572]. The 32 unique SDRF RAW names exactly equal all 32 RAWs in the accession-scoped file list and all 32 depositor run-map filenames; no missing, extra, duplicate, or IP .d files. All row source names, replicate numbers, enrichment types and fraction IDs agree with the run map."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed 16 biological source names, each occurring exactly twice as pY fraction 1 and TiO2 fraction 2; 8 control hearts (4 in each ligand comparison), 4 EGF hearts and 4 NRG1β hearts. Every factor/cohort/enrichment combination has four acquisition rows. Each source pair shares biological replicate and differs by assay/file/fraction."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Inspected every repeated column by ordinal position: all 32 rows contain both Lys-C and Trypsin and separate Carbamidomethyl, Oxidation, Acetyl and Phospho terms. Sex and disease remain not available instead of unsupported assignments. Age, sampling time, heart tissue, acquisition and enrichment have source support."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t vertebrates --use_ols_cache_only: exit 0, one strain warning; python3 -m tools structure: exit 0; python3 -m tools check --offline: exit 0, CLEAN; python3 -m tools score: exit 0, 100/100. Offline check is the documented local-cache mode for this review."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "ontology_integrity",
+      "location": "characteristics[strain or breed], rows 2-33",
+      "message": "The exact vendor substrain spelling C57BL/6JRj is absent from the validator’s NCBI Taxonomy cache.",
+      "evidence": "Official parse_sdrf emitted one warning; the vertebrates template marks strain ontology validation as warning and the paper and PRIDE identify the C57Bl6Jrj/C57BL/6JRj strain.",
+      "correction_criterion": "If a future recognized accession for this vendor substrain is available, use it or retain the source-supported literal strain."
+    }
+  ]
+}

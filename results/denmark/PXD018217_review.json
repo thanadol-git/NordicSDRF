@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD018217.sdrf.tsv",
+  "artifact_sha256": "d68ee7f8ee5dff696d8647abe64d1995b56422db328b605e890ce14ac41affd0",
+  "verdict": "PASS",
+  "summary": "Independent adversarial review found no blocker or important finding for the 32-run CHROMASS SDRF.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh isolated reviewer; inspected artifact, accession-scoped PRIDE/files records, publication, evidence manifest, specification, and deterministic outputs without producer transcript."
+  },
+  "evidence_manifest": "annotations/PXD018217.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Read TERMS.tsv, templates.yaml, ms-proteomics 1.1.0 and vertebrates 1.1.0 YAML. Xenopus laevis supports vertebrates; label-free DDA supports ms-proteomics. 32 rows have uniform 28-column width and no duplicate records; template declarations and repeated cleavage columns pass structure and parse_sdrf validation."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "tools verify resolved and label-matched PRIDE:0000627, MS:1002877, MS:1001309, MS:1001251, and MS:1000422 in the declared ontology families. parse_sdrf validates Xenopus laevis and label free sample. Offline check found zero hallucinations, label mismatches, or wrong ontologies."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Accession-scoped pride.json accession PXD018217 and Gallina et al. PMC7864614 CHROMASS Methods support Xenopus egg extract plus sperm chromatin, untreated/2000 J/m2 UV-C, mock/REV1/RFWD3 depletion, quadruplicate reactions, two Normal/Fast technical injections, Q Exactive HF-X DDA HCD, label-free MS, and sequential Lys-C then trypsin digestion."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Every files.json record has projectAccessions exactly [PXD018217]. Its 32 RAW filenames equal the 32 unique SDRF data files with no missing or extra entries; two SEARCH and one FASTA deposit files are correctly excluded. Assay names match raw basenames."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed four condition groups with four biological preparations and two technical injections each: 16 sources, 32 assays. Group counts are eight each for C-C, C-UV, RF-UV, RV-UV. Untreated/mock occurs eight times; UV/mock, UV/RFWD3-depleted, UV/REV1-depleted occur eight times each. Factor values duplicate their corresponding characteristics per row."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Reviewed all distinct values across 28 columns against PRIDE protocol, publication, raw filenames, and template rules. Biological attributes without sample-level support remain not available. Optional/recommended mass tolerances and search modifications are omitted rather than inferred from MaxQuant defaults; no unsupported condition or instrument specificity was found."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -s annotations/PXD018217.sdrf.tsv -t ms-proteomics -t vertebrates --use_ols_cache_only exited 0. python -m tools structure exited 0; python -m tools check --offline exited 0 CLEAN; python -m tools score exited 0 with 87/100, its completeness note concerns omitted search parameters unsupported by deposited protocol."
+    }
+  },
+  "findings": []
+}

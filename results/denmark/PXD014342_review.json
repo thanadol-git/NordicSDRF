@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD014342.sdrf.tsv",
+  "artifact_sha256": "1ca8c7f710298add59326aa9a2fbb1ea85705d51ecf3693f08602051a4e06dde",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issue in the 27-RAW PXD014342 annotation.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Separate reviewer read PRIDE project and file inventory, depositor README, and Welker et al. primary paper PDF, checked the complete final SDRF, and did not edit the SDRF."
+  },
+  "evidence_manifest": "results/denmark/PXD014342_evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "27 rows have 24 consistently populated SDRF fields. Official parse_sdrf validation with ms-proteomics and OLS cache returned exit 0: Everything seems to be fine."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Official validator accepted acquisition, instrument, cleavage, label, and dissociation values. Genus Homo is used in the constrained organism field; exact Homo antecessor and Homo erectus identifications are retained separately."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE project protocol describes ancient tooth extraction, blanks, and both mass-spectrometry facilities. Welker et al. Methods and Extended Data Table 1 specify stage-tip tissue, extraction method, instrument facility and replicate counts. The PRIDE README and RAW filenames map individual injections to stage tips."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "All 27 SDRF data-file values exactly match the 27 distinct RAW filenames in PRIDE file inventory, with no missing, extra or duplicated files."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Atapuerca 1069 is method 1, four QE-HF and one Fusion Lumos runs. Dmanisi 1138/1139 are method 1 and 1141/1142 method 2, each with two QE-HF and one Lumos runs; 1386 and 1388 are method 1 and 1387 method 3, all QE-HF. Stage tips 1070, 1140 and 1143 are correctly treated as blanks. Method 2 has Lys-C plus Trypsin; methods 1 and 3 have no added protease. Source specimen, site, tissue, instrument and technical replicate values follow these assignments."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Extraction blanks are not assigned organism, specimen or tissue. Exact species claims are limited to the paper's specimen taxonomic identifications; no unreported sample-level demographic attributes are inferred."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -s annotations/PXD014342.sdrf.tsv -t ms-proteomics --use_ols_cache_only exited 0. SHA-256 of the final independently reviewed artifact is 1ca8c7f710298add59326aa9a2fbb1ea85705d51ecf3693f08602051a4e06dde."
+    }
+  },
+  "findings": []
+}

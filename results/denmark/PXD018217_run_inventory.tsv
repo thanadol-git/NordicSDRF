@@ -1,0 +1,33 @@
+source name	data file	condition code	biological replicate	technical replicate	acquisition variant	UV-C treatment	egg extract depletion
+C-C_R1	20190708_QE4_LC12_IAH_collab_IG_CrMa_C-C_R1.raw	C-C	1	1	Normal	untreated	mock-depleted
+C-C_R1	20190708_QE4_LC12_IAH_collab_IG_CrMa_C-C_R1b.raw	C-C	1	2	Fast	untreated	mock-depleted
+C-C_R2	20190708_QE4_LC12_IAH_collab_IG_CrMa_C-C_R2.raw	C-C	2	1	Normal	untreated	mock-depleted
+C-C_R2	20190708_QE4_LC12_IAH_collab_IG_CrMa_C-C_R2b.raw	C-C	2	2	Fast	untreated	mock-depleted
+C-C_R3	20190708_QE4_LC12_IAH_collab_IG_CrMa_C-C_R3.raw	C-C	3	1	Normal	untreated	mock-depleted
+C-C_R3	20190708_QE4_LC12_IAH_collab_IG_CrMa_C-C_R3b.raw	C-C	3	2	Fast	untreated	mock-depleted
+C-C_R4	20190708_QE4_LC12_IAH_collab_IG_CrMa_C-C_R4.raw	C-C	4	1	Normal	untreated	mock-depleted
+C-C_R4	20190708_QE4_LC12_IAH_collab_IG_CrMa_C-C_R4b.raw	C-C	4	2	Fast	untreated	mock-depleted
+C-UV_R1	20190708_QE4_LC12_IAH_collab_IG_CrMa_C-UV_R1.raw	C-UV	1	1	Normal	2000 J/m2 UV-C	mock-depleted
+C-UV_R1	20190708_QE4_LC12_IAH_collab_IG_CrMa_C-UV_R1b.raw	C-UV	1	2	Fast	2000 J/m2 UV-C	mock-depleted
+C-UV_R2	20190708_QE4_LC12_IAH_collab_IG_CrMa_C-UV_R2.raw	C-UV	2	1	Normal	2000 J/m2 UV-C	mock-depleted
+C-UV_R2	20190708_QE4_LC12_IAH_collab_IG_CrMa_C-UV_R2b.raw	C-UV	2	2	Fast	2000 J/m2 UV-C	mock-depleted
+C-UV_R3	20190708_QE4_LC12_IAH_collab_IG_CrMa_C-UV_R3.raw	C-UV	3	1	Normal	2000 J/m2 UV-C	mock-depleted
+C-UV_R3	20190708_QE4_LC12_IAH_collab_IG_CrMa_C-UV_R3b.raw	C-UV	3	2	Fast	2000 J/m2 UV-C	mock-depleted
+C-UV_R4	20190708_QE4_LC12_IAH_collab_IG_CrMa_C-UV_R4.raw	C-UV	4	1	Normal	2000 J/m2 UV-C	mock-depleted
+C-UV_R4	20190708_QE4_LC12_IAH_collab_IG_CrMa_C-UV_R4b.raw	C-UV	4	2	Fast	2000 J/m2 UV-C	mock-depleted
+RF-UV_R1	20190708_QE4_LC12_IAH_collab_IG_CrMa_RF-UV_R1.raw	RF-UV	1	1	Normal	2000 J/m2 UV-C	RFWD3-depleted
+RF-UV_R1	20190708_QE4_LC12_IAH_collab_IG_CrMa_RF-UV_R1b.raw	RF-UV	1	2	Fast	2000 J/m2 UV-C	RFWD3-depleted
+RF-UV_R2	20190708_QE4_LC12_IAH_collab_IG_CrMa_RF-UV_R2.raw	RF-UV	2	1	Normal	2000 J/m2 UV-C	RFWD3-depleted
+RF-UV_R2	20190708_QE4_LC12_IAH_collab_IG_CrMa_RF-UV_R2b.raw	RF-UV	2	2	Fast	2000 J/m2 UV-C	RFWD3-depleted
+RF-UV_R3	20190708_QE4_LC12_IAH_collab_IG_CrMa_RF-UV_R3.raw	RF-UV	3	1	Normal	2000 J/m2 UV-C	RFWD3-depleted
+RF-UV_R3	20190708_QE4_LC12_IAH_collab_IG_CrMa_RF-UV_R3b.raw	RF-UV	3	2	Fast	2000 J/m2 UV-C	RFWD3-depleted
+RF-UV_R4	20190708_QE4_LC12_IAH_collab_IG_CrMa_RF-UV_R4.raw	RF-UV	4	1	Normal	2000 J/m2 UV-C	RFWD3-depleted
+RF-UV_R4	20190708_QE4_LC12_IAH_collab_IG_CrMa_RF-UV_R4b.raw	RF-UV	4	2	Fast	2000 J/m2 UV-C	RFWD3-depleted
+RV-UV_R1	20190708_QE4_LC12_IAH_collab_IG_CrMa_RV-UV_R1.raw	RV-UV	1	1	Normal	2000 J/m2 UV-C	REV1-depleted
+RV-UV_R1	20190708_QE4_LC12_IAH_collab_IG_CrMa_RV-UV_R1b.raw	RV-UV	1	2	Fast	2000 J/m2 UV-C	REV1-depleted
+RV-UV_R2	20190708_QE4_LC12_IAH_collab_IG_CrMa_RV-UV_R2.raw	RV-UV	2	1	Normal	2000 J/m2 UV-C	REV1-depleted
+RV-UV_R2	20190708_QE4_LC12_IAH_collab_IG_CrMa_RV-UV_R2b.raw	RV-UV	2	2	Fast	2000 J/m2 UV-C	REV1-depleted
+RV-UV_R3	20190708_QE4_LC12_IAH_collab_IG_CrMa_RV-UV_R3.raw	RV-UV	3	1	Normal	2000 J/m2 UV-C	REV1-depleted
+RV-UV_R3	20190708_QE4_LC12_IAH_collab_IG_CrMa_RV-UV_R3b.raw	RV-UV	3	2	Fast	2000 J/m2 UV-C	REV1-depleted
+RV-UV_R4	20190708_QE4_LC12_IAH_collab_IG_CrMa_RV-UV_R4.raw	RV-UV	4	1	Normal	2000 J/m2 UV-C	REV1-depleted
+RV-UV_R4	20190708_QE4_LC12_IAH_collab_IG_CrMa_RV-UV_R4b.raw	RV-UV	4	2	Fast	2000 J/m2 UV-C	REV1-depleted

@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD025523-human-biopsy.sdrf.tsv",
+  "dataset": "PXD025523",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD025523",
+      "local_path": "scratchpad/PXD025523/pride.json"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD025523/files",
+      "local_path": "scratchpad/PXD025523/files.json"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9474627/"
+    },
+    {
+      "id": "processed",
+      "kind": "repository",
+      "location": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/11/PXD025523/ARVC-data-proteomics.xlsx",
+      "local_path": "scratchpad/PXD025523/ARVC-data-proteomics.xlsx"
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] and comment[fraction identifier] all rows",
+      "value": "46 human TMT fractions, fr01-fr46, each represented for 8 reporter channels",
+      "source_ids": [
+        "files",
+        "pride"
+      ],
+      "evidence": "All 46 deposited RAW file names with ARCV_fr01 through ARCV_fr46, exactly one per numbered fraction. The other 12 RAW runs have distinct 20201211 PRI names and are outside this partial artifact."
+    },
+    {
+      "location": "comment[label] and source name",
+      "value": "126 Ctrl1; 127N Ctrl2; 127C Ctrl3; 128N ARVC1; 128C ARVC2; 129N ARVC3; 129C ARVC4; 131C ARVC5",
+      "source_ids": [
+        "pride",
+        "processed"
+      ],
+      "evidence": "PRIDE sampleProcessingProtocol explicitly lists eight TMT label/sample assignments. Processed workbook Ttest(ARVC vs Ctrl) has Ctrl1-3 and ARVC1-5 columns."
+    },
+    {
+      "location": "characteristics[organism] and characteristics[organism part]",
+      "value": "Homo sapiens; heart",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "Human right-ventricular endomyocardial biopsies in paper and PRIDE protocol."
+    },
+    {
+      "location": "characteristics[disease] and factor value[disease]",
+      "value": "normal for three controls; arrhythmogenic right ventricular cardiomyopathy for five cases",
+      "source_ids": [
+        "pride",
+        "paper",
+        "processed"
+      ],
+      "evidence": "PRIDE explicit label map names Ctrl1-3 and ARVC1-5; paper Figure 3 states five ARVC and three control heart samples; processed workbook Ttest(ARVC vs Ctrl) confirms these same eight identities."
+    },
+    {
+      "location": "characteristics[age], characteristics[sex], characteristics[ancestry category]",
+      "value": "not available",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "No donor-to-TMT-channel age, sex or ancestry map is deposited. Paper provides only cohort-level clinical ranges."
+    },
+    {
+      "location": "comment[instrument], acquisition method, dissociation, collision energy",
+      "value": "Orbitrap Exploris 480; DDA Top10; HCD; 30 NCE",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE dataProcessingProtocol states the 46 fractioned TMT peptides were measured on Orbitrap Exploris 480 using Top10 HCD and normalized collision energy 30%."
+    },
+    {
+      "location": "two repeated comment[cleavage agent details] columns",
+      "value": "Lys-C then Trypsin",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE sampleProcessingProtocol explicitly says 2 h Lys-C followed by overnight trypsin. Bundled reconcile inspects only first repeated cleavage column and produces a false incomplete warning."
+    }
+  ],
+  "limitations": [
+    "This SDRF is only the 46-file human TMT fraction subset of a 58-RAW-file PXD. The 12 mouse 20201211 runs require separate sample-to-condition mapping and are not claimed here.",
+    "PRIDE sampleProcessingProtocol has an apparent copied HCM/MYBPC3 sentence inconsistent with the project title, explicit ARVC channel map, processed workbook and primary paper. Case disease follows the latter three concordant sources.",
+    "Individual donor ages, sexes, ancestry and exact PKP2 allele are not mapped to reporter channels.",
+    "Search modification parameters and mass tolerances are omitted or not available because the accessible primary deposit metadata does not specify them."
+  ]
+}
