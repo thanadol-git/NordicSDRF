@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD035331.sdrf.tsv",
+  "dataset": "PXD035331",
+  "sources": [
+    {
+      "type": "submitter_sheet",
+      "ref": "PROTEOMICS_LHF.xlsx"
+    },
+    {
+      "type": "pride_files",
+      "ref": "files/all",
+      "note": "93 RAW, SHA-256 matched"
+    }
+  ],
+  "decisions": [
+    {
+      "field": "scope",
+      "value": "77/93",
+      "basis": "LHF3-2..6 not in sample sheet"
+    }
+  ]
+}
