@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD028021.sdrf.tsv",
+  "dataset": "PXD028021",
+  "sources": [
+    {
+      "type": "pride_files",
+      "ref": "files/all",
+      "note": "276 RAW, SHA-256 matched"
+    },
+    {
+      "type": "raw_headers",
+      "ref": "Q Exactive HF-X (AP and proteome runs)"
+    }
+  ],
+  "decisions": []
+}
