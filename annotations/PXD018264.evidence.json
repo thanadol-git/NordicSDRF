@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD018264.sdrf.tsv",
+  "dataset": "PXD018264",
+  "sources": [
+    {
+      "type": "pride_files",
+      "ref": "files/all",
+      "note": "78 RAW, SHA-256 matched"
+    },
+    {
+      "type": "raw_headers",
+      "ref": "Q Exactive HF-X (2 files checked)"
+    }
+  ],
+  "decisions": []
+}
