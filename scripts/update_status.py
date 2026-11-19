@@ -34,6 +34,7 @@ import argparse
 import csv
 import datetime as dt
 import json
+import os
 import re
 import sys
 import time
@@ -96,15 +97,26 @@ def collect_pride_hits(country: str, slug: str, city: dict, out_dir: Path) -> in
 
 
 # --------------------------------------------------------------------------- community corpus
+def github_api_headers() -> dict[str, str]:
+    """Headers for api.github.com; use GITHUB_TOKEN/GH_TOKEN when set (CI rate limits)."""
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "User-Agent": "NordicSDRF-update-status",
+    }
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+    return headers
+
+
 def corpus_from_github() -> set[str] | None:
     """PXDs with at least one .sdrf.tsv under datasets/ in the upstream repo (one request)."""
-    req = urllib.request.Request(GITHUB_TREE, headers={"Accept": "application/vnd.github+json",
-                                                        "User-Agent": "NordicSDRF-update-status"})
+    req = urllib.request.Request(GITHUB_TREE, headers=github_api_headers())
     try:
         with urllib.request.urlopen(req, timeout=120) as resp:
             tree = json.loads(resp.read().decode())
     except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
-        print(f"  ! GitHub tree fetch failed ({exc}); falling back to the local checkout", file=sys.stderr)
+        print(f"  ! GitHub tree fetch failed ({exc})", file=sys.stderr)
         return None
     if tree.get("truncated"):
         print("  ! GitHub tree was truncated; corpus check may under-count", file=sys.stderr)
@@ -129,6 +141,14 @@ def load_corpus(cfg: dict, source: str) -> tuple[set[str], str]:
         hits = corpus_from_github()
         if hits is not None:
             return hits, f"GitHub {CORPUS_REPO}"
+        local = corpus_from_local(cfg)
+        if local:
+            print("  ! falling back to local checkout", file=sys.stderr)
+            return local, "local checkout"
+        sys.exit(
+            "GitHub corpus fetch failed and no local corpus is available "
+            "(set GITHUB_TOKEN / GH_TOKEN, or use --corpus local with a sibling checkout)"
+        )
     return corpus_from_local(cfg), "local checkout"
 
 
