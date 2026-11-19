@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD017216.sdrf.tsv",
+  "dataset": "PXD017216",
+  "sources": [
+    {
+      "type": "search_output",
+      "ref": "DMT1KD_Proteome.msf, DMT1KD_Phosphoproteome.msf (range read)"
+    },
+    {
+      "type": "raw_headers",
+      "ref": "original file names"
+    },
+    {
+      "type": "publication",
+      "ref": "PMC8348373"
+    }
+  ],
+  "decisions": []
+}
