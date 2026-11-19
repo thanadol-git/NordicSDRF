@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD010155-proteome.sdrf.tsv",
+  "artifact_sha256": "5c75f1ce2a1b16c1739d6d7f5d9968bddc5cbd5a25ce5a14e5ece09b7243845b",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues in the 16-RAW LWAC flow-through proteome subset (96 TMT6plex rows).",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh isolated hook-agent reviewer without producer transcript; accession-scoped scratchpad/PXD010155 only; did not edit the SDRF."
+  },
+  "evidence_manifest": "results/denmark/PXD010155_proteome_evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Declared templates ms-proteomics/human/cell-lines v1.1.0; 96 rows × 43 columns with consistent repeated modification and template fields. parse_sdrf validate-sdrf (-t ms-proteomics -t human -t cell-lines --use_ols_cache_only) exited 0; sdrf-tools structure exited 0."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check reported CLEAN (14/14 terms verified, 0 hallucinated/mismatched). Official parse_sdrf OLS-cache validation accepted instrument, cleavage, label, dissociation, fractionation, acquisition, reduction/alkylation, and UNIMOD modification parameters."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "pride.json and files.json projectAccessions are exclusively PXD010155. PRIDE sampleProcessingProtocol states HEKindT2 dox 0/4/8/12/16 ng/mL, HEKindT11 0/2.5/5/7.5/10 ng/mL, HEK WT at 0 ng/mL, TMTsixplex with one WT channel plus five induced channels, PNA LWAC then high-pH fractionation of flow-through for proteome, Orbitrap Fusion, trypsin/DTT/IAA. dataProcessingProtocol: 6 ppm / 20 mmu; Carbamidomethyl fixed; HCD variable Met oxidation only (no HexNAc on proteome HCD). DataS1 sheets D/H label those dose/WT ratio columns. TMT map independently checked against deposited FT_Proteome SEARCH xlsx: T11 DataS1 X/0 ratios match A6 127–131/126 exactly (10000/10000 cells on 2000 proteins); T2 hypA 126=0→131=WT is the clear best mono assignment versus all 24 middle-channel permutations and alternative zero/WT channel choices (protein-level float equality imperfect, consistent with DataS1 re-aggregation)."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "All 36 PRIDE file records carry projectAccessions PXD010155. SDRF lists exactly the 16 FT_Proteome RAW files (T2 stem 171209… and T11 stem 171222… × fractions 1–8); no missing, extra, duplicate, or non-RAW data files. Fraction identifier matches filename suffix on every row."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "96 rows = 16 RAW × 6 TMT channels; 96 unique assay names. Per file: labels TMT126–131 once each; per stem×fraction consistent. Channel→sample: TMT126 uninduced 0 ng/ml; TMT127–130 increasing dox; TMT131 HEK WT at 0 ng/ml for both plexes, matching PRIDE and DataS1 dose tables. Factors genotype×doxycycline align with source names. Biological/technical replicate = 1 throughout (no claimed bio-replicates). Enrichment not applicable for LWAC flow-through proteome (glyco PNA-enriched RAWs correctly excluded)."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "No HexNAc modification asserted on this HCD proteome subset. Engineered HEKindT2/T11 lines are distinguished by factor value[genotype] while Cellosaurus CVCL_0045/HEK293/kidney/female describes the parental line (engineered accessions absent from Cellosaurus). Demographics age/ancestry/passage/culture marked not available rather than fabricated. Disease/cell type not available. Proteome subset does not claim the 16 glyco RAW stems."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf exited 0 ('Everything seems to be fine'). sdrf-tools structure OK; check CLEAN; score 93/100; reconcile against scratchpad/PXD010155/pride.json: every annotated value agrees with the deposit record. Frozen SHA-256 5c75f1ce2a1b16c1739d6d7f5d9968bddc5cbd5a25ce5a14e5ece09b7243845b matches expected."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[developmental stage]",
+      "message": "Recommended developmental-stage column is absent; score flagged it as a completeness gap only.",
+      "evidence": "sdrf-tools score Completeness 97/100 noted Missing recommended column: characteristics[developmental stage]. Not required by active templates for approval."
+    }
+  ]
+}

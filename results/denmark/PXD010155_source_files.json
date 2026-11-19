@@ -1,0 +1,1370 @@
+[
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "ab88462ee302046739da697515fc96ab6a9defb9ad0c8b3029f89d1d02bc68a0",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "816f36105491143a87e6633a280ec92b2404c74d",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_7.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_7.raw"
+      }
+    ],
+    "fileSizeBytes": 600395494,
+    "fileName": "171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_7.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 58
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "1ae891314d72a84c2a9bd110353be84ce1f6774b1cee5ea6493a24c42d7bc494",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "29bef08e13013f952f3ebd9805400e4215306400",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_8.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_8.raw"
+      }
+    ],
+    "fileSizeBytes": 469369878,
+    "fileName": "171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_8.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 50
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "91848a8b6551f7e0c9e66a5d537668e2ae84ae3991b7b9ae762b26319effca72",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000408",
+      "name": "Search engine output file URI",
+      "value": "SEARCH"
+    },
+    "checksum": "b84fba73bbdee8f74349aafb2290e4e6f4528a95",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH.xlsx"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH.xlsx"
+      }
+    ],
+    "fileSizeBytes": 1412659,
+    "fileName": "171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH.xlsx",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 56
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "12a70ea03c1425f346e1b3518d449dd2ee9aa296a3e18cc44c71599ea4e566a2",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "01c10a12e53523936ede6964af33617c1f42a354",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_2.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_2.raw"
+      }
+    ],
+    "fileSizeBytes": 612712824,
+    "fileName": "171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_2.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 46
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "e9caad702ea2261e14c0f03814d05fa3c6c2f56b75f9db4e7813888703f302ea",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "b070dffbd690c38f3574b9e24292cb18f549fe2c",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_4.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_4.raw"
+      }
+    ],
+    "fileSizeBytes": 2518599548,
+    "fileName": "171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_4.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 54
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "28529a7ceba35e3a766d7fc7dae65d041e64ab9ef19d1aa12e12aee625617058",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "b4ff32deea51e4884ea016e7ed863e41bff3eb5b",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_1.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_1.raw"
+      }
+    ],
+    "fileSizeBytes": 674646098,
+    "fileName": "171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_1.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 43
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "e9df688f94f8d0b962014041e2258cf271fbabe2e7ab23541af1e4207bb6c0bf",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "8ff6e0fc3ffd912aa4c5c29cb5dabd0b2f2516da",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_8.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_8.raw"
+      }
+    ],
+    "fileSizeBytes": 556134352,
+    "fileName": "171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_8.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 49
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "b53abbe50fd20e5fe38852a9172a8be483fced3d8a5099bbaa474a6088d81390",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "bc8d1011d4777d28693ac9a39630af927637241b",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_1.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_1.raw"
+      }
+    ],
+    "fileSizeBytes": 2688713986,
+    "fileName": "171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_1.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 51
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "1c5a2aa162fa7986f735ed58838307d8375314e4f0dcb229232de287234883ba",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "b7c0d4a00caa761dc52922864ef7de2b5b34f3df",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_3.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_3.raw"
+      }
+    ],
+    "fileSizeBytes": 2237355492,
+    "fileName": "171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_3.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 52
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "99777566de57393b7f226570e97c5a5ce6bfc3517a3c698f9c904882e84d04b6",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "af4d1136979057944845aa260e9792ce5a7bdaab",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_5.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_5.raw"
+      }
+    ],
+    "fileSizeBytes": 2486013642,
+    "fileName": "171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_5.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 53
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "bb225b9614c48b4f79b7b0b672d44725af1b30d978bf4a2fbaed7a6f115e7b9e",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "70c4b9e8751d272a2e1ffc62f9cee5a6c49737ee",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_5.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_5.raw"
+      }
+    ],
+    "fileSizeBytes": 525021658,
+    "fileName": "171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_5.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 39
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "abffd5e880a8e3cc50e7be601375df1025187f9102c75687cde51343ebdff64c",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "f1436868a83c82cb35df7c7d755a3637e771309f",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_5.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_5.raw"
+      }
+    ],
+    "fileSizeBytes": 2158844310,
+    "fileName": "171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_5.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 52
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "2136c88878e4bcf5583499ef7f1abfb94c3649980ab3700235a0d3d47e25094e",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "d1bcd836196876d38ffc6d7050749e5e2d84e6df",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_1.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_1.raw"
+      }
+    ],
+    "fileSizeBytes": 675360592,
+    "fileName": "171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_1.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 56
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "ba171aaa5a8564d462c2a403e8a618958c3505c202bfeb4de6c8ee3c08fa32be",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "ec3f1bc51292b753e121b0c56302530d53dabd32",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_5.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_5.raw"
+      }
+    ],
+    "fileSizeBytes": 711949828,
+    "fileName": "171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_5.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 29
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "dc273afbcfc88e7637b4952a7594cd087e7c5cb705e174719ec73b63d6625559",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "3301e82b9d69fc64431aa6c18cdec19bd3d362aa",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_3.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_3.raw"
+      }
+    ],
+    "fileSizeBytes": 2533219730,
+    "fileName": "171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_3.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 56
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "86fa6496a2aee77f9f0b524442462a9f9de44005da419f05898908b80f41eae0",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "a4788f61bfb3a46e8bd191206a09140864df3221",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_6.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_6.raw"
+      }
+    ],
+    "fileSizeBytes": 2451374142,
+    "fileName": "171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_6.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 49
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "be206456124a03703451406916b945a4c6e801088d86c6c5a187dca8dcad96cd",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "a3db1d18b764def4c46813ef31721f05025235cb",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_2.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_2.raw"
+      }
+    ],
+    "fileSizeBytes": 2520858146,
+    "fileName": "171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_2.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 52
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "dcd5972b7dcce3540030a311fe29cd291088206139581822abb1f71a099d2f3a",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000408",
+      "name": "Search engine output file URI",
+      "value": "SEARCH"
+    },
+    "checksum": "4e4253e688ebcc00d81681796852fc7626826d0b",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH.xlsx"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH.xlsx"
+      }
+    ],
+    "fileSizeBytes": 1204597,
+    "fileName": "171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH.xlsx",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 53
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "ca5e536ba6860b8f773c36453465d89ae48c4ac71ef67bec5965f53b8eb06d25",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "2c23541bbbada06becda649d36d578ad6458ace5",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_7.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_7.raw"
+      }
+    ],
+    "fileSizeBytes": 2373371296,
+    "fileName": "171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_7.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 54
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "6f10c1c0efb22e90b5f582a269f63ebd0d8e922458a8e6baf57bc2d94bc44751",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000408",
+      "name": "Search engine output file URI",
+      "value": "SEARCH"
+    },
+    "checksum": "1e1ac03c3ffa97f38d62a4f218cefb75ad959c90",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH.xlsx"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH.xlsx"
+      }
+    ],
+    "fileSizeBytes": 42227978,
+    "fileName": "171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH.xlsx",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 57
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "9c091ea5ae9154b474e7dabc641064cecb7ec371173570fed3e93131858015e8",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "191cf2fec13012197208bf1ab48d553be2ca64db",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_1.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_1.raw"
+      }
+    ],
+    "fileSizeBytes": 2297184950,
+    "fileName": "171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_1.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 53
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "34fee775441a668bbc85651936de9bf1364250e21d8359b8eaaaf09440534a7f",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "b35687130b9b383b9f661b680ad1d7ca9ad70202",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_7.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_7.raw"
+      }
+    ],
+    "fileSizeBytes": 2042792014,
+    "fileName": "171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_7.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 49
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "a908ca99d8f8c32d04f930fcc7187043d75b7c6d66c8830797f3430947726739",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "2c3b8c28b331402fb28bfa21c40a04655cdc9ef5",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_2.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_2.raw"
+      }
+    ],
+    "fileSizeBytes": 644362438,
+    "fileName": "171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_2.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 46
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "7a10b50b15681de0ddb1631d33370e002e4b6332c89d71c53473265bc077caf9",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "bb759347909fe8cef0aa8e603db54e3a053e8e51",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_3.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_3.raw"
+      }
+    ],
+    "fileSizeBytes": 652544730,
+    "fileName": "171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_3.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 54
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "95eaf9f755c39e22e0a8eb6c1c342fb114274133a56b4a3c52f60cf5300926a3",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "0edea8d4eedb502461408e5d9cc7e269a8a95b79",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_6.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_6.raw"
+      }
+    ],
+    "fileSizeBytes": 523793418,
+    "fileName": "171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_6.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 50
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "f7093131b41b64cf9b4c3afa502bd76a006c235581df6b49a6a81315caeeb28b",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "f1ccafe82728bbb53b03b7373802ca9a4f435694",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_4.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_4.raw"
+      }
+    ],
+    "fileSizeBytes": 753167122,
+    "fileName": "171030_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_4.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 48
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "989c5bd109e2fb2e7ffa622f3cc63c563eaf0d94363d6beba085b2c618fe6c8d",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "e36215c1ed72a5c2ff0136e50c31ec91aad13fab",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_4.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_4.raw"
+      }
+    ],
+    "fileSizeBytes": 2201090572,
+    "fileName": "171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_4.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 59
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "4f0f6e0312f4ab83337f509ac41045afb6047e0c1d0193ef5e5aeb3d76bf7dd9",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "631dc24b7c1acd775270f519aa16133a95f5a473",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_6.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_6.raw"
+      }
+    ],
+    "fileSizeBytes": 2156500142,
+    "fileName": "171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_6.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 55
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "abb15fa44ed3554bdce4c243ac6ae50b935b25b4d357a0faed33d2618210a19a",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "6904035d2cc6e0ffae37384abd027cd7cf94199e",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_3.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_3.raw"
+      }
+    ],
+    "fileSizeBytes": 514282620,
+    "fileName": "171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_3.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 41
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "3499ff37db535a81a0f599a688cac9455e01bc8e918888103141f84833d6221a",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "8e769a73dde8abbfe1ac051c3cc6f5f6a5cc8e4e",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_6.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_6.raw"
+      }
+    ],
+    "fileSizeBytes": 593154052,
+    "fileName": "171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_6.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 44
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "3fc2d71527cae0627be88bd645d12504b6c593d68e0a2157566af90a68c27ff6",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000408",
+      "name": "Search engine output file URI",
+      "value": "SEARCH"
+    },
+    "checksum": "2b03eaaec1ac8869163c9452c5cdce93fcaf633d",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH.xlsx"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH.xlsx"
+      }
+    ],
+    "fileSizeBytes": 42776938,
+    "fileName": "171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH.xlsx",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 56
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "c17840db19035ca1625a7cca9f1ffd40d4feb1a2a461888900f36deb621ad626",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "6c7cbf85740fb5108d2ee2d9f8a1d91e54487ec5",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_4.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_4.raw"
+      }
+    ],
+    "fileSizeBytes": 658016298,
+    "fileName": "171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_4.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 53
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "ebafdb30f9dc9ed49f1c8b9b3f05e465b0ba839320f1777e1b074f3aa38204e5",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "ba0fe2906ccb126cb5d1e79b43579c86dc876dad",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_7.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_7.raw"
+      }
+    ],
+    "fileSizeBytes": 468587336,
+    "fileName": "171020_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_2h_ETD_HCD_High_pH_7.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 54
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "0b0cfab4b1b1b0dbcb06a36943e45ac488a68c214741195ab6b86d8016388418",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "f90a32afc2e5741974928b39b54cfe4a2878c48b",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_8.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_8.raw"
+      }
+    ],
+    "fileSizeBytes": 2420975658,
+    "fileName": "171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_8.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 60
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "db75260ed3146fe832f3a234d2eccc2f9dff2d553117bcf04207a9d74f434761",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "ff80b4362a8f21bf0b1c833ad9e91e9f71942d13",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_2.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_2.raw"
+      }
+    ],
+    "fileSizeBytes": 2219719722,
+    "fileName": "171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_2.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 52
+  },
+  {
+    "projectAccessions": [
+      "PXD010155"
+    ],
+    "accession": "10a7a36cd8519caf6810d1383dac8695a52f20327a259c491bef63789c961ca7",
+    "fileCategory": {
+      "@type": "CvParam",
+      "cvLabel": "PRIDE",
+      "accession": "PRIDE:0000404",
+      "name": "Associated raw file URI",
+      "value": "RAW"
+    },
+    "checksum": "a70afd1b24cbf7256552b212f3b784db45f2a53b",
+    "publicFileLocations": [
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000468",
+        "name": "Aspera Protocol",
+        "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2018/10/PXD010155/171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_8.raw"
+      },
+      {
+        "@type": "CvParam",
+        "cvLabel": "PRIDE",
+        "accession": "PRIDE:0000469",
+        "name": "FTP Protocol",
+        "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/10/PXD010155/171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_8.raw"
+      }
+    ],
+    "fileSizeBytes": 1981181534,
+    "fileName": "171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH_8.raw",
+    "compress": false,
+    "submissionDate": "2018-06-18T16:44:17.000+00:00",
+    "publicationDate": "2018-10-16T16:59:48.000+00:00",
+    "updatedDate": "2018-06-18T16:46:07.000+00:00",
+    "additionalAttributes": [],
+    "totalDownloads": 52
+  }
+]

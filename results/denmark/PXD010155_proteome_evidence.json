@@ -1,0 +1,94 @@
+{
+  "accession": "PXD010155",
+  "subset": "proteome",
+  "sdrf": "annotations/PXD010155-proteome.sdrf.tsv",
+  "templates": [
+    "ms-proteomics",
+    "human",
+    "cell-lines"
+  ],
+  "sources": [
+    {
+      "role": "pride_project",
+      "path": "scratchpad/PXD010155/pride.json",
+      "url": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD010155"
+    },
+    {
+      "role": "pride_files",
+      "path": "scratchpad/PXD010155/files.json",
+      "url": "https://www.ebi.ac.uk/pride/ws/archive/v2/files/byProject?accession=PXD010155"
+    },
+    {
+      "role": "publication",
+      "pmid": "30327431",
+      "doi": "10.1074/jbc.RA118.004516",
+      "pmcid": "PMC6295722",
+      "note": "Methods extracted from PMC HTML; PDF download blocked by PMC POW"
+    },
+    {
+      "role": "supplementary_DataS1",
+      "path": "scratchpad/PXD010155/DataS1.xlsx",
+      "url": "https://web.archive.org/web/20250202114703/https://pmc.ncbi.nlm.nih.gov/articles/instance/6295722/bin/supp_RA118.004516_138885_2_supp_214124_pg2p2v.xlsx",
+      "sha256": "11a1f3d6157eb118bffd386cebfa0dd7c4e2e1184888450a4089256e488fb483"
+    },
+    {
+      "role": "pride_search_T2_proteome",
+      "path": "scratchpad/PXD010155/171209_Fusion_LC2_John_Hek_WT_T2_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH.xlsx"
+    },
+    {
+      "role": "pride_search_T11_proteome",
+      "path": "scratchpad/PXD010155/171222_Fusion_LC2_John_Hek_WT_T11_inducer_Trypsin_TMT6plex_PNA_FT_Proteome_3h_HCD_High_pH.xlsx"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "32 RAW files in 4 stems x 8 high-pH fractions",
+      "columns": [
+        "comment[data file]",
+        "comment[fraction identifier]"
+      ]
+    },
+    {
+      "claim": "TMT6plex channel map: 126=0ng uninduced; 127-130 increasing dox; 131=HEK WT; verified by matching Data S1 labeled ratios to PD SEARCH channel ratios (T11 exact 2000/2000; T2 mono order best 1803/2000 exact)",
+      "columns": [
+        "comment[label]",
+        "factor value[doxycycline]",
+        "factor value[genotype]"
+      ]
+    },
+    {
+      "claim": "Organism Homo sapiens HEK293 CVCL_0045 kidney female from Cellosaurus",
+      "columns": [
+        "characteristics[organism]",
+        "characteristics[cell line]",
+        "characteristics[cellosaurus accession]",
+        "characteristics[organism part]",
+        "characteristics[sex]"
+      ]
+    },
+    {
+      "claim": "Orbitrap Fusion trypsin DDA; precursor 6 ppm; fragment 20 mmu=0.02 Da; Carbamidomethyl+TMT6plex fixed; Oxidation variable; HexNAc variable only for glyco subset",
+      "columns": [
+        "comment[instrument]",
+        "comment[cleavage agent details]",
+        "comment[modification parameters]",
+        "comment[precursor mass tolerance]",
+        "comment[fragment mass tolerance]"
+      ]
+    },
+    {
+      "claim": "Glyco subset is PNA LWAC enriched O-glycopeptides; proteome subset is LWAC flow-through",
+      "columns": [
+        "characteristics[enrichment process]"
+      ]
+    }
+  ],
+  "unavailable_evidence": [
+    "Live PMC/JBC PDF download blocked (POW/recaptcha); Methods taken from PMC article HTML via browser",
+    "Engineered HEKindT2/HEKindT11 lines absent from Cellosaurus; parental HEK293 CVCL_0045 used"
+  ],
+  "validation": {
+    "parse_sdrf": "parse_sdrf validate-sdrf -s ... -t ms-proteomics -t human -t cell-lines --use_ols_cache_only",
+    "notes": "glyco: ontology warning on 'glycopeptide enrichment' only; proteome: clean"
+  }
+}
