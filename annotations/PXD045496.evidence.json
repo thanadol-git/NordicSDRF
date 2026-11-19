@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD045496.sdrf.tsv",
+  "dataset": "PXD045496",
+  "sources": [
+    {
+      "type": "search_output",
+      "ref": "iTRAQ8_Proteome.pdResult, iTRAQ8_PhosphoProteome.pdResult (range read)"
+    },
+    {
+      "type": "publication",
+      "ref": "PMC10652125"
+    }
+  ],
+  "decisions": []
+}
