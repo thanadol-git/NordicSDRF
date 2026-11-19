@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD040583.sdrf.tsv",
+  "dataset": "PXD040583",
+  "sources": [
+    {
+      "type": "pride_files",
+      "ref": "files/all",
+      "note": "120 RAW, SHA-256 of sorted names matched"
+    },
+    {
+      "type": "raw_headers",
+      "ref": "120/120 Orbitrap Eclipse, MS1-only methods"
+    }
+  ],
+  "decisions": []
+}
