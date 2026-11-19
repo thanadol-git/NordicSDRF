@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="420" viewBox="0 0 860 420" role="img" aria-label="Nordic SDRF progress by country">
+<style>
+  .bg { fill: #fcfcfb; }
+  .title { fill: #0b0b0b; font-size: 17px; font-weight: 600; }
+  .city { fill: #0b0b0b; font-size: 13px; font-weight: 600; }
+  .sub, .legend, .total, .axis { fill: #52514e; font-size: 11.5px; }
+  .seg { font-size: 11.5px; font-weight: 600; fill: #ffffff; font-variant-numeric: tabular-nums; }
+  .uncurated { fill: none; stroke: #8a8983; stroke-width: 1.5; stroke-dasharray: 4 3; }
+  .grid { stroke: #e8e7e2; stroke-width: 1; }
+  text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  .c-annotated { fill: #2a78d6; }
+  .c-blocked { fill: #d95926; }
+  .c-in_corpus { fill: #199e70; }
+  .c-screened { fill: #c98500; }
+  .c-todo { fill: #8a8983; }
+
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #1a1a19; }
+    .title, .city { fill: #ffffff; }
+    .sub, .legend, .total, .axis { fill: #c3c2b7; }
+    .uncurated { stroke: #8f8e86; }
+    .grid { stroke: #3a3a37; }
+    .c-annotated { fill: #3987e5; }
+    .c-blocked { fill: #d95926; }
+    .c-in_corpus { fill: #199e70; }
+    .c-screened { fill: #c98500; }
+    .c-todo { fill: #6b6a65; }
+  }
+</style>
+<rect class="bg" width="860" height="420" rx="6"/>
+<text class="title" x="12" y="22">Nordic countries — listed PXDs</text>
+<text class="sub" x="12" y="40">2104 listed · 983 local SDRFs · 178 to do · 467 blocked · PRIDE queried 2026-11-19</text>
+<rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
+<text class="legend" x="29" y="62">Local SDRF</text>
+<rect class="c-blocked" fill="#d95926" x="117" y="52" width="12" height="12" rx="2"/>
+<text class="legend" x="134" y="62">Blocked</text>
+<rect class="c-in_corpus" fill="#199e70" x="201" y="52" width="12" height="12" rx="2"/>
+<text class="legend" x="218" y="62">In corpus</text>
+<rect class="c-screened" fill="#c98500" x="299" y="52" width="12" height="12" rx="2"/>
+<text class="legend" x="316" y="62">Screened</text>
+<rect class="c-todo" fill="#8a8983" x="390" y="52" width="12" height="12" rx="2"/>
+<text class="legend" x="407" y="62">To do</text>
+<line class="grid" x1="52" y1="364.0" x2="840" y2="364.0"/>
+<text class="axis" x="44" y="368.0" text-anchor="end">0</text>
+<line class="grid" x1="52" y1="307.6" x2="840" y2="307.6"/>
+<text class="axis" x="44" y="311.6" text-anchor="end">200</text>
+<line class="grid" x1="52" y1="251.2" x2="840" y2="251.2"/>
+<text class="axis" x="44" y="255.2" text-anchor="end">400</text>
+<line class="grid" x1="52" y1="194.8" x2="840" y2="194.8"/>
+<text class="axis" x="44" y="198.8" text-anchor="end">600</text>
+<line class="grid" x1="52" y1="138.4" x2="840" y2="138.4"/>
+<text class="axis" x="44" y="142.4" text-anchor="end">800</text>
+<line class="grid" x1="52" y1="82.0" x2="840" y2="82.0"/>
+<text class="axis" x="44" y="86.0" text-anchor="end">1000</text>
+<rect class="c-annotated" fill="#2a78d6" x="70.0" y="280.2" width="136.0" height="82.8" rx="2"><title>Sweden · Local SDRF: 297</title></rect>
+<text class="seg" x="138.0" y="326.1" text-anchor="middle">297</text>
+<rect class="c-blocked" fill="#d95926" x="70.0" y="204.4" width="136.0" height="74.9" rx="2"><title>Sweden · Blocked: 269</title></rect>
+<text class="seg" x="138.0" y="246.3" text-anchor="middle">269</text>
+<rect class="c-in_corpus" fill="#199e70" x="70.0" y="195.6" width="136.0" height="7.7" rx="2"><title>Sweden · In corpus: 31</title></rect>
+<text class="total" x="138.0" y="189.6" text-anchor="middle">597</text>
+<text class="city" x="138.0" y="382.0" text-anchor="middle">Sweden</text>
+<rect class="c-annotated" fill="#2a78d6" x="224.0" y="264.5" width="136.0" height="98.5" rx="2"><title>Denmark · Local SDRF: 353</title></rect>
+<text class="seg" x="292.0" y="318.2" text-anchor="middle">353</text>
+<rect class="c-blocked" fill="#d95926" x="224.0" y="232.0" width="136.0" height="31.4" rx="2"><title>Denmark · Blocked: 115</title></rect>
+<text class="seg" x="292.0" y="252.2" text-anchor="middle">115</text>
+<rect class="c-in_corpus" fill="#199e70" x="224.0" y="143.2" width="136.0" height="87.8" rx="2"><title>Denmark · In corpus: 315</title></rect>
+<text class="seg" x="292.0" y="191.6" text-anchor="middle">315</text>
+<rect class="c-todo" fill="#8a8983" x="224.0" y="93.6" width="136.0" height="48.6" rx="2"><title>Denmark · To do: 176</title></rect>
+<text class="seg" x="292.0" y="122.4" text-anchor="middle">176</text>
+<text class="total" x="292.0" y="87.6" text-anchor="middle">959</text>
+<text class="city" x="292.0" y="382.0" text-anchor="middle">Denmark</text>
+<rect class="c-annotated" fill="#2a78d6" x="378.0" y="300.0" width="136.0" height="63.0" rx="2"><title>Norway · Local SDRF: 227</title></rect>
+<text class="seg" x="446.0" y="336.0" text-anchor="middle">227</text>
+<rect class="c-blocked" fill="#d95926" x="378.0" y="287.9" width="136.0" height="11.1" rx="2"><title>Norway · Blocked: 43</title></rect>
+<rect class="c-in_corpus" fill="#199e70" x="378.0" y="266.4" width="136.0" height="20.4" rx="2"><title>Norway · In corpus: 76</title></rect>
+<text class="seg" x="446.0" y="281.1" text-anchor="middle">76</text>
+<rect class="c-todo" fill="#8a8983" x="378.0" y="265.9" width="136.0" height="1.0" rx="2"><title>Norway · To do: 2</title></rect>
+<text class="total" x="446.0" y="259.9" text-anchor="middle">348</text>
+<text class="city" x="446.0" y="382.0" text-anchor="middle">Norway</text>
+<rect class="c-annotated" fill="#2a78d6" x="532.0" y="335.2" width="136.0" height="27.8" rx="2"><title>Finland · Local SDRF: 102</title></rect>
+<text class="seg" x="600.0" y="353.6" text-anchor="middle">102</text>
+<rect class="c-blocked" fill="#d95926" x="532.0" y="324.5" width="136.0" height="9.7" rx="2"><title>Finland · Blocked: 38</title></rect>
+<rect class="c-in_corpus" fill="#199e70" x="532.0" y="309.3" width="136.0" height="14.2" rx="2"><title>Finland · In corpus: 54</title></rect>
+<text class="seg" x="600.0" y="320.9" text-anchor="middle">54</text>
+<text class="total" x="600.0" y="303.3" text-anchor="middle">194</text>
+<text class="city" x="600.0" y="382.0" text-anchor="middle">Finland</text>
+<rect class="c-annotated" fill="#2a78d6" x="686.0" y="362.9" width="136.0" height="1.0" rx="2"><title>Iceland · Local SDRF: 4</title></rect>
+<rect class="c-blocked" fill="#d95926" x="686.0" y="362.3" width="136.0" height="1.0" rx="2"><title>Iceland · Blocked: 2</title></rect>
+<text class="total" x="754.0" y="356.3" text-anchor="middle">6</text>
+<text class="city" x="754.0" y="382.0" text-anchor="middle">Iceland</text>
+</svg>

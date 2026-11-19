@@ -3,9 +3,10 @@
   .bg { fill: #fcfcfb; }
   .title { fill: #0b0b0b; font-size: 17px; font-weight: 600; }
   .city { fill: #0b0b0b; font-size: 13px; font-weight: 600; }
-  .sub, .legend, .total { fill: #52514e; font-size: 11.5px; }
+  .sub, .legend, .total, .axis { fill: #52514e; font-size: 11.5px; }
   .seg { font-size: 11.5px; font-weight: 600; fill: #ffffff; font-variant-numeric: tabular-nums; }
   .uncurated { fill: none; stroke: #8a8983; stroke-width: 1.5; stroke-dasharray: 4 3; }
+  .grid { stroke: #e8e7e2; stroke-width: 1; }
   text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
   .c-annotated { fill: #2a78d6; }
   .c-blocked { fill: #d95926; }
@@ -16,8 +17,9 @@
   @media (prefers-color-scheme: dark) {
     .bg { fill: #1a1a19; }
     .title, .city { fill: #ffffff; }
-    .sub, .legend, .total { fill: #c3c2b7; }
+    .sub, .legend, .total, .axis { fill: #c3c2b7; }
     .uncurated { stroke: #8f8e86; }
+    .grid { stroke: #3a3a37; }
     .c-annotated { fill: #3987e5; }
     .c-blocked { fill: #d95926; }
     .c-in_corpus { fill: #199e70; }
