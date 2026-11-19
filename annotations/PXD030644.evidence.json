@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD030644.sdrf.tsv",
+  "dataset": "PXD030644",
+  "sources": [
+    {
+      "type": "publication",
+      "ref": "PMC9117253"
+    },
+    {
+      "type": "raw_headers",
+      "ref": "18/18 Orbitrap Exploris 480"
+    }
+  ],
+  "decisions": [
+    {
+      "field": "comment[instrument]",
+      "basis": "RAW header overrides PRIDE Exploris 240"
+    }
+  ]
+}
