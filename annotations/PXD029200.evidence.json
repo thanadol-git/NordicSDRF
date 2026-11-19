@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029200.sdrf.tsv",
+  "dataset": "PXD029200",
+  "sources": [
+    {
+      "type": "publication",
+      "ref": "PMC9600727"
+    },
+    {
+      "type": "submitter_sheet",
+      "ref": "Pride_explanatory_sample_file.xlsx"
+    },
+    {
+      "type": "submitter_sheet",
+      "ref": "Raw_file_sample_list.xlsx"
+    },
+    {
+      "type": "raw_headers",
+      "ref": "LUM2_03808, LUM2_03854: Orbitrap Fusion Lumos"
+    }
+  ],
+  "decisions": [
+    {
+      "field": "scope",
+      "value": "27/51",
+      "basis": "only codes x1y/x3y are documented"
+    }
+  ]
+}
