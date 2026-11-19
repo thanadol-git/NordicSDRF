@@ -339,13 +339,20 @@ def country_plot(country: str, cdata: dict, plots_dir: str) -> str:
     return f"### {title}\n\n![{title}: SDRF progress per city]({plots_dir}/{country}.svg)"
 
 
+def overview_plot(plots_dir: str) -> str:
+    """Campaign-wide vertical stacked bars (one per country), drawn by plot_status.py."""
+    title = "All countries — listed PXDs"
+    return f"### {title}\n\n![{title}: SDRF progress by country]({plots_dir}/overview.svg)"
+
+
 def render_status_block(cfg: dict) -> str:
     queried = cfg.get("pride_hits_queried", "unknown date")
-    intro = (f"One chart per country, one bar per city (shared x scale within a country). A\n"
-             f"curated city's bar is its manifest (`lists/<country>/<city>.txt`), split so every PXD\n"
-             f"sits in exactly one block: *Blocked* (including batch-tracker blockers),\n"
-             f"*Local SDRF* (a local file without a blocker, including files awaiting review),\n"
-             f"*In corpus* (already has an SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/{CORPUS_REPO}),\n"
+    intro = (f"Overview first: one vertical stacked bar per country (city manifests summed).\n"
+             f"Then one chart per country, one horizontal bar per city (shared x scale within a\n"
+             f"country). A curated city's bar is its manifest (`lists/<country>/<city>.txt`),\n"
+             f"split so every PXD sits in exactly one block: *Blocked* (including batch-tracker\n"
+             f"blockers), *Local SDRF* (a local file without a blocker, including files awaiting\n"
+             f"review), *In corpus* (already has an SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/{CORPUS_REPO}),\n"
              f"checked against {cfg.get('corpus_source', 'the local checkout')}), *Screened*, *To do*.\n"
              f"A city without a manifest shows a dashed outline sized by its raw PRIDE full-text\n"
              f"hit count (unioned over `search_terms` in `config.yml`, queried {queried}). *Olink PAD*\n"
@@ -355,7 +362,8 @@ def render_status_block(cfg: dict) -> str:
              f"The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with\n"
              f"`python scripts/update_status.py`; redraw the charts alone from `tables/` with\n"
              f"`python scripts/plot_status.py`.")
-    charts = [country_plot(c, d, "status/plots") for c, d in cfg["countries"].items()]
+    charts = [overview_plot("status/plots"),
+              *(country_plot(c, d, "status/plots") for c, d in cfg["countries"].items())]
     return "\n\n".join([intro, *charts])
 
 
