@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD032049.sdrf.tsv",
+  "dataset": "PXD032049",
+  "sources": [
+    {
+      "type": "search_output",
+      "ref": "Set_A..F.msf (range read)",
+      "note": "input RAW list per set; PD static/dynamic mods"
+    },
+    {
+      "type": "submitter_sheet",
+      "ref": "Experiment_setup__samples-TMT_label_.xlsx"
+    },
+    {
+      "type": "publication",
+      "ref": "PMC9149909"
+    }
+  ],
+  "decisions": [
+    {
+      "field": "set assignment",
+      "basis": ".msf input files"
+    },
+    {
+      "field": "comment[modification parameters]",
+      "basis": ".msf workflow: TMT6plex static"
+    }
+  ]
+}
