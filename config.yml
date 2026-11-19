@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-11-19
 
-corpus_source: local checkout (2026-11-19)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-11-19)
 
 countries:
   sweden:
@@ -52,7 +52,7 @@ countries:
         annotated: 68
         blocked: 93
         notes: "line 1 is PRD000423, a legacy ProteomeXchange id — resolve to a PXD before screening"
-        in_corpus: 0
+        in_corpus: 86
       lund:
         name: Lund
         search_terms: [Lund, Malmö, Skåne]
@@ -62,7 +62,7 @@ countries:
         screened: 0
         annotated: 75
         blocked: 82
-        in_corpus: 0
+        in_corpus: 101
       gothenburg:
         name: Gothenburg
         search_terms: [Gothenburg, Göteborg, Sahlgrenska, Chalmers]
@@ -72,7 +72,7 @@ countries:
         screened: 0
         annotated: 66
         blocked: 60
-        in_corpus: 0
+        in_corpus: 74
       uppsala:
         name: Uppsala
         search_terms: [Uppsala]
@@ -83,7 +83,7 @@ countries:
         annotated: 44
         blocked: 23
         notes: "PXD001817, PXD004529, and PXD007189 are Utrecht datasets (PI address 'Uppsalalaan 8', countries=[Netherlands]) — keyword false positives; filter on PRIDE `countries` in tier 1"
-        in_corpus: 0
+        in_corpus: 52
       umea:
         name: Umeå
         search_terms: [Umeå, Umea]
@@ -93,7 +93,7 @@ countries:
         blocked: 11
         pxd_list: lists/sweden/umea.txt
         pxd_count: 39
-        in_corpus: 0
+        in_corpus: 28
       linkoping:
         name: Linköping
         search_terms: [Linköping, Linkoping]
@@ -103,7 +103,7 @@ countries:
         blocked: 0
         pxd_list: lists/sweden/linkoping.txt
         pxd_count: 26
-        in_corpus: 0
+        in_corpus: 26
       orebro:
         name: Örebro
         search_terms: [Örebro, Orebro]
@@ -125,7 +125,7 @@ countries:
         notes: "Manifest from build_manifest.py (2026-11-03): 543 confirmed Danish; PXD006201, PXD006679, PXD027901, PXD043505 removed (SDU Odense affiliations only). 32 Odense-list, 1 Aarhus-list and 2 Roskilde-list PXDs have Copenhagen-only affiliations and are still listed under those cities"
         pxd_list: lists/denmark/copenhagen.txt
         pxd_count: 539
-        in_corpus: 0
+        in_corpus: 303
       odense:
         name: Odense
         search_terms: [Odense, "University of Southern Denmark"]
@@ -135,7 +135,7 @@ countries:
         blocked: 30
         pxd_list: lists/denmark/odense.txt
         pxd_count: 178
-        in_corpus: 0
+        in_corpus: 87
       aarhus:
         name: Aarhus
         search_terms: [Aarhus, Århus]
@@ -145,7 +145,7 @@ countries:
         blocked: 16
         pxd_list: lists/denmark/aarhus.txt
         pxd_count: 113
-        in_corpus: 0
+        in_corpus: 84
       aalborg:
         name: Aalborg
         search_terms: [Aalborg]
@@ -155,7 +155,7 @@ countries:
         blocked: 0
         pxd_list: lists/denmark/aalborg.txt
         pxd_count: 65
-        in_corpus: 0
+        in_corpus: 57
       lyngby:
         name: Lyngby
         search_terms: [Lyngby, "Technical University of Denmark"]
@@ -165,7 +165,7 @@ countries:
         blocked: 7
         pxd_list: lists/denmark/lyngby.txt
         pxd_count: 57
-        in_corpus: 0
+        in_corpus: 32
       roskilde:
         name: Roskilde
         search_terms: [Roskilde]
@@ -175,7 +175,7 @@ countries:
         blocked: 0
         pxd_list: lists/denmark/roskilde.txt
         pxd_count: 7
-        in_corpus: 0
+        in_corpus: 7
   norway:
     status: in_progress
     cities:
@@ -189,7 +189,7 @@ countries:
         notes: "'Bergen' also matches Bergen NJ (USA) and Bergen op Zoom (NL). PXD005126, PXD005447, and PXD009056 are UFZ Leipzig datasets (PI 'Martin von Bergen') — affiliation-name false positives removed from the manifest; re-check after rebuilding"
         pxd_list: lists/norway/bergen.txt
         pxd_count: 96
-        in_corpus: 0
+        in_corpus: 81
       oslo:
         name: Oslo
         search_terms: [Oslo, Rikshospitalet, Radiumhospitalet]
@@ -199,7 +199,7 @@ countries:
         blocked: 3
         pxd_list: lists/norway/oslo.txt
         pxd_count: 120
-        in_corpus: 0
+        in_corpus: 91
       trondheim:
         name: Trondheim
         search_terms: [Trondheim, NTNU]
@@ -209,7 +209,7 @@ countries:
         blocked: 12
         pxd_list: lists/norway/trondheim.txt
         pxd_count: 62
-        in_corpus: 0
+        in_corpus: 52
       aas:
         name: Ås
         search_terms: [NMBU, "Norwegian University of Life Sciences"]   # never the bare token "Ås"
@@ -219,7 +219,7 @@ countries:
         blocked: 12
         pxd_list: lists/norway/aas.txt
         pxd_count: 56
-        in_corpus: 0
+        in_corpus: 44
       tromso:
         name: Tromsø
         search_terms: [Tromsø, Tromso]
@@ -229,7 +229,7 @@ countries:
         blocked: 0
         pxd_list: lists/norway/tromso.txt
         pxd_count: 14
-        in_corpus: 0
+        in_corpus: 12
       stavanger:
         name: Stavanger
         search_terms: [Stavanger]
@@ -250,7 +250,7 @@ countries:
         blocked: 27
         pxd_list: lists/finland/helsinki.txt
         pxd_count: 66
-        in_corpus: 0
+        in_corpus: 43
       turku:
         name: Turku
         search_terms: [Turku, Åbo]
@@ -260,7 +260,7 @@ countries:
         blocked: 8
         pxd_list: lists/finland/turku.txt
         pxd_count: 102
-        in_corpus: 0
+        in_corpus: 94
       oulu:
         name: Oulu
         search_terms: [Oulu]
@@ -270,7 +270,7 @@ countries:
         blocked: 2
         pxd_list: lists/finland/oulu.txt
         pxd_count: 11
-        in_corpus: 0
+        in_corpus: 9
       tampere:
         name: Tampere
         search_terms: [Tampere]
@@ -280,7 +280,7 @@ countries:
         blocked: 1
         pxd_list: lists/finland/tampere.txt
         pxd_count: 4
-        in_corpus: 0
+        in_corpus: 3
       kuopio:
         name: Kuopio
         search_terms: [Kuopio, "University of Eastern Finland"]
@@ -290,7 +290,7 @@ countries:
         blocked: 0
         pxd_list: lists/finland/kuopio.txt
         pxd_count: 10
-        in_corpus: 0
+        in_corpus: 10
       jyvaskyla:
         name: Jyväskylä
         search_terms: [Jyväskylä, Jyvaskyla]
@@ -300,7 +300,7 @@ countries:
         blocked: 0
         pxd_list: lists/finland/jyvaskyla.txt
         pxd_count: 1
-        in_corpus: 0
+        in_corpus: 1
 
   iceland:
     status: in_progress
@@ -315,7 +315,7 @@ countries:
         screened: 0
         annotated: 4
         blocked: 2
-        in_corpus: 0
+        in_corpus: 4
 
   olink_pad:
     name: Olink PAD
@@ -326,7 +326,7 @@ countries:
         name: Explore HT
         pxd_list: olink_pad/explore_ht.txt
         pxd_count: 7
-        in_corpus: 0
+        in_corpus: 7
         screened: 0
         annotated: 4
         blocked: 0
@@ -335,7 +335,7 @@ countries:
         pxd_list: olink_pad/explore.txt
         notes: "also Explore 1536, Explore 384 and bare 'Olink Explore' records"
         pxd_count: 7
-        in_corpus: 0
+        in_corpus: 7
         screened: 0
         annotated: 1
         blocked: 0
@@ -343,7 +343,7 @@ countries:
         name: Target 96/48
         pxd_list: olink_pad/target.txt
         pxd_count: 7
-        in_corpus: 0
+        in_corpus: 7
         screened: 0
         annotated: 4
         blocked: 0
@@ -351,7 +351,7 @@ countries:
         name: Reveal
         pxd_list: olink_pad/reveal.txt
         pxd_count: 1
-        in_corpus: 0
+        in_corpus: 1
         screened: 0
         annotated: 0
         blocked: 0
@@ -360,7 +360,7 @@ countries:
         pxd_list: olink_pad/unspecified.txt
         notes: "PRIDE instrument is the generic 'Olink instrument model'"
         pxd_count: 2
-        in_corpus: 0
+        in_corpus: 2
         screened: 0
         annotated: 1
         blocked: 0
