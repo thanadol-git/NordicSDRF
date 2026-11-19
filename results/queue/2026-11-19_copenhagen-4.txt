@@ -1,21 +1,21 @@
 # daily queue denmark/copenhagen batch 4 (20 smallest pending PXDs by total deposited RAW size, excluding accessions already in the bigbio corpus (datasets/ + sandbox/) or with annotation files here)
-PXD066727	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
-PXD025344	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
-PXD039178	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
-PXD035846	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
-PXD069155	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
-PXD006579	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
-PXD058625	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
-PXD055964	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
-PXD057146	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
-PXD024607	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
-PXD045801	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
-PXD017417	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
-PXD044258	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
-PXD052818	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
-PXD028548	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
-PXD066029	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
-PXD020326	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
-PXD010516	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
-PXD050393	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
-PXD008964	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD066727	denmark/copenhagen	blocked	copenhagen: batch 4, annotations/PXD066727.BLOCKED.md
+PXD025344	denmark/copenhagen	annotated	copenhagen: batch 4, annotations/PXD025344.sdrf.tsv (review pending)
+PXD039178	denmark/copenhagen	blocked	copenhagen: batch 4, annotations/PXD039178.BLOCKED.md
+PXD035846	denmark/copenhagen	annotated	copenhagen: batch 4, annotations/PXD035846.sdrf.tsv (review pending)
+PXD069155	denmark/copenhagen	annotated	copenhagen: batch 4, annotations/PXD069155.sdrf.tsv (review pending)
+PXD006579	denmark/copenhagen	annotated	copenhagen: batch 4, annotations/PXD006579.sdrf.tsv (review pending)
+PXD058625	denmark/copenhagen	blocked	copenhagen: batch 4, annotations/PXD058625.BLOCKED.md
+PXD055964	denmark/copenhagen	annotated	copenhagen: batch 4, annotations/PXD055964.sdrf.tsv (review pending)
+PXD057146	denmark/copenhagen	annotated	copenhagen: batch 4, annotations/PXD057146.sdrf.tsv (review pending; partial 60/80 runs (controls/dilutions not described))
+PXD024607	denmark/copenhagen	annotated	copenhagen: batch 4, annotations/PXD024607.sdrf.tsv (review pending)
+PXD045801	denmark/copenhagen	blocked	copenhagen: batch 4, annotations/PXD045801.BLOCKED.md
+PXD017417	denmark/copenhagen	annotated	copenhagen: batch 4, annotations/PXD017417.sdrf.tsv (review pending)
+PXD044258	denmark/copenhagen	annotated	copenhagen: batch 4, annotations/PXD044258.sdrf.tsv (review pending)
+PXD052818	denmark/copenhagen	annotated	copenhagen: batch 4, annotations/PXD052818.sdrf.tsv (review pending)
+PXD028548	denmark/copenhagen	annotated	copenhagen: batch 4, annotations/PXD028548.sdrf.tsv (review pending)
+PXD066029	denmark/copenhagen	annotated	copenhagen: batch 4, annotations/PXD066029.sdrf.tsv (review pending; partial 51/53 runs (2 TMT DiGly runs without channel map))
+PXD020326	denmark/copenhagen	annotated	copenhagen: batch 4, annotations/PXD020326.sdrf.tsv (review pending)
+PXD010516	denmark/copenhagen	blocked	copenhagen: batch 4, annotations/PXD010516.BLOCKED.md
+PXD050393	denmark/copenhagen	annotated	copenhagen: batch 4, annotations/PXD050393.sdrf.tsv (review pending)
+PXD008964	denmark/copenhagen	blocked	copenhagen: batch 4, annotations/PXD008964.BLOCKED.md
