@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD034620.sdrf.tsv",
+  "dataset": "PXD034620",
+  "sources": [
+    {
+      "type": "publication",
+      "ref": "PMC10092762"
+    },
+    {
+      "type": "pride_files",
+      "ref": "files/all",
+      "note": "4 7z archives + Spectronaut report"
+    },
+    {
+      "type": "7z_header",
+      "ref": "ECFCs_Critical.7z encoded header LZMA-decoded: 8 .d folders"
+    },
+    {
+      "type": "search_output",
+      "ref": "ECFCs_DirectDIA_Spectronaut_Report.txt header: 32 runs"
+    }
+  ],
+  "decisions": [
+    {
+      "field": "comment[data file]",
+      "basis": ".d names from archive header / Spectronaut report"
+    },
+    {
+      "field": "factor value[treatment]",
+      "basis": "paper Methods"
+    }
+  ]
+}
