@@ -272,10 +272,10 @@ def overview_svg(rows: list[tuple[dict, list[dict]]]) -> str:
     out = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{OVERVIEW_HEIGHT}" '
         f'viewBox="0 0 {WIDTH} {OVERVIEW_HEIGHT}" role="img" '
-        f'aria-label="SDRF progress by country">',
+        f'aria-label="Nordic SDRF progress by country">',
         f"<style>{STYLE}</style>",
         f'<rect class="bg" width="{WIDTH}" height="{OVERVIEW_HEIGHT}" rx="6"/>',
-        '<text class="title" x="12" y="22">All countries — listed PXDs</text>',
+        '<text class="title" x="12" y="22">Nordic countries — listed PXDs</text>',
         f'<text class="sub" x="12" y="40">{sum(grand.values())} listed · {grand["annotated"]} local SDRFs · '
         f'{grand["todo"]} to do · {grand["blocked"]} blocked · PRIDE queried {escape(queried)}</text>',
     ]

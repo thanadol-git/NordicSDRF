@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="420" viewBox="0 0 860 420" role="img" aria-label="SDRF progress by country">
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="420" viewBox="0 0 860 420" role="img" aria-label="Nordic SDRF progress by country">
 <style>
   .bg { fill: #fcfcfb; }
   .title { fill: #0b0b0b; font-size: 17px; font-weight: 600; }
@@ -28,7 +28,7 @@
   }
 </style>
 <rect class="bg" width="860" height="420" rx="6"/>
-<text class="title" x="12" y="22">All countries — listed PXDs</text>
+<text class="title" x="12" y="22">Nordic countries — listed PXDs</text>
 <text class="sub" x="12" y="40">2104 listed · 983 local SDRFs · 178 to do · 467 blocked · PRIDE queried 2026-11-19</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Local SDRF</text>

@@ -340,14 +340,15 @@ def country_plot(country: str, cdata: dict, plots_dir: str) -> str:
 
 
 def overview_plot(plots_dir: str) -> str:
-    """Campaign-wide vertical stacked bars (one per country), drawn by plot_status.py."""
-    title = "All countries — listed PXDs"
+    """Nordic-country vertical stacked bars (Olink PAD excluded), drawn by plot_status.py."""
+    title = "Nordic countries — listed PXDs"
     return f"### {title}\n\n![{title}: SDRF progress by country]({plots_dir}/overview.svg)"
 
 
 def render_status_block(cfg: dict) -> str:
     queried = cfg.get("pride_hits_queried", "unknown date")
-    intro = (f"Overview first: one vertical stacked bar per country (city manifests summed).\n"
+    intro = (f"Overview first: one vertical stacked bar per Nordic country (city manifests\n"
+             f"summed; *Olink PAD* is omitted from the overview and has its own chart below).\n"
              f"Then one chart per country, one horizontal bar per city (shared x scale within a\n"
              f"country). A curated city's bar is its manifest (`lists/<country>/<city>.txt`),\n"
              f"split so every PXD sits in exactly one block: *Blocked* (including batch-tracker\n"
