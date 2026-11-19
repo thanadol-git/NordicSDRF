@@ -1,0 +1,21 @@
+# daily queue denmark/copenhagen batch 4 (20 smallest pending PXDs by total deposited RAW size, excluding accessions already in the bigbio corpus (datasets/ + sandbox/) or with annotation files here)
+PXD066727	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD025344	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD039178	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD035846	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD069155	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD006579	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD058625	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD055964	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD057146	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD024607	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD045801	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD017417	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD044258	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD052818	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD028548	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD066029	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD020326	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD010516	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD050393	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
+PXD008964	denmark/copenhagen	pending	copenhagen: batch 4, queued as a candidate
