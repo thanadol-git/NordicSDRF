@@ -11,6 +11,6 @@ PXD076297	denmark/odense	blocked	odense: batch 11, annotations/PXD076297.BLOCKED
 PXD019098	denmark/odense	blocked	odense: batch 11, annotations/PXD019098.BLOCKED.md
 PXD014425	denmark/odense	blocked	odense: batch 11, annotations/PXD014425.BLOCKED.md
 PXD050921	denmark/odense	blocked	odense: batch 11, annotations/PXD050921.BLOCKED.md
-PXD020812	denmark/odense	deferred	odense: 191 RAW over several sub-experiments (SILAC IPs, WT vs Mdm2 Adi+/- fractions, MORC2 RIME); SILAC label->condition and the 20/80 fraction codes need the MaxQuant evidence/experiment tables
-PXD054682	denmark/odense	deferred	odense: methods paper with ~9 sub-experiments (label-free membrane/RAC/SDC treatments + TMTpro tissue and db/db brain sets); label-free parts annotatable from names, TMT channel maps to be read from the 8-31 GB .msf files
-PXD072589	denmark/odense	deferred	odense: 196 RAW mixing TMT phospho (.msf) and timsTOF DIA organoid/cortex series; needs per-series mapping
+PXD020812	denmark/odense	sandbox	odense: batch 11 (deferred), sandbox/PXD020812/PXD020812.sdrf.tsv + BRIEF.md (partial 124/191 runs; IP SILAC maps missing)
+PXD054682	denmark/odense	sandbox	odense: batch 11 (deferred), sandbox/PXD054682/PXD054682.sdrf.tsv + BRIEF.md (review pending)
+PXD072589	denmark/odense	sandbox	odense: batch 11 (deferred), sandbox/PXD072589/PXD072589.sdrf.tsv + BRIEF.md (review pending)
