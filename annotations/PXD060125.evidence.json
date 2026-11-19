@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD060125.sdrf.tsv",
+  "dataset": "PXD060125",
+  "sources": [
+    {
+      "type": "submitter_sheet",
+      "ref": "Rawfile_Overview.xlsx"
+    },
+    {
+      "type": "pride_protocol",
+      "ref": "PRIDE sample processing protocol"
+    }
+  ],
+  "decisions": []
+}
