@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD045269.sdrf.tsv",
+  "dataset": "PXD045269",
+  "sources": [
+    {
+      "type": "publication",
+      "ref": "PMID 37972658",
+      "note": "abstract only"
+    },
+    {
+      "type": "raw_headers",
+      "ref": "17/17 RAW: Q Exactive HF-X, DIA_olsenNEW_120min_56wind.meth"
+    }
+  ],
+  "decisions": [
+    {
+      "field": "comment[instrument]",
+      "value": "Q Exactive HF-X",
+      "basis": "RAW header overrides PRIDE"
+    }
+  ]
+}
