@@ -27,7 +27,7 @@
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
 <text class="title" x="12" y="22">Norway — in progress</text>
-<text class="sub" x="12" y="40">348 listed · 227 local SDRFs · 2 to do · 43 blocked · PRIDE queried 2026-10-01</text>
+<text class="sub" x="12" y="40">348 listed · 227 local SDRFs · 78 to do · 43 blocked · PRIDE queried 2026-11-19</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Local SDRF</text>
 <rect class="c-blocked" fill="#d95926" x="117" y="52" width="12" height="12" rx="2"/>
@@ -45,7 +45,7 @@
 <text class="seg" x="252.2" y="88.0" text-anchor="middle">53</text>
 <rect class="c-blocked" fill="#d95926" x="395.4" y="74" width="85.2" height="20" rx="2"><title>Bergen · Blocked: 16</title></rect>
 <text class="seg" x="438.0" y="88.0" text-anchor="middle">16</text>
-<rect class="c-in_corpus" fill="#199e70" x="481.5" y="74" width="144.4" height="20" rx="2"><title>Bergen · In corpus: 27</title></rect>
+<rect class="c-todo" fill="#8a8983" x="481.5" y="74" width="144.4" height="20" rx="2"><title>Bergen · To do: 27</title></rect>
 <text class="seg" x="553.7" y="88.0" text-anchor="middle">27</text>
 <text class="total" x="632.9" y="88.0">96 listed</text>
 <text class="city" x="12" y="118.0">Oslo</text>
@@ -53,7 +53,7 @@
 <text class="seg" x="400.3" y="118.0" text-anchor="middle">108</text>
 <rect class="c-blocked" fill="#d95926" x="691.5" y="104" width="17.0" height="20" rx="2"><title>Oslo · Blocked: 3</title></rect>
 <text class="seg" x="700.0" y="118.0" text-anchor="middle">3</text>
-<rect class="c-in_corpus" fill="#199e70" x="709.5" y="104" width="47.5" height="20" rx="2"><title>Oslo · In corpus: 9</title></rect>
+<rect class="c-todo" fill="#8a8983" x="709.5" y="104" width="47.5" height="20" rx="2"><title>Oslo · To do: 9</title></rect>
 <text class="seg" x="733.3" y="118.0" text-anchor="middle">9</text>
 <text class="total" x="764.0" y="118.0">120 listed</text>
 <text class="city" x="12" y="148.0">Trondheim</text>
@@ -61,7 +61,7 @@
 <text class="seg" x="217.2" y="148.0" text-anchor="middle">40</text>
 <rect class="c-blocked" fill="#d95926" x="325.4" y="134" width="63.6" height="20" rx="2"><title>Trondheim · Blocked: 12</title></rect>
 <text class="seg" x="357.2" y="148.0" text-anchor="middle">12</text>
-<rect class="c-in_corpus" fill="#199e70" x="390.0" y="134" width="52.8" height="20" rx="2"><title>Trondheim · In corpus: 10</title></rect>
+<rect class="c-todo" fill="#8a8983" x="390.0" y="134" width="52.8" height="20" rx="2"><title>Trondheim · To do: 10</title></rect>
 <text class="seg" x="416.4" y="148.0" text-anchor="middle">10</text>
 <text class="total" x="449.8" y="148.0">62 listed</text>
 <text class="city" x="12" y="178.0">Ås</text>
@@ -69,17 +69,15 @@
 <text class="seg" x="166.0" y="178.0" text-anchor="middle">21</text>
 <rect class="c-blocked" fill="#d95926" x="223.1" y="164" width="63.6" height="20" rx="2"><title>Ås · Blocked: 12</title></rect>
 <text class="seg" x="254.9" y="178.0" text-anchor="middle">12</text>
-<rect class="c-in_corpus" fill="#199e70" x="287.7" y="164" width="122.8" height="20" rx="2"><title>Ås · In corpus: 23</title></rect>
+<rect class="c-todo" fill="#8a8983" x="287.7" y="164" width="122.8" height="20" rx="2"><title>Ås · To do: 23</title></rect>
 <text class="seg" x="349.1" y="178.0" text-anchor="middle">23</text>
 <text class="total" x="417.5" y="178.0">56 listed</text>
 <text class="city" x="12" y="208.0">Tromsø</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="194" width="25.9" height="20" rx="2"><title>Tromsø · Local SDRF: 5</title></rect>
 <text class="seg" x="123.0" y="208.0" text-anchor="middle">5</text>
-<rect class="c-in_corpus" fill="#199e70" x="136.9" y="194" width="36.7" height="20" rx="2"><title>Tromsø · In corpus: 7</title></rect>
-<text class="seg" x="155.3" y="208.0" text-anchor="middle">7</text>
-<rect class="c-todo" fill="#8a8983" x="174.6" y="194" width="17.0" height="20" rx="2"><title>Tromsø · To do: 2</title></rect>
-<text class="seg" x="183.1" y="208.0" text-anchor="middle">2</text>
-<text class="total" x="198.6" y="208.0">14 listed</text>
+<rect class="c-todo" fill="#8a8983" x="136.9" y="194" width="47.5" height="20" rx="2"><title>Tromsø · To do: 9</title></rect>
+<text class="seg" x="160.7" y="208.0" text-anchor="middle">9</text>
+<text class="total" x="191.4" y="208.0">14 listed</text>
 <text class="city" x="12" y="238.0">Stavanger</text>
 <text class="total" x="116.0" y="238.0">0 PRIDE hits</text>
 </svg>
