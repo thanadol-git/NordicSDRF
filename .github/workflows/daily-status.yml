@@ -33,6 +33,10 @@ jobs:
         run: pip install --quiet pyyaml
 
       - name: Full PRIDE status refresh
+        env:
+          # Authenticated api.github.com calls avoid the unauthenticated rate limit
+          # that zeroed in_corpus on the first scheduled/manual run.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/update_status.py --corpus github
 
       - name: Commit and push to main
