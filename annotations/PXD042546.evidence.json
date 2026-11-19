@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD042546.sdrf.tsv",
+  "dataset": "PXD042546",
+  "sources": [
+    {
+      "type": "pride_project",
+      "ref": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD042546"
+    },
+    {
+      "type": "pride_files",
+      "ref": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD042546/files/all",
+      "note": "162 files, 79 RAW, all projectAccessions asserted"
+    },
+    {
+      "type": "raw_headers",
+      "ref": "first 300 KB of all 79 RAW (utf-16le)",
+      "note": "Exploris 480 for 69 SpecLIB files, Eclipse for Sample_1-10"
+    },
+    {
+      "type": "publication",
+      "ref": "PMID 37706597 / doi:10.1002/pmic.202300236",
+      "note": "closed; abstract only"
+    }
+  ],
+  "decisions": [
+    {
+      "field": "comment[instrument]",
+      "value": "Orbitrap Exploris 480",
+      "basis": "RAW header"
+    },
+    {
+      "field": "scope",
+      "value": "69/79 RAW annotated",
+      "basis": "Sample_1-10 have no channel map"
+    },
+    {
+      "field": "comment[modification parameters]",
+      "value": "CAM fixed, TMTpro K fixed, TMTpro N-term var, Ox var",
+      "basis": "FragPipe TMT16 template named in protocol (inferred defaults)"
+    },
+    {
+      "field": "characteristics[cell line]",
+      "value": "HeLa-S3",
+      "basis": "Pierce HeLa digest standard = HeLa S3"
+    }
+  ]
+}
