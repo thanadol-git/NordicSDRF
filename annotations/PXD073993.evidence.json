@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD073993.sdrf.tsv",
+  "dataset": "PXD073993",
+  "sources": [
+    {
+      "type": "publication",
+      "ref": "PMC13680048"
+    },
+    {
+      "type": "submitter_metadata",
+      "ref": "metadata.csv",
+      "note": "178 rows, S-number + well matched to every RAW"
+    }
+  ],
+  "decisions": [
+    {
+      "field": "characteristics[individual]",
+      "basis": "Subject ID prefix in metadata.csv"
+    },
+    {
+      "field": "characteristics[disease]",
+      "basis": "paper 2.2 cohort description"
+    }
+  ]
+}
