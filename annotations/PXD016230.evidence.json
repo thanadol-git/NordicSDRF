@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD016230.sdrf.tsv",
+  "dataset": "PXD016230",
+  "sources": [
+    {
+      "type": "search_output",
+      "ref": "8 × .pdResult (range read: input files, study factors)"
+    },
+    {
+      "type": "publication",
+      "ref": "PMC8143646"
+    }
+  ],
+  "decisions": []
+}
