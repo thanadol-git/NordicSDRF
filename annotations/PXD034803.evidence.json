@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD034803.sdrf.tsv",
+  "dataset": "PXD034803",
+  "sources": [
+    {
+      "type": "submitter_sdrf",
+      "ref": "giphot.sdrf.tsv"
+    },
+    {
+      "type": "raw_headers",
+      "ref": "Exploris 480"
+    }
+  ],
+  "decisions": []
+}
