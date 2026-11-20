@@ -3,7 +3,7 @@
 
 Three steps, stdlib only:
 
-  1. fetch  — every accession in lists/<country>/<city>.txt and olink_pad/<platform>.txt
+  1. fetch  — every accession in lists/<country>/<city>.txt and affinity_pad/<platform>.txt
               -> PRIDE project record, cached as results/authorship/cache/<acc>.json
               (gitignored: records carry e-mail addresses). Cached records are reused;
               --refresh re-downloads them.
@@ -58,7 +58,7 @@ GROUPS = [
     ("norway", "Norway", "#199e70"),
     ("finland", "Finland", "#7b55d6"),
     ("iceland", "Iceland", "#c98500"),
-    ("olink_pad", "Olink PAD", "#8a8983"),
+    ("affinity_pad", "Affinity PAD", "#8a8983"),
 ]
 COLOUR = {g: c for g, _, c in GROUPS}
 
@@ -100,8 +100,9 @@ STYLE = """
 def manifests() -> dict[str, list[tuple[str, str]]]:
     """{accession: [(country, city), ...]} over every curated manifest."""
     out: dict[str, list[tuple[str, str]]] = {}
-    for path in [*sorted((ROOT / "lists").glob("*/*.txt")), *sorted((ROOT / "olink_pad").glob("*.txt"))]:
-        country = path.parent.name
+    for path in [*sorted((ROOT / "lists").glob("*/*.txt")), *sorted((ROOT / "affinity_pad").glob("*.txt"))]:
+        # lists/<country>/<city>.txt or affinity_pad/<platform>.txt
+        country = "affinity_pad" if path.parent.name == "affinity_pad" else path.parent.name
         for line in path.read_text().splitlines():
             acc = line.strip()
             if acc and not acc.startswith("#"):

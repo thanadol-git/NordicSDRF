@@ -317,22 +317,22 @@ countries:
         blocked: 2
         in_corpus: 4
 
-  olink_pad:
-    name: Olink PAD
+  affinity_pad:
+    name: Affinity PAD
     status: in_progress
-    pride_search: false   # not a keyword search: olink_pad/*.txt come from scripts/build_pad_manifest.py
-    cities:               # one row per Olink platform (PRIDE instrument field), not a city
+    pride_search: false   # not a keyword search: affinity_pad/*.txt come from scripts/build_pad_manifest.py
+    cities:               # one row per affinity technology / Olink platform (PRIDE instrument), not a city
       explore_ht:
         name: Explore HT
-        pxd_list: olink_pad/explore_ht.txt
-        pxd_count: 7
-        in_corpus: 7
+        pxd_list: affinity_pad/explore_ht.txt
+        pxd_count: 10
+        in_corpus: 9
         screened: 0
         annotated: 4
         blocked: 0
       explore:
         name: Explore 3072/384
-        pxd_list: olink_pad/explore.txt
+        pxd_list: affinity_pad/explore.txt
         notes: "also Explore 1536, Explore 384 and bare 'Olink Explore' records"
         pxd_count: 7
         in_corpus: 7
@@ -341,26 +341,51 @@ countries:
         blocked: 0
       target:
         name: Target 96/48
-        pxd_list: olink_pad/target.txt
-        pxd_count: 7
+        pxd_list: affinity_pad/target.txt
+        pxd_count: 11
         in_corpus: 7
         screened: 0
         annotated: 4
         blocked: 0
       reveal:
         name: Reveal
-        pxd_list: olink_pad/reveal.txt
+        pxd_list: affinity_pad/reveal.txt
         pxd_count: 1
         in_corpus: 1
         screened: 0
         annotated: 0
         blocked: 0
       unspecified:
-        name: Unspecified
-        pxd_list: olink_pad/unspecified.txt
+        name: Unspecified Olink
+        pxd_list: affinity_pad/unspecified.txt
         notes: "PRIDE instrument is the generic 'Olink instrument model'"
-        pxd_count: 2
+        pxd_count: 3
         in_corpus: 2
         screened: 0
         annotated: 1
+        blocked: 0
+      somascan:
+        name: SomaScan
+        pxd_list: affinity_pad/somascan.txt
+        pxd_count: 12
+        in_corpus: 9
+        screened: 0
+        annotated: 0
+        blocked: 0
+      nulisa:
+        name: NULISA
+        pxd_list: affinity_pad/nulisa.txt
+        pxd_count: 1
+        in_corpus: 1
+        screened: 0
+        annotated: 0
+        blocked: 0
+      other:
+        name: Other
+        pxd_list: affinity_pad/other.txt
+        notes: "public PADs whose instrument matches no known affinity platform"
+        pxd_count: 0
+        in_corpus: 0
+        screened: 0
+        annotated: 0
         blocked: 0

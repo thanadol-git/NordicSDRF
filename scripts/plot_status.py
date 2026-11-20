@@ -245,11 +245,11 @@ def nice_ticks(max_val: int, target: int = 4) -> list[int]:
 def overview_svg(rows: list[tuple[dict, list[dict]]]) -> str:
     """One vertical stacked bar per country, same CATEGORIES as the city charts.
 
-    Skips `olink_pad` — that campaign is tracked separately from the Nordic countries.
+    Skips `affinity_pad` — that campaign is tracked separately from the Nordic countries.
     """
     series = []
     for country, cities in rows:
-        if country["country"] == "olink_pad":
+        if country["country"] == "affinity_pad":
             continue
         totals = country_category_totals(cities)
         series.append({

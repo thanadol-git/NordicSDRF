@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
-"""Olink datasets in PRIDE's affinity archive (PAD accessions) -> olink_pad/<platform>.txt.
+"""All public PRIDE affinity-archive PADs -> affinity_pad/<platform>.txt.
 
 PRIDE has no list endpoint for PAD projects, so this walks PAD000001, PAD000002,
 ... through the archive API and stops after --stop-after consecutive misses past
 the highest accession found (private / unreleased PADs return 404 and are simply
-skipped — rerun later and they are picked up once public). A project counts as
-Olink when any of its PRIDE instruments names Olink; it is filed under the first
-PLATFORMS entry whose pattern matches that instrument name.
+skipped — rerun later and they are picked up once public). Each public PAD is
+filed under the first PLATFORMS entry whose pattern matches any instrument name
+(Olink platforms, SomaScan, NULISA); anything else goes to `other`.
 
     python scripts/build_pad_manifest.py            # write manifests + candidates table
     python scripts/build_pad_manifest.py --dry-run  # print what would be written
 
-Writes olink_pad/<platform>.txt (one PAD per line; these are the `pxd_list`s of
-the `olink_pad` group in config.yml) and results/olink_pad/candidates.tsv (every
-public PAD with its instrument, platform or "not Olink", date and title). Then
-refresh the numbers and plots:
+Writes affinity_pad/<platform>.txt (one PAD per line; these are the `pxd_list`s of
+the `affinity_pad` group in config.yml) and results/affinity_pad/candidates.tsv
+(every public PAD with its instrument, platform, date and title). Then refresh
+the numbers and plots:
 
     python scripts/update_status.py --no-pride --corpus github
 """
@@ -31,19 +31,24 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 API = "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/{}"
-MANIFEST_DIR = ROOT / "olink_pad"
-CANDIDATES = ROOT / "results" / "olink_pad" / "candidates.tsv"
+MANIFEST_DIR = ROOT / "affinity_pad"
+CANDIDATES = ROOT / "results" / "affinity_pad" / "candidates.tsv"
 
 # (manifest slug, substring of the lower-cased PRIDE instrument name). First match
 # wins, so the specific "explore ht" sits above plain "explore". Keep the slugs in
-# step with the cities under `olink_pad` in config.yml.
+# step with the cities under `affinity_pad` in config.yml. `other` is the fallback
+# for public PADs that match none of these patterns.
 PLATFORMS = [
     ("explore_ht", "explore ht"),
     ("explore", "explore"),        # Explore 3072/384, 1536, 384, bare "Olink Explore"
     ("target", "target"),          # Target 96 / Target 48
     ("reveal", "reveal"),
     ("unspecified", "olink"),      # generic "Olink instrument model"
+    ("somascan", "somascan"),
+    ("nulisa", "nulisa"),
 ]
+OTHER = "other"
+ALL_SLUGS = [slug for slug, _ in PLATFORMS] + [OTHER]
 
 
 def fetch(accession: str, retries: int = 3) -> dict | None:
@@ -63,15 +68,14 @@ def fetch(accession: str, retries: int = 3) -> dict | None:
 
 
 def platform_of(record: dict) -> tuple[str, str]:
-    """(platform slug or "", instrument names joined) for one PRIDE record."""
+    """(platform slug, instrument names joined) for one PRIDE record."""
     names = [i.get("name", "") for i in record.get("instruments") or []]
-    for name in names:
-        low = name.lower()
-        if "olink" not in low:
-            continue
-        slug = next(s for s, pat in PLATFORMS if pat in low)
-        return slug, "; ".join(names)
-    return "", "; ".join(names)
+    joined = "; ".join(names)
+    blob = " ".join(names).lower().replace("soma scan", "somascan")
+    for slug, pat in PLATFORMS:
+        if pat in blob:
+            return slug, joined
+    return OTHER, joined
 
 
 def main() -> None:
@@ -91,14 +95,13 @@ def main() -> None:
             continue
         misses = 0
         slug, instruments = platform_of(record)
-        rows.append({"accession": acc, "platform": slug or "not Olink", "instrument": instruments,
+        rows.append({"accession": acc, "platform": slug, "instrument": instruments,
                      "publication_date": (record.get("publicationDate") or "")[:10],
                      "title": " ".join((record.get("title") or "").split())})
-        print(f"  {acc}  {rows[-1]['platform']:<12} {instruments}")
+        print(f"  {acc}  {slug:<12} {instruments}")
 
-    manifests = {slug: [r["accession"] for r in rows if r["platform"] == slug] for slug, _ in PLATFORMS}
-    olink = sum(len(v) for v in manifests.values())
-    print(f"\n{len(rows)} public PADs, {olink} Olink: "
+    manifests = {slug: [r["accession"] for r in rows if r["platform"] == slug] for slug in ALL_SLUGS}
+    print(f"\n{len(rows)} public PADs: "
           + ", ".join(f"{slug} {len(ids)}" for slug, ids in manifests.items()))
     if args.dry_run:
         return

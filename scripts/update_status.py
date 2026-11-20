@@ -154,8 +154,8 @@ def load_corpus(cfg: dict, source: str) -> tuple[set[str], str]:
 
 # --------------------------------------------------------------------------- local counts
 def conventional_list_relpath(country: str, slug: str) -> str:
-    """Geographic city lists live under lists/; Olink PAD lists stay at olink_pad/."""
-    if country == "olink_pad":
+    """Geographic city lists live under lists/; affinity PAD lists stay at affinity_pad/."""
+    if country == "affinity_pad":
         return f"{country}/{slug}.txt"
     return f"lists/{country}/{slug}.txt"
 
@@ -329,7 +329,7 @@ def human_status(status: str) -> str:
 
 
 def display_name(country: str, cdata: dict) -> str:
-    """`name:` from config.yml (e.g. "Olink PAD"), else the key title-cased."""
+    """`name:` from config.yml (e.g. "Affinity PAD"), else the key title-cased."""
     return cdata.get("name") or country.title()
 
 
@@ -340,7 +340,7 @@ def country_plot(country: str, cdata: dict, plots_dir: str) -> str:
 
 
 def overview_plot(plots_dir: str) -> str:
-    """Nordic-country vertical stacked bars (Olink PAD excluded), drawn by plot_status.py."""
+    """Nordic-country vertical stacked bars (Affinity PAD excluded), drawn by plot_status.py."""
     title = "Nordic countries — listed PXDs"
     return f"### {title}\n\n![{title}: SDRF progress by country]({plots_dir}/overview.svg)"
 
@@ -348,7 +348,7 @@ def overview_plot(plots_dir: str) -> str:
 def render_status_block(cfg: dict) -> str:
     queried = cfg.get("pride_hits_queried", "unknown date")
     intro = (f"Overview first: one vertical stacked bar per Nordic country (city manifests\n"
-             f"summed; *Olink PAD* is omitted from the overview and has its own chart below).\n"
+             f"summed; *Affinity PAD* is omitted from the overview and has its own chart below).\n"
              f"Then one chart per country, one horizontal bar per city (shared x scale within a\n"
              f"country). A curated city's bar is its manifest (`lists/<country>/<city>.txt`),\n"
              f"split so every PXD sits in exactly one block: *Blocked* (including batch-tracker\n"
@@ -356,9 +356,10 @@ def render_status_block(cfg: dict) -> str:
              f"review), *In corpus* (already has an SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/{CORPUS_REPO}),\n"
              f"checked against {cfg.get('corpus_source', 'the local checkout')}), *Screened*, *To do*.\n"
              f"A city without a manifest shows a dashed outline sized by its raw PRIDE full-text\n"
-             f"hit count (unioned over `search_terms` in `config.yml`, queried {queried}). *Olink PAD*\n"
-             f"is every public Olink dataset in PRIDE's affinity archive, one row per platform\n"
-             f"(`olink_pad/<platform>.txt`, rebuilt by `python scripts/build_pad_manifest.py`).\n"
+             f"hit count (unioned over `search_terms` in `config.yml`, queried {queried}). *Affinity PAD*\n"
+             f"is every public dataset in PRIDE's affinity archive, one row per technology\n"
+             f"(Olink platforms, SomaScan, NULISA, Other; `affinity_pad/<platform>.txt`, rebuilt by\n"
+             f"`python scripts/build_pad_manifest.py`).\n"
              f"*To do* is ready for annotation; blocked PXDs also need annotation after their missing metadata is resolved.\n"
              f"The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with\n"
              f"`python scripts/update_status.py`; redraw the charts alone from `tables/` with\n"
