@@ -1,0 +1,26 @@
+# daily queue denmark/copenhagen batch 5 (25 smallest pending PXDs by total deposited RAW size, excluding accessions in the bigbio corpus (datasets/ + sandbox/), with annotation/BLOCKED files here, or already handled in earlier queues)
+PXD009208	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD045597	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD044455	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD009955	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD019039	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD018218	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD025687	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD046755	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD057988	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD011009	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD025410	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD021947	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD024935	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD049326	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD083139	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD068387	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD027504	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD016618	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD029227	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD040221	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD054549	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD013841	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD046843	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD056756	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
+PXD031056	denmark/copenhagen	pending	copenhagen: batch 5, queued as a candidate
