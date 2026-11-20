@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029241-supernatant.sdrf.tsv",
+  "dataset": "PXD029241",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD029241 (local copy scratchpad/PXD029241/pride.json)"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD029241/files/all (local copy scratchpad/PXD029241/files.json): 5 RAW + 1 SEARCH"
+    },
+    {
+      "id": "search",
+      "kind": "repository",
+      "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2022/09/PXD029241/20191227_TMT_Raw_data.txt (local copy scratchpad/PXD029241/20191227_TMT_Raw_data.txt)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "Li et al. PLoS One 2022 17(9):e0273843, PMID 36054185, PMC9439253 (full text scratchpad/PXD029241/manuscript.txt)"
+    },
+    {
+      "id": "tableS1",
+      "kind": "publication",
+      "location": "PMC9439253 supplementary pone.0273843.s001.xlsx (scratchpad/PXD029241/pone.0273843.s001.xlsx)"
+    },
+    {
+      "id": "raw",
+      "kind": "raw file",
+      "location": "170126_RLi_TMT_4plex_CLys_36_39.raw and 170113_RLi_TMT_5plex_CLys_22_26.raw converted with ThermoRawFileParser; metadata scratchpad/PXD029241/*-metadata.txt; MS2 reporter ion counts per TMT6 channel scratchpad/PXD029241/raw_reporter_check.txt (count/summed intensity)"
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "parse_sdrf validate-sdrf OLS lookups"
+    }
+  ],
+  "claims": [
+    {
+      "location": "file scope",
+      "value": "cell culture supernatant sub-experiment only: 170126_RLi_TMT_4plex_CLys_36_39.raw, 170126_RLi_TMT_4plex_CLys_45_48.raw",
+      "source_ids": [
+        "search",
+        "tableS1",
+        "paper"
+      ],
+      "evidence": "The paper analyses cell lysates (5 groups, 5plex runs) and 24 h supernatants (4 groups, 4plex runs) separately (Fig 1; Table S1 sheets Rat_LSEC_TMT6plex_Cell_Prot and _Supernat_Prot); the dataset is split into PXD029241-lysate and PXD029241-supernatant SDRFs so factor values do not mix specimen types"
+    },
+    {
+      "location": "comment[data file] (4 files)",
+      "value": "5plex_CLys_22_26, 5plex_CLys_40_44, 4plex_CLys_36_39, 4plex_CLys_45_48",
+      "source_ids": [
+        "files",
+        "search"
+      ],
+      "evidence": "Sample numbers in file names match the sample-number column headers of the search table (22-26 _Rat2, 40-44 _Rat4, 36-39 _sRat3, 45-48 _sRat4). 5plex_CLys_17_21 excluded: its search experiment 'mixRat1' has no sample names and samples 17-21 are absent from Table S1"
+    },
+    {
+      "location": "sample identity per channel",
+      "value": "column order of renamed reporter columns = MaxQuant channel index",
+      "source_ids": [
+        "search",
+        "raw"
+      ],
+      "evidence": "Unused channels keep original names 'Reporter intensity corrected <i> <exp>' at position i (e.g. '5 cRat2' after 22..26; '0 sRat3',36,37,'3 sRat3',38,39; 48,'1 sRat4','2 sRat4',45,46,47). RAW reporter ions: 22_26 has 131 empty; 36_39 has 126 and 129 empty, matching the leftover positions"
+    },
+    {
+      "location": "characteristics[treatment], characteristics[sampling time], factor values",
+      "value": "sample -> condition (22/31/40 NT 2h; 23/32/41 NT 24h; 24/33/42 Dex 24h; 25/34/43 IL-1b 24h; 26/35/44 Dex+IL-1b 24h; supernatant 27/36/45 NT, 28/37/46 Dex, 29/38/47 IL-1b, 30/39/48 Dex+IL-1b)",
+      "source_ids": [
+        "search",
+        "tableS1"
+      ],
+      "evidence": "Per-run protein-centred log2 reporter intensities of each search column vs Table S1 condition columns (Rat_LSEC_TMT6plex_Cell_Prot / _Supernat_Prot): unique match r=1.00 for every column; Rat2/3/4 = Exp1/2/3"
+    },
+    {
+      "location": "characteristics[specimen]",
+      "value": "cell lysate (5plex files) / cell culture supernatant (4plex files)",
+      "source_ids": [
+        "search",
+        "tableS1",
+        "paper"
+      ],
+      "evidence": "Search experiments cRat vs sRat; 4plex columns match the Supernat sheet; paper Fig 1: 5 lysate groups, 4 supernatant groups"
+    },
+    {
+      "location": "characteristics[organism], strain, sex, organism part, cell type",
+      "value": "Rattus norvegicus; Sprague Dawley; male; liver; endothelial cell of hepatic sinusoid",
+      "source_ids": [
+        "paper",
+        "pride"
+      ],
+      "evidence": "Methods: male Sprague Dawley (Crl:CD (SD)) rats from Charles River used for proteomics; LSECs isolated from liver"
+    },
+    {
+      "location": "characteristics[pooled sample]",
+      "value": "pooled",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "'LSECs from two rat livers were pooled in each proteomics experiment'"
+    },
+    {
+      "location": "characteristics[biological replicate]",
+      "value": "1 = Exp1/Rat2, 2 = Exp2/Rat3, 3 = Exp3/Rat4",
+      "source_ids": [
+        "search",
+        "tableS1"
+      ],
+      "evidence": "correlation match above"
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "Q Exactive MS:1001911",
+      "source_ids": [
+        "raw",
+        "pride",
+        "paper"
+      ],
+      "evidence": "RAW metadata 'Q Exactive Orbitrap'; protocol/paper 'Q-Exactive'; PRIDE structured instrument Q Exactive HF overridden"
+    },
+    {
+      "location": "comment[dissociation method], DDA",
+      "value": "HCD; DDA",
+      "source_ids": [
+        "raw",
+        "paper"
+      ],
+      "evidence": "RAW 'Fragmentation types=HCD'; 'data-dependent mode using a Top10 method'"
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "Lys-C + Trypsin",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "lysyl endopeptidase 6 h then trypsin overnight"
+    },
+    {
+      "location": "comment[reduction reagent]",
+      "value": "DTT",
+      "source_ids": [
+        "paper"
+      ],
+      "evidence": "5 mM dithiothreitol"
+    },
+    {
+      "location": "comment[label]",
+      "value": "TMT126..TMT131",
+      "source_ids": [
+        "search",
+        "raw"
+      ],
+      "evidence": "6 MaxQuant reporter indices 0-5 = TMT6 channels 126-131"
+    },
+    {
+      "location": "comment[modification parameters], comment[alkylation reagent]",
+      "value": "Carbamidomethyl C, TMT6plex K and Any N-term fixed; Oxidation M and Acetyl Protein N-term variable; iodoacetamide",
+      "source_ids": [
+        "pride",
+        "paper"
+      ],
+      "evidence": "PRIDE identifiedPTMStrings: MOD:00397 iodoacetamide derivatized residue, MOD:01720 TMT6plex reporter+balance acylated residue, MOD:00425 monohydroxylated residue, MOD:00394 acetylated residue; paper: proteins reduced and processed per the TMTsixplex kit protocol (which alkylates with iodoacetamide), DTT substituted for TCEP. Fixed/variable assignment and target sites follow these PTMs and MaxQuant defaults (inference; no search parameter file deposited)"
+    }
+  ],
+  "limitations": [
+    "Raw files 40_44 and 45_48 were not downloaded; their empty channels (131; 127,128) follow the same verified column-position convention",
+    "5plex_CLys_17_21 not annotated (no channel map anywhere); lysate replicate 2 and supernatant replicate 1 RAW files are not deposited",
+    "Rat age is 6 weeks at purchase plus acclimatisation; developmental stage written not available",
+    "MaxQuant search parameters not deposited: modification sites and fixed/variable status inferred from PRIDE PTM list and kit protocol; tolerances not available"
+  ]
+}

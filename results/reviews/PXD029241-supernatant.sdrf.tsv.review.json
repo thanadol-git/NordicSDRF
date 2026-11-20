@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029241-supernatant.sdrf.tsv",
+  "artifact_sha256": "4520a0a8b714a2199171e753e525c028515003633e0b07f84b1cb9af78914c6f",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. The channel-to-condition map, the replicate numbering and the technical metadata were independently confirmed against the search table, Table S1, RAW metadata and the paper. Minor findings only.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent; read only the SDRFs, evidence manifests, spec, and scratchpad/PXD029241 evidence; did not read producer report, transcript, or earlier review verdicts"
+  },
+  "evidence_manifest": "annotations/PXD029241-supernatant.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Templates derived independently: rat primary cells -> ms-proteomics 1.1.0 + vertebrates 1.1.0 (+ inherited sample-metadata/base), declared correctly. All required columns present: developmental stage 'not available' is allowed, and tolerances 'not available' are recommended-only. characteristics[specimen] is a custom column named after a valid ontology term (OBI 'specimen'), which README 'Extending Templates' permits. Row shape is uniform: 8 rows x 41 columns."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "OLS4 re-resolved independently: CL:1000398 endothelial cell of hepatic sinusoid, UBERON:0002107 liver, MS:1001911 Q Exactive, MS:1001309 Lys-C, MS:1000422 (HCD synonym), PRIDE:0000627 Data-dependent acquisition, PRIDE:0000608 DTT, PRIDE:0000599 IAA, none obsolete; UNIMOD 4/737/35/1 standard; sdrf-tools check verified all 15 controlled terms with no label mismatch or UNIMOD swap"
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Paper (manuscript.txt) Methods: male Sprague Dawley (Crl:CD (SD)) rats, LSECs pooled from 2 livers per biological replicate, n=3, Dex 1 ug/ml, IL-1b 100 U/ml, DTT reduction, Lys-C 6 h then trypsin, Q-Exactive Top10 DDA, MaxQuant 1.5.0.30. RAW metadata of 22_26 and 36_39: Q Exactive Orbitrap, HCD (PRIDE's 'Q Exactive HF' correctly overridden). PRIDE PTMs: iodoacetamide derivatized, TMT6plex, monohydroxylated, acetylated residue. Reviewer recomputed run-centred log2 reporter profiles of every named search-table column against Table S1 condition columns: every column matches exactly one condition at r>=0.996 (next best <=0.86), confirming Rat2/Rat3/Rat4 = Exp1/Exp2/Exp3 and every row's treatment and sampling time. Supernatant rows: 36_39 = sRat3/Exp2 (127 NT,128 Dex,130 IL1b,131 DexIL1b), 45_48 = sRat4/Exp3 (126 DexIL1b,129 NT,130 Dex,131 IL1b), all match SDRF; 4plex columns match only the Supernat_Prot sheet."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Both data files (170126_RLi_TMT_4plex_CLys_36_39.raw, 170126_RLi_TMT_4plex_CLys_45_48.raw) exist verbatim in files.json. Unused-channel positions in the search table (sRat3 indices 0,3; sRat4 indices 1,2; summed intensity ~0) match the SDRF. For 36_39 the RAW MS2 reporter counts confirm that 126 and 129 are empty. The sRat2 supernatant run (samples 27-30) is in the search but not deposited, as the manifest notes. 17_21 is excluded: see minor finding."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "8 samples = 4 conditions x 2 deposited replicates (Exp2, Exp3), all at 24 h, as paper Fig 1 describes for supernatants. Biological replicate numbers 2 and 3 are consistent with the lysate SDRF. One fraction and one technical replicate per run. Labels are 4 per run on the channels that carry signal."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value traced to paper, PRIDE, RAW metadata or search-table data. Inferred items (mod sites, fixed/variable status, IAA alkylation via kit protocol and PRIDE PTM list) are disclosed as inference in the manifest. Unknown tolerances and developmental stage are written 'not available', not guessed. No per-sample value is derived from a cohort summary."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t vertebrates exit 0, warnings only (free-text treatment 'untreated'/'dexamethasone and interleukin-1 beta', strain 'Sprague Dawley'); sdrf-tools check: 15/15 terms verified, CLEAN; sdrf-tools score 100/100; 41 columns on every row, no CR, no trailing whitespace, unique source names and unique (data file, label) pairs (8 rows)."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "file_mapping",
+      "location": "file (dataset-level): 170126_RLi_TMT_5plex_CLys_17_21.raw",
+      "message": "One of the 5 deposited RAW files is in neither split SDRF. Exclusion is justified, but the PR has to say so.",
+      "evidence": "files.json lists 5 RAW; this one is search experiment 'mixRat1' (all six reporter columns unnamed, channel 126 empty). Samples 17-21 are absent from Table S1 and the paper (n=3, Exp1-3 = Rat2-4). Reviewer check: channels 127/130/131 correlate with the lysate-minus-supernatant profile (r=+0.44/+0.37/+0.50) and 128/129 anticorrelate (r=-0.47/-0.43), so the run is a mixed lysate/supernatant run with no published condition map. Correction: state the exclusion in the contribution PR, or add a separate SDRF that writes 'not available' for condition."
+    },
+    {
+      "severity": "minor",
+      "category": "annotation_detail",
+      "location": "characteristics[treatment] / factor value[treatment], all rows",
+      "message": "Treatment values are free text with no dose. The combined label and 'untreated' are not ontology terms.",
+      "evidence": "Paper: Dex 1 ug/ml, IL-1b 100 U/ml (human recombinant). The validator warns on 'untreated' and 'dexamethasone and interleukin-1 beta'. Optional improvement: add characteristics[dose] or compound columns."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "factor value[sampling time], all 8 rows",
+      "message": "The factor is constant at '24 hour', so it is not a study variable in this SDRF.",
+      "evidence": "All supernatants were collected at 24 h (paper Methods). Optional: drop the factor value column and keep characteristics[sampling time]."
+    },
+    {
+      "severity": "minor",
+      "category": "annotation_detail",
+      "location": "characteristics[material type], all rows",
+      "message": "'cell' is the closest allowed value, but the material analysed is conditioned culture medium.",
+      "evidence": "material type is a fixed list (tissue, cell, cell line, organism part, whole organism, synthetic). The 'cell culture supernatant' specimen column disambiguates it. Acceptable as is."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "rows 5-8 (170126_RLi_TMT_4plex_CLys_45_48.raw), comment[label]",
+      "message": "The channel order for 45_48 is not checked against the RAW itself.",
+      "evidence": "Only 36_39 was converted. 45_48 rests on the MaxQuant column-position convention (leftover indices 1,2 empty), which holds for both RAW-checked files. Optional: confirm that 127 and 128 are empty in the RAW."
+    }
+  ]
+}
