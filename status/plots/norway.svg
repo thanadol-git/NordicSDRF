@@ -29,7 +29,7 @@
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
 <text class="title" x="12" y="22">Norway — in progress</text>
-<text class="sub" x="12" y="40">348 listed · 227 local SDRFs · 2 to do · 43 blocked · PRIDE queried 2026-11-20</text>
+<text class="sub" x="12" y="40">348 listed · 229 local SDRFs · 0 to do · 43 blocked · PRIDE queried 2026-11-20</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Local SDRF</text>
 <rect class="c-blocked" fill="#d95926" x="117" y="52" width="12" height="12" rx="2"/>
@@ -75,13 +75,11 @@
 <text class="seg" x="349.1" y="178.0" text-anchor="middle">23</text>
 <text class="total" x="417.5" y="178.0">56 listed</text>
 <text class="city" x="12" y="208.0">Tromsø</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="194" width="25.9" height="20" rx="2"><title>Tromsø · Local SDRF: 5</title></rect>
-<text class="seg" x="123.0" y="208.0" text-anchor="middle">5</text>
-<rect class="c-in_corpus" fill="#199e70" x="136.9" y="194" width="36.7" height="20" rx="2"><title>Tromsø · In corpus: 7</title></rect>
-<text class="seg" x="155.3" y="208.0" text-anchor="middle">7</text>
-<rect class="c-todo" fill="#8a8983" x="174.6" y="194" width="17.0" height="20" rx="2"><title>Tromsø · To do: 2</title></rect>
-<text class="seg" x="183.1" y="208.0" text-anchor="middle">2</text>
-<text class="total" x="198.6" y="208.0">14 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="194" width="36.7" height="20" rx="2"><title>Tromsø · Local SDRF: 7</title></rect>
+<text class="seg" x="128.3" y="208.0" text-anchor="middle">7</text>
+<rect class="c-in_corpus" fill="#199e70" x="147.7" y="194" width="36.7" height="20" rx="2"><title>Tromsø · In corpus: 7</title></rect>
+<text class="seg" x="166.0" y="208.0" text-anchor="middle">7</text>
+<text class="total" x="191.4" y="208.0">14 listed</text>
 <text class="city" x="12" y="238.0">Stavanger</text>
 <text class="total" x="116.0" y="238.0">0 PRIDE hits</text>
 </svg>

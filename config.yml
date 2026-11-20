@@ -52,7 +52,7 @@ countries:
         annotated: 68
         blocked: 93
         notes: "line 1 is PRD000423, a legacy ProteomeXchange id — resolve to a PXD before screening"
-        in_corpus: 87
+        in_corpus: 88
       lund:
         name: Lund
         search_terms: [Lund, Malmö, Skåne]
@@ -120,12 +120,12 @@ countries:
         search_terms: [Copenhagen, København, Rigshospitalet, Frederiksberg]
         pride_hits: 567
         screened: 0
-        annotated: 144
-        blocked: 67
+        annotated: 167
+        blocked: 69
         notes: "Manifest from build_manifest.py (2026-11-03): 543 confirmed Danish; PXD006201, PXD006679, PXD027901, PXD043505 removed (SDU Odense affiliations only). 32 Odense-list, 1 Aarhus-list and 2 Roskilde-list PXDs have Copenhagen-only affiliations and are still listed under those cities"
         pxd_list: lists/denmark/copenhagen.txt
         pxd_count: 539
-        in_corpus: 347
+        in_corpus: 370
       odense:
         name: Odense
         search_terms: [Odense, "University of Southern Denmark"]
@@ -225,7 +225,7 @@ countries:
         search_terms: [Tromsø, Tromso]
         pride_hits: 16
         screened: 0
-        annotated: 5
+        annotated: 7
         blocked: 0
         pxd_list: lists/norway/tromso.txt
         pxd_count: 14
@@ -326,9 +326,9 @@ countries:
         name: Explore HT
         pxd_list: affinity_pad/explore_ht.txt
         pxd_count: 10
-        in_corpus: 9
+        in_corpus: 10
         screened: 0
-        annotated: 4
+        annotated: 5
         blocked: 0
       explore:
         name: Explore 3072/384
@@ -343,9 +343,9 @@ countries:
         name: Target 96/48
         pxd_list: affinity_pad/target.txt
         pxd_count: 11
-        in_corpus: 7
+        in_corpus: 11
         screened: 0
-        annotated: 4
+        annotated: 8
         blocked: 0
       reveal:
         name: Reveal
@@ -360,17 +360,17 @@ countries:
         pxd_list: affinity_pad/unspecified.txt
         notes: "PRIDE instrument is the generic 'Olink instrument model'"
         pxd_count: 3
-        in_corpus: 2
+        in_corpus: 3
         screened: 0
-        annotated: 1
+        annotated: 2
         blocked: 0
       somascan:
         name: SomaScan
         pxd_list: affinity_pad/somascan.txt
         pxd_count: 12
-        in_corpus: 9
+        in_corpus: 12
         screened: 0
-        annotated: 0
+        annotated: 3
         blocked: 0
       nulisa:
         name: NULISA
