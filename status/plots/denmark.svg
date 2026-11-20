@@ -29,7 +29,7 @@
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
 <text class="title" x="12" y="22">Denmark — in progress</text>
-<text class="sub" x="12" y="40">959 listed · 388 local SDRFs · 128 to do · 127 blocked · PRIDE queried 2026-11-20</text>
+<text class="sub" x="12" y="40">959 listed · 411 local SDRFs · 103 to do · 129 blocked · PRIDE queried 2026-11-20</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Local SDRF</text>
 <rect class="c-blocked" fill="#d95926" x="117" y="52" width="12" height="12" rx="2"/>
@@ -43,14 +43,14 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="460" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="477" y="62">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="88.0">Copenhagen</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="74" width="172.1" height="20" rx="2"><title>Copenhagen · Local SDRF: 144</title></rect>
-<text class="seg" x="196.1" y="88.0" text-anchor="middle">144</text>
-<rect class="c-blocked" fill="#d95926" x="283.1" y="74" width="79.5" height="20" rx="2"><title>Copenhagen · Blocked: 67</title></rect>
-<text class="seg" x="322.9" y="88.0" text-anchor="middle">67</text>
-<rect class="c-in_corpus" fill="#199e70" x="363.7" y="74" width="243.1" height="20" rx="2"><title>Copenhagen · In corpus: 203</title></rect>
-<text class="seg" x="485.2" y="88.0" text-anchor="middle">203</text>
-<rect class="c-todo" fill="#8a8983" x="607.7" y="74" width="149.3" height="20" rx="2"><title>Copenhagen · To do: 125</title></rect>
-<text class="seg" x="682.4" y="88.0" text-anchor="middle">125</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="74" width="199.8" height="20" rx="2"><title>Copenhagen · Local SDRF: 167</title></rect>
+<text class="seg" x="209.9" y="88.0" text-anchor="middle">167</text>
+<rect class="c-blocked" fill="#d95926" x="310.8" y="74" width="82.0" height="20" rx="2"><title>Copenhagen · Blocked: 69</title></rect>
+<text class="seg" x="351.7" y="88.0" text-anchor="middle">69</text>
+<rect class="c-in_corpus" fill="#199e70" x="393.7" y="74" width="243.1" height="20" rx="2"><title>Copenhagen · In corpus: 203</title></rect>
+<text class="seg" x="515.3" y="88.0" text-anchor="middle">203</text>
+<rect class="c-todo" fill="#8a8983" x="637.8" y="74" width="119.2" height="20" rx="2"><title>Copenhagen · To do: 100</title></rect>
+<text class="seg" x="697.4" y="88.0" text-anchor="middle">100</text>
 <text class="total" x="764.0" y="88.0">539 listed</text>
 <text class="city" x="12" y="118.0">Odense</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="109.6" height="20" rx="2"><title>Odense · Local SDRF: 92</title></rect>
