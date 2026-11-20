@@ -120,6 +120,10 @@ The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with
 
 ![Nordic countries — listed PXDs: SDRF progress by country](status/plots/overview.svg)
 
+### Affinity PAD — in progress
+
+![Affinity PAD — in progress: SDRF progress per city](status/plots/affinity_pad.svg)
+
 ### Sweden — in progress
 
 ![Sweden — in progress: SDRF progress per city](status/plots/sweden.svg)
@@ -139,10 +143,6 @@ The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with
 ### Iceland — in progress
 
 ![Iceland — in progress: SDRF progress per city](status/plots/iceland.svg)
-
-### Affinity PAD — in progress
-
-![Affinity PAD — in progress: SDRF progress per city](status/plots/affinity_pad.svg)
 <!-- status:end -->
 
 No duplicates found within or across the four Swedish city lists. Two
