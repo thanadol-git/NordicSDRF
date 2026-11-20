@@ -1,0 +1,6 @@
+# daily queue odense+tromso batch odense-tromso-1 (the last 5 unannotated Odense/Tromsø PXDs: 3 Odense batch-11 sandbox deferrals + 2 Tromsø TMT datasets; channel maps recovered by correlating deposited reporter columns with condition-named paper supplementary tables, TMT masses checked in RAW reporter ions)
+PXD029241	norway/tromso	annotated	tromso: odense-tromso-1, annotations/PXD029241-lysate.sdrf.tsv + -supernatant.sdrf.tsv (4/5 RAW; 17_21 has no map; review round 3 PASS; bigbio #3431)
+PXD041381	norway/tromso	annotated	tromso: odense-tromso-1, annotations/PXD041381.sdrf.tsv (33/33 RAW; reviewed PASS; bigbio #3430)
+PXD020812	denmark/odense	sandbox	odense: odense-tromso-1, sandbox/PXD020812/PXD020812-ip.sdrf.tsv added (MDM2 co-IP 45 RAW; 169/191 RAW now; 22 MORC2 RAW unmappable; bigbio #3409)
+PXD054682	denmark/odense	sandbox	odense: unchanged since batch 11, sandbox/PXD054682 (bigbio sandbox #3332 merged; independent review pending)
+PXD072589	denmark/odense	sandbox	odense: unchanged since batch 11, sandbox/PXD072589 (bigbio sandbox #3333 merged; independent review pending)

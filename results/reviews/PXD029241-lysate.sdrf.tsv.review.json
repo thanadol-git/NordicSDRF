@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029241-lysate.sdrf.tsv",
+  "artifact_sha256": "20f6f06f6b42029f60bdbe6e553b6e6f628ae6fc111beb7d2721fcbbec6813d5",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. The channel-to-condition map, the replicate numbering and the technical metadata were independently confirmed against the search table, Table S1, RAW metadata and the paper. Minor findings only.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent; read only the SDRFs, evidence manifests, spec, and scratchpad/PXD029241 evidence; did not read producer report, transcript, or earlier review verdicts"
+  },
+  "evidence_manifest": "annotations/PXD029241-lysate.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Templates derived independently: rat primary cells -> ms-proteomics 1.1.0 + vertebrates 1.1.0 (+ inherited sample-metadata/base), declared correctly. All required columns present: developmental stage 'not available' is allowed, and tolerances 'not available' are recommended-only. characteristics[specimen] is a custom column named after a valid ontology term (OBI 'specimen'), which README 'Extending Templates' permits. Row shape is uniform: 10 rows x 41 columns."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "OLS4 re-resolved independently: CL:1000398 endothelial cell of hepatic sinusoid, UBERON:0002107 liver, MS:1001911 Q Exactive, MS:1001309 Lys-C, MS:1000422 (HCD synonym), PRIDE:0000627 Data-dependent acquisition, PRIDE:0000608 DTT, PRIDE:0000599 IAA, none obsolete; UNIMOD 4/737/35/1 standard; sdrf-tools check verified all 15 controlled terms with no label mismatch or UNIMOD swap"
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Paper (manuscript.txt) Methods: male Sprague Dawley (Crl:CD (SD)) rats, LSECs pooled from 2 livers per biological replicate, n=3, Dex 1 ug/ml, IL-1b 100 U/ml, DTT reduction, Lys-C 6 h then trypsin, Q-Exactive Top10 DDA, MaxQuant 1.5.0.30. RAW metadata of 22_26 and 36_39: Q Exactive Orbitrap, HCD (PRIDE's 'Q Exactive HF' correctly overridden). PRIDE PTMs: iodoacetamide derivatized, TMT6plex, monohydroxylated, acetylated residue. Reviewer recomputed run-centred log2 reporter profiles of every named search-table column against Table S1 condition columns: every column matches exactly one condition at r>=0.996 (next best <=0.86), confirming Rat2/Rat3/Rat4 = Exp1/Exp2/Exp3 and every row's treatment and sampling time. Lysate rows: 22_26 = cRat2/Exp1 (126 NT2h,127 NT24h,128 Dex,129 IL1b,130 DexIL1b), 40_44 = cRat4/Exp3 (126 IL1b,127 DexIL1b,128 NT2h,129 NT24h,130 Dex), all match SDRF."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "Both data files (170113_RLi_TMT_5plex_CLys_22_26.raw, 170113_RLi_TMT_5plex_CLys_40_44.raw) exist verbatim in files.json (projectAccessions PXD029241). The channel index comes from MaxQuant column position, confirmed by the leftover unnamed column 'Reporter intensity corrected 5' at position 6 of each block (summed intensity ~0) and, for 22_26, by RAW MS2 reporter counts (131 empty). The cRat3 lysate run (samples 31-35) is in the search but not deposited, as the manifest notes. 17_21 is excluded: see minor finding."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "10 samples = 5 conditions x 2 deposited replicates (Exp1, Exp3). Biological replicate numbers 1 and 3 match study-wide Exp numbering and the supernatant SDRF (Rat3=2, Rat4=3). Treatment and sampling time vary as factors. One fraction and one technical replicate per run (single-shot 180 min runs). Labels cover TMT126-130 and 131 is unused, matching the RAW."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value traced to paper, PRIDE, RAW metadata or search-table data. Inferred items (mod sites, fixed/variable status, IAA alkylation via kit protocol and PRIDE PTM list) are disclosed as inference in the manifest. Unknown tolerances and developmental stage are written 'not available', not guessed. No per-sample value is derived from a cohort summary."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t vertebrates exit 0, warnings only (free-text treatment 'untreated'/'dexamethasone and interleukin-1 beta', strain 'Sprague Dawley'); sdrf-tools check: 15/15 terms verified, CLEAN; sdrf-tools score 100/100; 41 columns on every row, no CR, no trailing whitespace, unique source names and unique (data file, label) pairs (10 rows)."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "file_mapping",
+      "location": "file (dataset-level): 170126_RLi_TMT_5plex_CLys_17_21.raw",
+      "message": "One of the 5 deposited RAW files is in neither split SDRF. Exclusion is justified, but the PR has to say so.",
+      "evidence": "files.json lists 5 RAW; this one is search experiment 'mixRat1' (all six reporter columns unnamed, channel 126 empty). Samples 17-21 are absent from Table S1 and the paper (n=3, Exp1-3 = Rat2-4). Reviewer check: channels 127/130/131 correlate with the lysate-minus-supernatant profile (r=+0.44/+0.37/+0.50) and 128/129 anticorrelate (r=-0.47/-0.43), so the run is a mixed lysate/supernatant run with no published condition map. Correction: state the exclusion in the contribution PR, or add a separate SDRF that writes 'not available' for condition."
+    },
+    {
+      "severity": "minor",
+      "category": "annotation_detail",
+      "location": "characteristics[treatment] / factor value[treatment], all rows",
+      "message": "Treatment values are free text with no dose. The combined label and 'untreated' are not ontology terms.",
+      "evidence": "Paper: Dex 1 ug/ml, IL-1b 100 U/ml (human recombinant). The validator warns on 'untreated' and 'dexamethasone and interleukin-1 beta'. Optional improvement: add characteristics[dose] or compound columns."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "rows 6-10 (170113_RLi_TMT_5plex_CLys_40_44.raw), comment[label]",
+      "message": "The channel order for 40_44 is not checked against the RAW itself.",
+      "evidence": "Only 22_26 was converted. 40_44 rests on the MaxQuant column-position convention, which is internally consistent (leftover index-5 column is empty) and holds for both RAW-checked files. Optional: confirm that 131 is empty in the RAW."
+    }
+  ]
+}

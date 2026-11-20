@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD041381.sdrf.tsv",
+  "dataset": "PXD041381",
+  "sources": [
+    {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD041381 (local copy scratchpad/PXD041381/pride.json)"},
+    {"id": "files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD041381/files/all (local copy scratchpad/PXD041381/files.json): 33 RAW + proteinGroups.txt"},
+    {"id": "pg", "kind": "repository", "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2024/09/PXD041381/proteinGroups.txt (local copy scratchpad/PXD041381/proteinGroups.txt)"},
+    {"id": "paper", "kind": "publication", "location": "Front Pharmacol 2024, doi:10.3389/fphar.2024.1377136, PMID 39439887, PMC11494038 (full text scratchpad/PXD041381/manuscript.txt)"},
+    {"id": "tableS1", "kind": "publication", "location": "https://public-pages-files-2025.frontiersin.org/articles/1377136/file/Table_1.XLSX/1377136_supplementary-materials_tables_1_xlsx/1 (scratchpad/PXD041381/Table_1.xlsx)"},
+    {"id": "raw", "kind": "raw file", "location": "190919_RLie_LSEC_cellLysate_TMT7_A6.raw and 190830_RLie_LSEC_cellLysate_TMT8_A5.raw converted with ThermoRawFileParser; metadata scratchpad/PXD041381/*-metadata.txt; MS3 reporter ion counts per TMT6 channel scratchpad/PXD041381/raw_reporter_check.txt (count/summed intensity)"},
+    {"id": "ols", "kind": "ontology", "location": "parse_sdrf validate-sdrf OLS lookups"}
+  ],
+  "claims": [
+    {"location": "comment[data file], comment[fraction identifier]", "value": "TMT7 A1-A12 = fractions 1-12; TMT8 A1-A12, B4-B12 = fractions 1-21", "source_ids": ["files", "paper"], "evidence": "33 RAW files; paper: 42 fractions pooled into 21 per TMT mix. Fraction order from well names is an inference"},
+    {"location": "MaxQuant channel -> condition", "value": "TMT7: idx0 NT 1h, 1 NT 10h, 2 Dex 10h, 3 NT 48h, 4 Dex 48h. TMT8: idx0 NT 48h, 1 Dex 48h, 2 NT 1h, 3 NT 10h, 4 Dex 10h", "source_ids": ["pg", "tableS1"], "evidence": "Per-run protein-centred log2 'Reporter intensity corrected <i> TMTn' vs Table S1 '<cond>_TMT_ExpN' columns: unique permutation with mean r = 1.000 for TMT7=Exp1, TMT8=Exp2 (TMT9=Exp3, no RAW deposited); off-diagonal experiments <= 0.67"},
+    {"location": "comment[label]", "value": "TMT7 idx0-4 = 126,128,129,130,131 (127 unused); TMT8 idx0-4 = 126,127,128,130,131 (129 unused)", "source_ids": ["raw", "pg"], "evidence": "MS3 reporter ions: TMT7_A6 127 in 226 of 31167 spectra vs ~16,500 others; TMT8_A5 129 in 329 of 32687 vs ~20,000. proteinGroups per-index reporter totals follow the RAW non-empty channel profile in both runs. Assumes MaxQuant indices in ascending mass order"},
+    {"location": "characteristics[treatment], characteristics[sampling time], factor values", "value": "untreated / dexamethasone (1 uM); 1, 10, 48 hour", "source_ids": ["paper", "pride"], "evidence": "Methods 2.4: extracts at 1 h (AIM-V alone), 10 h +/- Dex, 48 h +/- Dex; 1 uM Dex"},
+    {"location": "characteristics[organism], strain, sex, organism part, cell type", "value": "Mus musculus; C57BL/6J; male; liver; endothelial cell of hepatic sinusoid", "source_ids": ["paper"], "evidence": "proteomic experiments with C57Bl/6J male mice from Charles River; CD146+ LSECs from liver"},
+    {"location": "characteristics[pooled sample], biological replicate", "value": "pooled; 1 = TMT7/Exp1, 2 = TMT8/Exp2", "source_ids": ["paper", "pg", "tableS1"], "evidence": "each replicate pooled LSECs from 4-5 mouse livers; replicate assignment from correlation match"},
+    {"location": "comment[instrument], dissociation", "value": "Orbitrap Fusion Lumos; CID (MS2)", "source_ids": ["raw", "paper", "pride"], "evidence": "RAW metadata Orbitrap Fusion Lumos, Fragmentation types=CID, method TMT6_TKO_6plex_SPS; paper TMT SPS MS3"},
+    {"location": "comment[fractionation method]", "value": "High-pH reversed-phase chromatography", "source_ids": ["paper"], "evidence": "high pH reversed-phase on Ultimate 3000, 21 pooled fractions"},
+    {"location": "comment[cleavage agent details], reduction", "value": "Lys-C + Trypsin; DTT", "source_ids": ["paper"], "evidence": "lysyl endopeptidase 6 h then trypsin; 5 mM DTT"},
+    {"location": "comment[modification parameters], tolerances", "value": "Carbamidomethyl C, TMT6plex K/N-term fixed; Oxidation M, Acetyl protein N-term variable; 4.5 ppm / 20 ppm", "source_ids": ["pride", "paper"], "evidence": "Data processing protocol and Methods 2.5"},
+    {"location": "comment[ms min/max charge]", "value": "2 / 7", "source_ids": ["raw"], "evidence": "RAW metadata of both converted files"}
+  ],
+  "limitations": [
+    "Replicate 3 (TMT9) RAW files are not deposited; 9 of 21 TMT7 fractions are not deposited",
+    "Only one RAW fraction per TMT run was checked for the empty reporter channel",
+    "MaxQuant index -> mass mapping assumes ascending-mass order of configured labels (corroborated by per-channel totals)",
+    "Alkylation reagent not stated (carbamidomethyl searched): not available. Age 6-12 weeks at use: developmental stage not available"
+  ]
+}

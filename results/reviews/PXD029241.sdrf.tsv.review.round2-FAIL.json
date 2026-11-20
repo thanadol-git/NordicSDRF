@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD029241.sdrf.tsv",
+  "artifact_sha256": "f3e40df632aa3097a8bdf4556e9e57d24dd7cbaf9d1cfc3ba7c72ae5424e6ed2",
+  "verdict": "FAIL",
+  "summary": "Sample-to-channel and sample-to-condition mapping independently reproduced (r>=0.996 against Table S1 for all 18 channels; RAW empty-channel patterns match). One important design defect: the factor values (sampling time, treatment) do not separate cell lysate from cell culture supernatant, so four factor-level conditions pool two different specimen types analysed separately in the paper. Minor issues: one deposited RAW file not annotated, nonstandard characteristics[specimen] column, material type 'cell' on supernatant rows, treatment doses omitted.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "Fresh subagent reviewer launched by the caller; did not read the producer report (annotations/PXD029241.report.md), transcript, or prior review JSON; used only SDRF, evidence manifest, scratchpad/PXD029241 files and the spec."
+  },
+  "evidence_manifest": "annotations/PXD029241.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "pass", "evidence": "Active templates ms-proteomics 1.1.0 + vertebrates 1.1.0 (both latest in templates.yaml; extend sample-metadata 1.0.0 / base 1.1.0). All required columns present (source name, organism, organism part, biological replicate, disease, developmental stage, assay name, technology type, technical replicate, data file, acquisition method, instrument, cleavage agent, label, fraction identifier). 18 rows x 41 columns, unique source names, no duplicate (data file, label) pairs, no trailing empty cells. pooled sample value 'pooled' and biological replicate integers match template patterns."},
+    "ontology_integrity": {"status": "pass", "evidence": "sdrf-tools check: 15 terms checked, 15 verified, 0 hallucinated, 0 label mismatch, 0 wrong ontology, 0 UNIMOD swaps. Reviewed manually: CL endothelial cell of hepatic sinusoid (matches PRIDE CL:1000398), Q Exactive MS:1001911, Lys-C MS:1001309, Trypsin MS:1001251, HCD MS:1000422, DDA PRIDE:0000627, Carbamidomethyl UNIMOD:4, TMT6plex UNIMOD:737, Oxidation UNIMOD:35, Acetyl UNIMOD:1. Free-text treatment/strain only raise validator warnings (allowed)."},
+    "source_evidence": {"status": "pass", "evidence": "Re-checked against scratchpad/PXD029241 (projectAccessions all PXD029241; manuscript title matches PRIDE title/DOI 10.1371/journal.pone.0273843). Paper: male Sprague Dawley Crl:CD(SD), LSECs from two livers pooled per experiment, n=3, Dex 1 ug/ml, IL-1b 100 U/ml, 2 h and 24 h, Q-Exactive Top10 DDA, Lys-C then trypsin, DTT. RAW metadata of 22_26 and 36_39: 'Q Exactive Orbitrap', HCD (PRIDE's 'Q Exactive HF' correctly overridden). Recomputed correlation of every renamed search-table reporter column against Table S1 per-condition columns: best match r>=0.996 for all 27 sample columns, consistent with the SDRF condition and replicate assignment (Rat2/3/4 = Exp1/2/3)."},
+    "file_mapping": {"status": "pass", "evidence": "files.json lists 5 RAW; SDRF references 4 (22_26, 40_44, 36_39, 45_48), names match exactly. Channel positions follow MaxQuant reporter index order; raw_reporter_check.txt confirms empty 131 in 22_26 (cRat2 index 5 unused) and empty 126/129 in 36_39 (sRat3 indices 0 and 3 unused), matching SDRF labels. 40_44 and 45_48 follow the same convention (not RAW-verified; disclosed). 170126_RLi_TMT_5plex_CLys_17_21.raw omitted (see minor finding)."},
+    "design_consistency": {"status": "fail", "evidence": "Grouping by factor value[sampling time]+factor value[treatment] gives 5 conditions; 4 of them (24 h untreated, dexamethasone, interleukin-1 beta, dexamethasone and interleukin-1 beta) each contain 2 cell-lysate and 2 supernatant channels from different TMT runs. The paper analyses proteome (lysate) and secretome (supernatant) as separate datasets (Table S1 Cell_Prot vs Supernat_Prot sheets). Biological replicate numbering, runs per replicate, and labels otherwise consistent."},
+    "omission_safety": {"status": "pass", "evidence": "No value asserts more than evidence supports: developmental stage, tolerances written 'not available'; modification fixed/variable status disclosed as inference from PRIDE PTM list and TMT kit protocol; unverifiable 17_21 file excluded rather than given invented conditions; limitations listed in manifest."},
+    "deterministic_validation": {"status": "pass", "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t vertebrates: exit 0, warnings only (treatment 'untreated' and 'dexamethasone and interleukin-1 beta' not in ncit/efo; strain 'Sprague Dawley' not in ncbitaxon). sdrf-tools check: CLEAN, exit 0. sdrf-tools score: 100/100."}
+  },
+  "findings": [
+    {
+      "severity": "important",
+      "category": "design_consistency",
+      "location": "factor value columns, rows 2-18 (24 h conditions)",
+      "message": "Factor values do not distinguish cell lysate from cell culture supernatant, so each 24 h treatment condition pools lysate (5plex runs) and supernatant (4plex runs) channels; any downstream condition-level analysis (e.g. MSstatsTMT/quantms) would mix two different specimen types.",
+      "evidence": "groupby(factor value[sampling time], factor value[treatment]) -> characteristics[specimen] nunique = 2 for all four 24 h conditions; paper/Table S1 analyse Cell_Prot and Supernat_Prot separately (Fig 1: 5 lysate groups, 4 supernatant groups). Correction: add factor value[specimen] mirroring characteristics[specimen], or split into separate lysate and supernatant SDRFs."
+    },
+    {
+      "severity": "minor",
+      "category": "file_mapping",
+      "location": "comment[data file]; file 170126_RLi_TMT_5plex_CLys_17_21.raw",
+      "message": "One of five deposited RAW files is not represented in the SDRF.",
+      "evidence": "files.json lists 17_21; its search experiment 'mixRat1' has only generic reporter columns (index 0 mostly empty, 1-5 populated) and samples 17-21 are absent from Table S1, so condition assignment is genuinely unavailable. Exclusion is disclosed in the manifest; optionally note it in the PR body or add rows with known invariant characteristics and 'not available' conditions."
+    },
+    {
+      "severity": "minor",
+      "category": "spec_compliance",
+      "location": "characteristics[specimen], all rows",
+      "message": "characteristics[specimen] is not a TERMS.tsv term; acceptable as a custom column (OBI/NCIT 'specimen' exists) but downstream tools will not recognise it.",
+      "evidence": "grep of TERMS.tsv and templates finds no 'specimen' entry; README 'Extending Templates' allows custom ontology-named columns."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[material type], rows 11-18 (supernatant)",
+      "message": "Material type 'cell' for culture-supernatant samples is loose; the material analysed is secreted protein in conditioned medium, not cells.",
+      "evidence": "TERMS.tsv material type fixed values (tissue, cell, cell line, organism part, whole organism, synthetic) have no exact fit; consider 'not applicable' or keep with a note."
+    },
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "characteristics[treatment]",
+      "message": "Treatment values omit the documented doses.",
+      "evidence": "Fig 1 legend: Dex 1 ug/ml, IL-1b 100 U/ml, treatment started 2 h after plating; could be recorded e.g. in characteristics[compound]/dose columns."
+    }
+  ]
+}
