@@ -1,0 +1,10 @@
+# PAD batch 1: the 9 public PRIDE affinity (PAD) projects with no SDRF in bigbio datasets/ or sandbox/ (checked 2026-11-20 against PRIDE PAD000001-PAD000144)
+PAD000034	olink_pad/not_olink	pending	pad: batch 1, SomaScan assay v4.1
+PAD000045	olink_pad/not_olink	pending	pad: batch 1, SomaScan assay v4.0
+PAD000051	olink_pad/not_olink	pending	pad: batch 1, SomaScan assay v4.1
+PAD000056	olink_pad/explore_ht	pending	pad: batch 1, Olink Explore HT
+PAD000065	olink_pad/target	pending	pad: batch 1, Olink Target 96
+PAD000066	olink_pad/target	pending	pad: batch 1, Olink Target 96
+PAD000067	olink_pad/target	pending	pad: batch 1, Olink Target 96
+PAD000072	olink_pad/target	pending	pad: batch 1, Olink Target 96
+PAD000076	olink_pad/unspecified	pending	pad: batch 1, Olink instrument model
