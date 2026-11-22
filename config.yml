@@ -34,9 +34,9 @@ pipeline:
   tier_3_claude:
     jobs: [sdrf_annotate, sdrf_review, sdrf_adversarial_review]
 
-pride_hits_queried: 2026-11-21
+pride_hits_queried: 2026-11-22
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-11-21)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-11-22)
 
 countries:
   sweden:
@@ -58,7 +58,7 @@ countries:
         search_terms: [Lund, Malmö, Skåne]
         pxd_list: lists/sweden/lund.txt
         pxd_count: 163
-        pride_hits: 547
+        pride_hits: 549
         screened: 0
         annotated: 75
         blocked: 82

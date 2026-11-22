@@ -29,7 +29,7 @@
 </style>
 <rect class="bg" width="860" height="112" rx="6"/>
 <text class="title" x="12" y="22">Iceland — in progress</text>
-<text class="sub" x="12" y="40">6 listed · 4 local SDRFs · 0 to do · 2 blocked · PRIDE queried 2026-11-21</text>
+<text class="sub" x="12" y="40">6 listed · 4 local SDRFs · 0 to do · 2 blocked · PRIDE queried 2026-11-22</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Local SDRF</text>
 <rect class="c-blocked" fill="#d95926" x="117" y="52" width="12" height="12" rx="2"/>
