@@ -1,0 +1,21 @@
+# daily queue denmark/copenhagen batch 8 (20 smallest pending PXDs by total deposited RAW size, excluding accessions in the bigbio corpus (datasets/ + sandbox/), with annotation/BLOCKED files here, or already handled in earlier queues)
+PXD037543	denmark/copenhagen	pending	copenhagen: batch 8
+PXD029409	denmark/copenhagen	pending	copenhagen: batch 8
+PXD055524	denmark/copenhagen	pending	copenhagen: batch 8
+PXD061015	denmark/copenhagen	pending	copenhagen: batch 8
+PXD011008	denmark/copenhagen	pending	copenhagen: batch 8
+PXD064353	denmark/copenhagen	pending	copenhagen: batch 8
+PXD044009	denmark/copenhagen	pending	copenhagen: batch 8
+PXD008099	denmark/copenhagen	pending	copenhagen: batch 8
+PXD009931	denmark/copenhagen	pending	copenhagen: batch 8
+PXD046285	denmark/copenhagen	pending	copenhagen: batch 8
+PXD064789	denmark/copenhagen	pending	copenhagen: batch 8
+PXD060348	denmark/copenhagen	pending	copenhagen: batch 8
+PXD065892	denmark/copenhagen	pending	copenhagen: batch 8
+PXD040818	denmark/copenhagen	pending	copenhagen: batch 8
+PXD013750	denmark/copenhagen	pending	copenhagen: batch 8
+PXD058818	denmark/copenhagen	pending	copenhagen: batch 8
+PXD040434	denmark/copenhagen	pending	copenhagen: batch 8
+PXD031277	denmark/copenhagen	pending	copenhagen: batch 8
+PXD060376	denmark/copenhagen	pending	copenhagen: batch 8
+PXD062414	denmark/copenhagen	pending	copenhagen: batch 8
