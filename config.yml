@@ -4,7 +4,7 @@
 # `scripts/update_status.py` reads this file, queries PRIDE, counts manifests and
 # annotations/ outputs, and writes the numbers back here (pxd_count, pride_hits,
 # screened, annotated, blocked), country `status`, a missing `pxd_list` when
-# `lists/<country>/<city>.txt` exists, and into README.md + status/<country>.md.
+# `lists/<country>/<city>.txt` exists, and into README.md + status/markdowns/<country>.md.
 #
 # City fields:
 #   name          display name used in tables

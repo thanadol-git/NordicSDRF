@@ -217,20 +217,20 @@ tail -3 results/logs/slurm-*_*.out           # each Slurm task ends with a verdi
 
 **3. Where is the campaign?** The tracker never calls out. It counts files
 here and writes `config.yml`, the [Current status](../README.md#current-status)
-block in the README, and `status/<country>.md`:
+block in the README, and `status/markdowns/<country>.md`:
 
 ```bash
 python scripts/update_status.py --no-pride --dry-run              # print the numbers, change nothing
 python scripts/update_status.py --no-pride                        # refresh from local files only (offline)
 python scripts/update_status.py --no-pride --country iceland      # one country
 python scripts/update_status.py --no-pride --corpus github        # + live check against bigbio/sdrf-annotated-datasets
-cat status/sweden.md                                              # generated per-country page + chart
-cat status/iceland.md
+cat status/markdowns/sweden.md                                    # generated per-country page + chart
+cat status/markdowns/iceland.md
 ```
 
 | File | What it tells you |
 |---|---|
-| `status/<country>.md` | Same chart as in the README, one country |
+| `status/markdowns/<country>.md` | Same chart as in the README, one country |
 | `config.yml` → city `annotated` / `blocked` / `in_corpus` | Machine counters the tables are built from |
 | `annotations/<PXD>.sdrf.tsv` | That PXD is counted as annotated |
 | `annotations/<PXD>.BLOCKED.md` | Counted as blocked |

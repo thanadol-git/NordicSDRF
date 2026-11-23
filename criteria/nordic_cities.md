@@ -9,7 +9,7 @@ full-text search (`/pride/ws/archive/v2/search/projects?keyword=<city>`),
 queried 2026-09-23 for the single city name. The live numbers (unioned over
 all of a city's `search_terms` in `config.yml`, plus overlap with the
 community corpus) are maintained by `scripts/update_status.py` in the README
-and `status/<country>.md`; this file is the narrative reference. The hit count
+and `status/markdowns/<country>.md`; this file is the narrative reference. The hit count
 is a rough size indicator, not a manifest count: the
 search matches titles, descriptions and affiliation strings, so it both
 over-counts (surnames, streets, other places with the same name) and
