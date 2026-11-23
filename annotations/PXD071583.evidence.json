@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD071583.sdrf.tsv",
+  "dataset": "PXD071583",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD071583 (local copy /home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD071583/evidence/pride.json). Title, sampleProcessingProtocol, dataProcessingProtocol, organisms, instruments, quantificationMethods, references."
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD071583/files/all (local copy /home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD071583/evidence/files_all.json). 143 RAW files; every entry has projectAccessions containing PXD071583."
+    },
+    {
+      "id": "paper-abstract",
+      "kind": "publication",
+      "location": "PMID:42695893; DOI:10.1021/acs.jproteome.6c00453; J Proteome Res. 2026 25(9):4957-4972. Unpaywall is_oa=false; Europe PMC inEPMC=N, inPMC=N, hasSuppl=N, hasPDF=N; NCBI idconv: Identifier not found in PMC. Abstract and PubMed XML only."
+    },
+    {
+      "id": "si-pdf",
+      "kind": "publication",
+      "location": "Figshare 10.1021/acs.jproteome.6c00453.s001 article 33263646 file pr6c00453_si_001.pdf (https://ndownloader.figshare.com/files/67579644; local /home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD071583/si/pr6c00453_si_001.pdf). Supplementary figures only (isolation interference; reference-sample Pearson correlation)."
+    },
+    {
+      "id": "si-xlsx",
+      "kind": "publication",
+      "location": "Figshare 10.1021/acs.jproteome.6c00453.s002 article 33263649 file pr6c00453_si_002.xlsx (https://ndownloader.figshare.com/files/67579647; local /home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD071583/si/pr6c00453_si_002.xlsx). Table S1 inclusion/exclusion; Table S2 TMT labeling assignments; Table S6 abundance headers with per-patient sex and smoking status."
+    },
+    {
+      "id": "pd-workflow",
+      "kind": "search-output",
+      "location": "PRIDE SEARCH file 20240301_B03_Phospho_CIT30MCO100.msf (https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/09/PXD071583/20240301_B03_Phospho_CIT30MCO100.msf). SQLite Workflows table reconstructed via HTTP range of page 5 plus overflow pages 4937801-4937820. Local XML /home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD071583/workflow.xml. TemplateName PWF_Tribrid_TMT10_Reporter_Based_Quan_MS2_SequestHT_Percolator_BatchProcessing_Phospho. sdrf-tools search-params on a mini .msf copy of that XML."
+    },
+    {
+      "id": "mzid-head",
+      "kind": "search-output",
+      "location": "First 4 MB of 20240301_B03_04_05_Phospho_CIT30MCO100.mzid (https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/09/PXD071583/20240301_B03_04_05_Phospho_CIT30MCO100.mzid). cvParam names include TMT6plex, Phospho, Carbamidomethyl, Deamidated, Oxidation. AnalysisSoftware Proteome Discoverer 2.5.0.400."
+    },
+    {
+      "id": "companion-pride",
+      "kind": "repository",
+      "location": "PXD050598 PRIDE record and files/all (same TMTB03/B04/B05 raw-file naming as the proteome companion; SEARCH files only, no sample sheet). Used only to confirm that TMTB03/04/05 are this cohort's batch names; channel map taken from this paper's Table S2, not from PXD050598."
+    },
+    {
+      "id": "ols",
+      "kind": "ontology",
+      "location": "OLS4 search https://www.ebi.ac.uk/ols4/api/search for Homo sapiens, lung, lung adenocarcinoma, adult, Filipino, Smoker, Never Smoker, IMAC, Orbitrap Fusion Lumos, Trypsin, HCD/MS:1002481, DDA/PRIDE:0000627, DTT, IAA, hpHRP, UNIMOD terms."
+    }
+  ],
+  "claims": [
+    {
+      "location": "comment[data file] all 1430 rows",
+      "value": "143 Thermo .raw files, each linked to 10 TMT channels",
+      "source_ids": ["files"],
+      "evidence": "files_all.json lists 143 RAW names matching ^\\d{8}_Philippine_LC_TMTB0[345]_prot_F\\d+-R[12]\\.raw$; TMTB03 missing F01-R1 (47 files); TMTB04 and TMTB05 have 48 files each."
+    },
+    {
+      "location": "comment[label]",
+      "value": "TMT126, TMT127N, TMT127C, TMT128N, TMT128C, TMT129N, TMT129C, TMT130N, TMT130C, TMT131N",
+      "source_ids": ["si-xlsx", "pd-workflow", "pride"],
+      "evidence": "Table S2 is TMT10 channels 126-131 with N/C splits; PD template TMT10; PRIDE quantificationMethods TMT. Channel 131 written as TMT131N (TMT10plex)."
+    },
+    {
+      "location": "source name / factor value[disease] patient rows",
+      "value": "12 patients, paired NAT (normal) and Tumor (lung adenocarcinoma); TMTB03=S12,S13,S18,S19; TMTB04=S01,S03,S04,S24; TMTB05=S10,S11,S20,S22",
+      "source_ids": ["si-xlsx", "pride", "paper-abstract"],
+      "evidence": "Table S2 TMT labeling assignments with NAT/Tumor per channel and three batches. Table S6 headers F1/F2=S12 (Batch 1), F3/F4=S01 (Batch 2), F5/F6=S10 (Batch 3) match TMTB03/04/05 chronological order. PRIDE protocol: paired tumor and NAT from Filipino early-stage NSCLC LUAD. Abstract: paired tumor and adjacent normal LUAD."
+    },
+    {
+      "location": "source name Control_NT / Control_T",
+      "value": "pooled reference channels TMT126=Control NT, TMT131N=Control T",
+      "source_ids": ["si-xlsx", "pride"],
+      "evidence": "Table S2 caption: Control NT = pooled tumor tissues and NATs; Control T = pooled tumor tissues. PRIDE dataProcessingProtocol: scaling to designated reference channels (Control NT). Exact patient membership of each pool is not listed; characteristics[pooled sample] and characteristics[biological replicate] are the reserved word pooled."
+    },
+    {
+      "location": "characteristics[organism]",
+      "value": "Homo sapiens",
+      "source_ids": ["pride", "paper-abstract", "ols"],
+      "evidence": "PRIDE organisms NCBITaxon:9606; human LUAD cohort."
+    },
+    {
+      "location": "characteristics[organism part]",
+      "value": "lung",
+      "source_ids": ["pride", "paper-abstract", "ols"],
+      "evidence": "Surgical lung tumor and NAT tissue; OLS UBERON:0002048 lung."
+    },
+    {
+      "location": "characteristics[disease] Tumor / NAT",
+      "value": "lung adenocarcinoma vs normal",
+      "source_ids": ["pride", "paper-abstract", "si-xlsx", "ols"],
+      "evidence": "Inclusion: histopathologically proven NSCLC adenocarcinoma. Abstract and PRIDE protocol specify LUAD. NAT is adjacent normal lung; not assigned the project-level NSCLC term. OLS MONDO:0005061 lung adenocarcinoma; PATO:0000461 normal."
+    },
+    {
+      "location": "characteristics[sex] / characteristics[smoking status] patient rows",
+      "value": "per-patient male/female and Smoker/Never Smoker from Table S6 headers",
+      "source_ids": ["si-xlsx", "ols"],
+      "evidence": "Table S6 abundance column headers encode Sample, Normal|Tumor, SxxN|SxxT, Male|Female, Smoker|Nonsmoker. Nonsmoker mapped to NCIT Never Smoker; Smoker to NCIT Smoker."
+    },
+    {
+      "location": "characteristics[age]",
+      "value": "not available",
+      "source_ids": ["si-xlsx", "pride"],
+      "evidence": "No per-sample ages in Table S1/S2/S6 or PRIDE. Inclusion allows 18-90 years; that is not a per-sample age."
+    },
+    {
+      "location": "characteristics[ancestry category] / characteristics[developmental stage]",
+      "value": "Filipino; adult",
+      "source_ids": ["si-xlsx", "pride", "ols"],
+      "evidence": "Table S1 inclusion: patient must be Filipino and 18-90 years of age. PRIDE protocol: Filipino patients. OLS HANCESTRO:0498 Filipino; EFO:0001272 adult."
+    },
+    {
+      "location": "characteristics[enrichment process]",
+      "value": "IMAC",
+      "source_ids": ["pride", "ols"],
+      "evidence": "PRIDE sampleProcessingProtocol: phosphopeptide enrichment using IMAC StageTips (Fe3+-NTA). OLS PRIDE:0000587 IMAC."
+    },
+    {
+      "location": "comment[instrument]",
+      "value": "NT=Orbitrap Fusion Lumos;AC=MS:1002732",
+      "source_ids": ["pride", "ols"],
+      "evidence": "PRIDE sampleProcessingProtocol and instruments field: Orbitrap Fusion Lumos. techsdrf not installed; raw headers not range-read."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": ["pride", "pd-workflow"],
+      "evidence": "PRIDE protocol: Top10 DDA workflow, HCD MS2. PD template name contains MS2 SequestHT, not DIA."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "NT=higher energy beam-type collision-induced dissociation;AC=MS:1002481",
+      "source_ids": ["pride", "pd-workflow", "ols"],
+      "evidence": "PRIDE protocol: HCD MS2 scans at 60,000 resolution. ReporterIonQuantifierNode ActivationTypeFilter DisplayValue=HCD. Workflow description also says CID spectra using SequestHT (template boilerplate)."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": ["pd-workflow", "pride"],
+      "evidence": "PD Sequest node Enzyme Name DisplayValue=Trypsin (Full). Wet-lab protocol also used Lys-C then trypsin; search enzyme is trypsin only."
+    },
+    {
+      "location": "comment[modification parameters]",
+      "value": "Carbamidomethyl C fixed; TMT6plex K and Any N-term fixed; Oxidation M variable; Deamidated N,Q variable; Phospho STY variable; Acetyl Protein N-term variable",
+      "source_ids": ["pd-workflow", "pride", "mzid-head"],
+      "evidence": "Sequest node in workflow.xml: Static Carbamidomethyl C, Static TMT6plex K, StaticTerminal TMT6plex Any N-Terminus, Dynamic Oxidation M, Deamidated N/Q, Phospho STY, DynamicModificationNProtein Acetyl. PRIDE dataProcessingProtocol lists the same set. search-params mapped Acetyl as Any N-term; SDRF uses Protein N-term from DynamicModificationNProtein. MappingL / J skipped (not a biological PTM)."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]",
+      "value": "10 ppm / 0.1 Da",
+      "source_ids": ["pd-workflow", "pride"],
+      "evidence": "Sequest node PeptideTolerance 10 ppm and FragmentTolerance 0.1 Da. PRIDE dataProcessingProtocol: 10 ppm precursor, 0.1 Da fragment. An earlier workflow node lists 20 ppm; Sequest/PRIDE 10 ppm used."
+    },
+    {
+      "location": "comment[reduction reagent] / comment[alkylation reagent]",
+      "value": "DTT / IAA",
+      "source_ids": ["pride", "ols"],
+      "evidence": "PRIDE sampleProcessingProtocol: reduced with 10 mM DTT; alkylated with 5 mM iodoacetamide. Search includes fixed Carbamidomethyl."
+    },
+    {
+      "location": "comment[fractionation method] / comment[fraction identifier]",
+      "value": "High-pH reversed-phase chromatography (hpHRP); comment[fraction identifier] equals the Fxx integer in comment[data file]",
+      "source_ids": ["pride", "files", "ols"],
+      "evidence": "PRIDE protocol: high-pH RP into 96 fractions concatenated into 12 pooled fractions. Deposited files are F01-F24 x R1/R2; file names outrank the '12 fractions' sentence. R1 vs R2 are technical replicate injections of the same Fxx fraction. TMTB03 F01-R1.raw is undeposited, so TMTB03 R1 has fraction identifiers 2-24 (gap at 1) rather than compacted 1-23."
+    },
+    {
+      "location": "comment[sample preparation batch]",
+      "value": "TMTB03 / TMTB04 / TMTB05",
+      "source_ids": ["files", "si-xlsx"],
+      "evidence": "Raw-file infix TMTB03/04/05; Table S2 three batches."
+    },
+    {
+      "location": "characteristics[biological replicate] Control_NT / Control_T",
+      "value": "pooled",
+      "source_ids": ["si-xlsx"],
+      "evidence": "Table S2 caption: Control NT = pooled tumor tissues and NATs; Control T = pooled tumor tissues. sample-metadata / TERMS.tsv allow pooled on biological replicate for TMT reference channels."
+    },
+    {
+      "location": "templates",
+      "value": "ms-proteomics v1.1.0, human v1.1.0, oncology-metadata v1.0.0",
+      "source_ids": ["pride", "paper-abstract"],
+      "evidence": "MS proteomics of human LUAD tissue (cancer study). Not DIA, not cell lines, not single-cell. oncology-metadata supplies the clinical columns used (age, sex, ancestry, smoking)."
+    }
+  ],
+  "limitations": [
+    "Full paper HTML/PDF is closed (ACS Cloudflare 403; Unpaywall closed; no PMCID). Methods used are PRIDE sample/data processing protocols plus ACS SI on Figshare.",
+    "No per-sample age, tumor stage, or histologic subtype table beyond LUAD inclusion.",
+    "Exact SN= membership of Control NT / Control T pools is not in Table S2; pooled is written without SN= lists because the validator rejected SN= values.",
+    "TMTB03 F01-R1.raw is absent from the deposit; comment[fraction identifier] on remaining TMTB03 R1 files uses the filename F number (2-24) so R1 and R2 of the same Fxx share an identifier.",
+    "techsdrf is not installed; instrument model was not confirmed from a .raw header.",
+    "Wet-lab Lys-C pre-digest is not represented in comment[cleavage agent details] because the PD search enzyme is Trypsin (Full) only.",
+    "sdrf-tools reconcile reported cleavage_agent_unsupported for Trypsin against the PRIDE record; the sampleProcessingProtocol text does name trypsin after Lys-C."
+  ]
+}

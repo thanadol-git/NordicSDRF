@@ -1,0 +1,445 @@
+{
+  "schema_version": 1,
+  "artifact": "/home/thanadol.sutantiwani@Olink.local/Github/NordicSDRF/annotations/PXD050598.sdrf.tsv",
+  "dataset": "PXD050598",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD050598",
+      "local": "/home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD050598/evidence/pride.json"
+    },
+    {
+      "id": "pride_files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/files/byProject?accession=PXD050598",
+      "local": "/home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD050598/evidence/files_all.json"
+    },
+    {
+      "id": "raw_names",
+      "kind": "derived",
+      "location": "/home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD050598/evidence/files.json"
+    },
+    {
+      "id": "paper_epmc",
+      "kind": "publication",
+      "location": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:40014793&resultType=core&format=json",
+      "local": "/home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD050598/evidence/epmc.json"
+    },
+    {
+      "id": "paper_doi",
+      "kind": "publication",
+      "location": "https://doi.org/10.1021/acs.jproteome.4c00764"
+    },
+    {
+      "id": "unpaywall",
+      "kind": "publication",
+      "location": "https://api.unpaywall.org/v2/10.1021/acs.jproteome.4c00764",
+      "local": "/home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD050598/evidence/unpaywall.json"
+    },
+    {
+      "id": "si_pdf",
+      "kind": "supplement",
+      "location": "https://pubs.acs.org/doi/suppl/10.1021/acs.jproteome.4c00764",
+      "local": "/home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD050598/si/pr4c00764_si_001.pdf"
+    },
+    {
+      "id": "si_xlsx",
+      "kind": "supplement",
+      "location": "https://pubs.acs.org/doi/suppl/10.1021/acs.jproteome.4c00764",
+      "local": "/home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD050598/si/pr4c00764_si_002.xlsx"
+    },
+    {
+      "id": "si_txt",
+      "kind": "derived",
+      "location": "/home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD050598/si/si_001.txt"
+    },
+    {
+      "id": "companion_pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD071583",
+      "local": "/home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD050598/evidence/pride_PXD071583.json"
+    },
+    {
+      "id": "companion_files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/files/byProject?accession=PXD071583",
+      "local": "/home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD050598/evidence/files_PXD071583.json"
+    },
+    {
+      "id": "companion_si_xlsx",
+      "kind": "supplement",
+      "location": "Figshare SI for DOI 10.1021/acs.jproteome.6c00453 (companion phosphoproteomics paper, Table S2 TMT labeling assignments)",
+      "local": "/home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD050598/si/pr6c00453_si_002.xlsx"
+    },
+    {
+      "id": "companion_si_pdf",
+      "kind": "supplement",
+      "location": "Figshare SI PDF for DOI 10.1021/acs.jproteome.6c00453",
+      "local": "/home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD050598/si/pr6c00453_si_001.pdf"
+    },
+    {
+      "id": "companion_si_txt",
+      "kind": "derived",
+      "location": "/home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD050598/si/pr6c00453_si_001.txt"
+    },
+    {
+      "id": "raw_header",
+      "kind": "raw-file",
+      "location": "HTTP range of PRIDE-deposited 20220609_Philippine_LC_TMTB03_prot_F01-R1.raw (first 262144 bytes)",
+      "local": "/home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD050598/raw_F01R1_head.bin"
+    },
+    {
+      "id": "s2",
+      "kind": "publication",
+      "location": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1021/acs.jproteome.4c00764",
+      "local": "/home/thanadol.sutantiwani@Olink.local/Github/sdrf-skills/scratchpad/PXD050598/evidence/s2.json"
+    }
+  ],
+  "claims": [
+    {
+      "location": "characteristics[organism] all 1440 rows",
+      "value": "Homo sapiens",
+      "source_ids": [
+        "pride",
+        "paper_epmc"
+      ],
+      "evidence": "PRIDE organisms NEWT:9606 Homo sapiens (human). Europe PMC MeSH Humans. Paper abstract: Filipino NSCLC LUAD patients."
+    },
+    {
+      "location": "characteristics[organism part] all 1440 rows",
+      "value": "lung",
+      "source_ids": [
+        "pride",
+        "paper_epmc"
+      ],
+      "evidence": "PRIDE organismParts BTO:0000763 Lung. Abstract: NSCLC lung adenocarcinoma. Companion protocol: paired tumor and normal adjacent tissue from lung resections."
+    },
+    {
+      "location": "characteristics[cell type] all 1440 rows",
+      "value": "not available",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "PRIDE lists both lung (BTO:0000763) and epithelial cell of lung (CL:0000082) as organism part, not as a measured cell type. The experiment used resected tissue, not a purified cell population. Cell type therefore left not available."
+    },
+    {
+      "location": "characteristics[material type] all 1440 rows",
+      "value": "tissue",
+      "source_ids": [
+        "pride",
+        "companion_pride",
+        "paper_epmc"
+      ],
+      "evidence": "PRIDE sampleProcessingProtocol: proteins extracted from paired Tumor and adjacent normal tissue specimens. Companion: paired tumor and NAT obtained intraoperatively."
+    },
+    {
+      "location": "characteristics[ancestry category] all 1440 rows",
+      "value": "Filipino",
+      "source_ids": [
+        "paper_epmc",
+        "si_xlsx",
+        "companion_si_xlsx"
+      ],
+      "evidence": "Abstract: cohort of Filipino early-stage NSCLC LUAD patients. Table S1 inclusion criterion (both papers): Patient must be Filipino and 18-90 years of age."
+    },
+    {
+      "location": "characteristics[developmental stage] all 1440 rows",
+      "value": "adult",
+      "source_ids": [
+        "si_xlsx",
+        "paper_epmc"
+      ],
+      "evidence": "Inclusion criterion 18-90 years of age. Europe PMC MeSH includes Middle Aged and Aged. Adult is the supported developmental-stage term; exact ages are not in SI."
+    },
+    {
+      "location": "characteristics[age] all 1440 rows",
+      "value": "not available",
+      "source_ids": [
+        "si_xlsx",
+        "paper_epmc"
+      ],
+      "evidence": "No per-patient age table in PXD050598 SI (Tables S1-S9). Cohort range 18-90 is inclusion, not a sample-level age. Marked not available rather than inferred from the range."
+    },
+    {
+      "location": "characteristics[sex] patient rows (1152)",
+      "value": "male or female per individual",
+      "source_ids": [
+        "companion_si_xlsx"
+      ],
+      "evidence": "Companion SI pr6c00453_si_002.xlsx Table S6 abundance-column headers encode sex with the same patient codes and TMT channels as Table S2: S12 male, S13 female, S18 male, S19 male, S01 male, S03 male, S04 female, S24 female, S10 female, S11 male, S20 male, S22 female. NAT and Tumor from the same patient share sex."
+    },
+    {
+      "location": "characteristics[sex] Control_NT and Control_T rows (288)",
+      "value": "not available",
+      "source_ids": [
+        "companion_si_xlsx"
+      ],
+      "evidence": "Control NT is mixed tumor+NAT pool and Control T is mixed-patient tumor pool. Human template values validator accepts male/female/intersex; parse_sdrf rejects reserved word pooled on this column, so mixed-pool sex is not available."
+    },
+    {
+      "location": "characteristics[smoking status] patient rows",
+      "value": "never smoker or current smoker",
+      "source_ids": [
+        "companion_si_xlsx"
+      ],
+      "evidence": "Same Table S6 headers: Nonsmoker mapped to never smoker (S12, S13, S04, S24, S10, S20, S22); Smoker mapped to current smoker (S18, S19, S01, S03, S11). SI does not distinguish former vs current smoker. Template examples: never smoker, current smoker. Control channels not available."
+    },
+    {
+      "location": "comment[label] TMT10plex channels TMT126, TMT127N, TMT127C, TMT128N, TMT128C, TMT129N, TMT129C, TMT130N, TMT130C, TMT131",
+      "value": "TMT10plex reporter channels (bare TMT labels)",
+      "source_ids": [
+        "companion_si_xlsx",
+        "pride",
+        "raw_header"
+      ],
+      "evidence": "Companion Table S2 is TMT labeling assignments with channels 126, 127N, 127C, 128N, 128C, 129N, 129C, 130N, 130C, 131. PRIDE quantificationMethods TMT. Raw-file method string TMT10. Not TMTpro (UNIMOD:2016)."
+    },
+    {
+      "location": "source name / comment[label] / comment[sample preparation batch] channel map",
+      "value": "Batch mapping TMTB03=Table S2 Batch 1, TMTB04=Batch 2, TMTB05=Batch 3; 126=Control NT, 131=Control T, remaining channels paired NAT/Tumor per patient codes S12/S13/S18/S19 (batch 1), S01/S03/S04/S24 (batch 2), S10/S11/S20/S22 (batch 3)",
+      "source_ids": [
+        "companion_si_xlsx",
+        "raw_names",
+        "companion_files"
+      ],
+      "evidence": "Companion Table S2 (sheet Table S2) lists the 10-channel assignments for Batches 1-3. PXD050598 raw names encode TMTB03 (date 20220609), TMTB04 (20220905), TMTB05 (20221122). PXD071583 reuses the same _prot_ filenames (143/144 overlap; only 20220609_Philippine_LC_TMTB03_prot_F01-R1.raw is unique to PXD050598). Date order matches batch 1/2/3. PXD050598 SI Table S2 is a DEP list, not a TMT map; the map is taken from the companion SI of the same lab/cohort."
+    },
+    {
+      "location": "characteristics[disease] / factor value[disease] Tumor rows (720)",
+      "value": "lung adenocarcinoma",
+      "source_ids": [
+        "paper_epmc",
+        "si_xlsx",
+        "companion_si_xlsx"
+      ],
+      "evidence": "Paper title/abstract: early-stage NSCLC lung adenocarcinoma (LUAD). Table S1: histopathologically proven NSCLC adenocarcinoma. Tumor channels and Control T (pooled tumor) annotated as lung adenocarcinoma rather than the coarser PRIDE disease DOID:3908 non-small cell lung carcinoma because the paper/SI specify LUAD."
+    },
+    {
+      "location": "characteristics[disease] / factor value[disease] NAT rows (576)",
+      "value": "normal",
+      "source_ids": [
+        "pride",
+        "companion_si_xlsx",
+        "paper_epmc"
+      ],
+      "evidence": "PRIDE protocol: paired Tumor and adjacent normal tissue. Companion Table S2: NAT refers to adjacent normal lung tissues. Reserved word normal used for NAT."
+    },
+    {
+      "location": "characteristics[disease] / factor value[disease] Control_NT rows (144)",
+      "value": "not available",
+      "source_ids": [
+        "companion_si_xlsx",
+        "si_txt"
+      ],
+      "evidence": "Companion Table S2 caption: Control NT refers to pooled tumor tissues and NATs. Mixed pool cannot be assigned a single disease; marked not available. PXD050598 Fig S2 also shows T and NT reference samples."
+    },
+    {
+      "location": "characteristics[pooled sample] Control_NT and Control_T",
+      "value": "pooled",
+      "source_ids": [
+        "companion_si_xlsx",
+        "si_txt"
+      ],
+      "evidence": "Table S2 caption: Control NT = pooled tumor + NAT; Control T = pooled tumor tissues. Fig S2: reference samples T and NT."
+    },
+    {
+      "location": "characteristics[pooled sample] patient NAT/Tumor rows",
+      "value": "not pooled",
+      "source_ids": [
+        "companion_si_xlsx"
+      ],
+      "evidence": "Table S2 assigns a single patient code + NAT or Tumor per channel (S12 NAT, S12 Tumor, etc.)."
+    },
+    {
+      "location": "characteristics[individual] patient rows",
+      "value": "S01, S03, S04, S10, S11, S12, S13, S18, S19, S20, S22, S24",
+      "source_ids": [
+        "companion_si_xlsx"
+      ],
+      "evidence": "Patient codes from companion Table S2. Twelve patients, each with paired NAT and Tumor."
+    },
+    {
+      "location": "characteristics[individual] Control_NT and Control_T",
+      "value": "pooled",
+      "source_ids": [
+        "companion_si_xlsx"
+      ],
+      "evidence": "Pooled reference channels; reserved word pooled used for individual."
+    },
+    {
+      "location": "characteristics[histologic subtype] Tumor and Control_T rows",
+      "value": "lung adenocarcinoma",
+      "source_ids": [
+        "si_xlsx",
+        "paper_epmc"
+      ],
+      "evidence": "Inclusion: histopathologically or cytopathologically proven NSCLC adenocarcinoma. Control T is pooled tumor from the same LUAD cohort."
+    },
+    {
+      "location": "characteristics[histologic subtype] NAT rows",
+      "value": "not applicable",
+      "source_ids": [
+        "companion_si_xlsx"
+      ],
+      "evidence": "NAT is adjacent normal lung tissue, not a tumor histologic subtype."
+    },
+    {
+      "location": "characteristics[histologic subtype] Control_NT rows",
+      "value": "not available",
+      "source_ids": [
+        "companion_si_xlsx"
+      ],
+      "evidence": "Mixed tumor+NAT pool; histologic subtype cannot be assigned."
+    },
+    {
+      "location": "characteristics[biological replicate] all rows",
+      "value": "1",
+      "source_ids": [
+        "companion_si_xlsx"
+      ],
+      "evidence": "Each source (patient tissue or pool) appears once per TMT batch channel. No additional biological-replicate numbering is provided."
+    },
+    {
+      "location": "comment[technical replicate]",
+      "value": "1-2 for patient channels (R1/R2 injections); 1-6 for Control_NT and Control_T across three batches x two injections",
+      "source_ids": [
+        "raw_names",
+        "si_txt"
+      ],
+      "evidence": "Filenames encode Fxx-R1 and Fxx-R2 (two MS injections per fraction). Fig S2 legend: batch number_injection number_T or NT, with 1_1 through 3_2 for both T and NT (six reference injections). Patient samples are unique to one batch so tech 1-2; pooled controls repeat in all three batches so tech 1-6."
+    },
+    {
+      "location": "comment[sample preparation batch]",
+      "value": "TMTB03, TMTB04, TMTB05",
+      "source_ids": [
+        "raw_names",
+        "companion_si_xlsx"
+      ],
+      "evidence": "Raw filenames contain TMTB03/TMTB04/TMTB05. Mapped to companion Table S2 Batch 1/2/3 by acquisition date 20220609, 20220905, 20221122."
+    },
+    {
+      "location": "comment[data file] 144 unique .raw names, 1440 rows",
+      "value": "all 144 PRIDE .raw files; 10 TMT channels per file",
+      "source_ids": [
+        "pride_files",
+        "raw_names"
+      ],
+      "evidence": "PRIDE file list: 144 .raw + 3 .msf. files.json has 144 raw names. 144 files x 10 channels = 1440 rows. Fractions F01-F24 x injections R1/R2 x 3 batches = 144."
+    },
+    {
+      "location": "comment[fraction identifier]",
+      "value": "1-24 from F01-F24 in filenames",
+      "source_ids": [
+        "raw_names"
+      ],
+      "evidence": "Filename token _prot_Fnn-. 24 concatenated fractions per batch. Companion protocol describes hpRP into 96 fractions concatenated (companion phospho used 12; this proteome deposit has 24)."
+    },
+    {
+      "location": "comment[instrument] all rows",
+      "value": "NT=Orbitrap Fusion Lumos;AC=MS:1002732",
+      "source_ids": [
+        "pride",
+        "raw_header",
+        "companion_pride"
+      ],
+      "evidence": "PRIDE instruments MS:1002732 Orbitrap Fusion Lumos. Raw header: Orbitrap Fusion Lumos. Companion protocol: Orbitrap Fusion Lumos coupled to UltiMate 3000 RSLCnano."
+    },
+    {
+      "location": "comment[proteomics data acquisition method]",
+      "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+      "source_ids": [
+        "companion_pride",
+        "raw_header"
+      ],
+      "evidence": "Companion protocol: Top10 DDA workflow. Raw method consistent with DDA TMT. Not DIA."
+    },
+    {
+      "location": "comment[dissociation method]",
+      "value": "NT=beam-type collision-induced dissociation;AC=MS:1000422",
+      "source_ids": [
+        "raw_header",
+        "companion_pride"
+      ],
+      "evidence": "Companion: HCD MS2. Raw header collision energy 36 NCE. HCD maps to beam-type CID MS:1000422."
+    },
+    {
+      "location": "comment[collision energy]",
+      "value": "36 NCE",
+      "source_ids": [
+        "raw_header"
+      ],
+      "evidence": "Raw-file method string from 20220609_Philippine_LC_TMTB03_prot_F01-R1.raw header: CE36 / 36 NCE."
+    },
+    {
+      "location": "comment[fractionation method]",
+      "value": "NT=High-pH reversed-phase chromatography (hpHRP);AC=PRIDE:0000564",
+      "source_ids": [
+        "companion_pride"
+      ],
+      "evidence": "Companion sampleProcessingProtocol: labeled samples fractionated by high-pH reversed-phase LC. PXD050598 PRIDE protocol does not name the fractionation chemistry; 24 fractions in filenames support offline fractionation."
+    },
+    {
+      "location": "comment[cleavage agent details]",
+      "value": "NT=Trypsin;AC=MS:1001251",
+      "source_ids": [
+        "companion_pride",
+        "pride"
+      ],
+      "evidence": "PXD050598 PRIDE sampleProcessingProtocol only says 'Enzymatically digested' and does not name the enzyme. Companion PXD071583 protocol (same lab, overlapping _prot_ raw files): Lys-C 1:100 then trypsin 1:50. SDRF records Trypsin as the cleavage agent used in the search/digest; Lys-C is not a separate SDRF cleavage-agent column value here. This is inferred from the companion complete submission, not from a PXD050598 search parameter table (65 GB .msf not successfully parsed)."
+    },
+    {
+      "location": "comment[reduction reagent] / comment[alkylation reagent]",
+      "value": "DTT PRIDE:0000608; IAA PRIDE:0000599",
+      "source_ids": [
+        "companion_pride"
+      ],
+      "evidence": "Companion protocol: reduced with 10 mM DTT, alkylated with 5 mM iodoacetamide. Not stated in the short PXD050598 PRIDE protocol."
+    },
+    {
+      "location": "comment[precursor mass tolerance] / comment[fragment mass tolerance]",
+      "value": "10 ppm / 0.1 Da",
+      "source_ids": [
+        "companion_pride"
+      ],
+      "evidence": "Companion dataProcessingProtocol: precursor 10 ppm, fragment 0.1 Da in Proteome Discoverer 2.5 SEQUEST HT. PXD050598 PRIDE dataProcessingProtocol names Proteome Discoverer + Sequest HT but does not give tolerances. .msf search tables were not extracted."
+    },
+    {
+      "location": "comment[modification parameters] five columns",
+      "value": "Carbamidomethyl UNIMOD:4 C Fixed; TMT6plex UNIMOD:737 K Fixed; TMT6plex UNIMOD:737 Any N-term Fixed; Oxidation UNIMOD:35 M Variable; Acetyl UNIMOD:1 Protein N-term Variable",
+      "source_ids": [
+        "companion_pride",
+        "pride"
+      ],
+      "evidence": "Companion static mods: carbamidomethyl C (+57.022) and TMT on K and peptide N-termini (+229.163 = TMT6plex/TMT10plex UNIMOD:737, not TMTpro 304/UNIMOD:2016). Companion dynamic mods also include deamidation N/Q and phosphorylation STY; those belong to the phospho search (PXD071583) and are omitted here because PXD050598 identifiedPTMStrings is 'No PTMs are included in the dataset' and this is the proteome (not phospho) deposit. Oxidation M and protein N-terminal acetyl are retained as standard PD TMT proteome variable mods stated in the companion search description."
+    },
+    {
+      "location": "comment[sdrf template] four columns",
+      "value": "ms-proteomics v1.1.0; human v1.1.0; clinical-metadata v1.0.0; oncology-metadata v1.0.0",
+      "source_ids": [
+        "pride",
+        "paper_epmc"
+      ],
+      "evidence": "Human clinical LUAD tissue TMT DDA proteomics. Not DIA, not cell-line. Clinical and oncology metadata templates cover ancestry, age/sex placeholders, histologic subtype, disease factor."
+    },
+    {
+      "location": "technology type / comment[sdrf version] / comment[sdrf annotation tool]",
+      "value": "proteomic profiling; v1.1.0; manual curation",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "TMT LC-MS/MS proteomic profiling. Spec version v1.1.0. Built via sdrf-tools from samples.tsv + technical.tsv then curated."
+    }
+  ],
+  "limitations": [
+    "Primary paper DOI 10.1021/acs.jproteome.4c00764 is closed (Unpaywall oa_status=closed; no PMCID). Methods text was not available as full PDF; ACS HTML returned Cloudflare 403. Annotation of digest, reduction/alkylation, search tolerances, and TMT channel map therefore relies on PRIDE metadata, open SI, raw-file headers, and the companion PXD071583 complete submission from the same lab with overlapping _prot_ raw files.",
+    "PXD050598 SI Table S2 is a DEP list, not a TMT channel table. The TMT map is companion paper Table S2 (pr6c00453_si_002.xlsx).",
+    "Per-patient age and stage are not in the PXD050598 SI or companion Table S6 headers. Sex and smoking status were taken from companion Table S6 column headers (not a dedicated demographics table). Smoking 'Smoker' mapped to current smoker because former smoker is not distinguished.",
+    "Proteome Discoverer .msf files are 58-65 GB; HTTP-range SQLite walk did not extract Workflows/StudyInformation. Search parameters were not read from the deposited .msf.",
+    "PXD050598 PRIDE protocol does not name trypsin; cleavage agent is inferred from the companion Lys-C then trypsin protocol plus standard TMT PD search. sdrf-tools reconcile may flag cleavage_agent_unsupported against the PXD050598 protocol text alone.",
+    "Companion phospho search includes deamidation and phosphorylation; those mods are intentionally not copied onto this proteome SDRF.",
+    "PRIDE sampleAttributes list disease as non-small cell lung carcinoma (DOID:3908) and organism part includes epithelial cell of lung; the SDRF uses the more specific paper term lung adenocarcinoma for tumor samples and leaves cell type as not available for tissue lysates.",
+    "Community corpus path sdrf-annotated-datasets/datasets/PXD050598/ was absent at annotation time; this is a new annotation.",
+    "Independent review round 1 failed because required sex was left not available despite Table S6; round-2 SDRF fills patient sex/smoking from that table."
+  ]
+}

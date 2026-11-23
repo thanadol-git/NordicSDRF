@@ -28,8 +28,8 @@
   }
 </style>
 <rect class="bg" width="860" height="502" rx="6"/>
-<text class="title" x="12" y="22">Southeast Asia — scoped</text>
-<text class="sub" x="12" y="40">3 listed · 0 local SDRFs · 3 to do · 0 blocked · PRIDE queried 2026-11-23</text>
+<text class="title" x="12" y="22">Southeast Asia — in progress</text>
+<text class="sub" x="12" y="40">3 listed · 3 local SDRFs · 0 to do · 0 blocked · PRIDE queried 2026-11-23</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Local SDRF</text>
 <rect class="c-blocked" fill="#d95926" x="117" y="52" width="12" height="12" rx="2"/>
@@ -63,7 +63,7 @@
 <text class="city" x="12" y="268.0">Vietnam · Ho Chi Minh City</text>
 <text class="total" x="254.0" y="268.0">0 PRIDE hits</text>
 <text class="city" x="12" y="298.0">Philippines · Manila</text>
-<rect class="c-todo" fill="#8a8983" x="248.0" y="284" width="17.0" height="20" rx="2"><title>Philippines · Manila · To do: 3</title></rect>
+<rect class="c-annotated" fill="#2a78d6" x="248.0" y="284" width="17.0" height="20" rx="2"><title>Philippines · Manila · Local SDRF: 3</title></rect>
 <text class="seg" x="256.5" y="298.0" text-anchor="middle">3</text>
 <text class="total" x="272.0" y="298.0">3 listed</text>
 <text class="city" x="12" y="328.0">Indonesia · Jakarta</text>
