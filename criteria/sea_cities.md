@@ -1,10 +1,10 @@
-# Southeast Asia countries for a later PXD campaign
+# Southeast Asia countries for the PXD campaign
 
-Inventory only. These countries are **not** part of NordicSDRF: they are not in
-`config.yml`, they do not appear on the README charts, and there are no
-`lists/<country>/<city>.txt` manifests yet. Use this file when you start a
-sibling campaign (same `build_manifest.py` path: keyword search, then keep only
-records that confirm the country).
+Narrative reference for SEA cities now tracked in `config.yml` with `region: sea`.
+Progress is plotted together as `status/plots/sea.svg` (all cities on one chart).
+Manifests still appear under `lists/<country>/<city>.txt` when scoped; use the
+same `build_manifest.py` path (keyword search, then keep only records that
+confirm the country).
 
 Scope: the 10 ASEAN members plus Timor-Leste. Suggested order is by likely
 curated PXD count, not by geography.
@@ -115,5 +115,5 @@ python scripts/build_manifest.py malaysia kuala_lumpur --dry-run
 ```
 
 Keep an accession only when the PRIDE record itself confirms the SEA country.
-Do not add these countries to NordicSDRF `config.yml` until you actually want
-them on the Nordic status charts.
+Refresh numbers and `status/plots/sea.svg` with
+`python scripts/update_status.py --no-pride --corpus github` (or a full PRIDE run).

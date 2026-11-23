@@ -11,12 +11,13 @@ Two steps, both defined here so the table format lives in one place:
      Every PXD in a city's manifest is counted in exactly one category, so the
      categories add up to `listed`.
   2. plots    — this script reads only those TSVs and writes:
-       status/plots/<country>.svg  horizontal stacked bar per city
-       status/plots/overview.svg   vertical stacked bar per country (city sums)
+       status/plots/<country>.svg  horizontal stacked bar per city (nordic + affinity)
+       status/plots/overview.svg   vertical stacked bar per Nordic country
+       status/plots/sea.svg        horizontal stacked bar for all SEA cities together
      Stdlib only.
 
-    python scripts/plot_status.py                    # redraw overview + every country
-    python scripts/plot_status.py --country sweden   # one country chart (+ always overview)
+    python scripts/plot_status.py                    # redraw overview + sea + country charts
+    python scripts/plot_status.py --country sweden   # one country chart (+ always overview/sea)
 
 update_status.py rewrites the tables and redraws the plots every run, so a hand
 edit to a TSV only lasts until the next run. Run this by hand after editing a
@@ -87,6 +88,15 @@ def human_status(status: str | None) -> str:
     return (status or "not_started").replace("_", " ")
 
 
+def country_region(cdata: dict | None = None, row: dict | None = None) -> str:
+    """Campaign region: nordic | sea | affinity (default nordic for legacy rows)."""
+    if cdata and cdata.get("region"):
+        return cdata["region"]
+    if row and row.get("region"):
+        return row["region"]
+    return "nordic"
+
+
 # --------------------------------------------------------------------------- tables
 def write_tables(cfg: dict, breakdowns: dict[tuple[str, str], dict[str, int] | None]) -> list[Path]:
     """config.yml + per-city category counts -> tables/countries.tsv + tables/<country>.tsv.
@@ -97,9 +107,11 @@ def write_tables(cfg: dict, breakdowns: dict[tuple[str, str], dict[str, int] | N
     written = [TABLE_DIR / "countries.tsv"]
     with written[0].open("w", newline="") as fh:
         w = csv.writer(fh, delimiter="\t", lineterminator="\n")
-        w.writerow(["country", "name", "status", "pride_hits_queried"])
+        w.writerow(["country", "name", "region", "status", "pride_hits_queried"])
         for country, cdata in cfg["countries"].items():
-            w.writerow([country, cdata.get("name") or country.title(), cdata.get("status") or "not_started",
+            w.writerow([country, cdata.get("name") or country.title(),
+                        country_region(cdata=cdata),
+                        cdata.get("status") or "not_started",
                         cfg.get("pride_hits_queried", "")])
     for country, cdata in cfg["countries"].items():
         path = TABLE_DIR / f"{country}.tsv"
@@ -127,6 +139,10 @@ def read_tables(countries: list[str] | None = None) -> list[tuple[dict, list[dic
         with (TABLE_DIR / f"{row['country']}.tsv").open(newline="") as fh:
             out.append((row, list(csv.DictReader(fh, delimiter="\t"))))
     return out
+
+
+def rows_for_region(rows: list[tuple[dict, list[dict]]], region: str) -> list[tuple[dict, list[dict]]]:
+    return [(c, cities) for c, cities in rows if country_region(row=c) == region]
 
 
 def cell(row: dict, key: str) -> int | None:
@@ -243,14 +259,9 @@ def nice_ticks(max_val: int, target: int = 4) -> list[int]:
 
 
 def overview_svg(rows: list[tuple[dict, list[dict]]]) -> str:
-    """One vertical stacked bar per country, same CATEGORIES as the city charts.
-
-    Skips `affinity_pad` — that campaign is tracked separately from the Nordic countries.
-    """
+    """One vertical stacked bar per Nordic country (SEA / Affinity omitted)."""
     series = []
-    for country, cities in rows:
-        if country["country"] == "affinity_pad":
-            continue
+    for country, cities in rows_for_region(rows, "nordic"):
         totals = country_category_totals(cities)
         series.append({
             "key": country["country"],
@@ -327,15 +338,54 @@ def overview_svg(rows: list[tuple[dict, list[dict]]]) -> str:
     return "\n".join(out) + "\n"
 
 
+def sea_cities(rows: list[tuple[dict, list[dict]]]) -> list[dict]:
+    """Flatten SEA country tables into one city list labeled `Country · City`."""
+    out = []
+    for country, cities in rows_for_region(rows, "sea"):
+        cname = country.get("name") or country["country"].title()
+        for city in cities:
+            row = dict(city)
+            city_name = city.get("city") or ""
+            row["city"] = city_name if city_name == cname else f"{cname} · {city_name}"
+            out.append(row)
+    return out
+
+
+def sea_status(rows: list[tuple[dict, list[dict]]]) -> str:
+    statuses = [c.get("status") or "not_started" for c, _ in rows_for_region(rows, "sea")]
+    if "in_progress" in statuses:
+        return "in_progress"
+    if "scoped" in statuses:
+        return "scoped"
+    return "not_started"
+
+
 def write_plots(countries: list[str] | None = None) -> list[Path]:
-    """tables/*.tsv -> status/plots/overview.svg + status/plots/<country>.svg."""
+    """tables/*.tsv -> overview.svg + sea.svg + per-country charts (nordic/affinity only)."""
     PLOT_DIR.mkdir(parents=True, exist_ok=True)
     written = []
     all_rows = read_tables()
     overview = PLOT_DIR / "overview.svg"
     overview.write_text(overview_svg(all_rows))
     written.append(overview)
+
+    sea_rows = rows_for_region(all_rows, "sea")
+    if sea_rows:
+        queried = next((c.get("pride_hits_queried") for c, _ in sea_rows if c.get("pride_hits_queried")),
+                       "unknown date")
+        sea_meta = {
+            "country": "sea",
+            "name": "Southeast Asia",
+            "status": sea_status(all_rows),
+            "pride_hits_queried": queried,
+        }
+        sea_path = PLOT_DIR / "sea.svg"
+        sea_path.write_text(country_svg(sea_meta, sea_cities(all_rows)))
+        written.append(sea_path)
+
     for country, cities in read_tables(countries):
+        if country_region(row=country) == "sea":
+            continue  # SEA cities are only on sea.svg
         path = PLOT_DIR / f"{country['country']}.svg"
         path.write_text(country_svg(country, cities))
         written.append(path)

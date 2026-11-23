@@ -1,7 +1,18 @@
-country	name	status	pride_hits_queried
-sweden	Sweden	in_progress	2026-11-23
-denmark	Denmark	in_progress	2026-11-23
-norway	Norway	in_progress	2026-11-23
-finland	Finland	in_progress	2026-11-23
-iceland	Iceland	in_progress	2026-11-23
-affinity_pad	Affinity PAD	in_progress	2026-11-23
+country	name	region	status	pride_hits_queried
+sweden	Sweden	nordic	in_progress	2026-11-23
+denmark	Denmark	nordic	in_progress	2026-11-23
+norway	Norway	nordic	in_progress	2026-11-23
+finland	Finland	nordic	in_progress	2026-11-23
+iceland	Iceland	nordic	in_progress	2026-11-23
+singapore	Singapore	sea	not_started	2026-11-23
+thailand	Thailand	sea	not_started	2026-11-23
+malaysia	Malaysia	sea	not_started	2026-11-23
+vietnam	Vietnam	sea	not_started	2026-11-23
+philippines	Philippines	sea	not_started	2026-11-23
+indonesia	Indonesia	sea	not_started	2026-11-23
+myanmar	Myanmar	sea	not_started	2026-11-23
+laos	Laos	sea	not_started	2026-11-23
+cambodia	Cambodia	sea	not_started	2026-11-23
+brunei	Brunei	sea	not_started	2026-11-23
+timor_leste	Timor-Leste	sea	not_started	2026-11-23
+affinity_pad	Affinity PAD	affinity	in_progress	2026-11-23
