@@ -1,0 +1,4 @@
+accession	verdict	evidence	in_corpus	title
+PXD001726	rejected	countries=['United States'] | UC San Diego ; TU Berlin		Venom proteomics of Indonesian king cobra
+PXD011642	rejected	countries=['United States'] | University of Washington ; University of Washington Department of Genome Sciences	yes	Competition between microbes during anaerobic oxidation of methane: Bioreactor metaproteomics
+PXD068619	rejected	countries=['South Korea'] | Pusan National University ; Department of Plant Bioscience, Life and Industry Convergenc	yes	Datasets for comprehensive DIA-MS proteomics of root basal nodes elucidates mechanisms of salinity t

@@ -1,0 +1,49 @@
+accession	verdict	evidence	in_corpus	title
+PXD001307	confirmed	countries=['Malaysia']		Protein profiling of the oil palm leaves samples
+PXD003403	rejected	countries=['Brazil'] | Universidade Federal do Rio de Janeiro  ; Institute of Chemistry, Universidade Federal do Rio de Janei		Denaturing and native top-down venomics:  Mapping proteoforms and protein complexes from king cobra 
+PXD003723	confirmed	affiliation~'university of malaya': University of Malaya		Salivary biomarkers of diabetic retinopathy, part 1
+PXD003724	confirmed	affiliation~'university of malaya': University of Malaya		Potential salivary biomarkers with diabetic retinopathy, part 2
+PXD003725	confirmed	affiliation~'university of malaya': University of Malaya		Salivary biomarkers of diabetic retinopathy, part 3
+PXD004370	confirmed	countries=['Malaysia']		To compare the proteome of Stenotrophomonas maltophilia grown in normal and iron depleted condition
+PXD005020	confirmed	countries=['Malaysia']		In vitro infection of AGS cell line with Helicobacter pylori oipA “on” and “off” clinical strains re
+PXD005749	confirmed	countries=['Malaysia']		SWATH-MS Proteomics Analysis of Persicaria minor herb upon Methyl Jasmonate elicitation
+PXD006295	confirmed	countries=['Malaysia']		SWATH-MS dataset of Garcinia mangostana pericarp’s proteome across ripening stages
+PXD007251	confirmed	countries=['Malaysia']	yes	Pitcher fluid protein profiling of Nepenthes x ventrata
+PXD007599	confirmed	countries=['Malaysia']		Pitcher fluid protein profiling from Nepenthes spp.
+PXD007830	confirmed	affiliation~'university of malaya': Medical Microbiology, Faculty of Medicine, University of Malaya	yes	Candida albicans proteomics_Biofilm without treatment
+PXD007831	confirmed	affiliation~'university of malaya': Medical Microbiology, Faculty of Medicine, University of Malaya	yes	Candida albicans proteomics_planktonic culture without treatment
+PXD007832	confirmed	affiliation~'university of malaya': Medical Microbiology, Faculty of Medicine, University of Malaya	yes	Candida albicans proteomics_biofilm DMSO control
+PXD007833	confirmed	affiliation~'university of malaya': Medical Microbiology, Faculty of Medicine, University of Malaya	yes	Candida albicans proyeomics_Planktonic DMSO control
+PXD007834	confirmed	affiliation~'university of malaya': Medical Microbiology, Faculty of Medicine, University of Malaya	yes	Candida albicans proteomics_biofilm with Aureobasidin treatment
+PXD007835	confirmed	affiliation~'university of malaya': Medical Microbiology, Faculty of Medicine, University of Malaya	yes	Candida albicans proteomics_planktonic with Aureobasidin treatment
+PXD009579	confirmed	countries=['Malaysia']		Proteome profiles of oil palm fruit mesocarp
+PXD009933	confirmed	countries=['Malaysia']		proteomic analysis of gamma-tocotienol(GT3)-treated human diploid fibroblasts (HDFs)
+PXD010171	confirmed	countries=['Malaysia']		Extraction of Entamoeba histolytica membrane proteins using three extraction methods
+PXD010232	confirmed	countries=['Malaysia']		Hypolipidemic effects of Tamarindus indica fruit pulp extract
+PXD011373	confirmed	countries=['Malaysia']	yes	The effect of aqueous extract Gynura procumbens on fertility of diabetes induced male rats using pro
+PXD011893	confirmed	countries=['Malaysia']		Pitcher fluid protein profiling of Nepenthes ampullaria
+PXD013255	confirmed	countries=['Malaysia']		Evaluation of sodium deoxycholate as solubilization buffer
+PXD014916	confirmed	countries=['Malaysia']	yes	Proteomic responses of Candida glabrata to acetate as the sole carbon source
+PXD018338	confirmed	countries=['Malaysia']	yes	SWATH-based quantitative proteomics data derived from whole grain of Malaysian local pigmented and n
+PXD020292	rejected	countries=['Australia'] | Department of Biochemistry and Molecular Biology & Infection ; Department of Biochemistry and Molecular Biology & Infection		Influenza-derived peptide presentation by HLA-A*24:02
+PXD023223	confirmed	countries=['Malaysia']		The label-free quantitative secretome of MCF-7 cells treated with sumaCTX
+PXD024564	confirmed	countries=['Malaysia']		Proteomic Analysis on Anti-proliferative and Apoptosis Effects of Curcumin Analogue, 1,5-bis(4-hydro
+PXD024565	confirmed	countries=['Malaysia']		Proteomic Analysis on Anti-proliferative and Apoptosis Effects of Curcumin Analogue, 1,5-bis(4-hydro
+PXD028784	confirmed	countries=['Malaysia']		Pandanus amaryllifolius drought stress and recovery LC-MSMS TMT-Labelled
+PXD028985	rejected	countries=['Australia'] | Department of Biochemistry and Molecular Biology & Infection ; Infection and Immunity Program & Department of Biochemistry 	yes	Influenza-derived peptide presentation by HLA-A*11:01
+PXD028986	confirmed	countries=['Malaysia']		Proteomic analysis of oil palm's response to red palm weevil infestation
+PXD033191	confirmed	countries=['Malaysia']		Label-free quantitative proteomics analysis of Drosophila melanogaster lethal giant larvae mutants r
+PXD034654	confirmed	countries=['Malaysia']		The proteomic changes in MCF-7 cells in exposure to cytotoxin
+PXD040420	confirmed	countries=['Malaysia']		LC-MS peptide analysis of cytotoxin digested with multiple-proteolytic enzyme
+PXD040566	confirmed	countries=['Malaysia']	yes	A proteomic profiling in Alzheimer's Disease to identify the disregulation of proteins and pathology
+PXD045000	rejected	countries=['Australia'] | Department of Biochemistry and Molecular Biology & Infection ; Department of Biochemistry and Molecular Biology, Biomedicin	yes	Influenza B-derived peptide presentation by HLA-B*07:02, -B*08:01 and -B*35:01
+PXD045998	rejected	countries=['United Kingdom'] | University of Oxford ; Vice-Dean and Head of School, School of Biological Sciences,		Proteogenomics Pipeline For Pineapple
+PXD054693	confirmed	countries=['Malaysia']		Investigation of the rhythmic changes in the proteome of different subtypes of pancreatic ductal ade
+PXD055356	confirmed	countries=['Malaysia']	yes	Cross-linked mass spectrometry for protein-protein interaction with cytotoxin
+PXD057483	confirmed	countries=['Malaysia']	yes	Proteomic Profiling of Latex from Hevea Species
+PXD060699	rejected	countries=['Japan'] | Kyushu University ; Research Center for Integrative Evolutionary Science, The Gr	yes	Continuous and prolonged breastfeeding in wild Bornean orangutans verified with fecal proteomics
+PXD062381	rejected	countries=['United Kingdom'] | The Rosalind Franklin Institute & University of Oxford ; Biochemistry Department, Kavli Institute for Nanoscience Dis		Nipah G glycosylation site provides stability for receptor engagement
+PXD066081	confirmed	countries=['Malaysia']		Profiling pathogenesis stages of Ceratocystis manginecans infecting Acacia mangium using Tandem Mass
+PXD073738	confirmed	countries=['Malaysia']		Comparative Proteomic Profiling of Hevea brasiliensis Latex from 10- and 20-Year-Old Trees
+PXD077525	confirmed	countries=['Malaysia']		Predatory behavior of ixotrophy predator in response to nutrient availability
+PXD081994	confirmed	countries=['Malaysia']	yes	Proteomic Insights into Hepatic Responses to High Soybean Meal Inclusion with Citric Acid Supplement

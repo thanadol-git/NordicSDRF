@@ -327,7 +327,7 @@ countries:
   singapore:
     region: sea
     name: Singapore
-    status: not_started
+    status: in_progress
     cities:
       singapore:
         name: Singapore
@@ -340,13 +340,16 @@ countries:
           - Duke-NUS
         pride_hits: 463
         screened: 0
-        annotated: 0
-        blocked: 0
+        annotated: 2
+        blocked: 8
+        pxd_list: lists/singapore/singapore.txt
+        pxd_count: 263
+        in_corpus: 87
 
   thailand:
     region: sea
     name: Thailand
-    status: not_started
+    status: scoped
     cities:
       bangkok:
         name: Bangkok
@@ -355,6 +358,9 @@ countries:
         screened: 0
         annotated: 0
         blocked: 0
+        pxd_list: lists/thailand/bangkok.txt
+        pxd_count: 94
+        in_corpus: 32
       chiang_mai:
         name: Chiang Mai
         search_terms: ["Chiang Mai"]
@@ -362,11 +368,14 @@ countries:
         screened: 0
         annotated: 0
         blocked: 0
+        pxd_list: lists/thailand/chiang_mai.txt
+        pxd_count: 0
+        in_corpus: 0
 
   malaysia:
     region: sea
     name: Malaysia
-    status: not_started
+    status: scoped
     cities:
       kuala_lumpur:
         name: Kuala Lumpur
@@ -375,6 +384,9 @@ countries:
         screened: 0
         annotated: 0
         blocked: 0
+        pxd_list: lists/malaysia/kuala_lumpur.txt
+        pxd_count: 41
+        in_corpus: 14
       penang:
         name: Penang
         search_terms: ["Universiti Sains Malaysia", Penang]
@@ -383,11 +395,14 @@ countries:
         screened: 0
         annotated: 0
         blocked: 0
+        pxd_list: lists/malaysia/penang.txt
+        pxd_count: 3
+        in_corpus: 1
 
   vietnam:
     region: sea
     name: Vietnam
-    status: not_started
+    status: scoped
     cities:
       hanoi:
         name: Hanoi
@@ -396,6 +411,9 @@ countries:
         screened: 0
         annotated: 0
         blocked: 0
+        pxd_list: lists/vietnam/hanoi.txt
+        pxd_count: 5
+        in_corpus: 0
       ho_chi_minh:
         name: Ho Chi Minh City
         search_terms: ["Ho Chi Minh", Saigon]
@@ -403,6 +421,9 @@ countries:
         screened: 0
         annotated: 0
         blocked: 0
+        pxd_list: lists/vietnam/ho_chi_minh.txt
+        pxd_count: 0
+        in_corpus: 0
 
   philippines:
     region: sea
@@ -432,6 +453,9 @@ countries:
         screened: 0
         annotated: 0
         blocked: 0
+        pxd_list: lists/indonesia/jakarta.txt
+        pxd_count: 0
+        in_corpus: 0
 
   myanmar:
     region: sea
@@ -446,6 +470,9 @@ countries:
         screened: 0
         annotated: 0
         blocked: 0
+        pxd_list: lists/myanmar/yangon.txt
+        pxd_count: 0
+        in_corpus: 0
 
   laos:
     region: sea
@@ -460,6 +487,9 @@ countries:
         screened: 0
         annotated: 0
         blocked: 0
+        pxd_list: lists/laos/vientiane.txt
+        pxd_count: 0
+        in_corpus: 0
 
   cambodia:
     region: sea
@@ -473,6 +503,9 @@ countries:
         screened: 0
         annotated: 0
         blocked: 0
+        pxd_list: lists/cambodia/phnom_penh.txt
+        pxd_count: 0
+        in_corpus: 0
 
   brunei:
     region: sea
@@ -486,6 +519,9 @@ countries:
         screened: 0
         annotated: 0
         blocked: 0
+        pxd_list: lists/brunei/bandar_seri_begawan.txt
+        pxd_count: 0
+        in_corpus: 0
 
   timor_leste:
     region: sea
@@ -500,6 +536,9 @@ countries:
         screened: 0
         annotated: 0
         blocked: 0
+        pxd_list: lists/timor_leste/dili.txt
+        pxd_count: 0
+        in_corpus: 0
 
   affinity_pad:
     region: affinity

@@ -1,0 +1,484 @@
+accession	verdict	evidence	in_corpus	title
+PRD000212	legacy_id	countries=['Singapore']		Gastritis gastric juice profile
+PXD000214	confirmed	countries=['Singapore']		Identification of Autocrine Growth Factors Secreted by CHO cells for Applications in Single Cell Clo
+PXD000588	confirmed	countries=['Singapore']		A Quantitative Chemical Proteomics Approach to Profile the Specific Cellular Targets of Andrographol
+PXD000748	confirmed	countries=['Singapore']		LACI Plasma Microvesicle Biomarker
+PXD000771	confirmed	countries=['Singapore']		Proteomic characterisation of the salt gland-enriched tissues of the mangrove tree species Avicennia
+PXD000774	confirmed	countries=['Singapore']	yes	Mitral Valve Tissue Shotgun Proteomics
+PXD000811	rejected	countries=['United Kingdom'] | Faculty of Human and Medical Science ; Wellcome Trust Centre for Cell-Matrix Research, Faculty of L		Mouse kidney glomerular extracellular matrix LC-MSMS
+PXD000837	confirmed	countries=['Singapore']		Proteomic analysis of plasma membrane and tonoplast from the leaves of a mangrove plant Avicennia of
+PXD000998	confirmed	countries=['Singapore']		Gastric cancer_iTRAQ -  Integrating transcriptomics and proteomics to show that tanshinone IIA suppr
+PXD001123	confirmed	countries=['Singapore']		ZNF322A_lung cancer_iTRAQ_LC-MSMS
+PXD001250	rejected	countries=['Germany'] | Proteomics and Signal Transduction, Max Planck Institute of  ; Dept. Proteomics and Signal Transduction,  Max-Planck Instit		Cell-type and brain-region resolved mouse brain proteome
+PXD001426	confirmed	countries=['Singapore']	yes	EBprot: Bayesian Analysis of Labelling-based Quantitative Proteomics Data
+PXD001473	confirmed	countries=['Singapore']	yes	Brassinosteroid-Regulated Phosphorylation Dynamics in Arabidopsis
+PXD001618	confirmed	affiliation~'nanyang technological university': Nanyang Technological University	yes	Phosphatase POPX2 secretome SILAC
+PXD001650	confirmed	countries=['Singapore']		Evaluation of the Effect of Trypsin Digestion Buffers on Artificial Deamidation
+PXD001691	confirmed	countries=['Singapore']		An optimised protocol for protein extraction from salt gland-enriched tissues of a mangrove tree spe
+PXD002369	confirmed	countries=['Singapore']	yes	Selective labeling and eradication of antibiotic tolerant bacterial populations in pathogenic biofil
+PXD002466	rejected	countries=['Germany'] | Max Planck Institute of Psychiatry ; Centre for Cellular and Molecular Biology	yes	Wdr13-/0 compared to wild-type mice hippocampus and pre-frontal cortex iTRAQ proteomics
+PXD002516	confirmed	countries=['Singapore']		Human Brain LC-MS/MS -  Dementia-linked amyloidosis is associated with brain protein deamidation as 
+PXD002542	rejected	countries=['Russia'] | Research Institute of Physical Chemical Medicine ; MD, PhD, DSc Head of laboratory of Molecular microbial genet		Proteome analysis of the M. tuberculosis Beijing B0/W148 cluster
+PXD002611	confirmed	countries=['Singapore']		Heme-activated Promiscuous Targeting of Artemisinin in Plasmodium falciparum
+PXD002661	confirmed	countries=['Singapore']		Global Metabonomic and Proteomic Analysis of Human Conjunctival Epithelial Cells (IOBA-NHC) in Respo
+PXD002668	confirmed	countries=['Singapore']		Isolation of extracellular vesicles by PROSPR
+PXD002671	rejected	countries=['Spain'] | Universitat de Valencia ; Departament de Bioquímica i Biologia Molecular, Universitat 		Tandem affinity purification of histones, coupled to mass spectrometry, identifies new sites of post
+PXD002772	confirmed	countries=['Singapore']	yes	Structural determinants of heparin–transforming growth factor-β1 interactions and their effects on s
+PXD002811	confirmed	countries=['Singapore']		Peptide recovery from acid-precipitated sodium deoxycholate pellet
+PXD002927	confirmed	countries=['Singapore']	yes	Phosphoprotein network analysis of white adipose tissues unveils deregulated pathways in response to
+PXD002939	rejected	countries=['Spain'] | Proteomics - Bioinformatics ; Vaccine and Gene Expresion group. Molecular Microbiology and		Differential gene expression in Leishmania [SPP.] promastigotes. Leishmania chagasi
+PXD002950	confirmed	countries=['Singapore']	yes	Plasma-derived extracellular vesicles contain predictive biomarkers and potential therapeutic target
+PXD003027	confirmed	countries=['Singapore']		AD+CVD temporal lobe proteome -  Gender differences in white matter pathology and mitochondrial dysf
+PXD003064	confirmed	countries=['Singapore']		Top-down characterization of lunasin in a commercial soybean-derived product
+PXD003288	confirmed	countries=['Singapore']		CNS-EVs enriched by PROSPR -  Enrichment of extracellular vesicles from tissues of the central nervo
+PXD003521	confirmed	affiliation~'singapore': National University of Singapore		Identification of Cypermethrin Induced Proteins Changes in Green Algae by iTRAQ Quantitative Proteom
+PXD003546	confirmed	countries=['Singapore']		Quantitative Chemical Proteomics Profiling of de novo Proteins Synthesis during Starvation-Mediated 
+PXD003723	confirmed	countries=['Singapore']		Salivary biomarkers of diabetic retinopathy, part 1
+PXD003724	confirmed	countries=['Singapore']		Potential salivary biomarkers with diabetic retinopathy, part 2
+PXD003725	confirmed	countries=['Singapore']		Salivary biomarkers of diabetic retinopathy, part 3
+PXD003799	rejected	countries=['United Kingdom'] | University of Bristol, Bristol UK ; School of Cellular and Molecular Medicine, Faculty of Biomed		Proteomics Informed by Transcriptomics for Characterising Active Transposable Elements and Genome An
+PXD003851	confirmed	countries=['Singapore']		Reticulocytes vs mature red blood cell
+PXD003937	confirmed	countries=['Singapore']	yes	Gamma ray irradiation of epithelial carcinoma cells under hypoxic conditions
+PXD003940	confirmed	countries=['Singapore']	yes	Phosphatase POPX2 exhibits dual regulatory functions in cancer metastasis
+PXD004181	rejected	countries=['Germany'] | MPI for Biophysical Chemistry ; 1. Bioanalytical Mass Spectrometry Group, Max Planck Institu	yes	HSP90 promotes Burkitt lymphoma cell survival by maintaining tonic B cell receptor signaling
+PXD004274	confirmed	countries=['Singapore']		Comparative ploidy proteomics of Candida albicans biofilms unraveled the role of AHP1 in the biofilm
+PXD004355	confirmed	countries=['Singapore']		Characterization of protein deamidation by shotgun proteomics
+PXD004545	rejected	countries=['Germany'] | Max Planck Institute of Psychiatry ; Centre for Cellular and Molecular Biology, Hyderabad, India	yes	wdr13 knockout mice develops MD like phenotype on chronic stress
+PXD004560	confirmed	affiliation~'singapore': Experimental Therapeutics centre, A-STAR, Singapore	yes	Pseudomonas aeroginosa resistant against Ciprofloxacin
+PXD004561	rejected	"countries=['Netherlands'] | University Medical Center Utrecht
+Dept. Molecular Cancer Re ; Center for Molecular Medicine, Molecular Cancer Research, Un"	yes	Proteome-wide changes in proteostasis in C. elegans models of longevity and age-related disease.
+PXD004882	confirmed	countries=['Singapore']	yes	Greatwall kinase regulates SAC by controlling phosphorylation and activity of MPS1
+PXD004940	rejected	countries=['Spain'] | Centre de Regulació Genòmica ; 1. Proteomics Unit, Centre de Regulació Genòmica, 08003 Barc		Performance of the Orbitrap Fusion Lumos Tribrid in single-shot analyses of human samples
+PXD005239	confirmed	affiliation~'singapore': Department of Civil and Environmental Engineering, National University of Singapore, Singa		iTRAQ experiment on Clostridium strain BOH3
+PXD005863	rejected	countries=['France'] | EDyP ; EDyP	yes	Identification of TH2B partners
+PXD005865	confirmed	countries=['Singapore']		Phosphoproteomics of STMN1 knockdown cells
+PXD005894	rejected	countries=['United States'] | Colorado State University ; Microbiology, Immunology and Pathology, Lab C210, Colorado S	yes	Proteome changes as consequence of altered c-di-GMP metabolism in BCG
+PXD006035	confirmed	countries=['Singapore']		On-line desalting of sodium dodecyl sulfate in mass spectrometry
+PXD006178	confirmed	countries=['Singapore']		A quantitative proteomic based approach to study the genistein induced epigenetic reprogramming in M
+PXD006233	confirmed	countries=['Singapore']	yes	uDPMs in AD+CVD -  Brain ureido degenerative protein modifications are associated with neuroinflamma
+PXD006333	confirmed	countries=['Singapore']	yes	iTRAQ-MRM approach identify plasma biomarkers of atherosclerosis and myocardial injury
+PXD006366	rejected	countries=['United States'] | North Carolina State University ; Department of Geoscience, University of Calgary	yes	Re-analysis of an ultra-deep and quantitative saliva proteome
+PXD006542	confirmed	countries=['Singapore']	yes	Enterococcus faecalis biofilm proteome
+PXD006640	confirmed	countries=['Singapore']		Proteomics analysis of amyloid corneal aggregates from lattice corneal dystrophy patients
+PXD006734	rejected	"countries=['Sweden'] | Department of Biochemistry and Structural Biology
+Kemicentr ; Deparment of Boichemistry and Structural Biology  Center for"		Thylakoid membranes from Arabidopsis LC-MSMS
+PXD006922	confirmed	countries=['Singapore']		A multiplex targeted mass spectrometry assay for one-shot flavivirus diagnosis
+PXD006992	confirmed	countries=['Singapore']		PROTEOLYTIC SIGNATURES OF THROMBIN-DERIVED PEPTIDES by LC-MS/MS
+PXD007051	confirmed	countries=['Singapore']	yes	Phosphoproteomics reveals network rewiring to a pro-adhesion state in Annexin-1-deficient mammary ep
+PXD007224	confirmed	countries=['Singapore']		Human hair shaft LC-MS/MS -  Studies on the Proteome of Human Hair - Identification of Histones and 
+PXD007624	confirmed	countries=['Singapore']		Human aqueous humor of Primary open angle glaucoma  LC-MS/MS
+PXD007830	confirmed	countries=['Singapore']	yes	Candida albicans proteomics_Biofilm without treatment
+PXD007831	confirmed	countries=['Singapore']	yes	Candida albicans proteomics_planktonic culture without treatment
+PXD007832	confirmed	countries=['Singapore']	yes	Candida albicans proteomics_biofilm DMSO control
+PXD007833	confirmed	countries=['Singapore']	yes	Candida albicans proyeomics_Planktonic DMSO control
+PXD007834	confirmed	countries=['Singapore']	yes	Candida albicans proteomics_biofilm with Aureobasidin treatment
+PXD007835	confirmed	countries=['Singapore']	yes	Candida albicans proteomics_planktonic with Aureobasidin treatment
+PXD008075	rejected	countries=['South Africa'] | University of Cape Town ; Division of Chemical and Systems Biology, Department of Inte		Cell wall enrichment unveils proteomic changes in the cell wall during treatment of Mycobacterium sm
+PXD008090	confirmed	countries=['Singapore']		Proteomic Profiling of Barley Spent Grains
+PXD008609	confirmed	countries=['Singapore']	yes	TTG1 interacting profile -  Site-specific phosphorylation of TRANSPARENT TESTA GLABRA1 mediates carb
+PXD008794	confirmed	countries=['Singapore']	yes	Molecular profiling of vascular beds in vivo by DISDIVO
+PXD008834	confirmed	countries=['Singapore']		Proteomic analysis of Candida albicans dnm1 mutant
+PXD008837	confirmed	countries=['Singapore']		Differential regulation of tobacco host factors upon TMV infection
+PXD009093	confirmed	countries=['Singapore']	yes	Brain-derived and circulating EVs from hypoperfused mice, early AD and mixed dementias
+PXD009222	confirmed	countries=['Singapore']		HEK-AXL glycopeptides supporting GlycopeptideGraphMS development
+PXD009379	rejected	countries=['Germany'] | University of Hohenheim ; University of Hohenheim, Institute of Microbiology, 70599 St		Metabolic reprogramming of Vibrio cholerae impaired in respiratory NADH oxidation is accompanied wit
+PXD009525	confirmed	countries=['Singapore']	yes	Dual-function thermogelling polymers as effective endotamponade for retinal detachment repair and re
+PXD009565	rejected	countries=['United States'] | Institute for Systems Biology ; Institute for Systems Biology	yes	Iceman stomach content -  The 5300-year-old Helicobacter pylori genome of the Iceman
+PXD009584	rejected	countries=['China'] | Zhejiang University ; Center for Cultivation of Subtropical Forest Resources (CCSF	yes	Quantitative succinyl-proteome profiling of hickory (Carya cathayensis) during grafting process
+PXD010261	confirmed	countries=['Singapore']		iTRAQ-based quantitative proteomics unravels synergistic bacterial-fungal interactions in an oral cr
+PXD010514	rejected	countries=['Germany'] | University of Greifswald, Institute of Microbiology ; Department of Microbial Physiology and Molecular Biology, In	yes	Differential view on the bile acids stress response of Clostridioides difficile
+PXD010525	rejected	countries=['Germany'] | University of Greifswald, Institute of Microbiology ; Department of Microbial Physiology and Molecular Biology, In		Differential view on the bile acids stress response of Clostridioides difficile_longterm stress
+PXD010567	confirmed	countries=['Singapore']	yes	Immunomic identification of antigens
+PXD010628	rejected	countries=['United Kingdom'] | University of Oxford ; Target Discovery Institute, Nuffield Department of Medicine,		Nitric oxide modulates metabolic remodelling and  immunometabolism in inflammatory murine macrophage
+PXD010873	rejected	countries=['Switzerland'] | Philip Morris International R&D, Philip Morris Products S.A. ; Philip Morris International R&D, Philip Morris Products S.A.		A 6-Month Systems Toxicology Inhalation/Cessation Study in ApoE-/- Mice to Investigate Cardiovascula
+PXD010874	rejected	countries=['Switzerland'] | Philip Morris International R&D, Philip Morris Products S.A. ; Philip Morris International R&D, Philip Morris Products S.A.		A 6-Month Systems Toxicology Inhalation/Cessation Study in ApoE-/- Mice to Investigate Cardiovascula
+PXD010875	rejected	countries=['Switzerland'] | Philip Morris International R&D, Philip Morris Products S.A. ; Philip Morris International R&D, Philip Morris Products S.A.		A 6-Month Systems Toxicology Inhalation/Cessation Study in ApoE-/- Mice to Investigate Cardiovascula
+PXD011136	confirmed	countries=['Singapore']	yes	Uncovering nutrient-regulated surface proteins using stable isotope labeling with amino acids in cel
+PXD011630	confirmed	affiliation~'singapore': Translational Laboratory in Genetic Medicine, Agency for Science, Technology and Research,	yes	Integrative analysis identifies key molecular signatures underlying neurodevelopmental deficits in f
+PXD011633	confirmed	countries=['Singapore']	yes	iTRAQ based analysis of leaf proteome identifies important proteins in secondary metabolite biosynth
+PXD011825	confirmed	affiliation~'singapore': Department of Biological Science, National University of Singapore Singapore		Proteomic analysis of TMV and TMV 24A+UPD infected N. benthamiana plants by iTRAQ reveal differences
+PXD012112	confirmed	countries=['Singapore']		Shotgun mass spectrometry characterization of beef jerky and unprocessed beef meat
+PXD012132	rejected	countries=['Spain'] | CIB.CSIC ; Proteomics and Genomics Facility		Proteomic signature of neuroblastoma cells UKF-NB-4 reveals key role of lysosomal sequestration and 
+PXD012203	confirmed	countries=['Singapore']	yes	Proteomics of Brain Proteome Revealed Altered Mitochondrial Function in Alzheimer Disease
+PXD012279	rejected	countries=['Spain'] | Instituto de Salud Carlos III ; UFIEC, Chronic Disease Programme, Functional Proteomics Unit	yes	Delineation of the olive pollen proteome: A focus on its allergen families
+PXD012280	rejected	countries=['Spain'] | Instituto de Salud Carlos III ; UFIEC, Chronic Disease Programme, Functional Proteomics Unit		Delineation of the olive pollen proteome: A focus on its allergen families reveals cyclophilin as a 
+PXD012334	rejected	countries=['Spain'] | Instituto de Salud Carlos III ; UFIEC, Chronic Disease Programme, Functional Proteomics Unit	yes	Delineation of the olive pollen proteome: A focus on its allergen families reveals cyclophilin as a 
+PXD012628	rejected	countries=['United States'] | UC Davis ; University of California Davis, College of Agricultural and 	yes	Genetically Variant Peptide Biomarkers from Fingermarks
+PXD012667	confirmed	countries=['Singapore']		Oxidative Stress Biomarker of Type 2 Diabetes Mellitus
+PXD013176	confirmed	countries=['Singapore']		Tracking genome-editing and associated molecular perturbations by SWATH mass spectrometry
+PXD013186	rejected	"countries=['Germany'] | University of Greifswald,
+Department for Microbial Proteomi ; University of Greifswald Center of Functional Genomics of Mi"	yes	The lactococcal phage p2 protein ORF47 impedes Lactococcus lactis MG1363 resistance to phage infecti
+PXD013310	confirmed	countries=['Singapore']		Quantitative proteomic analysis of simian primary hepatocytes reveals candidate molecular markers fo
+PXD013412	rejected	"countries=['Germany'] | University of Greifswald,
+Department for Microbial Proteomi ; University of Greifswald Institute of Microbiology Departmen"	yes	Proteomics analysis of the Enterobacter cloacae response to imipenem
+PXD013502	confirmed	countries=['Singapore']	yes	In vivo murine brain protein synthesis uncover the molecular physiological process in brain
+PXD013824	rejected	countries=['China'] | PTM Biolabs lnc. ; Department of Pathophysiology, School of Basic Medical Scien		Proteomics reveals the inhibitory mechanism of Levodopa against esophageal squamous cell carcinoma
+PXD014087	confirmed	countries=['Singapore']		Proteomics analysis of pancreatic cancer cell line (MiaPaCa-2)
+PXD014314	rejected	countries=['China'] | Center of Reproductive Medicine, Huai’an Maternity and Child ; Center of Reproductive Medicine, Huai’an Maternity and Child		Proteomic-based identification of oocyte maturation-related proteins in mouse GV oocytes
+PXD014580	rejected	countries=['United Kingdom'] | Durham University ; Department of Chemistry, Durham University, Stockton Road, D		Quantitative proteomics profiling of NSPs in Leishmania mexicana parasites during starvation
+PXD014692	confirmed	affiliation~'singapore': NUS Singapore		Avian reproductive tissue proteome (zebra finch)
+PXD014736	confirmed	countries=['Singapore']	yes	c-Met activation leads to the establishment of a TGFβ receptor regulatory network required for bladd
+PXD014967	confirmed	countries=['Singapore']	yes	Insights into Early Recovery from Influenza Pneumonia by Spatial and Temporal Quantification of Puta
+PXD015008	confirmed	countries=['Singapore']	yes	MELK mediates the stability of EZH2 throught site-specific phosphorylation in extranodal natural kil
+PXD015137	rejected	countries=['Croatia'] | School of Medicine, University of Zagreb ; Department for Proteomics, Center for Translational and Clin	yes	hnRNP M and HSP 90α as Potential Biomarkers in Early Stage Cutaneous Head and Neck Melanoma Tissue
+PXD015221	rejected	countries=['Austria'] | University of Vienna, Dept. of Functional and Evolutionary E ; department of ecogenomics and systemsbiology University of V		MOA:Multiomics analysis of potato response to Potato virus Y (PVY) infection
+PXD015393	confirmed	countries=['Singapore']		Phosphoproteome profiling unravels rewiring of chromatin organization factors in host cells upon HBV
+PXD015452	confirmed	countries=['Singapore']		Multiomics Analyses Reveal Dynamic Bioenergetic Pathways and Functional Remodeling of the Heart Duri
+PXD015578	confirmed	countries=['Singapore']	yes	Alzheimer stage proteomics study
+PXD016016	confirmed	countries=['Singapore']		Structural insights into a HECT-type E3 ligase AREL1
+PXD016047	confirmed	countries=['Singapore']	yes	A comprehensive CHO SWATH-MS spectral library for accurate quantitative profiling of 10k proteins
+PXD016460	rejected	countries=['Switzerland'] | Philip Morris International R&D, Philip Morris Products S.A. ; Philip Morris International R&D, Philip Morris Products S.A.	yes	Respiratory effects of exposure to aerosol from the candidate modified-risk tobacco product THS 2.2 
+PXD016466	rejected	countries=['Switzerland'] | Philip Morris International R&D, Philip Morris Products S.A. ; Philip Morris International R&D, Philip Morris Products S.A.		Respiratory effects of exposure to aerosol from the candidate modified-risk tobacco product THS 2.2 
+PXD017025	confirmed	countries=['Singapore']		Comprehensive proteomic characterization reveals subclass-specific molecular aberrations within trip
+PXD017254	rejected	countries=['United States'] | CCDC CBC ; CCDC CBC		Plasma Biomarkers for VX exposure in guinea pigs
+PXD018185	rejected	countries=['Switzerland'] | Philip Morris International R&D, Philip Morris Products S.A. ; Philip Morris International R&D, Philip Morris Products S.A.	yes	Impact of whole-body versus nose-only exposure systems on systemic, respiratory, and cardiovascular 
+PXD018245	rejected	countries=['Spain'] | CIB.CSIC ; Centro de Investigaciones Biológicas, Consejo Superior de In		Intercellular Transmission of a Synthetic Bacterial Cytotoxic Prion-Like Protein in Mammalian Cells.
+PXD018533	rejected	countries=['Germany'] | Georg-August-Universität Göttingen ; Georg-August-University Göttingen, Department of Molecular M		V. longisporum elicits media-dependent secretome responses with a further capacity to distinguish be
+PXD018681	rejected	countries=['Canada'] | Proteomic Platform ; IRIC-Université de Montréal	yes	NRS1, a nitrogen source-regulated microprotein, confers an alternative mechanism of G1/S transcripti
+PXD018897	confirmed	countries=['Singapore']		Identification of sex steroid hormones binding proteins in Pseudomonas aeruginosa.
+PXD018988	rejected	countries=['Argentina'] | INSIBIO- Tucuman ; Instituto Superior de Investigaciones Biológicas (INSIBIO), 		Phosphate-mediated adaptations in L. paraplantarum CRL 1905
+PXD019110	confirmed	countries=['Singapore']	yes	Structural basis of human full-length kindlin-3 homotrimer in an auto-inhibited state
+PXD019470	confirmed	countries=['Singapore']		Proteomic analysis of Pseudomonas aeruginosa purified outer membrane vesicle (OMV) extracts exposed 
+PXD019488	confirmed	countries=['Singapore']		Identification of TbUnc119-interacting proteins by proximity-based biotinylation
+PXD019694	confirmed	countries=['Singapore']		SOX4 supports cancer stemness by enhancing HDAC1 transcription revealed by comparative proteomics
+PXD020167	rejected	countries=['India'] | Engineer at NTNU, Norway ; Professor, Department of Biology, Norwegian University of Sc	yes	Mass spectrometry of P. tricornutum proteome, Bohlin clone Pt1 8.6 (CCMP632) culture, cpsrp54-8, cps
+PXD020384	confirmed	countries=['Singapore']	yes	Hydrogen sulfide sensitizes Acinetobacter baumannii to killing by antibiotics.
+PXD020473	confirmed	countries=['Singapore']	yes	The RB/E2F pathway controls expression of the cancer genomic DNA deaminase APOBEC3B
+PXD020775	rejected	countries=['Germany'] | University of Greifswald, Institute of Microbiology ; University of Greifswald, Institute of Microbiology, Departm	yes	An integrated multi-omics protocol for swine feces reveals congruent longitudinal dynamics in microb
+PXD020906	confirmed	countries=['Singapore']	yes	Novel carfilzomib-based combinations as potential therapeutic strategies for liposarcomas
+PXD021001	confirmed	countries=['Singapore']	yes	Novel carfilzomib-based combinations as potential therapeutic strategies for liposarcomas
+PXD021823	confirmed	countries=['Singapore']	yes	Systematic analysis of intronic microRNAs reveals cooperativity within the multi-component FTX locus
+PXD021873	rejected	countries=['United States'] | Department of Biochemistry and Molecular Biology, Pennsylvan ; Department of Biochemistry and Molecular Biology, Pennsylvan	yes	Molecular architecture and domain arrangement of the placental malaria protein VAR2CSA suggests a mo
+PXD021891	rejected	countries=['Germany'] | Leibniz Institute on Aging ; Leibniz Institute on Aging – Fritz Lipmann Institute (FLI), 		Mapping sites of carboxymethyllysine modification on proteins reveals consequences for proteostasis 
+PXD021926	confirmed	countries=['Singapore']		A novel enzyme-mediated method for covalent surface modification of extracellular vesicles to achiev
+PXD022255	confirmed	affiliation~'a*star': A*STAR-SRIS		TMT-MS2_cellular adaptation to hypomorphic alleles of essential gene NUP58
+PXD022379	rejected	countries=['Italy'] | University of Padua ; University of Padua		GLUTAMINE METABOLISM VIA TRANSAMINATION REGULATES VEGFR2 TRANSLATION DURING ANGIOGENESIS
+PXD023063	rejected	countries=['India'] | Microbial Engineering Group, International Centre for Geneti ; ICGEB		Comparative proteomic analysis of secretomes from engineered Penicillium funiculosum modulated with 
+PXD023138	confirmed	countries=['Singapore']		SARS-CoV-2 S protein ACE2 interaction reveals novel allosteric targets
+PXD023212	rejected	countries=['France'] | UMR UCA/INRA 1095 ; Université Clermont Auvergne, INRAE, UMR 1095 Genetics, Dive		Proteomics-based data integration of wheat cultivars facing Fusarium graminearum strains revealed a 
+PXD023373	confirmed	countries=['Singapore']		Long-read transcriptome sequencing reveals abundant promoter diversity in distinct molecular subtype
+PXD023455	confirmed	countries=['Singapore']		KDM4C epigenetically regulates and forms a feed-forward loop with ALDH1A3 to maintain gastric cancer
+PXD023484	rejected	countries=['United States'] | Harvard Medical School ; Professor, Dept. Cell Biology   Director, Taplin Biological 		Iron deficiency and recovery in yeast: a quantitative proteomics approach
+PXD023653	rejected	countries=['Australia'] | The University of Queensland Diamantina Institute, Translati ; Lab Head, UQ Diamantina Institute,The University of Queensla		Elp2 mutations perturb the epitranscriptome and lead to a complex neurodevelopmental phenotype
+PXD023678	rejected	countries=['Germany'] | uni ; University of Greifswald, Animal Physiology and Biochemistry	yes	Major determinants of airway epithelial cell sensitivity to S. aureus alpha-toxin:  Disposition of t
+PXD023909	confirmed	countries=['Singapore']		Exosomal Proteins and Brown Fat Activation
+PXD024031	rejected	countries=['Japan'] | Tohoku University, Graduate School of Life Sciences ; Laboratory of Membrane Trafficking Mechanisms, Department of		Proteomic analysis of small extracellular vesicles released from polarized MDCK cells
+PXD024039	rejected	countries=['China'] | First Affiliated Hospital of Jinan University ; Jinan University		Effect of ATP2 deletion on protein expression in Candida albicans
+PXD024380	confirmed	countries=['Singapore']		Aging-induced isoDGR-modified fibronectin activates monocytic and endothelial cells to promote ather
+PXD024464	confirmed	countries=['Singapore']	yes	Proximity proteomics identifies PAK4 as a component of Afadin–Nectin junctions.
+PXD024630	confirmed	countries=['Singapore']		ZNF524 directly binds telomeres and supports their integrity via TRF2/RAP1
+PXD024642	rejected	countries=['China'] | Nanjing Agircultural University ; Nanjing Agricultural Univeristy, Nanjing, China	yes	mTOR-mediated phosphorylation of VAMP8 prevents a starvation-induced VAMP8-SCFD1 interaction that pr
+PXD024769	confirmed	countries=['Singapore']		Cytosine methylation of tRNA in Plasmodium falciparum disrupts translational homeostasis to prime fo
+PXD024983	confirmed	countries=['Singapore']		Bifunctional dehalogenases in Dehalococcoides mediate complete debromination of penta- and tetra-bro
+PXD025122	rejected	countries=['United Kingdom'] | Edinburgh University ; Centre for Synthetic and Systems Biology (SynthSys) Universi	yes	RNase III CLASH uncovers sRNA regulatory networks coupling metabolism to production of cytolytic tox
+PXD025299	confirmed	countries=['Singapore']		Semi-automated Glycoproteomic Data Analysis of LC-MS data using GlycopeptideGraphMS in Lead and Proc
+PXD025356	confirmed	countries=['Singapore']	yes	Secretory autophagy mediates mitochondria clearance in the absence of the mATG8-conjugation machiner
+PXD025616	confirmed	affiliation~'singapore': Department of  Molecular Biology and Genetics, Cornell University, USA; Institute for Digi	yes	Comparative mass spectrometry of extracellular vesicles
+PXD026038	confirmed	countries=['Singapore']		iTRAQ-based quantitative proteomics suggests mitophagy involvement after Rice black-streaked dwarf v
+PXD026057	rejected	countries=['Germany'] | University of Hohenheim ; University of Hohenheim, Stuttgart, Germany		Prevotella_monensin_time series
+PXD026085	rejected	countries=['Germany'] | University of Hohenheim ; University of Hohenheim, Stuttgart, Germany		Prevotella monensin concentration
+PXD026217	rejected	countries=['United States'] | Yale University ; Department of Cellular & Molecular Physiology, Yale School o	yes	OTS Development and E. coli Proteome LC-MSMS
+PXD026343	confirmed	countries=['Singapore']		Tensin3 interaction with talin drives formation of fibronectin-associated fibrillar adhesions
+PXD026508	confirmed	countries=['Singapore']	yes	Withaferin A inhibits LFA-1-stimulated ZAP70 activity and T-cell motility
+PXD026605	rejected	"countries=['Germany'] | Chair of Organic Chemistry II
+Technical University of Munich ; Department of Chemistry, Chair of Organic Chemistry II, Cent"	yes	Listeria monocytogenes utilizes the ClpP1/2 proteolytic machinery for fine-tuned substrate degradati
+PXD026689	confirmed	countries=['Singapore']	yes	Development and characterization of vorinostat resistant cutaneous T cell lymphoma cells
+PXD026873	rejected	countries=['United States'] | North Carolina State University ; North Carolina State University		Proteomics of phage VPE25 treated Enterococcus faecalis OG1RF relative to untreated controls
+PXD026932	confirmed	countries=['Singapore']	yes	reductive debromination of polybrominated diphenyl ethers by Dehalococcoides
+PXD027027	confirmed	"affiliation~'singapore': Currently: School of Integrative Plant Science, Cornell University
+Previously: School of B"		A prion-like protein from a red-type pyrenoid forms heterotypic Rubisco condensates via sticker tetr
+PXD027124	confirmed	countries=['Singapore']		Human CK1 alpha (CK1α) 5'UTR-interacting proteins
+PXD027150	confirmed	countries=['Singapore']	yes	MALDI-TOF Profiling of modified histone proteins
+PXD027265	rejected	countries=['Germany'] | Max Delbrück Center for Molecular Medicine, Berlin ; Max Delbrück Center for Molecular Medicine in the Helmholtz 	yes	A universal peptide matrix interactomics approach to disclose motif dependent protein binding
+PXD027433	confirmed	countries=['Singapore']	yes	Profiling C. albicans dimorphism in the human intestine
+PXD027549	confirmed	countries=['Singapore']		O-GlcNAcylation of fatty acid synthase under nutritional stress as a pro-survival mechanism in cance
+PXD027640	confirmed	countries=['Singapore']	yes	The Mediator complex in the malaria parasite Plasmodium falciparum contains evolutionarily novel sub
+PXD027848	rejected	countries=['South Africa'] | University of Cape Town ; Department of Chemical and Systems Biology, Institute of Inf		Comparison of Cell Wall Proteomics of Drug Resistant M. smegmatis with and without Sub-inhibitory Ri
+PXD027855	rejected	countries=['South Africa'] | University of Cape Town ; Department of Chemical and Systems Biology, Institute of Inf		Comparison of Cell Wall Proteomics of Drug Resistant M. smegmatis with and without Sub-inhibitory Ri
+PXD027922	rejected	countries=['Norway'] | Nord University ; Faculty of Biosciences and Aquaculture, Nord University, Bod		Clues from the intestinal mucus proteome of Atlantic salmon to counter inflammation
+PXD028109	rejected	countries=['United States'] | Brown University ; Brown University, MCB Department	yes	CAR T cells inhibit B cell activating phosphorylation in their targets
+PXD028325	confirmed	countries=['Singapore']		Identification of splicing legumain from Momordica cochinchinesis
+PXD028327	confirmed	countries=['Singapore']	yes	Identification of splicing legumain from Momordica cochinchinesis
+PXD028392	rejected	countries=['Spain'] | Instituto de Salud Carlos III ; Functional Proteomics Unit Chronic Disease Programme Institu	yes	Multiomics Profiling of Alzheimer’s Disease Serum for the Identification of Autoantibody Biomarkers
+PXD028409	rejected	countries=['United States'] | Ohio University ; Department of Biological Sciences, Ohio University	yes	The novel peptide ScrA acts through the SaeRS two component system to regulate virulence gene expres
+PXD028702	rejected	countries=['Norway'] | Oslo University Hospital ; Department of Mechanical, Electronics and Chemical Engineeri		Protein dysregulation during T cell activation in multiple sclerosis patients compared to healthy co
+PXD028714	confirmed	countries=['Singapore']		EIF5A hypusinaion in hepatic cells
+PXD029028	rejected	countries=['Sweden'] | Lund University ; Department of Experimental Medical Science, Medical Faculty,	yes	Proteomic characterization of mesenchymal lung cells
+PXD029234	rejected	countries=['Canada'] | University of Alberta ; Department of Biological Sciences, University of Alberta		Multi-omic analysis reveals the biochemical changes underpinning the varied phenotypes of the Arabid
+PXD029330	confirmed	countries=['Singapore']		Proteomics analysis on cottonseed meal protein isolate extract-ed using improved gossypol removal me
+PXD029717	rejected	countries=['Australia'] | University of Queensland ; University of Oslo, department of biosciences	yes	Venoms for all occasions: the functional toxin profiles of different anatomical regions in sea anemo
+PXD029967	confirmed	countries=['Singapore']		SARS-CoV-2 Spike Protein and Murine Hepatitis Virus Inhib-its S. pneumoniae and S. aureus Biofilms
+PXD030126	rejected	countries=['India'] | Indian Institute of Technology, Delhi ; Department of Chemical Engineering, Indian Institute of Tech	yes	Impact of Stringent Stress Response and Amino Acid Supplementation on Recombinant Protein Production
+PXD030215	confirmed	countries=['Singapore']	yes	Global analysis of RNA-binding proteins identifies a positive feedback loop between LARP1 and MYC th
+PXD030257	rejected	countries=['Australia'] | Australian Institute for Bioengineering and Nanotechnology ; Australian Institute for Bioengineering and Nanotechnology, 		Multi-omic characterisation of Streptomyces hygroscopicus NRRL 30439: detailed assessment of its sec
+PXD030465	rejected	countries=['Germany'] | Proteomics and Signal Transduction, Max Planck Institute of  ; Department of Proteomics and Signal Transduction, Max Planck	yes	An evolutionary conserved, immobility associated antithrombotic mechanism
+PXD030637	confirmed	countries=['Singapore']		Activity-dependent changes in the nuclear proteome and transcriptome of forebrain excitatory neurons
+PXD030671	rejected	countries=['Spain'] | Instituto de Salud Carlos III ; Chronic Disease Programme, UFIEC, Instituto de Salud Carlos 		Spatial Proteomic Analysis of Isogenic Metastatic Colorectal Cancer Cells Reveals Key Dysregulated P
+PXD030751	rejected	countries=['Spain'] | Instituto de Salud Carlos III ; Chronic Disease Programme (UFIEC), Instituto de Salud Carlos	yes	Proteomics analysis of prefrontal cortex from Alzheimer’s Disease patients revealed novel dysregulat
+PXD030778	rejected	countries=['Switzerland'] | ETH Zurich ; Department of Modeling of Biological Processes COS, Heidelbe		∆glnA Enterococcus faecalis V583 - data analysis
+PXD030800	confirmed	countries=['Singapore']	yes	The aberrant upregulation of exon 10-inclusive SREK1 through SRSF10 acts as an oncogenic driver in h
+PXD031110	confirmed	countries=['Singapore']		PLK1 inhibition selectively induces apoptosis in ARID1A deficient cells through uncoupling of oxygen
+PXD031119	rejected	countries=['Spain'] | Instituto de Salud Carlos III ; Chronic Disease Programme (UFIEC), Instituto de Salud Carlos		Aryl hydrocarbon receptor-interacting protein regulates tumorigenic and metastatic properties of col
+PXD031168	confirmed	countries=['Singapore']	yes	The H. pylori CagA Oncoprotein Induces DNA Double Strand Breaks Through Fanconi Anemia Pathway Downr
+PXD031228	confirmed	countries=['Singapore']	yes	Vascular bed systematic profiling unravels endothelial and glycocalyx dysregulations in experimental
+PXD031343	rejected	countries=['Germany'] | TU Munich ; Bavarian Center for Biomolecular Mass Spectrometry (BayBioMS		Impact of modified atmospheres on growth and metabolism of meat-spoilage relevant Photobacterium spp
+PXD031425	rejected	countries=['United States'] | Johns Hopkins University ; Johns Hopkins University, Chemistry Department, Fried Lab, U	yes	Universal protein misfolding intermediates can bypass the proteostasis network and remain soluble an
+PXD031521	rejected	countries=['Germany'] | Proteomics and Signal Transduction, Max Planck Institute of  ; Director at Max Planck Institute of Biochemistry Department 	yes	An evolutionary conserved, immobility associated antithrombotic mechanism
+PXD032225	confirmed	countries=['Singapore']		Quantitative Proteomics of Medium-Sized Extracellular Vesicle-Enriched Plasma of Lacunar Infarction 
+PXD032271	rejected	countries=['Spain'] | Instituto de Salud Carlos III ; Chronic Disease Programme, UFIEC, Instituto de Salud Carlos 	yes	Quantitative proteomics analysis revealed C1GALT1 depletion in ECC-1 cells mimics an aggressive endo
+PXD032334	confirmed	affiliation~'singapore': Biomolecular Mass Spectrometry and Proteomics, Bijvoet Center for Biomolecular Research an		Proteomic characterization of SEC-fractionated sEV subpopulations
+PXD032801	rejected	countries=['United Kingdom'] | University of Bristol  ; Professor of Cell Biology and NHSBT Principal Investigator, 	yes	NanoLC-MSMS TMT whole cell comparison of ex vivo derived macrophage subtypes.
+PXD032823	rejected	countries=['United Kingdom'] | University of Bristol  ; Professor of Cell Biology and NHSBT Principal Investigator, 	yes	NanoLC-MSMS TMT surfaceome comparison of ex vivo derived macrophage subtypes.
+PXD032905	rejected	countries=['United Kingdom'] | University of Bristol  ; Professor of Cell Biology and NHSBT Principal Investigator,S		SMS TMT surfaceome comparison of ex vivo derived M1 macrophages treated with dexamethasone
+PXD032966	rejected	countries=['United Kingdom'] | University of Bristol  ; Professor of Cell Biology and NHSBT Principal Investigator,S		SMS TMT surfaceome comparison of ex vivo derived M1 macrophages treated with dexamethasone
+PXD032967	rejected	countries=['United Kingdom'] | University of Bristol  ; Professor of Cell Biology and NHSBT Principal Investigator,S		SMS TMT surfaceome comparison of ex vivo derived M1 macrophages treated with dexamethasone
+PXD033128	rejected	countries=['Germany'] | TU München ; TU Muenchen Center for Functional Protein Assemblies Departm		Indolin-2-one nitroimidazole antibiotics exhibit an unexpected dual mode of action
+PXD033145	rejected	countries=['South Africa'] | University of Cape Town ; University of Sharjah	yes	Mass spectroscopy-based proteomics and metabolomics analysis of BT- 474 breast cancer cells treated 
+PXD033153	confirmed	countries=['Singapore']		Dysregulated proteins in aqueous humor from primary open angle glaucoma patients with clinical corre
+PXD033257	rejected	countries=['South Africa'] | University of Cape Town ; University of Sharjah		Unveiling the mechanism of action of nature-inspired anti-cancer compounds using a multi-Omics appro
+PXD033369	confirmed	affiliation~'singapore': Biomolecular Mass Spectrometry and Proteomics, Bijvoet Center for Biomolecular Research an		An integral atlas of hormone peptides of human EECs and their dedicated proteases
+PXD034333	confirmed	countries=['Singapore']		Englerin A rewires phosphosignaling via HSP27 hyperphosphorylation to induce cytotoxicity in renal c
+PXD034805	rejected	countries=['South Africa'] | University of Cape Town ; SAMRC Gynaecology Cancer Research Centre, University of Cape		A mass spectrometry-based approach for the identification of Kpnβ1 binding partners in cancer cells
+PXD034896	confirmed	countries=['Singapore']		Proteomic analysis of S-acylated proteins in human retinal pigment epithelial cells reveals the role
+PXD035080	rejected	countries=['Switzerland'] | Ecole Polotechnique Federale de Lausanne (EPFL), SV, GHI, UP ; School of Life Sciences, Swiss Federal Institute of Technolo	yes	Proteomic analysis of the secretome of selected Mycobacterium tuberculosis Erdman strains
+PXD035082	rejected	countries=['Switzerland'] | Ecole Polotechnique Federale de Lausanne (EPFL), SV, GHI, UP ; School of Life Sciences, Swiss Federal Institute of Technolo	yes	Proteomic analysis of the secretome of a esxaA mutant Mycobacterium tuberculosis strain
+PXD035225	confirmed	countries=['Singapore']		Cohesin is involved in transcriptional repression of invasion-related genes
+PXD035349	rejected	countries=['Austria'] | University of Vienna ; Archaea Biology and Ecogenomics, Department of Functional an		Membrane Fraction Complexome of Nitrososphaera viennensis with BN-PAGE and Examination of the Archae
+PXD035392	confirmed	countries=['Singapore']		STUB1 is an intracellular checkpoint for interferon gamma sensing
+PXD035476	rejected	countries=['Spain'] | Centro de Investigaciones Biológicas Margarita Salas, CSIC ; Centro de Investigaciones Biológicas Margarita Salas, CSIC, 	yes	"Supplementary Information for ""Wax worm saliva and the enzymes therein are the key to polyethylene d"
+PXD035479	rejected	countries=['Spain'] | Centro de Investigaciones Biológicas Margarita Salas, CSIC ; Centro de Investigaciones Biológicas Margarita Salas, CSIC, 		"Supplementary Information for ""Wax worm saliva and the enzymes therein are the key to polyethylene d"
+PXD036033	confirmed	countries=['Singapore']		System-wide vitreous proteome dissection reveals impaired sheddase activity in diabetic retinopathy
+PXD036335	confirmed	countries=['Singapore']		A proteome-wide effect of PHF8 knockdown in neuronal activity-dependent synaptic plasticity shows do
+PXD037103	rejected	countries=['Slovenia'] | Young Researcher ; Department of Biology, Chair of Molecular Genetics and Micro		Extracellular vesicles from Aureobasidium pullulans
+PXD037250	rejected	countries=['Spain'] | CIB.CSIC ; Center for Biological Research (CIB-CSIC)		Proteomic and in silico analyses of the influence of dextran synthesis on the adaptation of Leuconos
+PXD037501	confirmed	countries=['Singapore']	yes	Signalling Inhibition by Ponatinib Disrupts Productive Alternative Lengthening of Telomeres (ALT)
+PXD037670	confirmed	countries=['Singapore']	yes	ASCL1: a pioneer factor that induces subtype switching and characterizes adrenergic neuroblastoma
+PXD037776	confirmed	countries=['Singapore']	yes	E4F1 and ZNF148 are transcriptional activators of the A57C and wildtype TERT promoter
+PXD038178	confirmed	countries=['Singapore']		Epitranscriptomic regulation of the oxidative stress response by the radical S-adenosylmethionine me
+PXD038281	confirmed	countries=['Singapore']	yes	Proteomics analysis of the corneal amyloid disaggregation effects by brain chaperone L-PGDS
+PXD038985	rejected	countries=['Poland'] | Laboratory of Biopolymers Structure, Intercollegiate Faculty ; Laboratory of Biopolymers Structure,  Intercollegiate Facult		Comparison of peptidomes extracted from healthy tissue, tumor tissue of the parotid glands and saliv
+PXD038986	rejected	countries=['United States'] | University of Utah ; Department of Biochemistry, University of Utah, Salt Lake Ci	yes	Discovery of Novel Bilaterian Signaling Peptides Using Cone Snail Toxins
+PXD038992	rejected	countries=['United States'] | University of Utah ; Department of Biochemistry, University of Utah, Salt Lake Ci	yes	Discovery of Novel Bilaterian Signaling Peptides Using Cone Snail Toxins
+PXD038993	rejected	countries=['United States'] | University of Utah ; Department of Biochemistry, University of Utah, Salt Lake Ci	yes	Discovery of Novel Bilaterian Signaling Peptides Using Cone Snail Toxins
+PXD039087	rejected	countries=['Germany'] | Proteomics and Signal Transduction, Max Planck Institute of  ; Director at Max Planck Institute of Biochemistry Department 	yes	An evolutionary conserved, immobility associated antithrombotic mechanism
+PXD039168	rejected	"countries=['Italy'] | University of Naples ""Federico II"" ; University of Naples Federico II"		Enzyme replacement therapy for Fabry disease: possible strate-gies to improve its efficacy
+PXD039627	confirmed	countries=['Singapore']	yes	ChIP-MS reveals the local chromatin composition by label-free quantitative proteomics
+PXD039630	rejected	countries=['Spain'] | Instituto de Salud Carlos III ; Functional Proteomics Unit, Chronic Disease Programme (UFIEC		In-depth proteomic analysis of paraffin-embedded tissue samples from colorectal cancer patients reve
+PXD039701	confirmed	countries=['Singapore']		ChIP-MS reveals the local chromatin composition by label-free quantitative proteomics
+PXD039865	confirmed	countries=['Singapore']	yes	EPLIN-Beta is a novel substrate of ornithine decarboxylase antizyme 1, mediating cellular migration
+PXD040936	rejected	countries=['Argentina'] | Instituto de Biología Molecular y Celular de Rosario (IBR-CO ; Instituto de Biología Molecular y Celular de Rosario-CONICET		The Zika virus infection remodels the expression of the synaptotagmin-9 secretory protein
+PXD040948	rejected	countries=['United States'] | University of Maryland Baltimore ; Department of Pharmaceutical Sciences, School of Pharmacy, U		The heme-responsive PrrH sRNA regulates Pseudomonas aeruginosa pyochelin gene expression
+PXD041372	rejected	countries=['Germany'] | Section for Mass Spectrometry and Proteomics, University Med ; Department of Anesthesiology, University Medical Center Hamb		Multisite phosphorylation by protein kinase A mediates modality-specific modulation of PIEZO2
+PXD041391	confirmed	countries=['Singapore']		DDA-PASEF and diaPASEF acquired HCC1806/HS578T proteomic datasets with deliberate batch effects
+PXD041421	confirmed	countries=['Singapore']	yes	DDA-PASEF and diaPASEF acquired A549/K562 proteomic datasets with deliberate batch effects
+PXD041512	rejected	"countries=['Germany'] | University of Greifswald,
+Department for Microbial Proteomi ; Department of Microbial Proteomics, University of Greifswald"		Diamide-based screening method for isolation of improved oxidative stress tolerance phenotypes in Ba
+PXD041585	confirmed	countries=['Singapore']	yes	Small open reading frame-encoded protein production is modulated by nonsense-mediated decay in breas
+PXD042235	confirmed	countries=['Singapore']		Secreted dengue virus NS1 is predominantly dimeric and in complex with high-density lipoprotein
+PXD042394	rejected	"countries=['Germany'] | University of Greifswald,
+Department for Microbial Proteomi ; University of Greifswald, Institute of Microbiology, Departm"	yes	Deconvoluting the complexity of Bacillus subtilis disulfide stress responses by redox-state and abso
+PXD042569	rejected	countries=['Switzerland'] | University of Zürich ; Department of biochemistry, University of Zürich, Zürich, Sw	yes	N-terminal modification of eGFP by LC-MSMS
+PXD042572	confirmed	countries=['Singapore']	yes	The effect of inhibition of receptor tyrosine kinase AXL on DNA damage response in ovarian cancer
+PXD042774	rejected	countries=['United States'] | Institute for Systems Biology, Seattle, WA, USA ; Institute for Systems Biology, Seattle, WA, USA		DIA/SWATH-MS analysis of Halobacterium salinarum NRC-1 collected at four time points of batch cultur
+PXD042874	rejected	countries=['Spain'] | Instituto de Salud Carlos III ; Chronic Disease Programme (UFIEC), Instituto de Salud Carlos		Functional proteomics characterization of the role of SPRYD7 in colorectal cancer progression and me
+PXD042899	rejected	countries=['Sweden'] | Gothenburg University ; Department of Medical Biochemistry and Cell biology, Univers	yes	Loss of Lamin A leads to the nuclear translocation of AGO2 and compromised RNA interference
+PXD043021	confirmed	countries=['Singapore']	yes	Escherichia coli displays a conserved membrane proteomic response to a range of alcohols
+PXD043084	confirmed	countries=['Singapore']		ZNF524 directly interacts with telomeric DNA and supports telomere integrity
+PXD043134	confirmed	countries=['Singapore']		ZBTB48 is a pioneer factor regulating B-cell-specific CIITA expression
+PXD043539	rejected	countries=['France'] | Proteomics Platform Necker, PPN-3P5, Structure Fédérative de ; Proteomics platform Necker, Université Paris Cité - Structur		Phosphoproteome analysis of TgPP1 depleted Toxoplasma gondii tachyzoites
+PXD043550	confirmed	affiliation~'singapore': Biomolecular Mass Spectrometry and Proteomics, Bijvoet Center for Biomolecular Research an		Mouse and Human Conjunctiva Organoids to Study Ocular Surface Homeostasis and Disease
+PXD043747	confirmed	countries=['Singapore']		tRNA modification reprogramming of Plasmodium falciparum as a feature of artemisinin resistance
+PXD043818	confirmed	countries=['Singapore']		Defining neutralization and allostery by antibodies against COVID-19 variants
+PXD043870	confirmed	countries=['Singapore']		Role of Rab11 in Enterovirus A71 (EV-A71) infection
+PXD044152	rejected	"countries=['United States'] | Department of Integrative Biology
+University of California,  ; Department of Integrative Biology, University of California "		Effect of diet and association with fertility outcomes in semen proteome and transcriptome from wild
+PXD044316	rejected	"countries=['Germany'] | Otto-von-Guericke-University
+Universitätsplatz 2
+39106 Magde ; Hochschule Anhalt Fachbereich 7 - Angewandte Biowissenschaft"	yes	Detection, isolation and characterization of phage-host complexes using BONCAT and click chemistry
+PXD044329	rejected	countries=['Germany'] | Cellzome ; Cellzome		Comprehensive selectivity profile of PARP inhibitors using a target-centric bead matrix
+PXD044330	rejected	countries=['Germany'] | Cellzome ; Cellzome		Off-target profiling of several PARP inhibitors using immobilized Niraparib beads
+PXD044406	confirmed	affiliation~'singapore': Singapore Immunology Network (SIgN), Agency for Science, Technology and Research, Singapor		Proteomic analysis of human brain organoids
+PXD044957	confirmed	affiliation~'singapore': Cardiovascular and Metabolic Diseases, Duke-NUS Medical School, Singapore	yes	Complexome profiling of BRAWNIN KO mouse heart mitochondria
+PXD045048	rejected	countries=['Argentina'] | Instituto de Biología Molecular y Celular de Rosario (IBR-CO ; Instituto de Biología Molecular y Celular de Rosario, IBR,CO		The p53 Tumor Suppressor Regulates AKR1B1 Expression, a MetastasisPromoting Gene in Breast Cancer
+PXD045152	rejected	countries=['Netherlands'] | Leiden University Medical Center ; Center for Proteomics and Metabolomics, LUMC, Leiden, The Ne		A revised model for the Type A glycan biosynthetic pathway in Clostridioides difficile strain 630Δer
+PXD045268	rejected	countries=['Germany'] | University Medical Center Hamburg-Eppendorf ; Section mass-spectrometry and proteomics Diagnostic Center, 		Integrated proteomics spotlight the proteasome as a pervasive therapeutic vulnerability in Embryonal
+PXD045297	rejected	countries=['Germany'] | Cellzome ; Cellzome		Comprehensive selectivity profile of PARP inhibitors using kinobeads
+PXD045311	confirmed	affiliation~'singapore': Department of Biological Engineering, Massachusetts Institute of Technology, 77 Massachuse	yes	A comprehensive portrait of tissue-, age- and sex-specific DNA modifications in rodents and humans
+PXD045574	rejected	countries=['United States'] | Lawrence Berkeley National Laboratory ; Staff Scientist Biological Systems & Engineering Division La		Unnatural lactam production by reprogrammed modular polyketide synthases in Pseudomonas putida
+PXD045792	rejected	countries=['France'] | Institut Pasteur ; Université Paris Cité, Institut Pasteur, CNRS UAR 2024, Mass	yes	Don’t Waste Time – Ensure Success in Your Cross-Linking Mass Spectrometry Experiments Before You Beg
+PXD045835	rejected	countries=['United States'] | University of Maryland Baltimore ; Department of Pharmaceutical Sciences School of Pharmacy Uni		Pseudomonas aeruginosa Heme Metabolites Biliverdin IX and IX are Integral to Lifestyle Adaptations
+PXD045969	rejected	countries=['China'] | Department of Nephrology, Blood Purification Research Center ; Department of Nephrology, Blood Purification Research Center	yes	The association between baseline serum lipids and renal outcome in microscopic polyangiitis patients
+PXD046082	confirmed	countries=['Singapore']	yes	A PRMT5-ZNF326 axis mediates innate immune activation upon replication stress
+PXD046473	rejected	countries=['United States'] | The University of Texas at Austin ; Institute for Cell and Molecular Biology, Department of Mole		Serum antibody repertoire to influenza HA
+PXD046538	confirmed	countries=['Singapore']		MMV000848 Target Identification with MS-CETSA
+PXD046551	confirmed	countries=['Singapore']		Pyronaridine Target Identification with MS-CETSA
+PXD046574	confirmed	countries=['Singapore']		Temporal Insights into Molecular and cellular responses during rAAV production in HEK293T cells
+PXD046575	confirmed	countries=['Singapore']		MMV665806 Target Identification with MS-CETSA
+PXD046578	confirmed	countries=['Singapore']		Piperaquine Target Identification with MS-CETSA
+PXD046584	confirmed	countries=['Singapore']		Lumefantrine Target Identification with MS-CETSA
+PXD046606	rejected	countries=['United Kingdom'] | School of Molecular and Cellular Biology, University of Leed ; Astbury Centre for Structural Molecular Biology, School of M	yes	Understanding the interaction of SurA and BAM in the outer membrane of E. coli
+PXD046642	confirmed	countries=['Singapore']		MK4815 Target Identification with MS-CETSA
+PXD046647	confirmed	countries=['Singapore']		Amodiaquine Target Identification with MS-CETSA
+PXD046662	confirmed	countries=['Singapore']		Chloroquine Target Identification with MS-CETSA
+PXD046679	rejected	countries=['Germany'] | Goethe University Frankfurt ; Institute of Biochemistry II, Faculty of Medicine, Goethe Un		An AMP-activated protein kinase-PGC-1α axis mediates metabolic plasticity in glioblastoma
+PXD046714	confirmed	countries=['Singapore']	yes	ZHX3 interacts with CEBPB to repress hepatic gluconeogenic gene expression and uric acid secretion
+PXD046804	confirmed	countries=['Singapore']		Facile metabolic reprogramming distinguishes mycobacterial adaptation to hypoxia and starvation:  Th
+PXD046834	confirmed	countries=['Singapore']	yes	Identification of Novel Cell-Surface Biomarkers in Malignant Rhabdoid Tumours (MRT)
+PXD046940	confirmed	affiliation~'singapore': Biomolecular Mass Spectrometry and Proteomics, Bijvoet Center for Biomolecular Research an		Comprehensive PTP and proteome profiling from human liver tissues
+PXD047075	confirmed	affiliation~'singapore': Biomolecular Mass Spectrometry and Proteomics, Bijvoet Center for Biomolecular Research an		Comprehensive secretome and proteome analysis for human fetal brain self-organized organoids
+PXD047537	rejected	countries=['Czech Republic'] | CEITEC MU ; Proteomics Core Facility and Research Group Proteomics, CEIT		Synthetically primed adaptation of Pseudomonas putida to a non-native substrate D-xylose
+PXD047626	rejected	countries=['United States'] | University of Colorado ; Department of Biochemistry and Molecular Genetics, School of		ECM-Focused Proteomic Analysis of Ear Punch Regeneration in <i>Acomys cahirinus</i>
+PXD047664	confirmed	affiliation~'singapore': Cardiovascular and Metabolic Diseases, Duke-NUS Medical School, Singapore		Differential complexome profiling of CRISTA WT and KO HEK293T mitochondria
+PXD047875	confirmed	countries=['Singapore']		Response of malaria parasites to artemisin compounds and oxidative stress
+PXD048050	rejected	countries=['China'] | China Agriculture University ; Key Laboratory of Sweet Potato Biology and Biotechnology, Mi		Proteome of two F1 individuals H283 and L423 with significantly different of starch contents
+PXD048219	rejected	countries=['Germany'] | MDC Berlin-Buch ; Max Delbrück Center for Molecular Medicine in the Helmholtz 	yes	The natural diversity of the yeast proteome links aneuploidy tolerance to protein turnover
+PXD048575	confirmed	countries=['Singapore']		SWATH-MS insights on butyric acid effect on mAbs production and redox homeostasis in CHO cells.
+PXD048737	confirmed	countries=['Singapore']		MS-CETSA Target Identification of MMV000848
+PXD048745	confirmed	countries=['Singapore']		MS-CETSA Target Identification of MMV665987
+PXD048750	confirmed	countries=['Singapore']		MS-CETSA Target Identification of MMV006656.
+PXD048752	confirmed	countries=['Singapore']		MS-CETSA Target Identification of MMV665971
+PXD048756	confirmed	countries=['Singapore']		MS-CETSA Target Identification of MMV007574
+PXD048757	confirmed	countries=['Singapore']		MS-CETSA Target Identification of MMV665941
+PXD048761	confirmed	countries=['Singapore']		MS-CETSA Target Identification of MMV019127
+PXD048762	confirmed	countries=['Singapore']		MS-CETSA Target Identification of MMV665909
+PXD048768	confirmed	countries=['Singapore']		MS-CETSA Target Identification of MMV compounds: MMV007127, MMV665886
+PXD048772	confirmed	countries=['Singapore']		MS-CETSA Target Identification of MMV compounds (MMV020885, MMV665806, MMV665864)
+PXD048805	confirmed	affiliation~'singapore': Dr Peter C Dedon, Department of Biological Engineering, Massachusetts Institute of Technol		Mapping the tRNA Modification Landscape of Bartonella henselae Houston I and Bartonella quintana Tou
+PXD049155	rejected	countries=['South Korea'] | Center for Bioanalysis, Division of Chemical and Medical Met ; Group for BIoanalysis, Korea Research Institute of Standards		SCN1A-KO Human cerebral organoid proteome
+PXD049708	confirmed	affiliation~'singapore': 1. Singapore Immunology Network (SIgN), Agency for Science, Technology and Research (A*STA	yes	Analysis of FBXW7 mutants in colon organoids
+PXD050285	rejected	countries=['United States'] | Lawrence Berkeley National Laboratory ; Staff Scientist Biological Systems & Engineering Division La		Multi-Functional Enzymes and Metabolic Cross-Feeding Constrain Implementation of Genome Scale Metabo
+PXD050495	rejected	countries=['India'] | Indian Institute of Technology, Delhi ; Microbial Engineering Group, ICGEB, India	yes	Proteomics and metabolic burden analysis to understand the impact of recombinant protein production 
+PXD050686	confirmed	countries=['Singapore']		Impact of therapeutic and synchrotron x-rays on collagen I
+PXD050689	confirmed	countries=['Singapore']		Impact of therapeutic and synchrotron x-rays on collagen I
+PXD050690	confirmed	countries=['Singapore']		Impact of therapeutic and synchrotron x-rays on collagen I
+PXD050691	confirmed	countries=['Singapore']		Impact of therapeutic and synchrotron x-rays on collagen I
+PXD050844	confirmed	countries=['Singapore']	yes	PARP4 interacts with hnRNPM to regulate splicing during lung cancer progression
+PXD051044	confirmed	countries=['Singapore']		Enhancing CAR T-cell efficacy against neuroblastoma through MIF  inhibition
+PXD051674	rejected	countries=['United States'] | University of California-Los Angeles. Chemistry and Biochemi ; Department of Chemistry and Biochemistry, Loo, University of	yes	Exoproteome and surfaceome of toxigenic Corynebacterium diphtheriae 1737 and their response to iron-
+PXD051727	rejected	countries=['United States'] | UCSD ; University of California San Diego, School of Biological Sci		Proteomics of mature Bacillus subtilis spores in wild-type and mdfA deletion strains
+PXD052070	rejected	countries=['United States'] | University of Michigan Medical School  ; Department of Microbiology and Immunology, University of Mic	yes	Acarbose Primarily Targets Intracellular GH97 Enzymes in Bacteroides to Impair Their Growth
+PXD052106	rejected	countries=['United States'] | University of Rhode Island ; University of Rhode Island		Exposure to a PFOA, PFOS and PFHxS mixture during gestation and lactation alters the liver proteome 
+PXD052176	rejected	countries=['China'] | Henan University ; Henan University	yes	Targeting MGAT4A-mediated N-glycosylation as a therapeutic strategy to inhibit glioblastoma stem cel
+PXD052691	confirmed	countries=['Singapore']	yes	Plant-based meat protein extractions
+PXD052693	rejected	countries=['United States'] | Princeton Uninversity ; Department of Molecular Biology; Kang Lab; Princeton Univers		Development of next-generation retinoid pathway immunotherapeutics through targeting tumor ALDH1a3
+PXD052786	rejected	countries=['United States'] | Stanford University ; Stanford University		Genome dilution by cell growth drives starvation-like proteome remodeling in yeast and mammalian cel
+PXD053297	confirmed	countries=['Singapore']		tRNA modification profile of PA14 transposon insertion mutant library
+PXD053645	confirmed	countries=['Singapore']		Co-IP protein identification of WT/MT IVNS1ABP in isogenic iPSCs derived NPCs
+PXD053698	rejected	countries=['Germany'] | DZNE Munich Neuroproteomics ; DZNE Munich, Neuroproteomics, Feodor-Lynen Str. 17, 81377 Mu		Mouse CSF analysis of 3, 6, and 12 months old mice in comparison to human CSF
+PXD053717	rejected	countries=['United States'] | University of Southern California ; University of Southern California	yes	Quantitative contributions of cyanobacterial alkaline phosphatases to biogeochemical rates in the su
+PXD053760	confirmed	countries=['Singapore']	yes	ARL3 GTPases facilitate ODA16 unloading from IFT in motile cilia
+PXD053974	confirmed	countries=['Singapore']		CETSA with YLIU-06-026-1 on P. falciparum
+PXD054143	rejected	countries=['Switzerland'] | FMI Basel ; Genome Regulation, Friedrich Miescher Institute for Biomedic		Chromatin-dependent motif syntax defines differentiation trajectories 
+PXD054298	confirmed	countries=['Singapore']		RAPIDASH: Tag-free enrichment of ribosome-associated proteins reveals compositional dynamics in embr
+PXD054300	confirmed	countries=['Singapore']		RAPIDASH: Tag-free enrichment of ribosome-associated proteins reveals compositional dynamics in embr
+PXD054303	confirmed	countries=['Singapore']		RAPIDASH: Tag-free enrichment of ribosome-associated proteins reveals compositional dynamics in embr
+PXD054304	confirmed	countries=['Singapore']		RAPIDASH: Tag-free enrichment of ribosome-associated proteins reveals compositional dynamics in embr
+PXD054427	confirmed	countries=['Singapore']		RAPIDASH: Tag-free enrichment of ribosome-associated proteins reveals compositional dynamics in embr
+PXD054586	confirmed	countries=['Singapore']		Long non-coding RNA PLUM controls PRC2-mediated H3K27 methylation in multiple myeloma to promote che
+PXD054878	rejected	countries=['United States'] | Northeastern University ; Northeastern University		An SH3-binding allosteric modulator stabilizes the global conformation of the AML-associated Src-fam
+PXD054896	confirmed	countries=['Singapore']		Insights into the regulation of CHIP E3 ligase-mediated ubiquitination of neuronal protein BNIP-H
+PXD054948	confirmed	countries=['Singapore']		Multi-level – Intact, Subunits, and Peptides – Characterization of Antibody-Based Therapeutics by a 
+PXD054997	rejected	countries=['Germany'] | Helmholtz Centre for Environmental Research - UFZ ; Helmholtz Centre for Environmental Research – UFZ, Departmen		Separation of proteome of Kuenenia stuttgartiensis strain CSTR1 using anion exchange chromatography
+PXD055102	confirmed	countries=['Singapore']		Thermal shift assay on P. falciparum with azithromycin analogs
+PXD055189	rejected	countries=['France'] | MSAP USR 3290 ; ​​Laboratoire MSAP UAR 3290 CNRS Bâtiment C4 Avenue Paul Lan	yes	LIKE EARLY STARVATION is involved in the regulation of starch initiation in potato (Solanum tuberosu
+PXD055501	rejected	"countries=['Germany'] | University of Greifswald,
+Department for Microbial Proteomi ; Department of Microbial Proteomics, Institute of Microbiolog"	yes	Impact of oxygen availability on the organelle-specific redox potentials and stress in recombinant p
+PXD055890	rejected	countries=['France'] | Protim, Irset, Inserm U1085 ; Protim Core facility - Irset Inserm U1085 - UAR Biosit CNRS 		Laser capture proteomics reveals new candidates for sperm-interacting proteins in the bovine oviduct
+PXD056075	confirmed	countries=['Singapore']		Meltome of P. falciparum across intraerythrocytic developmental cycle
+PXD056170	confirmed	affiliation~'singapore': Department of Oncology-Pathology, Karolinska Institutet, 171 77 Stockholm, Sweden Institut		IMPRINTS-CETSA Docetaxel and Paclitaxel in MCF-7 cells, 1h incubation
+PXD056176	confirmed	affiliation~'singapore': Department of Oncology-Pathology, Karolinska Institutet, 171 77 Stockholm, Sweden Institut		IMPRINTS-CETSA Docetaxel and Paclitaxel in MCF-7 cells, 8h incubation
+PXD056183	confirmed	affiliation~'singapore': Department of Oncology-Pathology, Karolinska Institutet, 171 77 Stockholm, Sweden  Institu	yes	IMPRINTS-CETSA Venetoclax in Kasumi-1 cells, 1h incubation
+PXD056189	confirmed	affiliation~'singapore': Department of Oncology-Pathology, Karolinska Institutet, 171 77 Stockholm, Sweden  Institu		IMPRINTS-CETSA Venetoclax in Kasumi-1 cells, 6h incubation
+PXD056192	confirmed	affiliation~'singapore': Department of Oncology-Pathology, Karolinska Institutet, 171 77 Stockholm, Sweden  Institu		IMPRINTS-CETSA AT-IAP and TNF alpha in MOLM-16 cells, 1h incubation
+PXD056194	confirmed	affiliation~'singapore': Department of Oncology-Pathology, Karolinska Institutet, 171 77 Stockholm, Sweden  Institu		IMPRINTS-CETSA AT-IAP and TNF alpha in MOLM-16 cells, 4h incubation
+PXD056196	confirmed	affiliation~'singapore': Department of Oncology-Pathology, Karolinska Institutet, 171 77 Stockholm, Sweden  Institu		IMPRINTS-CETSA Alpelisib and Buparlisib in MCF-7 cells, 1h incubation
+PXD056197	confirmed	affiliation~'singapore': Department of Oncology-Pathology, Karolinska Institutet, 171 77 Stockholm, Sweden  Institu		IMPRINTS-CETSA Alpelisib and Buparlisib in MCF-7 cells, 6h incubation
+PXD056199	confirmed	affiliation~'singapore': Department of Oncology-Pathology, Karolinska Institutet, 171 77 Stockholm, Sweden  Institu		IMPRINTS-CETSA MQ in OVCAR-3 cells, at 2h and 6h incubation
+PXD056281	rejected	countries=['Sweden'] | Department of Pharmacy, Uppsala University ; Professor at Department of Pharmacy, Drug Delivery, Uppsala 	yes	A patient-derived 3D cyst model of polycystic kidney disease that mimics disease development, expres
+PXD056330	rejected	countries=['United States'] | MSKCC ; Simon H. Rifkind Chair		Efn1 (SPBPB2B2.06c) and Efn2 (SPAC1039.02) are extracellular 5'-nucleotidases induced during the fis
+PXD056342	confirmed	countries=['Singapore']		Mass spectrometry-based pipeline for screening hazardous proteins in alternative protein-based foods
+PXD056606	rejected	countries=['Belgium'] | Faculity of Pharmaceutical Biotechnology ; ProGenTomics, Laboratory of Pharmaceutical Biotechnology, Gh		Potential of Proteomics in Forensic Phenotyping: A Focus on Biological Sex Determination
+PXD057257	confirmed	countries=['Singapore']		Mouse ESC Nr1h2 interactome under T09 treatment
+PXD057700	rejected	countries=['Canada'] | Canada's Michael Smith Genome Sciences Centre, BC Cancer Age ; Canada's Michael Smith Genome Sciences Centre, BC Cancer Age		Uncovering biological heterogeneity in endometrial carcinoma molecular subtypes by proteomic analysi
+PXD057908	rejected	"countries=['Germany'] | University of Greifswald,
+Department for Microbial Proteomi ; Institute of Microbiology, University of Greifswald, 17489 G"	yes	FISH-FACS Proteomics: Enhanced label-free quantitative proteome analysis from ultra-low cell numbers
+PXD057932	confirmed	countries=['Singapore']		Lower H2S-generating enzyme levels and persulfidation-mediated protein protection characterize metab
+PXD057950	rejected	countries=['Spain'] | Instituto de Salud Carlos III ; Chronic Disease Programme, UFIEC, Instituto de Salud Carlos 		Deciphering the central role of TMOD2 in colorectal cancer progression and metastasis
+PXD058541	rejected	countries=['United States'] | Yale University ; Yale Cancer Biology Institute		The phosphoproteomics study of Chk1 and ATR inhibitors regulation on cells
+PXD058626	rejected	countries=['United States'] | University of Colorado, Anschutz Medical Campus ; University of Colorado, Anschutz Medical Campus	yes	The MUC5B promoter variant results in proteomic changes in the non-fibrotic lung
+PXD058872	rejected	countries=['South Korea'] | Korea Institute of Science and Technology ; Chemical and Biological Integrative Research center, Korea I		PRM of Nt-arginylation under UPR stress
+PXD058896	rejected	countries=['Germany'] | University Duisburg-Essen ; Analytics Core Facility Essen (ACE), Chemische Biologie, Uni		Identification of  Sulphostin targets unsig competitive ABPP
+PXD059385	confirmed	countries=['Singapore']		Microbial Cooperative Molecular Strategies Enabling 1, 2-Dichloroethane Detoxification in Low pH Aqu
+PXD059435	confirmed	countries=['Singapore']	yes	Stable Function, Dynamic Phylotypes: Microdiversity as a Reservoir for Resilience in Dehalococcoides
+PXD059545	rejected	"countries=['Germany'] | Max Planck Institute for Terrestrial Microbiology
+Marburg ; Max Planck Institute for Terrestrial Microbiology Karl-von-F"		One-carbon fixation via the reductive glycine pathway exceeds yield of the Calvin cycle in bacteria
+PXD060310	rejected	countries=['Germany'] | University Medicine Greifswald ; Interfaculty Institute of Genetics and Functional Genomics, 	yes	pTripleTREP – A vector for tightly controlled expression and purification of virulence factors in St
+PXD060436	rejected	countries=['France'] | French Agency for Food, Environmental and Occupational Healt ; Anses Fougères	yes	Proteomic analysis of raw bacillus thuringiensis supernatants and those used to expose Caco-2 cells
+PXD060825	rejected	countries=['Germany'] | Leibniz-Forschungsinstitut für Molekulare Pharmakologie (FMP ; Leibniz-Institut für Molekulare Pharmakologie (FMP)	yes	Interaction of Human Cytomegalovirus pUL52 with major components of the viral DNA encapsidation netw
+PXD060843	confirmed	countries=['Singapore']		X-Ray Exposure Induces Structural Changes in Human Breast Proteins
+PXD060864	confirmed	countries=['Singapore']		Hybrid hydrogel-extracellular matrix scaffolds identify distinct biochemical and mechanical signatur
+PXD060871	confirmed	countries=['Singapore']		X-Ray Exposure Induces Structural Changes in Human Breast Proteins
+PXD060917	confirmed	countries=['Singapore']		X-Ray Exposure Induces Structural Changes in Human Breast Proteins
+PXD061002	rejected	countries=['Spain'] | Instituto de Salud Carlos III ; Chronic Disease Programme (UFIEC), Instituto de Salud Carlos	yes	Neurochondrin Drives Colorectal Cancer Progression by Modulating the PODXL–Ezrin Axis and Mitochondr
+PXD061100	rejected	countries=['Spain'] | Instituto de Salud Carlos III ; Chronic Disease Programme (UFIEC), Instituto de Salud Carlos	yes	Comprehensive Profiling of Aβ40 and Aβ42 Fibril-Interacting Proteins Reveals PRKCG as a Drug-Targeta
+PXD061206	confirmed	countries=['Singapore']	yes	Omics analysis reveals striking effects of progesterone receptor on mitochondria and mitochondria-me
+PXD061585	rejected	countries=['Netherlands'] | Leiden University Medical Center ; Center for Proteomics and Metabolomics, Leiden University Me	yes	Biochemical and structural characterization of PPEP-3 from Geobacillus thermodenitrificans
+PXD061622	rejected	countries=['Germany'] | Department of Functional Genomics, University Medicine Greif ; Department of Functional Genomics,  University Medicine Grei		ClpXP, ClpCP and ClpEP proteases effects on the  Streptococcus pneumoniae proteome
+PXD061686	rejected	countries=['China'] | Guangzhou medical university ; The Fifth Affiliated Hospital of Guangzhou Medical Universit	yes	LncRNA NEAT1 promotes immunosuppression in gastric cancer by maintaining the m6A methylation of SEMA
+PXD062053	rejected	countries=['United States'] | Albert Einstein College of Medicine ; Department of Biochemistry, Albert Einstein College of Medic	yes	¬Multi-omics identification of extracellular components of the fetal monkey and human neocortex
+PXD062330	confirmed	countries=['Singapore']		CAPTURE2.0 pull-down of SINE-MIR associated proteins in mouse embryonic stem cells
+PXD062502	confirmed	countries=['Singapore']		Interactome of Entamoeba histolytica KERP2 with host epithelial cells
+PXD062725	confirmed	countries=['Singapore']	yes	Human iPSC-derived motor neurons with TDP-43 nuclear loss present early ALS pathological phenotypes
+PXD062975	rejected	countries=['United Kingdom'] | Proteomics ; CRUK Scotland Institute, Garscube Estate, Switchback Road, G		CYRI-B loss promotes enlarged mature focal adhesions and restricts microtubule and ERC1 access to th
+PXD063019	rejected	countries=['United States'] | Princeton University ; Lewis-Sigler Institute for Integrative Genomics, Princeton U		Lipids accumulation in nitrogen and phosphorus-limited yeast is caused by less growth-related diluti
+PXD063440	rejected	countries=['Germany'] | Department of Chemistry, Clemens-Schöpf-Institute of Chemist ; Department of Chemistry, Clemens-Schöpf-Institute of Chemist		Native Taylor/Non-Taylor Dispersion – Mass Spectrometry (TNT-MS) Allows Rapid Protein Desalting and 
+PXD065136	rejected	countries=['China'] | Qingdao Institute of Bioenergy and Bioprocess Technology, Ch ; 1. Key Laboratory of Photoelectric Conversion and Utilizatio	yes	Ubiquitinomic data: Evolutionarily conserved E3 ubiquitin ligase modulates carotenoid, sterol and li
+PXD065422	confirmed	countries=['Singapore']		Glycans on Non-Structural Protein 1 Prevent Premature T-cell Mediated Dengue Virus Clearance
+PXD065824	confirmed	countries=['Singapore']		Target profiling of organoplatinum(II) complex reveals role of protein tyrosine phosphatase 1B in mo
+PXD066799	rejected	"countries=['Germany'] | University of Freiburg
+Faculty of Biology
+Biochemistry and F ; Faculty of Biology, University of Freiburg, Freiburg, German"	yes	Filamentous growth, cell envelope architecture and surface appendages in Litorilinea aerophila
+PXD066919	confirmed	countries=['Singapore']	yes	Mass spectrometry-based Quantitative RNA Modification Mapping Using Isobaric Tandem Mass Tags
+PXD067418	rejected	countries=['Brazil'] | Universidade Federal do Rio Grande do Sul ; Faculdade de Farmácia; Centro de Biotecnologia, Federal Univ		Metarhizium anisopliae exposed to an infection system triggering medium
+PXD067660	rejected	countries=['United Kingdom'] | MRC-LMB ; MRC Laboratory of Molecular Biology; Francis Crick Avenue, C	yes	A cellular basis for the mammalian nocturnal-diurnal switch
+PXD067801	rejected	countries=['Egypt'] | Mdical Malacology Department, Theodor Bilharz Research Insti ; Medical Malacology, Theodore Bilharz Research Institute, Giz		Novel peptides from the edible bivalve Ruditapes decussatus target apoptosis, autophagy, and FGF19-F
+PXD067993	rejected	countries=['Germany'] | University Medicine Greifswald ; Department of Functional Genomics, Interfaculty Institute of	yes	Integrated genomic and proteomic analysis of the mouse-adapted Staphylococcus aureus strain JSNZ
+PXD068498	rejected	countries=['United States'] | Albert Einstein College of Medicine ; Department of Biochemistry, Albert Einstein College of Medic		Reduced IGF-1 signaling fails to limit Alzheimer’s disease progression in a novel rat model of IGF-1
+PXD068911	confirmed	affiliation~'singapore': Department of Biological Engineering, Massachusetts Institute of Technology, Cambridge, MA		Enterohemorrhagic Escherichia coli O157:H7 responds to norepinephrine gradients by tRNA reprogrammin
+PXD069102	confirmed	countries=['Singapore']		Proteomic profiling of New Zealand endemic Porphyra/Pyropia (karengo) seaweeds: A predictive framewo
+PXD069186	rejected	countries=['United Kingdom'] | University of Dundee, Faculty of Life Sciences, Molecular Mi ; University of Dundee, School of Life Sciences, Molecular Mic	yes	Total proteomes of starved Pseudomonas aeruginosa
+PXD069847	confirmed	countries=['Singapore']		TMT-Based Quantitative Proteomic Profiling of Retina, Choroid, and Sclera in Albino and Pigmented Gu
+PXD070195	rejected	countries=['United States'] | University of California, Irvine ; 1Gavin Herbert Eye Institute –Brunson Center for Translation	yes	Scalable purification enables high-quality virus-like particles for therapeutic translation
+PXD070583	confirmed	countries=['Singapore']		Secretome proteomics of Galdieria sulphuraria cultured on glucose, maltose and starch hydrolysate
+PXD072307	confirmed	countries=['Singapore']	yes	Comparative proteomic analysis of black tiger prawn (Penaeus monodon) and white leg prawn (Litopenae
+PXD073252	rejected	countries=['Switzerland'] | University of Geneva, Faculty of Medicine ; University of Geneva		Molecular basis of mitogen-activated protein kinase ERK2 activation by its upstream kinase MEK1
+PXD073457	rejected	"countries=['Germany'] | Proteomics Core Facility
+EMBL Heidelberg ; EMBL Grenoble"		Molecular basis of mitogen-activated protein kinase ERK2 activation by its upstream kinase MEK1
+PXD073488	rejected	"countries=['United States'] | National Institutes of Health (NIH)
+National Center for Adva ; National Center for Advancing Translational Sciences, Nation"		Kinome-profiling enabled discovery of a LATS1/2 inhibitor with wound healing potential
+PXD073706	confirmed	countries=['Singapore']	yes	The Combination of Remdesivir and Ivermectin Exerts Highly Potent and Synergistic Antiviral Activity
+PXD074044	rejected	countries=['Australia'] | Adelaide University ; School of Pharmacy and Biomedical Science, College of Health	yes	Proteomic characterisation of oat grain compartments
+PXD074087	confirmed	countries=['Singapore']		TMT-based proteome and phosphoproteome profiling of control and GPR146 knockdown SGBS cells
+PXD074160	rejected	countries=['Denmark'] | DTU Proteomics Core ; Proteomics Core, DTU Bioengineering, Technical University of	yes	Human milk oligosaccharides’ impact on maturation of the gut microbiota
+PXD074650	rejected	countries=['Germany'] | Section for Mass spectrometry and Proteomics, University Med ; Section Mass Spectrometry and Proteomics, University Medical		Contractility governs cardiomyocyte cell cycle activity
+PXD074713	confirmed	countries=['Singapore']		Large CETSA screen of antimalarial compounds
+PXD074728	confirmed	countries=['Singapore']		Detergent-assisted CETSA for drug discovery in Plasmodium falciparum
+PXD075984	confirmed	countries=['Singapore']	yes	Dengue virus recombinant NS1 sample LC-MSMS
+PXD076093	confirmed	countries=['Singapore']		Pyridoxal phosphate-dependent biosynthesis of aminovaleramide by AvaS in tRNA
+PXD076520	confirmed	countries=['Singapore']	yes	qChIP-MS reveals the local chromatin composition by label-free quantitative proteomics
+PXD076681	rejected	countries=['United Kingdom'] | University of Dundee ; School of Life Sciences, University of Dundee	yes	Tvp complexes support formation of the VgrG-PAAR spike during Type VI secretion system assembly
+PXD077392	rejected	countries=['Germany'] | University of Freiburg ; Faculty of Biology, University of Freiburg, Freiburg, German		Distinct Assembly Complexes are involved in cbb3-type Cytochrome Oxidase Maturation
+PXD078430	confirmed	countries=['Singapore']		Early-life skin molecular signaturesare predictive of atopic dermatitis risk in an Asian preconcepti
+PXD079013	confirmed	countries=['Singapore']	yes	Protein dynamics during Enterococcus faecalis OG1RF growth
+PXD079232	rejected	countries=['Germany'] | Proteomics Platform, BIH@Charite ; Core Unit Proteomics, Berlin Institute of Health (BIH) at Ch	yes	Towards a proteomic plasma biomarker panel for diagnosing vasculitis remission 
+PXD079682	confirmed	affiliation~'singapore': Program in Cancer and Stem Cell Biology, Duke-NUS Medical School, Singapore Department of 		Phosphoproteomics Reveals EPHA2 and EGFR Activation Following Wnt Pathway Inhibition in Wnt-Driven T
+PXD079947	confirmed	countries=['Singapore']		Modelling ferroptosis in a human microglial line by sequential exposure to iron and GPX4 inhibition
+PXD080308	rejected	countries=['Austria'] | University Innsbruck, Insitute Zoology ; University Innsbruck, Insitute Zoology		Identification of the sea star Asterina gibbosa adhesive footprint proteins (Sfps)
+PXD082164	confirmed	countries=['Singapore']		In depth mapping of the neuroblastoma secretome reveals an immunosuppressive secretory phenotype inh
+PXD082746	confirmed	countries=['Singapore']		Proteome integral solubility alteration with ATQ and DSM265
+PXD084067	confirmed	countries=['Singapore']		Type III CI Factors from wAlbB Induce Cytoplasmic Incompatibility via a Host Modification Mechanism
+PXD084821	confirmed	countries=['Singapore']		Quantitative and stability proteomics across P knowlesi IDC
+PXD085150	rejected	"countries=['Italy'] | 
+Laboratory of Clinical Biochemistry and Molecular Biology
+C ; Gianluca Sala, PhD Associate Professor in Biochemistry Labor"	yes	LGALS3BP is associated with selective cargo enrichment in Neuroblastoma Extracellular Vesicles
+PXD086492	confirmed	affiliation~'singapore': Director, Neurobiology Research Programme, Life Sciences Institute, National University of	yes	TGF-β inhibition ameliorates reactive ALS astrocyte sub-states at single-cell resolution

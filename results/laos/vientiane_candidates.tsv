@@ -1,0 +1,14 @@
+accession	verdict	evidence	in_corpus	title
+PXD018721	rejected	"countries=['Denmark'] | Postdoc
+Department of Biology, University of Copenhagen ; Evolutionary Genomics Section, Globe Institute, University o"	yes	The TNH2 hominin enamel proteome
+PXD020224	rejected	countries=['Netherlands'] | The Netherlands Cancer Institute ; Division of Oncogenomics, Oncode institute, The Netherlands 	yes	Anti-tumor immunity induces the presentation of aberrant peptides in melanoma
+PXD027426	rejected	"countries=['Denmark'] | Postdoc
+Department of Biology, University of Copenhagen ; Evolutionary Genomics Section, Globe Institute, University o"	yes	Nam Lot enamel proteome: part of a multi-proxy approach to exploring Homo sapiens arrival, environme
+PXD028862	rejected	countries=['Norway'] | University of Oslo ; Department of Cancer Immunology, Institute for Cancer Resear	yes	Public T cell epitopes shared among SARS-CoV-2 Public T cell epitopes shared among SARS-CoV-2 varian
+PXD028921	rejected	countries=['Netherlands'] | The Netherlands Cancer Institute ; Division of Oncogenomics, Oncode institute, The Netherlands 	yes	Tryptophan depletion provokes the production and presentation of in-frame tryptophan to phenylalanin
+PXD034789	rejected	countries=['United Kingdom'] | University of Oxford and the Lao-Oxford-Mahosot Hospital-Wel ; Department of Biochemistry, University of Oxford		- Deep proteomics network and machine learning analysis of human cerebrospinal fluid in Japanese enc
+PXD040213	rejected	countries=['France'] | Université Paris Cité ; Section for Evolutionary Genomics, GLOBE Institute, Universi	yes	Geometric morphometrics and paleoproteomics enlighten the paleodiversity of Pongo
+PXD043908	rejected	countries=['Norway'] | University of Oslo ; Head, Dept of Immunology, Institute for Cancer Research, Osl	yes	A T-cell receptor targeting a shared neoantigen mediates elimination of primary human acute myeloid 
+PXD046107	rejected	countries=['Spain'] | Proteomics Group ; Head of Proteomics Unit (affiliation at the time of MS data 		Polyamine-dependent metabolic shielding regulates U2 snRNP SF3 subcomplex phosphorylation and altern
+PXD054276	rejected	countries=['Norway'] | University of Oslo ; Head, Dept of Immunology, Institute for Cancer Research, Osl	yes	TCR-engineered T cells targeting a shared β-catenin mutation eradicate solid tumors in vivo
+PXD065659	rejected	countries=['Spain'] | Biobizkaia HRI ; IIS Biobizkaia		Polyamine-dependent metabolic shielding  regulates alternative splicing

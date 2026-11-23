@@ -9,6 +9,6 @@ PXD050598	confirmed	countries=['Philippines']		Proteomic Analysis of Aberrant Pr
 PXD055480	rejected	countries=['Uruguay'] | Institut Pasteur de Montevideo ; Analytical Biochemistry and Proteomics Unit, Institut Pasteu		Identification of factors involved in the adaptation to superoxide stress in pathogenic Leptospira
 PXD068009	rejected	"countries=['France'] | Light, Photosynthesis & Metabolism (LPM) &
 Exploring the Dyn ; 3  Univ. Grenoble Alpes, CNRS, INRAE, CEA, IRIG-LPCV, 38000 "		XL-MS of of influenza A NEP/NS2
-PXD071583	confirmed	countries=['Philippines']		Hexosamine Biosynthetic Pathway-Induced Cytoskeletal Remodeling: A Potential Driver for Early-Stage 
+PXD071583	confirmed	countries=['Philippines']	yes	Hexosamine Biosynthetic Pathway-Induced Cytoskeletal Remodeling: A Potential Driver for Early-Stage 
 PXD074672	rejected	countries=['United States'] | National Institute of Standards and Technology ; National Institute of Standards and Technology		Site-Specific Glycosylation Profiling of Protein Subunit and Inactivated Virus Vaccines
-PXD077813	rejected	countries=['France'] | CNRS, Pasteur ; Institut Pasteur, Université Paris Cité, CNRS UAR 2024, Mass		Core–sheath coupling controls flagellar curvature and motility in Leptospira
+PXD077813	rejected	countries=['France'] | CNRS, Pasteur ; Institut Pasteur, Université Paris Cité, CNRS UAR 2024, Mass	yes	Core–sheath coupling controls flagellar curvature and motility in Leptospira
