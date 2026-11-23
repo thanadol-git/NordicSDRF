@@ -1,0 +1,425 @@
+{
+ "schema_version": 1,
+ "artifact": "annotations/PXD005252.sdrf.tsv",
+ "dataset": "PXD005252",
+ "sources": [
+  {
+   "id": "pride",
+   "kind": "repository",
+   "location": "scratchpad/PXD005252/evidence/pride.json (PRIDE project PXD005252)"
+  },
+  {
+   "id": "files",
+   "kind": "repository",
+   "location": "scratchpad/PXD005252/evidence/files.json; scratchpad/PXD005252/files_all.json"
+  },
+  {
+   "id": "paper",
+   "kind": "publication",
+   "location": "PMID:29804834; doi:10.1016/j.cell.2018.04.033; PMC6078418 (NCBI efetch db=pmc id=6078418, saved as scratchpad/PXD005252/paper_pmc6078418.xml, methods text in manuscript_methods.txt)"
+  },
+  {
+   "id": "mq-index",
+   "kind": "search-output",
+   "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2018/06/PXD005252/MaxQuant_Output.zip :: MaxQuant_Output/Index_of_Raw_Data.xlsx (local copy scratchpad/PXD005252/mq/Index_of_Raw_Data.xlsx)"
+  },
+  {
+   "id": "mq-summary",
+   "kind": "search-output",
+   "location": "MaxQuant_Output.zip :: MaxQuant_Output/<folder>/summary.txt (local copies scratchpad/PXD005252/mq/*/summary.txt)"
+  },
+  {
+   "id": "mq-params",
+   "kind": "search-output",
+   "location": "MaxQuant_Output.zip :: MaxQuant_Output/<folder>/parameters.txt (local copies scratchpad/PXD005252/mq/*/parameters.txt)"
+  },
+  {
+   "id": "raw-header",
+   "kind": "raw-file",
+   "location": "HTTP range read (first 1.2-2 MB) of one RAW per acquisition date/instrument group at ftp.pride.ebi.ac.uk/pride/data/archive/2018/06/PXD005252/; output scratchpad/PXD005252/raw_header_instrument_check.txt"
+  },
+  {
+   "id": "cellosaurus",
+   "kind": "repository",
+   "location": "https://api.cellosaurus.org/cell-line/CVCL_0589 and /CVCL_6911 (fetched 2026-11-23)"
+  },
+  {
+   "id": "ols",
+   "kind": "repository",
+   "location": "sdrf-tools ols / verify (OLS) for MS:1002523, MS:1001313, MS:1001309, PRIDE:0000325/6/7, PRIDE:0000561, PRIDE:0000564, PRIDE:0000600, PRIDE:0000609, PRIDE:0000954, MONDO:0018874, CL:2000042, UBERON:0000922/0000178/0002113, NCIT:C185409, NCIT:C178973"
+  }
+ ],
+ "claims": [
+  {
+   "location": "source name rows 1-1317",
+   "value": "one source per (MaxQuant output folder, experiment, SILAC channel)",
+   "source_ids": [
+    "mq-index",
+    "mq-summary"
+   ],
+   "evidence": "Source = Index_of_Raw_Data experiment x SILAC channel; Acetyl and PROT folders kept as separate sources (same lysate is not documented)."
+  },
+  {
+   "location": "characteristics[organism] rows 89-1301",
+   "value": "Mus musculus",
+   "source_ids": [
+    "paper",
+    "pride"
+   ],
+   "evidence": "Crebbp fl/fl;Ep300 fl/fl mouse embryonic fibroblasts (Methods); PRIDE organisms NEWT:10090. Filenames 'mm'/'C8'."
+  },
+  {
+   "location": "characteristics[organism] rows 1-88, 1302-1317",
+   "value": "Homo sapiens",
+   "source_ids": [
+    "paper",
+    "pride"
+   ],
+   "evidence": "Kasumi-1 (human AML) and 293FT (human) cells (Methods); filenames 'hs'."
+  },
+  {
+   "location": "characteristics[organism part] rows 89-1301",
+   "value": "embryo",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Mouse embryonic fibroblasts."
+  },
+  {
+   "location": "characteristics[organism part] rows 1-88",
+   "value": "blood",
+   "source_ids": [
+    "paper",
+    "pride",
+    "cellosaurus"
+   ],
+   "evidence": "Kasumi-1: acute myeloid leukemia line; PRIDE organismParts 'blood cell'; Cellosaurus derived-from site peripheral blood."
+  },
+  {
+   "location": "characteristics[organism part] rows 1302-1317",
+   "value": "kidney",
+   "source_ids": [
+    "paper",
+    "cellosaurus"
+   ],
+   "evidence": "293FT 'derived from human embryonal kidney cells' (Methods); Cellosaurus CVCL_6911 fetal kidney."
+  },
+  {
+   "location": "characteristics[cell type] rows 89-1301",
+   "value": "embryonic fibroblast",
+   "source_ids": [
+    "paper",
+    "pride"
+   ],
+   "evidence": "Mouse embryonic fibroblasts; PRIDE organismParts fibroblast (CL:0000057). Others not stated: not available."
+  },
+  {
+   "location": "characteristics[biological replicate] rows 1-1317",
+   "value": "integer rank of the MaxQuant experiment among experiments containing the same condition",
+   "source_ids": [
+    "mq-index",
+    "mq-summary"
+   ],
+   "evidence": "E1..E3 (or E1..E7 for the time course) are the MaxQuant Experiment names in summary.txt / Index; replicate index counted within identical condition. Kasumi-1 has no Experiment column in its summary.txt and the Index lists a single experiment: written as 1."
+  },
+  {
+   "location": "characteristics[disease] rows 89-1301",
+   "value": "normal",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Non-diseased MEF fibroblasts (immortalised, floxed)."
+  },
+  {
+   "location": "characteristics[disease] rows 1-88",
+   "value": "acute myeloid leukemia",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "'Kasumi-1 is a human acute myeloid leukemia cell line' (Results)."
+  },
+  {
+   "location": "characteristics[material type] rows 1-1317",
+   "value": "cell line",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "All samples are cultured cell lines (MEF clone, Kasumi-1, 293FT) or lysate thereof."
+  },
+  {
+   "location": "characteristics[treatment] rows 1-1317",
+   "value": "control / A-485 / Compound R / CBP112 / knockout / A-485 time course / recombinant p300 / p300 transfection",
+   "source_ids": [
+    "mq-index",
+    "paper"
+   ],
+   "evidence": "Index_of_Raw_Data column C (SILAC L=..., M=..., H=...) names the condition per channel; doses/durations from Methods (3 uM Cmpd-R and A-485, 5 uM CBP112, 16 h; KO 72 h). Doses omitted where the paper does not state them (Kasumi-1, time course)."
+  },
+  {
+   "location": "characteristics[enrichment process] rows 1-40, 89-152, 249-673, 746-823, 918-1107, 1288-1317",
+   "value": "antibody enrichment",
+   "source_ids": [
+    "paper",
+    "mq-index"
+   ],
+   "evidence": "Acetylated peptides enriched with PTMScan acetyl-lysine antibody kit; folders 'Ac'/type=acetylation."
+  },
+  {
+   "location": "characteristics[enrichment process] rows 41-88, 153-248, 674-745, 824-917, 1108-1287",
+   "value": "not applicable",
+   "source_ids": [
+    "mq-index"
+   ],
+   "evidence": "Index type=proteome: no enrichment."
+  },
+  {
+   "location": "characteristics[strain or breed] rows 1-1317",
+   "value": "not available",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Strain not stated."
+  },
+  {
+   "location": "characteristics[sex] rows 1-88",
+   "value": "male",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "'Kasumi-1 cells are derived from a human male'."
+  },
+  {
+   "location": "characteristics[sex] rows 89-1317",
+   "value": "not available",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "'The sex of these cells is not reported' (MEFs); 293FT not stated."
+  },
+  {
+   "location": "characteristics[developmental stage] rows 1-1317",
+   "value": "not available",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Not stated for any line."
+  },
+  {
+   "location": "characteristics[cell line] rows 1-1317",
+   "value": "Kasumi-1 / 293FT / Crebbp fl/fl Ep300 fl/fl Cre-ERT2 MEF clone 8",
+   "source_ids": [
+    "paper",
+    "raw-header"
+   ],
+   "evidence": "Methods name the lines; clone 8 = 'clone8'/'C8' in file names; MEF clone is an engineered line (Kasper et al. 2010) without a Cellosaurus entry."
+  },
+  {
+   "location": "characteristics[cellosaurus accession] rows 1-88",
+   "value": "CVCL_0589",
+   "source_ids": [
+    "cellosaurus"
+   ],
+   "evidence": "Kasumi-1. (sdrf-tools offline DB disease field says 'megakaryoblastic'; the paper and Cellosaurus NCIt say AML with maturation, so the paper value is used.)"
+  },
+  {
+   "location": "characteristics[cellosaurus accession] rows 1302-1317",
+   "value": "CVCL_6911",
+   "source_ids": [
+    "cellosaurus"
+   ],
+   "evidence": "293FT = HEK293-FT (the offline lookup fuzzy-matched it to HEK293T/CVCL_0063; overridden)."
+  },
+  {
+   "location": "characteristics[cellosaurus accession] rows 89-1301",
+   "value": "not available",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Engineered MEF clone not in Cellosaurus."
+  },
+  {
+   "location": "characteristics[cellosaurus name] rows 1-1317",
+   "value": "Kasumi-1 / HEK293-FT / not available",
+   "source_ids": [
+    "cellosaurus"
+   ],
+   "evidence": "Cellosaurus identifiers."
+  },
+  {
+   "location": "characteristics[passage number] rows 1-1317",
+   "value": "not available",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Not reported."
+  },
+  {
+   "location": "characteristics[culture medium] rows 1-1317",
+   "value": "Dulbecco's Modified Eagle Medium (MEF, 293FT); Roswell Park Memorial Institute 1640 Medium (Kasumi-1)",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "'MEFs and Kasumi-1 were cultured in DMEM and RPMI1640'; 293FT 'in SILAC DMEM media as described above for MEF cells'."
+  },
+  {
+   "location": "assay name / comment[data file] rows 1-1317",
+   "value": "raw file stem / file name",
+   "source_ids": [
+    "files",
+    "mq-summary"
+   ],
+   "evidence": "612 RAW files in PRIDE, all claimed; each listed in a MaxQuant summary.txt. 8 files (20171121 CBP112-1 acK SCX) absent from Index but present in MEF CBP112 Ac summary.txt (Experiment E2)."
+  },
+  {
+   "location": "comment[technical replicate] rows 1-1317",
+   "value": "1",
+   "source_ids": [
+    "mq-summary"
+   ],
+   "evidence": "No technical-replicate structure is documented; a/b file suffixes are kept as distinct fraction positions."
+  },
+  {
+   "location": "comment[label] rows 1-1317",
+   "value": "SILAC light / SILAC medium / SILAC heavy",
+   "source_ids": [
+    "mq-summary",
+    "mq-index"
+   ],
+   "evidence": "summary.txt Multiplicity/Labels: 2-plex light|Arg10;Lys8 (heavy) and 3-plex light|Arg6;Lys4|Arg10;Lys8 for the time course; channel identities from Index column C and file names (L-0_M-1h_H-8h etc.)."
+  },
+  {
+   "location": "comment[fraction identifier] rows 1-1317",
+   "value": "position of the file within its experiment (sorted by file name)",
+   "source_ids": [
+    "mq-index"
+   ],
+   "evidence": "Nominal fraction numbers (F01-F10, a/b, SCX 1-5, HpH 1A-6A) are not unique within a MaxQuant experiment; positional numbering used."
+  },
+  {
+   "location": "comment[fractionation method] rows 89-152, 249-308, 327-332, 351-356, 375-380, 399-404, 423-428, 447-533, 570-575, 612-673",
+   "value": "Strong cation-exchange chromatography (SCX)",
+   "source_ids": [
+    "files",
+    "paper"
+   ],
+   "evidence": "File name contains 'SCX'/'scx' (in-tip SCX after enrichment per Methods)."
+  },
+  {
+   "location": "comment[fractionation method] rows 309-326, 333-350, 357-374, 381-398, 405-422, 429-446, 534-569, 576-611, 918-987, 998-1017, 1028-1047, 1077, 1107-1287",
+   "value": "High-pH reversed-phase chromatography (hpHRP)",
+   "source_ids": [
+    "files",
+    "paper"
+   ],
+   "evidence": "File name contains 'HpH' (high pH reversed-phase pre-fractionation per Methods)."
+  },
+  {
+   "location": "comment[fractionation method] rows 1-88, 153-248, 674-917, 988-997, 1018-1027, 1048-1076, 1078-1106, 1288-1317",
+   "value": "not available",
+   "source_ids": [
+    "files",
+    "paper"
+   ],
+   "evidence": "File name does not name the method; Methods mention both HpH and SCX without per-file assignment (Tables S2/S3 not retrieved)."
+  },
+  {
+   "location": "comment[instrument] rows 1-1317",
+   "value": "Q Exactive HF",
+   "source_ids": [
+    "raw-header",
+    "paper"
+   ],
+   "evidence": "RAW headers of one file per date/instrument group (QE1 and QE2) read 'Q Exactive HF - Orbitrap MS'; Methods say Q-Exactive HF. PRIDE structured field 'Q Exactive' and PRIDE protocol text 'Q-Exactive plus' disagree and are overridden."
+  },
+  {
+   "location": "comment[proteomics data acquisition method] rows 1-1317",
+   "value": "Data-dependent acquisition",
+   "source_ids": [
+    "pride",
+    "mq-params"
+   ],
+   "evidence": "PRIDE experiment type shotgun proteomics; MaxQuant MS/MS-triggered search. No explicit method statement."
+  },
+  {
+   "location": "comment[cleavage agent details] rows 1-1317",
+   "value": "Trypsin/P ; Lys-C",
+   "source_ids": [
+    "mq-params",
+    "mq-summary",
+    "paper"
+   ],
+   "evidence": "MaxQuant Enzyme = Trypsin/P (summary.txt); Methods: 'Lys-C was added ... trypsin ... overnight'. PRIDE protocol text only says 'standard protocols'."
+  },
+  {
+   "location": "comment[dissociation method] rows 1-1317",
+   "value": "not available",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Fragmentation not stated."
+  },
+  {
+   "location": "comment[fragment mass tolerance] rows 1-1317",
+   "value": "20 ppm",
+   "source_ids": [
+    "mq-params"
+   ],
+   "evidence": "parameters.txt: MS/MS tol. (FTMS) 20 ppm; Orbitrap fragment analysis."
+  },
+  {
+   "location": "comment[reduction reagent] rows 1-1317",
+   "value": "TCEP",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "'reduced and alkylated by 5mM TCEP and 5mM chloroacetamide'."
+  },
+  {
+   "location": "comment[alkylation reagent] rows 1-1317",
+   "value": "Chloroacetamide",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Same sentence in Methods."
+  },
+  {
+   "location": "comment[modification parameters] rows 1-1317",
+   "value": "Carbamidomethyl (fixed); Oxidation (M), Acetyl (Protein N-term), Acetyl (K) in acetyl-searched folders, SILAC label modifications (variable)",
+   "source_ids": [
+    "mq-params",
+    "mq-summary"
+   ],
+   "evidence": "parameters.txt Fixed modifications = Carbamidomethyl (C); summary.txt Variable modifications per folder; label states from Labels0/1/2. Acetyl (K) variable in every Ac folder and in 'MEF Cmpd-R PROT'; absent in the other PROT folders. Read with sdrf-tools search-params. Rows with fewer than 8 modification values are padded with the reserved word not applicable so every repeated column is filled (convert-openms rejects empty cells)."
+  },
+  {
+   "location": "comment[sdrf version] / comment[sdrf template] / comment[sdrf annotation tool] / technology type rows 1-1317",
+   "value": "v1.1.0; ms-proteomics@1.1.0, vertebrates@1.1.0, cell-lines@1.1.0; manual curation; proteomic profiling by mass spectrometry",
+   "source_ids": [
+    "ols"
+   ],
+   "evidence": "Spec README Version v1.1.0; templates pinned to their released latest."
+  },
+  {
+   "location": "factor value[treatment] rows 1-1317",
+   "value": "mirrors characteristics[treatment]",
+   "source_ids": [
+    "mq-index",
+    "paper"
+   ],
+   "evidence": "Compared variable per SILAC channel: treated vs control."
+  }
+ ],
+ "limitations": [
+  "Review gate not run in this context: the producing task may not dispatch a fresh-context sdrf-adversarial-review subagent (no isolated context available); status REVIEW_FAILED (draft) per unattended-mode rule.",
+  "Paper Tables S1-S3 (per-experiment fractionation and replicate details) not retrieved; fraction identifiers are positional and fractionation method is only set when the file name names SCX or HpH.",
+  "Kasumi-1: Index/MaxQuant group all 44 files in one experiment (E1) but file names carry E2 tags and two date series (20160822/0829, 0901/0905): biological replicate written as 1, true replicate structure unverified.",
+  "Index experiment numbers do not equal the E-tags in file names for CBP112 (E1 holds files tagged E2) and Cmpd-R: the deposited MaxQuant experiment is followed.",
+  "8 RAW files (20171121 CBP112-1 acK SCX) are missing from Index_of_Raw_Data.xlsx; experiment taken from MEF CBP112 Ac summary.txt (E2), SILAC scheme assumed identical to the other CBP112 Ac experiments.",
+  "Acetyl-enriched and proteome samples of the same experiment number are kept as separate sources because the deposit does not state they share a lysate.",
+  "'control' arm is not defined further (vehicle/DMSO, wild type or no-4-OHT) for inhibitor and KO experiments; for p300 in vitro the control (H) arm is not defined (no p300 vs p300 + A-485).",
+  "Label modifications are listed as variable modifications as read by sdrf-tools search-params from summary.txt; they are applied to all channels of a run.",
+  "sdrf-tools reconcile reports two findings against pride.json: cleavage agent not named in the PRIDE text (paper Methods and MaxQuant parameters name Lys-C and trypsin) and instrument 'Q Exactive Plus' in the PRIDE text (RAW headers and paper say HF).",
+  "comment[precursor mass tolerance] omitted: deposited parameters.txt does not carry it (convert-openms then assumes 10 ppm; MaxQuant defaults are not asserted). The online-ontology run of parse_sdrf validate-sdrf stalled on OLS for >6 min and was killed; validation was run with --use_ols_cache_only.",
+  "Dose of A-485 in the time course and of Compound R in Kasumi-1 not stated in the retrieved text; omitted from treatment."
+ ]
+}
