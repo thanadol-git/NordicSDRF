@@ -1,0 +1,4 @@
+# daily queue 2026-11-23 manila batch 1 (all 3 confirmed Manila PXDs; none in corpus / annotated / blocked)
+PXD027710	philippines/manila	pending	manila: no screen yet; queued as a candidate
+PXD050598	philippines/manila	pending	manila: no screen yet; queued as a candidate
+PXD071583	philippines/manila	pending	manila: no screen yet; queued as a candidate

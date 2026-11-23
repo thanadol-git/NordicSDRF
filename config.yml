@@ -407,14 +407,14 @@ countries:
   philippines:
     region: sea
     name: Philippines
-    status: scoped
+    status: in_progress
     cities:
       manila:
         name: Manila
         search_terms: [Philippines, Manila, "University of the Philippines"]
         pride_hits: 12
         screened: 0
-        annotated: 0
+        annotated: 3
         blocked: 0
         pxd_list: lists/philippines/manila.txt
         pxd_count: 3
