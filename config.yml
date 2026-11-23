@@ -59,7 +59,7 @@ countries:
         search_terms: [Lund, Malmö, Skåne]
         pxd_list: lists/sweden/lund.txt
         pxd_count: 163
-        pride_hits: 547
+        pride_hits: 549
         screened: 0
         annotated: 75
         blocked: 82
@@ -407,7 +407,7 @@ countries:
   philippines:
     region: sea
     name: Philippines
-    status: not_started
+    status: scoped
     cities:
       manila:
         name: Manila
@@ -416,6 +416,9 @@ countries:
         screened: 0
         annotated: 0
         blocked: 0
+        pxd_list: lists/philippines/manila.txt
+        pxd_count: 3
+        in_corpus: 0
 
   indonesia:
     region: sea

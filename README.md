@@ -146,9 +146,9 @@ The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with
 
 ![Affinity PAD — in progress: SDRF progress per city](status/plots/affinity_pad.svg)
 
-### Southeast Asia — not started
+### Southeast Asia — scoped
 
-![Southeast Asia — not started: SDRF progress by city](status/plots/sea.svg)
+![Southeast Asia — scoped: SDRF progress by city](status/plots/sea.svg)
 <!-- status:end -->
 
 No duplicates found within or across the four Swedish city lists. Two
