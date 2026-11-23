@@ -339,11 +339,17 @@ def overview_svg(rows: list[tuple[dict, list[dict]]]) -> str:
 
 
 def sea_cities(rows: list[tuple[dict, list[dict]]]) -> list[dict]:
-    """Flatten SEA country tables into one city list labeled `Country · City`."""
+    """Flatten SEA country tables into one city list labeled `Country · City`.
+
+    Cities with no PXDs on the bar (empty manifest / zero progress and no PRIDE
+    hit fallback) are omitted so sea.svg only shows places with something to plot.
+    """
     out = []
     for country, cities in rows_for_region(rows, "sea"):
         cname = country.get("name") or country["country"].title()
         for city in cities:
+            if bar_total(city)[0] <= 0:
+                continue
             row = dict(city)
             city_name = city.get("city") or ""
             row["city"] = city_name if city_name == cname else f"{cname} · {city_name}"
