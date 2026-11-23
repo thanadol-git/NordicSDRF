@@ -1,0 +1,5 @@
+# daily queue denmark/copenhagen batch 12 (the last 4 untouched Copenhagen PXDs by total deposited RAW size; 25 other pending accessions already have local evidence reports/blockers and are not queued; excluding bigbio corpus datasets/+sandbox/)
+PXD004055	denmark/copenhagen	pending	copenhagen: batch 12
+PXD006361	denmark/copenhagen	pending	copenhagen: batch 12
+PXD003443	denmark/copenhagen	pending	copenhagen: batch 12
+PXD005252	denmark/copenhagen	pending	copenhagen: batch 12
