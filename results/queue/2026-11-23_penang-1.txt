@@ -1,0 +1,3 @@
+# daily queue 2026-11-23 penang batch 1 (all 3 confirmed Penang PXDs; PXD018338 already in corpus — skipped for annotate)
+PXD010171	malaysia/penang	pending	penang: no screen yet; queued as a candidate
+PXD077525	malaysia/penang	pending	penang: no screen yet; queued as a candidate
