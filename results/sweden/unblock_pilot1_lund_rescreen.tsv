@@ -1,0 +1,9 @@
+accession	city	outcome	one_line
+PXD012524	lund	STILL_BLOCKED	Partial later-paper IDs (CSC-17F=APP, CSC-37N=control) but 12F/36C still unmapped; no text-extractable prefix→genotype table.
+PXD023174	lund	STILL_BLOCKED	HTTP-range of q01_noDECOY.csv shows OpenSWATH file_name=Anahita_* only — no patient/diagnosis labels.
+PXD054562	lund	STILL_BLOCKED	DIA-NN reports expose LPS/Lav/G and opaque MR_* stems but no Raw_zipped.rar inventory or EBP sample sheet.
+PXD007995	lund	STILL_BLOCKED	MaxQuant summary.txt Experiment column is numeric 1–12 only; Emma_* still unmapped to scaffold/time/label state.
+PXD021338	lund	STILL_BLOCKED	FF_M_* codes still lack woman/MII-vs-immature map in PMC supplements or deposited MRM CSV.
+PXD025956	lund	STILL_BLOCKED	Circulation supplements still 403; deposited Table-1..4 name samples but not TMT channels or set↔genotype.
+PXD002896	lund	STILL_BLOCKED	Erik/Simon opaque names; OA paper has no RAW→tissue/dose table; no design file in PRIDE.
+PXD004158	lund	ANNOTATED	Sample_description.xlsx maps all 54 Camilla_* RAW to IL-1/control×day; wrote SDRF (54 rows) + report + validation.

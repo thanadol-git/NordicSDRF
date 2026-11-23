@@ -1,0 +1,147 @@
+accession	city	score	reasons	hard	blocked_bytes	title_line
+PXD012524	lund	14	mq/design,supp/paper,filenames,prior-draft	False	1964	# PXD012524 — annotation blocked
+PXD023174	lund	14	mq/design,supp/paper,filenames,prior-draft	False	1433	# PXD023174 — annotation blocked
+PXD054562	lund	13	mq/design,filenames,prior-draft	False	869	# PXD054562 annotation blocked
+PXD007995	lund	12	mq/design,filenames,prior-draft,explicit-invent-ban	False	1088	# PXD007995 — annotation blocked
+PXD014234	lund	12	mq/design,supp/paper,prior-draft	False	1670	# PXD014234 — annotation blocked
+PXD021338	lund	12	mq/design,supp/paper,prior-draft	False	1528	# PXD021338 — annotation blocked
+PXD019690	stockholm	12	mq/design,prior-draft,mixed-partial-possible	False	645	# PXD019690 — annotation blocked
+PXD034342	stockholm	12	mq/design,supp/paper,filenames,explicit-invent-ban	False	1893	# PXD034342 — annotation blocked
+PXD039256	stockholm	12	mq/design,supp/paper,filenames,explicit-invent-ban	False	1740	# PXD039256 — annotation blocked
+PXD025956	lund	11	mq/design,supp/paper,mixed-partial-possible	False	2813	# PXD025956 — BLOCKED
+PXD063200	lund	11	mq/design,prior-draft	False	1608	# PXD063200: blocked after independent review
+PXD002896	lund	10	mq/design,supp/paper,filenames	False	1084	# PXD002896 — annotation blocked
+PXD004158	lund	10	mq/design,supp/paper,filenames	False	1153	# PXD004158 — blocked: no per-file sample mapping is publicly available
+PXD006734	lund	10	mq/design,supp/paper,filenames	False	1493	# PXD006734 — blocked: heterogeneous RAW files lack an experiment-level sample map
+PXD008213	lund	10	mq/design,supp/paper,filenames	False	1321	# PXD008213 — blocked: TMT RAW files are not mapped to biological subjects or channels
+PXD008307	lund	10	mq/design,supp/paper,filenames	False	1174	# PXD008307 — blocked: no TMT channel-to-AML sample map
+PXD008676	lund	10	mq/design,supp/paper,filenames	False	1135	# PXD008676 — blocked: labelled RAW aliases lack experimental-condition mapping
+PXD011546	lund	10	mq/design,supp/paper,filenames	False	1238	# PXD011546 — BLOCKED
+PXD031458	lund	10	supp/paper,filenames,prior-draft	False	1419	# PXD031458 — annotation blocked
+PXD033115	lund	10	mq/design,supp/paper,explicit-invent-ban	False	1007	# PXD033115 — blocked SDRF annotation
+PXD063461	lund	10	mq/design,supp/paper	False	1475	# PXD063461 — annotation blocked
+PXD010554	stockholm	10	supp/paper,filenames,prior-draft,explicit-invent-ban	False	1299	# PXD010554 — annotation blocked
+PXD025319	stockholm	10	mq/design,supp/paper,filenames	False	963	# PXD025319 — BLOCKED
+PXD030167	stockholm	10	mq/design,supp/paper,explicit-invent-ban	False	998	# PXD030167 — BLOCKED
+PXD039805	stockholm	10	mq/design,supp/paper,explicit-invent-ban	False	1064	# PXD039805 — BLOCKED
+PXD009426	lund	9	supp/paper,filenames,prior-draft	False	1246	# PXD009426 — blocked: preparation labels are not mapped to tissue/species and digestion arms
+PXD013344	lund	9	supp/paper,filenames,prior-draft	False	1929	# PXD013344 — annotation blocked
+PXD016706	lund	9	mq/design,prior-draft	False	1491	# PXD016706 — annotation blocked
+PXD028709	lund	9	supp/paper,filenames,prior-draft	False	2409	# PXD028709 — annotation blocked
+PXD013182	stockholm	9	mq/design,prior-draft	False	758	# PXD013182 — annotation blocked
+PXD039591	stockholm	9	mq/design,filenames,explicit-invent-ban	False	818	# PXD039591 — BLOCKED
+PXD056818	stockholm	9	mq/design,filenames	False	1059	# PXD056818 — BLOCKED
+PXD057937	stockholm	9	mq/design,filenames	False	1071	# PXD057937 — BLOCKED
+PXD061498	stockholm	9	mq/design,filenames	False	1012	# PXD061498 — BLOCKED
+PXD064939	stockholm	9	supp/paper,prior-draft	False	1251	# PXD064939 — BLOCKED
+PXD069119	stockholm	9	supp/paper,prior-draft	False	998	# PXD069119 — BLOCKED
+PXD001391	lund	8	mq/design,supp/paper	False	3359	# PXD001391 — BLOCKED
+PXD006419	lund	8	mq/design,supp/paper	False	1456	# PXD006419 — blocked: RAW aliases cannot be assigned to MSC sample groups
+PXD008442	lund	8	mq/design,supp/paper	False	1153	# PXD008442 — blocked: no patient/disease/extraction mapping for RAW files
+PXD011767	lund	8	mq/design,supp/paper	False	1154	# PXD011767 — BLOCKED
+PXD030521	lund	8	supp/paper,prior-draft	False	1622	# PXD030521 — annotation blocked
+PXD045155	lund	8	mq/design,filenames	False	1095	# PXD045155 — annotation blocked
+PXD047943	lund	8	supp/paper,prior-draft	False	889	# PXD047943 — annotation blocked
+PXD048039	lund	8	supp/paper,prior-draft	False	997	# PXD048039 — annotation blocked
+PXD028398	stockholm	8	mq/design,supp/paper	False	2248	# PXD028398 — annotation blocked
+PXD044445	stockholm	8	mq/design,filenames	False	555	# PXD044445 — BLOCKED
+PXD060423	stockholm	8	mq/design,explicit-invent-ban	False	884	# PXD060423 — BLOCKED
+PXD000616	lund	7	mq/design,filenames	False	1070	# PXD000616 — annotation blocked
+PXD000691	lund	7	mq/design,filenames	False	1054	# PXD000691 — annotation blocked
+PXD000708	lund	7	mq/design,filenames	False	876	# PXD000708 — annotation blocked
+PXD000944	lund	7	mq/design,filenames	False	825	# PXD000944 — annotation blocked
+PXD001893	lund	7	mq/design,filenames	False	894	# PXD001893 — annotation blocked
+PXD007249	lund	7	supp/paper,prior-draft	False	859	# PXD007249 — BLOCKED
+PXD020157	lund	7	filenames,prior-draft,explicit-invent-ban	False	1387	# PXD020157 — annotation blocked
+PXD023890	lund	7	supp/paper,prior-draft	False	1455	# PXD023890 — annotation blocked
+PXD025242	lund	7	supp/paper,prior-draft	False	1367	# PXD025242 — annotation blocked
+PXD029129	lund	7	supp/paper,prior-draft	False	1652	# PXD029129 — annotation blocked
+PXD010006	stockholm	7	prior-draft,mixed-partial-possible	False	722	# PXD010006 — annotation blocked
+PXD020191	stockholm	7	supp/paper,prior-draft	False	551	# PXD020191 — annotation blocked
+PXD022734	stockholm	7	mq/design,filenames	False	820	# PXD022734 — BLOCKED
+PXD033081	stockholm	7	mq/design,explicit-invent-ban	False	913	# PXD033081 — BLOCKED
+PXD064521	stockholm	7	filenames,mixed-partial-possible	False	1015	# PXD064521 — BLOCKED
+PXD071434	stockholm	7	supp/paper,filenames	False	804	# PXD071434 — BLOCKED
+PXD020756	lund	6	filenames,prior-draft	False	1481	# PXD020756 — annotation blocked
+PXD033983	lund	6	supp/paper,filenames	False	927	# PXD033983 — blocked SDRF annotation
+PXD063187	lund	6	prior-draft	False	634	# PXD063187 annotation blocked
+PXD031107	stockholm	6	supp/paper,filenames	False	1238	# BLOCKED: PXD031107
+PXD042967	stockholm	6	mq/design	False	742	# PXD042967 — BLOCKED
+PXD044069	stockholm	6	mq/design	False	584	# PXD044069 — BLOCKED
+PXD047238	stockholm	6	mq/design	False	608	# PXD047238 — BLOCKED
+PXD047313	stockholm	6	mq/design	False	689	# PXD047313 — BLOCKED
+PXD069997	stockholm	6	prior-draft	False	1080	# PXD069997 — BLOCKED
+PXD077592	stockholm	6	prior-draft	False	1093	# PXD077592 — BLOCKED
+PXD001966	lund	5	mq/design	False	741	# PXD001966 — annotation blocked
+PXD006876	lund	5	supp/paper,filenames	False	1132	# PXD006876 — blocked: no per-file fetal/adult HSPC mapping
+PXD007901	lund	5	supp/paper,filenames	False	1172	# PXD007901 — blocked: Sample 1–10 aliases are not mapped to PDX identities
+PXD008648	lund	5	supp/paper,filenames	False	1370	# PXD008648 — blocked: DNMT1 RAW files are not mapped to KO/control sample identities
+PXD010296	lund	5	supp/paper,filenames	False	1260	# PXD010296 — blocked: no complete mixed-material workflow/run map
+PXD010364	lund	5	supp/paper,filenames	False	1592	# PXD010364 — BLOCKED
+PXD011008	lund	5	mq/design	False	1282	# PXD011008 — annotation blocked
+PXD050545	lund	5	supp/paper	False	1505	# PXD050545: TMT channel layouts required
+PXD060216	lund	5	mixed-partial-possible	False	1257	# PXD060216 — annotation blocked
+PXD013134	stockholm	5	prior-draft,explicit-invent-ban	False	1234	# PXD013134 — annotation blocked
+PXD023148	stockholm	5	supp/paper,filenames	False	659	# PXD023148 — BLOCKED
+PXD023846	stockholm	5	supp/paper,filenames	False	545	# PXD023846 — BLOCKED
+PXD023881	stockholm	5	mq/design	False	771	# PXD023881 — BLOCKED
+PXD038570	lund	4	supp/paper	False	698	# PXD038570 — BLOCKED
+PXD010175	stockholm	4	prior-draft	False	676	# PXD010175 — annotation blocked
+PXD013284	stockholm	4	prior-draft	False	804	# PXD013284 — annotation blocked
+PXD014445	stockholm	4	prior-draft	False	726	# PXD014445 — annotation blocked
+PXD014830	stockholm	4	prior-draft	False	601	# PXD014830 — annotation blocked
+PXD017453	stockholm	4	prior-draft	False	651	# PXD017453 — annotation blocked
+PXD018426	stockholm	4	prior-draft	False	596	# PXD018426 — annotation blocked
+PXD019267	stockholm	4	prior-draft	False	644	# PXD019267 — annotation blocked
+PXD041024	stockholm	4	filenames,explicit-invent-ban	False	785	# PXD041024 — BLOCKED
+PXD047462	stockholm	4	mixed-partial-possible	False	677	# PXD047462 — BLOCKED
+PXD053789	stockholm	4	filenames	False	735	# PXD053789 — BLOCKED
+PXD056170	stockholm	4	filenames	False	839	# PXD056170 — BLOCKED
+PXD003007	lund	3	supp/paper	False	1758	# PXD003007 — blocked: RAW files cannot be assigned to study groups
+PXD046365	lund	3	filenames	False	1219	# PXD046365 — annotation blocked
+PRD000423	stockholm	3	supp/paper	False	843	# PRD000423 — BLOCKED
+PXD021799	stockholm	3	supp/paper	False	614	# PXD021799 — BLOCKED
+PXD023050	stockholm	3	supp/paper	False	634	# PXD023050 — BLOCKED
+PXD031143	stockholm	3	filenames	False	903	# PXD031143 — BLOCKED
+PXD034351	stockholm	3	filenames	False	1007	# BLOCKED: PXD034351
+PXD037675	stockholm	3	filenames	False	882	# PXD037675 — BLOCKED
+PXD037681	stockholm	3	filenames	False	858	# PXD037681 — BLOCKED
+PXD046610	stockholm	3	filenames	False	1214	# PXD046610 — BLOCKED
+PXD002037	lund	2	filenames	False	772	# PXD002037 — annotation blocked
+PXD006719	lund	2	filenames	False	1047	# PXD006719 — blocked: no raw-file-to-tumour mapping
+PXD002603	stockholm	2	filenames	False	404	# PXD002603 — blocked annotation
+PXD023760	stockholm	2	filenames	False	812	# PXD023760 — BLOCKED
+PXD030695	stockholm	2	explicit-invent-ban	False	1007	# PXD030695 — BLOCKED
+PXD037486	stockholm	2	explicit-invent-ban	False	365	# PXD037486 blocked
+PXD043637	stockholm	2	explicit-invent-ban	False	687	# PXD043637 — BLOCKED
+PXD050241	stockholm	2	unclear	False	626	# PXD050241 — BLOCKED
+PXD054158	stockholm	2	unclear	False	759	# PXD054158 — BLOCKED
+PXD054598	stockholm	2	unclear	False	842	# PXD054598 — BLOCKED
+PXD056176	stockholm	2	unclear	False	780	# PXD056176 — BLOCKED
+PXD056189	stockholm	2	unclear	False	1153	# PXD056189 — BLOCKED
+PXD056192	stockholm	2	unclear	False	1012	# PXD056192 — BLOCKED
+PXD056194	stockholm	2	unclear	False	913	# PXD056194 — BLOCKED
+PXD056196	stockholm	2	unclear	False	917	# PXD056196 — BLOCKED
+PXD056197	stockholm	2	unclear	False	917	# PXD056197 — BLOCKED
+PXD056199	stockholm	2	unclear	False	897	# PXD056199 — BLOCKED
+PXD061849	stockholm	2	unclear	False	1000	# PXD061849 — BLOCKED
+PXD064542	stockholm	2	unclear	False	950	# PXD064542 — BLOCKED
+PXD067483	stockholm	2	unclear	False	829	# PXD067483 — BLOCKED
+PXD000617	lund	1	explicit-invent-ban	False	953	# PXD000617 — annotation blocked
+PXD044689	lund	1	unclear	False	1054	# PXD044689 — annotation blocked
+PXD036514	stockholm	1	unclear	False	1086	# PXD036514 — BLOCKED
+PXD037451	stockholm	1	unclear	False	398	# PXD037451 blocked
+PXD040913	stockholm	1	unclear	False	930	# PXD040913 — BLOCKED
+PXD042661	stockholm	1	unclear	False	726	# PXD042661 — BLOCKED
+PXD045264	stockholm	1	unclear	False	754	# PXD045264 — BLOCKED
+PXD001929	lund	0	unclear	False	902	# PXD001929 — annotation blocked
+PXD010516	lund	0	unclear	False	875	# PXD010516 — annotation blocked
+PXD023450	stockholm	0	unclear	False	729	# PXD023450 — BLOCKED
+PXD047461	lund	-10	supp/paper,filenames,prior-draft,HARD	True	1099	# PXD047461 — annotation blocked
+PXD021266	lund	-13	supp/paper,prior-draft,HARD	True	1766	# PXD021266 — annotation blocked
+PXD023122	lund	-13	supp/paper,prior-draft,HARD	True	1260	# PXD023122 — annotation blocked
+PXD017968	lund	-16	prior-draft,HARD	True	832	# PXD017968 — annotation blocked
+PXD000435	lund	-17	supp/paper,HARD	True	872	# PXD000435 — annotation blocked
+PXD001031	lund	-18	filenames,HARD	True	557	# PXD001031 — annotation blocked
+PXD006429	lund	-18	filenames,HARD	True	511	# PXD006429 — annotation blocked
+PXD003405	lund	-20	HARD	True	486	# PXD003405 — annotation blocked

@@ -3,7 +3,7 @@ batch_order	accession	pride_raw_bytes	pride_raw_count	annotation_status	title
 2	PXD042430	22230354877	14	approved: 14 modern-grouper RAW rows; 1082 and CAN2 species resolved; independent review pass	Collagen sequencing and ZooMS biomarkers of Mediterranean groupers (Epinephelus spp.)
 3	PXD012573	22413621528	24	blocked: 264-row channel map verified; independent review rejected inferred DDA; raw acquisition method needed	Phosphoproteomics analysis of Erk signaling in embryonic stem cell differentiation
 4	PXD052956	22501199698	52	blocked: six-channel TMT source map absent from deposit, paper and supplements; phospho fraction-2 duplicate unresolved	Chemogenomic screening in a patient-derived 3D model of metabolic dysfunction-associated steatohepat
-5	PXD063200	23520448633	1	blocked: 12 RAW mappings verified; two review failures on biological replicate and cell-type claims	Proximity labeling of dense core vesicle protein VMAT
+5	PXD063200	23520448633	1	annotated: sandbox-honest whole-fly SDRF (sweden-unblock-1 rescue); bio-rep=1	Proximity labeling of dense core vesicle protein VMAT
 6	PXD017510	23602340090	39	blocked: mixed human/mouse arms; five opaque tissue codes cannot be linked to OV1-OV4; replicate suffixes unresolved	Probing the ovarian cancer O-glycoproteome by the Macrophage Galactose like C-type Lectin (MGL): dis
 7	PXD041717	24151817824	20	approved: 20 DNMT1-IP RAW rows; siD=siDNMT1 from supplement; independent review pass	Concerted SUMO-targeted ubiquitin ligase activities of TOPORS and RNF4 are essential for stress mana
 8	PXD053351	24385213014	1	approved: 12 ZIP acquisitions; four three-run groups; 6A retained as literal code; independent review pass	RNAPII interactome in INTS6 degron cells

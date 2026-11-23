@@ -1,0 +1,30 @@
+=== parse_sdrf validate-sdrf (ms-proteomics + vertebrates, ols cache) ===
+WARNING: Term: DR4-AL179 + isotype control in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo
+WARNING: Term: DR4-CLIP in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo
+WARNING: Term: DR4-AL179 + anti-VISTA in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo
+WARNING: Label 'hcd' / accession 'ms:1000422' in column 'comment[dissociation method]': agreement could not be verified (no live ontology lookup)
+WARNING: Term: B6N.DRA.DRB1*04:01.hIi.Cia9i (Parker) in column 'characteristics[strain or breed]', is not found in the given ontology list ncbitaxon
+Most seems to be fine. There were only warnings.
+EXIT:0
+
+=== sdrf-tools structure ===
+Structure OK: acquisition, template declaration and column order are consistent.
+
+=== sdrf-tools check ===
+Hallucination Report: /home/thanadol/Documents/GitHub/NordicSDRF/annotations/PXD056818.sdrf.tsv
+  Terms checked:     19
+  Verified:          19
+  Hallucinated:      0
+  Label mismatches:  0
+  Wrong ontology:    0
+  UNIMOD swaps:      0
+  Status:            CLEAN
+
+=== sdrf-tools score ===
+Quality Score: 100/100 (Excellent)
+
+  Completeness:  100/100 ██████████
+  Specificity:   100/100 ██████████
+  Consistency:   100/100 ██████████
+  Standards:     100/100 ██████████
+  Design:        100/100 ██████████

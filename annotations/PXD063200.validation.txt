@@ -1,0 +1,28 @@
+=== parse_sdrf validate-sdrf (-t ms-proteomics -t invertebrates --use_ols_cache_only) ===
+Everything seems to be fine. Well done.
+exit:0
+
+=== python -m tools structure ===
+Structure OK: acquisition, template declaration and column order are consistent.
+exit:0
+
+=== python -m tools check --offline ===
+Hallucination Report: annotations/PXD063200.sdrf.tsv
+  Terms checked:     8
+  Verified:          3
+  Hallucinated:      0
+  Label mismatches:  0
+  Wrong ontology:    0
+  UNIMOD swaps:      0
+  Status:            CLEAN
+exit:0
+
+=== python -m tools score ===
+Quality Score: 100/100 (Excellent)
+
+  Completeness:  100/100 ██████████
+  Specificity:   100/100 ██████████
+  Consistency:   100/100 ██████████
+  Standards:     100/100 ██████████
+  Design:        100/100 ██████████
+exit:0

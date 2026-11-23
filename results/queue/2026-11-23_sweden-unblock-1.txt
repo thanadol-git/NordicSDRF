@@ -1,0 +1,21 @@
+# daily queue sweden unblock pilot 1 (10 Stockholm + 10 Lund BLOCKED re-screen; prefer MQ/design/supplement-cited)
+PXD019690	sweden/stockholm	annotated	partial LFQ 58/90; TMT astrocytes still need channel map
+PXD034342	sweden/stockholm	annotated	Supp Table 6 TMTpro map; 144 rows
+PXD039256	sweden/stockholm	blocked	TMT16 + IPMS sample01-42 still unmapped after 2026-11-23 rescreen
+PXD010554	sweden/stockholm	annotated	Protocol Exchange temp→TMT; 1280 rows (4 validation RAW excluded)
+PXD025319	sweden/stockholm	blocked	J_01-J_24 + TMT channels still opaque after eLife rescreen
+PXD030167	sweden/stockholm	annotated	PD workbook TMTpro channels; 28 rows
+PXD039805	sweden/stockholm	annotated	PD workbook TMT6 WT/IFNAR; 6 rows
+PXD013182	sweden/stockholm	blocked	PISA TMT10 design still absent
+PXD039591	sweden/stockholm	blocked	sample1-18 still unmapped
+PXD056818	sweden/stockholm	annotated	filename c179/Clip/V decoded from paper; 35/35
+PXD012524	sweden/lund	blocked	iPSC prefix→genotype incomplete (12F/36C)
+PXD023174	sweden/lund	blocked	Anahita RAW→patient still absent in q01_noDECOY
+PXD054562	sweden/lund	blocked	Raw_zipped.rar inventory still missing
+PXD007995	sweden/lund	blocked	Emma_* scaffold map still absent
+PXD014234	sweden/lund	annotated	G/P from PD studies; 14/14
+PXD021338	sweden/lund	blocked	FF_M_* maturation map still absent
+PXD025956	sweden/lund	blocked	TMT set/channel supplement still unreachable
+PXD063200	denmark/copenhagen	annotated	sandbox-honest whole-fly; 12/12
+PXD002896	sweden/lund	blocked	Erik/Simon opaque names still unmapped
+PXD004158	sweden/lund	annotated	Sample_description.xlsx; 54/54

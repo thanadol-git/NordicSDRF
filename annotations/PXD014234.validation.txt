@@ -1,0 +1,36 @@
+$ parse_sdrf validate-sdrf -s annotations/PXD014234.sdrf.tsv -t ms-proteomics -t human -t cell-lines --use_ols_cache_only
+WARNING: Term: vehicle control, 48 h in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo
+WARNING: Term: IBL-302, 50 nM, 48 h in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo
+WARNING: Term: no enrichment in column 'characteristics[enrichment process]', is not found in the given ontology list pride;efo
+WARNING: Term: phosphopeptide enrichment in column 'characteristics[enrichment process]', is not found in the given ontology list pride;efo
+WARNING: Term: LU-NB-3 in column 'characteristics[cell line]', is not found in the given ontology list clo;bto;efo
+WARNING: Term: child in column 'characteristics[developmental stage]', is not found in the given ontology list efo
+Most seems to be fine. There were only warnings.
+exit code: 0
+$ sdrf-tools structure annotations/PXD014234.sdrf.tsv
+1 structural problem(s):
+  duplicate-row-coordinate [source name]: 7 row(s) repeat a coordinate that must be unique: 'LU-NB-3 Ctrl 1' (bio 1, tech 1, fraction 1) x2; 'LU-NB-3 Ctrl 2' (bio 2, tech 1, fraction 1) x2; ...
+exit code: 1
+$ sdrf-tools reconcile annotations/PXD014234.sdrf.tsv --record scratchpad/PXD014234/evidence/pride.json --accession PXD014234
+PXD014234: 1 value(s) disagree with the deposit record:
+
+  BLOCKER  cleavage_agent_unsupported (comment[cleavage agent details]): the record never names Trypsin as a digest reagent; the annotation may have matched the enzyme in another role
+exit code: 1
+$ sdrf-tools check annotations/PXD014234.sdrf.tsv --offline
+Hallucination Report: annotations/PXD014234.sdrf.tsv
+  Terms checked:     8
+  Verified:          4
+  Hallucinated:      0
+  Label mismatches:  0
+  Wrong ontology:    0
+  UNIMOD swaps:      0
+  Status:            CLEAN
+exit code: 0
+$ sdrf-tools score annotations/PXD014234.sdrf.tsv
+Quality Score: 100/100 (Excellent)
+
+  Completeness:  100/100 ██████████
+  Specificity:   100/100 ██████████
+  Consistency:   100/100 ██████████
+  Standards:     100/100 ██████████
+  Design:        100/100 ██████████

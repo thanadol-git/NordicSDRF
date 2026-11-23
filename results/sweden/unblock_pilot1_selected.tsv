@@ -1,0 +1,21 @@
+accession	city	score	reasons	hard	blocked_bytes	title_line
+PXD019690	stockholm	12	mq/design,prior-draft,mixed-partial-possible	False	645	# PXD019690 — annotation blocked
+PXD034342	stockholm	12	mq/design,supp/paper,filenames,explicit-invent-ban	False	1893	# PXD034342 — annotation blocked
+PXD039256	stockholm	12	mq/design,supp/paper,filenames,explicit-invent-ban	False	1740	# PXD039256 — annotation blocked
+PXD010554	stockholm	10	supp/paper,filenames,prior-draft,explicit-invent-ban	False	1299	# PXD010554 — annotation blocked
+PXD025319	stockholm	10	mq/design,supp/paper,filenames	False	963	# PXD025319 — BLOCKED
+PXD030167	stockholm	10	mq/design,supp/paper,explicit-invent-ban	False	998	# PXD030167 — BLOCKED
+PXD039805	stockholm	10	mq/design,supp/paper,explicit-invent-ban	False	1064	# PXD039805 — BLOCKED
+PXD013182	stockholm	9	mq/design,prior-draft	False	758	# PXD013182 — annotation blocked
+PXD039591	stockholm	9	mq/design,filenames,explicit-invent-ban	False	818	# PXD039591 — BLOCKED
+PXD056818	stockholm	9	mq/design,filenames	False	1059	# PXD056818 — BLOCKED
+PXD012524	lund	14	mq/design,supp/paper,filenames,prior-draft	False	1964	# PXD012524 — annotation blocked
+PXD023174	lund	14	mq/design,supp/paper,filenames,prior-draft	False	1433	# PXD023174 — annotation blocked
+PXD054562	lund	13	mq/design,filenames,prior-draft	False	869	# PXD054562 annotation blocked
+PXD007995	lund	12	mq/design,filenames,prior-draft,explicit-invent-ban	False	1088	# PXD007995 — annotation blocked
+PXD014234	lund	12	mq/design,supp/paper,prior-draft	False	1670	# PXD014234 — annotation blocked
+PXD021338	lund	12	mq/design,supp/paper,prior-draft	False	1528	# PXD021338 — annotation blocked
+PXD025956	lund	11	mq/design,supp/paper,mixed-partial-possible	False	2813	# PXD025956 — BLOCKED
+PXD063200	lund	11	mq/design,prior-draft	False	1608	# PXD063200: blocked after independent review
+PXD002896	lund	10	mq/design,supp/paper,filenames	False	1084	# PXD002896 — annotation blocked
+PXD004158	lund	10	mq/design,supp/paper,filenames	False	1153	# PXD004158 — blocked: no per-file sample mapping is publicly available

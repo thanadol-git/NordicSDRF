@@ -1,0 +1,29 @@
+=== parse_sdrf validate-sdrf -t ms-proteomics -t vertebrates ===
+WARNING: Term: C57BL/6N in column 'characteristics[strain or breed]', is not found in the given ontology list ncbitaxon
+Most seems to be fine. There were only warnings.
+EXIT:0
+
+=== sdrf-tools structure ===
+Structure OK: acquisition, template declaration and column order are consistent.
+EXIT:0
+
+=== sdrf-tools check ===
+Hallucination Report: annotations/PXD019690.sdrf.tsv
+  Terms checked:     12
+  Verified:          12
+  Hallucinated:      0
+  Label mismatches:  0
+  Wrong ontology:    0
+  UNIMOD swaps:      0
+  Status:            CLEAN
+EXIT:0
+
+=== parse_sdrf convert-openms -t2 ===
+SUCCESS (WARNINGS=1): precursor 4.5 ppm from mqpar mainSearchTol; Acetyl N-term TA warning x58
+EXIT:0
+
+=== coverage ===
+annotated LFQ RAW: 58
+excluded TMT RAW: 32
+total RAW: 90
+SHA256 99d7072bddb53b54bd9522304c02e45d2d80fbe8e3102877b5b48c2440a40e6d

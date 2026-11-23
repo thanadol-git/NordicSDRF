@@ -1,0 +1,9 @@
+accession	outcome	reason
+PXD034342	ANNOTATED	Open SI Supp Table 6 (PMC9810596) gives full TMTpro channel→WT/KO1/KO2×rep map; SDRF 144 rows written
+PXD039256	STILL_BLOCKED	PMC11358041 lacks channel sheet; protein xlsx has DA/ATA/ARCH×TMT16 codes without genotype map; IPMS sample01–42 still opaque
+PXD010554	ANNOTATED	Protocol Exchange maps TMT126→37°C…TMT131→67°C; filenames encode SIESTA plex/condition/rep/frac; SDRF 1280 rows (4 validation RAWs excluded)
+PXD025319	STILL_BLOCKED	eLife PMC9119677 has no J_01–J_24 or TMT channel crosswalk; MaxQuant outputs are result tables only
+PXD030167	ANNOTATED	Deposited PD workbooks embed TMTpro channel→animal IDs for both runs; SDRF 28 rows written
+PXD039805	ANNOTATED	Deposited PD mouse workbook abundance headers map TMT6 channels to WT vs IFNAR KO; SDRF 6 rows written
+PXD013182	STILL_BLOCKED	PISA/TMT10 workflow is conceptual only; no open channel↔sample↔treatment design for deposited RAW plexes
+PXD039591	STILL_BLOCKED	sample1–18 and A2–R2 columns remain unmapped in paper/SI and multiconsensus workbook

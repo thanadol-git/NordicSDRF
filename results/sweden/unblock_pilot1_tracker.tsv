@@ -1,0 +1,21 @@
+accession	city	outcome	target	rows	note
+PXD019690	stockholm	annotated	sandbox	58	LFQ Purkinje/cerebellar; TMT astrocytes omitted
+PXD034342	stockholm	annotated	datasets	144	Supp Table 6 TMTpro
+PXD039256	stockholm	blocked		0	rescreened 2026-11-23
+PXD010554	stockholm	annotated	datasets	1280	SIESTA Protocol Exchange temps
+PXD025319	stockholm	blocked		0	rescreened 2026-11-23
+PXD030167	stockholm	annotated	datasets	28	PD TMTpro animal map
+PXD039805	stockholm	annotated	datasets	6	PD TMT6 WT/IFNAR
+PXD013182	stockholm	blocked		0	rescreened 2026-11-23
+PXD039591	stockholm	blocked		0	rescreened 2026-11-23
+PXD056818	stockholm	annotated	datasets	35	c179/Clip/V decoded
+PXD012524	lund	blocked		0	rescreened 2026-11-23
+PXD023174	lund	blocked		0	rescreened 2026-11-23
+PXD054562	lund	blocked		0	rescreened 2026-11-23
+PXD007995	lund	blocked		0	rescreened 2026-11-23
+PXD014234	lund	annotated	datasets	14	G=global P=phospho from PD
+PXD021338	lund	blocked		0	rescreened 2026-11-23
+PXD025956	lund	blocked		0	rescreened 2026-11-23
+PXD063200	copenhagen	annotated	sandbox	12	whole-fly; bio-rep=1 honest
+PXD002896	lund	blocked		0	rescreened 2026-11-23
+PXD004158	lund	annotated	datasets	54	Sample_description.xlsx

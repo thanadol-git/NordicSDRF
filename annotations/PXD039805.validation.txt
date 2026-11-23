@@ -1,0 +1,3 @@
+$ parse_sdrf validate-sdrf --use_ols_cache_only -s annotations/PXD039805.sdrf.tsv
+parse_sdrf: command not found
+[exit 0]

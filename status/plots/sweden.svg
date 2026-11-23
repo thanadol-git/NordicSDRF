@@ -29,7 +29,7 @@
 </style>
 <rect class="bg" width="860" height="292" rx="6"/>
 <text class="title" x="12" y="22">Sweden — in progress</text>
-<text class="sub" x="12" y="40">597 listed · 297 local SDRFs · 0 to do · 269 blocked · PRIDE queried 2026-11-23</text>
+<text class="sub" x="12" y="40">597 listed · 305 local SDRFs · 0 to do · 261 blocked · PRIDE queried 2026-11-23</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Local SDRF</text>
 <rect class="c-blocked" fill="#d95926" x="117" y="52" width="12" height="12" rx="2"/>
@@ -43,18 +43,18 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="460" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="477" y="62">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="88.0">Stockholm</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="74" width="265.1" height="20" rx="2"><title>Stockholm · Local SDRF: 68</title></rect>
-<text class="seg" x="242.5" y="88.0" text-anchor="middle">68</text>
-<rect class="c-blocked" fill="#d95926" x="376.1" y="74" width="362.9" height="20" rx="2"><title>Stockholm · Blocked: 93</title></rect>
-<text class="seg" x="557.5" y="88.0" text-anchor="middle">93</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="74" width="288.6" height="20" rx="2"><title>Stockholm · Local SDRF: 74</title></rect>
+<text class="seg" x="254.3" y="88.0" text-anchor="middle">74</text>
+<rect class="c-blocked" fill="#d95926" x="399.6" y="74" width="339.4" height="20" rx="2"><title>Stockholm · Blocked: 87</title></rect>
+<text class="seg" x="569.3" y="88.0" text-anchor="middle">87</text>
 <rect class="c-in_corpus" fill="#199e70" x="740.0" y="74" width="17.0" height="20" rx="2"><title>Stockholm · In corpus: 4</title></rect>
 <text class="seg" x="748.5" y="88.0" text-anchor="middle">4</text>
 <text class="total" x="764.0" y="88.0">165 listed</text>
 <text class="city" x="12" y="118.0">Lund</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="292.5" height="20" rx="2"><title>Lund · Local SDRF: 75</title></rect>
-<text class="seg" x="256.2" y="118.0" text-anchor="middle">75</text>
-<rect class="c-blocked" fill="#d95926" x="403.5" y="104" width="319.9" height="20" rx="2"><title>Lund · Blocked: 82</title></rect>
-<text class="seg" x="563.4" y="118.0" text-anchor="middle">82</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="300.3" height="20" rx="2"><title>Lund · Local SDRF: 77</title></rect>
+<text class="seg" x="260.2" y="118.0" text-anchor="middle">77</text>
+<rect class="c-blocked" fill="#d95926" x="411.3" y="104" width="312.0" height="20" rx="2"><title>Lund · Blocked: 80</title></rect>
+<text class="seg" x="567.3" y="118.0" text-anchor="middle">80</text>
 <rect class="c-in_corpus" fill="#199e70" x="724.3" y="104" width="22.5" height="20" rx="2"><title>Lund · In corpus: 6</title></rect>
 <text class="seg" x="735.6" y="118.0" text-anchor="middle">6</text>
 <text class="total" x="753.8" y="118.0">163 listed</text>

@@ -1,0 +1,19 @@
+WARNING: Term: Day 0 baseline in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo
+WARNING: Term: IL-1alpha day 6 in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo
+WARNING: Term: IL-1alpha day 9 in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo
+WARNING: Term: IL-1alpha day 12 in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo
+WARNING: Term: IL-1alpha day 15 in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo
+WARNING: Term: control day 6 in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo
+WARNING: Term: control day 9 in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo
+WARNING: Term: control day 12 in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo
+WARNING: Term: control day 15 in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo
+WARNING: Term: control day 0 in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo
+WARNING: Term: control day 1 in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo
+WARNING: Term: control day 3 in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo
+WARNING: Term: IL-1alpha day 1 in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo
+WARNING: Term: IL-1alpha day 3 in column 'characteristics[treatment]', is not found in the given ontology list ncit;efo
+WARNING: Label 'q exactive plus' / accession 'ms:1002048' in column 'comment[instrument]': agreement could not be verified (no live ontology lookup)
+WARNING: Label 'hcd' / accession 'ms:1000422' in column 'comment[dissociation method]': agreement could not be verified (no live ontology lookup)
+WARNING: Label 'tris(2-carboxyethyl)phosphine (tcep)' / accession 'pride:0000616' in column 'comment[reduction reagent]': agreement could not be verified (no live ontology lookup)
+WARNING: Label 'iodoacetamide (iaa)' / accession 'pride:0000590' in column 'comment[alkylation reagent]': agreement could not be verified (no live ontology lookup)
+Most seems to be fine. There were only warnings.
