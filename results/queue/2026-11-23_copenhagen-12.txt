@@ -1,5 +1,5 @@
 # daily queue denmark/copenhagen batch 12 (the last 4 untouched Copenhagen PXDs by total deposited RAW size; 25 other pending accessions already have local evidence reports/blockers and are not queued; excluding bigbio corpus datasets/+sandbox/)
-PXD004055	denmark/copenhagen	pending	copenhagen: batch 12
-PXD006361	denmark/copenhagen	pending	copenhagen: batch 12
-PXD003443	denmark/copenhagen	pending	copenhagen: batch 12
-PXD005252	denmark/copenhagen	pending	copenhagen: batch 12
+PXD004055	denmark/copenhagen	partial	339/342 RAW annotated (rat lung EGF/saline proteome, TiO2, pTyr IP, 275 peptide pulldowns); 3 human A549 SILAC RAW excluded (no label->condition map); validated, review pending; see annotations/PXD004055.sdrf.tsv
+PXD006361	denmark/copenhagen	partial	227 RAW / 327 rows from archive listings; OriginalMMC truncated + ~138 searched-but-undeposited RAW excluded; validated, review pending; see annotations/PXD006361.sdrf.tsv
+PXD003443	denmark/copenhagen	annotated	189 RAW x 2 SILAC channels (378 rows) mapped via deposited MaxQuant summary.txt; validated, review pending; see annotations/PXD003443.sdrf.tsv
+PXD005252	denmark/copenhagen	annotated	612/612 RAW, 1317 rows (519 SILAC L/H runs x2 + 93 L/M/H time-course runs x3) mapped via deposited MaxQuant_Output.zip Index_of_Raw_Data.xlsx + summary.txt; validated (parse_sdrf warnings only, convert-openms OK), independent review not run (review pending); see annotations/PXD005252.sdrf.tsv

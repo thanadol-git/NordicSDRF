@@ -1,0 +1,16 @@
+$ sdrf-tools reconcile annotations/PXD003443.sdrf.tsv --record scratchpad/PXD003443/evidence/pride.json --accession PXD003443
+PXD003443: every annotated value agrees with the deposit record.
+[exit 0]
+$ parse_sdrf validate-sdrf -s annotations/PXD003443.sdrf.tsv -t ms-proteomics -t human -t cell-lines
+Everything seems to be fine. Well done.
+[exit 0]
+$ sdrf-tools structure annotations/PXD003443.sdrf.tsv
+Structure OK: acquisition, template declaration and column order are consistent.
+[exit 0]
+$ parse_sdrf convert-openms -s annotations/PXD003443.sdrf.tsv -t2  (scratch dir)
+    raise ValueError(msg) from ex
+ValueError: Error: Cannot read precursor mass tolerance: not available
+[exit 1]
+
+NOTE 1: parse_sdrf 0.1.7 does not accept pinned template names (-t cell-lines@1.1.0 -> "Schema not found in registry"), so validation used the unpinned names ms-proteomics, human, cell-lines. The SDRF declares ms-proteomics v1.1.0, human v1.1.0, cell-lines v1.1.0 (comment[sdrf template]), pinned at build time.
+NOTE 2: convert-openms stops only because comment[precursor mass tolerance] = not available; the main-search precursor tolerance is not recorded in the deposited parameters.txt/summary.txt (no mqpar.xml or andromeda .apar in search.zip). Kept as the sentinel rather than guessing MaxQuant's default.

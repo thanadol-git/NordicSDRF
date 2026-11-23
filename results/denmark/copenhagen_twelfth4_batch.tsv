@@ -1,5 +1,5 @@
 batch_order	accession	pride_raw_bytes	pride_raw_count	annotation_status	title
-1	PXD004055	305022443428	342	queued: evidence review	Large-scale phosphorylation site interaction proteomics
-2	PXD006361	327259658283	4	queued: evidence review	Proteomics Reveal Global Regulation of Protein SUMOylation by ATM and ATR Kinases during Replication
-3	PXD003443	356651942659	189	queued: evidence review	Changes in proteome upon deletion of UBE2S/UBE2C in HCT116 cells
-4	PXD005252	755820476695	612	queued: evidence review	Time-resolved analysis reveals rapid dynamics and broad scope of the CBP/p300 acetylome
+1	PXD004055	305022443428	342	partial: 339/342 RAW (A549 SILAC excluded); validated draft, review pending	Large-scale phosphorylation site interaction proteomics
+2	PXD006361	327259658283	4	partial: 227 RAW (327 rows); truncated OriginalMMC + undeposited RAW excluded; validated draft, review pending	Proteomics Reveal Global Regulation of Protein SUMOylation by ATM and ATR Kinases during Replication
+3	PXD003443	356651942659	189	annotated: draft SDRF (validation OK; independent review pending)	Changes in proteome upon deletion of UBE2S/UBE2C in HCT116 cells
+4	PXD005252	755820476695	612	annotated: draft SDRF (612/612 RAW, 1317 rows; validation OK; independent review pending)	Time-resolved analysis reveals rapid dynamics and broad scope of the CBP/p300 acetylome

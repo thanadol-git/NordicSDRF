@@ -1,0 +1,361 @@
+{
+ "schema_version": 1,
+ "artifact": "annotations/PXD004055.sdrf.tsv",
+ "dataset": "PXD004055",
+ "sources": [
+  {
+   "id": "pride",
+   "kind": "repository",
+   "location": "scratchpad/PXD004055/evidence/pride.json"
+  },
+  {
+   "id": "files",
+   "kind": "repository",
+   "location": "scratchpad/PXD004055/evidence/files.json"
+  },
+  {
+   "id": "paper",
+   "kind": "publication",
+   "location": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7618132/ (Lundby et al., Cell 2019, doi:10.1016/j.cell.2019.09.008, PMID 31585087); local copy scratchpad/PXD004055/work/paper.txt"
+  },
+  {
+   "id": "expdesign",
+   "kind": "deposited-table",
+   "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2019/10/PXD004055/Peptidepulldownstxtfiles.zip :: ExpDesign-365.xlsx; local copy scratchpad/PXD004055/work/PP__ExpDesign-365.xlsx"
+  },
+  {
+   "id": "pTyr_xlsx",
+   "kind": "deposited-table",
+   "location": "PXD004055/pTyrtxtfiles.zip :: Normalized_pTyr_ModSpecPeptides.xlsx (Rat 1-16, experiment 1/2, EGF vs Ctrl); local copy scratchpad/PXD004055/work/pTyr_norm.xlsx"
+  },
+  {
+   "id": "tio2_xlsx",
+   "kind": "deposited-table",
+   "location": "PXD004055/TiO2txtfiles.zip :: Normalized_TiO2_ModSpecPeptides.xlsx; local copy scratchpad/PXD004055/work/TiO2_norm.xlsx"
+  },
+  {
+   "id": "mq_summary",
+   "kind": "search-output",
+   "location": "summary.txt of Proteometxtfiles/pTyrtxtfiles/TiO2txtfiles/A549txtfiles/Peptidepulldownstxtfiles zips; local copies scratchpad/PXD004055/work/*__summary.txt, scratchpad/PXD004055/work/PP__summary.txt"
+  },
+  {
+   "id": "mq_params",
+   "kind": "search-output",
+   "location": "parameters.txt of the txt zips; local copies scratchpad/PXD004055/work/*__parameters.txt, scratchpad/PXD004055/work/PP__parameters.txt"
+  },
+  {
+   "id": "perseus",
+   "kind": "search-output",
+   "location": "PXD004055/Proteometxtfiles.zip :: Perseus-Export-EXP1.txt (LFQ intensity E_01,03,05,06,09,11,13,15); local copy scratchpad/PXD004055/work/prot_perseus.txt"
+  }
+ ],
+ "claims": [
+  {
+   "location": "characteristics[organism] rows 1-339",
+   "value": "Rattus norvegicus",
+   "source_ids": [
+    "pride",
+    "paper",
+    "files"
+   ],
+   "evidence": "PRIDE organisms NEWT:10116; file names Rat_Lung_*; STAR methods use Sprague Dawley rats (lysate-derived rows) and PRIDE organism for pulldown rows"
+  },
+  {
+   "location": "characteristics[organism part] rows 1-339",
+   "value": "lung",
+   "source_ids": [
+    "pride",
+    "paper",
+    "files"
+   ],
+   "evidence": "PRIDE organismParts BTO:0000763 lung; all runs named Rat_Lung/LUNG; pulldowns in lung tissue lysates (Methods, Peptide pulldowns)"
+  },
+  {
+   "location": "characteristics[strain or breed] rows 1-64",
+   "value": "Sprague Dawley",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Animal experiments: 'Sprague Dawley rats (Crl:SD, male, 200g, Charles River)'; pulldown rows 65-339 left 'not available' because the pulldown lysate rats are not described"
+  },
+  {
+   "location": "characteristics[sex] rows 1-64",
+   "value": "male",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Animal experiments: male rats; pulldown rows 65-339 'not available'"
+  },
+  {
+   "location": "characteristics[developmental stage] rows 1-339",
+   "value": "not available",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Only 'Sprague Dawley rats, male, 200 g' is stated; no age"
+  },
+  {
+   "location": "characteristics[cell type] rows 1-339",
+   "value": "not available",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Whole-lung homogenate; cell type not specified"
+  },
+  {
+   "location": "characteristics[disease] rows 1-339",
+   "value": "normal",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Healthy rats injected with EGF or saline; lysates for pulldowns from saline-treated rats"
+  },
+  {
+   "location": "characteristics[material type] rows 1-339",
+   "value": "tissue",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Frozen lung tissue homogenates"
+  },
+  {
+   "location": "characteristics[treatment] / factor value[treatment] rows 1-64",
+   "value": "epidermal growth factor (rats 1-8) / saline (rats 9-16)",
+   "source_ids": [
+    "pTyr_xlsx",
+    "mq_summary",
+    "paper",
+    "perseus"
+   ],
+   "evidence": "pTyr workbook: Rat 1-8 = EGF, Rat 9-16 = Ctrl (Median(EGF)/Median(Ctrl) sheets, experiment 1 = rats 1,3,5,6 EGF + 9,11,13,15 Ctrl); MaxQuant summary experiments EGF_1..8 / Ctrl_1..8 match raw files 1-8 / 9-16 by Peptide Sequences Identified; paper: EGF 100 ug/kg iv vs isotonic saline iv, 4+4 rats per experiment"
+  },
+  {
+   "location": "characteristics[treatment] rows 65-339",
+   "value": "saline",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "'lung tissue lysates used as input for the peptide pulldowns were prepared from homogenized tissue from different rats treated with saline'"
+  },
+  {
+   "location": "characteristics[biological replicate] rows 1-64",
+   "value": "1-8 within each treatment group (rat 1-8 = EGF_1-8; rat 9-16 = Ctrl_1-8)",
+   "source_ids": [
+    "mq_summary",
+    "pTyr_xlsx"
+   ],
+   "evidence": "MaxQuant experiment names EGF_n / Ctrl_n; Rat n numbering in deposited workbook"
+  },
+  {
+   "location": "characteristics[biological replicate] rows 65-339",
+   "value": "pulldown replicate index from file design (_1.._3 plate; 1-4 for DBJ files = LUNG9/11/13/15)",
+   "source_ids": [
+    "expdesign",
+    "paper"
+   ],
+   "evidence": "ExpDesign-365.xlsx experiment names <well>_<rep>_<bait>; paper: 'three independent pulldowns'"
+  },
+  {
+   "location": "characteristics[enrichment process] rows 1,5,9,...(proteome) ",
+   "value": "not applicable",
+   "source_ids": [
+    "paper",
+    "mq_summary"
+   ],
+   "evidence": "PROTEOME_NN raw files are total-lung-digest proteome samples (STAGE-tip, no enrichment)"
+  },
+  {
+   "location": "characteristics[enrichment process] TiO2 rows",
+   "value": "metal oxide affinity chromatography",
+   "source_ids": [
+    "paper",
+    "files"
+   ],
+   "evidence": "Methods: phosphopeptide enrichment by TiO2 beads; files *_TiO2_*"
+  },
+  {
+   "location": "characteristics[enrichment process] pTyr rows",
+   "value": "immunoprecipitation",
+   "source_ids": [
+    "paper",
+    "files"
+   ],
+   "evidence": "Methods: anti-phosphotyrosine antibody (P-Tyr100/P-Tyr-1000) enrichment; files *_pTyr_*"
+  },
+  {
+   "location": "characteristics[enrichment process] rows 65-339",
+   "value": "affinity chromatography",
+   "source_ids": [
+    "paper",
+    "expdesign"
+   ],
+   "evidence": "Biotinylated phosphopeptide baits on streptavidin sepharose, incubated with lung lysate"
+  },
+  {
+   "location": "characteristics[bait peptide] / factor value[bait peptide] rows 65-339",
+   "value": "bait gene, site and 7-residue flanking sequence per well; empty beads for H6",
+   "source_ids": [
+    "expdesign"
+   ],
+   "evidence": "ExpDesign-365.xlsx maps each deposited pulldown raw file to e.g. A1_1_Gab1_Y659_RVDYVVV; DBJ files map H2-H6 (Egfr Y998/Y1069/Y1172/Y1197/EmptyBeads, reps 1-4 = LUNG9/11/13/15). File names say pY988 but design and sequence SNFYRAL say Y998"
+  },
+  {
+   "location": "assay name / comment[data file] / comment[fraction identifier] rows 1-339",
+   "value": "one raw file per row, single-shot, fraction 1",
+   "source_ids": [
+    "files",
+    "paper"
+   ],
+   "evidence": "339 of 342 deposited RAW files in scope (3 A549 SILAC files excluded); samples analysed in single-shot LC-MS/MS"
+  },
+  {
+   "location": "comment[label] rows 1-339",
+   "value": "label free sample",
+   "source_ids": [
+    "paper",
+    "mq_summary"
+   ],
+   "evidence": "Label-free single-shot runs; MaxQuant multiplicity 1 for lysate and pulldown runs (the only SILAC runs, A549, are excluded)"
+  },
+  {
+   "location": "comment[technical replicate] rows 1-339",
+   "value": "1",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "No repeated injection of the same sample is described; pTyr a/b are separate sequential-IP samples"
+  },
+  {
+   "location": "source name rows pTyr",
+   "value": "pTyr IP a = *_QE5_*_pTyr_N.raw, pTyr IP b = *_QE3_*_pTyr_N.raw",
+   "source_ids": [
+    "mq_summary",
+    "paper"
+   ],
+   "evidence": "MaxQuant summary experiments Ctrl_Na/EGF_Na match QE5 files and Ctrl_Nb/EGF_Nb match QE3 files by Peptide Sequences Identified (Ctrl_7b/EGF_1b tie between QE3_pTyr_1 and _15 resolved by numbering pattern); paper Fig S1 legend: antibody enrichment in two consecutive incubation steps, each of the two samples measured"
+  },
+  {
+   "location": "comment[instrument] rows 1-339",
+   "value": "NT=Q Exactive;AC=MS:1001911",
+   "source_ids": [
+    "pride",
+    "mq_summary"
+   ],
+   "evidence": "PRIDE instrument Q Exactive; MaxQuant summary Instrument column 'Q Exactive' for all runs; raw files dated 2013"
+  },
+  {
+   "location": "comment[proteomics data acquisition method] rows 1-339",
+   "value": "NT=Data-dependent acquisition;AC=PRIDE:0000627",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Top10 HCD DDA"
+  },
+  {
+   "location": "comment[dissociation method] rows 1-339",
+   "value": "NT=HCD;AC=MS:1000422",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Top10 higher-energy collisional dissociation"
+  },
+  {
+   "location": "comment[cleavage agent details] rows 1-64",
+   "value": "Trypsin + Lys-C",
+   "source_ids": [
+    "paper",
+    "pride"
+   ],
+   "evidence": "Lys-C then trypsin in-solution digest"
+  },
+  {
+   "location": "comment[cleavage agent details] rows 65-339",
+   "value": "Trypsin only (second column not applicable)",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "On-bead digestion with 120 ng trypsin in 2 M urea; no Lys-C"
+  },
+  {
+   "location": "comment[reduction reagent] / comment[alkylation reagent] rows 1-64",
+   "value": "DTT / chloroacetamide",
+   "source_ids": [
+    "paper",
+    "pride"
+   ],
+   "evidence": "1 mM DTT, 5.5 mM chloroacetamide"
+  },
+  {
+   "location": "comment[reduction reagent] / comment[alkylation reagent] rows 65-339",
+   "value": "DTT / iodoacetamide",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "On-bead digestion buffer 1 mM DTT; elution in 5 mM iodoacetamide"
+  },
+  {
+   "location": "comment[modification parameters] proteome and pulldown rows",
+   "value": "Carbamidomethyl C fixed; Oxidation M, Acetyl Protein N-term, Gln->pyro-Glu variable",
+   "source_ids": [
+    "mq_summary",
+    "mq_params"
+   ],
+   "evidence": "summary.txt Variable modifications (Proteome: Acetyl (Protein N-term);Oxidation (M);Gln->pyro-Glu; Peptidepulldowns same); parameters.txt fixed Carbamidomethyl (C)"
+  },
+  {
+   "location": "comment[modification parameters] TiO2 and pTyr rows",
+   "value": "as above plus Phospho (STY) variable",
+   "source_ids": [
+    "mq_params",
+    "paper"
+   ],
+   "evidence": "parameters.txt of TiO2/pTyr zips: Variable modifications Oxidation (M);Acetyl (Protein N-term);Gln->pyro-Glu (N-term Q);Phospho (STY)"
+  },
+  {
+   "location": "comment[precursor mass tolerance] rows 1-339",
+   "value": "7 ppm",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Methods: initial precursor ion tolerance of 7 ppm (stated for the whole search section; applied to all rows)"
+  },
+  {
+   "location": "comment[fragment mass tolerance] TiO2 and pTyr rows",
+   "value": "0.02 Da",
+   "source_ids": [
+    "paper",
+    "mq_params"
+   ],
+   "evidence": "Methods MS/MS tolerance 0.02 Da; parameters.txt MS/MS tol. (HCD) 0.02 Da"
+  },
+  {
+   "location": "comment[fragment mass tolerance] proteome and pulldown rows",
+   "value": "20 ppm",
+   "source_ids": [
+    "mq_params"
+   ],
+   "evidence": "parameters.txt MS/MS tol. (FTMS) 20 ppm (MaxQuant 1.4.0.6 / 1.4.1.4); paper states 0.02 Da generically - deposited parameters preferred"
+  },
+  {
+   "location": "comment[sdrf version] / comment[sdrf template] / comment[sdrf annotation tool] rows 1-339",
+   "value": "v1.1.0; ms-proteomics v1.1.0 + vertebrates v1.1.0; manual curation",
+   "source_ids": [
+    "paper"
+   ],
+   "evidence": "Spec README Version v1.1.0; templates.yaml latest for both templates 1.1.0"
+  }
+ ],
+ "limitations": [
+  "A549 SILAC pTyr runs (3 RAW, 20131216_QE7_*_A549_w_wo_EGF_SILAC_pTYR_1-3) excluded: MaxQuant shows Labels0 = light, Labels1 = Arg10;Lys8, but no deposited file or accessible paper text says which label is EGF vs saline (Table S2 not retrievable: PMC/EuropePMC supplementary downloads are bot-blocked).",
+  "Supplementary Tables (S1-S5) of the paper could not be downloaded; the sample map was reconstructed from deposited txt-zip tables and MaxQuant summaries.",
+  "TiO2 and proteome file-number to rat-number link is by ordinal (T_N / PROTEOME_N = Rat N): confirmed for proteome by the Perseus export (E_01,03,05,06,09,11,13,15 = experiment 1 rat set) and for pTyr by summary counts; TiO2 workbook carries the same Rat 1-16 / experiment 1-2 layout but no raw-name key.",
+  "QE3_pTyr_1 and QE3_pTyr_15 have identical peptide counts (10417), so Ctrl_7b vs EGF_1b assignment follows the numbering pattern, not an independent check.",
+  "Pulldown lysate donor animals (strain, sex, age) not described; strain and sex left 'not available' for pulldown rows. Replicates 1-4 correspond to file suffixes LUNG9/11/13/15 for the DBJ files; whether LUNG9 etc. are the saline rats 9,11,13,15 of the EGF experiment is not stated and was not asserted.",
+  "Pulldown replicate 4 of the plate experiments (82 files in ExpDesign-365) is not deposited.",
+  "PROTEOME_09-16 are reused in ExpDesign-365 as 'Proteome_1-4' pulldown controls; annotated here by their proteome-experiment identity (E_09-E_16 = rats 9-16, saline).",
+  "Instrument: PRIDE and MaxQuant say Q Exactive; Methods text says Q-Exactive Plus for the phospho/proteome runs. Q Exactive used.",
+  "Rat age/developmental stage not available. Strain term 'Sprague Dawley' is not an NCBITaxon term (validator warning).",
+  "File names for the EGFR pY998 bait say 'EGFpY988'; ExpDesign and the SNFYRAL flank say Y998; Y998 used.",
+  "No independent adversarial review was run (subagent dispatch not permitted in this run); annotation is a draft."
+ ]
+}
