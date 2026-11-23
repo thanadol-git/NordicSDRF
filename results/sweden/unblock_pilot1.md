@@ -13,7 +13,7 @@ Re-triaged 20 BLOCKED Stockholm/Lund accessions (highest recoverability scores).
 | PXD039805 | Stockholm | datasets | 6 | PD workbook channels |
 | PXD056818 | Stockholm | datasets | 35 | Paper decode of c179/Clip/V |
 | PXD014234 | Lund | datasets | 14 | PD study names for G/P |
-| PXD063200 | Lund | sandbox | 12 | Honest whole-fly rebuild |
+| PXD063200 | Copenhagen (false Sweden hit) | sandbox | 12 | Honest whole-fly rebuild |
 | PXD004158 | Lund | datasets | 54 | Sample_description.xlsx |
 
 ## Still blocked (author/supplement needed)
