@@ -1,0 +1,21 @@
+# daily queue 2026-11-24 bangkok batch 1 (20 Bangkok PXDs with fewest RAW files; counts from ProteomeCentral PROXI)
+PXD021005	thailand/bangkok	pending	bangkok-1: evidence review
+PXD012793	thailand/bangkok	pending	bangkok-1: evidence review
+PXD052291	thailand/bangkok	pending	bangkok-1: evidence review
+PXD062669	thailand/bangkok	pending	bangkok-1: evidence review
+PXD027317	thailand/bangkok	pending	bangkok-1: evidence review
+PXD039718	thailand/bangkok	pending	bangkok-1: evidence review
+PXD063183	thailand/bangkok	pending	bangkok-1: evidence review
+PXD064135	thailand/bangkok	pending	bangkok-1: evidence review
+PXD017234	thailand/bangkok	pending	bangkok-1: evidence review
+PXD078923	thailand/bangkok	pending	bangkok-1: evidence review
+PXD016946	thailand/bangkok	pending	bangkok-1: evidence review
+PXD048253	thailand/bangkok	pending	bangkok-1: evidence review
+PXD021066	thailand/bangkok	pending	bangkok-1: evidence review
+PXD052806	thailand/bangkok	pending	bangkok-1: evidence review
+PXD052809	thailand/bangkok	pending	bangkok-1: evidence review
+PXD057572	thailand/bangkok	pending	bangkok-1: evidence review
+PXD037553	thailand/bangkok	pending	bangkok-1: evidence review
+PXD043954	thailand/bangkok	pending	bangkok-1: evidence review
+PXD026304	thailand/bangkok	pending	bangkok-1: evidence review
+PXD073886	thailand/bangkok	pending	bangkok-1: evidence review

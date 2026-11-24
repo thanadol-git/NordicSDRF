@@ -1,0 +1,21 @@
+batch_order	accession	raw_count	total_files	annotation_status	title
+1	PXD021005	1	3	queued: evidence review	rice flag leaf cytokinin drought
+2	PXD012793	1	6	queued: evidence review	silver ionic vs nanoparticle toxicology
+3	PXD052291	4	6	queued: evidence review	exosome apoptotic dental stem cells
+4	PXD062669	4	7	queued: evidence review	vitamin D3 Vdr silencing C2C12
+5	PXD027317	6	8	queued: evidence review	duodenum slow-growing chicken
+6	PXD039718	6	8	queued: evidence review	thigh muscle slow-growing chicken
+7	PXD063183	6	8	queued: evidence review	7-octenoic acid HSC LX-2
+8	PXD064135	6	13	queued: evidence review	miR-146a NO LPS
+9	PXD017234	6	19	queued: evidence review	Lingzhi octapeptide anti-tyrosinase
+10	PXD078923	7	9	queued: evidence review	KD1 cell-free supernatant
+11	PXD016946	8	9	queued: evidence review	Lingzhi hydrolysate LPS A549
+12	PXD048253	8	9	queued: evidence review	trmA mutant
+13	PXD021066	8	17	queued: evidence review	MFS overexpression PAO1
+14	PXD052806	9	10	queued: evidence review	beta-citronellol LX-2 TGF-b1
+15	PXD052809	9	10	queued: evidence review	1-phenyl-2-pentanol LX-2
+16	PXD057572	9	11	queued: evidence review	Centella ECa 233 SH-SY5Y
+17	PXD037553	9	16	queued: evidence review	caffeine trigonelline HepG2
+18	PXD043954	11	13	queued: evidence review	ARTP mutagenesis anti-MRSA
+19	PXD026304	12	14	queued: evidence review	species-specific targets leishmaniasis
+20	PXD073886	12	17	queued: evidence review	Ov ES antigens
