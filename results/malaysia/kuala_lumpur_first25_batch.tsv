@@ -1,12 +1,12 @@
 batch_order	accession	bigbio_hit	annotation_status	title
-1	PXD001307		queued: evidence review	Protein profiling of the oil palm leaves samples
-2	PXD003723		queued: evidence review	Salivary biomarkers of diabetic retinopathy, part 1
-3	PXD003724		queued: evidence review	Potential salivary biomarkers with diabetic retinopathy, part 2
-4	PXD003725		queued: evidence review	Salivary biomarkers of diabetic retinopathy, part 3
-5	PXD004370		queued: evidence review	To compare the proteome of Stenotrophomonas maltophilia grown in normal and iron depleted condition
-6	PXD005020		queued: evidence review	In vitro infection of AGS cell line with Helicobacter pylori oipA “on” and “off” clinical strains re
-7	PXD005749		queued: evidence review	SWATH-MS Proteomics Analysis of Persicaria minor herb upon Methyl Jasmonate elicitation
-8	PXD006295		queued: evidence review	SWATH-MS dataset of Garcinia mangostana pericarp’s proteome across ripening stages
+1	PXD001307		blocked: only mzXML deposited (no vendor RAW)	Protein profiling of the oil palm leaves samples
+2	PXD003723		blocked: iTRAQ 8-plex channel map missing; publication pending	Salivary biomarkers of diabetic retinopathy, part 1
+3	PXD003724		blocked: ProteomeCentral record unreadable; iTRAQ series	Potential salivary biomarkers with diabetic retinopathy, part 2
+4	PXD003725		blocked: iTRAQ 8-plex channel map missing; publication pending	Salivary biomarkers of diabetic retinopathy, part 3
+5	PXD004370		evidence review: iTRAQ layout in OA paper (Virulence 2020) not yet read	To compare the proteome of Stenotrophomonas maltophilia grown in normal and iron depleted condition
+6	PXD005020		blocked: only mzXML deposited; publication pending	In vitro infection of AGS cell line with Helicobacter pylori oipA “on” and “off” clinical strains re
+7	PXD005749		annotated: draft SDRF 26/32 runs (6 IDA library injections excluded); structural validation OK; review pending	SWATH-MS Proteomics Analysis of Persicaria minor herb upon Methyl Jasmonate elicitation
+8	PXD006295		partial: 9/14 raw (SWATH only); structural validation OK; review pending	SWATH-MS dataset of Garcinia mangostana pericarp’s proteome across ripening stages
 9	PXD007599		queued: evidence review	Pitcher fluid protein profiling from Nepenthes spp.
 10	PXD009579		queued: evidence review	Proteome profiles of oil palm fruit mesocarp
 11	PXD009933		queued: evidence review	proteomic analysis of gamma-tocotienol(GT3)-treated human diploid fibroblasts (HDFs)

@@ -4,8 +4,8 @@ This session could not reach any EBI host (PRIDE API/FTP, OLS, Europe PMC); the 
 morning's GitHub Action reached PRIDE normally, so it was session egress, not an outage.
 Evidence below comes from ProteomeCentral (dataset record + full file list) and PMC/NCBI only.
 PMC supplementary downloads sit behind a proof-of-work bot check and were not fetched.
-**No SDRF has been written yet.** Each Hanoi PXD below is multiplexed or needs a per-sample
-supplementary table, so annotating from here would mean guessing the sample map.
+Each Hanoi PXD below is multiplexed or needs a per-sample supplementary table, so annotating it
+from here would mean guessing the sample map. Two Kuala Lumpur PXDs were annotated (drafts, review pending).
 
 | PXD | RAW | What it is | Blocker / what is needed |
 |---|---:|---|---|
@@ -15,4 +15,20 @@ supplementary table, so annotating from here would mean guessing the sample map.
 | PXD047708 | 36 | Human aortic valve interstitial cells (hVIC), pro-calcifying medium ± niclosamide; `HVIC_Global_01–20` + `HVIC_Phospho_01–16`; Orbitrap Eclipse / LTQ Orbitrap Elite. Biochem Pharmacol 2024 230:116614. | Fractionated multiplexed design (global + phospho); channel map and fraction plan need the paper Methods / deposited search files. |
 | PXD052208 | 36 | Arabidopsis thaliana leaf protoplasts, single-cell TMTpro (`SingleCellTMTpro_<n>`) vs bulk leaf `ARA_global_F<n>` fractions, ± ABA; Orbitrap Eclipse / Q Exactive. Paper doi:10.1186/s40543-024-00457-x (open access). | Single-cell TMTpro channel layout (carrier/blank/single-cell channels per run) must be read from the paper/supplement before any row is written. |
 
-Kuala Lumpur (25 PXDs, incl. PXD034654 already in BigBio `sandbox/`) not yet triaged.
+
+## Kuala Lumpur
+
+| PXD | RAW | What it is | Status / what is needed |
+|---|---:|---|---|
+| PXD005749 | 32 | *Persicaria minor* leaves, control vs methyl jasmonate (24 h), 3 bio × 3 tech SWATH + IDA library; TripleTOF 5600. Data Brief 2018 (PMC5972844). | **Annotated (draft):** 26/32 runs; 6 `Control/Treated_IDA_Inj` library runs excluded (biological replicate unstated). See `annotations/PXD005749.report.md`. |
+| PXD006295 | 14 | *Garcinia mangostana* pericarp, ripening stage 0/2/6, SWATH + IDA; TripleTOF 5600. Publication pending. | **Annotated (partial draft):** 9 SWATH archives; stage IDA runs and bundled 2D-LC fraction archives left out. See `annotations/PXD006295.report.md`. |
+| PXD001307 | 34 | *Elaeis guineensis* var. tenera mature leaves, 2-DE spot picking, MALDI (ultraflex) PMF/MS-MS; 34 spots. Electrophoresis 2017 38:1147 (PMID 28198080). | Only `Spectrum<spot>.mzXML` deposited as "raw" (no Bruker `.fid`/vendor RAW) — the repo rule (vendor RAW only in `comment[data file]`) blocks an SDRF. Annotate only if the curator accepts mzXML for MALDI spot data. |
+| PXD003723 | 1 | Human saliva, type-2 diabetes / diabetic retinopathy stages; one iTRAQ 8-plex run (`iTRAQ8plex10ul_1.raw`), Orbitrap Fusion. Submitter NUS Singapore. Publication pending. | iTRAQ 8-plex channel→sample (DR stage) map not deposited in the PX record and no paper; needs the PRIDE sample protocol or the authors. |
+| PXD003724 | ? | "Potential salivary biomarkers with diabetic retinopathy, part 2" — same series. | ProteomeCentral UI fails to render this record (TypeError); file list not retrieved. Same iTRAQ channel-map blocker expected; verify on PRIDE. |
+| PXD003725 | 1 | Part 3 of the same series; one iTRAQ 8-plex run (`iTRAQ8plex10ul_3.raw`), Orbitrap Fusion; phospho also searched. | Same as PXD003723 (no channel map, publication pending). |
+| PXD004370 | 8 | *Stenotrophomonas maltophilia* clinical CS17 vs environmental LMG959, normal vs iron-depleted, culture supernatant; iTRAQ, TripleTOF 5600; `1501173488F1–F8.d.zip`. Virulence 2020 11:104 (doi:10.1080/21505594.2020.1713649, open access). | iTRAQ label→strain/condition layout and how F1–F8 split across the two replicate experiments must come from the paper Methods; not read this session. Strong candidate for the next pass. |
+| PXD005020 | 57 | AGS gastric cells infected with *H. pylori* oipA "on"/"off" clinical strains and ΔoipA; label-free, Agilent 6520 Q-TOF. Publication pending. | Only `.mzxml` deposited (no Agilent `.d`) — vendor-RAW rule blocks; file stems (`006_b`, `576c`, …) need a strain/replicate key from the authors. |
+
+Not yet triaged this session (17): PXD007599, PXD009579, PXD009933, PXD010232, PXD011893,
+PXD013255, PXD023223, PXD024564, PXD024565, PXD028784 (TMT per title), PXD028986, PXD033191,
+PXD034654 (BigBio `sandbox/` SDRF exists), PXD040420, PXD054693, PXD066081, PXD073738.

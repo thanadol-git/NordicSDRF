@@ -1,6 +1,6 @@
 batch_order	accession	bigbio_hit	annotation_status	title
-1	PXD020510		queued: evidence review	Value of lipocalin 2 as a potential biomarker for bacterial meningitis
-2	PXD029710		queued: evidence review	Nanodiamond Solid Phase Extraction and Triton X-114 Cloud Point Separation for Robust Fractionation 
-3	PXD035718		queued: evidence review	tipSCX-based quantitative proteomic analysis of bronchoalveolar lavage fluids from patients with sma
-4	PXD047708		queued: evidence review	Calcific hVIC niclosamide treatment
-5	PXD052208		queued: evidence review	Single cell proteomics analysis of arabidopsis thaliana protoplast
+1	PXD020510		blocked: per-patient diagnosis only in PMC8128987 mmc1.xlsx (unreadable this session)	Value of lipocalin 2 as a potential biomarker for bacterial meningitis
+2	PXD029710		evidence review: needs MaxQuant parameters.txt + paper Methods (PRIDE unreachable)	Nanodiamond Solid Phase Extraction and Triton X-114 Cloud Point Separation for Robust Fractionation 
+3	PXD035718		evidence review: label-free half mappable; TMT half needs channel map	tipSCX-based quantitative proteomic analysis of bronchoalveolar lavage fluids from patients with sma
+4	PXD047708		blocked: multiplexed global+phospho, channel map not found	Calcific hVIC niclosamide treatment
+5	PXD052208		blocked: single-cell TMTpro layout not yet read	Single cell proteomics analysis of arabidopsis thaliana protoplast
