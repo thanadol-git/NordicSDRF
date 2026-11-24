@@ -15,7 +15,7 @@ Each condition is one pool of 6 pitchers (PX description), so `biological replic
 
 ## Instrument — still unresolved
 
-- PX structured field: **LTQ Orbitrap Elite** (MS:1001910) — used in the draft.
+- PX structured field: **LTQ Orbitrap Elite** (MS:1001910, PSI-MS label "Orbitrap Elite") — used in the draft.
 - PX description: "Orbitrap Fusion Tribid", but that paragraph is copied from PXD007599 (it says
   "for each species" although this deposit has one species), so it is weak evidence.
 - The proteomics paper that would settle it is not identified: the linked Front Plant Sci 2015
