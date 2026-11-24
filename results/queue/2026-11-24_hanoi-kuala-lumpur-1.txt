@@ -1,0 +1,31 @@
+# daily queue 2026-11-24 hanoi + kuala_lumpur batch 1 (all 5 Hanoi + the 25 remaining Kuala Lumpur PXDs; excluding bigbio datasets/; PXD034654 has a bigbio sandbox/ SDRF and is flagged, not skipped)
+PXD020510	vietnam/hanoi	blocked	blocked: per-patient diagnosis only in PMC8128987 mmc1.xlsx (unreadable this session)
+PXD029710	vietnam/hanoi	annotated	annotated: draft 7/7; settings from deposited MaxQuant summary.txt; review pending
+PXD035718	vietnam/hanoi	evidence review	evidence review: label-free half mappable; TMT half needs channel map
+PXD047708	vietnam/hanoi	blocked	blocked: multiplexed global+phospho, channel map not found
+PXD052208	vietnam/hanoi	blocked	blocked: single-cell TMTpro layout not yet read
+PXD001307	malaysia/kuala_lumpur	blocked	blocked: only mzXML deposited (no vendor RAW)
+PXD003723	malaysia/kuala_lumpur	blocked	blocked: iTRAQ 8-plex channel map missing; publication pending
+PXD003724	malaysia/kuala_lumpur	blocked	blocked: ProteomeCentral record unreadable; iTRAQ series
+PXD003725	malaysia/kuala_lumpur	blocked	blocked: iTRAQ 8-plex channel map missing; publication pending
+PXD004370	malaysia/kuala_lumpur	blocked	blocked: iTRAQ channel map absent from OA paper
+PXD005020	malaysia/kuala_lumpur	blocked	blocked: only mzXML deposited; publication pending
+PXD005749	malaysia/kuala_lumpur	annotated	annotated: draft SDRF 26/32 runs (6 IDA library injections excluded); structural validation OK; review pending
+PXD006295	malaysia/kuala_lumpur	partial	partial: 9/14 raw (SWATH only); structural validation OK; review pending
+PXD007599	malaysia/kuala_lumpur	annotated	annotated: draft 18/18; structural validation OK; review pending
+PXD009579	malaysia/kuala_lumpur	blocked	blocked: 2-DE spot map only in closed paper
+PXD009933	malaysia/kuala_lumpur	blocked	blocked: plate-position file names, no key
+PXD010232	malaysia/kuala_lumpur	blocked	blocked: 2-DE spot map only in closed paper
+PXD011893	malaysia/kuala_lumpur	sandbox	sandbox: 9/9 mapped; D3C/D3L resolved; instrument conflict + enzyme open
+PXD013255	malaysia/kuala_lumpur	annotated	annotated: draft 16/16; structural validation OK; review pending
+PXD023223	malaysia/kuala_lumpur	blocked	blocked: runs bundled in zips, listing unreachable
+PXD024564	malaysia/kuala_lumpur	blocked	blocked: flattened Agilent .d internals
+PXD024565	malaysia/kuala_lumpur	blocked	blocked: flattened Agilent .d internals
+PXD028784	malaysia/kuala_lumpur	blocked	blocked: TMT10 channel map absent from paper
+PXD028986	malaysia/kuala_lumpur	annotated	annotated: draft 81/81; search settings from mqpar.xml; review pending
+PXD033191	malaysia/kuala_lumpur	sandbox	sandbox: 72/72 mapped; enzyme unknown
+PXD034654	malaysia/kuala_lumpur	skipped	skipped: BigBio sandbox SDRF exists
+PXD040420	malaysia/kuala_lumpur	blocked	blocked: only mzdata.xml deposited
+PXD054693	malaysia/kuala_lumpur	sandbox	sandbox: 48/48 mapped; enzyme unknown; H6c7 Cellosaurus ID unverified
+PXD066081	malaysia/kuala_lumpur	blocked	blocked: TMT channel map absent (paywalled paper)
+PXD073738	malaysia/kuala_lumpur	sandbox	sandbox: 24/24 mapped; enzyme + instrument model unknown

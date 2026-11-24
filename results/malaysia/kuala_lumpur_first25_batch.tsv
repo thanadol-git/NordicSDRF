@@ -1,0 +1,26 @@
+batch_order	accession	bigbio_hit	annotation_status	title
+1	PXD001307		blocked: only mzXML deposited (no vendor RAW)	Protein profiling of the oil palm leaves samples
+2	PXD003723		blocked: iTRAQ 8-plex channel map missing; publication pending	Salivary biomarkers of diabetic retinopathy, part 1
+3	PXD003724		blocked: ProteomeCentral record unreadable; iTRAQ series	Potential salivary biomarkers with diabetic retinopathy, part 2
+4	PXD003725		blocked: iTRAQ 8-plex channel map missing; publication pending	Salivary biomarkers of diabetic retinopathy, part 3
+5	PXD004370		blocked: iTRAQ channel map absent from OA paper	To compare the proteome of Stenotrophomonas maltophilia grown in normal and iron depleted condition
+6	PXD005020		blocked: only mzXML deposited; publication pending	In vitro infection of AGS cell line with Helicobacter pylori oipA “on” and “off” clinical strains re
+7	PXD005749		annotated: draft SDRF 26/32 runs (6 IDA library injections excluded); structural validation OK; review pending	SWATH-MS Proteomics Analysis of Persicaria minor herb upon Methyl Jasmonate elicitation
+8	PXD006295		partial: 9/14 raw (SWATH only); structural validation OK; review pending	SWATH-MS dataset of Garcinia mangostana pericarp’s proteome across ripening stages
+9	PXD007599		annotated: draft 18/18; structural validation OK; review pending	Pitcher fluid protein profiling from Nepenthes spp.
+10	PXD009579		blocked: 2-DE spot map only in closed paper	Proteome profiles of oil palm fruit mesocarp
+11	PXD009933		blocked: design known from paper; file→group key missing	proteomic analysis of gamma-tocotienol(GT3)-treated human diploid fibroblasts (HDFs)
+12	PXD010232		blocked: 2-DE spot map only in closed paper	Hypolipidemic effects of Tamarindus indica fruit pulp extract
+13	PXD011893		sandbox: 9/9 mapped; D3C/D3L resolved; instrument conflict + enzyme open	Pitcher fluid protein profiling of Nepenthes ampullaria
+14	PXD013255		annotated: draft 16/16; structural validation OK; review pending	Evaluation of sodium deoxycholate as solubilization buffer
+15	PXD023223		blocked: runs bundled in zips, listing unreachable	The label-free quantitative secretome of MCF-7 cells treated with sumaCTX
+16	PXD024564		blocked: flattened Agilent .d internals	Proteomic Analysis on Anti-proliferative and Apoptosis Effects of Curcumin Analogue, 1,5-bis(4-hydro
+17	PXD024565		blocked: flattened Agilent .d internals	Proteomic Analysis on Anti-proliferative and Apoptosis Effects of Curcumin Analogue, 1,5-bis(4-hydro
+18	PXD028784		blocked: TMT10 channel map absent from paper	Pandanus amaryllifolius drought stress and recovery LC-MSMS TMT-Labelled
+19	PXD028986		annotated: draft 81/81; search settings from mqpar.xml; review pending	Proteomic analysis of oil palm's response to red palm weevil infestation
+20	PXD033191		annotated: 72/72; promoted to datasets/ (annotation/PXD033191)	Label-free quantitative proteomics analysis of Drosophila melanogaster lethal giant larvae mutants r
+21	PXD034654	sandbox	skipped: BigBio sandbox SDRF exists	The proteomic changes in MCF-7 cells in exposure to cytotoxin
+22	PXD040420		blocked: only mzdata.xml deposited	LC-MS peptide analysis of cytotoxin digested with multiple-proteolytic enzyme
+23	PXD054693		sandbox: 48/48 mapped; enzyme unknown; H6c7 Cellosaurus ID unverified	Investigation of the rhythmic changes in the proteome of different subtypes of pancreatic ductal ade
+24	PXD066081		blocked: TMT channel map absent (paywalled paper)	Profiling pathogenesis stages of Ceratocystis manginecans infecting Acacia mangium using Tandem Mass
+25	PXD073738		sandbox: 24/24 mapped; enzyme + instrument model unknown	Comparative Proteomic Profiling of Hevea brasiliensis Latex from 10- and 20-Year-Old Trees
