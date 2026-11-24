@@ -5,7 +5,7 @@ morning's GitHub Action reached PRIDE normally, so it was session egress, not an
 Evidence below comes from ProteomeCentral (dataset record + full file list) and PMC/NCBI only.
 PMC supplementary downloads sit behind a proof-of-work bot check and were not fetched.
 Each Hanoi PXD below is multiplexed or needs a per-sample supplementary table, so annotating it
-from here would mean guessing the sample map. Kuala Lumpur: 4 draft SDRFs in `annotations/` (PXD006295 partial), 5 drafts in `sandbox/` (PXD011893, PXD028986, PXD033191, PXD054693, PXD073738), the rest blocked with a reason below. All 25 triaged.
+from here would mean guessing the sample map. Kuala Lumpur: 5 draft SDRFs in `annotations/` (PXD006295 partial), 3 near-complete drafts in `sandbox/` (one value missing), the rest blocked with a reason below. All 25 triaged.
 
 | PXD | RAW | What it is | Blocker / what is needed |
 |---|---:|---|---|
@@ -42,6 +42,6 @@ from here would mean guessing the sample map. Kuala Lumpur: 4 draft SDRFs in `an
 | PXD073738 | 24 | *Hevea brasiliensis* latex, 4 clones × 10/20-year-old trees × 3; LTQ Orbitrap (generic). Publication pending. | **Sandbox draft:** 24/24 mapped (`sandbox/PXD073738/`); enzyme and real instrument model unknown. |
 | PXD066081 | 4 | *Ceratocystis manginecans* isolates CAM (FRIM1162) and CEP (FRIM1441) on *Acacia mangium* stem, 1 h / 24 h; one TMT run, high-pH fractions 12.5/17.5/50% + label check; Q Exactive. Trop Plant Pathol 2025 (doi:10.1007/s40858-025-00768-3, paywalled). | Four groups in one TMT plex; channel→group map not in the abstract (maybe in the paper's DOCX supplement or `CeratoTMT.mzid`). |
 | PXD054693 | 48 | Secretome of Capan-2, PANC-1, hTERT-HPNE, H6c7 at 0/6/12/18 h × 3; label-free, Orbitrap Fusion. Expert Rev Proteomics 2026. | **Sandbox draft:** 48/48 mapped (`sandbox/PXD054693/`); enzyme unstated; H6c7 Cellosaurus ID not verifiable offline. |
-| PXD028986 | 81 | Oil palm leaf, control / wounded / red-palm-weevil-infested × weeks 1/3/6 × 3 trees × 3 injections; Orbitrap Fusion. Plants 2021 (PMC8709180). | **Sandbox draft:** 81/81 (`sandbox/PXD028986/`); search settings now from deposited `mqpar.xml` (Carbamidomethyl C fixed, Trypsin/P, 4.5 ppm / 0.5 Da). |
+| PXD028986 | 81 | Oil palm leaf, control / wounded / red-palm-weevil-infested × weeks 1/3/6 × 3 trees × 3 injections; Orbitrap Fusion. Plants 2021 (PMC8709180). | **Annotated (draft):** 81/81. See `annotations/PXD028986.report.md`; search settings now from deposited `mqpar.xml` (Carbamidomethyl C fixed, Trypsin/P, 4.5 ppm / 0.5 Da). |
 | PXD040420 | 3 | *Naja sumatrana* cytotoxin, multi-enzyme epitope-excision digests (`1-5000`, `1-10000`, `1-30000`); Agilent 6550 Q-TOF. Sci Rep 2023 (doi:10.1038/s41598-023-39222-2). | Only `.mzdata.xml` deposited (no Agilent `.d`) — vendor-RAW rule blocks; also needs the enzyme set and what the 1:5000/10000/30000 ratios denote. |
 | PXD034654 | – | MCF-7 cells exposed to sumaCTX. | Already has a BigBio `sandbox/` SDRF — not re-annotated; audit that file instead. |

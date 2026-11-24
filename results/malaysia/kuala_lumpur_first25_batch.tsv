@@ -17,7 +17,7 @@ batch_order	accession	bigbio_hit	annotation_status	title
 16	PXD024564		blocked: flattened Agilent .d internals	Proteomic Analysis on Anti-proliferative and Apoptosis Effects of Curcumin Analogue, 1,5-bis(4-hydro
 17	PXD024565		blocked: flattened Agilent .d internals	Proteomic Analysis on Anti-proliferative and Apoptosis Effects of Curcumin Analogue, 1,5-bis(4-hydro
 18	PXD028784		blocked: TMT10 channel map absent from paper	Pandanus amaryllifolius drought stress and recovery LC-MSMS TMT-Labelled
-19	PXD028986		sandbox: 81/81 mapped; search settings from mqpar.xml; review pending	Proteomic analysis of oil palm's response to red palm weevil infestation
+19	PXD028986		annotated: draft 81/81; search settings from mqpar.xml; review pending	Proteomic analysis of oil palm's response to red palm weevil infestation
 20	PXD033191		sandbox: 72/72 mapped; enzyme unknown	Label-free quantitative proteomics analysis of Drosophila melanogaster lethal giant larvae mutants r
 21	PXD034654	sandbox	skipped: BigBio sandbox SDRF exists	The proteomic changes in MCF-7 cells in exposure to cytotoxin
 22	PXD040420		blocked: only mzdata.xml deposited	LC-MS peptide analysis of cytotoxin digested with multiple-proteolytic enzyme

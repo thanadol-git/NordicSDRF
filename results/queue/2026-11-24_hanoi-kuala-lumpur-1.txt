@@ -22,7 +22,7 @@ PXD023223	malaysia/kuala_lumpur	blocked	blocked: runs bundled in zips, listing u
 PXD024564	malaysia/kuala_lumpur	blocked	blocked: flattened Agilent .d internals
 PXD024565	malaysia/kuala_lumpur	blocked	blocked: flattened Agilent .d internals
 PXD028784	malaysia/kuala_lumpur	blocked	blocked: TMT10 channel map absent from paper
-PXD028986	malaysia/kuala_lumpur	sandbox	sandbox: 81/81 mapped; search settings from mqpar.xml; review pending
+PXD028986	malaysia/kuala_lumpur	annotated	annotated: draft 81/81; search settings from mqpar.xml; review pending
 PXD033191	malaysia/kuala_lumpur	sandbox	sandbox: 72/72 mapped; enzyme unknown
 PXD034654	malaysia/kuala_lumpur	skipped	skipped: BigBio sandbox SDRF exists
 PXD040420	malaysia/kuala_lumpur	blocked	blocked: only mzdata.xml deposited
