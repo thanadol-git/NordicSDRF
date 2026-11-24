@@ -9,7 +9,7 @@ batch_order	accession	bigbio_hit	annotation_status	title
 8	PXD006295		partial: 9/14 raw (SWATH only); structural validation OK; review pending	SWATH-MS dataset of Garcinia mangostana pericarp’s proteome across ripening stages
 9	PXD007599		annotated: draft 18/18; structural validation OK; review pending	Pitcher fluid protein profiling from Nepenthes spp.
 10	PXD009579		blocked: 2-DE spot map only in closed paper	Proteome profiles of oil palm fruit mesocarp
-11	PXD009933		blocked: plate-position file names, no key	proteomic analysis of gamma-tocotienol(GT3)-treated human diploid fibroblasts (HDFs)
+11	PXD009933		blocked: design known from paper; file→group key missing	proteomic analysis of gamma-tocotienol(GT3)-treated human diploid fibroblasts (HDFs)
 12	PXD010232		blocked: 2-DE spot map only in closed paper	Hypolipidemic effects of Tamarindus indica fruit pulp extract
 13	PXD011893		sandbox: 9/9 mapped; D3C/D3L resolved; instrument conflict + enzyme open	Pitcher fluid protein profiling of Nepenthes ampullaria
 14	PXD013255		annotated: draft 16/16; structural validation OK; review pending	Evaluation of sodium deoxycholate as solubilization buffer
