@@ -16,13 +16,13 @@ PXD007599	malaysia/kuala_lumpur	annotated	annotated: draft 18/18; structural val
 PXD009579	malaysia/kuala_lumpur	blocked	blocked: 2-DE spot map only in closed paper
 PXD009933	malaysia/kuala_lumpur	blocked	blocked: plate-position file names, no key
 PXD010232	malaysia/kuala_lumpur	blocked	blocked: 2-DE spot map only in closed paper
-PXD011893	malaysia/kuala_lumpur	evidence review	evidence review: instrument conflict; D3C/D3L meaning unknown
+PXD011893	malaysia/kuala_lumpur	sandbox	sandbox: 9/9 mapped; D3C/D3L resolved; instrument conflict + enzyme open
 PXD013255	malaysia/kuala_lumpur	annotated	annotated: draft 16/16; structural validation OK; review pending
 PXD023223	malaysia/kuala_lumpur	blocked	blocked: runs bundled in zips, listing unreachable
 PXD024564	malaysia/kuala_lumpur	blocked	blocked: flattened Agilent .d internals
 PXD024565	malaysia/kuala_lumpur	blocked	blocked: flattened Agilent .d internals
 PXD028784	malaysia/kuala_lumpur	blocked	blocked: TMT10 channel map absent from paper
-PXD028986	malaysia/kuala_lumpur	annotated	annotated: draft 81/81; structural validation OK; mqpar.xml unread; review pending
+PXD028986	malaysia/kuala_lumpur	annotated	annotated: draft 81/81; search settings from mqpar.xml; review pending
 PXD033191	malaysia/kuala_lumpur	sandbox	sandbox: 72/72 mapped; enzyme unknown
 PXD034654	malaysia/kuala_lumpur	skipped	skipped: BigBio sandbox SDRF exists
 PXD040420	malaysia/kuala_lumpur	blocked	blocked: only mzdata.xml deposited
