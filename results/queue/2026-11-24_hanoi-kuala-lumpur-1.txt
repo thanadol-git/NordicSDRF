@@ -1,6 +1,6 @@
 # daily queue 2026-11-24 hanoi + kuala_lumpur batch 1 (all 5 Hanoi + the 25 remaining Kuala Lumpur PXDs; excluding bigbio datasets/; PXD034654 has a bigbio sandbox/ SDRF and is flagged, not skipped)
 PXD020510	vietnam/hanoi	blocked	blocked: per-patient diagnosis only in PMC8128987 mmc1.xlsx (unreadable this session)
-PXD029710	vietnam/hanoi	evidence review	evidence review: needs MaxQuant parameters.txt + paper Methods (PRIDE unreachable)
+PXD029710	vietnam/hanoi	annotated	annotated: draft 7/7; settings from deposited MaxQuant summary.txt; review pending
 PXD035718	vietnam/hanoi	evidence review	evidence review: label-free half mappable; TMT half needs channel map
 PXD047708	vietnam/hanoi	blocked	blocked: multiplexed global+phospho, channel map not found
 PXD052208	vietnam/hanoi	blocked	blocked: single-cell TMTpro layout not yet read
