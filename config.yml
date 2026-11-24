@@ -34,9 +34,9 @@ pipeline:
   tier_3_claude:
     jobs: [sdrf_annotate, sdrf_review, sdrf_adversarial_review]
 
-pride_hits_queried: 2026-11-23
+pride_hits_queried: 2026-11-24
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-11-23)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-11-24)
 
 countries:
   sweden:
@@ -63,7 +63,7 @@ countries:
         screened: 0
         annotated: 75
         blocked: 82
-        in_corpus: 103
+        in_corpus: 105
       gothenburg:
         name: Gothenburg
         search_terms: [Gothenburg, Göteborg, Sahlgrenska, Chalmers]
@@ -127,11 +127,11 @@ countries:
         notes: "Manifest from build_manifest.py (2026-11-03): 543 confirmed Danish; PXD006201, PXD006679, PXD027901, PXD043505 removed (SDU Odense affiliations only). 32 Odense-list, 1 Aarhus-list and 2 Roskilde-list PXDs have Copenhagen-only affiliations and are still listed under those cities"
         pxd_list: lists/denmark/copenhagen.txt
         pxd_count: 539
-        in_corpus: 433
+        in_corpus: 435
       odense:
         name: Odense
         search_terms: [Odense, "University of Southern Denmark"]
-        pride_hits: 618
+        pride_hits: 619
         screened: 0
         annotated: 92
         blocked: 37
@@ -338,13 +338,13 @@ countries:
           - A*STAR
           - IMCB
           - Duke-NUS
-        pride_hits: 463
+        pride_hits: 464
         screened: 0
         annotated: 2
         blocked: 8
         pxd_list: lists/singapore/singapore.txt
         pxd_count: 263
-        in_corpus: 87
+        in_corpus: 92
 
   thailand:
     region: sea
@@ -354,7 +354,7 @@ countries:
       bangkok:
         name: Bangkok
         search_terms: [Bangkok, Mahidol, Chulalongkorn, Siriraj, Thailand]
-        pride_hits: 112
+        pride_hits: 113
         screened: 0
         annotated: 0
         blocked: 0
@@ -375,29 +375,29 @@ countries:
   malaysia:
     region: sea
     name: Malaysia
-    status: scoped
+    status: in_progress
     cities:
       kuala_lumpur:
         name: Kuala Lumpur
         search_terms: [Malaysia, "Kuala Lumpur", "University of Malaya"]
         pride_hits: 48
         screened: 0
-        annotated: 0
+        annotated: 2
         blocked: 0
         pxd_list: lists/malaysia/kuala_lumpur.txt
         pxd_count: 41
-        in_corpus: 14
+        in_corpus: 16
       penang:
         name: Penang
         search_terms: ["Universiti Sains Malaysia", Penang]
         notes: "Do not search bare USM"
         pride_hits: 3
         screened: 0
-        annotated: 0
+        annotated: 2
         blocked: 0
         pxd_list: lists/malaysia/penang.txt
         pxd_count: 3
-        in_corpus: 1
+        in_corpus: 3
 
   vietnam:
     region: sea
@@ -439,7 +439,7 @@ countries:
         blocked: 0
         pxd_list: lists/philippines/manila.txt
         pxd_count: 3
-        in_corpus: 0
+        in_corpus: 2
 
   indonesia:
     region: sea

@@ -29,7 +29,7 @@
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
 <text class="title" x="12" y="22">Denmark — in progress</text>
-<text class="sub" x="12" y="40">959 listed · 495 local SDRFs · 3 to do · 144 blocked · PRIDE queried 2026-11-23</text>
+<text class="sub" x="12" y="40">959 listed · 495 local SDRFs · 3 to do · 144 blocked · PRIDE queried 2026-11-24</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Local SDRF</text>
 <rect class="c-blocked" fill="#d95926" x="117" y="52" width="12" height="12" rx="2"/>
