@@ -5,7 +5,7 @@ morning's GitHub Action reached PRIDE normally, so it was session egress, not an
 Evidence below comes from ProteomeCentral (dataset record + full file list) and PMC/NCBI only.
 PMC supplementary downloads sit behind a proof-of-work bot check and were not fetched.
 Each Hanoi PXD below is multiplexed or needs a per-sample supplementary table, so annotating it
-from here would mean guessing the sample map. Kuala Lumpur: 5 draft SDRFs in `annotations/` (PXD006295 partial), 3 near-complete drafts in `sandbox/` (one value missing), the rest blocked with a reason below. All 25 triaged.
+from here would mean guessing the sample map. Kuala Lumpur: 5 draft SDRFs in `annotations/` (PXD006295 partial), 4 drafts in `sandbox/` (PXD011893, PXD033191, PXD054693, PXD073738), the rest blocked with a reason below. All 25 triaged.
 
 | PXD | RAW | What it is | Blocker / what is needed |
 |---|---:|---|---|
