@@ -17,6 +17,20 @@ Annotation is three tiers, cheapest first: local GPU (dedup / triage) → Codex
 (`sdrf-metascreen`) → Claude (`sdrf-annotate` + review). Setup, Ollama, Slurm,
 and how to watch a run are in [`docs/workflow.md`](docs/workflow.md).
 
+## Starting a Claude session
+
+For each annotation batch, start the session with these three repos attached:
+
+* `thanadol-git/NordicSDRF`
+* `thanadol-git/sdrf-skills`
+* `bigbio/sdrf-annotated-datasets`
+
+Do **not** also attach the fork `thanadol-git/sdrf-annotated-datasets`: it has
+the same name as the BigBio repo, so the two can't share a session, and BigBio
+then can't be attached. With BigBio attached, Claude can push the branch and
+open the BigBio PR itself through the GitHub REST API (`gh pr create` does not
+work in Claude Code sessions).
+
 ## Repository layout
 
 ```
