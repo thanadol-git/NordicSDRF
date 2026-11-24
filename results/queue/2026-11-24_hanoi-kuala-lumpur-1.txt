@@ -1,0 +1,31 @@
+# daily queue 2026-11-24 hanoi + kuala_lumpur batch 1 (all 5 Hanoi + the 25 remaining Kuala Lumpur PXDs; excluding bigbio datasets/; PXD034654 has a bigbio sandbox/ SDRF and is flagged, not skipped)
+PXD020510	vietnam/hanoi	pending	queued: evidence review
+PXD029710	vietnam/hanoi	pending	queued: evidence review
+PXD035718	vietnam/hanoi	pending	queued: evidence review
+PXD047708	vietnam/hanoi	pending	queued: evidence review
+PXD052208	vietnam/hanoi	pending	queued: evidence review
+PXD001307	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD003723	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD003724	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD003725	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD004370	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD005020	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD005749	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD006295	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD007599	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD009579	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD009933	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD010232	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD011893	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD013255	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD023223	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD024564	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD024565	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD028784	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD028986	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD033191	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD034654	malaysia/kuala_lumpur	pending	queued: evidence review; bigbio sandbox/ SDRF exists
+PXD040420	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD054693	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD066081	malaysia/kuala_lumpur	pending	queued: evidence review
+PXD073738	malaysia/kuala_lumpur	pending	queued: evidence review
