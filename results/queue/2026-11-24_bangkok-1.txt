@@ -1,21 +1,21 @@
 # daily queue 2026-11-24 bangkok batch 1 (20 Bangkok PXDs with fewest RAW files; counts from ProteomeCentral PROXI)
-PXD021005	thailand/bangkok	pending	bangkok-1: evidence review
-PXD012793	thailand/bangkok	pending	bangkok-1: evidence review
-PXD052291	thailand/bangkok	pending	bangkok-1: evidence review
-PXD062669	thailand/bangkok	pending	bangkok-1: evidence review
-PXD027317	thailand/bangkok	pending	bangkok-1: evidence review
-PXD039718	thailand/bangkok	pending	bangkok-1: evidence review
-PXD063183	thailand/bangkok	pending	bangkok-1: evidence review
-PXD064135	thailand/bangkok	pending	bangkok-1: evidence review
-PXD017234	thailand/bangkok	pending	bangkok-1: evidence review
-PXD078923	thailand/bangkok	pending	bangkok-1: evidence review
-PXD016946	thailand/bangkok	pending	bangkok-1: evidence review
-PXD048253	thailand/bangkok	pending	bangkok-1: evidence review
-PXD021066	thailand/bangkok	pending	bangkok-1: evidence review
-PXD052806	thailand/bangkok	pending	bangkok-1: evidence review
-PXD052809	thailand/bangkok	pending	bangkok-1: evidence review
-PXD057572	thailand/bangkok	pending	bangkok-1: evidence review
-PXD037553	thailand/bangkok	pending	bangkok-1: evidence review
-PXD043954	thailand/bangkok	pending	bangkok-1: evidence review
-PXD026304	thailand/bangkok	pending	bangkok-1: evidence review
-PXD073886	thailand/bangkok	pending	bangkok-1: evidence review
+PXD021005	thailand/bangkok	blocked	blocked: only RAW is one BAF FILES.zip bundle; per-run names inside archive
+PXD012793	thailand/bangkok	blocked	blocked: only RAW is raw.zip (Waters bundle); cell line unnamed; publication pending
+PXD052291	thailand/bangkok	sandbox	sandbox: 4/4 mapped; enzyme in supplement only; instrument PX/paper conflict
+PXD062669	thailand/bangkok	annotated	annotated: 4/4; Sci Rep 2025 methods; review pending
+PXD027317	thailand/bangkok	blocked	blocked: QE_0817_* names carry no FE group; key only in txt.zip / authors
+PXD039718	thailand/bangkok	sandbox	sandbox: 6/6 mapped; H/L suffix ambiguous (FE vs FCR)
+PXD063183	thailand/bangkok	sandbox	sandbox: 6/6 mapped; enzyme unstated (publication pending)
+PXD064135	thailand/bangkok	annotated	annotated: 6/6; IJMS 2026 methods (QE Plus per paper); review pending
+PXD017234	thailand/bangkok	annotated	annotated: 6/6 (.d.zip); Pharmaceuticals 2022 methods; review pending
+PXD078923	thailand/bangkok	blocked	blocked: only mzXML deposited (no Agilent .d)
+PXD016946	thailand/bangkok	sandbox	sandbox: 8/8 mapped; enzyme unstated; two instruments listed
+PXD048253	thailand/bangkok	blocked	blocked: FX1-8 strain/fraction key unknown; paper closed
+PXD021066	thailand/bangkok	sandbox	sandbox: 8/8 mapped; enzyme unstated (publication pending)
+PXD052806	thailand/bangkok	blocked	blocked: L01/L02/L04 group codes not explained; paper has 2 groups
+PXD052809	thailand/bangkok	blocked	blocked: L01/L02/L03 group codes not explained; L02 names repeat PXD052806
+PXD057572	thailand/bangkok	annotated	annotated: 9/9; Sci Rep 2025 methods; review pending
+PXD037553	thailand/bangkok	sandbox	sandbox: 9/9 mapped; enzyme unread (paper behind captcha)
+PXD043954	thailand/bangkok	blocked	blocked: irregular M27 run set (M27_1.raw extra, two missing); paper not read
+PXD026304	thailand/bangkok	blocked	blocked: le1/le2/le3 species key in paper (not read)
+PXD073886	thailand/bangkok	blocked	blocked: Ag-OV / Ag-CCA meaning and enzyme only in metadata.csv (download-only)
