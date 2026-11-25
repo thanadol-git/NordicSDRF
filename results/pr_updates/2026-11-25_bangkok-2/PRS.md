@@ -12,7 +12,7 @@
 | PXD045313 | datasets/PXD045313/PXD045313.sdrf.tsv | https://github.com/bigbio/sdrf-annotated-datasets/pull/4270 |
 | PXD061033 | datasets/PXD061033/PXD061033.sdrf.tsv | https://github.com/bigbio/sdrf-annotated-datasets/pull/4271 |
 | PXD052630 | datasets/PXD052630/PXD052630.sdrf.tsv | https://github.com/bigbio/sdrf-annotated-datasets/pull/4281 |
-| PXD033149 | not PR'd: failed round 3 (MS1 scan range), corrected, awaiting round 4 | - |
+| PXD033149 | datasets/PXD033149/PXD033149.sdrf.tsv (round 4 PASS) | https://github.com/bigbio/sdrf-annotated-datasets/pull/4282 |
 
 ## Sandbox (bigbio sandbox/, not datasets/)
 
