@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD032081.sdrf.tsv",
+  "artifact_sha256": "0adf1a1d63ad99b9eb48d5f089cf32d0d94f0484baab6489ca02abb92593d2b2",
+  "verdict": "PASS",
+  "summary": "One T. spiralis muscle-larval extract, 12 SDS-PAGE gel slices (gel1-12.baf) acquired on a Bruker micrOTOF-Q II; instrument, search tolerances and modifications independently confirmed. Only minor findings.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent; producer transcript, report.md and prior reviews not read; evidence read only from scratchpad/bkk/<PXD>/ plus independent PRIDE FTP/OLS/Cellosaurus fetches"
+  },
+  "evidence_manifest": "annotations/PXD032081.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "30 columns, 12 rows, ms-proteomics + invertebrates v1.1.0 declared and validated; required columns present; assay names unique; structured NT/AC values well-formed."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check: 10/10 terms verified, CLEAN (MS:1000704 micrOTOF-Q II, MS:1001251, MS:1000133, PRIDE:0000568, PRIDE:0000627, UNIMOD:4/35). Only validator warning is 'whole organism' in organism part (UBERON synonym of multicellular organism)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Paper Methods (PMID 35558100): 12% SDS-PAGE, trypsin, Ultimate 3000, 'MicroToF Q II (Bruker)', Mascot 0.8/0.8 Da, variable carbamidomethylation and oxidation. Range-fetched first 3 MB of gel1.baf: 'micrOTOF-Q II' and otofControl; mgf header 'Instrument: micrOTOF-Q II'. PRIDE 'maXis' is correctly overridden."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "files.json has 12 RAW (gel1-12.baf), all 12 mapped once; 12 mgf PEAK and F002725.dat SEARCH correctly excluded."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Single source, biological replicate 1, technical replicate 1, fraction identifier 1-12 matching gelN; no condition contrast so no factor value is defensible."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Reduction/alkylation 'not available' (not stated in paper); strain/sex 'not available' (not stated); developmental stage 'larval stage' supported by 'infective muscle larvae'. No unsupported specificity found."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf with the file's declared templates: exit 0, warnings only ('Most seems to be fine. There were only warnings.'); sdrf-tools check and score run; check CLEAN; score 95/100."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[organism part] all rows",
+      "message": "'whole organism' is not a UBERON label; consider 'multicellular organism' or keep as accepted synonym.",
+      "evidence": "validate-sdrf warning: not found in uberon;bto."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "file",
+      "message": "No factor value column; acceptable for a single-condition catalogue but score flags design 67/100.",
+      "evidence": "sdrf-tools score design issue 'No factor value columns defined'."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[fraction identifier] rows 1-12",
+      "message": "gelN = band/slice N order is inferred from file names; not stated in the paper.",
+      "evidence": "Paper reports SDS-PAGE bands 34->170 kDa but no slice numbering."
+    }
+  ]
+}

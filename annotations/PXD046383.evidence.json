@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD046383.sdrf.tsv",
+  "dataset": "PXD046383",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD046383 (scratchpad/bkk/PXD046383/pride.json)"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD046383/files/all (scratchpad/bkk/PXD046383/files.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "full text scratchpad/bkk/PXD046383/manuscript.txt; references [(39765814, '10.3390/antiox13121485')]"
+    },
+    {
+      "id": "deposit",
+      "kind": "repository",
+      "location": "EL_S1F4.raw header (Q Exactive Plus)"
+    },
+    {
+      "id": "round1fix",
+      "kind": "repository",
+      "location": "paper Methods: Pierce High pH Reversed-Phase Peptide Fractionation Kit, RAW264.7 ATCC TIB-71; Cellosaurus CVCL_0493 (mouse leukemia, Abelson MuLV-transformed, BALB/c, adult male)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "RAW 264.7: PBS control (light DIMETHYL0), LPS 1 ug/mL (medium DIMETHYL4), EL extract 500 ug/mL 1 h pretreatment + LPS (heavy DIMETHYL8), label order as stated; 3 sets S1-S3 (= biological replicates, INFERRED) x 10 fractions (protocol says 8; 10 deposited, fractionation method not named).",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Q Exactive Plus, HCD 32%, MS1 350-1400.",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "PD 2.1: 10 ppm / 0.02 Da, carbamidomethyl + L/M/H dimethyl fixed (28.0313/32.0564/36.0757 = UNIMOD 36/199/330), ox M var.",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Antioxidants 2024 PMC11673262.",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "round-1 review fixes",
+      "value": "dimethyl label mod per row (36/199/330); fractionation high-pH RP; cellosaurus CVCL_0493; disease leukemia; developmental stage adult; strain BALB/c",
+      "source_ids": [
+        "round1fix"
+      ],
+      "evidence": "paper Methods: Pierce High pH Reversed-Phase Peptide Fractionation Kit, RAW264.7 ATCC TIB-71; Cellosaurus CVCL_0493 (mouse leukemia, Abelson MuLV-transformed, BALB/c, adult male)"
+    }
+  ],
+  "limitations": [
+    "RAW 264.7: PBS control (light DIMETHYL0), LPS 1 ug/mL (medium DIMETHYL4), EL extract 500 ug/mL 1 h pretreatment + LPS (heavy DIMETHYL8), label order as stated; 3 sets S1-S3 (= biological replicates, INFERRED) x 10 fractions (protocol says 8; 10 deposited, fractionation method not named)."
+  ]
+}

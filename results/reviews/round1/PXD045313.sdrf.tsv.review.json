@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD045313.sdrf.tsv",
+  "artifact_sha256": "ef2ce1681841a8391cdeced4e3b5473d23039096e50b6f2dd945b66e8d02ac3b",
+  "verdict": "FAIL",
+  "summary": "File mapping and MS parameters are correct, but the required Cellosaurus accession is 'not available' although MDCK = CVCL_0422 is known, and the cell type is a non-ontology label.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh independent reviewer subagent; no producer transcript, report.md or prior reviews read; evidence limited to scratchpad/bkk/<PXD>/ plus re-fetched PRIDE/Europe PMC/OLS/Cellosaurus"
+  },
+  "evidence_manifest": "annotations/PXD045313.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "fail",
+      "evidence": "Templates ms-proteomics+vertebrates+cell-lines (declared) re-derived; 18 rows; cell-lines template marks characteristics[cellosaurus accession] required (format CVCL_XXXX) and it holds 'not available' for a known line."
+    },
+    "ontology_integrity": {
+      "status": "fail",
+      "evidence": "'kidney tubule epithelial cell' (characteristics[cell type]) not found in cl/bto/clo (parse_sdrf warning, OLS4). Cellosaurus CVCL_0422 gives cell type CL:0002518 'kidney epithelial cell'. Other terms verified by sdrf-tools check (12/12)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE/paper (PMID 37799542): MDCK (ATCC) caffeine 100 uM 24 h vs untreated; SDT with 100 mM DTT; nanoLC-ESI-LTQ-Orbitrap; MaxQuant 2.1.4 CAM fixed, Ox M var, trypsin 1 missed, 4.5 ppm/0.5 Da, charge 2-3; three biological replicates. Cellosaurus: MDCK dog, female, adult."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "18 SDRF data files = 18 RAW in files.json (projectAccessions PXD045313); combined.zip, Spectral_APL.zip, mzTab excluded."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "2 conditions x 3 biological replicates x 3 injections = 18; source names unique per biorep; factor value[treatment] matches characteristics."
+    },
+    "omission_safety": {
+      "status": "fail",
+      "evidence": "Known required value (CVCL_0422, cited in the manifest itself) omitted as 'not available'. CID dissociation and X-Y = biorep/injection mapping are inferences (minor)."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t vertebrates -t cell-lines exit 0 (warnings only: cell type and treatment free text); sdrf-tools check and score run (see findings)"
+    }
+  },
+  "findings": [
+    {
+      "severity": "important",
+      "category": "omission",
+      "location": "characteristics[cellosaurus accession], all rows",
+      "message": "Required Cellosaurus accession is 'not available' although the cell line is known.",
+      "evidence": "cell-lines template v1.1.0: characteristics[cellosaurus accession] required; manifest states 'MDCK (CVCL_0422)'; Cellosaurus API returns CVCL_0422 ID MDCK, dog, female, adult.",
+      "correction": "Set to CVCL_0422 on all rows."
+    },
+    {
+      "severity": "important",
+      "category": "ontology",
+      "location": "characteristics[cell type], all rows",
+      "message": "'kidney tubule epithelial cell' is not an ontology label.",
+      "evidence": "parse_sdrf warning (not in cl;bto;clo); OLS4 has no such label. Cellosaurus CVCL_0422 cell type is CL:0002518 'kidney epithelial cell'.",
+      "correction": "Use 'kidney epithelial cell' (CL:0002518)."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[dissociation method], all rows",
+      "message": "CID is not stated in PRIDE or the paper (MS method only 'as previously reported'); consistent with LTQ Orbitrap XL and 0.5 Da fragment tolerance.",
+      "evidence": "sampleProcessingProtocol defers MS settings to cited papers; manifest has no claim for dissociation method."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "characteristics[biological replicate], comment[technical replicate]",
+      "message": "Biological/technical assignment from file names CafX-Y / ControlX-Y is inferred, not stated.",
+      "evidence": "Paper says three independent biological replicates; 18 files imply 3 injections each; manifest flags it as INFERRED."
+    }
+  ]
+}

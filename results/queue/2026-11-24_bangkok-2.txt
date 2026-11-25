@@ -1,0 +1,21 @@
+# daily queue 2026-11-24 bangkok batch 2 (next 20 Bangkok PXDs with the fewest RAW files, after bangkok-1's 20; counts from PRIDE files/all; excluding bigbio datasets/)
+PXD032081	thailand/bangkok	annotated	annotated: 12/12 gel bands; micrOTOF-Q II per .baf; review pending
+PXD062512	thailand/bangkok	sandbox	sandbox: 6/6 mapped; only mzML deposited (WIFF missing); untreated controls not deposited
+PXD011432	thailand/bangkok	annotated	annotated: 12/12; params from deposited mzid; review pending
+PXD058082	thailand/bangkok	annotated	annotated: 15/15; pooled lungs x 3 injections; msf not read; review pending
+PXD052630	thailand/bangkok	annotated	annotated: 17/17; FA/FN/MA/MN codes; review pending
+PXD052319	thailand/bangkok	sandbox	sandbox: 9/9; NN/SN/SY -> non-SPHS/SPHS inferred (S-Figure 6 not retrievable)
+PXD045313	thailand/bangkok	annotated	annotated: 18/18; X-Y = bio-tech inferred; review pending
+PXD061033	thailand/bangkok	annotated	annotated: 18/18; X-Y = bio-tech inferred; review pending
+PXD035814	thailand/bangkok	sandbox	sandbox: 9/9; co-culture rows hold two organisms
+PXD040999	thailand/bangkok	annotated	annotated: 18/18 split -elute/-flowthrough (MARS-14); review pending
+PXD022257	thailand/bangkok	blocked	blocked: TMT10plex channel map absent (msf Factors empty, no paper table)
+PXD054595	thailand/bangkok	sandbox	sandbox: 18/18 mapped; no vendor RAW (Mascot .dat + mgf only)
+PXD047028	thailand/bangkok	annotated	annotated: 18/18; params from mqpar.xml; review pending
+PXD033149	thailand/bangkok	annotated	annotated: 18/18; cyt1/cyt2 = injections inferred; review pending
+PXD043461	thailand/bangkok	blocked	blocked: T-code -> donor/group key missing; control and donor O1 sheets absent
+PXD013551	thailand/bangkok	blocked	blocked: only .baf_idx index files; irregular gel-slice run set
+PXD039206	thailand/bangkok	sandbox	sandbox: 24/24; codes 10/50 -> 20/100 ug/mL inferred
+PXD038611	thailand/bangkok	blocked	duplicate: byte-identical RAW of PXD039206
+PXD034530	thailand/bangkok	annotated	annotated: 27 RAW x 2 dimethyl labels; review pending
+PXD046383	thailand/bangkok	annotated	annotated: 30 RAW x 3 dimethyl labels; review pending

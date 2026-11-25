@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD034530.sdrf.tsv",
+  "dataset": "PXD034530",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD034530 (scratchpad/bkk/PXD034530/pride.json)"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD034530/files/all (scratchpad/bkk/PXD034530/files.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "full text scratchpad/bkk/PXD034530/manuscript.txt; references [(35955437, '10.3390/ijms23158308')]"
+    },
+    {
+      "id": "deposit",
+      "kind": "repository",
+      "location": "Bio_Set1_F4.raw header (Q Exactive Plus)"
+    },
+    {
+      "id": "round1fix",
+      "kind": "repository",
+      "location": "PRIDE sample protocol (labels light C_PACL / medium PACL; NCE 32, 350-1400 m/z); deposited Bio_Set1_F_Proteins.txt \"F1: Light, Sample\" / \"F1: Medium, Control\""
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "P. aeruginosa clinical isolate PACL vs chlorhexidine-adapted C_PACL, 24 h biofilms; dimethyl labelling: C_PACL light (DIMETHYL0), PACL medium (DIMETHYL4), order as stated in PRIDE protocol; 3 biological sets (Bio_Set1/3/4; set 2 not deposited) x 9 high-pH fractions (F1, F3-F10 named; F2 absent; fraction ids assigned 1-9 by order).",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Q Exactive Plus (RAW header + protocol).",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "PD 2.1 SEQUEST: trypsin 2 missed, 10 ppm / 0.02 Da, carbamidomethyl + light/medium dimethyl (N-term, K) fixed, ox M var.",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "IJMS 2022 PMC9368580.",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Labels built per channel with sdrf-tools build then merged (build has no dimethyl channel support).",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "round-1 review fixes",
+      "value": "dimethyl label modification per row (DIMETHYL0 -> UNIMOD:36, DIMETHYL4 -> UNIMOD:199); collision energy 32% NCE; MS1 350-1400 m/z; material type cell",
+      "source_ids": [
+        "round1fix"
+      ],
+      "evidence": "PRIDE sample protocol (labels light C_PACL / medium PACL; NCE 32, 350-1400 m/z); deposited Bio_Set1_F_Proteins.txt \"F1: Light, Sample\" / \"F1: Medium, Control\""
+    }
+  ],
+  "limitations": [
+    "aeruginosa clinical isolate PACL vs chlorhexidine-adapted C_PACL, 24 h biofilms; dimethyl labelling: C_PACL light (DIMETHYL0), PACL medium (DIMETHYL4), order as stated in PRIDE protocol; 3 biological sets (Bio_Set1/3/4; set 2 not deposited) x 9 high-pH fractions (F1, F3-F10 named; F2 absent; fraction ids assigned 1-9 by order)."
+  ]
+}

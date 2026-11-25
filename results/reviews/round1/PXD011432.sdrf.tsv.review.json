@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD011432.sdrf.tsv",
+  "artifact_sha256": "75ad2fa4376ff0f27dd6c3df17b9c3f6cbf34cfb46afc0a5f6d3405b1792c28f",
+  "verdict": "FAIL",
+  "summary": "Design (TAP-HSP90 vs TAP control, 3 biol x 2 tech, 12 .baf) and MS parameters are correct, but the required cell-line identity is incomplete: cellosaurus accession left 'not available' although HEK293T = CVCL_0063, and the cell line name does not resolve.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent; producer transcript, report.md and prior reviews not read; evidence read only from scratchpad/bkk/<PXD>/ plus independent PRIDE FTP/OLS/Cellosaurus fetches"
+  },
+  "evidence_manifest": "annotations/PXD011432.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "fail",
+      "evidence": "cell-lines template marks characteristics[cellosaurus accession] required with guidance 'Look up accessions at cellosaurus.org'; value 'not available' despite an unambiguous cell line."
+    },
+    "ontology_integrity": {
+      "status": "fail",
+      "evidence": "sdrf-tools check: 'HEK 293T' in characteristics[cell line] flagged as hallucinated (not in CLO/BTO/EFO); OLS labels are 'HEK293T cell' (CLO:0037372), 'HEK-293T cell' (BTO:0002181), '293T' (EFO:0001082). Other 11 terms verified (MS:1003462 maXis impact confirmed in OLS)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE protocols: HEK293T, TAP control vs N-terminal TAP-HSP90, DTT in lysis buffer, maXis Impact, Mascot 0.1/0.5 Da. Downloaded Empty_merge_BiolReplicate2.mzid.gz: Carbamidomethyl C fixed, Oxidation M variable, trypsin, 0.1/0.5 Da. Range-fetched .baf header: 'maXis impact'."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "All 12 RAW .baf files mapped once; mgf/mzid/mztab excluded."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "6 sources (2 baits x 3 biol reps), tech reps 1-2 per source, consistent with file names and 'three independent biological replicates ... each with two technical replicates'; factor value[bait] mirrors characteristics[bait]."
+    },
+    "omission_safety": {
+      "status": "fail",
+      "evidence": "Cellosaurus accession (CVCL_0063) and Cellosaurus name (HEK293T) omitted although trivially derivable; DTT as reduction reagent rests on lysis-buffer DTT (sample 'reduced by heating at 95C')."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf with the file's declared templates: exit 0, warnings only ('Most seems to be fine. There were only warnings.'); sdrf-tools check and score run; check reports 1 hallucinated term; score 98/100."
+    }
+  },
+  "findings": [
+    {
+      "severity": "important",
+      "category": "spec/omission",
+      "location": "characteristics[cellosaurus accession] rows 1-12",
+      "message": "Set to CVCL_0063 (HEK293T) instead of 'not available'.",
+      "evidence": "Cellosaurus API CVCL_0063 name HEK293T, sex Female, age Fetus; PRIDE title/description 'HEK293T cells'; template marks the column required."
+    },
+    {
+      "severity": "important",
+      "category": "ontology",
+      "location": "characteristics[cell line] rows 1-12",
+      "message": "'HEK 293T' does not resolve; use the Cellosaurus/CLO name (HEK293T) and add characteristics[cellosaurus name] HEK293T.",
+      "evidence": "sdrf-tools check hallucinated 'HEK 293T'; validate-sdrf warning not found in clo;bto;efo; OLS CLO:0037372 'HEK293T cell'."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[cell type] rows 1-12",
+      "message": "'embryonic cell' is not an exact CL label (CL:0002321 is 'embryonic cell (metazoa)').",
+      "evidence": "validate-sdrf warning; OLS search."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[reduction reagent] rows 1-12",
+      "message": "DTT is inferred from 2 mM DTT in TAP lysis buffer; the digestion step says only 'reduced by heating at 95C'. Acceptable, but note it as an inference.",
+      "evidence": "PRIDE sampleProcessingProtocol."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[enrichment process] rows 1-12",
+      "message": "'tandem affinity purification' is free text, not a child of EFO:0009090.",
+      "evidence": "validate-sdrf warning; OLS no match."
+    },
+    {
+      "severity": "minor",
+      "category": "source",
+      "location": "characteristics[age]/[developmental stage]",
+      "message": "Cellosaurus gives age 'Fetus'; 'embryo' is customary for HEK lines but fetal stage is the more exact value.",
+      "evidence": "Cellosaurus CVCL_0063 age Fetus."
+    }
+  ]
+}

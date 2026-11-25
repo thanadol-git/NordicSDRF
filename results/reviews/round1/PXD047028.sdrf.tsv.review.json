@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD047028.sdrf.tsv",
+  "artifact_sha256": "17f9344758970956fd0fab4e83db8ab2e230388fddb09d1d0f75995134a71b5b",
+  "verdict": "FAIL",
+  "summary": "Design, file mapping and search parameters are correct (2 groups x 3 biological x 3 technical, 18/18 .d.zip, mqpar-derived params). FAIL on three important issues: required Cellosaurus accession set to 'not available' although MDCK is CVCL_0422; alkylation reagent 'not available' although iodoacetamide is stated; instrument annotated as generic maXis although the paper states maXis Impact (MS:1003462).",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent; no producer transcript; annotations/<PXD>.report.md, results/reviews/ and producer scratch files (samples.tsv, technical.tsv, validate_*.txt) not read"
+  },
+  "evidence_manifest": "annotations/PXD047028.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Templates ms-proteomics + vertebrates + cell-lines v1.1.0 match content (dog cell line, MS). Required columns present, 18 rows, unique assay names/files, valid mod syntax."
+    },
+    "ontology_integrity": {
+      "status": "fail",
+      "evidence": "NCBITaxon Canis lupus familiaris, kidney, Trypsin/P MS:1001313, CID, UNIMOD:4/35/1 OK. MS:1001541 'maXis' is a distinct instrument model from 'maXis impact' MS:1003462 (OLS). 'kidney tubule epithelial cell' is not the current CL:1000494 label ('nephron tubule epithelial cell'; validator warning)."
+    },
+    "source_evidence": {
+      "status": "fail",
+      "evidence": "PRIDE protocol + manuscript (CSBJ 2023, PMID 38074474) + deposited mqpar.xml checked. 100 uM 24 h confirmed ('trigonelline at 100 uM was chosen'), n=3 biological x technical triplicate confirmed; mqpar: Trypsin/P, Carbamidomethyl (C) fixed, Oxidation (M) + Acetyl (Protein N-term) variable, mainSearchTol 0.006 Da, TOF MS/MS 0.5 Da. Cellosaurus CVCL_0422 MDCK: female, adult (matches SDRF). Alkylation and Cellosaurus accession contradict available evidence."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "18 RAW .d.zip in PRIDE files.json, all mapped once; mqpar.xml lists exactly these 18 runs; fasta/combined.zip/proteinGroups/mqpar are non-raw."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Control1-3 / Treat1-3 (D1-D6) = biological replicates, 3 injections each ordered by run number = technical 1-3; factor value[treatment] 2 levels x 9 runs; matches 'three biological replicates per group and technical triplicate'."
+    },
+    "omission_safety": {
+      "status": "fail",
+      "evidence": "No unsupported additions found; omissions of available values: Cellosaurus accession (required), iodoacetamide alkylation, exact instrument model; culture medium DMEM (recommended) absent."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t vertebrates -t cell-lines: exit 0, warnings only (free-text treatment values; cell type label); sdrf-tools check: CLEAN (0 hallucinated/mismatch); sdrf-tools score run (97-98/100)."
+    }
+  },
+  "findings": [
+    {
+      "severity": "important",
+      "category": "omission",
+      "location": "characteristics[cellosaurus accession], all 18 rows",
+      "message": "Required column set to 'not available' although the accession exists. Set to CVCL_0422 (and add characteristics[cellosaurus name] MDCK).",
+      "evidence": "Cellosaurus API CVCL_0422: ID MDCK, Canis lupus familiaris, Female, Adult; paper: 'MDCK (Madin-Darby canine kidney) cells (ATCC ...)'. cell-lines template marks the column required, format CVCL_XXXX."
+    },
+    {
+      "severity": "important",
+      "category": "source_evidence/omission",
+      "location": "comment[alkylation reagent], all 18 rows",
+      "message": "Alkylation reagent is 'not available' but iodoacetamide is stated. Set NT=iodoacetamide (IAA);AC=PRIDE:0000599.",
+      "evidence": "PRIDE sampleProcessingProtocol (FASP): 'alkylated with 100 ul of 50 mM iodoacetamide in 8 M urea'; mqpar fixed modification Carbamidomethyl (C)."
+    },
+    {
+      "severity": "important",
+      "category": "ontology",
+      "location": "comment[instrument], all 18 rows",
+      "message": "NT=maXis;AC=MS:1001541 names a different Bruker model than the one used. Use NT=maXis impact;AC=MS:1003462.",
+      "evidence": "PRIDE protocol and paper: 'ultra-high resolution Qq-TOF MS/MS system (maXis Impact, Bruker Daltonics)'; OLS MS:1003462 'maXis impact' (not obsolete). PRIDE project-level MS:1001541 is a generic submitter choice."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[cell type]",
+      "message": "'kidney tubule epithelial cell' is not the current CL label; use 'nephron tubule epithelial cell' (CL:1000494) or the broader 'kidney epithelial cell' (CL:0002518).",
+      "evidence": "OLS CL:1000494 label 'nephron tubule epithelial cell'; parse_sdrf warning: term not found in cl;bto;clo."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[culture medium] (absent)",
+      "message": "Recommended cell-lines column; DMEM with 10% FBS is stated.",
+      "evidence": "Manuscript Methods 'Cultivation of renal cells': growth medium containing DMEM (Gibco) ... 10% fetal bovine serum."
+    }
+  ]
+}

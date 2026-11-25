@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD061033.sdrf.tsv",
+  "dataset": "PXD061033",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD061033 (scratchpad/bkk/PXD061033/pride.json)"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD061033/files/all (scratchpad/bkk/PXD061033/files.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "full text scratchpad/bkk/PXD061033/manuscript.txt; references [(42011480, '10.1016/j.gendis.2025.101926')]"
+    },
+    {
+      "id": "deposit",
+      "kind": "repository",
+      "location": "SNAI_1-1.raw header (LTQ XL)"
+    },
+    {
+      "id": "round1fix",
+      "kind": "repository",
+      "location": "Cellosaurus CVCL_0302 (HK-2, proximal tubule, male)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "HK-2 (CVCL_0302) stable SNAI1 overexpression vs empty vector; same X-Y naming inference; same LTQ Orbitrap XL and MaxQuant parameters (stated).",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Genes Dis 2025 PMC13091999.",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "round-1 review fixes",
+      "value": "cellosaurus accession CVCL_0302; cell type epithelial cell of proximal tubule",
+      "source_ids": [
+        "round1fix"
+      ],
+      "evidence": "Cellosaurus CVCL_0302 (HK-2, proximal tubule, male)"
+    }
+  ],
+  "limitations": [
+    "none recorded"
+  ]
+}

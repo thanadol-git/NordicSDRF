@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD033149.sdrf.tsv",
+  "artifact_sha256": "7b157b5c28c45a63584427ce33e93514d1b2c9ec920147c306a8f6c874b60cab",
+  "verdict": "FAIL",
+  "summary": "Design, file mapping, instrument (QE HF confirmed from raw header) and search parameters are correct. FAIL on one important issue: required Cellosaurus accession is 'not available' although SW480 is CVCL_0546 (cited in the producer's own manifest).",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent; no producer transcript; annotations/<PXD>.report.md, results/reviews/ and producer scratch files (samples.tsv, technical.tsv, validate_*.txt) not read"
+  },
+  "evidence_manifest": "annotations/PXD033149.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Templates ms-proteomics + human + cell-lines v1.1.0 match content (human cell line). Required columns present, 18 rows, unique assay names/files, valid mod syntax, ms1 scan range present."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "OLS/sdrf-tools check 14/14 verified: MONDO:0002271 colon adenocarcinoma (= Cellosaurus NCIt C4349), colon, epithelial cell, MS:1002523 Q Exactive HF, HCD MS:1000422, Trypsin, DTT/IAA PRIDE terms, UNIMOD:4/35."
+    },
+    "source_evidence": {
+      "status": "fail",
+      "evidence": "PRIDE protocols + Proteome Sci 2022 (PMID 35578244) checked. Treatments 10 nM R9VH36 / gefitinib 1 h, triplicate flasks, top10 HCD, 400-1600 m/z, PD 2.4 20 ppm / 0.01 Da, carbamidomethyl fixed / ox M variable, DTT/IAA confirmed. Raw header (first 8 MB of con1_cyt1.raw, HTTPS range request) reads 'Q Exactive HF - Orbitrap MS'. Cellosaurus CVCL_0546: male, NCIt colon adenocarcinoma, age 51Y. Cellosaurus accession value contradicts available evidence."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "PRIDE files.json has 18 RAW .raw files, all mapped exactly once; the mzML (PEAK) and mzid.gz (RESULT) for VH3b3_cyt2 are derived files and correctly excluded."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "3 treatments (con, VH3b=R9VH36, gefitinib) x 3 biological replicates x 2 runs (cyt1/cyt2) = 18 runs, matching paper 'across all runs; n = 18'. cyt1/cyt2 as technical injections is inferred from names (no fractionation described) and disclosed in the manifest."
+    },
+    "omission_safety": {
+      "status": "fail",
+      "evidence": "No unsupported additions; omission of the required Cellosaurus accession that is available (and cited in the manifest)."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t human -t cell-lines: exit 0, warnings only (free-text treatment values); sdrf-tools check: CLEAN (0 hallucinated/mismatch); sdrf-tools score run (97-98/100)."
+    }
+  },
+  "findings": [
+    {
+      "severity": "important",
+      "category": "omission",
+      "location": "characteristics[cellosaurus accession], all 18 rows",
+      "message": "Required column set to 'not available' although the accession exists. Set to CVCL_0546 (and add characteristics[cellosaurus name] SW480).",
+      "evidence": "Cellosaurus API CVCL_0546: ID SW480, Homo sapiens, Male, 51Y, colon adenocarcinoma. The evidence manifest claim itself reads 'SW480 (CVCL_0546)'. cell-lines template: required, format CVCL_XXXX."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[age], all rows",
+      "message": "Donor age is available from Cellosaurus (51Y); consider '51Y' instead of 'not available'.",
+      "evidence": "Cellosaurus CVCL_0546 AG 51Y."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "characteristics[treatment] / evidence manifest limitations",
+      "message": "The paper also states 'The IC50 of testing samples was used in the proteomics analysis' (IC50 527 nM R9VH36, 13.31 uM gefitinib), conflicting with the explicit '10 nM ... for 1 h'. The 10 nM value follows the explicit sample-prep text; record the conflict in the manifest limitations.",
+      "evidence": "Proteome Sci 2022 Methods (cell viability vs 'Sample preparation for proteomics analysis'); PRIDE sampleProcessingProtocol states 10 nM."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[culture medium], characteristics[passage number] (absent)",
+      "message": "Recommended cell-lines columns: EMEM is stated; file names carry 'p7' (likely passage 7, unconfirmed).",
+      "evidence": "Manuscript Cell culture: 'Eagle's Minimum Essential Medium (EMEM) (ATCC, USA) supplemented with 10% ... calf bovine serum'; file names Kiatawi_SW480_p7_*."
+    }
+  ]
+}

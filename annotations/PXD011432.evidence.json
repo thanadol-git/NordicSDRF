@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD011432.sdrf.tsv",
+  "dataset": "PXD011432",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD011432 (scratchpad/bkk/PXD011432/pride.json)"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD011432/files/all (scratchpad/bkk/PXD011432/files.json)"
+    },
+    {
+      "id": "deposit",
+      "kind": "repository",
+      "location": "deposited Empty_merge_BiolReplicate1.mzid.gz SearchModification / tolerances; .baf header (maXis impact)"
+    },
+    {
+      "id": "round1fix",
+      "kind": "repository",
+      "location": "Cellosaurus CVCL_0063 (HEK293T, female, fetus); PRIDE description \"HEK293T\""
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "HEK293T TAP-HSP90 vs TAP control (Empty), 3 biological x 2 technical replicates, names carry group/rep. maXis impact per .baf header and protocol (MS:1003462).",
+      "source_ids": [
+        "pride",
+        "files",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Mascot params from deposited mzid: trypsin, 0.1 Da / 0.5 Da, carbamidomethyl C fixed, oxidation M variable.",
+      "source_ids": [
+        "pride",
+        "files",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "DTT in lysis/elution; alkylation not stated.",
+      "source_ids": [
+        "pride",
+        "files",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Paper Proteomics 2019 PMID 30508278 (not in PMC; PRIDE protocols used).",
+      "source_ids": [
+        "pride",
+        "files",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Custom characteristics[bait].",
+      "source_ids": [
+        "pride",
+        "files",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "round-1 review fixes",
+      "value": "cellosaurus accession CVCL_0063; cell line HEK293T; cell type embryonic cell (metazoa)",
+      "source_ids": [
+        "round1fix"
+      ],
+      "evidence": "Cellosaurus CVCL_0063 (HEK293T, female, fetus); PRIDE description \"HEK293T\""
+    }
+  ],
+  "limitations": [
+    "DTT in lysis/elution; alkylation not stated."
+  ]
+}

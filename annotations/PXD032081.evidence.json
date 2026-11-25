@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD032081.sdrf.tsv",
+  "dataset": "PXD032081",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD032081 (scratchpad/bkk/PXD032081/pride.json)"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD032081/files/all (scratchpad/bkk/PXD032081/files.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "full text scratchpad/bkk/PXD032081/manuscript.txt; references [(35558100, '10.3389/fcimb.2022.882608')]"
+    },
+    {
+      "id": "deposit",
+      "kind": "repository",
+      "location": "gel1.baf header (micrOTOF-Q II)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "T. spiralis infective muscle larval extract (from BALB/c infected mice), one sample, 12 SDS-PAGE bands gel1-12 (= fractions 1-12; mgf Rep4_T.spi_N). micrOTOF-Q II per .baf header and paper (PRIDE says maXis, overridden).",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Mascot 0.8/0.8 Da, carbamidomethyl + oxidation variable (stated), trypsin in-gel.",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Reduction/alkylation not stated.",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Paper Front Cell Infect Microbiol 2022 PMC9086976.",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Templates ms-proteomics + invertebrates.",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Inferred: gelN = band N order; developmental stage \"larval stage\".",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    }
+  ],
+  "limitations": [
+    "micrOTOF-Q II per .baf header and paper (PRIDE says maXis, overridden).",
+    "Reduction/alkylation not stated."
+  ]
+}

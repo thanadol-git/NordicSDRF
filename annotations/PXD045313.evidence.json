@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD045313.sdrf.tsv",
+  "dataset": "PXD045313",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD045313 (scratchpad/bkk/PXD045313/pride.json)"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD045313/files/all (scratchpad/bkk/PXD045313/files.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "full text scratchpad/bkk/PXD045313/manuscript.txt; references [(37799542, '10.1016/j.csbj.2023.09.023')]"
+    },
+    {
+      "id": "deposit",
+      "kind": "repository",
+      "location": "Caf1-1.raw header (LTQ Orbitrap XL)"
+    },
+    {
+      "id": "round1fix",
+      "kind": "repository",
+      "location": "Cellosaurus CVCL_0422 (MDCK, dog, female)"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "MDCK (CVCL_0422) caffeine 100 uM 24 h vs untreated; Caf/Control X-Y names: X = biological replicate, Y = technical injection (INFERRED from naming; not stated).",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "LTQ Orbitrap XL per RAW header (PRIDE \"LTQ Orbitrap\").",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "MaxQuant 2.1.4: carbamidomethyl fixed, ox M var, trypsin 1 missed, 4.5 ppm / 0.5 Da, charge 2-3 (stated).",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "SDT lysis with DTT; alkylation not named.",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "CSBJ 2023 PMC10550404.",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "round-1 review fixes",
+      "value": "cellosaurus accession CVCL_0422; cell type kidney epithelial cell",
+      "source_ids": [
+        "round1fix"
+      ],
+      "evidence": "Cellosaurus CVCL_0422 (MDCK, dog, female)"
+    }
+  ],
+  "limitations": [
+    "MDCK (CVCL_0422) caffeine 100 uM 24 h vs untreated; Caf/Control X-Y names: X = biological replicate, Y = technical injection (INFERRED from naming; not stated)."
+  ]
+}

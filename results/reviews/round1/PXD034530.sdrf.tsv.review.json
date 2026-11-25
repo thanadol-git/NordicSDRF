@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD034530.sdrf.tsv",
+  "artifact_sha256": "eb1678f3585ca4a08df48f27535f22a1d746296e4c8fbf38145f35d97547902a",
+  "verdict": "FAIL",
+  "summary": "Sample identities, label-to-strain mapping (confirmed by deposited Bio_Set1_F_Proteins.txt: Light=Sample, Medium=Control), instrument (Q Exactive Plus, confirmed from two RAW headers), file coverage (27/27 RAW) and design are correct. One important issue blocks approval: every row lists light AND medium dimethyl as fixed modifications, contradicting the row's own comment[label] and the per-row convention used throughout the dimethyl corpus.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent; no producer transcript, report.md or prior reviews read; evidence limited to scratchpad/bkk/PXD034530 plus fresh HTTPS fetches from PRIDE FTP, OLS and the local sdrf-annotated-datasets corpus"
+  },
+  "evidence_manifest": "annotations/PXD034530.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "fail", "evidence": "Columns and template (ms-proteomics v1.1.0, no organism template applies to bacteria) are correct and validator-clean, but the 4 dimethyl comment[modification parameters] columns (cols 30-33) carry both UNIMOD:36 and UNIMOD:199 as MT=Fixed on every row, so each row's modification set contradicts its comment[label]."},
+    "ontology_integrity": {"status": "pass", "evidence": "OLS4: MS:1002634 Q Exactive Plus, MS:1000422 (HCD), MS:1001251 Trypsin, PRIDE:0000564 hpHRP, PRIDE:0000608 DTT, PRIDE:0000599 IAA, PRIDE:0000627 DDA, NCBITaxon:287 P. aeruginosa all resolve, none obsolete. UNIMOD:36 Dimethyl (+28.0313) and UNIMOD:199 Dimethyl:2H(4) (+32.0564) match the masses in the PRIDE data processing protocol. sdrf-tools check: 14/14 verified."},
+    "source_evidence": {"status": "pass", "evidence": "PRIDE protocol and paper Methods 4.8: C_PACL light, PACL medium ('respectively'); deposited Bio_Set1_F_Proteins.txt headers 'F1: Light, Sample' / 'F1: Medium, Control' confirm C_PACL=light, PACL(parent)=medium. 24 h biofilms, DTT/IAA, trypsin, Pierce high-pH RP kit 9 fractions, 10 ppm/0.02 Da all stated. RAW headers of Bio_Set1_F4.raw and Bio_Set3_F3.raw read 'Q Exactive Plus - Orbitrap MS' (PRIDE record's Q Exactive HF and Homo sapiens are deposit errors, correctly overridden)."},
+    "file_mapping": {"status": "pass", "evidence": "files.json (all projectAccessions=PXD034530): 27 RAW files; SDRF references exactly these 27, 2 rows (one per channel) each; no missing, extra or non-raw files. Set 2 raw files absent from the deposit, consistent with biological replicates 1/3/4."},
+    "design_consistency": {"status": "pass", "evidence": "6 source names = 2 strains x 3 sets; 54 rows = 27 files x 2 labels; 9 fractions per set (paper: 9 fractions); assay names unique; factor value[phenotype] mirrors characteristics[phenotype]; strain and label not confounded beyond the study's fixed label assignment (stated in Methods)."},
+    "omission_safety": {"status": "fail", "evidence": "No fabricated biology found, but the modification columns assert on DIMETHYL0 rows a fixed +32 Da K/N-term label and on DIMETHYL4 rows a fixed +28 Da label, which is not true of any single channel."},
+    "deterministic_validation": {"status": "pass", "evidence": "parse_sdrf validate-sdrf -t ms-proteomics: exit 0, 'Everything seems to be fine'. sdrf-tools check: exit 0, CLEAN (14/14). sdrf-tools score: 100/100."}
+  },
+  "findings": [
+    {
+      "severity": "important",
+      "category": "modification parameters",
+      "location": "comment[modification parameters] columns 30-33, all 54 rows",
+      "message": "Light (Dimethyl, UNIMOD:36) and medium (Dimethyl:2H(4), UNIMOD:199) labels are both listed MT=Fixed on K and Any N-term on every row. Correction: per row, keep only the dimethyl variant matching comment[label] (DIMETHYL0 rows -> UNIMOD:36 K + N-term; DIMETHYL4 rows -> UNIMOD:199 K + N-term), i.e. two label-mod columns instead of four.",
+      "evidence": "sdrf-annotated-datasets corpus pairs label and mod per row: PXD002145 (504 DIMETHYL0 rows with Dimethyl, 504 DIMETHYL4 rows with Dimethyl:2H(4)), PXD025344 (21/21), PXD038699 (308/308/305 incl. DIMETHYL8 -> Dimethyl:2H(6)13C(2)). A light-labelled sample cannot carry a fixed +32 Da on every lysine."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "columns absent",
+      "message": "Stated acquisition parameters not captured: comment[collision energy] '32% NCE', comment[ms1 scan range] '350m/z-1400m/z'; missed cleavages 2.",
+      "evidence": "PRIDE sampleProcessingProtocol: 'normalized collision energy of HCD fragmentation was set at 32%', 'MS scan range of 350 to 1400 m/z'; dataProcessingProtocol: 'maximum allowance for missed cleavages: 2'."
+    },
+    {
+      "severity": "minor",
+      "category": "sample metadata",
+      "location": "characteristics[material type], all rows",
+      "message": "'not applicable' is used although the material is known (bacterial biofilm cells); 'cell' or 'whole organism' from the allowed list would be more accurate.",
+      "evidence": "sample-metadata material type values: tissue, cell, cell line, organism part, whole organism, synthetic; Methods: 24-h biofilm pellets of PACL/C_PACL."
+    },
+    {
+      "severity": "minor",
+      "category": "fractions",
+      "location": "comment[fraction identifier], rows with *_F3* to *_F10* files",
+      "message": "Fraction identifiers are renumbered 1-9 by order, so files named F3..F10 carry ids 2..9 (no F2 file deposited). Consistent across sets, so acceptable; consider noting the renumbering or keeping the filename number.",
+      "evidence": "files.json: Bio_Set{1,3,4}_F1, F3, F4..F10 RAW (Set1 F3 is Bio_Set1_F3_20220402101443.raw); paper: 9 fractions."
+    }
+  ]
+}

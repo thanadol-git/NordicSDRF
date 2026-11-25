@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD034530.sdrf.tsv",
+  "artifact_sha256": "084be30ba2a4dcf8b633a130562e0e9680010463c9529497f4dfdbd3261af128",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. 54 rows = 27 deposited RAW files x 2 dimethyl channels (light C_PACL, medium PACL); labels, instrument, search parameters and design verified against PRIDE protocol, deposited PD protein tables, a RAW header and the IJMS 2022 paper. Minor notes only.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent reviewer; did not read producer report.md, transcript or earlier reviews; used only scratchpad/bkk/PXD034530 evidence plus fresh HTTPS fetches"
+  },
+  "evidence_manifest": "annotations/PXD034530.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "pass", "evidence": "Active template derived as ms-proteomics v1.1.0 only (single bacterial organism; no matching sample-layer template). 35 columns, all required ms-proteomics columns present, factor value last, 54 unique assay names, no duplicate (data file,label) pairs, modification parameters key=value syntax valid."},
+    "ontology_integrity": {"status": "pass", "evidence": "sdrf-tools check: 14/14 controlled terms verified, 0 label mismatches, 0 UNIMOD swaps. UNIMOD:36 Dimethyl and UNIMOD:199 Dimethyl:2H(4) match the +28.0313/+32.0564 Da light/medium masses in the PRIDE data processing protocol; MS:1002634 Q Exactive Plus, MS:1000422 HCD, PRIDE:0000564 hpHRP, PRIDE:0000608 DTT, PRIDE:0000599 IAA resolved."},
+    "source_evidence": {"status": "pass", "evidence": "PRIDE sample protocol and paper Methods: C_PACL light (CH2O), PACL medium (CD2O); 9 high-pH fractions (Pierce kit); NCE 32%; 350-1400 m/z; DTT/IAA; trypsin; PD 2.1 10 ppm/0.02 Da; 24-h biofilms in glass flasks. Deposited Bio_Set{1,3,4}_F_Proteins.txt headers show 'Light, Sample' / 'Medium, Control' (control = PACL parent, ratios C_PACL/PACL). RAW header of Bio_Set3_F6.raw (byte-range fetch) reads 'Q Exactive Plus'; PRIDE metadata 'Q Exactive HF' and organism 'Homo sapiens' are deposit errors correctly overridden (paper/protocol: Q-Exactive Orbitrap Plus; P. aeruginosa search DB). Paper figure legend calls the strains P. aeruginosa clinical isolates."},
+    "file_mapping": {"status": "pass", "evidence": "files.json (projectAccessions PXD034530) lists 27 RAW files; SDRF comment[data file] set equals it exactly (0 missing, 0 extra), each file on 2 rows (one per channel). Bio_SetN files map to source *_setN consistently. No mgf/msf/pdResult files referenced."},
+    "design_consistency": {"status": "pass", "evidence": "6 sources = 2 strains x 3 biological sets (1,3,4; set 2 not deposited), matching 'three biological replicates' in protocol. 9 fractions per set match protocol's 9 fractions. factor value[phenotype] mirrors characteristics[phenotype]; label perfectly confounded with phenotype as in the original design (no label swap), which is faithfully represented."},
+    "omission_safety": {"status": "pass", "evidence": "Every value traced: organism/strain/phenotype/growth condition to paper+protocol; technical values to protocol and RAW header; 'not applicable' used for organism part, disease, developmental stage of a bacterial culture rather than invented values. No unsupported specificity found."},
+    "deterministic_validation": {"status": "pass", "evidence": "parse_sdrf validate-sdrf -t ms-proteomics: 'Everything seems to be fine', exit 0. sdrf-tools check: CLEAN. sdrf-tools score: 100/100. sdrf-tools schema-check on evidence manifest: valid."}
+  },
+  "findings": [
+    {"severity": "minor", "category": "fraction_identifier", "location": "comment[fraction identifier], all rows", "message": "Raw files are named F1, F3-F10 but fraction identifiers are renumbered 1-9, so the identifier for e.g. Bio_Set1_F10.raw is 9.", "evidence": "Protocol states 9 fractions, so 1-9 is defensible, but the original fraction names are lost; consider using the deposited fraction numbers or documenting the mapping."},
+    {"severity": "minor", "category": "provenance", "location": "annotations/PXD034530.evidence.json", "message": "Manifest claims are coarse ('all rows', evidence 'producer note; verify against the cited sources') and the limitations entry duplicates the first claim text (truncated).", "evidence": "Claims do not cite column-level locations; limitations[0] begins mid-word 'aeruginosa clinical isolate...'."},
+    {"severity": "minor", "category": "replicate_numbering", "location": "characteristics[biological replicate], all rows", "message": "Biological replicates numbered 1,3,4 (set 2 absent from deposit).", "evidence": "Matches deposited Bio_Set1/3/4 names; acceptable, but a note that set 2 was not deposited would help users."}
+  ]
+}

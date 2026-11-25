@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD061033.sdrf.tsv",
+  "artifact_sha256": "696cf48489415bf0d0a8ddfbffcd0850ed2d6ea01d4c7b2b102fef87c25401a8",
+  "verdict": "FAIL",
+  "summary": "Validator-clean and file mapping is complete, but the required Cellosaurus accession is 'not available' although HK-2 = CVCL_0302 is known, and the cell type is more specific than the evidence supports.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh independent reviewer subagent; no producer transcript, report.md or prior reviews read; evidence limited to scratchpad/bkk/<PXD>/ plus re-fetched PRIDE/Europe PMC/OLS/Cellosaurus"
+  },
+  "evidence_manifest": "annotations/PXD061033.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "fail",
+      "evidence": "Templates ms-proteomics+human+cell-lines (declared) re-derived; 18 rows; validator clean, but required characteristics[cellosaurus accession] is 'not available' for a known line."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check 12/12 verified, no label mismatches; 'kidney proximal convoluted tubule epithelial cell' = CL:1000838 resolves (specificity issue reported under omission safety)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE/paper (PMID 42011480): HK-2 (ATCC) stably transduced with pBabe-puro-Snail vs empty pBabe-puro; SDT/DTT; LTQ Orbitrap XL (PRIDE MS:1000556); MaxQuant 2.1.4 params as annotated; three biological replicates. Cellosaurus CVCL_0302: male, adult, cell type CL:0002306."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "18 SDRF data files = 18 RAW in files.json (projectAccessions PXD061033); FASTA, mzTab, zips excluded."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "2 groups x 3 biological replicates x 3 injections = 18; factor value[genetic modification] matches characteristics."
+    },
+    "omission_safety": {
+      "status": "fail",
+      "evidence": "Known required CVCL_0302 (named in manifest) omitted; cell type narrowed to 'proximal convoluted' while Cellosaurus states proximal tubule (CL:0002306)."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t human -t cell-lines exit 0 ('Everything seems to be fine'); sdrf-tools check and score run (see findings)"
+    }
+  },
+  "findings": [
+    {
+      "severity": "important",
+      "category": "omission",
+      "location": "characteristics[cellosaurus accession], all rows",
+      "message": "Required Cellosaurus accession is 'not available' although the cell line is known.",
+      "evidence": "cell-lines template v1.1.0 marks it required; manifest states 'HK-2 (CVCL_0302)'; Cellosaurus API returns CVCL_0302 HK-2, human, male, adult.",
+      "correction": "Set to CVCL_0302 on all rows."
+    },
+    {
+      "severity": "important",
+      "category": "specificity",
+      "location": "characteristics[cell type], all rows",
+      "message": "'kidney proximal convoluted tubule epithelial cell' (CL:1000838) is more specific than any source supports.",
+      "evidence": "Cellosaurus CVCL_0302: 'Derived from site: Kidney, proximal tubule'; 'Cell type: Epithelial cell of proximal tubule; CL_0002306'. PRIDE/paper say proximal tubular epithelial cells; no mention of convoluted segment.",
+      "correction": "Use 'epithelial cell of proximal tubule' (CL:0002306)."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[dissociation method], all rows",
+      "message": "CID is not stated in PRIDE or the paper (MS method 'as previously reported'); consistent with LTQ Orbitrap XL and 0.5 Da fragment tolerance.",
+      "evidence": "sampleProcessingProtocol defers MS settings to cited papers; no manifest claim covers it."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "characteristics[biological replicate], comment[technical replicate]",
+      "message": "Biological/technical assignment from file names SNAI_X-Y / Vector_X-Y is inferred, not stated.",
+      "evidence": "Paper/PRIDE: three independent biological replicates; 18 files imply 3 injections each."
+    }
+  ]
+}
