@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD033149.sdrf.tsv",
+  "artifact_sha256": "895d7ee636a7da7a3d5bf1cbde017bc4bddcd2139e8192f3b2de5d4068cf629a",
+  "verdict": "FAIL",
+  "summary": "Structure, files, ontology and design are sound, but comment[ms1 scan range] 400-1600 m/z (from paper text) contradicts the deposited RAW files, which were acquired at 400-1400 m/z.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent; no producer transcript, report.md or prior reviews read; evidence limited to the dataset's scratchpad folder plus re-fetched PRIDE/Europe PMC/OLS/Cellosaurus and RAW-header byte ranges"
+  },
+  "evidence_manifest": "annotations/PXD033149.evidence.json",
+  "confidence": 0.9,
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Templates ms-proteomics + human + cell-lines v1.1.0 declared and appropriate for SW480; validator accepts columns/order; only free-text treatment warnings."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check 14/14 verified; OLS exact: colon adenocarcinoma MONDO:0002271, colon UBERON:0001155, epithelial cell CL:0000066; Cellosaurus CVCL_0546 = SW480, Male, 51Y, NCIt C4349 colon adenocarcinoma; Q Exactive HF MS:1002523."
+    },
+    "source_evidence": {
+      "status": "fail",
+      "evidence": "RAW header byte ranges of con1_cyt1, con1_cyt2, VH3b1_cyt1, gefitinib3_cyt2 all show 'Method of Q Exactive HF', 'Scan range 400 to 1400 m/z', TopN 6, NCE 27, dynamic exclusion 45 s; paper/PRIDE text says 400-1600 m/z, top10, 15 s. SDRF ms1 scan range copies the text, not the acquisition. Other values (DTT/IAA, trypsin, 20 ppm/0.01 Da, Carbamidomethyl/Oxidation, Cellosaurus sex/age) supported."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "files.json (projectAccessions==PXD033149): 18 RAW; SDRF 18 unique data files, symmetric difference empty; mzML/mzid.gz correctly excluded."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "3 conditions x 3 biological replicates x 2 runs (cyt1/cyt2 -> technical replicate 1/2) = 18, matching paper 'n = 18' LC runs and 'first LC-runs ... for all replications'; source names unique per biological sample; factor value[treatment] matches characteristics[treatment]."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Age 51Y/male/adult from Cellosaurus; disease from Cellosaurus NCIt; no unsupported additions found beyond the scan-range error (recorded under source evidence). Treatment dose choice documented in manifest limitations."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t human -t cell-lines: warnings only (3 free-text treatment terms), exit 0; sdrf-tools check CLEAN exit 0; score 98/100 exit 0."
+    }
+  },
+  "findings": [
+    {
+      "severity": "important",
+      "category": "source_evidence",
+      "location": "comment[ms1 scan range], rows 1-18",
+      "message": "Value 400m/z-1600m/z contradicts the deposited RAW instrument method (400 to 1400 m/z).",
+      "evidence": "UTF-16 method text in first 4 MB of 4 of 18 RAW files (all three conditions, cyt1 and cyt2): 'Scan range 400 to 1400 m/z'. Correction: set 400m/z-1400m/z (RAW is authoritative over the paper text, which also misstates top10/15 s vs RAW top6/45 s)."
+    },
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "characteristics[treatment], factor value[treatment]",
+      "message": "Dose/time 10 nM 1 h is taken from the proteomics sample-prep text, while the paper also says 'The IC50 of testing samples was used in the proteomics analysis' (527 nM / 13.31 uM).",
+      "evidence": "manuscript.txt Methods lines 21 and 23; ambiguity is documented in the manifest limitations; acceptable, but the RAW/paper method mismatch weakens the paper text as a source for acquisition details."
+    },
+    {
+      "severity": "minor",
+      "category": "design",
+      "location": "comment[technical replicate]",
+      "message": "cyt1/cyt2 as repeated injections is inferred from file names.",
+      "evidence": "Supported by n = 18 runs for 9 samples and identical RAW methods for cyt1/cyt2; lysis protocol describes a single supernatant, so no subcellular-fraction split is evident."
+    }
+  ]
+}
