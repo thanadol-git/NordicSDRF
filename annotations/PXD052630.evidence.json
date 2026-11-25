@@ -82,6 +82,14 @@
         "round1fix"
       ],
       "evidence": "paper title/abstract: female androgenetic alopecia (FPHL); MONDO:0005339"
+    },
+    {
+      "location": "round-2 review fix",
+      "value": "developmental stage not available (round-2 fix)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "no source states patient ages or developmental stage"
     }
   ],
   "limitations": [

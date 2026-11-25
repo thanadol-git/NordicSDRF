@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD045313.sdrf.tsv",
+  "artifact_sha256": "001964af7d4501e6d2c1936a81809928ec1b1c8dc8722a20167c227baf2b609b",
+  "verdict": "PASS",
+  "summary": "MDCK caffeine 100 uM 24 h vs untreated, 3 biological x 3 technical, 18 LTQ Orbitrap XL runs; verified against PRIDE, full text, mzTab, raw header and Cellosaurus. Only minor findings.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent reviewer; no producer transcript, report.md, or prior reviews read; evidence limited to scratchpad/bkk/<PXD>/ pride.json, files.json, manuscript.txt plus fresh PRIDE/Europe PMC/OLS/Cellosaurus fetches and 4 MB raw-header range reads"
+  },
+  "evidence_manifest": "annotations/PXD045313.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "18 rows x 37 columns, uniform; ms-proteomics + vertebrates + cell-lines v1.1.0 correct for dog cell line (no human template); vertebrates-required disease and developmental stage present; cell line + cellosaurus accession present."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Cellosaurus CVCL_0422 = MDCK, Canis lupus familiaris (9615), female, adult, kidney; OLS CL:0002518 'kidney epithelial cell'; MS:1000556 LTQ Orbitrap XL, MS:1000133 CID, PRIDE:0000608 DTT, UNIMOD:4/35; sdrf-tools check CLEAN (12/12)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Manuscript (PMID 37799542) and PRIDE: MDCK treated with 100 uM caffeine 24 h vs untreated; SDT lysis with 100 mM DTT; MaxQuant 2.1.4.0, CAM fixed, Ox variable, trypsin, 4.5 ppm / 0.5 Da, charge +2,+3; 'three independent biological replicates'. Caf1-1.raw header contains 'LTQ Orbitrap XL MS'."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "files.json (PXD045313): 18 RAW, all mapped once; mzTab ms_run[1-18] lists exactly the same 18 raw names; zip/mzTab excluded."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "2 treatments x 3 biological x 3 technical = 18; X-Y names map to biological replicate X / technical replicate Y; factor value[treatment] equals characteristics[treatment]."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "All values trace to PRIDE, manuscript or Cellosaurus; alkylation left 'not available' (digestion cited to prior papers); replicate-structure inference is disclosed in the manifest."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf (sdrf-skills e5cb884 venv) with templates derived from the file's comment[sdrf template] columns: exit 0; templates ms-proteomics, vertebrates, cell-lines; output: warnings only: treatment values 'caffeine 100 uM 24 h' and 'untreated' not found in ncit;efo. sdrf-tools check: CLEAN (all terms verified, 0 hallucinated/mismatch). sdrf-tools score exit 0."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "characteristics[biological replicate], comment[technical replicate]",
+      "message": "Biological vs technical split is inferred from X-Y file naming; sources say only 'three independent biological replicates'. Consistent but not explicitly stated.",
+      "evidence": "PRIDE dataProcessingProtocol; mzTab MTD has no study_variable grouping; 9 runs per group."
+    },
+    {
+      "severity": "minor",
+      "category": "semantics",
+      "location": "comment[ms min charge], comment[ms max charge]",
+      "message": "Values 2/3 come from the search-parameter text 'charge state ions = +2, +3', while TERMS.tsv defines these as MS method acquisition settings.",
+      "evidence": "TERMS.tsv PRIDE:0000472/0000473 'MS method-defined ... charge state setting used to acquire the data'; PRIDE dataProcessingProtocol lists it among MaxQuant parameters."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file",
+      "message": "Recommended characteristics[strain or breed] (vertebrates) and characteristics[cellosaurus name] absent.",
+      "evidence": "Cellosaurus CVCL_0422: 'Breed/subspecies: Cocker Spaniel; VBO=VBO_0200372'."
+    },
+    {
+      "severity": "minor",
+      "category": "ontology",
+      "location": "characteristics[treatment]",
+      "message": "Treatment packs compound, dose and duration into free text; consider 'caffeine' (CHEBI:27732) with separate compound/dose/time columns.",
+      "evidence": "Validator warning: not found in ncit;efo."
+    }
+  ]
+}

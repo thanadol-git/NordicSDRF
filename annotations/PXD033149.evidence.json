@@ -62,6 +62,14 @@
         "round1fix"
       ],
       "evidence": "Cellosaurus CVCL_0546 (SW480, male)"
+    },
+    {
+      "location": "round-2 review fix",
+      "value": "age 51Y (round-2 fix)",
+      "source_ids": [
+        "round1fix"
+      ],
+      "evidence": "Cellosaurus CVCL_0546 SW480: donor age 51Y, male"
     }
   ],
   "limitations": [

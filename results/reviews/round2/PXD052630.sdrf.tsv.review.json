@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD052630.sdrf.tsv",
+  "artifact_sha256": "4e6e8c6cdc600faafd21b7d8fcbe784fa1a8fe0b09338fb13d25be0e4e010f69",
+  "verdict": "FAIL",
+  "summary": "Scalp tissue, male/female androgenetic alopecia vs normal, 17 Q Exactive Plus runs. Structure, ontology, files and instrument verified, but developmental stage 'adult' is asserted on all rows without any cited or locatable source.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent reviewer; no producer transcript, report.md, or prior reviews read; evidence limited to scratchpad/bkk/<PXD>/ pride.json, files.json, manuscript.txt plus fresh PRIDE/Europe PMC/OLS/Cellosaurus fetches and 4 MB raw-header range reads"
+  },
+  "evidence_manifest": "annotations/PXD052630.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "17 rows x 35 columns, uniform; ms-proteomics + human v1.1.0 appropriate (tissue, no cell line); human-required age (not available), sex, disease present; ms1 scan range '350m/z-1400m/z' and collision energy '27% NCE' match TERMS.tsv patterns."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "MONDO:0005339 'androgenetic alopecia' resolved in OLS; MS:1002634 Q Exactive Plus, MS:1000422 HCD, PRIDE:0000608 DTT, PRIDE:0000599 IAA, UNIMOD:4/35; sdrf-tools check CLEAN (13/13)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE + Europe PMC abstract (PMID 39460779, title 'Comparative proteomic analysis of male and female androgenetic alopecia') support scalp samples from male AGA and female AGA patients with respective normal controls; protocol states DTT 10 mM/IAA 40 mM, Q Exactive Plus, HCD NCE 27%, 350-1400 m/z, SEQUEST trypsin, CAM fixed/Ox variable. FA1.raw header (4 MB range read) contains 'Q Exactive Plus', overriding PRIDE's structured 'Q Exactive HF'."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "files.json (PXD052630): 17 RAW files, all 17 mapped once; .msf/.mgf excluded."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "FA 6, FN 2, MA 7, MN 2 = 17; disease and sex factors consistent with F/M and A/N code letters; biological replicate numbering per group; one individual per run."
+    },
+    "omission_safety": {
+      "status": "fail",
+      "evidence": "characteristics[developmental stage] = 'adult' on all 17 rows is not supported by PRIDE, the abstract, or the manifest; no age data available (age correctly 'not available')."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf (sdrf-skills e5cb884 venv) with templates derived from the file's comment[sdrf template] columns: exit 0; templates ms-proteomics, human; output: 'Everything seems to be fine. Well done.'. sdrf-tools check: CLEAN (all terms verified, 0 hallucinated/mismatch). sdrf-tools score exit 0."
+    }
+  },
+  "findings": [
+    {
+      "severity": "important",
+      "category": "omission_safety",
+      "location": "characteristics[developmental stage], rows 1-17",
+      "message": "'adult' is an unsupported addition; no source states patient ages or developmental stage (age itself is 'not available'). Set to 'not available' unless the publication's cohort table is obtained and states adult donors.",
+      "evidence": "PRIDE projectDescription/protocols and Europe PMC abstract PMID 39460779 contain no age information; manifest claims do not cite a source for developmental stage; paper full text not openly available."
+    },
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "characteristics[sex], characteristics[disease], factor values, all rows",
+      "message": "Per-sample sex and disease are inferred from file-name codes (F/M, A/N) rather than a sample table; inference is consistent with the stated 2x2 design but should be recorded as an inference/limitation.",
+      "evidence": "Raw names FA1-6, FN1-2, MA1-7, MN1-2; abstract: male AGA and female AGA patients with respective normal controls."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file",
+      "message": "PRIDE lists keratinocyte (CL:0000312) as organism part; no cell type column. Scalp tissue lysate is correct material; recommended ancestry category also absent.",
+      "evidence": "pride.json organismParts; sdrf-tools score completeness notes."
+    }
+  ]
+}

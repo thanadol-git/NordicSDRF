@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD011432.sdrf.tsv",
+  "artifact_sha256": "b3154473cdaf8a3ffbdf660f8f66d86aa26a6eb4bb3e730d97aca9ef17a0e209",
+  "verdict": "PASS",
+  "summary": "HEK293T TAP-HSP90 vs TAP control, 3 biological x 2 technical replicates, 12 .baf runs; structure, terms, files and design verified. Only minor findings.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent reviewer; no producer transcript, report.md, or prior reviews read; evidence limited to scratchpad/bkk/<PXD>/ pride.json, files.json, manuscript.txt plus fresh PRIDE/Europe PMC/OLS/Cellosaurus fetches and 4 MB raw-header range reads"
+  },
+  "evidence_manifest": "annotations/PXD011432.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "12 rows x 37 columns, uniform width; ms-proteomics + human + cell-lines v1.1.0 declared and appropriate; required human age (not available, allowed), sex, disease; cell-lines cell line + cellosaurus accession present; no duplicate assay names or data files."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "OLS: MS:1003462 'maXis impact' (not obsolete), CL:0002321 'embryonic cell (metazoa)', PRIDE:0000608 DTT, MS:1001251 Trypsin, MS:1000133 CID, PRIDE:0000627 DDA, UNIMOD:4/35; Cellosaurus CVCL_0063 = HEK293T, Homo sapiens, female, fetal kidney. sdrf-tools check CLEAN (12/12)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE protocol: TAP control vs N-terminal TAP-HSP90 in HEK293T; 'three independent biological replicates ... each with two technical replicates'; maXis Impact Qq-TOF; Mascot 0.1 Da / 0.5 Da; PTMs carbamidomethyl+oxidation in PRIDE identifiedPTMStrings; trypsin in-solution."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "files.json (projectAccessions PXD011432): 12 RAW .baf files, all 12 mapped once; mgf/mzid/mztab excluded correctly."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: 2 bait groups x 3 biological replicates x 2 technical replicates = 12; file names BiolReplicateN_TechReplicateM match characteristics[biological replicate] and comment[technical replicate]; factor value[bait] equals characteristics[bait]."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value traced to PRIDE text or Cellosaurus; alkylation left 'not available' as protocol omits it; only weakly inferred value (DTT as reduction reagent) logged as minor."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf (sdrf-skills e5cb884 venv) with templates derived from the file's comment[sdrf template] columns: exit 0; templates ms-proteomics, human, cell-lines; output: warnings only: 'tandem affinity purification' (enrichment process) and 'HEK293T' (cell line) not found in ontology list. sdrf-tools check: CLEAN (all terms verified, 0 hallucinated/mismatch). sdrf-tools score exit 0."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "characteristics[developmental stage], all rows",
+      "message": "'embryo' is less precise than the source; Cellosaurus gives fetal origin.",
+      "evidence": "Cellosaurus CVCL_0063: AG Fetus; derived from fetal kidney (UBERON_0002113). Consider 'fetal stage' or keep embryo with note."
+    },
+    {
+      "severity": "minor",
+      "category": "omission_safety",
+      "location": "comment[reduction reagent], all rows",
+      "message": "DTT is inferred: the reduction step is 'heating at 95 C' in Laemmli buffer, whose reductant is not named; DTT is only stated as 2 mM in the TAP lysis buffer.",
+      "evidence": "PRIDE sampleProcessingProtocol: lysis buffer '2mM DTT'; 'reduced by heating at 95°C for 5 min'. 'not available' would be the conservative value."
+    },
+    {
+      "severity": "minor",
+      "category": "spec_compliance",
+      "location": "characteristics[bait], characteristics[enrichment process]",
+      "message": "characteristics[bait] is not a TERMS.tsv column and 'tandem affinity purification' is free text outside PRIDE/EFO enrichment terms (validator warning).",
+      "evidence": "TERMS.tsv has no 'bait' term; validator: 'tandem affinity purification ... not found in the given ontology list pride;efo'."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file",
+      "message": "Recommended characteristics[cellosaurus name] absent.",
+      "evidence": "cell-lines template marks it recommended; sdrf-tools score completeness note."
+    }
+  ]
+}

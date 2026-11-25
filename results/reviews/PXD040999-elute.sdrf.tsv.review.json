@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD040999-elute.sdrf.tsv",
+  "artifact_sha256": "65e2bc0a3aca8c0575d77c5153fb240962c0745c7213a2b6b166cadfce114cf3",
+  "verdict": "PASS",
+  "summary": "MARS-14 bound-eluate SDRF (9 runs: 3 pooled groups x 3 technical injections) is supported by the paper, PRIDE protocol and deposited Progenesis exports; only minor findings.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent reviewer; did not read producer transcript, annotations/<PXD>.report.md, or results/reviews/; used only PRIDE pride.json/files.json, manuscript/paper full text, deposited files, Cellosaurus, spec and deterministic tool output"
+  },
+  "evidence_manifest": "annotations/PXD040999-elute.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Templates ms-proteomics v1.1.0 + human v1.1.0 derived independently (human plasma, MS); all required columns present (age, sex, disease, organism part, biological replicate, technical replicate, label, instrument, cleavage, fraction identifier, data file); no empty cells; 9 unique assay names; source+assay unique."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check verified 14/14 NT/AC terms (MS:1002300 amaZon Speed ETD, MS:1001251 Trypsin, MS:1000133 CID, PRIDE:0000627 DDA, PRIDE:0000608/0000599, UNIMOD:4/35); validator ontology lookups for blood plasma, colorectal cancer, normal, adult passed with no warnings."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PMC10077704 Methods (fetched from Europe PMC, title matches PXD040999 reference): study cohort 10 HC / 10 NM / 10 M pooled by equal volume; MARS-14 FT and EL fractions; 10 mM DTT / 20 mM IAA; trypsin; amaZon speed ETD; 'Each sample was analyzed in triplicate, providing three technical replicates per sample'; Mascot 1.2 Da / 0.6 Da, fixed carbamidomethyl C, variable Met oxidation and N-terminal carbamidomethylation; donor ages 40-78 (adult). PRIDE protocol: CID mode, pooled plasma N/NM/M."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "9 comment[data file] values match the 9 *-MB_*.d.zip RAW files in PRIDE files.json (projectAccessions=PXD040999); the 9 *-MUB_* runs are in the companion flow-through SDRF; no duplicates or non-raw files. Run-to-group mapping confirmed independently from deposited Progenesis exports (byte-range fetch of reanalyse_MARS14_Elute_pep-ions.csv and reanalyse_MARS14_FT_pep-ions.csv headers): N_Elute=UC-PN-MB 4544-4546, NM_Elute=UC-PNM-MB 4555-4557, M_Elute=UC-PM-MB 4558-4560; N_FT=UC-PN-MUB 4562-4564, NM_FT=UC-PNM-MUB 4572-4574, M_FT=UC-PM-MUB 4576-4578."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "3 source names (healthy / non-metastatic CRC / metastatic CRC pools) x technical replicate 1-3; factors disease + metastasis status separate the three groups without confounding; fraction identifier 1; split by MARS fraction matches separate Progenesis analyses."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Every value traced: disease/metastasis from Table 1, developmental stage adult from donor ages 40-78, reagents/mods/tolerances from Methods, CID from PRIDE protocol; age/sex correctly not asserted per-row for pools; no unsupported specificity found."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t human -> exit 0, 'Everything seems to be fine'; sdrf-tools check -> CLEAN (14/14 terms verified, 0 hallucinated/mismatch); sdrf-tools score -> 97/100; schema-check of evidence manifest valid."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "semantics",
+      "location": "characteristics[depletion] all rows",
+      "message": "'depletion' on the bound eluate (the 14 abundant proteins removed by the column) can mislead users filtering for depleted plasma; characteristics[specimen] disambiguates, but consider documenting this or using 'not applicable' for the eluate.",
+      "evidence": "PMC10077704: EL fraction represents the high-abundant proteins."
+    },
+    {
+      "severity": "minor",
+      "category": "specificity",
+      "location": "characteristics[sex], characteristics[age], all rows",
+      "message": "Pools combine 10 donors each (4 F / 6 M; median ages 51/58/59); 'pooled' (allowed for age/sex per TERMS.tsv allow_pooled) or SN= pooled-sample listing would describe the pool more precisely than 'not available'.",
+      "evidence": "PMC10077704 Table 1; TERMS.tsv age/sex allow_pooled=true."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "comment[ms1 scan range]",
+      "message": "Optional MS1 range is stated in the paper and could be added.",
+      "evidence": "PMC10077704 LC-MS/MS: 'mass range between 400-1,400 m/z'."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "evidence manifest claims[2]",
+      "message": "Manifest says 'PRIDE abstract only used' while a later source cites PMC10077704 Methods; stale provenance note.",
+      "evidence": "annotations/PXD040999-*.evidence.json claims."
+    }
+  ]
+}

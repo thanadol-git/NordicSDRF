@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD047028.sdrf.tsv",
+  "artifact_sha256": "1cd17e4e6a958e3e4be33183864c204ede93414a149aafca8ad12820fc0c368b",
+  "verdict": "PASS",
+  "summary": "MDCK untreated vs 100 uM trigonelline 24 h, 3 biological x 3 technical injections (18 runs); values match PRIDE, paper, deposited mqpar.xml and Cellosaurus; only minor findings.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent reviewer; did not read producer transcript, annotations/<PXD>.report.md, or results/reviews/; used only PRIDE pride.json/files.json, manuscript/paper full text, deposited files, Cellosaurus, spec and deterministic tool output"
+  },
+  "evidence_manifest": "annotations/PXD047028.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Templates ms-proteomics + vertebrates + cell-lines v1.1.0 derived independently (dog cell line, MS; cell-lines requires technology+sample layers, satisfied). Required columns present (cell line, cellosaurus accession, developmental stage, disease, etc.); no empty cells; 18 unique assay names."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check 14/14 verified (MS:1003462 maXis impact, MS:1001313 Trypsin/P, MS:1000133, UNIMOD:4/35/1); validator lookups for Canis lupus familiaris, kidney, kidney epithelial cell, normal, adult passed; only treatment free-text warnings. Cellosaurus API: CVCL_0422 = MDCK, ATCC CCL-34, Canis lupus familiaris, Female, Adult, kidney epithelial cell (CL_0002518)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Paper (CSBJ 2023, manuscript.txt) Methods: proteomics 'After 24-h incubation with/without 100 uM trigonelline', 'three biological replicates per group and technical triplicate per each biological sample', MDCK from ATCC; PRIDE protocol: SDT buffer with 100 mM DTT, 50 mM iodoacetamide, trypsin, maXis Impact Qq-TOF; mqpar.xml: msInstrument=1 (Bruker QTOF), Trypsin/P, 1 missed cleavage, fixed Carbamidomethyl (C), variable Oxidation (M) + Acetyl (Protein N-term), mainSearchTol 0.006 Da, TOF MS/MS 0.5 Da, fractions unset."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "18 comment[data file] values = the 18 RAW .d.zip files in PRIDE files.json (projectAccessions=PXD047028) and the 18 filePaths in mqpar.xml; no duplicates; non-raw files (combined.zip, proteinGroups.txt, fasta, mqpar) correctly excluded."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "6 sources (Control1-3, Treat1-3 = D1-D6) x 3 injections each, technical replicate ordered by run number (e.g. 2867/2879/2891); single factor treatment, balanced 9 vs 9 runs as in paper ('five out of nine quantified values in each group')."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Sex female / developmental stage adult / cell type traced to Cellosaurus; 100 uM dose from paper proteomics section (not the 1/10 uM viability doses); instrument kept as maXis impact consistent with .d files and mqpar msInstrument=1; no unsupported additions found."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t vertebrates -t cell-lines -> exit 0, warnings only (treatment values 'untreated' and 'trigonelline 100 uM 24 h' not in NCIT/EFO); sdrf-tools check -> CLEAN (14/14 terms verified, 0 hallucinated/mismatch); sdrf-tools score -> 98/100; schema-check of evidence manifest valid."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "evidence manifest / comment[instrument]",
+      "message": "Paper main Methods says 'analyzed by nanoLC-ESI-LTQ-Orbitrap MS/MS as previously reported', contradicting PRIDE/abstract Qq-TOF; the SDRF value (maXis impact) is correct per .d files and mqpar msInstrument=1, but the conflict is not recorded in limitations.",
+      "evidence": "manuscript.txt Methods vs PRIDE sampleProcessingProtocol and mqpar.xml."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "characteristics[strain or breed] (vertebrates, recommended)",
+      "message": "Cellosaurus gives breed Cocker Spaniel (VBO_0200372); column absent.",
+      "evidence": "Cellosaurus CVCL_0422 'Breed/subspecies: Cocker Spaniel'."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "characteristics[culture medium], characteristics[cellosaurus name] (cell-lines, recommended)",
+      "message": "DMEM + 10% FBS is stated; Cellosaurus name 'MDCK' available; both recommended columns absent.",
+      "evidence": "manuscript.txt 'Cultivation of renal cells'; sdrf-tools score completeness note."
+    }
+  ]
+}
