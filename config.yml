@@ -34,9 +34,9 @@ pipeline:
   tier_3_claude:
     jobs: [sdrf_annotate, sdrf_review, sdrf_adversarial_review]
 
-pride_hits_queried: 2026-11-24
+pride_hits_queried: 2026-11-25
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-11-24)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-11-25)
 
 countries:
   sweden:
@@ -63,7 +63,7 @@ countries:
         screened: 0
         annotated: 75
         blocked: 82
-        in_corpus: 105
+        in_corpus: 106
       gothenburg:
         name: Gothenburg
         search_terms: [Gothenburg, Göteborg, Sahlgrenska, Chalmers]
