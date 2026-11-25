@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD052630.sdrf.tsv",
+  "artifact_sha256": "5d862f073e5b006d4e66c9d64061f57fd6df1c2d861d2a9e0835dae5005f0e80",
+  "verdict": "FAIL",
+  "summary": "Structure, file mapping and technical metadata are sound, but the female disease value 'female pattern hair loss' does not resolve to any ontology term, so ontology integrity fails.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh independent reviewer subagent; no producer transcript, report.md or prior reviews read; evidence limited to scratchpad/bkk/<PXD>/ plus re-fetched PRIDE/Europe PMC/OLS/Cellosaurus"
+  },
+  "evidence_manifest": "annotations/PXD052630.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Templates ms-proteomics+human (declared, v1.1.0) re-derived; 17 rows, 35 columns, no duplicate rows; validator reports only an ontology warning."
+    },
+    "ontology_integrity": {
+      "status": "fail",
+      "evidence": "'female pattern hair loss' (characteristics[disease], factor value[disease], rows 1-6) not found in mondo/efo/doid/ncit/pato by parse_sdrf, sdrf-tools check (flagged hallucinated) and OLS4 search. Other 13 terms verified by sdrf-tools check; scalp=UBERON:0000403, androgenetic alopecia=MONDO:0005339 resolve."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE protocol: Q Exactive Plus, HCD NCE 27%, MS1 350-1400 m/z, DTT/IAA, trypsin 2 missed, CAM fixed / Ox M variable, Proteome Discoverer 2.1; scalp samples AGA/FPHL + normal controls. Paper (PMID 39460779, DOI 10.1007/s00403-024-03453-8) abstract consistent; full text not open access."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "17 SDRF data files = 17 RAW files in PRIDE files.json (projectAccessions PXD052630); no missing/extra; .mgf/.msf excluded correctly."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "FA1-6 (6), FN1-2 (2), MA1-7 (7), MN1-2 (2); factor value[disease]/[sex] match characteristics; one run per individual, technical replicate 1, fraction 1."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Values trace to PRIDE protocol/abstract; tolerances and age left not available; group/sex derived from file codes (FA/FN/MA/MN) consistent with stated 2x2 design (noted as minor); developmental stage 'adult' inferred (minor)."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t human exit 0 (warnings only: disease term not in ontology list); sdrf-tools check and score run (see findings)"
+    }
+  },
+  "findings": [
+    {
+      "severity": "important",
+      "category": "ontology",
+      "location": "characteristics[disease] and factor value[disease], rows 1-6 (FA1-FA6)",
+      "message": "'female pattern hair loss' is free text that resolves to no ontology term.",
+      "evidence": "parse_sdrf warning; sdrf-tools check marks it hallucinated; OLS4 search returns no match. Paper title calls the condition 'female androgenetic alopecia'. Resolvable options: NCIT:C219942 'Female Pattern Alopecia' (defined as androgenetic alopecia in females) or MONDO:0005339 'androgenetic alopecia' (with sex already a factor).",
+      "correction": "Replace with an exact ontology label, e.g. 'Female Pattern Alopecia' (NCIT:C219942) or 'androgenetic alopecia' (MONDO:0005339), in both characteristics and factor value columns."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "characteristics[sex], characteristics[disease], rows 1-17",
+      "message": "Per-sample sex and disease are inferred from filename codes (F/M, A/N), not from a sample table.",
+      "evidence": "Manifest itself labels this 'Inference'; PRIDE describes AGA/FPHL patients and respective controls; paper full text not open access so group sizes (6/2/7/2) could not be confirmed."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "characteristics[developmental stage], all rows",
+      "message": "'adult' is not stated in PRIDE or the abstract; it is a plausible inference for pattern hair loss patients.",
+      "evidence": "No age information in pride.json or abstract; age is 'not available'."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[instrument], all rows",
+      "message": "Q Exactive Plus overrides PRIDE structured 'Q Exactive HF'; supported by the written protocol, RAW-header claim not independently re-checked (780 MB file).",
+      "evidence": "dataProcessingProtocol: 'Q Exactive Plus Hybrid Quadrupole-Orbitrap'; PRIDE instruments: MS:1002523 Q Exactive HF."
+    }
+  ]
+}

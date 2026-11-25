@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD033149.sdrf.tsv",
+  "artifact_sha256": "105c010b12a8ad584b4e6ae1ac4f227b96e65d0bdbaa5cf60a4bc2e90deaef10",
+  "verdict": "FAIL",
+  "summary": "Structure, file mapping and technical parameters are sound, but the required human-template characteristics[age] is 'not available' although Cellosaurus gives the SW480 donor age (51Y), while sex and developmental stage were taken from the same record.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent reviewer; did not read producer transcript, annotations/<PXD>.report.md, or results/reviews/; used only PRIDE pride.json/files.json, manuscript/paper full text, deposited files, Cellosaurus, spec and deterministic tool output"
+  },
+  "evidence_manifest": "annotations/PXD033149.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Templates ms-proteomics + human + cell-lines v1.1.0 derived independently; required columns present; no empty cells; 18 unique assay names; ms1 scan range syntax 400m/z-1600m/z valid."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check 14/14 verified (MS:1002523 Q Exactive HF, MS:1000422 HCD, MS:1001251, UNIMOD:4/35, PRIDE reagents); validator lookups for colon, epithelial cell, colon adenocarcinoma, adult passed; Cellosaurus API CVCL_0546 = SW480, human, male, Colon adenocarcinoma (NCIt C4349)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE protocol and paper Methods both state 10 nM R9VH36 or gefitinib for 1 h, triplicate flasks, DTT/IAA, trypsin, Orbitrap HF top10 HCD, MS1 m/z 400-1600, PD 2.4 SEQUEST 20 ppm / 0.01 Da, fixed carbamidomethyl C, variable oxidation M, n=18 runs. The paper's 'IC50 ... was used in the proteomics analysis' conflict is recorded in limitations; the explicit proteomics-prep dose (10 nM) was chosen correctly."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "18 comment[data file] values = the 18 .raw files in PRIDE files.json (projectAccessions=PXD033149); mzML/mzid.gz for VH3b3_cyt2 correctly excluded; no duplicates."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "9 sources (con/VH3b/gefitinib x 3 flasks) x 2 runs (cyt1/cyt2) = 18 runs matching PRIDE 'n=18'; factor treatment balanced. cyt1/cyt2 as technical injections is an inference from file names (declared as INFERRED in manifest); no evidence contradicts it."
+    },
+    "omission_safety": {
+      "status": "fail",
+      "evidence": "Material available evidence omitted for a required column: Cellosaurus CVCL_0546 'AG 51Y' not used for characteristics[age] although SX/DI/developmental stage were taken from Cellosaurus (sdrf-annotate cellline.md 4.7 directs numeric AG -> characteristics[age])."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t human -t cell-lines -> exit 0, warnings only (treatment free text not in NCIT/EFO); sdrf-tools check -> CLEAN (14/14 terms verified, 0 hallucinated/mismatch); sdrf-tools score -> 98/100; schema-check of evidence manifest valid."
+    }
+  },
+  "findings": [
+    {
+      "severity": "important",
+      "category": "omission",
+      "location": "characteristics[age], all 18 rows",
+      "message": "Required human-template age is 'not available' but the donor age is documented; set to 51Y.",
+      "evidence": "Cellosaurus CVCL_0546: 'AG   51Y'; human.yaml marks characteristics[age] required; sdrf-annotate references/cellline.md section 4.7."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "comment[technical replicate] / assay name",
+      "message": "cyt1/cyt2 interpreted as technical injections from file names only; neither paper nor PRIDE says so explicitly (PRIDE only gives n=18 runs). Keep the INFERRED note or confirm.",
+      "evidence": "PRIDE dataProcessingProtocol 'across all runs; n=18'; no 'duplicate/technical/injection' wording in manuscript.txt."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "characteristics[culture medium], characteristics[passage number], characteristics[cellosaurus name] (cell-lines, recommended)",
+      "message": "EMEM + 10% calf serum is stated; file names carry 'p7' (likely passage 7, unconfirmed); Cellosaurus name SW480; recommended columns absent.",
+      "evidence": "manuscript.txt cell culture section; file names Kiatawi_SW480_p7_*."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "characteristics[ancestry category] (human, recommended)",
+      "message": "Absent; Cellosaurus gives no population for SW480, so 'not available' would complete the recommended column.",
+      "evidence": "sdrf-tools score completeness note."
+    }
+  ]
+}

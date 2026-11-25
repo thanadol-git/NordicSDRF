@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD046383.sdrf.tsv",
+  "artifact_sha256": "c19bfe697529b6756ba33c66e9fc43e86c5acdabc354271e026e802166f83cd8",
+  "verdict": "FAIL",
+  "summary": "Treatments, label order (control light, LPS medium, LPS+EL heavy), instrument (Q Exactive Plus, confirmed from EL_S2F10.raw header), file coverage (30/30 RAW) and design are correct. Four important issues block approval: per-row label modifications contradict comment[label]; the fractionation method stated in the paper is set to 'not available'; the Cellosaurus accession (CVCL_0493, given via ATCC TIB-71) is 'not available'; and disease is 'not applicable' for a leukemia-derived cell line.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent; no producer transcript, report.md or prior reviews read; evidence limited to scratchpad/bkk/PXD046383 plus fresh HTTPS fetches from PRIDE FTP, Cellosaurus, OLS and the local sdrf-annotated-datasets corpus"
+  },
+  "evidence_manifest": "annotations/PXD046383.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "fail", "evidence": "Templates ms-proteomics + vertebrates + cell-lines (v1.1.0) are the right set and validate with warnings only, but the six dimethyl comment[modification parameters] columns (35-40) list light, medium and heavy labels as MT=Fixed on every row, contradicting each row's comment[label]; cell-lines required characteristics[cellosaurus accession] is 'not available' although determinable."},
+    "ontology_integrity": {"status": "pass", "evidence": "UNIMOD:36/199/330 match +28.0313/+32.0564/+36.0757 in the PRIDE protocol; OLS4 confirms UNIMOD:330 = Dimethyl:2H(6)13C(2) (sdrf-tools check flags it as 'hallucinated' - a false positive). MS:1002634, MS:1000422, MS:1001251, PRIDE:0000608/0000599/0000627 resolve as in PXD034530. 'RAW 264.7' is the corpus spelling (1815 occurrences) though not in CLO/BTO/EFO via OLS (warning only)."},
+    "source_evidence": {"status": "fail", "evidence": "Label order, treatments (PBS; LPS 1 ug/mL 24 h; 500 ug/mL EL 1 h pretreatment + LPS), DTT/IAA, trypsin, HCD 32%, 350-1400 m/z, 10 ppm/0.02 Da all supported by PRIDE protocol and paper section 2.16. Not supported: fractionation 'not available' contradicts paper ('High pH Reversed-Phase Peptide Fractionation Kit (Thermo Fisher)'); disease 'not applicable' contradicts Cellosaurus CVCL_0493 DI 'NCIt C21604 Mouse leukemia'."},
+    "file_mapping": {"status": "pass", "evidence": "files.json (all projectAccessions=PXD046383): 30 RAW files EL_S{1..3}F{1..10}.raw; SDRF references exactly these, 3 rows (one per label) each; no missing/extra/non-raw files."},
+    "design_consistency": {"status": "pass", "evidence": "9 source names = 3 treatments x 3 sets; 90 rows = 30 files x 3 labels; 10 fractions per set match the deposit (PRIDE text says 8; deposit governs); biological replicate = set index (paper: 'three biological replicates'); factor value[treatment] mirrors characteristics[treatment]; assay names unique."},
+    "omission_safety": {"status": "fail", "evidence": "Evidence-backed values were replaced by reserved words (fractionation method, cellosaurus accession) or asserted as inapplicable (disease), and modification columns assert every label on every channel."},
+    "deterministic_validation": {"status": "pass", "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t vertebrates -t cell-lines: exit 0, warnings only (free-text treatment values, RAW 264.7 not in clo/bto/efo). sdrf-tools check: exit 1 (3 'hallucinated': RAW 264.7 and UNIMOD:330 x2 - both reviewed, not real errors). sdrf-tools score: 98/100 (missing recommended cellosaurus name)."}
+  },
+  "findings": [
+    {
+      "severity": "important",
+      "category": "modification parameters",
+      "location": "comment[modification parameters] columns 35-40, all 90 rows",
+      "message": "Light, medium and heavy dimethyl (UNIMOD:36, 199, 330) are all MT=Fixed on K and Any N-term on every row. Correction: per row keep only the dimethyl variant matching comment[label] (DIMETHYL0 -> UNIMOD:36, DIMETHYL4 -> UNIMOD:199, DIMETHYL8 -> UNIMOD:330), K and N-term, as two columns.",
+      "evidence": "Corpus PXD038699 triplex: DIMETHYL0 rows Dimethyl (308), DIMETHYL4 rows Dimethyl:2H(4) (308), DIMETHYL8 rows Dimethyl:2H(6)13C(2) (305); PXD002145 and PXD025344 duplexes likewise paired per row."
+    },
+    {
+      "severity": "important",
+      "category": "source evidence",
+      "location": "comment[fractionation method], all 90 rows",
+      "message": "Set to 'not available' although the paper names the method. Correction: NT=High-pH reversed-phase chromatography (hpHRP);AC=PRIDE:0000564.",
+      "evidence": "manuscript.txt Methods (proteomics): 'The labeled samples were fractionated using a High pH Reversed-Phase Peptide Fractionation Kit (Thermo Fisher Scientific...) with minor modifications.'"
+    },
+    {
+      "severity": "important",
+      "category": "cell line identity",
+      "location": "characteristics[cellosaurus accession], all 90 rows",
+      "message": "Required cell-lines column set to 'not available' although identity is documented. Correction: CVCL_0493 (and add characteristics[cellosaurus name] 'RAW 264.7').",
+      "evidence": "manuscript.txt Methods: 'mouse macrophages RAW267.4 (ATCC number; TIB-71)' (typo for RAW 264.7); Cellosaurus CVCL_0493 'RAW 264.7', DR ATCC; TIB-71."
+    },
+    {
+      "severity": "important",
+      "category": "sample metadata",
+      "location": "characteristics[disease], all 90 rows",
+      "message": "'not applicable' asserts no disease, but RAW 264.7 is an Abelson-MuLV-transformed leukemia line. Correction: disease of the originating tumour, e.g. 'mouse leukemia' (Cellosaurus NCIt C21604) or an equivalent EFO/MONDO term.",
+      "evidence": "Cellosaurus CVCL_0493: DI 'NCIt; C21604; Mouse leukemia'; CA 'Cancer cell line'; Transformant AbMuLV. cell-lines template: disease = 'Disease state of the donor tissue from which the cell line was established'."
+    },
+    {
+      "severity": "minor",
+      "category": "sample metadata",
+      "location": "characteristics[developmental stage]; missing characteristics[strain or breed]",
+      "message": "Developmental stage could be 'adult' and strain or breed (recommended in vertebrates) 'BALB/c' from Cellosaurus rather than 'not available'/absent.",
+      "evidence": "Cellosaurus CVCL_0493: AG Adult; 'Breed/subspecies: BALB/c'; SX Male (sex 'male' in SDRF is correct)."
+    },
+    {
+      "severity": "minor",
+      "category": "fractions",
+      "location": "comment[fraction identifier]",
+      "message": "10 fractions annotated while PRIDE text says 8; deposit (F1-F10 per set) supports 10 and the paper mentions 'minor modifications'. No change required; worth a note.",
+      "evidence": "PRIDE sampleProcessingProtocol 'fractionated to 8 fractions'; files.json EL_S{1,2,3}F1..F10.raw."
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD058082.sdrf.tsv",
+  "artifact_sha256": "fba73864ad8e7c3026078d9f4a9b9894702e1ac74c56a8de498ea969bdb8b02f",
+  "verdict": "PASS",
+  "summary": "Five pooled BALB/c male lung samples (vehicle, fly ash PM 1/10 mg/kg/day, standard PM2.5 1/10 mg/kg/day) x 3 injections on Orbitrap Exploris 480; all claims match PRIDE and the paper. Only minor findings.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent; producer transcript, report.md and prior reviews not read; evidence read only from scratchpad/bkk/<PXD>/ plus independent PRIDE FTP/OLS/Cellosaurus fetches"
+  },
+  "evidence_manifest": "annotations/PXD058082.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "37 columns, 15 rows, ms-proteomics + vertebrates v1.1.0 declared and validated; assay names unique; factor columns last; NCE and scan-range formats valid."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check: 8/8 terms verified, CLEAN (MS:1003028, MS:1001251, MS:1001309, MS:1000422, PRIDE:0000627). Warnings only for free-text treatment and BALB/c strain."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Paper (doi 10.1016/j.toxrep.2025.102110) Methods: 'Eight to twelve-week-old male Balb/c mice', five groups n=6 (saline; fly ash 1 and 10; standard PM2.5 1 and 10 mg/kg/day), intratracheal once daily 7 days; lung tissues 'collected, pooled'; EasyPep with trypsin/Lys-C; triplicate injections; Exploris 480, MS1 525-1200 m/z, HCD 27%."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "15 RAW files in files.json, all mapped once; Lung_PM25.msf (SEARCH) excluded."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "5 pooled sources x technical replicates 1-3 (N1-N3); dose and treatment factors reproduce the 5 groups; biological replicate 1 per pool is correct."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Search tolerances/modifications and reduction/alkylation reagents left 'not available' (not stated; msf 4.3 GB not inspected); no value asserts more than the sources."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf with the file's declared templates: exit 0, warnings only ('Most seems to be fine. There were only warnings.'); sdrf-tools check and score run; check CLEAN; score 100/100."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "spec",
+      "location": "factor value[treatment] vs characteristics[treatment] all rows",
+      "message": "Factor value text (e.g. 'fly ash particulate matter') does not mirror the characteristics value ('fly ash particulate matter, intratracheal, daily x7 d'); align them.",
+      "evidence": "README.adoc: factor value typically mirrors a characteristics column value."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "characteristics[treatment] STD rows",
+      "message": "Standard PM2.5 is NIST SRM 2786; could be named.",
+      "evidence": "Paper: 'Standard Reference Materials (SRM) 2786 ... NIST'."
+    },
+    {
+      "severity": "minor",
+      "category": "omission",
+      "location": "file",
+      "message": "Age (8-12 weeks at purchase) and FAIMS Pro CV -60 V are documented but not annotated.",
+      "evidence": "Paper Methods animal and MS paragraphs."
+    },
+    {
+      "severity": "minor",
+      "category": "spec",
+      "location": "characteristics[dose] / factor value[dose]",
+      "message": "'mg/kg/day' is outside the dose unit list (mg/kg ...) of the clinical-metadata term; template not active, so not enforced.",
+      "evidence": "TERMS.tsv dose row."
+    }
+  ]
+}

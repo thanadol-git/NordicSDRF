@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD052630.sdrf.tsv",
+  "dataset": "PXD052630",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD052630 (scratchpad/bkk/PXD052630/pride.json)"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD052630/files/all (scratchpad/bkk/PXD052630/files.json)"
+    },
+    {
+      "id": "deposit",
+      "kind": "repository",
+      "location": "FA1.raw header (Q Exactive Plus)"
+    },
+    {
+      "id": "round1fix",
+      "kind": "repository",
+      "location": "paper title/abstract: female androgenetic alopecia (FPHL); MONDO:0005339"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "Scalp tissue: FA1-6 female pattern hair loss, FN1-2 female normal, MA1-7 male androgenetic alopecia, MN1-2 male normal (group key from file prefixes + PRIDE description: AGA and FPHL patients with respective normal controls).",
+      "source_ids": [
+        "pride",
+        "files",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Q Exactive Plus per RAW header and protocol (PRIDE structured Q Exactive HF overridden).",
+      "source_ids": [
+        "pride",
+        "files",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "PD 2.1 SEQUEST, trypsin 2 missed, carbamidomethyl fixed, ox M variable; DTT/IAA; tolerances not stated.",
+      "source_ids": [
+        "pride",
+        "files",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Paper Arch Dermatol Res 2024 PMID 39460779 (not in PMC).",
+      "source_ids": [
+        "pride",
+        "files",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Inference: F/M = sex, A/N = alopecia/normal from codes.",
+      "source_ids": [
+        "pride",
+        "files",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "round-1 review fixes",
+      "value": "disease for FA rows = androgenetic alopecia",
+      "source_ids": [
+        "round1fix"
+      ],
+      "evidence": "paper title/abstract: female androgenetic alopecia (FPHL); MONDO:0005339"
+    },
+    {
+      "location": "round-2 review fix",
+      "value": "developmental stage not available (round-2 fix)",
+      "source_ids": [
+        "pride"
+      ],
+      "evidence": "no source states patient ages or developmental stage"
+    }
+  ],
+  "limitations": [
+    "Q Exactive Plus per RAW header and protocol (PRIDE structured Q Exactive HF overridden).",
+    "PD 2.1 SEQUEST, trypsin 2 missed, carbamidomethyl fixed, ox M variable; DTT/IAA; tolerances not stated."
+  ]
+}

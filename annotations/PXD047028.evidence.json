@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD047028.sdrf.tsv",
+  "dataset": "PXD047028",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD047028 (scratchpad/bkk/PXD047028/pride.json)"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD047028/files/all (scratchpad/bkk/PXD047028/files.json)"
+    },
+    {
+      "id": "paper",
+      "kind": "publication",
+      "location": "full text scratchpad/bkk/PXD047028/manuscript.txt; references [(38074474, '10.1016/j.csbj.2023.11.036')]"
+    },
+    {
+      "id": "deposit",
+      "kind": "repository",
+      "location": "deposited mqpar.xml (sdrf-tools search-params)"
+    },
+    {
+      "id": "round1fix",
+      "kind": "repository",
+      "location": "PRIDE protocol \"alkylated with 50 mM iodoacetamide\" and \"maXis Impact\"; mqpar fixed Carbamidomethyl; Cellosaurus CVCL_0422"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "MDCK trigonelline 100 uM 24 h vs untreated; 3 biological x technical triplicate (stated in paper); Control/Treat N = biological replicate, injection order = technical.",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Params from deposited mqpar.xml (sdrf-tools search-params): carbamidomethyl fixed, ox M + acetyl protein N-term var, Trypsin/P, main 0.006 Da, TOF MS/MS 0.5 Da.",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Instrument maXis per PRIDE + paper \"Qq-TOF\" (.d not inspected).",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "CSBJ 2023 PMC10697849.",
+      "source_ids": [
+        "pride",
+        "files",
+        "paper",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "round-1 review fixes",
+      "value": "cellosaurus accession CVCL_0422; alkylation iodoacetamide; instrument maXis impact MS:1003462; cell type kidney epithelial cell",
+      "source_ids": [
+        "round1fix"
+      ],
+      "evidence": "PRIDE protocol \"alkylated with 50 mM iodoacetamide\" and \"maXis Impact\"; mqpar fixed Carbamidomethyl; Cellosaurus CVCL_0422"
+    }
+  ],
+  "limitations": [
+    "none recorded"
+  ]
+}

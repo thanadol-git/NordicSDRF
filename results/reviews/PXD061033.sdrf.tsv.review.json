@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD061033.sdrf.tsv",
+  "artifact_sha256": "49039fba84ba6a622ef70b19c51ad389eda1a4ceed57174e85997c67f974b2b9",
+  "verdict": "PASS",
+  "summary": "HK-2 stable SNAI1 overexpression vs empty pBabe-puro vector, 3 biological x 3 technical, 18 LTQ Orbitrap XL runs; verified against PRIDE, full text, raw header and Cellosaurus. Only minor findings.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent reviewer; no producer transcript, report.md, or prior reviews read; evidence limited to scratchpad/bkk/<PXD>/ pride.json, files.json, manuscript.txt plus fresh PRIDE/Europe PMC/OLS/Cellosaurus fetches and 4 MB raw-header range reads"
+  },
+  "evidence_manifest": "annotations/PXD061033.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "18 rows x 38 columns, uniform; ms-proteomics + human + cell-lines v1.1.0 correct; human age (not available), sex, disease present; cell line and cellosaurus accession present; no duplicate assay names/files."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "Cellosaurus CVCL_0302 = HK-2, human, male, adult, proximal tubule, cell type CL_0002306; OLS CL:0002306 'epithelial cell of proximal tubule'; MS:1000556, MS:1000133, PRIDE:0000608, UNIMOD:4/35; sdrf-tools check CLEAN (12/12)."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "Manuscript (PMID 42011480) and PRIDE: stable SNAI1 overexpression by retroviral pBabe-puro-Snail transduction vs empty pBabe-puro control in HK-2; SDT lysis with 100 mM DTT; MaxQuant 2.1.4.0 CAM fixed/Ox variable, trypsin, 4.5 ppm / 0.5 Da, charge +2,+3; 'three independent biological replicates'. SNAI_1-1.raw header contains 'LTQ Orbitrap XL MS'; PRIDE instrument MS:1000556 agrees."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "files.json (PXD061033): 18 RAW, all mapped once; mzTab, FASTA, zips excluded."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "2 groups x 3 biological x 3 technical = 18; names SNAI_X-Y / Vector_X-Y match replicate columns; factor value[genetic modification] equals characteristics[genetic modification]."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "All values trace to PRIDE, manuscript or Cellosaurus (sex male, adult); alkylation 'not available'; replicate inference consistent with stated three biological replicates."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf (sdrf-skills e5cb884 venv) with templates derived from the file's comment[sdrf template] columns: exit 0; templates ms-proteomics, human, cell-lines; output: 'Everything seems to be fine. Well done.'. sdrf-tools check: CLEAN (all terms verified, 0 hallucinated/mismatch). sdrf-tools score exit 0."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "characteristics[biological replicate], comment[technical replicate]",
+      "message": "Biological vs technical split inferred from X-Y naming; not explicitly stated for the MS runs. Manifest limitations say 'none recorded' though this inference is noted in claims.",
+      "evidence": "PRIDE: 'three independent biological replicates'; 9 runs per group."
+    },
+    {
+      "severity": "minor",
+      "category": "semantics",
+      "location": "comment[ms min charge], comment[ms max charge]",
+      "message": "Values come from MaxQuant search-parameter text, while TERMS.tsv defines acquisition-method charge settings.",
+      "evidence": "PRIDE dataProcessingProtocol 'charge state ions = +2, +3' listed under MaxQuant parameters; TERMS.tsv PRIDE:0000472/0000473."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file",
+      "message": "Recommended characteristics[cellosaurus name] and ancestry category absent.",
+      "evidence": "cell-lines/human templates mark them recommended; sdrf-tools score notes."
+    }
+  ]
+}

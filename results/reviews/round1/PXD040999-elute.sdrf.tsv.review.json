@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD040999-elute.sdrf.tsv",
+  "artifact_sha256": "ae58e1560a28b0ba6d978b3edf0de0472015cb2f367d9a7520f2f441451e6c3a",
+  "verdict": "FAIL",
+  "summary": "Structure, ontology terms, file mapping and design of the eluate SDRF are correct (3 pools x 3 technical injections, 9/9 eluate raw files, MB/MUB code verified). FAIL on one important omission: reduction (DTT) and alkylation (iodoacetamide) reagents are stated in the linked publication but annotated 'not available'.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent; no producer transcript; annotations/<PXD>.report.md, results/reviews/ and producer scratch files (samples.tsv, technical.tsv, validate_*.txt) not read"
+  },
+  "evidence_manifest": "annotations/PXD040999-elute.evidence.json",
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Templates declared ms-proteomics v1.1.0 + human v1.1.0 match content (human plasma, MS). All required columns present; 37 columns, 9 rows, no duplicate assay names/data files; modification parameter syntax valid. Custom columns characteristics[metastasis status] and characteristics[specimen] are extra (minor)."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "OLS: UBERON:0001969 blood plasma, MONDO:0005575 colorectal cancer, MS:1002300 amaZon Speed ETD (PRIDE instrument), MS:1000133 CID, MS:1001251 Trypsin, PRIDE:0000627 DDA, UNIMOD:4/35 correct; sdrf-tools check 12/12 verified."
+    },
+    "source_evidence": {
+      "status": "fail",
+      "evidence": "Checked against PRIDE protocols and full text PMC10077704 (title/PMID verified). Pools of 10 donors per group, MARS-14 FT/EL, triplicate injections, amaZon speed ETD CID, Mascot 1.2/0.6 Da, carbamidomethyl C fixed, ox M + N-term carbamidomethyl variable all confirmed. Reduction/alkylation reagents contradict the paper."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "9 data files UC-P{M,N,NM}-MB_*.d.zip all present in PRIDE files.json as RAW; no duplicates; the other 9 RAW files belong to the sibling SDRF; mgf/dat/xml/csv are non-raw. Downloaded deposited MARS14_Elute_20210804_F002139.xml (17 MB, PRIDE PXD040999): it references only UC-PM-MB_RC4, UC-PN-MB_RE1, UC-PNM-MB_RC3 runs, confirming MB = bound/eluate."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "3 pooled samples (HC, NM-CRC, M-CRC), biological replicate 1 each, technical replicate 1-3 ordered by run number; factors disease + metastasis status distinguish the 3 groups; split by MARS fraction matches separate Progenesis analyses per fraction (paper)."
+    },
+    "omission_safety": {
+      "status": "fail",
+      "evidence": "No unsupported additions found (adult developmental stage supported by ages 40-78). Material omission: DTT/IAA stated in paper but annotated 'not available'."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t human: exit 0, 'Everything seems to be fine'; sdrf-tools check: CLEAN (0 hallucinated/mismatch); sdrf-tools score run (97-98/100)."
+    }
+  },
+  "findings": [
+    {
+      "severity": "important",
+      "category": "source_evidence/omission",
+      "location": "comment[reduction reagent], comment[alkylation reagent], all 9 rows",
+      "message": "Reduction and alkylation reagents are 'not available' but the publication states them. Set reduction reagent to NT=dithiothreitol (DTT);AC=PRIDE:0000608 (or the MS/PRIDE DTT term used elsewhere) and alkylation reagent to NT=iodoacetamide (IAA);AC=PRIDE:0000599.",
+      "evidence": "Clin Proteomics 2023 PMC10077704 (PMID 37024778, the PRIDE-linked paper), Methods 'Sample preparation for LC-MS/MS analysis': FT and EL samples 'reduced with 10 mM dithiothreitol ... and alkylated with 20 mM iodoacetamide'. PRIDE identifiedPTMStrings also lists MOD:00397 iodoacetamide derivatized residue. The manifest cites only PRIDE (no publication source), so the paper was not consulted."
+    },
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "characteristics[sex], all rows",
+      "message": "Sex 'not available' is not accurate for these pools: each pool is 10 donors of known mixed sex. Consider a value expressing a mixed pool (or 'not applicable' for a pooled sample) and record the 4F/6M composition in the manifest.",
+      "evidence": "PMC10077704 Table 1, study-cohort: each of HC/NM/M has 10 subjects, Female 4 / Male 6."
+    },
+    {
+      "severity": "minor",
+      "category": "spec_compliance",
+      "location": "characteristics[metastasis status], factor value[metastasis status]",
+      "message": "Column is not in TERMS.tsv; the oncology-metadata template provides characteristics[disease staging]/[tumor stage] for the same information (NM pool = stage I/II, M pool = stage III/IV). Consider a standard column or keep the custom one with justification.",
+      "evidence": "TERMS.tsv has no 'metastasis status'; PMC10077704 Table 1 stages: NM I=2, II=8; M III=4, IV=6."
+    },
+    {
+      "severity": "minor",
+      "category": "provenance",
+      "location": "evidence manifest",
+      "message": "Manifest lists no publication source and records the bound/unbound code key as 'inferred from names'. The key is verifiable: add the paper and deposited search file as sources.",
+      "evidence": "Downloaded deposited MARS14_Elute_20210804_F002139.xml (17 MB, PRIDE PXD040999): it references only UC-PM-MB_RC4, UC-PN-MB_RE1, UC-PNM-MB_RC3 runs, confirming MB = bound/eluate."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "characteristics[age]",
+      "message": "Age 'not available' is acceptable for pooled samples, but pool median/range is published and could be recorded in the manifest or as a range.",
+      "evidence": "PMC10077704 Table 1: median age (range) HC 51 (40-66), NM 58 (43-78), M 59 (41-72)."
+    }
+  ]
+}

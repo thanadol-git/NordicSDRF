@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD046383.sdrf.tsv",
+  "artifact_sha256": "a46a878e9233be4954a1e4e90f3fd13d7ed96a098ce984a842fc9d7b97ba0777",
+  "verdict": "PASS",
+  "summary": "Independent review found no blocking or important issues. 90 rows = 30 deposited RAW files x 3 dimethyl channels (light PBS, medium LPS, heavy EL+LPS) for RAW 264.7 cells; labels, cell-line metadata, instrument and search parameters verified against PRIDE, the Antioxidants 2024 paper, Cellosaurus and a RAW header. Minor notes only.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh subagent reviewer; did not read producer report.md, transcript or earlier reviews; used only scratchpad/bkk/PXD046383 evidence plus fresh HTTPS fetches"
+  },
+  "evidence_manifest": "annotations/PXD046383.evidence.json",
+  "checks": {
+    "spec_compliance": {"status": "pass", "evidence": "Active templates derived independently as ms-proteomics + vertebrates (Mus musculus) + cell-lines, all v1.1.0, matching the declared comment[sdrf template] columns. All required columns present (cell line, cellosaurus accession, disease, developmental stage); 90 unique assay names; no duplicate (data file,label) pairs; factor value last."},
+    "ontology_integrity": {"status": "pass", "evidence": "sdrf-tools check verified 17/20 terms; its 3 'hallucinated' flags were resolved externally: UNIMOD:330 = Dimethyl:2H(6)13C(2) (OLS unimod exact search), matching +36.0757 Da heavy mass in protocol; 'RAW 264.7' is the Cellosaurus ID line for CVCL_0493. UNIMOD:36/199 match light/medium masses. Validator warnings are only free-text treatment/cell line/strain values, which is permitted."},
+    "source_evidence": {"status": "pass", "evidence": "PRIDE protocol and paper section 2.16: control/LPS/LPS+EL labelled light/medium/heavy dimethyl; 1 ug/mL LPS 24 h; 1 h 500 ug/mL EL pretreatment; high pH RP fractionation kit; three biological replicates; NCE 32%, 350-1400 m/z; PD 2.1 10 ppm/0.02 Da. Paper cites ATCC TIB-71 and PXD046383. Cellosaurus CVCL_0493: Mus musculus, male, adult, BALB/c, NCIt C21604 Mouse leukemia (AbMuLV transformant). Byte-range header of EL_S2F7.raw reads 'Q Exactive Plus' (PRIDE metadata 'Q Exactive' is coarser/erroneous; protocol says Q-Exactive Orbitrap Plus)."},
+    "file_mapping": {"status": "pass", "evidence": "files.json (projectAccessions PXD046383) lists 30 RAW files; SDRF data files equal that set exactly (0 missing, 0 extra), 3 rows per file. EL_SnFk maps to set n and fraction identifier k for all k=1..10."},
+    "design_consistency": {"status": "pass", "evidence": "9 sources = 3 treatments x 3 sets; sets = the 3 biological replicates stated in protocol and paper. factor value[treatment] mirrors characteristics[treatment]. 10 deposited fractions per set vs '8 fractions' in PRIDE protocol: SDRF follows deposited files (file sizes comparable, not re-injections), and the discrepancy is disclosed in the manifest."},
+    "omission_safety": {"status": "pass", "evidence": "Sex, age, strain and disease come from Cellosaurus for the cell line, not invented; cell type macrophage per paper/Cellosaurus; no per-sample values inferred from cohort summaries. No unsupported specificity found."},
+    "deterministic_validation": {"status": "pass", "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t vertebrates -t cell-lines: 'only warnings' (5 free-text ontology warnings), exit 0. sdrf-tools check: 3 flags all resolved as cache gaps (see ontology_integrity). sdrf-tools score 98/100 (missing recommended cellosaurus name). Evidence manifest schema-check: valid."}
+  },
+  "findings": [
+    {"severity": "minor", "category": "completeness", "location": "file (characteristics[cellosaurus name], characteristics[culture medium])", "message": "Recommended cell-lines columns cellosaurus name and culture medium are absent.", "evidence": "cell-lines template marks both recommended; paper gives 'high-glucose DMEM with 10% FBS'; Cellosaurus name 'RAW 264.7'."},
+    {"severity": "minor", "category": "specificity", "location": "characteristics[organism part], all rows", "message": "'not applicable' could be 'ascites' per Cellosaurus derived-from-site.", "evidence": "Cellosaurus CVCL_0493: 'Derived from site: In situ; Ascites; UBERON_0007795'."},
+    {"severity": "minor", "category": "provenance", "location": "annotations/PXD046383.evidence.json", "message": "Manifest claims are coarse ('all rows', evidence 'producer note; verify against the cited sources'); the claim that fractionation method was 'not named' is outdated (paper names the High pH RP kit, as the round1fix source notes).", "evidence": "claims[0].value and limitations[0] say 'fractionation method not named'; paper section 2.16 names the Pierce/Thermo High pH Reversed-Phase Peptide Fractionation Kit."},
+    {"severity": "minor", "category": "source_discrepancy", "location": "comment[fraction identifier]", "message": "10 fractions per set deposited vs 8 stated in the PRIDE protocol.", "evidence": "files.json lists EL_SnF1-F10.raw for n=1..3; sampleProcessingProtocol says 'fractionated to 8 fractions'. SDRF correctly follows the deposited files."}
+  ]
+}

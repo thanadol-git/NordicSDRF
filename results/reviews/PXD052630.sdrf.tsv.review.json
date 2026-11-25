@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD052630.sdrf.tsv",
+  "artifact_sha256": "3675268fc093bb6d1bee171292e98a6f9ca2d7b4215f1524b7eb0bb05c059cf4",
+  "verdict": "PASS",
+  "summary": "17 scalp-tissue LFQ runs (female/male AGA vs normal) match the deposit; instrument, NCE and MS1 range confirmed from RAW headers; only minor findings.",
+  "reviewer_context": {
+    "independent": true,
+    "context": "fresh reviewer subagent; no producer transcript, report.md or prior reviews read; evidence limited to the dataset's scratchpad folder plus re-fetched PRIDE/Europe PMC/OLS/Cellosaurus and RAW-header byte ranges"
+  },
+  "evidence_manifest": "annotations/PXD052630.evidence.json",
+  "confidence": 0.85,
+  "checks": {
+    "spec_compliance": {
+      "status": "pass",
+      "evidence": "Templates ms-proteomics v1.1.0 + human v1.1.0 declared and appropriate (human tissue, DDA); column set/order accepted by validator; ms1 scan range and collision energy match TERMS.tsv patterns; source+assay unique."
+    },
+    "ontology_integrity": {
+      "status": "pass",
+      "evidence": "sdrf-tools check 12/12 verified; OLS exact: androgenetic alopecia MONDO:0005339, scalp UBERON:0000403 (not obsolete); Q Exactive Plus MS:1002634, HCD MS:1000422, Trypsin MS:1001251, UNIMOD:4/35 verified by check."
+    },
+    "source_evidence": {
+      "status": "pass",
+      "evidence": "PRIDE protocol: DTT/IAA, trypsin, Q Exactive Plus, HCD NCE 27%, 350-1400 m/z, Carbamidomethyl C fixed / Oxidation M variable. RAW header ranges of FA1.raw and MN2.raw: 'Q Exactive Plus - Orbitrap MS', serial TMOQEPLUS, scan range 350 to 1400 m/z, nce 27, path 'Hair loss Project'. PRIDE structured 'Q Exactive HF' correctly overridden. Europe PMC PMID 39460779 abstract: male AGA and female AGA scalp samples with respective normal controls."
+    },
+    "file_mapping": {
+      "status": "pass",
+      "evidence": "files.json (projectAccessions==PXD052630) lists 17 RAW; SDRF has 17 unique comment[data file] values, symmetric difference empty; .mgf/.msf correctly excluded."
+    },
+    "design_consistency": {
+      "status": "pass",
+      "evidence": "Recomputed: FA 6, FN 2, MA 7, MN 2 = 17 individuals, one run each (technical replicate 1, fraction 1); factors disease x sex form the paper's 2x2 design; no confounding beyond the design itself."
+    },
+    "omission_safety": {
+      "status": "pass",
+      "evidence": "Age, developmental stage, tolerances set to 'not available' (no per-sample source); no PTMs, fractionation or labels beyond protocol; per-sample group assignment is inferred from file codes (flagged minor) but consistent with abstract design."
+    },
+    "deterministic_validation": {
+      "status": "pass",
+      "evidence": "parse_sdrf validate-sdrf -t ms-proteomics -t human: 'Everything seems to be fine' exit 0; default run also clean; sdrf-tools check CLEAN exit 0; sdrf-tools score 97/100 exit 0."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "category": "source_evidence",
+      "location": "characteristics[disease], characteristics[sex], factor values, all rows",
+      "message": "Per-sample disease/sex derive from file-name codes (F/M, A/N); group sizes (6/2/7/2) are not stated in any accessible source (paper not open access).",
+      "evidence": "Abstract/PRIDE describe male AGA, female AGA and respective controls; RAW headers carry only file names. Consistent, but confirm counts against paper Methods if obtainable."
+    },
+    {
+      "severity": "minor",
+      "category": "completeness",
+      "location": "file",
+      "message": "Recommended columns characteristics[cell type] and characteristics[ancestry category] are absent.",
+      "evidence": "sdrf-tools score completeness notes; no per-sample ancestry source exists, so omission is acceptable."
+    }
+  ]
+}

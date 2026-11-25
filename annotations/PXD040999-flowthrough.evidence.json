@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "artifact": "annotations/PXD040999-flowthrough.sdrf.tsv",
+  "dataset": "PXD040999",
+  "sources": [
+    {
+      "id": "pride",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD040999 (scratchpad/bkk/PXD040999/pride.json)"
+    },
+    {
+      "id": "files",
+      "kind": "repository",
+      "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD040999/files/all (scratchpad/bkk/PXD040999/files.json)"
+    },
+    {
+      "id": "deposit",
+      "kind": "repository",
+      "location": "PRIDE sample/data protocols (file codes N/NM/M, FT/EL)"
+    },
+    {
+      "id": "round1fix",
+      "kind": "repository",
+      "location": "PMC10077704 Methods; MUB = flow-through by exclusion from the eluate search XML"
+    }
+  ],
+  "claims": [
+    {
+      "location": "all rows",
+      "value": "Pooled plasma: healthy (PN), non-metastatic CRC (PNM), metastatic CRC (PM); MARS-14 bound eluate (MB) and flow-through (MUB) analysed separately, 3 technical injections each (Progenesis, \"three technical replicated LC-MS/MS data of each group\"). amaZon speed ETD CID.",
+      "source_ids": [
+        "pride",
+        "files",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Mascot 1.2 Da / 0.6 Da, carbamidomethyl C fixed, ox M + N-term carbamidomethyl var, trypsin 1 missed.",
+      "source_ids": [
+        "pride",
+        "files",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Paper Clin Proteomics 2023 PMID 37024778 (PRIDE abstract only used).",
+      "source_ids": [
+        "pride",
+        "files",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Split so factors don't mix MARS fractions.",
+      "source_ids": [
+        "pride",
+        "files",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "all rows",
+      "value": "Code key from PRIDE sample protocol (N, NM, M; FT, EL); MB=bound/elute, MUB=unbound/FT inferred from names.",
+      "source_ids": [
+        "pride",
+        "files",
+        "deposit"
+      ],
+      "evidence": "producer note; verify against the cited sources"
+    },
+    {
+      "location": "round-1 review fixes",
+      "value": "reduction DTT, alkylation iodoacetamide",
+      "source_ids": [
+        "round1fix"
+      ],
+      "evidence": "PMC10077704 Methods; MUB = flow-through by exclusion from the eluate search XML"
+    }
+  ],
+  "limitations": [
+    "Code key from PRIDE sample protocol (N, NM, M; FT, EL); MB=bound/elute, MUB=unbound/FT inferred from names.",
+    "Pools of 10 donors (4 F / 6 M), so sex is not available per row"
+  ]
+}
