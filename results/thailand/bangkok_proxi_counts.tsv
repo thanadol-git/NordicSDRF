@@ -1,0 +1,63 @@
+accession	raw	total	instrument	species	title
+PXD002645	0	-	Q Exactive	Homo sapiens	ubiquitylated urinary exosomes (mgf/msf only, no RAW listed)
+PXD011432	12	24	maXis	Homo sapiens	HSP90 TAP complex renal cells kidney stone
+PXD012793	1	6	Synapt MS	Homo sapiens	silver ionic vs nanoparticle toxicology
+PXD013551	19	57	Bruker micrOTOF	Gnathostoma spinigerum	ES proteome larvae
+PXD014768	58	174	6550 iFunnel Q-TOF	Canis lupus familiaris	estrogen kidney stone MDCK
+PXD015512	90	200	Q Exactive	Canis lupus familiaris	canine BM-MSC vs DPSC osteogenic
+PXD016946	8	9	Synapt MS, impact II	Ganoderma lingzhi, Homo sapiens	Lingzhi hydrolysate LPS A549
+PXD017234	6	19	impact II	Mus musculus	Lingzhi octapeptide anti-tyrosinase
+PXD017251	95	210	Q Exactive	HBV, Homo sapiens	IFN HepG2 HBV
+PXD018652	48	108	Q Exactive	Mus musculus	STING B cells CIA
+PXD019239	77	199	Q Exactive	Mus musculus	STING lupus DC
+PXD021005	1	3	ultraflex	Oryza sativa	rice flag leaf cytokinin drought
+PXD021066	8	17	LTQ Orbitrap Velos	Pseudomonas aeruginosa	MFS overexpression PAO1
+PXD022257	18	39	Q Exactive HF	Homo sapiens	Graves orbital fibroblasts proteomics+methylation
+PXD026304	12	14	Q Exactive HF	Leishmania donovani	species-specific targets leishmaniasis
+PXD027317	6	8	Q Exactive	Gallus gallus	duodenum slow-growing chicken
+PXD027471	30	66	Q Exactive	Mus musculus	IVIG sepsis macrophages
+PXD030613	36	56	Q Exactive HF	(PX says Arabidopsis; actually Daboia siamensis)	Thai Russell's viper venomics
+PXD031111	60	124	Bruker micrOTOF	Pythium insidiosum	Pythium protein identification
+PXD032081	12	25	maXis	Trichinella spiralis	T. spiralis larval peptide HepG2
+PXD032795	106	212	Agilent	Synechocystis sp. PCC 6803	Hik28 stress response
+PXD033149	18	20	Q Exactive HF	Homo sapiens	nanobody SW480 label-free
+PXD034528	50	127	Q Exactive HF	Candida albicans	Pseudomonas-Candida biofilms
+PXD034530	27	72	Q Exactive HF	(PX Homo sapiens) P. aeruginosa	chlorhexidine Psl P. aeruginosa
+PXD035814	18	79	TripleTOF 6600	Auricularia cornea, Pseudonocardia mangrovi	co-cultivation agar
+PXD037553	9	16	LTQ Orbitrap XL	Homo sapiens	caffeine trigonelline HepG2
+PXD038611	25	27	Q Exactive HF	Mus musculus	Grammatophyllum extracts RAW264.7
+PXD039206	24	27	Q Exactive HF	Mus musculus	Grammatophyllum extracts macrophage
+PXD039718	6	8	Q Exactive HF	Gallus gallus	thigh muscle slow-growing chicken
+PXD040999	18	27	amaZon Speed ETD	Homo sapiens	CRC plasma label-free
+PXD041265	125	268	Q Exactive	Mus musculus	Ezh2 LPS macrophages
+PXD042648	60	121	Q Exactive HF	Leptospira interrogans	Leptospira EVs stress
+PXD043461	18	20	Q Exactive HF	Homo sapiens	oleamide TAM polarization
+PXD043828	108	217	(compact)	Mus musculus	methamphetamine melatonin
+PXD043954	11	13	Q Exactive HF	Brevibacillus sp.	ARTP mutagenesis anti-MRSA
+PXD045313	18	22	LTQ Orbitrap	Canis lupus familiaris	caffeine renal cells
+PXD046383	30	63	Q Exactive	Mus musculus	Elaeagnus latifolia LPS macrophages
+PXD047028	18	23	maXis	Canis lupus familiaris	trigonelline CaOx renal cells
+PXD048253	8	9	Q Exactive	Pseudomonas aeruginosa PA14	trmA mutant
+PXD050494	45	95	Q Exactive HF	Candida albicans	Klebsiella-Candida biofilms
+PXD050755	36	55	TripleTOF 5600	Homo sapiens	HSPD1 knockdown A549 secretome
+PXD051236	278	407	TripleTOF 5600	Homo sapiens	placental EVs Hb Bart's
+PXD052291	4	6	LTQ Orbitrap Elite	Homo sapiens	exosome apoptotic dental stem cells
+PXD052319	18	38	ZenoTOF 7600	Homo sapiens, Leptospira	leptospirosis pulmonary hemorrhage multi-omics
+PXD052630	17	52	Q Exactive HF	Homo sapiens	pattern hair loss sex-specific
+PXD052806	9	10	Q Exactive HF	Homo sapiens	beta-citronellol LX-2 TGF-b1
+PXD052809	9	10	Q Exactive HF	Homo sapiens	1-phenyl-2-pentanol LX-2
+PXD054595	18	37	(LC-MS LFQ)	Homo sapiens	HSC-4 betaine
+PXD055138	90	258	(compact)	Canis lupus familiaris	canine diabetes astaxanthin plasma
+PXD057572	9	11	Orbitrap Exploris 480	Homo sapiens	Centella ECa 233 SH-SY5Y
+PXD058082	15	17	Orbitrap Exploris 480	Mus musculus	coal PM lungs balb/c
+PXD061033	18	23	LTQ Orbitrap XL	Homo sapiens	SNAI1 renal tubular cells
+PXD062512	12	24	TripleTOF 5600	Homo sapiens	sacha inchi shell CRC cells
+PXD062669	4	7	Q Exactive HF	Mus musculus	vitamin D3 Vdr silencing C2C12
+PXD063171	39	79	Q Exactive	Canis lupus	canine PDLSC hydrogel osteogenic
+PXD063183	6	8	Q Exactive HF	Homo sapiens	7-octenoic acid HSC LX-2
+PXD063568	30	60	(compact)	Sus scrofa	porcine iNSC reprogramming
+PXD064135	6	13	Q Exactive HF	Mus musculus	miR-146a NO LPS
+PXD073886	12	17	(compact)	Opisthorchis viverrini	Ov ES antigens
+PXD076578	-	-	(compact)	Canis	canine epilepsy curcuminoid (file counts unknown)
+PXD078766	72	73	TripleTOF 6600+	Homo sapiens	MLKL ferroptosis CRC
+PXD078923	7	9	6545XT Q-TOF	Lactobacillus johnsonii	KD1 cell-free supernatant
