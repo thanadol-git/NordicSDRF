@@ -2,3 +2,4 @@
 PXD054896	singapore/singapore	blocked	blocked: 4 "RAW" = DynamX .DnX projects + 11 PLGS UnD CSVs; no HDX .raw runs deposited (as PXD042235)
 PXD025299	singapore/singapore	blocked	blocked: 6 "RAW" = UNIFI .uep export bundles (multi-sample: IgG+2 mAbs; D3-14 time courses); no per-run files
 PXD016016	singapore/singapore	sandbox	sandbox: 4/4 mzML (no .wiff deposited); AREL1 auto-Ub + 3 SMAC-Ub bands; SMAC run 1-3 = bio reps inferred
+PXD060864	singapore/singapore	blocked	blocked: 5 "RAW" = tar bundles (members unlisted); TMT plex/channel map unstated; protein.tsv unreadable; QE vs QE HF-X
