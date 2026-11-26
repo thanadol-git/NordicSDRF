@@ -1,7 +1,7 @@
-city	pride_hits	listed	annotated	blocked	in_corpus	screened	todo
-Copenhagen	567	539	251	84	204	0	0
-Odense	619	178	92	37	46	0	3
-Aarhus	121	113	66	16	31	0	0
-Aalborg	68	65	45	0	20	0	0
-Lyngby	59	57	34	7	16	0	0
-Roskilde	10	7	7	0	0	0	0
+city	pride_hits	listed	annotated	sandbox	blocked	in_corpus	screened	todo
+Copenhagen	567	539	251	3	72	213	0	0
+Odense	619	178	92	4	35	47	0	0
+Aarhus	121	113	66	0	16	31	0	0
+Aalborg	68	65	45	0	0	20	0	0
+Lyngby	59	57	34	0	7	16	0	0
+Roskilde	10	7	7	0	0	0	0	0

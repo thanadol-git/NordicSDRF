@@ -117,17 +117,20 @@ Overview first: one vertical stacked bar per Nordic country (city manifests
 summed). Then one horizontal chart per Nordic country (and Affinity PAD), plus one
 combined *Southeast Asia* chart with all SEA cities together (`status/plots/sea.svg`).
 A curated city's bar is its manifest (`lists/<country>/<city>.txt`),
-split so every PXD sits in exactly one block: *Blocked* (including batch-tracker
-blockers), *Local SDRF* (a local file without a blocker, including files awaiting
-review), *In corpus* (already has an SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/bigbio/sdrf-annotated-datasets),
-checked against GitHub bigbio/sdrf-annotated-datasets (2026-11-26)), *Screened*, *To do*.
+split so every PXD sits in exactly one block: *Local SDRF* (a local file without a
+blocker, including files awaiting review), *Sandbox* (an SDRF under `sandbox/` in
+[`bigbio/sdrf-annotated-datasets`](https://github.com/bigbio/sdrf-annotated-datasets)),
+*Blocked* (local or batch-tracker blocker **and** not already in `sandbox/` or
+`datasets/` — never published upstream as a draft), *In corpus* (already under
+`datasets/`, checked against local checkout (2026-11-26)),
+*Screened*, *To do*.
 A city without a manifest shows a dashed outline sized by its raw PRIDE full-text
 hit count (unioned over `search_terms` in `config.yml`, queried 2026-11-26). *Affinity PAD*
 is every public dataset in PRIDE's affinity archive, one row per technology
 (Olink platforms, SomaScan, NULISA, Other; `affinity_pad/<platform>.txt`, rebuilt by
 `python scripts/build_pad_manifest.py`). SEA search terms live in
 `criteria/sea_cities.md` / `config.yml`.
-*To do* is ready for annotation; blocked PXDs also need annotation after their missing metadata is resolved.
+*To do* is ready for annotation; *Blocked* PXDs need missing metadata before a sandbox or datasets PR.
 The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with
 `python scripts/update_status.py`; redraw the charts alone from `tables/` with
 `python scripts/plot_status.py`.

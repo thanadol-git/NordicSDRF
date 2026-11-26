@@ -1,0 +1,47 @@
+country	city	listed	annotated	sandbox	blocked_not_upstream	in_corpus	todo
+affinity_pad	Explore HT	10	5	0	0	5	0
+affinity_pad	Explore 3072/384	7	1	0	0	6	0
+affinity_pad	Target 96/48	11	8	0	0	3	0
+affinity_pad	Reveal	1	0	0	0	1	0
+affinity_pad	Unspecified Olink	3	2	0	0	1	0
+affinity_pad	SomaScan	12	3	0	0	9	0
+affinity_pad	NULISA	1	0	0	0	1	0
+affinity_pad	Other	0	0	0	0	0	0
+brunei	Bandar Seri Begawan	0	0	0	0	0	0
+cambodia	Phnom Penh	0	0	0	0	0	0
+denmark	Copenhagen	539	251	3	72	213	0
+denmark	Odense	178	92	4	35	47	0
+denmark	Aarhus	113	66	0	16	31	0
+denmark	Aalborg	65	45	0	0	20	0
+denmark	Lyngby	57	34	0	7	16	0
+denmark	Roskilde	7	7	0	0	0	0
+finland	Helsinki	66	27	0	21	18	0
+finland	Turku	102	61	0	7	34	0
+finland	Oulu	11	5	0	2	4	0
+finland	Tampere	4	1	0	1	2	0
+finland	Kuopio	10	8	0	0	2	0
+finland	Jyväskylä	1	0	0	0	1	0
+iceland	Reykjavík	6	4	0	2	0	0
+indonesia	Jakarta	0	0	0	0	0	0
+laos	Vientiane	0	0	0	0	0	0
+malaysia	Kuala Lumpur	41	7	1	15	14	4
+malaysia	Penang	3	2	0	0	1	0
+myanmar	Yangon	0	0	0	0	0	0
+norway	Bergen	96	53	0	15	28	0
+norway	Oslo	120	108	2	1	9	0
+norway	Trondheim	62	40	0	10	12	0
+norway	Ås	56	21	2	10	23	0
+norway	Tromsø	14	7	0	0	7	0
+philippines	Manila	3	3	0	0	0	0
+singapore	Singapore	263	2	0	11	84	166
+sweden	Stockholm	165	68	1	76	20	0
+sweden	Lund	163	75	0	60	28	0
+sweden	Gothenburg	135	66	0	53	16	0
+sweden	Uppsala	69	44	0	17	8	0
+sweden	Umeå	39	22	0	11	6	0
+sweden	Linköping	26	22	0	0	4	0
+thailand	Bangkok	94	36	0	15	32	11
+thailand	Chiang Mai	0	0	0	0	0	0
+timor_leste	Dili	0	0	0	0	0	0
+vietnam	Hanoi	5	1	0	3	0	1
+vietnam	Ho Chi Minh City	0	0	0	0	0	0
