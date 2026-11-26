@@ -6,3 +6,4 @@ PXD060864	singapore/singapore	blocked	blocked: 5 "RAW" = tar bundles (members un
 PXD054304	singapore/singapore	sandbox	sandbox: 4/4 RAW x TMT126/127/128 (limbs/forebrain/liver) per Table 1; mqpar unread (FTP down), HCD vs CID-named apl
 PXD054300	singapore/singapore	sandbox	sandbox: 6/6 RAW label-free, L36/S17-FLAG x 3 reps (Fig 1G); parental ES-E14; mqpar unread; ITMS frag tol n/a
 PXD027027	singapore/singapore	sandbox	sandbox: 5/5 RAW; P. tricornutum co-IP (not Chlamy); 3 DSP/2 no-XL via XL_ prefix; mods/tols unread (.msf, FTP down)
+PXD084067	singapore/singapore	sandbox	sandbox: 6/6 wiff mapped; T-W=testis, C/C2/C3=CI embryos INFERRED from file tokens; organism Aaeg not PX Aalb
