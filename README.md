@@ -120,7 +120,7 @@ A curated city's bar is its manifest (`lists/<country>/<city>.txt`),
 split so every PXD sits in exactly one block: *Blocked* (including batch-tracker
 blockers), *Local SDRF* (a local file without a blocker, including files awaiting
 review), *In corpus* (already has an SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/bigbio/sdrf-annotated-datasets),
-checked against GitHub bigbio/sdrf-annotated-datasets (2026-11-25)), *Screened*, *To do*.
+checked against GitHub bigbio/sdrf-annotated-datasets (2026-11-26)), *Screened*, *To do*.
 A city without a manifest shows a dashed outline sized by its raw PRIDE full-text
 hit count (unioned over `search_terms` in `config.yml`, queried 2026-11-25). *Affinity PAD*
 is every public dataset in PRIDE's affinity archive, one row per technology

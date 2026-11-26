@@ -29,7 +29,7 @@
 </style>
 <rect class="bg" width="860" height="262" rx="6"/>
 <text class="title" x="12" y="22">Southeast Asia — in progress</text>
-<text class="sub" x="12" y="40">409 listed · 15 local SDRFs · 226 to do · 29 blocked · PRIDE queried 2026-11-25</text>
+<text class="sub" x="12" y="40">409 listed · 51 local SDRFs · 173 to do · 44 blocked · PRIDE queried 2026-11-25</text>
 <rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
 <text class="legend" x="29" y="62">Local SDRF</text>
 <rect class="c-blocked" fill="#d95926" x="117" y="52" width="12" height="12" rx="2"/>
@@ -47,17 +47,21 @@
 <text class="seg" x="216.5" y="88.0" text-anchor="middle">2</text>
 <rect class="c-blocked" fill="#d95926" x="226.0" y="74" width="25.0" height="20" rx="2"><title>Singapore · Blocked: 11</title></rect>
 <text class="seg" x="238.5" y="88.0" text-anchor="middle">11</text>
-<rect class="c-in_corpus" fill="#199e70" x="252.0" y="74" width="183.2" height="20" rx="2"><title>Singapore · In corpus: 91</title></rect>
-<text class="seg" x="343.6" y="88.0" text-anchor="middle">91</text>
-<rect class="c-todo" fill="#8a8983" x="436.2" y="74" width="320.8" height="20" rx="2"><title>Singapore · To do: 159</title></rect>
-<text class="seg" x="596.6" y="88.0" text-anchor="middle">159</text>
+<rect class="c-in_corpus" fill="#199e70" x="252.0" y="74" width="187.2" height="20" rx="2"><title>Singapore · In corpus: 93</title></rect>
+<text class="seg" x="345.6" y="88.0" text-anchor="middle">93</text>
+<rect class="c-todo" fill="#8a8983" x="440.2" y="74" width="316.8" height="20" rx="2"><title>Singapore · To do: 157</title></rect>
+<text class="seg" x="598.6" y="88.0" text-anchor="middle">157</text>
 <text class="total" x="764.0" y="88.0">263 listed</text>
 <text class="city" x="12" y="118.0">Thailand · Bangkok</text>
-<rect class="c-in_corpus" fill="#199e70" x="208.0" y="104" width="63.8" height="20" rx="2"><title>Thailand · Bangkok · In corpus: 32</title></rect>
-<text class="seg" x="239.9" y="118.0" text-anchor="middle">32</text>
-<rect class="c-todo" fill="#8a8983" x="272.8" y="104" width="124.5" height="20" rx="2"><title>Thailand · Bangkok · To do: 62</title></rect>
-<text class="seg" x="335.0" y="118.0" text-anchor="middle">62</text>
-<text class="total" x="404.3" y="118.0">94 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="208.0" y="104" width="71.9" height="20" rx="2"><title>Thailand · Bangkok · Local SDRF: 36</title></rect>
+<text class="seg" x="243.9" y="118.0" text-anchor="middle">36</text>
+<rect class="c-blocked" fill="#d95926" x="280.9" y="104" width="29.4" height="20" rx="2"><title>Thailand · Bangkok · Blocked: 15</title></rect>
+<text class="seg" x="295.5" y="118.0" text-anchor="middle">15</text>
+<rect class="c-in_corpus" fill="#199e70" x="311.2" y="104" width="63.8" height="20" rx="2"><title>Thailand · Bangkok · In corpus: 32</title></rect>
+<text class="seg" x="343.1" y="118.0" text-anchor="middle">32</text>
+<rect class="c-todo" fill="#8a8983" x="376.0" y="104" width="25.0" height="20" rx="2"><title>Thailand · Bangkok · To do: 11</title></rect>
+<text class="seg" x="388.5" y="118.0" text-anchor="middle">11</text>
+<text class="total" x="408.0" y="118.0">94 listed</text>
 <text class="city" x="12" y="148.0">Malaysia · Kuala Lumpur</text>
 <rect class="c-annotated" fill="#2a78d6" x="208.0" y="134" width="17.0" height="20" rx="2"><title>Malaysia · Kuala Lumpur · Local SDRF: 7</title></rect>
 <text class="seg" x="216.5" y="148.0" text-anchor="middle">7</text>
