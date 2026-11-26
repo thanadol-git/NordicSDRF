@@ -1,0 +1,21 @@
+# daily queue 2026-11-26 singapore batch 1 (20 Singapore PXDs with fewest RAW; PRIDE API unreachable, PROXI + papers + PRIDE FTP via cloud browser)
+PXD000588	singapore/singapore	annotated	annotated: 1/1 (only data file is mzML, no .wiff); iTRAQ 113/114 DMSO, 116/117 P2 probe stated; 8plex; review round2 PASS
+PXD003546	singapore/singapore	annotated	annotated: 4/4 (1 mzML x iTRAQ 113/114/116/117); channel map stated in paper; only mzML+group.xml deposited, no wiff; review round1 PASS
+PXD048805	singapore/singapore	blocked	out of scope: nucleoside LC-MS/MS; Bartonella tRNA ribonucleoside MRM (6495 QQQ); no peptides
+PXD053297	singapore/singapore	blocked	out of scope: nucleoside LC-MS/MS; PA14 Tn-library tRNA dMRM screen (6495 QQQ); no peptides
+PXD076093	singapore/singapore	blocked	out of scope: nucleoside LC-MS/MS; AvaS ava2C QQQ MRM + nucleoside QTOF; no peptides
+PXD003723	singapore/singapore	sandbox	sandbox: 1 RAW x iTRAQ 113/114/115 (XDR/NPDR/PDR stated); group pooling + part1=tech rep 1 inferred; mzid unread
+PXD003724	singapore/singapore	sandbox	sandbox: 1 RAW x iTRAQ 113/114/115 (XDR/NPDR/PDR stated); group pooling + part2=tech rep 2 inferred; mzid unread
+PXD003725	singapore/singapore	sandbox	sandbox: 1 RAW x iTRAQ 113/114/115 (XDR/NPDR/PDR stated); pooling + part3=tech rep 3 inferred; PX lists phospho
+PXD027549	singapore/singapore	blocked	blocked: 1 wiff run (wiff+scan, not 2 RAW); iTRAQ8 reagent->sample map absent; paper closed, thesis restricted
+PXD004274	singapore/singapore	annotated	annotated: 8/8 (1 RAW.mzml x iTRAQ8plex); ch map stated in Fig1A; mzML only, SCX fractions unknown; review round1 PASS
+PXD046804	singapore/singapore	blocked	blocked: TMT6plex; only 2 Thermo RAW (setA/setB) not in paper (6550 QTOF .d absent); channel map unstated
+PXD054427	singapore/singapore	blocked	blocked: 1 RAW (TMT6, mESC chromatography vs RAPIDASH); mqpar/proteinGroups channels unnamed 1-6; map only in Table S1
+PXD054298	singapore/singapore	sandbox	sandbox: 3/3 RAW x TMT130/131 (sucrose pellet/RAPIDASH) per Table 1 + mqpar; HCD (Methods) vs CID-named apl
+PXD000998	singapore/singapore	sandbox	sandbox: 8/8 (2 RAW x 4 iTRAQ); 114/115=DMSO, 116/117=TIIA stated; 2 RAW = tech-rep injections inferred
+PXD002661	singapore/singapore	annotated	annotated: 9/9 (3 mzML x iTRAQ 114/115/116 = ctrl/T1/T2 stated); no wiff, no SWATH deposited (cache wrong); review round2 PASS
+PXD062330	singapore/singapore	annotated	annotated: 12/12 (2 RAW x TMT6); deposited metadata + PD factors give same map; ESC only (paper RA arm absent); review round1 PASS
+PXD042235	singapore/singapore	blocked	blocked: 3 "RAW" = DynamX .DnX projects + 10 PLGS undeuterated CSVs; no HDX .raw runs in PRIDE or jPOST
+PXD024983	singapore/singapore	sandbox	sandbox: 4/4 RAW (PBDE x2/PCE/TCE, TZ50 enrichment); PBDE-2 = tech rep inferred; tol/mods via ref43, msf unread
+PXD004355	singapore/singapore	sandbox	sandbox: 3/3 RAW; paper unlinked (Anal Chem 2016 inferred); params from JoVE; rar/RAW unread
+PXD019488	singapore/singapore	annotated	annotated: 2/2 wiff runs (N-/C-term BioID2-TbUnc119 baits) from file names; Mascot .dat params; WT ctrl not deposited; review round1 PASS

@@ -31,7 +31,7 @@
 </style>
 <rect class="bg" width="860" height="256.0" rx="6"/>
 <text class="title" x="12" y="22">Finland — in progress</text>
-<text class="sub" x="12" y="40">194 listed · 102 local SDRFs · 0 sandbox · 0 to do · 31 blocked (not in sandbox) · PRIDE queried 2026-11-26</text>
+<text class="sub" x="12" y="40">194 listed · 102 local SDRFs · 0 sandbox · 0 to do · 30 blocked (not in sandbox) · PRIDE queried 2026-11-26</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -65,11 +65,11 @@
 <text class="city" x="12" y="142.0">Oulu</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="128.0" width="30.8" height="20" rx="2"><title>Oulu · Local SDRF: 5</title></rect>
 <text class="seg" x="125.4" y="142.0" text-anchor="middle">5</text>
-<rect class="c-blocked" fill="#d95926" x="141.8" y="128.0" width="17.0" height="20" rx="2"><title>Oulu · Blocked: 2</title></rect>
-<text class="seg" x="150.3" y="142.0" text-anchor="middle">2</text>
-<rect class="c-in_corpus" fill="#199e70" x="159.8" y="128.0" width="24.4" height="20" rx="2"><title>Oulu · In corpus: 4</title></rect>
-<text class="seg" x="172.0" y="142.0" text-anchor="middle">4</text>
-<text class="total" x="191.2" y="142.0">11 listed</text>
+<rect class="c-blocked" fill="#d95926" x="141.8" y="128.0" width="17.0" height="20" rx="2"><title>Oulu · Blocked: 1</title></rect>
+<text class="seg" x="150.3" y="142.0" text-anchor="middle">1</text>
+<rect class="c-in_corpus" fill="#199e70" x="159.8" y="128.0" width="30.8" height="20" rx="2"><title>Oulu · In corpus: 5</title></rect>
+<text class="seg" x="175.1" y="142.0" text-anchor="middle">5</text>
+<text class="total" x="197.5" y="142.0">11 listed</text>
 <text class="city" x="12" y="172.0">Tampere</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="158.0" width="17.0" height="20" rx="2"><title>Tampere · Local SDRF: 1</title></rect>
 <text class="seg" x="118.5" y="172.0" text-anchor="middle">1</text>

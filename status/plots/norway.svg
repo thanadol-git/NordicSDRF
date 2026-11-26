@@ -31,7 +31,7 @@
 </style>
 <rect class="bg" width="860" height="256.0" rx="6"/>
 <text class="title" x="12" y="22">Norway — in progress</text>
-<text class="sub" x="12" y="40">348 listed · 229 local SDRFs · 4 sandbox · 0 to do · 36 blocked (not in sandbox) · PRIDE queried 2026-11-26</text>
+<text class="sub" x="12" y="40">348 listed · 229 local SDRFs · 0 sandbox · 0 to do · 40 blocked (not in sandbox) · PRIDE queried 2026-11-26</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -47,47 +47,43 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="544.0" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="561.0" y="62.0">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="82.0">Bergen</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="68.0" width="276.2" height="20" rx="2"><title>Bergen · Local SDRF: 53</title></rect>
-<text class="seg" x="248.1" y="82.0" text-anchor="middle">53</text>
-<rect class="c-blocked" fill="#d95926" x="387.2" y="68.0" width="77.5" height="20" rx="2"><title>Bergen · Blocked: 15</title></rect>
-<text class="seg" x="426.0" y="82.0" text-anchor="middle">15</text>
-<rect class="c-in_corpus" fill="#199e70" x="465.7" y="68.0" width="145.5" height="20" rx="2"><title>Bergen · In corpus: 28</title></rect>
-<text class="seg" x="538.4" y="82.0" text-anchor="middle">28</text>
-<text class="total" x="618.2" y="82.0">96 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="68.0" width="284.4" height="20" rx="2"><title>Bergen · Local SDRF: 53</title></rect>
+<text class="seg" x="252.2" y="82.0" text-anchor="middle">53</text>
+<rect class="c-blocked" fill="#d95926" x="395.4" y="68.0" width="79.8" height="20" rx="2"><title>Bergen · Blocked: 15</title></rect>
+<text class="seg" x="435.3" y="82.0" text-anchor="middle">15</text>
+<rect class="c-in_corpus" fill="#199e70" x="476.2" y="68.0" width="149.8" height="20" rx="2"><title>Bergen · In corpus: 28</title></rect>
+<text class="seg" x="551.0" y="82.0" text-anchor="middle">28</text>
+<text class="total" x="632.9" y="82.0">96 listed</text>
 <text class="city" x="12" y="112.0">Oslo</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="98.0" width="563.9" height="20" rx="2"><title>Oslo · Local SDRF: 108</title></rect>
-<text class="seg" x="392.0" y="112.0" text-anchor="middle">108</text>
-<rect class="c-sandbox" fill="#6b4ea3" x="674.9" y="98.0" width="17.0" height="20" rx="2"><title>Oslo · Sandbox: 2</title></rect>
-<text class="seg" x="683.4" y="112.0" text-anchor="middle">2</text>
-<rect class="c-blocked" fill="#d95926" x="692.9" y="98.0" width="17.0" height="20" rx="2"><title>Oslo · Blocked: 1</title></rect>
-<text class="seg" x="701.4" y="112.0" text-anchor="middle">1</text>
-<rect class="c-in_corpus" fill="#199e70" x="710.9" y="98.0" width="46.1" height="20" rx="2"><title>Oslo · In corpus: 9</title></rect>
-<text class="seg" x="734.0" y="112.0" text-anchor="middle">9</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="98.0" width="580.5" height="20" rx="2"><title>Oslo · Local SDRF: 108</title></rect>
+<text class="seg" x="400.3" y="112.0" text-anchor="middle">108</text>
+<rect class="c-blocked" fill="#d95926" x="691.5" y="98.0" width="17.0" height="20" rx="2"><title>Oslo · Blocked: 3</title></rect>
+<text class="seg" x="700.0" y="112.0" text-anchor="middle">3</text>
+<rect class="c-in_corpus" fill="#199e70" x="709.5" y="98.0" width="47.5" height="20" rx="2"><title>Oslo · In corpus: 9</title></rect>
+<text class="seg" x="733.3" y="112.0" text-anchor="middle">9</text>
 <text class="total" x="764.0" y="112.0">120 listed</text>
 <text class="city" x="12" y="142.0">Trondheim</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="128.0" width="208.2" height="20" rx="2"><title>Trondheim · Local SDRF: 40</title></rect>
-<text class="seg" x="214.1" y="142.0" text-anchor="middle">40</text>
-<rect class="c-blocked" fill="#d95926" x="319.2" y="128.0" width="51.3" height="20" rx="2"><title>Trondheim · Blocked: 10</title></rect>
-<text class="seg" x="344.9" y="142.0" text-anchor="middle">10</text>
-<rect class="c-in_corpus" fill="#199e70" x="371.5" y="128.0" width="61.8" height="20" rx="2"><title>Trondheim · In corpus: 12</title></rect>
-<text class="seg" x="402.4" y="142.0" text-anchor="middle">12</text>
-<text class="total" x="440.3" y="142.0">62 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="128.0" width="214.4" height="20" rx="2"><title>Trondheim · Local SDRF: 40</title></rect>
+<text class="seg" x="217.2" y="142.0" text-anchor="middle">40</text>
+<rect class="c-blocked" fill="#d95926" x="325.4" y="128.0" width="52.8" height="20" rx="2"><title>Trondheim · Blocked: 10</title></rect>
+<text class="seg" x="351.8" y="142.0" text-anchor="middle">10</text>
+<rect class="c-in_corpus" fill="#199e70" x="379.2" y="128.0" width="63.6" height="20" rx="2"><title>Trondheim · In corpus: 12</title></rect>
+<text class="seg" x="411.0" y="142.0" text-anchor="middle">12</text>
+<text class="total" x="449.8" y="142.0">62 listed</text>
 <text class="city" x="12" y="172.0">Ås</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="158.0" width="108.8" height="20" rx="2"><title>Ås · Local SDRF: 21</title></rect>
-<text class="seg" x="164.4" y="172.0" text-anchor="middle">21</text>
-<rect class="c-sandbox" fill="#6b4ea3" x="219.8" y="158.0" width="17.0" height="20" rx="2"><title>Ås · Sandbox: 2</title></rect>
-<text class="seg" x="228.3" y="172.0" text-anchor="middle">2</text>
-<rect class="c-blocked" fill="#d95926" x="237.8" y="158.0" width="51.3" height="20" rx="2"><title>Ås · Blocked: 10</title></rect>
-<text class="seg" x="263.5" y="172.0" text-anchor="middle">10</text>
-<rect class="c-in_corpus" fill="#199e70" x="290.2" y="158.0" width="119.3" height="20" rx="2"><title>Ås · In corpus: 23</title></rect>
-<text class="seg" x="349.8" y="172.0" text-anchor="middle">23</text>
-<text class="total" x="416.5" y="172.0">56 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="158.0" width="112.1" height="20" rx="2"><title>Ås · Local SDRF: 21</title></rect>
+<text class="seg" x="166.0" y="172.0" text-anchor="middle">21</text>
+<rect class="c-blocked" fill="#d95926" x="223.1" y="158.0" width="63.6" height="20" rx="2"><title>Ås · Blocked: 12</title></rect>
+<text class="seg" x="254.9" y="172.0" text-anchor="middle">12</text>
+<rect class="c-in_corpus" fill="#199e70" x="287.7" y="158.0" width="122.8" height="20" rx="2"><title>Ås · In corpus: 23</title></rect>
+<text class="seg" x="349.1" y="172.0" text-anchor="middle">23</text>
+<text class="total" x="417.5" y="172.0">56 listed</text>
 <text class="city" x="12" y="202.0">Tromsø</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="188.0" width="35.6" height="20" rx="2"><title>Tromsø · Local SDRF: 7</title></rect>
-<text class="seg" x="127.8" y="202.0" text-anchor="middle">7</text>
-<rect class="c-in_corpus" fill="#199e70" x="146.6" y="188.0" width="35.6" height="20" rx="2"><title>Tromsø · In corpus: 7</title></rect>
-<text class="seg" x="164.4" y="202.0" text-anchor="middle">7</text>
-<text class="total" x="189.2" y="202.0">14 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="188.0" width="36.7" height="20" rx="2"><title>Tromsø · Local SDRF: 7</title></rect>
+<text class="seg" x="128.3" y="202.0" text-anchor="middle">7</text>
+<rect class="c-in_corpus" fill="#199e70" x="147.7" y="188.0" width="36.7" height="20" rx="2"><title>Tromsø · In corpus: 7</title></rect>
+<text class="seg" x="166.0" y="202.0" text-anchor="middle">7</text>
+<text class="total" x="191.4" y="202.0">14 listed</text>
 <text class="city" x="12" y="232.0">Stavanger</text>
 <text class="total" x="116.0" y="232.0">0 PRIDE hits</text>
 </svg>
