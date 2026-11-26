@@ -1,0 +1,161 @@
+accession	raw	total	instrument	species	title
+PXD000214	16	19	LTQ Orbitrap Velos	Cricetulus griseus, Homo sapiens, Mus musculus	Autocrine growth factors secreted by CHO cells
+PXD000588	1	2	TripleTOF 5600	Homo sapiens	Andrographolide cellular targets iTRAQ ABPP (raw listed is mzML)
+PXD000748	204	207	QSTAR	Homo sapiens	LACI plasma microvesicle biomarker
+PXD000771	56	62	TripleTOF 5600	Avicennia	Salt gland-enriched tissues Avicennia officinalis (raw listed as mzML)
+PXD000837	95	272	TripleTOF 5600	Avicennia	Plasma membrane and tonoplast, Avicennia officinalis leaves
+PXD000998	2	5	Synapt G2 HDMS	Homo sapiens	Gastric cancer iTRAQ tanshinone IIA
+PXD001123	74	149	Synapt G2 HDMS	Homo sapiens	ZNF322A lung cancer iTRAQ
+PXD001650	60	68	Q Exactive	Rattus norvegicus	Trypsin digestion buffers artificial deamidation (rat kidney)
+PXD001691	66	144	TripleTOF 5600	Avicennia officinalis	Protein extraction protocol, mangrove salt gland tissues
+PXD002516	104	105	Q Exactive	Homo sapiens	Dementia amyloidosis brain protein deamidation
+PXD002661	3	6	TripleTOF 5600	Homo sapiens	Conjunctival epithelial cells hyperosmotic stress (iTRAQ/SWATH)
+PXD002668	172	173	LTQ Orbitrap Elite, Q Exactive	Homo sapiens	Isolation of extracellular vesicles by PROSPR
+PXD002811	40	42	LTQ FT	Homo sapiens	Peptide recovery from acid-precipitated SDC pellet (plasma)
+PXD003027	520	521	QSTAR	Homo sapiens	AD+CVD temporal lobe proteome, gender differences
+PXD003064	15	33	LTQ Orbitrap Elite	Glycine max	Top-down characterization of lunasin in soybean product
+PXD003288	159	163	LTQ Orbitrap Elite	Homo sapiens, Mus musculus	CNS extracellular vesicles enriched by PROSPR
+PXD003521	40	42	TripleTOF 5600	Chlorella vulgaris	Cypermethrin-induced protein changes in green algae (iTRAQ)
+PXD003546	1	2	TripleTOF 5600	Homo sapiens	De novo protein synthesis in starvation autophagy (BONCAT iTRAQ)
+PXD003723	1	3	Orbitrap Fusion	Homo sapiens	Salivary biomarkers of diabetic retinopathy, part 1
+PXD003724	1	3	Orbitrap Fusion	Homo sapiens	Salivary biomarkers of diabetic retinopathy, part 2
+PXD003725	1	3	Orbitrap Fusion	Homo sapiens	Salivary biomarkers of diabetic retinopathy, part 3
+PXD003851	45	54	Q Exactive	Homo sapiens	Reticulocytes vs mature red blood cells (iTRAQ)
+PXD004274	1	2	TripleTOF 5600	Candida albicans	Candida albicans biofilm ploidy proteomics, AHP1
+PXD004355	3	4	LTQ Orbitrap Elite	Homo sapiens	Characterization of protein deamidation by shotgun proteomics
+PXD005239	9	10	TripleTOF 5600	Clostridium	iTRAQ on Clostridium strain BOH3 (biobutanol)
+PXD006035	123	125	LTQ FT, LTQ Orbitrap Velos	Homo sapiens	On-line desalting of SDS in mass spectrometry (WCX)
+PXD006178	96	98	Q Exactive	Homo sapiens	Genistein-induced epigenetic reprogramming MDA-MB231 (TMT)
+PXD006640	27	56	Q Exactive	Homo sapiens	Amyloid corneal aggregates, lattice corneal dystrophy
+PXD006922	219	239	Q Exactive	Flavivirus	Multiplex targeted MS assay for flavivirus diagnosis
+PXD006992	43	44	Q Exactive	Homo sapiens	Proteolytic signatures of thrombin-derived peptides
+PXD007224	18	19	Q Exactive	Homo sapiens	Human hair shaft proteome, histones and deamidated keratins
+PXD007624	80	81	Q Exactive	Homo sapiens	Aqueous humor of primary open angle glaucoma
+PXD008090	6	17	LTQ Orbitrap Elite	Hordeum vulgare	Proteomic profiling of barley spent grains
+PXD008834	10	30	TripleTOF 5600	Candida albicans	Candida albicans dnm1 mutant iTRAQ (raw=mzML; wiff listed as other)
+PXD008837	30	32	TripleTOF 5600	Nicotiana tabacum	Tobacco host factors upon TMV infection (iTRAQ)
+PXD009222	15	23	Orbitrap Fusion ETD	Homo sapiens	HEK-AXL glycopeptides for GlycopeptideGraphMS
+PXD010261	18	33	TripleTOF 5600	Candida albicans, Streptococcus mutans	Oral cross-kingdom biofilm bacterial-fungal interactions (iTRAQ)
+PXD011825	10	18	TripleTOF 5600	Nicotiana benthamiana	TMV vs TMV 24A+UPD infected N. benthamiana (iTRAQ)
+PXD012112	114	116	LTQ Orbitrap Velos, Q Exactive	Bos taurus	Shotgun MS of beef jerky vs unprocessed beef
+PXD012667	112	113	Q Exactive	Homo sapiens	Oxidative stress biomarker of type 2 diabetes (plasma)
+PXD013176	90	107	TripleTOF 6600	Bicyclus anynana, Danio rerio, Mus musculus	Tracking genome editing perturbations by SWATH-MS
+PXD013310	48	52	Q Exactive	Macaca fascicularis	Simian primary hepatocytes, P. cynomolgi permissiveness (TMT)
+PXD014692	36	38	Q Exactive	Taeniopygia guttata	Avian reproductive tissue proteome (zebra finch GRC)
+PXD015393	6	10	Orbitrap Fusion	Homo sapiens	Phosphoproteome rewiring of chromatin factors upon HBV infection
+PXD015452	36	38	Q Exactive, Q Exactive Plus	Mus musculus	Heart remodeling during intermittent fasting (multiomics)
+PXD016016	4	12	TripleTOF 5600	Homo sapiens	Structural insights into HECT-type E3 ligase AREL1
+PXD017025	156	161	Orbitrap Fusion	Homo sapiens	Triple-negative breast cancer subclass proteomics
+PXD018897	12	39	LTQ Orbitrap Velos	Pseudomonas aeruginosa PAO1	Sex steroid hormone binding proteins in P. aeruginosa
+PXD019488	4	10	TripleTOF 5600	Trypanosoma brucei	TbUnc119-interacting proteins by proximity biotinylation
+PXD019694	32	36	TripleTOF 5600	Homo sapiens	SOX4 cancer stemness via HDAC1 (comparative proteomics)
+PXD021926	12	14	Q Exactive HF	Homo sapiens	Enzyme-mediated covalent EV surface modification for drug delivery
+PXD022255	116	243	Orbitrap Fusion Lumos	Homo sapiens	TMT-MS2 cellular adaptation to hypomorphic NUP58 alleles
+PXD023373	80	82	Q Exactive HF	Homo sapiens	Long-read transcriptome promoter diversity in gastric cancer
+PXD023455	32	36	TripleTOF 5600	Homo sapiens	KDM4C-ALDH1A3 loop in gastric cancer stemness (iTRAQ)
+PXD023909	45	47	Q Exactive HF	Homo sapiens	Exosomal proteins and brown fat activation
+PXD024630	8	10	Q Exactive HF	Homo sapiens	ZNF524 binds telomeres via TRF2/RAP1 (BioID)
+PXD024769	16	17	Q Exactive HF	Plasmodium falciparum 3D7	tRNA cytosine methylation in P. falciparum sexual commitment
+PXD024983	4	9	Orbitrap Fusion	Dehalococcoides mccartyi	Bifunctional dehalogenases debrominate PBDEs in Dehalococcoides
+PXD025299	6	7	Waters instrument model	Homo sapiens	GlycopeptideGraphMS glycoproteomics of biologics (BioAccord)
+PXD026038	215	225	TripleTOF 5600	Laodelphax striatellus	RBSDV acquisition and mitophagy in small brown planthopper (iTRAQ)
+PXD026343	14	16	Q Exactive	Homo sapiens	Tensin3-talin interaction in fibrillar adhesions
+PXD027027	5	29	Q Exactive	Phaeodactylum tricornutum	Prion-like pyrenoid protein forms Rubisco condensates
+PXD027124	24	57	TripleTOF 5600	Homo sapiens	Human CK1alpha 5prime-UTR-interacting proteins
+PXD027549	2	4	TripleTOF 5600	Homo sapiens	O-GlcNAcylation of FASN under nutritional stress (iTRAQ)
+PXD028325	10	12	5800 TOF/TOF	Momordica cochinchinensis	Splicing legumain from Momordica cochinchinensis
+PXD028714	7	9	Q Exactive HF	Mus musculus	EIF5A hypusination in hepatic cells
+PXD029330	12	24	TripleTOF 6600	Gossypium hirsutum	Cottonseed meal protein isolate, gossypol removal
+PXD029967	20	49	TripleTOF 5600	Staphylococcus aureus, Streptococcus pneumoniae	SARS-CoV-2 spike and MHV inhibit pneumococcal/S. aureus biofilms
+PXD030637	45	49	Q Exactive	Mus musculus	Nuclear proteome of forebrain neurons in pilocarpine seizures (TMT)
+PXD031110	12	13	Q Exactive HF	Homo sapiens	PLK1 inhibition in ARID1A-deficient cells
+PXD032225	390	392	QSTAR	Homo sapiens	Medium-sized EV plasma proteomics in lacunar infarction
+PXD032334	16	20	Orbitrap Exploris 480	Homo sapiens	SEC-fractionated small EV subpopulations
+PXD033153	80	85	Q Exactive	Homo sapiens	Aqueous humor proteins in POAG with clinical correlation (TMT)
+PXD033369	86	258	Orbitrap Exploris 480	Homo sapiens	Atlas of hormone peptides of human EECs and their proteases
+PXD034333	52	55	Q Exactive	Homo sapiens	Englerin A rewires phosphosignaling via HSP27 in renal cancer
+PXD034896	32	88	TripleTOF 5600	Homo sapiens	S-acylated proteins in RPE cells, NPC1 palmitoylation
+PXD035225	6	10	Q Exactive HF	Homo sapiens	Cohesin represses invasion-related genes (Plasmodium SMC3)
+PXD035392	25	26	Q Exactive	Mus musculus	STUB1 intracellular checkpoint for IFN-gamma sensing
+PXD036033	120	121	Orbitrap Fusion	Homo sapiens	Vitreous proteome, impaired sheddase activity in diabetic retinopathy
+PXD036335	64	67	TripleTOF 5600	Rattus norvegicus	PHF8 knockdown in synaptic plasticity, alpha-synuclein
+PXD038178	27	32	Q Exactive HF	Enterococcus faecalis	Epitranscriptomic oxidative stress response by RlmN
+PXD039701	48	49	Q Exactive HF, timsTOF fleX	Homo sapiens	ChIP-MS local chromatin composition by LFQ (telomeres)
+PXD041391	72	77	timsTOF Pro	Homo sapiens	DDA-/diaPASEF HCC1806/HS578T with deliberate batch effects
+PXD042235	3	13	Synapt MS	Dengue virus 2	Secreted dengue NS1 dimer with HDL (HDX-MS)
+PXD043084	8	9	Q Exactive HF	Homo sapiens	ZNF524 interacts with telomeric DNA, telomere integrity
+PXD043134	80	81	Q Exactive HF	Homo sapiens	ZBTB48 pioneer factor regulating B-cell CIITA
+PXD043550	30	32	Orbitrap Eclipse	Homo sapiens	Mouse and human conjunctiva organoids secretome
+PXD043747	36	39	Q Exactive HF	Plasmodium falciparum	tRNA modification reprogramming in artemisinin resistance
+PXD043818	9	38	Synapt MS	Homo sapiens	Neutralization and allostery by antibodies vs COVID-19 variants (HDX)
+PXD043870	12	16	Q Exactive HF	Enterovirus A71, Homo sapiens	Role of Rab11 in EV-A71 infection
+PXD044406	27	57	Orbitrap Fusion Lumos	Homo sapiens	Proteomic analysis of human brain organoids (microglia)
+PXD046538	160	168	Q Exactive HF	Plasmodium falciparum 3D7	MMV000848 target identification with MS-CETSA
+PXD046551	139	146	Q Exactive HF	Plasmodium falciparum 3D7	Pyronaridine target identification with MS-CETSA
+PXD046574	69	70	TripleTOF 6600	Homo sapiens	Temporal responses during rAAV production in HEK293T (SWATH)
+PXD046575	160	168	Q Exactive HF	Plasmodium falciparum 3D7	MMV665806 target identification with MS-CETSA
+PXD046578	108	117	Q Exactive HF	Plasmodium falciparum 3D7	Piperaquine target identification with MS-CETSA
+PXD046584	140	147	Q Exactive HF	Plasmodium falciparum 3D7	Lumefantrine target identification with MS-CETSA
+PXD046642	237	249	Q Exactive HF	Plasmodium falciparum 3D7	MK4815 target identification with MS-CETSA
+PXD046647	180	189	Q Exactive HF	Plasmodium falciparum 3D7	Amodiaquine target identification with MS-CETSA
+PXD046662	299	314	Q Exactive HF	Plasmodium falciparum 3D7	Chloroquine target identification with MS-CETSA
+PXD046804	2	12	6520A Q-TOF LC/MS, LTQ Orbitrap	Mycobacterium bovis BCG	Mycobacterial adaptation to hypoxia/starvation, ketosis
+PXD046940	20	22	Q Exactive HF	Homo sapiens	PTP and proteome profiling of human liver tissues
+PXD047075	24	26	Orbitrap Exploris 480	Homo sapiens	Secretome and proteome of human fetal brain organoids
+PXD047664	96	100	Q Exactive Plus	Homo sapiens	Complexome profiling of CRISTA WT/KO HEK293T mitochondria
+PXD047875	32	64	Q Exactive	Homo sapiens, Plasmodium falciparum 3D7	Malaria parasite response to artemisinins and oxidative stress (CETSA)
+PXD048575	48	51	TripleTOF 6600	Cricetulus griseus	Butyric acid effect on mAb production in CHO cells (SWATH)
+PXD048737	80	84	Q Exactive HF	Plasmodium falciparum 3D7	MS-CETSA target identification of MMV000848
+PXD048745	80	84	Q Exactive HF	Plasmodium falciparum 3D7	MS-CETSA target identification of MMV665987
+PXD048750	100	105	Q Exactive HF	Plasmodium falciparum 3D7	MS-CETSA target identification of MMV006656
+PXD048752	80	84	Q Exactive HF	Plasmodium falciparum 3D7	MS-CETSA target identification of MMV665971
+PXD048756	80	84	Q Exactive HF	Plasmodium falciparum 3D7	MS-CETSA target identification of MMV007574
+PXD048757	80	84	Q Exactive HF	Plasmodium falciparum 3D7	MS-CETSA target identification of MMV665941
+PXD048761	120	126	Q Exactive HF	Plasmodium falciparum 3D7	MS-CETSA target identification of MMV019127
+PXD048762	80	84	Q Exactive HF	Plasmodium falciparum 3D7	MS-CETSA target identification of MMV665909
+PXD048768	222	233	Q Exactive HF	Plasmodium falciparum 3D7	MS-CETSA target ID of MMV007127, MMV665886
+PXD048772	320	336	Q Exactive HF	Plasmodium falciparum 3D7	MS-CETSA target ID of MMV020885, MMV665806, MMV665864
+PXD048805	1	2	6495C Triple Quadrupole LC/MS	Bartonella henselae, Bartonella quintana	tRNA modification landscape of Bartonella (QQQ)
+PXD050686	15	19	Orbitrap Exploris 480	Rattus norvegicus	Therapeutic and synchrotron x-rays on collagen I
+PXD050689	15	18	Orbitrap Exploris 480	Rattus norvegicus	Therapeutic and synchrotron x-rays on collagen I
+PXD050690	15	19	Orbitrap Exploris 480	Rattus norvegicus	Therapeutic and synchrotron x-rays on collagen I
+PXD050691	12	16	Orbitrap Exploris 480	Gallus gallus	Therapeutic and synchrotron x-rays on collagen I (tendon)
+PXD051044	12	14	Orbitrap Exploris 480	Homo sapiens	CAR T-cell efficacy vs neuroblastoma via MIF inhibition
+PXD053297	1	3	6495C Triple Quadrupole LC/MS	Pseudomonas aeruginosa PA14	tRNA modification profile of PA14 transposon mutant library
+PXD053645	9	12	LTQ Orbitrap Elite	Homo sapiens	Co-IP of WT/MT IVNS1ABP in iPSC-derived NPCs
+PXD053974	8	16	Q Exactive HF	Plasmodium falciparum 3D7	CETSA with YLIU-06-026-1 on P. falciparum
+PXD054298	3	33	LTQ Orbitrap Elite	Mus musculus	RAPIDASH TMT vs sucrose cushion, E14 mESCs
+PXD054300	6	50	LTQ Orbitrap Elite	Mus musculus	RAPIDASH label-free L36-FLAG/S17-FLAG E14 mESCs
+PXD054304	4	44	LTQ Orbitrap Elite	Mus musculus	RAPIDASH TMT of E12.5 mouse limbs, forebrain, liver
+PXD054427	1	9	LTQ Orbitrap Elite	Mus musculus	RAPIDASH TMT vs chromatographic yeast ribosome purification
+PXD054586	12	13	Q Exactive HF	Homo sapiens	lncRNA PLUM controls PRC2 H3K27me in multiple myeloma
+PXD054896	4	16	Synapt MS	Mus musculus	CHIP E3 ligase ubiquitination of BNIP-H (HDX-MS)
+PXD054948	30	49	ZenoTOF 7600	Cricetulus griseus	Multi-level characterization of antibody therapeutics, single-column LC-MS
+PXD055102	32	64	Q Exactive HF	Plasmodium falciparum 3D7	Thermal shift assay on P. falciparum with azithromycin analogs
+PXD056075	21	42	Q Exactive HF	Homo sapiens, Plasmodium falciparum 3D7	Meltome of P. falciparum across intraerythrocytic cycle
+PXD056342	150	171	Orbitrap Exploris 240, Orbitrap Exploris 480	Fusarium venenatum, Glycine max, Pisum sativum, others (9 spp)	MS pipeline screening hazardous proteins in alternative protein foods
+PXD057257	45	47	Orbitrap Exploris 480	Mus musculus	Mouse ESC Nr1h2 interactome under T09 treatment
+PXD057932	18	20	Orbitrap Exploris 480	Mus musculus	H2S enzymes and persulfidation in MASH
+PXD059385	8	29	Orbitrap Fusion	Desulfitobacterium sp.	Microbial cooperation for 1,2-dichloroethane detoxification, low pH
+PXD060843	15	18	Orbitrap Fusion Lumos	Homo sapiens	X-ray exposure induces structural changes in human breast proteins
+PXD060864	5	8	Q Exactive	Mus musculus	Hydrogel-ECM scaffolds, signatures of cardiac ageing
+PXD060871	15	18	Orbitrap Fusion Lumos	Homo sapiens	X-ray exposure structural changes in human breast proteins (tissue)
+PXD060917	15	18	Orbitrap Exploris 480	Homo sapiens	X-ray exposure structural changes in breast proteins (fibronectin)
+PXD062330	2	6	Orbitrap Eclipse	Mus musculus	CAPTURE2.0 pull-down of SINE-MIR proteins in mESCs (TMT)
+PXD062502	6	16	Orbitrap Fusion Lumos	Homo sapiens	Interactome of E. histolytica KERP2 with host epithelial cells
+PXD065824	7	11	Orbitrap Fusion Lumos	Homo sapiens	Organoplatinum(II) target profiling, PTP1B immunogenicity
+PXD068911	24	26	Q Exactive	Escherichia coli	EHEC O157:H7 tRNA reprogramming in response to norepinephrine
+PXD069102	12	18	LTQ Orbitrap Elite	Bangiaceae	Proteomic profiling of NZ Porphyra/Pyropia (karengo) seaweeds
+PXD069847	48	58	Orbitrap Exploris 480	Cavia porcellus	TMT retina/choroid/sclera of albino vs pigmented guinea pigs (myopia)
+PXD070583	15	20	Q Exactive HF	Galdieria sulphuraria	Galdieria sulphuraria secretome on glucose/maltose/starch (DIA; has SDRF)
+PXD074087	14	24	Orbitrap Fusion Lumos	Homo sapiens	TMT proteome/phosphoproteome of GPR146 knockdown SGBS cells (has SDRF)
+PXD074713	98	1910	Q Exactive HF	Plasmodium falciparum 3D7	Large CETSA screen of antimalarial compounds (raw/total ratio odd)
+PXD074728	1121	1181	Orbitrap Exploris 480, Q Exactive HF	Plasmodium falciparum 3D7	Detergent-assisted CETSA for drug discovery in P. falciparum
+PXD076093	4	6	6495C Triple Quadrupole LC/MS	Escherichia coli	PLP-dependent aminovaleramide biosynthesis by AvaS in tRNA (QQQ)
+PXD078430	142	143	Orbitrap Eclipse	Homo sapiens	Early-life skin signatures predictive of atopic dermatitis (S-PRESTO)
+PXD079682	51	55	Q Exactive HF	Homo sapiens	Phosphoproteomics: EPHA2/EGFR activation after Wnt inhibition
+PXD079947	54	55	timsTOF fleX MALDI-2	Homo sapiens	Ferroptosis in HMC3 microglia (54 .d.gz.zip runs; only 1 tagged raw)
+PXD082164	63	65	Orbitrap Exploris 480	Homo sapiens	Neuroblastoma secretome, immunosuppressive EVs vs T cells
+PXD082746	9	14	Orbitrap Exploris 480	Plasmodium falciparum 3D7	PISA with atovaquone and DSM265 in P. falciparum
+PXD084067	6	15	TripleTOF 6600	Aedes albopictus	wAlbB Type III CI factors via host modification (6 wiff runs)
+PXD084821	180	189	Orbitrap Exploris 480	Plasmodium knowlesi, Homo sapiens, Macaca fascicularis	P. knowlesi IDC quantitative/stability proteomics (9x20 fracs, est.)
