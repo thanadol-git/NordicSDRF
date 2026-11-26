@@ -1,0 +1,2 @@
+# daily queue 2026-11-26 singapore batch 2 (next 20 Singapore PXDs with fewest RAW)
+PXD054896	singapore/singapore	blocked	blocked: 4 "RAW" = DynamX .DnX projects + 11 PLGS UnD CSVs; no HDX .raw runs deposited (as PXD042235)
