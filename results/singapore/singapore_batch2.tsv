@@ -1,0 +1,21 @@
+batch_order	accession	raw_count	total_files	instrument	annotation_status	title
+1	PXD016016	4	12	TripleTOF 5600	queued	Structural insights into HECT-type E3 ligase AREL1
+2	PXD054896	4	16	Synapt MS	queued	CHIP E3 ligase ubiquitination of BNIP-H (HDX-MS)
+3	PXD054304	4	44	LTQ Orbitrap Elite	queued	RAPIDASH TMT of E12.5 mouse limbs, forebrain, liver
+4	PXD060864	5	8	Q Exactive	queued	Hydrogel-ECM scaffolds, signatures of cardiac ageing
+5	PXD027027	5	29	Q Exactive	queued	Prion-like pyrenoid protein forms Rubisco condensates
+6	PXD025299	6	7	Waters instrument model	queued	GlycopeptideGraphMS glycoproteomics of biologics (BioAccord)
+7	PXD015393	6	10	Orbitrap Fusion	queued	Phosphoproteome rewiring of chromatin factors upon HBV infection
+8	PXD035225	6	10	Q Exactive HF	queued	Cohesin represses invasion-related genes (Plasmodium SMC3)
+9	PXD084067	6	15	TripleTOF 6600	queued	wAlbB Type III CI factors via host modification (6 wiff runs)
+10	PXD062502	6	16	Orbitrap Fusion Lumos	queued	Interactome of E. histolytica KERP2 with host epithelial cells
+11	PXD008090	6	17	LTQ Orbitrap Elite	queued	Proteomic profiling of barley spent grains
+12	PXD054300	6	50	LTQ Orbitrap Elite	queued	RAPIDASH label-free L36-FLAG/S17-FLAG E14 mESCs
+13	PXD028714	7	9	Q Exactive HF	queued	EIF5A hypusination in hepatic cells
+14	PXD065824	7	11	Orbitrap Fusion Lumos	queued	Organoplatinum(II) target profiling, PTP1B immunogenicity
+15	PXD043084	8	9	Q Exactive HF	queued	ZNF524 interacts with telomeric DNA, telomere integrity
+16	PXD024630	8	10	Q Exactive HF	queued	ZNF524 binds telomeres via TRF2/RAP1 (BioID)
+17	PXD053974	8	16	Q Exactive HF	queued	CETSA with YLIU-06-026-1 on P. falciparum
+18	PXD059385	8	29	Orbitrap Fusion	queued	Microbial cooperation for 1,2-dichloroethane detoxification, low pH
+19	PXD005239	9	10	TripleTOF 5600	queued	iTRAQ on Clostridium strain BOH3 (biobutanol)
+20	PXD053645	9	12	LTQ Orbitrap Elite	queued	Co-IP of WT/MT IVNS1ABP in iPSC-derived NPCs

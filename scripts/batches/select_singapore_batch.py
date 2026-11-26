@@ -1,4 +1,4 @@
-"""Select singapore-1: the 20 remaining Singapore deposits with the fewest RAW files.
+"""Select the next Singapore batch: the 20 remaining deposits with the fewest RAW files.
 
 Pool: lists/singapore/singapore.txt minus BigBio corpus (singapore_in_corpus.txt) minus any
 local annotation minus accessions already in bigbio sandbox/ (passed as a file of accessions).
@@ -6,19 +6,20 @@ RAW counts come from ProteomeCentral PROXI, cached in results/singapore/singapor
 (PRIDE API unreachable from the annotation session). Deposits with 0 or unknown RAW are excluded.
 Ties break on total file count, then accession.
 
-Usage: python scripts/batches/select_singapore_first20.py [bigbio_sandbox_accessions.txt]
+Usage: python scripts/batches/select_singapore_batch.py BATCH_TSV [bigbio_sandbox_accessions.txt]
+  e.g. ... results/singapore/singapore_batch2.tsv /tmp/bbsand.txt  (singapore-1 wrote singapore_first20_batch.tsv)
 """
 import csv, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SG = ROOT / "results/singapore"
-OUT = SG / "singapore_first20_batch.tsv"
 
 manifest = [l.strip() for l in (ROOT / "lists/singapore/singapore.txt").read_text().splitlines() if l.startswith("PXD")]
 corpus = set((SG / "singapore_in_corpus.txt").read_text().split())
 local = {p.name[:9] for p in (ROOT / "annotations").glob("PXD*")}
-sandbox = set(Path(sys.argv[1]).read_text().split()) if len(sys.argv) > 1 else set()
+OUT = ROOT / sys.argv[1]
+sandbox = set(Path(sys.argv[2]).read_text().split()) if len(sys.argv) > 2 else set()
 counts = {r["accession"]: r for r in csv.DictReader((SG / "singapore_proxi_counts.tsv").open(), delimiter="\t")}
 
 pool = []
