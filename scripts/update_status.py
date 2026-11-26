@@ -402,16 +402,37 @@ def display_name(country: str, cdata: dict) -> str:
     return cdata.get("name") or country.title()
 
 
-def country_plot(country: str, cdata: dict, plots_dir: str) -> str:
-    """Heading + the horizontal bar chart drawn by scripts/plot_status.py."""
+MARKDOWNS_DIR = "status/markdowns"
+MARKDOWNS_LINK = f"[Country status pages]({MARKDOWNS_DIR}/)"
+
+
+def country_plot(country: str, cdata: dict, plots_dir: str, *, collapsed: bool = False) -> str:
+    """Heading + the horizontal bar chart drawn by scripts/plot_status.py.
+
+    When `collapsed` is true (README region sections), wrap in <details> so the
+    region overview stays visible and per-country charts stay one click away.
+    """
     title = f"{display_name(country, cdata)} — {human_status(cdata.get('status'))}"
-    return f"### {title}\n\n![{title}: SDRF progress per city]({plots_dir}/{country}.svg)"
+    image = f"![{title}: SDRF progress per city]({plots_dir}/{country}.svg)"
+    if not collapsed:
+        return f"### {title}\n\n{image}"
+    # Blank lines inside <details> keep GitHub's markdown image renderer happy.
+    return (
+        f"<details>\n"
+        f"<summary><strong>{title}</strong></summary>\n\n"
+        f"{image}\n\n"
+        f"</details>"
+    )
 
 
 def overview_plot(plots_dir: str) -> str:
     """Nordic-country vertical stacked bars, drawn by plot_status.py."""
     title = "Nordic countries — listed PXDs"
-    return f"### {title}\n\n![{title}: SDRF progress by country]({plots_dir}/overview.svg)"
+    return (
+        f"### {title}\n\n"
+        f"![{title}: SDRF progress by country]({plots_dir}/overview.svg)\n\n"
+        f"Per-country pages: {MARKDOWNS_LINK}"
+    )
 
 
 def sea_region_status(cfg: dict) -> str:
@@ -424,10 +445,14 @@ def sea_region_status(cfg: dict) -> str:
     return "not_started"
 
 
-def sea_plot(cfg: dict, plots_dir: str) -> str:
-    """Combined SEA city chart (one SVG for the whole region)."""
-    title = f"Southeast Asia — {human_status(sea_region_status(cfg))}"
-    return f"### {title}\n\n![{title}: SDRF progress by city]({plots_dir}/sea.svg)"
+def sea_plot(plots_dir: str) -> str:
+    """SEA region overview (vertical bars), matching the Nordic overview layout."""
+    title = "Southeast Asia — listed PXDs"
+    return (
+        f"### {title}\n\n"
+        f"![{title}: SDRF progress by country]({plots_dir}/sea.svg)\n\n"
+        f"Per-country pages: {MARKDOWNS_LINK}"
+    )
 
 
 def countries_in_region(cfg: dict, region: str) -> list[tuple[str, dict]]:
@@ -436,9 +461,8 @@ def countries_in_region(cfg: dict, region: str) -> list[tuple[str, dict]]:
 
 def render_status_block(cfg: dict) -> str:
     queried = cfg.get("pride_hits_queried", "unknown date")
-    intro = (f"Overview first: one vertical stacked bar per Nordic country (city manifests\n"
-             f"summed). Then one horizontal chart per Nordic country (and Affinity PAD), plus one\n"
-             f"combined *Southeast Asia* chart with all SEA cities together (`status/plots/sea.svg`).\n"
+    intro = (f"Region overviews are shown below. Per-country city charts (Nordic and SEA) live in\n"
+             f"{MARKDOWNS_LINK} (and `status/plots/<country>.svg`).\n"
              f"A curated city's bar is its manifest (`lists/<country>/<city>.txt`),\n"
              f"split so every PXD sits in exactly one block: *Local SDRF* (a local file without a\n"
              f"blocker, including files awaiting review), *Sandbox* (an SDRF under `sandbox/` in\n"
@@ -457,15 +481,22 @@ def render_status_block(cfg: dict) -> str:
              f"The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with\n"
              f"`python scripts/update_status.py`; redraw the charts alone from `tables/` with\n"
              f"`python scripts/plot_status.py`.")
-    nordic = countries_in_region(cfg, "nordic")
     affinity = countries_in_region(cfg, "affinity")
     sea = countries_in_region(cfg, "sea")
-    charts = [overview_plot("status/plots"),
-              *(country_plot(c, d, "status/plots") for c, d in nordic),
-              *(country_plot(c, d, "status/plots") for c, d in affinity)]
+    # Per-country charts stay in status/markdowns/ + status/plots/; README only
+    # shows region overviews (with a link to those pages).
+    parts = [intro, overview_plot("status/plots")]
     if sea:
-        charts.append(sea_plot(cfg, "status/plots"))
-    return "\n\n".join([intro, *charts])
+        parts.append(sea_plot("status/plots"))
+    for c, d in affinity:
+        # Affinity is a single multi-row chart; keep it open with a link under the image.
+        title = f"{display_name(c, d)} — {human_status(d.get('status'))}"
+        parts.append(
+            f"### {title}\n\n"
+            f"![{title}: SDRF progress per city](status/plots/{c}.svg)\n\n"
+            f"Page: [{MARKDOWNS_DIR}/{c}.md]({MARKDOWNS_DIR}/{c}.md) · all pages: {MARKDOWNS_LINK}"
+        )
+    return "\n\n".join(parts)
 
 
 def update_readme(block: str, dry_run: bool) -> None:
@@ -483,23 +514,26 @@ def write_status_pages(cfg: dict, dry_run: bool) -> None:
     pages_dir = ROOT / "status" / "markdowns"
     if not dry_run:
         pages_dir.mkdir(parents=True, exist_ok=True)
+    sea = countries_in_region(cfg, "sea")
     for country, cdata in cfg["countries"].items():
-        if cdata.get("region") == "sea":
-            continue  # one combined SEA page below
         page = (f"# {display_name(country, cdata)} — {human_status(cdata.get('status'))}\n\n"
                 f"Generated by `scripts/update_status.py`; PRIDE hits queried "
                 f"{cfg.get('pride_hits_queried', 'unknown date')}.\n\n"
                 f"{country_plot(country, cdata, '../plots')}\n")
         if not dry_run:
             (pages_dir / f"{country}.md").write_text(page)
-    if countries_in_region(cfg, "sea") and not dry_run:
-        title = f"Southeast Asia — {human_status(sea_region_status(cfg))}"
+    if sea and not dry_run:
+        links = "\n".join(
+            f"- [{display_name(c, d)}]({c}.md) — {human_status(d.get('status'))}"
+            for c, d in sea
+        )
         (pages_dir / "sea.md").write_text(
-            f"# {title}\n\n"
+            f"# Southeast Asia — {human_status(sea_region_status(cfg))}\n\n"
             f"Generated by `scripts/update_status.py`; PRIDE hits queried "
             f"{cfg.get('pride_hits_queried', 'unknown date')}. "
-            f"All SEA cities share one chart.\n\n"
-            f"{sea_plot(cfg, '../plots')}\n"
+            f"Region overview below; per-country city charts are linked under it.\n\n"
+            f"{sea_plot('../plots')}\n\n"
+            f"### Countries\n\n{links}\n"
         )
 
 

@@ -1,10 +1,12 @@
 # Southeast Asia countries for the PXD campaign
 
 Narrative reference for SEA cities now tracked in `config.yml` with `region: sea`.
-Progress is plotted together as `status/plots/sea.svg` (all cities on one chart).
-Manifests still appear under `lists/<country>/<city>.txt` when scoped; use the
-same `build_manifest.py` path (keyword search, then keep only records that
-confirm the country).
+The region overview is `status/plots/sea.svg` (one vertical bar per country, same
+style as the Nordic overview). Per-country city charts are
+`status/plots/<country>.svg` with pages under `status/markdowns/`. Manifests
+still appear under `lists/<country>/<city>.txt` when scoped; use the same
+`build_manifest.py` path (keyword search, then keep only records that confirm
+the country).
 
 Scope: the 10 ASEAN members plus Timor-Leste. Suggested order is by likely
 curated PXD count, not by geography.
