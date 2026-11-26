@@ -34,7 +34,7 @@ pipeline:
   tier_3_claude:
     jobs: [sdrf_annotate, sdrf_review, sdrf_adversarial_review]
 
-pride_hits_queried: 2026-11-25
+pride_hits_queried: 2026-11-26
 
 corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-11-26)
 

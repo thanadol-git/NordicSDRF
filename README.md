@@ -122,7 +122,7 @@ blockers), *Local SDRF* (a local file without a blocker, including files awaitin
 review), *In corpus* (already has an SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/bigbio/sdrf-annotated-datasets),
 checked against GitHub bigbio/sdrf-annotated-datasets (2026-11-26)), *Screened*, *To do*.
 A city without a manifest shows a dashed outline sized by its raw PRIDE full-text
-hit count (unioned over `search_terms` in `config.yml`, queried 2026-11-25). *Affinity PAD*
+hit count (unioned over `search_terms` in `config.yml`, queried 2026-11-26). *Affinity PAD*
 is every public dataset in PRIDE's affinity archive, one row per technology
 (Olink platforms, SomaScan, NULISA, Other; `affinity_pad/<platform>.txt`, rebuilt by
 `python scripts/build_pad_manifest.py`). SEA search terms live in
