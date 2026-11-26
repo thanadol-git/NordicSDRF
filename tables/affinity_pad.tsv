@@ -1,9 +1,9 @@
-city	pride_hits	listed	annotated	blocked	in_corpus	screened	todo
-Explore HT	0	10	5	0	5	0	0
-Explore 3072/384	0	7	1	0	6	0	0
-Target 96/48	0	11	8	0	3	0	0
-Reveal	0	1	0	0	1	0	0
-Unspecified Olink	0	3	2	0	1	0	0
-SomaScan	0	12	3	0	9	0	0
-NULISA	0	1	0	0	1	0	0
-Other	0	0	0	0	0	0	0
+city	pride_hits	listed	annotated	sandbox	blocked	in_corpus	screened	todo
+Explore HT	0	10	5	0	0	5	0	0
+Explore 3072/384	0	7	1	0	0	6	0	0
+Target 96/48	0	11	8	0	0	3	0	0
+Reveal	0	1	0	0	0	1	0	0
+Unspecified Olink	0	3	2	0	0	1	0	0
+SomaScan	0	12	3	0	0	9	0	0
+NULISA	0	1	0	0	0	1	0	0
+Other	0	0	0	0	0	0	0	0

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="292" viewBox="0 0 860 292" role="img" aria-label="Sweden SDRF progress by city">
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="286.0" viewBox="0 0 860 286.0" role="img" aria-label="Sweden SDRF progress by city">
 <style>
   .bg { fill: #fcfcfb; }
   .title { fill: #0b0b0b; font-size: 17px; font-weight: 600; }
@@ -9,6 +9,7 @@
   .grid { stroke: #e8e7e2; stroke-width: 1; }
   text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
   .c-annotated { fill: #2a78d6; }
+  .c-sandbox { fill: #6b4ea3; }
   .c-blocked { fill: #d95926; }
   .c-in_corpus { fill: #199e70; }
   .c-screened { fill: #c98500; }
@@ -21,73 +22,78 @@
     .uncurated { stroke: #8f8e86; }
     .grid { stroke: #3a3a37; }
     .c-annotated { fill: #3987e5; }
+    .c-sandbox { fill: #7d5fb5; }
     .c-blocked { fill: #d95926; }
     .c-in_corpus { fill: #199e70; }
     .c-screened { fill: #c98500; }
     .c-todo { fill: #6b6a65; }
   }
 </style>
-<rect class="bg" width="860" height="292" rx="6"/>
+<rect class="bg" width="860" height="286.0" rx="6"/>
 <text class="title" x="12" y="22">Sweden — in progress</text>
-<text class="sub" x="12" y="40">597 listed · 297 local SDRFs · 0 to do · 269 blocked · PRIDE queried 2026-11-26</text>
-<rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
-<text class="legend" x="29" y="62">Local SDRF</text>
-<rect class="c-blocked" fill="#d95926" x="117" y="52" width="12" height="12" rx="2"/>
-<text class="legend" x="134" y="62">Blocked</text>
-<rect class="c-in_corpus" fill="#199e70" x="201" y="52" width="12" height="12" rx="2"/>
-<text class="legend" x="218" y="62">In corpus</text>
-<rect class="c-screened" fill="#c98500" x="299" y="52" width="12" height="12" rx="2"/>
-<text class="legend" x="316" y="62">Screened</text>
-<rect class="c-todo" fill="#8a8983" x="390" y="52" width="12" height="12" rx="2"/>
-<text class="legend" x="407" y="62">To do</text>
-<rect class="uncurated" fill="none" stroke="#8a8983" x="460" y="52.75" width="12" height="10.5" rx="2"/>
-<text class="legend" x="477" y="62">PRIDE hits, not curated yet</text>
-<text class="city" x="12" y="88.0">Stockholm</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="74" width="265.1" height="20" rx="2"><title>Stockholm · Local SDRF: 68</title></rect>
-<text class="seg" x="242.5" y="88.0" text-anchor="middle">68</text>
-<rect class="c-blocked" fill="#d95926" x="376.1" y="74" width="362.9" height="20" rx="2"><title>Stockholm · Blocked: 93</title></rect>
-<text class="seg" x="557.5" y="88.0" text-anchor="middle">93</text>
-<rect class="c-in_corpus" fill="#199e70" x="740.0" y="74" width="17.0" height="20" rx="2"><title>Stockholm · In corpus: 4</title></rect>
-<text class="seg" x="748.5" y="88.0" text-anchor="middle">4</text>
-<text class="total" x="764.0" y="88.0">165 listed</text>
-<text class="city" x="12" y="118.0">Lund</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="104" width="292.5" height="20" rx="2"><title>Lund · Local SDRF: 75</title></rect>
-<text class="seg" x="256.2" y="118.0" text-anchor="middle">75</text>
-<rect class="c-blocked" fill="#d95926" x="403.5" y="104" width="319.9" height="20" rx="2"><title>Lund · Blocked: 82</title></rect>
-<text class="seg" x="563.4" y="118.0" text-anchor="middle">82</text>
-<rect class="c-in_corpus" fill="#199e70" x="724.3" y="104" width="22.5" height="20" rx="2"><title>Lund · In corpus: 6</title></rect>
-<text class="seg" x="735.6" y="118.0" text-anchor="middle">6</text>
-<text class="total" x="753.8" y="118.0">163 listed</text>
-<text class="city" x="12" y="148.0">Gothenburg</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="134" width="257.3" height="20" rx="2"><title>Gothenburg · Local SDRF: 66</title></rect>
-<text class="seg" x="238.6" y="148.0" text-anchor="middle">66</text>
-<rect class="c-blocked" fill="#d95926" x="368.3" y="134" width="233.8" height="20" rx="2"><title>Gothenburg · Blocked: 60</title></rect>
-<text class="seg" x="485.2" y="148.0" text-anchor="middle">60</text>
-<rect class="c-in_corpus" fill="#199e70" x="603.0" y="134" width="34.2" height="20" rx="2"><title>Gothenburg · In corpus: 9</title></rect>
-<text class="seg" x="620.2" y="148.0" text-anchor="middle">9</text>
-<text class="total" x="644.3" y="148.0">135 listed</text>
-<text class="city" x="12" y="178.0">Uppsala</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="164" width="171.2" height="20" rx="2"><title>Uppsala · Local SDRF: 44</title></rect>
-<text class="seg" x="195.6" y="178.0" text-anchor="middle">44</text>
-<rect class="c-blocked" fill="#d95926" x="282.2" y="164" width="89.0" height="20" rx="2"><title>Uppsala · Blocked: 23</title></rect>
-<text class="seg" x="326.7" y="178.0" text-anchor="middle">23</text>
-<rect class="c-in_corpus" fill="#199e70" x="372.2" y="164" width="17.0" height="20" rx="2"><title>Uppsala · In corpus: 2</title></rect>
-<text class="seg" x="380.7" y="178.0" text-anchor="middle">2</text>
-<text class="total" x="396.2" y="178.0">69 listed</text>
-<text class="city" x="12" y="208.0">Umeå</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="194" width="85.1" height="20" rx="2"><title>Umeå · Local SDRF: 22</title></rect>
-<text class="seg" x="152.5" y="208.0" text-anchor="middle">22</text>
-<rect class="c-blocked" fill="#d95926" x="196.1" y="194" width="42.0" height="20" rx="2"><title>Umeå · Blocked: 11</title></rect>
-<text class="seg" x="217.1" y="208.0" text-anchor="middle">11</text>
-<rect class="c-in_corpus" fill="#199e70" x="239.1" y="194" width="22.5" height="20" rx="2"><title>Umeå · In corpus: 6</title></rect>
-<text class="seg" x="250.4" y="208.0" text-anchor="middle">6</text>
-<text class="total" x="268.6" y="208.0">39 listed</text>
-<text class="city" x="12" y="238.0">Linköping</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="224" width="85.1" height="20" rx="2"><title>Linköping · Local SDRF: 22</title></rect>
-<text class="seg" x="152.5" y="238.0" text-anchor="middle">22</text>
-<rect class="c-in_corpus" fill="#199e70" x="196.1" y="224" width="17.0" height="20" rx="2"><title>Linköping · In corpus: 4</title></rect>
-<text class="seg" x="204.6" y="238.0" text-anchor="middle">4</text>
-<text class="total" x="220.1" y="238.0">26 listed</text>
-<text class="city" x="12" y="268.0">Örebro</text>
-<text class="total" x="116.0" y="268.0">0 PRIDE hits</text>
+<text class="sub" x="12" y="40">597 listed · 297 local SDRFs · 1 sandbox · 0 to do · 199 blocked (not in sandbox) · PRIDE queried 2026-11-26</text>
+<rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
+<text class="legend" x="29.0" y="62.0">Local SDRF</text>
+<rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
+<text class="legend" x="134.0" y="62.0">Sandbox</text>
+<rect class="c-blocked" fill="#d95926" x="201.0" y="52.0" width="12" height="12" rx="2"/>
+<text class="legend" x="218.0" y="62.0">Blocked</text>
+<rect class="c-in_corpus" fill="#199e70" x="285.0" y="52.0" width="12" height="12" rx="2"/>
+<text class="legend" x="302.0" y="62.0">In corpus</text>
+<rect class="c-screened" fill="#c98500" x="383.0" y="52.0" width="12" height="12" rx="2"/>
+<text class="legend" x="400.0" y="62.0">Screened</text>
+<rect class="c-todo" fill="#8a8983" x="474.0" y="52.0" width="12" height="12" rx="2"/>
+<text class="legend" x="491.0" y="62.0">To do</text>
+<rect class="uncurated" fill="none" stroke="#8a8983" x="544.0" y="52.75" width="12" height="10.5" rx="2"/>
+<text class="legend" x="561.0" y="62.0">PRIDE hits, not curated yet</text>
+<text class="city" x="12" y="82.0">Stockholm</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="68.0" width="260.2" height="20" rx="2"><title>Stockholm · Local SDRF: 68</title></rect>
+<text class="seg" x="240.1" y="82.0" text-anchor="middle">68</text>
+<rect class="c-sandbox" fill="#6b4ea3" x="371.2" y="68.0" width="17.0" height="20" rx="2"><title>Stockholm · Sandbox: 1</title></rect>
+<text class="seg" x="379.7" y="82.0" text-anchor="middle">1</text>
+<rect class="c-blocked" fill="#d95926" x="389.2" y="68.0" width="267.9" height="20" rx="2"><title>Stockholm · Blocked: 70</title></rect>
+<text class="seg" x="523.2" y="82.0" text-anchor="middle">70</text>
+<rect class="c-in_corpus" fill="#199e70" x="658.1" y="68.0" width="98.9" height="20" rx="2"><title>Stockholm · In corpus: 26</title></rect>
+<text class="seg" x="707.6" y="82.0" text-anchor="middle">26</text>
+<text class="total" x="764.0" y="82.0">165 listed</text>
+<text class="city" x="12" y="112.0">Lund</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="98.0" width="287.1" height="20" rx="2"><title>Lund · Local SDRF: 75</title></rect>
+<text class="seg" x="253.6" y="112.0" text-anchor="middle">75</text>
+<rect class="c-blocked" fill="#d95926" x="398.1" y="98.0" width="202.6" height="20" rx="2"><title>Lund · Blocked: 53</title></rect>
+<text class="seg" x="499.4" y="112.0" text-anchor="middle">53</text>
+<rect class="c-in_corpus" fill="#199e70" x="601.7" y="98.0" width="133.5" height="20" rx="2"><title>Lund · In corpus: 35</title></rect>
+<text class="seg" x="668.4" y="112.0" text-anchor="middle">35</text>
+<text class="total" x="742.2" y="112.0">163 listed</text>
+<text class="city" x="12" y="142.0">Gothenburg</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="128.0" width="252.5" height="20" rx="2"><title>Gothenburg · Local SDRF: 66</title></rect>
+<text class="seg" x="236.3" y="142.0" text-anchor="middle">66</text>
+<rect class="c-blocked" fill="#d95926" x="363.5" y="128.0" width="187.2" height="20" rx="2"><title>Gothenburg · Blocked: 49</title></rect>
+<text class="seg" x="457.2" y="142.0" text-anchor="middle">49</text>
+<rect class="c-in_corpus" fill="#199e70" x="551.8" y="128.0" width="75.8" height="20" rx="2"><title>Gothenburg · In corpus: 20</title></rect>
+<text class="seg" x="589.7" y="142.0" text-anchor="middle">20</text>
+<text class="total" x="634.6" y="142.0">135 listed</text>
+<text class="city" x="12" y="172.0">Uppsala</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="158.0" width="168.0" height="20" rx="2"><title>Uppsala · Local SDRF: 44</title></rect>
+<text class="seg" x="194.0" y="172.0" text-anchor="middle">44</text>
+<rect class="c-blocked" fill="#d95926" x="279.0" y="158.0" width="60.5" height="20" rx="2"><title>Uppsala · Blocked: 16</title></rect>
+<text class="seg" x="309.3" y="172.0" text-anchor="middle">16</text>
+<rect class="c-in_corpus" fill="#199e70" x="340.5" y="158.0" width="33.6" height="20" rx="2"><title>Uppsala · In corpus: 9</title></rect>
+<text class="seg" x="357.3" y="172.0" text-anchor="middle">9</text>
+<text class="total" x="381.1" y="172.0">69 listed</text>
+<text class="city" x="12" y="202.0">Umeå</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="188.0" width="83.5" height="20" rx="2"><title>Umeå · Local SDRF: 22</title></rect>
+<text class="seg" x="151.8" y="202.0" text-anchor="middle">22</text>
+<rect class="c-blocked" fill="#d95926" x="194.5" y="188.0" width="41.3" height="20" rx="2"><title>Umeå · Blocked: 11</title></rect>
+<text class="seg" x="215.1" y="202.0" text-anchor="middle">11</text>
+<rect class="c-in_corpus" fill="#199e70" x="236.8" y="188.0" width="22.0" height="20" rx="2"><title>Umeå · In corpus: 6</title></rect>
+<text class="seg" x="247.8" y="202.0" text-anchor="middle">6</text>
+<text class="total" x="265.8" y="202.0">39 listed</text>
+<text class="city" x="12" y="232.0">Linköping</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="218.0" width="83.5" height="20" rx="2"><title>Linköping · Local SDRF: 22</title></rect>
+<text class="seg" x="151.8" y="232.0" text-anchor="middle">22</text>
+<rect class="c-in_corpus" fill="#199e70" x="194.5" y="218.0" width="17.0" height="20" rx="2"><title>Linköping · In corpus: 4</title></rect>
+<text class="seg" x="203.0" y="232.0" text-anchor="middle">4</text>
+<text class="total" x="218.5" y="232.0">26 listed</text>
+<text class="city" x="12" y="262.0">Örebro</text>
+<text class="total" x="116.0" y="262.0">0 PRIDE hits</text>
 </svg>
