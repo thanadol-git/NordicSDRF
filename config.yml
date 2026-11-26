@@ -356,8 +356,8 @@ countries:
         search_terms: [Bangkok, Mahidol, Chulalongkorn, Siriraj, Thailand]
         pride_hits: 113
         screened: 0
-        annotated: 15
-        blocked: 14
+        annotated: 36
+        blocked: 15
         pxd_list: lists/thailand/bangkok.txt
         pxd_count: 94
         in_corpus: 43

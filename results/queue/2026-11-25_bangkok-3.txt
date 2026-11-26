@@ -1,0 +1,23 @@
+# daily queue 2026-11-25 bangkok batch 3 (remaining 22 Bangkok PXDs after bangkok-1/2, excluding bigbio datasets/; PRIDE API/FTP unreachable, ProteomeCentral PROXI + papers used)
+PXD030613	thailand/bangkok	sandbox	sandbox: 36/36; D. siamensis (PX says Arabidopsis); QE Plus per paper vs PX HF, raw unread; Venomset2 inferred
+PXD027471	thailand/bangkok	sandbox	sandbox: 30/30; TMT128/130 stated; instrument QE (PX) vs QE Plus (paper), RAW/msf unread; PX PMID mislinked
+PXD002645	thailand/bangkok	sandbox	sandbox: 72/72 RAW (cache wrong: RAW deposited); 105min run, IP 01-04 and R2 replicate mapping inferred
+PXD050755	thailand/bangkok	sandbox	sandbox: 18/18 wiff; instrument 5600 (PX) vs 6600+ (protocol); IDA/IDA2 = tech reps inferred
+PXD063568	thailand/bangkok	annotated	annotated: 30/30 (15 DDA + 15 SWATH) in fibroblast + pinsc files; review round 2 PASS
+PXD034528	thailand/bangkok	blocked	blocked: light/medium -> PA vs PA+CA unstated; protocol says C/P/CP triplex (searched 2-plex); PD files unreadable
+PXD063171	thailand/bangkok	sandbox	sandbox: 39/39; G1-G4 -> hydrogel inferred; D14 set1/set2 dup = tech reps?; QE Plus per paper
+PXD018652	thailand/bangkok	sandbox	sandbox: 48/48 RAW x L/M dimethyl mapped; instrument (QE vs QE Plus) and search params from cited ref, msf not read
+PXD014768	thailand/bangkok	sandbox	sandbox: 58/58 2-DE spots (mzData only, no .d); spot->control/E2 gel unknown; treatment not available
+PXD050494	thailand/bangkok	sandbox	sandbox: 45 RAW x 3 dimethyl; L/M/H map from PRIDE protocol; QE Plus (paper) vs PX HF; co-culture 1 organism
+PXD042648	thailand/bangkok	sandbox	sandbox: 60/60 RAW x 3 dimethyl; instrument QE Plus (paper) vs QE HF (PX) unresolved, RAW unread
+PXD015512	thailand/bangkok	sandbox	sandbox: 90/90 x 3 dimethyl; instrument QE (PX) vs QE Plus (paper), RAW header unreadable; msf unread
+PXD031111	thailand/bangkok	sandbox	sandbox: 60/60 mgf; only .baf_idx deposited (no .d/.baf); mgf->rep2/rep3 split inferred from run batches
+PXD019239	thailand/bangkok	sandbox	sandbox: 77/77 (36 dimethyl x3 + 41 STING co-IP bands); params via Makjaroen 2018; R2KO-6-30KD absent
+PXD078766	thailand/bangkok	sandbox	sandbox: 36/36 SWATH runs mapped; bio/tech reps inferred (paper says single inj); RSL3 dose unstated
+PXD055138	thailand/bangkok	sandbox	sandbox: 36/90 annotated; .baf_idx only (data file = mgf); 54 "Aging" runs not in paper, left out
+PXD017251	thailand/bangkok	sandbox	sandbox: 95/95 RAW (50x3 + 45x2 dimethyl); series->experiment and L/M/H maps inferred; QE Plus per paper
+PXD041265	thailand/bangkok	sandbox	sandbox: 125/125 mapped (3 dimethyl ch stated); trypsin/HCD inferred; QE vs QE Plus unresolved; PX paper link wrong
+PXD032795	thailand/bangkok	sandbox	sandbox: 106/106 mzXML (no .d deposited); 6545 Q-TOF per header; b/inj file tokens inferred
+PXD043828	thailand/bangkok	sandbox	sandbox: 108/108 split dda/swath; mouse/injection map inferred from names; .dat search params unread
+PXD076578	thailand/bangkok	sandbox	sandbox: 54/54 RAW mapped; 6 PES + 6 Adult codes vs paper 8 PES/5 controls; codes->dogs unknown
+PXD051236	thailand/bangkok	sandbox	sandbox: 139/139 wiff, 24 donors; NonBart/Control undefined; deposit != paper (18 pts); 6600+ vs PX 5600
