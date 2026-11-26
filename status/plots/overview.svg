@@ -9,6 +9,7 @@
   .grid { stroke: #e8e7e2; stroke-width: 1; }
   text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
   .c-annotated { fill: #2a78d6; }
+  .c-sandbox { fill: #6b4ea3; }
   .c-blocked { fill: #d95926; }
   .c-in_corpus { fill: #199e70; }
   .c-screened { fill: #c98500; }
@@ -21,6 +22,7 @@
     .uncurated { stroke: #8f8e86; }
     .grid { stroke: #3a3a37; }
     .c-annotated { fill: #3987e5; }
+    .c-sandbox { fill: #7d5fb5; }
     .c-blocked { fill: #d95926; }
     .c-in_corpus { fill: #199e70; }
     .c-screened { fill: #c98500; }
@@ -29,17 +31,21 @@
 </style>
 <rect class="bg" width="860" height="420" rx="6"/>
 <text class="title" x="12" y="22">Nordic countries — listed PXDs</text>
-<text class="sub" x="12" y="40">2104 listed · 1127 local SDRFs · 3 to do · 496 blocked · PRIDE queried 2026-11-26</text>
-<rect class="c-annotated" fill="#2a78d6" x="12" y="52" width="12" height="12" rx="2"/>
-<text class="legend" x="29" y="62">Local SDRF</text>
-<rect class="c-blocked" fill="#d95926" x="117" y="52" width="12" height="12" rx="2"/>
-<text class="legend" x="134" y="62">Blocked</text>
-<rect class="c-in_corpus" fill="#199e70" x="201" y="52" width="12" height="12" rx="2"/>
-<text class="legend" x="218" y="62">In corpus</text>
-<rect class="c-screened" fill="#c98500" x="299" y="52" width="12" height="12" rx="2"/>
-<text class="legend" x="316" y="62">Screened</text>
-<rect class="c-todo" fill="#8a8983" x="390" y="52" width="12" height="12" rx="2"/>
-<text class="legend" x="407" y="62">To do</text>
+<text class="sub" x="12" y="40">2104 listed · 1127 local SDRFs · 12 sandbox · 0 to do · 416 blocked (not in sandbox) · PRIDE queried 2026-11-26</text>
+<rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
+<text class="legend" x="29.0" y="62.0">Local SDRF</text>
+<rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
+<text class="legend" x="134.0" y="62.0">Sandbox</text>
+<rect class="c-blocked" fill="#d95926" x="201.0" y="52.0" width="12" height="12" rx="2"/>
+<text class="legend" x="218.0" y="62.0">Blocked</text>
+<rect class="c-in_corpus" fill="#199e70" x="285.0" y="52.0" width="12" height="12" rx="2"/>
+<text class="legend" x="302.0" y="62.0">In corpus</text>
+<rect class="c-screened" fill="#c98500" x="383.0" y="52.0" width="12" height="12" rx="2"/>
+<text class="legend" x="400.0" y="62.0">Screened</text>
+<rect class="c-todo" fill="#8a8983" x="474.0" y="52.0" width="12" height="12" rx="2"/>
+<text class="legend" x="491.0" y="62.0">To do</text>
+<rect class="uncurated" fill="none" stroke="#8a8983" x="544.0" y="52.75" width="12" height="10.5" rx="2"/>
+<text class="legend" x="561.0" y="62.0">PRIDE hits, not curated yet</text>
 <line class="grid" x1="52" y1="364.0" x2="840" y2="364.0"/>
 <text class="axis" x="44" y="368.0" text-anchor="end">0</text>
 <line class="grid" x1="52" y1="307.6" x2="840" y2="307.6"/>
@@ -54,32 +60,35 @@
 <text class="axis" x="44" y="86.0" text-anchor="end">1000</text>
 <rect class="c-annotated" fill="#2a78d6" x="70.0" y="280.2" width="136.0" height="82.8" rx="2"><title>Sweden · Local SDRF: 297</title></rect>
 <text class="seg" x="138.0" y="326.1" text-anchor="middle">297</text>
-<rect class="c-blocked" fill="#d95926" x="70.0" y="204.4" width="136.0" height="74.9" rx="2"><title>Sweden · Blocked: 269</title></rect>
-<text class="seg" x="138.0" y="246.3" text-anchor="middle">269</text>
-<rect class="c-in_corpus" fill="#199e70" x="70.0" y="195.6" width="136.0" height="7.7" rx="2"><title>Sweden · In corpus: 31</title></rect>
+<rect class="c-sandbox" fill="#6b4ea3" x="70.0" y="280.0" width="136.0" height="1.0" rx="2"><title>Sweden · Sandbox: 1</title></rect>
+<rect class="c-blocked" fill="#d95926" x="70.0" y="218.8" width="136.0" height="60.2" rx="2"><title>Sweden · Blocked: 217</title></rect>
+<text class="seg" x="138.0" y="253.4" text-anchor="middle">217</text>
+<rect class="c-in_corpus" fill="#199e70" x="70.0" y="195.6" width="136.0" height="22.1" rx="2"><title>Sweden · In corpus: 82</title></rect>
+<text class="seg" x="138.0" y="211.2" text-anchor="middle">82</text>
 <text class="total" x="138.0" y="189.6" text-anchor="middle">597</text>
 <text class="city" x="138.0" y="382.0" text-anchor="middle">Sweden</text>
 <rect class="c-annotated" fill="#2a78d6" x="224.0" y="224.4" width="136.0" height="138.6" rx="2"><title>Denmark · Local SDRF: 495</title></rect>
 <text class="seg" x="292.0" y="298.2" text-anchor="middle">495</text>
-<rect class="c-blocked" fill="#d95926" x="224.0" y="183.8" width="136.0" height="39.6" rx="2"><title>Denmark · Blocked: 144</title></rect>
-<text class="seg" x="292.0" y="208.1" text-anchor="middle">144</text>
-<rect class="c-in_corpus" fill="#199e70" x="224.0" y="94.4" width="136.0" height="88.4" rx="2"><title>Denmark · In corpus: 317</title></rect>
-<text class="seg" x="292.0" y="143.1" text-anchor="middle">317</text>
-<rect class="c-todo" fill="#8a8983" x="224.0" y="93.6" width="136.0" height="1.0" rx="2"><title>Denmark · To do: 3</title></rect>
+<rect class="c-sandbox" fill="#6b4ea3" x="224.0" y="222.4" width="136.0" height="1.0" rx="2"><title>Denmark · Sandbox: 7</title></rect>
+<rect class="c-blocked" fill="#d95926" x="224.0" y="185.8" width="136.0" height="35.7" rx="2"><title>Denmark · Blocked: 130</title></rect>
+<text class="seg" x="292.0" y="208.1" text-anchor="middle">130</text>
+<rect class="c-in_corpus" fill="#199e70" x="224.0" y="93.6" width="136.0" height="91.2" rx="2"><title>Denmark · In corpus: 327</title></rect>
+<text class="seg" x="292.0" y="143.7" text-anchor="middle">327</text>
 <text class="total" x="292.0" y="87.6" text-anchor="middle">959</text>
 <text class="city" x="292.0" y="382.0" text-anchor="middle">Denmark</text>
 <rect class="c-annotated" fill="#2a78d6" x="378.0" y="299.4" width="136.0" height="63.6" rx="2"><title>Norway · Local SDRF: 229</title></rect>
 <text class="seg" x="446.0" y="335.7" text-anchor="middle">229</text>
-<rect class="c-blocked" fill="#d95926" x="378.0" y="287.3" width="136.0" height="11.1" rx="2"><title>Norway · Blocked: 43</title></rect>
-<rect class="c-in_corpus" fill="#199e70" x="378.0" y="265.9" width="136.0" height="20.4" rx="2"><title>Norway · In corpus: 76</title></rect>
-<text class="seg" x="446.0" y="280.6" text-anchor="middle">76</text>
+<rect class="c-sandbox" fill="#6b4ea3" x="378.0" y="298.3" width="136.0" height="1.0" rx="2"><title>Norway · Sandbox: 4</title></rect>
+<rect class="c-blocked" fill="#d95926" x="378.0" y="288.1" width="136.0" height="9.2" rx="2"><title>Norway · Blocked: 36</title></rect>
+<rect class="c-in_corpus" fill="#199e70" x="378.0" y="265.9" width="136.0" height="21.3" rx="2"><title>Norway · In corpus: 79</title></rect>
+<text class="seg" x="446.0" y="281.0" text-anchor="middle">79</text>
 <text class="total" x="446.0" y="259.9" text-anchor="middle">348</text>
 <text class="city" x="446.0" y="382.0" text-anchor="middle">Norway</text>
 <rect class="c-annotated" fill="#2a78d6" x="532.0" y="335.2" width="136.0" height="27.8" rx="2"><title>Finland · Local SDRF: 102</title></rect>
 <text class="seg" x="600.0" y="353.6" text-anchor="middle">102</text>
-<rect class="c-blocked" fill="#d95926" x="532.0" y="324.5" width="136.0" height="9.7" rx="2"><title>Finland · Blocked: 38</title></rect>
-<rect class="c-in_corpus" fill="#199e70" x="532.0" y="309.3" width="136.0" height="14.2" rx="2"><title>Finland · In corpus: 54</title></rect>
-<text class="seg" x="600.0" y="320.9" text-anchor="middle">54</text>
+<rect class="c-blocked" fill="#d95926" x="532.0" y="326.5" width="136.0" height="7.7" rx="2"><title>Finland · Blocked: 31</title></rect>
+<rect class="c-in_corpus" fill="#199e70" x="532.0" y="309.3" width="136.0" height="16.2" rx="2"><title>Finland · In corpus: 61</title></rect>
+<text class="seg" x="600.0" y="321.9" text-anchor="middle">61</text>
 <text class="total" x="600.0" y="303.3" text-anchor="middle">194</text>
 <text class="city" x="600.0" y="382.0" text-anchor="middle">Finland</text>
 <rect class="c-annotated" fill="#2a78d6" x="686.0" y="362.9" width="136.0" height="1.0" rx="2"><title>Iceland · Local SDRF: 4</title></rect>

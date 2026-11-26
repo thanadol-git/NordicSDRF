@@ -7,15 +7,17 @@ Reads config.yml, then for every city:
                   results/pride_hits/<country>/<city>.txt as a raw candidate list)
   * pxd_count   - lines in the curated manifest (`pxd_list`, or `lists/<country>/<city>.txt`
                   if that file exists), if the city is scoped
-  * in_corpus   - manifest PXDs that already have an SDRF in the community repo
+  * in_corpus   - manifest PXDs that already have an SDRF under datasets/ in
                   bigbio/sdrf-annotated-datasets (local sibling checkout by default,
                   or the live GitHub tree with --corpus github); the PXDs are written
                   to results/<country>/<city>_in_corpus.txt so tier 1 can drop them
+  * sandbox     - manifest PXDs with an SDRF under sandbox/ in the same community repo
+                  (written to results/<country>/<city>_in_sandbox.txt)
   * screened    - data rows in results/<country>/<city>_screen.tsv, if present
   * annotated   - non-blocked manifest PXDs with annotations/<PXD>.sdrf.tsv
                   or split annotations/<PXD>-*.sdrf.tsv artifacts
-  * blocked     - manifest PXDs with annotations/<PXD>.BLOCKED.md, listed in
-                  annotations/BLOCKED.md, or marked blocked in a batch tracker
+  * blocked     - manifest PXDs with a local blocker that are not already in
+                  sandbox/ or datasets/ (never published upstream as a draft)
 
 and writes the numbers back to config.yml (values only; comments and layout are
 preserved), to the README block between <!-- status:begin --> / <!-- status:end -->,
@@ -54,7 +56,7 @@ README = ROOT / "README.md"
 PRIDE_SEARCH = "https://www.ebi.ac.uk/pride/ws/archive/v2/search/projects"
 PAGE_SIZE = 100
 ACCESSION_RE = re.compile(r"^(PXD|PRD|MSV|RPXD|PAD)\d+$")
-MACHINE_KEYS = ("pxd_count", "pride_hits", "in_corpus", "screened", "annotated", "blocked")
+MACHINE_KEYS = ("pxd_count", "pride_hits", "in_corpus", "sandbox", "screened", "annotated", "blocked")
 CORPUS_REPO = "bigbio/sdrf-annotated-datasets"
 GITHUB_TREE = f"https://api.github.com/repos/{CORPUS_REPO}/git/trees/HEAD?recursive=1"
 BEGIN, END = "<!-- status:begin -->", "<!-- status:end -->"
@@ -109,8 +111,17 @@ def github_api_headers() -> dict[str, str]:
     return headers
 
 
-def corpus_from_github() -> set[str] | None:
-    """PXDs with at least one .sdrf.tsv under datasets/ in the upstream repo (one request)."""
+def _accessions_under(tree_entries: list[dict], top: str) -> set[str]:
+    """PXD folder names that contain at least one .sdrf.tsv under top/ (datasets|sandbox)."""
+    hits = set()
+    for entry in tree_entries:
+        parts = entry.get("path", "").split("/")
+        if len(parts) >= 3 and parts[0] == top and parts[-1].endswith(".sdrf.tsv"):
+            hits.add(parts[1])
+    return hits
+
+
+def github_tree() -> dict | None:
     req = urllib.request.Request(GITHUB_TREE, headers=github_api_headers())
     try:
         with urllib.request.urlopen(req, timeout=120) as resp:
@@ -120,18 +131,41 @@ def corpus_from_github() -> set[str] | None:
         return None
     if tree.get("truncated"):
         print("  ! GitHub tree was truncated; corpus check may under-count", file=sys.stderr)
-    hits = set()
-    for entry in tree.get("tree", []):
-        parts = entry.get("path", "").split("/")
-        if len(parts) >= 3 and parts[0] == "datasets" and parts[-1].endswith(".sdrf.tsv"):
-            hits.add(parts[1])
-    return hits
+    return tree
+
+
+def corpus_from_github() -> set[str] | None:
+    """PXDs with at least one .sdrf.tsv under datasets/ in the upstream repo."""
+    tree = github_tree()
+    if tree is None:
+        return None
+    return _accessions_under(tree.get("tree", []), "datasets")
+
+
+def sandbox_from_github() -> set[str] | None:
+    """PXDs with at least one .sdrf.tsv under sandbox/ in the upstream repo."""
+    tree = github_tree()
+    if tree is None:
+        return None
+    return _accessions_under(tree.get("tree", []), "sandbox")
+
+
+def _local_repo_base(cfg: dict) -> Path:
+    return ROOT / cfg.get("tools", {}).get("sdrf_annotated_datasets", "../sdrf-annotated-datasets")
 
 
 def corpus_from_local(cfg: dict) -> set[str]:
-    base = ROOT / cfg.get("tools", {}).get("sdrf_annotated_datasets", "../sdrf-annotated-datasets") / "datasets"
+    base = _local_repo_base(cfg) / "datasets"
     if not base.exists():
         print(f"  ! local corpus not found at {base}", file=sys.stderr)
+        return set()
+    return {d.name for d in base.iterdir() if d.is_dir() and any(d.glob("*.sdrf.tsv"))}
+
+
+def sandbox_from_local(cfg: dict) -> set[str]:
+    base = _local_repo_base(cfg) / "sandbox"
+    if not base.exists():
+        print(f"  ! local sandbox not found at {base}", file=sys.stderr)
         return set()
     return {d.name for d in base.iterdir() if d.is_dir() and any(d.glob("*.sdrf.tsv"))}
 
@@ -150,6 +184,19 @@ def load_corpus(cfg: dict, source: str) -> tuple[set[str], str]:
             "(set GITHUB_TOKEN / GH_TOKEN, or use --corpus local with a sibling checkout)"
         )
     return corpus_from_local(cfg), "local checkout"
+
+
+def load_sandbox(cfg: dict, source: str) -> tuple[set[str], str]:
+    if source == "github":
+        hits = sandbox_from_github()
+        if hits is not None:
+            return hits, f"GitHub {CORPUS_REPO} sandbox/"
+        local = sandbox_from_local(cfg)
+        if local:
+            print("  ! sandbox falling back to local checkout", file=sys.stderr)
+            return local, "local checkout sandbox/"
+        return set(), "unavailable"
+    return sandbox_from_local(cfg), "local checkout sandbox/"
 
 
 # --------------------------------------------------------------------------- local counts
@@ -210,19 +257,32 @@ def has_local_annotation(pxd: str) -> bool:
     return (ann / f"{pxd}.sdrf.tsv").exists() or any(ann.glob(f"{pxd}-*.sdrf.tsv"))
 
 
-def local_counts(country: str, slug: str, city: dict, blocked: set[str], corpus: set[str]) -> dict[str, int]:
+def local_counts(
+    country: str,
+    slug: str,
+    city: dict,
+    blocked: set[str],
+    corpus: set[str],
+    sandbox: set[str],
+) -> dict[str, int]:
     ids = manifest_ids(country, slug, city)
     in_corpus = sorted(pxd for pxd in ids if pxd in corpus)
+    in_sandbox = sorted(pxd for pxd in ids if pxd in sandbox)
     if ids:
         out = ROOT / "results" / country / f"{slug}_in_corpus.txt"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text("\n".join(in_corpus) + ("\n" if in_corpus else ""))
+        sout = ROOT / "results" / country / f"{slug}_in_sandbox.txt"
+        sout.write_text("\n".join(in_sandbox) + ("\n" if in_sandbox else ""))
+    # Config "blocked" matches the plot category: local blocker and not upstream.
+    unpublished_blocked = sum(pxd in blocked and pxd not in sandbox and pxd not in corpus for pxd in ids)
     return {
         "pxd_count": len(ids),
         "in_corpus": len(in_corpus),
+        "sandbox": len(in_sandbox),
         "screened": screened_count(country, slug),
         "annotated": sum(pxd not in blocked and has_local_annotation(pxd) for pxd in ids),
-        "blocked": sum(pxd in blocked for pxd in ids),
+        "blocked": unpublished_blocked,
     }
 
 
@@ -233,19 +293,28 @@ def screened_ids(country: str, slug: str) -> set[str]:
     return set(re.findall(r"\b(?:PXD|PRD|MSV|RPXD|PAD)\d+\b", tsv.read_text()))
 
 
-def city_categories(country: str, slug: str, city: dict, blocked: set[str], corpus: set[str]) -> dict[str, int] | None:
+def city_categories(
+    country: str,
+    slug: str,
+    city: dict,
+    blocked: set[str],
+    corpus: set[str],
+    sandbox: set[str],
+) -> dict[str, int] | None:
     """Manifest PXDs split into CATEGORIES (plot_status.py), each PXD counted once.
 
     A PXD that fits several categories goes to the first one in CATEGORIES order
-    (blocked > annotated > in corpus > screened > to do), so the counts add up to
-    the manifest length. None for a city without a curated manifest.
+    (annotated > sandbox > blocked > in corpus > screened > to do), so the counts
+    add up to the manifest length. *Blocked* is only blockers not already in
+    sandbox/ or datasets/. None for a city without a curated manifest.
     """
     if not manifest_relpath(country, slug, city):
         return None
     screened = screened_ids(country, slug)
     tests = {
         "annotated": lambda p: p not in blocked and has_local_annotation(p),
-        "blocked": lambda p: p in blocked,
+        "sandbox": lambda p: p in sandbox,
+        "blocked": lambda p: p in blocked and p not in sandbox and p not in corpus,
         "in_corpus": lambda p: p in corpus,
         "screened": lambda p: p in screened,
         "todo": lambda p: True,
@@ -371,17 +440,20 @@ def render_status_block(cfg: dict) -> str:
              f"summed). Then one horizontal chart per Nordic country (and Affinity PAD), plus one\n"
              f"combined *Southeast Asia* chart with all SEA cities together (`status/plots/sea.svg`).\n"
              f"A curated city's bar is its manifest (`lists/<country>/<city>.txt`),\n"
-             f"split so every PXD sits in exactly one block: *Blocked* (including batch-tracker\n"
-             f"blockers), *Local SDRF* (a local file without a blocker, including files awaiting\n"
-             f"review), *In corpus* (already has an SDRF in [`bigbio/sdrf-annotated-datasets`](https://github.com/{CORPUS_REPO}),\n"
-             f"checked against {cfg.get('corpus_source', 'the local checkout')}), *Screened*, *To do*.\n"
+             f"split so every PXD sits in exactly one block: *Local SDRF* (a local file without a\n"
+             f"blocker, including files awaiting review), *Sandbox* (an SDRF under `sandbox/` in\n"
+             f"[`bigbio/sdrf-annotated-datasets`](https://github.com/{CORPUS_REPO})),\n"
+             f"*Blocked* (local or batch-tracker blocker **and** not already in `sandbox/` or\n"
+             f"`datasets/` — never published upstream as a draft), *In corpus* (already under\n"
+             f"`datasets/`, checked against {cfg.get('corpus_source', 'the local checkout')}),\n"
+             f"*Screened*, *To do*.\n"
              f"A city without a manifest shows a dashed outline sized by its raw PRIDE full-text\n"
              f"hit count (unioned over `search_terms` in `config.yml`, queried {queried}). *Affinity PAD*\n"
              f"is every public dataset in PRIDE's affinity archive, one row per technology\n"
              f"(Olink platforms, SomaScan, NULISA, Other; `affinity_pad/<platform>.txt`, rebuilt by\n"
              f"`python scripts/build_pad_manifest.py`). SEA search terms live in\n"
              f"`criteria/sea_cities.md` / `config.yml`.\n"
-             f"*To do* is ready for annotation; blocked PXDs also need annotation after their missing metadata is resolved.\n"
+             f"*To do* is ready for annotation; *Blocked* PXDs need missing metadata before a sandbox or datasets PR.\n"
              f"The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with\n"
              f"`python scripts/update_status.py`; redraw the charts alone from `tables/` with\n"
              f"`python scripts/plot_status.py`.")
@@ -451,8 +523,14 @@ def main() -> None:
 
     blocked = blocked_ids()
     corpus, corpus_source = load_corpus(cfg, args.corpus)
+    sandbox, sandbox_source = load_sandbox(cfg, args.corpus)
     cfg["corpus_source"] = corpus_source
-    print(f"community corpus: {len(corpus)} annotated PXDs ({corpus_source})")
+    print(f"community corpus: {len(corpus)} datasets/ PXDs ({corpus_source})")
+    print(f"community sandbox: {len(sandbox)} sandbox/ PXDs ({sandbox_source})")
+    print(f"local blockers: {len(blocked)}; "
+          f"blocked∩sandbox={len(blocked & sandbox)}; "
+          f"blocked∩datasets={len(blocked & corpus)}; "
+          f"blocked never upstream={len(blocked - sandbox - corpus)}")
     numbers: dict[tuple[str, str], dict[str, int]] = {}
     discovered_lists: dict[tuple[str, str], str] = {}
     country_status: dict[str, str] = {}
@@ -462,11 +540,12 @@ def main() -> None:
         print(f"{country}:")
         listed = annotated = blocked_n = 0
         for slug, city in (cdata.get("cities") or {}).items():
-            n = local_counts(country, slug, city, blocked, corpus)
+            n = local_counts(country, slug, city, blocked, corpus, sandbox)
             path = manifest_relpath(country, slug, city)
             if not path:
-                n.pop("pxd_count")
-                n.pop("in_corpus")
+                n.pop("pxd_count", None)
+                n.pop("in_corpus", None)
+                n.pop("sandbox", None)
             elif not city.get("pxd_list"):
                 discovered_lists[(country, slug)] = path
                 city["pxd_list"] = path
@@ -496,7 +575,7 @@ def main() -> None:
     CONFIG.write_text(new_text)
     update_readme(block, dry_run=False)
     write_status_pages(cfg, dry_run=False)
-    breakdowns = {(country, slug): city_categories(country, slug, city, blocked, corpus)
+    breakdowns = {(country, slug): city_categories(country, slug, city, blocked, corpus, sandbox)
                   for country, cdata in cfg["countries"].items()
                   for slug, city in (cdata.get("cities") or {}).items()}
     write_tables(cfg, breakdowns)
@@ -504,7 +583,6 @@ def main() -> None:
     print(f"\nupdated {CONFIG.name}, README.md status block, status/markdowns/, tables/, "
           f"status/plots/overview.svg + sea.svg + per-country charts"
           + ("" if args.no_pride else f", raw candidate lists in {args.hits_dir}/"))
-
 
 if __name__ == "__main__":
     main()
