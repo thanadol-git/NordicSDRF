@@ -4,3 +4,4 @@ PXD008834	singapore/singapore	blocked	blocked: iTRAQ8 x10 RPRP fractions; channe
 PXD028325	singapore/singapore	sandbox	sandbox: 10/10 t2d, 1 seed-extract spot; 4800 (paper) vs 5800 (PX) unresolved; trypsin inferred
 PXD011825	singapore/singapore	sandbox	sandbox: 40 rows = 5 wiff x 8 iTRAQ (map Fig 1b); paper does not cite the PXD; mods inferred
 PXD082746	singapore/singapore	annotated	annotated: 9/9 RAW label-free DIA; Ctrl/Atq/DSM x3 from file names; Exploris 480; review round1 PASS
+PXD021926	singapore/singapore	sandbox	sandbox: 12/12 RAW; RBCEV run->donor order and pulldown pairing inferred; RAW/mqpar not read
