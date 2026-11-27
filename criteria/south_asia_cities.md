@@ -2,7 +2,7 @@
 
 Narrative reference for South Asia cities tracked in `config.yml` with
 `region: south_asia`. The region overview is `status/plots/south_asia.svg`
-(one vertical bar per country, same style as Nordic / SEA). Per-country city
+(one horizontal bar per country, same style as Nordic / SEA). Per-country city
 charts are `status/plots/<country>.svg` with pages under `status/markdowns/`.
 Manifests appear under `lists/<country>/<city>.txt` when scoped; use the same
 `build_manifest.py` path (keyword search, then keep only records that confirm

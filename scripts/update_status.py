@@ -426,7 +426,7 @@ def country_plot(country: str, cdata: dict, plots_dir: str, *, collapsed: bool =
 
 
 def overview_plot(plots_dir: str) -> str:
-    """Nordic-country vertical stacked bars, drawn by plot_status.py."""
+    """Nordic-country horizontal stacked bars, drawn by plot_status.py."""
     title = "Nordic countries — listed PXDs"
     return (
         f"### {title}\n\n"
@@ -450,7 +450,7 @@ def sea_region_status(cfg: dict) -> str:
 
 
 def region_plot(title: str, svg_name: str, plots_dir: str) -> str:
-    """Region overview markdown (vertical bars) with a link to country pages."""
+    """Region overview markdown (horizontal bars) with a link to country pages."""
     return (
         f"### {title}\n\n"
         f"![{title}: SDRF progress by country]({plots_dir}/{svg_name})\n\n"
@@ -459,22 +459,22 @@ def region_plot(title: str, svg_name: str, plots_dir: str) -> str:
 
 
 def sea_plot(plots_dir: str) -> str:
-    """SEA region overview (vertical bars), matching the Nordic overview layout."""
+    """SEA region overview (horizontal bars), matching the Nordic overview layout."""
     return region_plot("Southeast Asia — listed PXDs", "sea.svg", plots_dir)
 
 
 def south_asia_plot(plots_dir: str) -> str:
-    """South Asia region overview (vertical bars), matching SEA/Nordic layout."""
+    """South Asia region overview (horizontal bars), matching SEA/Nordic layout."""
     return region_plot("South Asia — listed PXDs", "south_asia.svg", plots_dir)
 
 
 def middle_east_plot(plots_dir: str) -> str:
-    """Middle East region overview (vertical bars), matching SEA/Nordic layout."""
+    """Middle East region overview (horizontal bars), matching SEA/Nordic layout."""
     return region_plot("Middle East — listed PXDs", "middle_east.svg", plots_dir)
 
 
 def central_asia_plot(plots_dir: str) -> str:
-    """Central Asia region overview (vertical bars), matching SEA/Nordic layout."""
+    """Central Asia region overview (horizontal bars), matching SEA/Nordic layout."""
     return region_plot("Central Asia — listed PXDs", "central_asia.svg", plots_dir)
 
 

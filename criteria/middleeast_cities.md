@@ -2,7 +2,7 @@
 
 Narrative reference for Middle East cities tracked in `config.yml` with
 `region: middle_east`. The region overview is `status/plots/middle_east.svg`
-(one vertical bar per country, same style as Nordic / SEA / South Asia).
+(one horizontal bar per country, same style as Nordic / SEA / South Asia).
 Per-country city charts are `status/plots/<country>.svg` with pages under
 `status/markdowns/`. Manifests appear under `lists/<country>/<city>.txt` when
 scoped; use the same `build_manifest.py` path (keyword search, then keep only

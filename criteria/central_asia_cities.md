@@ -2,7 +2,7 @@
 
 Narrative reference for Central Asia cities tracked in `config.yml` with
 `region: central_asia`. The region overview is `status/plots/central_asia.svg`
-(one vertical bar per country, same style as Nordic / SEA / South Asia /
+(one horizontal bar per country, same style as Nordic / SEA / South Asia /
 Middle East). Per-country city charts are `status/plots/<country>.svg` with
 pages under `status/markdowns/`. Manifests appear under
 `lists/<country>/<city>.txt` when scoped; use the same `build_manifest.py`

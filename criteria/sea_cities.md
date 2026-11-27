@@ -1,7 +1,7 @@
 # Southeast Asia countries for the PXD campaign
 
 Narrative reference for SEA cities now tracked in `config.yml` with `region: sea`.
-The region overview is `status/plots/sea.svg` (one vertical bar per country, same
+The region overview is `status/plots/sea.svg` (one horizontal bar per country, same
 style as the Nordic overview). Per-country city charts are
 `status/plots/<country>.svg` with pages under `status/markdowns/`. Manifests
 still appear under `lists/<country>/<city>.txt` when scoped; use the same
