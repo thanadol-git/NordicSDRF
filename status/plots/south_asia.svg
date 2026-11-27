@@ -31,7 +31,7 @@
 </style>
 <rect class="bg" width="860" height="316.0" rx="6"/>
 <text class="title" x="12" y="22">South Asia — listed PXDs</text>
-<text class="sub" x="12" y="40">405 listed · 0 local SDRFs · 0 sandbox · 205 to do · 0 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
+<text class="sub" x="12" y="40">405 listed · 6 local SDRFs · 1 sandbox · 198 to do · 1 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -47,26 +47,32 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="544.0" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="561.0" y="62.0">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="82.0">India</text>
-<rect class="c-in_corpus" fill="#199e70" x="112.0" y="68.0" width="310.2" height="20" rx="2"><title>India · In corpus: 185</title></rect>
-<text class="seg" x="267.1" y="82.0" text-anchor="middle">185</text>
-<rect class="c-todo" fill="#8a8983" x="423.2" y="68.0" width="333.8" height="20" rx="2"><title>India · To do: 199</title></rect>
-<text class="seg" x="590.1" y="82.0" text-anchor="middle">199</text>
+<rect class="c-annotated" fill="#2a78d6" x="112.0" y="68.0" width="17.0" height="20" rx="2"><title>India · Local SDRF: 1</title></rect>
+<text class="seg" x="120.5" y="82.0" text-anchor="middle">1</text>
+<rect class="c-sandbox" fill="#6b4ea3" x="130.0" y="68.0" width="17.0" height="20" rx="2"><title>India · Sandbox: 1</title></rect>
+<text class="seg" x="138.5" y="82.0" text-anchor="middle">1</text>
+<rect class="c-in_corpus" fill="#199e70" x="148.0" y="68.0" width="292.8" height="20" rx="2"><title>India · In corpus: 184</title></rect>
+<text class="seg" x="294.4" y="82.0" text-anchor="middle">184</text>
+<rect class="c-todo" fill="#8a8983" x="441.8" y="68.0" width="315.2" height="20" rx="2"><title>India · To do: 198</title></rect>
+<text class="seg" x="599.4" y="82.0" text-anchor="middle">198</text>
 <text class="total" x="764.0" y="82.0">384 listed</text>
 <text class="city" x="12" y="112.0">Pakistan</text>
-<rect class="c-in_corpus" fill="#199e70" x="112.0" y="98.0" width="25.0" height="20" rx="2"><title>Pakistan · In corpus: 11</title></rect>
-<text class="seg" x="124.5" y="112.0" text-anchor="middle">11</text>
-<rect class="c-todo" fill="#8a8983" x="138.0" y="98.0" width="17.0" height="20" rx="2"><title>Pakistan · To do: 2</title></rect>
-<text class="seg" x="146.5" y="112.0" text-anchor="middle">2</text>
-<text class="total" x="162.0" y="112.0">13 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="112.0" y="98.0" width="17.0" height="20" rx="2"><title>Pakistan · Local SDRF: 1</title></rect>
+<text class="seg" x="120.5" y="112.0" text-anchor="middle">1</text>
+<rect class="c-blocked" fill="#d95926" x="130.0" y="98.0" width="17.0" height="20" rx="2"><title>Pakistan · Blocked: 1</title></rect>
+<text class="seg" x="138.5" y="112.0" text-anchor="middle">1</text>
+<rect class="c-in_corpus" fill="#199e70" x="148.0" y="98.0" width="25.0" height="20" rx="2"><title>Pakistan · In corpus: 11</title></rect>
+<text class="seg" x="160.5" y="112.0" text-anchor="middle">11</text>
+<text class="total" x="180.0" y="112.0">13 listed</text>
 <text class="city" x="12" y="142.0">Nepal</text>
-<rect class="c-todo" fill="#8a8983" x="112.0" y="128.0" width="17.0" height="20" rx="2"><title>Nepal · To do: 1</title></rect>
+<rect class="c-annotated" fill="#2a78d6" x="112.0" y="128.0" width="17.0" height="20" rx="2"><title>Nepal · Local SDRF: 1</title></rect>
 <text class="seg" x="120.5" y="142.0" text-anchor="middle">1</text>
 <text class="total" x="136.0" y="142.0">1 listed</text>
 <text class="city" x="12" y="172.0">Sri Lanka</text>
-<rect class="c-in_corpus" fill="#199e70" x="112.0" y="158.0" width="17.0" height="20" rx="2"><title>Sri Lanka · In corpus: 4</title></rect>
-<text class="seg" x="120.5" y="172.0" text-anchor="middle">4</text>
-<rect class="c-todo" fill="#8a8983" x="130.0" y="158.0" width="17.0" height="20" rx="2"><title>Sri Lanka · To do: 3</title></rect>
-<text class="seg" x="138.5" y="172.0" text-anchor="middle">3</text>
+<rect class="c-annotated" fill="#2a78d6" x="112.0" y="158.0" width="17.0" height="20" rx="2"><title>Sri Lanka · Local SDRF: 3</title></rect>
+<text class="seg" x="120.5" y="172.0" text-anchor="middle">3</text>
+<rect class="c-in_corpus" fill="#199e70" x="130.0" y="158.0" width="17.0" height="20" rx="2"><title>Sri Lanka · In corpus: 4</title></rect>
+<text class="seg" x="138.5" y="172.0" text-anchor="middle">4</text>
 <text class="total" x="154.0" y="172.0">7 listed</text>
 <text class="city" x="12" y="202.0">Bangladesh</text>
 <text class="total" x="118.0" y="202.0">0 listed</text>
