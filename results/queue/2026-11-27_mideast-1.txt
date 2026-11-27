@@ -5,3 +5,4 @@ PXD022193	lebanon/beirut	sandbox	sandbox: 45/45 LFQ RAW (5 regions x SHAM/D1/D7 
 PXD009416	qatar/doha	sandbox	sandbox: 24/24 RAW (8 gel slices x 3 lanes); lane->buffer/monomer/oligomer unstated; Fusion (paper) vs Fusion ETD (PX)
 PXD029315	qatar/doha	sandbox	sandbox: 18/18 RAW LF HEK293 +/-MG; file code->compartment inferred (N/MIM/M); cytoplasm not deposited?
 PXD047674	qatar/doha	sandbox	sandbox: 40 serum EV LF runs, HC12/nDS14/DS13 from file names; instrument QEP (file) vs HF (PX) vs HFX (paper); mods unstated
+PXD042852	qatar/doha	blocked	blocked: ~2000 timsTOF .d (QMDiab plasma x 5 Seer NPs); no run->sample/NP key in PX or paper; FTP down
