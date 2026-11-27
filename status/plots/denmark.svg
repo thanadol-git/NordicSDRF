@@ -31,7 +31,7 @@
 </style>
 <rect class="bg" width="860" height="256.0" rx="6"/>
 <text class="title" x="12" y="22">Denmark — in progress</text>
-<text class="sub" x="12" y="40">959 listed · 495 local SDRFs · 5 sandbox · 3 to do · 115 blocked (not in sandbox) · PRIDE queried 2026-11-26</text>
+<text class="sub" x="12" y="40">959 listed · 495 local SDRFs · 5 sandbox · 3 to do · 113 blocked (not in sandbox) · PRIDE queried 2026-11-26</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -61,21 +61,21 @@
 <text class="seg" x="163.7" y="112.0" text-anchor="middle">92</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="218.3" y="98.0" width="17.0" height="20" rx="2"><title>Odense · Sandbox: 1</title></rect>
 <text class="seg" x="226.8" y="112.0" text-anchor="middle">1</text>
-<rect class="c-blocked" fill="#d95926" x="236.3" y="98.0" width="36.7" height="20" rx="2"><title>Odense · Blocked: 32</title></rect>
-<text class="seg" x="254.7" y="112.0" text-anchor="middle">32</text>
-<rect class="c-in_corpus" fill="#199e70" x="274.0" y="98.0" width="57.9" height="20" rx="2"><title>Odense · In corpus: 50</title></rect>
-<text class="seg" x="303.0" y="112.0" text-anchor="middle">50</text>
+<rect class="c-blocked" fill="#d95926" x="236.3" y="98.0" width="35.5" height="20" rx="2"><title>Odense · Blocked: 31</title></rect>
+<text class="seg" x="254.1" y="112.0" text-anchor="middle">31</text>
+<rect class="c-in_corpus" fill="#199e70" x="272.8" y="98.0" width="59.1" height="20" rx="2"><title>Odense · In corpus: 51</title></rect>
+<text class="seg" x="302.4" y="112.0" text-anchor="middle">51</text>
 <rect class="c-todo" fill="#8a8983" x="332.9" y="98.0" width="17.0" height="20" rx="2"><title>Odense · To do: 3</title></rect>
 <text class="seg" x="341.4" y="112.0" text-anchor="middle">3</text>
 <text class="total" x="356.9" y="112.0">178 listed</text>
 <text class="city" x="12" y="142.0">Aarhus</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="128.0" width="76.7" height="20" rx="2"><title>Aarhus · Local SDRF: 66</title></rect>
 <text class="seg" x="148.4" y="142.0" text-anchor="middle">66</text>
-<rect class="c-blocked" fill="#d95926" x="187.7" y="128.0" width="25.0" height="20" rx="2"><title>Aarhus · Blocked: 16</title></rect>
-<text class="seg" x="200.2" y="142.0" text-anchor="middle">16</text>
-<rect class="c-in_corpus" fill="#199e70" x="213.7" y="128.0" width="35.5" height="20" rx="2"><title>Aarhus · In corpus: 31</title></rect>
-<text class="seg" x="231.5" y="142.0" text-anchor="middle">31</text>
-<text class="total" x="256.2" y="142.0">113 listed</text>
+<rect class="c-blocked" fill="#d95926" x="187.7" y="128.0" width="25.0" height="20" rx="2"><title>Aarhus · Blocked: 15</title></rect>
+<text class="seg" x="200.2" y="142.0" text-anchor="middle">15</text>
+<rect class="c-in_corpus" fill="#199e70" x="213.7" y="128.0" width="36.7" height="20" rx="2"><title>Aarhus · In corpus: 32</title></rect>
+<text class="seg" x="232.1" y="142.0" text-anchor="middle">32</text>
+<text class="total" x="257.4" y="142.0">113 listed</text>
 <text class="city" x="12" y="172.0">Aalborg</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="158.0" width="52.0" height="20" rx="2"><title>Aalborg · Local SDRF: 45</title></rect>
 <text class="seg" x="136.0" y="172.0" text-anchor="middle">45</text>

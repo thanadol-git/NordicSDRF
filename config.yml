@@ -36,7 +36,7 @@ pipeline:
 
 pride_hits_queried: 2026-11-26
 
-corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-11-26)
+corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-11-27)
 
 countries:
   sweden:
@@ -74,8 +74,8 @@ countries:
         pride_hits: 197
         screened: 0
         annotated: 66
-        blocked: 49
-        in_corpus: 86
+        blocked: 48
+        in_corpus: 87
         sandbox: 1
       uppsala:
         name: Uppsala
@@ -141,10 +141,10 @@ countries:
         pride_hits: 619
         screened: 0
         annotated: 92
-        blocked: 32
+        blocked: 31
         pxd_list: lists/denmark/odense.txt
         pxd_count: 178
-        in_corpus: 117
+        in_corpus: 118
         sandbox: 1
       aarhus:
         name: Aarhus
@@ -152,10 +152,10 @@ countries:
         pride_hits: 121
         screened: 0
         annotated: 66
-        blocked: 16
+        blocked: 15
         pxd_list: lists/denmark/aarhus.txt
         pxd_count: 113
-        in_corpus: 84
+        in_corpus: 85
         sandbox: 0
       aalborg:
         name: Aalborg
@@ -364,11 +364,11 @@ countries:
           - Duke-NUS
         pride_hits: 464
         screened: 0
-        annotated: 12
-        blocked: 18
+        annotated: 25
+        blocked: 25
         pxd_list: lists/singapore/singapore.txt
         pxd_count: 263
-        in_corpus: 104
+        in_corpus: 105
         sandbox: 0
 
   thailand:
