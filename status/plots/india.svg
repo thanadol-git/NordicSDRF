@@ -31,7 +31,7 @@
 </style>
 <rect class="bg" width="860" height="286.0" rx="6"/>
 <text class="title" x="12" y="22">India — scoped</text>
-<text class="sub" x="12" y="40">384 listed · 0 local SDRFs · 0 sandbox · 235 to do · 0 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
+<text class="sub" x="12" y="40">384 listed · 0 local SDRFs · 1 sandbox · 199 to do · 0 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -47,45 +47,47 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="544.0" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="561.0" y="62.0">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="82.0">Bengaluru</text>
-<rect class="c-in_corpus" fill="#199e70" x="110.0" y="68.0" width="287.7" height="20" rx="2"><title>Bengaluru · In corpus: 45</title></rect>
-<text class="seg" x="253.9" y="82.0" text-anchor="middle">45</text>
-<rect class="c-todo" fill="#8a8983" x="398.7" y="68.0" width="358.3" height="20" rx="2"><title>Bengaluru · To do: 56</title></rect>
-<text class="seg" x="577.9" y="82.0" text-anchor="middle">56</text>
+<rect class="c-in_corpus" fill="#199e70" x="110.0" y="68.0" width="364.7" height="20" rx="2"><title>Bengaluru · In corpus: 57</title></rect>
+<text class="seg" x="292.4" y="82.0" text-anchor="middle">57</text>
+<rect class="c-todo" fill="#8a8983" x="475.7" y="68.0" width="281.3" height="20" rx="2"><title>Bengaluru · To do: 44</title></rect>
+<text class="seg" x="616.4" y="82.0" text-anchor="middle">44</text>
 <text class="total" x="764.0" y="82.0">101 listed</text>
 <text class="city" x="12" y="112.0">Mumbai</text>
-<rect class="c-in_corpus" fill="#199e70" x="110.0" y="98.0" width="172.2" height="20" rx="2"><title>Mumbai · In corpus: 27</title></rect>
-<text class="seg" x="196.1" y="112.0" text-anchor="middle">27</text>
-<rect class="c-todo" fill="#8a8983" x="283.2" y="98.0" width="236.4" height="20" rx="2"><title>Mumbai · To do: 37</title></rect>
-<text class="seg" x="401.4" y="112.0" text-anchor="middle">37</text>
+<rect class="c-in_corpus" fill="#199e70" x="110.0" y="98.0" width="210.7" height="20" rx="2"><title>Mumbai · In corpus: 33</title></rect>
+<text class="seg" x="215.4" y="112.0" text-anchor="middle">33</text>
+<rect class="c-todo" fill="#8a8983" x="321.7" y="98.0" width="197.9" height="20" rx="2"><title>Mumbai · To do: 31</title></rect>
+<text class="seg" x="420.7" y="112.0" text-anchor="middle">31</text>
 <text class="total" x="526.6" y="112.0">64 listed</text>
 <text class="city" x="12" y="142.0">Delhi</text>
-<rect class="c-in_corpus" fill="#199e70" x="110.0" y="128.0" width="191.5" height="20" rx="2"><title>Delhi · In corpus: 30</title></rect>
-<text class="seg" x="205.7" y="142.0" text-anchor="middle">30</text>
-<rect class="c-todo" fill="#8a8983" x="302.5" y="128.0" width="364.7" height="20" rx="2"><title>Delhi · To do: 57</title></rect>
-<text class="seg" x="484.8" y="142.0" text-anchor="middle">57</text>
+<rect class="c-in_corpus" fill="#199e70" x="110.0" y="128.0" width="236.4" height="20" rx="2"><title>Delhi · In corpus: 37</title></rect>
+<text class="seg" x="228.2" y="142.0" text-anchor="middle">37</text>
+<rect class="c-todo" fill="#8a8983" x="347.4" y="128.0" width="319.8" height="20" rx="2"><title>Delhi · To do: 50</title></rect>
+<text class="seg" x="507.3" y="142.0" text-anchor="middle">50</text>
 <text class="total" x="674.2" y="142.0">87 listed</text>
 <text class="city" x="12" y="172.0">Hyderabad</text>
-<rect class="c-in_corpus" fill="#199e70" x="110.0" y="158.0" width="172.2" height="20" rx="2"><title>Hyderabad · In corpus: 27</title></rect>
-<text class="seg" x="196.1" y="172.0" text-anchor="middle">27</text>
-<rect class="c-todo" fill="#8a8983" x="283.2" y="158.0" width="236.4" height="20" rx="2"><title>Hyderabad · To do: 37</title></rect>
-<text class="seg" x="401.4" y="172.0" text-anchor="middle">37</text>
-<text class="total" x="526.6" y="172.0">64 listed</text>
+<rect class="c-sandbox" fill="#6b4ea3" x="110.0" y="158.0" width="17.0" height="20" rx="2"><title>Hyderabad · Sandbox: 1</title></rect>
+<text class="seg" x="118.5" y="172.0" text-anchor="middle">1</text>
+<rect class="c-in_corpus" fill="#199e70" x="128.0" y="158.0" width="210.7" height="20" rx="2"><title>Hyderabad · In corpus: 33</title></rect>
+<text class="seg" x="233.4" y="172.0" text-anchor="middle">33</text>
+<rect class="c-todo" fill="#8a8983" x="339.7" y="158.0" width="191.5" height="20" rx="2"><title>Hyderabad · To do: 30</title></rect>
+<text class="seg" x="435.5" y="172.0" text-anchor="middle">30</text>
+<text class="total" x="538.2" y="172.0">64 listed</text>
 <text class="city" x="12" y="202.0">Pune</text>
-<rect class="c-in_corpus" fill="#199e70" x="110.0" y="188.0" width="37.5" height="20" rx="2"><title>Pune · In corpus: 6</title></rect>
-<text class="seg" x="128.7" y="202.0" text-anchor="middle">6</text>
-<rect class="c-todo" fill="#8a8983" x="148.5" y="188.0" width="159.4" height="20" rx="2"><title>Pune · To do: 25</title></rect>
-<text class="seg" x="228.2" y="202.0" text-anchor="middle">25</text>
+<rect class="c-in_corpus" fill="#199e70" x="110.0" y="188.0" width="43.9" height="20" rx="2"><title>Pune · In corpus: 7</title></rect>
+<text class="seg" x="132.0" y="202.0" text-anchor="middle">7</text>
+<rect class="c-todo" fill="#8a8983" x="154.9" y="188.0" width="153.0" height="20" rx="2"><title>Pune · To do: 24</title></rect>
+<text class="seg" x="231.4" y="202.0" text-anchor="middle">24</text>
 <text class="total" x="314.9" y="202.0">31 listed</text>
 <text class="city" x="12" y="232.0">Kolkata</text>
-<rect class="c-in_corpus" fill="#199e70" x="110.0" y="218.0" width="69.6" height="20" rx="2"><title>Kolkata · In corpus: 11</title></rect>
-<text class="seg" x="144.8" y="232.0" text-anchor="middle">11</text>
-<rect class="c-todo" fill="#8a8983" x="180.6" y="218.0" width="101.7" height="20" rx="2"><title>Kolkata · To do: 16</title></rect>
-<text class="seg" x="231.4" y="232.0" text-anchor="middle">16</text>
+<rect class="c-in_corpus" fill="#199e70" x="110.0" y="218.0" width="82.4" height="20" rx="2"><title>Kolkata · In corpus: 13</title></rect>
+<text class="seg" x="151.2" y="232.0" text-anchor="middle">13</text>
+<rect class="c-todo" fill="#8a8983" x="193.4" y="218.0" width="88.8" height="20" rx="2"><title>Kolkata · To do: 14</title></rect>
+<text class="seg" x="237.8" y="232.0" text-anchor="middle">14</text>
 <text class="total" x="289.2" y="232.0">27 listed</text>
 <text class="city" x="12" y="262.0">Chennai</text>
-<rect class="c-in_corpus" fill="#199e70" x="110.0" y="248.0" width="18.2" height="20" rx="2"><title>Chennai · In corpus: 3</title></rect>
-<text class="seg" x="119.1" y="262.0" text-anchor="middle">3</text>
-<rect class="c-todo" fill="#8a8983" x="129.2" y="248.0" width="43.9" height="20" rx="2"><title>Chennai · To do: 7</title></rect>
-<text class="seg" x="151.2" y="262.0" text-anchor="middle">7</text>
+<rect class="c-in_corpus" fill="#199e70" x="110.0" y="248.0" width="24.7" height="20" rx="2"><title>Chennai · In corpus: 4</title></rect>
+<text class="seg" x="122.3" y="262.0" text-anchor="middle">4</text>
+<rect class="c-todo" fill="#8a8983" x="135.7" y="248.0" width="37.5" height="20" rx="2"><title>Chennai · To do: 6</title></rect>
+<text class="seg" x="154.4" y="262.0" text-anchor="middle">6</text>
 <text class="total" x="180.2" y="262.0">10 listed</text>
 </svg>

@@ -31,7 +31,7 @@
 </style>
 <rect class="bg" width="860" height="136.0" rx="6"/>
 <text class="title" x="12" y="22">Egypt — scoped</text>
-<text class="sub" x="12" y="40">33 listed · 0 local SDRFs · 0 sandbox · 15 to do · 0 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
+<text class="sub" x="12" y="40">33 listed · 0 local SDRFs · 0 sandbox · 13 to do · 0 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -47,10 +47,10 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="544.0" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="561.0" y="62.0">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="82.0">Cairo</text>
-<rect class="c-in_corpus" fill="#199e70" x="110.0" y="68.0" width="343.2" height="20" rx="2"><title>Cairo · In corpus: 17</title></rect>
-<text class="seg" x="281.6" y="82.0" text-anchor="middle">17</text>
-<rect class="c-todo" fill="#8a8983" x="454.2" y="68.0" width="302.8" height="20" rx="2"><title>Cairo · To do: 15</title></rect>
-<text class="seg" x="605.6" y="82.0" text-anchor="middle">15</text>
+<rect class="c-in_corpus" fill="#199e70" x="110.0" y="68.0" width="383.8" height="20" rx="2"><title>Cairo · In corpus: 19</title></rect>
+<text class="seg" x="301.9" y="82.0" text-anchor="middle">19</text>
+<rect class="c-todo" fill="#8a8983" x="494.8" y="68.0" width="262.2" height="20" rx="2"><title>Cairo · To do: 13</title></rect>
+<text class="seg" x="625.9" y="82.0" text-anchor="middle">13</text>
 <text class="total" x="764.0" y="82.0">32 listed</text>
 <text class="city" x="12" y="112.0">Alexandria</text>
 <rect class="c-in_corpus" fill="#199e70" x="110.0" y="98.0" width="19.2" height="20" rx="2"><title>Alexandria · In corpus: 1</title></rect>

@@ -31,7 +31,7 @@
 </style>
 <rect class="bg" width="860" height="136.0" rx="6"/>
 <text class="title" x="12" y="22">Vietnam — in progress</text>
-<text class="sub" x="12" y="40">5 listed · 1 local SDRFs · 0 sandbox · 1 to do · 3 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
+<text class="sub" x="12" y="40">5 listed · 1 local SDRFs · 0 sandbox · 1 to do · 2 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -49,8 +49,10 @@
 <text class="city" x="12" y="82.0">Hanoi</text>
 <rect class="c-annotated" fill="#2a78d6" x="152.0" y="68.0" width="120.2" height="20" rx="2"><title>Hanoi · Local SDRF: 1</title></rect>
 <text class="seg" x="212.1" y="82.0" text-anchor="middle">1</text>
-<rect class="c-blocked" fill="#d95926" x="273.2" y="68.0" width="362.6" height="20" rx="2"><title>Hanoi · Blocked: 3</title></rect>
-<text class="seg" x="454.5" y="82.0" text-anchor="middle">3</text>
+<rect class="c-blocked" fill="#d95926" x="273.2" y="68.0" width="241.4" height="20" rx="2"><title>Hanoi · Blocked: 2</title></rect>
+<text class="seg" x="393.9" y="82.0" text-anchor="middle">2</text>
+<rect class="c-in_corpus" fill="#199e70" x="515.6" y="68.0" width="120.2" height="20" rx="2"><title>Hanoi · In corpus: 1</title></rect>
+<text class="seg" x="575.7" y="82.0" text-anchor="middle">1</text>
 <rect class="c-todo" fill="#8a8983" x="636.8" y="68.0" width="120.2" height="20" rx="2"><title>Hanoi · To do: 1</title></rect>
 <text class="seg" x="696.9" y="82.0" text-anchor="middle">1</text>
 <text class="total" x="764.0" y="82.0">5 listed</text>

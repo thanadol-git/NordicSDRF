@@ -1,0 +1,11 @@
+# daily queue 2026-11-27 singapore batch 3 (next 10 Singapore PXDs with fewest RAW)
+PXD043818	singapore/singapore	blocked	blocked: HDX-MS; 9 "RAW" are DynamX .DnX projects, 28 PLGS UnD zips; no Waters .raw runs (=PXD042235 case)
+PXD008834	singapore/singapore	blocked	blocked: iTRAQ8 x10 RPRP fractions; channel map absent (Wiley paywall, no PMC); .group unread (FTP down)
+PXD028325	singapore/singapore	sandbox	sandbox: 10/10 t2d, 1 seed-extract spot; 4800 (paper) vs 5800 (PX) unresolved; trypsin inferred
+PXD011825	singapore/singapore	sandbox	sandbox: 40 rows = 5 wiff x 8 iTRAQ (map Fig 1b); paper does not cite the PXD; mods inferred
+PXD082746	singapore/singapore	annotated	annotated: 9/9 RAW label-free DIA; Ctrl/Atq/DSM x3 from file names; Exploris 480; review round1 PASS
+PXD021926	singapore/singapore	sandbox	sandbox: 12/12 RAW; RBCEV run->donor order and pulldown pairing inferred; RAW/mqpar not read
+PXD031110	singapore/singapore	sandbox	sandbox: 12/12 RAW label-free; WT/KO x DMSO/volasertib x3 from file names; trypsin/DDA/QE HF from PX only, Methods DOCX unread
+PXD051044	singapore/singapore	sandbox	sandbox: 12/12 RAW label-free (3 tumoroids x3 + DMEM blank x3, split files); reps=injections inferred; RAW/mqpar unread
+PXD054586	singapore/singapore	annotated	annotated: 12/12 RAW; PLUM FL/dExon1/dExon7 x4 from file names; QE HF; review round1 PASS
+PXD043870	singapore/singapore	sandbox	sandbox: 12/12 RAW x 4 pulldown conditions (bait/IgG x infected/uninfected stated); _01-03 = gel fractions inferred; QE (paper) vs QE HF (PX)

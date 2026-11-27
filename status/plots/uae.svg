@@ -31,7 +31,7 @@
 </style>
 <rect class="bg" width="860" height="166.0" rx="6"/>
 <text class="title" x="12" y="22">United Arab Emirates — in progress</text>
-<text class="sub" x="12" y="40">32 listed · 1 local SDRFs · 0 sandbox · 26 to do · 0 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
+<text class="sub" x="12" y="40">32 listed · 1 local SDRFs · 0 sandbox · 24 to do · 0 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -49,17 +49,19 @@
 <text class="city" x="12" y="82.0">Sharjah</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="68.0" width="24.9" height="20" rx="2"><title>Sharjah · Local SDRF: 1</title></rect>
 <text class="seg" x="122.5" y="82.0" text-anchor="middle">1</text>
-<rect class="c-in_corpus" fill="#199e70" x="135.9" y="68.0" width="128.6" height="20" rx="2"><title>Sharjah · In corpus: 5</title></rect>
-<text class="seg" x="200.2" y="82.0" text-anchor="middle">5</text>
-<rect class="c-todo" fill="#8a8983" x="265.5" y="68.0" width="491.5" height="20" rx="2"><title>Sharjah · To do: 19</title></rect>
-<text class="seg" x="511.3" y="82.0" text-anchor="middle">19</text>
+<rect class="c-in_corpus" fill="#199e70" x="135.9" y="68.0" width="154.5" height="20" rx="2"><title>Sharjah · In corpus: 6</title></rect>
+<text class="seg" x="213.2" y="82.0" text-anchor="middle">6</text>
+<rect class="c-todo" fill="#8a8983" x="291.4" y="68.0" width="465.6" height="20" rx="2"><title>Sharjah · To do: 18</title></rect>
+<text class="seg" x="524.2" y="82.0" text-anchor="middle">18</text>
 <text class="total" x="764.0" y="82.0">25 listed</text>
 <text class="city" x="12" y="112.0">Dubai</text>
 <rect class="c-todo" fill="#8a8983" x="110.0" y="98.0" width="102.7" height="20" rx="2"><title>Dubai · To do: 4</title></rect>
 <text class="seg" x="161.3" y="112.0" text-anchor="middle">4</text>
 <text class="total" x="219.7" y="112.0">4 listed</text>
 <text class="city" x="12" y="142.0">Abu Dhabi</text>
-<rect class="c-todo" fill="#8a8983" x="110.0" y="128.0" width="76.8" height="20" rx="2"><title>Abu Dhabi · To do: 3</title></rect>
-<text class="seg" x="148.4" y="142.0" text-anchor="middle">3</text>
+<rect class="c-in_corpus" fill="#199e70" x="110.0" y="128.0" width="24.9" height="20" rx="2"><title>Abu Dhabi · In corpus: 1</title></rect>
+<text class="seg" x="122.5" y="142.0" text-anchor="middle">1</text>
+<rect class="c-todo" fill="#8a8983" x="135.9" y="128.0" width="50.8" height="20" rx="2"><title>Abu Dhabi · To do: 2</title></rect>
+<text class="seg" x="161.3" y="142.0" text-anchor="middle">2</text>
 <text class="total" x="193.8" y="142.0">3 listed</text>
 </svg>

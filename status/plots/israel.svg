@@ -31,7 +31,7 @@
 </style>
 <rect class="bg" width="860" height="196.0" rx="6"/>
 <text class="title" x="12" y="22">Israel — in progress</text>
-<text class="sub" x="12" y="40">443 listed · 2 local SDRFs · 0 sandbox · 249 to do · 0 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
+<text class="sub" x="12" y="40">443 listed · 2 local SDRFs · 1 sandbox · 216 to do · 0 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -47,29 +47,31 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="544.0" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="561.0" y="62.0">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="82.0">Rehovot</text>
-<rect class="c-in_corpus" fill="#199e70" x="110.0" y="68.0" width="295.7" height="20" rx="2"><title>Rehovot · In corpus: 76</title></rect>
-<text class="seg" x="257.8" y="82.0" text-anchor="middle">76</text>
-<rect class="c-todo" fill="#8a8983" x="406.7" y="68.0" width="350.3" height="20" rx="2"><title>Rehovot · To do: 90</title></rect>
-<text class="seg" x="581.8" y="82.0" text-anchor="middle">90</text>
+<rect class="c-sandbox" fill="#6b4ea3" x="110.0" y="68.0" width="17.0" height="20" rx="2"><title>Rehovot · Sandbox: 1</title></rect>
+<text class="seg" x="118.5" y="82.0" text-anchor="middle">1</text>
+<rect class="c-in_corpus" fill="#199e70" x="128.0" y="68.0" width="327.4" height="20" rx="2"><title>Rehovot · In corpus: 86</title></rect>
+<text class="seg" x="291.7" y="82.0" text-anchor="middle">86</text>
+<rect class="c-todo" fill="#8a8983" x="456.4" y="68.0" width="300.6" height="20" rx="2"><title>Rehovot · To do: 79</title></rect>
+<text class="seg" x="606.7" y="82.0" text-anchor="middle">79</text>
 <text class="total" x="764.0" y="82.0">166 listed</text>
 <text class="city" x="12" y="112.0">Haifa</text>
-<rect class="c-in_corpus" fill="#199e70" x="110.0" y="98.0" width="174.7" height="20" rx="2"><title>Haifa · In corpus: 45</title></rect>
-<text class="seg" x="197.3" y="112.0" text-anchor="middle">45</text>
-<rect class="c-todo" fill="#8a8983" x="285.7" y="98.0" width="244.9" height="20" rx="2"><title>Haifa · To do: 63</title></rect>
-<text class="seg" x="408.1" y="112.0" text-anchor="middle">63</text>
-<text class="total" x="537.6" y="112.0">108 listed</text>
+<rect class="c-in_corpus" fill="#199e70" x="110.0" y="98.0" width="197.5" height="20" rx="2"><title>Haifa · In corpus: 52</title></rect>
+<text class="seg" x="208.8" y="112.0" text-anchor="middle">52</text>
+<rect class="c-todo" fill="#8a8983" x="308.5" y="98.0" width="212.8" height="20" rx="2"><title>Haifa · To do: 56</title></rect>
+<text class="seg" x="415.0" y="112.0" text-anchor="middle">56</text>
+<text class="total" x="528.4" y="112.0">108 listed</text>
 <text class="city" x="12" y="142.0">Tel Aviv</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="128.0" width="17.0" height="20" rx="2"><title>Tel Aviv · Local SDRF: 2</title></rect>
 <text class="seg" x="118.5" y="142.0" text-anchor="middle">2</text>
-<rect class="c-in_corpus" fill="#199e70" x="128.0" y="128.0" width="127.8" height="20" rx="2"><title>Tel Aviv · In corpus: 33</title></rect>
-<text class="seg" x="191.9" y="142.0" text-anchor="middle">33</text>
-<rect class="c-todo" fill="#8a8983" x="256.8" y="128.0" width="213.7" height="20" rx="2"><title>Tel Aviv · To do: 55</title></rect>
-<text class="seg" x="363.7" y="142.0" text-anchor="middle">55</text>
-<text class="total" x="477.5" y="142.0">90 listed</text>
+<rect class="c-in_corpus" fill="#199e70" x="128.0" y="128.0" width="147.9" height="20" rx="2"><title>Tel Aviv · In corpus: 39</title></rect>
+<text class="seg" x="202.0" y="142.0" text-anchor="middle">39</text>
+<rect class="c-todo" fill="#8a8983" x="276.9" y="128.0" width="186.1" height="20" rx="2"><title>Tel Aviv · To do: 49</title></rect>
+<text class="seg" x="370.0" y="142.0" text-anchor="middle">49</text>
+<text class="total" x="470.0" y="142.0">90 listed</text>
 <text class="city" x="12" y="172.0">Jerusalem</text>
-<rect class="c-in_corpus" fill="#199e70" x="110.0" y="158.0" width="147.3" height="20" rx="2"><title>Jerusalem · In corpus: 38</title></rect>
-<text class="seg" x="183.7" y="172.0" text-anchor="middle">38</text>
-<rect class="c-todo" fill="#8a8983" x="258.3" y="158.0" width="159.0" height="20" rx="2"><title>Jerusalem · To do: 41</title></rect>
-<text class="seg" x="337.9" y="172.0" text-anchor="middle">41</text>
-<text class="total" x="424.4" y="172.0">79 listed</text>
+<rect class="c-in_corpus" fill="#199e70" x="110.0" y="158.0" width="178.5" height="20" rx="2"><title>Jerusalem · In corpus: 47</title></rect>
+<text class="seg" x="199.2" y="172.0" text-anchor="middle">47</text>
+<rect class="c-todo" fill="#8a8983" x="289.5" y="158.0" width="121.2" height="20" rx="2"><title>Jerusalem · To do: 32</title></rect>
+<text class="seg" x="350.0" y="172.0" text-anchor="middle">32</text>
+<text class="total" x="417.6" y="172.0">79 listed</text>
 </svg>

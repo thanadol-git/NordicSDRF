@@ -31,7 +31,7 @@
 </style>
 <rect class="bg" width="860" height="136.0" rx="6"/>
 <text class="title" x="12" y="22">Iran — in progress</text>
-<text class="sub" x="12" y="40">15 listed · 0 local SDRFs · 0 sandbox · 10 to do · 1 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
+<text class="sub" x="12" y="40">15 listed · 0 local SDRFs · 0 sandbox · 9 to do · 1 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -49,10 +49,10 @@
 <text class="city" x="12" y="82.0">Tehran</text>
 <rect class="c-blocked" fill="#d95926" x="110.0" y="68.0" width="42.2" height="20" rx="2"><title>Tehran · Blocked: 1</title></rect>
 <text class="seg" x="131.1" y="82.0" text-anchor="middle">1</text>
-<rect class="c-in_corpus" fill="#199e70" x="153.2" y="68.0" width="171.8" height="20" rx="2"><title>Tehran · In corpus: 4</title></rect>
-<text class="seg" x="239.1" y="82.0" text-anchor="middle">4</text>
-<rect class="c-todo" fill="#8a8983" x="326.0" y="68.0" width="431.0" height="20" rx="2"><title>Tehran · To do: 10</title></rect>
-<text class="seg" x="541.5" y="82.0" text-anchor="middle">10</text>
+<rect class="c-in_corpus" fill="#199e70" x="153.2" y="68.0" width="215.0" height="20" rx="2"><title>Tehran · In corpus: 5</title></rect>
+<text class="seg" x="260.7" y="82.0" text-anchor="middle">5</text>
+<rect class="c-todo" fill="#8a8983" x="369.2" y="68.0" width="387.8" height="20" rx="2"><title>Tehran · To do: 9</title></rect>
+<text class="seg" x="563.1" y="82.0" text-anchor="middle">9</text>
 <text class="total" x="764.0" y="82.0">15 listed</text>
 <text class="city" x="12" y="112.0">Tabriz</text>
 <text class="total" x="116.0" y="112.0">0 listed</text>

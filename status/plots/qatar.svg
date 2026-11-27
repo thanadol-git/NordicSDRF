@@ -31,7 +31,7 @@
 </style>
 <rect class="bg" width="860" height="106.0" rx="6"/>
 <text class="title" x="12" y="22">Qatar — scoped</text>
-<text class="sub" x="12" y="40">17 listed · 0 local SDRFs · 1 sandbox · 8 to do · 0 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
+<text class="sub" x="12" y="40">17 listed · 0 local SDRFs · 0 sandbox · 8 to do · 0 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -47,10 +47,8 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="544.0" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="561.0" y="62.0">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="82.0">Doha</text>
-<rect class="c-sandbox" fill="#6b4ea3" x="110.0" y="68.0" width="37.1" height="20" rx="2"><title>Doha · Sandbox: 1</title></rect>
-<text class="seg" x="128.6" y="82.0" text-anchor="middle">1</text>
-<rect class="c-in_corpus" fill="#199e70" x="148.1" y="68.0" width="303.9" height="20" rx="2"><title>Doha · In corpus: 8</title></rect>
-<text class="seg" x="300.1" y="82.0" text-anchor="middle">8</text>
+<rect class="c-in_corpus" fill="#199e70" x="110.0" y="68.0" width="342.1" height="20" rx="2"><title>Doha · In corpus: 9</title></rect>
+<text class="seg" x="281.0" y="82.0" text-anchor="middle">9</text>
 <rect class="c-todo" fill="#8a8983" x="453.1" y="68.0" width="303.9" height="20" rx="2"><title>Doha · To do: 8</title></rect>
 <text class="seg" x="605.0" y="82.0" text-anchor="middle">8</text>
 <text class="total" x="764.0" y="82.0">17 listed</text>

@@ -31,7 +31,7 @@
 </style>
 <rect class="bg" width="860" height="166.0" rx="6"/>
 <text class="title" x="12" y="22">Pakistan — scoped</text>
-<text class="sub" x="12" y="40">13 listed · 0 local SDRFs · 0 sandbox · 5 to do · 0 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
+<text class="sub" x="12" y="40">13 listed · 0 local SDRFs · 0 sandbox · 2 to do · 0 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -47,16 +47,14 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="544.0" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="561.0" y="62.0">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="82.0">Lahore</text>
-<rect class="c-in_corpus" fill="#199e70" x="110.0" y="68.0" width="387.8" height="20" rx="2"><title>Lahore · In corpus: 6</title></rect>
-<text class="seg" x="303.9" y="82.0" text-anchor="middle">6</text>
-<rect class="c-todo" fill="#8a8983" x="498.8" y="68.0" width="258.2" height="20" rx="2"><title>Lahore · To do: 4</title></rect>
-<text class="seg" x="627.9" y="82.0" text-anchor="middle">4</text>
+<rect class="c-in_corpus" fill="#199e70" x="110.0" y="68.0" width="517.4" height="20" rx="2"><title>Lahore · In corpus: 8</title></rect>
+<text class="seg" x="368.7" y="82.0" text-anchor="middle">8</text>
+<rect class="c-todo" fill="#8a8983" x="628.4" y="68.0" width="128.6" height="20" rx="2"><title>Lahore · To do: 2</title></rect>
+<text class="seg" x="692.7" y="82.0" text-anchor="middle">2</text>
 <text class="total" x="764.0" y="82.0">10 listed</text>
 <text class="city" x="12" y="112.0">Karachi</text>
-<rect class="c-in_corpus" fill="#199e70" x="110.0" y="98.0" width="63.8" height="20" rx="2"><title>Karachi · In corpus: 1</title></rect>
-<text class="seg" x="141.9" y="112.0" text-anchor="middle">1</text>
-<rect class="c-todo" fill="#8a8983" x="174.8" y="98.0" width="63.8" height="20" rx="2"><title>Karachi · To do: 1</title></rect>
-<text class="seg" x="206.7" y="112.0" text-anchor="middle">1</text>
+<rect class="c-in_corpus" fill="#199e70" x="110.0" y="98.0" width="128.6" height="20" rx="2"><title>Karachi · In corpus: 2</title></rect>
+<text class="seg" x="174.3" y="112.0" text-anchor="middle">2</text>
 <text class="total" x="245.6" y="112.0">2 listed</text>
 <text class="city" x="12" y="142.0">Islamabad</text>
 <rect class="c-in_corpus" fill="#199e70" x="110.0" y="128.0" width="63.8" height="20" rx="2"><title>Islamabad · In corpus: 1</title></rect>

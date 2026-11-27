@@ -125,7 +125,7 @@ blocker, including files awaiting review), *Sandbox* (an SDRF under `sandbox/` i
 [`bigbio/sdrf-annotated-datasets`](https://github.com/bigbio/sdrf-annotated-datasets)),
 *Blocked* (local or batch-tracker blocker **and** not already in `sandbox/` or
 `datasets/` — never published upstream as a draft), *In corpus* (already under
-`datasets/`, checked against local checkout (2026-11-27)),
+`datasets/`, checked against GitHub bigbio/sdrf-annotated-datasets (2026-11-27)),
 *Screened*, *To do*.
 A city without a manifest shows a dashed outline sized by its raw PRIDE full-text
 hit count (unioned over `search_terms` in `config.yml`, queried 2026-11-27). *Affinity PAD*

@@ -31,7 +31,7 @@
 </style>
 <rect class="bg" width="860" height="166.0" rx="6"/>
 <text class="title" x="12" y="22">Turkey — scoped</text>
-<text class="sub" x="12" y="40">53 listed · 0 local SDRFs · 0 sandbox · 36 to do · 0 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
+<text class="sub" x="12" y="40">53 listed · 0 local SDRFs · 0 sandbox · 31 to do · 0 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -47,17 +47,19 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="544.0" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="561.0" y="62.0">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="82.0">Istanbul</text>
-<rect class="c-in_corpus" fill="#199e70" x="110.0" y="68.0" width="228.5" height="20" rx="2"><title>Istanbul · In corpus: 17</title></rect>
-<text class="seg" x="224.2" y="82.0" text-anchor="middle">17</text>
-<rect class="c-todo" fill="#8a8983" x="339.5" y="68.0" width="417.5" height="20" rx="2"><title>Istanbul · To do: 31</title></rect>
-<text class="seg" x="548.2" y="82.0" text-anchor="middle">31</text>
+<rect class="c-in_corpus" fill="#199e70" x="110.0" y="68.0" width="282.5" height="20" rx="2"><title>Istanbul · In corpus: 21</title></rect>
+<text class="seg" x="251.2" y="82.0" text-anchor="middle">21</text>
+<rect class="c-todo" fill="#8a8983" x="393.5" y="68.0" width="363.5" height="20" rx="2"><title>Istanbul · To do: 27</title></rect>
+<text class="seg" x="575.2" y="82.0" text-anchor="middle">27</text>
 <text class="total" x="764.0" y="82.0">48 listed</text>
 <text class="city" x="12" y="112.0">Ankara</text>
 <rect class="c-todo" fill="#8a8983" x="110.0" y="98.0" width="26.0" height="20" rx="2"><title>Ankara · To do: 2</title></rect>
 <text class="seg" x="123.0" y="112.0" text-anchor="middle">2</text>
 <text class="total" x="143.0" y="112.0">2 listed</text>
 <text class="city" x="12" y="142.0">Izmir</text>
-<rect class="c-todo" fill="#8a8983" x="110.0" y="128.0" width="39.5" height="20" rx="2"><title>Izmir · To do: 3</title></rect>
-<text class="seg" x="129.8" y="142.0" text-anchor="middle">3</text>
-<text class="total" x="156.5" y="142.0">3 listed</text>
+<rect class="c-in_corpus" fill="#199e70" x="110.0" y="128.0" width="17.0" height="20" rx="2"><title>Izmir · In corpus: 1</title></rect>
+<text class="seg" x="118.5" y="142.0" text-anchor="middle">1</text>
+<rect class="c-todo" fill="#8a8983" x="128.0" y="128.0" width="26.0" height="20" rx="2"><title>Izmir · To do: 2</title></rect>
+<text class="seg" x="141.0" y="142.0" text-anchor="middle">2</text>
+<text class="total" x="161.0" y="142.0">3 listed</text>
 </svg>
