@@ -1,0 +1,11 @@
+accession	verdict	evidence	in_corpus	title
+PXD004892	rejected	countries=['France'] | INRAE-Nouzilly-PRC ; Plate-forme d'Analyse Intégrative des Biomolécules et de Phé		Follicular cells Top-down proteomic
+PXD008851	rejected	countries=['France'] | INRA ; Institud National de la Recherche Agronomique (INRA),  UMR72	yes	Analysis of extracelullar vesicles (EVs) protein cargo across the bovine estrous cycle
+PXD020508	rejected	countries=['France'] | INRAE ; Centre INRAE Val de Loire UMR physiologie de la Reproduction	yes	Proteome of bovine granulosa cells and extracellular vesicles from follicular fluid
+PXD020540	rejected	countries=['France'] | INRAE ; INRAE Val de Loire UMR Physiologie de la Reproduction et des		Palmitoylated proteins in bovine ovarian cumulus-oocyte complexes
+PXD020547	rejected	countries=['France'] | INRAE ; INRAE Val de Loire UMR Physiologie de la reproduction et des		Palmitoylated proteins in bovine granulosa cells
+PXD022264	rejected	"countries=['Germany'] | Ludwig-Maximilians-Universität München
+Genzentrum
+Laboratory ; Ludwig-Maximilians-Universität München Genzentrum Laboratory"		Isolation and characterization of equine uterine extracellular vesicles: a comparative methodologica
+PXD047107	rejected	countries=['France'] | INRAE ; INRAE Centre Val de Loire UMR Physiologie de la Reproduction		Oral exposure to bisphenol S associated with alterations in the proteome of granulosa cells in ewes 
+PXD084037	rejected	countries=['China'] | Southwest University ; Insttute of Vertebrate Paleontology and Paleoanthropology, C	yes	Cocoon LC-MS/MS-Silkworm cultivation predating the Silk Road in southern Central Asia (2000 BCE)

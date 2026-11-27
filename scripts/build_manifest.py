@@ -55,6 +55,9 @@ DEMONYMS = {
     "cyprus": ["Cypriot"], "kuwait": ["Kuwaiti"], "jordan": ["Jordanian"],
     "syria": ["Syrian"], "iraq": ["Iraqi"], "oman": ["Omani"],
     "yemen": ["Yemeni"], "bahrain": ["Bahraini"], "palestine": ["Palestinian"],
+    "kazakhstan": ["Kazakh", "Kazakhstani"], "uzbekistan": ["Uzbek", "Uzbekistani"],
+    "kyrgyzstan": ["Kyrgyz", "Kirghiz"], "tajikistan": ["Tajik", "Tajikistani"],
+    "turkmenistan": ["Turkmen", "Turkmenistani"],
 }
 
 # Extra PRIDE `countries` spellings (beyond display name / demonyms).

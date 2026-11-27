@@ -1233,6 +1233,107 @@ countries:
         in_corpus: 0
         sandbox: 0
 
+  # Central Asia — region overview status/plots/central_asia.svg; city charts under status/plots/<country>.svg.
+  # Search terms from criteria/central_asia_cities.md; manifests under lists/<country>/ when scoped.
+  kazakhstan:
+    region: central_asia
+    name: Kazakhstan
+    status: scoped
+    cities:
+      astana:
+        name: Astana
+        search_terms: [Kazakhstan, Astana, Nur-Sultan, Nazarbayev]
+        notes: "Nazarbayev University / NCB Astana; confirm countries: [Kazakhstan]"
+        pride_hits: 4
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/kazakhstan/astana.txt
+        pxd_count: 2
+        in_corpus: 2
+        sandbox: 0
+      almaty:
+        name: Almaty
+        search_terms: [Almaty, KazNU, "Al-Farabi"]
+        pride_hits: 0
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/kazakhstan/almaty.txt
+        pxd_count: 0
+        in_corpus: 0
+        sandbox: 0
+
+  uzbekistan:
+    region: central_asia
+    name: Uzbekistan
+    status: not_started
+    cities:
+      tashkent:
+        name: Tashkent
+        search_terms: [Uzbekistan, Tashkent, Uzbek]
+        notes: "Uzbek is surname noise — require countries / affiliation"
+        pride_hits: 1
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/uzbekistan/tashkent.txt
+        pxd_count: 0
+        in_corpus: 0
+        sandbox: 0
+
+  kyrgyzstan:
+    region: central_asia
+    name: Kyrgyzstan
+    status: not_started
+    cities:
+      bishkek:
+        name: Bishkek
+        search_terms: [Kyrgyzstan, Bishkek]
+        pride_hits: 0
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/kyrgyzstan/bishkek.txt
+        pxd_count: 0
+        in_corpus: 0
+        sandbox: 0
+
+  tajikistan:
+    region: central_asia
+    name: Tajikistan
+    status: not_started
+    cities:
+      dushanbe:
+        name: Dushanbe
+        search_terms: [Tajikistan, Dushanbe, Tajik]
+        notes: "Tajik hits are often sample geography abroad"
+        pride_hits: 1
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/tajikistan/dushanbe.txt
+        pxd_count: 0
+        in_corpus: 0
+        sandbox: 0
+
+  turkmenistan:
+    region: central_asia
+    name: Turkmenistan
+    status: not_started
+    cities:
+      ashgabat:
+        name: Ashgabat
+        search_terms: [Turkmenistan, Ashgabat]
+        pride_hits: 0
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/turkmenistan/ashgabat.txt
+        pxd_count: 0
+        in_corpus: 0
+        sandbox: 0
+
   affinity_pad:
     region: affinity
     name: Affinity PAD
