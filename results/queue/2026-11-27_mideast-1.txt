@@ -2,3 +2,4 @@
 PXD033069	jordan/amman	blocked	blocked: no raw files listed (3 ProteinPilot .group + 4 seaMASS csv); iTRAQ8 map unseen; 5600 (PX) vs 6600
 PXD004652	qatar/doha	blocked	blocked: dimethyl triplex, 11 sets x M/H; no set/channel->timepoint map in paper (21 samples vs 22 slots); MQ zip unread; PXD004658 unrelated
 PXD022193	lebanon/beirut	sandbox	sandbox: 45/45 LFQ RAW (5 regions x SHAM/D1/D7 x 3 mice); no-D-code files -> SHAM inferred; sex n/a
+PXD009416	qatar/doha	sandbox	sandbox: 24/24 RAW (8 gel slices x 3 lanes); lane->buffer/monomer/oligomer unstated; Fusion (paper) vs Fusion ETD (PX)
