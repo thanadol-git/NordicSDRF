@@ -810,6 +810,429 @@ countries:
         in_corpus: 0
         sandbox: 0
 
+  # Middle East — region overview status/plots/middle_east.svg; city charts under status/plots/<country>.svg.
+  # Search terms from criteria/middleeast_cities.md; manifests under lists/<country>/ when scoped.
+  israel:
+    region: middle_east
+    name: Israel
+    status: in_progress
+    cities:
+      rehovot:
+        name: Rehovot
+        search_terms: [Rehovot, Weizmann]
+        notes: "Weizmann is the strongest Israel seed; confirm countries: [Israel]"
+        pride_hits: 80
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/israel/rehovot.txt
+        pxd_count: 166
+        in_corpus: 76
+        sandbox: 0
+      haifa:
+        name: Haifa
+        search_terms: [Haifa, Technion]
+        pride_hits: 74
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/israel/haifa.txt
+        pxd_count: 108
+        in_corpus: 45
+        sandbox: 0
+      tel_aviv:
+        name: Tel Aviv
+        search_terms: ["Tel Aviv", "Bar-Ilan", "Sheba Medical"]
+        pride_hits: 73
+        screened: 0
+        annotated: 2
+        blocked: 0
+        pxd_list: lists/israel/tel_aviv.txt
+        pxd_count: 90
+        in_corpus: 34
+        sandbox: 1
+      jerusalem:
+        name: Jerusalem
+        search_terms: [Jerusalem, "Hebrew University"]
+        pride_hits: 72
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/israel/jerusalem.txt
+        pxd_count: 79
+        in_corpus: 38
+        sandbox: 0
+
+  turkey:
+    region: middle_east
+    name: Turkey
+    status: scoped
+    cities:
+      istanbul:
+        name: Istanbul
+        search_terms: [Turkey, Türkiye, Istanbul, Bogazici, Boğaziçi]
+        notes: "PRIDE countries may say Türkiye; prefer Turkey + city"
+        pride_hits: 65
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/turkey/istanbul.txt
+        pxd_count: 48
+        in_corpus: 17
+        sandbox: 0
+      ankara:
+        name: Ankara
+        search_terms: [Ankara, Hacettepe, METU, Bilkent]
+        pride_hits: 6
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/turkey/ankara.txt
+        pxd_count: 2
+        in_corpus: 0
+        sandbox: 0
+      izmir:
+        name: Izmir
+        search_terms: [Izmir, İzmir]
+        pride_hits: 4
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/turkey/izmir.txt
+        pxd_count: 3
+        in_corpus: 0
+        sandbox: 0
+
+  saudi_arabia:
+    region: middle_east
+    name: Saudi Arabia
+    status: scoped
+    cities:
+      kaust:
+        name: KAUST
+        search_terms: ["Saudi Arabia", KAUST]
+        notes: "KAUST (Thuwal) dominates the Saudi signal"
+        pride_hits: 50
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/saudi_arabia/kaust.txt
+        pxd_count: 49
+        in_corpus: 15
+        sandbox: 0
+      riyadh:
+        name: Riyadh
+        search_terms: [Riyadh, "King Saud University"]
+        pride_hits: 5
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/saudi_arabia/riyadh.txt
+        pxd_count: 3
+        in_corpus: 0
+        sandbox: 0
+      jeddah:
+        name: Jeddah
+        search_terms: [Jeddah, "King Abdulaziz"]
+        pride_hits: 1
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/saudi_arabia/jeddah.txt
+        pxd_count: 2
+        in_corpus: 1
+        sandbox: 0
+
+  egypt:
+    region: middle_east
+    name: Egypt
+    status: scoped
+    cities:
+      cairo:
+        name: Cairo
+        search_terms: [Egypt, Cairo, "Ain Shams"]
+        pride_hits: 49
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/egypt/cairo.txt
+        pxd_count: 32
+        in_corpus: 17
+        sandbox: 0
+      alexandria:
+        name: Alexandria
+        search_terms: [Alexandria]
+        notes: "Confirm Egypt — place-name collisions exist"
+        pride_hits: 10
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/egypt/alexandria.txt
+        pxd_count: 1
+        in_corpus: 1
+        sandbox: 0
+
+  iran:
+    region: middle_east
+    name: Iran
+    status: in_progress
+    cities:
+      tehran:
+        name: Tehran
+        search_terms: [Iran, Tehran, "University of Tehran", "Sharif University"]
+        pride_hits: 30
+        screened: 0
+        annotated: 0
+        blocked: 1
+        pxd_list: lists/iran/tehran.txt
+        pxd_count: 15
+        in_corpus: 4
+        sandbox: 0
+      tabriz:
+        name: Tabriz
+        search_terms: [Tabriz]
+        pride_hits: 4
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/iran/tabriz.txt
+        pxd_count: 0
+        in_corpus: 0
+        sandbox: 0
+
+  uae:
+    region: middle_east
+    name: United Arab Emirates
+    status: in_progress
+    cities:
+      sharjah:
+        name: Sharjah
+        search_terms: ["United Arab Emirates", UAE, Sharjah]
+        notes: "Prefer full country name; Sharjah is the strongest city term"
+        pride_hits: 21
+        screened: 0
+        annotated: 1
+        blocked: 0
+        pxd_list: lists/uae/sharjah.txt
+        pxd_count: 25
+        in_corpus: 6
+        sandbox: 0
+      dubai:
+        name: Dubai
+        search_terms: [Dubai]
+        pride_hits: 5
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/uae/dubai.txt
+        pxd_count: 4
+        in_corpus: 0
+        sandbox: 0
+      abu_dhabi:
+        name: Abu Dhabi
+        search_terms: ["Abu Dhabi"]
+        pride_hits: 3
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/uae/abu_dhabi.txt
+        pxd_count: 3
+        in_corpus: 0
+        sandbox: 0
+
+  qatar:
+    region: middle_east
+    name: Qatar
+    status: scoped
+    cities:
+      doha:
+        name: Doha
+        search_terms: [Qatar, Doha, "Qatar University"]
+        pride_hits: 17
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/qatar/doha.txt
+        pxd_count: 17
+        in_corpus: 8
+        sandbox: 1
+
+  lebanon:
+    region: middle_east
+    name: Lebanon
+    status: scoped
+    cities:
+      beirut:
+        name: Beirut
+        search_terms: [Lebanon, Beirut, "American University of Beirut"]
+        notes: "Never search bare AUB"
+        pride_hits: 10
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/lebanon/beirut.txt
+        pxd_count: 2
+        in_corpus: 1
+        sandbox: 0
+
+  cyprus:
+    region: middle_east
+    name: Cyprus
+    status: scoped
+    cities:
+      nicosia:
+        name: Nicosia
+        search_terms: [Cyprus, Nicosia]
+        notes: "Confirm country; Nicosia can collide"
+        pride_hits: 9
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/cyprus/nicosia.txt
+        pxd_count: 4
+        in_corpus: 1
+        sandbox: 0
+
+  kuwait:
+    region: middle_east
+    name: Kuwait
+    status: scoped
+    cities:
+      kuwait_city:
+        name: Kuwait City
+        search_terms: [Kuwait, "Kuwait University", "Kuwait City"]
+        pride_hits: 8
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/kuwait/kuwait_city.txt
+        pxd_count: 6
+        in_corpus: 6
+        sandbox: 0
+
+  jordan:
+    region: middle_east
+    name: Jordan
+    status: scoped
+    cities:
+      amman:
+        name: Amman
+        search_terms: [Jordan, Amman]
+        notes: "Jordan surname noise — require countries / affiliation"
+        pride_hits: 66
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/jordan/amman.txt
+        pxd_count: 1
+        in_corpus: 0
+        sandbox: 0
+
+  syria:
+    region: middle_east
+    name: Syria
+    status: not_started
+    cities:
+      damascus:
+        name: Damascus
+        search_terms: [Syria, Damascus]
+        notes: "Likely noisy; country filter before any list"
+        pride_hits: 18
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/syria/damascus.txt
+        pxd_count: 0
+        in_corpus: 0
+        sandbox: 0
+
+  iraq:
+    region: middle_east
+    name: Iraq
+    status: not_started
+    cities:
+      baghdad:
+        name: Baghdad
+        search_terms: [Iraq, Baghdad]
+        pride_hits: 3
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/iraq/baghdad.txt
+        pxd_count: 0
+        in_corpus: 0
+        sandbox: 0
+
+  oman:
+    region: middle_east
+    name: Oman
+    status: not_started
+    cities:
+      muscat:
+        name: Muscat
+        search_terms: [Oman, Muscat, "Sultan Qaboos"]
+        pride_hits: 1
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/oman/muscat.txt
+        pxd_count: 0
+        in_corpus: 0
+        sandbox: 0
+
+  yemen:
+    region: middle_east
+    name: Yemen
+    status: not_started
+    cities:
+      sanaa:
+        name: Sana'a
+        search_terms: [Yemen, Sanaa, "Sana'a"]
+        pride_hits: 1
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/yemen/sanaa.txt
+        pxd_count: 0
+        in_corpus: 0
+        sandbox: 0
+
+  bahrain:
+    region: middle_east
+    name: Bahrain
+    status: not_started
+    cities:
+      manama:
+        name: Manama
+        search_terms: [Bahrain, Manama]
+        pride_hits: 0
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/bahrain/manama.txt
+        pxd_count: 0
+        in_corpus: 0
+        sandbox: 0
+
+  palestine:
+    region: middle_east
+    name: Palestine
+    status: not_started
+    cities:
+      # No city scoped yet — placeholder so the country appears on the region overview.
+      west_bank:
+        name: West Bank
+        search_terms: [Palestine, Palestinian]
+        notes: "Skip until other manifests exist"
+        pride_hits: 0
+        screened: 0
+        annotated: 0
+        blocked: 0
+        pxd_list: lists/palestine/west_bank.txt
+        pxd_count: 0
+        in_corpus: 0
+        sandbox: 0
+
   affinity_pad:
     region: affinity
     name: Affinity PAD

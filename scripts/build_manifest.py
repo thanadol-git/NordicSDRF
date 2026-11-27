@@ -49,6 +49,20 @@ DEMONYMS = {
     "indonesia": ["Indonesian"], "myanmar": ["Burmese", "Myanmar"],
     "laos": ["Lao", "Laotian"], "cambodia": ["Cambodian"], "brunei": ["Bruneian"],
     "timor_leste": ["Timorese"],
+    "israel": ["Israeli"], "turkey": ["Turkish", "Türkiye", "Turkiye"],
+    "saudi_arabia": ["Saudi"], "egypt": ["Egyptian"], "iran": ["Iranian", "Persian"],
+    "uae": ["Emirati"], "qatar": ["Qatari"], "lebanon": ["Lebanese"],
+    "cyprus": ["Cypriot"], "kuwait": ["Kuwaiti"], "jordan": ["Jordanian"],
+    "syria": ["Syrian"], "iraq": ["Iraqi"], "oman": ["Omani"],
+    "yemen": ["Yemeni"], "bahrain": ["Bahraini"], "palestine": ["Palestinian"],
+}
+
+# Extra PRIDE `countries` spellings (beyond display name / demonyms).
+COUNTRY_ALIASES = {
+    "turkey": ["Türkiye", "Turkiye"],
+    "uae": ["UAE", "U.A.E.", "United Arab Emirates"],
+    "saudi_arabia": ["KSA", "Kingdom of Saudi Arabia"],
+    "palestine": ["State of Palestine", "Palestinian Territory", "Palestine, State of"],
 }
 
 
@@ -90,15 +104,20 @@ def classify(rec: dict, country_slug: str, terms: list[str], *,
     cname = display_name or country_display_name(country_slug)
     slug_l = country_slug.lower()
     name_l = cname.lower()
+    aliases = COUNTRY_ALIASES.get(country_slug, [])
+    alias_l = {a.lower() for a in aliases}
     people = (rec.get("submitters") or []) + (rec.get("labPIs") or [])
     countries = rec.get("countries") or []
-    if cname in countries or any((c or "").lower() == name_l for c in countries):
+    if (cname in countries
+            or any((c or "").lower() == name_l for c in countries)
+            or any((c or "").lower() in alias_l for c in countries)
+            or any(a in countries for a in aliases)):
         return True, f"countries={countries}"
     for p in people:
         pc = (p.get("country") or "").strip().lower()
-        if pc in {slug_l, name_l, slug_l.replace("_", " ")}:
+        if pc in {slug_l, name_l, slug_l.replace("_", " "), *alias_l}:
             return True, f"submitter country={cname} ({p.get('name')})"
-    needles = [t.lower() for t in [cname, *DEMONYMS.get(country_slug, []), *terms] if t]
+    needles = [t.lower() for t in [cname, *DEMONYMS.get(country_slug, []), *aliases, *terms] if t]
     for p in people:
         aff = (p.get("affiliation") or "")
         low = aff.lower()

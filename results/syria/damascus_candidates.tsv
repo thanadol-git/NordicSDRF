@@ -1,0 +1,19 @@
+accession	verdict	evidence	in_corpus	title
+PXD003385	rejected	countries=['India'] | Institute of Life Sciences ; Institute of life sciences (ILS) Bhubaneswar National dairy 	yes	Characterisation and use of orthotopically grownHapT1tumours in its homologous host as a preclinical
+PXD010232	rejected	countries=['Malaysia'] | University of Malaya ; Department of Molecular Medicine, Faculty of Medicine, Unive		Hypolipidemic effects of Tamarindus indica fruit pulp extract
+PXD017998	rejected	countries=['United States'] | Cleveland Clinic ; Department of Cardiovascular & Metabolic Sciences, Lerner Re		Changes in golden Syrian hamster HDL proteome caused by altered cholesteryl ester transfer protein e
+PXD024547	rejected	countries=['India'] | Institute of Life Sciences ; Scientist-E Institute of Life Sciences Tumor Microenvironmen	yes	Quantitative proteomics of hamster lung tissues infected with SARS-CoV-2 reveal host-factors having 
+PXD024606	rejected	countries=['United Kingdom'] | University of Oxford ; University of Oxford/ Smithsonian Institutions		Species identification of silks by protein mass spectrometry
+PXD024610	rejected	countries=['United Kingdom'] | University of Oxford ; University of Oxford/Smithsonian Institutions		Species identification of silks by protein mass spectrometry
+PXD025164	rejected	countries=['Germany'] | Core  Facility -High-Throughput  Mass  Spectrometry,  Charit ; Core Facility - High-Throughput Mass Spectrometry, Charité -		Temporal omics analysis in Syrian hamsters unravel cellular effector responses to moderate COVID-19
+PXD026905	rejected	countries=['Brazil'] | UFRJ ; Federal University of Rio de Janeiro		Proteomic analysis of T-cruzi experimentally infected hamster cheeck pouch
+PXD029426	rejected	countries=['Brazil'] | Post doctor ; University of Campinas - São Paulo - Brazil		SARS-CoV-2 Infection Impacts Glutamate/Glutamine Metabolism in Syrian Hamster Central Nervous System
+PXD036331	rejected	countries=['China'] | School of Basic Medical Sciences, Peking University, Beijing ; peking university		syrian hamster plasma FPLC data
+PXD036862	rejected	countries=['United States'] | CSO ; Laboratory of Biochemistry and Vascular Biology  Center for 	yes	Quantitative proteomics analysis of COVID-19 infected hamster lung tissue
+PXD041777	rejected	countries=['France'] | Institut Pasteur de Lille ; Univ. Lille, CNRS, INSERM, CHU Lille, Institut Pasteur de Li	yes	Removal of senescent cells reduces the viral load and attenuates pulmonary and systemic inflammation
+PXD041973	rejected	countries=['France'] | Institut Pasteur de Lille ; Univ. Lille, CNRS, Inserm, CHU Lille, Institut Pasteur de Li	yes	Removal of senescent cells reduces the viral load and attenuates pulmonary and systemic inflammation
+PXD048058	rejected	countries=['Sweden'] | Karolinska Institutet ; Karolinska Institutet, Stockholm, Sweden	yes	SARS-CoV-2 variants mediated tissue-specific metabolic reprogramming determines the disease pathophy
+PXD049200	rejected	countries=['Australia'] | James Cook University ; Australian Institute of Tropical Health and Medicine, James 		Proteomic characterization and comparison of the infective and adult life stage secretomes from Neca
+PXD053070	rejected	countries=['Germany'] | Leibniz Institut für Analytische Wissenschaften ; Proteomics, Leibniz-Institut für Analytische Wissenschaften 		Giant Axonal Neuropathy (GAN): Cross-sectional data on phenotypes, genotypes and proteomics signatur
+PXD054808	rejected	countries=['United States'] | Icahn School of Medicine at Mount Sinai ; Icahn School of Medicine at Mount Sinai		Quantitative tissue proteomics reveals increased pathogenesis associated with infection with the SAR
+PXD062303	rejected	countries=['United Kingdom'] | Centre for Proteome Research, University of Liverpool ; University of Liverpool, Centre for Proteome Research, Biosc	yes	Encephalomyocarditis virus protein 2B* antagonises innate immune signalling by interacting with 14-3

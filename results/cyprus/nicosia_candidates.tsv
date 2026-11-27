@@ -1,0 +1,19 @@
+accession	verdict	evidence	in_corpus	title
+PXD007582	rejected	countries=['Italy'] | European Institute of Oncology ; European Institute of Oncology		Chromatin proteomics reveals novel combinatorial histone modification signatures that mark distinct 
+PXD011717	rejected	countries=['China'] | PTM Biolabs Inc. ; Tea Research Institute, Qingdao Agricultural University, Cha		A Qualitative Proteome-wide Lysine Succinylation Profiling of Tea Revealed Its Involvement in Primar
+PXD012443	rejected	countries=['China'] | PTM Biolabs Inc. ; Tea Research Institute, Qingdao Agricultural University, Qin		Nitrosoproteomic Analysis Deciphers the S-Nitrosylome in Carbon Metabolism of Tea Leaves
+PXD012954	rejected	countries=['Italy'] | European Institute of Oncology IRCSS, Department of Experime ; Department of Experimental Oncology, IEO, European Institute	yes	Targeting the scaffolding role of LSD1 (KDM1A) poises acute myeloid leukemia cells for Retinoic Acid
+PXD019598	confirmed	affiliation~'cyprus': Department of Biological Sciences, University of Cyprus, Cyprus		Protein interactions of TMEM147 and TMEM129 proteins from HeLa cells in co-IP experiments
+PXD020405	rejected	countries=['United States'] | TSRI ; The Scripps Research Institute, Department of Chemistry	yes	PROTOMAP analysis of Human Cartoid Plaques
+PXD020406	rejected	countries=['United States'] | TSRI ; The Scripps Research Institue Department of Chemistry	yes	Wild-type and O/E uPA in mouse aortic arches_PROTOMAP
+PXD021429	rejected	countries=['Italy'] | European Institute of Oncology IRCSS, Department of Experime ; Department of Experimental Oncology, European Institute of O		LSD1 interactome in Glioblastoma
+PXD025781	rejected	countries=['Italy'] | Istituto Europeo di Oncologia ; European Instutute of Oncology	yes	LSD1-directed therapy affects glioblastoma tumorigenicity by deregulating the protective ATF4-depend
+PXD027949	rejected	countries=['Italy'] | European Institute of Oncology IRCSS, Department of Experime ; European Institute of Oncology IRCCS, 20139 Milan, Italy	yes	ProMetheus: a database of hmSILAC-validated protein methylation sites
+PXD030581	rejected	countries=['United Kingdom'] | Thermo Fisher Scientific ; Leukaemia Biology Laboratory, Cancer Research UK Manchester 	yes	HMG20B stabilizes interaction of LSD1 with GFI1 on chromatin to confer 1 transcription repression an
+PXD033847	rejected	countries=['United States'] | Mayo Clinic ; Mayo Clinic, Assistant Professor of Physiology	yes	Loss of ERG in  human lung endothelial cells leads to release of pro-inflammatory and pro-fibrotic f
+PXD036466	rejected	countries=['Germany'] | Institute of Inorganic and Analytical Chemistry, Justus Lieb ; Institute of Inorganic and Analytical Chemistry, Justus Lieb		Venomics of Iranian and Cypriot Macrovipera lebetina
+PXD053477	confirmed	countries=['Cyprus']		Stage-Specific Serum Proteomic Signatures Reveal Early Biomarkers and Molecular Pathways in Huntingt
+PXD067059	confirmed	affiliation~'cyprus': Neurogenetics Department  The Cyprus Institute of Neurology and Genetics 2371 Nicosia Cypr		Proteomic analysis of ANO10 SH-SY5Y mutant cell lines
+PXD073864	rejected	countries=['Turkey'] | Karabuk University Biomedical Engineering Department ; Faculty of Engineering and Natural Science, Biomedical Engin		LC–MS/MS Proteomic Profiling of Apis mellifera Venoms
+PXD076870	rejected	countries=['Czechia'] | Department of Botany and Zoology, Faculty of Science, Masary ; Department of Botany and Zoology Faculty of Science, Masaryk		Palpimanus cyprius venom gland proteome
+PXD085265	confirmed	countries=['Cyprus']	yes	Quantitative proteomic profiling of ATG7-deficient primary mouse renal proximal tubule cells

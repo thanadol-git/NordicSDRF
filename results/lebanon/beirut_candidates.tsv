@@ -1,0 +1,13 @@
+accession	verdict	evidence	in_corpus	title
+PXD001649	confirmed	affiliation~'lebanon': Departments of Genetics and Biochemistry, Geisel School of Medicine at Dartmouth, Lebanon,	yes	Pom1-AS quantitative phosphoproteomics
+PXD005224	rejected	"countries=['Germany'] | AG Warscheid
+Biologie II
+Albert-Ludwigs-Universität Freibu ; Department of Biochemistry and Functional Proteomics, Instit"	yes	Identification of novel STAT6-regulated proteins in mouse B cells by comparative transcriptome and p
+PXD019774	rejected	countries=['United States'] | Center for Alzheimer’s Disease and Related Dementias (CARD)/ ; Thoracic and GI Malignancies Branch, Center for Cancer Resea	yes	Proteogenomic analysis unveils the expression of cancer associated and specific antigen-derived HLA 
+PXD022193	confirmed	affiliation~'lebanon': Department of Biology, Faculty of Sciences-I, Lebanese University, Beirut, Lebanon		Analysis of the neuro-proteome associated with cell therapy in a mouse model of Parkinson's disease
+PXD022949	rejected	countries=['United States'] | Center for Alzheimer’s Disease and Related Dementias (CARD)/ ; Thoracic and GI Malignancies Branch, Center for Cancer Resea	yes	Proteogenomic analysis unveils the HLA Class I presented immunopeptidome in melanoma and EGFR mutant
+PXD026463	rejected	countries=['Sweden'] | Clinical Proteomics Unit, Dep. of Oncology-Pathology ; Dep. of Oncology-Pathology, Karolinska Institutet, Scilifela	yes	Iimmunopeptidomics pipeline for generation of personalized oncolytic cancer vaccines.
+PXD029194	rejected	countries=['Germany'] | Proteomics Platform, BIH@Charite ; Core Unit Proteomics, BIH at Charite and MDC, Robert Roessle		C-terminal-dependent control of EAAT2 signaling, corticostriatal synaptic glutamate clearance and sp
+PXD033163	rejected	countries=['Sweden'] | Karolinska Institutet ; Department of Molecular Medicine and Surgery  Center for Mol		functional biomarker which could be used to predict connective healing based on an Achilles Tendon M
+PXD038273	rejected	countries=['Sweden'] | Clinical Proteomics Unit, Dep. of Oncology-Pathology ; Dept. Oncology-Pathology, SciLifeLab, Karolinska Institutet,	yes	Immunopeptidomics of malignant mesothelioma to identify target antigens for T cell Immunotherapy
+PXD079646	rejected	countries=['Spain'] | IIBB-CSIC ; IIBB-CSIC, Spain	yes	HLA class I-naturally presented synovial tissue peptides are recognized by CD8+ T lymphocytes from r

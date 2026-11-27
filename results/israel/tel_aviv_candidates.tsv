@@ -1,0 +1,92 @@
+accession	verdict	evidence	in_corpus	title
+PXD000815	confirmed	countries=['Israel']	yes	Breast cancer tumors -  System-wide Clinical Proteomics of Breast Cancer Reveals Global Remodeling o
+PXD001048	confirmed	countries=['Israel']		Proteomic profiling of melanoma progression
+PXD001194	confirmed	countries=['Israel']		PROMIS-Quan: a novel proteomic method for plasma biomarker quantification
+PXD002094	confirmed	countries=['Israel']		Tumor-Associated Macrophages Promote Colorectal Tumor Development Through Remodeling of Its Extracel
+PXD002118	confirmed	countries=['Israel']	yes	Social interaction dependent protein expression dynamics in hippocampus of the animals with strong f
+PXD002176	confirmed	countries=['Israel']	yes	Dynamics of hippocampal protein expression during long-term spatial memory formation
+PXD002619	confirmed	affiliation~'israel': Department of Human Molecular Genetics and Biochemistry, Sackler Faculty of Medicine, Tel 	yes	Proteomic maps of breast cancer subtypes
+PXD002802	confirmed	countries=['Israel']		Uncovering hidden layers of cell cycle regulation through integrative multi-omic analysis
+PXD003120	confirmed	countries=['Israel']		Downregulation of LATS kinases alters p53 to promote cell migration
+PXD003379	confirmed	countries=['Israel']		Inner ear proteomics/transcriptomics
+PXD004244	confirmed	countries=['Israel']	yes	hnRNP C is a key regulator of protein synthesis in mitosis
+PXD004740	confirmed	countries=['Israel']	yes	Early prediction of inflammation by unprecedented unbiased linking of tissue ‎molecular ‎composition
+PXD004761	confirmed	countries=['Israel']	yes	Ubiquitylated-Rpn10 -  Structure of ubiquitylated-Rpn10 provides insight into its autoregulation mec
+PXD005032	confirmed	countries=['Israel']	yes	Phosphoproteomics of EGF stimulated MCF7 cells
+PXD005827	confirmed	countries=['Israel']		Trade-off between transcriptome plasticity and genome evolution in cephalopods
+PXD005854	confirmed	countries=['Israel']	yes	eIF2B links translational control to mitochondrial oxidative phosphorylation in Vanishing White Matt
+PXD005913	confirmed	countries=['Israel']		Nuclear poly(A)-binding protein 1 is an ATM target and essential for DNA double-strand break rep
+PXD006003	confirmed	countries=['Israel']	yes	Proteomics of melanoma response to immunotherapy reveals dependence on mitochondrial function
+PXD006449	confirmed	countries=['Israel']	yes	A systematic multi-omics investigation of breast cancer metabolism mapping its tiered regulation
+PXD006509	rejected	countries=['India'] | IIT Bombay ; Biosciences and bioengineering Department, IIT Bombay		PROTEOMIC ALTERATIONS IN COLON ADENOCARCINOMA TISSUE LYSATES
+PXD008299	confirmed	countries=['Israel']	yes	UBQLN4, a regulator of protein dynamics at sites of DNA damage,  is lost in a new genome instability
+PXD008384	confirmed	countries=['Israel']		Micro-metastases regression following primary tumor excision: a critical role for primary tumor secr
+PXD009655	confirmed	countries=['Israel']		Microvesicle Proteomic profiling of Uterine Liquid Biopsy for Ovarian Cancer Early Detection
+PXD009766	confirmed	countries=['Israel']	yes	Clinical Proteomics of Breast Cancer Unravels a Novel Layer of Breast Cancer Classification
+PXD012000	confirmed	countries=['Israel']	yes	Clinical proteomics of invasive breast carcinoma reveals a major role for proline metabolism in impa
+PXD012525	confirmed	countries=['Israel']	yes	Schistosomes- exosomal miRNAs: modulators of T helper (CD+) cell differentiation
+PXD012564	confirmed	countries=['Israel']		Specific inhibition of splicing factor activity by decoy RNA oligonucleotides
+PXD012574	confirmed	countries=['Israel']		Proteomic and Genomic Signatures of Repeat-instability in Cancer and Adjacent Normal Tissues
+PXD012727	confirmed	countries=['Israel']		Novel proteomic approach (PUNCH-P) reveals cell cycle-specific fluctuations in mRNA translation
+PXD014341	confirmed	countries=['Israel']	yes	Systematic detection of amino acid substitutions in proteomes reveals a mechanistic basis of ribosom
+PXD015455	confirmed	countries=['Israel']		Phosphoproteomics reveals novel modes of function and inter-relationships among PIKKs in response to
+PXD015523	confirmed	countries=['Israel']		PDZD8 interacts with Protrudin and Rab7 to form an ER-late endosome membrane contact site that recru
+PXD017330	confirmed	countries=['Israel']		Spatio-temporal Proteomic Analysis of Stress Granule disassembly using APEX Reveals Regulation by SU
+PXD018024	confirmed	countries=['Israel']	yes	Proteogenomic analysis of glioblstoma reveals survival related patterns
+PXD018258	confirmed	countries=['Israel']		Proteomic analysis of necroptotic extracellular vesicles
+PXD020618	confirmed	countries=['Israel']	yes	Clinical Proteomics of Metastatic Melanoma Reveals Profiles of Organ-Specificity and Treatment Resis
+PXD020884	confirmed	countries=['Israel']		Phosphoproteomics reveals novel modes of function and inter-relationships among PIKKs in response to
+PXD021186	confirmed	countries=['Israel']		ATP-Citrate lyase fuels axonal transport across species
+PXD021447	confirmed	affiliation~'israel': The Mina & Everard Goodman Faculty of Life Sciences Bar-Ilan University  Ramat-Gan 52900, 		Restoration of energy homeostasis by SIRT6 extends healthy lifespan
+PXD021876	confirmed	affiliation~'israel': Sackler Faculty of Medicine, Tel-Aviv University, Tel-Aviv, Israel  Sagol School of Neuros		Axonal TDP-43 Drives NMJ Disruption through Inhibition of Local Protein Synthesis
+PXD022112	confirmed	countries=['Israel']	yes	Harnessing machine learning to unravel protein degradation in Escherichia coli
+PXD022635	confirmed	countries=['Israel']	yes	Persistent inflammatory stimulation drives the transition of MSCs to inflammatory CAFs that promote 
+PXD023142	confirmed	countries=['Israel']	yes	Serine biosynthesis is a metabolic vulnerability in IDH2-driven breast cancer progression
+PXD024190	confirmed	countries=['Israel']		Proteomic landscape of multi-layered breast cancer internal tumor heterogeneity
+PXD025325	confirmed	countries=['Israel']		LC-MS/MS for identification on ADAR1p110 the sites of ubiquitin conjugation
+PXD025338	confirmed	countries=['Israel']	yes	ADAR1 interactome analysis, LC-MS/MS
+PXD025973	confirmed	countries=['Israel']		Skin Exposure to UVB Light induces a Skin-Brain-Gonad Axis and Sexual Behavior
+PXD026834	confirmed	countries=['Israel']		IRS1 phosphorylation determines a heritable probability of cancer cells to persist during EGFR inhib
+PXD027596	confirmed	countries=['Israel']		Metastasis-entrained eosinophils enhance lymphocyte-mediated anti-tumor immunity
+PXD029217	confirmed	countries=['Israel']	yes	Proteomics of liver from ob/ob and WT mice
+PXD029268	confirmed	countries=['Israel']		Proteomics of HEPG2 cells following FTO overexpression and knockdown
+PXD029280	confirmed	countries=['Israel']	yes	Proteomics of liver from mice fed high fat diet (HFD) or regular chow diet
+PXD029642	confirmed	affiliation~'israel': Laboratory of Molecular and Cellular Cancer Biology Azrieli Faculty of Medicine   Bar-Ilan	yes	Regulatory role of E3 ubiquitin ligase Smurf2 on transcriptional corepressor KAP1
+PXD030544	confirmed	countries=['Israel']		Role of H/ACA snoRNA in translation
+PXD032108	confirmed	countries=['Israel']		Comparison of matched formalin-fixed paraffin embedded and fresh frozen tissue reveals bias in prote
+PXD033203	confirmed	countries=['Israel']		Solar exposed skin induces sex-dependent food-seeking behavior
+PXD033253	confirmed	countries=['Israel']		CRISPR-Cas9 Editing of TLR4 Improves the Outcome of Cardiac Cell Therapy
+PXD034116	confirmed	countries=['Israel']		Site specific pseudouridine (Psi) on Leishmania rRNA regulates translation of subset of proteins
+PXD035630	confirmed	countries=['Israel']		Exercise forms a metabolic-shield in distant organs blocking cancer progression and metastatic  diss
+PXD035648	confirmed	countries=['Israel']		Exercise forms a metabolic-shield in distant organs blocking cancer progression and metastatic  diss
+PXD037173	confirmed	countries=['Israel']		Increased protein solubility contributes to heat priming of the plant pathogenic fungus Botrytis cin
+PXD037864	confirmed	countries=['Israel']	yes	Vibrio parahaemolyticus BB22OP T6SS2 secretome
+PXD037980	confirmed	countries=['Israel']		Vibrio parahaemolyticus RIMD 2210633 T6SS2 secretome
+PXD038485	confirmed	countries=['Israel']		The LHX2-OTX2 regulatory module controls RPE differentiation and underlies a causal regulatory risk-
+PXD039664	confirmed	countries=['Israel']	yes	Tetraspanin 4 stabilizes membrane swellings and facilitates their maturation into migrasomes
+PXD040610	confirmed	countries=['Israel']		Comparative proteomics for the secretome of Vibrio proteolyticus T6SS3
+PXD041121	confirmed	countries=['Israel']		ATM signaling delays skin pigmentation upon UV exposure by mediating MITF function towards DNA repai
+PXD043103	confirmed	countries=['Israel']		Immunorecognition of Streptococcus mutans secreted proteins protects against caries by limiting toot
+PXD046421	confirmed	countries=['Israel']		Second-Hand Melanoma Melanosomes Regulate Diversity Among Tumor-Associated Macrophages
+PXD046711	confirmed	countries=['Israel']		Differential expression analysis of cutaneous squamous cell carcinoma and basal cell carcinoma prote
+PXD048864	confirmed	affiliation~'tel aviv': University of Oslo, University of Lübeck, University of Latvia, Tel Aviv University, www.p	yes	Evaluation of cerebrospinal fluid (CSF) and interstitial fluid (ISF) mouse proteomes for the validat
+PXD049479	confirmed	countries=['Israel']		Vibrio coralliilyticus T6SS comparative proteomics
+PXD049995	confirmed	countries=['Israel']		TblncRNA-23, a long non-coding RNA transcribed by RNA polymerase I, regulates developmental changes 
+PXD050713	confirmed	countries=['Israel']		Deciphering dermatological distinctions: Cornulin as a discriminant biomarker between Basal Cell Car
+PXD052150	confirmed	countries=['Israel']		Chaperonic function of a C/D snoRNA dictates the structure and function of translating ribosomes
+PXD052629	confirmed	countries=['Israel']		Challenges in Allergenicity Assessment of Ulva sp. as a Novel Food Source
+PXD053250	confirmed	affiliation~'tel aviv': University of Oslo, University of Lübeck, University of Latvia, Tel Aviv University, www.p		ABCA7 transporter functional role on Alzheimer’s disease onset and progess
+PXD054809	confirmed	countries=['Israel']		Aeromonas jandaei DSM 7311 T6SS secretome - comparative proteomics
+PXD057841	confirmed	affiliation~'israel': Nathan Dascal, Ph.D. Tel Aviv University School of Medicine ISRAEL dascaln@tauex.tau.ac.il	yes	Tripartite interactions of PKA catalytic subunit and C-terminal domains of cardiac Ca2+ channel may 
+PXD059351	confirmed	countries=['Israel']	yes	Metabolostasis failure thresholds are linked with network topology, metabolite solubility, and trans
+PXD061654	confirmed	countries=['Israel']		The mammalian longevity associated acetylome
+PXD066156	confirmed	countries=['Israel']		Proteomic Profiling of High-Temperature Growth and Recovery in Pseudomonas aeruginosa
+PXD066732	confirmed	countries=['Israel']	yes	Metaproteomic analysis of non-IBD, UC and pouchitis patients stool samples berfore and on antibiotic
+PXD067654	confirmed	affiliation~'israel': The Shmunis School of Biomedicine and Cancer Research, Cell Biology Division, George Wise 	yes	Oligosaccharyltransferase is involved in targeting to ER-associated degradation
+PXD068423	confirmed	countries=['Israel']		Dual functionality of a small nucleolar RNA dictates the structure and function of translating ribos
+PXD069489	confirmed	countries=['Israel']		A Mitochondria-Driven Quality Control Pathway Eliminates Mislocalized Peroxisomal Membrane Proteins
+PXD074406	confirmed	countries=['Israel']		Vibrio campbellii BB120 T3SS secretome
+PXD074667	confirmed	countries=['Israel']	yes	Identification of HSP70 family proteins as targets of anti-melanosome monoclonal antibodies by immun
+PXD076092	confirmed	countries=['Israel']	yes	Pantoea agglomerans pv. betae T6SS secretome
+PXD084660	confirmed	countries=['Israel']		A prophage-encoded anti-phage defence system that prevents DNA packaging by targeting the terminase 
+PXD084964	confirmed	countries=['Israel']		Aeromonas jandaei DSM 7311 secretome

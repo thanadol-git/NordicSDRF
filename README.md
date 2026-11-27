@@ -70,14 +70,15 @@ NordicSDRF/
 │   ├── plots/overview.svg      # vertical stacked bar per Nordic country
 │   ├── plots/sea.svg           # vertical stacked bar per SEA country
 │   ├── plots/south_asia.svg    # vertical stacked bar per South Asia country
-│   ├── plots/<country>.svg     # per-country city charts (Nordic / SEA / South Asia / Affinity)
+│   ├── plots/middle_east.svg   # vertical stacked bar per Middle East country
+│   ├── plots/<country>.svg     # per-country city charts (Nordic / SEA / South Asia / Middle East / Affinity)
 │   └── plots/authorship.svg    # who-publishes-with-whom network across all manifests
 ├── criteria/
 │   ├── nordic_cities.md        # cities × institutions × search terms × rough PRIDE hit counts, all 5 countries
 │   ├── nordic_screen.md        # inclusion rules + extract fields for sdrf-metascreen
 │   ├── sea_cities.md           # SEA country/city inventory (now also in config.yml, region: sea)
 │   ├── south_asia_cities.md    # South Asia inventory (also in config.yml, region: south_asia)
-│   └── middleeast_cities.md    # Middle East inventory (PRIDE hit counts); not in config.yml
+│   └── middleeast_cities.md    # Middle East inventory (also in config.yml, region: middle_east)
 ├── docs/
 │   └── workflow.md             # local GPU, Codex, Claude, Slurm, how to watch a run
 └── scripts/
@@ -114,8 +115,8 @@ trace, or refresh the numbers from files on this machine (no tokens), see
 [Checking status locally](docs/workflow.md#checking-status-locally).
 
 <!-- status:begin -->
-Region overviews are shown below. Per-country city charts (Nordic, SEA, South Asia)
-live in [Country status pages](status/markdowns/) (and `status/plots/<country>.svg`).
+Region overviews are shown below. Per-country city charts (Nordic, SEA, South Asia,
+Middle East) live in [Country status pages](status/markdowns/) (and `status/plots/<country>.svg`).
 A curated city's bar is its manifest (`lists/<country>/<city>.txt`),
 split so every PXD sits in exactly one block: *Local SDRF* (a local file without a
 blocker, including files awaiting review), *Sandbox* (an SDRF under `sandbox/` in
@@ -128,8 +129,8 @@ A city without a manifest shows a dashed outline sized by its raw PRIDE full-tex
 hit count (unioned over `search_terms` in `config.yml`, queried 2026-11-27). *Affinity PAD*
 is every public dataset in PRIDE's affinity archive, one row per technology
 (Olink platforms, SomaScan, NULISA, Other; `affinity_pad/<platform>.txt`, rebuilt by
-`python scripts/build_pad_manifest.py`). SEA / South Asia search terms live in
-`criteria/sea_cities.md`, `criteria/south_asia_cities.md` / `config.yml`.
+`python scripts/build_pad_manifest.py`). SEA / South Asia / Middle East search terms live in
+`criteria/sea_cities.md`, `criteria/south_asia_cities.md`, `criteria/middleeast_cities.md` / `config.yml`.
 *To do* is ready for annotation; *Blocked* PXDs need missing metadata before a sandbox or datasets PR.
 The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with
 `python scripts/update_status.py`; redraw the charts alone from `tables/` with
@@ -150,6 +151,12 @@ Per-country pages: [Country status pages](status/markdowns/)
 ### South Asia — listed PXDs
 
 ![South Asia — listed PXDs: SDRF progress by country](status/plots/south_asia.svg)
+
+Per-country pages: [Country status pages](status/markdowns/)
+
+### Middle East — listed PXDs
+
+![Middle East — listed PXDs: SDRF progress by country](status/plots/middle_east.svg)
 
 Per-country pages: [Country status pages](status/markdowns/)
 

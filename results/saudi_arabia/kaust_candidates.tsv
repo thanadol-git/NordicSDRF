@@ -1,0 +1,58 @@
+accession	verdict	evidence	in_corpus	title
+PXD000869	confirmed	countries=['Saudi Arabia']		CLPC1 maintains chloroplast proteome and RNA homeostasis
+PXD001386	confirmed	countries=['Saudi Arabia']		Plant Natriuretic Peptides induce a specific set of proteins diagnostic for an adaptive response to 
+PXD002496	confirmed	countries=['Saudi Arabia']	yes	Selective phospohorylation of macrophage differentiation
+PXD002833	rejected	countries=['Japan'] | Osaka University ; Div. Biol. Geosci., Grad. Sch. Sci., Osaka City Univ., Japan	yes	Proteome-wide analysis of lysine succinylation in 5 organisms
+PXD003983	rejected	"countries=['United States'] | Cell Biology and Physiology
+Institute for Informatics ; Center for Epigenetics Van Andel Research Institute Grand Ra"	yes	Hemi-methylated DNA regulates DNA methylation inheritance through allosteric control of H3 ubiquityl
+PXD004679	confirmed	countries=['Saudi Arabia']		Transcriptome and proteome studies during the development of barnacle amphitrite
+PXD005549	confirmed	countries=['Saudi Arabia']		Proteomics of C. briggsae embryo and larvae
+PXD006807	confirmed	affiliation~'saudi arabia': Center for Desert Agriculture, 4700 King Abdullah University of Science and Technology (KA		Shared and specific targets of Arabidopsis immune MAPKs
+PXD008403	confirmed	countries=['Saudi Arabia']	yes	Phosphoproteomics of Arabidopsis flg22 treated nuclear samples
+PXD009823	confirmed	affiliation~'kaust': KAUST		Chromatin phosphoproteomics unravels a function for AT-hook motif nuclear localized protein AHL13 in
+PXD012198	confirmed	countries=['Saudi Arabia']		Proteomic analysis of glomerular organoid extracellular matrix
+PXD012708	confirmed	countries=['Saudi Arabia']	yes	Comprehensive Arabidopsis Proteome Spectral Library
+PXD012710	confirmed	countries=['Saudi Arabia']	yes	Arabidopsis proteome spectral library
+PXD014032	confirmed	countries=['Saudi Arabia']	yes	Tissue specfic proteome quantitation and Temporal proteome profile of Arabidopsis upon ABA exposure 
+PXD014076	confirmed	countries=['Saudi Arabia']		The phosphoproteome of the coral model system Aiptasia
+PXD015549	rejected	countries=['Sweden'] | Clinical Proteomics Unit, Dep. of Oncology-Pathology ; Dept. Oncology Pathology, Karolinska Institutet and Scilifel	yes	LCMS quantification of internal crosslink in WT and G68L mutant R2lox proteins from Geobacillus kaus
+PXD016883	confirmed	countries=['Saudi Arabia']		RNA binding proteins modification by drought stress
+PXD017605	confirmed	countries=['Saudi Arabia']	yes	SWATH proteome for the coral reef fish, Acanthochromis polyacanthus, under ocean acidification and o
+PXD017721	confirmed	countries=['Saudi Arabia']	yes	Proteomics profiling of KAIMRC1 in comparison to MDA-MB231 and MCF-7
+PXD018167	rejected	countries=['India'] | CSIR-Institute of Microbial Technology, Chandigarh ; T.N.C. Ramya Principal Scientist CSIR-Institute of Microbial		Identification of O-glycosylation sites in Clostridium botulinum and Geobacillus kaustophilus flagel
+PXD020350	confirmed	countries=['Saudi Arabia']		Proteomic responses to ocean acidification in the brain of juvenile coral reef fish
+PXD021666	rejected	countries=['Germany'] | Metabolomics and Proteomics Core, Helmholtz Munich ; Research Unit Environmental Simulation, Institute of Biochem		Protein expression plasticity contributes to heat and drought  tolerance of date palm
+PXD022292	rejected	countries=['United States'] | Johns Hopkins University ; Wilmer Eye Institute, Smith Building, M015, 400 N Broadway, 	yes	Primary angle closure glaucoma is characterized by altered  extracellular matrix homeostasis in the 
+PXD025516	confirmed	countries=['Saudi Arabia']		SARS-Cov2 coronavirus spike protein-induced apoptosis, inflammatory and oxidative stress responses i
+PXD026965	confirmed	countries=['Saudi Arabia']	yes	Narrow precursor window for DIA-MS enhances protein identification and quantification
+PXD027168	confirmed	countries=['Saudi Arabia']		Affinity Purification Mass Spectrometry Analysis of Mutant and Wildtype SARS-CoV-2 Nucleocapsid Prot
+PXD029052	confirmed	countries=['Saudi Arabia']	yes	Proteomics profiling to distinguish DOCK8 deficiency from atopic dermatitis
+PXD029502	confirmed	countries=['Saudi Arabia']	yes	Arabidopsis Coilin mutant LC-MS/MS
+PXD030124	confirmed	countries=['Saudi Arabia']		Protein interactome of 3’,5’-cyclic adenosine monophosphate reveals its role in regulating the actin
+PXD030308	confirmed	countries=['Saudi Arabia']		PfAP2-MRP DNA-binding protein is a master regulator of parasite pathogenesis during malaria parasite
+PXD032944	confirmed	countries=['Saudi Arabia']		LINE-1 RNA is causative of heterochromatin erosion and target for amelioration of senescent phenotyp
+PXD033326	confirmed	countries=['Saudi Arabia']	yes	Proteome quantification in WASP wild-type and deficient macrophages using DIA-MS
+PXD034195	confirmed	countries=['Saudi Arabia']		Proteome analysis of Desulfuromonas acetexigens
+PXD034557	confirmed	countries=['Saudi Arabia']		Comparative Proteomic Profiling of Variants SARS-CoV-2 Virus-Like-Particles (VLPs) Incubated Cells
+PXD035453	confirmed	countries=['Saudi Arabia']		EZH1 Orchestrates Rhythmicity of Circadian Gene Expression Acting on Transcription Machinery Integri
+PXD037400	confirmed	countries=['Saudi Arabia']		Quantitative Proteomics Analysis of COVID-19 Patients
+PXD039388	confirmed	countries=['Saudi Arabia']	yes	Tankyrase-1regulates RBP-mediated mRNA turnover to promotemuscle fiber formation.
+PXD039714	confirmed	affiliation~'saudi arabia': Biological and Environmental Sciences and Engineering Division (BESE), Red Sea Research Ce		Enzyme adaptation to habitat thermal legacy shapes the thermal plasticity of marine microbiomes
+PXD042292	confirmed	countries=['Saudi Arabia']	yes	Evaluation of Protein Extraction Methods to Improve Meta-Proteomics Analysis of Treated Wastewater B
+PXD044191	rejected	countries=['India'] | CSIR-Institute of Microbial Technology, Chandigarh ; CSIR- Institute of Microbial Technology, Chandigarh	yes	Harnessing the acceptor substrate promiscuity of Clostridium botulinum Maf glycosyltransferase to gl
+PXD044448	confirmed	countries=['Saudi Arabia']		Adherence to Lifestyle Recommendations Linked to Innate Immunity and Lipoprotein Metabolism: A Cross
+PXD046860	confirmed	countries=['Saudi Arabia']		Integrated multi-omics and genetic analyses reveal molecular determinants underlying Arabidopsis sna
+PXD047231	confirmed	countries=['Saudi Arabia']		The Role of Microbe-Enhanced Iron-Dependent Redox Metabolism in optimizing photosynthesis under high
+PXD051103	confirmed	countries=['Saudi Arabia']	yes	Salicornia bigelovii responses to NaCl
+PXD051195	confirmed	countries=['Saudi Arabia']		LINE-1 RNA triggers matrix formation in bone cells via a PKR-mediated inflammatory response
+PXD051790	confirmed	countries=['Saudi Arabia']		Optimized Time-segment Acquisition Expands Peptide and Protein Identification in TIMS-TOF Pro Mass S
+PXD051826	confirmed	countries=['Saudi Arabia']		proteotoxic stress response in in-vitro 2 human neuronal models 3
+PXD053556	confirmed	countries=['Saudi Arabia']		Desulfuromonas acetexigens full proteome
+PXD062650	confirmed	countries=['Saudi Arabia']	yes	https://edelivery.oracle.com/akam/otn/java/jdk/8u202-b08/1961070e4c9b4e26a04e7f5a083f551e/jre-8u202-
+PXD065110	confirmed	countries=['Saudi Arabia']		A chloroplast protein, PORC,  undergoes heat-induced condensation and enhances thermotolerance in Ar
+PXD066612	confirmed	countries=['Saudi Arabia']		Coral color morphs exhibit distinct microbial and proteomic profiles linked to stress and immune mec
+PXD069054	confirmed	countries=['Saudi Arabia']		A Simple Human Embryo Model Reveals V-ATPase Requirement in Mammalian Blastocyst Cavitation
+PXD069737	confirmed	affiliation~'saudi arabia': Department of Medical Sciences, College of Medicine and Health Sciences, Khalifa Universit		The Calmodulin/Striatin Interaction is Enhanced in Diabetic Hearts and Defines Novel Signaling Clust
+PXD072096	confirmed	countries=['Saudi Arabia']		Prolonged stagnation reduces treated wastewater biostability by altering microbial community balance
+PXD072123	confirmed	countries=['Saudi Arabia']		Molecular Basis and Cellular Effects of Janus-Class–Driven Cytoplasmic PYK2 Coacervates
+PXD078003	confirmed	countries=['Saudi Arabia']		Effect of Magnesium ions on MEC performance and changes in proteome landscape in T. acetexigens
