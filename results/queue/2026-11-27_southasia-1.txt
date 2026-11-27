@@ -1,2 +1,3 @@
 # daily queue 2026-11-27 southasia batch 1 (open PXDs for Pakistan, Nepal, Sri Lanka)
 PXD002757	pakistan/lahore	blocked	blocked: 8 MALDI 2DE spots; README maps every spot to both gels; spot->control pool/CML unknown
+PXD020885	india/hyderabad	sandbox	sandbox: 20 RAW yeast WT/rub1D[HA-PfN8]/rub1D[HA-ScN8] anti-HA IP x3 exp; A/B as gel fractions guessed
