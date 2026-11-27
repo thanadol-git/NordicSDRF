@@ -30,8 +30,8 @@
   }
 </style>
 <rect class="bg" width="860" height="106.0" rx="6"/>
-<text class="title" x="12" y="22">Jordan — scoped</text>
-<text class="sub" x="12" y="40">1 listed · 0 local SDRFs · 0 sandbox · 1 to do · 0 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
+<text class="title" x="12" y="22">Jordan — in progress</text>
+<text class="sub" x="12" y="40">1 listed · 0 local SDRFs · 0 sandbox · 0 to do · 1 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -47,7 +47,7 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="544.0" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="561.0" y="62.0">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="82.0">Amman</text>
-<rect class="c-todo" fill="#8a8983" x="110.0" y="68.0" width="647.0" height="20" rx="2"><title>Amman · To do: 1</title></rect>
+<rect class="c-blocked" fill="#d95926" x="110.0" y="68.0" width="647.0" height="20" rx="2"><title>Amman · Blocked: 1</title></rect>
 <text class="seg" x="433.5" y="82.0" text-anchor="middle">1</text>
 <text class="total" x="764.0" y="82.0">1 listed</text>
 </svg>
