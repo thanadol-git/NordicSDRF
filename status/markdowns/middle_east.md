@@ -16,11 +16,11 @@ Per-country pages: [Country status pages](status/markdowns/)
 - [Egypt](egypt.md) — scoped
 - [Iran](iran.md) — in progress
 - [United Arab Emirates](uae.md) — in progress
-- [Qatar](qatar.md) — scoped
-- [Lebanon](lebanon.md) — scoped
-- [Cyprus](cyprus.md) — scoped
+- [Qatar](qatar.md) — in progress
+- [Lebanon](lebanon.md) — in progress
+- [Cyprus](cyprus.md) — in progress
 - [Kuwait](kuwait.md) — scoped
-- [Jordan](jordan.md) — scoped
+- [Jordan](jordan.md) — in progress
 - [Syria](syria.md) — not started
 - [Iraq](iraq.md) — not started
 - [Oman](oman.md) — not started

@@ -1043,15 +1043,15 @@ countries:
   qatar:
     region: middle_east
     name: Qatar
-    status: scoped
+    status: in_progress
     cities:
       doha:
         name: Doha
         search_terms: [Qatar, Doha, "Qatar University"]
         pride_hits: 17
         screened: 0
-        annotated: 0
-        blocked: 0
+        annotated: 5
+        blocked: 2
         pxd_list: lists/qatar/doha.txt
         pxd_count: 17
         in_corpus: 9
@@ -1060,7 +1060,7 @@ countries:
   lebanon:
     region: middle_east
     name: Lebanon
-    status: scoped
+    status: in_progress
     cities:
       beirut:
         name: Beirut
@@ -1068,7 +1068,7 @@ countries:
         notes: "Never search bare AUB"
         pride_hits: 10
         screened: 0
-        annotated: 0
+        annotated: 1
         blocked: 0
         pxd_list: lists/lebanon/beirut.txt
         pxd_count: 2
@@ -1078,7 +1078,7 @@ countries:
   cyprus:
     region: middle_east
     name: Cyprus
-    status: scoped
+    status: in_progress
     cities:
       nicosia:
         name: Nicosia
@@ -1086,8 +1086,8 @@ countries:
         notes: "Confirm country; Nicosia can collide"
         pride_hits: 9
         screened: 0
-        annotated: 0
-        blocked: 0
+        annotated: 1
+        blocked: 1
         pxd_list: lists/cyprus/nicosia.txt
         pxd_count: 4
         in_corpus: 2
@@ -1113,7 +1113,7 @@ countries:
   jordan:
     region: middle_east
     name: Jordan
-    status: scoped
+    status: in_progress
     cities:
       amman:
         name: Amman
@@ -1122,7 +1122,7 @@ countries:
         pride_hits: 66
         screened: 0
         annotated: 0
-        blocked: 0
+        blocked: 1
         pxd_list: lists/jordan/amman.txt
         pxd_count: 1
         in_corpus: 0
