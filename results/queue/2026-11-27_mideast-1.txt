@@ -1,2 +1,3 @@
 # daily queue 2026-11-27 mideast batch 1 (open PXDs for Lebanon, Jordan, Qatar, Cyprus)
 PXD033069	jordan/amman	blocked	blocked: no raw files listed (3 ProteinPilot .group + 4 seaMASS csv); iTRAQ8 map unseen; 5600 (PX) vs 6600
+PXD004652	qatar/doha	blocked	blocked: dimethyl triplex, 11 sets x M/H; no set/channel->timepoint map in paper (21 samples vs 22 slots); MQ zip unread; PXD004658 unrelated
