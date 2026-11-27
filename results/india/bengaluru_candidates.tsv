@@ -1,0 +1,102 @@
+accession	verdict	evidence	in_corpus	title
+PXD000795	confirmed	countries=['India']	yes	Identification of full length Hsp90 from Giardia lamblia cell lysate
+PXD000848	confirmed	countries=['India']		iTRAQ-based quantitative proteomic analysis of membrane and nuclear fractions of glioma (WHO grade I
+PXD001071	confirmed	countries=['India']	yes	Proteogenomics of Candida tropicalis – an opportunistic pathogen
+PXD001647	confirmed	countries=['India']		Anopheles stephensi salivary gland LC-MS/MS
+PXD002760	confirmed	countries=['India']		Muscle biopsies from human neuromuscular diseases with dystrophic, inflammatory and myopathic pathol
+PXD002828	confirmed	countries=['India']		Anopheles culicifacies species A and species B Midgut Proteome
+PXD004161	confirmed	countries=['India']		Quantitative proteomic and phosphoproteomic analysis of H37Ra and H37Rv strains of Mycobacterium tub
+PXD004332	confirmed	countries=['India']	yes	Characterization of human pineal gland proteome
+PXD004868	confirmed	affiliation~'india': Institute of Bioinformatics, Bangalore, India	yes	Altered signaling associated with chronic arsenic exposure in human skin keratinocytes
+PXD005207	confirmed	countries=['India']	yes	PfCDPK1 mediated signaling in erythrocytic stages of Plasmodium falciparum
+PXD005629	confirmed	countries=['India']		A proteomic analysis of human olfactory bulb
+PXD005819	confirmed	countries=['India']	yes	Proteomic analysis of human anterior pituitary gland
+PXD006255	confirmed	affiliation~'bengaluru': Harsha Gowda, Institute of Bioinformatics, Discoverer, 7th floor, International tech park,		Rapid processing of archival tissue samples for proteomic analysis using pressure-cycling technology
+PXD006283	confirmed	countries=['India']		An Integrated OMICs Approach of Assembly and Annotation of Indian Sandalwood (Santalum album L.) pla
+PXD006462	confirmed	countries=['India']		Identification of molecular response to blood meal in the fatbody of Anopheles stephensi using quant
+PXD006672	confirmed	countries=['India']	yes	Phosphoproteomic analysis reveals cytoskeletal remodelling via CDC42-PAK signaling in lung mucoepide
+PXD006677	confirmed	countries=['India']		Dataset on fat body proteome of Anopheles stephensi Liston
+PXD006705	confirmed	countries=['India']	yes	Targeting Focal Adhesion Kinase overcomes erlotinib resistance in smoke induced lung cancer by alter
+PXD006743	confirmed	countries=['India']		Proteome-wide changes in primary skin keratinocytes exposed to diesel particulate extract – a role f
+PXD007108	confirmed	countries=['India']	yes	Cigarette smoke induces mitochondrial metabolic reprogramming in lung cells
+PXD007127	confirmed	countries=['India']		Molecular alterations elicited by chronic exposure to cigarette smoke and chewing tobacco in oral ke
+PXD007256	confirmed	countries=['India']	yes	Calcium/calmodulin dependent protein kinase kinase 2 (CAMKK2), an alternative to curcumin in head an
+PXD007637	confirmed	countries=['India']		Molecular alterations elicited by chronic exposure to cigarette smoke in oral keratinocytes
+PXD007655	confirmed	countries=['India']		A Comparative Proteomic Analysis of Whey Protein from Early, Mid and Late Lactation Stages of Indian
+PXD007661	confirmed	countries=['India']		Global proteome profile of Elizabethkingia meningoseptica: an opportunistic nosocomial pathogen
+PXD007768	confirmed	affiliation~'india': Institute of Bioinformatics , International Technology Park, Bangalore, India	yes	SILAC-based proteomic approach to delineate molecular alterations associated with erlotinib resistan
+PXD007769	confirmed	affiliation~'india': Institute of Bioinformatics , International Technology Park, Bangalore, India.	yes	SILAC-based quantitative tyrosine phosphoproteomic profiling identifies alternative therapeutic targ
+PXD007785	confirmed	affiliation~'india': Institute of Bioinformatics , International Technology Park, Bangalore, India	yes	Genetic aberrations in MAP kinase pathway play an important role in erlotinib resistance in head and
+PXD007799	confirmed	affiliation~'india': Institute of Bioinformatics , International Technology Park, Bangalore, India		A multi-omic analysis to characterize cigarette smoke induced molecular alterations in esophageal ce
+PXD007814	confirmed	affiliation~'india': Institute of Bioinformatics , International Technology Park, Bangalore, India		A multi-omic analysis to characterize cigarette smoke induced molecular alterations in esophageal ce
+PXD007946	confirmed	affiliation~'india': Institute of Bioinformatics, 7th floor, Discoverer building, International Tech Park, Bang		PIM1 kinase promotes gallbladder cancer cell proliferation via inhibition of proline-rich Akt substr
+PXD008555	confirmed	countries=['India']		Integrated multi-omic analysis of M. tuberculosis H37Ra redefines virulence attributes
+PXD008700	confirmed	countries=['India']	yes	Quantitative proteomic analysis of lung adenocarcinoma and squamous cell carcinoma primary tissues u
+PXD009006	confirmed	countries=['India']	yes	Analysis of Conus venom peptides
+PXD009241	confirmed	countries=['India']		Identification of potential biomarkers of head and neck squamous cell carcinoma using iTRAQ based qu
+PXD010753	confirmed	countries=['India']		Proteomics of Asrij perturbed Drosophila lymph glands as a resource for identification of new regula
+PXD011106	confirmed	countries=['India']	yes	Proteomic analysis of oral keratinocytes chronically exposed to shisha
+PXD011130	confirmed	affiliation~'bangalore': Institute of Bioinformatics 7th floor, Discoverer building, International Tech Park, Banga		Secretome analysis of oral keratinocytes chronically exposed to shisha
+PXD011318	confirmed	countries=['India']		Chronic shisha exposure alters phosphoproteome of oral keratinocytes
+PXD011392	confirmed	countries=['India']	yes	Molecular analysis of somatic embryogenesis through proteomic approach and optimization of protocol 
+PXD012207	confirmed	countries=['India']	yes	Glioblastoma  serum biomarkers identification by iTRAQ
+PXD012899	confirmed	countries=['India']	yes	Analysis of C.monile venom peptides.
+PXD013396	confirmed	affiliation~'india': Institute of Bioinformatics, International Tech Park, Bangalore 560066, India		Chronic exposure to chewing tobacco induces metabolic reprogramming and cancer stem cell-like proper
+PXD014111	confirmed	countries=['India']	yes	iTRAQ-based quantitative proteomic analysis of nuclear fractions of glioma (WHO grade II, III and IV
+PXD014172	confirmed	countries=['India']	yes	Mapping proteome of seminal plasma and spermatozoa of Indian Indigenous Malnad Gidda (Bos indicus) c
+PXD015551	confirmed	countries=['India']	yes	Proteomic analysis of somatic embryo development in Musa spp. cv. Grand Naine (AAA)
+PXD015722	confirmed	countries=['India']		iTRAQ based quantitative proteomic analysis of human saliva to detect differential abundance of cand
+PXD017215	confirmed	countries=['India']	yes	A novel polyubiquitin chain linkage formed by viral Ubiquitin resists cleavage by deubiquitinating e
+PXD017882	confirmed	countries=['India']	yes	Identification and characterization of novel peptide components in the venom of Indian marine cone s
+PXD019243	confirmed	countries=['India']		Optimization of protocols for detection of de novo protein synthesis in whole blood samples via azid
+PXD020078	confirmed	countries=['India']	yes	Urinary Glycoproteomic profiling of Non-Muscle Invasive and Muscle Invasive Bladder Carcinoma Patien
+PXD020497	confirmed	countries=['India']		Hiss of death - Biogeographical venom variation in the Indian spectacled cobra (Naja naja) underscor
+PXD021060	confirmed	countries=['India']		Biogeographic venom variation in medically important Indian snakes and the inadequacy of antivenom t
+PXD021896	confirmed	countries=['India']		Proteomic analysis of SARS-CoV-2: A clinical landscape of  COVID-19 proteome and host responses
+PXD022808	confirmed	countries=['India']		Proteomic alterations in oral cancer patients delineated by tobacco using habits
+PXD023127	confirmed	countries=['India']	yes	A wolf in another wolf’s clothing: Post-genomic regulation dictates venom profiles of medically-impo
+PXD025362	confirmed	countries=['India']		To the islands their own: Venomics of the enigmatic Andaman cobra (N. sagittifera) and the preclinic
+PXD026036	confirmed	countries=['India']		Potential binding partners of profilin protein from Leishmania donovani
+PXD026879	confirmed	countries=['India']		Neuroproteomics with Systems Biology: The proteomic landscape of adult human hypothalamus
+PXD029436	confirmed	countries=['India']	yes	The preclinical evaluation of a second-generation antivenom for treating snake envenoming in India
+PXD031190	confirmed	countries=['India']		The Arabian cousin: Comparative venomics of Daboia palaestinae and Daboia russelii
+PXD031519	confirmed	affiliation~'india': Molecular Biology and Genetics Unit,  Jawaharlal Nehru Centre for Advanced Scientific Rese	yes	Cross-linking mass spectrometry and integrative modelling of Methanocaldococcus jannaschii GMP synth
+PXD031569	confirmed	countries=['India']		GPR56 (ADGRG1) and Transglutaminase (TG2) interaction in Regulation of Mesenchymal Transition in Gli
+PXD032958	confirmed	affiliation~'india': Department of Microbiology and Cell Biology, Indian Institute of Science, Bangalore, India		Functional genomics of glioblastoma: from epigenetics to proteomic investigation of tumor-initiating
+PXD034166	confirmed	countries=['India']	yes	Proteome of human scalp hair follicles
+PXD034212	confirmed	countries=['India']		Impact of neonatal lead exposure on memory: A study highlighting the association between hippocampal
+PXD035285	confirmed	countries=['India']	yes	Contryphan sequence diversity: Messy N-terminus processing, effects on chromatographic behaviour  an
+PXD035431	confirmed	countries=['India']	yes	Contryphan sequence diversity:Conus virgo
+PXD035536	confirmed	countries=['India']	yes	Contryphan sequence diversity:Conus inscriptus
+PXD035592	confirmed	countries=['India']	yes	Contryphan sequence diversity:Conus amadis
+PXD035670	confirmed	countries=['India']	yes	Contryphan sequence diversity:Conus lividus
+PXD035776	confirmed	countries=['India']	yes	Contryphan sequence diversity:Conus frigidus
+PXD036238	confirmed	affiliation~'india': Institute of Bioinformatics, 7th floor, Discoverer Building, International Tech Park, Bang		Molecular characterization of esophageal squamous cell carcinoma using quantitative proteomics
+PXD037171	confirmed	countries=['India']		Stings on wings: venom proteomics and tissue transcriptomics of the lesser banded hornet, Vespa affi
+PXD037488	confirmed	countries=['India']		Multigenerational effect of heat stress on the Drosophila melanogaster sperm proteome
+PXD037936	confirmed	countries=['India']		Amino acid sequence of Antheraea mylitta cocoonase.
+PXD039139	confirmed	countries=['India']		Fangs in the ghats: preclinical insights into the medical importance of endemic pit vipers from the 
+PXD042679	confirmed	countries=['India']	yes	Analysis of venom peptide from Conus betulinus
+PXD042902	confirmed	countries=['India']	yes	Analysis of Conus monile venom duct
+PXD043004	confirmed	countries=['India']	yes	Analysis of Conus monile venom duct.
+PXD045194	confirmed	countries=['India']		Targeting metabolic fluxes reverts metastatic transitions in ovarian cancer
+PXD046781	confirmed	countries=['India']		From birth to bite: the evolutionary ecology of India's medically most important snake venoms
+PXD049136	confirmed	countries=['India']		Widespread prevalence of a post-translational modification in activation of an essential bacterial D
+PXD049793	confirmed	countries=['India']	yes	Identification of interacting partners of Ppg1 phosphatase
+PXD049989	confirmed	countries=['India']		Regulation of Far11 phosphorylation by Ppg1 phosphatase
+PXD050802	confirmed	countries=['India']	yes	study of actin interactome in Alzheimers disease mouse model
+PXD052611	confirmed	countries=['India']		Elusive elapid: Biogeographic venom variation in Indian kraits and its repercussion on snakebite the
+PXD055164	confirmed	countries=['India']		Phosphoproteomics guides low dose drug combination of cisplatin and silmitasertib against concurrent
+PXD058855	confirmed	countries=['India']		KAT5-mediated acetylation of PC4 facilitates DNA repair by promoting chromatin reorganization
+PXD059878	confirmed	countries=['India']	yes	KAT5-mediated acetylation of PC4 facilitates DNA repair by promoting chromatin reorganization
+PXD064002	confirmed	countries=['India']		Explaining Echis envenoming: Transcriptomic and proteomic profiling of Echis carinatus venom
+PXD069961	confirmed	countries=['India']	yes	Interactome profile of the global regulator YmdB in Bacillus subtilis
+PXD072960	confirmed	countries=['India']		A detailed Proteomic map of the mechanical disease vector Musca domestica adult flies
+PXD073003	confirmed	countries=['India']		A Phosphoproteomics analysis of male and female of mechanical disease vector Musca domestica adult f
+PXD075095	confirmed	countries=['India']		Intact protein mass analysis of wild-type and mutants of glutamine amidotransferase from Methanocald
+PXD075155	confirmed	countries=['India']	yes	MS/MS analysis of in-gel tryptic peptides of wild-type and mutants of glutamine amidotransferase fro
+PXD078927	confirmed	countries=['India']	yes	Mice BMDCs LCMS datta analysis for showing cross presentation in Antigen presenting cells
+PXD079132	confirmed	countries=['India']		Mice BMDCs LCMS datta analysis for showing cross presentation in Antigen presenting cells
+PXD082567	confirmed	countries=['India']		A Proteomics approaches to investigate lead toxicity in industrial workers
+PXD082794	confirmed	countries=['India']	yes	3D confinement physically regulates cell cycle progression in budding yeast
+PXD083392	confirmed	countries=['India']		Pull-Down Analysis of DUB Interactions with Ub, vUb, and their mutants

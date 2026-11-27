@@ -1,0 +1,13 @@
+accession	verdict	evidence	in_corpus	title
+PXD002774	confirmed	countries=['India']		Proteomic profiling of retinoblastoma by high resolution mass spectrometry
+PXD007228	confirmed	countries=['India']		QUANTITATIVE PHOSPHOPROTEOMIC PROFILING OF PRIMARY RETINOBLASTOMA TUMORS
+PXD007531	confirmed	countries=['India']	yes	Proteomics based identification and validation of biomarkers for AMD
+PXD008221	confirmed	countries=['India']	yes	Preclinical targeted therapy for retinoblastoma using EpCAM Aptamer siRNA chimeras
+PXD012552	rejected	countries=['China'] | Dalian Medical University ; Institute of Cancer Stem Cell, Cancer Center, Dalian Medical	yes	XAB2 depletion induces intron retention in POLR2A to impair global transcription and promote cellula
+PXD016843	confirmed	countries=['India']		Characterization of plasma proteins of  HIV/AIDS patients underfirst line anti-retroviral therapy
+PXD017985	confirmed	countries=['India']		Phosphoproteome analysis of signaling by ErbB2 in ovarian cancer cell line (2nd approach)
+PXD018046	confirmed	countries=['India']		Phosphoproteome analysis of signaling by ErbB2 in ovarian cancer cell line(1st approach)
+PXD052211	confirmed	countries=['India']		Comparative proteomic study of healthy retinal vascular tree from human donor eyes and fibrovascular
+PXD065022	rejected	countries=['Czech Republic'] | CEITEC MU ; Proteomics Core Facility and Research Group Proteomics, CEIT		Proteome analysis of seven Treponema pallidum subsp. pallidum strains grown in vitro: a limited numb
+PXD067986	confirmed	countries=['India']	yes	Comparative proteomics of human naso-oropharyngeal swabs from COVID19 patients for identification of
+PXD075094	confirmed	affiliation~'india': Department of Nanobiotechnology, Vision Research Foundation, Sankara Nethralaya, 18 Colleg		TCF4 trinucleotide repeat expansion drives distinct proteomic signatures in Fuchs endothelial cornea

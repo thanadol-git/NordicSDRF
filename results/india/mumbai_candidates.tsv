@@ -1,0 +1,68 @@
+accession	verdict	evidence	in_corpus	title
+PXD000644	confirmed	countries=['India']		Bacillus subtilis under Curcumin treatment LC-MS/MS
+PXD001097	confirmed	countries=['India']		B. subtilis, Totarol, LC-MS/MS
+PXD002296	confirmed	countries=['India']		Binding partners to Testis Specific Antigen, TSA70
+PXD002313	confirmed	countries=['India']		Plasmodium spp. Glyceraldehyde 3-phosphate dehydrogenase: Diverse subcellular localization and multi
+PXD004712	confirmed	countries=['India']		Chlorella sp. FC2 IITG temporal nitrogen-starvation LC-MSMS
+PXD005267	confirmed	countries=['India']		Quantitative Proteomics analysis of Plasmodium vivax induced alterations in human serum during the a
+PXD005301	confirmed	countries=['India']		Quantitative phosphoproteomic analysis reveals system-wide signaling pathways regulated by site-spec
+PXD006509	confirmed	countries=['India']		PROTEOMIC ALTERATIONS IN COLON ADENOCARCINOMA TISSUE LYSATES
+PXD007206	confirmed	countries=['India']		Depletion of Keratin8 affects tumorigenic potential of A431 cells via altering multiple signaling pa
+PXD007734	confirmed	countries=['India']		Protein analysis from mandibular glands of termites
+PXD009291	rejected	countries=['United Kingdom'] | University of Bristol ; Department of Biochemistry, Biomedical Sciences Building, Un		Enhancement of red blood cell transfusion compatibility using CRISPR-mediated erythroblast gene edit
+PXD009686	confirmed	countries=['India']	yes	LC-MSMS of leukemic cell line K562
+PXD011485	confirmed	countries=['India']		Elevated carbon dioxide levels lead to proteome-wide alterations for optimal growth of a fast-growin
+PXD012455	confirmed	countries=['India']		Honeybees glandular proteins - data analysis
+PXD012731	confirmed	countries=['India']	yes	Quantitative mass spectrometric analysis to unravel glycoproteomic signature of follicular fluid in 
+PXD014823	confirmed	affiliation~'bombay': PI BSBE PROTEOMICS LAB IIT BOMBAY	yes	Global proteomic profiling of meningioma cohort
+PXD014852	confirmed	affiliation~'bombay': PROFESSOR, PI, PROTEOMICS LAB, DEPARTMENT OF BIOSCIENCES AND BIOENGINEERING, IIT BOMBAY		Mining the meningioma lanscape to identify biomarkers using LFQ
+PXD014853	confirmed	affiliation~'bombay': PROFESSOR, PRINCIPLE INVESTIGATOR, PROTEOMICS LAB, BSBE, IIT BOMBAY	yes	Mining Meningioma Proteomics Alterations Using IP MS
+PXD014855	confirmed	affiliation~'bombay': PROFESSOR, PRINCIPLE INVESTIGATOR, PROTEOMICS LAB, DEPARTMENT OF BIOSCIENCES AND BIOENGINE		Identifying alterations post ILK inhibition in Meningioma cell lines
+PXD014991	confirmed	countries=['India']		Multiplexed Quantitative Proteomics Provides Mechanistic Cues for Malaria Severity and Complexity
+PXD015090	rejected	countries=['China'] | College of Agronomy, Shandong Agricultural University, Tai’a ; College of Agronomy, Shandong Agricultural University, Tai’a		Proteome and phosphoproteome data of peanut seedlings under salt stress
+PXD015165	confirmed	countries=['India']		Next-generation diagnostic biomarkers for vivax malaria
+PXD017164	confirmed	affiliation~'india': Department of Biosciences and Bioengineering, IIT Bombay, Mumbai 400076, India		A Data-Independent-Acquisition-based proteomic approach towards understanding the acclimation strate
+PXD017297	confirmed	affiliation~'india': Department of Biosciences and Bioengineering, IIT Bombay, Mumbai 400076, India		A Data-Independent-Acquisition-based proteomic approach towards understanding the acclimation strate
+PXD017834	confirmed	countries=['India']		An Integrated Quantitative Proteomics Workflow for Biomarker Discovery and Validation in Plasma
+PXD017987	confirmed	countries=['India']	yes	Validation of Nri1/Nri2 physical interaction with the Candida albicans RSC complex
+PXD017988	confirmed	countries=['India']	yes	Identification of interactors of Sth1 in Candida albicans
+PXD017990	confirmed	countries=['India']	yes	Global proteome analysis of conditional sth1 mutant in Candida albicans
+PXD019936	confirmed	countries=['India']		Human Brain Proteomics uncovers the Inter-hemispheric laterality & Inter-regional proteomic signatur
+PXD020580	confirmed	countries=['India']	yes	Proteomic Investigation Reveals Dominant Alterations of Neutrophil Degranulation and mRNA Translatio
+PXD021822	confirmed	countries=['India']	yes	Identification of proteins in the interactomes of 4 DNA-repair proteins of Deinococcus radiodurans
+PXD022296	confirmed	countries=['India']		Mass-spectrometry based plasma proteomics identifies biomarkers for the detection of COVID-19 progre
+PXD022380	confirmed	countries=['India']		Chronic exposure of humans to high level natural background radiation leads to robust expression of 
+PXD022506	confirmed	countries=['India']	yes	Discovery of biomarkers in radioresistant MCF7R breast cancer xenografts
+PXD023016	confirmed	countries=['India']	yes	Proteomic Investigation Reveals Dominant Alterations of Neutrophil Degranulation and mRNA Translatio
+PXD023521	confirmed	countries=['India']	yes	A longitudinal study of COVID-19 patients using proteomics approach
+PXD023569	confirmed	countries=['India']	yes	Cerulenin action on colon cancer cell line
+PXD023589	confirmed	countries=['India']		TOMATO SEEDLING LIGHT INDUCED PROTEOMICS ALTERATON
+PXD024293	confirmed	countries=['India']	yes	LC-MSMS of microplasts derived from macrophage conditioned medium treated breast adenocarcinoma MCF-
+PXD025173	confirmed	countries=['India']		iTRAQ analysis of K562 cell line
+PXD026036	confirmed	countries=['India']		Potential binding partners of profilin protein from Leishmania donovani
+PXD026377	confirmed	countries=['India']	yes	Proteomic profiling of Labeo Rohita; a widely cultivated fish
+PXD026703	confirmed	countries=['India']	yes	Viral fallout: Semen proteome reveals COVID-19 dysregulates several biological processes linked to m
+PXD027141	confirmed	countries=['India']	yes	Organ wise proteomic profiling of Indian major carp,  Labeo rohita
+PXD029300	confirmed	countries=['India']		Detection of mutated peptides of SARS-CoV-2 from COVID-19-infected patients
+PXD030235	confirmed	countries=['India']		Mass Spectrometry analysis of human matched Anterior and Posterior lobes of Pituitary
+PXD033529	confirmed	countries=['India']		A proteomics investigation of cigarette smoke exposed Wistar rats revealed improved anti-inflammator
+PXD037850	confirmed	countries=['India']	yes	Proteomic analysis of gut tissue of Labeo rohita infected with Aeromonas hydrophila
+PXD039170	confirmed	countries=['India']		Proteomics analysis of High-grade glioma tissues showing differential fluorescence following 5-Amino
+PXD039285	confirmed	countries=['India']		Quantitative proteomic analaysis of colorectal cancer
+PXD041904	confirmed	countries=['India']		Semen proteome analysis comparing the persistent effects of different SARS-COV-2 variants on male re
+PXD043888	confirmed	countries=['India']	yes	Proteomic analysis of cold atmospheric plasma induced bystander signalling in human lung carcinoma A
+PXD050400	confirmed	countries=['India']	yes	GCN5 interactome in U87MG Control, IR and doxorubicin treated conditions
+PXD050799	confirmed	countries=['India']	yes	Modulation of abiotic stress tolerance and photosynthesis of cyanobacterium Nostoc PCC 7120 through 
+PXD051777	confirmed	countries=['India']		Proteomics of motor enriched fraction (ATP releasate) from Dictyostelium discoideum
+PXD055242	confirmed	countries=['India']		Meta-Analysis and DIA-MS-based Proteomic Investigation of COPD Patients and Asymptomatic Smokers in 
+PXD055870	confirmed	countries=['India']	yes	Identification of post translational modifications of human Topoiosmerase 1 in the presence of campt
+PXD057032	confirmed	countries=['India']		Phosphoproteome enrichment strategy using complementary chemistries of Fe-NTA and TiO2 followed by L
+PXD057116	confirmed	countries=['India']		Quantitative comparative proteomic analysis of ITGB1-knockdown and ITGB1-vector control cells in K56
+PXD059501	confirmed	countries=['India']	yes	In vitro Protein Expression Profile of Cultivated Muscle Cells from Labeo rohita
+PXD059581	confirmed	countries=['India']		First report of natural co-infections and protein profile of Indian Major Carp, Labeo rohita
+PXD060219	confirmed	countries=['India']	yes	Development and proteome characterisation of muscle cell culture derived from Genetically improved f
+PXD062678	confirmed	countries=['India']		Identification of potential salivary biomarkers and enriched protein domain/motif families for early
+PXD064422	confirmed	countries=['India']	yes	Mass Spectrometry of Escherichia coli expressing ParA from F' plasmid or weak IPTG inducible promote
+PXD067986	confirmed	countries=['India']	yes	Comparative proteomics of human naso-oropharyngeal swabs from COVID19 patients for identification of
+PXD071171	rejected	countries=['Germany'] | CECAD Research Center ; Department II of Internal Medicine and Center for Molecular 		Mitochondrial IntegrityMitochondrial Integrity Modulates mTOR Signaling and Podocyte Function  Modul
+PXD082794	confirmed	countries=['India']	yes	3D confinement physically regulates cell cycle progression in budding yeast
