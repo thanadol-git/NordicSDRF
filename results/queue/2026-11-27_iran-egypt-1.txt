@@ -3,3 +3,4 @@ PXD030535	iran/tehran	blocked	blocked: not proteomics; GC-MS of Nostoc EPS; 4 fi
 PXD030537	iran/tehran	blocked	blocked: earlier resubmission of PXD030535 study; jpg + pdf only, no MS data
 PXD000319	iran/tehran	sandbox	sandbox: 9/9 zip mapped (WW/WD/DD x3 from file tokens); IR64 vs Nipponbare; LTQ unverified; paper closed
 PXD006271	iran/tehran	sandbox	sandbox: 18/18 mzML (no vendor raw); H9 6 subcellular fractions x3; DDA, reps, TCEP/MMTS from companion paper inferred
+PXD002428	iran/tehran	sandbox	sandbox: 9/9 zip; 3x3 Control/Mock/DDX3Y-siRNA NT2 NPCs; LTQ PX-only, zip members + Methods unread
