@@ -18,3 +18,4 @@ PXD024630	singapore/singapore	annotated	annotated: 8/8 RAW label-free BioID; ZNF
 PXD005239	singapore/singapore	blocked	blocked: 9 mzML (F1-F10, no F7; no wiff) + 13GB PP group.xml; iTRAQ8 channel map absent, paper closed
 PXD059385	singapore/singapore	sandbox	sandbox: 8/8 RAW pH5.5/pH7 x R1-4 (AusDCA strain, NCBITaxon:3240383); PD searched 10 AT11-20, no key; paper closed
 PXD065824	singapore/singapore	blocked	blocked: FTP verified 7 RAW/11 files, no metadata txt (checksum empty); TMTpro map only in 1.3G msf
+PXD053645	singapore/singapore	sandbox	sandbox: 9/9 RAW, Ctrl_III/MT_III anti-IVNS1ABP IP + IgG x3 (stated); IgG lysate unstated; Exploris 480 (paper) vs Elite (PX)
