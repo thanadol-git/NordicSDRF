@@ -12,3 +12,4 @@ PXD008090	singapore/singapore	sandbox	sandbox: 6/6 RAW, SGA malted vs SGB raw+en
 PXD065824	singapore/singapore	blocked	blocked: 7 RAW = 7 fractions of 1 TMTpro set (DMSO/P-1/P-2b/P-3 x3); channel map absent; .msf unread (FTP down)
 PXD062502	singapore/singapore	blocked	blocked: 6 RAW, no bait/control key; run names carry only S1-S4 serials; 8 runs searched, 6 deposited
 PXD028714	singapore/singapore	sandbox	sandbox: 7/7 RAW label-free AML12, 1 pooled run/condition; QE HF-X (paper, HFX4 prefix) vs PX HF; DDA/mods unread
+PXD053974	singapore/singapore	blocked	blocked (provisional): TMT channel->dose/temp map unstated in paper; 8 RAW cache vs 160 implied by Methods; PX/FTP unread
