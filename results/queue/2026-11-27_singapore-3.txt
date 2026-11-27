@@ -5,6 +5,6 @@ PXD028325	singapore/singapore	sandbox	sandbox: 10/10 t2d, 1 seed-extract spot; 4
 PXD011825	singapore/singapore	sandbox	sandbox: 40 rows = 5 wiff x 8 iTRAQ (map Fig 1b); paper does not cite the PXD; mods inferred
 PXD082746	singapore/singapore	annotated	annotated: 9/9 RAW label-free DIA; Ctrl/Atq/DSM x3 from file names; Exploris 480; review round1 PASS
 PXD021926	singapore/singapore	sandbox	sandbox: 12/12 RAW; RBCEV run->donor order and pulldown pairing inferred; RAW/mqpar not read
-PXD054586	singapore/singapore	annotated	annotated: 12/12 RAW; PLUM FL/dExon1/dExon7 x4 from file names; QE HF; review pending
 PXD031110	singapore/singapore	sandbox	sandbox: 12/12 RAW label-free; WT/KO x DMSO/volasertib x3 from file names; trypsin/DDA/QE HF from PX only, Methods DOCX unread
 PXD051044	singapore/singapore	sandbox	sandbox: 12/12 RAW label-free (3 tumoroids x3 + DMEM blank x3, split files); reps=injections inferred; RAW/mqpar unread
+PXD054586	singapore/singapore	annotated	annotated: 12/12 RAW; PLUM FL/dExon1/dExon7 x4 from file names; QE HF; review round1 PASS
