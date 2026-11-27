@@ -9,7 +9,6 @@ PXD027027	singapore/singapore	sandbox	sandbox: 5/5 RAW; P. tricornutum co-IP (no
 PXD084067	singapore/singapore	sandbox	sandbox: 6/6 wiff mapped; T-W=testis, C/C2/C3=CI embryos INFERRED from file tokens; organism Aaeg not PX Aalb
 PXD035225	singapore/singapore	sandbox	sandbox: 6/6 RAW (SMC3-3HA IP x3 / NF54-named WT ctrl x3, tech reps stated); HF-X (paper) vs HF (PX), RAW unread
 PXD008090	singapore/singapore	sandbox	sandbox: 6/6 RAW, SGA malted vs SGB raw+enzymes (stated); rep=file suffix inferred; FTP down, txt.zip/raw unread
-PXD065824	singapore/singapore	blocked	blocked: 7 RAW = 7 fractions of 1 TMTpro set (DMSO/P-1/P-2b/P-3 x3); channel map absent; .msf unread (FTP down)
 PXD062502	singapore/singapore	blocked	blocked: 6 RAW, no bait/control key; run names carry only S1-S4 serials; 8 runs searched, 6 deposited
 PXD028714	singapore/singapore	sandbox	sandbox: 7/7 RAW label-free AML12, 1 pooled run/condition; QE HF-X (paper, HFX4 prefix) vs PX HF; DDA/mods unread
 PXD053974	singapore/singapore	blocked	blocked (provisional): TMT channel->dose/temp map unstated in paper; 8 RAW cache vs 160 implied by Methods; PX/FTP unread
@@ -18,3 +17,4 @@ PXD043084	singapore/singapore	annotated	annotated: 8/8 RAW label-free BioID; Bir
 PXD024630	singapore/singapore	annotated	annotated: 8/8 RAW label-free BioID; ZNF524 WT x4 (bait) vs ZF2 C144A mut x4 (ctrl), Fig 3f; dox 100 vs 300 resolved; review round1 PASS
 PXD005239	singapore/singapore	blocked	blocked: 9 mzML (F1-F10, no F7; no wiff) + 13GB PP group.xml; iTRAQ8 channel map absent, paper closed
 PXD059385	singapore/singapore	sandbox	sandbox: 8/8 RAW pH5.5/pH7 x R1-4 (AusDCA strain, NCBITaxon:3240383); PD searched 10 AT11-20, no key; paper closed
+PXD065824	singapore/singapore	blocked	blocked: FTP verified 7 RAW/11 files, no metadata txt (checksum empty); TMTpro map only in 1.3G msf
