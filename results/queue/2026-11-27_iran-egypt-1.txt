@@ -9,3 +9,4 @@ PXD017288	iran/tehran	sandbox	sandbox: 17/17 raw; run->sample from file names on
 PXD036231	iran/tehran	blocked	blocked: 0 MS data files; 18 TIF images + 3 Mascot PDFs + Peptides.dat/txt only
 PXD027360	iran/tehran	blocked	blocked: TMT130/131 KD-vs-parental map unstated; PROXI lists 5/12 fractions; FTP + .msf unreachable
 PXD011558	egypt/cairo	blocked	duplicate of PXD011693: same 6 wiff/6 mgf/6 xls names + metadata; paper cites only PXD011693; bytes unverified
+PXD011693	egypt/cairo	sandbox	sandbox: 6/6 wiff; ESBL vs non-ESBL per isolate unstated; TT5600+ per paper vs PX 5600
