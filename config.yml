@@ -34,7 +34,7 @@ pipeline:
   tier_3_claude:
     jobs: [sdrf_annotate, sdrf_review, sdrf_adversarial_review]
 
-pride_hits_queried: 2026-11-26
+pride_hits_queried: 2026-11-27
 
 corpus_source: GitHub bigbio/sdrf-annotated-datasets (2026-11-27)
 
@@ -138,7 +138,7 @@ countries:
       odense:
         name: Odense
         search_terms: [Odense, "University of Southern Denmark"]
-        pride_hits: 619
+        pride_hits: 620
         screened: 0
         annotated: 92
         blocked: 31
