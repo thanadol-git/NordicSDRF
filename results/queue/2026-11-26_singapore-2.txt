@@ -14,3 +14,4 @@ PXD062502	singapore/singapore	blocked	blocked: 6 RAW, no bait/control key; run n
 PXD028714	singapore/singapore	sandbox	sandbox: 7/7 RAW label-free AML12, 1 pooled run/condition; QE HF-X (paper, HFX4 prefix) vs PX HF; DDA/mods unread
 PXD053974	singapore/singapore	blocked	blocked (provisional): TMT channel->dose/temp map unstated in paper; 8 RAW cache vs 160 implied by Methods; PX/FTP unread
 PXD043084	singapore/singapore	annotated	annotated: 8/8 RAW label-free BioID; BirA*-ZNF524 WT x4 (bait) vs BirA*-NLS x4 (ctrl) per Supp Fig 3a; QE HF; review pending
+PXD024630	singapore/singapore	annotated	annotated: 8/8 RAW label-free BioID; ZNF524 WT x4 (bait) vs ZF2 C144A mut x4 (ctrl), Fig 3f; dox 100 vs 300 resolved; review pending
