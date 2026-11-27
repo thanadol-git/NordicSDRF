@@ -1,3 +1,4 @@
 # daily queue 2026-11-27 singapore batch 3 (next 10 Singapore PXDs with fewest RAW)
 PXD043818	singapore/singapore	blocked	blocked: HDX-MS; 9 "RAW" are DynamX .DnX projects, 28 PLGS UnD zips; no Waters .raw runs (=PXD042235 case)
 PXD008834	singapore/singapore	blocked	blocked: iTRAQ8 x10 RPRP fractions; channel map absent (Wiley paywall, no PMC); .group unread (FTP down)
+PXD082746	singapore/singapore	annotated	annotated: 9/9 RAW label-free DIA; Ctrl/Atq/DSM x3 from file names; Exploris 480; review pending
