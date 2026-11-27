@@ -7,3 +7,4 @@ PXD082746	singapore/singapore	annotated	annotated: 9/9 RAW label-free DIA; Ctrl/
 PXD021926	singapore/singapore	sandbox	sandbox: 12/12 RAW; RBCEV run->donor order and pulldown pairing inferred; RAW/mqpar not read
 PXD054586	singapore/singapore	annotated	annotated: 12/12 RAW; PLUM FL/dExon1/dExon7 x4 from file names; QE HF; review pending
 PXD031110	singapore/singapore	sandbox	sandbox: 12/12 RAW label-free; WT/KO x DMSO/volasertib x3 from file names; trypsin/DDA/QE HF from PX only, Methods DOCX unread
+PXD051044	singapore/singapore	sandbox	sandbox: 12/12 RAW label-free (3 tumoroids x3 + DMEM blank x3, split files); reps=injections inferred; RAW/mqpar unread
