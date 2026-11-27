@@ -5,3 +5,4 @@ PXD000319	iran/tehran	sandbox	sandbox: 9/9 zip mapped (WW/WD/DD x3 from file tok
 PXD006271	iran/tehran	sandbox	sandbox: 18/18 mzML (no vendor raw); H9 6 subcellular fractions x3; DDA, reps, TCEP/MMTS from companion paper inferred
 PXD002428	iran/tehran	sandbox	sandbox: 9/9 zip; 3x3 Control/Mock/DDX3Y-siRNA NT2 NPCs; LTQ PX-only, zip members + Methods unread
 PXD007837	iran/tehran	sandbox	sandbox: 15/15 zips (5 groups x3); RH6 parent inferred; 12 vs 16 slices, zip members unread; LTQ-XL per paper
+PXD017288	iran/tehran	sandbox	sandbox: 17/17 raw; run->sample from file names only; 5 runs unidentified
