@@ -38,8 +38,35 @@ ROOT = Path(__file__).resolve().parents[1]
 PRIDE = "https://www.ebi.ac.uk/pride/ws/archive/v2"
 PAGE_SIZE = 100
 
-DEMONYMS = {"sweden": ["Swedish"], "norway": ["Norwegian"], "denmark": ["Danish"],
-            "finland": ["Finnish"], "iceland": ["Icelandic"]}
+DEMONYMS = {
+    "sweden": ["Swedish"], "norway": ["Norwegian"], "denmark": ["Danish"],
+    "finland": ["Finnish"], "iceland": ["Icelandic"],
+    "india": ["Indian"], "pakistan": ["Pakistani"], "nepal": ["Nepali", "Nepalese"],
+    "sri_lanka": ["Sri Lankan"], "bangladesh": ["Bangladeshi"],
+    "bhutan": ["Bhutanese"], "maldives": ["Maldivian"], "afghanistan": ["Afghan"],
+    "singapore": ["Singaporean"], "thailand": ["Thai"], "malaysia": ["Malaysian"],
+    "vietnam": ["Vietnamese"], "philippines": ["Filipino", "Philippine"],
+    "indonesia": ["Indonesian"], "myanmar": ["Burmese", "Myanmar"],
+    "laos": ["Lao", "Laotian"], "cambodia": ["Cambodian"], "brunei": ["Bruneian"],
+    "timor_leste": ["Timorese"],
+    "israel": ["Israeli"], "turkey": ["Turkish", "Türkiye", "Turkiye"],
+    "saudi_arabia": ["Saudi"], "egypt": ["Egyptian"], "iran": ["Iranian", "Persian"],
+    "uae": ["Emirati"], "qatar": ["Qatari"], "lebanon": ["Lebanese"],
+    "cyprus": ["Cypriot"], "kuwait": ["Kuwaiti"], "jordan": ["Jordanian"],
+    "syria": ["Syrian"], "iraq": ["Iraqi"], "oman": ["Omani"],
+    "yemen": ["Yemeni"], "bahrain": ["Bahraini"], "palestine": ["Palestinian"],
+    "kazakhstan": ["Kazakh", "Kazakhstani"], "uzbekistan": ["Uzbek", "Uzbekistani"],
+    "kyrgyzstan": ["Kyrgyz", "Kirghiz"], "tajikistan": ["Tajik", "Tajikistani"],
+    "turkmenistan": ["Turkmen", "Turkmenistani"],
+}
+
+# Extra PRIDE `countries` spellings (beyond display name / demonyms).
+COUNTRY_ALIASES = {
+    "turkey": ["Türkiye", "Turkiye"],
+    "uae": ["UAE", "U.A.E.", "United Arab Emirates"],
+    "saudi_arabia": ["KSA", "Kingdom of Saudi Arabia"],
+    "palestine": ["State of Palestine", "Palestinian Territory", "Palestine, State of"],
+}
 
 
 def get_json(url: str, retries: int = 3):
@@ -67,25 +94,41 @@ def search(term: str) -> set[str]:
         page += 1
 
 
-def classify(rec: dict, country: str, terms: list[str]) -> tuple[bool, str]:
+def country_display_name(slug: str, cfg_country: dict | None = None) -> str:
+    """Human country name for PRIDE `countries` matching (e.g. sri_lanka → Sri Lanka)."""
+    if cfg_country and cfg_country.get("name"):
+        return str(cfg_country["name"])
+    return slug.replace("_", " ").title()
+
+
+def classify(rec: dict, country_slug: str, terms: list[str], *,
+             display_name: str | None = None) -> tuple[bool, str]:
     """Return (confirmed, evidence)."""
-    cname = country.title()
+    cname = display_name or country_display_name(country_slug)
+    slug_l = country_slug.lower()
+    name_l = cname.lower()
+    aliases = COUNTRY_ALIASES.get(country_slug, [])
+    alias_l = {a.lower() for a in aliases}
     people = (rec.get("submitters") or []) + (rec.get("labPIs") or [])
-    if cname in (rec.get("countries") or []):
-        return True, f"countries={rec.get('countries')}"
+    countries = rec.get("countries") or []
+    if (cname in countries
+            or any((c or "").lower() == name_l for c in countries)
+            or any((c or "").lower() in alias_l for c in countries)
+            or any(a in countries for a in aliases)):
+        return True, f"countries={countries}"
     for p in people:
-        if (p.get("country") or "").strip().lower() == country:
+        pc = (p.get("country") or "").strip().lower()
+        if pc in {slug_l, name_l, slug_l.replace("_", " "), *alias_l}:
             return True, f"submitter country={cname} ({p.get('name')})"
-    needles = [t.lower() for t in [cname, *DEMONYMS.get(country, []), *terms]]
+    needles = [t.lower() for t in [cname, *DEMONYMS.get(country_slug, []), *aliases, *terms] if t]
     for p in people:
         aff = (p.get("affiliation") or "")
         low = aff.lower()
-        hit = next((n for n in needles if n in low), None)
+        hit = next((n for n in needles if n and n in low), None)
         if hit:
             return True, f"affiliation~'{hit}': {aff[:90]}"
     affs = " ; ".join((p.get("affiliation") or "")[:60] for p in people) or "(no affiliation)"
-    return False, f"countries={rec.get('countries')} | {affs}"
-
+    return False, f"countries={countries} | {affs}"
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -97,18 +140,20 @@ def main() -> None:
 
     cfg = yaml.safe_load((ROOT / "config.yml").read_text())
     try:
-        city = cfg["countries"][args.country]["cities"][args.city]
+        cdata = cfg["countries"][args.country]
+        city = cdata["cities"][args.city]
     except KeyError:
         sys.exit(f"{args.country}/{args.city} is not in config.yml")
+    display = country_display_name(args.country, cdata)
     terms = list(dict.fromkeys([*(city.get("search_terms") or [city.get("name", args.city)]), *args.term]))
     # affiliation matching also accepts every other city term of the same country
     country_terms = list(dict.fromkeys(
-        t for c in cfg["countries"][args.country]["cities"].values() for t in (c.get("search_terms") or [])))
+        t for c in cdata["cities"].values() for t in (c.get("search_terms") or [])))
 
     corpus_dir = ROOT / cfg.get("tools", {}).get("sdrf_annotated_datasets", "../sdrf-annotated-datasets") / "datasets"
     corpus = {d.name for d in corpus_dir.iterdir()} if corpus_dir.exists() else set()
 
-    print(f"{args.country}/{args.city}: searching PRIDE for {terms}")
+    print(f"{args.country}/{args.city}: searching PRIDE for {terms} (country={display})")
     candidates: set[str] = set()
     for t in terms:
         hits = search(t)
@@ -122,7 +167,7 @@ def main() -> None:
         if not rec:
             rows.append((acc, "error", "record fetch failed", "", ""))
             continue
-        ok, evidence = classify(rec, args.country, country_terms)
+        ok, evidence = classify(rec, args.country, country_terms, display_name=display)
         legacy = not acc.startswith("PXD")
         verdict = "legacy_id" if legacy and ok else "confirmed" if ok else "rejected"
         rows.append((acc, verdict, evidence, "yes" if acc in corpus else "", (rec.get("title") or "")[:100]))
@@ -144,17 +189,19 @@ def main() -> None:
     if args.dry_run:
         print(f"dry run: not writing {manifest.relative_to(ROOT)}")
         return
+    manifest.parent.mkdir(parents=True, exist_ok=True)
+    existing = set()
     if manifest.exists():
         existing = {ln.strip() for ln in manifest.read_text().splitlines() if ln.strip()}
+    if existing:
         new = sorted(set(confirmed) - existing)
-        print(f"{manifest.relative_to(ROOT)} exists ({len(existing)} lines); {len(new)} confirmed PXDs are not in it: {new}")
+        print(f"{manifest.relative_to(ROOT)} exists ({len(existing)} lines); "
+              f"{len(new)} confirmed PXDs are not in it: {new}")
         print("not overwriting — merge by hand or delete the file to regenerate")
         return
-    manifest.parent.mkdir(parents=True, exist_ok=True)
     manifest.write_text("\n".join(confirmed) + ("\n" if confirmed else ""))
     print(f"wrote {manifest.relative_to(ROOT)} ({len(confirmed)} PXDs). Next:\n"
           f"    python scripts/update_status.py --no-pride --corpus github")
-
 
 if __name__ == "__main__":
     main()

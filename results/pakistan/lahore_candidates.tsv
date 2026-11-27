@@ -1,0 +1,28 @@
+accession	verdict	evidence	in_corpus	title
+PXD002392	confirmed	countries=['Pakistan']	yes	Dithiothreitol (DTT) acts as a specific, UV-inducible cross-linker in elucidation of protein-RNA int
+PXD002656	confirmed	countries=['Pakistan']	yes	Dithiothreitol (DTT) acts as a specific, UV-inducible cross-linker in elucidation of protein-RNA int
+PXD002757	confirmed	countries=['Pakistan']		Plasma Proteome Profiling of CML in Pakistan
+PXD003671	rejected	countries=['Japan'] | NARO Institute of Crop Science, University of Tsukuba ; National Institute of Crop Science, Tsukuba, Japan	yes	Proteomic and physiological analyses of seeds of wheat varieties under copper and iron nanoparticles
+PXD004277	rejected	countries=['Japan'] | University of Tsukuba ; NARO Institute of Crop Science, Tsukuba, Japan		Gel-free/label-free proteomic analysis of wheat root in stress tolerant varieties under iron nanopar
+PXD006257	confirmed	countries=['Pakistan']	yes	Proteome profiling of Cumin by Q-Exactive HF mass spectrometer
+PXD006425	confirmed	countries=['Pakistan']		In depth proteome profiling of Cumin by LTQ-Orbitrap Velos mass spectrometer
+PXD013827	confirmed	countries=['Pakistan']		Tissue Proteome Profiling of Ovarian cancer in Pakistani Population.
+PXD014352	confirmed	countries=['Pakistan']	yes	Tissue Proteome Profiling of Ovarian cancer.
+PXD018726	rejected	countries=['Germany'] | University Medical Center Hamburg-Eppendorf, Institute of Cl ; University Medical Center Hamburg-Eppendorf: Hamburg, Hambur	yes	Proteomic Investigations of Two Pakistani Naja Snake Venoms Species Unravel the Venom Complexity, Po
+PXD018936	rejected	countries=['India'] | Amrita Vishwa VIdyapeetham ; Associate Professor and Head-Proteomics Research, School of 		Proteomics of Naja naja venom from the Western Ghats of India
+PXD019876	rejected	countries=['Sweden'] | Department of Medical Biochemistry and Biophysics, Karolinsk ; Division of Chemistry I, Department of Medical Biochemistry 		Polymorphisms of the vitamin D receptor regulate T cells and T cell dependent inflammatory diseases
+PXD020235	rejected	countries=['United Kingdom'] | University of Liverpool ; Institute of Life Course and Medical Sciences, University of		Comparison of Rheumatoid Arthritis Patient and Control Sample Serum Proteomes
+PXD024126	rejected	countries=['Sweden'] | Department of Medical Biochemistry and Biophysics, Karolinsk ; Division Medical Inflammation Research, Dept. Medical Bioche		Polymorphism in estrogen receptor binding site causes CD2-dependent sex bias in T cell autoimmune di
+PXD025319	rejected	countries=['Sweden'] | Department of Medical Biochemistry and Biophysics, Karolinsk ; Department of Medical Biochemistry and Biophysics, Karolinsk		Redox regulation of PTPN22 affects the severity of T cell dependent autoimmune inflammation
+PXD025837	rejected	"countries=['Sweden'] | Division of Chemistry I
+Department of Medical Biochemistry & ; Division of Medical Inflammation Research, Dept. Medical Bio"		Bone marrow-selected antigen specific regulatory B cells
+PXD034792	rejected	"countries=['Sweden'] | Division of Chemistry I
+Department of Medical Biochemistry & ; Division of Medical Inflammation Research, Dept. Medical Bio"		A peptide-based tolerizing vaccine against autoimmune arthritis directly interacting with antigen-sp
+PXD035177	rejected	"countries=['Sweden'] | Division of Chemistry I
+Department of Medical Biochemistry & ; Division of Medical Inflammation Research, Dept. Medical Bio"		Arthritis protection conferred by a subset of antibodies to citrullinated proteins in rheumatoid art
+PXD035180	rejected	"countries=['Sweden'] | Division of Chemistry I
+Department of Medical Biochemistry & ; Division of Medical Inflammation Research, Dept. Medical Bio"		Arthritis protection conferred by a subset of antibodies to citrullinated proteins in rheumatoid art
+PXD044293	confirmed	countries=['Pakistan']	yes	In vitro and In vivo Antimicrobial Potential of Lithium Complex against Multi Drug Resistant Acineto
+PXD052896	confirmed	countries=['Pakistan']		Proteomic Analysis of Rap1A GTPase Signaling-Deficient C57BL/6 Mouse Pancreas and Functional Studies
+PXD056003	confirmed	countries=['Pakistan']	yes	Proteomics of Cotton Leaves Under Heat Stress
+PXD059319	rejected	countries=['China'] | China Academy of Inspection and Quarantine ; Chinese Academy of Inspection and Quarantine		Ornithodoros Lahorensis Salivary gland LC-MSMS

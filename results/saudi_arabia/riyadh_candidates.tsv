@@ -1,0 +1,6 @@
+accession	verdict	evidence	in_corpus	title
+PXD022292	rejected	countries=['United States'] | Johns Hopkins University ; Wilmer Eye Institute, Smith Building, M015, 400 N Broadway, 	yes	Primary angle closure glaucoma is characterized by altered  extracellular matrix homeostasis in the 
+PXD025516	confirmed	countries=['Saudi Arabia']		SARS-Cov2 coronavirus spike protein-induced apoptosis, inflammatory and oxidative stress responses i
+PXD027498	rejected	countries=['Spain'] | CSIC  ; Evolutionary and translational venomics Lab, Instituto de Bi	yes	Venomics of the desert black cobra Walterinnesia aegyptia from Riyadh, SA
+PXD051826	confirmed	countries=['Saudi Arabia']		proteotoxic stress response in in-vitro 2 human neuronal models 3
+PXD069737	confirmed	affiliation~'saudi arabia': Department of Medical Sciences, College of Medicine and Health Sciences, Khalifa Universit		The Calmodulin/Striatin Interaction is Enhanced in Diabetic Hearts and Defines Novel Signaling Clust

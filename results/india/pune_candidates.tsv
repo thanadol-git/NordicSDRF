@@ -1,0 +1,35 @@
+accession	verdict	evidence	in_corpus	title
+PXD006441	confirmed	countries=['India']	yes	Multipronged quantitative proteomics reveals serum proteome alterations in breast cancer intrinsic s
+PXD007734	confirmed	countries=['India']		Protein analysis from mandibular glands of termites
+PXD008376	confirmed	countries=['India']		Integrated transcriptomic and proteomic analyses revealed the participation of endogenous protease i
+PXD008927	confirmed	countries=['India']	yes	Proteomic Alterations in Multiple Myeloma: A Comprehensive Study Using Bone Marrow Interstitial Flui
+PXD011064	confirmed	countries=['India']	yes	Label free SWATH proteomics reveals sex-biased proteins potentially associated with sex expression a
+PXD012455	confirmed	countries=['India']		Honeybees glandular proteins - data analysis
+PXD013859	confirmed	countries=['India']		XPO1 is a critical player for Bortezomib resistance in Multiple Myeloma: A quantitative proteomic ap
+PXD015515	confirmed	countries=['India']		Comparative proteomics of salt stressed own rooted and 110R grafted Thompson Seedless grapevines
+PXD016602	rejected	countries=['United Kingdom'] | The University of Edinburgh ; Wellcome Centre for Cell Biology, University of Edinburgh		Hap2-Ino80 mediated transcription facilitates de novo establishment of CENP-A chromatin
+PXD017375	confirmed	countries=['India']		Proteomic and metabolomic analysis of Nothapodytes nimmoniana (J. Graham) extracts treatment on HeLa
+PXD024321	confirmed	countries=['India']		A SUPERFAMILY-WIDE ACTIVITY ATLAS OF SERINE HYDROLASES IN DROSOPHILA MELANOGASTER
+PXD029374	confirmed	countries=['India']		Proteomic profiling and alteration in Tuta absoluta upon infection with entomopathogenic fungi, Beau
+PXD033116	confirmed	countries=['India']	yes	Chemoproteomics with a Diaryliodonium Probe in Bacteria
+PXD037673	confirmed	countries=['India']		IDA-SWATH proteomic analysis of rat hippocampus upon methylglyoxal treatment
+PXD038968	rejected	countries=['Germany'] | MPI of Biochemistry ; Max Planck Institute of Biochemistry, Dept. of Proteomics an	yes	Association of HMG20A to H2A.Z, PWWP2A and NuRD complex
+PXD040028	confirmed	countries=['India']		Quantification of glycated human serum albumin peptides
+PXD041210	confirmed	countries=['India']		Statin attenuates Wnt/β-catenin signaling by targeting the SATB family of proteins in Colorectal can
+PXD046292	confirmed	affiliation~'india': Department of Microbiology Guru Nanak Dev University Amritsar 143005 Punjab India		Transcriptional and secretome analysis of Rasamsonia emersonii lytic polysaccharide mono-oxygenases
+PXD051170	confirmed	countries=['India']		Mapping serine hydrolase activities during phagocytosis
+PXD051332	confirmed	countries=['India']		Validation of PG-DA probe in mammalian cell and brain lysates
+PXD051399	confirmed	countries=['India']		Competition of PG-DA vs PA-DA probes in mammalian cell and brain lysates
+PXD051775	confirmed	countries=['India']		Validation of PA-DA probe in mammalian cell and brain lysates
+PXD055116	confirmed	countries=['India']		Mapping active serine hydrolases during infection in fly models
+PXD060359	confirmed	countries=['India']		ID8 cells manifest phenotypic plasticity and molecular heterogeneity of high-grade serous ovarian ca
+PXD060831	confirmed	countries=['India']		Lamin A/C-EZH2 interaction in breast cancer cells
+PXD062888	confirmed	countries=['India']		Orbitrap proteomic analysis of five distinct molecular subtypes of High Grade Serous Ovarian Carcino
+PXD070150	confirmed	countries=['India']		RNA pull down experiment for vA-202 (ANAPC1P2) lncRNA
+PXD070186	confirmed	countries=['India']		IP-MS Profiling of ANAPC1 and MP1 Interaction Networks in OVCAR3 Cells
+PXD071790	confirmed	countries=['India']		CCL20-CCR6 signaling alters the metabolic reprogramming to promote the pathogenic Th17 cell differen
+PXD074495	confirmed	countries=['India']		Quantification of glycated rat serum albumin peptides
+PXD074698	confirmed	countries=['India']	yes	HYDIN2 knockdown in NT2 cells analyses by LFQ
+PXD077540	confirmed	countries=['India']		Discovery of Cholesteryl Ester Hydrolases in Mammalian Cells
+PXD077915	confirmed	countries=['India']	yes	Vacuolar protein sorting-associated protein 1 (Vps1) has membrane constricting and severing abilitie
+PXD078610	rejected	countries=['Germany'] | University Medical Center Hamburg-Eppendorf ; Section Mass Spectrometry and Proteomics, University Medical	yes	Proteomic analysis of saliva reveals changes in proteomic profiles during colorectal cancer in an Ir

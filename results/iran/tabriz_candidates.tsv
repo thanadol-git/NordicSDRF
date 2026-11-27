@@ -1,0 +1,5 @@
+accession	verdict	evidence	in_corpus	title
+PXD013140	rejected	countries=['Denmark'] | Department of Cellular and Molecular Medicine ; Copenhagen Center for Glycomics (CCG), Department of Cellula	yes	The Glycosylation Design Space for Recombinant Lysosomal Replacement Enzymes Produced in CHO Cells
+PXD021105	rejected	countries=['Austria'] | Institute of Chemical Technologies and Analytics, TU Wien ; Full Professor for Analytical Chemistry Vienna University of	yes	Loss of adipose triglyceride lipase aids cancer growth in 3D
+PXD023221	rejected	countries=['United Kingdom'] | Institute of Structural and Molecular Biology - UCL ; Institute of Structural and Molecular Biology, University Co	yes	Dual FAN1 activities stabilize the HTT CAG repeat
+PXD040343	rejected	countries=['Luxembourg'] | LIST - Environmental and Industrial Biotechnologies ; LIST-ERIN-BEAP-HAU,  Bascharage, Luxembourg		Comprehensive proteome analysis of propolis elucidates the origin and function of its proteins

@@ -11,13 +11,16 @@ Two steps, both defined here so the table format lives in one place:
      Every PXD in a city's manifest is counted in exactly one category, so the
      categories add up to `listed`.
   2. plots    — this script reads only those TSVs and writes:
-       status/plots/<country>.svg  horizontal stacked bar per city (nordic, SEA, affinity)
-       status/plots/overview.svg   vertical stacked bar per Nordic country
-       status/plots/sea.svg        vertical stacked bar per SEA country (same style as overview)
+       status/plots/<country>.svg    horizontal stacked bar per city
+       status/plots/overview.svg     horizontal stacked bar per Nordic country
+       status/plots/sea.svg          horizontal stacked bar per SEA country
+       status/plots/south_asia.svg   horizontal stacked bar per South Asia country
+       status/plots/middle_east.svg  horizontal stacked bar per Middle East country
+       status/plots/central_asia.svg horizontal stacked bar per Central Asia country
      Stdlib only.
 
-    python scripts/plot_status.py                    # redraw overview + sea + country charts
-    python scripts/plot_status.py --country sweden   # one country chart (+ always overview/sea)
+    python scripts/plot_status.py                    # redraw region overviews + country charts
+    python scripts/plot_status.py --country sweden   # one country chart (+ always region overviews)
 
 update_status.py rewrites the tables and redraws the plots every run, so a hand
 edit to a TSV only lasts until the next run. Run this by hand after editing a
@@ -58,15 +61,6 @@ HEADER_H = 48         # country title + subtitle
 LEGEND_H = 26
 MIN_BLOCK_PX = 8      # per digit + 10: small blocks are widened so their number fits
 
-# Layout, in px (vertical per-country overview).
-OVERVIEW_HEIGHT = 420
-OVERVIEW_PLOT_TOP = HEADER_H + LEGEND_H + 8
-OVERVIEW_PLOT_BOTTOM = 56   # room for country labels
-OVERVIEW_LEFT = 52          # room for y-axis ticks
-OVERVIEW_RIGHT = 20
-OVERVIEW_BAR_GAP = 18
-MIN_SEG_H = 14              # min px before a vertical segment shows its count
-
 STYLE = """
   .bg { fill: #fcfcfb; }
   .title { fill: #0b0b0b; font-size: 17px; font-weight: 600; }
@@ -91,7 +85,7 @@ def human_status(status: str | None) -> str:
 
 
 def country_region(cdata: dict | None = None, row: dict | None = None) -> str:
-    """Campaign region: nordic | sea | affinity (default nordic for legacy rows)."""
+    """Campaign region: nordic | sea | south_asia | middle_east | central_asia | affinity (default nordic)."""
     if cdata and cdata.get("region"):
         return cdata["region"]
     if row and row.get("region"):
@@ -264,24 +258,6 @@ def country_category_totals(cities: list[dict]) -> dict[str, int]:
     return {k: sum(cell(c, k) or 0 for c in cities) for k, *_ in CATEGORIES}
 
 
-def nice_ticks(max_val: int, target: int = 4) -> list[int]:
-    """A few round y-axis ticks from 0 through at least max_val."""
-    if max_val <= 0:
-        return [0]
-    raw = max(1, max_val / target)
-    magnitude = 10 ** max(0, len(str(int(raw))) - 1)
-    for step in (magnitude, 2 * magnitude, 5 * magnitude, 10 * magnitude):
-        if step <= 0:
-            continue
-        top = ((max_val + step - 1) // step) * step
-        ticks = list(range(0, top + 1, step))
-        if 3 <= len(ticks) <= 7:
-            return ticks
-    step = max(1, round(raw))
-    top = ((max_val + step - 1) // step) * step
-    return list(range(0, top + 1, step))
-
-
 def region_overview_svg(
     rows: list[tuple[dict, list[dict]]],
     *,
@@ -289,96 +265,76 @@ def region_overview_svg(
     title: str,
     aria_label: str,
 ) -> str:
-    """One vertical stacked bar per country in `region` (Nordic or SEA)."""
-    series = []
+    """One horizontal stacked bar per country in `region` (same layout as city charts)."""
+    # Synthetic city-rows so we can reuse bar_total / row_widths.
+    series: list[dict] = []
     for country, cities in rows_for_region(rows, region):
         totals = country_category_totals(cities)
         series.append({
-            "key": country["country"],
-            "name": country.get("name") or country["country"].title(),
-            "totals": totals,
-            "listed": sum(totals.values()),
+            "city": country.get("name") or country["country"].title(),
+            "pride_hits": "",
+            "listed": str(sum(totals.values())),
+            **{k: str(totals[k]) for k, *_ in CATEGORIES},
         })
-    max_listed = max((s["listed"] for s in series), default=0)
-    ticks = nice_ticks(max_listed)
-    y_max = ticks[-1] if ticks else 1
-    plot_w = WIDTH - OVERVIEW_LEFT - OVERVIEW_RIGHT
-    n = max(len(series), 1)
-    # SEA has more countries: keep bars readable by tightening the gap slightly.
-    gap = OVERVIEW_BAR_GAP if n <= 6 else max(8.0, OVERVIEW_BAR_GAP - 6)
-    bar_w = max(22.0, (plot_w - gap * (n + 1)) / n)
-    grand = {k: sum(s["totals"][k] for s in series) for k, *_ in CATEGORIES}
+
+    name_w = max(NAME_W, 12 + 8 * max((len(c["city"]) for c in series), default=0) + 12)
+    span = WIDTH - name_w - TOTAL_W - 12
+    px_per_pxd = span / max(1, max((bar_total(c)[0] for c in series), default=0))
+    for _ in range(20):
+        widest = max((sum(row_widths(c, px_per_pxd)) for c in series), default=0)
+        if widest <= span:
+            break
+        px_per_pxd *= span / widest
+
+    grand = {k: sum(cell(c, k) or 0 for c in series) for k, *_ in CATEGORIES}
     queried = next((c.get("pride_hits_queried") for c, _ in rows if c.get("pride_hits_queried")), "unknown date")
+    legend_svg, legend_bottom = layout_legend()
+    height = legend_bottom + max(len(series), 1) * (BAR_H + ROW_GAP) + 8
 
     out = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{OVERVIEW_HEIGHT}" '
-        f'viewBox="0 0 {WIDTH} {OVERVIEW_HEIGHT}" role="img" '
-        f'aria-label="{escape(aria_label)}">',
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{height}" '
+        f'viewBox="0 0 {WIDTH} {height}" role="img" aria-label="{escape(aria_label)}">',
         f"<style>{STYLE}</style>",
-        f'<rect class="bg" width="{WIDTH}" height="{OVERVIEW_HEIGHT}" rx="6"/>',
+        f'<rect class="bg" width="{WIDTH}" height="{height}" rx="6"/>',
         f'<text class="title" x="12" y="22">{escape(title)}</text>',
         f'<text class="sub" x="12" y="40">{sum(grand.values())} listed · {grand["annotated"]} local SDRFs · '
         f'{grand["sandbox"]} sandbox · {grand["todo"]} to do · {grand["blocked"]} blocked '
         f'(not in sandbox) · PRIDE queried {escape(queried)}</text>',
+        *legend_svg,
     ]
 
-    legend_svg, legend_bottom = layout_legend()
-    out.extend(legend_svg)
-    plot_top = max(OVERVIEW_PLOT_TOP, legend_bottom + 8)
-    plot_h = OVERVIEW_HEIGHT - plot_top - OVERVIEW_PLOT_BOTTOM
-    px_per_pxd = plot_h / max(y_max, 1)
-
-    base_y = plot_top + plot_h
-    for tick in ticks:
-        gy = base_y - tick * px_per_pxd
-        out.append(f'<line class="grid" x1="{OVERVIEW_LEFT}" y1="{gy:.1f}" '
-                   f'x2="{WIDTH - OVERVIEW_RIGHT}" y2="{gy:.1f}"/>')
-        out.append(f'<text class="axis" x="{OVERVIEW_LEFT - 8}" y="{gy + 4:.1f}" text-anchor="end">{tick}</text>')
-
-    for i, s in enumerate(series):
-        bx = OVERVIEW_LEFT + gap + i * (bar_w + gap)
-        # Draw bottom → top in CATEGORIES order (annotated at bottom).
-        y_cursor = base_y
-        for key, label, light, _ in CATEGORIES:
-            n_pxd = s["totals"][key]
-            if not n_pxd:
+    for i, country_row in enumerate(series):
+        y = legend_bottom + i * (BAR_H + ROW_GAP)
+        ty = y + BAR_H / 2 + 4
+        cname = escape(country_row["city"])
+        out.append(f'<text class="city" x="12" y="{ty}">{cname}</text>')
+        total, _ = bar_total(country_row)
+        widths = row_widths(country_row, px_per_pxd)
+        x = name_w
+        if total == 0:
+            out.append(f'<text class="total" x="{x + 6:.1f}" y="{ty}">0 listed</text>')
+            continue
+        for (key, label, light, _), w in zip(CATEGORIES, widths):
+            n = cell(country_row, key) or 0
+            if not n:
                 continue
-            h = n_pxd * px_per_pxd
-            y_top = y_cursor - h
             out.append(
-                f'<rect class="c-{key}" fill="{light}" x="{bx:.1f}" y="{y_top:.1f}" '
-                f'width="{bar_w:.1f}" height="{max(h - 1, 1):.1f}" rx="2">'
-                f'<title>{escape(s["name"])} · {label}: {n_pxd}</title></rect>'
+                f'<rect class="c-{key}" fill="{light}" x="{x:.1f}" y="{y}" '
+                f'width="{max(w - 1, 1):.1f}" height="{BAR_H}" rx="2">'
+                f'<title>{cname} · {label}: {n}</title></rect>'
             )
-            if h >= MIN_SEG_H:
-                out.append(
-                    f'<text class="seg" x="{bx + bar_w / 2:.1f}" y="{y_top + h / 2 + 4:.1f}" '
-                    f'text-anchor="middle">{n_pxd}</text>'
-                )
-            y_cursor = y_top
-        out.append(
-            f'<text class="total" x="{bx + bar_w / 2:.1f}" y="{y_cursor - 6:.1f}" '
-            f'text-anchor="middle">{s["listed"]}</text>'
-        )
-        # Long SEA names: allow two-line labels by inserting a soft break on space/hyphen.
-        label = s["name"]
-        if len(label) > 10 and n > 6:
             out.append(
-                f'<text class="city" x="{bx + bar_w / 2:.1f}" y="{base_y + 14:.1f}" '
-                f'text-anchor="middle" font-size="10">{escape(label)}</text>'
+                f'<text class="seg" x="{x + (w - 1) / 2:.1f}" y="{ty}" text-anchor="middle">{n}</text>'
             )
-        else:
-            out.append(
-                f'<text class="city" x="{bx + bar_w / 2:.1f}" y="{base_y + 18:.1f}" '
-                f'text-anchor="middle">{escape(label)}</text>'
-            )
+            x += w
+        out.append(f'<text class="total" x="{x + 6:.1f}" y="{ty}">{total} listed</text>')
 
     out.append("</svg>")
     return "\n".join(out) + "\n"
 
 
 def overview_svg(rows: list[tuple[dict, list[dict]]]) -> str:
-    """Nordic region overview (vertical bars)."""
+    """Nordic region overview (horizontal bars)."""
     return region_overview_svg(
         rows,
         region="nordic",
@@ -388,7 +344,7 @@ def overview_svg(rows: list[tuple[dict, list[dict]]]) -> str:
 
 
 def sea_overview_svg(rows: list[tuple[dict, list[dict]]]) -> str:
-    """SEA region overview (vertical bars), matching Nordic overview style."""
+    """SEA region overview (horizontal bars), matching Nordic overview style."""
     return region_overview_svg(
         rows,
         region="sea",
@@ -397,26 +353,61 @@ def sea_overview_svg(rows: list[tuple[dict, list[dict]]]) -> str:
     )
 
 
+def south_asia_overview_svg(rows: list[tuple[dict, list[dict]]]) -> str:
+    """South Asia region overview (horizontal bars), matching Nordic/SEA style."""
+    return region_overview_svg(
+        rows,
+        region="south_asia",
+        title="South Asia — listed PXDs",
+        aria_label="South Asia SDRF progress by country",
+    )
+
+
+def middle_east_overview_svg(rows: list[tuple[dict, list[dict]]]) -> str:
+    """Middle East region overview (horizontal bars), matching Nordic/SEA style."""
+    return region_overview_svg(
+        rows,
+        region="middle_east",
+        title="Middle East — listed PXDs",
+        aria_label="Middle East SDRF progress by country",
+    )
+
+
+def central_asia_overview_svg(rows: list[tuple[dict, list[dict]]]) -> str:
+    """Central Asia region overview (horizontal bars), matching Nordic/SEA style."""
+    return region_overview_svg(
+        rows,
+        region="central_asia",
+        title="Central Asia — listed PXDs",
+        aria_label="Central Asia SDRF progress by country",
+    )
+
+
+REGION_OVERVIEWS = (
+    ("nordic", "overview.svg", overview_svg),
+    ("sea", "sea.svg", sea_overview_svg),
+    ("south_asia", "south_asia.svg", south_asia_overview_svg),
+    ("middle_east", "middle_east.svg", middle_east_overview_svg),
+    ("central_asia", "central_asia.svg", central_asia_overview_svg),
+)
+
+
 def write_plots(countries: list[str] | None = None) -> list[Path]:
-    """tables/*.tsv -> overview.svg + sea.svg + per-country charts (all regions)."""
+    """tables/*.tsv -> region overviews + per-country charts (all regions)."""
     PLOT_DIR.mkdir(parents=True, exist_ok=True)
     written = []
     all_rows = read_tables()
-    overview = PLOT_DIR / "overview.svg"
-    overview.write_text(overview_svg(all_rows))
-    written.append(overview)
-
-    if rows_for_region(all_rows, "sea"):
-        sea_path = PLOT_DIR / "sea.svg"
-        sea_path.write_text(sea_overview_svg(all_rows))
-        written.append(sea_path)
+    for region, filename, drawer in REGION_OVERVIEWS:
+        if rows_for_region(all_rows, region):
+            path = PLOT_DIR / filename
+            path.write_text(drawer(all_rows))
+            written.append(path)
 
     for country, cities in read_tables(countries):
         path = PLOT_DIR / f"{country['country']}.svg"
         path.write_text(country_svg(country, cities))
         written.append(path)
     return written
-
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--country", action="append", help="limit to one or more countries (repeatable)")

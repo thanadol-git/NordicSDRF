@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="586.0" viewBox="0 0 860 586.0" role="img" aria-label="Middle East SDRF progress by country">
+<style>
+  .bg { fill: #fcfcfb; }
+  .title { fill: #0b0b0b; font-size: 17px; font-weight: 600; }
+  .city { fill: #0b0b0b; font-size: 13px; font-weight: 600; }
+  .sub, .legend, .total, .axis { fill: #52514e; font-size: 11.5px; }
+  .seg { font-size: 11.5px; font-weight: 600; fill: #ffffff; font-variant-numeric: tabular-nums; }
+  .uncurated { fill: none; stroke: #8a8983; stroke-width: 1.5; stroke-dasharray: 4 3; }
+  .grid { stroke: #e8e7e2; stroke-width: 1; }
+  text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  .c-annotated { fill: #2a78d6; }
+  .c-sandbox { fill: #6b4ea3; }
+  .c-blocked { fill: #d95926; }
+  .c-in_corpus { fill: #199e70; }
+  .c-screened { fill: #c98500; }
+  .c-todo { fill: #8a8983; }
+
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #1a1a19; }
+    .title, .city { fill: #ffffff; }
+    .sub, .legend, .total, .axis { fill: #c3c2b7; }
+    .uncurated { stroke: #8f8e86; }
+    .grid { stroke: #3a3a37; }
+    .c-annotated { fill: #3987e5; }
+    .c-sandbox { fill: #7d5fb5; }
+    .c-blocked { fill: #d95926; }
+    .c-in_corpus { fill: #199e70; }
+    .c-screened { fill: #c98500; }
+    .c-todo { fill: #6b6a65; }
+  }
+</style>
+<rect class="bg" width="860" height="586.0" rx="6"/>
+<text class="title" x="12" y="22">Middle East — listed PXDs</text>
+<text class="sub" x="12" y="40">660 listed · 3 local SDRFs · 1 sandbox · 342 to do · 1 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
+<rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
+<text class="legend" x="29.0" y="62.0">Local SDRF</text>
+<rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
+<text class="legend" x="134.0" y="62.0">Sandbox</text>
+<rect class="c-blocked" fill="#d95926" x="201.0" y="52.0" width="12" height="12" rx="2"/>
+<text class="legend" x="218.0" y="62.0">Blocked</text>
+<rect class="c-in_corpus" fill="#199e70" x="285.0" y="52.0" width="12" height="12" rx="2"/>
+<text class="legend" x="302.0" y="62.0">In corpus</text>
+<rect class="c-screened" fill="#c98500" x="383.0" y="52.0" width="12" height="12" rx="2"/>
+<text class="legend" x="400.0" y="62.0">Screened</text>
+<rect class="c-todo" fill="#8a8983" x="474.0" y="52.0" width="12" height="12" rx="2"/>
+<text class="legend" x="491.0" y="62.0">To do</text>
+<rect class="uncurated" fill="none" stroke="#8a8983" x="544.0" y="52.75" width="12" height="10.5" rx="2"/>
+<text class="legend" x="561.0" y="62.0">PRIDE hits, not curated yet</text>
+<text class="city" x="12" y="82.0">Israel</text>
+<rect class="c-annotated" fill="#2a78d6" x="184.0" y="68.0" width="17.0" height="20" rx="2"><title>Israel · Local SDRF: 2</title></rect>
+<text class="seg" x="192.5" y="82.0" text-anchor="middle">2</text>
+<rect class="c-sandbox" fill="#6b4ea3" x="202.0" y="68.0" width="17.0" height="20" rx="2"><title>Israel · Sandbox: 1</title></rect>
+<text class="seg" x="210.5" y="82.0" text-anchor="middle">1</text>
+<rect class="c-in_corpus" fill="#199e70" x="220.0" y="68.0" width="272.9" height="20" rx="2"><title>Israel · In corpus: 224</title></rect>
+<text class="seg" x="356.4" y="82.0" text-anchor="middle">224</text>
+<rect class="c-todo" fill="#8a8983" x="493.9" y="68.0" width="263.1" height="20" rx="2"><title>Israel · To do: 216</title></rect>
+<text class="seg" x="625.4" y="82.0" text-anchor="middle">216</text>
+<text class="total" x="764.0" y="82.0">443 listed</text>
+<text class="city" x="12" y="112.0">Turkey</text>
+<rect class="c-in_corpus" fill="#199e70" x="184.0" y="98.0" width="25.9" height="20" rx="2"><title>Turkey · In corpus: 22</title></rect>
+<text class="seg" x="196.9" y="112.0" text-anchor="middle">22</text>
+<rect class="c-todo" fill="#8a8983" x="210.9" y="98.0" width="36.9" height="20" rx="2"><title>Turkey · To do: 31</title></rect>
+<text class="seg" x="229.4" y="112.0" text-anchor="middle">31</text>
+<text class="total" x="254.8" y="112.0">53 listed</text>
+<text class="city" x="12" y="142.0">Saudi Arabia</text>
+<rect class="c-in_corpus" fill="#199e70" x="184.0" y="128.0" width="25.0" height="20" rx="2"><title>Saudi Arabia · In corpus: 17</title></rect>
+<text class="seg" x="196.5" y="142.0" text-anchor="middle">17</text>
+<rect class="c-todo" fill="#8a8983" x="210.0" y="128.0" width="44.2" height="20" rx="2"><title>Saudi Arabia · To do: 37</title></rect>
+<text class="seg" x="232.1" y="142.0" text-anchor="middle">37</text>
+<text class="total" x="261.2" y="142.0">54 listed</text>
+<text class="city" x="12" y="172.0">Egypt</text>
+<rect class="c-in_corpus" fill="#199e70" x="184.0" y="158.0" width="25.0" height="20" rx="2"><title>Egypt · In corpus: 20</title></rect>
+<text class="seg" x="196.5" y="172.0" text-anchor="middle">20</text>
+<rect class="c-todo" fill="#8a8983" x="210.0" y="158.0" width="25.0" height="20" rx="2"><title>Egypt · To do: 13</title></rect>
+<text class="seg" x="222.5" y="172.0" text-anchor="middle">13</text>
+<text class="total" x="242.0" y="172.0">33 listed</text>
+<text class="city" x="12" y="202.0">Iran</text>
+<rect class="c-blocked" fill="#d95926" x="184.0" y="188.0" width="17.0" height="20" rx="2"><title>Iran · Blocked: 1</title></rect>
+<text class="seg" x="192.5" y="202.0" text-anchor="middle">1</text>
+<rect class="c-in_corpus" fill="#199e70" x="202.0" y="188.0" width="17.0" height="20" rx="2"><title>Iran · In corpus: 5</title></rect>
+<text class="seg" x="210.5" y="202.0" text-anchor="middle">5</text>
+<rect class="c-todo" fill="#8a8983" x="220.0" y="188.0" width="17.0" height="20" rx="2"><title>Iran · To do: 9</title></rect>
+<text class="seg" x="228.5" y="202.0" text-anchor="middle">9</text>
+<text class="total" x="244.0" y="202.0">15 listed</text>
+<text class="city" x="12" y="232.0">United Arab Emirates</text>
+<rect class="c-annotated" fill="#2a78d6" x="184.0" y="218.0" width="17.0" height="20" rx="2"><title>United Arab Emirates · Local SDRF: 1</title></rect>
+<text class="seg" x="192.5" y="232.0" text-anchor="middle">1</text>
+<rect class="c-in_corpus" fill="#199e70" x="202.0" y="218.0" width="17.0" height="20" rx="2"><title>United Arab Emirates · In corpus: 7</title></rect>
+<text class="seg" x="210.5" y="232.0" text-anchor="middle">7</text>
+<rect class="c-todo" fill="#8a8983" x="220.0" y="218.0" width="28.3" height="20" rx="2"><title>United Arab Emirates · To do: 24</title></rect>
+<text class="seg" x="234.2" y="232.0" text-anchor="middle">24</text>
+<text class="total" x="255.3" y="232.0">32 listed</text>
+<text class="city" x="12" y="262.0">Qatar</text>
+<rect class="c-in_corpus" fill="#199e70" x="184.0" y="248.0" width="17.0" height="20" rx="2"><title>Qatar · In corpus: 9</title></rect>
+<text class="seg" x="192.5" y="262.0" text-anchor="middle">9</text>
+<rect class="c-todo" fill="#8a8983" x="202.0" y="248.0" width="17.0" height="20" rx="2"><title>Qatar · To do: 8</title></rect>
+<text class="seg" x="210.5" y="262.0" text-anchor="middle">8</text>
+<text class="total" x="226.0" y="262.0">17 listed</text>
+<text class="city" x="12" y="292.0">Lebanon</text>
+<rect class="c-in_corpus" fill="#199e70" x="184.0" y="278.0" width="17.0" height="20" rx="2"><title>Lebanon · In corpus: 1</title></rect>
+<text class="seg" x="192.5" y="292.0" text-anchor="middle">1</text>
+<rect class="c-todo" fill="#8a8983" x="202.0" y="278.0" width="17.0" height="20" rx="2"><title>Lebanon · To do: 1</title></rect>
+<text class="seg" x="210.5" y="292.0" text-anchor="middle">1</text>
+<text class="total" x="226.0" y="292.0">2 listed</text>
+<text class="city" x="12" y="322.0">Cyprus</text>
+<rect class="c-in_corpus" fill="#199e70" x="184.0" y="308.0" width="17.0" height="20" rx="2"><title>Cyprus · In corpus: 2</title></rect>
+<text class="seg" x="192.5" y="322.0" text-anchor="middle">2</text>
+<rect class="c-todo" fill="#8a8983" x="202.0" y="308.0" width="17.0" height="20" rx="2"><title>Cyprus · To do: 2</title></rect>
+<text class="seg" x="210.5" y="322.0" text-anchor="middle">2</text>
+<text class="total" x="226.0" y="322.0">4 listed</text>
+<text class="city" x="12" y="352.0">Kuwait</text>
+<rect class="c-in_corpus" fill="#199e70" x="184.0" y="338.0" width="17.0" height="20" rx="2"><title>Kuwait · In corpus: 6</title></rect>
+<text class="seg" x="192.5" y="352.0" text-anchor="middle">6</text>
+<text class="total" x="208.0" y="352.0">6 listed</text>
+<text class="city" x="12" y="382.0">Jordan</text>
+<rect class="c-todo" fill="#8a8983" x="184.0" y="368.0" width="17.0" height="20" rx="2"><title>Jordan · To do: 1</title></rect>
+<text class="seg" x="192.5" y="382.0" text-anchor="middle">1</text>
+<text class="total" x="208.0" y="382.0">1 listed</text>
+<text class="city" x="12" y="412.0">Syria</text>
+<text class="total" x="190.0" y="412.0">0 listed</text>
+<text class="city" x="12" y="442.0">Iraq</text>
+<text class="total" x="190.0" y="442.0">0 listed</text>
+<text class="city" x="12" y="472.0">Oman</text>
+<text class="total" x="190.0" y="472.0">0 listed</text>
+<text class="city" x="12" y="502.0">Yemen</text>
+<text class="total" x="190.0" y="502.0">0 listed</text>
+<text class="city" x="12" y="532.0">Bahrain</text>
+<text class="total" x="190.0" y="532.0">0 listed</text>
+<text class="city" x="12" y="562.0">Palestine</text>
+<text class="total" x="190.0" y="562.0">0 listed</text>
+</svg>

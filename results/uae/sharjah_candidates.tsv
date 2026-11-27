@@ -1,0 +1,29 @@
+accession	verdict	evidence	in_corpus	title
+PXD004888	confirmed	countries=['United Arab Emirates']	yes	Quantitative Proteomic Analysis of Extracellular Matrix Extracted from Mono- and Dual-Species Biofil
+PXD008288	confirmed	countries=['United Arab Emirates']	yes	Proteomic analysis of Fusobacterium nucleatum and Porphyromonas gingivalis biofilms and planktonic c
+PXD033145	confirmed	affiliation~'sharjah': University of Sharjah	yes	Mass spectroscopy-based proteomics and metabolomics analysis of BT- 474 breast cancer cells treated 
+PXD033257	confirmed	affiliation~'sharjah': University of Sharjah		Unveiling the mechanism of action of nature-inspired anti-cancer compounds using a multi-Omics appro
+PXD036785	confirmed	countries=['United Arab Emirates']		Multi-Omics analysis revealed a significant alteration of critical metabolic pathways due to sorafen
+PXD038750	confirmed	countries=['United Arab Emirates']		Evaluation of Two Simultaneous Metabolomic and Proteomic Extraction Protocols Assessed by Ultra-High
+PXD040450	confirmed	countries=['United Arab Emirates']	yes	Lysosomal cystine export regulates mTORC1 signaling to guide kidney epithelial cell fate specializat
+PXD040466	rejected	countries=['France'] | CRBM-CNRS ; CRBM-CNRS, Montpellier, France		Identification of NEDD8 sites at endogenous levels of NEDD8 expression upon NEDP1 (SENP8, DEN1) knoc
+PXD042753	confirmed	countries=['United Arab Emirates']	yes	Employing Hindlimb Unloading Model for The Identification of Serum Biomarkers Associated with Cardio
+PXD043309	confirmed	countries=['United Arab Emirates']		Untargeted Multi-Omics of LNCaP Cell-line Treated with Novel DNA Minor Groove Binder and /or Doxorub
+PXD045018	rejected	countries=['China'] | Wenzhou Medical University ; Department of Parasitology, School of Basic Medical Sciences		The profound effect of ubiquitin-activating enzyme 1(TgUAE1) on the protein expression of Toxoplasma
+PXD045901	confirmed	affiliation~'sharjah': 1 - College of Pharmacy, University of Sharjah, Sharjah  2 - Sharjah Institute for Medical		Salivary Proteome Alterations in Medwakh Smokers Associated with Pathogenic Pathways: Implications f
+PXD045926	confirmed	affiliation~'united arab emirates': Sharjah Institute for Medical Research & Health Sciences, University of Sharjah, Sharjah 2		Comparative Proteomic Analysis of Saliva from Chewing Tobacco Users and Oral Cancer Patients Reveals
+PXD050411	confirmed	countries=['United Arab Emirates']		proteomic and metabolomic profiling of methicillin resistant and methicillin sensitive Staphylococcu
+PXD051250	confirmed	countries=['United Arab Emirates']		Exploring The Impact of Two Novel DNA Minor Groove Binders on HCT-116 Cells: A Comprehensive Multi-O
+PXD051730	confirmed	countries=['United Arab Emirates']		Qualitative LC-MSMS analysis of Mus Musculus proteins
+PXD052027	confirmed	countries=['United Arab Emirates']		Multi-Omics Analysis Revealed Significant Metabolic Changes in Brain Cancer Cells Treated with Pacli
+PXD053261	confirmed	affiliation~'united arab emirates': College of Medicine, Mohammed Bin Rashid University of Medicine and Health Sciences,  Duba		Conserved Role of FOXC1 in TNBC is parallel to FOXA1 in ER+ Breast   Cancer
+PXD062839	rejected	countries=['United States'] | Cleveland Clinic ; Case Western Reserve University, Department of Genetics and 		Elaboration of molecular glues that target TRIM21 into TRIMTACs that degrade protein aggregates
+PXD069033	confirmed	affiliation~'uae': College of Medicine, Department of Medical Sciences, University of Sharjah, Sharjah, UAE  	yes	Impact of PPP1R1A Knockdown on the Proteomic Landscape of INS-1 Cells: A Focus on Significant Modula
+PXD069737	confirmed	countries=['United Arab Emirates']		The Calmodulin/Striatin Interaction is Enhanced in Diabetic Hearts and Defines Novel Signaling Clust
+PXD070849	confirmed	countries=['United Arab Emirates']		Proteomic analysis of human dentin matrix extracts by  peptide-level high-pH reverse-phase fractiona
+PXD071424	confirmed	affiliation~'united arab emirates': 1 College of Medicine, Mohammed Bin Rashid University of Medicine and Health Sciences, Dub		Proteomic and Metabolomic Profiling of Invasive Methicillin Resistant Staphy-lococcus aureus   : Unc
+PXD073897	confirmed	countries=['United Arab Emirates']		Evaluating the Molecular Effects of Two Quinoline-Containing Anti-Proliferative Compounds Using a Mu
+PXD077759	confirmed	countries=['United Arab Emirates']		Serum Proteomics Analysis Identified Junction Plakoglobin and Glyceraldehyde-3-Phosphate Dehydrogena
+PXD078124	confirmed	affiliation~'united arab emirates': Center for Applied and Translational Genomics, Mohammed Bin Rashid University of Medicine 		Evaluation of the SPEED sample preparation protocol for metabolomics
+PXD078584	confirmed	countries=['United Arab Emirates']		Multi-omics integration reveals convergent extracellular matrix remodeling and lipid metabolic repro
+PXD079661	confirmed	countries=['United Arab Emirates']		Edaravone Promotes Adaptive Proteomic Remodeling and Improves Behavioral Outcomes in Chronic Heat St

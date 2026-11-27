@@ -1,0 +1,14 @@
+accession	verdict	evidence	in_corpus	title
+PXD001853	rejected	countries=['Austria'] | Mass Spectrometry Facility, Max Perutz Labs Vienna, Universi ; Max F.Perutz Laboratories (MFPL), University of Vienna; MFPL	yes	Light-sensing via H2O2 and a peroxiredoxin
+PXD012617	rejected	countries=['Austria'] | Mass Spectrometry Facility, Max Perutz Labs Vienna, Universi ; Department of Chemistry and Molecular Biology, University of	yes	Peroxiredoxin promotes longevity and H2O2-resistance in yeast through redox-modulation of protein ki
+PXD018459	rejected	countries=['United Kingdom'] | University of Oxford ; University of Oxford	yes	The viral vectored vaccine targeting Thymosin β10 controls tumour growth in a murine model of prosta
+PXD018762	rejected	countries=['United Kingdom'] | The University of Manchester ; Division of Evolution and Genomic Sciences School of Biologi	yes	Integrated multi-omics reveals common properties underlying stress granule and P-body formation
+PXD024217	confirmed	countries=['Turkey']		Characterization of circulating extracellular vesides of steroid sensitive nephrotic syndrome patien
+PXD024599	rejected	countries=['France'] | Proteomic facility of Institut Jacques Monod (UMR7592) - CNR ; Proteomic Facility, Institut Jacques Monod, UMR7592 (CNRS an	yes	Dynamic methylation of histone H3K18 in differentiating Theileria parasites
+PXD031967	rejected	countries=['Taiwan'] | Institute of Molecular Biology, Academia Sinica ; Institute of Molecular Biology, Academia Sinica, Taiwan	yes	Stable Isotope Labelling with Amino Acids in Cell Culture –  Size Exclusion Chromatography – Mass Sp
+PXD039034	rejected	countries=['United Kingdom'] | University of Cambridge ; Cambridge Institute for Medical Research, University of Camb		Quantitative temporal proteomic analysis of modified vaccinia Ankara, a mpox vaccine
+PXD041137	rejected	countries=['United States'] | Case Western Reserve University ; Cardiovascular Research Institute	yes	Immunometabolism in resolving atherosclerosis guides the development of nanometabolite therapy
+PXD047121	confirmed	countries=['Turkey']		Investigation of Interaction Partners of Desmin and Lamin B Proteins Using High Resolution Mass Spec
+PXD054958	rejected	countries=['Netherlands'] | TNO ; Research Manager, TNO, Department CBRN protection, The Nethe	yes	Proteome4Pandemic Preparedness: Proteomics, an agnostic approach to identify virusesProteome4Pandemi
+PXD059054	rejected	countries=['United States'] | University of Michigan ; University of Michigan		Yeast TIA1 coordinates with Npl3 to promote ATG1 translation during starvation
+PXD070420	rejected	countries=['Germany'] | Charité - Universitätsmedizin Berlin ; Department of Biochemistry, Charité - Universitätsmedizin Be	yes	Pho-Tip: one-pot dephosphorylation for rapid and sensitive analysis of DIA phosphoproteomics data

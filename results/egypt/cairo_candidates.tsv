@@ -1,0 +1,61 @@
+accession	verdict	evidence	in_corpus	title
+PRD000249	legacy_id	countries=['Egypt']		Staphylococcus aureus Secretome
+PRD000252	legacy_id	countries=['Egypt']		AQP8 knockout project - 2DE of wild and AQP8 knockout mice colon
+PRD000279	legacy_id	countries=['Egypt']		AQP8 proteome project - Wild type and AQP8 Knockout proteomes
+PRD000406	legacy_id	countries=['Egypt']		C57BL6J mice project - First whole tissue colon proteome for mouse
+PRD000826	legacy_id	countries=['Egypt']		Two Dimensional electrophoresis of the exo-proteome produced from Community Acquired Methicillin Res
+PXD000170	rejected	countries=['Hong Kong'] | Bioengineering ; Bioengineering	yes	Identifying sources of tick blood meals using unidentified tandem mass spectral libraries
+PXD001171	rejected	countries=['United States'] | Georgetown University ; Ressom Lab, Department of Oncology, Lambardi Comprehensive C		Human Serum LC-MS/MS -  LC-MS/MS-based serum proteomics for identification of candidate biomarkers f
+PXD002620	confirmed	countries=['Egypt']	yes	Human Ureter project -  A proteomic glimpse into human ureter proteome
+PXD011558	confirmed	countries=['Egypt']		Shotgun Proteomic Analysis of ESBL and non ESBL Producing Klebsiella Pneumoniae Clinical Isolates
+PXD011693	confirmed	countries=['Egypt']		Shotgun Proteomic Analysis of ESBL and non ESBL Producing Klebsiella Pneumoniae Clinical Isolates
+PXD012159	confirmed	countries=['Egypt']		thermotolerance of camel cells
+PXD012199	confirmed	countries=['Egypt']		Heat shock of camel oocytes
+PXD015572	rejected	countries=['Italy'] | University of Turin ; University of Turin	yes	Non-destructive Palaeoproteomics Of Mummified Human Skin
+PXD018885	rejected	countries=['Spain'] | Centre for Omic Sciences (COS) - Universitat Rovira i Virgil ; Eurecat, Centre Tecnològic de Catalunya. Centre for Omic Sci		Red-fleshed apples rich in anthocyanins and white-fleshed apples poor in anthocyanins modulate aorta
+PXD021076	confirmed	countries=['Egypt']		Proteomics profiling of pediatric choroid plexus tumors
+PXD022978	rejected	countries=['France'] | OncoProt plateform, UAR TBMCore CNRS 3427 INSERM US005 Unive ; UMR CNRS 7369 MEDyC, Matrice Extracellulaire et Dynamique Ce	yes	Influence of LRP-1 on MDA-MB-231 secretome
+PXD024388	rejected	"countries=['United Kingdom'] | Cancer Research UK
+University of Manchester ; Cancer Research UK  Manchester Institute  Transcriptional Ne"	yes	A KRAS-responsive long non-coding RNA controls microRNA
+PXD024418	confirmed	countries=['Egypt']		Expression Signature and Regulatory Role of miRNAs in Hepatocellular Carcinoma-Induced Cancer Associ
+PXD025751	confirmed	countries=['Egypt']	yes	Effect of soybean agglutinin on biological function of gut
+PXD026274	confirmed	countries=['Egypt']	yes	Multi-Omics signature of Autism Spectral Disorder reveals microbial macromolecules
+PXD026331	confirmed	affiliation~'cairo': 1) Freedman Foundation Metabolomics Facility, Innovation Centre, Victor Chang Cardiac Rese	yes	Synergistic interactions between Australian propolis and Doxorubicin against the MCF-7 breast adenoc
+PXD027495	rejected	countries=['Spain'] | CSIC  ; Evolutionary and translational venomics Lab, Instituto de Bi	yes	Venomics of the desert black cobra Walterinnesia aegyptia from Sinai Peninsula, Egypt
+PXD029003	rejected	countries=['Australia'] | Macquarie University ; Haynes Lab, Department of Molecular Sciences, Faculty of Sci		Development of a novel minimally invasive sampling and analysis technique for bioarchaeological prot
+PXD029357	confirmed	affiliation~'egypt': Borg AlArab Higher Institute of Engineering and Technology, New Borg AlArab City, Alexandr	yes	Monitoring Changes in the Levels of Newly Synthesized Proteins in Response to Nutlin-3 Treatment.
+PXD030966	confirmed	countries=['Egypt']		Human Wharton’s jelly mesenchymal stem cells secretome inhibits human SARS-CoV-2 and avian IBV coron
+PXD031881	rejected	countries=['Brazil'] | University of Campinas ; Laboratory of Enzymology and Molecular Biology (LEBIMO), Ins		Analysis of the extracellular proteome from single deleted LPMO9s Aspergillus nidulans mutants growi
+PXD031886	rejected	countries=['Brazil'] | University of Campinas ; Laboratory of Enzymology and Molecular Biology (LEBIMO), Ins		Analysis of the extracellular proteome from Aspergillus nidulans growing in Avicel, sugarcane bagass
+PXD033335	confirmed	countries=['Egypt']	yes	Integrated Multiomics analysis to infer covid 19 biological insights
+PXD033367	confirmed	countries=['Egypt']		Paleoproteomic profiling for identification of animal skin species in ancient Egyptian archaeologica
+PXD035326	rejected	countries=['Italy'] | ISPAAM CNR ; Proteomics, Metabolomics and Mass Spectrometry Laboratory In	yes	Proteomic analysis of Limosilactobacillus reuteri DSM 17938
+PXD035678	confirmed	countries=['Egypt']		Proteomics and metabolomics analyses of Streptococcus agalactiae isolates from human and animal sour
+PXD035812	confirmed	countries=['Egypt']	yes	Detection of Early Prognostic Biomarkers for Metastasis of Ewing’s Sarcoma in Pediatric Patients
+PXD036116	confirmed	countries=['Egypt']		Diabetic microenvironment deteriorates the regenerative capacities of adipose mesenchymal stromal ce
+PXD037269	rejected	countries=['Slovenia'] | Faculty of Chemistry and Chemical Technology, University of  ; Globe Institute, University of Copenhagen, Denmark		‘A lost chapter of ancient art’: archaeometric examinations of panel paintings from Roman Egypt
+PXD037271	confirmed	countries=['Egypt']	yes	CRC proteomic analysis by LC MS/MS
+PXD037957	confirmed	countries=['Egypt']	yes	Mining Nudibranch Symbionts for Biosynthesis of novel Secondary Metabolites
+PXD040739	rejected	countries=['United States'] | University of South Florida ; Assistant Professor at Department of Chemical and Pharmaceut	yes	Ritual revealed: psychotropic substances in a Ptolemaic Egyptian vase
+PXD043703	confirmed	countries=['Egypt']	yes	LC3A and Aggresomes: A trigger for UPR-activation, mitochondrial dysfunction, and cellular senescenc
+PXD043748	confirmed	countries=['Egypt']	yes	Characterization of ZIC4 role in choroid plexus carcinoma
+PXD044486	rejected	countries=['Germany'] | Max-Planck-Insitute of Biochemistry ; Max-Planck-Insitute for Biochemistry, Department of cellular		Stress Dependent Condensate Formation Regulated by the Ubiquitin Related Modifier Urm1
+PXD044833	rejected	countries=['Canada'] | Proteomic Platform ; Centre de Recherche du CHU Ste-Justine		Severe kidney dysfunction in sialidosis mice reveals an essential role for neuraminidase 1 in reabso
+PXD047606	confirmed	affiliation~'egypt': Division of Cell Matrix Biology & Regenerative Medicine and KNH Centre for Biomedical Egyp	yes	A novel integrated extraction protocol for multi-omic studies in heavily degraded samples
+PXD048187	confirmed	countries=['Egypt']		Crosstalk between type 2 diabetic microenvironment and human adipose tissue- derived pericytes
+PXD052488	confirmed	countries=['Egypt']		Multi-omics characterization of childhood rhabdomyosarcoma
+PXD054558	confirmed	countries=['Egypt']		Interaction between Malat1 and miR-499-5p regulates Meis1 expression and function with a net impact 
+PXD056094	rejected	countries=['United States'] | The Art Institute of Chicago ; Globe Institute, Faculty of Health and Medical Science, Univ	yes	Animal glue and beyond: palaeoproteomic analysis of paint binders and adhesives in ancient Egypt
+PXD056472	rejected	countries=['Spain'] | Universitat de Valencia ; Pest Control Laboratory, Institute of Biotechnology and Biom		Proteomic variation in the oral secretion of Spodoptera exigua and Spodoptera littoralis larvae in r
+PXD058003	rejected	countries=['Canada'] | University of British Columbia ; Biochemistry and Molecular Biology, Michael Smith Laboratori	yes	Comparative single-cell and spatial transcriptomics illuminate bat immunity and barrier tissue evolu
+PXD061406	rejected	"countries=['Czech Republic'] | Proteomics Core Facility and Research Group Proteomics
+CEIT ; Proteomics Core Facility and Research Group Proteomics, CEIT"		A SMG7-eIF4A module constitutes a homeostatic system for P-bodies and Meiotic bodies
+PXD064835	confirmed	countries=['Egypt']	yes	Lactiplantibacillus plantarum cell free supernatant
+PXD066178	rejected	countries=['United States'] | Icahn School of Medicine at Mount Sinai ; Ichn School of Medicine at Mount Sinai		Species-specific antiviral programs drive immunity to Marburg virus in Egyptian rousette bats and hu
+PXD067235	confirmed	countries=['Egypt']	yes	Functional Microbial Shifts and Host-Microbiome Crosstalk in Colorectal Cancer: Evidence from a Meta
+PXD067801	confirmed	countries=['Egypt']		Novel peptides from the edible bivalve Ruditapes decussatus target apoptosis, autophagy, and FGF19-F
+PXD072134	rejected	countries=['United States'] | Universiy of California, Davis - One Health Institute ; Lab Director, One Health Institute Laboratory	yes	Serum proteome of the Egyptian rousette bat (Rousettus aegyptiacus) reveals signatures of immunity, 
+PXD072895	confirmed	countries=['Egypt']		Toxoplasma gondii Proteomic analysis in Paediatric Anterior Uveitis Granulomas in rural areas of Egy
+PXD080738	confirmed	countries=['Egypt']	yes	Metaproteomic analysis of the Red Sea sponge Callyspongia siphonella-associated microbiome
+PXD080802	confirmed	countries=['Egypt']	yes	Metaproteomic analysis of the Red Sea sponge Clathria curacaoensis-associated microbiome
+PXD081135	confirmed	countries=['Egypt']	yes	Kaiso is a novel TAZ-interaction partner that promotes hepatic stellate cell activation and regulate

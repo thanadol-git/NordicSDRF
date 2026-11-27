@@ -426,7 +426,7 @@ def country_plot(country: str, cdata: dict, plots_dir: str, *, collapsed: bool =
 
 
 def overview_plot(plots_dir: str) -> str:
-    """Nordic-country vertical stacked bars, drawn by plot_status.py."""
+    """Nordic-country horizontal stacked bars, drawn by plot_status.py."""
     title = "Nordic countries — listed PXDs"
     return (
         f"### {title}\n\n"
@@ -435,9 +435,9 @@ def overview_plot(plots_dir: str) -> str:
     )
 
 
-def sea_region_status(cfg: dict) -> str:
+def region_status(cfg: dict, region: str) -> str:
     statuses = [d.get("status") or "not_started"
-                for d in cfg["countries"].values() if d.get("region") == "sea"]
+                for d in cfg["countries"].values() if d.get("region") == region]
     if "in_progress" in statuses:
         return "in_progress"
     if "scoped" in statuses:
@@ -445,14 +445,37 @@ def sea_region_status(cfg: dict) -> str:
     return "not_started"
 
 
-def sea_plot(plots_dir: str) -> str:
-    """SEA region overview (vertical bars), matching the Nordic overview layout."""
-    title = "Southeast Asia — listed PXDs"
+def sea_region_status(cfg: dict) -> str:
+    return region_status(cfg, "sea")
+
+
+def region_plot(title: str, svg_name: str, plots_dir: str) -> str:
+    """Region overview markdown (horizontal bars) with a link to country pages."""
     return (
         f"### {title}\n\n"
-        f"![{title}: SDRF progress by country]({plots_dir}/sea.svg)\n\n"
+        f"![{title}: SDRF progress by country]({plots_dir}/{svg_name})\n\n"
         f"Per-country pages: {MARKDOWNS_LINK}"
     )
+
+
+def sea_plot(plots_dir: str) -> str:
+    """SEA region overview (horizontal bars), matching the Nordic overview layout."""
+    return region_plot("Southeast Asia — listed PXDs", "sea.svg", plots_dir)
+
+
+def south_asia_plot(plots_dir: str) -> str:
+    """South Asia region overview (horizontal bars), matching SEA/Nordic layout."""
+    return region_plot("South Asia — listed PXDs", "south_asia.svg", plots_dir)
+
+
+def middle_east_plot(plots_dir: str) -> str:
+    """Middle East region overview (horizontal bars), matching SEA/Nordic layout."""
+    return region_plot("Middle East — listed PXDs", "middle_east.svg", plots_dir)
+
+
+def central_asia_plot(plots_dir: str) -> str:
+    """Central Asia region overview (horizontal bars), matching SEA/Nordic layout."""
+    return region_plot("Central Asia — listed PXDs", "central_asia.svg", plots_dir)
 
 
 def countries_in_region(cfg: dict, region: str) -> list[tuple[str, dict]]:
@@ -461,8 +484,8 @@ def countries_in_region(cfg: dict, region: str) -> list[tuple[str, dict]]:
 
 def render_status_block(cfg: dict) -> str:
     queried = cfg.get("pride_hits_queried", "unknown date")
-    intro = (f"Region overviews are shown below. Per-country city charts (Nordic and SEA) live in\n"
-             f"{MARKDOWNS_LINK} (and `status/plots/<country>.svg`).\n"
+    intro = (f"Region overviews are shown below. Per-country city charts (Nordic, SEA, South Asia,\n"
+             f"Middle East, Central Asia) live in {MARKDOWNS_LINK} (and `status/plots/<country>.svg`).\n"
              f"A curated city's bar is its manifest (`lists/<country>/<city>.txt`),\n"
              f"split so every PXD sits in exactly one block: *Local SDRF* (a local file without a\n"
              f"blocker, including files awaiting review), *Sandbox* (an SDRF under `sandbox/` in\n"
@@ -475,19 +498,29 @@ def render_status_block(cfg: dict) -> str:
              f"hit count (unioned over `search_terms` in `config.yml`, queried {queried}). *Affinity PAD*\n"
              f"is every public dataset in PRIDE's affinity archive, one row per technology\n"
              f"(Olink platforms, SomaScan, NULISA, Other; `affinity_pad/<platform>.txt`, rebuilt by\n"
-             f"`python scripts/build_pad_manifest.py`). SEA search terms live in\n"
-             f"`criteria/sea_cities.md` / `config.yml`.\n"
+             f"`python scripts/build_pad_manifest.py`). Regional search terms live in\n"
+             f"`criteria/sea_cities.md`, `criteria/south_asia_cities.md`, `criteria/middleeast_cities.md`,\n"
+             f"`criteria/central_asia_cities.md` / `config.yml`.\n"
              f"*To do* is ready for annotation; *Blocked* PXDs need missing metadata before a sandbox or datasets PR.\n"
              f"The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with\n"
              f"`python scripts/update_status.py`; redraw the charts alone from `tables/` with\n"
              f"`python scripts/plot_status.py`.")
     affinity = countries_in_region(cfg, "affinity")
     sea = countries_in_region(cfg, "sea")
+    south_asia = countries_in_region(cfg, "south_asia")
+    middle_east = countries_in_region(cfg, "middle_east")
+    central_asia = countries_in_region(cfg, "central_asia")
     # Per-country charts stay in status/markdowns/ + status/plots/; README only
     # shows region overviews (with a link to those pages).
     parts = [intro, overview_plot("status/plots")]
     if sea:
         parts.append(sea_plot("status/plots"))
+    if south_asia:
+        parts.append(south_asia_plot("status/plots"))
+    if middle_east:
+        parts.append(middle_east_plot("status/plots"))
+    if central_asia:
+        parts.append(central_asia_plot("status/plots"))
     for c, d in affinity:
         # Affinity is a single multi-row chart; keep it open with a link under the image.
         title = f"{display_name(c, d)} — {human_status(d.get('status'))}"
@@ -510,11 +543,36 @@ def update_readme(block: str, dry_run: bool) -> None:
         README.write_text(new)
 
 
+def write_region_index_page(
+    cfg: dict,
+    pages_dir: Path,
+    *,
+    region: str,
+    filename: str,
+    heading: str,
+    plot_md: str,
+) -> None:
+    countries = countries_in_region(cfg, region)
+    if not countries:
+        return
+    links = "\n".join(
+        f"- [{display_name(c, d)}]({c}.md) — {human_status(d.get('status'))}"
+        for c, d in countries
+    )
+    (pages_dir / filename).write_text(
+        f"# {heading} — {human_status(region_status(cfg, region))}\n\n"
+        f"Generated by `scripts/update_status.py`; PRIDE hits queried "
+        f"{cfg.get('pride_hits_queried', 'unknown date')}. "
+        f"Region overview below; per-country city charts are linked under it.\n\n"
+        f"{plot_md}\n\n"
+        f"### Countries\n\n{links}\n"
+    )
+
+
 def write_status_pages(cfg: dict, dry_run: bool) -> None:
     pages_dir = ROOT / "status" / "markdowns"
     if not dry_run:
         pages_dir.mkdir(parents=True, exist_ok=True)
-    sea = countries_in_region(cfg, "sea")
     for country, cdata in cfg["countries"].items():
         page = (f"# {display_name(country, cdata)} — {human_status(cdata.get('status'))}\n\n"
                 f"Generated by `scripts/update_status.py`; PRIDE hits queried "
@@ -522,19 +580,24 @@ def write_status_pages(cfg: dict, dry_run: bool) -> None:
                 f"{country_plot(country, cdata, '../plots')}\n")
         if not dry_run:
             (pages_dir / f"{country}.md").write_text(page)
-    if sea and not dry_run:
-        links = "\n".join(
-            f"- [{display_name(c, d)}]({c}.md) — {human_status(d.get('status'))}"
-            for c, d in sea
-        )
-        (pages_dir / "sea.md").write_text(
-            f"# Southeast Asia — {human_status(sea_region_status(cfg))}\n\n"
-            f"Generated by `scripts/update_status.py`; PRIDE hits queried "
-            f"{cfg.get('pride_hits_queried', 'unknown date')}. "
-            f"Region overview below; per-country city charts are linked under it.\n\n"
-            f"{sea_plot('../plots')}\n\n"
-            f"### Countries\n\n{links}\n"
-        )
+    if dry_run:
+        return
+    write_region_index_page(
+        cfg, pages_dir, region="sea", filename="sea.md",
+        heading="Southeast Asia", plot_md=sea_plot("../plots"),
+    )
+    write_region_index_page(
+        cfg, pages_dir, region="south_asia", filename="south_asia.md",
+        heading="South Asia", plot_md=south_asia_plot("../plots"),
+    )
+    write_region_index_page(
+        cfg, pages_dir, region="middle_east", filename="middle_east.md",
+        heading="Middle East", plot_md=middle_east_plot("../plots"),
+    )
+    write_region_index_page(
+        cfg, pages_dir, region="central_asia", filename="central_asia.md",
+        heading="Central Asia", plot_md=central_asia_plot("../plots"),
+    )
 
 
 # --------------------------------------------------------------------------- main
@@ -615,7 +678,7 @@ def main() -> None:
     write_tables(cfg, breakdowns)
     write_plots()
     print(f"\nupdated {CONFIG.name}, README.md status block, status/markdowns/, tables/, "
-          f"status/plots/overview.svg + sea.svg + per-country charts"
+          f"status/plots/overview.svg + sea.svg + south_asia.svg + middle_east.svg + central_asia.svg + per-country charts"
           + ("" if args.no_pride else f", raw candidate lists in {args.hits_dir}/"))
 
 if __name__ == "__main__":

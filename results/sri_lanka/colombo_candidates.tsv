@@ -1,0 +1,46 @@
+accession	verdict	evidence	in_corpus	title
+PXD000838	rejected	"countries=['Italy'] | Proteomics and Metabonomics Laboratory,
+CERC- S.Lucia Found ; Department of Experimental Medicine and Surgery, University "		Mitochondrial proteomics investigation of a cellular model of impaired dopamine homeostasis, an earl
+PXD002455	confirmed	affiliation~'colombo': Department of Biomedical Sciences, University of Padova, Istituto Interuniversitario di Mi	yes	Calsequestrins in skeletal and cardiac muscle from adult Danio rerio.
+PXD003257	rejected	countries=['France'] | Institut Curie ; Laboratoire de Spectrométrie de Masse Protéomique (LSMP) Ins		Proteomic comparison defines novel markers to characterize heterogeneous populations of extracellula
+PXD003426	rejected	countries=['Germany'] | DZNE München ; Lehrstuhl für Neuroproteomik, Technische Universität München	yes	Systematic substrate identification reveals a central role for the metalloprotease ADAM10 in axon ta
+PXD004744	rejected	countries=['Germany'] | DZNE Munich Neuroproteomics ; German Center for Neurodegenerative Diseases (DZNE) Feodor-L	yes	TDP-43 loss of function inhibits endosomal trafficking and alters trophic signaling in neurons - Sur
+PXD004756	rejected	countries=['Germany'] | Proteomics and Signal Transduction, Max Planck Institute of  ; Max Planck Institute of Biochemistry Experimental Systems Im		TDP-43 loss of function inhibits endosomal trafficking and alters trophic signaling in neurons
+PXD006997	rejected	countries=['Italy'] | University of Cagliari, DISVA ; Department of Life and Environmental Sciences, Biomedical se		Salivary proteomics of sP and sNP rats
+PXD007235	rejected	countries=['Italy'] | Istituto Europeo di Oncologia ; European Institute of Oncology		Extensive and systematic rewiring of histone post-translational modifications in cancer model system
+PXD014848	rejected	countries=['Argentina'] | National University of Cuyo ; Morpho-phisiology department, Faculty of Medicine, NAtional 	yes	DETECTION OF ODF1 IN KIDNEY MEDULLA
+PXD015024	rejected	countries=['Brazil'] | UFRJ ; UFRJ		Proteomic Analysis of Whole Saliva in Chronic Periodontitis
+PXD015078	rejected	countries=['Italy'] | Institute of Biosciences and Bioresources, National Research ; Molecular Plant Biology, Department of Biochemistry, Univers		GUN1 controls the accumulation of NEP-dependent transcripts in Arabidopsis cotyledons
+PXD016075	rejected	countries=['Germany'] | DZNE Munich Neuroproteomics ; DZNE Munich Neuroproteomics Feodor-Lynen Str. 17 81377 Munic		Microglial proteomic signatures in APPPS1 and APP-KI mice
+PXD017592	rejected	countries=['India'] | Amrita Vishwa VIdyapeetham ; Associate Professor and Head-Proteomics Research, School of 	yes	Proteomics of Hypnale hypnale (Hump-nosed pit viper) venom from the Western Ghats of India
+PXD018130	rejected	countries=['India'] | Research Scholar ; Professor, Department of Molecular Biology and Biotechnology		Proteomics analysis of Echis carinatus venom from Sri Lanka
+PXD018397	rejected	countries=['France'] | Biopark Archamps ; ID-FISH Technology Inc., Milpitas, CA 95035, USA		Salinity adaptation in the principal arboviral vector Aedes aegypti characterized by larval cuticle 
+PXD018936	rejected	countries=['India'] | Amrita Vishwa VIdyapeetham ; Associate Professor and Head-Proteomics Research, School of 		Proteomics of Naja naja venom from the Western Ghats of India
+PXD019446	confirmed	countries=['Sri Lanka']		A primary human T-cell spectral library to facilitate large scale quantitative T-cell proteomics
+PXD019447	rejected	countries=['Germany'] | DZNE Munich Neuroproteomics ; German Center for Neurodegenerative Diseases Munich, Neuropr		Proteomic signature of NPC1 KO microglia
+PXD019452	rejected	countries=['Germany'] | DZNE Munich Neuroproteomics ; DZNE Munich, Neuroproteomics, Feodor-Lynen Str. 17, 81377 Mu		Proteomic signature of NPC1 KO microglia from conditional KO mice
+PXD019542	confirmed	countries=['Sri Lanka']		A primary human T-cell spectral library to facilitate large scale quantitative T-cell proteomics
+PXD020659	rejected	countries=['Germany'] | DZNE Munich Neuroproteomics ; German Center for Neurodegenerative Diseases Munich, Neuropr		Proteomic analysis of monocyte derived macrophages from Niemann-Pick disease type C patients
+PXD022091	rejected	countries=['United States'] | UCSF ; Cellular and Molecular Pharmacology, UCSF, San Francisco, CA	yes	Integration of Protein Interactome Data with Congenital Heart Disease Variants Reveals Disease Genes
+PXD022095	confirmed	countries=['Sri Lanka']		CD49f defines a subset of dysfunctional regulatory T cells circulating in the human peripheral blood
+PXD022180	confirmed	affiliation~'colombo': Department of Biomedical Science, University of Padova, via U. Bassi 58b, 35121 Padova, It		Mytho, An Uncharacterized Gene that Controls Longevity and WIPI2-dependent Autophagy
+PXD031426	rejected	countries=['United States'] | Columbia University ; Columbia University		Pre-transplant microvesicle  proteomics
+PXD031791	rejected	countries=['Germany'] | DKFZ ; Department of Proteomics of Stem Cells and Cancer, German Ca		The cell-based control and underlying mechanism for inflammatory bone loss
+PXD033538	rejected	countries=['Russia'] | IBMC ; IBMC, Moscow, Russia		Protein dataset of immortalized HaCaT cells p53 knock down HaCaT keratinocytes
+PXD036069	rejected	countries=['United States'] | SUNY Upstate Medical University ; Department of Urology, SUNY Upstate Medical University Syrac		Phosphosecretome profiling and kinase-substrate interaction screening reveal key extracellular c-Src
+PXD037543	rejected	countries=['Denmark'] | Novo Nordisk Foundation Center For Protein Research, Copenha ; University of Copenhagen Faculty of Health and Medical Scien		Matrix Gla Protein acts as a driver of stemness and tumor initiation in ovarian cancer
+PXD038665	rejected	countries=['Germany'] | DZNE Munich Neuroproteomics ; DZNE Munich, Neuroproteomics, Feodor-Lynen Str. 17, 81377 Mu	yes	Beneficial effect of ACI-24 vaccination on microglial phenotypes in an amyloidosis mouse model
+PXD038810	confirmed	countries=['Sri Lanka']		Integrative proteomics and transcriptomics of human T-cells reveals temporal changes in metabolic pa
+PXD039139	rejected	countries=['India'] | Assistant Professor, Centre for Ecological Sciences, Indian  ; Assistant Professor, Evolutionary Venomics Lab, Center for E		Fangs in the ghats: preclinical insights into the medical importance of endemic pit vipers from the 
+PXD048550	rejected	countries=['Germany'] | DZNE Munich Neuroproteomics ; DZNE Munich, Neuroproteomics, Feodor-Lynen Str. 17, 81377 Mu		Proteomics of CLN3-deficient murine microglia identifies a disease associated phenotype with lysosom
+PXD050251	rejected	countries=['United States'] | University of New Hampshire ; Department of Molecular, Cellular & Biomedical Sciences, Uni	yes	Phosphorylation-Driven Epichaperome Assembly: A Critical Regulator of Cellular Adaptability and Prol
+PXD052574	confirmed	countries=['Sri Lanka']		Human mucosal-associated invariant T (MAIT) cell proteome
+PXD055524	rejected	countries=['Denmark'] | Novo Nordisk Foundation Center For Protein Research, Copenha ; University of Copenhagen Faculty of Health and Medical Scien		Quantitative proteomics and phosphoproteomics analysis of patient-derived ovarian cancer stem cells
+PXD059137	rejected	countries=['United States'] | Stanford University ; Departments of Medicine (Oncology) and of Chemical and Syste	yes	Proteomic profiling of PRLX-93936 and structurally similar compounds in pancreatic cancer cells. 
+PXD061015	rejected	countries=['Denmark'] | Novo Nordisk Foundation Center For Protein Research, Copenha ; University of Copenhagen Faculty of Health and Medical Scien	yes	Quantitative proteomics and phosphoproteomics analysis of patient-derived ovarian cancer stem cells
+PXD061021	rejected	countries=['Italy'] | University of L'Aquila ; University of L'Aquila		Molecular Structure and Enzymatic Mechanism of the Human Collagen Hydroxylysine Galactosyltransferas
+PXD065011	rejected	countries=['Germany'] | DZNE Munich Neuroproteomics ; DZNE Munich, Neuroproteomics, Feodor-Lynen-Str. 17, 81377 Mü		Secretome and lysate proteomics of primary murine neurons with inactive BACE1
+PXD068495	rejected	countries=['Argentina'] | CERELA-CONICET ; Laboratory of Technology, Centro de Referencia para Lactobac	yes	Proteomic profiling of Levilactobacillus brevis CRL 2013 grown in different nitrogen sources.
+PXD070409	rejected	countries=['Germany'] | Department for Plant Cell and Molecular Biology, Institute f ; Plant Cell and Molecular Biology, Institute of Biology, Humb		SPOROCYTELESS/NOZZLE interacts with MADS-DOMAIN transcription factors during the megaspore mother ce
+PXD072123	rejected	countries=['Saudi Arabia'] | King Abdullah University of Science and Technology ; King Abdullah University of Science and Technology		Molecular Basis and Cellular Effects of Janus-Class–Driven Cytoplasmic PYK2 Coacervates
+PXD076262	rejected	countries=['Italy'] | Istituto Europeo di Oncologia ; European Institute of Oncology, Milan	yes	Epiproteomic Profiling Identifies Histone H4 Hyperacetylation as a Prognostic Marker in Pleural Meso

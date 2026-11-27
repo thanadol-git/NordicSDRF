@@ -1,0 +1,73 @@
+accession	verdict	evidence	in_corpus	title
+PRD000147	legacy_id	countries=['India']		Proteomic profile of Zebrafish brain based on 2D MALDI MS/MS analysis
+PRD000222	legacy_id	countries=['India']		Prpteomic profile of zebrafish brain based on 1DE LC-MS/MS analysis
+PRD000223	legacy_id	countries=['India']		Proteomic profile of Zebrafish brain based on 1DE LC MS-MS analysis
+PRD000238	legacy_id	countries=['India']		Identification of proteins from an Antarctic bacterium Pseudomonas syringae Lz4W
+PRD000239	legacy_id	countries=['India']		Proteins of Pseudomonas syringae Lz4W
+PRD000300	legacy_id	countries=['India']		Zebra fish fin proteome -  Proteome profile of zebrafish caudal fin based on one-dimensional gel ele
+PXD000221	confirmed	countries=['India']		Proteins from Outer Membrane Vesicules of Pseudomonas syringae Lz4W
+PXD000848	confirmed	countries=['India']		iTRAQ-based quantitative proteomic analysis of membrane and nuclear fractions of glioma (WHO grade I
+PXD003817	confirmed	countries=['India']	yes	Tomato clade proteome -  Green-fruited Solanum habrochaites lacks fruit-specific carotenogenesis due
+PXD003920	confirmed	countries=['India']	yes	Shotgun Proteomics of Tomato Fruits: Evaluation and Optimization of Sample Preparation Methods and M
+PXD004545	confirmed	affiliation~'india': Centre for Cellular and Molecular Biology, Hyderabad, India	yes	wdr13 knockout mice develops MD like phenotype on chronic stress
+PXD006698	confirmed	countries=['India']		Tyrosine phosphatase interaction network
+PXD007104	confirmed	countries=['India']		Sesamum floral buds LC-MSMS
+PXD008404	confirmed	countries=['India']		Comparison of Nuclear Matrix and Mitotic Chromosome Scaffold proteins in Drosophila S2 cells – Trans
+PXD010238	confirmed	countries=['India']		Analysis of Erysiphe pisi proteome
+PXD012204	confirmed	countries=['India']		Aggregation of respiratory complex subunits marks the onset of proteotoxicity in proteasome inhibite
+PXD012257	confirmed	countries=['India']		"Analysis of mDiaphanous1 (mDia1) interactome in adult mouse skeletal muscle C2C12
+myoblasts and myo"
+PXD014111	confirmed	countries=['India']	yes	iTRAQ-based quantitative proteomic analysis of nuclear fractions of glioma (WHO grade II, III and IV
+PXD014258	confirmed	countries=['India']	yes	LC-MS analysis of human tumour cell lines
+PXD014361	confirmed	countries=['India']		QUATERNARY AND QUINARY ORGANIZATION OF RESPIRATORY COMPLEX SUBUNITS TO ADAPT PROTEOSTASIS-STRESS
+PXD014427	confirmed	countries=['India']		QUATERNARY AND QUINARY ORGANIZATION OF RESPIRATORY COMPLEX SUBUNITS TO ADAPT PROTEOSTASIS-STRESS
+PXD014772	confirmed	countries=['India']		Human Ser/Thr phosphatase regulatory subunits  interactome
+PXD015131	confirmed	countries=['India']	yes	Secretome analysis of Candida glabrata wild-type and aspartyl protease-deficient strains
+PXD015132	confirmed	countries=['India']	yes	Secretome analysis of Candida glabrata aspartyl protease-deficient strains
+PXD015147	confirmed	countries=['India']	yes	Quantitative secretome profiling of Candida glabrata wild-type and aspartyl protease-deficient strai
+PXD016867	confirmed	countries=['India']	yes	Interactome identification of Histones H3 and H4 in the presence and absence of methyl methanesulfon
+PXD016933	confirmed	countries=['India']	yes	MALDI MS-MS analysis of Arachis hypogaea seed proteinase inhibitor
+PXD017412	confirmed	countries=['India']		Comparative milk proteome analysis of Kashmiri and Jersey cattle identifies differential expression 
+PXD017992	confirmed	countries=['India']		Mass spectral Analysis of Synthetic Peptides: Implications in Proteomics
+PXD018150	confirmed	countries=['India']		Tomato phototropin1 fruit proteome
+PXD020885	confirmed	"affiliation~'india': CSIR - Centre for Cellular and Molecular Biology, India
+Central Department of Biotechnolog"		Characterization of Plasmodium falciparum NEDD8
+PXD020952	confirmed	countries=['India']		Characterization of Plasmodium falciparum NEDD8
+PXD022766	confirmed	countries=['India']	yes	Interactome identification of a glycosylphosphatidylinositol-linked aspartyl protease, CgYps1, in th
+PXD027216	confirmed	countries=['India']		Distinct Stress Response to Mitochondrial Inter-membrane Space and Matrix Proteotoxic Stress are Pre
+PXD027940	confirmed	countries=['India']		Tomato trifoliate mutant proteome
+PXD028941	confirmed	countries=['India']	yes	Nuclear-injuries by aberrant dynein-forces defeat proteostatic purposes of Lewy Body-like Inclusions
+PXD029614	confirmed	countries=['India']	yes	Total membrane proteome analysis of Candida glabrata wild-type and eleven CgYapsins-deficient strain
+PXD029629	confirmed	countries=['India']	yes	Label-free quantitative total membrane proteome analysis of Candida glabrata wild-type and eleven Cg
+PXD029741	confirmed	countries=['India']	yes	Proteomic study at low and optimum temperature in Pseudomonas sp. Lz4W using LC-MSMS
+PXD031296	confirmed	countries=['India']		Subfractionation of Nuclear Matrix (NuMat)
+PXD032150	confirmed	countries=['India']		Proteome Map of Human nasopharyngeal/oropharyngeal swab samples in VTM media following SARS-CoV-2 in
+PXD035348	confirmed	countries=['India']		A comprehensive comparison of Rapid and Deep Plasma Proteomics workflows to identify and quantify bi
+PXD037488	confirmed	countries=['India']		Multigenerational effect of heat stress on the Drosophila melanogaster sperm proteome
+PXD040194	confirmed	countries=['India']		Immunoprecipitation followed by  mass spectropmetry of Plasmodium falciparum Skp1
+PXD040195	confirmed	countries=['India']		Immunoprecipitation followed by mass spectropmetry of Plasmodium falciparum Cullin1
+PXD040197	confirmed	countries=['India']		Label Free Quantitative mass spectropmetry of Plasmodium falciparum Cullin2 protein in wild type and
+PXD040268	confirmed	countries=['India']		Immunoprecipitation followed by mass spectropmetry of Plasmodium falciparum Cullin2
+PXD042056	confirmed	countries=['India']		Label-free quantitative plasma membrane proteome analysis of Candida glabrata wild-type and Cgvps34∆
+PXD042058	confirmed	countries=['India']	yes	Phosphatidylinositol 3-phosphate (PI3P) interactome analysis under varied iron conditions in Candida
+PXD045586	confirmed	countries=['India']		Phosphorylation of CFP10 modulates Mycobacterium tuberculosis virulence
+PXD045797	confirmed	countries=['India']		Enhanced Secretion of Promyogenic Small Extracellular Vesicles/Exosomes by Quiescent Muscle Cells
+PXD046280	confirmed	countries=['India']	yes	Cell membrane proteome analysis in HEK293T cells challenged with α-Synuclein amyloids
+PXD049223	confirmed	countries=['India']	yes	CgSub2 interactome analysis in the presence and absence of CgHog1 MAPK in Candida glabrata
+PXD049380	confirmed	countries=['India']	yes	Interactome analysis of the CgHog1 MAPK under varied-iron conditions in Candida glabrata
+PXD049381	confirmed	countries=['India']		Identification of phosphorylated amino acids in CgSub2 protein in Candida glabrata
+PXD050706	confirmed	countries=['India']		Phosphoproteomic association in zebrafish caudal fin regeneration.
+PXD053938	confirmed	countries=['India']		Candida glabrata GPI-anchored cell surface associated aspartyl protease CgYps1 and CgYps7 interactom
+PXD055514	confirmed	countries=['India']	yes	Whole cell iTRAQ proteome analysis of strain JA2
+PXD056007	confirmed	countries=['India']	yes	Immunoprecipitation followed by mass-spectrometry of Toxoplasma gondii VMP1 immunoprecipitate
+PXD058912	confirmed	countries=['India']	yes	Lis1 dynein interactome dataset
+PXD064011	confirmed	countries=['India']		Human LisH domain containing protein interaction network
+PXD066777	confirmed	countries=['India']	yes	Mycobacterium tuberculosis Sec and Tat secretion pathways play a role in the maintenance of membrane
+PXD068826	confirmed	affiliation~'india': Tata Institute of Fundamental Research, Hyderabad, India.		Identification of interacting partners of CNPY1 in the mouse vomeronasal organ.
+PXD070502	confirmed	countries=['India']		Multi-omics profiling of the host response to Leptospira infection in human PBMCs
+PXD074507	confirmed	countries=['India']	yes	Identifying Nucleus Accumbens Dysfunction in a novel mouse model of Female Social Defeat Stress (fem
+PXD074547	confirmed	countries=['India']	yes	Integrated Proteomic Profiling of the Hippocampus Identifies Stress-Induced Molecular Signatures in 
+PXD075151	confirmed	countries=['India']	yes	Cytosolic interaction with RNA-helicase DDX39A titrates viral RNA G-quadruplex mediated α-Synuclein 
+PXD075221	confirmed	countries=['India']	yes	Cytosolic interaction with RNA-helicase DDX39A titrates viral RNA G-quadruplex mediated α-Synuclein 
+PXD075754	confirmed	countries=['India']		Association of IL-8 and IL-18 Expression with Histone-Associated NETosis in Aqueous-Deficient and Ev
+PXD075862	confirmed	countries=['India']		Association of IL-8 and IL-18 Expression with Histone-Associated NETosis in Aqueous-Deficient and Ev

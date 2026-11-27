@@ -1,0 +1,6 @@
+accession	verdict	evidence	in_corpus	title
+PXD002354	rejected	countries=['France'] | University of Lyon (UCBL) ; University of Liege, GIGA-Cancer, Laboratory of Connective T	yes	pNPs N-terminomics -  Determination of the substrate repertoire of ADAMTS2, 3, and 14 significantly 
+PXD053261	confirmed	affiliation~'united arab emirates': College of Medicine, Mohammed Bin Rashid University of Medicine and Health Sciences,  Duba		Conserved Role of FOXC1 in TNBC is parallel to FOXA1 in ER+ Breast   Cancer
+PXD070849	confirmed	countries=['United Arab Emirates']		Proteomic analysis of human dentin matrix extracts by  peptide-level high-pH reverse-phase fractiona
+PXD071424	confirmed	affiliation~'united arab emirates': 1 College of Medicine, Mohammed Bin Rashid University of Medicine and Health Sciences, Dub		Proteomic and Metabolomic Profiling of Invasive Methicillin Resistant Staphy-lococcus aureus   : Unc
+PXD078124	confirmed	affiliation~'united arab emirates': Center for Applied and Translational Genomics, Mohammed Bin Rashid University of Medicine 		Evaluation of the SPEED sample preparation protocol for metabolomics
