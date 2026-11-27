@@ -8,3 +8,4 @@ PXD021926	singapore/singapore	sandbox	sandbox: 12/12 RAW; RBCEV run->donor order
 PXD031110	singapore/singapore	sandbox	sandbox: 12/12 RAW label-free; WT/KO x DMSO/volasertib x3 from file names; trypsin/DDA/QE HF from PX only, Methods DOCX unread
 PXD051044	singapore/singapore	sandbox	sandbox: 12/12 RAW label-free (3 tumoroids x3 + DMEM blank x3, split files); reps=injections inferred; RAW/mqpar unread
 PXD054586	singapore/singapore	annotated	annotated: 12/12 RAW; PLUM FL/dExon1/dExon7 x4 from file names; QE HF; review round1 PASS
+PXD043870	singapore/singapore	sandbox	sandbox: 12/12 RAW x 4 pulldown conditions (bait/IgG x infected/uninfected stated); _01-03 = gel fractions inferred; QE (paper) vs QE HF (PX)
