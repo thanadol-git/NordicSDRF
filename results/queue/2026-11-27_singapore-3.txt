@@ -1,0 +1,2 @@
+# daily queue 2026-11-27 singapore batch 3 (next 10 Singapore PXDs with fewest RAW)
+PXD043818	singapore/singapore	blocked	blocked: HDX-MS; 9 "RAW" are DynamX .DnX projects, 28 PLGS UnD zips; no Waters .raw runs (=PXD042235 case)
