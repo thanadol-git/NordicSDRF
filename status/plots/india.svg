@@ -31,7 +31,7 @@
 </style>
 <rect class="bg" width="860" height="286.0" rx="6"/>
 <text class="title" x="12" y="22">India — scoped</text>
-<text class="sub" x="12" y="40">384 listed · 0 local SDRFs · 1 sandbox · 199 to do · 0 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
+<text class="sub" x="12" y="40">384 listed · 0 local SDRFs · 0 sandbox · 199 to do · 0 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -65,13 +65,11 @@
 <text class="seg" x="507.3" y="142.0" text-anchor="middle">50</text>
 <text class="total" x="674.2" y="142.0">87 listed</text>
 <text class="city" x="12" y="172.0">Hyderabad</text>
-<rect class="c-sandbox" fill="#6b4ea3" x="110.0" y="158.0" width="17.0" height="20" rx="2"><title>Hyderabad · Sandbox: 1</title></rect>
-<text class="seg" x="118.5" y="172.0" text-anchor="middle">1</text>
-<rect class="c-in_corpus" fill="#199e70" x="128.0" y="158.0" width="210.7" height="20" rx="2"><title>Hyderabad · In corpus: 33</title></rect>
-<text class="seg" x="233.4" y="172.0" text-anchor="middle">33</text>
-<rect class="c-todo" fill="#8a8983" x="339.7" y="158.0" width="191.5" height="20" rx="2"><title>Hyderabad · To do: 30</title></rect>
-<text class="seg" x="435.5" y="172.0" text-anchor="middle">30</text>
-<text class="total" x="538.2" y="172.0">64 listed</text>
+<rect class="c-in_corpus" fill="#199e70" x="110.0" y="158.0" width="217.1" height="20" rx="2"><title>Hyderabad · In corpus: 34</title></rect>
+<text class="seg" x="218.6" y="172.0" text-anchor="middle">34</text>
+<rect class="c-todo" fill="#8a8983" x="328.1" y="158.0" width="191.5" height="20" rx="2"><title>Hyderabad · To do: 30</title></rect>
+<text class="seg" x="423.9" y="172.0" text-anchor="middle">30</text>
+<text class="total" x="526.6" y="172.0">64 listed</text>
 <text class="city" x="12" y="202.0">Pune</text>
 <rect class="c-in_corpus" fill="#199e70" x="110.0" y="188.0" width="43.9" height="20" rx="2"><title>Pune · In corpus: 7</title></rect>
 <text class="seg" x="132.0" y="202.0" text-anchor="middle">7</text>

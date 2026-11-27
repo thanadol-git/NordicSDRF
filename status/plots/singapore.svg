@@ -31,7 +31,7 @@
 </style>
 <rect class="bg" width="860" height="106.0" rx="6"/>
 <text class="title" x="12" y="22">Singapore — in progress</text>
-<text class="sub" x="12" y="40">263 listed · 33 local SDRFs · 0 sandbox · 101 to do · 27 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
+<text class="sub" x="12" y="40">263 listed · 33 local SDRFs · 3 sandbox · 101 to do · 24 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -47,13 +47,15 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="544.0" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="561.0" y="62.0">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="82.0">Singapore</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="68.0" width="80.3" height="20" rx="2"><title>Singapore · Local SDRF: 33</title></rect>
-<text class="seg" x="150.2" y="82.0" text-anchor="middle">33</text>
-<rect class="c-blocked" fill="#d95926" x="191.3" y="68.0" width="65.5" height="20" rx="2"><title>Singapore · Blocked: 27</title></rect>
-<text class="seg" x="224.1" y="82.0" text-anchor="middle">27</text>
-<rect class="c-in_corpus" fill="#199e70" x="257.8" y="68.0" width="250.3" height="20" rx="2"><title>Singapore · In corpus: 102</title></rect>
-<text class="seg" x="383.0" y="82.0" text-anchor="middle">102</text>
-<rect class="c-todo" fill="#8a8983" x="509.1" y="68.0" width="247.9" height="20" rx="2"><title>Singapore · To do: 101</title></rect>
-<text class="seg" x="633.1" y="82.0" text-anchor="middle">101</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="68.0" width="79.0" height="20" rx="2"><title>Singapore · Local SDRF: 33</title></rect>
+<text class="seg" x="149.5" y="82.0" text-anchor="middle">33</text>
+<rect class="c-sandbox" fill="#6b4ea3" x="190.0" y="68.0" width="17.0" height="20" rx="2"><title>Singapore · Sandbox: 3</title></rect>
+<text class="seg" x="198.5" y="82.0" text-anchor="middle">3</text>
+<rect class="c-blocked" fill="#d95926" x="208.0" y="68.0" width="57.2" height="20" rx="2"><title>Singapore · Blocked: 24</title></rect>
+<text class="seg" x="236.5" y="82.0" text-anchor="middle">24</text>
+<rect class="c-in_corpus" fill="#199e70" x="266.1" y="68.0" width="246.2" height="20" rx="2"><title>Singapore · In corpus: 102</title></rect>
+<text class="seg" x="389.2" y="82.0" text-anchor="middle">102</text>
+<rect class="c-todo" fill="#8a8983" x="513.3" y="68.0" width="243.7" height="20" rx="2"><title>Singapore · To do: 101</title></rect>
+<text class="seg" x="635.1" y="82.0" text-anchor="middle">101</text>
 <text class="total" x="764.0" y="82.0">263 listed</text>
 </svg>

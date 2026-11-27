@@ -51,10 +51,10 @@ countries:
         pride_hits: 328
         screened: 0
         annotated: 68
-        blocked: 63
+        blocked: 62
         notes: "line 1 is PRD000423, a legacy ProteomeXchange id — resolve to a PXD before screening"
         in_corpus: 102
-        sandbox: 1
+        sandbox: 2
       lund:
         name: Lund
         search_terms: [Lund, Malmö, Skåne]
@@ -65,7 +65,7 @@ countries:
         annotated: 75
         blocked: 50
         in_corpus: 111
-        sandbox: 0
+        sandbox: 1
       gothenburg:
         name: Gothenburg
         search_terms: [Gothenburg, Göteborg, Sahlgrenska, Chalmers]
@@ -76,7 +76,7 @@ countries:
         annotated: 66
         blocked: 43
         in_corpus: 92
-        sandbox: 1
+        sandbox: 0
       uppsala:
         name: Uppsala
         search_terms: [Uppsala]
@@ -129,12 +129,12 @@ countries:
         pride_hits: 567
         screened: 0
         annotated: 251
-        blocked: 57
+        blocked: 55
         notes: "Manifest from build_manifest.py (2026-11-03): 543 confirmed Danish; PXD006201, PXD006679, PXD027901, PXD043505 removed (SDU Odense affiliations only). 32 Odense-list, 1 Aarhus-list and 2 Roskilde-list PXDs have Copenhagen-only affiliations and are still listed under those cities"
         pxd_list: lists/denmark/copenhagen.txt
         pxd_count: 539
         in_corpus: 452
-        sandbox: 5
+        sandbox: 33
       odense:
         name: Odense
         search_terms: [Odense, "University of Southern Denmark"]
@@ -145,7 +145,7 @@ countries:
         pxd_list: lists/denmark/odense.txt
         pxd_count: 178
         in_corpus: 118
-        sandbox: 1
+        sandbox: 25
       aarhus:
         name: Aarhus
         search_terms: [Aarhus, Århus]
@@ -156,7 +156,7 @@ countries:
         pxd_list: lists/denmark/aarhus.txt
         pxd_count: 113
         in_corpus: 88
-        sandbox: 0
+        sandbox: 13
       aalborg:
         name: Aalborg
         search_terms: [Aalborg]
@@ -167,7 +167,7 @@ countries:
         pxd_list: lists/denmark/aalborg.txt
         pxd_count: 65
         in_corpus: 57
-        sandbox: 0
+        sandbox: 8
       lyngby:
         name: Lyngby
         search_terms: [Lyngby, "Technical University of Denmark"]
@@ -178,7 +178,7 @@ countries:
         pxd_list: lists/denmark/lyngby.txt
         pxd_count: 57
         in_corpus: 36
-        sandbox: 1
+        sandbox: 7
       roskilde:
         name: Roskilde
         search_terms: [Roskilde]
@@ -189,7 +189,7 @@ countries:
         pxd_list: lists/denmark/roskilde.txt
         pxd_count: 7
         in_corpus: 7
-        sandbox: 1
+        sandbox: 0
   norway:
     region: nordic
     status: in_progress
@@ -212,11 +212,11 @@ countries:
         pride_hits: 74
         screened: 0
         annotated: 108
-        blocked: 3
+        blocked: 1
         pxd_list: lists/norway/oslo.txt
         pxd_count: 120
         in_corpus: 92
-        sandbox: 0
+        sandbox: 35
       trondheim:
         name: Trondheim
         search_terms: [Trondheim, NTNU]
@@ -234,11 +234,11 @@ countries:
         pride_hits: 59
         screened: 0
         annotated: 21
-        blocked: 9
+        blocked: 7
         pxd_list: lists/norway/aas.txt
         pxd_count: 56
         in_corpus: 47
-        sandbox: 0
+        sandbox: 2
       tromso:
         name: Tromsø
         search_terms: [Tromsø, Tromso]
@@ -283,7 +283,7 @@ countries:
         pxd_list: lists/finland/turku.txt
         pxd_count: 102
         in_corpus: 97
-        sandbox: 0
+        sandbox: 1
       oulu:
         name: Oulu
         search_terms: [Oulu]
@@ -347,7 +347,7 @@ countries:
 
   # Southeast Asia — plotted together as status/plots/sea.svg (not per-country charts).
   # Search terms from criteria/sea_cities.md; manifests appear under lists/<country>/ when scoped.
-        sandbox: 1
+        sandbox: 0
   singapore:
     region: sea
     name: Singapore
@@ -365,11 +365,11 @@ countries:
         pride_hits: 464
         screened: 0
         annotated: 33
-        blocked: 27
+        blocked: 24
         pxd_list: lists/singapore/singapore.txt
         pxd_count: 263
         in_corpus: 115
-        sandbox: 0
+        sandbox: 18
 
   thailand:
     region: sea
@@ -386,7 +386,7 @@ countries:
         pxd_list: lists/thailand/bangkok.txt
         pxd_count: 94
         in_corpus: 50
-        sandbox: 0
+        sandbox: 31
       chiang_mai:
         name: Chiang Mai
         search_terms: ["Chiang Mai"]
@@ -410,11 +410,11 @@ countries:
         pride_hits: 48
         screened: 0
         annotated: 7
-        blocked: 12
+        blocked: 9
         pxd_list: lists/malaysia/kuala_lumpur.txt
         pxd_count: 41
         in_corpus: 25
-        sandbox: 0
+        sandbox: 8
       penang:
         name: Penang
         search_terms: ["Universiti Sains Malaysia", Penang]
@@ -589,7 +589,7 @@ countries:
         name: Bengaluru
         search_terms: [Bangalore, Bengaluru, IISc, NCBS]
         notes: "Prefer Bangalore + institute terms; confirm countries: [India]"
-        pride_hits: 82
+        pride_hits: 101
         screened: 0
         annotated: 0
         blocked: 0
@@ -600,7 +600,7 @@ countries:
       mumbai:
         name: Mumbai
         search_terms: [Mumbai, Bombay, "IIT Bombay", ACTREC, TIFR]
-        pride_hits: 37
+        pride_hits: 67
         screened: 0
         annotated: 0
         blocked: 0
@@ -612,7 +612,7 @@ countries:
         name: Delhi
         search_terms: [Delhi, "New Delhi", "IIT Delhi", IGIB]
         notes: "Bare Delhi is noisy; institute terms sparse"
-        pride_hits: 89
+        pride_hits: 90
         screened: 0
         annotated: 0
         blocked: 0
@@ -624,18 +624,18 @@ countries:
         name: Hyderabad
         search_terms: [Hyderabad, CDFD, CCMB]
         notes: "Also matches non-India places — country filter required"
-        pride_hits: 58
+        pride_hits: 70
         screened: 0
         annotated: 0
         blocked: 0
         pxd_list: lists/india/hyderabad.txt
         pxd_count: 64
         in_corpus: 34
-        sandbox: 1
+        sandbox: 0
       pune:
         name: Pune
         search_terms: [Pune, NCCS]
-        pride_hits: 32
+        pride_hits: 34
         screened: 0
         annotated: 0
         blocked: 0
@@ -646,7 +646,7 @@ countries:
       kolkata:
         name: Kolkata
         search_terms: [Kolkata, Calcutta, "IIT Kharagpur"]
-        pride_hits: 26
+        pride_hits: 27
         screened: 0
         annotated: 0
         blocked: 0
@@ -657,7 +657,7 @@ countries:
       chennai:
         name: Chennai
         search_terms: [Chennai, Madras, "IIT Madras"]
-        pride_hits: 10
+        pride_hits: 12
         screened: 0
         annotated: 0
         blocked: 0
@@ -674,7 +674,7 @@ countries:
       lahore:
         name: Lahore
         search_terms: [Pakistan, Lahore]
-        pride_hits: 15
+        pride_hits: 23
         screened: 0
         annotated: 0
         blocked: 0
@@ -731,7 +731,7 @@ countries:
         name: Colombo
         search_terms: ["Sri Lanka", Colombo, Peradeniya]
         notes: "Colombo over-counts — require Sri Lanka in the record"
-        pride_hits: 10
+        pride_hits: 44
         screened: 0
         annotated: 0
         blocked: 0
@@ -748,7 +748,7 @@ countries:
       dhaka:
         name: Dhaka
         search_terms: [Bangladesh, Dhaka]
-        pride_hits: 3
+        pride_hits: 7
         screened: 0
         annotated: 0
         blocked: 0
@@ -821,18 +821,18 @@ countries:
         name: Rehovot
         search_terms: [Rehovot, Weizmann]
         notes: "Weizmann is the strongest Israel seed; confirm countries: [Israel]"
-        pride_hits: 80
+        pride_hits: 169
         screened: 0
         annotated: 0
         blocked: 0
         pxd_list: lists/israel/rehovot.txt
         pxd_count: 166
         in_corpus: 86
-        sandbox: 1
+        sandbox: 0
       haifa:
         name: Haifa
         search_terms: [Haifa, Technion]
-        pride_hits: 74
+        pride_hits: 109
         screened: 0
         annotated: 0
         blocked: 0
@@ -843,18 +843,18 @@ countries:
       tel_aviv:
         name: Tel Aviv
         search_terms: ["Tel Aviv", "Bar-Ilan", "Sheba Medical"]
-        pride_hits: 73
+        pride_hits: 91
         screened: 0
         annotated: 2
         blocked: 0
         pxd_list: lists/israel/tel_aviv.txt
         pxd_count: 90
         in_corpus: 40
-        sandbox: 0
+        sandbox: 1
       jerusalem:
         name: Jerusalem
         search_terms: [Jerusalem, "Hebrew University"]
-        pride_hits: 72
+        pride_hits: 83
         screened: 0
         annotated: 0
         blocked: 0
@@ -872,7 +872,7 @@ countries:
         name: Istanbul
         search_terms: [Turkey, Türkiye, Istanbul, Bogazici, Boğaziçi]
         notes: "PRIDE countries may say Türkiye; prefer Turkey + city"
-        pride_hits: 65
+        pride_hits: 69
         screened: 0
         annotated: 0
         blocked: 0
@@ -883,7 +883,7 @@ countries:
       ankara:
         name: Ankara
         search_terms: [Ankara, Hacettepe, METU, Bilkent]
-        pride_hits: 6
+        pride_hits: 13
         screened: 0
         annotated: 0
         blocked: 0
@@ -912,7 +912,7 @@ countries:
         name: KAUST
         search_terms: ["Saudi Arabia", KAUST]
         notes: "KAUST (Thuwal) dominates the Saudi signal"
-        pride_hits: 50
+        pride_hits: 56
         screened: 0
         annotated: 0
         blocked: 0
@@ -934,7 +934,7 @@ countries:
       jeddah:
         name: Jeddah
         search_terms: [Jeddah, "King Abdulaziz"]
-        pride_hits: 1
+        pride_hits: 2
         screened: 0
         annotated: 0
         blocked: 0
@@ -951,7 +951,7 @@ countries:
       cairo:
         name: Cairo
         search_terms: [Egypt, Cairo, "Ain Shams"]
-        pride_hits: 49
+        pride_hits: 58
         screened: 0
         annotated: 0
         blocked: 0
@@ -980,7 +980,7 @@ countries:
       tehran:
         name: Tehran
         search_terms: [Iran, Tehran, "University of Tehran", "Sharif University"]
-        pride_hits: 30
+        pride_hits: 36
         screened: 0
         annotated: 0
         blocked: 1
@@ -1009,7 +1009,7 @@ countries:
         name: Sharjah
         search_terms: ["United Arab Emirates", UAE, Sharjah]
         notes: "Prefer full country name; Sharjah is the strongest city term"
-        pride_hits: 21
+        pride_hits: 28
         screened: 0
         annotated: 1
         blocked: 0
@@ -1048,14 +1048,14 @@ countries:
       doha:
         name: Doha
         search_terms: [Qatar, Doha, "Qatar University"]
-        pride_hits: 17
+        pride_hits: 21
         screened: 0
         annotated: 5
         blocked: 2
         pxd_list: lists/qatar/doha.txt
         pxd_count: 17
         in_corpus: 9
-        sandbox: 0
+        sandbox: 1
 
   lebanon:
     region: middle_east
@@ -1084,7 +1084,7 @@ countries:
         name: Nicosia
         search_terms: [Cyprus, Nicosia]
         notes: "Confirm country; Nicosia can collide"
-        pride_hits: 9
+        pride_hits: 18
         screened: 0
         annotated: 1
         blocked: 1
@@ -1119,7 +1119,7 @@ countries:
         name: Amman
         search_terms: [Jordan, Amman]
         notes: "Jordan surname noise — require countries / affiliation"
-        pride_hits: 66
+        pride_hits: 82
         screened: 0
         annotated: 0
         blocked: 1
@@ -1154,7 +1154,7 @@ countries:
       baghdad:
         name: Baghdad
         search_terms: [Iraq, Baghdad]
-        pride_hits: 3
+        pride_hits: 4
         screened: 0
         annotated: 0
         blocked: 0
@@ -1171,7 +1171,7 @@ countries:
       muscat:
         name: Muscat
         search_terms: [Oman, Muscat, "Sultan Qaboos"]
-        pride_hits: 1
+        pride_hits: 4
         screened: 0
         annotated: 0
         blocked: 0
@@ -1273,7 +1273,7 @@ countries:
         name: Tashkent
         search_terms: [Uzbekistan, Tashkent, Uzbek]
         notes: "Uzbek is surname noise — require countries / affiliation"
-        pride_hits: 1
+        pride_hits: 8
         screened: 0
         annotated: 0
         blocked: 0
@@ -1308,7 +1308,7 @@ countries:
         name: Dushanbe
         search_terms: [Tajikistan, Dushanbe, Tajik]
         notes: "Tajik hits are often sample geography abroad"
-        pride_hits: 1
+        pride_hits: 2
         screened: 0
         annotated: 0
         blocked: 0

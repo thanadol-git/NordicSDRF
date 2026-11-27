@@ -49,25 +49,23 @@
 <text class="city" x="12" y="82.0">Israel</text>
 <rect class="c-annotated" fill="#2a78d6" x="184.0" y="68.0" width="17.0" height="20" rx="2"><title>Israel · Local SDRF: 2</title></rect>
 <text class="seg" x="192.5" y="82.0" text-anchor="middle">2</text>
-<rect class="c-sandbox" fill="#6b4ea3" x="202.0" y="68.0" width="17.0" height="20" rx="2"><title>Israel · Sandbox: 1</title></rect>
-<text class="seg" x="210.5" y="82.0" text-anchor="middle">1</text>
-<rect class="c-in_corpus" fill="#199e70" x="220.0" y="68.0" width="272.9" height="20" rx="2"><title>Israel · In corpus: 224</title></rect>
-<text class="seg" x="356.4" y="82.0" text-anchor="middle">224</text>
-<rect class="c-todo" fill="#8a8983" x="493.9" y="68.0" width="263.1" height="20" rx="2"><title>Israel · To do: 216</title></rect>
-<text class="seg" x="625.4" y="82.0" text-anchor="middle">216</text>
+<rect class="c-in_corpus" fill="#199e70" x="202.0" y="68.0" width="281.4" height="20" rx="2"><title>Israel · In corpus: 224</title></rect>
+<text class="seg" x="342.7" y="82.0" text-anchor="middle">224</text>
+<rect class="c-todo" fill="#8a8983" x="484.4" y="68.0" width="272.6" height="20" rx="2"><title>Israel · To do: 217</title></rect>
+<text class="seg" x="620.7" y="82.0" text-anchor="middle">217</text>
 <text class="total" x="764.0" y="82.0">443 listed</text>
 <text class="city" x="12" y="112.0">Turkey</text>
-<rect class="c-in_corpus" fill="#199e70" x="184.0" y="98.0" width="25.9" height="20" rx="2"><title>Turkey · In corpus: 22</title></rect>
-<text class="seg" x="196.9" y="112.0" text-anchor="middle">22</text>
-<rect class="c-todo" fill="#8a8983" x="210.9" y="98.0" width="36.9" height="20" rx="2"><title>Turkey · To do: 31</title></rect>
-<text class="seg" x="229.4" y="112.0" text-anchor="middle">31</text>
-<text class="total" x="254.8" y="112.0">53 listed</text>
+<rect class="c-in_corpus" fill="#199e70" x="184.0" y="98.0" width="26.7" height="20" rx="2"><title>Turkey · In corpus: 22</title></rect>
+<text class="seg" x="197.4" y="112.0" text-anchor="middle">22</text>
+<rect class="c-todo" fill="#8a8983" x="211.7" y="98.0" width="38.1" height="20" rx="2"><title>Turkey · To do: 31</title></rect>
+<text class="seg" x="230.8" y="112.0" text-anchor="middle">31</text>
+<text class="total" x="256.8" y="112.0">53 listed</text>
 <text class="city" x="12" y="142.0">Saudi Arabia</text>
 <rect class="c-in_corpus" fill="#199e70" x="184.0" y="128.0" width="25.0" height="20" rx="2"><title>Saudi Arabia · In corpus: 17</title></rect>
 <text class="seg" x="196.5" y="142.0" text-anchor="middle">17</text>
-<rect class="c-todo" fill="#8a8983" x="210.0" y="128.0" width="44.2" height="20" rx="2"><title>Saudi Arabia · To do: 37</title></rect>
-<text class="seg" x="232.1" y="142.0" text-anchor="middle">37</text>
-<text class="total" x="261.2" y="142.0">54 listed</text>
+<rect class="c-todo" fill="#8a8983" x="210.0" y="128.0" width="45.6" height="20" rx="2"><title>Saudi Arabia · To do: 37</title></rect>
+<text class="seg" x="232.8" y="142.0" text-anchor="middle">37</text>
+<text class="total" x="262.6" y="142.0">54 listed</text>
 <text class="city" x="12" y="172.0">Egypt</text>
 <rect class="c-in_corpus" fill="#199e70" x="184.0" y="158.0" width="25.0" height="20" rx="2"><title>Egypt · In corpus: 20</title></rect>
 <text class="seg" x="196.5" y="172.0" text-anchor="middle">20</text>
@@ -87,18 +85,18 @@
 <text class="seg" x="192.5" y="232.0" text-anchor="middle">1</text>
 <rect class="c-in_corpus" fill="#199e70" x="202.0" y="218.0" width="17.0" height="20" rx="2"><title>United Arab Emirates · In corpus: 7</title></rect>
 <text class="seg" x="210.5" y="232.0" text-anchor="middle">7</text>
-<rect class="c-todo" fill="#8a8983" x="220.0" y="218.0" width="28.3" height="20" rx="2"><title>United Arab Emirates · To do: 24</title></rect>
-<text class="seg" x="234.2" y="232.0" text-anchor="middle">24</text>
-<text class="total" x="255.3" y="232.0">32 listed</text>
+<rect class="c-todo" fill="#8a8983" x="220.0" y="218.0" width="29.3" height="20" rx="2"><title>United Arab Emirates · To do: 24</title></rect>
+<text class="seg" x="234.6" y="232.0" text-anchor="middle">24</text>
+<text class="total" x="256.3" y="232.0">32 listed</text>
 <text class="city" x="12" y="262.0">Qatar</text>
 <rect class="c-annotated" fill="#2a78d6" x="184.0" y="248.0" width="17.0" height="20" rx="2"><title>Qatar · Local SDRF: 5</title></rect>
 <text class="seg" x="192.5" y="262.0" text-anchor="middle">5</text>
-<rect class="c-blocked" fill="#d95926" x="202.0" y="248.0" width="17.0" height="20" rx="2"><title>Qatar · Blocked: 2</title></rect>
-<text class="seg" x="210.5" y="262.0" text-anchor="middle">2</text>
-<rect class="c-in_corpus" fill="#199e70" x="220.0" y="248.0" width="17.0" height="20" rx="2"><title>Qatar · In corpus: 9</title></rect>
-<text class="seg" x="228.5" y="262.0" text-anchor="middle">9</text>
-<rect class="c-todo" fill="#8a8983" x="238.0" y="248.0" width="17.0" height="20" rx="2"><title>Qatar · To do: 1</title></rect>
-<text class="seg" x="246.5" y="262.0" text-anchor="middle">1</text>
+<rect class="c-sandbox" fill="#6b4ea3" x="202.0" y="248.0" width="17.0" height="20" rx="2"><title>Qatar · Sandbox: 1</title></rect>
+<text class="seg" x="210.5" y="262.0" text-anchor="middle">1</text>
+<rect class="c-blocked" fill="#d95926" x="220.0" y="248.0" width="17.0" height="20" rx="2"><title>Qatar · Blocked: 2</title></rect>
+<text class="seg" x="228.5" y="262.0" text-anchor="middle">2</text>
+<rect class="c-in_corpus" fill="#199e70" x="238.0" y="248.0" width="17.0" height="20" rx="2"><title>Qatar · In corpus: 9</title></rect>
+<text class="seg" x="246.5" y="262.0" text-anchor="middle">9</text>
 <text class="total" x="262.0" y="262.0">17 listed</text>
 <text class="city" x="12" y="292.0">Lebanon</text>
 <rect class="c-annotated" fill="#2a78d6" x="184.0" y="278.0" width="17.0" height="20" rx="2"><title>Lebanon · Local SDRF: 1</title></rect>

@@ -31,7 +31,7 @@
 </style>
 <rect class="bg" width="860" height="136.0" rx="6"/>
 <text class="title" x="12" y="22">Malaysia — in progress</text>
-<text class="sub" x="12" y="40">44 listed · 9 local SDRFs · 0 sandbox · 4 to do · 12 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
+<text class="sub" x="12" y="40">44 listed · 9 local SDRFs · 8 sandbox · 0 to do · 9 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -49,12 +49,12 @@
 <text class="city" x="12" y="82.0">Kuala Lumpur</text>
 <rect class="c-annotated" fill="#2a78d6" x="120.0" y="68.0" width="107.9" height="20" rx="2"><title>Kuala Lumpur · Local SDRF: 7</title></rect>
 <text class="seg" x="174.0" y="82.0" text-anchor="middle">7</text>
-<rect class="c-blocked" fill="#d95926" x="228.9" y="68.0" width="185.7" height="20" rx="2"><title>Kuala Lumpur · Blocked: 12</title></rect>
-<text class="seg" x="321.8" y="82.0" text-anchor="middle">12</text>
-<rect class="c-in_corpus" fill="#199e70" x="415.7" y="68.0" width="279.1" height="20" rx="2"><title>Kuala Lumpur · In corpus: 18</title></rect>
-<text class="seg" x="555.2" y="82.0" text-anchor="middle">18</text>
-<rect class="c-todo" fill="#8a8983" x="695.8" y="68.0" width="61.2" height="20" rx="2"><title>Kuala Lumpur · To do: 4</title></rect>
-<text class="seg" x="726.4" y="82.0" text-anchor="middle">4</text>
+<rect class="c-sandbox" fill="#6b4ea3" x="228.9" y="68.0" width="123.5" height="20" rx="2"><title>Kuala Lumpur · Sandbox: 8</title></rect>
+<text class="seg" x="290.7" y="82.0" text-anchor="middle">8</text>
+<rect class="c-blocked" fill="#d95926" x="353.4" y="68.0" width="139.0" height="20" rx="2"><title>Kuala Lumpur · Blocked: 9</title></rect>
+<text class="seg" x="422.9" y="82.0" text-anchor="middle">9</text>
+<rect class="c-in_corpus" fill="#199e70" x="493.5" y="68.0" width="263.5" height="20" rx="2"><title>Kuala Lumpur · In corpus: 17</title></rect>
+<text class="seg" x="625.2" y="82.0" text-anchor="middle">17</text>
 <text class="total" x="764.0" y="82.0">41 listed</text>
 <text class="city" x="12" y="112.0">Penang</text>
 <rect class="c-annotated" fill="#2a78d6" x="120.0" y="98.0" width="30.1" height="20" rx="2"><title>Penang · Local SDRF: 2</title></rect>

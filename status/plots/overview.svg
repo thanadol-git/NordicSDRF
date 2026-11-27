@@ -31,7 +31,7 @@
 </style>
 <rect class="bg" width="860" height="226.0" rx="6"/>
 <text class="title" x="12" y="22">Nordic countries — listed PXDs</text>
-<text class="sub" x="12" y="40">2104 listed · 1127 local SDRFs · 6 sandbox · 3 to do · 352 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
+<text class="sub" x="12" y="40">2104 listed · 1127 local SDRFs · 16 sandbox · 0 to do · 345 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -47,43 +47,43 @@
 <rect class="uncurated" fill="none" stroke="#8a8983" x="544.0" y="52.75" width="12" height="10.5" rx="2"/>
 <text class="legend" x="561.0" y="62.0">PRIDE hits, not curated yet</text>
 <text class="city" x="12" y="82.0">Sweden</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="68.0" width="190.1" height="20" rx="2"><title>Sweden · Local SDRF: 297</title></rect>
-<text class="seg" x="205.1" y="82.0" text-anchor="middle">297</text>
-<rect class="c-sandbox" fill="#6b4ea3" x="301.1" y="68.0" width="17.0" height="20" rx="2"><title>Sweden · Sandbox: 1</title></rect>
-<text class="seg" x="309.6" y="82.0" text-anchor="middle">1</text>
-<rect class="c-blocked" fill="#d95926" x="319.1" y="68.0" width="114.8" height="20" rx="2"><title>Sweden · Blocked: 180</title></rect>
-<text class="seg" x="376.5" y="82.0" text-anchor="middle">180</text>
-<rect class="c-in_corpus" fill="#199e70" x="435.0" y="68.0" width="75.6" height="20" rx="2"><title>Sweden · In corpus: 119</title></rect>
-<text class="seg" x="472.8" y="82.0" text-anchor="middle">119</text>
-<text class="total" x="517.5" y="82.0">597 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="68.0" width="196.0" height="20" rx="2"><title>Sweden · Local SDRF: 297</title></rect>
+<text class="seg" x="208.0" y="82.0" text-anchor="middle">297</text>
+<rect class="c-sandbox" fill="#6b4ea3" x="307.0" y="68.0" width="17.0" height="20" rx="2"><title>Sweden · Sandbox: 3</title></rect>
+<text class="seg" x="315.5" y="82.0" text-anchor="middle">3</text>
+<rect class="c-blocked" fill="#d95926" x="325.0" y="68.0" width="117.7" height="20" rx="2"><title>Sweden · Blocked: 179</title></rect>
+<text class="seg" x="383.8" y="82.0" text-anchor="middle">179</text>
+<rect class="c-in_corpus" fill="#199e70" x="443.7" y="68.0" width="77.3" height="20" rx="2"><title>Sweden · In corpus: 118</title></rect>
+<text class="seg" x="482.3" y="82.0" text-anchor="middle">118</text>
+<text class="total" x="527.9" y="82.0">597 listed</text>
 <text class="city" x="12" y="112.0">Denmark</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="98.0" width="317.5" height="20" rx="2"><title>Denmark · Local SDRF: 495</title></rect>
-<text class="seg" x="268.8" y="112.0" text-anchor="middle">495</text>
-<rect class="c-sandbox" fill="#6b4ea3" x="428.5" y="98.0" width="17.0" height="20" rx="2"><title>Denmark · Sandbox: 5</title></rect>
-<text class="seg" x="437.0" y="112.0" text-anchor="middle">5</text>
-<rect class="c-blocked" fill="#d95926" x="446.5" y="98.0" width="68.5" height="20" rx="2"><title>Denmark · Blocked: 108</title></rect>
-<text class="seg" x="480.8" y="112.0" text-anchor="middle">108</text>
-<rect class="c-in_corpus" fill="#199e70" x="516.1" y="98.0" width="222.9" height="20" rx="2"><title>Denmark · In corpus: 348</title></rect>
-<text class="seg" x="627.5" y="112.0" text-anchor="middle">348</text>
-<rect class="c-todo" fill="#8a8983" x="740.0" y="98.0" width="17.0" height="20" rx="2"><title>Denmark · To do: 3</title></rect>
-<text class="seg" x="748.5" y="112.0" text-anchor="middle">3</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="98.0" width="327.3" height="20" rx="2"><title>Denmark · Local SDRF: 495</title></rect>
+<text class="seg" x="273.6" y="112.0" text-anchor="middle">495</text>
+<rect class="c-sandbox" fill="#6b4ea3" x="438.3" y="98.0" width="17.0" height="20" rx="2"><title>Denmark · Sandbox: 9</title></rect>
+<text class="seg" x="446.8" y="112.0" text-anchor="middle">9</text>
+<rect class="c-blocked" fill="#d95926" x="456.3" y="98.0" width="69.3" height="20" rx="2"><title>Denmark · Blocked: 106</title></rect>
+<text class="seg" x="490.9" y="112.0" text-anchor="middle">106</text>
+<rect class="c-in_corpus" fill="#199e70" x="526.6" y="98.0" width="230.4" height="20" rx="2"><title>Denmark · In corpus: 349</title></rect>
+<text class="seg" x="641.8" y="112.0" text-anchor="middle">349</text>
 <text class="total" x="764.0" y="112.0">959 listed</text>
 <text class="city" x="12" y="142.0">Norway</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="128.0" width="146.4" height="20" rx="2"><title>Norway · Local SDRF: 229</title></rect>
-<text class="seg" x="183.2" y="142.0" text-anchor="middle">229</text>
-<rect class="c-blocked" fill="#d95926" x="257.4" y="128.0" width="25.0" height="20" rx="2"><title>Norway · Blocked: 36</title></rect>
-<text class="seg" x="269.9" y="142.0" text-anchor="middle">36</text>
-<rect class="c-in_corpus" fill="#199e70" x="283.4" y="128.0" width="52.4" height="20" rx="2"><title>Norway · In corpus: 83</title></rect>
-<text class="seg" x="309.6" y="142.0" text-anchor="middle">83</text>
-<text class="total" x="342.8" y="142.0">348 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="128.0" width="150.9" height="20" rx="2"><title>Norway · Local SDRF: 229</title></rect>
+<text class="seg" x="185.4" y="142.0" text-anchor="middle">229</text>
+<rect class="c-sandbox" fill="#6b4ea3" x="261.9" y="128.0" width="17.0" height="20" rx="2"><title>Norway · Sandbox: 4</title></rect>
+<text class="seg" x="270.4" y="142.0" text-anchor="middle">4</text>
+<rect class="c-blocked" fill="#d95926" x="279.9" y="128.0" width="25.0" height="20" rx="2"><title>Norway · Blocked: 32</title></rect>
+<text class="seg" x="292.4" y="142.0" text-anchor="middle">32</text>
+<rect class="c-in_corpus" fill="#199e70" x="305.9" y="128.0" width="54.0" height="20" rx="2"><title>Norway · In corpus: 83</title></rect>
+<text class="seg" x="332.9" y="142.0" text-anchor="middle">83</text>
+<text class="total" x="366.9" y="142.0">348 listed</text>
 <text class="city" x="12" y="172.0">Finland</text>
-<rect class="c-annotated" fill="#2a78d6" x="110.0" y="158.0" width="64.6" height="20" rx="2"><title>Finland · Local SDRF: 102</title></rect>
-<text class="seg" x="142.3" y="172.0" text-anchor="middle">102</text>
-<rect class="c-blocked" fill="#d95926" x="175.6" y="158.0" width="25.0" height="20" rx="2"><title>Finland · Blocked: 26</title></rect>
-<text class="seg" x="188.1" y="172.0" text-anchor="middle">26</text>
-<rect class="c-in_corpus" fill="#199e70" x="201.6" y="158.0" width="41.5" height="20" rx="2"><title>Finland · In corpus: 66</title></rect>
-<text class="seg" x="222.4" y="172.0" text-anchor="middle">66</text>
-<text class="total" x="250.1" y="172.0">194 listed</text>
+<rect class="c-annotated" fill="#2a78d6" x="110.0" y="158.0" width="66.6" height="20" rx="2"><title>Finland · Local SDRF: 102</title></rect>
+<text class="seg" x="143.3" y="172.0" text-anchor="middle">102</text>
+<rect class="c-blocked" fill="#d95926" x="177.6" y="158.0" width="25.0" height="20" rx="2"><title>Finland · Blocked: 26</title></rect>
+<text class="seg" x="190.1" y="172.0" text-anchor="middle">26</text>
+<rect class="c-in_corpus" fill="#199e70" x="203.6" y="158.0" width="42.8" height="20" rx="2"><title>Finland · In corpus: 66</title></rect>
+<text class="seg" x="225.0" y="172.0" text-anchor="middle">66</text>
+<text class="total" x="253.4" y="172.0">194 listed</text>
 <text class="city" x="12" y="202.0">Iceland</text>
 <rect class="c-annotated" fill="#2a78d6" x="110.0" y="188.0" width="17.0" height="20" rx="2"><title>Iceland · Local SDRF: 4</title></rect>
 <text class="seg" x="118.5" y="202.0" text-anchor="middle">4</text>
