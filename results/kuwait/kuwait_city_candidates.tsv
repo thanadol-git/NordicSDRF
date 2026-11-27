@@ -1,0 +1,9 @@
+accession	verdict	evidence	in_corpus	title
+PRD000200	legacy_id	countries=['Kuwait']		Serum Peptide Identification - Serum Peptide Identification with no fractionation
+PRD000203	legacy_id	countries=['Kuwait']		Identification of Human serum peptides
+PXD013000	confirmed	countries=['Kuwait']	yes	Secretome of Granulicatella adiacens
+PXD015631	confirmed	countries=['Kuwait']	yes	Proteomics of Abiotrophia defectiva protein secretion
+PXD021414	confirmed	countries=['Kuwait']	yes	Proteomics of Extracellular Vesicles Produced by Granulicatella adiacens, which causes Infective End
+PXD029419	confirmed	countries=['Kuwait']	yes	Proteomics of the periodontal pathogen Prevotella intermedia secretome in biofilm and planktonic lif
+PXD059541	confirmed	countries=['Kuwait']	yes	Proteome analysis of biofilm extracellular vesicles produced by Granulicatella adiacens and Granulic
+PXD086304	confirmed	countries=['Kuwait']	yes	Hippocampal proteomic profiling at three and six weeks after intracerebroventricular streptozotocin 

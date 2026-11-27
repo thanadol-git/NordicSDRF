@@ -1,0 +1,37 @@
+accession	verdict	evidence	in_corpus	title
+PXD000319	confirmed	affiliation~'iran': Department of Molecular Systems Biology at Cell Science Research Center, Royan Institute f		Maniupulating root water supply elicits major shifts in the shoot proteome
+PXD001191	rejected	countries=['Canada'] | Ottawa Hospital Research Institute ; Ottawa Hospital Research Institute		Integrative Genomics Positions MKRN1 as a Novel Ribonucleoprotein within the Embryonic Stem Cell Gen
+PXD001291	rejected	countries=['Canada'] | Ottawa Hospital Research Institute ; Ottawa Hospital Research Institute		Integrative Genomics Positions MKRN1 as a Novel Ribonucleoprotein within the Embryonic Stem Cell Gen
+PXD002428	confirmed	affiliation~'iran': Royan Institute-Tehran, Iran		DDX3Y and other Male Specific Region of Y Chromosome Genes may modulate neuronal differentiation and
+PXD002804	rejected	countries=['Belgium'] | UCL - de Duve Institute, Brussels Belgium ; UCL - de Duve Institute Brussels Belgium	yes	Repairing oxidatively damaged proteins using electrons from the respiratory chain
+PXD006040	rejected	countries=['Japan'] | NARO Institute of Crop Science ; National Institute of Crop Science		Leaf proteomics of drought-sensitive and -tolerant genotypes of fennel
+PXD006271	confirmed	countries=['Iran']		Proteome Analysis of Human Embryonic Stem Cells Organelles
+PXD007837	confirmed	affiliation~'iran': Department of Molecular Systems Biology, Cell Science Research Center, Royan Institute for		Enrichment, proteome analysis and transplantation of human embryonic stem cell derived dopaminergic 
+PXD009578	rejected	countries=['United Kingdom'] | University of Oxford ; Target Discovery Institute, NDMRB, University of Oxford		Serum autoantibodies to the glutamate receptor delta 2 in paediatric opsoclonus myoclonus ataxia syn
+PXD011556	confirmed	countries=['Iran']	yes	Bacteriocin LC-MSMS
+PXD015547	rejected	countries=['United States'] | postdoc ; Joint International Research Laboratory of Metabolic & Devel		Comprehensive map of the Artemisia annua proteome and quantification of differential protein express
+PXD017288	confirmed	countries=['Iran']		Identification of OmpA in Acinetobacter sp. SA01 and its expression assessment
+PXD017649	confirmed	affiliation~'iran': Department of Molecular Systems Biology, Cell Science Research Center, Royan Institute for	yes	The Dynamic Proteome of Oligodendrocyte Lineage Differentiation Features Planar Cell Polarity and Ma
+PXD021183	rejected	countries=['Germany'] | Institute of Inorganic and Analytical Chemistry, Justus Lieb ; Institute of Inorganic and Analytical Chemistry, Justus Lieb		Saw-scaled viper, Echis carinatus sochureki, venomics
+PXD022174	confirmed	affiliation~'iran': Department of Stem Cells and Developmental Biology, Cell Science Research Center, Royan In	yes	Characterizations of molecularly distinct subpopulations of conditioned medium derived extracellular
+PXD027360	confirmed	countries=['Iran']		Proteomic analysis of Nrf2 knocked down in HT29
+PXD030535	confirmed	countries=['Iran']		Metal removal capability of two cyanobacterial species in autotrophic and mixotrophic mode of nutrit
+PXD030537	confirmed	countries=['Iran']		Metal removal capability of two cyanobacterial species in autotrophic and mixotrophic mode of nutrit
+PXD030565	rejected	countries=['United States'] | Quintara Biosciences ; Division of Cardiovascular Medicine, Department of Medicine,	yes	Changes in endothelial cell secretome after sirtuin-1 knock-down
+PXD033242	rejected	countries=['Germany'] | Leibniz Institute for Natural Product Research and Infection ; Department for Molecular and Applied Microbiology, Leibniz-I	yes	Arginine-derived polyketides are ubiquitous signals shaping cross-kingdom microbial interactions
+PXD033452	rejected	countries=['France'] | Univ. Lille, Inserm, CHU Lille, U1192 - Protéomique Réponse  ; Univ. Lille, Inserm, CHU Lille, U1192 - Protéomique Réponse 	yes	SARS-CoV-2 proteins BioID in HEK293
+PXD036231	confirmed	countries=['Iran']		Novel peptide from Buthotus saulcyi,Odontobuthus doriae, Androctonus crassicauda scorpion venom (Jam
+PXD036323	confirmed	countries=['Iran']	yes	Phosphoproteomics data of the Anti-Proliferative Activity of Safranal on Triple-Negative Breast Canc
+PXD036333	confirmed	countries=['Iran']		Acetylomics data of the Anti-Proliferative Activity of Safranal on Triple-Negative Breast Cancer Cel
+PXD036466	rejected	countries=['Germany'] | Institute of Inorganic and Analytical Chemistry, Justus Lieb ; Institute of Inorganic and Analytical Chemistry, Justus Lieb		Venomics of Iranian and Cypriot Macrovipera lebetina
+PXD039653	rejected	countries=['Luxembourg'] | Luxembourg Institute of Science and Technology ; CHU de Besancon, Besancon, France		Comprehensive proteome analysis of propolis elucidates the origin and function of its proteins
+PXD040343	rejected	countries=['Luxembourg'] | LIST - Environmental and Industrial Biotechnologies ; LIST-ERIN-BEAP-HAU,  Bascharage, Luxembourg		Comprehensive proteome analysis of propolis elucidates the origin and function of its proteins
+PXD041994	rejected	countries=['Belgium'] | Department of Biochemistry and Microbiology, Ghent Univers ; Ghent University, Department of Biochemistry and Microbiolog	yes	Streptomyces secondary metabolism
+PXD042019	rejected	countries=['Belgium'] | Department of Biochemistry and Microbiology, Ghent Univers ; Ghent University, Department of Biochemistry and Microbiolog	yes	Streptomyces secondary metaboites - strain M1
+PXD042894	rejected	countries=['Switzerland'] | ETH Zurich ; Biology Department, Institute of Molecular Health Sciences, 		BioID screen for PRSS35 interactors in human primary fibroblasts
+PXD043456	rejected	countries=['Denmark'] | Aalborg University ; Aalborg University		Data in support of Comparative Proteomics Analysis in Different Stages of Urothelial Bladder Cancer 
+PXD052504	rejected	countries=['Australia'] | CSIRO Health & Biosecurity, Adelaide, Australia ; Department of Molecular Sciences, Faculty of Science and Eng	yes	Proteomic Insight into Early Establishment of Seed Dormancy in Xanthium Strumarium
+PXD060077	confirmed	countries=['Iran']		Proteomic Analysis of Receptive and Non-receptive Endometria-derived Uterine Fluid by LC-MS/MS
+PXD061512	rejected	countries=['Canada'] | Dalhousie University ; Department of Chemistry, Dalhousie University, Halifax, Nova		Bovine Liver Membrane Preparation
+PXD077805	rejected	countries=['Spain'] | Centro de Investigación del Cáncer, Universidad de Salamanca ; Centro de Investigación del Cáncer, CSIC/Universidad de Sala	yes	Proteomic analysis of RRP12-containing complexes in HeLa cells upon RPS19 depletion
+PXD078610	rejected	countries=['Germany'] | University Medical Center Hamburg-Eppendorf ; Section Mass Spectrometry and Proteomics, University Medical	yes	Proteomic analysis of saliva reveals changes in proteomic profiles during colorectal cancer in an Ir

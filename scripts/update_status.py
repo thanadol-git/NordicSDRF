@@ -468,14 +468,19 @@ def south_asia_plot(plots_dir: str) -> str:
     return region_plot("South Asia — listed PXDs", "south_asia.svg", plots_dir)
 
 
+def middle_east_plot(plots_dir: str) -> str:
+    """Middle East region overview (vertical bars), matching SEA/Nordic layout."""
+    return region_plot("Middle East — listed PXDs", "middle_east.svg", plots_dir)
+
+
 def countries_in_region(cfg: dict, region: str) -> list[tuple[str, dict]]:
     return [(c, d) for c, d in cfg["countries"].items() if d.get("region", "nordic") == region]
 
 
 def render_status_block(cfg: dict) -> str:
     queried = cfg.get("pride_hits_queried", "unknown date")
-    intro = (f"Region overviews are shown below. Per-country city charts (Nordic, SEA, South Asia)\n"
-             f"live in {MARKDOWNS_LINK} (and `status/plots/<country>.svg`).\n"
+    intro = (f"Region overviews are shown below. Per-country city charts (Nordic, SEA, South Asia,\n"
+             f"Middle East) live in {MARKDOWNS_LINK} (and `status/plots/<country>.svg`).\n"
              f"A curated city's bar is its manifest (`lists/<country>/<city>.txt`),\n"
              f"split so every PXD sits in exactly one block: *Local SDRF* (a local file without a\n"
              f"blocker, including files awaiting review), *Sandbox* (an SDRF under `sandbox/` in\n"
@@ -488,8 +493,8 @@ def render_status_block(cfg: dict) -> str:
              f"hit count (unioned over `search_terms` in `config.yml`, queried {queried}). *Affinity PAD*\n"
              f"is every public dataset in PRIDE's affinity archive, one row per technology\n"
              f"(Olink platforms, SomaScan, NULISA, Other; `affinity_pad/<platform>.txt`, rebuilt by\n"
-             f"`python scripts/build_pad_manifest.py`). SEA / South Asia search terms live in\n"
-             f"`criteria/sea_cities.md`, `criteria/south_asia_cities.md` / `config.yml`.\n"
+             f"`python scripts/build_pad_manifest.py`). SEA / South Asia / Middle East search terms live in\n"
+             f"`criteria/sea_cities.md`, `criteria/south_asia_cities.md`, `criteria/middleeast_cities.md` / `config.yml`.\n"
              f"*To do* is ready for annotation; *Blocked* PXDs need missing metadata before a sandbox or datasets PR.\n"
              f"The numbers behind each chart are in `tables/<country>.tsv`. Regenerate with\n"
              f"`python scripts/update_status.py`; redraw the charts alone from `tables/` with\n"
@@ -497,6 +502,7 @@ def render_status_block(cfg: dict) -> str:
     affinity = countries_in_region(cfg, "affinity")
     sea = countries_in_region(cfg, "sea")
     south_asia = countries_in_region(cfg, "south_asia")
+    middle_east = countries_in_region(cfg, "middle_east")
     # Per-country charts stay in status/markdowns/ + status/plots/; README only
     # shows region overviews (with a link to those pages).
     parts = [intro, overview_plot("status/plots")]
@@ -504,6 +510,8 @@ def render_status_block(cfg: dict) -> str:
         parts.append(sea_plot("status/plots"))
     if south_asia:
         parts.append(south_asia_plot("status/plots"))
+    if middle_east:
+        parts.append(middle_east_plot("status/plots"))
     for c, d in affinity:
         # Affinity is a single multi-row chart; keep it open with a link under the image.
         title = f"{display_name(c, d)} — {human_status(d.get('status'))}"
@@ -572,6 +580,10 @@ def write_status_pages(cfg: dict, dry_run: bool) -> None:
     write_region_index_page(
         cfg, pages_dir, region="south_asia", filename="south_asia.md",
         heading="South Asia", plot_md=south_asia_plot("../plots"),
+    )
+    write_region_index_page(
+        cfg, pages_dir, region="middle_east", filename="middle_east.md",
+        heading="Middle East", plot_md=middle_east_plot("../plots"),
     )
 
 
@@ -653,7 +665,7 @@ def main() -> None:
     write_tables(cfg, breakdowns)
     write_plots()
     print(f"\nupdated {CONFIG.name}, README.md status block, status/markdowns/, tables/, "
-          f"status/plots/overview.svg + sea.svg + south_asia.svg + per-country charts"
+          f"status/plots/overview.svg + sea.svg + south_asia.svg + middle_east.svg + per-country charts"
           + ("" if args.no_pride else f", raw candidate lists in {args.hits_dir}/"))
 
 if __name__ == "__main__":

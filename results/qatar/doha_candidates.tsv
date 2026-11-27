@@ -1,0 +1,22 @@
+accession	verdict	evidence	in_corpus	title
+PXD001007	confirmed	affiliation~'qatar': Weill Cornell Medical College in Qatar	yes	Genome-wide identification and functional analysis of Apobec-1 mediated C-to-U RNA editing in mouse 
+PXD001856	confirmed	affiliation~'qatar': Weill Cornell Medical College in Qatar	yes	Comprehensive transcriptomic and proteomic characterization of human mesenchymal stem cells reveals 
+PXD004652	confirmed	affiliation~'qatar': Weill Cornell Medicine - Qatar		A Systems-Level Characterization of the Differentiation of Human Embryonic Stem Cells into Mesenchym
+PXD004658	confirmed	affiliation~'qatar': Weill Cornell Medicine - Qatar		Proteomic profiling of human cancer pseudopodia for the identification of anti-metastatic drug candi
+PXD009416	confirmed	countries=['Qatar']		ATP synthase nLC-MSMS -  α-synuclein oligomers interact with ATP synthase and open the permeability 
+PXD015660	rejected	countries=['Belgium'] | UCL - de Duve Institute, Brussels Belgium ; GIGA-Molecular Biology of Diseases-Viral Interactomes Networ	yes	Proteome analysis of HeLa cells knocked down for EXT1 expression
+PXD019716	confirmed	countries=['Qatar']		Comparative proteomic profiling of 3T3-L1 adipocyte differentiation using SILAC quantification
+PXD026558	confirmed	countries=['Qatar']	yes	The effect of exercise on heart proteome
+PXD029315	confirmed	countries=['Qatar']		Proteomic response to cytotoxicity of methylglyoxall
+PXD029956	rejected	countries=['United States'] | Krogan lab ; Department of Cellular and Molecular Pharmacology		Comparative Analysis of T Cell Spatial Proteomics and the Influence of HIV Expression
+PXD037368	confirmed	countries=['Qatar']	yes	Comprehensive characterization of protein turnover by comparative SILAC labeling analysis in 3T3-L1
+PXD037674	confirmed	countries=['Qatar']	yes	LC-MS/MS quantification of proteome derived from wild-type and agp2Δ mutant strains of Yeast.
+PXD042045	rejected	countries=['Germany'] | Laboratory for Functional Genome Analysis (LAFUGA), Gene Cen ; Laboratory for Functional Genome Analysis (LAFUGA), Gene Cen		The assessment of hiPSC-derived Neural Stem Cells after a repeated-dose bisphenol A exposure
+PXD042046	rejected	countries=['Germany'] | Laboratory for Functional Genome Analysis (LAFUGA), Gene Cen ; Laboratory for Functional Genome Analysis (LAFUGA), Gene Cen	yes	Repeated bisphenol A exposure in low concentrations alters the functionality and environment of a hu
+PXD042852	confirmed	countries=['Qatar']		Nanoparticle Enrichment Mass-Spectrometry Proteomics Identifies Protein Altering Variants for Precis
+PXD047674	confirmed	countries=['Qatar']		Mass spectrometry-based proteomic profiling of exosomal proteins in diabetic and non-diabetic ischem
+PXD050528	confirmed	countries=['Qatar']		Comprehensive Proteomic Profiling of Converted Adipocyte-like Cells from Normal Human Dermal Fibrobl
+PXD065109	confirmed	countries=['Qatar']		A sEH/COX-2 Dual Inhibitor PTUPB Reduces Endothelium-to-Mesenchymal Transition and Improves Doxorubi
+PXD066427	confirmed	countries=['Qatar']	yes	Proteins profiling of ICU COVID-19 with versus without comorbidities using Proteomics: a case-contro
+PXD073010	confirmed	countries=['Qatar']	yes	Plasma Proteomic Profiling of Comorbid and Non-Comorbid COVID-19 Patients in ICU
+PXD075150	confirmed	countries=['Qatar']	yes	Comparative Proteomic Analysis of Colorectal Cancer Stem Cells Reveals Potential Biomarkers and Alte

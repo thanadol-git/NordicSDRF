@@ -15,9 +15,10 @@ Two steps, both defined here so the table format lives in one place:
        status/plots/overview.svg     vertical stacked bar per Nordic country
        status/plots/sea.svg          vertical stacked bar per SEA country
        status/plots/south_asia.svg   vertical stacked bar per South Asia country
+       status/plots/middle_east.svg  vertical stacked bar per Middle East country
      Stdlib only.
 
-    python scripts/plot_status.py                    # redraw overview + sea + south_asia + country charts
+    python scripts/plot_status.py                    # redraw overview + sea + south_asia + middle_east + country charts
     python scripts/plot_status.py --country sweden   # one country chart (+ always region overviews)
 
 update_status.py rewrites the tables and redraws the plots every run, so a hand
@@ -92,7 +93,7 @@ def human_status(status: str | None) -> str:
 
 
 def country_region(cdata: dict | None = None, row: dict | None = None) -> str:
-    """Campaign region: nordic | sea | south_asia | affinity (default nordic for legacy rows)."""
+    """Campaign region: nordic | sea | south_asia | middle_east | affinity (default nordic for legacy rows)."""
     if cdata and cdata.get("region"):
         return cdata["region"]
     if row and row.get("region"):
@@ -408,10 +409,21 @@ def south_asia_overview_svg(rows: list[tuple[dict, list[dict]]]) -> str:
     )
 
 
+def middle_east_overview_svg(rows: list[tuple[dict, list[dict]]]) -> str:
+    """Middle East region overview (vertical bars), matching Nordic/SEA style."""
+    return region_overview_svg(
+        rows,
+        region="middle_east",
+        title="Middle East — listed PXDs",
+        aria_label="Middle East SDRF progress by country",
+    )
+
+
 REGION_OVERVIEWS = (
     ("nordic", "overview.svg", overview_svg),
     ("sea", "sea.svg", sea_overview_svg),
     ("south_asia", "south_asia.svg", south_asia_overview_svg),
+    ("middle_east", "middle_east.svg", middle_east_overview_svg),
 )
 
 

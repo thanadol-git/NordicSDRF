@@ -1,0 +1,11 @@
+accession	verdict	evidence	in_corpus	title
+PXD011102	rejected	countries=['Australia'] | Queensland University of Technology ; Senior Lecturer - Anatomy and Physiology | School of Biomedi	yes	Pediatric burn blister fluid LC-MS/MS SWATH
+PXD026219	rejected	countries=['Australia'] | The University of Melbourne ; University of Melbourne		Training-induced bioenergetic improvement in human skeletal muscle is associated with non-stoichiome
+PXD029334	rejected	countries=['United States'] | North Carolina State University ; North Carolina State University	yes	Metaproteomics of stool samples collected from free-eating individual for diet prediction
+PXD029357	confirmed	affiliation~'egypt': Borg AlArab Higher Institute of Engineering and Technology, New Borg AlArab City, Alexandr	yes	Monitoring Changes in the Levels of Newly Synthesized Proteins in Response to Nutlin-3 Treatment.
+PXD030004	rejected	countries=['United States'] | North Carolina State University ; North Carolina State University	yes	Metaproteomics of human stool samples for diet assessment
+PXD037977	rejected	countries=['Australia'] | CSIRO ; CSIRO Agriculture and Food, 306 Carmody Rd, St Lucia QLD 406	yes	Dataset from The proteome landscape of the black soldier fly provides insights into protein function
+PXD043688	rejected	countries=['United States'] | University of Nebraska Medical Center ; University of Nebraska Medical Center		SpiD3-treated Human OSU-CLL cells LC-MSMS
+PXD043717	rejected	countries=['United States'] | University of Nebraska Medical Center ; University of Nebraska Medical Center	yes	Click-chemistry alkyne-tagged pull-down
+PXD050748	rejected	countries=['Germany'] | Helmholtz Zentrum München ; Office for Research, Griffith University, Southport, QLD 422		Identifying a novel hydroxysteroid dehydrogenase enzyme that is capable of testosterone biosynthesis
+PXD068036	rejected	countries=['United States'] | Cold Spring Harbor Laboratory ; Cold Spring Harbor Laboratory	yes	APEX2 and TurboID Define Unique Subcellular Proteomes

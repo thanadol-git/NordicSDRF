@@ -1,0 +1,5 @@
+accession	verdict	evidence	in_corpus	title
+PXD029007	rejected	countries=['Italy'] | IEO ; National Institute of Molecular Genetics (INGM), Italy		Plasma-derived Exosome-Like Vesicles (ELVs) of COVID-19 patients expose SARS-CoV-2-Spike-derived fra
+PXD051895	rejected	countries=['China'] | Jiangsu Academy of Agricultural Sciences ; Jiangsu Academy of Agricultural Sciences		Comparative exo-proteomic analysis of Trichoderma antagonists induced by oomycete mycelium highlight
+PXD066230	rejected	countries=['Australia'] | Peter MacCallum Cancer Centre ; Executive Director Cancer Research Group Leader, Gene Regula		A CDK11-dependent RNA polymerase II pause-checkpoint precedes CDK9-mediated transition to transcript
+PXD074007	rejected	countries=['Italy'] | Institute for Biomedical Technologies, National Research Cou ; Institute for Biomedical Technologies, National Research Cou	yes	Proteomic profiling of WT and KO for DPP3 Mus musculus splenocites, treated (and not) with LPS
