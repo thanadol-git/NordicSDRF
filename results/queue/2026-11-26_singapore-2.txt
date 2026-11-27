@@ -10,3 +10,4 @@ PXD084067	singapore/singapore	sandbox	sandbox: 6/6 wiff mapped; T-W=testis, C/C2
 PXD035225	singapore/singapore	sandbox	sandbox: 6/6 RAW (SMC3-3HA IP x3 / NF54-named WT ctrl x3, tech reps stated); HF-X (paper) vs HF (PX), RAW unread
 PXD008090	singapore/singapore	sandbox	sandbox: 6/6 RAW, SGA malted vs SGB raw+enzymes (stated); rep=file suffix inferred; FTP down, txt.zip/raw unread
 PXD065824	singapore/singapore	blocked	blocked: 7 RAW = 7 fractions of 1 TMTpro set (DMSO/P-1/P-2b/P-3 x3); channel map absent; .msf unread (FTP down)
+PXD062502	singapore/singapore	blocked	blocked: 6 RAW, no bait/control key; run names carry only S1-S4 serials; 8 runs searched, 6 deposited
