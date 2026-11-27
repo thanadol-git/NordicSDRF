@@ -8,3 +8,4 @@ PXD047674	qatar/doha	sandbox	sandbox: 40 serum EV LF runs, HC12/nDS14/DS13 from 
 PXD042852	qatar/doha	blocked	blocked: ~2000 timsTOF .d (QMDiab plasma x 5 Seer NPs); no run->sample/NP key in PX or paper; FTP down
 PXD053477	cyprus/nicosia	sandbox	sandbox: 72/72 RAW label-free serum; Sym=10/SymAdv=8 (files, PX) vs 8/10 (paper); QE HF (paper) vs QE (PX)
 PXD065109	qatar/doha	sandbox	sandbox: zebrafish larvae LFQ 4 groups x3 pools; timsTOF Pro DDA; trypsin inferred, prep/mods unstated
+PXD019598	cyprus/nicosia	blocked	blocked: TMT6 co-IP 6 RAW fractions; channel map likely in deposited metadata.csv (unreadable here); paper gives no map
