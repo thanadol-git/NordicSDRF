@@ -1,3 +1,4 @@
 # daily queue 2026-11-27 iran-egypt batch 1 (open PXDs for Iran, Egypt)
 PXD030535	iran/tehran	blocked	blocked: not proteomics; GC-MS of Nostoc EPS; 4 files = pdf scan/2 docx/jpg, no MS data
 PXD030537	iran/tehran	blocked	blocked: earlier resubmission of PXD030535 study; jpg + pdf only, no MS data
+PXD000319	iran/tehran	sandbox	sandbox: 9/9 zip mapped (WW/WD/DD x3 from file tokens); IR64 vs Nipponbare; LTQ unverified; paper closed
