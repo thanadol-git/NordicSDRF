@@ -31,7 +31,7 @@
 </style>
 <rect class="bg" width="860" height="420" rx="6"/>
 <text class="title" x="12" y="22">Southeast Asia — listed PXDs</text>
-<text class="sub" x="12" y="40">409 listed · 61 local SDRFs · 0 sandbox · 154 to do · 48 blocked (not in sandbox) · PRIDE queried 2026-11-26</text>
+<text class="sub" x="12" y="40">409 listed · 61 local SDRFs · 22 sandbox · 138 to do · 42 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -61,28 +61,29 @@
 <line class="grid" x1="52" y1="82.0" x2="840" y2="82.0"/>
 <text class="axis" x="44" y="86.0" text-anchor="end">300</text>
 <rect class="c-annotated" fill="#2a78d6" x="64.0" y="352.7" width="58.5" height="10.3" rx="2"><title>Singapore · Local SDRF: 12</title></rect>
-<rect class="c-blocked" fill="#d95926" x="64.0" y="335.8" width="58.5" height="15.9" rx="2"><title>Singapore · Blocked: 18</title></rect>
-<text class="seg" x="93.3" y="348.3" text-anchor="middle">18</text>
-<rect class="c-in_corpus" fill="#199e70" x="64.0" y="246.5" width="58.5" height="88.3" rx="2"><title>Singapore · In corpus: 95</title></rect>
-<text class="seg" x="93.3" y="295.1" text-anchor="middle">95</text>
-<rect class="c-todo" fill="#8a8983" x="64.0" y="116.8" width="58.5" height="128.7" rx="2"><title>Singapore · To do: 138</title></rect>
-<text class="seg" x="93.3" y="185.6" text-anchor="middle">138</text>
+<rect class="c-sandbox" fill="#6b4ea3" x="64.0" y="349.9" width="58.5" height="1.8" rx="2"><title>Singapore · Sandbox: 3</title></rect>
+<rect class="c-blocked" fill="#d95926" x="64.0" y="335.8" width="58.5" height="13.1" rx="2"><title>Singapore · Blocked: 15</title></rect>
+<text class="seg" x="93.3" y="346.9" text-anchor="middle">15</text>
+<rect class="c-in_corpus" fill="#199e70" x="64.0" y="245.6" width="58.5" height="89.2" rx="2"><title>Singapore · In corpus: 96</title></rect>
+<text class="seg" x="93.3" y="294.7" text-anchor="middle">96</text>
+<rect class="c-todo" fill="#8a8983" x="64.0" y="116.8" width="58.5" height="127.8" rx="2"><title>Singapore · To do: 137</title></rect>
+<text class="seg" x="93.3" y="185.2" text-anchor="middle">137</text>
 <text class="total" x="93.3" y="110.8" text-anchor="middle">263</text>
 <text class="city" x="93.3" y="382.0" text-anchor="middle">Singapore</text>
 <rect class="c-annotated" fill="#2a78d6" x="134.5" y="330.2" width="58.5" height="32.8" rx="2"><title>Thailand · Local SDRF: 36</title></rect>
 <text class="seg" x="163.8" y="351.1" text-anchor="middle">36</text>
-<rect class="c-blocked" fill="#d95926" x="134.5" y="316.1" width="58.5" height="13.1" rx="2"><title>Thailand · Blocked: 15</title></rect>
-<text class="seg" x="163.8" y="327.1" text-anchor="middle">15</text>
-<rect class="c-in_corpus" fill="#199e70" x="134.5" y="286.0" width="58.5" height="29.1" rx="2"><title>Thailand · In corpus: 32</title></rect>
-<text class="seg" x="163.8" y="305.0" text-anchor="middle">32</text>
-<rect class="c-todo" fill="#8a8983" x="134.5" y="275.6" width="58.5" height="9.3" rx="2"><title>Thailand · To do: 11</title></rect>
+<rect class="c-sandbox" fill="#6b4ea3" x="134.5" y="319.8" width="58.5" height="9.3" rx="2"><title>Thailand · Sandbox: 11</title></rect>
+<rect class="c-blocked" fill="#d95926" x="134.5" y="305.7" width="58.5" height="13.1" rx="2"><title>Thailand · Blocked: 15</title></rect>
+<text class="seg" x="163.8" y="316.8" text-anchor="middle">15</text>
+<rect class="c-in_corpus" fill="#199e70" x="134.5" y="275.6" width="58.5" height="29.1" rx="2"><title>Thailand · In corpus: 32</title></rect>
+<text class="seg" x="163.8" y="294.7" text-anchor="middle">32</text>
 <text class="total" x="163.8" y="269.6" text-anchor="middle">94</text>
 <text class="city" x="163.8" y="382.0" text-anchor="middle">Thailand</text>
 <rect class="c-annotated" fill="#2a78d6" x="205.1" y="355.5" width="58.5" height="7.5" rx="2"><title>Malaysia · Local SDRF: 9</title></rect>
-<rect class="c-blocked" fill="#d95926" x="205.1" y="344.3" width="58.5" height="10.3" rx="2"><title>Malaysia · Blocked: 12</title></rect>
-<rect class="c-in_corpus" fill="#199e70" x="205.1" y="326.4" width="58.5" height="16.9" rx="2"><title>Malaysia · In corpus: 19</title></rect>
-<text class="seg" x="234.4" y="339.3" text-anchor="middle">19</text>
-<rect class="c-todo" fill="#8a8983" x="205.1" y="322.6" width="58.5" height="2.8" rx="2"><title>Malaysia · To do: 4</title></rect>
+<rect class="c-sandbox" fill="#6b4ea3" x="205.1" y="348.0" width="58.5" height="6.5" rx="2"><title>Malaysia · Sandbox: 8</title></rect>
+<rect class="c-blocked" fill="#d95926" x="205.1" y="339.6" width="58.5" height="7.5" rx="2"><title>Malaysia · Blocked: 9</title></rect>
+<rect class="c-in_corpus" fill="#199e70" x="205.1" y="322.6" width="58.5" height="15.9" rx="2"><title>Malaysia · In corpus: 18</title></rect>
+<text class="seg" x="234.4" y="335.1" text-anchor="middle">18</text>
 <text class="total" x="234.4" y="316.6" text-anchor="middle">44</text>
 <text class="city" x="234.4" y="382.0" text-anchor="middle">Malaysia</text>
 <rect class="c-annotated" fill="#2a78d6" x="275.6" y="363.1" width="58.5" height="1.0" rx="2"><title>Vietnam · Local SDRF: 1</title></rect>
