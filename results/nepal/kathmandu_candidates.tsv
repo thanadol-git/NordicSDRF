@@ -1,0 +1,14 @@
+accession	verdict	evidence	in_corpus	title
+PXD005286	rejected	countries=['India'] | Engineer at NTNU, Norway ; Department of Cancer Research and Molecular Medicine Departm	yes	Use of a modified Multiplexed Inhibitor Bead assay to study kinome responses to cytostatic treatment
+PXD005402	rejected	countries=['India'] | Engineer at NTNU, Norway ; Department of Cancer Research and Molecular Medicine Departm	yes	Use of a modified Multiplexed Inhibitor Bead assay to study kinome responses to cytostatic treatment
+PXD007113	rejected	countries=['Germany'] | Institute for Microbiology ; Dr. Andreas Otto Institute for Microbiology Department of Mi		A novel mobile genomic island: introducing ‘cephalosporinase morons’  in Enterobacteriaceae
+PXD008724	rejected	countries=['India'] | Engineer at NTNU, Norway ; Professor Institutt for klinisk og molekylær medisin Norges 	yes	APIM-peptide targeting PCNA improves cisplatin therapy in a rat muscle-invasive bladder cancer model
+PXD011044	rejected	countries=['India'] | Engineer at NTNU, Norway ; Professor Institutt for klinisk og molekylær medisin Norges 	yes	PCNA-targeting peptide modifies and increases the response to EGFR/HER2/VEGF inhibition in breast ca
+PXD012960	rejected	countries=['India'] | DEPARTMENT OF LABORATORY MEDICINE, SCHOOL OF TROPICAL MEDICI ; DEPARTMENT OF TROPICAL MEDICINE,SCHOOL OF TROPICAL MEDICINE,		• Clinical proteomics profiling for biomarker identification  among patients suffering with Indian P
+PXD013412	rejected	"countries=['Germany'] | University of Greifswald,
+Department for Microbial Proteomi ; University of Greifswald Institute of Microbiology Departmen"	yes	Proteomics analysis of the Enterobacter cloacae response to imipenem
+PXD018936	rejected	countries=['India'] | Amrita Vishwa VIdyapeetham ; Associate Professor and Head-Proteomics Research, School of 		Proteomics of Naja naja venom from the Western Ghats of India
+PXD020885	confirmed	countries=['Nepal']		Characterization of Plasmodium falciparum NEDD8
+PXD037239	rejected	countries=['Denmark'] | Copenhagen center for Glycomics, University of Copenhagen ; LUMC		Fc glycosylation status of Vi vaccine-induced antibodies
+PXD037251	rejected	countries=['Denmark'] | Copenhagen center for Glycomics, University of Copenhagen ; Center for Proteomics and Metabolomics, Leiden Universtity M		Fc glycosylation status of Vi vaccine-induced antibodies following polysaccharide or conjugate Salmo
+PXD052353	rejected	countries=['United States'] | UNC at Chapel Hill ; Center for Genomics Department of Basic Sciences Loma Linda 		Epigenomic, transcriptomic and proteomic characterizations of reference samples

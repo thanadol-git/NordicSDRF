@@ -1,0 +1,8 @@
+accession	verdict	evidence	in_corpus	title
+PXD003404	rejected	countries=['India'] | ICAR-Central Inland Fisheries Research Institute, Barrackpor ; ICAR- Central Inland Fisheries Research Institute, Fishery R	yes	Labeo rohita (Rohu) plasma MALDI-TOF MS/MS
+PXD005301	rejected	countries=['India'] | Scientific Officer G ; Scientific Officer-G Advanced Centre for Treatment, Research		Quantitative phosphoproteomic analysis reveals system-wide signaling pathways regulated by site-spec
+PXD012960	rejected	countries=['India'] | DEPARTMENT OF LABORATORY MEDICINE, SCHOOL OF TROPICAL MEDICI ; DEPARTMENT OF TROPICAL MEDICINE,SCHOOL OF TROPICAL MEDICINE,		• Clinical proteomics profiling for biomarker identification  among patients suffering with Indian P
+PXD013396	rejected	countries=['Australia'] | QIMR Berghofer Medical Research Institute ; Institute of Bioinformatics, International Tech Park, Bangal		Chronic exposure to chewing tobacco induces metabolic reprogramming and cancer stem cell-like proper
+PXD018936	rejected	countries=['India'] | Amrita Vishwa VIdyapeetham ; Associate Professor and Head-Proteomics Research, School of 		Proteomics of Naja naja venom from the Western Ghats of India
+PXD022325	rejected	countries=['United States'] | Harvard Medical School ; Harvard Medical School		Proteomic analysis to examine the functional consequences of intratumor heterogeneity
+PXD053766	rejected	countries=['Netherlands'] | UMCG ; Department of Pediatrics, UMCG/RUG, Groningen, The Netherlan	yes	Fibroblast-derived osteoglycin promotes epithelial cell repair

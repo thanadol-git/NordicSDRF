@@ -15,4 +15,12 @@ laos	Laos	sea	not_started	2026-11-27
 cambodia	Cambodia	sea	not_started	2026-11-27
 brunei	Brunei	sea	not_started	2026-11-27
 timor_leste	Timor-Leste	sea	not_started	2026-11-27
+india	India	south_asia	scoped	2026-11-27
+pakistan	Pakistan	south_asia	scoped	2026-11-27
+nepal	Nepal	south_asia	scoped	2026-11-27
+sri_lanka	Sri Lanka	south_asia	scoped	2026-11-27
+bangladesh	Bangladesh	south_asia	not_started	2026-11-27
+bhutan	Bhutan	south_asia	not_started	2026-11-27
+maldives	Maldives	south_asia	not_started	2026-11-27
+afghanistan	Afghanistan	south_asia	not_started	2026-11-27
 affinity_pad	Affinity PAD	affinity	in_progress	2026-11-27
