@@ -1,0 +1,5 @@
+accession	verdict	evidence	in_corpus	title
+PXD003255	confirmed	countries=['Kazakhstan']	yes	The effect of carbon starvation on the Escherichia coli SLE1 proteome.
+PXD015756	confirmed	countries=['Kazakhstan']	yes	Development of a method for quantitative analysis of in vivo interactions of pluripotency transcript
+PXD022543	rejected	countries=['Germany'] | University of Greifswald, Institute of Microbiology ; University of Greifswald, Institute of Microbiology, Departm		lMoniliella spathulata an oil-degrading yeast, which promotes growth of barley in oil polluted soil
+PXD076281	rejected	countries=['Russia'] | System Biology Lab. at Lopukhin Federal Research and Clinica ; System Biology Lab. at Lopukhin Federal Research and Clinica	yes	LC-MS/MS Profiling of Blood Serum Reveals Disease-Enriched Peptides in Metabolic Syndrome
