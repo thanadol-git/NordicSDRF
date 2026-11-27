@@ -2,3 +2,4 @@
 PXD002757	pakistan/lahore	blocked	blocked: 8 MALDI 2DE spots; README maps every spot to both gels; spot->control pool/CML unknown
 PXD020885	india/hyderabad	sandbox	sandbox: 20 RAW yeast WT/rub1D[HA-PfN8]/rub1D[HA-ScN8] anti-HA IP x3 exp; A/B as gel fractions guessed
 PXD019542	sri_lanka/colombo	sandbox	sandbox: 18/18 SWATH wiff, CD4 3 donors x 6 time points; REP->donor inferred; CL term unverified live
+PXD052574	sri_lanka/colombo	annotated	annotated: 9/9 RAW label-free (MAIT / nonMAIT CD3 / nonMAIT CD8 x 3 donors) from paper Table 1; review pending
