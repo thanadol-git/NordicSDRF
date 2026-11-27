@@ -16,3 +16,4 @@ PXD053974	singapore/singapore	blocked	blocked (provisional): TMT channel->dose/t
 PXD015393	singapore/singapore	sandbox	sandbox: 60 rows = 6/6 RAW x TMT10plex (channel map stated); 6 runs as tech reps 1-6 INFERRED (no fractionation stated)
 PXD043084	singapore/singapore	annotated	annotated: 8/8 RAW label-free BioID; BirA*-ZNF524 WT x4 (bait) vs BirA*-NLS x4 (ctrl) per Supp Fig 3a; QE HF; review round1 PASS
 PXD024630	singapore/singapore	annotated	annotated: 8/8 RAW label-free BioID; ZNF524 WT x4 (bait) vs ZF2 C144A mut x4 (ctrl), Fig 3f; dox 100 vs 300 resolved; review round1 PASS
+PXD005239	singapore/singapore	blocked	blocked: 9 mzML (F1-F10, no F7; no wiff) + 13GB PP group.xml; iTRAQ8 channel map absent, paper closed
