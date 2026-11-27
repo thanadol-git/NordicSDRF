@@ -1,0 +1,11 @@
+batch_order	accession	raw_count	total_files	instrument	annotation_status	title
+1	PXD082746	9	14	Orbitrap Exploris 480	queued	PISA with atovaquone and DSM265 in P. falciparum
+2	PXD043818	9	38	Synapt MS	queued	Neutralization and allostery by antibodies vs COVID-19 variants (HDX)
+3	PXD028325	10	12	5800 TOF/TOF	queued	Splicing legumain from Momordica cochinchinensis
+4	PXD011825	10	18	TripleTOF 5600	queued	TMV vs TMV 24A+UPD infected N. benthamiana (iTRAQ)
+5	PXD008834	10	30	TripleTOF 5600	queued	Candida albicans dnm1 mutant iTRAQ (raw=mzML; wiff listed as other)
+6	PXD031110	12	13	Q Exactive HF	queued	PLK1 inhibition in ARID1A-deficient cells
+7	PXD054586	12	13	Q Exactive HF	queued	lncRNA PLUM controls PRC2 H3K27me in multiple myeloma
+8	PXD021926	12	14	Q Exactive HF	queued	Enzyme-mediated covalent EV surface modification for drug delivery
+9	PXD051044	12	14	Orbitrap Exploris 480	queued	CAR T-cell efficacy vs neuroblastoma via MIF inhibition
+10	PXD043870	12	16	Q Exactive HF	queued	Role of Rab11 in EV-A71 infection
