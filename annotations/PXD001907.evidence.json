@@ -2,7 +2,7 @@
   "schema_version": 1,
   "artifact": "annotations/PXD001907.sdrf.tsv",
   "dataset": "PXD001907",
-  "artifact_sha256": "ed31e64da65be07f58f9e347605d4082a15bb2cf2514bbddca2ee541b8883a2e",
+  "artifact_sha256": "845c77470e685127eb2aa61636253dd7756922201515bbc33a43022bc275fe03",
   "sources": [
     {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD001907"},
     {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD001907/files/all (76 entries, 12 RAW)"},
@@ -13,7 +13,7 @@
   ],
   "claims": [
     {"column": "comment[instrument]", "value": "Orbitrap Fusion", "sources": ["raw-header", "pride"]},
-    {"column": "comment[label] / comment[modification parameters]", "value": "3-plex dimethyl; light UNIMOD:36, medium 2H(4) UNIMOD:199, heavy 2H(6)13C(2) UNIMOD:330; Carbamidomethyl fixed, Oxidation variable", "sources": ["export-psm", "pride"]},
+    {"column": "comment[label] / comment[modification parameters]", "value": "3-plex dimethyl; light DIMETHYL0 PRIDE:0000848 and UNIMOD:36, medium DIMETHYL4 PRIDE:0000850 and UNIMOD:199, heavy DIMETHYL8 PRIDE:0000852 and UNIMOD:330; Carbamidomethyl fixed, Oxidation variable", "sources": ["export-psm", "pride"]},
     {"column": "comment[dissociation method]", "value": "CID (Activation Type = CID for all PSMs)", "sources": ["export-psm", "pride"]},
     {"column": "comment[precursor/fragment mass tolerance]", "value": "5 ppm; 0.02 Da (OT), 0.5 Da (IT)", "sources": ["pride"]},
     {"column": "comment[cleavage agent details]", "value": "Trypsin - INFERRED from C-terminal K/R in 99.8% of PSMs; enzyme not named in record", "sources": ["export-psm"]},

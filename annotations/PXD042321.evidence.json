@@ -2,6 +2,7 @@
   "schema_version": 1,
   "artifact": "annotations/PXD042321.sdrf.tsv",
   "dataset": "PXD042321",
+  "artifact_sha256": "8ac529bee3e3aa35f0e69c9daa39915db6955e32c8ea14d6e762e7b1ae9ff0ff",
   "sources": [
     {
       "id": "pride",
@@ -140,12 +141,12 @@
     },
     {
       "location": "comment[modification parameters]",
-      "value": "Oxidation M, Deamidated NQ, Gln->pyro-Glu, Glu->pyro-Glu, Oxidation P (hydroxyproline) variable; NEM C fixed for SPIN files only",
+      "value": "Oxidation M, Deamidated NQ, Gln->pyro-Glu and Glu->pyro-Glu (both TA and PP=Any N-term), Oxidation P (hydroxyproline) variable; NEM C fixed for SPIN files only",
       "source_ids": [
         "mq",
         "paper"
       ],
-      "evidence": "summary.txt per raw file: Variable modifications list identical for 102 files; Fixed modifications nem(c) in the 14 6SPIN files only"
+      "evidence": "summary.txt per raw file lists bare Gln->pyro-Glu and Glu->pyro-Glu for all 102 files; both are written with the implied residue and PP=Any N-term. Fixed modifications nem(c) in the 14 6SPIN files only"
     },
     {
       "location": "ontology terms",

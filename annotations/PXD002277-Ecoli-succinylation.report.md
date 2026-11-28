@@ -14,7 +14,7 @@ Status: validated annotation; independent review pending.
 
 - SDRF: `annotations/PXD002277-Ecoli-succinylation.sdrf.tsv`
 - 17 data rows x 32 columns (13 RAW files; the 4 SILAC runs have one row per channel).
-- SHA-256: `d2a620093984bc7a482a896e808775e453f2d290179e8380b3165c434b5a45ad`
+- SHA-256: `91bcdf4ee4960ae53631a9998c717ad4bb37fe2af8294c6332be834e29d5cb85`
 - Templates: `ms-proteomics` v1.1.0 only. The organism is *Escherichia coli*; no organism template fits bacteria (`human` and `vertebrates` do not apply), so per project convention only the base MS template is declared.
 - Factor: `factor value[genotype]` = `wild type` (4 rows) / `cobB mutant` (4 rows) on the SILAC runs; `not available` on the 9 label-free discovery rows, which have no stated comparison.
 
@@ -37,7 +37,7 @@ The `E_coli_succinylation` `summary.txt` lists 13 raw files in two MaxQuant expe
 
 ## Validation
 
-- `timeout 900 .venv/bin/parse_sdrf validate-sdrf --sdrf_file annotations/PXD002277-Ecoli-succinylation.sdrf.tsv --template ms-proteomics --use_ols_cache_only`: "Everything seems to be fine. Well done.", exit 0, no errors or warnings (re-run 2026-11-04 on the SDRF with the SHA-256 above).
+- `timeout 900 .venv/bin/parse_sdrf validate-sdrf --sdrf_file annotations/PXD002277-Ecoli-succinylation.sdrf.tsv --template ms-proteomics --use_ols_cache_only`: "Everything seems to be fine. Well done.", exit 0, no errors or warnings (re-run 2026-11-04 on SHA-256 `d2a620093984bc7a482a896e808775e453f2d290179e8380b3165c434b5a45ad`). The only later edit is the assay-name post-processing below; the current file is SHA-256 `91bcdf4ee4960ae53631a9998c717ad4bb37fe2af8294c6332be834e29d5cb85`.
 - `cd sdrf-skills && .venv/bin/python -m tools check annotations/PXD002277-Ecoli-succinylation.sdrf.tsv`: exit 0, Status CLEAN (12 terms checked, 12 verified, 0 hallucinated, 0 label mismatches, 0 wrong ontology, 0 UNIMOD swaps).
 - Earlier run (2026-11-03): `sdrf-tools structure` "Structure OK", exit 0. `sdrf-tools reconcile` raised one `cleavage_agent_unsupported` flag for Trypsin/P (see Limitations).
 - Live OLS (ols4) lookups confirmed MS:1001911, MS:1001313, MS:1000422, MS:1000484, PRIDE:0000627, PRIDE:0000561, UNIMOD:4, UNIMOD:35, UNIMOD:1, UNIMOD:64, UNIMOD:259 and NCBITaxon:562.

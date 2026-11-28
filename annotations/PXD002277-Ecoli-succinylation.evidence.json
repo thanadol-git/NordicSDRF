@@ -2,7 +2,7 @@
   "schema_version": 1,
   "artifact": "annotations/PXD002277-Ecoli-succinylation.sdrf.tsv",
   "dataset": "PXD002277",
-  "artifact_sha256": "d2a620093984bc7a482a896e808775e453f2d290179e8380b3165c434b5a45ad",
+  "artifact_sha256": "91bcdf4ee4960ae53631a9998c717ad4bb37fe2af8294c6332be834e29d5cb85",
   "sources": [
     {"id": "pride", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002277"},
     {"id": "pride-files", "kind": "repository", "location": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD002277/files (58 entries: 57 RAW + MaxQuant_output_files.zip)"},
@@ -47,6 +47,7 @@
     "Lys8 label modification present on both SILAC channel rows (same multiplicity-2 search); comment[label] distinguishes channels",
     "Trypsin/P from deposited search settings; digest reagent not named in sample-prep text (sdrf-tools reconcile: cleavage_agent_unsupported)",
     "Reduction/alkylation reagents not stated",
-    "Antibody enrichment of succinyl-lysine peptides not encoded as a column (no accepted term)"
+    "Antibody enrichment of succinyl-lysine peptides not encoded as a column (no accepted term)",
+    "assay name is one value per RAW file: the per-channel -SILAC light/heavy suffixes were removed from the 4 multiplexed runs so both channel rows share the RAW basename"
   ]
 }
