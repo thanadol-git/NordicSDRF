@@ -31,7 +31,7 @@
 </style>
 <rect class="bg" width="860" height="316.0" rx="6"/>
 <text class="title" x="12" y="22">South Asia — listed PXDs</text>
-<text class="sub" x="12" y="40">405 listed · 6 local SDRFs · 1 sandbox · 198 to do · 1 blocked (not in sandbox) · PRIDE queried 2026-11-27</text>
+<text class="sub" x="12" y="40">405 listed · 6 local SDRFs · 0 sandbox · 198 to do · 1 blocked (not in sandbox) · PRIDE queried 2026-11-28</text>
 <rect class="c-annotated" fill="#2a78d6" x="12.0" y="52.0" width="12" height="12" rx="2"/>
 <text class="legend" x="29.0" y="62.0">Local SDRF</text>
 <rect class="c-sandbox" fill="#6b4ea3" x="117.0" y="52.0" width="12" height="12" rx="2"/>
@@ -49,12 +49,10 @@
 <text class="city" x="12" y="82.0">India</text>
 <rect class="c-annotated" fill="#2a78d6" x="112.0" y="68.0" width="17.0" height="20" rx="2"><title>India · Local SDRF: 1</title></rect>
 <text class="seg" x="120.5" y="82.0" text-anchor="middle">1</text>
-<rect class="c-sandbox" fill="#6b4ea3" x="130.0" y="68.0" width="17.0" height="20" rx="2"><title>India · Sandbox: 1</title></rect>
-<text class="seg" x="138.5" y="82.0" text-anchor="middle">1</text>
-<rect class="c-in_corpus" fill="#199e70" x="148.0" y="68.0" width="292.8" height="20" rx="2"><title>India · In corpus: 184</title></rect>
-<text class="seg" x="294.4" y="82.0" text-anchor="middle">184</text>
-<rect class="c-todo" fill="#8a8983" x="441.8" y="68.0" width="315.2" height="20" rx="2"><title>India · To do: 198</title></rect>
-<text class="seg" x="599.4" y="82.0" text-anchor="middle">198</text>
+<rect class="c-in_corpus" fill="#199e70" x="130.0" y="68.0" width="302.3" height="20" rx="2"><title>India · In corpus: 185</title></rect>
+<text class="seg" x="281.2" y="82.0" text-anchor="middle">185</text>
+<rect class="c-todo" fill="#8a8983" x="433.3" y="68.0" width="323.7" height="20" rx="2"><title>India · To do: 198</title></rect>
+<text class="seg" x="595.2" y="82.0" text-anchor="middle">198</text>
 <text class="total" x="764.0" y="82.0">384 listed</text>
 <text class="city" x="12" y="112.0">Pakistan</text>
 <rect class="c-annotated" fill="#2a78d6" x="112.0" y="98.0" width="17.0" height="20" rx="2"><title>Pakistan · Local SDRF: 1</title></rect>
